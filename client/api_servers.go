@@ -20,12 +20,12 @@ import (
 )
 
 
-// ServersApiService ServersApi service
-type ServersApiService service
+// ServersAPIService ServersAPI service
+type ServersAPIService service
 
-type ServersApiGetNetworkSwitchDhcpV4ServersSeenRequest struct {
+type ServersAPIGetNetworkSwitchDhcpV4ServersSeenRequest struct {
 	ctx context.Context
-	ApiService *ServersApiService
+	ApiService *ServersAPIService
 	networkId string
 	t0 *string
 	timespan *float32
@@ -35,36 +35,36 @@ type ServersApiGetNetworkSwitchDhcpV4ServersSeenRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r ServersApiGetNetworkSwitchDhcpV4ServersSeenRequest) T0(t0 string) ServersApiGetNetworkSwitchDhcpV4ServersSeenRequest {
+func (r ServersAPIGetNetworkSwitchDhcpV4ServersSeenRequest) T0(t0 string) ServersAPIGetNetworkSwitchDhcpV4ServersSeenRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r ServersApiGetNetworkSwitchDhcpV4ServersSeenRequest) Timespan(timespan float32) ServersApiGetNetworkSwitchDhcpV4ServersSeenRequest {
+func (r ServersAPIGetNetworkSwitchDhcpV4ServersSeenRequest) Timespan(timespan float32) ServersAPIGetNetworkSwitchDhcpV4ServersSeenRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r ServersApiGetNetworkSwitchDhcpV4ServersSeenRequest) PerPage(perPage int32) ServersApiGetNetworkSwitchDhcpV4ServersSeenRequest {
+func (r ServersAPIGetNetworkSwitchDhcpV4ServersSeenRequest) PerPage(perPage int32) ServersAPIGetNetworkSwitchDhcpV4ServersSeenRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ServersApiGetNetworkSwitchDhcpV4ServersSeenRequest) StartingAfter(startingAfter string) ServersApiGetNetworkSwitchDhcpV4ServersSeenRequest {
+func (r ServersAPIGetNetworkSwitchDhcpV4ServersSeenRequest) StartingAfter(startingAfter string) ServersAPIGetNetworkSwitchDhcpV4ServersSeenRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ServersApiGetNetworkSwitchDhcpV4ServersSeenRequest) EndingBefore(endingBefore string) ServersApiGetNetworkSwitchDhcpV4ServersSeenRequest {
+func (r ServersAPIGetNetworkSwitchDhcpV4ServersSeenRequest) EndingBefore(endingBefore string) ServersAPIGetNetworkSwitchDhcpV4ServersSeenRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r ServersApiGetNetworkSwitchDhcpV4ServersSeenRequest) Execute() ([]GetNetworkSwitchDhcpV4ServersSeen200ResponseInner, *http.Response, error) {
+func (r ServersAPIGetNetworkSwitchDhcpV4ServersSeenRequest) Execute() ([]GetNetworkSwitchDhcpV4ServersSeen200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchDhcpV4ServersSeenExecute(r)
 }
 
@@ -75,10 +75,10 @@ Return the network's DHCPv4 servers seen within the selected timeframe (default 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ServersApiGetNetworkSwitchDhcpV4ServersSeenRequest
+ @return ServersAPIGetNetworkSwitchDhcpV4ServersSeenRequest
 */
-func (a *ServersApiService) GetNetworkSwitchDhcpV4ServersSeen(ctx context.Context, networkId string) ServersApiGetNetworkSwitchDhcpV4ServersSeenRequest {
-	return ServersApiGetNetworkSwitchDhcpV4ServersSeenRequest{
+func (a *ServersAPIService) GetNetworkSwitchDhcpV4ServersSeen(ctx context.Context, networkId string) ServersAPIGetNetworkSwitchDhcpV4ServersSeenRequest {
+	return ServersAPIGetNetworkSwitchDhcpV4ServersSeenRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -87,7 +87,7 @@ func (a *ServersApiService) GetNetworkSwitchDhcpV4ServersSeen(ctx context.Contex
 
 // Execute executes the request
 //  @return []GetNetworkSwitchDhcpV4ServersSeen200ResponseInner
-func (a *ServersApiService) GetNetworkSwitchDhcpV4ServersSeenExecute(r ServersApiGetNetworkSwitchDhcpV4ServersSeenRequest) ([]GetNetworkSwitchDhcpV4ServersSeen200ResponseInner, *http.Response, error) {
+func (a *ServersAPIService) GetNetworkSwitchDhcpV4ServersSeenExecute(r ServersAPIGetNetworkSwitchDhcpV4ServersSeenRequest) ([]GetNetworkSwitchDhcpV4ServersSeen200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -95,7 +95,7 @@ func (a *ServersApiService) GetNetworkSwitchDhcpV4ServersSeenExecute(r ServersAp
 		localVarReturnValue  []GetNetworkSwitchDhcpV4ServersSeen200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServersApiService.GetNetworkSwitchDhcpV4ServersSeen")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServersAPIService.GetNetworkSwitchDhcpV4ServersSeen")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

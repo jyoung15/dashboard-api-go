@@ -21,12 +21,12 @@ import (
 )
 
 
-// AddressesApiService AddressesApi service
-type AddressesApiService service
+// AddressesAPIService AddressesAPI service
+type AddressesAPIService service
 
-type AddressesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest struct {
+type AddressesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest struct {
 	ctx context.Context
-	ApiService *AddressesApiService
+	ApiService *AddressesAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -39,54 +39,54 @@ type AddressesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r AddressesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) PerPage(perPage int32) AddressesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r AddressesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) PerPage(perPage int32) AddressesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r AddressesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) StartingAfter(startingAfter string) AddressesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r AddressesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) StartingAfter(startingAfter string) AddressesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r AddressesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) EndingBefore(endingBefore string) AddressesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r AddressesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) EndingBefore(endingBefore string) AddressesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter device uplinks by network ID. This filter uses multiple exact matches.
-func (r AddressesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) NetworkIds(networkIds []string) AddressesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r AddressesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) NetworkIds(networkIds []string) AddressesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter device uplinks by device product types. This filter uses multiple exact matches.
-func (r AddressesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) ProductTypes(productTypes []string) AddressesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r AddressesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) ProductTypes(productTypes []string) AddressesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter device availabilities by device serial numbers. This filter uses multiple exact matches.
-func (r AddressesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) Serials(serials []string) AddressesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r AddressesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) Serials(serials []string) AddressesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.serials = &serials
 	return r
 }
 
 // An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below). This filter uses multiple exact matches.
-func (r AddressesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) Tags(tags []string) AddressesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r AddressesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) Tags(tags []string) AddressesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.tags = &tags
 	return r
 }
 
 // An optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return devices which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r AddressesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) TagsFilterType(tagsFilterType string) AddressesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r AddressesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) TagsFilterType(tagsFilterType string) AddressesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
-func (r AddressesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) Execute() ([]GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner, *http.Response, error) {
+func (r AddressesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) Execute() ([]GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesUplinksAddressesByDeviceExecute(r)
 }
 
@@ -97,10 +97,10 @@ List the current uplink addresses for devices in an organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return AddressesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest
+ @return AddressesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest
 */
-func (a *AddressesApiService) GetOrganizationDevicesUplinksAddressesByDevice(ctx context.Context, organizationId string) AddressesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
-	return AddressesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest{
+func (a *AddressesAPIService) GetOrganizationDevicesUplinksAddressesByDevice(ctx context.Context, organizationId string) AddressesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+	return AddressesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -109,7 +109,7 @@ func (a *AddressesApiService) GetOrganizationDevicesUplinksAddressesByDevice(ctx
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner
-func (a *AddressesApiService) GetOrganizationDevicesUplinksAddressesByDeviceExecute(r AddressesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) ([]GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner, *http.Response, error) {
+func (a *AddressesAPIService) GetOrganizationDevicesUplinksAddressesByDeviceExecute(r AddressesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) ([]GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -117,7 +117,7 @@ func (a *AddressesApiService) GetOrganizationDevicesUplinksAddressesByDeviceExec
 		localVarReturnValue  []GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AddressesApiService.GetOrganizationDevicesUplinksAddressesByDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AddressesAPIService.GetOrganizationDevicesUplinksAddressesByDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

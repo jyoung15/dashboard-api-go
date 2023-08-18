@@ -20,30 +20,30 @@ import (
 )
 
 
-// PacketsApiService PacketsApi service
-type PacketsApiService service
+// PacketsAPIService PacketsAPI service
+type PacketsAPIService service
 
-type PacketsApiGetDeviceSwitchPortsStatusesPacketsRequest struct {
+type PacketsAPIGetDeviceSwitchPortsStatusesPacketsRequest struct {
 	ctx context.Context
-	ApiService *PacketsApiService
+	ApiService *PacketsAPIService
 	serial string
 	t0 *string
 	timespan *float32
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 1 day from today.
-func (r PacketsApiGetDeviceSwitchPortsStatusesPacketsRequest) T0(t0 string) PacketsApiGetDeviceSwitchPortsStatusesPacketsRequest {
+func (r PacketsAPIGetDeviceSwitchPortsStatusesPacketsRequest) T0(t0 string) PacketsAPIGetDeviceSwitchPortsStatusesPacketsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 1 day. The default is 1 day.
-func (r PacketsApiGetDeviceSwitchPortsStatusesPacketsRequest) Timespan(timespan float32) PacketsApiGetDeviceSwitchPortsStatusesPacketsRequest {
+func (r PacketsAPIGetDeviceSwitchPortsStatusesPacketsRequest) Timespan(timespan float32) PacketsAPIGetDeviceSwitchPortsStatusesPacketsRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r PacketsApiGetDeviceSwitchPortsStatusesPacketsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r PacketsAPIGetDeviceSwitchPortsStatusesPacketsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceSwitchPortsStatusesPacketsExecute(r)
 }
 
@@ -54,10 +54,10 @@ Return the packet counters for all the ports of a switch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return PacketsApiGetDeviceSwitchPortsStatusesPacketsRequest
+ @return PacketsAPIGetDeviceSwitchPortsStatusesPacketsRequest
 */
-func (a *PacketsApiService) GetDeviceSwitchPortsStatusesPackets(ctx context.Context, serial string) PacketsApiGetDeviceSwitchPortsStatusesPacketsRequest {
-	return PacketsApiGetDeviceSwitchPortsStatusesPacketsRequest{
+func (a *PacketsAPIService) GetDeviceSwitchPortsStatusesPackets(ctx context.Context, serial string) PacketsAPIGetDeviceSwitchPortsStatusesPacketsRequest {
+	return PacketsAPIGetDeviceSwitchPortsStatusesPacketsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -66,7 +66,7 @@ func (a *PacketsApiService) GetDeviceSwitchPortsStatusesPackets(ctx context.Cont
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *PacketsApiService) GetDeviceSwitchPortsStatusesPacketsExecute(r PacketsApiGetDeviceSwitchPortsStatusesPacketsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *PacketsAPIService) GetDeviceSwitchPortsStatusesPacketsExecute(r PacketsAPIGetDeviceSwitchPortsStatusesPacketsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -74,7 +74,7 @@ func (a *PacketsApiService) GetDeviceSwitchPortsStatusesPacketsExecute(r Packets
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PacketsApiService.GetDeviceSwitchPortsStatusesPackets")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PacketsAPIService.GetDeviceSwitchPortsStatusesPackets")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

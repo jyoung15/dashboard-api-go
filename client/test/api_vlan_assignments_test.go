@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing VlanAssignmentsApiService
+Testing VlanAssignmentsAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_VlanAssignmentsApiService(t *testing.T) {
+func Test_client_VlanAssignmentsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test VlanAssignmentsApiService GetDeviceAppliancePrefixesDelegatedVlanAssignments", func(t *testing.T) {
+	t.Run("Test VlanAssignmentsAPIService GetDeviceAppliancePrefixesDelegatedVlanAssignments", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.VlanAssignmentsApi.GetDeviceAppliancePrefixesDelegatedVlanAssignments(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.VlanAssignmentsAPI.GetDeviceAppliancePrefixesDelegatedVlanAssignments(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing TrafficShapingApiService
+Testing TrafficShapingAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_TrafficShapingApiService(t *testing.T) {
+func Test_client_TrafficShapingAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test TrafficShapingApiService CreateNetworkApplianceTrafficShapingCustomPerformanceClass", func(t *testing.T) {
+	t.Run("Test TrafficShapingAPIService CreateNetworkApplianceTrafficShapingCustomPerformanceClass", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.TrafficShapingApi.CreateNetworkApplianceTrafficShapingCustomPerformanceClass(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.TrafficShapingAPI.CreateNetworkApplianceTrafficShapingCustomPerformanceClass(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,27 +36,27 @@ func Test_client_TrafficShapingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test TrafficShapingApiService DeleteNetworkApplianceTrafficShapingCustomPerformanceClass", func(t *testing.T) {
+	t.Run("Test TrafficShapingAPIService DeleteNetworkApplianceTrafficShapingCustomPerformanceClass", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var customPerformanceClassId string
 
-		httpRes, err := apiClient.TrafficShapingApi.DeleteNetworkApplianceTrafficShapingCustomPerformanceClass(context.Background(), networkId, customPerformanceClassId).Execute()
+		httpRes, err := apiClient.TrafficShapingAPI.DeleteNetworkApplianceTrafficShapingCustomPerformanceClass(context.Background(), networkId, customPerformanceClassId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test TrafficShapingApiService GetNetworkApplianceTrafficShaping", func(t *testing.T) {
+	t.Run("Test TrafficShapingAPIService GetNetworkApplianceTrafficShaping", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.TrafficShapingApi.GetNetworkApplianceTrafficShaping(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.TrafficShapingAPI.GetNetworkApplianceTrafficShaping(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,14 +64,14 @@ func Test_client_TrafficShapingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test TrafficShapingApiService GetNetworkApplianceTrafficShapingCustomPerformanceClass", func(t *testing.T) {
+	t.Run("Test TrafficShapingAPIService GetNetworkApplianceTrafficShapingCustomPerformanceClass", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var customPerformanceClassId string
 
-		resp, httpRes, err := apiClient.TrafficShapingApi.GetNetworkApplianceTrafficShapingCustomPerformanceClass(context.Background(), networkId, customPerformanceClassId).Execute()
+		resp, httpRes, err := apiClient.TrafficShapingAPI.GetNetworkApplianceTrafficShapingCustomPerformanceClass(context.Background(), networkId, customPerformanceClassId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,13 +79,13 @@ func Test_client_TrafficShapingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test TrafficShapingApiService GetNetworkApplianceTrafficShapingCustomPerformanceClasses", func(t *testing.T) {
+	t.Run("Test TrafficShapingAPIService GetNetworkApplianceTrafficShapingCustomPerformanceClasses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.TrafficShapingApi.GetNetworkApplianceTrafficShapingCustomPerformanceClasses(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.TrafficShapingAPI.GetNetworkApplianceTrafficShapingCustomPerformanceClasses(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -93,13 +93,13 @@ func Test_client_TrafficShapingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test TrafficShapingApiService GetNetworkApplianceTrafficShapingRules", func(t *testing.T) {
+	t.Run("Test TrafficShapingAPIService GetNetworkApplianceTrafficShapingRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.TrafficShapingApi.GetNetworkApplianceTrafficShapingRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.TrafficShapingAPI.GetNetworkApplianceTrafficShapingRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -107,13 +107,13 @@ func Test_client_TrafficShapingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test TrafficShapingApiService GetNetworkApplianceTrafficShapingUplinkBandwidth", func(t *testing.T) {
+	t.Run("Test TrafficShapingAPIService GetNetworkApplianceTrafficShapingUplinkBandwidth", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.TrafficShapingApi.GetNetworkApplianceTrafficShapingUplinkBandwidth(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.TrafficShapingAPI.GetNetworkApplianceTrafficShapingUplinkBandwidth(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -121,13 +121,13 @@ func Test_client_TrafficShapingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test TrafficShapingApiService GetNetworkApplianceTrafficShapingUplinkSelection", func(t *testing.T) {
+	t.Run("Test TrafficShapingAPIService GetNetworkApplianceTrafficShapingUplinkSelection", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.TrafficShapingApi.GetNetworkApplianceTrafficShapingUplinkSelection(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.TrafficShapingAPI.GetNetworkApplianceTrafficShapingUplinkSelection(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -135,13 +135,13 @@ func Test_client_TrafficShapingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test TrafficShapingApiService GetNetworkTrafficShapingApplicationCategories", func(t *testing.T) {
+	t.Run("Test TrafficShapingAPIService GetNetworkTrafficShapingApplicationCategories", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.TrafficShapingApi.GetNetworkTrafficShapingApplicationCategories(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.TrafficShapingAPI.GetNetworkTrafficShapingApplicationCategories(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -149,13 +149,13 @@ func Test_client_TrafficShapingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test TrafficShapingApiService GetNetworkTrafficShapingDscpTaggingOptions", func(t *testing.T) {
+	t.Run("Test TrafficShapingAPIService GetNetworkTrafficShapingDscpTaggingOptions", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.TrafficShapingApi.GetNetworkTrafficShapingDscpTaggingOptions(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.TrafficShapingAPI.GetNetworkTrafficShapingDscpTaggingOptions(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -163,14 +163,14 @@ func Test_client_TrafficShapingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test TrafficShapingApiService GetNetworkWirelessSsidTrafficShapingRules", func(t *testing.T) {
+	t.Run("Test TrafficShapingAPIService GetNetworkWirelessSsidTrafficShapingRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.TrafficShapingApi.GetNetworkWirelessSsidTrafficShapingRules(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.TrafficShapingAPI.GetNetworkWirelessSsidTrafficShapingRules(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -178,13 +178,13 @@ func Test_client_TrafficShapingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test TrafficShapingApiService UpdateNetworkApplianceTrafficShaping", func(t *testing.T) {
+	t.Run("Test TrafficShapingAPIService UpdateNetworkApplianceTrafficShaping", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.TrafficShapingApi.UpdateNetworkApplianceTrafficShaping(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.TrafficShapingAPI.UpdateNetworkApplianceTrafficShaping(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -192,14 +192,14 @@ func Test_client_TrafficShapingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test TrafficShapingApiService UpdateNetworkApplianceTrafficShapingCustomPerformanceClass", func(t *testing.T) {
+	t.Run("Test TrafficShapingAPIService UpdateNetworkApplianceTrafficShapingCustomPerformanceClass", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var customPerformanceClassId string
 
-		resp, httpRes, err := apiClient.TrafficShapingApi.UpdateNetworkApplianceTrafficShapingCustomPerformanceClass(context.Background(), networkId, customPerformanceClassId).Execute()
+		resp, httpRes, err := apiClient.TrafficShapingAPI.UpdateNetworkApplianceTrafficShapingCustomPerformanceClass(context.Background(), networkId, customPerformanceClassId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -207,13 +207,13 @@ func Test_client_TrafficShapingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test TrafficShapingApiService UpdateNetworkApplianceTrafficShapingRules", func(t *testing.T) {
+	t.Run("Test TrafficShapingAPIService UpdateNetworkApplianceTrafficShapingRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.TrafficShapingApi.UpdateNetworkApplianceTrafficShapingRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.TrafficShapingAPI.UpdateNetworkApplianceTrafficShapingRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -221,13 +221,13 @@ func Test_client_TrafficShapingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test TrafficShapingApiService UpdateNetworkApplianceTrafficShapingUplinkBandwidth", func(t *testing.T) {
+	t.Run("Test TrafficShapingAPIService UpdateNetworkApplianceTrafficShapingUplinkBandwidth", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.TrafficShapingApi.UpdateNetworkApplianceTrafficShapingUplinkBandwidth(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.TrafficShapingAPI.UpdateNetworkApplianceTrafficShapingUplinkBandwidth(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -235,13 +235,13 @@ func Test_client_TrafficShapingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test TrafficShapingApiService UpdateNetworkApplianceTrafficShapingUplinkSelection", func(t *testing.T) {
+	t.Run("Test TrafficShapingAPIService UpdateNetworkApplianceTrafficShapingUplinkSelection", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.TrafficShapingApi.UpdateNetworkApplianceTrafficShapingUplinkSelection(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.TrafficShapingAPI.UpdateNetworkApplianceTrafficShapingUplinkSelection(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -249,14 +249,14 @@ func Test_client_TrafficShapingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test TrafficShapingApiService UpdateNetworkWirelessSsidTrafficShapingRules", func(t *testing.T) {
+	t.Run("Test TrafficShapingAPIService UpdateNetworkWirelessSsidTrafficShapingRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.TrafficShapingApi.UpdateNetworkWirelessSsidTrafficShapingRules(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.TrafficShapingAPI.UpdateNetworkWirelessSsidTrafficShapingRules(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

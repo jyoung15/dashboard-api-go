@@ -20,16 +20,16 @@ import (
 )
 
 
-// CurrentApiService CurrentApi service
-type CurrentApiService service
+// CurrentAPIService CurrentAPI service
+type CurrentAPIService service
 
-type CurrentApiGetNetworkSensorAlertsCurrentOverviewByMetricRequest struct {
+type CurrentAPIGetNetworkSensorAlertsCurrentOverviewByMetricRequest struct {
 	ctx context.Context
-	ApiService *CurrentApiService
+	ApiService *CurrentAPIService
 	networkId string
 }
 
-func (r CurrentApiGetNetworkSensorAlertsCurrentOverviewByMetricRequest) Execute() (*GetNetworkSensorAlertsCurrentOverviewByMetric200Response, *http.Response, error) {
+func (r CurrentAPIGetNetworkSensorAlertsCurrentOverviewByMetricRequest) Execute() (*GetNetworkSensorAlertsCurrentOverviewByMetric200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSensorAlertsCurrentOverviewByMetricExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return an overview of currently alerting sensors by metric
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return CurrentApiGetNetworkSensorAlertsCurrentOverviewByMetricRequest
+ @return CurrentAPIGetNetworkSensorAlertsCurrentOverviewByMetricRequest
 */
-func (a *CurrentApiService) GetNetworkSensorAlertsCurrentOverviewByMetric(ctx context.Context, networkId string) CurrentApiGetNetworkSensorAlertsCurrentOverviewByMetricRequest {
-	return CurrentApiGetNetworkSensorAlertsCurrentOverviewByMetricRequest{
+func (a *CurrentAPIService) GetNetworkSensorAlertsCurrentOverviewByMetric(ctx context.Context, networkId string) CurrentAPIGetNetworkSensorAlertsCurrentOverviewByMetricRequest {
+	return CurrentAPIGetNetworkSensorAlertsCurrentOverviewByMetricRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *CurrentApiService) GetNetworkSensorAlertsCurrentOverviewByMetric(ctx co
 
 // Execute executes the request
 //  @return GetNetworkSensorAlertsCurrentOverviewByMetric200Response
-func (a *CurrentApiService) GetNetworkSensorAlertsCurrentOverviewByMetricExecute(r CurrentApiGetNetworkSensorAlertsCurrentOverviewByMetricRequest) (*GetNetworkSensorAlertsCurrentOverviewByMetric200Response, *http.Response, error) {
+func (a *CurrentAPIService) GetNetworkSensorAlertsCurrentOverviewByMetricExecute(r CurrentAPIGetNetworkSensorAlertsCurrentOverviewByMetricRequest) (*GetNetworkSensorAlertsCurrentOverviewByMetric200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *CurrentApiService) GetNetworkSensorAlertsCurrentOverviewByMetricExecute
 		localVarReturnValue  *GetNetworkSensorAlertsCurrentOverviewByMetric200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CurrentApiService.GetNetworkSensorAlertsCurrentOverviewByMetric")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CurrentAPIService.GetNetworkSensorAlertsCurrentOverviewByMetric")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

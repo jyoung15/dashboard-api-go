@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing DevicesApiService
+Testing DevicesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_DevicesApiService(t *testing.T) {
+func Test_client_DevicesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test DevicesApiService BlinkDeviceLeds", func(t *testing.T) {
+	t.Run("Test DevicesAPIService BlinkDeviceLeds", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.DevicesApi.BlinkDeviceLeds(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.BlinkDeviceLeds(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService CheckinNetworkSmDevices", func(t *testing.T) {
+	t.Run("Test DevicesAPIService CheckinNetworkSmDevices", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.DevicesApi.CheckinNetworkSmDevices(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.CheckinNetworkSmDevices(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,26 +50,26 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService ClaimNetworkDevices", func(t *testing.T) {
+	t.Run("Test DevicesAPIService ClaimNetworkDevices", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		httpRes, err := apiClient.DevicesApi.ClaimNetworkDevices(context.Background(), networkId).Execute()
+		httpRes, err := apiClient.DevicesAPI.ClaimNetworkDevices(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DevicesApiService CloneOrganizationSwitchDevices", func(t *testing.T) {
+	t.Run("Test DevicesAPIService CloneOrganizationSwitchDevices", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.DevicesApi.CloneOrganizationSwitchDevices(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.CloneOrganizationSwitchDevices(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -77,13 +77,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService CreateDeviceLiveToolsPing", func(t *testing.T) {
+	t.Run("Test DevicesAPIService CreateDeviceLiveToolsPing", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.DevicesApi.CreateDeviceLiveToolsPing(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.CreateDeviceLiveToolsPing(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -91,13 +91,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService CreateDeviceLiveToolsPingDevice", func(t *testing.T) {
+	t.Run("Test DevicesAPIService CreateDeviceLiveToolsPingDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.DevicesApi.CreateDeviceLiveToolsPingDevice(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.CreateDeviceLiveToolsPingDevice(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -105,13 +105,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetDevice", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetDevice(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetDevice(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -119,13 +119,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetDeviceCellularSims", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetDeviceCellularSims", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetDeviceCellularSims(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetDeviceCellularSims(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -133,13 +133,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetDeviceClients", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetDeviceClients", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetDeviceClients(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetDeviceClients(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -147,29 +147,14 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetDeviceLiveToolsPing", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var serial string
-		var id string
-
-		resp, httpRes, err := apiClient.DevicesApi.GetDeviceLiveToolsPing(context.Background(), serial, id).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test DevicesApiService GetDeviceLiveToolsPingDevice", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetDeviceLiveToolsPing", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var id string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetDeviceLiveToolsPingDevice(context.Background(), serial, id).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetDeviceLiveToolsPing(context.Background(), serial, id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -177,13 +162,28 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetDeviceLldpCdp", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetDeviceLiveToolsPingDevice", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var serial string
+		var id string
+
+		resp, httpRes, err := apiClient.DevicesAPI.GetDeviceLiveToolsPingDevice(context.Background(), serial, id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test DevicesAPIService GetDeviceLldpCdp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetDeviceLldpCdp(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetDeviceLldpCdp(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -191,13 +191,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetDeviceLossAndLatencyHistory", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetDeviceLossAndLatencyHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetDeviceLossAndLatencyHistory(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetDeviceLossAndLatencyHistory(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -205,13 +205,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetDeviceManagementInterface", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetDeviceManagementInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetDeviceManagementInterface(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetDeviceManagementInterface(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -219,13 +219,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetNetworkDevices", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetNetworkDevices", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetNetworkDevices(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetNetworkDevices(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -233,29 +233,14 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetNetworkSmDeviceCellularUsageHistory", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-		var deviceId string
-
-		resp, httpRes, err := apiClient.DevicesApi.GetNetworkSmDeviceCellularUsageHistory(context.Background(), networkId, deviceId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test DevicesApiService GetNetworkSmDeviceCerts", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetNetworkSmDeviceCellularUsageHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var deviceId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetNetworkSmDeviceCerts(context.Background(), networkId, deviceId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetNetworkSmDeviceCellularUsageHistory(context.Background(), networkId, deviceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -263,14 +248,14 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetNetworkSmDeviceConnectivity", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetNetworkSmDeviceCerts", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var deviceId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetNetworkSmDeviceConnectivity(context.Background(), networkId, deviceId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetNetworkSmDeviceCerts(context.Background(), networkId, deviceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -278,14 +263,14 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetNetworkSmDeviceDesktopLogs", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetNetworkSmDeviceConnectivity", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var deviceId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetNetworkSmDeviceDesktopLogs(context.Background(), networkId, deviceId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetNetworkSmDeviceConnectivity(context.Background(), networkId, deviceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -293,14 +278,14 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetNetworkSmDeviceDeviceCommandLogs", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetNetworkSmDeviceDesktopLogs", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var deviceId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetNetworkSmDeviceDeviceCommandLogs(context.Background(), networkId, deviceId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetNetworkSmDeviceDesktopLogs(context.Background(), networkId, deviceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -308,14 +293,14 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetNetworkSmDeviceDeviceProfiles", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetNetworkSmDeviceDeviceCommandLogs", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var deviceId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetNetworkSmDeviceDeviceProfiles(context.Background(), networkId, deviceId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetNetworkSmDeviceDeviceCommandLogs(context.Background(), networkId, deviceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -323,14 +308,14 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetNetworkSmDeviceNetworkAdapters", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetNetworkSmDeviceDeviceProfiles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var deviceId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetNetworkSmDeviceNetworkAdapters(context.Background(), networkId, deviceId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetNetworkSmDeviceDeviceProfiles(context.Background(), networkId, deviceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -338,14 +323,14 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetNetworkSmDevicePerformanceHistory", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetNetworkSmDeviceNetworkAdapters", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var deviceId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetNetworkSmDevicePerformanceHistory(context.Background(), networkId, deviceId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetNetworkSmDeviceNetworkAdapters(context.Background(), networkId, deviceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -353,14 +338,14 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetNetworkSmDeviceRestrictions", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetNetworkSmDevicePerformanceHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var deviceId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetNetworkSmDeviceRestrictions(context.Background(), networkId, deviceId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetNetworkSmDevicePerformanceHistory(context.Background(), networkId, deviceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -368,14 +353,14 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetNetworkSmDeviceSecurityCenters", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetNetworkSmDeviceRestrictions", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var deviceId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetNetworkSmDeviceSecurityCenters(context.Background(), networkId, deviceId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetNetworkSmDeviceRestrictions(context.Background(), networkId, deviceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -383,14 +368,14 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetNetworkSmDeviceSoftwares", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetNetworkSmDeviceSecurityCenters", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var deviceId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetNetworkSmDeviceSoftwares(context.Background(), networkId, deviceId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetNetworkSmDeviceSecurityCenters(context.Background(), networkId, deviceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -398,14 +383,14 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetNetworkSmDeviceWlanLists", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetNetworkSmDeviceSoftwares", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var deviceId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetNetworkSmDeviceWlanLists(context.Background(), networkId, deviceId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetNetworkSmDeviceSoftwares(context.Background(), networkId, deviceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -413,13 +398,28 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetNetworkSmDevices", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetNetworkSmDeviceWlanLists", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+		var deviceId string
+
+		resp, httpRes, err := apiClient.DevicesAPI.GetNetworkSmDeviceWlanLists(context.Background(), networkId, deviceId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test DevicesAPIService GetNetworkSmDevices", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetNetworkSmDevices(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetNetworkSmDevices(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -427,13 +427,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetNetworkWirelessDevicesConnectionStats", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetNetworkWirelessDevicesConnectionStats", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetNetworkWirelessDevicesConnectionStats(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetNetworkWirelessDevicesConnectionStats(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -441,13 +441,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetNetworkWirelessDevicesLatencyStats", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetNetworkWirelessDevicesLatencyStats", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetNetworkWirelessDevicesLatencyStats(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetNetworkWirelessDevicesLatencyStats(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -455,13 +455,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetOrganizationDevices", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetOrganizationDevices", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetOrganizationDevices(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetOrganizationDevices(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -469,13 +469,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetOrganizationDevicesAvailabilities", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetOrganizationDevicesAvailabilities", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetOrganizationDevicesAvailabilities(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetOrganizationDevicesAvailabilities(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -483,13 +483,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetOrganizationDevicesAvailabilitiesChangeHistory", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetOrganizationDevicesAvailabilitiesChangeHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetOrganizationDevicesAvailabilitiesChangeHistory(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetOrganizationDevicesAvailabilitiesChangeHistory(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -497,13 +497,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetOrganizationDevicesPowerModulesStatusesByDevice", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetOrganizationDevicesPowerModulesStatusesByDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetOrganizationDevicesPowerModulesStatusesByDevice(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetOrganizationDevicesPowerModulesStatusesByDevice(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -511,13 +511,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetOrganizationDevicesProvisioningStatuses", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetOrganizationDevicesProvisioningStatuses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetOrganizationDevicesProvisioningStatuses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetOrganizationDevicesProvisioningStatuses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -525,13 +525,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetOrganizationDevicesStatuses", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetOrganizationDevicesStatuses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetOrganizationDevicesStatuses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetOrganizationDevicesStatuses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -539,13 +539,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetOrganizationDevicesStatusesOverview", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetOrganizationDevicesStatusesOverview", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetOrganizationDevicesStatusesOverview(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetOrganizationDevicesStatusesOverview(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -553,13 +553,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetOrganizationDevicesUplinksAddressesByDevice", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetOrganizationDevicesUplinksAddressesByDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetOrganizationDevicesUplinksAddressesByDevice(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetOrganizationDevicesUplinksAddressesByDevice(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -567,13 +567,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetOrganizationDevicesUplinksLossAndLatency", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetOrganizationDevicesUplinksLossAndLatency", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetOrganizationDevicesUplinksLossAndLatency(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetOrganizationDevicesUplinksLossAndLatency(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -581,14 +581,14 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetOrganizationInventoryDevice", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetOrganizationInventoryDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var serial string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetOrganizationInventoryDevice(context.Background(), organizationId, serial).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetOrganizationInventoryDevice(context.Background(), organizationId, serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -596,13 +596,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetOrganizationInventoryDevices", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetOrganizationInventoryDevices", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetOrganizationInventoryDevices(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetOrganizationInventoryDevices(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -610,13 +610,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetOrganizationSummaryTopDevicesByUsage", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetOrganizationSummaryTopDevicesByUsage", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetOrganizationSummaryTopDevicesByUsage(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetOrganizationSummaryTopDevicesByUsage(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -624,13 +624,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetOrganizationSummaryTopDevicesModelsByUsage", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetOrganizationSummaryTopDevicesModelsByUsage", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetOrganizationSummaryTopDevicesModelsByUsage(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetOrganizationSummaryTopDevicesModelsByUsage(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -638,13 +638,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetOrganizationWirelessDevicesChannelUtilizationByDevice", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetOrganizationWirelessDevicesChannelUtilizationByDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetOrganizationWirelessDevicesChannelUtilizationByDevice(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetOrganizationWirelessDevicesChannelUtilizationByDevice(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -652,13 +652,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetOrganizationWirelessDevicesChannelUtilizationByNetwork", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetOrganizationWirelessDevicesChannelUtilizationByNetwork", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetOrganizationWirelessDevicesChannelUtilizationByNetwork(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetOrganizationWirelessDevicesChannelUtilizationByNetwork(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -666,13 +666,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -680,13 +680,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -694,13 +694,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService GetOrganizationWirelessDevicesEthernetStatuses", func(t *testing.T) {
+	t.Run("Test DevicesAPIService GetOrganizationWirelessDevicesEthernetStatuses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.DevicesApi.GetOrganizationWirelessDevicesEthernetStatuses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.GetOrganizationWirelessDevicesEthernetStatuses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -708,13 +708,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService LockNetworkSmDevices", func(t *testing.T) {
+	t.Run("Test DevicesAPIService LockNetworkSmDevices", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.DevicesApi.LockNetworkSmDevices(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.LockNetworkSmDevices(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -722,13 +722,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService ModifyNetworkSmDevicesTags", func(t *testing.T) {
+	t.Run("Test DevicesAPIService ModifyNetworkSmDevicesTags", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.DevicesApi.ModifyNetworkSmDevicesTags(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.ModifyNetworkSmDevicesTags(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -736,13 +736,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService MoveNetworkSmDevices", func(t *testing.T) {
+	t.Run("Test DevicesAPIService MoveNetworkSmDevices", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.DevicesApi.MoveNetworkSmDevices(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.MoveNetworkSmDevices(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -750,13 +750,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService RebootDevice", func(t *testing.T) {
+	t.Run("Test DevicesAPIService RebootDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.DevicesApi.RebootDevice(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.RebootDevice(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -764,41 +764,41 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService RefreshNetworkSmDeviceDetails", func(t *testing.T) {
+	t.Run("Test DevicesAPIService RefreshNetworkSmDeviceDetails", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var deviceId string
 
-		httpRes, err := apiClient.DevicesApi.RefreshNetworkSmDeviceDetails(context.Background(), networkId, deviceId).Execute()
+		httpRes, err := apiClient.DevicesAPI.RefreshNetworkSmDeviceDetails(context.Background(), networkId, deviceId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DevicesApiService RemoveNetworkDevices", func(t *testing.T) {
+	t.Run("Test DevicesAPIService RemoveNetworkDevices", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		httpRes, err := apiClient.DevicesApi.RemoveNetworkDevices(context.Background(), networkId).Execute()
+		httpRes, err := apiClient.DevicesAPI.RemoveNetworkDevices(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DevicesApiService UnenrollNetworkSmDevice", func(t *testing.T) {
+	t.Run("Test DevicesAPIService UnenrollNetworkSmDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var deviceId string
 
-		resp, httpRes, err := apiClient.DevicesApi.UnenrollNetworkSmDevice(context.Background(), networkId, deviceId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.UnenrollNetworkSmDevice(context.Background(), networkId, deviceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -806,13 +806,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService UpdateDevice", func(t *testing.T) {
+	t.Run("Test DevicesAPIService UpdateDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.DevicesApi.UpdateDevice(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.UpdateDevice(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -820,13 +820,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService UpdateDeviceCellularSims", func(t *testing.T) {
+	t.Run("Test DevicesAPIService UpdateDeviceCellularSims", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.DevicesApi.UpdateDeviceCellularSims(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.UpdateDeviceCellularSims(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -834,13 +834,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService UpdateDeviceManagementInterface", func(t *testing.T) {
+	t.Run("Test DevicesAPIService UpdateDeviceManagementInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.DevicesApi.UpdateDeviceManagementInterface(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.UpdateDeviceManagementInterface(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -848,13 +848,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService UpdateNetworkSmDevicesFields", func(t *testing.T) {
+	t.Run("Test DevicesAPIService UpdateNetworkSmDevicesFields", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.DevicesApi.UpdateNetworkSmDevicesFields(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.UpdateNetworkSmDevicesFields(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -862,13 +862,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService VmxNetworkDevicesClaim", func(t *testing.T) {
+	t.Run("Test DevicesAPIService VmxNetworkDevicesClaim", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.DevicesApi.VmxNetworkDevicesClaim(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.VmxNetworkDevicesClaim(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -876,13 +876,13 @@ func Test_client_DevicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DevicesApiService WipeNetworkSmDevices", func(t *testing.T) {
+	t.Run("Test DevicesAPIService WipeNetworkSmDevices", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.DevicesApi.WipeNetworkSmDevices(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.DevicesAPI.WipeNetworkSmDevices(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing OverviewApiService
+Testing OverviewAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_OverviewApiService(t *testing.T) {
+func Test_client_OverviewAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test OverviewApiService GetDeviceCameraAnalyticsOverview", func(t *testing.T) {
+	t.Run("Test OverviewAPIService GetDeviceCameraAnalyticsOverview", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.OverviewApi.GetDeviceCameraAnalyticsOverview(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.OverviewAPI.GetDeviceCameraAnalyticsOverview(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_OverviewApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test OverviewApiService GetNetworkClientsOverview", func(t *testing.T) {
+	t.Run("Test OverviewAPIService GetNetworkClientsOverview", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.OverviewApi.GetNetworkClientsOverview(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.OverviewAPI.GetNetworkClientsOverview(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,13 +50,13 @@ func Test_client_OverviewApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test OverviewApiService GetNetworkSensorAlertsCurrentOverviewByMetric", func(t *testing.T) {
+	t.Run("Test OverviewAPIService GetNetworkSensorAlertsCurrentOverviewByMetric", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.OverviewApi.GetNetworkSensorAlertsCurrentOverviewByMetric(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.OverviewAPI.GetNetworkSensorAlertsCurrentOverviewByMetric(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,13 +64,13 @@ func Test_client_OverviewApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test OverviewApiService GetNetworkSensorAlertsOverviewByMetric", func(t *testing.T) {
+	t.Run("Test OverviewAPIService GetNetworkSensorAlertsOverviewByMetric", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.OverviewApi.GetNetworkSensorAlertsOverviewByMetric(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.OverviewAPI.GetNetworkSensorAlertsOverviewByMetric(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -78,13 +78,13 @@ func Test_client_OverviewApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test OverviewApiService GetOrganizationAdaptivePolicyOverview", func(t *testing.T) {
+	t.Run("Test OverviewAPIService GetOrganizationAdaptivePolicyOverview", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.OverviewApi.GetOrganizationAdaptivePolicyOverview(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.OverviewAPI.GetOrganizationAdaptivePolicyOverview(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -92,13 +92,13 @@ func Test_client_OverviewApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test OverviewApiService GetOrganizationApiRequestsOverview", func(t *testing.T) {
+	t.Run("Test OverviewAPIService GetOrganizationApiRequestsOverview", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.OverviewApi.GetOrganizationApiRequestsOverview(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.OverviewAPI.GetOrganizationApiRequestsOverview(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -106,13 +106,13 @@ func Test_client_OverviewApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test OverviewApiService GetOrganizationApiRequestsOverviewResponseCodesByInterval", func(t *testing.T) {
+	t.Run("Test OverviewAPIService GetOrganizationApiRequestsOverviewResponseCodesByInterval", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.OverviewApi.GetOrganizationApiRequestsOverviewResponseCodesByInterval(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.OverviewAPI.GetOrganizationApiRequestsOverviewResponseCodesByInterval(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -120,13 +120,13 @@ func Test_client_OverviewApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test OverviewApiService GetOrganizationClientsOverview", func(t *testing.T) {
+	t.Run("Test OverviewAPIService GetOrganizationClientsOverview", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.OverviewApi.GetOrganizationClientsOverview(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.OverviewAPI.GetOrganizationClientsOverview(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -134,13 +134,13 @@ func Test_client_OverviewApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test OverviewApiService GetOrganizationDevicesStatusesOverview", func(t *testing.T) {
+	t.Run("Test OverviewAPIService GetOrganizationDevicesStatusesOverview", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.OverviewApi.GetOrganizationDevicesStatusesOverview(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.OverviewAPI.GetOrganizationDevicesStatusesOverview(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -148,13 +148,13 @@ func Test_client_OverviewApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test OverviewApiService GetOrganizationLicensesOverview", func(t *testing.T) {
+	t.Run("Test OverviewAPIService GetOrganizationLicensesOverview", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.OverviewApi.GetOrganizationLicensesOverview(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.OverviewAPI.GetOrganizationLicensesOverview(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

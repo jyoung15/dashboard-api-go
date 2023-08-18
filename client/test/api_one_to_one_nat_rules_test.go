@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing OneToOneNatRulesApiService
+Testing OneToOneNatRulesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_OneToOneNatRulesApiService(t *testing.T) {
+func Test_client_OneToOneNatRulesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test OneToOneNatRulesApiService GetNetworkApplianceFirewallOneToOneNatRules", func(t *testing.T) {
+	t.Run("Test OneToOneNatRulesAPIService GetNetworkApplianceFirewallOneToOneNatRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.OneToOneNatRulesApi.GetNetworkApplianceFirewallOneToOneNatRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.OneToOneNatRulesAPI.GetNetworkApplianceFirewallOneToOneNatRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_OneToOneNatRulesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test OneToOneNatRulesApiService UpdateNetworkApplianceFirewallOneToOneNatRules", func(t *testing.T) {
+	t.Run("Test OneToOneNatRulesAPIService UpdateNetworkApplianceFirewallOneToOneNatRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.OneToOneNatRulesApi.UpdateNetworkApplianceFirewallOneToOneNatRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.OneToOneNatRulesAPI.UpdateNetworkApplianceFirewallOneToOneNatRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -21,22 +21,22 @@ import (
 )
 
 
-// NetworksApiService NetworksApi service
-type NetworksApiService service
+// NetworksAPIService NetworksAPI service
+type NetworksAPIService service
 
-type NetworksApiBindNetworkRequest struct {
+type NetworksAPIBindNetworkRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	bindNetworkRequest *BindNetworkRequest
 }
 
-func (r NetworksApiBindNetworkRequest) BindNetworkRequest(bindNetworkRequest BindNetworkRequest) NetworksApiBindNetworkRequest {
+func (r NetworksAPIBindNetworkRequest) BindNetworkRequest(bindNetworkRequest BindNetworkRequest) NetworksAPIBindNetworkRequest {
 	r.bindNetworkRequest = &bindNetworkRequest
 	return r
 }
 
-func (r NetworksApiBindNetworkRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIBindNetworkRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.BindNetworkExecute(r)
 }
 
@@ -47,10 +47,10 @@ Bind a network to a template.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiBindNetworkRequest
+ @return NetworksAPIBindNetworkRequest
 */
-func (a *NetworksApiService) BindNetwork(ctx context.Context, networkId string) NetworksApiBindNetworkRequest {
-	return NetworksApiBindNetworkRequest{
+func (a *NetworksAPIService) BindNetwork(ctx context.Context, networkId string) NetworksAPIBindNetworkRequest {
+	return NetworksAPIBindNetworkRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -59,7 +59,7 @@ func (a *NetworksApiService) BindNetwork(ctx context.Context, networkId string) 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) BindNetworkExecute(r NetworksApiBindNetworkRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) BindNetworkExecute(r NetworksAPIBindNetworkRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -67,7 +67,7 @@ func (a *NetworksApiService) BindNetworkExecute(r NetworksApiBindNetworkRequest)
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.BindNetwork")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.BindNetwork")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -152,19 +152,19 @@ func (a *NetworksApiService) BindNetworkExecute(r NetworksApiBindNetworkRequest)
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiClaimNetworkDevicesRequest struct {
+type NetworksAPIClaimNetworkDevicesRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	claimNetworkDevicesRequest *ClaimNetworkDevicesRequest
 }
 
-func (r NetworksApiClaimNetworkDevicesRequest) ClaimNetworkDevicesRequest(claimNetworkDevicesRequest ClaimNetworkDevicesRequest) NetworksApiClaimNetworkDevicesRequest {
+func (r NetworksAPIClaimNetworkDevicesRequest) ClaimNetworkDevicesRequest(claimNetworkDevicesRequest ClaimNetworkDevicesRequest) NetworksAPIClaimNetworkDevicesRequest {
 	r.claimNetworkDevicesRequest = &claimNetworkDevicesRequest
 	return r
 }
 
-func (r NetworksApiClaimNetworkDevicesRequest) Execute() (*http.Response, error) {
+func (r NetworksAPIClaimNetworkDevicesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.ClaimNetworkDevicesExecute(r)
 }
 
@@ -175,10 +175,10 @@ Claim devices into a network. (Note: for recently claimed devices, it may take a
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiClaimNetworkDevicesRequest
+ @return NetworksAPIClaimNetworkDevicesRequest
 */
-func (a *NetworksApiService) ClaimNetworkDevices(ctx context.Context, networkId string) NetworksApiClaimNetworkDevicesRequest {
-	return NetworksApiClaimNetworkDevicesRequest{
+func (a *NetworksAPIService) ClaimNetworkDevices(ctx context.Context, networkId string) NetworksAPIClaimNetworkDevicesRequest {
+	return NetworksAPIClaimNetworkDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -186,14 +186,14 @@ func (a *NetworksApiService) ClaimNetworkDevices(ctx context.Context, networkId 
 }
 
 // Execute executes the request
-func (a *NetworksApiService) ClaimNetworkDevicesExecute(r NetworksApiClaimNetworkDevicesRequest) (*http.Response, error) {
+func (a *NetworksAPIService) ClaimNetworkDevicesExecute(r NetworksAPIClaimNetworkDevicesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.ClaimNetworkDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.ClaimNetworkDevices")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -269,19 +269,19 @@ func (a *NetworksApiService) ClaimNetworkDevicesExecute(r NetworksApiClaimNetwor
 	return localVarHTTPResponse, nil
 }
 
-type NetworksApiCombineOrganizationNetworksRequest struct {
+type NetworksAPICombineOrganizationNetworksRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	organizationId string
 	combineOrganizationNetworksRequest *CombineOrganizationNetworksRequest
 }
 
-func (r NetworksApiCombineOrganizationNetworksRequest) CombineOrganizationNetworksRequest(combineOrganizationNetworksRequest CombineOrganizationNetworksRequest) NetworksApiCombineOrganizationNetworksRequest {
+func (r NetworksAPICombineOrganizationNetworksRequest) CombineOrganizationNetworksRequest(combineOrganizationNetworksRequest CombineOrganizationNetworksRequest) NetworksAPICombineOrganizationNetworksRequest {
 	r.combineOrganizationNetworksRequest = &combineOrganizationNetworksRequest
 	return r
 }
 
-func (r NetworksApiCombineOrganizationNetworksRequest) Execute() (*CombineOrganizationNetworks200Response, *http.Response, error) {
+func (r NetworksAPICombineOrganizationNetworksRequest) Execute() (*CombineOrganizationNetworks200Response, *http.Response, error) {
 	return r.ApiService.CombineOrganizationNetworksExecute(r)
 }
 
@@ -292,10 +292,10 @@ Combine multiple networks into a single network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return NetworksApiCombineOrganizationNetworksRequest
+ @return NetworksAPICombineOrganizationNetworksRequest
 */
-func (a *NetworksApiService) CombineOrganizationNetworks(ctx context.Context, organizationId string) NetworksApiCombineOrganizationNetworksRequest {
-	return NetworksApiCombineOrganizationNetworksRequest{
+func (a *NetworksAPIService) CombineOrganizationNetworks(ctx context.Context, organizationId string) NetworksAPICombineOrganizationNetworksRequest {
+	return NetworksAPICombineOrganizationNetworksRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -304,7 +304,7 @@ func (a *NetworksApiService) CombineOrganizationNetworks(ctx context.Context, or
 
 // Execute executes the request
 //  @return CombineOrganizationNetworks200Response
-func (a *NetworksApiService) CombineOrganizationNetworksExecute(r NetworksApiCombineOrganizationNetworksRequest) (*CombineOrganizationNetworks200Response, *http.Response, error) {
+func (a *NetworksAPIService) CombineOrganizationNetworksExecute(r NetworksAPICombineOrganizationNetworksRequest) (*CombineOrganizationNetworks200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -312,7 +312,7 @@ func (a *NetworksApiService) CombineOrganizationNetworksExecute(r NetworksApiCom
 		localVarReturnValue  *CombineOrganizationNetworks200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.CombineOrganizationNetworks")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CombineOrganizationNetworks")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -397,19 +397,19 @@ func (a *NetworksApiService) CombineOrganizationNetworksExecute(r NetworksApiCom
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiCreateNetworkFirmwareUpgradesRollbackRequest struct {
+type NetworksAPICreateNetworkFirmwareUpgradesRollbackRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	createNetworkFirmwareUpgradesRollbackRequest *CreateNetworkFirmwareUpgradesRollbackRequest
 }
 
-func (r NetworksApiCreateNetworkFirmwareUpgradesRollbackRequest) CreateNetworkFirmwareUpgradesRollbackRequest(createNetworkFirmwareUpgradesRollbackRequest CreateNetworkFirmwareUpgradesRollbackRequest) NetworksApiCreateNetworkFirmwareUpgradesRollbackRequest {
+func (r NetworksAPICreateNetworkFirmwareUpgradesRollbackRequest) CreateNetworkFirmwareUpgradesRollbackRequest(createNetworkFirmwareUpgradesRollbackRequest CreateNetworkFirmwareUpgradesRollbackRequest) NetworksAPICreateNetworkFirmwareUpgradesRollbackRequest {
 	r.createNetworkFirmwareUpgradesRollbackRequest = &createNetworkFirmwareUpgradesRollbackRequest
 	return r
 }
 
-func (r NetworksApiCreateNetworkFirmwareUpgradesRollbackRequest) Execute() (*CreateNetworkFirmwareUpgradesRollback200Response, *http.Response, error) {
+func (r NetworksAPICreateNetworkFirmwareUpgradesRollbackRequest) Execute() (*CreateNetworkFirmwareUpgradesRollback200Response, *http.Response, error) {
 	return r.ApiService.CreateNetworkFirmwareUpgradesRollbackExecute(r)
 }
 
@@ -420,10 +420,10 @@ Rollback a Firmware Upgrade For A Network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiCreateNetworkFirmwareUpgradesRollbackRequest
+ @return NetworksAPICreateNetworkFirmwareUpgradesRollbackRequest
 */
-func (a *NetworksApiService) CreateNetworkFirmwareUpgradesRollback(ctx context.Context, networkId string) NetworksApiCreateNetworkFirmwareUpgradesRollbackRequest {
-	return NetworksApiCreateNetworkFirmwareUpgradesRollbackRequest{
+func (a *NetworksAPIService) CreateNetworkFirmwareUpgradesRollback(ctx context.Context, networkId string) NetworksAPICreateNetworkFirmwareUpgradesRollbackRequest {
+	return NetworksAPICreateNetworkFirmwareUpgradesRollbackRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -432,7 +432,7 @@ func (a *NetworksApiService) CreateNetworkFirmwareUpgradesRollback(ctx context.C
 
 // Execute executes the request
 //  @return CreateNetworkFirmwareUpgradesRollback200Response
-func (a *NetworksApiService) CreateNetworkFirmwareUpgradesRollbackExecute(r NetworksApiCreateNetworkFirmwareUpgradesRollbackRequest) (*CreateNetworkFirmwareUpgradesRollback200Response, *http.Response, error) {
+func (a *NetworksAPIService) CreateNetworkFirmwareUpgradesRollbackExecute(r NetworksAPICreateNetworkFirmwareUpgradesRollbackRequest) (*CreateNetworkFirmwareUpgradesRollback200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -440,7 +440,7 @@ func (a *NetworksApiService) CreateNetworkFirmwareUpgradesRollbackExecute(r Netw
 		localVarReturnValue  *CreateNetworkFirmwareUpgradesRollback200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.CreateNetworkFirmwareUpgradesRollback")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkFirmwareUpgradesRollback")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -525,19 +525,19 @@ func (a *NetworksApiService) CreateNetworkFirmwareUpgradesRollbackExecute(r Netw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiCreateNetworkFirmwareUpgradesStagedEventRequest struct {
+type NetworksAPICreateNetworkFirmwareUpgradesStagedEventRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	createNetworkFirmwareUpgradesStagedEventRequest *CreateNetworkFirmwareUpgradesStagedEventRequest
 }
 
-func (r NetworksApiCreateNetworkFirmwareUpgradesStagedEventRequest) CreateNetworkFirmwareUpgradesStagedEventRequest(createNetworkFirmwareUpgradesStagedEventRequest CreateNetworkFirmwareUpgradesStagedEventRequest) NetworksApiCreateNetworkFirmwareUpgradesStagedEventRequest {
+func (r NetworksAPICreateNetworkFirmwareUpgradesStagedEventRequest) CreateNetworkFirmwareUpgradesStagedEventRequest(createNetworkFirmwareUpgradesStagedEventRequest CreateNetworkFirmwareUpgradesStagedEventRequest) NetworksAPICreateNetworkFirmwareUpgradesStagedEventRequest {
 	r.createNetworkFirmwareUpgradesStagedEventRequest = &createNetworkFirmwareUpgradesStagedEventRequest
 	return r
 }
 
-func (r NetworksApiCreateNetworkFirmwareUpgradesStagedEventRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (r NetworksAPICreateNetworkFirmwareUpgradesStagedEventRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	return r.ApiService.CreateNetworkFirmwareUpgradesStagedEventExecute(r)
 }
 
@@ -548,10 +548,10 @@ Create a Staged Upgrade Event for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiCreateNetworkFirmwareUpgradesStagedEventRequest
+ @return NetworksAPICreateNetworkFirmwareUpgradesStagedEventRequest
 */
-func (a *NetworksApiService) CreateNetworkFirmwareUpgradesStagedEvent(ctx context.Context, networkId string) NetworksApiCreateNetworkFirmwareUpgradesStagedEventRequest {
-	return NetworksApiCreateNetworkFirmwareUpgradesStagedEventRequest{
+func (a *NetworksAPIService) CreateNetworkFirmwareUpgradesStagedEvent(ctx context.Context, networkId string) NetworksAPICreateNetworkFirmwareUpgradesStagedEventRequest {
+	return NetworksAPICreateNetworkFirmwareUpgradesStagedEventRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -560,7 +560,7 @@ func (a *NetworksApiService) CreateNetworkFirmwareUpgradesStagedEvent(ctx contex
 
 // Execute executes the request
 //  @return GetNetworkFirmwareUpgradesStagedEvents200Response
-func (a *NetworksApiService) CreateNetworkFirmwareUpgradesStagedEventExecute(r NetworksApiCreateNetworkFirmwareUpgradesStagedEventRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (a *NetworksAPIService) CreateNetworkFirmwareUpgradesStagedEventExecute(r NetworksAPICreateNetworkFirmwareUpgradesStagedEventRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -568,7 +568,7 @@ func (a *NetworksApiService) CreateNetworkFirmwareUpgradesStagedEventExecute(r N
 		localVarReturnValue  *GetNetworkFirmwareUpgradesStagedEvents200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.CreateNetworkFirmwareUpgradesStagedEvent")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkFirmwareUpgradesStagedEvent")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -653,19 +653,19 @@ func (a *NetworksApiService) CreateNetworkFirmwareUpgradesStagedEventExecute(r N
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiCreateNetworkFirmwareUpgradesStagedGroupRequest struct {
+type NetworksAPICreateNetworkFirmwareUpgradesStagedGroupRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	createNetworkFirmwareUpgradesStagedGroupRequest *CreateNetworkFirmwareUpgradesStagedGroupRequest
 }
 
-func (r NetworksApiCreateNetworkFirmwareUpgradesStagedGroupRequest) CreateNetworkFirmwareUpgradesStagedGroupRequest(createNetworkFirmwareUpgradesStagedGroupRequest CreateNetworkFirmwareUpgradesStagedGroupRequest) NetworksApiCreateNetworkFirmwareUpgradesStagedGroupRequest {
+func (r NetworksAPICreateNetworkFirmwareUpgradesStagedGroupRequest) CreateNetworkFirmwareUpgradesStagedGroupRequest(createNetworkFirmwareUpgradesStagedGroupRequest CreateNetworkFirmwareUpgradesStagedGroupRequest) NetworksAPICreateNetworkFirmwareUpgradesStagedGroupRequest {
 	r.createNetworkFirmwareUpgradesStagedGroupRequest = &createNetworkFirmwareUpgradesStagedGroupRequest
 	return r
 }
 
-func (r NetworksApiCreateNetworkFirmwareUpgradesStagedGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPICreateNetworkFirmwareUpgradesStagedGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkFirmwareUpgradesStagedGroupExecute(r)
 }
 
@@ -676,10 +676,10 @@ Create a Staged Upgrade Group for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiCreateNetworkFirmwareUpgradesStagedGroupRequest
+ @return NetworksAPICreateNetworkFirmwareUpgradesStagedGroupRequest
 */
-func (a *NetworksApiService) CreateNetworkFirmwareUpgradesStagedGroup(ctx context.Context, networkId string) NetworksApiCreateNetworkFirmwareUpgradesStagedGroupRequest {
-	return NetworksApiCreateNetworkFirmwareUpgradesStagedGroupRequest{
+func (a *NetworksAPIService) CreateNetworkFirmwareUpgradesStagedGroup(ctx context.Context, networkId string) NetworksAPICreateNetworkFirmwareUpgradesStagedGroupRequest {
+	return NetworksAPICreateNetworkFirmwareUpgradesStagedGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -688,7 +688,7 @@ func (a *NetworksApiService) CreateNetworkFirmwareUpgradesStagedGroup(ctx contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) CreateNetworkFirmwareUpgradesStagedGroupExecute(r NetworksApiCreateNetworkFirmwareUpgradesStagedGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) CreateNetworkFirmwareUpgradesStagedGroupExecute(r NetworksAPICreateNetworkFirmwareUpgradesStagedGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -696,7 +696,7 @@ func (a *NetworksApiService) CreateNetworkFirmwareUpgradesStagedGroupExecute(r N
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.CreateNetworkFirmwareUpgradesStagedGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkFirmwareUpgradesStagedGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -781,19 +781,19 @@ func (a *NetworksApiService) CreateNetworkFirmwareUpgradesStagedGroupExecute(r N
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiCreateNetworkFloorPlanRequest struct {
+type NetworksAPICreateNetworkFloorPlanRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	createNetworkFloorPlanRequest *CreateNetworkFloorPlanRequest
 }
 
-func (r NetworksApiCreateNetworkFloorPlanRequest) CreateNetworkFloorPlanRequest(createNetworkFloorPlanRequest CreateNetworkFloorPlanRequest) NetworksApiCreateNetworkFloorPlanRequest {
+func (r NetworksAPICreateNetworkFloorPlanRequest) CreateNetworkFloorPlanRequest(createNetworkFloorPlanRequest CreateNetworkFloorPlanRequest) NetworksAPICreateNetworkFloorPlanRequest {
 	r.createNetworkFloorPlanRequest = &createNetworkFloorPlanRequest
 	return r
 }
 
-func (r NetworksApiCreateNetworkFloorPlanRequest) Execute() (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
+func (r NetworksAPICreateNetworkFloorPlanRequest) Execute() (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateNetworkFloorPlanExecute(r)
 }
 
@@ -804,10 +804,10 @@ Upload a floor plan
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiCreateNetworkFloorPlanRequest
+ @return NetworksAPICreateNetworkFloorPlanRequest
 */
-func (a *NetworksApiService) CreateNetworkFloorPlan(ctx context.Context, networkId string) NetworksApiCreateNetworkFloorPlanRequest {
-	return NetworksApiCreateNetworkFloorPlanRequest{
+func (a *NetworksAPIService) CreateNetworkFloorPlan(ctx context.Context, networkId string) NetworksAPICreateNetworkFloorPlanRequest {
+	return NetworksAPICreateNetworkFloorPlanRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -816,7 +816,7 @@ func (a *NetworksApiService) CreateNetworkFloorPlan(ctx context.Context, network
 
 // Execute executes the request
 //  @return GetNetworkFloorPlans200ResponseInner
-func (a *NetworksApiService) CreateNetworkFloorPlanExecute(r NetworksApiCreateNetworkFloorPlanRequest) (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
+func (a *NetworksAPIService) CreateNetworkFloorPlanExecute(r NetworksAPICreateNetworkFloorPlanRequest) (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -824,7 +824,7 @@ func (a *NetworksApiService) CreateNetworkFloorPlanExecute(r NetworksApiCreateNe
 		localVarReturnValue  *GetNetworkFloorPlans200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.CreateNetworkFloorPlan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkFloorPlan")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -909,19 +909,19 @@ func (a *NetworksApiService) CreateNetworkFloorPlanExecute(r NetworksApiCreateNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiCreateNetworkGroupPolicyRequest struct {
+type NetworksAPICreateNetworkGroupPolicyRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	createNetworkGroupPolicyRequest *CreateNetworkGroupPolicyRequest
 }
 
-func (r NetworksApiCreateNetworkGroupPolicyRequest) CreateNetworkGroupPolicyRequest(createNetworkGroupPolicyRequest CreateNetworkGroupPolicyRequest) NetworksApiCreateNetworkGroupPolicyRequest {
+func (r NetworksAPICreateNetworkGroupPolicyRequest) CreateNetworkGroupPolicyRequest(createNetworkGroupPolicyRequest CreateNetworkGroupPolicyRequest) NetworksAPICreateNetworkGroupPolicyRequest {
 	r.createNetworkGroupPolicyRequest = &createNetworkGroupPolicyRequest
 	return r
 }
 
-func (r NetworksApiCreateNetworkGroupPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPICreateNetworkGroupPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkGroupPolicyExecute(r)
 }
 
@@ -932,10 +932,10 @@ Create a group policy
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiCreateNetworkGroupPolicyRequest
+ @return NetworksAPICreateNetworkGroupPolicyRequest
 */
-func (a *NetworksApiService) CreateNetworkGroupPolicy(ctx context.Context, networkId string) NetworksApiCreateNetworkGroupPolicyRequest {
-	return NetworksApiCreateNetworkGroupPolicyRequest{
+func (a *NetworksAPIService) CreateNetworkGroupPolicy(ctx context.Context, networkId string) NetworksAPICreateNetworkGroupPolicyRequest {
+	return NetworksAPICreateNetworkGroupPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -944,7 +944,7 @@ func (a *NetworksApiService) CreateNetworkGroupPolicy(ctx context.Context, netwo
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) CreateNetworkGroupPolicyExecute(r NetworksApiCreateNetworkGroupPolicyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) CreateNetworkGroupPolicyExecute(r NetworksAPICreateNetworkGroupPolicyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -952,7 +952,7 @@ func (a *NetworksApiService) CreateNetworkGroupPolicyExecute(r NetworksApiCreate
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.CreateNetworkGroupPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkGroupPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1037,19 +1037,19 @@ func (a *NetworksApiService) CreateNetworkGroupPolicyExecute(r NetworksApiCreate
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiCreateNetworkMerakiAuthUserRequest struct {
+type NetworksAPICreateNetworkMerakiAuthUserRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	createNetworkMerakiAuthUserRequest *CreateNetworkMerakiAuthUserRequest
 }
 
-func (r NetworksApiCreateNetworkMerakiAuthUserRequest) CreateNetworkMerakiAuthUserRequest(createNetworkMerakiAuthUserRequest CreateNetworkMerakiAuthUserRequest) NetworksApiCreateNetworkMerakiAuthUserRequest {
+func (r NetworksAPICreateNetworkMerakiAuthUserRequest) CreateNetworkMerakiAuthUserRequest(createNetworkMerakiAuthUserRequest CreateNetworkMerakiAuthUserRequest) NetworksAPICreateNetworkMerakiAuthUserRequest {
 	r.createNetworkMerakiAuthUserRequest = &createNetworkMerakiAuthUserRequest
 	return r
 }
 
-func (r NetworksApiCreateNetworkMerakiAuthUserRequest) Execute() (*GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
+func (r NetworksAPICreateNetworkMerakiAuthUserRequest) Execute() (*GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateNetworkMerakiAuthUserExecute(r)
 }
 
@@ -1060,10 +1060,10 @@ Authorize a user configured with Meraki Authentication for a network (currently 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiCreateNetworkMerakiAuthUserRequest
+ @return NetworksAPICreateNetworkMerakiAuthUserRequest
 */
-func (a *NetworksApiService) CreateNetworkMerakiAuthUser(ctx context.Context, networkId string) NetworksApiCreateNetworkMerakiAuthUserRequest {
-	return NetworksApiCreateNetworkMerakiAuthUserRequest{
+func (a *NetworksAPIService) CreateNetworkMerakiAuthUser(ctx context.Context, networkId string) NetworksAPICreateNetworkMerakiAuthUserRequest {
+	return NetworksAPICreateNetworkMerakiAuthUserRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1072,7 +1072,7 @@ func (a *NetworksApiService) CreateNetworkMerakiAuthUser(ctx context.Context, ne
 
 // Execute executes the request
 //  @return GetNetworkMerakiAuthUsers200ResponseInner
-func (a *NetworksApiService) CreateNetworkMerakiAuthUserExecute(r NetworksApiCreateNetworkMerakiAuthUserRequest) (*GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
+func (a *NetworksAPIService) CreateNetworkMerakiAuthUserExecute(r NetworksAPICreateNetworkMerakiAuthUserRequest) (*GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1080,7 +1080,7 @@ func (a *NetworksApiService) CreateNetworkMerakiAuthUserExecute(r NetworksApiCre
 		localVarReturnValue  *GetNetworkMerakiAuthUsers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.CreateNetworkMerakiAuthUser")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkMerakiAuthUser")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1165,19 +1165,19 @@ func (a *NetworksApiService) CreateNetworkMerakiAuthUserExecute(r NetworksApiCre
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiCreateNetworkMqttBrokerRequest struct {
+type NetworksAPICreateNetworkMqttBrokerRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	createNetworkMqttBrokerRequest *CreateNetworkMqttBrokerRequest
 }
 
-func (r NetworksApiCreateNetworkMqttBrokerRequest) CreateNetworkMqttBrokerRequest(createNetworkMqttBrokerRequest CreateNetworkMqttBrokerRequest) NetworksApiCreateNetworkMqttBrokerRequest {
+func (r NetworksAPICreateNetworkMqttBrokerRequest) CreateNetworkMqttBrokerRequest(createNetworkMqttBrokerRequest CreateNetworkMqttBrokerRequest) NetworksAPICreateNetworkMqttBrokerRequest {
 	r.createNetworkMqttBrokerRequest = &createNetworkMqttBrokerRequest
 	return r
 }
 
-func (r NetworksApiCreateNetworkMqttBrokerRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPICreateNetworkMqttBrokerRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkMqttBrokerExecute(r)
 }
 
@@ -1188,10 +1188,10 @@ Add an MQTT broker
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiCreateNetworkMqttBrokerRequest
+ @return NetworksAPICreateNetworkMqttBrokerRequest
 */
-func (a *NetworksApiService) CreateNetworkMqttBroker(ctx context.Context, networkId string) NetworksApiCreateNetworkMqttBrokerRequest {
-	return NetworksApiCreateNetworkMqttBrokerRequest{
+func (a *NetworksAPIService) CreateNetworkMqttBroker(ctx context.Context, networkId string) NetworksAPICreateNetworkMqttBrokerRequest {
+	return NetworksAPICreateNetworkMqttBrokerRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1200,7 +1200,7 @@ func (a *NetworksApiService) CreateNetworkMqttBroker(ctx context.Context, networ
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) CreateNetworkMqttBrokerExecute(r NetworksApiCreateNetworkMqttBrokerRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) CreateNetworkMqttBrokerExecute(r NetworksAPICreateNetworkMqttBrokerRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1208,7 +1208,7 @@ func (a *NetworksApiService) CreateNetworkMqttBrokerExecute(r NetworksApiCreateN
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.CreateNetworkMqttBroker")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkMqttBroker")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1293,19 +1293,19 @@ func (a *NetworksApiService) CreateNetworkMqttBrokerExecute(r NetworksApiCreateN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiCreateNetworkPiiRequestRequest struct {
+type NetworksAPICreateNetworkPiiRequestRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	createNetworkPiiRequestRequest *CreateNetworkPiiRequestRequest
 }
 
-func (r NetworksApiCreateNetworkPiiRequestRequest) CreateNetworkPiiRequestRequest(createNetworkPiiRequestRequest CreateNetworkPiiRequestRequest) NetworksApiCreateNetworkPiiRequestRequest {
+func (r NetworksAPICreateNetworkPiiRequestRequest) CreateNetworkPiiRequestRequest(createNetworkPiiRequestRequest CreateNetworkPiiRequestRequest) NetworksAPICreateNetworkPiiRequestRequest {
 	r.createNetworkPiiRequestRequest = &createNetworkPiiRequestRequest
 	return r
 }
 
-func (r NetworksApiCreateNetworkPiiRequestRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPICreateNetworkPiiRequestRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkPiiRequestExecute(r)
 }
 
@@ -1322,10 +1322,10 @@ Submit a new delete or restrict processing PII request
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiCreateNetworkPiiRequestRequest
+ @return NetworksAPICreateNetworkPiiRequestRequest
 */
-func (a *NetworksApiService) CreateNetworkPiiRequest(ctx context.Context, networkId string) NetworksApiCreateNetworkPiiRequestRequest {
-	return NetworksApiCreateNetworkPiiRequestRequest{
+func (a *NetworksAPIService) CreateNetworkPiiRequest(ctx context.Context, networkId string) NetworksAPICreateNetworkPiiRequestRequest {
+	return NetworksAPICreateNetworkPiiRequestRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1334,7 +1334,7 @@ func (a *NetworksApiService) CreateNetworkPiiRequest(ctx context.Context, networ
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) CreateNetworkPiiRequestExecute(r NetworksApiCreateNetworkPiiRequestRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) CreateNetworkPiiRequestExecute(r NetworksAPICreateNetworkPiiRequestRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1342,7 +1342,7 @@ func (a *NetworksApiService) CreateNetworkPiiRequestExecute(r NetworksApiCreateN
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.CreateNetworkPiiRequest")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkPiiRequest")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1424,19 +1424,19 @@ func (a *NetworksApiService) CreateNetworkPiiRequestExecute(r NetworksApiCreateN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiCreateNetworkWebhooksHttpServerRequest struct {
+type NetworksAPICreateNetworkWebhooksHttpServerRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	createNetworkWebhooksHttpServerRequest *CreateNetworkWebhooksHttpServerRequest
 }
 
-func (r NetworksApiCreateNetworkWebhooksHttpServerRequest) CreateNetworkWebhooksHttpServerRequest(createNetworkWebhooksHttpServerRequest CreateNetworkWebhooksHttpServerRequest) NetworksApiCreateNetworkWebhooksHttpServerRequest {
+func (r NetworksAPICreateNetworkWebhooksHttpServerRequest) CreateNetworkWebhooksHttpServerRequest(createNetworkWebhooksHttpServerRequest CreateNetworkWebhooksHttpServerRequest) NetworksAPICreateNetworkWebhooksHttpServerRequest {
 	r.createNetworkWebhooksHttpServerRequest = &createNetworkWebhooksHttpServerRequest
 	return r
 }
 
-func (r NetworksApiCreateNetworkWebhooksHttpServerRequest) Execute() (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
+func (r NetworksAPICreateNetworkWebhooksHttpServerRequest) Execute() (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateNetworkWebhooksHttpServerExecute(r)
 }
 
@@ -1447,10 +1447,10 @@ Add an HTTP server to a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiCreateNetworkWebhooksHttpServerRequest
+ @return NetworksAPICreateNetworkWebhooksHttpServerRequest
 */
-func (a *NetworksApiService) CreateNetworkWebhooksHttpServer(ctx context.Context, networkId string) NetworksApiCreateNetworkWebhooksHttpServerRequest {
-	return NetworksApiCreateNetworkWebhooksHttpServerRequest{
+func (a *NetworksAPIService) CreateNetworkWebhooksHttpServer(ctx context.Context, networkId string) NetworksAPICreateNetworkWebhooksHttpServerRequest {
+	return NetworksAPICreateNetworkWebhooksHttpServerRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1459,7 +1459,7 @@ func (a *NetworksApiService) CreateNetworkWebhooksHttpServer(ctx context.Context
 
 // Execute executes the request
 //  @return GetNetworkWebhooksHttpServers200ResponseInner
-func (a *NetworksApiService) CreateNetworkWebhooksHttpServerExecute(r NetworksApiCreateNetworkWebhooksHttpServerRequest) (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
+func (a *NetworksAPIService) CreateNetworkWebhooksHttpServerExecute(r NetworksAPICreateNetworkWebhooksHttpServerRequest) (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1467,7 +1467,7 @@ func (a *NetworksApiService) CreateNetworkWebhooksHttpServerExecute(r NetworksAp
 		localVarReturnValue  *GetNetworkWebhooksHttpServers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.CreateNetworkWebhooksHttpServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkWebhooksHttpServer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1552,19 +1552,19 @@ func (a *NetworksApiService) CreateNetworkWebhooksHttpServerExecute(r NetworksAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiCreateNetworkWebhooksPayloadTemplateRequest struct {
+type NetworksAPICreateNetworkWebhooksPayloadTemplateRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	createNetworkWebhooksPayloadTemplateRequest *CreateNetworkWebhooksPayloadTemplateRequest
 }
 
-func (r NetworksApiCreateNetworkWebhooksPayloadTemplateRequest) CreateNetworkWebhooksPayloadTemplateRequest(createNetworkWebhooksPayloadTemplateRequest CreateNetworkWebhooksPayloadTemplateRequest) NetworksApiCreateNetworkWebhooksPayloadTemplateRequest {
+func (r NetworksAPICreateNetworkWebhooksPayloadTemplateRequest) CreateNetworkWebhooksPayloadTemplateRequest(createNetworkWebhooksPayloadTemplateRequest CreateNetworkWebhooksPayloadTemplateRequest) NetworksAPICreateNetworkWebhooksPayloadTemplateRequest {
 	r.createNetworkWebhooksPayloadTemplateRequest = &createNetworkWebhooksPayloadTemplateRequest
 	return r
 }
 
-func (r NetworksApiCreateNetworkWebhooksPayloadTemplateRequest) Execute() (*GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
+func (r NetworksAPICreateNetworkWebhooksPayloadTemplateRequest) Execute() (*GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateNetworkWebhooksPayloadTemplateExecute(r)
 }
 
@@ -1575,10 +1575,10 @@ Create a webhook payload template for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiCreateNetworkWebhooksPayloadTemplateRequest
+ @return NetworksAPICreateNetworkWebhooksPayloadTemplateRequest
 */
-func (a *NetworksApiService) CreateNetworkWebhooksPayloadTemplate(ctx context.Context, networkId string) NetworksApiCreateNetworkWebhooksPayloadTemplateRequest {
-	return NetworksApiCreateNetworkWebhooksPayloadTemplateRequest{
+func (a *NetworksAPIService) CreateNetworkWebhooksPayloadTemplate(ctx context.Context, networkId string) NetworksAPICreateNetworkWebhooksPayloadTemplateRequest {
+	return NetworksAPICreateNetworkWebhooksPayloadTemplateRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1587,7 +1587,7 @@ func (a *NetworksApiService) CreateNetworkWebhooksPayloadTemplate(ctx context.Co
 
 // Execute executes the request
 //  @return GetNetworkWebhooksPayloadTemplates200ResponseInner
-func (a *NetworksApiService) CreateNetworkWebhooksPayloadTemplateExecute(r NetworksApiCreateNetworkWebhooksPayloadTemplateRequest) (*GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
+func (a *NetworksAPIService) CreateNetworkWebhooksPayloadTemplateExecute(r NetworksAPICreateNetworkWebhooksPayloadTemplateRequest) (*GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1595,7 +1595,7 @@ func (a *NetworksApiService) CreateNetworkWebhooksPayloadTemplateExecute(r Netwo
 		localVarReturnValue  *GetNetworkWebhooksPayloadTemplates200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.CreateNetworkWebhooksPayloadTemplate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkWebhooksPayloadTemplate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1680,19 +1680,19 @@ func (a *NetworksApiService) CreateNetworkWebhooksPayloadTemplateExecute(r Netwo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiCreateNetworkWebhooksWebhookTestRequest struct {
+type NetworksAPICreateNetworkWebhooksWebhookTestRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	createNetworkWebhooksWebhookTestRequest *CreateNetworkWebhooksWebhookTestRequest
 }
 
-func (r NetworksApiCreateNetworkWebhooksWebhookTestRequest) CreateNetworkWebhooksWebhookTestRequest(createNetworkWebhooksWebhookTestRequest CreateNetworkWebhooksWebhookTestRequest) NetworksApiCreateNetworkWebhooksWebhookTestRequest {
+func (r NetworksAPICreateNetworkWebhooksWebhookTestRequest) CreateNetworkWebhooksWebhookTestRequest(createNetworkWebhooksWebhookTestRequest CreateNetworkWebhooksWebhookTestRequest) NetworksAPICreateNetworkWebhooksWebhookTestRequest {
 	r.createNetworkWebhooksWebhookTestRequest = &createNetworkWebhooksWebhookTestRequest
 	return r
 }
 
-func (r NetworksApiCreateNetworkWebhooksWebhookTestRequest) Execute() (*CreateNetworkWebhooksWebhookTest201Response, *http.Response, error) {
+func (r NetworksAPICreateNetworkWebhooksWebhookTestRequest) Execute() (*CreateNetworkWebhooksWebhookTest201Response, *http.Response, error) {
 	return r.ApiService.CreateNetworkWebhooksWebhookTestExecute(r)
 }
 
@@ -1703,10 +1703,10 @@ Send a test webhook for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiCreateNetworkWebhooksWebhookTestRequest
+ @return NetworksAPICreateNetworkWebhooksWebhookTestRequest
 */
-func (a *NetworksApiService) CreateNetworkWebhooksWebhookTest(ctx context.Context, networkId string) NetworksApiCreateNetworkWebhooksWebhookTestRequest {
-	return NetworksApiCreateNetworkWebhooksWebhookTestRequest{
+func (a *NetworksAPIService) CreateNetworkWebhooksWebhookTest(ctx context.Context, networkId string) NetworksAPICreateNetworkWebhooksWebhookTestRequest {
+	return NetworksAPICreateNetworkWebhooksWebhookTestRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1715,7 +1715,7 @@ func (a *NetworksApiService) CreateNetworkWebhooksWebhookTest(ctx context.Contex
 
 // Execute executes the request
 //  @return CreateNetworkWebhooksWebhookTest201Response
-func (a *NetworksApiService) CreateNetworkWebhooksWebhookTestExecute(r NetworksApiCreateNetworkWebhooksWebhookTestRequest) (*CreateNetworkWebhooksWebhookTest201Response, *http.Response, error) {
+func (a *NetworksAPIService) CreateNetworkWebhooksWebhookTestExecute(r NetworksAPICreateNetworkWebhooksWebhookTestRequest) (*CreateNetworkWebhooksWebhookTest201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1723,7 +1723,7 @@ func (a *NetworksApiService) CreateNetworkWebhooksWebhookTestExecute(r NetworksA
 		localVarReturnValue  *CreateNetworkWebhooksWebhookTest201Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.CreateNetworkWebhooksWebhookTest")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateNetworkWebhooksWebhookTest")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1808,19 +1808,19 @@ func (a *NetworksApiService) CreateNetworkWebhooksWebhookTestExecute(r NetworksA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiCreateOrganizationNetworkRequest struct {
+type NetworksAPICreateOrganizationNetworkRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	organizationId string
 	createOrganizationNetworkRequest *CreateOrganizationNetworkRequest
 }
 
-func (r NetworksApiCreateOrganizationNetworkRequest) CreateOrganizationNetworkRequest(createOrganizationNetworkRequest CreateOrganizationNetworkRequest) NetworksApiCreateOrganizationNetworkRequest {
+func (r NetworksAPICreateOrganizationNetworkRequest) CreateOrganizationNetworkRequest(createOrganizationNetworkRequest CreateOrganizationNetworkRequest) NetworksAPICreateOrganizationNetworkRequest {
 	r.createOrganizationNetworkRequest = &createOrganizationNetworkRequest
 	return r
 }
 
-func (r NetworksApiCreateOrganizationNetworkRequest) Execute() (*GetNetwork200Response, *http.Response, error) {
+func (r NetworksAPICreateOrganizationNetworkRequest) Execute() (*GetNetwork200Response, *http.Response, error) {
 	return r.ApiService.CreateOrganizationNetworkExecute(r)
 }
 
@@ -1831,10 +1831,10 @@ Create a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return NetworksApiCreateOrganizationNetworkRequest
+ @return NetworksAPICreateOrganizationNetworkRequest
 */
-func (a *NetworksApiService) CreateOrganizationNetwork(ctx context.Context, organizationId string) NetworksApiCreateOrganizationNetworkRequest {
-	return NetworksApiCreateOrganizationNetworkRequest{
+func (a *NetworksAPIService) CreateOrganizationNetwork(ctx context.Context, organizationId string) NetworksAPICreateOrganizationNetworkRequest {
+	return NetworksAPICreateOrganizationNetworkRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1843,7 +1843,7 @@ func (a *NetworksApiService) CreateOrganizationNetwork(ctx context.Context, orga
 
 // Execute executes the request
 //  @return GetNetwork200Response
-func (a *NetworksApiService) CreateOrganizationNetworkExecute(r NetworksApiCreateOrganizationNetworkRequest) (*GetNetwork200Response, *http.Response, error) {
+func (a *NetworksAPIService) CreateOrganizationNetworkExecute(r NetworksAPICreateOrganizationNetworkRequest) (*GetNetwork200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1851,7 +1851,7 @@ func (a *NetworksApiService) CreateOrganizationNetworkExecute(r NetworksApiCreat
 		localVarReturnValue  *GetNetwork200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.CreateOrganizationNetwork")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.CreateOrganizationNetwork")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1936,13 +1936,13 @@ func (a *NetworksApiService) CreateOrganizationNetworkExecute(r NetworksApiCreat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiDeferNetworkFirmwareUpgradesStagedEventsRequest struct {
+type NetworksAPIDeferNetworkFirmwareUpgradesStagedEventsRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 }
 
-func (r NetworksApiDeferNetworkFirmwareUpgradesStagedEventsRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (r NetworksAPIDeferNetworkFirmwareUpgradesStagedEventsRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	return r.ApiService.DeferNetworkFirmwareUpgradesStagedEventsExecute(r)
 }
 
@@ -1953,10 +1953,10 @@ Postpone by 1 week all pending staged upgrade stages for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiDeferNetworkFirmwareUpgradesStagedEventsRequest
+ @return NetworksAPIDeferNetworkFirmwareUpgradesStagedEventsRequest
 */
-func (a *NetworksApiService) DeferNetworkFirmwareUpgradesStagedEvents(ctx context.Context, networkId string) NetworksApiDeferNetworkFirmwareUpgradesStagedEventsRequest {
-	return NetworksApiDeferNetworkFirmwareUpgradesStagedEventsRequest{
+func (a *NetworksAPIService) DeferNetworkFirmwareUpgradesStagedEvents(ctx context.Context, networkId string) NetworksAPIDeferNetworkFirmwareUpgradesStagedEventsRequest {
+	return NetworksAPIDeferNetworkFirmwareUpgradesStagedEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1965,7 +1965,7 @@ func (a *NetworksApiService) DeferNetworkFirmwareUpgradesStagedEvents(ctx contex
 
 // Execute executes the request
 //  @return GetNetworkFirmwareUpgradesStagedEvents200Response
-func (a *NetworksApiService) DeferNetworkFirmwareUpgradesStagedEventsExecute(r NetworksApiDeferNetworkFirmwareUpgradesStagedEventsRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (a *NetworksAPIService) DeferNetworkFirmwareUpgradesStagedEventsExecute(r NetworksAPIDeferNetworkFirmwareUpgradesStagedEventsRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1973,7 +1973,7 @@ func (a *NetworksApiService) DeferNetworkFirmwareUpgradesStagedEventsExecute(r N
 		localVarReturnValue  *GetNetworkFirmwareUpgradesStagedEvents200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.DeferNetworkFirmwareUpgradesStagedEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeferNetworkFirmwareUpgradesStagedEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2053,13 +2053,13 @@ func (a *NetworksApiService) DeferNetworkFirmwareUpgradesStagedEventsExecute(r N
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiDeleteNetworkRequest struct {
+type NetworksAPIDeleteNetworkRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 }
 
-func (r NetworksApiDeleteNetworkRequest) Execute() (*http.Response, error) {
+func (r NetworksAPIDeleteNetworkRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkExecute(r)
 }
 
@@ -2070,10 +2070,10 @@ Delete a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiDeleteNetworkRequest
+ @return NetworksAPIDeleteNetworkRequest
 */
-func (a *NetworksApiService) DeleteNetwork(ctx context.Context, networkId string) NetworksApiDeleteNetworkRequest {
-	return NetworksApiDeleteNetworkRequest{
+func (a *NetworksAPIService) DeleteNetwork(ctx context.Context, networkId string) NetworksAPIDeleteNetworkRequest {
+	return NetworksAPIDeleteNetworkRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2081,14 +2081,14 @@ func (a *NetworksApiService) DeleteNetwork(ctx context.Context, networkId string
 }
 
 // Execute executes the request
-func (a *NetworksApiService) DeleteNetworkExecute(r NetworksApiDeleteNetworkRequest) (*http.Response, error) {
+func (a *NetworksAPIService) DeleteNetworkExecute(r NetworksAPIDeleteNetworkRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.DeleteNetwork")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetwork")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2159,14 +2159,14 @@ func (a *NetworksApiService) DeleteNetworkExecute(r NetworksApiDeleteNetworkRequ
 	return localVarHTTPResponse, nil
 }
 
-type NetworksApiDeleteNetworkFirmwareUpgradesStagedGroupRequest struct {
+type NetworksAPIDeleteNetworkFirmwareUpgradesStagedGroupRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	groupId string
 }
 
-func (r NetworksApiDeleteNetworkFirmwareUpgradesStagedGroupRequest) Execute() (*http.Response, error) {
+func (r NetworksAPIDeleteNetworkFirmwareUpgradesStagedGroupRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkFirmwareUpgradesStagedGroupExecute(r)
 }
 
@@ -2178,10 +2178,10 @@ Delete a Staged Upgrade Group
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param groupId Group ID
- @return NetworksApiDeleteNetworkFirmwareUpgradesStagedGroupRequest
+ @return NetworksAPIDeleteNetworkFirmwareUpgradesStagedGroupRequest
 */
-func (a *NetworksApiService) DeleteNetworkFirmwareUpgradesStagedGroup(ctx context.Context, networkId string, groupId string) NetworksApiDeleteNetworkFirmwareUpgradesStagedGroupRequest {
-	return NetworksApiDeleteNetworkFirmwareUpgradesStagedGroupRequest{
+func (a *NetworksAPIService) DeleteNetworkFirmwareUpgradesStagedGroup(ctx context.Context, networkId string, groupId string) NetworksAPIDeleteNetworkFirmwareUpgradesStagedGroupRequest {
+	return NetworksAPIDeleteNetworkFirmwareUpgradesStagedGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2190,14 +2190,14 @@ func (a *NetworksApiService) DeleteNetworkFirmwareUpgradesStagedGroup(ctx contex
 }
 
 // Execute executes the request
-func (a *NetworksApiService) DeleteNetworkFirmwareUpgradesStagedGroupExecute(r NetworksApiDeleteNetworkFirmwareUpgradesStagedGroupRequest) (*http.Response, error) {
+func (a *NetworksAPIService) DeleteNetworkFirmwareUpgradesStagedGroupExecute(r NetworksAPIDeleteNetworkFirmwareUpgradesStagedGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.DeleteNetworkFirmwareUpgradesStagedGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetworkFirmwareUpgradesStagedGroup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2269,14 +2269,14 @@ func (a *NetworksApiService) DeleteNetworkFirmwareUpgradesStagedGroupExecute(r N
 	return localVarHTTPResponse, nil
 }
 
-type NetworksApiDeleteNetworkFloorPlanRequest struct {
+type NetworksAPIDeleteNetworkFloorPlanRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	floorPlanId string
 }
 
-func (r NetworksApiDeleteNetworkFloorPlanRequest) Execute() (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
+func (r NetworksAPIDeleteNetworkFloorPlanRequest) Execute() (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
 	return r.ApiService.DeleteNetworkFloorPlanExecute(r)
 }
 
@@ -2288,10 +2288,10 @@ Destroy a floor plan
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param floorPlanId Floor plan ID
- @return NetworksApiDeleteNetworkFloorPlanRequest
+ @return NetworksAPIDeleteNetworkFloorPlanRequest
 */
-func (a *NetworksApiService) DeleteNetworkFloorPlan(ctx context.Context, networkId string, floorPlanId string) NetworksApiDeleteNetworkFloorPlanRequest {
-	return NetworksApiDeleteNetworkFloorPlanRequest{
+func (a *NetworksAPIService) DeleteNetworkFloorPlan(ctx context.Context, networkId string, floorPlanId string) NetworksAPIDeleteNetworkFloorPlanRequest {
+	return NetworksAPIDeleteNetworkFloorPlanRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2301,7 +2301,7 @@ func (a *NetworksApiService) DeleteNetworkFloorPlan(ctx context.Context, network
 
 // Execute executes the request
 //  @return GetNetworkFloorPlans200ResponseInner
-func (a *NetworksApiService) DeleteNetworkFloorPlanExecute(r NetworksApiDeleteNetworkFloorPlanRequest) (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
+func (a *NetworksAPIService) DeleteNetworkFloorPlanExecute(r NetworksAPIDeleteNetworkFloorPlanRequest) (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -2309,7 +2309,7 @@ func (a *NetworksApiService) DeleteNetworkFloorPlanExecute(r NetworksApiDeleteNe
 		localVarReturnValue  *GetNetworkFloorPlans200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.DeleteNetworkFloorPlan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetworkFloorPlan")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2390,14 +2390,14 @@ func (a *NetworksApiService) DeleteNetworkFloorPlanExecute(r NetworksApiDeleteNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiDeleteNetworkGroupPolicyRequest struct {
+type NetworksAPIDeleteNetworkGroupPolicyRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	groupPolicyId string
 }
 
-func (r NetworksApiDeleteNetworkGroupPolicyRequest) Execute() (*http.Response, error) {
+func (r NetworksAPIDeleteNetworkGroupPolicyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkGroupPolicyExecute(r)
 }
 
@@ -2409,10 +2409,10 @@ Delete a group policy
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param groupPolicyId Group policy ID
- @return NetworksApiDeleteNetworkGroupPolicyRequest
+ @return NetworksAPIDeleteNetworkGroupPolicyRequest
 */
-func (a *NetworksApiService) DeleteNetworkGroupPolicy(ctx context.Context, networkId string, groupPolicyId string) NetworksApiDeleteNetworkGroupPolicyRequest {
-	return NetworksApiDeleteNetworkGroupPolicyRequest{
+func (a *NetworksAPIService) DeleteNetworkGroupPolicy(ctx context.Context, networkId string, groupPolicyId string) NetworksAPIDeleteNetworkGroupPolicyRequest {
+	return NetworksAPIDeleteNetworkGroupPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2421,14 +2421,14 @@ func (a *NetworksApiService) DeleteNetworkGroupPolicy(ctx context.Context, netwo
 }
 
 // Execute executes the request
-func (a *NetworksApiService) DeleteNetworkGroupPolicyExecute(r NetworksApiDeleteNetworkGroupPolicyRequest) (*http.Response, error) {
+func (a *NetworksAPIService) DeleteNetworkGroupPolicyExecute(r NetworksAPIDeleteNetworkGroupPolicyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.DeleteNetworkGroupPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetworkGroupPolicy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2500,21 +2500,21 @@ func (a *NetworksApiService) DeleteNetworkGroupPolicyExecute(r NetworksApiDelete
 	return localVarHTTPResponse, nil
 }
 
-type NetworksApiDeleteNetworkMerakiAuthUserRequest struct {
+type NetworksAPIDeleteNetworkMerakiAuthUserRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	merakiAuthUserId string
 	delete *bool
 }
 
 // If the ID supplied is for a splash guest or client VPN user, and that user is not authorized for any other networks in the organization, then also delete the user. 802.1X RADIUS users are always deleted regardless of this optional attribute.
-func (r NetworksApiDeleteNetworkMerakiAuthUserRequest) Delete(delete bool) NetworksApiDeleteNetworkMerakiAuthUserRequest {
+func (r NetworksAPIDeleteNetworkMerakiAuthUserRequest) Delete(delete bool) NetworksAPIDeleteNetworkMerakiAuthUserRequest {
 	r.delete = &delete
 	return r
 }
 
-func (r NetworksApiDeleteNetworkMerakiAuthUserRequest) Execute() (*http.Response, error) {
+func (r NetworksAPIDeleteNetworkMerakiAuthUserRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkMerakiAuthUserExecute(r)
 }
 
@@ -2526,10 +2526,10 @@ Delete an 802.1X RADIUS user, or deauthorize and optionally delete a splash gues
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param merakiAuthUserId Meraki auth user ID
- @return NetworksApiDeleteNetworkMerakiAuthUserRequest
+ @return NetworksAPIDeleteNetworkMerakiAuthUserRequest
 */
-func (a *NetworksApiService) DeleteNetworkMerakiAuthUser(ctx context.Context, networkId string, merakiAuthUserId string) NetworksApiDeleteNetworkMerakiAuthUserRequest {
-	return NetworksApiDeleteNetworkMerakiAuthUserRequest{
+func (a *NetworksAPIService) DeleteNetworkMerakiAuthUser(ctx context.Context, networkId string, merakiAuthUserId string) NetworksAPIDeleteNetworkMerakiAuthUserRequest {
+	return NetworksAPIDeleteNetworkMerakiAuthUserRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2538,14 +2538,14 @@ func (a *NetworksApiService) DeleteNetworkMerakiAuthUser(ctx context.Context, ne
 }
 
 // Execute executes the request
-func (a *NetworksApiService) DeleteNetworkMerakiAuthUserExecute(r NetworksApiDeleteNetworkMerakiAuthUserRequest) (*http.Response, error) {
+func (a *NetworksAPIService) DeleteNetworkMerakiAuthUserExecute(r NetworksAPIDeleteNetworkMerakiAuthUserRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.DeleteNetworkMerakiAuthUser")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetworkMerakiAuthUser")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2620,14 +2620,14 @@ func (a *NetworksApiService) DeleteNetworkMerakiAuthUserExecute(r NetworksApiDel
 	return localVarHTTPResponse, nil
 }
 
-type NetworksApiDeleteNetworkMqttBrokerRequest struct {
+type NetworksAPIDeleteNetworkMqttBrokerRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	mqttBrokerId string
 }
 
-func (r NetworksApiDeleteNetworkMqttBrokerRequest) Execute() (*http.Response, error) {
+func (r NetworksAPIDeleteNetworkMqttBrokerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkMqttBrokerExecute(r)
 }
 
@@ -2639,10 +2639,10 @@ Delete an MQTT broker
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param mqttBrokerId Mqtt broker ID
- @return NetworksApiDeleteNetworkMqttBrokerRequest
+ @return NetworksAPIDeleteNetworkMqttBrokerRequest
 */
-func (a *NetworksApiService) DeleteNetworkMqttBroker(ctx context.Context, networkId string, mqttBrokerId string) NetworksApiDeleteNetworkMqttBrokerRequest {
-	return NetworksApiDeleteNetworkMqttBrokerRequest{
+func (a *NetworksAPIService) DeleteNetworkMqttBroker(ctx context.Context, networkId string, mqttBrokerId string) NetworksAPIDeleteNetworkMqttBrokerRequest {
+	return NetworksAPIDeleteNetworkMqttBrokerRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2651,14 +2651,14 @@ func (a *NetworksApiService) DeleteNetworkMqttBroker(ctx context.Context, networ
 }
 
 // Execute executes the request
-func (a *NetworksApiService) DeleteNetworkMqttBrokerExecute(r NetworksApiDeleteNetworkMqttBrokerRequest) (*http.Response, error) {
+func (a *NetworksAPIService) DeleteNetworkMqttBrokerExecute(r NetworksAPIDeleteNetworkMqttBrokerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.DeleteNetworkMqttBroker")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetworkMqttBroker")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2730,14 +2730,14 @@ func (a *NetworksApiService) DeleteNetworkMqttBrokerExecute(r NetworksApiDeleteN
 	return localVarHTTPResponse, nil
 }
 
-type NetworksApiDeleteNetworkPiiRequestRequest struct {
+type NetworksAPIDeleteNetworkPiiRequestRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	requestId string
 }
 
-func (r NetworksApiDeleteNetworkPiiRequestRequest) Execute() (*http.Response, error) {
+func (r NetworksAPIDeleteNetworkPiiRequestRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkPiiRequestExecute(r)
 }
 
@@ -2755,10 +2755,10 @@ Delete a restrict processing PII request
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param requestId Request ID
- @return NetworksApiDeleteNetworkPiiRequestRequest
+ @return NetworksAPIDeleteNetworkPiiRequestRequest
 */
-func (a *NetworksApiService) DeleteNetworkPiiRequest(ctx context.Context, networkId string, requestId string) NetworksApiDeleteNetworkPiiRequestRequest {
-	return NetworksApiDeleteNetworkPiiRequestRequest{
+func (a *NetworksAPIService) DeleteNetworkPiiRequest(ctx context.Context, networkId string, requestId string) NetworksAPIDeleteNetworkPiiRequestRequest {
+	return NetworksAPIDeleteNetworkPiiRequestRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2767,14 +2767,14 @@ func (a *NetworksApiService) DeleteNetworkPiiRequest(ctx context.Context, networ
 }
 
 // Execute executes the request
-func (a *NetworksApiService) DeleteNetworkPiiRequestExecute(r NetworksApiDeleteNetworkPiiRequestRequest) (*http.Response, error) {
+func (a *NetworksAPIService) DeleteNetworkPiiRequestExecute(r NetworksAPIDeleteNetworkPiiRequestRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.DeleteNetworkPiiRequest")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetworkPiiRequest")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2846,14 +2846,14 @@ func (a *NetworksApiService) DeleteNetworkPiiRequestExecute(r NetworksApiDeleteN
 	return localVarHTTPResponse, nil
 }
 
-type NetworksApiDeleteNetworkWebhooksHttpServerRequest struct {
+type NetworksAPIDeleteNetworkWebhooksHttpServerRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	httpServerId string
 }
 
-func (r NetworksApiDeleteNetworkWebhooksHttpServerRequest) Execute() (*http.Response, error) {
+func (r NetworksAPIDeleteNetworkWebhooksHttpServerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkWebhooksHttpServerExecute(r)
 }
 
@@ -2865,10 +2865,10 @@ Delete an HTTP server from a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param httpServerId Http server ID
- @return NetworksApiDeleteNetworkWebhooksHttpServerRequest
+ @return NetworksAPIDeleteNetworkWebhooksHttpServerRequest
 */
-func (a *NetworksApiService) DeleteNetworkWebhooksHttpServer(ctx context.Context, networkId string, httpServerId string) NetworksApiDeleteNetworkWebhooksHttpServerRequest {
-	return NetworksApiDeleteNetworkWebhooksHttpServerRequest{
+func (a *NetworksAPIService) DeleteNetworkWebhooksHttpServer(ctx context.Context, networkId string, httpServerId string) NetworksAPIDeleteNetworkWebhooksHttpServerRequest {
+	return NetworksAPIDeleteNetworkWebhooksHttpServerRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2877,14 +2877,14 @@ func (a *NetworksApiService) DeleteNetworkWebhooksHttpServer(ctx context.Context
 }
 
 // Execute executes the request
-func (a *NetworksApiService) DeleteNetworkWebhooksHttpServerExecute(r NetworksApiDeleteNetworkWebhooksHttpServerRequest) (*http.Response, error) {
+func (a *NetworksAPIService) DeleteNetworkWebhooksHttpServerExecute(r NetworksAPIDeleteNetworkWebhooksHttpServerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.DeleteNetworkWebhooksHttpServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetworkWebhooksHttpServer")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2956,14 +2956,14 @@ func (a *NetworksApiService) DeleteNetworkWebhooksHttpServerExecute(r NetworksAp
 	return localVarHTTPResponse, nil
 }
 
-type NetworksApiDeleteNetworkWebhooksPayloadTemplateRequest struct {
+type NetworksAPIDeleteNetworkWebhooksPayloadTemplateRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	payloadTemplateId string
 }
 
-func (r NetworksApiDeleteNetworkWebhooksPayloadTemplateRequest) Execute() (*http.Response, error) {
+func (r NetworksAPIDeleteNetworkWebhooksPayloadTemplateRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkWebhooksPayloadTemplateExecute(r)
 }
 
@@ -2975,10 +2975,10 @@ Destroy a webhook payload template for a network. Does not work for included tem
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param payloadTemplateId Payload template ID
- @return NetworksApiDeleteNetworkWebhooksPayloadTemplateRequest
+ @return NetworksAPIDeleteNetworkWebhooksPayloadTemplateRequest
 */
-func (a *NetworksApiService) DeleteNetworkWebhooksPayloadTemplate(ctx context.Context, networkId string, payloadTemplateId string) NetworksApiDeleteNetworkWebhooksPayloadTemplateRequest {
-	return NetworksApiDeleteNetworkWebhooksPayloadTemplateRequest{
+func (a *NetworksAPIService) DeleteNetworkWebhooksPayloadTemplate(ctx context.Context, networkId string, payloadTemplateId string) NetworksAPIDeleteNetworkWebhooksPayloadTemplateRequest {
+	return NetworksAPIDeleteNetworkWebhooksPayloadTemplateRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2987,14 +2987,14 @@ func (a *NetworksApiService) DeleteNetworkWebhooksPayloadTemplate(ctx context.Co
 }
 
 // Execute executes the request
-func (a *NetworksApiService) DeleteNetworkWebhooksPayloadTemplateExecute(r NetworksApiDeleteNetworkWebhooksPayloadTemplateRequest) (*http.Response, error) {
+func (a *NetworksAPIService) DeleteNetworkWebhooksPayloadTemplateExecute(r NetworksAPIDeleteNetworkWebhooksPayloadTemplateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.DeleteNetworkWebhooksPayloadTemplate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetworkWebhooksPayloadTemplate")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3066,13 +3066,13 @@ func (a *NetworksApiService) DeleteNetworkWebhooksPayloadTemplateExecute(r Netwo
 	return localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkRequest struct {
+type NetworksAPIGetNetworkRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 }
 
-func (r NetworksApiGetNetworkRequest) Execute() (*GetNetwork200Response, *http.Response, error) {
+func (r NetworksAPIGetNetworkRequest) Execute() (*GetNetwork200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkExecute(r)
 }
 
@@ -3083,10 +3083,10 @@ Return a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkRequest
+ @return NetworksAPIGetNetworkRequest
 */
-func (a *NetworksApiService) GetNetwork(ctx context.Context, networkId string) NetworksApiGetNetworkRequest {
-	return NetworksApiGetNetworkRequest{
+func (a *NetworksAPIService) GetNetwork(ctx context.Context, networkId string) NetworksAPIGetNetworkRequest {
+	return NetworksAPIGetNetworkRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3095,7 +3095,7 @@ func (a *NetworksApiService) GetNetwork(ctx context.Context, networkId string) N
 
 // Execute executes the request
 //  @return GetNetwork200Response
-func (a *NetworksApiService) GetNetworkExecute(r NetworksApiGetNetworkRequest) (*GetNetwork200Response, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkExecute(r NetworksAPIGetNetworkRequest) (*GetNetwork200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3103,7 +3103,7 @@ func (a *NetworksApiService) GetNetworkExecute(r NetworksApiGetNetworkRequest) (
 		localVarReturnValue  *GetNetwork200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetwork")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetwork")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3183,9 +3183,9 @@ func (a *NetworksApiService) GetNetworkExecute(r NetworksApiGetNetworkRequest) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkAlertsHistoryRequest struct {
+type NetworksAPIGetNetworkAlertsHistoryRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	perPage *int32
 	startingAfter *string
@@ -3193,24 +3193,24 @@ type NetworksApiGetNetworkAlertsHistoryRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
-func (r NetworksApiGetNetworkAlertsHistoryRequest) PerPage(perPage int32) NetworksApiGetNetworkAlertsHistoryRequest {
+func (r NetworksAPIGetNetworkAlertsHistoryRequest) PerPage(perPage int32) NetworksAPIGetNetworkAlertsHistoryRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r NetworksApiGetNetworkAlertsHistoryRequest) StartingAfter(startingAfter string) NetworksApiGetNetworkAlertsHistoryRequest {
+func (r NetworksAPIGetNetworkAlertsHistoryRequest) StartingAfter(startingAfter string) NetworksAPIGetNetworkAlertsHistoryRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r NetworksApiGetNetworkAlertsHistoryRequest) EndingBefore(endingBefore string) NetworksApiGetNetworkAlertsHistoryRequest {
+func (r NetworksAPIGetNetworkAlertsHistoryRequest) EndingBefore(endingBefore string) NetworksAPIGetNetworkAlertsHistoryRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r NetworksApiGetNetworkAlertsHistoryRequest) Execute() ([]GetNetworkAlertsHistory200ResponseInner, *http.Response, error) {
+func (r NetworksAPIGetNetworkAlertsHistoryRequest) Execute() ([]GetNetworkAlertsHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkAlertsHistoryExecute(r)
 }
 
@@ -3221,10 +3221,10 @@ Return the alert history for this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkAlertsHistoryRequest
+ @return NetworksAPIGetNetworkAlertsHistoryRequest
 */
-func (a *NetworksApiService) GetNetworkAlertsHistory(ctx context.Context, networkId string) NetworksApiGetNetworkAlertsHistoryRequest {
-	return NetworksApiGetNetworkAlertsHistoryRequest{
+func (a *NetworksAPIService) GetNetworkAlertsHistory(ctx context.Context, networkId string) NetworksAPIGetNetworkAlertsHistoryRequest {
+	return NetworksAPIGetNetworkAlertsHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3233,7 +3233,7 @@ func (a *NetworksApiService) GetNetworkAlertsHistory(ctx context.Context, networ
 
 // Execute executes the request
 //  @return []GetNetworkAlertsHistory200ResponseInner
-func (a *NetworksApiService) GetNetworkAlertsHistoryExecute(r NetworksApiGetNetworkAlertsHistoryRequest) ([]GetNetworkAlertsHistory200ResponseInner, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkAlertsHistoryExecute(r NetworksAPIGetNetworkAlertsHistoryRequest) ([]GetNetworkAlertsHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3241,7 +3241,7 @@ func (a *NetworksApiService) GetNetworkAlertsHistoryExecute(r NetworksApiGetNetw
 		localVarReturnValue  []GetNetworkAlertsHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkAlertsHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkAlertsHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3330,13 +3330,13 @@ func (a *NetworksApiService) GetNetworkAlertsHistoryExecute(r NetworksApiGetNetw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkAlertsSettingsRequest struct {
+type NetworksAPIGetNetworkAlertsSettingsRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 }
 
-func (r NetworksApiGetNetworkAlertsSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkAlertsSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkAlertsSettingsExecute(r)
 }
 
@@ -3347,10 +3347,10 @@ Return the alert configuration for this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkAlertsSettingsRequest
+ @return NetworksAPIGetNetworkAlertsSettingsRequest
 */
-func (a *NetworksApiService) GetNetworkAlertsSettings(ctx context.Context, networkId string) NetworksApiGetNetworkAlertsSettingsRequest {
-	return NetworksApiGetNetworkAlertsSettingsRequest{
+func (a *NetworksAPIService) GetNetworkAlertsSettings(ctx context.Context, networkId string) NetworksAPIGetNetworkAlertsSettingsRequest {
+	return NetworksAPIGetNetworkAlertsSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3359,7 +3359,7 @@ func (a *NetworksApiService) GetNetworkAlertsSettings(ctx context.Context, netwo
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) GetNetworkAlertsSettingsExecute(r NetworksApiGetNetworkAlertsSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkAlertsSettingsExecute(r NetworksAPIGetNetworkAlertsSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3367,7 +3367,7 @@ func (a *NetworksApiService) GetNetworkAlertsSettingsExecute(r NetworksApiGetNet
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkAlertsSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkAlertsSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3447,9 +3447,9 @@ func (a *NetworksApiService) GetNetworkAlertsSettingsExecute(r NetworksApiGetNet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkBluetoothClientRequest struct {
+type NetworksAPIGetNetworkBluetoothClientRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	bluetoothClientId string
 	includeConnectivityHistory *bool
@@ -3457,18 +3457,18 @@ type NetworksApiGetNetworkBluetoothClientRequest struct {
 }
 
 // Include the connectivity history for this client
-func (r NetworksApiGetNetworkBluetoothClientRequest) IncludeConnectivityHistory(includeConnectivityHistory bool) NetworksApiGetNetworkBluetoothClientRequest {
+func (r NetworksAPIGetNetworkBluetoothClientRequest) IncludeConnectivityHistory(includeConnectivityHistory bool) NetworksAPIGetNetworkBluetoothClientRequest {
 	r.includeConnectivityHistory = &includeConnectivityHistory
 	return r
 }
 
 // The timespan, in seconds, for the connectivityHistory data. By default 1 day, 86400, will be used.
-func (r NetworksApiGetNetworkBluetoothClientRequest) ConnectivityHistoryTimespan(connectivityHistoryTimespan int32) NetworksApiGetNetworkBluetoothClientRequest {
+func (r NetworksAPIGetNetworkBluetoothClientRequest) ConnectivityHistoryTimespan(connectivityHistoryTimespan int32) NetworksAPIGetNetworkBluetoothClientRequest {
 	r.connectivityHistoryTimespan = &connectivityHistoryTimespan
 	return r
 }
 
-func (r NetworksApiGetNetworkBluetoothClientRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkBluetoothClientRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkBluetoothClientExecute(r)
 }
 
@@ -3480,10 +3480,10 @@ Return a Bluetooth client. Bluetooth clients can be identified by their ID or th
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param bluetoothClientId Bluetooth client ID
- @return NetworksApiGetNetworkBluetoothClientRequest
+ @return NetworksAPIGetNetworkBluetoothClientRequest
 */
-func (a *NetworksApiService) GetNetworkBluetoothClient(ctx context.Context, networkId string, bluetoothClientId string) NetworksApiGetNetworkBluetoothClientRequest {
-	return NetworksApiGetNetworkBluetoothClientRequest{
+func (a *NetworksAPIService) GetNetworkBluetoothClient(ctx context.Context, networkId string, bluetoothClientId string) NetworksAPIGetNetworkBluetoothClientRequest {
+	return NetworksAPIGetNetworkBluetoothClientRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3493,7 +3493,7 @@ func (a *NetworksApiService) GetNetworkBluetoothClient(ctx context.Context, netw
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) GetNetworkBluetoothClientExecute(r NetworksApiGetNetworkBluetoothClientRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkBluetoothClientExecute(r NetworksAPIGetNetworkBluetoothClientRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3501,7 +3501,7 @@ func (a *NetworksApiService) GetNetworkBluetoothClientExecute(r NetworksApiGetNe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkBluetoothClient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkBluetoothClient")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3588,9 +3588,9 @@ func (a *NetworksApiService) GetNetworkBluetoothClientExecute(r NetworksApiGetNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkBluetoothClientsRequest struct {
+type NetworksAPIGetNetworkBluetoothClientsRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	t0 *string
 	timespan *float32
@@ -3601,42 +3601,42 @@ type NetworksApiGetNetworkBluetoothClientsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 7 days from today.
-func (r NetworksApiGetNetworkBluetoothClientsRequest) T0(t0 string) NetworksApiGetNetworkBluetoothClientsRequest {
+func (r NetworksAPIGetNetworkBluetoothClientsRequest) T0(t0 string) NetworksAPIGetNetworkBluetoothClientsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 7 days. The default is 1 day.
-func (r NetworksApiGetNetworkBluetoothClientsRequest) Timespan(timespan float32) NetworksApiGetNetworkBluetoothClientsRequest {
+func (r NetworksAPIGetNetworkBluetoothClientsRequest) Timespan(timespan float32) NetworksAPIGetNetworkBluetoothClientsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 5 - 1000. Default is 10.
-func (r NetworksApiGetNetworkBluetoothClientsRequest) PerPage(perPage int32) NetworksApiGetNetworkBluetoothClientsRequest {
+func (r NetworksAPIGetNetworkBluetoothClientsRequest) PerPage(perPage int32) NetworksAPIGetNetworkBluetoothClientsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r NetworksApiGetNetworkBluetoothClientsRequest) StartingAfter(startingAfter string) NetworksApiGetNetworkBluetoothClientsRequest {
+func (r NetworksAPIGetNetworkBluetoothClientsRequest) StartingAfter(startingAfter string) NetworksAPIGetNetworkBluetoothClientsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r NetworksApiGetNetworkBluetoothClientsRequest) EndingBefore(endingBefore string) NetworksApiGetNetworkBluetoothClientsRequest {
+func (r NetworksAPIGetNetworkBluetoothClientsRequest) EndingBefore(endingBefore string) NetworksAPIGetNetworkBluetoothClientsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Include the connectivity history for this client
-func (r NetworksApiGetNetworkBluetoothClientsRequest) IncludeConnectivityHistory(includeConnectivityHistory bool) NetworksApiGetNetworkBluetoothClientsRequest {
+func (r NetworksAPIGetNetworkBluetoothClientsRequest) IncludeConnectivityHistory(includeConnectivityHistory bool) NetworksAPIGetNetworkBluetoothClientsRequest {
 	r.includeConnectivityHistory = &includeConnectivityHistory
 	return r
 }
 
-func (r NetworksApiGetNetworkBluetoothClientsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkBluetoothClientsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkBluetoothClientsExecute(r)
 }
 
@@ -3647,10 +3647,10 @@ List the Bluetooth clients seen by APs in this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkBluetoothClientsRequest
+ @return NetworksAPIGetNetworkBluetoothClientsRequest
 */
-func (a *NetworksApiService) GetNetworkBluetoothClients(ctx context.Context, networkId string) NetworksApiGetNetworkBluetoothClientsRequest {
-	return NetworksApiGetNetworkBluetoothClientsRequest{
+func (a *NetworksAPIService) GetNetworkBluetoothClients(ctx context.Context, networkId string) NetworksAPIGetNetworkBluetoothClientsRequest {
+	return NetworksAPIGetNetworkBluetoothClientsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3659,7 +3659,7 @@ func (a *NetworksApiService) GetNetworkBluetoothClients(ctx context.Context, net
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *NetworksApiService) GetNetworkBluetoothClientsExecute(r NetworksApiGetNetworkBluetoothClientsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkBluetoothClientsExecute(r NetworksAPIGetNetworkBluetoothClientsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3667,7 +3667,7 @@ func (a *NetworksApiService) GetNetworkBluetoothClientsExecute(r NetworksApiGetN
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkBluetoothClients")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkBluetoothClients")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3765,14 +3765,14 @@ func (a *NetworksApiService) GetNetworkBluetoothClientsExecute(r NetworksApiGetN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkClientRequest struct {
+type NetworksAPIGetNetworkClientRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	clientId string
 }
 
-func (r NetworksApiGetNetworkClientRequest) Execute() (*GetNetworkClient200Response, *http.Response, error) {
+func (r NetworksAPIGetNetworkClientRequest) Execute() (*GetNetworkClient200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkClientExecute(r)
 }
 
@@ -3784,10 +3784,10 @@ Return the client associated with the given identifier. Clients can be identifie
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return NetworksApiGetNetworkClientRequest
+ @return NetworksAPIGetNetworkClientRequest
 */
-func (a *NetworksApiService) GetNetworkClient(ctx context.Context, networkId string, clientId string) NetworksApiGetNetworkClientRequest {
-	return NetworksApiGetNetworkClientRequest{
+func (a *NetworksAPIService) GetNetworkClient(ctx context.Context, networkId string, clientId string) NetworksAPIGetNetworkClientRequest {
+	return NetworksAPIGetNetworkClientRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3797,7 +3797,7 @@ func (a *NetworksApiService) GetNetworkClient(ctx context.Context, networkId str
 
 // Execute executes the request
 //  @return GetNetworkClient200Response
-func (a *NetworksApiService) GetNetworkClientExecute(r NetworksApiGetNetworkClientRequest) (*GetNetworkClient200Response, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkClientExecute(r NetworksAPIGetNetworkClientRequest) (*GetNetworkClient200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3805,7 +3805,7 @@ func (a *NetworksApiService) GetNetworkClientExecute(r NetworksApiGetNetworkClie
 		localVarReturnValue  *GetNetworkClient200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkClient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkClient")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3886,14 +3886,14 @@ func (a *NetworksApiService) GetNetworkClientExecute(r NetworksApiGetNetworkClie
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkClientPolicyRequest struct {
+type NetworksAPIGetNetworkClientPolicyRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	clientId string
 }
 
-func (r NetworksApiGetNetworkClientPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkClientPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientPolicyExecute(r)
 }
 
@@ -3905,10 +3905,10 @@ Return the policy assigned to a client on the network. Clients can be identified
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return NetworksApiGetNetworkClientPolicyRequest
+ @return NetworksAPIGetNetworkClientPolicyRequest
 */
-func (a *NetworksApiService) GetNetworkClientPolicy(ctx context.Context, networkId string, clientId string) NetworksApiGetNetworkClientPolicyRequest {
-	return NetworksApiGetNetworkClientPolicyRequest{
+func (a *NetworksAPIService) GetNetworkClientPolicy(ctx context.Context, networkId string, clientId string) NetworksAPIGetNetworkClientPolicyRequest {
+	return NetworksAPIGetNetworkClientPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3918,7 +3918,7 @@ func (a *NetworksApiService) GetNetworkClientPolicy(ctx context.Context, network
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) GetNetworkClientPolicyExecute(r NetworksApiGetNetworkClientPolicyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkClientPolicyExecute(r NetworksAPIGetNetworkClientPolicyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3926,7 +3926,7 @@ func (a *NetworksApiService) GetNetworkClientPolicyExecute(r NetworksApiGetNetwo
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkClientPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkClientPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4007,14 +4007,14 @@ func (a *NetworksApiService) GetNetworkClientPolicyExecute(r NetworksApiGetNetwo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkClientSplashAuthorizationStatusRequest struct {
+type NetworksAPIGetNetworkClientSplashAuthorizationStatusRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	clientId string
 }
 
-func (r NetworksApiGetNetworkClientSplashAuthorizationStatusRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkClientSplashAuthorizationStatusRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientSplashAuthorizationStatusExecute(r)
 }
 
@@ -4026,10 +4026,10 @@ Return the splash authorization for a client, for each SSID they've associated w
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return NetworksApiGetNetworkClientSplashAuthorizationStatusRequest
+ @return NetworksAPIGetNetworkClientSplashAuthorizationStatusRequest
 */
-func (a *NetworksApiService) GetNetworkClientSplashAuthorizationStatus(ctx context.Context, networkId string, clientId string) NetworksApiGetNetworkClientSplashAuthorizationStatusRequest {
-	return NetworksApiGetNetworkClientSplashAuthorizationStatusRequest{
+func (a *NetworksAPIService) GetNetworkClientSplashAuthorizationStatus(ctx context.Context, networkId string, clientId string) NetworksAPIGetNetworkClientSplashAuthorizationStatusRequest {
+	return NetworksAPIGetNetworkClientSplashAuthorizationStatusRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4039,7 +4039,7 @@ func (a *NetworksApiService) GetNetworkClientSplashAuthorizationStatus(ctx conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) GetNetworkClientSplashAuthorizationStatusExecute(r NetworksApiGetNetworkClientSplashAuthorizationStatusRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkClientSplashAuthorizationStatusExecute(r NetworksAPIGetNetworkClientSplashAuthorizationStatusRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4047,7 +4047,7 @@ func (a *NetworksApiService) GetNetworkClientSplashAuthorizationStatusExecute(r 
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkClientSplashAuthorizationStatus")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkClientSplashAuthorizationStatus")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4128,9 +4128,9 @@ func (a *NetworksApiService) GetNetworkClientSplashAuthorizationStatusExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkClientTrafficHistoryRequest struct {
+type NetworksAPIGetNetworkClientTrafficHistoryRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	clientId string
 	perPage *int32
@@ -4139,24 +4139,24 @@ type NetworksApiGetNetworkClientTrafficHistoryRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000.
-func (r NetworksApiGetNetworkClientTrafficHistoryRequest) PerPage(perPage int32) NetworksApiGetNetworkClientTrafficHistoryRequest {
+func (r NetworksAPIGetNetworkClientTrafficHistoryRequest) PerPage(perPage int32) NetworksAPIGetNetworkClientTrafficHistoryRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r NetworksApiGetNetworkClientTrafficHistoryRequest) StartingAfter(startingAfter string) NetworksApiGetNetworkClientTrafficHistoryRequest {
+func (r NetworksAPIGetNetworkClientTrafficHistoryRequest) StartingAfter(startingAfter string) NetworksAPIGetNetworkClientTrafficHistoryRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r NetworksApiGetNetworkClientTrafficHistoryRequest) EndingBefore(endingBefore string) NetworksApiGetNetworkClientTrafficHistoryRequest {
+func (r NetworksAPIGetNetworkClientTrafficHistoryRequest) EndingBefore(endingBefore string) NetworksAPIGetNetworkClientTrafficHistoryRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r NetworksApiGetNetworkClientTrafficHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkClientTrafficHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientTrafficHistoryExecute(r)
 }
 
@@ -4168,10 +4168,10 @@ Return the client's network traffic data over time. Usage data is in kilobytes. 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return NetworksApiGetNetworkClientTrafficHistoryRequest
+ @return NetworksAPIGetNetworkClientTrafficHistoryRequest
 */
-func (a *NetworksApiService) GetNetworkClientTrafficHistory(ctx context.Context, networkId string, clientId string) NetworksApiGetNetworkClientTrafficHistoryRequest {
-	return NetworksApiGetNetworkClientTrafficHistoryRequest{
+func (a *NetworksAPIService) GetNetworkClientTrafficHistory(ctx context.Context, networkId string, clientId string) NetworksAPIGetNetworkClientTrafficHistoryRequest {
+	return NetworksAPIGetNetworkClientTrafficHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4181,7 +4181,7 @@ func (a *NetworksApiService) GetNetworkClientTrafficHistory(ctx context.Context,
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *NetworksApiService) GetNetworkClientTrafficHistoryExecute(r NetworksApiGetNetworkClientTrafficHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkClientTrafficHistoryExecute(r NetworksAPIGetNetworkClientTrafficHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4189,7 +4189,7 @@ func (a *NetworksApiService) GetNetworkClientTrafficHistoryExecute(r NetworksApi
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkClientTrafficHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkClientTrafficHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4279,14 +4279,14 @@ func (a *NetworksApiService) GetNetworkClientTrafficHistoryExecute(r NetworksApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkClientUsageHistoryRequest struct {
+type NetworksAPIGetNetworkClientUsageHistoryRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	clientId string
 }
 
-func (r NetworksApiGetNetworkClientUsageHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkClientUsageHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientUsageHistoryExecute(r)
 }
 
@@ -4298,10 +4298,10 @@ Return the client's daily usage history. Usage data is in kilobytes. Clients can
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return NetworksApiGetNetworkClientUsageHistoryRequest
+ @return NetworksAPIGetNetworkClientUsageHistoryRequest
 */
-func (a *NetworksApiService) GetNetworkClientUsageHistory(ctx context.Context, networkId string, clientId string) NetworksApiGetNetworkClientUsageHistoryRequest {
-	return NetworksApiGetNetworkClientUsageHistoryRequest{
+func (a *NetworksAPIService) GetNetworkClientUsageHistory(ctx context.Context, networkId string, clientId string) NetworksAPIGetNetworkClientUsageHistoryRequest {
+	return NetworksAPIGetNetworkClientUsageHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4311,7 +4311,7 @@ func (a *NetworksApiService) GetNetworkClientUsageHistory(ctx context.Context, n
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *NetworksApiService) GetNetworkClientUsageHistoryExecute(r NetworksApiGetNetworkClientUsageHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkClientUsageHistoryExecute(r NetworksAPIGetNetworkClientUsageHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4319,7 +4319,7 @@ func (a *NetworksApiService) GetNetworkClientUsageHistoryExecute(r NetworksApiGe
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkClientUsageHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkClientUsageHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4400,9 +4400,9 @@ func (a *NetworksApiService) GetNetworkClientUsageHistoryExecute(r NetworksApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkClientsRequest struct {
+type NetworksAPIGetNetworkClientsRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	t0 *string
 	timespan *float32
@@ -4422,96 +4422,96 @@ type NetworksApiGetNetworkClientsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r NetworksApiGetNetworkClientsRequest) T0(t0 string) NetworksApiGetNetworkClientsRequest {
+func (r NetworksAPIGetNetworkClientsRequest) T0(t0 string) NetworksAPIGetNetworkClientsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r NetworksApiGetNetworkClientsRequest) Timespan(timespan float32) NetworksApiGetNetworkClientsRequest {
+func (r NetworksAPIGetNetworkClientsRequest) Timespan(timespan float32) NetworksAPIGetNetworkClientsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 10.
-func (r NetworksApiGetNetworkClientsRequest) PerPage(perPage int32) NetworksApiGetNetworkClientsRequest {
+func (r NetworksAPIGetNetworkClientsRequest) PerPage(perPage int32) NetworksAPIGetNetworkClientsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r NetworksApiGetNetworkClientsRequest) StartingAfter(startingAfter string) NetworksApiGetNetworkClientsRequest {
+func (r NetworksAPIGetNetworkClientsRequest) StartingAfter(startingAfter string) NetworksAPIGetNetworkClientsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r NetworksApiGetNetworkClientsRequest) EndingBefore(endingBefore string) NetworksApiGetNetworkClientsRequest {
+func (r NetworksAPIGetNetworkClientsRequest) EndingBefore(endingBefore string) NetworksAPIGetNetworkClientsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Filters clients based on status. Can be one of &#39;Online&#39; or &#39;Offline&#39;.
-func (r NetworksApiGetNetworkClientsRequest) Statuses(statuses []string) NetworksApiGetNetworkClientsRequest {
+func (r NetworksAPIGetNetworkClientsRequest) Statuses(statuses []string) NetworksAPIGetNetworkClientsRequest {
 	r.statuses = &statuses
 	return r
 }
 
 // Filters clients based on a partial or full match for the ip address field.
-func (r NetworksApiGetNetworkClientsRequest) Ip(ip string) NetworksApiGetNetworkClientsRequest {
+func (r NetworksAPIGetNetworkClientsRequest) Ip(ip string) NetworksAPIGetNetworkClientsRequest {
 	r.ip = &ip
 	return r
 }
 
 // Filters clients based on a partial or full match for the ip6 address field.
-func (r NetworksApiGetNetworkClientsRequest) Ip6(ip6 string) NetworksApiGetNetworkClientsRequest {
+func (r NetworksAPIGetNetworkClientsRequest) Ip6(ip6 string) NetworksAPIGetNetworkClientsRequest {
 	r.ip6 = &ip6
 	return r
 }
 
 // Filters clients based on a partial or full match for the ip6Local address field.
-func (r NetworksApiGetNetworkClientsRequest) Ip6Local(ip6Local string) NetworksApiGetNetworkClientsRequest {
+func (r NetworksAPIGetNetworkClientsRequest) Ip6Local(ip6Local string) NetworksAPIGetNetworkClientsRequest {
 	r.ip6Local = &ip6Local
 	return r
 }
 
 // Filters clients based on a partial or full match for the mac address field.
-func (r NetworksApiGetNetworkClientsRequest) Mac(mac string) NetworksApiGetNetworkClientsRequest {
+func (r NetworksAPIGetNetworkClientsRequest) Mac(mac string) NetworksAPIGetNetworkClientsRequest {
 	r.mac = &mac
 	return r
 }
 
 // Filters clients based on a partial or full match for the os (operating system) field.
-func (r NetworksApiGetNetworkClientsRequest) Os(os string) NetworksApiGetNetworkClientsRequest {
+func (r NetworksAPIGetNetworkClientsRequest) Os(os string) NetworksAPIGetNetworkClientsRequest {
 	r.os = &os
 	return r
 }
 
 // Filters clients based on partial or full match for the iPSK name field.
-func (r NetworksApiGetNetworkClientsRequest) PskGroup(pskGroup string) NetworksApiGetNetworkClientsRequest {
+func (r NetworksAPIGetNetworkClientsRequest) PskGroup(pskGroup string) NetworksAPIGetNetworkClientsRequest {
 	r.pskGroup = &pskGroup
 	return r
 }
 
 // Filters clients based on a partial or full match for the description field.
-func (r NetworksApiGetNetworkClientsRequest) Description(description string) NetworksApiGetNetworkClientsRequest {
+func (r NetworksAPIGetNetworkClientsRequest) Description(description string) NetworksAPIGetNetworkClientsRequest {
 	r.description = &description
 	return r
 }
 
 // Filters clients based on the full match for the VLAN field.
-func (r NetworksApiGetNetworkClientsRequest) Vlan(vlan string) NetworksApiGetNetworkClientsRequest {
+func (r NetworksAPIGetNetworkClientsRequest) Vlan(vlan string) NetworksAPIGetNetworkClientsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filters clients based on recent connection type. Can be one of &#39;Wired&#39; or &#39;Wireless&#39;.
-func (r NetworksApiGetNetworkClientsRequest) RecentDeviceConnections(recentDeviceConnections []string) NetworksApiGetNetworkClientsRequest {
+func (r NetworksAPIGetNetworkClientsRequest) RecentDeviceConnections(recentDeviceConnections []string) NetworksAPIGetNetworkClientsRequest {
 	r.recentDeviceConnections = &recentDeviceConnections
 	return r
 }
 
-func (r NetworksApiGetNetworkClientsRequest) Execute() (*GetNetworkClients200Response, *http.Response, error) {
+func (r NetworksAPIGetNetworkClientsRequest) Execute() ([]GetNetworkClients200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkClientsExecute(r)
 }
 
@@ -4522,10 +4522,10 @@ List the clients that have used this network in the timespan
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkClientsRequest
+ @return NetworksAPIGetNetworkClientsRequest
 */
-func (a *NetworksApiService) GetNetworkClients(ctx context.Context, networkId string) NetworksApiGetNetworkClientsRequest {
-	return NetworksApiGetNetworkClientsRequest{
+func (a *NetworksAPIService) GetNetworkClients(ctx context.Context, networkId string) NetworksAPIGetNetworkClientsRequest {
+	return NetworksAPIGetNetworkClientsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4533,16 +4533,16 @@ func (a *NetworksApiService) GetNetworkClients(ctx context.Context, networkId st
 }
 
 // Execute executes the request
-//  @return GetNetworkClients200Response
-func (a *NetworksApiService) GetNetworkClientsExecute(r NetworksApiGetNetworkClientsRequest) (*GetNetworkClients200Response, *http.Response, error) {
+//  @return []GetNetworkClients200ResponseInner
+func (a *NetworksAPIService) GetNetworkClientsExecute(r NetworksAPIGetNetworkClientsRequest) ([]GetNetworkClients200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetNetworkClients200Response
+		localVarReturnValue  []GetNetworkClients200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkClients")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkClients")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4683,9 +4683,9 @@ func (a *NetworksApiService) GetNetworkClientsExecute(r NetworksApiGetNetworkCli
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkClientsApplicationUsageRequest struct {
+type NetworksAPIGetNetworkClientsApplicationUsageRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	clients *string
 	ssidNumber *int32
@@ -4698,54 +4698,54 @@ type NetworksApiGetNetworkClientsApplicationUsageRequest struct {
 }
 
 // A list of client keys, MACs or IPs separated by comma.
-func (r NetworksApiGetNetworkClientsApplicationUsageRequest) Clients(clients string) NetworksApiGetNetworkClientsApplicationUsageRequest {
+func (r NetworksAPIGetNetworkClientsApplicationUsageRequest) Clients(clients string) NetworksAPIGetNetworkClientsApplicationUsageRequest {
 	r.clients = &clients
 	return r
 }
 
 // An SSID number to include. If not specified, eveusage histories application usagents for all SSIDs will be returned.
-func (r NetworksApiGetNetworkClientsApplicationUsageRequest) SsidNumber(ssidNumber int32) NetworksApiGetNetworkClientsApplicationUsageRequest {
+func (r NetworksAPIGetNetworkClientsApplicationUsageRequest) SsidNumber(ssidNumber int32) NetworksAPIGetNetworkClientsApplicationUsageRequest {
 	r.ssidNumber = &ssidNumber
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000.
-func (r NetworksApiGetNetworkClientsApplicationUsageRequest) PerPage(perPage int32) NetworksApiGetNetworkClientsApplicationUsageRequest {
+func (r NetworksAPIGetNetworkClientsApplicationUsageRequest) PerPage(perPage int32) NetworksAPIGetNetworkClientsApplicationUsageRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r NetworksApiGetNetworkClientsApplicationUsageRequest) StartingAfter(startingAfter string) NetworksApiGetNetworkClientsApplicationUsageRequest {
+func (r NetworksAPIGetNetworkClientsApplicationUsageRequest) StartingAfter(startingAfter string) NetworksAPIGetNetworkClientsApplicationUsageRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r NetworksApiGetNetworkClientsApplicationUsageRequest) EndingBefore(endingBefore string) NetworksApiGetNetworkClientsApplicationUsageRequest {
+func (r NetworksAPIGetNetworkClientsApplicationUsageRequest) EndingBefore(endingBefore string) NetworksAPIGetNetworkClientsApplicationUsageRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r NetworksApiGetNetworkClientsApplicationUsageRequest) T0(t0 string) NetworksApiGetNetworkClientsApplicationUsageRequest {
+func (r NetworksAPIGetNetworkClientsApplicationUsageRequest) T0(t0 string) NetworksAPIGetNetworkClientsApplicationUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r NetworksApiGetNetworkClientsApplicationUsageRequest) T1(t1 string) NetworksApiGetNetworkClientsApplicationUsageRequest {
+func (r NetworksAPIGetNetworkClientsApplicationUsageRequest) T1(t1 string) NetworksAPIGetNetworkClientsApplicationUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r NetworksApiGetNetworkClientsApplicationUsageRequest) Timespan(timespan float32) NetworksApiGetNetworkClientsApplicationUsageRequest {
+func (r NetworksAPIGetNetworkClientsApplicationUsageRequest) Timespan(timespan float32) NetworksAPIGetNetworkClientsApplicationUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r NetworksApiGetNetworkClientsApplicationUsageRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkClientsApplicationUsageRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientsApplicationUsageExecute(r)
 }
 
@@ -4756,10 +4756,10 @@ Return the application usage data for clients. Usage data is in kilobytes. Clien
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkClientsApplicationUsageRequest
+ @return NetworksAPIGetNetworkClientsApplicationUsageRequest
 */
-func (a *NetworksApiService) GetNetworkClientsApplicationUsage(ctx context.Context, networkId string) NetworksApiGetNetworkClientsApplicationUsageRequest {
-	return NetworksApiGetNetworkClientsApplicationUsageRequest{
+func (a *NetworksAPIService) GetNetworkClientsApplicationUsage(ctx context.Context, networkId string) NetworksAPIGetNetworkClientsApplicationUsageRequest {
+	return NetworksAPIGetNetworkClientsApplicationUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4768,7 +4768,7 @@ func (a *NetworksApiService) GetNetworkClientsApplicationUsage(ctx context.Conte
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *NetworksApiService) GetNetworkClientsApplicationUsageExecute(r NetworksApiGetNetworkClientsApplicationUsageRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkClientsApplicationUsageExecute(r NetworksAPIGetNetworkClientsApplicationUsageRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4776,7 +4776,7 @@ func (a *NetworksApiService) GetNetworkClientsApplicationUsageExecute(r Networks
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkClientsApplicationUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkClientsApplicationUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4881,9 +4881,9 @@ func (a *NetworksApiService) GetNetworkClientsApplicationUsageExecute(r Networks
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkClientsBandwidthUsageHistoryRequest struct {
+type NetworksAPIGetNetworkClientsBandwidthUsageHistoryRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -4894,42 +4894,42 @@ type NetworksApiGetNetworkClientsBandwidthUsageHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 30 days from today.
-func (r NetworksApiGetNetworkClientsBandwidthUsageHistoryRequest) T0(t0 string) NetworksApiGetNetworkClientsBandwidthUsageHistoryRequest {
+func (r NetworksAPIGetNetworkClientsBandwidthUsageHistoryRequest) T0(t0 string) NetworksAPIGetNetworkClientsBandwidthUsageHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r NetworksApiGetNetworkClientsBandwidthUsageHistoryRequest) T1(t1 string) NetworksApiGetNetworkClientsBandwidthUsageHistoryRequest {
+func (r NetworksAPIGetNetworkClientsBandwidthUsageHistoryRequest) T1(t1 string) NetworksAPIGetNetworkClientsBandwidthUsageHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r NetworksApiGetNetworkClientsBandwidthUsageHistoryRequest) Timespan(timespan float32) NetworksApiGetNetworkClientsBandwidthUsageHistoryRequest {
+func (r NetworksAPIGetNetworkClientsBandwidthUsageHistoryRequest) Timespan(timespan float32) NetworksAPIGetNetworkClientsBandwidthUsageHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r NetworksApiGetNetworkClientsBandwidthUsageHistoryRequest) PerPage(perPage int32) NetworksApiGetNetworkClientsBandwidthUsageHistoryRequest {
+func (r NetworksAPIGetNetworkClientsBandwidthUsageHistoryRequest) PerPage(perPage int32) NetworksAPIGetNetworkClientsBandwidthUsageHistoryRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r NetworksApiGetNetworkClientsBandwidthUsageHistoryRequest) StartingAfter(startingAfter string) NetworksApiGetNetworkClientsBandwidthUsageHistoryRequest {
+func (r NetworksAPIGetNetworkClientsBandwidthUsageHistoryRequest) StartingAfter(startingAfter string) NetworksAPIGetNetworkClientsBandwidthUsageHistoryRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r NetworksApiGetNetworkClientsBandwidthUsageHistoryRequest) EndingBefore(endingBefore string) NetworksApiGetNetworkClientsBandwidthUsageHistoryRequest {
+func (r NetworksAPIGetNetworkClientsBandwidthUsageHistoryRequest) EndingBefore(endingBefore string) NetworksAPIGetNetworkClientsBandwidthUsageHistoryRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r NetworksApiGetNetworkClientsBandwidthUsageHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkClientsBandwidthUsageHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientsBandwidthUsageHistoryExecute(r)
 }
 
@@ -4940,10 +4940,10 @@ Returns a timeseries of total traffic consumption rates for all clients on a net
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkClientsBandwidthUsageHistoryRequest
+ @return NetworksAPIGetNetworkClientsBandwidthUsageHistoryRequest
 */
-func (a *NetworksApiService) GetNetworkClientsBandwidthUsageHistory(ctx context.Context, networkId string) NetworksApiGetNetworkClientsBandwidthUsageHistoryRequest {
-	return NetworksApiGetNetworkClientsBandwidthUsageHistoryRequest{
+func (a *NetworksAPIService) GetNetworkClientsBandwidthUsageHistory(ctx context.Context, networkId string) NetworksAPIGetNetworkClientsBandwidthUsageHistoryRequest {
+	return NetworksAPIGetNetworkClientsBandwidthUsageHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4952,7 +4952,7 @@ func (a *NetworksApiService) GetNetworkClientsBandwidthUsageHistory(ctx context.
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *NetworksApiService) GetNetworkClientsBandwidthUsageHistoryExecute(r NetworksApiGetNetworkClientsBandwidthUsageHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkClientsBandwidthUsageHistoryExecute(r NetworksAPIGetNetworkClientsBandwidthUsageHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4960,7 +4960,7 @@ func (a *NetworksApiService) GetNetworkClientsBandwidthUsageHistoryExecute(r Net
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkClientsBandwidthUsageHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkClientsBandwidthUsageHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5058,9 +5058,9 @@ func (a *NetworksApiService) GetNetworkClientsBandwidthUsageHistoryExecute(r Net
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkClientsOverviewRequest struct {
+type NetworksAPIGetNetworkClientsOverviewRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -5069,30 +5069,30 @@ type NetworksApiGetNetworkClientsOverviewRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r NetworksApiGetNetworkClientsOverviewRequest) T0(t0 string) NetworksApiGetNetworkClientsOverviewRequest {
+func (r NetworksAPIGetNetworkClientsOverviewRequest) T0(t0 string) NetworksAPIGetNetworkClientsOverviewRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r NetworksApiGetNetworkClientsOverviewRequest) T1(t1 string) NetworksApiGetNetworkClientsOverviewRequest {
+func (r NetworksAPIGetNetworkClientsOverviewRequest) T1(t1 string) NetworksAPIGetNetworkClientsOverviewRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r NetworksApiGetNetworkClientsOverviewRequest) Timespan(timespan float32) NetworksApiGetNetworkClientsOverviewRequest {
+func (r NetworksAPIGetNetworkClientsOverviewRequest) Timespan(timespan float32) NetworksAPIGetNetworkClientsOverviewRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 7200, 86400, 604800, 2592000. The default is 604800.
-func (r NetworksApiGetNetworkClientsOverviewRequest) Resolution(resolution int32) NetworksApiGetNetworkClientsOverviewRequest {
+func (r NetworksAPIGetNetworkClientsOverviewRequest) Resolution(resolution int32) NetworksAPIGetNetworkClientsOverviewRequest {
 	r.resolution = &resolution
 	return r
 }
 
-func (r NetworksApiGetNetworkClientsOverviewRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkClientsOverviewRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientsOverviewExecute(r)
 }
 
@@ -5103,10 +5103,10 @@ Return overview statistics for network clients
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkClientsOverviewRequest
+ @return NetworksAPIGetNetworkClientsOverviewRequest
 */
-func (a *NetworksApiService) GetNetworkClientsOverview(ctx context.Context, networkId string) NetworksApiGetNetworkClientsOverviewRequest {
-	return NetworksApiGetNetworkClientsOverviewRequest{
+func (a *NetworksAPIService) GetNetworkClientsOverview(ctx context.Context, networkId string) NetworksAPIGetNetworkClientsOverviewRequest {
+	return NetworksAPIGetNetworkClientsOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5115,7 +5115,7 @@ func (a *NetworksApiService) GetNetworkClientsOverview(ctx context.Context, netw
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) GetNetworkClientsOverviewExecute(r NetworksApiGetNetworkClientsOverviewRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkClientsOverviewExecute(r NetworksAPIGetNetworkClientsOverviewRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5123,7 +5123,7 @@ func (a *NetworksApiService) GetNetworkClientsOverviewExecute(r NetworksApiGetNe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkClientsOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkClientsOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5215,9 +5215,9 @@ func (a *NetworksApiService) GetNetworkClientsOverviewExecute(r NetworksApiGetNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkClientsUsageHistoriesRequest struct {
+type NetworksAPIGetNetworkClientsUsageHistoriesRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	clients *string
 	ssidNumber *int32
@@ -5230,54 +5230,54 @@ type NetworksApiGetNetworkClientsUsageHistoriesRequest struct {
 }
 
 // A list of client keys, MACs or IPs separated by comma.
-func (r NetworksApiGetNetworkClientsUsageHistoriesRequest) Clients(clients string) NetworksApiGetNetworkClientsUsageHistoriesRequest {
+func (r NetworksAPIGetNetworkClientsUsageHistoriesRequest) Clients(clients string) NetworksAPIGetNetworkClientsUsageHistoriesRequest {
 	r.clients = &clients
 	return r
 }
 
 // An SSID number to include. If not specified, events for all SSIDs will be returned.
-func (r NetworksApiGetNetworkClientsUsageHistoriesRequest) SsidNumber(ssidNumber int32) NetworksApiGetNetworkClientsUsageHistoriesRequest {
+func (r NetworksAPIGetNetworkClientsUsageHistoriesRequest) SsidNumber(ssidNumber int32) NetworksAPIGetNetworkClientsUsageHistoriesRequest {
 	r.ssidNumber = &ssidNumber
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000.
-func (r NetworksApiGetNetworkClientsUsageHistoriesRequest) PerPage(perPage int32) NetworksApiGetNetworkClientsUsageHistoriesRequest {
+func (r NetworksAPIGetNetworkClientsUsageHistoriesRequest) PerPage(perPage int32) NetworksAPIGetNetworkClientsUsageHistoriesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r NetworksApiGetNetworkClientsUsageHistoriesRequest) StartingAfter(startingAfter string) NetworksApiGetNetworkClientsUsageHistoriesRequest {
+func (r NetworksAPIGetNetworkClientsUsageHistoriesRequest) StartingAfter(startingAfter string) NetworksAPIGetNetworkClientsUsageHistoriesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r NetworksApiGetNetworkClientsUsageHistoriesRequest) EndingBefore(endingBefore string) NetworksApiGetNetworkClientsUsageHistoriesRequest {
+func (r NetworksAPIGetNetworkClientsUsageHistoriesRequest) EndingBefore(endingBefore string) NetworksAPIGetNetworkClientsUsageHistoriesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r NetworksApiGetNetworkClientsUsageHistoriesRequest) T0(t0 string) NetworksApiGetNetworkClientsUsageHistoriesRequest {
+func (r NetworksAPIGetNetworkClientsUsageHistoriesRequest) T0(t0 string) NetworksAPIGetNetworkClientsUsageHistoriesRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r NetworksApiGetNetworkClientsUsageHistoriesRequest) T1(t1 string) NetworksApiGetNetworkClientsUsageHistoriesRequest {
+func (r NetworksAPIGetNetworkClientsUsageHistoriesRequest) T1(t1 string) NetworksAPIGetNetworkClientsUsageHistoriesRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r NetworksApiGetNetworkClientsUsageHistoriesRequest) Timespan(timespan float32) NetworksApiGetNetworkClientsUsageHistoriesRequest {
+func (r NetworksAPIGetNetworkClientsUsageHistoriesRequest) Timespan(timespan float32) NetworksAPIGetNetworkClientsUsageHistoriesRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r NetworksApiGetNetworkClientsUsageHistoriesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkClientsUsageHistoriesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientsUsageHistoriesExecute(r)
 }
 
@@ -5288,10 +5288,10 @@ Return the usage histories for clients. Usage data is in kilobytes. Clients can 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkClientsUsageHistoriesRequest
+ @return NetworksAPIGetNetworkClientsUsageHistoriesRequest
 */
-func (a *NetworksApiService) GetNetworkClientsUsageHistories(ctx context.Context, networkId string) NetworksApiGetNetworkClientsUsageHistoriesRequest {
-	return NetworksApiGetNetworkClientsUsageHistoriesRequest{
+func (a *NetworksAPIService) GetNetworkClientsUsageHistories(ctx context.Context, networkId string) NetworksAPIGetNetworkClientsUsageHistoriesRequest {
+	return NetworksAPIGetNetworkClientsUsageHistoriesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5300,7 +5300,7 @@ func (a *NetworksApiService) GetNetworkClientsUsageHistories(ctx context.Context
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *NetworksApiService) GetNetworkClientsUsageHistoriesExecute(r NetworksApiGetNetworkClientsUsageHistoriesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkClientsUsageHistoriesExecute(r NetworksAPIGetNetworkClientsUsageHistoriesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5308,7 +5308,7 @@ func (a *NetworksApiService) GetNetworkClientsUsageHistoriesExecute(r NetworksAp
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkClientsUsageHistories")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkClientsUsageHistories")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5413,13 +5413,13 @@ func (a *NetworksApiService) GetNetworkClientsUsageHistoriesExecute(r NetworksAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkDevicesRequest struct {
+type NetworksAPIGetNetworkDevicesRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 }
 
-func (r NetworksApiGetNetworkDevicesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkDevicesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkDevicesExecute(r)
 }
 
@@ -5430,10 +5430,10 @@ List the devices in a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkDevicesRequest
+ @return NetworksAPIGetNetworkDevicesRequest
 */
-func (a *NetworksApiService) GetNetworkDevices(ctx context.Context, networkId string) NetworksApiGetNetworkDevicesRequest {
-	return NetworksApiGetNetworkDevicesRequest{
+func (a *NetworksAPIService) GetNetworkDevices(ctx context.Context, networkId string) NetworksAPIGetNetworkDevicesRequest {
+	return NetworksAPIGetNetworkDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5442,7 +5442,7 @@ func (a *NetworksApiService) GetNetworkDevices(ctx context.Context, networkId st
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *NetworksApiService) GetNetworkDevicesExecute(r NetworksApiGetNetworkDevicesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkDevicesExecute(r NetworksAPIGetNetworkDevicesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5450,7 +5450,7 @@ func (a *NetworksApiService) GetNetworkDevicesExecute(r NetworksApiGetNetworkDev
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkDevices")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5530,9 +5530,9 @@ func (a *NetworksApiService) GetNetworkDevicesExecute(r NetworksApiGetNetworkDev
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkEventsRequest struct {
+type NetworksAPIGetNetworkEventsRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	productType *string
 	includedEventTypes *[]string
@@ -5551,90 +5551,90 @@ type NetworksApiGetNetworkEventsRequest struct {
 }
 
 // The product type to fetch events for. This parameter is required for networks with multiple device types. Valid types are wireless, appliance, switch, systemsManager, camera, cellularGateway, and cloudGateway
-func (r NetworksApiGetNetworkEventsRequest) ProductType(productType string) NetworksApiGetNetworkEventsRequest {
+func (r NetworksAPIGetNetworkEventsRequest) ProductType(productType string) NetworksAPIGetNetworkEventsRequest {
 	r.productType = &productType
 	return r
 }
 
 // A list of event types. The returned events will be filtered to only include events with these types.
-func (r NetworksApiGetNetworkEventsRequest) IncludedEventTypes(includedEventTypes []string) NetworksApiGetNetworkEventsRequest {
+func (r NetworksAPIGetNetworkEventsRequest) IncludedEventTypes(includedEventTypes []string) NetworksAPIGetNetworkEventsRequest {
 	r.includedEventTypes = &includedEventTypes
 	return r
 }
 
 // A list of event types. The returned events will be filtered to exclude events with these types.
-func (r NetworksApiGetNetworkEventsRequest) ExcludedEventTypes(excludedEventTypes []string) NetworksApiGetNetworkEventsRequest {
+func (r NetworksAPIGetNetworkEventsRequest) ExcludedEventTypes(excludedEventTypes []string) NetworksAPIGetNetworkEventsRequest {
 	r.excludedEventTypes = &excludedEventTypes
 	return r
 }
 
 // The MAC address of the Meraki device which the list of events will be filtered with
-func (r NetworksApiGetNetworkEventsRequest) DeviceMac(deviceMac string) NetworksApiGetNetworkEventsRequest {
+func (r NetworksAPIGetNetworkEventsRequest) DeviceMac(deviceMac string) NetworksAPIGetNetworkEventsRequest {
 	r.deviceMac = &deviceMac
 	return r
 }
 
 // The serial of the Meraki device which the list of events will be filtered with
-func (r NetworksApiGetNetworkEventsRequest) DeviceSerial(deviceSerial string) NetworksApiGetNetworkEventsRequest {
+func (r NetworksAPIGetNetworkEventsRequest) DeviceSerial(deviceSerial string) NetworksAPIGetNetworkEventsRequest {
 	r.deviceSerial = &deviceSerial
 	return r
 }
 
 // The name of the Meraki device which the list of events will be filtered with
-func (r NetworksApiGetNetworkEventsRequest) DeviceName(deviceName string) NetworksApiGetNetworkEventsRequest {
+func (r NetworksAPIGetNetworkEventsRequest) DeviceName(deviceName string) NetworksAPIGetNetworkEventsRequest {
 	r.deviceName = &deviceName
 	return r
 }
 
 // The IP of the client which the list of events will be filtered with. Only supported for track-by-IP networks.
-func (r NetworksApiGetNetworkEventsRequest) ClientIp(clientIp string) NetworksApiGetNetworkEventsRequest {
+func (r NetworksAPIGetNetworkEventsRequest) ClientIp(clientIp string) NetworksAPIGetNetworkEventsRequest {
 	r.clientIp = &clientIp
 	return r
 }
 
 // The MAC address of the client which the list of events will be filtered with. Only supported for track-by-MAC networks.
-func (r NetworksApiGetNetworkEventsRequest) ClientMac(clientMac string) NetworksApiGetNetworkEventsRequest {
+func (r NetworksAPIGetNetworkEventsRequest) ClientMac(clientMac string) NetworksAPIGetNetworkEventsRequest {
 	r.clientMac = &clientMac
 	return r
 }
 
 // The name, or partial name, of the client which the list of events will be filtered with
-func (r NetworksApiGetNetworkEventsRequest) ClientName(clientName string) NetworksApiGetNetworkEventsRequest {
+func (r NetworksAPIGetNetworkEventsRequest) ClientName(clientName string) NetworksAPIGetNetworkEventsRequest {
 	r.clientName = &clientName
 	return r
 }
 
 // The MAC address of the Systems Manager device which the list of events will be filtered with
-func (r NetworksApiGetNetworkEventsRequest) SmDeviceMac(smDeviceMac string) NetworksApiGetNetworkEventsRequest {
+func (r NetworksAPIGetNetworkEventsRequest) SmDeviceMac(smDeviceMac string) NetworksAPIGetNetworkEventsRequest {
 	r.smDeviceMac = &smDeviceMac
 	return r
 }
 
 // The name of the Systems Manager device which the list of events will be filtered with
-func (r NetworksApiGetNetworkEventsRequest) SmDeviceName(smDeviceName string) NetworksApiGetNetworkEventsRequest {
+func (r NetworksAPIGetNetworkEventsRequest) SmDeviceName(smDeviceName string) NetworksAPIGetNetworkEventsRequest {
 	r.smDeviceName = &smDeviceName
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 10.
-func (r NetworksApiGetNetworkEventsRequest) PerPage(perPage int32) NetworksApiGetNetworkEventsRequest {
+func (r NetworksAPIGetNetworkEventsRequest) PerPage(perPage int32) NetworksAPIGetNetworkEventsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r NetworksApiGetNetworkEventsRequest) StartingAfter(startingAfter string) NetworksApiGetNetworkEventsRequest {
+func (r NetworksAPIGetNetworkEventsRequest) StartingAfter(startingAfter string) NetworksAPIGetNetworkEventsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r NetworksApiGetNetworkEventsRequest) EndingBefore(endingBefore string) NetworksApiGetNetworkEventsRequest {
+func (r NetworksAPIGetNetworkEventsRequest) EndingBefore(endingBefore string) NetworksAPIGetNetworkEventsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r NetworksApiGetNetworkEventsRequest) Execute() (*GetNetworkEvents200Response, *http.Response, error) {
+func (r NetworksAPIGetNetworkEventsRequest) Execute() (*GetNetworkEvents200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkEventsExecute(r)
 }
 
@@ -5645,10 +5645,10 @@ List the events for the network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkEventsRequest
+ @return NetworksAPIGetNetworkEventsRequest
 */
-func (a *NetworksApiService) GetNetworkEvents(ctx context.Context, networkId string) NetworksApiGetNetworkEventsRequest {
-	return NetworksApiGetNetworkEventsRequest{
+func (a *NetworksAPIService) GetNetworkEvents(ctx context.Context, networkId string) NetworksAPIGetNetworkEventsRequest {
+	return NetworksAPIGetNetworkEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5657,7 +5657,7 @@ func (a *NetworksApiService) GetNetworkEvents(ctx context.Context, networkId str
 
 // Execute executes the request
 //  @return GetNetworkEvents200Response
-func (a *NetworksApiService) GetNetworkEventsExecute(r NetworksApiGetNetworkEventsRequest) (*GetNetworkEvents200Response, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkEventsExecute(r NetworksAPIGetNetworkEventsRequest) (*GetNetworkEvents200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5665,7 +5665,7 @@ func (a *NetworksApiService) GetNetworkEventsExecute(r NetworksApiGetNetworkEven
 		localVarReturnValue  *GetNetworkEvents200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5803,13 +5803,13 @@ func (a *NetworksApiService) GetNetworkEventsExecute(r NetworksApiGetNetworkEven
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkEventsEventTypesRequest struct {
+type NetworksAPIGetNetworkEventsEventTypesRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 }
 
-func (r NetworksApiGetNetworkEventsEventTypesRequest) Execute() ([]GetNetworkEventsEventTypes200ResponseInner, *http.Response, error) {
+func (r NetworksAPIGetNetworkEventsEventTypesRequest) Execute() ([]GetNetworkEventsEventTypes200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkEventsEventTypesExecute(r)
 }
 
@@ -5820,10 +5820,10 @@ List the event type to human-readable description
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkEventsEventTypesRequest
+ @return NetworksAPIGetNetworkEventsEventTypesRequest
 */
-func (a *NetworksApiService) GetNetworkEventsEventTypes(ctx context.Context, networkId string) NetworksApiGetNetworkEventsEventTypesRequest {
-	return NetworksApiGetNetworkEventsEventTypesRequest{
+func (a *NetworksAPIService) GetNetworkEventsEventTypes(ctx context.Context, networkId string) NetworksAPIGetNetworkEventsEventTypesRequest {
+	return NetworksAPIGetNetworkEventsEventTypesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5832,7 +5832,7 @@ func (a *NetworksApiService) GetNetworkEventsEventTypes(ctx context.Context, net
 
 // Execute executes the request
 //  @return []GetNetworkEventsEventTypes200ResponseInner
-func (a *NetworksApiService) GetNetworkEventsEventTypesExecute(r NetworksApiGetNetworkEventsEventTypesRequest) ([]GetNetworkEventsEventTypes200ResponseInner, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkEventsEventTypesExecute(r NetworksAPIGetNetworkEventsEventTypesRequest) ([]GetNetworkEventsEventTypes200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5840,7 +5840,7 @@ func (a *NetworksApiService) GetNetworkEventsEventTypesExecute(r NetworksApiGetN
 		localVarReturnValue  []GetNetworkEventsEventTypes200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkEventsEventTypes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkEventsEventTypes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5920,13 +5920,13 @@ func (a *NetworksApiService) GetNetworkEventsEventTypesExecute(r NetworksApiGetN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkFirmwareUpgradesRequest struct {
+type NetworksAPIGetNetworkFirmwareUpgradesRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 }
 
-func (r NetworksApiGetNetworkFirmwareUpgradesRequest) Execute() (*GetNetworkFirmwareUpgrades200Response, *http.Response, error) {
+func (r NetworksAPIGetNetworkFirmwareUpgradesRequest) Execute() (*GetNetworkFirmwareUpgrades200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkFirmwareUpgradesExecute(r)
 }
 
@@ -5937,10 +5937,10 @@ Get firmware upgrade information for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkFirmwareUpgradesRequest
+ @return NetworksAPIGetNetworkFirmwareUpgradesRequest
 */
-func (a *NetworksApiService) GetNetworkFirmwareUpgrades(ctx context.Context, networkId string) NetworksApiGetNetworkFirmwareUpgradesRequest {
-	return NetworksApiGetNetworkFirmwareUpgradesRequest{
+func (a *NetworksAPIService) GetNetworkFirmwareUpgrades(ctx context.Context, networkId string) NetworksAPIGetNetworkFirmwareUpgradesRequest {
+	return NetworksAPIGetNetworkFirmwareUpgradesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5949,7 +5949,7 @@ func (a *NetworksApiService) GetNetworkFirmwareUpgrades(ctx context.Context, net
 
 // Execute executes the request
 //  @return GetNetworkFirmwareUpgrades200Response
-func (a *NetworksApiService) GetNetworkFirmwareUpgradesExecute(r NetworksApiGetNetworkFirmwareUpgradesRequest) (*GetNetworkFirmwareUpgrades200Response, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkFirmwareUpgradesExecute(r NetworksAPIGetNetworkFirmwareUpgradesRequest) (*GetNetworkFirmwareUpgrades200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5957,7 +5957,7 @@ func (a *NetworksApiService) GetNetworkFirmwareUpgradesExecute(r NetworksApiGetN
 		localVarReturnValue  *GetNetworkFirmwareUpgrades200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkFirmwareUpgrades")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkFirmwareUpgrades")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6037,13 +6037,13 @@ func (a *NetworksApiService) GetNetworkFirmwareUpgradesExecute(r NetworksApiGetN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkFirmwareUpgradesStagedEventsRequest struct {
+type NetworksAPIGetNetworkFirmwareUpgradesStagedEventsRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 }
 
-func (r NetworksApiGetNetworkFirmwareUpgradesStagedEventsRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (r NetworksAPIGetNetworkFirmwareUpgradesStagedEventsRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkFirmwareUpgradesStagedEventsExecute(r)
 }
 
@@ -6054,10 +6054,10 @@ Get the Staged Upgrade Event from a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkFirmwareUpgradesStagedEventsRequest
+ @return NetworksAPIGetNetworkFirmwareUpgradesStagedEventsRequest
 */
-func (a *NetworksApiService) GetNetworkFirmwareUpgradesStagedEvents(ctx context.Context, networkId string) NetworksApiGetNetworkFirmwareUpgradesStagedEventsRequest {
-	return NetworksApiGetNetworkFirmwareUpgradesStagedEventsRequest{
+func (a *NetworksAPIService) GetNetworkFirmwareUpgradesStagedEvents(ctx context.Context, networkId string) NetworksAPIGetNetworkFirmwareUpgradesStagedEventsRequest {
+	return NetworksAPIGetNetworkFirmwareUpgradesStagedEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6066,7 +6066,7 @@ func (a *NetworksApiService) GetNetworkFirmwareUpgradesStagedEvents(ctx context.
 
 // Execute executes the request
 //  @return GetNetworkFirmwareUpgradesStagedEvents200Response
-func (a *NetworksApiService) GetNetworkFirmwareUpgradesStagedEventsExecute(r NetworksApiGetNetworkFirmwareUpgradesStagedEventsRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkFirmwareUpgradesStagedEventsExecute(r NetworksAPIGetNetworkFirmwareUpgradesStagedEventsRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6074,7 +6074,7 @@ func (a *NetworksApiService) GetNetworkFirmwareUpgradesStagedEventsExecute(r Net
 		localVarReturnValue  *GetNetworkFirmwareUpgradesStagedEvents200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkFirmwareUpgradesStagedEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkFirmwareUpgradesStagedEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6154,14 +6154,14 @@ func (a *NetworksApiService) GetNetworkFirmwareUpgradesStagedEventsExecute(r Net
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkFirmwareUpgradesStagedGroupRequest struct {
+type NetworksAPIGetNetworkFirmwareUpgradesStagedGroupRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	groupId string
 }
 
-func (r NetworksApiGetNetworkFirmwareUpgradesStagedGroupRequest) Execute() (*GetNetworkFirmwareUpgradesStagedGroups200ResponseInner, *http.Response, error) {
+func (r NetworksAPIGetNetworkFirmwareUpgradesStagedGroupRequest) Execute() (*GetNetworkFirmwareUpgradesStagedGroups200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkFirmwareUpgradesStagedGroupExecute(r)
 }
 
@@ -6173,10 +6173,10 @@ Get a Staged Upgrade Group from a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param groupId Group ID
- @return NetworksApiGetNetworkFirmwareUpgradesStagedGroupRequest
+ @return NetworksAPIGetNetworkFirmwareUpgradesStagedGroupRequest
 */
-func (a *NetworksApiService) GetNetworkFirmwareUpgradesStagedGroup(ctx context.Context, networkId string, groupId string) NetworksApiGetNetworkFirmwareUpgradesStagedGroupRequest {
-	return NetworksApiGetNetworkFirmwareUpgradesStagedGroupRequest{
+func (a *NetworksAPIService) GetNetworkFirmwareUpgradesStagedGroup(ctx context.Context, networkId string, groupId string) NetworksAPIGetNetworkFirmwareUpgradesStagedGroupRequest {
+	return NetworksAPIGetNetworkFirmwareUpgradesStagedGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6186,7 +6186,7 @@ func (a *NetworksApiService) GetNetworkFirmwareUpgradesStagedGroup(ctx context.C
 
 // Execute executes the request
 //  @return GetNetworkFirmwareUpgradesStagedGroups200ResponseInner
-func (a *NetworksApiService) GetNetworkFirmwareUpgradesStagedGroupExecute(r NetworksApiGetNetworkFirmwareUpgradesStagedGroupRequest) (*GetNetworkFirmwareUpgradesStagedGroups200ResponseInner, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkFirmwareUpgradesStagedGroupExecute(r NetworksAPIGetNetworkFirmwareUpgradesStagedGroupRequest) (*GetNetworkFirmwareUpgradesStagedGroups200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6194,7 +6194,7 @@ func (a *NetworksApiService) GetNetworkFirmwareUpgradesStagedGroupExecute(r Netw
 		localVarReturnValue  *GetNetworkFirmwareUpgradesStagedGroups200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkFirmwareUpgradesStagedGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkFirmwareUpgradesStagedGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6275,13 +6275,13 @@ func (a *NetworksApiService) GetNetworkFirmwareUpgradesStagedGroupExecute(r Netw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkFirmwareUpgradesStagedGroupsRequest struct {
+type NetworksAPIGetNetworkFirmwareUpgradesStagedGroupsRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 }
 
-func (r NetworksApiGetNetworkFirmwareUpgradesStagedGroupsRequest) Execute() ([]GetNetworkFirmwareUpgradesStagedGroups200ResponseInner, *http.Response, error) {
+func (r NetworksAPIGetNetworkFirmwareUpgradesStagedGroupsRequest) Execute() ([]GetNetworkFirmwareUpgradesStagedGroups200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkFirmwareUpgradesStagedGroupsExecute(r)
 }
 
@@ -6292,10 +6292,10 @@ List of Staged Upgrade Groups in a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkFirmwareUpgradesStagedGroupsRequest
+ @return NetworksAPIGetNetworkFirmwareUpgradesStagedGroupsRequest
 */
-func (a *NetworksApiService) GetNetworkFirmwareUpgradesStagedGroups(ctx context.Context, networkId string) NetworksApiGetNetworkFirmwareUpgradesStagedGroupsRequest {
-	return NetworksApiGetNetworkFirmwareUpgradesStagedGroupsRequest{
+func (a *NetworksAPIService) GetNetworkFirmwareUpgradesStagedGroups(ctx context.Context, networkId string) NetworksAPIGetNetworkFirmwareUpgradesStagedGroupsRequest {
+	return NetworksAPIGetNetworkFirmwareUpgradesStagedGroupsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6304,7 +6304,7 @@ func (a *NetworksApiService) GetNetworkFirmwareUpgradesStagedGroups(ctx context.
 
 // Execute executes the request
 //  @return []GetNetworkFirmwareUpgradesStagedGroups200ResponseInner
-func (a *NetworksApiService) GetNetworkFirmwareUpgradesStagedGroupsExecute(r NetworksApiGetNetworkFirmwareUpgradesStagedGroupsRequest) ([]GetNetworkFirmwareUpgradesStagedGroups200ResponseInner, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkFirmwareUpgradesStagedGroupsExecute(r NetworksAPIGetNetworkFirmwareUpgradesStagedGroupsRequest) ([]GetNetworkFirmwareUpgradesStagedGroups200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6312,7 +6312,7 @@ func (a *NetworksApiService) GetNetworkFirmwareUpgradesStagedGroupsExecute(r Net
 		localVarReturnValue  []GetNetworkFirmwareUpgradesStagedGroups200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkFirmwareUpgradesStagedGroups")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkFirmwareUpgradesStagedGroups")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6392,13 +6392,13 @@ func (a *NetworksApiService) GetNetworkFirmwareUpgradesStagedGroupsExecute(r Net
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkFirmwareUpgradesStagedStagesRequest struct {
+type NetworksAPIGetNetworkFirmwareUpgradesStagedStagesRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 }
 
-func (r NetworksApiGetNetworkFirmwareUpgradesStagedStagesRequest) Execute() ([]GetNetworkFirmwareUpgradesStagedStages200ResponseInner, *http.Response, error) {
+func (r NetworksAPIGetNetworkFirmwareUpgradesStagedStagesRequest) Execute() ([]GetNetworkFirmwareUpgradesStagedStages200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkFirmwareUpgradesStagedStagesExecute(r)
 }
 
@@ -6409,10 +6409,10 @@ Order of Staged Upgrade Groups in a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkFirmwareUpgradesStagedStagesRequest
+ @return NetworksAPIGetNetworkFirmwareUpgradesStagedStagesRequest
 */
-func (a *NetworksApiService) GetNetworkFirmwareUpgradesStagedStages(ctx context.Context, networkId string) NetworksApiGetNetworkFirmwareUpgradesStagedStagesRequest {
-	return NetworksApiGetNetworkFirmwareUpgradesStagedStagesRequest{
+func (a *NetworksAPIService) GetNetworkFirmwareUpgradesStagedStages(ctx context.Context, networkId string) NetworksAPIGetNetworkFirmwareUpgradesStagedStagesRequest {
+	return NetworksAPIGetNetworkFirmwareUpgradesStagedStagesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6421,7 +6421,7 @@ func (a *NetworksApiService) GetNetworkFirmwareUpgradesStagedStages(ctx context.
 
 // Execute executes the request
 //  @return []GetNetworkFirmwareUpgradesStagedStages200ResponseInner
-func (a *NetworksApiService) GetNetworkFirmwareUpgradesStagedStagesExecute(r NetworksApiGetNetworkFirmwareUpgradesStagedStagesRequest) ([]GetNetworkFirmwareUpgradesStagedStages200ResponseInner, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkFirmwareUpgradesStagedStagesExecute(r NetworksAPIGetNetworkFirmwareUpgradesStagedStagesRequest) ([]GetNetworkFirmwareUpgradesStagedStages200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6429,7 +6429,7 @@ func (a *NetworksApiService) GetNetworkFirmwareUpgradesStagedStagesExecute(r Net
 		localVarReturnValue  []GetNetworkFirmwareUpgradesStagedStages200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkFirmwareUpgradesStagedStages")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkFirmwareUpgradesStagedStages")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6509,14 +6509,14 @@ func (a *NetworksApiService) GetNetworkFirmwareUpgradesStagedStagesExecute(r Net
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkFloorPlanRequest struct {
+type NetworksAPIGetNetworkFloorPlanRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	floorPlanId string
 }
 
-func (r NetworksApiGetNetworkFloorPlanRequest) Execute() (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
+func (r NetworksAPIGetNetworkFloorPlanRequest) Execute() (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkFloorPlanExecute(r)
 }
 
@@ -6528,10 +6528,10 @@ Find a floor plan by ID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param floorPlanId Floor plan ID
- @return NetworksApiGetNetworkFloorPlanRequest
+ @return NetworksAPIGetNetworkFloorPlanRequest
 */
-func (a *NetworksApiService) GetNetworkFloorPlan(ctx context.Context, networkId string, floorPlanId string) NetworksApiGetNetworkFloorPlanRequest {
-	return NetworksApiGetNetworkFloorPlanRequest{
+func (a *NetworksAPIService) GetNetworkFloorPlan(ctx context.Context, networkId string, floorPlanId string) NetworksAPIGetNetworkFloorPlanRequest {
+	return NetworksAPIGetNetworkFloorPlanRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6541,7 +6541,7 @@ func (a *NetworksApiService) GetNetworkFloorPlan(ctx context.Context, networkId 
 
 // Execute executes the request
 //  @return GetNetworkFloorPlans200ResponseInner
-func (a *NetworksApiService) GetNetworkFloorPlanExecute(r NetworksApiGetNetworkFloorPlanRequest) (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkFloorPlanExecute(r NetworksAPIGetNetworkFloorPlanRequest) (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6549,7 +6549,7 @@ func (a *NetworksApiService) GetNetworkFloorPlanExecute(r NetworksApiGetNetworkF
 		localVarReturnValue  *GetNetworkFloorPlans200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkFloorPlan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkFloorPlan")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6630,13 +6630,13 @@ func (a *NetworksApiService) GetNetworkFloorPlanExecute(r NetworksApiGetNetworkF
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkFloorPlansRequest struct {
+type NetworksAPIGetNetworkFloorPlansRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 }
 
-func (r NetworksApiGetNetworkFloorPlansRequest) Execute() ([]GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
+func (r NetworksAPIGetNetworkFloorPlansRequest) Execute() ([]GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkFloorPlansExecute(r)
 }
 
@@ -6647,10 +6647,10 @@ List the floor plans that belong to your network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkFloorPlansRequest
+ @return NetworksAPIGetNetworkFloorPlansRequest
 */
-func (a *NetworksApiService) GetNetworkFloorPlans(ctx context.Context, networkId string) NetworksApiGetNetworkFloorPlansRequest {
-	return NetworksApiGetNetworkFloorPlansRequest{
+func (a *NetworksAPIService) GetNetworkFloorPlans(ctx context.Context, networkId string) NetworksAPIGetNetworkFloorPlansRequest {
+	return NetworksAPIGetNetworkFloorPlansRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6659,7 +6659,7 @@ func (a *NetworksApiService) GetNetworkFloorPlans(ctx context.Context, networkId
 
 // Execute executes the request
 //  @return []GetNetworkFloorPlans200ResponseInner
-func (a *NetworksApiService) GetNetworkFloorPlansExecute(r NetworksApiGetNetworkFloorPlansRequest) ([]GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkFloorPlansExecute(r NetworksAPIGetNetworkFloorPlansRequest) ([]GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6667,7 +6667,7 @@ func (a *NetworksApiService) GetNetworkFloorPlansExecute(r NetworksApiGetNetwork
 		localVarReturnValue  []GetNetworkFloorPlans200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkFloorPlans")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkFloorPlans")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6747,13 +6747,13 @@ func (a *NetworksApiService) GetNetworkFloorPlansExecute(r NetworksApiGetNetwork
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkGroupPoliciesRequest struct {
+type NetworksAPIGetNetworkGroupPoliciesRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 }
 
-func (r NetworksApiGetNetworkGroupPoliciesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkGroupPoliciesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkGroupPoliciesExecute(r)
 }
 
@@ -6764,10 +6764,10 @@ List the group policies in a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkGroupPoliciesRequest
+ @return NetworksAPIGetNetworkGroupPoliciesRequest
 */
-func (a *NetworksApiService) GetNetworkGroupPolicies(ctx context.Context, networkId string) NetworksApiGetNetworkGroupPoliciesRequest {
-	return NetworksApiGetNetworkGroupPoliciesRequest{
+func (a *NetworksAPIService) GetNetworkGroupPolicies(ctx context.Context, networkId string) NetworksAPIGetNetworkGroupPoliciesRequest {
+	return NetworksAPIGetNetworkGroupPoliciesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6776,7 +6776,7 @@ func (a *NetworksApiService) GetNetworkGroupPolicies(ctx context.Context, networ
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *NetworksApiService) GetNetworkGroupPoliciesExecute(r NetworksApiGetNetworkGroupPoliciesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkGroupPoliciesExecute(r NetworksAPIGetNetworkGroupPoliciesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6784,7 +6784,7 @@ func (a *NetworksApiService) GetNetworkGroupPoliciesExecute(r NetworksApiGetNetw
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkGroupPolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkGroupPolicies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6864,14 +6864,14 @@ func (a *NetworksApiService) GetNetworkGroupPoliciesExecute(r NetworksApiGetNetw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkGroupPolicyRequest struct {
+type NetworksAPIGetNetworkGroupPolicyRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	groupPolicyId string
 }
 
-func (r NetworksApiGetNetworkGroupPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkGroupPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkGroupPolicyExecute(r)
 }
 
@@ -6883,10 +6883,10 @@ Display a group policy
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param groupPolicyId Group policy ID
- @return NetworksApiGetNetworkGroupPolicyRequest
+ @return NetworksAPIGetNetworkGroupPolicyRequest
 */
-func (a *NetworksApiService) GetNetworkGroupPolicy(ctx context.Context, networkId string, groupPolicyId string) NetworksApiGetNetworkGroupPolicyRequest {
-	return NetworksApiGetNetworkGroupPolicyRequest{
+func (a *NetworksAPIService) GetNetworkGroupPolicy(ctx context.Context, networkId string, groupPolicyId string) NetworksAPIGetNetworkGroupPolicyRequest {
+	return NetworksAPIGetNetworkGroupPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6896,7 +6896,7 @@ func (a *NetworksApiService) GetNetworkGroupPolicy(ctx context.Context, networkI
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) GetNetworkGroupPolicyExecute(r NetworksApiGetNetworkGroupPolicyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkGroupPolicyExecute(r NetworksAPIGetNetworkGroupPolicyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6904,7 +6904,7 @@ func (a *NetworksApiService) GetNetworkGroupPolicyExecute(r NetworksApiGetNetwor
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkGroupPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkGroupPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6985,13 +6985,13 @@ func (a *NetworksApiService) GetNetworkGroupPolicyExecute(r NetworksApiGetNetwor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkHealthAlertsRequest struct {
+type NetworksAPIGetNetworkHealthAlertsRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 }
 
-func (r NetworksApiGetNetworkHealthAlertsRequest) Execute() ([]GetNetworkHealthAlerts200ResponseInner, *http.Response, error) {
+func (r NetworksAPIGetNetworkHealthAlertsRequest) Execute() ([]GetNetworkHealthAlerts200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkHealthAlertsExecute(r)
 }
 
@@ -7002,10 +7002,10 @@ Return all global alerts on this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkHealthAlertsRequest
+ @return NetworksAPIGetNetworkHealthAlertsRequest
 */
-func (a *NetworksApiService) GetNetworkHealthAlerts(ctx context.Context, networkId string) NetworksApiGetNetworkHealthAlertsRequest {
-	return NetworksApiGetNetworkHealthAlertsRequest{
+func (a *NetworksAPIService) GetNetworkHealthAlerts(ctx context.Context, networkId string) NetworksAPIGetNetworkHealthAlertsRequest {
+	return NetworksAPIGetNetworkHealthAlertsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -7014,7 +7014,7 @@ func (a *NetworksApiService) GetNetworkHealthAlerts(ctx context.Context, network
 
 // Execute executes the request
 //  @return []GetNetworkHealthAlerts200ResponseInner
-func (a *NetworksApiService) GetNetworkHealthAlertsExecute(r NetworksApiGetNetworkHealthAlertsRequest) ([]GetNetworkHealthAlerts200ResponseInner, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkHealthAlertsExecute(r NetworksAPIGetNetworkHealthAlertsRequest) ([]GetNetworkHealthAlerts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7022,7 +7022,7 @@ func (a *NetworksApiService) GetNetworkHealthAlertsExecute(r NetworksApiGetNetwo
 		localVarReturnValue  []GetNetworkHealthAlerts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkHealthAlerts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkHealthAlerts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7102,14 +7102,14 @@ func (a *NetworksApiService) GetNetworkHealthAlertsExecute(r NetworksApiGetNetwo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkMerakiAuthUserRequest struct {
+type NetworksAPIGetNetworkMerakiAuthUserRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	merakiAuthUserId string
 }
 
-func (r NetworksApiGetNetworkMerakiAuthUserRequest) Execute() (*GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
+func (r NetworksAPIGetNetworkMerakiAuthUserRequest) Execute() (*GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkMerakiAuthUserExecute(r)
 }
 
@@ -7121,10 +7121,10 @@ Return the Meraki Auth splash guest, RADIUS, or client VPN user
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param merakiAuthUserId Meraki auth user ID
- @return NetworksApiGetNetworkMerakiAuthUserRequest
+ @return NetworksAPIGetNetworkMerakiAuthUserRequest
 */
-func (a *NetworksApiService) GetNetworkMerakiAuthUser(ctx context.Context, networkId string, merakiAuthUserId string) NetworksApiGetNetworkMerakiAuthUserRequest {
-	return NetworksApiGetNetworkMerakiAuthUserRequest{
+func (a *NetworksAPIService) GetNetworkMerakiAuthUser(ctx context.Context, networkId string, merakiAuthUserId string) NetworksAPIGetNetworkMerakiAuthUserRequest {
+	return NetworksAPIGetNetworkMerakiAuthUserRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -7134,7 +7134,7 @@ func (a *NetworksApiService) GetNetworkMerakiAuthUser(ctx context.Context, netwo
 
 // Execute executes the request
 //  @return GetNetworkMerakiAuthUsers200ResponseInner
-func (a *NetworksApiService) GetNetworkMerakiAuthUserExecute(r NetworksApiGetNetworkMerakiAuthUserRequest) (*GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkMerakiAuthUserExecute(r NetworksAPIGetNetworkMerakiAuthUserRequest) (*GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7142,7 +7142,7 @@ func (a *NetworksApiService) GetNetworkMerakiAuthUserExecute(r NetworksApiGetNet
 		localVarReturnValue  *GetNetworkMerakiAuthUsers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkMerakiAuthUser")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkMerakiAuthUser")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7223,13 +7223,13 @@ func (a *NetworksApiService) GetNetworkMerakiAuthUserExecute(r NetworksApiGetNet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkMerakiAuthUsersRequest struct {
+type NetworksAPIGetNetworkMerakiAuthUsersRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 }
 
-func (r NetworksApiGetNetworkMerakiAuthUsersRequest) Execute() ([]GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
+func (r NetworksAPIGetNetworkMerakiAuthUsersRequest) Execute() ([]GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkMerakiAuthUsersExecute(r)
 }
 
@@ -7240,10 +7240,10 @@ List the users configured under Meraki Authentication for a network (splash gues
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkMerakiAuthUsersRequest
+ @return NetworksAPIGetNetworkMerakiAuthUsersRequest
 */
-func (a *NetworksApiService) GetNetworkMerakiAuthUsers(ctx context.Context, networkId string) NetworksApiGetNetworkMerakiAuthUsersRequest {
-	return NetworksApiGetNetworkMerakiAuthUsersRequest{
+func (a *NetworksAPIService) GetNetworkMerakiAuthUsers(ctx context.Context, networkId string) NetworksAPIGetNetworkMerakiAuthUsersRequest {
+	return NetworksAPIGetNetworkMerakiAuthUsersRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -7252,7 +7252,7 @@ func (a *NetworksApiService) GetNetworkMerakiAuthUsers(ctx context.Context, netw
 
 // Execute executes the request
 //  @return []GetNetworkMerakiAuthUsers200ResponseInner
-func (a *NetworksApiService) GetNetworkMerakiAuthUsersExecute(r NetworksApiGetNetworkMerakiAuthUsersRequest) ([]GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkMerakiAuthUsersExecute(r NetworksAPIGetNetworkMerakiAuthUsersRequest) ([]GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7260,7 +7260,7 @@ func (a *NetworksApiService) GetNetworkMerakiAuthUsersExecute(r NetworksApiGetNe
 		localVarReturnValue  []GetNetworkMerakiAuthUsers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkMerakiAuthUsers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkMerakiAuthUsers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7340,14 +7340,14 @@ func (a *NetworksApiService) GetNetworkMerakiAuthUsersExecute(r NetworksApiGetNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkMqttBrokerRequest struct {
+type NetworksAPIGetNetworkMqttBrokerRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	mqttBrokerId string
 }
 
-func (r NetworksApiGetNetworkMqttBrokerRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkMqttBrokerRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkMqttBrokerExecute(r)
 }
 
@@ -7359,10 +7359,10 @@ Return an MQTT broker
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param mqttBrokerId Mqtt broker ID
- @return NetworksApiGetNetworkMqttBrokerRequest
+ @return NetworksAPIGetNetworkMqttBrokerRequest
 */
-func (a *NetworksApiService) GetNetworkMqttBroker(ctx context.Context, networkId string, mqttBrokerId string) NetworksApiGetNetworkMqttBrokerRequest {
-	return NetworksApiGetNetworkMqttBrokerRequest{
+func (a *NetworksAPIService) GetNetworkMqttBroker(ctx context.Context, networkId string, mqttBrokerId string) NetworksAPIGetNetworkMqttBrokerRequest {
+	return NetworksAPIGetNetworkMqttBrokerRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -7372,7 +7372,7 @@ func (a *NetworksApiService) GetNetworkMqttBroker(ctx context.Context, networkId
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) GetNetworkMqttBrokerExecute(r NetworksApiGetNetworkMqttBrokerRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkMqttBrokerExecute(r NetworksAPIGetNetworkMqttBrokerRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7380,7 +7380,7 @@ func (a *NetworksApiService) GetNetworkMqttBrokerExecute(r NetworksApiGetNetwork
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkMqttBroker")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkMqttBroker")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7461,13 +7461,13 @@ func (a *NetworksApiService) GetNetworkMqttBrokerExecute(r NetworksApiGetNetwork
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkMqttBrokersRequest struct {
+type NetworksAPIGetNetworkMqttBrokersRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 }
 
-func (r NetworksApiGetNetworkMqttBrokersRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkMqttBrokersRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkMqttBrokersExecute(r)
 }
 
@@ -7478,10 +7478,10 @@ List the MQTT brokers for this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkMqttBrokersRequest
+ @return NetworksAPIGetNetworkMqttBrokersRequest
 */
-func (a *NetworksApiService) GetNetworkMqttBrokers(ctx context.Context, networkId string) NetworksApiGetNetworkMqttBrokersRequest {
-	return NetworksApiGetNetworkMqttBrokersRequest{
+func (a *NetworksAPIService) GetNetworkMqttBrokers(ctx context.Context, networkId string) NetworksAPIGetNetworkMqttBrokersRequest {
+	return NetworksAPIGetNetworkMqttBrokersRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -7490,7 +7490,7 @@ func (a *NetworksApiService) GetNetworkMqttBrokers(ctx context.Context, networkI
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *NetworksApiService) GetNetworkMqttBrokersExecute(r NetworksApiGetNetworkMqttBrokersRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkMqttBrokersExecute(r NetworksAPIGetNetworkMqttBrokersRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7498,7 +7498,7 @@ func (a *NetworksApiService) GetNetworkMqttBrokersExecute(r NetworksApiGetNetwor
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkMqttBrokers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkMqttBrokers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7578,13 +7578,13 @@ func (a *NetworksApiService) GetNetworkMqttBrokersExecute(r NetworksApiGetNetwor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkNetflowRequest struct {
+type NetworksAPIGetNetworkNetflowRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 }
 
-func (r NetworksApiGetNetworkNetflowRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkNetflowRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkNetflowExecute(r)
 }
 
@@ -7595,10 +7595,10 @@ Return the NetFlow traffic reporting settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkNetflowRequest
+ @return NetworksAPIGetNetworkNetflowRequest
 */
-func (a *NetworksApiService) GetNetworkNetflow(ctx context.Context, networkId string) NetworksApiGetNetworkNetflowRequest {
-	return NetworksApiGetNetworkNetflowRequest{
+func (a *NetworksAPIService) GetNetworkNetflow(ctx context.Context, networkId string) NetworksAPIGetNetworkNetflowRequest {
+	return NetworksAPIGetNetworkNetflowRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -7607,7 +7607,7 @@ func (a *NetworksApiService) GetNetworkNetflow(ctx context.Context, networkId st
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) GetNetworkNetflowExecute(r NetworksApiGetNetworkNetflowRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkNetflowExecute(r NetworksAPIGetNetworkNetflowRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7615,7 +7615,7 @@ func (a *NetworksApiService) GetNetworkNetflowExecute(r NetworksApiGetNetworkNet
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkNetflow")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkNetflow")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7695,9 +7695,9 @@ func (a *NetworksApiService) GetNetworkNetflowExecute(r NetworksApiGetNetworkNet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkNetworkHealthChannelUtilizationRequest struct {
+type NetworksAPIGetNetworkNetworkHealthChannelUtilizationRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -7709,48 +7709,48 @@ type NetworksApiGetNetworkNetworkHealthChannelUtilizationRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r NetworksApiGetNetworkNetworkHealthChannelUtilizationRequest) T0(t0 string) NetworksApiGetNetworkNetworkHealthChannelUtilizationRequest {
+func (r NetworksAPIGetNetworkNetworkHealthChannelUtilizationRequest) T0(t0 string) NetworksAPIGetNetworkNetworkHealthChannelUtilizationRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r NetworksApiGetNetworkNetworkHealthChannelUtilizationRequest) T1(t1 string) NetworksApiGetNetworkNetworkHealthChannelUtilizationRequest {
+func (r NetworksAPIGetNetworkNetworkHealthChannelUtilizationRequest) T1(t1 string) NetworksAPIGetNetworkNetworkHealthChannelUtilizationRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r NetworksApiGetNetworkNetworkHealthChannelUtilizationRequest) Timespan(timespan float32) NetworksApiGetNetworkNetworkHealthChannelUtilizationRequest {
+func (r NetworksAPIGetNetworkNetworkHealthChannelUtilizationRequest) Timespan(timespan float32) NetworksAPIGetNetworkNetworkHealthChannelUtilizationRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 600. The default is 600.
-func (r NetworksApiGetNetworkNetworkHealthChannelUtilizationRequest) Resolution(resolution int32) NetworksApiGetNetworkNetworkHealthChannelUtilizationRequest {
+func (r NetworksAPIGetNetworkNetworkHealthChannelUtilizationRequest) Resolution(resolution int32) NetworksAPIGetNetworkNetworkHealthChannelUtilizationRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 100. Default is 10.
-func (r NetworksApiGetNetworkNetworkHealthChannelUtilizationRequest) PerPage(perPage int32) NetworksApiGetNetworkNetworkHealthChannelUtilizationRequest {
+func (r NetworksAPIGetNetworkNetworkHealthChannelUtilizationRequest) PerPage(perPage int32) NetworksAPIGetNetworkNetworkHealthChannelUtilizationRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r NetworksApiGetNetworkNetworkHealthChannelUtilizationRequest) StartingAfter(startingAfter string) NetworksApiGetNetworkNetworkHealthChannelUtilizationRequest {
+func (r NetworksAPIGetNetworkNetworkHealthChannelUtilizationRequest) StartingAfter(startingAfter string) NetworksAPIGetNetworkNetworkHealthChannelUtilizationRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r NetworksApiGetNetworkNetworkHealthChannelUtilizationRequest) EndingBefore(endingBefore string) NetworksApiGetNetworkNetworkHealthChannelUtilizationRequest {
+func (r NetworksAPIGetNetworkNetworkHealthChannelUtilizationRequest) EndingBefore(endingBefore string) NetworksAPIGetNetworkNetworkHealthChannelUtilizationRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r NetworksApiGetNetworkNetworkHealthChannelUtilizationRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkNetworkHealthChannelUtilizationRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkNetworkHealthChannelUtilizationExecute(r)
 }
 
@@ -7761,10 +7761,10 @@ Get the channel utilization over each radio for all APs in a network.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkNetworkHealthChannelUtilizationRequest
+ @return NetworksAPIGetNetworkNetworkHealthChannelUtilizationRequest
 */
-func (a *NetworksApiService) GetNetworkNetworkHealthChannelUtilization(ctx context.Context, networkId string) NetworksApiGetNetworkNetworkHealthChannelUtilizationRequest {
-	return NetworksApiGetNetworkNetworkHealthChannelUtilizationRequest{
+func (a *NetworksAPIService) GetNetworkNetworkHealthChannelUtilization(ctx context.Context, networkId string) NetworksAPIGetNetworkNetworkHealthChannelUtilizationRequest {
+	return NetworksAPIGetNetworkNetworkHealthChannelUtilizationRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -7773,7 +7773,7 @@ func (a *NetworksApiService) GetNetworkNetworkHealthChannelUtilization(ctx conte
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *NetworksApiService) GetNetworkNetworkHealthChannelUtilizationExecute(r NetworksApiGetNetworkNetworkHealthChannelUtilizationRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkNetworkHealthChannelUtilizationExecute(r NetworksAPIGetNetworkNetworkHealthChannelUtilizationRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7781,7 +7781,7 @@ func (a *NetworksApiService) GetNetworkNetworkHealthChannelUtilizationExecute(r 
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkNetworkHealthChannelUtilization")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkNetworkHealthChannelUtilization")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7882,9 +7882,9 @@ func (a *NetworksApiService) GetNetworkNetworkHealthChannelUtilizationExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkPiiPiiKeysRequest struct {
+type NetworksAPIGetNetworkPiiPiiKeysRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	username *string
 	email *string
@@ -7895,42 +7895,42 @@ type NetworksApiGetNetworkPiiPiiKeysRequest struct {
 }
 
 // The username of a Systems Manager user
-func (r NetworksApiGetNetworkPiiPiiKeysRequest) Username(username string) NetworksApiGetNetworkPiiPiiKeysRequest {
+func (r NetworksAPIGetNetworkPiiPiiKeysRequest) Username(username string) NetworksAPIGetNetworkPiiPiiKeysRequest {
 	r.username = &username
 	return r
 }
 
 // The email of a network user account or a Systems Manager device
-func (r NetworksApiGetNetworkPiiPiiKeysRequest) Email(email string) NetworksApiGetNetworkPiiPiiKeysRequest {
+func (r NetworksAPIGetNetworkPiiPiiKeysRequest) Email(email string) NetworksAPIGetNetworkPiiPiiKeysRequest {
 	r.email = &email
 	return r
 }
 
 // The MAC of a network client device or a Systems Manager device
-func (r NetworksApiGetNetworkPiiPiiKeysRequest) Mac(mac string) NetworksApiGetNetworkPiiPiiKeysRequest {
+func (r NetworksAPIGetNetworkPiiPiiKeysRequest) Mac(mac string) NetworksAPIGetNetworkPiiPiiKeysRequest {
 	r.mac = &mac
 	return r
 }
 
 // The serial of a Systems Manager device
-func (r NetworksApiGetNetworkPiiPiiKeysRequest) Serial(serial string) NetworksApiGetNetworkPiiPiiKeysRequest {
+func (r NetworksAPIGetNetworkPiiPiiKeysRequest) Serial(serial string) NetworksAPIGetNetworkPiiPiiKeysRequest {
 	r.serial = &serial
 	return r
 }
 
 // The IMEI of a Systems Manager device
-func (r NetworksApiGetNetworkPiiPiiKeysRequest) Imei(imei string) NetworksApiGetNetworkPiiPiiKeysRequest {
+func (r NetworksAPIGetNetworkPiiPiiKeysRequest) Imei(imei string) NetworksAPIGetNetworkPiiPiiKeysRequest {
 	r.imei = &imei
 	return r
 }
 
 // The MAC of a Bluetooth client
-func (r NetworksApiGetNetworkPiiPiiKeysRequest) BluetoothMac(bluetoothMac string) NetworksApiGetNetworkPiiPiiKeysRequest {
+func (r NetworksAPIGetNetworkPiiPiiKeysRequest) BluetoothMac(bluetoothMac string) NetworksAPIGetNetworkPiiPiiKeysRequest {
 	r.bluetoothMac = &bluetoothMac
 	return r
 }
 
-func (r NetworksApiGetNetworkPiiPiiKeysRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkPiiPiiKeysRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkPiiPiiKeysExecute(r)
 }
 
@@ -7947,10 +7947,10 @@ List the keys required to access Personally Identifiable Information (PII) for a
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkPiiPiiKeysRequest
+ @return NetworksAPIGetNetworkPiiPiiKeysRequest
 */
-func (a *NetworksApiService) GetNetworkPiiPiiKeys(ctx context.Context, networkId string) NetworksApiGetNetworkPiiPiiKeysRequest {
-	return NetworksApiGetNetworkPiiPiiKeysRequest{
+func (a *NetworksAPIService) GetNetworkPiiPiiKeys(ctx context.Context, networkId string) NetworksAPIGetNetworkPiiPiiKeysRequest {
+	return NetworksAPIGetNetworkPiiPiiKeysRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -7959,7 +7959,7 @@ func (a *NetworksApiService) GetNetworkPiiPiiKeys(ctx context.Context, networkId
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) GetNetworkPiiPiiKeysExecute(r NetworksApiGetNetworkPiiPiiKeysRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkPiiPiiKeysExecute(r NetworksAPIGetNetworkPiiPiiKeysRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7967,7 +7967,7 @@ func (a *NetworksApiService) GetNetworkPiiPiiKeysExecute(r NetworksApiGetNetwork
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkPiiPiiKeys")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkPiiPiiKeys")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8065,14 +8065,14 @@ func (a *NetworksApiService) GetNetworkPiiPiiKeysExecute(r NetworksApiGetNetwork
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkPiiRequestRequest struct {
+type NetworksAPIGetNetworkPiiRequestRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	requestId string
 }
 
-func (r NetworksApiGetNetworkPiiRequestRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkPiiRequestRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkPiiRequestExecute(r)
 }
 
@@ -8090,10 +8090,10 @@ Return a PII request
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param requestId Request ID
- @return NetworksApiGetNetworkPiiRequestRequest
+ @return NetworksAPIGetNetworkPiiRequestRequest
 */
-func (a *NetworksApiService) GetNetworkPiiRequest(ctx context.Context, networkId string, requestId string) NetworksApiGetNetworkPiiRequestRequest {
-	return NetworksApiGetNetworkPiiRequestRequest{
+func (a *NetworksAPIService) GetNetworkPiiRequest(ctx context.Context, networkId string, requestId string) NetworksAPIGetNetworkPiiRequestRequest {
+	return NetworksAPIGetNetworkPiiRequestRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -8103,7 +8103,7 @@ func (a *NetworksApiService) GetNetworkPiiRequest(ctx context.Context, networkId
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) GetNetworkPiiRequestExecute(r NetworksApiGetNetworkPiiRequestRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkPiiRequestExecute(r NetworksAPIGetNetworkPiiRequestRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -8111,7 +8111,7 @@ func (a *NetworksApiService) GetNetworkPiiRequestExecute(r NetworksApiGetNetwork
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkPiiRequest")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkPiiRequest")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8192,13 +8192,13 @@ func (a *NetworksApiService) GetNetworkPiiRequestExecute(r NetworksApiGetNetwork
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkPiiRequestsRequest struct {
+type NetworksAPIGetNetworkPiiRequestsRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 }
 
-func (r NetworksApiGetNetworkPiiRequestsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkPiiRequestsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkPiiRequestsExecute(r)
 }
 
@@ -8215,10 +8215,10 @@ List the PII requests for this network or organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkPiiRequestsRequest
+ @return NetworksAPIGetNetworkPiiRequestsRequest
 */
-func (a *NetworksApiService) GetNetworkPiiRequests(ctx context.Context, networkId string) NetworksApiGetNetworkPiiRequestsRequest {
-	return NetworksApiGetNetworkPiiRequestsRequest{
+func (a *NetworksAPIService) GetNetworkPiiRequests(ctx context.Context, networkId string) NetworksAPIGetNetworkPiiRequestsRequest {
+	return NetworksAPIGetNetworkPiiRequestsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -8227,7 +8227,7 @@ func (a *NetworksApiService) GetNetworkPiiRequests(ctx context.Context, networkI
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *NetworksApiService) GetNetworkPiiRequestsExecute(r NetworksApiGetNetworkPiiRequestsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkPiiRequestsExecute(r NetworksAPIGetNetworkPiiRequestsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -8235,7 +8235,7 @@ func (a *NetworksApiService) GetNetworkPiiRequestsExecute(r NetworksApiGetNetwor
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkPiiRequests")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkPiiRequests")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8315,9 +8315,9 @@ func (a *NetworksApiService) GetNetworkPiiRequestsExecute(r NetworksApiGetNetwor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkPiiSmDevicesForKeyRequest struct {
+type NetworksAPIGetNetworkPiiSmDevicesForKeyRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	username *string
 	email *string
@@ -8328,42 +8328,42 @@ type NetworksApiGetNetworkPiiSmDevicesForKeyRequest struct {
 }
 
 // The username of a Systems Manager user
-func (r NetworksApiGetNetworkPiiSmDevicesForKeyRequest) Username(username string) NetworksApiGetNetworkPiiSmDevicesForKeyRequest {
+func (r NetworksAPIGetNetworkPiiSmDevicesForKeyRequest) Username(username string) NetworksAPIGetNetworkPiiSmDevicesForKeyRequest {
 	r.username = &username
 	return r
 }
 
 // The email of a network user account or a Systems Manager device
-func (r NetworksApiGetNetworkPiiSmDevicesForKeyRequest) Email(email string) NetworksApiGetNetworkPiiSmDevicesForKeyRequest {
+func (r NetworksAPIGetNetworkPiiSmDevicesForKeyRequest) Email(email string) NetworksAPIGetNetworkPiiSmDevicesForKeyRequest {
 	r.email = &email
 	return r
 }
 
 // The MAC of a network client device or a Systems Manager device
-func (r NetworksApiGetNetworkPiiSmDevicesForKeyRequest) Mac(mac string) NetworksApiGetNetworkPiiSmDevicesForKeyRequest {
+func (r NetworksAPIGetNetworkPiiSmDevicesForKeyRequest) Mac(mac string) NetworksAPIGetNetworkPiiSmDevicesForKeyRequest {
 	r.mac = &mac
 	return r
 }
 
 // The serial of a Systems Manager device
-func (r NetworksApiGetNetworkPiiSmDevicesForKeyRequest) Serial(serial string) NetworksApiGetNetworkPiiSmDevicesForKeyRequest {
+func (r NetworksAPIGetNetworkPiiSmDevicesForKeyRequest) Serial(serial string) NetworksAPIGetNetworkPiiSmDevicesForKeyRequest {
 	r.serial = &serial
 	return r
 }
 
 // The IMEI of a Systems Manager device
-func (r NetworksApiGetNetworkPiiSmDevicesForKeyRequest) Imei(imei string) NetworksApiGetNetworkPiiSmDevicesForKeyRequest {
+func (r NetworksAPIGetNetworkPiiSmDevicesForKeyRequest) Imei(imei string) NetworksAPIGetNetworkPiiSmDevicesForKeyRequest {
 	r.imei = &imei
 	return r
 }
 
 // The MAC of a Bluetooth client
-func (r NetworksApiGetNetworkPiiSmDevicesForKeyRequest) BluetoothMac(bluetoothMac string) NetworksApiGetNetworkPiiSmDevicesForKeyRequest {
+func (r NetworksAPIGetNetworkPiiSmDevicesForKeyRequest) BluetoothMac(bluetoothMac string) NetworksAPIGetNetworkPiiSmDevicesForKeyRequest {
 	r.bluetoothMac = &bluetoothMac
 	return r
 }
 
-func (r NetworksApiGetNetworkPiiSmDevicesForKeyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkPiiSmDevicesForKeyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkPiiSmDevicesForKeyExecute(r)
 }
 
@@ -8380,10 +8380,10 @@ Given a piece of Personally Identifiable Information (PII), return the Systems M
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkPiiSmDevicesForKeyRequest
+ @return NetworksAPIGetNetworkPiiSmDevicesForKeyRequest
 */
-func (a *NetworksApiService) GetNetworkPiiSmDevicesForKey(ctx context.Context, networkId string) NetworksApiGetNetworkPiiSmDevicesForKeyRequest {
-	return NetworksApiGetNetworkPiiSmDevicesForKeyRequest{
+func (a *NetworksAPIService) GetNetworkPiiSmDevicesForKey(ctx context.Context, networkId string) NetworksAPIGetNetworkPiiSmDevicesForKeyRequest {
+	return NetworksAPIGetNetworkPiiSmDevicesForKeyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -8392,7 +8392,7 @@ func (a *NetworksApiService) GetNetworkPiiSmDevicesForKey(ctx context.Context, n
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) GetNetworkPiiSmDevicesForKeyExecute(r NetworksApiGetNetworkPiiSmDevicesForKeyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkPiiSmDevicesForKeyExecute(r NetworksAPIGetNetworkPiiSmDevicesForKeyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -8400,7 +8400,7 @@ func (a *NetworksApiService) GetNetworkPiiSmDevicesForKeyExecute(r NetworksApiGe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkPiiSmDevicesForKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkPiiSmDevicesForKey")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8498,9 +8498,9 @@ func (a *NetworksApiService) GetNetworkPiiSmDevicesForKeyExecute(r NetworksApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkPiiSmOwnersForKeyRequest struct {
+type NetworksAPIGetNetworkPiiSmOwnersForKeyRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	username *string
 	email *string
@@ -8511,42 +8511,42 @@ type NetworksApiGetNetworkPiiSmOwnersForKeyRequest struct {
 }
 
 // The username of a Systems Manager user
-func (r NetworksApiGetNetworkPiiSmOwnersForKeyRequest) Username(username string) NetworksApiGetNetworkPiiSmOwnersForKeyRequest {
+func (r NetworksAPIGetNetworkPiiSmOwnersForKeyRequest) Username(username string) NetworksAPIGetNetworkPiiSmOwnersForKeyRequest {
 	r.username = &username
 	return r
 }
 
 // The email of a network user account or a Systems Manager device
-func (r NetworksApiGetNetworkPiiSmOwnersForKeyRequest) Email(email string) NetworksApiGetNetworkPiiSmOwnersForKeyRequest {
+func (r NetworksAPIGetNetworkPiiSmOwnersForKeyRequest) Email(email string) NetworksAPIGetNetworkPiiSmOwnersForKeyRequest {
 	r.email = &email
 	return r
 }
 
 // The MAC of a network client device or a Systems Manager device
-func (r NetworksApiGetNetworkPiiSmOwnersForKeyRequest) Mac(mac string) NetworksApiGetNetworkPiiSmOwnersForKeyRequest {
+func (r NetworksAPIGetNetworkPiiSmOwnersForKeyRequest) Mac(mac string) NetworksAPIGetNetworkPiiSmOwnersForKeyRequest {
 	r.mac = &mac
 	return r
 }
 
 // The serial of a Systems Manager device
-func (r NetworksApiGetNetworkPiiSmOwnersForKeyRequest) Serial(serial string) NetworksApiGetNetworkPiiSmOwnersForKeyRequest {
+func (r NetworksAPIGetNetworkPiiSmOwnersForKeyRequest) Serial(serial string) NetworksAPIGetNetworkPiiSmOwnersForKeyRequest {
 	r.serial = &serial
 	return r
 }
 
 // The IMEI of a Systems Manager device
-func (r NetworksApiGetNetworkPiiSmOwnersForKeyRequest) Imei(imei string) NetworksApiGetNetworkPiiSmOwnersForKeyRequest {
+func (r NetworksAPIGetNetworkPiiSmOwnersForKeyRequest) Imei(imei string) NetworksAPIGetNetworkPiiSmOwnersForKeyRequest {
 	r.imei = &imei
 	return r
 }
 
 // The MAC of a Bluetooth client
-func (r NetworksApiGetNetworkPiiSmOwnersForKeyRequest) BluetoothMac(bluetoothMac string) NetworksApiGetNetworkPiiSmOwnersForKeyRequest {
+func (r NetworksAPIGetNetworkPiiSmOwnersForKeyRequest) BluetoothMac(bluetoothMac string) NetworksAPIGetNetworkPiiSmOwnersForKeyRequest {
 	r.bluetoothMac = &bluetoothMac
 	return r
 }
 
-func (r NetworksApiGetNetworkPiiSmOwnersForKeyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkPiiSmOwnersForKeyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkPiiSmOwnersForKeyExecute(r)
 }
 
@@ -8563,10 +8563,10 @@ Given a piece of Personally Identifiable Information (PII), return the Systems M
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkPiiSmOwnersForKeyRequest
+ @return NetworksAPIGetNetworkPiiSmOwnersForKeyRequest
 */
-func (a *NetworksApiService) GetNetworkPiiSmOwnersForKey(ctx context.Context, networkId string) NetworksApiGetNetworkPiiSmOwnersForKeyRequest {
-	return NetworksApiGetNetworkPiiSmOwnersForKeyRequest{
+func (a *NetworksAPIService) GetNetworkPiiSmOwnersForKey(ctx context.Context, networkId string) NetworksAPIGetNetworkPiiSmOwnersForKeyRequest {
+	return NetworksAPIGetNetworkPiiSmOwnersForKeyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -8575,7 +8575,7 @@ func (a *NetworksApiService) GetNetworkPiiSmOwnersForKey(ctx context.Context, ne
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) GetNetworkPiiSmOwnersForKeyExecute(r NetworksApiGetNetworkPiiSmOwnersForKeyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkPiiSmOwnersForKeyExecute(r NetworksAPIGetNetworkPiiSmOwnersForKeyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -8583,7 +8583,7 @@ func (a *NetworksApiService) GetNetworkPiiSmOwnersForKeyExecute(r NetworksApiGet
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkPiiSmOwnersForKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkPiiSmOwnersForKey")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8681,9 +8681,9 @@ func (a *NetworksApiService) GetNetworkPiiSmOwnersForKeyExecute(r NetworksApiGet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkPoliciesByClientRequest struct {
+type NetworksAPIGetNetworkPoliciesByClientRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	perPage *int32
 	startingAfter *string
@@ -8693,36 +8693,36 @@ type NetworksApiGetNetworkPoliciesByClientRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.
-func (r NetworksApiGetNetworkPoliciesByClientRequest) PerPage(perPage int32) NetworksApiGetNetworkPoliciesByClientRequest {
+func (r NetworksAPIGetNetworkPoliciesByClientRequest) PerPage(perPage int32) NetworksAPIGetNetworkPoliciesByClientRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r NetworksApiGetNetworkPoliciesByClientRequest) StartingAfter(startingAfter string) NetworksApiGetNetworkPoliciesByClientRequest {
+func (r NetworksAPIGetNetworkPoliciesByClientRequest) StartingAfter(startingAfter string) NetworksAPIGetNetworkPoliciesByClientRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r NetworksApiGetNetworkPoliciesByClientRequest) EndingBefore(endingBefore string) NetworksApiGetNetworkPoliciesByClientRequest {
+func (r NetworksAPIGetNetworkPoliciesByClientRequest) EndingBefore(endingBefore string) NetworksAPIGetNetworkPoliciesByClientRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r NetworksApiGetNetworkPoliciesByClientRequest) T0(t0 string) NetworksApiGetNetworkPoliciesByClientRequest {
+func (r NetworksAPIGetNetworkPoliciesByClientRequest) T0(t0 string) NetworksAPIGetNetworkPoliciesByClientRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r NetworksApiGetNetworkPoliciesByClientRequest) Timespan(timespan float32) NetworksApiGetNetworkPoliciesByClientRequest {
+func (r NetworksAPIGetNetworkPoliciesByClientRequest) Timespan(timespan float32) NetworksAPIGetNetworkPoliciesByClientRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r NetworksApiGetNetworkPoliciesByClientRequest) Execute() ([]GetNetworkPoliciesByClient200ResponseInner, *http.Response, error) {
+func (r NetworksAPIGetNetworkPoliciesByClientRequest) Execute() ([]GetNetworkPoliciesByClient200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkPoliciesByClientExecute(r)
 }
 
@@ -8733,10 +8733,10 @@ Get policies for all clients with policies
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkPoliciesByClientRequest
+ @return NetworksAPIGetNetworkPoliciesByClientRequest
 */
-func (a *NetworksApiService) GetNetworkPoliciesByClient(ctx context.Context, networkId string) NetworksApiGetNetworkPoliciesByClientRequest {
-	return NetworksApiGetNetworkPoliciesByClientRequest{
+func (a *NetworksAPIService) GetNetworkPoliciesByClient(ctx context.Context, networkId string) NetworksAPIGetNetworkPoliciesByClientRequest {
+	return NetworksAPIGetNetworkPoliciesByClientRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -8745,7 +8745,7 @@ func (a *NetworksApiService) GetNetworkPoliciesByClient(ctx context.Context, net
 
 // Execute executes the request
 //  @return []GetNetworkPoliciesByClient200ResponseInner
-func (a *NetworksApiService) GetNetworkPoliciesByClientExecute(r NetworksApiGetNetworkPoliciesByClientRequest) ([]GetNetworkPoliciesByClient200ResponseInner, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkPoliciesByClientExecute(r NetworksAPIGetNetworkPoliciesByClientRequest) ([]GetNetworkPoliciesByClient200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -8753,7 +8753,7 @@ func (a *NetworksApiService) GetNetworkPoliciesByClientExecute(r NetworksApiGetN
 		localVarReturnValue  []GetNetworkPoliciesByClient200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkPoliciesByClient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkPoliciesByClient")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8848,13 +8848,13 @@ func (a *NetworksApiService) GetNetworkPoliciesByClientExecute(r NetworksApiGetN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkSettingsRequest struct {
+type NetworksAPIGetNetworkSettingsRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 }
 
-func (r NetworksApiGetNetworkSettingsRequest) Execute() (*GetNetworkSettings200Response, *http.Response, error) {
+func (r NetworksAPIGetNetworkSettingsRequest) Execute() (*GetNetworkSettings200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSettingsExecute(r)
 }
 
@@ -8865,10 +8865,10 @@ Return the settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkSettingsRequest
+ @return NetworksAPIGetNetworkSettingsRequest
 */
-func (a *NetworksApiService) GetNetworkSettings(ctx context.Context, networkId string) NetworksApiGetNetworkSettingsRequest {
-	return NetworksApiGetNetworkSettingsRequest{
+func (a *NetworksAPIService) GetNetworkSettings(ctx context.Context, networkId string) NetworksAPIGetNetworkSettingsRequest {
+	return NetworksAPIGetNetworkSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -8877,7 +8877,7 @@ func (a *NetworksApiService) GetNetworkSettings(ctx context.Context, networkId s
 
 // Execute executes the request
 //  @return GetNetworkSettings200Response
-func (a *NetworksApiService) GetNetworkSettingsExecute(r NetworksApiGetNetworkSettingsRequest) (*GetNetworkSettings200Response, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkSettingsExecute(r NetworksAPIGetNetworkSettingsRequest) (*GetNetworkSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -8885,7 +8885,7 @@ func (a *NetworksApiService) GetNetworkSettingsExecute(r NetworksApiGetNetworkSe
 		localVarReturnValue  *GetNetworkSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8965,13 +8965,13 @@ func (a *NetworksApiService) GetNetworkSettingsExecute(r NetworksApiGetNetworkSe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkSnmpRequest struct {
+type NetworksAPIGetNetworkSnmpRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 }
 
-func (r NetworksApiGetNetworkSnmpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkSnmpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSnmpExecute(r)
 }
 
@@ -8982,10 +8982,10 @@ Return the SNMP settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkSnmpRequest
+ @return NetworksAPIGetNetworkSnmpRequest
 */
-func (a *NetworksApiService) GetNetworkSnmp(ctx context.Context, networkId string) NetworksApiGetNetworkSnmpRequest {
-	return NetworksApiGetNetworkSnmpRequest{
+func (a *NetworksAPIService) GetNetworkSnmp(ctx context.Context, networkId string) NetworksAPIGetNetworkSnmpRequest {
+	return NetworksAPIGetNetworkSnmpRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -8994,7 +8994,7 @@ func (a *NetworksApiService) GetNetworkSnmp(ctx context.Context, networkId strin
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) GetNetworkSnmpExecute(r NetworksApiGetNetworkSnmpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkSnmpExecute(r NetworksAPIGetNetworkSnmpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -9002,7 +9002,7 @@ func (a *NetworksApiService) GetNetworkSnmpExecute(r NetworksApiGetNetworkSnmpRe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkSnmp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkSnmp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9082,9 +9082,9 @@ func (a *NetworksApiService) GetNetworkSnmpExecute(r NetworksApiGetNetworkSnmpRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkSplashLoginAttemptsRequest struct {
+type NetworksAPIGetNetworkSplashLoginAttemptsRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	ssidNumber *int32
 	loginIdentifier *string
@@ -9092,24 +9092,24 @@ type NetworksApiGetNetworkSplashLoginAttemptsRequest struct {
 }
 
 // Only return the login attempts for the specified SSID
-func (r NetworksApiGetNetworkSplashLoginAttemptsRequest) SsidNumber(ssidNumber int32) NetworksApiGetNetworkSplashLoginAttemptsRequest {
+func (r NetworksAPIGetNetworkSplashLoginAttemptsRequest) SsidNumber(ssidNumber int32) NetworksAPIGetNetworkSplashLoginAttemptsRequest {
 	r.ssidNumber = &ssidNumber
 	return r
 }
 
 // The username, email, or phone number used during login
-func (r NetworksApiGetNetworkSplashLoginAttemptsRequest) LoginIdentifier(loginIdentifier string) NetworksApiGetNetworkSplashLoginAttemptsRequest {
+func (r NetworksAPIGetNetworkSplashLoginAttemptsRequest) LoginIdentifier(loginIdentifier string) NetworksAPIGetNetworkSplashLoginAttemptsRequest {
 	r.loginIdentifier = &loginIdentifier
 	return r
 }
 
 // The timespan, in seconds, for the login attempts. The period will be from [timespan] seconds ago until now. The maximum timespan is 3 months
-func (r NetworksApiGetNetworkSplashLoginAttemptsRequest) Timespan(timespan int32) NetworksApiGetNetworkSplashLoginAttemptsRequest {
+func (r NetworksAPIGetNetworkSplashLoginAttemptsRequest) Timespan(timespan int32) NetworksAPIGetNetworkSplashLoginAttemptsRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r NetworksApiGetNetworkSplashLoginAttemptsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkSplashLoginAttemptsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSplashLoginAttemptsExecute(r)
 }
 
@@ -9120,10 +9120,10 @@ List the splash login attempts for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkSplashLoginAttemptsRequest
+ @return NetworksAPIGetNetworkSplashLoginAttemptsRequest
 */
-func (a *NetworksApiService) GetNetworkSplashLoginAttempts(ctx context.Context, networkId string) NetworksApiGetNetworkSplashLoginAttemptsRequest {
-	return NetworksApiGetNetworkSplashLoginAttemptsRequest{
+func (a *NetworksAPIService) GetNetworkSplashLoginAttempts(ctx context.Context, networkId string) NetworksAPIGetNetworkSplashLoginAttemptsRequest {
+	return NetworksAPIGetNetworkSplashLoginAttemptsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9132,7 +9132,7 @@ func (a *NetworksApiService) GetNetworkSplashLoginAttempts(ctx context.Context, 
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *NetworksApiService) GetNetworkSplashLoginAttemptsExecute(r NetworksApiGetNetworkSplashLoginAttemptsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkSplashLoginAttemptsExecute(r NetworksAPIGetNetworkSplashLoginAttemptsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -9140,7 +9140,7 @@ func (a *NetworksApiService) GetNetworkSplashLoginAttemptsExecute(r NetworksApiG
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkSplashLoginAttempts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkSplashLoginAttempts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9229,13 +9229,13 @@ func (a *NetworksApiService) GetNetworkSplashLoginAttemptsExecute(r NetworksApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkSyslogServersRequest struct {
+type NetworksAPIGetNetworkSyslogServersRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 }
 
-func (r NetworksApiGetNetworkSyslogServersRequest) Execute() (*GetNetworkSyslogServers200Response, *http.Response, error) {
+func (r NetworksAPIGetNetworkSyslogServersRequest) Execute() (*GetNetworkSyslogServers200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSyslogServersExecute(r)
 }
 
@@ -9246,10 +9246,10 @@ List the syslog servers for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkSyslogServersRequest
+ @return NetworksAPIGetNetworkSyslogServersRequest
 */
-func (a *NetworksApiService) GetNetworkSyslogServers(ctx context.Context, networkId string) NetworksApiGetNetworkSyslogServersRequest {
-	return NetworksApiGetNetworkSyslogServersRequest{
+func (a *NetworksAPIService) GetNetworkSyslogServers(ctx context.Context, networkId string) NetworksAPIGetNetworkSyslogServersRequest {
+	return NetworksAPIGetNetworkSyslogServersRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9258,7 +9258,7 @@ func (a *NetworksApiService) GetNetworkSyslogServers(ctx context.Context, networ
 
 // Execute executes the request
 //  @return GetNetworkSyslogServers200Response
-func (a *NetworksApiService) GetNetworkSyslogServersExecute(r NetworksApiGetNetworkSyslogServersRequest) (*GetNetworkSyslogServers200Response, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkSyslogServersExecute(r NetworksAPIGetNetworkSyslogServersRequest) (*GetNetworkSyslogServers200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -9266,7 +9266,7 @@ func (a *NetworksApiService) GetNetworkSyslogServersExecute(r NetworksApiGetNetw
 		localVarReturnValue  *GetNetworkSyslogServers200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkSyslogServers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkSyslogServers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9346,13 +9346,13 @@ func (a *NetworksApiService) GetNetworkSyslogServersExecute(r NetworksApiGetNetw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkTopologyLinkLayerRequest struct {
+type NetworksAPIGetNetworkTopologyLinkLayerRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 }
 
-func (r NetworksApiGetNetworkTopologyLinkLayerRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkTopologyLinkLayerRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkTopologyLinkLayerExecute(r)
 }
 
@@ -9363,10 +9363,10 @@ List the LLDP and CDP information for all discovered devices and connections in 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkTopologyLinkLayerRequest
+ @return NetworksAPIGetNetworkTopologyLinkLayerRequest
 */
-func (a *NetworksApiService) GetNetworkTopologyLinkLayer(ctx context.Context, networkId string) NetworksApiGetNetworkTopologyLinkLayerRequest {
-	return NetworksApiGetNetworkTopologyLinkLayerRequest{
+func (a *NetworksAPIService) GetNetworkTopologyLinkLayer(ctx context.Context, networkId string) NetworksAPIGetNetworkTopologyLinkLayerRequest {
+	return NetworksAPIGetNetworkTopologyLinkLayerRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9375,7 +9375,7 @@ func (a *NetworksApiService) GetNetworkTopologyLinkLayer(ctx context.Context, ne
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) GetNetworkTopologyLinkLayerExecute(r NetworksApiGetNetworkTopologyLinkLayerRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkTopologyLinkLayerExecute(r NetworksAPIGetNetworkTopologyLinkLayerRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -9383,7 +9383,7 @@ func (a *NetworksApiService) GetNetworkTopologyLinkLayerExecute(r NetworksApiGet
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkTopologyLinkLayer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkTopologyLinkLayer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9463,9 +9463,9 @@ func (a *NetworksApiService) GetNetworkTopologyLinkLayerExecute(r NetworksApiGet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkTrafficRequest struct {
+type NetworksAPIGetNetworkTrafficRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	t0 *string
 	timespan *float32
@@ -9473,24 +9473,24 @@ type NetworksApiGetNetworkTrafficRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 30 days from today.
-func (r NetworksApiGetNetworkTrafficRequest) T0(t0 string) NetworksApiGetNetworkTrafficRequest {
+func (r NetworksAPIGetNetworkTrafficRequest) T0(t0 string) NetworksAPIGetNetworkTrafficRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 30 days.
-func (r NetworksApiGetNetworkTrafficRequest) Timespan(timespan float32) NetworksApiGetNetworkTrafficRequest {
+func (r NetworksAPIGetNetworkTrafficRequest) Timespan(timespan float32) NetworksAPIGetNetworkTrafficRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter the data by device type: &#39;combined&#39;, &#39;wireless&#39;, &#39;switch&#39; or &#39;appliance&#39;. Defaults to &#39;combined&#39;. When using &#39;combined&#39;, for each rule the data will come from the device type with the most usage.
-func (r NetworksApiGetNetworkTrafficRequest) DeviceType(deviceType string) NetworksApiGetNetworkTrafficRequest {
+func (r NetworksAPIGetNetworkTrafficRequest) DeviceType(deviceType string) NetworksAPIGetNetworkTrafficRequest {
 	r.deviceType = &deviceType
 	return r
 }
 
-func (r NetworksApiGetNetworkTrafficRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkTrafficRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkTrafficExecute(r)
 }
 
@@ -9501,10 +9501,10 @@ Return the traffic analysis data for this network. Traffic analysis with hostnam
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkTrafficRequest
+ @return NetworksAPIGetNetworkTrafficRequest
 */
-func (a *NetworksApiService) GetNetworkTraffic(ctx context.Context, networkId string) NetworksApiGetNetworkTrafficRequest {
-	return NetworksApiGetNetworkTrafficRequest{
+func (a *NetworksAPIService) GetNetworkTraffic(ctx context.Context, networkId string) NetworksAPIGetNetworkTrafficRequest {
+	return NetworksAPIGetNetworkTrafficRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9513,7 +9513,7 @@ func (a *NetworksApiService) GetNetworkTraffic(ctx context.Context, networkId st
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *NetworksApiService) GetNetworkTrafficExecute(r NetworksApiGetNetworkTrafficRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkTrafficExecute(r NetworksAPIGetNetworkTrafficRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -9521,7 +9521,7 @@ func (a *NetworksApiService) GetNetworkTrafficExecute(r NetworksApiGetNetworkTra
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkTraffic")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkTraffic")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9610,13 +9610,13 @@ func (a *NetworksApiService) GetNetworkTrafficExecute(r NetworksApiGetNetworkTra
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkTrafficAnalysisRequest struct {
+type NetworksAPIGetNetworkTrafficAnalysisRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 }
 
-func (r NetworksApiGetNetworkTrafficAnalysisRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkTrafficAnalysisRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkTrafficAnalysisExecute(r)
 }
 
@@ -9627,10 +9627,10 @@ Return the traffic analysis settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkTrafficAnalysisRequest
+ @return NetworksAPIGetNetworkTrafficAnalysisRequest
 */
-func (a *NetworksApiService) GetNetworkTrafficAnalysis(ctx context.Context, networkId string) NetworksApiGetNetworkTrafficAnalysisRequest {
-	return NetworksApiGetNetworkTrafficAnalysisRequest{
+func (a *NetworksAPIService) GetNetworkTrafficAnalysis(ctx context.Context, networkId string) NetworksAPIGetNetworkTrafficAnalysisRequest {
+	return NetworksAPIGetNetworkTrafficAnalysisRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9639,7 +9639,7 @@ func (a *NetworksApiService) GetNetworkTrafficAnalysis(ctx context.Context, netw
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) GetNetworkTrafficAnalysisExecute(r NetworksApiGetNetworkTrafficAnalysisRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkTrafficAnalysisExecute(r NetworksAPIGetNetworkTrafficAnalysisRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -9647,7 +9647,7 @@ func (a *NetworksApiService) GetNetworkTrafficAnalysisExecute(r NetworksApiGetNe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkTrafficAnalysis")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkTrafficAnalysis")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9727,13 +9727,13 @@ func (a *NetworksApiService) GetNetworkTrafficAnalysisExecute(r NetworksApiGetNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkTrafficShapingApplicationCategoriesRequest struct {
+type NetworksAPIGetNetworkTrafficShapingApplicationCategoriesRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 }
 
-func (r NetworksApiGetNetworkTrafficShapingApplicationCategoriesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkTrafficShapingApplicationCategoriesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkTrafficShapingApplicationCategoriesExecute(r)
 }
 
@@ -9744,10 +9744,10 @@ Returns the application categories for traffic shaping rules.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkTrafficShapingApplicationCategoriesRequest
+ @return NetworksAPIGetNetworkTrafficShapingApplicationCategoriesRequest
 */
-func (a *NetworksApiService) GetNetworkTrafficShapingApplicationCategories(ctx context.Context, networkId string) NetworksApiGetNetworkTrafficShapingApplicationCategoriesRequest {
-	return NetworksApiGetNetworkTrafficShapingApplicationCategoriesRequest{
+func (a *NetworksAPIService) GetNetworkTrafficShapingApplicationCategories(ctx context.Context, networkId string) NetworksAPIGetNetworkTrafficShapingApplicationCategoriesRequest {
+	return NetworksAPIGetNetworkTrafficShapingApplicationCategoriesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9756,7 +9756,7 @@ func (a *NetworksApiService) GetNetworkTrafficShapingApplicationCategories(ctx c
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) GetNetworkTrafficShapingApplicationCategoriesExecute(r NetworksApiGetNetworkTrafficShapingApplicationCategoriesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkTrafficShapingApplicationCategoriesExecute(r NetworksAPIGetNetworkTrafficShapingApplicationCategoriesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -9764,7 +9764,7 @@ func (a *NetworksApiService) GetNetworkTrafficShapingApplicationCategoriesExecut
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkTrafficShapingApplicationCategories")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkTrafficShapingApplicationCategories")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9844,13 +9844,13 @@ func (a *NetworksApiService) GetNetworkTrafficShapingApplicationCategoriesExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkTrafficShapingDscpTaggingOptionsRequest struct {
+type NetworksAPIGetNetworkTrafficShapingDscpTaggingOptionsRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 }
 
-func (r NetworksApiGetNetworkTrafficShapingDscpTaggingOptionsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIGetNetworkTrafficShapingDscpTaggingOptionsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkTrafficShapingDscpTaggingOptionsExecute(r)
 }
 
@@ -9861,10 +9861,10 @@ Returns the available DSCP tagging options for your traffic shaping rules.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkTrafficShapingDscpTaggingOptionsRequest
+ @return NetworksAPIGetNetworkTrafficShapingDscpTaggingOptionsRequest
 */
-func (a *NetworksApiService) GetNetworkTrafficShapingDscpTaggingOptions(ctx context.Context, networkId string) NetworksApiGetNetworkTrafficShapingDscpTaggingOptionsRequest {
-	return NetworksApiGetNetworkTrafficShapingDscpTaggingOptionsRequest{
+func (a *NetworksAPIService) GetNetworkTrafficShapingDscpTaggingOptions(ctx context.Context, networkId string) NetworksAPIGetNetworkTrafficShapingDscpTaggingOptionsRequest {
+	return NetworksAPIGetNetworkTrafficShapingDscpTaggingOptionsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9873,7 +9873,7 @@ func (a *NetworksApiService) GetNetworkTrafficShapingDscpTaggingOptions(ctx cont
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *NetworksApiService) GetNetworkTrafficShapingDscpTaggingOptionsExecute(r NetworksApiGetNetworkTrafficShapingDscpTaggingOptionsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkTrafficShapingDscpTaggingOptionsExecute(r NetworksAPIGetNetworkTrafficShapingDscpTaggingOptionsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -9881,7 +9881,7 @@ func (a *NetworksApiService) GetNetworkTrafficShapingDscpTaggingOptionsExecute(r
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkTrafficShapingDscpTaggingOptions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkTrafficShapingDscpTaggingOptions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9961,14 +9961,14 @@ func (a *NetworksApiService) GetNetworkTrafficShapingDscpTaggingOptionsExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkWebhooksHttpServerRequest struct {
+type NetworksAPIGetNetworkWebhooksHttpServerRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	httpServerId string
 }
 
-func (r NetworksApiGetNetworkWebhooksHttpServerRequest) Execute() (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
+func (r NetworksAPIGetNetworkWebhooksHttpServerRequest) Execute() (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWebhooksHttpServerExecute(r)
 }
 
@@ -9980,10 +9980,10 @@ Return an HTTP server for a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param httpServerId Http server ID
- @return NetworksApiGetNetworkWebhooksHttpServerRequest
+ @return NetworksAPIGetNetworkWebhooksHttpServerRequest
 */
-func (a *NetworksApiService) GetNetworkWebhooksHttpServer(ctx context.Context, networkId string, httpServerId string) NetworksApiGetNetworkWebhooksHttpServerRequest {
-	return NetworksApiGetNetworkWebhooksHttpServerRequest{
+func (a *NetworksAPIService) GetNetworkWebhooksHttpServer(ctx context.Context, networkId string, httpServerId string) NetworksAPIGetNetworkWebhooksHttpServerRequest {
+	return NetworksAPIGetNetworkWebhooksHttpServerRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9993,7 +9993,7 @@ func (a *NetworksApiService) GetNetworkWebhooksHttpServer(ctx context.Context, n
 
 // Execute executes the request
 //  @return GetNetworkWebhooksHttpServers200ResponseInner
-func (a *NetworksApiService) GetNetworkWebhooksHttpServerExecute(r NetworksApiGetNetworkWebhooksHttpServerRequest) (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkWebhooksHttpServerExecute(r NetworksAPIGetNetworkWebhooksHttpServerRequest) (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -10001,7 +10001,7 @@ func (a *NetworksApiService) GetNetworkWebhooksHttpServerExecute(r NetworksApiGe
 		localVarReturnValue  *GetNetworkWebhooksHttpServers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkWebhooksHttpServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkWebhooksHttpServer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10082,13 +10082,13 @@ func (a *NetworksApiService) GetNetworkWebhooksHttpServerExecute(r NetworksApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkWebhooksHttpServersRequest struct {
+type NetworksAPIGetNetworkWebhooksHttpServersRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 }
 
-func (r NetworksApiGetNetworkWebhooksHttpServersRequest) Execute() ([]GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
+func (r NetworksAPIGetNetworkWebhooksHttpServersRequest) Execute() ([]GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWebhooksHttpServersExecute(r)
 }
 
@@ -10099,10 +10099,10 @@ List the HTTP servers for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkWebhooksHttpServersRequest
+ @return NetworksAPIGetNetworkWebhooksHttpServersRequest
 */
-func (a *NetworksApiService) GetNetworkWebhooksHttpServers(ctx context.Context, networkId string) NetworksApiGetNetworkWebhooksHttpServersRequest {
-	return NetworksApiGetNetworkWebhooksHttpServersRequest{
+func (a *NetworksAPIService) GetNetworkWebhooksHttpServers(ctx context.Context, networkId string) NetworksAPIGetNetworkWebhooksHttpServersRequest {
+	return NetworksAPIGetNetworkWebhooksHttpServersRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10111,7 +10111,7 @@ func (a *NetworksApiService) GetNetworkWebhooksHttpServers(ctx context.Context, 
 
 // Execute executes the request
 //  @return []GetNetworkWebhooksHttpServers200ResponseInner
-func (a *NetworksApiService) GetNetworkWebhooksHttpServersExecute(r NetworksApiGetNetworkWebhooksHttpServersRequest) ([]GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkWebhooksHttpServersExecute(r NetworksAPIGetNetworkWebhooksHttpServersRequest) ([]GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -10119,7 +10119,7 @@ func (a *NetworksApiService) GetNetworkWebhooksHttpServersExecute(r NetworksApiG
 		localVarReturnValue  []GetNetworkWebhooksHttpServers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkWebhooksHttpServers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkWebhooksHttpServers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10199,14 +10199,14 @@ func (a *NetworksApiService) GetNetworkWebhooksHttpServersExecute(r NetworksApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkWebhooksPayloadTemplateRequest struct {
+type NetworksAPIGetNetworkWebhooksPayloadTemplateRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	payloadTemplateId string
 }
 
-func (r NetworksApiGetNetworkWebhooksPayloadTemplateRequest) Execute() (*GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
+func (r NetworksAPIGetNetworkWebhooksPayloadTemplateRequest) Execute() (*GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWebhooksPayloadTemplateExecute(r)
 }
 
@@ -10218,10 +10218,10 @@ Get the webhook payload template for a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param payloadTemplateId Payload template ID
- @return NetworksApiGetNetworkWebhooksPayloadTemplateRequest
+ @return NetworksAPIGetNetworkWebhooksPayloadTemplateRequest
 */
-func (a *NetworksApiService) GetNetworkWebhooksPayloadTemplate(ctx context.Context, networkId string, payloadTemplateId string) NetworksApiGetNetworkWebhooksPayloadTemplateRequest {
-	return NetworksApiGetNetworkWebhooksPayloadTemplateRequest{
+func (a *NetworksAPIService) GetNetworkWebhooksPayloadTemplate(ctx context.Context, networkId string, payloadTemplateId string) NetworksAPIGetNetworkWebhooksPayloadTemplateRequest {
+	return NetworksAPIGetNetworkWebhooksPayloadTemplateRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10231,7 +10231,7 @@ func (a *NetworksApiService) GetNetworkWebhooksPayloadTemplate(ctx context.Conte
 
 // Execute executes the request
 //  @return GetNetworkWebhooksPayloadTemplates200ResponseInner
-func (a *NetworksApiService) GetNetworkWebhooksPayloadTemplateExecute(r NetworksApiGetNetworkWebhooksPayloadTemplateRequest) (*GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkWebhooksPayloadTemplateExecute(r NetworksAPIGetNetworkWebhooksPayloadTemplateRequest) (*GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -10239,7 +10239,7 @@ func (a *NetworksApiService) GetNetworkWebhooksPayloadTemplateExecute(r Networks
 		localVarReturnValue  *GetNetworkWebhooksPayloadTemplates200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkWebhooksPayloadTemplate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkWebhooksPayloadTemplate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10320,13 +10320,13 @@ func (a *NetworksApiService) GetNetworkWebhooksPayloadTemplateExecute(r Networks
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkWebhooksPayloadTemplatesRequest struct {
+type NetworksAPIGetNetworkWebhooksPayloadTemplatesRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 }
 
-func (r NetworksApiGetNetworkWebhooksPayloadTemplatesRequest) Execute() ([]GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
+func (r NetworksAPIGetNetworkWebhooksPayloadTemplatesRequest) Execute() ([]GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWebhooksPayloadTemplatesExecute(r)
 }
 
@@ -10337,10 +10337,10 @@ List the webhook payload templates for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiGetNetworkWebhooksPayloadTemplatesRequest
+ @return NetworksAPIGetNetworkWebhooksPayloadTemplatesRequest
 */
-func (a *NetworksApiService) GetNetworkWebhooksPayloadTemplates(ctx context.Context, networkId string) NetworksApiGetNetworkWebhooksPayloadTemplatesRequest {
-	return NetworksApiGetNetworkWebhooksPayloadTemplatesRequest{
+func (a *NetworksAPIService) GetNetworkWebhooksPayloadTemplates(ctx context.Context, networkId string) NetworksAPIGetNetworkWebhooksPayloadTemplatesRequest {
+	return NetworksAPIGetNetworkWebhooksPayloadTemplatesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10349,7 +10349,7 @@ func (a *NetworksApiService) GetNetworkWebhooksPayloadTemplates(ctx context.Cont
 
 // Execute executes the request
 //  @return []GetNetworkWebhooksPayloadTemplates200ResponseInner
-func (a *NetworksApiService) GetNetworkWebhooksPayloadTemplatesExecute(r NetworksApiGetNetworkWebhooksPayloadTemplatesRequest) ([]GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkWebhooksPayloadTemplatesExecute(r NetworksAPIGetNetworkWebhooksPayloadTemplatesRequest) ([]GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -10357,7 +10357,7 @@ func (a *NetworksApiService) GetNetworkWebhooksPayloadTemplatesExecute(r Network
 		localVarReturnValue  []GetNetworkWebhooksPayloadTemplates200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkWebhooksPayloadTemplates")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkWebhooksPayloadTemplates")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10437,14 +10437,14 @@ func (a *NetworksApiService) GetNetworkWebhooksPayloadTemplatesExecute(r Network
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetNetworkWebhooksWebhookTestRequest struct {
+type NetworksAPIGetNetworkWebhooksWebhookTestRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	webhookTestId string
 }
 
-func (r NetworksApiGetNetworkWebhooksWebhookTestRequest) Execute() (*CreateNetworkWebhooksWebhookTest201Response, *http.Response, error) {
+func (r NetworksAPIGetNetworkWebhooksWebhookTestRequest) Execute() (*CreateNetworkWebhooksWebhookTest201Response, *http.Response, error) {
 	return r.ApiService.GetNetworkWebhooksWebhookTestExecute(r)
 }
 
@@ -10456,10 +10456,10 @@ Return the status of a webhook test for a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param webhookTestId Webhook test ID
- @return NetworksApiGetNetworkWebhooksWebhookTestRequest
+ @return NetworksAPIGetNetworkWebhooksWebhookTestRequest
 */
-func (a *NetworksApiService) GetNetworkWebhooksWebhookTest(ctx context.Context, networkId string, webhookTestId string) NetworksApiGetNetworkWebhooksWebhookTestRequest {
-	return NetworksApiGetNetworkWebhooksWebhookTestRequest{
+func (a *NetworksAPIService) GetNetworkWebhooksWebhookTest(ctx context.Context, networkId string, webhookTestId string) NetworksAPIGetNetworkWebhooksWebhookTestRequest {
+	return NetworksAPIGetNetworkWebhooksWebhookTestRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10469,7 +10469,7 @@ func (a *NetworksApiService) GetNetworkWebhooksWebhookTest(ctx context.Context, 
 
 // Execute executes the request
 //  @return CreateNetworkWebhooksWebhookTest201Response
-func (a *NetworksApiService) GetNetworkWebhooksWebhookTestExecute(r NetworksApiGetNetworkWebhooksWebhookTestRequest) (*CreateNetworkWebhooksWebhookTest201Response, *http.Response, error) {
+func (a *NetworksAPIService) GetNetworkWebhooksWebhookTestExecute(r NetworksAPIGetNetworkWebhooksWebhookTestRequest) (*CreateNetworkWebhooksWebhookTest201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -10477,7 +10477,7 @@ func (a *NetworksApiService) GetNetworkWebhooksWebhookTestExecute(r NetworksApiG
 		localVarReturnValue  *CreateNetworkWebhooksWebhookTest201Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetNetworkWebhooksWebhookTest")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkWebhooksWebhookTest")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10558,9 +10558,9 @@ func (a *NetworksApiService) GetNetworkWebhooksWebhookTestExecute(r NetworksApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest struct {
+type NetworksAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	organizationId string
 	deviceType *string
 	perPage *int32
@@ -10569,30 +10569,30 @@ type NetworksApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest
 }
 
 // Device Type switch or wireless controller
-func (r NetworksApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) DeviceType(deviceType string) NetworksApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
+func (r NetworksAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) DeviceType(deviceType string) NetworksAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
 	r.deviceType = &deviceType
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 100000. Default is 1000.
-func (r NetworksApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) PerPage(perPage int32) NetworksApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
+func (r NetworksAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) PerPage(perPage int32) NetworksAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r NetworksApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) StartingAfter(startingAfter string) NetworksApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
+func (r NetworksAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) StartingAfter(startingAfter string) NetworksAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r NetworksApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) EndingBefore(endingBefore string) NetworksApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
+func (r NetworksAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) EndingBefore(endingBefore string) NetworksAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r NetworksApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) Execute() ([]GetNetwork200Response, *http.Response, error) {
+func (r NetworksAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) Execute() ([]GetNetwork200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationInventoryOnboardingCloudMonitoringNetworksExecute(r)
 }
 
@@ -10603,10 +10603,10 @@ Returns list of networks eligible for adding cloud monitored device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return NetworksApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest
+ @return NetworksAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest
 */
-func (a *NetworksApiService) GetOrganizationInventoryOnboardingCloudMonitoringNetworks(ctx context.Context, organizationId string) NetworksApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
-	return NetworksApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest{
+func (a *NetworksAPIService) GetOrganizationInventoryOnboardingCloudMonitoringNetworks(ctx context.Context, organizationId string) NetworksAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
+	return NetworksAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -10615,7 +10615,7 @@ func (a *NetworksApiService) GetOrganizationInventoryOnboardingCloudMonitoringNe
 
 // Execute executes the request
 //  @return []GetNetwork200Response
-func (a *NetworksApiService) GetOrganizationInventoryOnboardingCloudMonitoringNetworksExecute(r NetworksApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) ([]GetNetwork200Response, *http.Response, error) {
+func (a *NetworksAPIService) GetOrganizationInventoryOnboardingCloudMonitoringNetworksExecute(r NetworksAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) ([]GetNetwork200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -10623,7 +10623,7 @@ func (a *NetworksApiService) GetOrganizationInventoryOnboardingCloudMonitoringNe
 		localVarReturnValue  []GetNetwork200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetOrganizationInventoryOnboardingCloudMonitoringNetworks")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetOrganizationInventoryOnboardingCloudMonitoringNetworks")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10716,9 +10716,9 @@ func (a *NetworksApiService) GetOrganizationInventoryOnboardingCloudMonitoringNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiGetOrganizationNetworksRequest struct {
+type NetworksAPIGetOrganizationNetworksRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	organizationId string
 	configTemplateId *string
 	isBoundToConfigTemplate *bool
@@ -10730,48 +10730,48 @@ type NetworksApiGetOrganizationNetworksRequest struct {
 }
 
 // An optional parameter that is the ID of a config template. Will return all networks bound to that template.
-func (r NetworksApiGetOrganizationNetworksRequest) ConfigTemplateId(configTemplateId string) NetworksApiGetOrganizationNetworksRequest {
+func (r NetworksAPIGetOrganizationNetworksRequest) ConfigTemplateId(configTemplateId string) NetworksAPIGetOrganizationNetworksRequest {
 	r.configTemplateId = &configTemplateId
 	return r
 }
 
 // An optional parameter to filter config template bound networks. If configTemplateId is set, this cannot be false.
-func (r NetworksApiGetOrganizationNetworksRequest) IsBoundToConfigTemplate(isBoundToConfigTemplate bool) NetworksApiGetOrganizationNetworksRequest {
+func (r NetworksAPIGetOrganizationNetworksRequest) IsBoundToConfigTemplate(isBoundToConfigTemplate bool) NetworksAPIGetOrganizationNetworksRequest {
 	r.isBoundToConfigTemplate = &isBoundToConfigTemplate
 	return r
 }
 
 // An optional parameter to filter networks by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below).
-func (r NetworksApiGetOrganizationNetworksRequest) Tags(tags []string) NetworksApiGetOrganizationNetworksRequest {
+func (r NetworksAPIGetOrganizationNetworksRequest) Tags(tags []string) NetworksAPIGetOrganizationNetworksRequest {
 	r.tags = &tags
 	return r
 }
 
 // An optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return networks which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r NetworksApiGetOrganizationNetworksRequest) TagsFilterType(tagsFilterType string) NetworksApiGetOrganizationNetworksRequest {
+func (r NetworksAPIGetOrganizationNetworksRequest) TagsFilterType(tagsFilterType string) NetworksAPIGetOrganizationNetworksRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 100000. Default is 1000.
-func (r NetworksApiGetOrganizationNetworksRequest) PerPage(perPage int32) NetworksApiGetOrganizationNetworksRequest {
+func (r NetworksAPIGetOrganizationNetworksRequest) PerPage(perPage int32) NetworksAPIGetOrganizationNetworksRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r NetworksApiGetOrganizationNetworksRequest) StartingAfter(startingAfter string) NetworksApiGetOrganizationNetworksRequest {
+func (r NetworksAPIGetOrganizationNetworksRequest) StartingAfter(startingAfter string) NetworksAPIGetOrganizationNetworksRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r NetworksApiGetOrganizationNetworksRequest) EndingBefore(endingBefore string) NetworksApiGetOrganizationNetworksRequest {
+func (r NetworksAPIGetOrganizationNetworksRequest) EndingBefore(endingBefore string) NetworksAPIGetOrganizationNetworksRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r NetworksApiGetOrganizationNetworksRequest) Execute() ([]GetNetwork200Response, *http.Response, error) {
+func (r NetworksAPIGetOrganizationNetworksRequest) Execute() ([]GetNetwork200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationNetworksExecute(r)
 }
 
@@ -10782,10 +10782,10 @@ List the networks that the user has privileges on in an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return NetworksApiGetOrganizationNetworksRequest
+ @return NetworksAPIGetOrganizationNetworksRequest
 */
-func (a *NetworksApiService) GetOrganizationNetworks(ctx context.Context, organizationId string) NetworksApiGetOrganizationNetworksRequest {
-	return NetworksApiGetOrganizationNetworksRequest{
+func (a *NetworksAPIService) GetOrganizationNetworks(ctx context.Context, organizationId string) NetworksAPIGetOrganizationNetworksRequest {
+	return NetworksAPIGetOrganizationNetworksRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -10794,7 +10794,7 @@ func (a *NetworksApiService) GetOrganizationNetworks(ctx context.Context, organi
 
 // Execute executes the request
 //  @return []GetNetwork200Response
-func (a *NetworksApiService) GetOrganizationNetworksExecute(r NetworksApiGetOrganizationNetworksRequest) ([]GetNetwork200Response, *http.Response, error) {
+func (a *NetworksAPIService) GetOrganizationNetworksExecute(r NetworksAPIGetOrganizationNetworksRequest) ([]GetNetwork200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -10802,7 +10802,7 @@ func (a *NetworksApiService) GetOrganizationNetworksExecute(r NetworksApiGetOrga
 		localVarReturnValue  []GetNetwork200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.GetOrganizationNetworks")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetOrganizationNetworks")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10911,19 +10911,19 @@ func (a *NetworksApiService) GetOrganizationNetworksExecute(r NetworksApiGetOrga
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiProvisionNetworkClientsRequest struct {
+type NetworksAPIProvisionNetworkClientsRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	provisionNetworkClientsRequest *ProvisionNetworkClientsRequest
 }
 
-func (r NetworksApiProvisionNetworkClientsRequest) ProvisionNetworkClientsRequest(provisionNetworkClientsRequest ProvisionNetworkClientsRequest) NetworksApiProvisionNetworkClientsRequest {
+func (r NetworksAPIProvisionNetworkClientsRequest) ProvisionNetworkClientsRequest(provisionNetworkClientsRequest ProvisionNetworkClientsRequest) NetworksAPIProvisionNetworkClientsRequest {
 	r.provisionNetworkClientsRequest = &provisionNetworkClientsRequest
 	return r
 }
 
-func (r NetworksApiProvisionNetworkClientsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIProvisionNetworkClientsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.ProvisionNetworkClientsExecute(r)
 }
 
@@ -10934,10 +10934,10 @@ Provisions a client with a name and policy. Clients can be provisioned before th
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiProvisionNetworkClientsRequest
+ @return NetworksAPIProvisionNetworkClientsRequest
 */
-func (a *NetworksApiService) ProvisionNetworkClients(ctx context.Context, networkId string) NetworksApiProvisionNetworkClientsRequest {
-	return NetworksApiProvisionNetworkClientsRequest{
+func (a *NetworksAPIService) ProvisionNetworkClients(ctx context.Context, networkId string) NetworksAPIProvisionNetworkClientsRequest {
+	return NetworksAPIProvisionNetworkClientsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10946,7 +10946,7 @@ func (a *NetworksApiService) ProvisionNetworkClients(ctx context.Context, networ
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) ProvisionNetworkClientsExecute(r NetworksApiProvisionNetworkClientsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) ProvisionNetworkClientsExecute(r NetworksAPIProvisionNetworkClientsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -10954,7 +10954,7 @@ func (a *NetworksApiService) ProvisionNetworkClientsExecute(r NetworksApiProvisi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.ProvisionNetworkClients")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.ProvisionNetworkClients")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11039,19 +11039,19 @@ func (a *NetworksApiService) ProvisionNetworkClientsExecute(r NetworksApiProvisi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiRemoveNetworkDevicesRequest struct {
+type NetworksAPIRemoveNetworkDevicesRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	removeNetworkDevicesRequest *RemoveNetworkDevicesRequest
 }
 
-func (r NetworksApiRemoveNetworkDevicesRequest) RemoveNetworkDevicesRequest(removeNetworkDevicesRequest RemoveNetworkDevicesRequest) NetworksApiRemoveNetworkDevicesRequest {
+func (r NetworksAPIRemoveNetworkDevicesRequest) RemoveNetworkDevicesRequest(removeNetworkDevicesRequest RemoveNetworkDevicesRequest) NetworksAPIRemoveNetworkDevicesRequest {
 	r.removeNetworkDevicesRequest = &removeNetworkDevicesRequest
 	return r
 }
 
-func (r NetworksApiRemoveNetworkDevicesRequest) Execute() (*http.Response, error) {
+func (r NetworksAPIRemoveNetworkDevicesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.RemoveNetworkDevicesExecute(r)
 }
 
@@ -11062,10 +11062,10 @@ Remove a single device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiRemoveNetworkDevicesRequest
+ @return NetworksAPIRemoveNetworkDevicesRequest
 */
-func (a *NetworksApiService) RemoveNetworkDevices(ctx context.Context, networkId string) NetworksApiRemoveNetworkDevicesRequest {
-	return NetworksApiRemoveNetworkDevicesRequest{
+func (a *NetworksAPIService) RemoveNetworkDevices(ctx context.Context, networkId string) NetworksAPIRemoveNetworkDevicesRequest {
+	return NetworksAPIRemoveNetworkDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -11073,14 +11073,14 @@ func (a *NetworksApiService) RemoveNetworkDevices(ctx context.Context, networkId
 }
 
 // Execute executes the request
-func (a *NetworksApiService) RemoveNetworkDevicesExecute(r NetworksApiRemoveNetworkDevicesRequest) (*http.Response, error) {
+func (a *NetworksAPIService) RemoveNetworkDevicesExecute(r NetworksAPIRemoveNetworkDevicesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.RemoveNetworkDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.RemoveNetworkDevices")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11156,19 +11156,19 @@ func (a *NetworksApiService) RemoveNetworkDevicesExecute(r NetworksApiRemoveNetw
 	return localVarHTTPResponse, nil
 }
 
-type NetworksApiRollbacksNetworkFirmwareUpgradesStagedEventsRequest struct {
+type NetworksAPIRollbacksNetworkFirmwareUpgradesStagedEventsRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	rollbacksNetworkFirmwareUpgradesStagedEventsRequest *RollbacksNetworkFirmwareUpgradesStagedEventsRequest
 }
 
-func (r NetworksApiRollbacksNetworkFirmwareUpgradesStagedEventsRequest) RollbacksNetworkFirmwareUpgradesStagedEventsRequest(rollbacksNetworkFirmwareUpgradesStagedEventsRequest RollbacksNetworkFirmwareUpgradesStagedEventsRequest) NetworksApiRollbacksNetworkFirmwareUpgradesStagedEventsRequest {
+func (r NetworksAPIRollbacksNetworkFirmwareUpgradesStagedEventsRequest) RollbacksNetworkFirmwareUpgradesStagedEventsRequest(rollbacksNetworkFirmwareUpgradesStagedEventsRequest RollbacksNetworkFirmwareUpgradesStagedEventsRequest) NetworksAPIRollbacksNetworkFirmwareUpgradesStagedEventsRequest {
 	r.rollbacksNetworkFirmwareUpgradesStagedEventsRequest = &rollbacksNetworkFirmwareUpgradesStagedEventsRequest
 	return r
 }
 
-func (r NetworksApiRollbacksNetworkFirmwareUpgradesStagedEventsRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (r NetworksAPIRollbacksNetworkFirmwareUpgradesStagedEventsRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	return r.ApiService.RollbacksNetworkFirmwareUpgradesStagedEventsExecute(r)
 }
 
@@ -11179,10 +11179,10 @@ Rollback a Staged Upgrade Event for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiRollbacksNetworkFirmwareUpgradesStagedEventsRequest
+ @return NetworksAPIRollbacksNetworkFirmwareUpgradesStagedEventsRequest
 */
-func (a *NetworksApiService) RollbacksNetworkFirmwareUpgradesStagedEvents(ctx context.Context, networkId string) NetworksApiRollbacksNetworkFirmwareUpgradesStagedEventsRequest {
-	return NetworksApiRollbacksNetworkFirmwareUpgradesStagedEventsRequest{
+func (a *NetworksAPIService) RollbacksNetworkFirmwareUpgradesStagedEvents(ctx context.Context, networkId string) NetworksAPIRollbacksNetworkFirmwareUpgradesStagedEventsRequest {
+	return NetworksAPIRollbacksNetworkFirmwareUpgradesStagedEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -11191,7 +11191,7 @@ func (a *NetworksApiService) RollbacksNetworkFirmwareUpgradesStagedEvents(ctx co
 
 // Execute executes the request
 //  @return GetNetworkFirmwareUpgradesStagedEvents200Response
-func (a *NetworksApiService) RollbacksNetworkFirmwareUpgradesStagedEventsExecute(r NetworksApiRollbacksNetworkFirmwareUpgradesStagedEventsRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (a *NetworksAPIService) RollbacksNetworkFirmwareUpgradesStagedEventsExecute(r NetworksAPIRollbacksNetworkFirmwareUpgradesStagedEventsRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -11199,7 +11199,7 @@ func (a *NetworksApiService) RollbacksNetworkFirmwareUpgradesStagedEventsExecute
 		localVarReturnValue  *GetNetworkFirmwareUpgradesStagedEvents200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.RollbacksNetworkFirmwareUpgradesStagedEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.RollbacksNetworkFirmwareUpgradesStagedEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11284,13 +11284,13 @@ func (a *NetworksApiService) RollbacksNetworkFirmwareUpgradesStagedEventsExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiSplitNetworkRequest struct {
+type NetworksAPISplitNetworkRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 }
 
-func (r NetworksApiSplitNetworkRequest) Execute() (*SplitNetwork200Response, *http.Response, error) {
+func (r NetworksAPISplitNetworkRequest) Execute() (*SplitNetwork200Response, *http.Response, error) {
 	return r.ApiService.SplitNetworkExecute(r)
 }
 
@@ -11301,10 +11301,10 @@ Split a combined network into individual networks for each type of device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiSplitNetworkRequest
+ @return NetworksAPISplitNetworkRequest
 */
-func (a *NetworksApiService) SplitNetwork(ctx context.Context, networkId string) NetworksApiSplitNetworkRequest {
-	return NetworksApiSplitNetworkRequest{
+func (a *NetworksAPIService) SplitNetwork(ctx context.Context, networkId string) NetworksAPISplitNetworkRequest {
+	return NetworksAPISplitNetworkRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -11313,7 +11313,7 @@ func (a *NetworksApiService) SplitNetwork(ctx context.Context, networkId string)
 
 // Execute executes the request
 //  @return SplitNetwork200Response
-func (a *NetworksApiService) SplitNetworkExecute(r NetworksApiSplitNetworkRequest) (*SplitNetwork200Response, *http.Response, error) {
+func (a *NetworksAPIService) SplitNetworkExecute(r NetworksAPISplitNetworkRequest) (*SplitNetwork200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -11321,7 +11321,7 @@ func (a *NetworksApiService) SplitNetworkExecute(r NetworksApiSplitNetworkReques
 		localVarReturnValue  *SplitNetwork200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.SplitNetwork")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.SplitNetwork")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11401,19 +11401,19 @@ func (a *NetworksApiService) SplitNetworkExecute(r NetworksApiSplitNetworkReques
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiUnbindNetworkRequest struct {
+type NetworksAPIUnbindNetworkRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	unbindNetworkRequest *UnbindNetworkRequest
 }
 
-func (r NetworksApiUnbindNetworkRequest) UnbindNetworkRequest(unbindNetworkRequest UnbindNetworkRequest) NetworksApiUnbindNetworkRequest {
+func (r NetworksAPIUnbindNetworkRequest) UnbindNetworkRequest(unbindNetworkRequest UnbindNetworkRequest) NetworksAPIUnbindNetworkRequest {
 	r.unbindNetworkRequest = &unbindNetworkRequest
 	return r
 }
 
-func (r NetworksApiUnbindNetworkRequest) Execute() (*GetNetwork200Response, *http.Response, error) {
+func (r NetworksAPIUnbindNetworkRequest) Execute() (*GetNetwork200Response, *http.Response, error) {
 	return r.ApiService.UnbindNetworkExecute(r)
 }
 
@@ -11424,10 +11424,10 @@ Unbind a network from a template.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiUnbindNetworkRequest
+ @return NetworksAPIUnbindNetworkRequest
 */
-func (a *NetworksApiService) UnbindNetwork(ctx context.Context, networkId string) NetworksApiUnbindNetworkRequest {
-	return NetworksApiUnbindNetworkRequest{
+func (a *NetworksAPIService) UnbindNetwork(ctx context.Context, networkId string) NetworksAPIUnbindNetworkRequest {
+	return NetworksAPIUnbindNetworkRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -11436,7 +11436,7 @@ func (a *NetworksApiService) UnbindNetwork(ctx context.Context, networkId string
 
 // Execute executes the request
 //  @return GetNetwork200Response
-func (a *NetworksApiService) UnbindNetworkExecute(r NetworksApiUnbindNetworkRequest) (*GetNetwork200Response, *http.Response, error) {
+func (a *NetworksAPIService) UnbindNetworkExecute(r NetworksAPIUnbindNetworkRequest) (*GetNetwork200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -11444,7 +11444,7 @@ func (a *NetworksApiService) UnbindNetworkExecute(r NetworksApiUnbindNetworkRequ
 		localVarReturnValue  *GetNetwork200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.UnbindNetwork")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UnbindNetwork")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11526,19 +11526,19 @@ func (a *NetworksApiService) UnbindNetworkExecute(r NetworksApiUnbindNetworkRequ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiUpdateNetworkRequest struct {
+type NetworksAPIUpdateNetworkRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	updateNetworkRequest *UpdateNetworkRequest
 }
 
-func (r NetworksApiUpdateNetworkRequest) UpdateNetworkRequest(updateNetworkRequest UpdateNetworkRequest) NetworksApiUpdateNetworkRequest {
+func (r NetworksAPIUpdateNetworkRequest) UpdateNetworkRequest(updateNetworkRequest UpdateNetworkRequest) NetworksAPIUpdateNetworkRequest {
 	r.updateNetworkRequest = &updateNetworkRequest
 	return r
 }
 
-func (r NetworksApiUpdateNetworkRequest) Execute() (*GetNetwork200Response, *http.Response, error) {
+func (r NetworksAPIUpdateNetworkRequest) Execute() (*GetNetwork200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkExecute(r)
 }
 
@@ -11549,10 +11549,10 @@ Update a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiUpdateNetworkRequest
+ @return NetworksAPIUpdateNetworkRequest
 */
-func (a *NetworksApiService) UpdateNetwork(ctx context.Context, networkId string) NetworksApiUpdateNetworkRequest {
-	return NetworksApiUpdateNetworkRequest{
+func (a *NetworksAPIService) UpdateNetwork(ctx context.Context, networkId string) NetworksAPIUpdateNetworkRequest {
+	return NetworksAPIUpdateNetworkRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -11561,7 +11561,7 @@ func (a *NetworksApiService) UpdateNetwork(ctx context.Context, networkId string
 
 // Execute executes the request
 //  @return GetNetwork200Response
-func (a *NetworksApiService) UpdateNetworkExecute(r NetworksApiUpdateNetworkRequest) (*GetNetwork200Response, *http.Response, error) {
+func (a *NetworksAPIService) UpdateNetworkExecute(r NetworksAPIUpdateNetworkRequest) (*GetNetwork200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -11569,7 +11569,7 @@ func (a *NetworksApiService) UpdateNetworkExecute(r NetworksApiUpdateNetworkRequ
 		localVarReturnValue  *GetNetwork200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.UpdateNetwork")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetwork")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11651,19 +11651,19 @@ func (a *NetworksApiService) UpdateNetworkExecute(r NetworksApiUpdateNetworkRequ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiUpdateNetworkAlertsSettingsRequest struct {
+type NetworksAPIUpdateNetworkAlertsSettingsRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	updateNetworkAlertsSettingsRequest *UpdateNetworkAlertsSettingsRequest
 }
 
-func (r NetworksApiUpdateNetworkAlertsSettingsRequest) UpdateNetworkAlertsSettingsRequest(updateNetworkAlertsSettingsRequest UpdateNetworkAlertsSettingsRequest) NetworksApiUpdateNetworkAlertsSettingsRequest {
+func (r NetworksAPIUpdateNetworkAlertsSettingsRequest) UpdateNetworkAlertsSettingsRequest(updateNetworkAlertsSettingsRequest UpdateNetworkAlertsSettingsRequest) NetworksAPIUpdateNetworkAlertsSettingsRequest {
 	r.updateNetworkAlertsSettingsRequest = &updateNetworkAlertsSettingsRequest
 	return r
 }
 
-func (r NetworksApiUpdateNetworkAlertsSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIUpdateNetworkAlertsSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkAlertsSettingsExecute(r)
 }
 
@@ -11674,10 +11674,10 @@ Update the alert configuration for this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiUpdateNetworkAlertsSettingsRequest
+ @return NetworksAPIUpdateNetworkAlertsSettingsRequest
 */
-func (a *NetworksApiService) UpdateNetworkAlertsSettings(ctx context.Context, networkId string) NetworksApiUpdateNetworkAlertsSettingsRequest {
-	return NetworksApiUpdateNetworkAlertsSettingsRequest{
+func (a *NetworksAPIService) UpdateNetworkAlertsSettings(ctx context.Context, networkId string) NetworksAPIUpdateNetworkAlertsSettingsRequest {
+	return NetworksAPIUpdateNetworkAlertsSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -11686,7 +11686,7 @@ func (a *NetworksApiService) UpdateNetworkAlertsSettings(ctx context.Context, ne
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) UpdateNetworkAlertsSettingsExecute(r NetworksApiUpdateNetworkAlertsSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) UpdateNetworkAlertsSettingsExecute(r NetworksAPIUpdateNetworkAlertsSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -11694,7 +11694,7 @@ func (a *NetworksApiService) UpdateNetworkAlertsSettingsExecute(r NetworksApiUpd
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.UpdateNetworkAlertsSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkAlertsSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11776,20 +11776,20 @@ func (a *NetworksApiService) UpdateNetworkAlertsSettingsExecute(r NetworksApiUpd
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiUpdateNetworkClientPolicyRequest struct {
+type NetworksAPIUpdateNetworkClientPolicyRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	clientId string
 	updateNetworkClientPolicyRequest *UpdateNetworkClientPolicyRequest
 }
 
-func (r NetworksApiUpdateNetworkClientPolicyRequest) UpdateNetworkClientPolicyRequest(updateNetworkClientPolicyRequest UpdateNetworkClientPolicyRequest) NetworksApiUpdateNetworkClientPolicyRequest {
+func (r NetworksAPIUpdateNetworkClientPolicyRequest) UpdateNetworkClientPolicyRequest(updateNetworkClientPolicyRequest UpdateNetworkClientPolicyRequest) NetworksAPIUpdateNetworkClientPolicyRequest {
 	r.updateNetworkClientPolicyRequest = &updateNetworkClientPolicyRequest
 	return r
 }
 
-func (r NetworksApiUpdateNetworkClientPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIUpdateNetworkClientPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkClientPolicyExecute(r)
 }
 
@@ -11801,10 +11801,10 @@ Update the policy assigned to a client on the network. Clients can be identified
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return NetworksApiUpdateNetworkClientPolicyRequest
+ @return NetworksAPIUpdateNetworkClientPolicyRequest
 */
-func (a *NetworksApiService) UpdateNetworkClientPolicy(ctx context.Context, networkId string, clientId string) NetworksApiUpdateNetworkClientPolicyRequest {
-	return NetworksApiUpdateNetworkClientPolicyRequest{
+func (a *NetworksAPIService) UpdateNetworkClientPolicy(ctx context.Context, networkId string, clientId string) NetworksAPIUpdateNetworkClientPolicyRequest {
+	return NetworksAPIUpdateNetworkClientPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -11814,7 +11814,7 @@ func (a *NetworksApiService) UpdateNetworkClientPolicy(ctx context.Context, netw
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) UpdateNetworkClientPolicyExecute(r NetworksApiUpdateNetworkClientPolicyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) UpdateNetworkClientPolicyExecute(r NetworksAPIUpdateNetworkClientPolicyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -11822,7 +11822,7 @@ func (a *NetworksApiService) UpdateNetworkClientPolicyExecute(r NetworksApiUpdat
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.UpdateNetworkClientPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkClientPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11908,20 +11908,20 @@ func (a *NetworksApiService) UpdateNetworkClientPolicyExecute(r NetworksApiUpdat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiUpdateNetworkClientSplashAuthorizationStatusRequest struct {
+type NetworksAPIUpdateNetworkClientSplashAuthorizationStatusRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	clientId string
 	updateNetworkClientSplashAuthorizationStatusRequest *UpdateNetworkClientSplashAuthorizationStatusRequest
 }
 
-func (r NetworksApiUpdateNetworkClientSplashAuthorizationStatusRequest) UpdateNetworkClientSplashAuthorizationStatusRequest(updateNetworkClientSplashAuthorizationStatusRequest UpdateNetworkClientSplashAuthorizationStatusRequest) NetworksApiUpdateNetworkClientSplashAuthorizationStatusRequest {
+func (r NetworksAPIUpdateNetworkClientSplashAuthorizationStatusRequest) UpdateNetworkClientSplashAuthorizationStatusRequest(updateNetworkClientSplashAuthorizationStatusRequest UpdateNetworkClientSplashAuthorizationStatusRequest) NetworksAPIUpdateNetworkClientSplashAuthorizationStatusRequest {
 	r.updateNetworkClientSplashAuthorizationStatusRequest = &updateNetworkClientSplashAuthorizationStatusRequest
 	return r
 }
 
-func (r NetworksApiUpdateNetworkClientSplashAuthorizationStatusRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIUpdateNetworkClientSplashAuthorizationStatusRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkClientSplashAuthorizationStatusExecute(r)
 }
 
@@ -11933,10 +11933,10 @@ Update a client's splash authorization. Clients can be identified by a client ke
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return NetworksApiUpdateNetworkClientSplashAuthorizationStatusRequest
+ @return NetworksAPIUpdateNetworkClientSplashAuthorizationStatusRequest
 */
-func (a *NetworksApiService) UpdateNetworkClientSplashAuthorizationStatus(ctx context.Context, networkId string, clientId string) NetworksApiUpdateNetworkClientSplashAuthorizationStatusRequest {
-	return NetworksApiUpdateNetworkClientSplashAuthorizationStatusRequest{
+func (a *NetworksAPIService) UpdateNetworkClientSplashAuthorizationStatus(ctx context.Context, networkId string, clientId string) NetworksAPIUpdateNetworkClientSplashAuthorizationStatusRequest {
+	return NetworksAPIUpdateNetworkClientSplashAuthorizationStatusRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -11946,7 +11946,7 @@ func (a *NetworksApiService) UpdateNetworkClientSplashAuthorizationStatus(ctx co
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) UpdateNetworkClientSplashAuthorizationStatusExecute(r NetworksApiUpdateNetworkClientSplashAuthorizationStatusRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) UpdateNetworkClientSplashAuthorizationStatusExecute(r NetworksAPIUpdateNetworkClientSplashAuthorizationStatusRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -11954,7 +11954,7 @@ func (a *NetworksApiService) UpdateNetworkClientSplashAuthorizationStatusExecute
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.UpdateNetworkClientSplashAuthorizationStatus")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkClientSplashAuthorizationStatus")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12040,19 +12040,19 @@ func (a *NetworksApiService) UpdateNetworkClientSplashAuthorizationStatusExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiUpdateNetworkFirmwareUpgradesRequest struct {
+type NetworksAPIUpdateNetworkFirmwareUpgradesRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	updateNetworkFirmwareUpgradesRequest *UpdateNetworkFirmwareUpgradesRequest
 }
 
-func (r NetworksApiUpdateNetworkFirmwareUpgradesRequest) UpdateNetworkFirmwareUpgradesRequest(updateNetworkFirmwareUpgradesRequest UpdateNetworkFirmwareUpgradesRequest) NetworksApiUpdateNetworkFirmwareUpgradesRequest {
+func (r NetworksAPIUpdateNetworkFirmwareUpgradesRequest) UpdateNetworkFirmwareUpgradesRequest(updateNetworkFirmwareUpgradesRequest UpdateNetworkFirmwareUpgradesRequest) NetworksAPIUpdateNetworkFirmwareUpgradesRequest {
 	r.updateNetworkFirmwareUpgradesRequest = &updateNetworkFirmwareUpgradesRequest
 	return r
 }
 
-func (r NetworksApiUpdateNetworkFirmwareUpgradesRequest) Execute() (*GetNetworkFirmwareUpgrades200Response, *http.Response, error) {
+func (r NetworksAPIUpdateNetworkFirmwareUpgradesRequest) Execute() (*GetNetworkFirmwareUpgrades200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkFirmwareUpgradesExecute(r)
 }
 
@@ -12063,10 +12063,10 @@ Update firmware upgrade information for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiUpdateNetworkFirmwareUpgradesRequest
+ @return NetworksAPIUpdateNetworkFirmwareUpgradesRequest
 */
-func (a *NetworksApiService) UpdateNetworkFirmwareUpgrades(ctx context.Context, networkId string) NetworksApiUpdateNetworkFirmwareUpgradesRequest {
-	return NetworksApiUpdateNetworkFirmwareUpgradesRequest{
+func (a *NetworksAPIService) UpdateNetworkFirmwareUpgrades(ctx context.Context, networkId string) NetworksAPIUpdateNetworkFirmwareUpgradesRequest {
+	return NetworksAPIUpdateNetworkFirmwareUpgradesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -12075,7 +12075,7 @@ func (a *NetworksApiService) UpdateNetworkFirmwareUpgrades(ctx context.Context, 
 
 // Execute executes the request
 //  @return GetNetworkFirmwareUpgrades200Response
-func (a *NetworksApiService) UpdateNetworkFirmwareUpgradesExecute(r NetworksApiUpdateNetworkFirmwareUpgradesRequest) (*GetNetworkFirmwareUpgrades200Response, *http.Response, error) {
+func (a *NetworksAPIService) UpdateNetworkFirmwareUpgradesExecute(r NetworksAPIUpdateNetworkFirmwareUpgradesRequest) (*GetNetworkFirmwareUpgrades200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -12083,7 +12083,7 @@ func (a *NetworksApiService) UpdateNetworkFirmwareUpgradesExecute(r NetworksApiU
 		localVarReturnValue  *GetNetworkFirmwareUpgrades200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.UpdateNetworkFirmwareUpgrades")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkFirmwareUpgrades")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12165,19 +12165,19 @@ func (a *NetworksApiService) UpdateNetworkFirmwareUpgradesExecute(r NetworksApiU
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiUpdateNetworkFirmwareUpgradesStagedEventsRequest struct {
+type NetworksAPIUpdateNetworkFirmwareUpgradesStagedEventsRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	updateNetworkFirmwareUpgradesStagedEventsRequest *UpdateNetworkFirmwareUpgradesStagedEventsRequest
 }
 
-func (r NetworksApiUpdateNetworkFirmwareUpgradesStagedEventsRequest) UpdateNetworkFirmwareUpgradesStagedEventsRequest(updateNetworkFirmwareUpgradesStagedEventsRequest UpdateNetworkFirmwareUpgradesStagedEventsRequest) NetworksApiUpdateNetworkFirmwareUpgradesStagedEventsRequest {
+func (r NetworksAPIUpdateNetworkFirmwareUpgradesStagedEventsRequest) UpdateNetworkFirmwareUpgradesStagedEventsRequest(updateNetworkFirmwareUpgradesStagedEventsRequest UpdateNetworkFirmwareUpgradesStagedEventsRequest) NetworksAPIUpdateNetworkFirmwareUpgradesStagedEventsRequest {
 	r.updateNetworkFirmwareUpgradesStagedEventsRequest = &updateNetworkFirmwareUpgradesStagedEventsRequest
 	return r
 }
 
-func (r NetworksApiUpdateNetworkFirmwareUpgradesStagedEventsRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (r NetworksAPIUpdateNetworkFirmwareUpgradesStagedEventsRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkFirmwareUpgradesStagedEventsExecute(r)
 }
 
@@ -12188,10 +12188,10 @@ Update the Staged Upgrade Event for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiUpdateNetworkFirmwareUpgradesStagedEventsRequest
+ @return NetworksAPIUpdateNetworkFirmwareUpgradesStagedEventsRequest
 */
-func (a *NetworksApiService) UpdateNetworkFirmwareUpgradesStagedEvents(ctx context.Context, networkId string) NetworksApiUpdateNetworkFirmwareUpgradesStagedEventsRequest {
-	return NetworksApiUpdateNetworkFirmwareUpgradesStagedEventsRequest{
+func (a *NetworksAPIService) UpdateNetworkFirmwareUpgradesStagedEvents(ctx context.Context, networkId string) NetworksAPIUpdateNetworkFirmwareUpgradesStagedEventsRequest {
+	return NetworksAPIUpdateNetworkFirmwareUpgradesStagedEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -12200,7 +12200,7 @@ func (a *NetworksApiService) UpdateNetworkFirmwareUpgradesStagedEvents(ctx conte
 
 // Execute executes the request
 //  @return GetNetworkFirmwareUpgradesStagedEvents200Response
-func (a *NetworksApiService) UpdateNetworkFirmwareUpgradesStagedEventsExecute(r NetworksApiUpdateNetworkFirmwareUpgradesStagedEventsRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (a *NetworksAPIService) UpdateNetworkFirmwareUpgradesStagedEventsExecute(r NetworksAPIUpdateNetworkFirmwareUpgradesStagedEventsRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -12208,7 +12208,7 @@ func (a *NetworksApiService) UpdateNetworkFirmwareUpgradesStagedEventsExecute(r 
 		localVarReturnValue  *GetNetworkFirmwareUpgradesStagedEvents200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.UpdateNetworkFirmwareUpgradesStagedEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkFirmwareUpgradesStagedEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12293,20 +12293,20 @@ func (a *NetworksApiService) UpdateNetworkFirmwareUpgradesStagedEventsExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiUpdateNetworkFirmwareUpgradesStagedGroupRequest struct {
+type NetworksAPIUpdateNetworkFirmwareUpgradesStagedGroupRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	groupId string
 	createNetworkFirmwareUpgradesStagedGroupRequest *CreateNetworkFirmwareUpgradesStagedGroupRequest
 }
 
-func (r NetworksApiUpdateNetworkFirmwareUpgradesStagedGroupRequest) CreateNetworkFirmwareUpgradesStagedGroupRequest(createNetworkFirmwareUpgradesStagedGroupRequest CreateNetworkFirmwareUpgradesStagedGroupRequest) NetworksApiUpdateNetworkFirmwareUpgradesStagedGroupRequest {
+func (r NetworksAPIUpdateNetworkFirmwareUpgradesStagedGroupRequest) CreateNetworkFirmwareUpgradesStagedGroupRequest(createNetworkFirmwareUpgradesStagedGroupRequest CreateNetworkFirmwareUpgradesStagedGroupRequest) NetworksAPIUpdateNetworkFirmwareUpgradesStagedGroupRequest {
 	r.createNetworkFirmwareUpgradesStagedGroupRequest = &createNetworkFirmwareUpgradesStagedGroupRequest
 	return r
 }
 
-func (r NetworksApiUpdateNetworkFirmwareUpgradesStagedGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIUpdateNetworkFirmwareUpgradesStagedGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkFirmwareUpgradesStagedGroupExecute(r)
 }
 
@@ -12318,10 +12318,10 @@ Update a Staged Upgrade Group for a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param groupId Group ID
- @return NetworksApiUpdateNetworkFirmwareUpgradesStagedGroupRequest
+ @return NetworksAPIUpdateNetworkFirmwareUpgradesStagedGroupRequest
 */
-func (a *NetworksApiService) UpdateNetworkFirmwareUpgradesStagedGroup(ctx context.Context, networkId string, groupId string) NetworksApiUpdateNetworkFirmwareUpgradesStagedGroupRequest {
-	return NetworksApiUpdateNetworkFirmwareUpgradesStagedGroupRequest{
+func (a *NetworksAPIService) UpdateNetworkFirmwareUpgradesStagedGroup(ctx context.Context, networkId string, groupId string) NetworksAPIUpdateNetworkFirmwareUpgradesStagedGroupRequest {
+	return NetworksAPIUpdateNetworkFirmwareUpgradesStagedGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -12331,7 +12331,7 @@ func (a *NetworksApiService) UpdateNetworkFirmwareUpgradesStagedGroup(ctx contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) UpdateNetworkFirmwareUpgradesStagedGroupExecute(r NetworksApiUpdateNetworkFirmwareUpgradesStagedGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) UpdateNetworkFirmwareUpgradesStagedGroupExecute(r NetworksAPIUpdateNetworkFirmwareUpgradesStagedGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -12339,7 +12339,7 @@ func (a *NetworksApiService) UpdateNetworkFirmwareUpgradesStagedGroupExecute(r N
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.UpdateNetworkFirmwareUpgradesStagedGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkFirmwareUpgradesStagedGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12425,19 +12425,19 @@ func (a *NetworksApiService) UpdateNetworkFirmwareUpgradesStagedGroupExecute(r N
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiUpdateNetworkFirmwareUpgradesStagedStagesRequest struct {
+type NetworksAPIUpdateNetworkFirmwareUpgradesStagedStagesRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	updateNetworkFirmwareUpgradesStagedStagesRequest *UpdateNetworkFirmwareUpgradesStagedStagesRequest
 }
 
-func (r NetworksApiUpdateNetworkFirmwareUpgradesStagedStagesRequest) UpdateNetworkFirmwareUpgradesStagedStagesRequest(updateNetworkFirmwareUpgradesStagedStagesRequest UpdateNetworkFirmwareUpgradesStagedStagesRequest) NetworksApiUpdateNetworkFirmwareUpgradesStagedStagesRequest {
+func (r NetworksAPIUpdateNetworkFirmwareUpgradesStagedStagesRequest) UpdateNetworkFirmwareUpgradesStagedStagesRequest(updateNetworkFirmwareUpgradesStagedStagesRequest UpdateNetworkFirmwareUpgradesStagedStagesRequest) NetworksAPIUpdateNetworkFirmwareUpgradesStagedStagesRequest {
 	r.updateNetworkFirmwareUpgradesStagedStagesRequest = &updateNetworkFirmwareUpgradesStagedStagesRequest
 	return r
 }
 
-func (r NetworksApiUpdateNetworkFirmwareUpgradesStagedStagesRequest) Execute() ([]GetNetworkFirmwareUpgradesStagedStages200ResponseInner, *http.Response, error) {
+func (r NetworksAPIUpdateNetworkFirmwareUpgradesStagedStagesRequest) Execute() ([]GetNetworkFirmwareUpgradesStagedStages200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkFirmwareUpgradesStagedStagesExecute(r)
 }
 
@@ -12448,10 +12448,10 @@ Assign Staged Upgrade Group order in the sequence.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiUpdateNetworkFirmwareUpgradesStagedStagesRequest
+ @return NetworksAPIUpdateNetworkFirmwareUpgradesStagedStagesRequest
 */
-func (a *NetworksApiService) UpdateNetworkFirmwareUpgradesStagedStages(ctx context.Context, networkId string) NetworksApiUpdateNetworkFirmwareUpgradesStagedStagesRequest {
-	return NetworksApiUpdateNetworkFirmwareUpgradesStagedStagesRequest{
+func (a *NetworksAPIService) UpdateNetworkFirmwareUpgradesStagedStages(ctx context.Context, networkId string) NetworksAPIUpdateNetworkFirmwareUpgradesStagedStagesRequest {
+	return NetworksAPIUpdateNetworkFirmwareUpgradesStagedStagesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -12460,7 +12460,7 @@ func (a *NetworksApiService) UpdateNetworkFirmwareUpgradesStagedStages(ctx conte
 
 // Execute executes the request
 //  @return []GetNetworkFirmwareUpgradesStagedStages200ResponseInner
-func (a *NetworksApiService) UpdateNetworkFirmwareUpgradesStagedStagesExecute(r NetworksApiUpdateNetworkFirmwareUpgradesStagedStagesRequest) ([]GetNetworkFirmwareUpgradesStagedStages200ResponseInner, *http.Response, error) {
+func (a *NetworksAPIService) UpdateNetworkFirmwareUpgradesStagedStagesExecute(r NetworksAPIUpdateNetworkFirmwareUpgradesStagedStagesRequest) ([]GetNetworkFirmwareUpgradesStagedStages200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -12468,7 +12468,7 @@ func (a *NetworksApiService) UpdateNetworkFirmwareUpgradesStagedStagesExecute(r 
 		localVarReturnValue  []GetNetworkFirmwareUpgradesStagedStages200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.UpdateNetworkFirmwareUpgradesStagedStages")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkFirmwareUpgradesStagedStages")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12550,20 +12550,20 @@ func (a *NetworksApiService) UpdateNetworkFirmwareUpgradesStagedStagesExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiUpdateNetworkFloorPlanRequest struct {
+type NetworksAPIUpdateNetworkFloorPlanRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	floorPlanId string
 	updateNetworkFloorPlanRequest *UpdateNetworkFloorPlanRequest
 }
 
-func (r NetworksApiUpdateNetworkFloorPlanRequest) UpdateNetworkFloorPlanRequest(updateNetworkFloorPlanRequest UpdateNetworkFloorPlanRequest) NetworksApiUpdateNetworkFloorPlanRequest {
+func (r NetworksAPIUpdateNetworkFloorPlanRequest) UpdateNetworkFloorPlanRequest(updateNetworkFloorPlanRequest UpdateNetworkFloorPlanRequest) NetworksAPIUpdateNetworkFloorPlanRequest {
 	r.updateNetworkFloorPlanRequest = &updateNetworkFloorPlanRequest
 	return r
 }
 
-func (r NetworksApiUpdateNetworkFloorPlanRequest) Execute() (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
+func (r NetworksAPIUpdateNetworkFloorPlanRequest) Execute() (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkFloorPlanExecute(r)
 }
 
@@ -12575,10 +12575,10 @@ Update a floor plan's geolocation and other meta data
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param floorPlanId Floor plan ID
- @return NetworksApiUpdateNetworkFloorPlanRequest
+ @return NetworksAPIUpdateNetworkFloorPlanRequest
 */
-func (a *NetworksApiService) UpdateNetworkFloorPlan(ctx context.Context, networkId string, floorPlanId string) NetworksApiUpdateNetworkFloorPlanRequest {
-	return NetworksApiUpdateNetworkFloorPlanRequest{
+func (a *NetworksAPIService) UpdateNetworkFloorPlan(ctx context.Context, networkId string, floorPlanId string) NetworksAPIUpdateNetworkFloorPlanRequest {
+	return NetworksAPIUpdateNetworkFloorPlanRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -12588,7 +12588,7 @@ func (a *NetworksApiService) UpdateNetworkFloorPlan(ctx context.Context, network
 
 // Execute executes the request
 //  @return GetNetworkFloorPlans200ResponseInner
-func (a *NetworksApiService) UpdateNetworkFloorPlanExecute(r NetworksApiUpdateNetworkFloorPlanRequest) (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
+func (a *NetworksAPIService) UpdateNetworkFloorPlanExecute(r NetworksAPIUpdateNetworkFloorPlanRequest) (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -12596,7 +12596,7 @@ func (a *NetworksApiService) UpdateNetworkFloorPlanExecute(r NetworksApiUpdateNe
 		localVarReturnValue  *GetNetworkFloorPlans200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.UpdateNetworkFloorPlan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkFloorPlan")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12679,20 +12679,20 @@ func (a *NetworksApiService) UpdateNetworkFloorPlanExecute(r NetworksApiUpdateNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiUpdateNetworkGroupPolicyRequest struct {
+type NetworksAPIUpdateNetworkGroupPolicyRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	groupPolicyId string
 	updateNetworkGroupPolicyRequest *UpdateNetworkGroupPolicyRequest
 }
 
-func (r NetworksApiUpdateNetworkGroupPolicyRequest) UpdateNetworkGroupPolicyRequest(updateNetworkGroupPolicyRequest UpdateNetworkGroupPolicyRequest) NetworksApiUpdateNetworkGroupPolicyRequest {
+func (r NetworksAPIUpdateNetworkGroupPolicyRequest) UpdateNetworkGroupPolicyRequest(updateNetworkGroupPolicyRequest UpdateNetworkGroupPolicyRequest) NetworksAPIUpdateNetworkGroupPolicyRequest {
 	r.updateNetworkGroupPolicyRequest = &updateNetworkGroupPolicyRequest
 	return r
 }
 
-func (r NetworksApiUpdateNetworkGroupPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIUpdateNetworkGroupPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkGroupPolicyExecute(r)
 }
 
@@ -12704,10 +12704,10 @@ Update a group policy
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param groupPolicyId Group policy ID
- @return NetworksApiUpdateNetworkGroupPolicyRequest
+ @return NetworksAPIUpdateNetworkGroupPolicyRequest
 */
-func (a *NetworksApiService) UpdateNetworkGroupPolicy(ctx context.Context, networkId string, groupPolicyId string) NetworksApiUpdateNetworkGroupPolicyRequest {
-	return NetworksApiUpdateNetworkGroupPolicyRequest{
+func (a *NetworksAPIService) UpdateNetworkGroupPolicy(ctx context.Context, networkId string, groupPolicyId string) NetworksAPIUpdateNetworkGroupPolicyRequest {
+	return NetworksAPIUpdateNetworkGroupPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -12717,7 +12717,7 @@ func (a *NetworksApiService) UpdateNetworkGroupPolicy(ctx context.Context, netwo
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) UpdateNetworkGroupPolicyExecute(r NetworksApiUpdateNetworkGroupPolicyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) UpdateNetworkGroupPolicyExecute(r NetworksAPIUpdateNetworkGroupPolicyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -12725,7 +12725,7 @@ func (a *NetworksApiService) UpdateNetworkGroupPolicyExecute(r NetworksApiUpdate
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.UpdateNetworkGroupPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkGroupPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12808,20 +12808,20 @@ func (a *NetworksApiService) UpdateNetworkGroupPolicyExecute(r NetworksApiUpdate
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiUpdateNetworkMerakiAuthUserRequest struct {
+type NetworksAPIUpdateNetworkMerakiAuthUserRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	merakiAuthUserId string
 	updateNetworkMerakiAuthUserRequest *UpdateNetworkMerakiAuthUserRequest
 }
 
-func (r NetworksApiUpdateNetworkMerakiAuthUserRequest) UpdateNetworkMerakiAuthUserRequest(updateNetworkMerakiAuthUserRequest UpdateNetworkMerakiAuthUserRequest) NetworksApiUpdateNetworkMerakiAuthUserRequest {
+func (r NetworksAPIUpdateNetworkMerakiAuthUserRequest) UpdateNetworkMerakiAuthUserRequest(updateNetworkMerakiAuthUserRequest UpdateNetworkMerakiAuthUserRequest) NetworksAPIUpdateNetworkMerakiAuthUserRequest {
 	r.updateNetworkMerakiAuthUserRequest = &updateNetworkMerakiAuthUserRequest
 	return r
 }
 
-func (r NetworksApiUpdateNetworkMerakiAuthUserRequest) Execute() (*GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
+func (r NetworksAPIUpdateNetworkMerakiAuthUserRequest) Execute() (*GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkMerakiAuthUserExecute(r)
 }
 
@@ -12833,10 +12833,10 @@ Update a user configured with Meraki Authentication (currently, 802.1X RADIUS, s
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param merakiAuthUserId Meraki auth user ID
- @return NetworksApiUpdateNetworkMerakiAuthUserRequest
+ @return NetworksAPIUpdateNetworkMerakiAuthUserRequest
 */
-func (a *NetworksApiService) UpdateNetworkMerakiAuthUser(ctx context.Context, networkId string, merakiAuthUserId string) NetworksApiUpdateNetworkMerakiAuthUserRequest {
-	return NetworksApiUpdateNetworkMerakiAuthUserRequest{
+func (a *NetworksAPIService) UpdateNetworkMerakiAuthUser(ctx context.Context, networkId string, merakiAuthUserId string) NetworksAPIUpdateNetworkMerakiAuthUserRequest {
+	return NetworksAPIUpdateNetworkMerakiAuthUserRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -12846,7 +12846,7 @@ func (a *NetworksApiService) UpdateNetworkMerakiAuthUser(ctx context.Context, ne
 
 // Execute executes the request
 //  @return GetNetworkMerakiAuthUsers200ResponseInner
-func (a *NetworksApiService) UpdateNetworkMerakiAuthUserExecute(r NetworksApiUpdateNetworkMerakiAuthUserRequest) (*GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
+func (a *NetworksAPIService) UpdateNetworkMerakiAuthUserExecute(r NetworksAPIUpdateNetworkMerakiAuthUserRequest) (*GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -12854,7 +12854,7 @@ func (a *NetworksApiService) UpdateNetworkMerakiAuthUserExecute(r NetworksApiUpd
 		localVarReturnValue  *GetNetworkMerakiAuthUsers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.UpdateNetworkMerakiAuthUser")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkMerakiAuthUser")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12937,20 +12937,20 @@ func (a *NetworksApiService) UpdateNetworkMerakiAuthUserExecute(r NetworksApiUpd
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiUpdateNetworkMqttBrokerRequest struct {
+type NetworksAPIUpdateNetworkMqttBrokerRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	mqttBrokerId string
 	updateNetworkMqttBrokerRequest *UpdateNetworkMqttBrokerRequest
 }
 
-func (r NetworksApiUpdateNetworkMqttBrokerRequest) UpdateNetworkMqttBrokerRequest(updateNetworkMqttBrokerRequest UpdateNetworkMqttBrokerRequest) NetworksApiUpdateNetworkMqttBrokerRequest {
+func (r NetworksAPIUpdateNetworkMqttBrokerRequest) UpdateNetworkMqttBrokerRequest(updateNetworkMqttBrokerRequest UpdateNetworkMqttBrokerRequest) NetworksAPIUpdateNetworkMqttBrokerRequest {
 	r.updateNetworkMqttBrokerRequest = &updateNetworkMqttBrokerRequest
 	return r
 }
 
-func (r NetworksApiUpdateNetworkMqttBrokerRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIUpdateNetworkMqttBrokerRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkMqttBrokerExecute(r)
 }
 
@@ -12962,10 +12962,10 @@ Update an MQTT broker
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param mqttBrokerId Mqtt broker ID
- @return NetworksApiUpdateNetworkMqttBrokerRequest
+ @return NetworksAPIUpdateNetworkMqttBrokerRequest
 */
-func (a *NetworksApiService) UpdateNetworkMqttBroker(ctx context.Context, networkId string, mqttBrokerId string) NetworksApiUpdateNetworkMqttBrokerRequest {
-	return NetworksApiUpdateNetworkMqttBrokerRequest{
+func (a *NetworksAPIService) UpdateNetworkMqttBroker(ctx context.Context, networkId string, mqttBrokerId string) NetworksAPIUpdateNetworkMqttBrokerRequest {
+	return NetworksAPIUpdateNetworkMqttBrokerRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -12975,7 +12975,7 @@ func (a *NetworksApiService) UpdateNetworkMqttBroker(ctx context.Context, networ
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) UpdateNetworkMqttBrokerExecute(r NetworksApiUpdateNetworkMqttBrokerRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) UpdateNetworkMqttBrokerExecute(r NetworksAPIUpdateNetworkMqttBrokerRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -12983,7 +12983,7 @@ func (a *NetworksApiService) UpdateNetworkMqttBrokerExecute(r NetworksApiUpdateN
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.UpdateNetworkMqttBroker")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkMqttBroker")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13066,19 +13066,19 @@ func (a *NetworksApiService) UpdateNetworkMqttBrokerExecute(r NetworksApiUpdateN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiUpdateNetworkNetflowRequest struct {
+type NetworksAPIUpdateNetworkNetflowRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	updateNetworkNetflowRequest *UpdateNetworkNetflowRequest
 }
 
-func (r NetworksApiUpdateNetworkNetflowRequest) UpdateNetworkNetflowRequest(updateNetworkNetflowRequest UpdateNetworkNetflowRequest) NetworksApiUpdateNetworkNetflowRequest {
+func (r NetworksAPIUpdateNetworkNetflowRequest) UpdateNetworkNetflowRequest(updateNetworkNetflowRequest UpdateNetworkNetflowRequest) NetworksAPIUpdateNetworkNetflowRequest {
 	r.updateNetworkNetflowRequest = &updateNetworkNetflowRequest
 	return r
 }
 
-func (r NetworksApiUpdateNetworkNetflowRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIUpdateNetworkNetflowRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkNetflowExecute(r)
 }
 
@@ -13089,10 +13089,10 @@ Update the NetFlow traffic reporting settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiUpdateNetworkNetflowRequest
+ @return NetworksAPIUpdateNetworkNetflowRequest
 */
-func (a *NetworksApiService) UpdateNetworkNetflow(ctx context.Context, networkId string) NetworksApiUpdateNetworkNetflowRequest {
-	return NetworksApiUpdateNetworkNetflowRequest{
+func (a *NetworksAPIService) UpdateNetworkNetflow(ctx context.Context, networkId string) NetworksAPIUpdateNetworkNetflowRequest {
+	return NetworksAPIUpdateNetworkNetflowRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -13101,7 +13101,7 @@ func (a *NetworksApiService) UpdateNetworkNetflow(ctx context.Context, networkId
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) UpdateNetworkNetflowExecute(r NetworksApiUpdateNetworkNetflowRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) UpdateNetworkNetflowExecute(r NetworksAPIUpdateNetworkNetflowRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -13109,7 +13109,7 @@ func (a *NetworksApiService) UpdateNetworkNetflowExecute(r NetworksApiUpdateNetw
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.UpdateNetworkNetflow")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkNetflow")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13191,19 +13191,19 @@ func (a *NetworksApiService) UpdateNetworkNetflowExecute(r NetworksApiUpdateNetw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiUpdateNetworkSettingsRequest struct {
+type NetworksAPIUpdateNetworkSettingsRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	updateNetworkSettingsRequest *UpdateNetworkSettingsRequest
 }
 
-func (r NetworksApiUpdateNetworkSettingsRequest) UpdateNetworkSettingsRequest(updateNetworkSettingsRequest UpdateNetworkSettingsRequest) NetworksApiUpdateNetworkSettingsRequest {
+func (r NetworksAPIUpdateNetworkSettingsRequest) UpdateNetworkSettingsRequest(updateNetworkSettingsRequest UpdateNetworkSettingsRequest) NetworksAPIUpdateNetworkSettingsRequest {
 	r.updateNetworkSettingsRequest = &updateNetworkSettingsRequest
 	return r
 }
 
-func (r NetworksApiUpdateNetworkSettingsRequest) Execute() (*GetNetworkSettings200Response, *http.Response, error) {
+func (r NetworksAPIUpdateNetworkSettingsRequest) Execute() (*GetNetworkSettings200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSettingsExecute(r)
 }
 
@@ -13214,10 +13214,10 @@ Update the settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiUpdateNetworkSettingsRequest
+ @return NetworksAPIUpdateNetworkSettingsRequest
 */
-func (a *NetworksApiService) UpdateNetworkSettings(ctx context.Context, networkId string) NetworksApiUpdateNetworkSettingsRequest {
-	return NetworksApiUpdateNetworkSettingsRequest{
+func (a *NetworksAPIService) UpdateNetworkSettings(ctx context.Context, networkId string) NetworksAPIUpdateNetworkSettingsRequest {
+	return NetworksAPIUpdateNetworkSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -13226,7 +13226,7 @@ func (a *NetworksApiService) UpdateNetworkSettings(ctx context.Context, networkI
 
 // Execute executes the request
 //  @return GetNetworkSettings200Response
-func (a *NetworksApiService) UpdateNetworkSettingsExecute(r NetworksApiUpdateNetworkSettingsRequest) (*GetNetworkSettings200Response, *http.Response, error) {
+func (a *NetworksAPIService) UpdateNetworkSettingsExecute(r NetworksAPIUpdateNetworkSettingsRequest) (*GetNetworkSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -13234,7 +13234,7 @@ func (a *NetworksApiService) UpdateNetworkSettingsExecute(r NetworksApiUpdateNet
 		localVarReturnValue  *GetNetworkSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.UpdateNetworkSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13316,19 +13316,19 @@ func (a *NetworksApiService) UpdateNetworkSettingsExecute(r NetworksApiUpdateNet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiUpdateNetworkSnmpRequest struct {
+type NetworksAPIUpdateNetworkSnmpRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	updateNetworkSnmpRequest *UpdateNetworkSnmpRequest
 }
 
-func (r NetworksApiUpdateNetworkSnmpRequest) UpdateNetworkSnmpRequest(updateNetworkSnmpRequest UpdateNetworkSnmpRequest) NetworksApiUpdateNetworkSnmpRequest {
+func (r NetworksAPIUpdateNetworkSnmpRequest) UpdateNetworkSnmpRequest(updateNetworkSnmpRequest UpdateNetworkSnmpRequest) NetworksAPIUpdateNetworkSnmpRequest {
 	r.updateNetworkSnmpRequest = &updateNetworkSnmpRequest
 	return r
 }
 
-func (r NetworksApiUpdateNetworkSnmpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIUpdateNetworkSnmpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSnmpExecute(r)
 }
 
@@ -13339,10 +13339,10 @@ Update the SNMP settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiUpdateNetworkSnmpRequest
+ @return NetworksAPIUpdateNetworkSnmpRequest
 */
-func (a *NetworksApiService) UpdateNetworkSnmp(ctx context.Context, networkId string) NetworksApiUpdateNetworkSnmpRequest {
-	return NetworksApiUpdateNetworkSnmpRequest{
+func (a *NetworksAPIService) UpdateNetworkSnmp(ctx context.Context, networkId string) NetworksAPIUpdateNetworkSnmpRequest {
+	return NetworksAPIUpdateNetworkSnmpRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -13351,7 +13351,7 @@ func (a *NetworksApiService) UpdateNetworkSnmp(ctx context.Context, networkId st
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) UpdateNetworkSnmpExecute(r NetworksApiUpdateNetworkSnmpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) UpdateNetworkSnmpExecute(r NetworksAPIUpdateNetworkSnmpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -13359,7 +13359,7 @@ func (a *NetworksApiService) UpdateNetworkSnmpExecute(r NetworksApiUpdateNetwork
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.UpdateNetworkSnmp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkSnmp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13441,19 +13441,19 @@ func (a *NetworksApiService) UpdateNetworkSnmpExecute(r NetworksApiUpdateNetwork
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiUpdateNetworkSyslogServersRequest struct {
+type NetworksAPIUpdateNetworkSyslogServersRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	updateNetworkSyslogServersRequest *UpdateNetworkSyslogServersRequest
 }
 
-func (r NetworksApiUpdateNetworkSyslogServersRequest) UpdateNetworkSyslogServersRequest(updateNetworkSyslogServersRequest UpdateNetworkSyslogServersRequest) NetworksApiUpdateNetworkSyslogServersRequest {
+func (r NetworksAPIUpdateNetworkSyslogServersRequest) UpdateNetworkSyslogServersRequest(updateNetworkSyslogServersRequest UpdateNetworkSyslogServersRequest) NetworksAPIUpdateNetworkSyslogServersRequest {
 	r.updateNetworkSyslogServersRequest = &updateNetworkSyslogServersRequest
 	return r
 }
 
-func (r NetworksApiUpdateNetworkSyslogServersRequest) Execute() (*GetNetworkSyslogServers200Response, *http.Response, error) {
+func (r NetworksAPIUpdateNetworkSyslogServersRequest) Execute() (*GetNetworkSyslogServers200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSyslogServersExecute(r)
 }
 
@@ -13464,10 +13464,10 @@ Update the syslog servers for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiUpdateNetworkSyslogServersRequest
+ @return NetworksAPIUpdateNetworkSyslogServersRequest
 */
-func (a *NetworksApiService) UpdateNetworkSyslogServers(ctx context.Context, networkId string) NetworksApiUpdateNetworkSyslogServersRequest {
-	return NetworksApiUpdateNetworkSyslogServersRequest{
+func (a *NetworksAPIService) UpdateNetworkSyslogServers(ctx context.Context, networkId string) NetworksAPIUpdateNetworkSyslogServersRequest {
+	return NetworksAPIUpdateNetworkSyslogServersRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -13476,7 +13476,7 @@ func (a *NetworksApiService) UpdateNetworkSyslogServers(ctx context.Context, net
 
 // Execute executes the request
 //  @return GetNetworkSyslogServers200Response
-func (a *NetworksApiService) UpdateNetworkSyslogServersExecute(r NetworksApiUpdateNetworkSyslogServersRequest) (*GetNetworkSyslogServers200Response, *http.Response, error) {
+func (a *NetworksAPIService) UpdateNetworkSyslogServersExecute(r NetworksAPIUpdateNetworkSyslogServersRequest) (*GetNetworkSyslogServers200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -13484,7 +13484,7 @@ func (a *NetworksApiService) UpdateNetworkSyslogServersExecute(r NetworksApiUpda
 		localVarReturnValue  *GetNetworkSyslogServers200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.UpdateNetworkSyslogServers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkSyslogServers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13569,19 +13569,19 @@ func (a *NetworksApiService) UpdateNetworkSyslogServersExecute(r NetworksApiUpda
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiUpdateNetworkTrafficAnalysisRequest struct {
+type NetworksAPIUpdateNetworkTrafficAnalysisRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	updateNetworkTrafficAnalysisRequest *UpdateNetworkTrafficAnalysisRequest
 }
 
-func (r NetworksApiUpdateNetworkTrafficAnalysisRequest) UpdateNetworkTrafficAnalysisRequest(updateNetworkTrafficAnalysisRequest UpdateNetworkTrafficAnalysisRequest) NetworksApiUpdateNetworkTrafficAnalysisRequest {
+func (r NetworksAPIUpdateNetworkTrafficAnalysisRequest) UpdateNetworkTrafficAnalysisRequest(updateNetworkTrafficAnalysisRequest UpdateNetworkTrafficAnalysisRequest) NetworksAPIUpdateNetworkTrafficAnalysisRequest {
 	r.updateNetworkTrafficAnalysisRequest = &updateNetworkTrafficAnalysisRequest
 	return r
 }
 
-func (r NetworksApiUpdateNetworkTrafficAnalysisRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIUpdateNetworkTrafficAnalysisRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkTrafficAnalysisExecute(r)
 }
 
@@ -13592,10 +13592,10 @@ Update the traffic analysis settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiUpdateNetworkTrafficAnalysisRequest
+ @return NetworksAPIUpdateNetworkTrafficAnalysisRequest
 */
-func (a *NetworksApiService) UpdateNetworkTrafficAnalysis(ctx context.Context, networkId string) NetworksApiUpdateNetworkTrafficAnalysisRequest {
-	return NetworksApiUpdateNetworkTrafficAnalysisRequest{
+func (a *NetworksAPIService) UpdateNetworkTrafficAnalysis(ctx context.Context, networkId string) NetworksAPIUpdateNetworkTrafficAnalysisRequest {
+	return NetworksAPIUpdateNetworkTrafficAnalysisRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -13604,7 +13604,7 @@ func (a *NetworksApiService) UpdateNetworkTrafficAnalysis(ctx context.Context, n
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) UpdateNetworkTrafficAnalysisExecute(r NetworksApiUpdateNetworkTrafficAnalysisRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) UpdateNetworkTrafficAnalysisExecute(r NetworksAPIUpdateNetworkTrafficAnalysisRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -13612,7 +13612,7 @@ func (a *NetworksApiService) UpdateNetworkTrafficAnalysisExecute(r NetworksApiUp
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.UpdateNetworkTrafficAnalysis")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkTrafficAnalysis")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13694,20 +13694,20 @@ func (a *NetworksApiService) UpdateNetworkTrafficAnalysisExecute(r NetworksApiUp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiUpdateNetworkWebhooksHttpServerRequest struct {
+type NetworksAPIUpdateNetworkWebhooksHttpServerRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	httpServerId string
 	updateNetworkWebhooksHttpServerRequest *UpdateNetworkWebhooksHttpServerRequest
 }
 
-func (r NetworksApiUpdateNetworkWebhooksHttpServerRequest) UpdateNetworkWebhooksHttpServerRequest(updateNetworkWebhooksHttpServerRequest UpdateNetworkWebhooksHttpServerRequest) NetworksApiUpdateNetworkWebhooksHttpServerRequest {
+func (r NetworksAPIUpdateNetworkWebhooksHttpServerRequest) UpdateNetworkWebhooksHttpServerRequest(updateNetworkWebhooksHttpServerRequest UpdateNetworkWebhooksHttpServerRequest) NetworksAPIUpdateNetworkWebhooksHttpServerRequest {
 	r.updateNetworkWebhooksHttpServerRequest = &updateNetworkWebhooksHttpServerRequest
 	return r
 }
 
-func (r NetworksApiUpdateNetworkWebhooksHttpServerRequest) Execute() (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
+func (r NetworksAPIUpdateNetworkWebhooksHttpServerRequest) Execute() (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWebhooksHttpServerExecute(r)
 }
 
@@ -13719,10 +13719,10 @@ Update an HTTP server. To change a URL, create a new HTTP server.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param httpServerId Http server ID
- @return NetworksApiUpdateNetworkWebhooksHttpServerRequest
+ @return NetworksAPIUpdateNetworkWebhooksHttpServerRequest
 */
-func (a *NetworksApiService) UpdateNetworkWebhooksHttpServer(ctx context.Context, networkId string, httpServerId string) NetworksApiUpdateNetworkWebhooksHttpServerRequest {
-	return NetworksApiUpdateNetworkWebhooksHttpServerRequest{
+func (a *NetworksAPIService) UpdateNetworkWebhooksHttpServer(ctx context.Context, networkId string, httpServerId string) NetworksAPIUpdateNetworkWebhooksHttpServerRequest {
+	return NetworksAPIUpdateNetworkWebhooksHttpServerRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -13732,7 +13732,7 @@ func (a *NetworksApiService) UpdateNetworkWebhooksHttpServer(ctx context.Context
 
 // Execute executes the request
 //  @return GetNetworkWebhooksHttpServers200ResponseInner
-func (a *NetworksApiService) UpdateNetworkWebhooksHttpServerExecute(r NetworksApiUpdateNetworkWebhooksHttpServerRequest) (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
+func (a *NetworksAPIService) UpdateNetworkWebhooksHttpServerExecute(r NetworksAPIUpdateNetworkWebhooksHttpServerRequest) (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -13740,7 +13740,7 @@ func (a *NetworksApiService) UpdateNetworkWebhooksHttpServerExecute(r NetworksAp
 		localVarReturnValue  *GetNetworkWebhooksHttpServers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.UpdateNetworkWebhooksHttpServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkWebhooksHttpServer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13823,20 +13823,20 @@ func (a *NetworksApiService) UpdateNetworkWebhooksHttpServerExecute(r NetworksAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiUpdateNetworkWebhooksPayloadTemplateRequest struct {
+type NetworksAPIUpdateNetworkWebhooksPayloadTemplateRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	payloadTemplateId string
 	updateNetworkWebhooksPayloadTemplateRequest *UpdateNetworkWebhooksPayloadTemplateRequest
 }
 
-func (r NetworksApiUpdateNetworkWebhooksPayloadTemplateRequest) UpdateNetworkWebhooksPayloadTemplateRequest(updateNetworkWebhooksPayloadTemplateRequest UpdateNetworkWebhooksPayloadTemplateRequest) NetworksApiUpdateNetworkWebhooksPayloadTemplateRequest {
+func (r NetworksAPIUpdateNetworkWebhooksPayloadTemplateRequest) UpdateNetworkWebhooksPayloadTemplateRequest(updateNetworkWebhooksPayloadTemplateRequest UpdateNetworkWebhooksPayloadTemplateRequest) NetworksAPIUpdateNetworkWebhooksPayloadTemplateRequest {
 	r.updateNetworkWebhooksPayloadTemplateRequest = &updateNetworkWebhooksPayloadTemplateRequest
 	return r
 }
 
-func (r NetworksApiUpdateNetworkWebhooksPayloadTemplateRequest) Execute() (*GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
+func (r NetworksAPIUpdateNetworkWebhooksPayloadTemplateRequest) Execute() (*GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWebhooksPayloadTemplateExecute(r)
 }
 
@@ -13848,10 +13848,10 @@ Update a webhook payload template for a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param payloadTemplateId Payload template ID
- @return NetworksApiUpdateNetworkWebhooksPayloadTemplateRequest
+ @return NetworksAPIUpdateNetworkWebhooksPayloadTemplateRequest
 */
-func (a *NetworksApiService) UpdateNetworkWebhooksPayloadTemplate(ctx context.Context, networkId string, payloadTemplateId string) NetworksApiUpdateNetworkWebhooksPayloadTemplateRequest {
-	return NetworksApiUpdateNetworkWebhooksPayloadTemplateRequest{
+func (a *NetworksAPIService) UpdateNetworkWebhooksPayloadTemplate(ctx context.Context, networkId string, payloadTemplateId string) NetworksAPIUpdateNetworkWebhooksPayloadTemplateRequest {
+	return NetworksAPIUpdateNetworkWebhooksPayloadTemplateRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -13861,7 +13861,7 @@ func (a *NetworksApiService) UpdateNetworkWebhooksPayloadTemplate(ctx context.Co
 
 // Execute executes the request
 //  @return GetNetworkWebhooksPayloadTemplates200ResponseInner
-func (a *NetworksApiService) UpdateNetworkWebhooksPayloadTemplateExecute(r NetworksApiUpdateNetworkWebhooksPayloadTemplateRequest) (*GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
+func (a *NetworksAPIService) UpdateNetworkWebhooksPayloadTemplateExecute(r NetworksAPIUpdateNetworkWebhooksPayloadTemplateRequest) (*GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -13869,7 +13869,7 @@ func (a *NetworksApiService) UpdateNetworkWebhooksPayloadTemplateExecute(r Netwo
 		localVarReturnValue  *GetNetworkWebhooksPayloadTemplates200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.UpdateNetworkWebhooksPayloadTemplate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.UpdateNetworkWebhooksPayloadTemplate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13952,19 +13952,19 @@ func (a *NetworksApiService) UpdateNetworkWebhooksPayloadTemplateExecute(r Netwo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetworksApiVmxNetworkDevicesClaimRequest struct {
+type NetworksAPIVmxNetworkDevicesClaimRequest struct {
 	ctx context.Context
-	ApiService *NetworksApiService
+	ApiService *NetworksAPIService
 	networkId string
 	vmxNetworkDevicesClaimRequest *VmxNetworkDevicesClaimRequest
 }
 
-func (r NetworksApiVmxNetworkDevicesClaimRequest) VmxNetworkDevicesClaimRequest(vmxNetworkDevicesClaimRequest VmxNetworkDevicesClaimRequest) NetworksApiVmxNetworkDevicesClaimRequest {
+func (r NetworksAPIVmxNetworkDevicesClaimRequest) VmxNetworkDevicesClaimRequest(vmxNetworkDevicesClaimRequest VmxNetworkDevicesClaimRequest) NetworksAPIVmxNetworkDevicesClaimRequest {
 	r.vmxNetworkDevicesClaimRequest = &vmxNetworkDevicesClaimRequest
 	return r
 }
 
-func (r NetworksApiVmxNetworkDevicesClaimRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetworksAPIVmxNetworkDevicesClaimRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.VmxNetworkDevicesClaimExecute(r)
 }
 
@@ -13975,10 +13975,10 @@ Claim a vMX into a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworksApiVmxNetworkDevicesClaimRequest
+ @return NetworksAPIVmxNetworkDevicesClaimRequest
 */
-func (a *NetworksApiService) VmxNetworkDevicesClaim(ctx context.Context, networkId string) NetworksApiVmxNetworkDevicesClaimRequest {
-	return NetworksApiVmxNetworkDevicesClaimRequest{
+func (a *NetworksAPIService) VmxNetworkDevicesClaim(ctx context.Context, networkId string) NetworksAPIVmxNetworkDevicesClaimRequest {
+	return NetworksAPIVmxNetworkDevicesClaimRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -13987,7 +13987,7 @@ func (a *NetworksApiService) VmxNetworkDevicesClaim(ctx context.Context, network
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetworksApiService) VmxNetworkDevicesClaimExecute(r NetworksApiVmxNetworkDevicesClaimRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetworksAPIService) VmxNetworkDevicesClaimExecute(r NetworksAPIVmxNetworkDevicesClaimRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -13995,7 +13995,7 @@ func (a *NetworksApiService) VmxNetworkDevicesClaimExecute(r NetworksApiVmxNetwo
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksApiService.VmxNetworkDevicesClaim")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.VmxNetworkDevicesClaim")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

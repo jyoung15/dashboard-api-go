@@ -20,22 +20,22 @@ import (
 )
 
 
-// PingDeviceApiService PingDeviceApi service
-type PingDeviceApiService service
+// PingDeviceAPIService PingDeviceAPI service
+type PingDeviceAPIService service
 
-type PingDeviceApiCreateDeviceLiveToolsPingDeviceRequest struct {
+type PingDeviceAPICreateDeviceLiveToolsPingDeviceRequest struct {
 	ctx context.Context
-	ApiService *PingDeviceApiService
+	ApiService *PingDeviceAPIService
 	serial string
 	createDeviceLiveToolsPingDeviceRequest *CreateDeviceLiveToolsPingDeviceRequest
 }
 
-func (r PingDeviceApiCreateDeviceLiveToolsPingDeviceRequest) CreateDeviceLiveToolsPingDeviceRequest(createDeviceLiveToolsPingDeviceRequest CreateDeviceLiveToolsPingDeviceRequest) PingDeviceApiCreateDeviceLiveToolsPingDeviceRequest {
+func (r PingDeviceAPICreateDeviceLiveToolsPingDeviceRequest) CreateDeviceLiveToolsPingDeviceRequest(createDeviceLiveToolsPingDeviceRequest CreateDeviceLiveToolsPingDeviceRequest) PingDeviceAPICreateDeviceLiveToolsPingDeviceRequest {
 	r.createDeviceLiveToolsPingDeviceRequest = &createDeviceLiveToolsPingDeviceRequest
 	return r
 }
 
-func (r PingDeviceApiCreateDeviceLiveToolsPingDeviceRequest) Execute() (*CreateDeviceLiveToolsPing201Response, *http.Response, error) {
+func (r PingDeviceAPICreateDeviceLiveToolsPingDeviceRequest) Execute() (*CreateDeviceLiveToolsPing201Response, *http.Response, error) {
 	return r.ApiService.CreateDeviceLiveToolsPingDeviceExecute(r)
 }
 
@@ -46,10 +46,10 @@ Enqueue a job to check connectivity status to the device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return PingDeviceApiCreateDeviceLiveToolsPingDeviceRequest
+ @return PingDeviceAPICreateDeviceLiveToolsPingDeviceRequest
 */
-func (a *PingDeviceApiService) CreateDeviceLiveToolsPingDevice(ctx context.Context, serial string) PingDeviceApiCreateDeviceLiveToolsPingDeviceRequest {
-	return PingDeviceApiCreateDeviceLiveToolsPingDeviceRequest{
+func (a *PingDeviceAPIService) CreateDeviceLiveToolsPingDevice(ctx context.Context, serial string) PingDeviceAPICreateDeviceLiveToolsPingDeviceRequest {
+	return PingDeviceAPICreateDeviceLiveToolsPingDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -58,7 +58,7 @@ func (a *PingDeviceApiService) CreateDeviceLiveToolsPingDevice(ctx context.Conte
 
 // Execute executes the request
 //  @return CreateDeviceLiveToolsPing201Response
-func (a *PingDeviceApiService) CreateDeviceLiveToolsPingDeviceExecute(r PingDeviceApiCreateDeviceLiveToolsPingDeviceRequest) (*CreateDeviceLiveToolsPing201Response, *http.Response, error) {
+func (a *PingDeviceAPIService) CreateDeviceLiveToolsPingDeviceExecute(r PingDeviceAPICreateDeviceLiveToolsPingDeviceRequest) (*CreateDeviceLiveToolsPing201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *PingDeviceApiService) CreateDeviceLiveToolsPingDeviceExecute(r PingDevi
 		localVarReturnValue  *CreateDeviceLiveToolsPing201Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingDeviceApiService.CreateDeviceLiveToolsPingDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingDeviceAPIService.CreateDeviceLiveToolsPingDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -148,14 +148,14 @@ func (a *PingDeviceApiService) CreateDeviceLiveToolsPingDeviceExecute(r PingDevi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PingDeviceApiGetDeviceLiveToolsPingDeviceRequest struct {
+type PingDeviceAPIGetDeviceLiveToolsPingDeviceRequest struct {
 	ctx context.Context
-	ApiService *PingDeviceApiService
+	ApiService *PingDeviceAPIService
 	serial string
 	id string
 }
 
-func (r PingDeviceApiGetDeviceLiveToolsPingDeviceRequest) Execute() (*GetDeviceLiveToolsPing200Response, *http.Response, error) {
+func (r PingDeviceAPIGetDeviceLiveToolsPingDeviceRequest) Execute() (*GetDeviceLiveToolsPing200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceLiveToolsPingDeviceExecute(r)
 }
 
@@ -167,10 +167,10 @@ Return a ping device job. Latency unit in response is in milliseconds. Size is i
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param id ID
- @return PingDeviceApiGetDeviceLiveToolsPingDeviceRequest
+ @return PingDeviceAPIGetDeviceLiveToolsPingDeviceRequest
 */
-func (a *PingDeviceApiService) GetDeviceLiveToolsPingDevice(ctx context.Context, serial string, id string) PingDeviceApiGetDeviceLiveToolsPingDeviceRequest {
-	return PingDeviceApiGetDeviceLiveToolsPingDeviceRequest{
+func (a *PingDeviceAPIService) GetDeviceLiveToolsPingDevice(ctx context.Context, serial string, id string) PingDeviceAPIGetDeviceLiveToolsPingDeviceRequest {
+	return PingDeviceAPIGetDeviceLiveToolsPingDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -180,7 +180,7 @@ func (a *PingDeviceApiService) GetDeviceLiveToolsPingDevice(ctx context.Context,
 
 // Execute executes the request
 //  @return GetDeviceLiveToolsPing200Response
-func (a *PingDeviceApiService) GetDeviceLiveToolsPingDeviceExecute(r PingDeviceApiGetDeviceLiveToolsPingDeviceRequest) (*GetDeviceLiveToolsPing200Response, *http.Response, error) {
+func (a *PingDeviceAPIService) GetDeviceLiveToolsPingDeviceExecute(r PingDeviceAPIGetDeviceLiveToolsPingDeviceRequest) (*GetDeviceLiveToolsPing200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -188,7 +188,7 @@ func (a *PingDeviceApiService) GetDeviceLiveToolsPingDeviceExecute(r PingDeviceA
 		localVarReturnValue  *GetDeviceLiveToolsPing200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingDeviceApiService.GetDeviceLiveToolsPingDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingDeviceAPIService.GetDeviceLiveToolsPingDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing OspfApiService
+Testing OspfAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_OspfApiService(t *testing.T) {
+func Test_client_OspfAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test OspfApiService GetNetworkSwitchRoutingOspf", func(t *testing.T) {
+	t.Run("Test OspfAPIService GetNetworkSwitchRoutingOspf", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.OspfApi.GetNetworkSwitchRoutingOspf(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.OspfAPI.GetNetworkSwitchRoutingOspf(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_OspfApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test OspfApiService UpdateNetworkSwitchRoutingOspf", func(t *testing.T) {
+	t.Run("Test OspfAPIService UpdateNetworkSwitchRoutingOspf", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.OspfApi.UpdateNetworkSwitchRoutingOspf(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.OspfAPI.UpdateNetworkSwitchRoutingOspf(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

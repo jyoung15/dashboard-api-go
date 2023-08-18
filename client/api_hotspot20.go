@@ -20,17 +20,17 @@ import (
 )
 
 
-// Hotspot20ApiService Hotspot20Api service
-type Hotspot20ApiService service
+// Hotspot20APIService Hotspot20API service
+type Hotspot20APIService service
 
-type Hotspot20ApiGetNetworkWirelessSsidHotspot20Request struct {
+type Hotspot20APIGetNetworkWirelessSsidHotspot20Request struct {
 	ctx context.Context
-	ApiService *Hotspot20ApiService
+	ApiService *Hotspot20APIService
 	networkId string
 	number string
 }
 
-func (r Hotspot20ApiGetNetworkWirelessSsidHotspot20Request) Execute() (map[string]interface{}, *http.Response, error) {
+func (r Hotspot20APIGetNetworkWirelessSsidHotspot20Request) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidHotspot20Execute(r)
 }
 
@@ -42,10 +42,10 @@ Return the Hotspot 2.0 settings for an SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return Hotspot20ApiGetNetworkWirelessSsidHotspot20Request
+ @return Hotspot20APIGetNetworkWirelessSsidHotspot20Request
 */
-func (a *Hotspot20ApiService) GetNetworkWirelessSsidHotspot20(ctx context.Context, networkId string, number string) Hotspot20ApiGetNetworkWirelessSsidHotspot20Request {
-	return Hotspot20ApiGetNetworkWirelessSsidHotspot20Request{
+func (a *Hotspot20APIService) GetNetworkWirelessSsidHotspot20(ctx context.Context, networkId string, number string) Hotspot20APIGetNetworkWirelessSsidHotspot20Request {
+	return Hotspot20APIGetNetworkWirelessSsidHotspot20Request{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -55,7 +55,7 @@ func (a *Hotspot20ApiService) GetNetworkWirelessSsidHotspot20(ctx context.Contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *Hotspot20ApiService) GetNetworkWirelessSsidHotspot20Execute(r Hotspot20ApiGetNetworkWirelessSsidHotspot20Request) (map[string]interface{}, *http.Response, error) {
+func (a *Hotspot20APIService) GetNetworkWirelessSsidHotspot20Execute(r Hotspot20APIGetNetworkWirelessSsidHotspot20Request) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -63,7 +63,7 @@ func (a *Hotspot20ApiService) GetNetworkWirelessSsidHotspot20Execute(r Hotspot20
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "Hotspot20ApiService.GetNetworkWirelessSsidHotspot20")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "Hotspot20APIService.GetNetworkWirelessSsidHotspot20")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -144,20 +144,20 @@ func (a *Hotspot20ApiService) GetNetworkWirelessSsidHotspot20Execute(r Hotspot20
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type Hotspot20ApiUpdateNetworkWirelessSsidHotspot20Request struct {
+type Hotspot20APIUpdateNetworkWirelessSsidHotspot20Request struct {
 	ctx context.Context
-	ApiService *Hotspot20ApiService
+	ApiService *Hotspot20APIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidHotspot20Request *UpdateNetworkWirelessSsidHotspot20Request
 }
 
-func (r Hotspot20ApiUpdateNetworkWirelessSsidHotspot20Request) UpdateNetworkWirelessSsidHotspot20Request(updateNetworkWirelessSsidHotspot20Request UpdateNetworkWirelessSsidHotspot20Request) Hotspot20ApiUpdateNetworkWirelessSsidHotspot20Request {
+func (r Hotspot20APIUpdateNetworkWirelessSsidHotspot20Request) UpdateNetworkWirelessSsidHotspot20Request(updateNetworkWirelessSsidHotspot20Request UpdateNetworkWirelessSsidHotspot20Request) Hotspot20APIUpdateNetworkWirelessSsidHotspot20Request {
 	r.updateNetworkWirelessSsidHotspot20Request = &updateNetworkWirelessSsidHotspot20Request
 	return r
 }
 
-func (r Hotspot20ApiUpdateNetworkWirelessSsidHotspot20Request) Execute() (map[string]interface{}, *http.Response, error) {
+func (r Hotspot20APIUpdateNetworkWirelessSsidHotspot20Request) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidHotspot20Execute(r)
 }
 
@@ -169,10 +169,10 @@ Update the Hotspot 2.0 settings of an SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return Hotspot20ApiUpdateNetworkWirelessSsidHotspot20Request
+ @return Hotspot20APIUpdateNetworkWirelessSsidHotspot20Request
 */
-func (a *Hotspot20ApiService) UpdateNetworkWirelessSsidHotspot20(ctx context.Context, networkId string, number string) Hotspot20ApiUpdateNetworkWirelessSsidHotspot20Request {
-	return Hotspot20ApiUpdateNetworkWirelessSsidHotspot20Request{
+func (a *Hotspot20APIService) UpdateNetworkWirelessSsidHotspot20(ctx context.Context, networkId string, number string) Hotspot20APIUpdateNetworkWirelessSsidHotspot20Request {
+	return Hotspot20APIUpdateNetworkWirelessSsidHotspot20Request{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -182,7 +182,7 @@ func (a *Hotspot20ApiService) UpdateNetworkWirelessSsidHotspot20(ctx context.Con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *Hotspot20ApiService) UpdateNetworkWirelessSsidHotspot20Execute(r Hotspot20ApiUpdateNetworkWirelessSsidHotspot20Request) (map[string]interface{}, *http.Response, error) {
+func (a *Hotspot20APIService) UpdateNetworkWirelessSsidHotspot20Execute(r Hotspot20APIUpdateNetworkWirelessSsidHotspot20Request) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -190,7 +190,7 @@ func (a *Hotspot20ApiService) UpdateNetworkWirelessSsidHotspot20Execute(r Hotspo
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "Hotspot20ApiService.UpdateNetworkWirelessSsidHotspot20")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "Hotspot20APIService.UpdateNetworkWirelessSsidHotspot20")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing QosRulesApiService
+Testing QosRulesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_QosRulesApiService(t *testing.T) {
+func Test_client_QosRulesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test QosRulesApiService CreateNetworkSwitchQosRule", func(t *testing.T) {
+	t.Run("Test QosRulesAPIService CreateNetworkSwitchQosRule", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.QosRulesApi.CreateNetworkSwitchQosRule(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.QosRulesAPI.CreateNetworkSwitchQosRule(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,28 +36,28 @@ func Test_client_QosRulesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test QosRulesApiService DeleteNetworkSwitchQosRule", func(t *testing.T) {
+	t.Run("Test QosRulesAPIService DeleteNetworkSwitchQosRule", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var qosRuleId string
 
-		httpRes, err := apiClient.QosRulesApi.DeleteNetworkSwitchQosRule(context.Background(), networkId, qosRuleId).Execute()
+		httpRes, err := apiClient.QosRulesAPI.DeleteNetworkSwitchQosRule(context.Background(), networkId, qosRuleId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test QosRulesApiService GetNetworkSwitchQosRule", func(t *testing.T) {
+	t.Run("Test QosRulesAPIService GetNetworkSwitchQosRule", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var qosRuleId string
 
-		resp, httpRes, err := apiClient.QosRulesApi.GetNetworkSwitchQosRule(context.Background(), networkId, qosRuleId).Execute()
+		resp, httpRes, err := apiClient.QosRulesAPI.GetNetworkSwitchQosRule(context.Background(), networkId, qosRuleId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -65,13 +65,13 @@ func Test_client_QosRulesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test QosRulesApiService GetNetworkSwitchQosRules", func(t *testing.T) {
+	t.Run("Test QosRulesAPIService GetNetworkSwitchQosRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.QosRulesApi.GetNetworkSwitchQosRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.QosRulesAPI.GetNetworkSwitchQosRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,13 +79,13 @@ func Test_client_QosRulesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test QosRulesApiService GetNetworkSwitchQosRulesOrder", func(t *testing.T) {
+	t.Run("Test QosRulesAPIService GetNetworkSwitchQosRulesOrder", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.QosRulesApi.GetNetworkSwitchQosRulesOrder(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.QosRulesAPI.GetNetworkSwitchQosRulesOrder(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -93,14 +93,14 @@ func Test_client_QosRulesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test QosRulesApiService UpdateNetworkSwitchQosRule", func(t *testing.T) {
+	t.Run("Test QosRulesAPIService UpdateNetworkSwitchQosRule", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var qosRuleId string
 
-		resp, httpRes, err := apiClient.QosRulesApi.UpdateNetworkSwitchQosRule(context.Background(), networkId, qosRuleId).Execute()
+		resp, httpRes, err := apiClient.QosRulesAPI.UpdateNetworkSwitchQosRule(context.Background(), networkId, qosRuleId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -108,13 +108,13 @@ func Test_client_QosRulesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test QosRulesApiService UpdateNetworkSwitchQosRulesOrder", func(t *testing.T) {
+	t.Run("Test QosRulesAPIService UpdateNetworkSwitchQosRulesOrder", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.QosRulesApi.UpdateNetworkSwitchQosRulesOrder(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.QosRulesAPI.UpdateNetworkSwitchQosRulesOrder(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

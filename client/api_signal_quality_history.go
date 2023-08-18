@@ -20,12 +20,12 @@ import (
 )
 
 
-// SignalQualityHistoryApiService SignalQualityHistoryApi service
-type SignalQualityHistoryApiService service
+// SignalQualityHistoryAPIService SignalQualityHistoryAPI service
+type SignalQualityHistoryAPIService service
 
-type SignalQualityHistoryApiGetNetworkWirelessSignalQualityHistoryRequest struct {
+type SignalQualityHistoryAPIGetNetworkWirelessSignalQualityHistoryRequest struct {
 	ctx context.Context
-	ApiService *SignalQualityHistoryApiService
+	ApiService *SignalQualityHistoryAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -40,66 +40,66 @@ type SignalQualityHistoryApiGetNetworkWirelessSignalQualityHistoryRequest struct
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r SignalQualityHistoryApiGetNetworkWirelessSignalQualityHistoryRequest) T0(t0 string) SignalQualityHistoryApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r SignalQualityHistoryAPIGetNetworkWirelessSignalQualityHistoryRequest) T0(t0 string) SignalQualityHistoryAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r SignalQualityHistoryApiGetNetworkWirelessSignalQualityHistoryRequest) T1(t1 string) SignalQualityHistoryApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r SignalQualityHistoryAPIGetNetworkWirelessSignalQualityHistoryRequest) T1(t1 string) SignalQualityHistoryAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r SignalQualityHistoryApiGetNetworkWirelessSignalQualityHistoryRequest) Timespan(timespan float32) SignalQualityHistoryApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r SignalQualityHistoryAPIGetNetworkWirelessSignalQualityHistoryRequest) Timespan(timespan float32) SignalQualityHistoryAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 300, 600, 1200, 3600, 14400, 86400. The default is 86400.
-func (r SignalQualityHistoryApiGetNetworkWirelessSignalQualityHistoryRequest) Resolution(resolution int32) SignalQualityHistoryApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r SignalQualityHistoryAPIGetNetworkWirelessSignalQualityHistoryRequest) Resolution(resolution int32) SignalQualityHistoryAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // Automatically select a data resolution based on the given timespan; this overrides the value specified by the &#39;resolution&#39; parameter. The default setting is false.
-func (r SignalQualityHistoryApiGetNetworkWirelessSignalQualityHistoryRequest) AutoResolution(autoResolution bool) SignalQualityHistoryApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r SignalQualityHistoryAPIGetNetworkWirelessSignalQualityHistoryRequest) AutoResolution(autoResolution bool) SignalQualityHistoryAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.autoResolution = &autoResolution
 	return r
 }
 
 // Filter results by network client.
-func (r SignalQualityHistoryApiGetNetworkWirelessSignalQualityHistoryRequest) ClientId(clientId string) SignalQualityHistoryApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r SignalQualityHistoryAPIGetNetworkWirelessSignalQualityHistoryRequest) ClientId(clientId string) SignalQualityHistoryAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.clientId = &clientId
 	return r
 }
 
 // Filter results by device.
-func (r SignalQualityHistoryApiGetNetworkWirelessSignalQualityHistoryRequest) DeviceSerial(deviceSerial string) SignalQualityHistoryApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r SignalQualityHistoryAPIGetNetworkWirelessSignalQualityHistoryRequest) DeviceSerial(deviceSerial string) SignalQualityHistoryAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.deviceSerial = &deviceSerial
 	return r
 }
 
 // Filter results by AP tag; either :clientId or :deviceSerial must be jointly specified.
-func (r SignalQualityHistoryApiGetNetworkWirelessSignalQualityHistoryRequest) ApTag(apTag string) SignalQualityHistoryApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r SignalQualityHistoryAPIGetNetworkWirelessSignalQualityHistoryRequest) ApTag(apTag string) SignalQualityHistoryAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;).
-func (r SignalQualityHistoryApiGetNetworkWirelessSignalQualityHistoryRequest) Band(band string) SignalQualityHistoryApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r SignalQualityHistoryAPIGetNetworkWirelessSignalQualityHistoryRequest) Band(band string) SignalQualityHistoryAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID number.
-func (r SignalQualityHistoryApiGetNetworkWirelessSignalQualityHistoryRequest) Ssid(ssid int32) SignalQualityHistoryApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r SignalQualityHistoryAPIGetNetworkWirelessSignalQualityHistoryRequest) Ssid(ssid int32) SignalQualityHistoryAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.ssid = &ssid
 	return r
 }
 
-func (r SignalQualityHistoryApiGetNetworkWirelessSignalQualityHistoryRequest) Execute() ([]GetNetworkWirelessSignalQualityHistory200ResponseInner, *http.Response, error) {
+func (r SignalQualityHistoryAPIGetNetworkWirelessSignalQualityHistoryRequest) Execute() ([]GetNetworkWirelessSignalQualityHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSignalQualityHistoryExecute(r)
 }
 
@@ -110,10 +110,10 @@ Return signal quality (SNR/RSSI) over time for a device or network client
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SignalQualityHistoryApiGetNetworkWirelessSignalQualityHistoryRequest
+ @return SignalQualityHistoryAPIGetNetworkWirelessSignalQualityHistoryRequest
 */
-func (a *SignalQualityHistoryApiService) GetNetworkWirelessSignalQualityHistory(ctx context.Context, networkId string) SignalQualityHistoryApiGetNetworkWirelessSignalQualityHistoryRequest {
-	return SignalQualityHistoryApiGetNetworkWirelessSignalQualityHistoryRequest{
+func (a *SignalQualityHistoryAPIService) GetNetworkWirelessSignalQualityHistory(ctx context.Context, networkId string) SignalQualityHistoryAPIGetNetworkWirelessSignalQualityHistoryRequest {
+	return SignalQualityHistoryAPIGetNetworkWirelessSignalQualityHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -122,7 +122,7 @@ func (a *SignalQualityHistoryApiService) GetNetworkWirelessSignalQualityHistory(
 
 // Execute executes the request
 //  @return []GetNetworkWirelessSignalQualityHistory200ResponseInner
-func (a *SignalQualityHistoryApiService) GetNetworkWirelessSignalQualityHistoryExecute(r SignalQualityHistoryApiGetNetworkWirelessSignalQualityHistoryRequest) ([]GetNetworkWirelessSignalQualityHistory200ResponseInner, *http.Response, error) {
+func (a *SignalQualityHistoryAPIService) GetNetworkWirelessSignalQualityHistoryExecute(r SignalQualityHistoryAPIGetNetworkWirelessSignalQualityHistoryRequest) ([]GetNetworkWirelessSignalQualityHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -130,7 +130,7 @@ func (a *SignalQualityHistoryApiService) GetNetworkWirelessSignalQualityHistoryE
 		localVarReturnValue  []GetNetworkWirelessSignalQualityHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SignalQualityHistoryApiService.GetNetworkWirelessSignalQualityHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SignalQualityHistoryAPIService.GetNetworkWirelessSignalQualityHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

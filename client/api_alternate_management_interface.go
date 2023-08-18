@@ -20,16 +20,16 @@ import (
 )
 
 
-// AlternateManagementInterfaceApiService AlternateManagementInterfaceApi service
-type AlternateManagementInterfaceApiService service
+// AlternateManagementInterfaceAPIService AlternateManagementInterfaceAPI service
+type AlternateManagementInterfaceAPIService service
 
-type AlternateManagementInterfaceApiGetNetworkSwitchAlternateManagementInterfaceRequest struct {
+type AlternateManagementInterfaceAPIGetNetworkSwitchAlternateManagementInterfaceRequest struct {
 	ctx context.Context
-	ApiService *AlternateManagementInterfaceApiService
+	ApiService *AlternateManagementInterfaceAPIService
 	networkId string
 }
 
-func (r AlternateManagementInterfaceApiGetNetworkSwitchAlternateManagementInterfaceRequest) Execute() (*GetNetworkSwitchAlternateManagementInterface200Response, *http.Response, error) {
+func (r AlternateManagementInterfaceAPIGetNetworkSwitchAlternateManagementInterfaceRequest) Execute() (*GetNetworkSwitchAlternateManagementInterface200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchAlternateManagementInterfaceExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the switch alternate management interface for the network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return AlternateManagementInterfaceApiGetNetworkSwitchAlternateManagementInterfaceRequest
+ @return AlternateManagementInterfaceAPIGetNetworkSwitchAlternateManagementInterfaceRequest
 */
-func (a *AlternateManagementInterfaceApiService) GetNetworkSwitchAlternateManagementInterface(ctx context.Context, networkId string) AlternateManagementInterfaceApiGetNetworkSwitchAlternateManagementInterfaceRequest {
-	return AlternateManagementInterfaceApiGetNetworkSwitchAlternateManagementInterfaceRequest{
+func (a *AlternateManagementInterfaceAPIService) GetNetworkSwitchAlternateManagementInterface(ctx context.Context, networkId string) AlternateManagementInterfaceAPIGetNetworkSwitchAlternateManagementInterfaceRequest {
+	return AlternateManagementInterfaceAPIGetNetworkSwitchAlternateManagementInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *AlternateManagementInterfaceApiService) GetNetworkSwitchAlternateManage
 
 // Execute executes the request
 //  @return GetNetworkSwitchAlternateManagementInterface200Response
-func (a *AlternateManagementInterfaceApiService) GetNetworkSwitchAlternateManagementInterfaceExecute(r AlternateManagementInterfaceApiGetNetworkSwitchAlternateManagementInterfaceRequest) (*GetNetworkSwitchAlternateManagementInterface200Response, *http.Response, error) {
+func (a *AlternateManagementInterfaceAPIService) GetNetworkSwitchAlternateManagementInterfaceExecute(r AlternateManagementInterfaceAPIGetNetworkSwitchAlternateManagementInterfaceRequest) (*GetNetworkSwitchAlternateManagementInterface200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *AlternateManagementInterfaceApiService) GetNetworkSwitchAlternateManage
 		localVarReturnValue  *GetNetworkSwitchAlternateManagementInterface200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlternateManagementInterfaceApiService.GetNetworkSwitchAlternateManagementInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlternateManagementInterfaceAPIService.GetNetworkSwitchAlternateManagementInterface")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,13 +140,13 @@ func (a *AlternateManagementInterfaceApiService) GetNetworkSwitchAlternateManage
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AlternateManagementInterfaceApiGetNetworkWirelessAlternateManagementInterfaceRequest struct {
+type AlternateManagementInterfaceAPIGetNetworkWirelessAlternateManagementInterfaceRequest struct {
 	ctx context.Context
-	ApiService *AlternateManagementInterfaceApiService
+	ApiService *AlternateManagementInterfaceAPIService
 	networkId string
 }
 
-func (r AlternateManagementInterfaceApiGetNetworkWirelessAlternateManagementInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r AlternateManagementInterfaceAPIGetNetworkWirelessAlternateManagementInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessAlternateManagementInterfaceExecute(r)
 }
 
@@ -157,10 +157,10 @@ Return alternate management interface and devices with IP assigned
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return AlternateManagementInterfaceApiGetNetworkWirelessAlternateManagementInterfaceRequest
+ @return AlternateManagementInterfaceAPIGetNetworkWirelessAlternateManagementInterfaceRequest
 */
-func (a *AlternateManagementInterfaceApiService) GetNetworkWirelessAlternateManagementInterface(ctx context.Context, networkId string) AlternateManagementInterfaceApiGetNetworkWirelessAlternateManagementInterfaceRequest {
-	return AlternateManagementInterfaceApiGetNetworkWirelessAlternateManagementInterfaceRequest{
+func (a *AlternateManagementInterfaceAPIService) GetNetworkWirelessAlternateManagementInterface(ctx context.Context, networkId string) AlternateManagementInterfaceAPIGetNetworkWirelessAlternateManagementInterfaceRequest {
+	return AlternateManagementInterfaceAPIGetNetworkWirelessAlternateManagementInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -169,7 +169,7 @@ func (a *AlternateManagementInterfaceApiService) GetNetworkWirelessAlternateMana
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *AlternateManagementInterfaceApiService) GetNetworkWirelessAlternateManagementInterfaceExecute(r AlternateManagementInterfaceApiGetNetworkWirelessAlternateManagementInterfaceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *AlternateManagementInterfaceAPIService) GetNetworkWirelessAlternateManagementInterfaceExecute(r AlternateManagementInterfaceAPIGetNetworkWirelessAlternateManagementInterfaceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -177,7 +177,7 @@ func (a *AlternateManagementInterfaceApiService) GetNetworkWirelessAlternateMana
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlternateManagementInterfaceApiService.GetNetworkWirelessAlternateManagementInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlternateManagementInterfaceAPIService.GetNetworkWirelessAlternateManagementInterface")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -257,19 +257,19 @@ func (a *AlternateManagementInterfaceApiService) GetNetworkWirelessAlternateMana
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AlternateManagementInterfaceApiUpdateNetworkSwitchAlternateManagementInterfaceRequest struct {
+type AlternateManagementInterfaceAPIUpdateNetworkSwitchAlternateManagementInterfaceRequest struct {
 	ctx context.Context
-	ApiService *AlternateManagementInterfaceApiService
+	ApiService *AlternateManagementInterfaceAPIService
 	networkId string
 	updateNetworkSwitchAlternateManagementInterfaceRequest *UpdateNetworkSwitchAlternateManagementInterfaceRequest
 }
 
-func (r AlternateManagementInterfaceApiUpdateNetworkSwitchAlternateManagementInterfaceRequest) UpdateNetworkSwitchAlternateManagementInterfaceRequest(updateNetworkSwitchAlternateManagementInterfaceRequest UpdateNetworkSwitchAlternateManagementInterfaceRequest) AlternateManagementInterfaceApiUpdateNetworkSwitchAlternateManagementInterfaceRequest {
+func (r AlternateManagementInterfaceAPIUpdateNetworkSwitchAlternateManagementInterfaceRequest) UpdateNetworkSwitchAlternateManagementInterfaceRequest(updateNetworkSwitchAlternateManagementInterfaceRequest UpdateNetworkSwitchAlternateManagementInterfaceRequest) AlternateManagementInterfaceAPIUpdateNetworkSwitchAlternateManagementInterfaceRequest {
 	r.updateNetworkSwitchAlternateManagementInterfaceRequest = &updateNetworkSwitchAlternateManagementInterfaceRequest
 	return r
 }
 
-func (r AlternateManagementInterfaceApiUpdateNetworkSwitchAlternateManagementInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r AlternateManagementInterfaceAPIUpdateNetworkSwitchAlternateManagementInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchAlternateManagementInterfaceExecute(r)
 }
 
@@ -280,10 +280,10 @@ Update the switch alternate management interface for the network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return AlternateManagementInterfaceApiUpdateNetworkSwitchAlternateManagementInterfaceRequest
+ @return AlternateManagementInterfaceAPIUpdateNetworkSwitchAlternateManagementInterfaceRequest
 */
-func (a *AlternateManagementInterfaceApiService) UpdateNetworkSwitchAlternateManagementInterface(ctx context.Context, networkId string) AlternateManagementInterfaceApiUpdateNetworkSwitchAlternateManagementInterfaceRequest {
-	return AlternateManagementInterfaceApiUpdateNetworkSwitchAlternateManagementInterfaceRequest{
+func (a *AlternateManagementInterfaceAPIService) UpdateNetworkSwitchAlternateManagementInterface(ctx context.Context, networkId string) AlternateManagementInterfaceAPIUpdateNetworkSwitchAlternateManagementInterfaceRequest {
+	return AlternateManagementInterfaceAPIUpdateNetworkSwitchAlternateManagementInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -292,7 +292,7 @@ func (a *AlternateManagementInterfaceApiService) UpdateNetworkSwitchAlternateMan
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *AlternateManagementInterfaceApiService) UpdateNetworkSwitchAlternateManagementInterfaceExecute(r AlternateManagementInterfaceApiUpdateNetworkSwitchAlternateManagementInterfaceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *AlternateManagementInterfaceAPIService) UpdateNetworkSwitchAlternateManagementInterfaceExecute(r AlternateManagementInterfaceAPIUpdateNetworkSwitchAlternateManagementInterfaceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -300,7 +300,7 @@ func (a *AlternateManagementInterfaceApiService) UpdateNetworkSwitchAlternateMan
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlternateManagementInterfaceApiService.UpdateNetworkSwitchAlternateManagementInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlternateManagementInterfaceAPIService.UpdateNetworkSwitchAlternateManagementInterface")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -382,19 +382,19 @@ func (a *AlternateManagementInterfaceApiService) UpdateNetworkSwitchAlternateMan
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AlternateManagementInterfaceApiUpdateNetworkWirelessAlternateManagementInterfaceRequest struct {
+type AlternateManagementInterfaceAPIUpdateNetworkWirelessAlternateManagementInterfaceRequest struct {
 	ctx context.Context
-	ApiService *AlternateManagementInterfaceApiService
+	ApiService *AlternateManagementInterfaceAPIService
 	networkId string
 	updateNetworkWirelessAlternateManagementInterfaceRequest *UpdateNetworkWirelessAlternateManagementInterfaceRequest
 }
 
-func (r AlternateManagementInterfaceApiUpdateNetworkWirelessAlternateManagementInterfaceRequest) UpdateNetworkWirelessAlternateManagementInterfaceRequest(updateNetworkWirelessAlternateManagementInterfaceRequest UpdateNetworkWirelessAlternateManagementInterfaceRequest) AlternateManagementInterfaceApiUpdateNetworkWirelessAlternateManagementInterfaceRequest {
+func (r AlternateManagementInterfaceAPIUpdateNetworkWirelessAlternateManagementInterfaceRequest) UpdateNetworkWirelessAlternateManagementInterfaceRequest(updateNetworkWirelessAlternateManagementInterfaceRequest UpdateNetworkWirelessAlternateManagementInterfaceRequest) AlternateManagementInterfaceAPIUpdateNetworkWirelessAlternateManagementInterfaceRequest {
 	r.updateNetworkWirelessAlternateManagementInterfaceRequest = &updateNetworkWirelessAlternateManagementInterfaceRequest
 	return r
 }
 
-func (r AlternateManagementInterfaceApiUpdateNetworkWirelessAlternateManagementInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r AlternateManagementInterfaceAPIUpdateNetworkWirelessAlternateManagementInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessAlternateManagementInterfaceExecute(r)
 }
 
@@ -405,10 +405,10 @@ Update alternate management interface and device static IP
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return AlternateManagementInterfaceApiUpdateNetworkWirelessAlternateManagementInterfaceRequest
+ @return AlternateManagementInterfaceAPIUpdateNetworkWirelessAlternateManagementInterfaceRequest
 */
-func (a *AlternateManagementInterfaceApiService) UpdateNetworkWirelessAlternateManagementInterface(ctx context.Context, networkId string) AlternateManagementInterfaceApiUpdateNetworkWirelessAlternateManagementInterfaceRequest {
-	return AlternateManagementInterfaceApiUpdateNetworkWirelessAlternateManagementInterfaceRequest{
+func (a *AlternateManagementInterfaceAPIService) UpdateNetworkWirelessAlternateManagementInterface(ctx context.Context, networkId string) AlternateManagementInterfaceAPIUpdateNetworkWirelessAlternateManagementInterfaceRequest {
+	return AlternateManagementInterfaceAPIUpdateNetworkWirelessAlternateManagementInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -417,7 +417,7 @@ func (a *AlternateManagementInterfaceApiService) UpdateNetworkWirelessAlternateM
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *AlternateManagementInterfaceApiService) UpdateNetworkWirelessAlternateManagementInterfaceExecute(r AlternateManagementInterfaceApiUpdateNetworkWirelessAlternateManagementInterfaceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *AlternateManagementInterfaceAPIService) UpdateNetworkWirelessAlternateManagementInterfaceExecute(r AlternateManagementInterfaceAPIUpdateNetworkWirelessAlternateManagementInterfaceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -425,7 +425,7 @@ func (a *AlternateManagementInterfaceApiService) UpdateNetworkWirelessAlternateM
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlternateManagementInterfaceApiService.UpdateNetworkWirelessAlternateManagementInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlternateManagementInterfaceAPIService.UpdateNetworkWirelessAlternateManagementInterface")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

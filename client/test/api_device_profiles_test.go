@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing DeviceProfilesApiService
+Testing DeviceProfilesAPIService
 
 */
 
@@ -17,19 +17,19 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_DeviceProfilesApiService(t *testing.T) {
+func Test_client_DeviceProfilesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test DeviceProfilesApiService GetNetworkSmDeviceDeviceProfiles", func(t *testing.T) {
+	t.Run("Test DeviceProfilesAPIService GetNetworkSmDeviceDeviceProfiles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var deviceId string
 
-		resp, httpRes, err := apiClient.DeviceProfilesApi.GetNetworkSmDeviceDeviceProfiles(context.Background(), networkId, deviceId).Execute()
+		resp, httpRes, err := apiClient.DeviceProfilesAPI.GetNetworkSmDeviceDeviceProfiles(context.Background(), networkId, deviceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -37,14 +37,14 @@ func Test_client_DeviceProfilesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DeviceProfilesApiService GetNetworkSmUserDeviceProfiles", func(t *testing.T) {
+	t.Run("Test DeviceProfilesAPIService GetNetworkSmUserDeviceProfiles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var userId string
 
-		resp, httpRes, err := apiClient.DeviceProfilesApi.GetNetworkSmUserDeviceProfiles(context.Background(), networkId, userId).Execute()
+		resp, httpRes, err := apiClient.DeviceProfilesAPI.GetNetworkSmUserDeviceProfiles(context.Background(), networkId, userId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

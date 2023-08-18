@@ -20,16 +20,16 @@ import (
 )
 
 
-// MtuApiService MtuApi service
-type MtuApiService service
+// MtuAPIService MtuAPI service
+type MtuAPIService service
 
-type MtuApiGetNetworkSwitchMtuRequest struct {
+type MtuAPIGetNetworkSwitchMtuRequest struct {
 	ctx context.Context
-	ApiService *MtuApiService
+	ApiService *MtuAPIService
 	networkId string
 }
 
-func (r MtuApiGetNetworkSwitchMtuRequest) Execute() (*GetNetworkSwitchMtu200Response, *http.Response, error) {
+func (r MtuAPIGetNetworkSwitchMtuRequest) Execute() (*GetNetworkSwitchMtu200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchMtuExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the MTU configuration
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MtuApiGetNetworkSwitchMtuRequest
+ @return MtuAPIGetNetworkSwitchMtuRequest
 */
-func (a *MtuApiService) GetNetworkSwitchMtu(ctx context.Context, networkId string) MtuApiGetNetworkSwitchMtuRequest {
-	return MtuApiGetNetworkSwitchMtuRequest{
+func (a *MtuAPIService) GetNetworkSwitchMtu(ctx context.Context, networkId string) MtuAPIGetNetworkSwitchMtuRequest {
+	return MtuAPIGetNetworkSwitchMtuRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *MtuApiService) GetNetworkSwitchMtu(ctx context.Context, networkId strin
 
 // Execute executes the request
 //  @return GetNetworkSwitchMtu200Response
-func (a *MtuApiService) GetNetworkSwitchMtuExecute(r MtuApiGetNetworkSwitchMtuRequest) (*GetNetworkSwitchMtu200Response, *http.Response, error) {
+func (a *MtuAPIService) GetNetworkSwitchMtuExecute(r MtuAPIGetNetworkSwitchMtuRequest) (*GetNetworkSwitchMtu200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *MtuApiService) GetNetworkSwitchMtuExecute(r MtuApiGetNetworkSwitchMtuRe
 		localVarReturnValue  *GetNetworkSwitchMtu200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MtuApiService.GetNetworkSwitchMtu")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MtuAPIService.GetNetworkSwitchMtu")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *MtuApiService) GetNetworkSwitchMtuExecute(r MtuApiGetNetworkSwitchMtuRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MtuApiUpdateNetworkSwitchMtuRequest struct {
+type MtuAPIUpdateNetworkSwitchMtuRequest struct {
 	ctx context.Context
-	ApiService *MtuApiService
+	ApiService *MtuAPIService
 	networkId string
 	updateNetworkSwitchMtuRequest *UpdateNetworkSwitchMtuRequest
 }
 
-func (r MtuApiUpdateNetworkSwitchMtuRequest) UpdateNetworkSwitchMtuRequest(updateNetworkSwitchMtuRequest UpdateNetworkSwitchMtuRequest) MtuApiUpdateNetworkSwitchMtuRequest {
+func (r MtuAPIUpdateNetworkSwitchMtuRequest) UpdateNetworkSwitchMtuRequest(updateNetworkSwitchMtuRequest UpdateNetworkSwitchMtuRequest) MtuAPIUpdateNetworkSwitchMtuRequest {
 	r.updateNetworkSwitchMtuRequest = &updateNetworkSwitchMtuRequest
 	return r
 }
 
-func (r MtuApiUpdateNetworkSwitchMtuRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r MtuAPIUpdateNetworkSwitchMtuRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchMtuExecute(r)
 }
 
@@ -163,10 +163,10 @@ Update the MTU configuration
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MtuApiUpdateNetworkSwitchMtuRequest
+ @return MtuAPIUpdateNetworkSwitchMtuRequest
 */
-func (a *MtuApiService) UpdateNetworkSwitchMtu(ctx context.Context, networkId string) MtuApiUpdateNetworkSwitchMtuRequest {
-	return MtuApiUpdateNetworkSwitchMtuRequest{
+func (a *MtuAPIService) UpdateNetworkSwitchMtu(ctx context.Context, networkId string) MtuAPIUpdateNetworkSwitchMtuRequest {
+	return MtuAPIUpdateNetworkSwitchMtuRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -175,7 +175,7 @@ func (a *MtuApiService) UpdateNetworkSwitchMtu(ctx context.Context, networkId st
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *MtuApiService) UpdateNetworkSwitchMtuExecute(r MtuApiUpdateNetworkSwitchMtuRequest) (map[string]interface{}, *http.Response, error) {
+func (a *MtuAPIService) UpdateNetworkSwitchMtuExecute(r MtuAPIUpdateNetworkSwitchMtuRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *MtuApiService) UpdateNetworkSwitchMtuExecute(r MtuApiUpdateNetworkSwitc
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MtuApiService.UpdateNetworkSwitchMtu")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MtuAPIService.UpdateNetworkSwitchMtu")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

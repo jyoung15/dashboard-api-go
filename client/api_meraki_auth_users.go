@@ -20,22 +20,22 @@ import (
 )
 
 
-// MerakiAuthUsersApiService MerakiAuthUsersApi service
-type MerakiAuthUsersApiService service
+// MerakiAuthUsersAPIService MerakiAuthUsersAPI service
+type MerakiAuthUsersAPIService service
 
-type MerakiAuthUsersApiCreateNetworkMerakiAuthUserRequest struct {
+type MerakiAuthUsersAPICreateNetworkMerakiAuthUserRequest struct {
 	ctx context.Context
-	ApiService *MerakiAuthUsersApiService
+	ApiService *MerakiAuthUsersAPIService
 	networkId string
 	createNetworkMerakiAuthUserRequest *CreateNetworkMerakiAuthUserRequest
 }
 
-func (r MerakiAuthUsersApiCreateNetworkMerakiAuthUserRequest) CreateNetworkMerakiAuthUserRequest(createNetworkMerakiAuthUserRequest CreateNetworkMerakiAuthUserRequest) MerakiAuthUsersApiCreateNetworkMerakiAuthUserRequest {
+func (r MerakiAuthUsersAPICreateNetworkMerakiAuthUserRequest) CreateNetworkMerakiAuthUserRequest(createNetworkMerakiAuthUserRequest CreateNetworkMerakiAuthUserRequest) MerakiAuthUsersAPICreateNetworkMerakiAuthUserRequest {
 	r.createNetworkMerakiAuthUserRequest = &createNetworkMerakiAuthUserRequest
 	return r
 }
 
-func (r MerakiAuthUsersApiCreateNetworkMerakiAuthUserRequest) Execute() (*GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
+func (r MerakiAuthUsersAPICreateNetworkMerakiAuthUserRequest) Execute() (*GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateNetworkMerakiAuthUserExecute(r)
 }
 
@@ -46,10 +46,10 @@ Authorize a user configured with Meraki Authentication for a network (currently 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MerakiAuthUsersApiCreateNetworkMerakiAuthUserRequest
+ @return MerakiAuthUsersAPICreateNetworkMerakiAuthUserRequest
 */
-func (a *MerakiAuthUsersApiService) CreateNetworkMerakiAuthUser(ctx context.Context, networkId string) MerakiAuthUsersApiCreateNetworkMerakiAuthUserRequest {
-	return MerakiAuthUsersApiCreateNetworkMerakiAuthUserRequest{
+func (a *MerakiAuthUsersAPIService) CreateNetworkMerakiAuthUser(ctx context.Context, networkId string) MerakiAuthUsersAPICreateNetworkMerakiAuthUserRequest {
+	return MerakiAuthUsersAPICreateNetworkMerakiAuthUserRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -58,7 +58,7 @@ func (a *MerakiAuthUsersApiService) CreateNetworkMerakiAuthUser(ctx context.Cont
 
 // Execute executes the request
 //  @return GetNetworkMerakiAuthUsers200ResponseInner
-func (a *MerakiAuthUsersApiService) CreateNetworkMerakiAuthUserExecute(r MerakiAuthUsersApiCreateNetworkMerakiAuthUserRequest) (*GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
+func (a *MerakiAuthUsersAPIService) CreateNetworkMerakiAuthUserExecute(r MerakiAuthUsersAPICreateNetworkMerakiAuthUserRequest) (*GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *MerakiAuthUsersApiService) CreateNetworkMerakiAuthUserExecute(r MerakiA
 		localVarReturnValue  *GetNetworkMerakiAuthUsers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MerakiAuthUsersApiService.CreateNetworkMerakiAuthUser")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MerakiAuthUsersAPIService.CreateNetworkMerakiAuthUser")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,21 +151,21 @@ func (a *MerakiAuthUsersApiService) CreateNetworkMerakiAuthUserExecute(r MerakiA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerakiAuthUsersApiDeleteNetworkMerakiAuthUserRequest struct {
+type MerakiAuthUsersAPIDeleteNetworkMerakiAuthUserRequest struct {
 	ctx context.Context
-	ApiService *MerakiAuthUsersApiService
+	ApiService *MerakiAuthUsersAPIService
 	networkId string
 	merakiAuthUserId string
 	delete *bool
 }
 
 // If the ID supplied is for a splash guest or client VPN user, and that user is not authorized for any other networks in the organization, then also delete the user. 802.1X RADIUS users are always deleted regardless of this optional attribute.
-func (r MerakiAuthUsersApiDeleteNetworkMerakiAuthUserRequest) Delete(delete bool) MerakiAuthUsersApiDeleteNetworkMerakiAuthUserRequest {
+func (r MerakiAuthUsersAPIDeleteNetworkMerakiAuthUserRequest) Delete(delete bool) MerakiAuthUsersAPIDeleteNetworkMerakiAuthUserRequest {
 	r.delete = &delete
 	return r
 }
 
-func (r MerakiAuthUsersApiDeleteNetworkMerakiAuthUserRequest) Execute() (*http.Response, error) {
+func (r MerakiAuthUsersAPIDeleteNetworkMerakiAuthUserRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkMerakiAuthUserExecute(r)
 }
 
@@ -177,10 +177,10 @@ Delete an 802.1X RADIUS user, or deauthorize and optionally delete a splash gues
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param merakiAuthUserId Meraki auth user ID
- @return MerakiAuthUsersApiDeleteNetworkMerakiAuthUserRequest
+ @return MerakiAuthUsersAPIDeleteNetworkMerakiAuthUserRequest
 */
-func (a *MerakiAuthUsersApiService) DeleteNetworkMerakiAuthUser(ctx context.Context, networkId string, merakiAuthUserId string) MerakiAuthUsersApiDeleteNetworkMerakiAuthUserRequest {
-	return MerakiAuthUsersApiDeleteNetworkMerakiAuthUserRequest{
+func (a *MerakiAuthUsersAPIService) DeleteNetworkMerakiAuthUser(ctx context.Context, networkId string, merakiAuthUserId string) MerakiAuthUsersAPIDeleteNetworkMerakiAuthUserRequest {
+	return MerakiAuthUsersAPIDeleteNetworkMerakiAuthUserRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -189,14 +189,14 @@ func (a *MerakiAuthUsersApiService) DeleteNetworkMerakiAuthUser(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *MerakiAuthUsersApiService) DeleteNetworkMerakiAuthUserExecute(r MerakiAuthUsersApiDeleteNetworkMerakiAuthUserRequest) (*http.Response, error) {
+func (a *MerakiAuthUsersAPIService) DeleteNetworkMerakiAuthUserExecute(r MerakiAuthUsersAPIDeleteNetworkMerakiAuthUserRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MerakiAuthUsersApiService.DeleteNetworkMerakiAuthUser")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MerakiAuthUsersAPIService.DeleteNetworkMerakiAuthUser")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -271,14 +271,14 @@ func (a *MerakiAuthUsersApiService) DeleteNetworkMerakiAuthUserExecute(r MerakiA
 	return localVarHTTPResponse, nil
 }
 
-type MerakiAuthUsersApiGetNetworkMerakiAuthUserRequest struct {
+type MerakiAuthUsersAPIGetNetworkMerakiAuthUserRequest struct {
 	ctx context.Context
-	ApiService *MerakiAuthUsersApiService
+	ApiService *MerakiAuthUsersAPIService
 	networkId string
 	merakiAuthUserId string
 }
 
-func (r MerakiAuthUsersApiGetNetworkMerakiAuthUserRequest) Execute() (*GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
+func (r MerakiAuthUsersAPIGetNetworkMerakiAuthUserRequest) Execute() (*GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkMerakiAuthUserExecute(r)
 }
 
@@ -290,10 +290,10 @@ Return the Meraki Auth splash guest, RADIUS, or client VPN user
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param merakiAuthUserId Meraki auth user ID
- @return MerakiAuthUsersApiGetNetworkMerakiAuthUserRequest
+ @return MerakiAuthUsersAPIGetNetworkMerakiAuthUserRequest
 */
-func (a *MerakiAuthUsersApiService) GetNetworkMerakiAuthUser(ctx context.Context, networkId string, merakiAuthUserId string) MerakiAuthUsersApiGetNetworkMerakiAuthUserRequest {
-	return MerakiAuthUsersApiGetNetworkMerakiAuthUserRequest{
+func (a *MerakiAuthUsersAPIService) GetNetworkMerakiAuthUser(ctx context.Context, networkId string, merakiAuthUserId string) MerakiAuthUsersAPIGetNetworkMerakiAuthUserRequest {
+	return MerakiAuthUsersAPIGetNetworkMerakiAuthUserRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -303,7 +303,7 @@ func (a *MerakiAuthUsersApiService) GetNetworkMerakiAuthUser(ctx context.Context
 
 // Execute executes the request
 //  @return GetNetworkMerakiAuthUsers200ResponseInner
-func (a *MerakiAuthUsersApiService) GetNetworkMerakiAuthUserExecute(r MerakiAuthUsersApiGetNetworkMerakiAuthUserRequest) (*GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
+func (a *MerakiAuthUsersAPIService) GetNetworkMerakiAuthUserExecute(r MerakiAuthUsersAPIGetNetworkMerakiAuthUserRequest) (*GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -311,7 +311,7 @@ func (a *MerakiAuthUsersApiService) GetNetworkMerakiAuthUserExecute(r MerakiAuth
 		localVarReturnValue  *GetNetworkMerakiAuthUsers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MerakiAuthUsersApiService.GetNetworkMerakiAuthUser")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MerakiAuthUsersAPIService.GetNetworkMerakiAuthUser")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -392,13 +392,13 @@ func (a *MerakiAuthUsersApiService) GetNetworkMerakiAuthUserExecute(r MerakiAuth
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerakiAuthUsersApiGetNetworkMerakiAuthUsersRequest struct {
+type MerakiAuthUsersAPIGetNetworkMerakiAuthUsersRequest struct {
 	ctx context.Context
-	ApiService *MerakiAuthUsersApiService
+	ApiService *MerakiAuthUsersAPIService
 	networkId string
 }
 
-func (r MerakiAuthUsersApiGetNetworkMerakiAuthUsersRequest) Execute() ([]GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
+func (r MerakiAuthUsersAPIGetNetworkMerakiAuthUsersRequest) Execute() ([]GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkMerakiAuthUsersExecute(r)
 }
 
@@ -409,10 +409,10 @@ List the users configured under Meraki Authentication for a network (splash gues
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MerakiAuthUsersApiGetNetworkMerakiAuthUsersRequest
+ @return MerakiAuthUsersAPIGetNetworkMerakiAuthUsersRequest
 */
-func (a *MerakiAuthUsersApiService) GetNetworkMerakiAuthUsers(ctx context.Context, networkId string) MerakiAuthUsersApiGetNetworkMerakiAuthUsersRequest {
-	return MerakiAuthUsersApiGetNetworkMerakiAuthUsersRequest{
+func (a *MerakiAuthUsersAPIService) GetNetworkMerakiAuthUsers(ctx context.Context, networkId string) MerakiAuthUsersAPIGetNetworkMerakiAuthUsersRequest {
+	return MerakiAuthUsersAPIGetNetworkMerakiAuthUsersRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -421,7 +421,7 @@ func (a *MerakiAuthUsersApiService) GetNetworkMerakiAuthUsers(ctx context.Contex
 
 // Execute executes the request
 //  @return []GetNetworkMerakiAuthUsers200ResponseInner
-func (a *MerakiAuthUsersApiService) GetNetworkMerakiAuthUsersExecute(r MerakiAuthUsersApiGetNetworkMerakiAuthUsersRequest) ([]GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
+func (a *MerakiAuthUsersAPIService) GetNetworkMerakiAuthUsersExecute(r MerakiAuthUsersAPIGetNetworkMerakiAuthUsersRequest) ([]GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -429,7 +429,7 @@ func (a *MerakiAuthUsersApiService) GetNetworkMerakiAuthUsersExecute(r MerakiAut
 		localVarReturnValue  []GetNetworkMerakiAuthUsers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MerakiAuthUsersApiService.GetNetworkMerakiAuthUsers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MerakiAuthUsersAPIService.GetNetworkMerakiAuthUsers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -509,20 +509,20 @@ func (a *MerakiAuthUsersApiService) GetNetworkMerakiAuthUsersExecute(r MerakiAut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerakiAuthUsersApiUpdateNetworkMerakiAuthUserRequest struct {
+type MerakiAuthUsersAPIUpdateNetworkMerakiAuthUserRequest struct {
 	ctx context.Context
-	ApiService *MerakiAuthUsersApiService
+	ApiService *MerakiAuthUsersAPIService
 	networkId string
 	merakiAuthUserId string
 	updateNetworkMerakiAuthUserRequest *UpdateNetworkMerakiAuthUserRequest
 }
 
-func (r MerakiAuthUsersApiUpdateNetworkMerakiAuthUserRequest) UpdateNetworkMerakiAuthUserRequest(updateNetworkMerakiAuthUserRequest UpdateNetworkMerakiAuthUserRequest) MerakiAuthUsersApiUpdateNetworkMerakiAuthUserRequest {
+func (r MerakiAuthUsersAPIUpdateNetworkMerakiAuthUserRequest) UpdateNetworkMerakiAuthUserRequest(updateNetworkMerakiAuthUserRequest UpdateNetworkMerakiAuthUserRequest) MerakiAuthUsersAPIUpdateNetworkMerakiAuthUserRequest {
 	r.updateNetworkMerakiAuthUserRequest = &updateNetworkMerakiAuthUserRequest
 	return r
 }
 
-func (r MerakiAuthUsersApiUpdateNetworkMerakiAuthUserRequest) Execute() (*GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
+func (r MerakiAuthUsersAPIUpdateNetworkMerakiAuthUserRequest) Execute() (*GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkMerakiAuthUserExecute(r)
 }
 
@@ -534,10 +534,10 @@ Update a user configured with Meraki Authentication (currently, 802.1X RADIUS, s
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param merakiAuthUserId Meraki auth user ID
- @return MerakiAuthUsersApiUpdateNetworkMerakiAuthUserRequest
+ @return MerakiAuthUsersAPIUpdateNetworkMerakiAuthUserRequest
 */
-func (a *MerakiAuthUsersApiService) UpdateNetworkMerakiAuthUser(ctx context.Context, networkId string, merakiAuthUserId string) MerakiAuthUsersApiUpdateNetworkMerakiAuthUserRequest {
-	return MerakiAuthUsersApiUpdateNetworkMerakiAuthUserRequest{
+func (a *MerakiAuthUsersAPIService) UpdateNetworkMerakiAuthUser(ctx context.Context, networkId string, merakiAuthUserId string) MerakiAuthUsersAPIUpdateNetworkMerakiAuthUserRequest {
+	return MerakiAuthUsersAPIUpdateNetworkMerakiAuthUserRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -547,7 +547,7 @@ func (a *MerakiAuthUsersApiService) UpdateNetworkMerakiAuthUser(ctx context.Cont
 
 // Execute executes the request
 //  @return GetNetworkMerakiAuthUsers200ResponseInner
-func (a *MerakiAuthUsersApiService) UpdateNetworkMerakiAuthUserExecute(r MerakiAuthUsersApiUpdateNetworkMerakiAuthUserRequest) (*GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
+func (a *MerakiAuthUsersAPIService) UpdateNetworkMerakiAuthUserExecute(r MerakiAuthUsersAPIUpdateNetworkMerakiAuthUserRequest) (*GetNetworkMerakiAuthUsers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -555,7 +555,7 @@ func (a *MerakiAuthUsersApiService) UpdateNetworkMerakiAuthUserExecute(r MerakiA
 		localVarReturnValue  *GetNetworkMerakiAuthUsers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MerakiAuthUsersApiService.UpdateNetworkMerakiAuthUser")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MerakiAuthUsersAPIService.UpdateNetworkMerakiAuthUser")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

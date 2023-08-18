@@ -20,16 +20,16 @@ import (
 )
 
 
-// SubnetPoolApiService SubnetPoolApi service
-type SubnetPoolApiService service
+// SubnetPoolAPIService SubnetPoolAPI service
+type SubnetPoolAPIService service
 
-type SubnetPoolApiGetNetworkCellularGatewaySubnetPoolRequest struct {
+type SubnetPoolAPIGetNetworkCellularGatewaySubnetPoolRequest struct {
 	ctx context.Context
-	ApiService *SubnetPoolApiService
+	ApiService *SubnetPoolAPIService
 	networkId string
 }
 
-func (r SubnetPoolApiGetNetworkCellularGatewaySubnetPoolRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SubnetPoolAPIGetNetworkCellularGatewaySubnetPoolRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkCellularGatewaySubnetPoolExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the subnet pool and mask configured for MGs in the network.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SubnetPoolApiGetNetworkCellularGatewaySubnetPoolRequest
+ @return SubnetPoolAPIGetNetworkCellularGatewaySubnetPoolRequest
 */
-func (a *SubnetPoolApiService) GetNetworkCellularGatewaySubnetPool(ctx context.Context, networkId string) SubnetPoolApiGetNetworkCellularGatewaySubnetPoolRequest {
-	return SubnetPoolApiGetNetworkCellularGatewaySubnetPoolRequest{
+func (a *SubnetPoolAPIService) GetNetworkCellularGatewaySubnetPool(ctx context.Context, networkId string) SubnetPoolAPIGetNetworkCellularGatewaySubnetPoolRequest {
+	return SubnetPoolAPIGetNetworkCellularGatewaySubnetPoolRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *SubnetPoolApiService) GetNetworkCellularGatewaySubnetPool(ctx context.C
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SubnetPoolApiService) GetNetworkCellularGatewaySubnetPoolExecute(r SubnetPoolApiGetNetworkCellularGatewaySubnetPoolRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SubnetPoolAPIService) GetNetworkCellularGatewaySubnetPoolExecute(r SubnetPoolAPIGetNetworkCellularGatewaySubnetPoolRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *SubnetPoolApiService) GetNetworkCellularGatewaySubnetPoolExecute(r Subn
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SubnetPoolApiService.GetNetworkCellularGatewaySubnetPool")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SubnetPoolAPIService.GetNetworkCellularGatewaySubnetPool")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *SubnetPoolApiService) GetNetworkCellularGatewaySubnetPoolExecute(r Subn
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SubnetPoolApiUpdateNetworkCellularGatewaySubnetPoolRequest struct {
+type SubnetPoolAPIUpdateNetworkCellularGatewaySubnetPoolRequest struct {
 	ctx context.Context
-	ApiService *SubnetPoolApiService
+	ApiService *SubnetPoolAPIService
 	networkId string
 	updateNetworkCellularGatewaySubnetPoolRequest *UpdateNetworkCellularGatewaySubnetPoolRequest
 }
 
-func (r SubnetPoolApiUpdateNetworkCellularGatewaySubnetPoolRequest) UpdateNetworkCellularGatewaySubnetPoolRequest(updateNetworkCellularGatewaySubnetPoolRequest UpdateNetworkCellularGatewaySubnetPoolRequest) SubnetPoolApiUpdateNetworkCellularGatewaySubnetPoolRequest {
+func (r SubnetPoolAPIUpdateNetworkCellularGatewaySubnetPoolRequest) UpdateNetworkCellularGatewaySubnetPoolRequest(updateNetworkCellularGatewaySubnetPoolRequest UpdateNetworkCellularGatewaySubnetPoolRequest) SubnetPoolAPIUpdateNetworkCellularGatewaySubnetPoolRequest {
 	r.updateNetworkCellularGatewaySubnetPoolRequest = &updateNetworkCellularGatewaySubnetPoolRequest
 	return r
 }
 
-func (r SubnetPoolApiUpdateNetworkCellularGatewaySubnetPoolRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SubnetPoolAPIUpdateNetworkCellularGatewaySubnetPoolRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkCellularGatewaySubnetPoolExecute(r)
 }
 
@@ -163,10 +163,10 @@ Update the subnet pool and mask configuration for MGs in the network.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SubnetPoolApiUpdateNetworkCellularGatewaySubnetPoolRequest
+ @return SubnetPoolAPIUpdateNetworkCellularGatewaySubnetPoolRequest
 */
-func (a *SubnetPoolApiService) UpdateNetworkCellularGatewaySubnetPool(ctx context.Context, networkId string) SubnetPoolApiUpdateNetworkCellularGatewaySubnetPoolRequest {
-	return SubnetPoolApiUpdateNetworkCellularGatewaySubnetPoolRequest{
+func (a *SubnetPoolAPIService) UpdateNetworkCellularGatewaySubnetPool(ctx context.Context, networkId string) SubnetPoolAPIUpdateNetworkCellularGatewaySubnetPoolRequest {
+	return SubnetPoolAPIUpdateNetworkCellularGatewaySubnetPoolRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -175,7 +175,7 @@ func (a *SubnetPoolApiService) UpdateNetworkCellularGatewaySubnetPool(ctx contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SubnetPoolApiService) UpdateNetworkCellularGatewaySubnetPoolExecute(r SubnetPoolApiUpdateNetworkCellularGatewaySubnetPoolRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SubnetPoolAPIService) UpdateNetworkCellularGatewaySubnetPoolExecute(r SubnetPoolAPIUpdateNetworkCellularGatewaySubnetPoolRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *SubnetPoolApiService) UpdateNetworkCellularGatewaySubnetPoolExecute(r S
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SubnetPoolApiService.UpdateNetworkCellularGatewaySubnetPool")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SubnetPoolAPIService.UpdateNetworkCellularGatewaySubnetPool")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -21,12 +21,12 @@ import (
 )
 
 
-// ByDeviceApiService ByDeviceApi service
-type ByDeviceApiService service
+// ByDeviceAPIService ByDeviceAPI service
+type ByDeviceAPIService service
 
-type ByDeviceApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest struct {
+type ByDeviceAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest struct {
 	ctx context.Context
-	ApiService *ByDeviceApiService
+	ApiService *ByDeviceAPIService
 	networkId string
 	perPage *int32
 	startingAfter *string
@@ -34,24 +34,24 @@ type ByDeviceApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceReq
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r ByDeviceApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) PerPage(perPage int32) ByDeviceApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest {
+func (r ByDeviceAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) PerPage(perPage int32) ByDeviceAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ByDeviceApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) StartingAfter(startingAfter string) ByDeviceApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest {
+func (r ByDeviceAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) StartingAfter(startingAfter string) ByDeviceAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ByDeviceApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) EndingBefore(endingBefore string) ByDeviceApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest {
+func (r ByDeviceAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) EndingBefore(endingBefore string) ByDeviceAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r ByDeviceApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) Execute() ([]GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice200ResponseInner, *http.Response, error) {
+func (r ByDeviceAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) Execute() ([]GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceExecute(r)
 }
 
@@ -62,10 +62,10 @@ Return the devices that have a Dynamic ARP Inspection warning and their warnings
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ByDeviceApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest
+ @return ByDeviceAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest
 */
-func (a *ByDeviceApiService) GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice(ctx context.Context, networkId string) ByDeviceApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest {
-	return ByDeviceApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest{
+func (a *ByDeviceAPIService) GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice(ctx context.Context, networkId string) ByDeviceAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest {
+	return ByDeviceAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -74,7 +74,7 @@ func (a *ByDeviceApiService) GetNetworkSwitchDhcpServerPolicyArpInspectionWarnin
 
 // Execute executes the request
 //  @return []GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice200ResponseInner
-func (a *ByDeviceApiService) GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceExecute(r ByDeviceApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) ([]GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice200ResponseInner, *http.Response, error) {
+func (a *ByDeviceAPIService) GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceExecute(r ByDeviceAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) ([]GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -82,7 +82,7 @@ func (a *ByDeviceApiService) GetNetworkSwitchDhcpServerPolicyArpInspectionWarnin
 		localVarReturnValue  []GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByDeviceApiService.GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByDeviceAPIService.GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -171,9 +171,9 @@ func (a *ByDeviceApiService) GetNetworkSwitchDhcpServerPolicyArpInspectionWarnin
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ByDeviceApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest struct {
+type ByDeviceAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest struct {
 	ctx context.Context
-	ApiService *ByDeviceApiService
+	ApiService *ByDeviceAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -186,54 +186,54 @@ type ByDeviceApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest struct
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r ByDeviceApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) PerPage(perPage int32) ByDeviceApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) PerPage(perPage int32) ByDeviceAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ByDeviceApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) StartingAfter(startingAfter string) ByDeviceApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) StartingAfter(startingAfter string) ByDeviceAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ByDeviceApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) EndingBefore(endingBefore string) ByDeviceApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) EndingBefore(endingBefore string) ByDeviceAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter device availabilities by network ID. This filter uses multiple exact matches.
-func (r ByDeviceApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) NetworkIds(networkIds []string) ByDeviceApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) NetworkIds(networkIds []string) ByDeviceAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter device availabilities by device product types. This filter uses multiple exact matches.
-func (r ByDeviceApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) ProductTypes(productTypes []string) ByDeviceApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) ProductTypes(productTypes []string) ByDeviceAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter device availabilities by device serial numbers. This filter uses multiple exact matches.
-func (r ByDeviceApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Serials(serials []string) ByDeviceApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Serials(serials []string) ByDeviceAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.serials = &serials
 	return r
 }
 
 // An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below). This filter uses multiple exact matches.
-func (r ByDeviceApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Tags(tags []string) ByDeviceApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Tags(tags []string) ByDeviceAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.tags = &tags
 	return r
 }
 
 // An optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return devices which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r ByDeviceApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) TagsFilterType(tagsFilterType string) ByDeviceApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) TagsFilterType(tagsFilterType string) ByDeviceAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
-func (r ByDeviceApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Execute() ([]GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner, *http.Response, error) {
+func (r ByDeviceAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Execute() ([]GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesPowerModulesStatusesByDeviceExecute(r)
 }
 
@@ -244,10 +244,10 @@ List the power status information for devices in an organization. The data retur
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ByDeviceApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest
+ @return ByDeviceAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest
 */
-func (a *ByDeviceApiService) GetOrganizationDevicesPowerModulesStatusesByDevice(ctx context.Context, organizationId string) ByDeviceApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
-	return ByDeviceApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest{
+func (a *ByDeviceAPIService) GetOrganizationDevicesPowerModulesStatusesByDevice(ctx context.Context, organizationId string) ByDeviceAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+	return ByDeviceAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -256,7 +256,7 @@ func (a *ByDeviceApiService) GetOrganizationDevicesPowerModulesStatusesByDevice(
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner
-func (a *ByDeviceApiService) GetOrganizationDevicesPowerModulesStatusesByDeviceExecute(r ByDeviceApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) ([]GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner, *http.Response, error) {
+func (a *ByDeviceAPIService) GetOrganizationDevicesPowerModulesStatusesByDeviceExecute(r ByDeviceAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) ([]GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -264,7 +264,7 @@ func (a *ByDeviceApiService) GetOrganizationDevicesPowerModulesStatusesByDeviceE
 		localVarReturnValue  []GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByDeviceApiService.GetOrganizationDevicesPowerModulesStatusesByDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByDeviceAPIService.GetOrganizationDevicesPowerModulesStatusesByDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -400,9 +400,9 @@ func (a *ByDeviceApiService) GetOrganizationDevicesPowerModulesStatusesByDeviceE
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ByDeviceApiGetOrganizationDevicesUplinksAddressesByDeviceRequest struct {
+type ByDeviceAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest struct {
 	ctx context.Context
-	ApiService *ByDeviceApiService
+	ApiService *ByDeviceAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -415,54 +415,54 @@ type ByDeviceApiGetOrganizationDevicesUplinksAddressesByDeviceRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r ByDeviceApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) PerPage(perPage int32) ByDeviceApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) PerPage(perPage int32) ByDeviceAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ByDeviceApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) StartingAfter(startingAfter string) ByDeviceApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) StartingAfter(startingAfter string) ByDeviceAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ByDeviceApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) EndingBefore(endingBefore string) ByDeviceApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) EndingBefore(endingBefore string) ByDeviceAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter device uplinks by network ID. This filter uses multiple exact matches.
-func (r ByDeviceApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) NetworkIds(networkIds []string) ByDeviceApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) NetworkIds(networkIds []string) ByDeviceAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter device uplinks by device product types. This filter uses multiple exact matches.
-func (r ByDeviceApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) ProductTypes(productTypes []string) ByDeviceApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) ProductTypes(productTypes []string) ByDeviceAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter device availabilities by device serial numbers. This filter uses multiple exact matches.
-func (r ByDeviceApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) Serials(serials []string) ByDeviceApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) Serials(serials []string) ByDeviceAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.serials = &serials
 	return r
 }
 
 // An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below). This filter uses multiple exact matches.
-func (r ByDeviceApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) Tags(tags []string) ByDeviceApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) Tags(tags []string) ByDeviceAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.tags = &tags
 	return r
 }
 
 // An optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return devices which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r ByDeviceApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) TagsFilterType(tagsFilterType string) ByDeviceApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) TagsFilterType(tagsFilterType string) ByDeviceAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
-func (r ByDeviceApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) Execute() ([]GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner, *http.Response, error) {
+func (r ByDeviceAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) Execute() ([]GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesUplinksAddressesByDeviceExecute(r)
 }
 
@@ -473,10 +473,10 @@ List the current uplink addresses for devices in an organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ByDeviceApiGetOrganizationDevicesUplinksAddressesByDeviceRequest
+ @return ByDeviceAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest
 */
-func (a *ByDeviceApiService) GetOrganizationDevicesUplinksAddressesByDevice(ctx context.Context, organizationId string) ByDeviceApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
-	return ByDeviceApiGetOrganizationDevicesUplinksAddressesByDeviceRequest{
+func (a *ByDeviceAPIService) GetOrganizationDevicesUplinksAddressesByDevice(ctx context.Context, organizationId string) ByDeviceAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+	return ByDeviceAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -485,7 +485,7 @@ func (a *ByDeviceApiService) GetOrganizationDevicesUplinksAddressesByDevice(ctx 
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner
-func (a *ByDeviceApiService) GetOrganizationDevicesUplinksAddressesByDeviceExecute(r ByDeviceApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) ([]GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner, *http.Response, error) {
+func (a *ByDeviceAPIService) GetOrganizationDevicesUplinksAddressesByDeviceExecute(r ByDeviceAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) ([]GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -493,7 +493,7 @@ func (a *ByDeviceApiService) GetOrganizationDevicesUplinksAddressesByDeviceExecu
 		localVarReturnValue  []GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByDeviceApiService.GetOrganizationDevicesUplinksAddressesByDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByDeviceAPIService.GetOrganizationDevicesUplinksAddressesByDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -629,9 +629,9 @@ func (a *ByDeviceApiService) GetOrganizationDevicesUplinksAddressesByDeviceExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ByDeviceApiGetOrganizationFirmwareUpgradesByDeviceRequest struct {
+type ByDeviceAPIGetOrganizationFirmwareUpgradesByDeviceRequest struct {
 	ctx context.Context
-	ApiService *ByDeviceApiService
+	ApiService *ByDeviceAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -644,54 +644,54 @@ type ByDeviceApiGetOrganizationFirmwareUpgradesByDeviceRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.
-func (r ByDeviceApiGetOrganizationFirmwareUpgradesByDeviceRequest) PerPage(perPage int32) ByDeviceApiGetOrganizationFirmwareUpgradesByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationFirmwareUpgradesByDeviceRequest) PerPage(perPage int32) ByDeviceAPIGetOrganizationFirmwareUpgradesByDeviceRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ByDeviceApiGetOrganizationFirmwareUpgradesByDeviceRequest) StartingAfter(startingAfter string) ByDeviceApiGetOrganizationFirmwareUpgradesByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationFirmwareUpgradesByDeviceRequest) StartingAfter(startingAfter string) ByDeviceAPIGetOrganizationFirmwareUpgradesByDeviceRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ByDeviceApiGetOrganizationFirmwareUpgradesByDeviceRequest) EndingBefore(endingBefore string) ByDeviceApiGetOrganizationFirmwareUpgradesByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationFirmwareUpgradesByDeviceRequest) EndingBefore(endingBefore string) ByDeviceAPIGetOrganizationFirmwareUpgradesByDeviceRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter by network
-func (r ByDeviceApiGetOrganizationFirmwareUpgradesByDeviceRequest) NetworkIds(networkIds []string) ByDeviceApiGetOrganizationFirmwareUpgradesByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationFirmwareUpgradesByDeviceRequest) NetworkIds(networkIds []string) ByDeviceAPIGetOrganizationFirmwareUpgradesByDeviceRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter by serial number.  All returned devices will have a serial number that is an exact match.
-func (r ByDeviceApiGetOrganizationFirmwareUpgradesByDeviceRequest) Serials(serials []string) ByDeviceApiGetOrganizationFirmwareUpgradesByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationFirmwareUpgradesByDeviceRequest) Serials(serials []string) ByDeviceAPIGetOrganizationFirmwareUpgradesByDeviceRequest {
 	r.serials = &serials
 	return r
 }
 
 // Optional parameter to filter by one or more MAC addresses belonging to devices. All devices returned belong to MAC addresses that are an exact match.
-func (r ByDeviceApiGetOrganizationFirmwareUpgradesByDeviceRequest) Macs(macs []string) ByDeviceApiGetOrganizationFirmwareUpgradesByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationFirmwareUpgradesByDeviceRequest) Macs(macs []string) ByDeviceAPIGetOrganizationFirmwareUpgradesByDeviceRequest {
 	r.macs = &macs
 	return r
 }
 
 // Optional parameter to filter by firmware upgrade batch ids.
-func (r ByDeviceApiGetOrganizationFirmwareUpgradesByDeviceRequest) FirmwareUpgradeBatchIds(firmwareUpgradeBatchIds []string) ByDeviceApiGetOrganizationFirmwareUpgradesByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationFirmwareUpgradesByDeviceRequest) FirmwareUpgradeBatchIds(firmwareUpgradeBatchIds []string) ByDeviceAPIGetOrganizationFirmwareUpgradesByDeviceRequest {
 	r.firmwareUpgradeBatchIds = &firmwareUpgradeBatchIds
 	return r
 }
 
 // Optional parameter to filter by firmware upgrade statuses.
-func (r ByDeviceApiGetOrganizationFirmwareUpgradesByDeviceRequest) UpgradeStatuses(upgradeStatuses []string) ByDeviceApiGetOrganizationFirmwareUpgradesByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationFirmwareUpgradesByDeviceRequest) UpgradeStatuses(upgradeStatuses []string) ByDeviceAPIGetOrganizationFirmwareUpgradesByDeviceRequest {
 	r.upgradeStatuses = &upgradeStatuses
 	return r
 }
 
-func (r ByDeviceApiGetOrganizationFirmwareUpgradesByDeviceRequest) Execute() ([]GetOrganizationFirmwareUpgradesByDevice200ResponseInner, *http.Response, error) {
+func (r ByDeviceAPIGetOrganizationFirmwareUpgradesByDeviceRequest) Execute() ([]GetOrganizationFirmwareUpgradesByDevice200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationFirmwareUpgradesByDeviceExecute(r)
 }
 
@@ -702,10 +702,10 @@ Get firmware upgrade status for the filtered devices
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ByDeviceApiGetOrganizationFirmwareUpgradesByDeviceRequest
+ @return ByDeviceAPIGetOrganizationFirmwareUpgradesByDeviceRequest
 */
-func (a *ByDeviceApiService) GetOrganizationFirmwareUpgradesByDevice(ctx context.Context, organizationId string) ByDeviceApiGetOrganizationFirmwareUpgradesByDeviceRequest {
-	return ByDeviceApiGetOrganizationFirmwareUpgradesByDeviceRequest{
+func (a *ByDeviceAPIService) GetOrganizationFirmwareUpgradesByDevice(ctx context.Context, organizationId string) ByDeviceAPIGetOrganizationFirmwareUpgradesByDeviceRequest {
+	return ByDeviceAPIGetOrganizationFirmwareUpgradesByDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -714,7 +714,7 @@ func (a *ByDeviceApiService) GetOrganizationFirmwareUpgradesByDevice(ctx context
 
 // Execute executes the request
 //  @return []GetOrganizationFirmwareUpgradesByDevice200ResponseInner
-func (a *ByDeviceApiService) GetOrganizationFirmwareUpgradesByDeviceExecute(r ByDeviceApiGetOrganizationFirmwareUpgradesByDeviceRequest) ([]GetOrganizationFirmwareUpgradesByDevice200ResponseInner, *http.Response, error) {
+func (a *ByDeviceAPIService) GetOrganizationFirmwareUpgradesByDeviceExecute(r ByDeviceAPIGetOrganizationFirmwareUpgradesByDeviceRequest) ([]GetOrganizationFirmwareUpgradesByDevice200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -722,7 +722,7 @@ func (a *ByDeviceApiService) GetOrganizationFirmwareUpgradesByDeviceExecute(r By
 		localVarReturnValue  []GetOrganizationFirmwareUpgradesByDevice200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByDeviceApiService.GetOrganizationFirmwareUpgradesByDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByDeviceAPIService.GetOrganizationFirmwareUpgradesByDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -866,9 +866,9 @@ func (a *ByDeviceApiService) GetOrganizationFirmwareUpgradesByDeviceExecute(r By
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest struct {
+type ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest struct {
 	ctx context.Context
-	ApiService *ByDeviceApiService
+	ApiService *ByDeviceAPIService
 	organizationId string
 	networkIds *[]string
 	serials *[]string
@@ -882,60 +882,60 @@ type ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest 
 }
 
 // Filter results by network.
-func (r ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) NetworkIds(networkIds []string) ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) NetworkIds(networkIds []string) ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Filter results by device.
-func (r ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Serials(serials []string) ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Serials(serials []string) ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.serials = &serials
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) PerPage(perPage int32) ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) PerPage(perPage int32) ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) StartingAfter(startingAfter string) ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) StartingAfter(startingAfter string) ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) EndingBefore(endingBefore string) ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) EndingBefore(endingBefore string) ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 90 days from today.
-func (r ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) T0(t0 string) ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) T0(t0 string) ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 90 days after t0.
-func (r ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) T1(t1 string) ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) T1(t1 string) ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 90 days. The default is 7 days.
-func (r ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Timespan(timespan float32) ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Timespan(timespan float32) ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time interval in seconds for returned data. The valid intervals are: 300, 600, 3600, 7200, 14400, 21600. The default is 3600.
-func (r ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Interval(interval int32) ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Interval(interval int32) ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.interval = &interval
 	return r
 }
 
-func (r ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationByDevice200ResponseInner, *http.Response, error) {
+func (r ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationByDevice200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationWirelessDevicesChannelUtilizationByDeviceExecute(r)
 }
 
@@ -946,10 +946,10 @@ Get average channel utilization for all bands in a network, split by AP
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest
+ @return ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest
 */
-func (a *ByDeviceApiService) GetOrganizationWirelessDevicesChannelUtilizationByDevice(ctx context.Context, organizationId string) ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
-	return ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest{
+func (a *ByDeviceAPIService) GetOrganizationWirelessDevicesChannelUtilizationByDevice(ctx context.Context, organizationId string) ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+	return ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -958,7 +958,7 @@ func (a *ByDeviceApiService) GetOrganizationWirelessDevicesChannelUtilizationByD
 
 // Execute executes the request
 //  @return []GetOrganizationWirelessDevicesChannelUtilizationByDevice200ResponseInner
-func (a *ByDeviceApiService) GetOrganizationWirelessDevicesChannelUtilizationByDeviceExecute(r ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationByDevice200ResponseInner, *http.Response, error) {
+func (a *ByDeviceAPIService) GetOrganizationWirelessDevicesChannelUtilizationByDeviceExecute(r ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationByDevice200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -966,7 +966,7 @@ func (a *ByDeviceApiService) GetOrganizationWirelessDevicesChannelUtilizationByD
 		localVarReturnValue  []GetOrganizationWirelessDevicesChannelUtilizationByDevice200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByDeviceApiService.GetOrganizationWirelessDevicesChannelUtilizationByDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByDeviceAPIService.GetOrganizationWirelessDevicesChannelUtilizationByDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1089,9 +1089,9 @@ func (a *ByDeviceApiService) GetOrganizationWirelessDevicesChannelUtilizationByD
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest struct {
+type ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest struct {
 	ctx context.Context
-	ApiService *ByDeviceApiService
+	ApiService *ByDeviceAPIService
 	organizationId string
 	networkIds *[]string
 	serials *[]string
@@ -1105,60 +1105,60 @@ type ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceB
 }
 
 // Filter results by network.
-func (r ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) NetworkIds(networkIds []string) ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) NetworkIds(networkIds []string) ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Filter results by device.
-func (r ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Serials(serials []string) ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Serials(serials []string) ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.serials = &serials
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) PerPage(perPage int32) ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) PerPage(perPage int32) ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) StartingAfter(startingAfter string) ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) StartingAfter(startingAfter string) ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) EndingBefore(endingBefore string) ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) EndingBefore(endingBefore string) ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) T0(t0 string) ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) T0(t0 string) ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) T1(t1 string) ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) T1(t1 string) ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Timespan(timespan float32) ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Timespan(timespan float32) ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time interval in seconds for returned data. The valid intervals are: 300, 600, 3600, 7200, 14400, 21600. The default is 3600.
-func (r ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Interval(interval int32) ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Interval(interval int32) ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.interval = &interval
 	return r
 }
 
-func (r ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner, *http.Response, error) {
+func (r ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalExecute(r)
 }
 
@@ -1169,10 +1169,10 @@ Get a time-series of average channel utilization for all bands, segmented by dev
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest
+ @return ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest
 */
-func (a *ByDeviceApiService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval(ctx context.Context, organizationId string) ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
-	return ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest{
+func (a *ByDeviceAPIService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval(ctx context.Context, organizationId string) ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+	return ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1181,7 +1181,7 @@ func (a *ByDeviceApiService) GetOrganizationWirelessDevicesChannelUtilizationHis
 
 // Execute executes the request
 //  @return []GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner
-func (a *ByDeviceApiService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalExecute(r ByDeviceApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner, *http.Response, error) {
+func (a *ByDeviceAPIService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalExecute(r ByDeviceAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1189,7 +1189,7 @@ func (a *ByDeviceApiService) GetOrganizationWirelessDevicesChannelUtilizationHis
 		localVarReturnValue  []GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByDeviceApiService.GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByDeviceAPIService.GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

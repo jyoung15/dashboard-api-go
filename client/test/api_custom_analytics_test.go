@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing CustomAnalyticsApiService
+Testing CustomAnalyticsAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_CustomAnalyticsApiService(t *testing.T) {
+func Test_client_CustomAnalyticsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test CustomAnalyticsApiService CreateOrganizationCameraCustomAnalyticsArtifact", func(t *testing.T) {
+	t.Run("Test CustomAnalyticsAPIService CreateOrganizationCameraCustomAnalyticsArtifact", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.CustomAnalyticsApi.CreateOrganizationCameraCustomAnalyticsArtifact(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.CustomAnalyticsAPI.CreateOrganizationCameraCustomAnalyticsArtifact(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,70 +36,70 @@ func Test_client_CustomAnalyticsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test CustomAnalyticsApiService DeleteOrganizationCameraCustomAnalyticsArtifact", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var organizationId string
-		var artifactId string
-
-		httpRes, err := apiClient.CustomAnalyticsApi.DeleteOrganizationCameraCustomAnalyticsArtifact(context.Background(), organizationId, artifactId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test CustomAnalyticsApiService GetDeviceCameraCustomAnalytics", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var serial string
-
-		resp, httpRes, err := apiClient.CustomAnalyticsApi.GetDeviceCameraCustomAnalytics(context.Background(), serial).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test CustomAnalyticsApiService GetOrganizationCameraCustomAnalyticsArtifact", func(t *testing.T) {
+	t.Run("Test CustomAnalyticsAPIService DeleteOrganizationCameraCustomAnalyticsArtifact", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var artifactId string
 
-		resp, httpRes, err := apiClient.CustomAnalyticsApi.GetOrganizationCameraCustomAnalyticsArtifact(context.Background(), organizationId, artifactId).Execute()
+		httpRes, err := apiClient.CustomAnalyticsAPI.DeleteOrganizationCameraCustomAnalyticsArtifact(context.Background(), organizationId, artifactId).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test CustomAnalyticsApiService GetOrganizationCameraCustomAnalyticsArtifacts", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var organizationId string
-
-		resp, httpRes, err := apiClient.CustomAnalyticsApi.GetOrganizationCameraCustomAnalyticsArtifacts(context.Background(), organizationId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test CustomAnalyticsApiService UpdateDeviceCameraCustomAnalytics", func(t *testing.T) {
+	t.Run("Test CustomAnalyticsAPIService GetDeviceCameraCustomAnalytics", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.CustomAnalyticsApi.UpdateDeviceCameraCustomAnalytics(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.CustomAnalyticsAPI.GetDeviceCameraCustomAnalytics(context.Background(), serial).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CustomAnalyticsAPIService GetOrganizationCameraCustomAnalyticsArtifact", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var organizationId string
+		var artifactId string
+
+		resp, httpRes, err := apiClient.CustomAnalyticsAPI.GetOrganizationCameraCustomAnalyticsArtifact(context.Background(), organizationId, artifactId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CustomAnalyticsAPIService GetOrganizationCameraCustomAnalyticsArtifacts", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var organizationId string
+
+		resp, httpRes, err := apiClient.CustomAnalyticsAPI.GetOrganizationCameraCustomAnalyticsArtifacts(context.Background(), organizationId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CustomAnalyticsAPIService UpdateDeviceCameraCustomAnalytics", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var serial string
+
+		resp, httpRes, err := apiClient.CustomAnalyticsAPI.UpdateDeviceCameraCustomAnalytics(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

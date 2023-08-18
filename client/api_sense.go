@@ -20,16 +20,16 @@ import (
 )
 
 
-// SenseApiService SenseApi service
-type SenseApiService service
+// SenseAPIService SenseAPI service
+type SenseAPIService service
 
-type SenseApiGetDeviceCameraSenseRequest struct {
+type SenseAPIGetDeviceCameraSenseRequest struct {
 	ctx context.Context
-	ApiService *SenseApiService
+	ApiService *SenseAPIService
 	serial string
 }
 
-func (r SenseApiGetDeviceCameraSenseRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SenseAPIGetDeviceCameraSenseRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraSenseExecute(r)
 }
 
@@ -40,10 +40,10 @@ Returns sense settings for a given camera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return SenseApiGetDeviceCameraSenseRequest
+ @return SenseAPIGetDeviceCameraSenseRequest
 */
-func (a *SenseApiService) GetDeviceCameraSense(ctx context.Context, serial string) SenseApiGetDeviceCameraSenseRequest {
-	return SenseApiGetDeviceCameraSenseRequest{
+func (a *SenseAPIService) GetDeviceCameraSense(ctx context.Context, serial string) SenseAPIGetDeviceCameraSenseRequest {
+	return SenseAPIGetDeviceCameraSenseRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -52,7 +52,7 @@ func (a *SenseApiService) GetDeviceCameraSense(ctx context.Context, serial strin
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SenseApiService) GetDeviceCameraSenseExecute(r SenseApiGetDeviceCameraSenseRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SenseAPIService) GetDeviceCameraSenseExecute(r SenseAPIGetDeviceCameraSenseRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *SenseApiService) GetDeviceCameraSenseExecute(r SenseApiGetDeviceCameraS
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SenseApiService.GetDeviceCameraSense")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SenseAPIService.GetDeviceCameraSense")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,13 +140,13 @@ func (a *SenseApiService) GetDeviceCameraSenseExecute(r SenseApiGetDeviceCameraS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SenseApiGetDeviceCameraSenseObjectDetectionModelsRequest struct {
+type SenseAPIGetDeviceCameraSenseObjectDetectionModelsRequest struct {
 	ctx context.Context
-	ApiService *SenseApiService
+	ApiService *SenseAPIService
 	serial string
 }
 
-func (r SenseApiGetDeviceCameraSenseObjectDetectionModelsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r SenseAPIGetDeviceCameraSenseObjectDetectionModelsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraSenseObjectDetectionModelsExecute(r)
 }
 
@@ -157,10 +157,10 @@ Returns the MV Sense object detection model list for the given camera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return SenseApiGetDeviceCameraSenseObjectDetectionModelsRequest
+ @return SenseAPIGetDeviceCameraSenseObjectDetectionModelsRequest
 */
-func (a *SenseApiService) GetDeviceCameraSenseObjectDetectionModels(ctx context.Context, serial string) SenseApiGetDeviceCameraSenseObjectDetectionModelsRequest {
-	return SenseApiGetDeviceCameraSenseObjectDetectionModelsRequest{
+func (a *SenseAPIService) GetDeviceCameraSenseObjectDetectionModels(ctx context.Context, serial string) SenseAPIGetDeviceCameraSenseObjectDetectionModelsRequest {
+	return SenseAPIGetDeviceCameraSenseObjectDetectionModelsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -169,7 +169,7 @@ func (a *SenseApiService) GetDeviceCameraSenseObjectDetectionModels(ctx context.
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *SenseApiService) GetDeviceCameraSenseObjectDetectionModelsExecute(r SenseApiGetDeviceCameraSenseObjectDetectionModelsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *SenseAPIService) GetDeviceCameraSenseObjectDetectionModelsExecute(r SenseAPIGetDeviceCameraSenseObjectDetectionModelsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -177,7 +177,7 @@ func (a *SenseApiService) GetDeviceCameraSenseObjectDetectionModelsExecute(r Sen
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SenseApiService.GetDeviceCameraSenseObjectDetectionModels")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SenseAPIService.GetDeviceCameraSenseObjectDetectionModels")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -257,19 +257,19 @@ func (a *SenseApiService) GetDeviceCameraSenseObjectDetectionModelsExecute(r Sen
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SenseApiUpdateDeviceCameraSenseRequest struct {
+type SenseAPIUpdateDeviceCameraSenseRequest struct {
 	ctx context.Context
-	ApiService *SenseApiService
+	ApiService *SenseAPIService
 	serial string
 	updateDeviceCameraSenseRequest *UpdateDeviceCameraSenseRequest
 }
 
-func (r SenseApiUpdateDeviceCameraSenseRequest) UpdateDeviceCameraSenseRequest(updateDeviceCameraSenseRequest UpdateDeviceCameraSenseRequest) SenseApiUpdateDeviceCameraSenseRequest {
+func (r SenseAPIUpdateDeviceCameraSenseRequest) UpdateDeviceCameraSenseRequest(updateDeviceCameraSenseRequest UpdateDeviceCameraSenseRequest) SenseAPIUpdateDeviceCameraSenseRequest {
 	r.updateDeviceCameraSenseRequest = &updateDeviceCameraSenseRequest
 	return r
 }
 
-func (r SenseApiUpdateDeviceCameraSenseRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SenseAPIUpdateDeviceCameraSenseRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceCameraSenseExecute(r)
 }
 
@@ -280,10 +280,10 @@ Update sense settings for the given camera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return SenseApiUpdateDeviceCameraSenseRequest
+ @return SenseAPIUpdateDeviceCameraSenseRequest
 */
-func (a *SenseApiService) UpdateDeviceCameraSense(ctx context.Context, serial string) SenseApiUpdateDeviceCameraSenseRequest {
-	return SenseApiUpdateDeviceCameraSenseRequest{
+func (a *SenseAPIService) UpdateDeviceCameraSense(ctx context.Context, serial string) SenseAPIUpdateDeviceCameraSenseRequest {
+	return SenseAPIUpdateDeviceCameraSenseRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -292,7 +292,7 @@ func (a *SenseApiService) UpdateDeviceCameraSense(ctx context.Context, serial st
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SenseApiService) UpdateDeviceCameraSenseExecute(r SenseApiUpdateDeviceCameraSenseRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SenseAPIService) UpdateDeviceCameraSenseExecute(r SenseAPIUpdateDeviceCameraSenseRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -300,7 +300,7 @@ func (a *SenseApiService) UpdateDeviceCameraSenseExecute(r SenseApiUpdateDeviceC
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SenseApiService.UpdateDeviceCameraSense")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SenseAPIService.UpdateDeviceCameraSense")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

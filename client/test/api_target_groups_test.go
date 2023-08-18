@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing TargetGroupsApiService
+Testing TargetGroupsAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_TargetGroupsApiService(t *testing.T) {
+func Test_client_TargetGroupsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test TargetGroupsApiService CreateNetworkSmTargetGroup", func(t *testing.T) {
+	t.Run("Test TargetGroupsAPIService CreateNetworkSmTargetGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.TargetGroupsApi.CreateNetworkSmTargetGroup(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.TargetGroupsAPI.CreateNetworkSmTargetGroup(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,42 +36,28 @@ func Test_client_TargetGroupsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test TargetGroupsApiService DeleteNetworkSmTargetGroup", func(t *testing.T) {
+	t.Run("Test TargetGroupsAPIService DeleteNetworkSmTargetGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var targetGroupId string
 
-		httpRes, err := apiClient.TargetGroupsApi.DeleteNetworkSmTargetGroup(context.Background(), networkId, targetGroupId).Execute()
+		httpRes, err := apiClient.TargetGroupsAPI.DeleteNetworkSmTargetGroup(context.Background(), networkId, targetGroupId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test TargetGroupsApiService GetNetworkSmTargetGroup", func(t *testing.T) {
+	t.Run("Test TargetGroupsAPIService GetNetworkSmTargetGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var targetGroupId string
 
-		resp, httpRes, err := apiClient.TargetGroupsApi.GetNetworkSmTargetGroup(context.Background(), networkId, targetGroupId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test TargetGroupsApiService GetNetworkSmTargetGroups", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-
-		resp, httpRes, err := apiClient.TargetGroupsApi.GetNetworkSmTargetGroups(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.TargetGroupsAPI.GetNetworkSmTargetGroup(context.Background(), networkId, targetGroupId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,14 +65,28 @@ func Test_client_TargetGroupsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test TargetGroupsApiService UpdateNetworkSmTargetGroup", func(t *testing.T) {
+	t.Run("Test TargetGroupsAPIService GetNetworkSmTargetGroups", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+
+		resp, httpRes, err := apiClient.TargetGroupsAPI.GetNetworkSmTargetGroups(context.Background(), networkId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test TargetGroupsAPIService UpdateNetworkSmTargetGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var targetGroupId string
 
-		resp, httpRes, err := apiClient.TargetGroupsApi.UpdateNetworkSmTargetGroup(context.Background(), networkId, targetGroupId).Execute()
+		resp, httpRes, err := apiClient.TargetGroupsAPI.UpdateNetworkSmTargetGroup(context.Background(), networkId, targetGroupId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

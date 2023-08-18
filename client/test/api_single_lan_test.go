@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing SingleLanApiService
+Testing SingleLanAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_SingleLanApiService(t *testing.T) {
+func Test_client_SingleLanAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test SingleLanApiService GetNetworkApplianceSingleLan", func(t *testing.T) {
+	t.Run("Test SingleLanAPIService GetNetworkApplianceSingleLan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SingleLanApi.GetNetworkApplianceSingleLan(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SingleLanAPI.GetNetworkApplianceSingleLan(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_SingleLanApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SingleLanApiService UpdateNetworkApplianceSingleLan", func(t *testing.T) {
+	t.Run("Test SingleLanAPIService UpdateNetworkApplianceSingleLan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SingleLanApi.UpdateNetworkApplianceSingleLan(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SingleLanAPI.UpdateNetworkApplianceSingleLan(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

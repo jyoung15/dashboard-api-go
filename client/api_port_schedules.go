@@ -20,22 +20,22 @@ import (
 )
 
 
-// PortSchedulesApiService PortSchedulesApi service
-type PortSchedulesApiService service
+// PortSchedulesAPIService PortSchedulesAPI service
+type PortSchedulesAPIService service
 
-type PortSchedulesApiCreateNetworkSwitchPortScheduleRequest struct {
+type PortSchedulesAPICreateNetworkSwitchPortScheduleRequest struct {
 	ctx context.Context
-	ApiService *PortSchedulesApiService
+	ApiService *PortSchedulesAPIService
 	networkId string
 	createNetworkSwitchPortScheduleRequest *CreateNetworkSwitchPortScheduleRequest
 }
 
-func (r PortSchedulesApiCreateNetworkSwitchPortScheduleRequest) CreateNetworkSwitchPortScheduleRequest(createNetworkSwitchPortScheduleRequest CreateNetworkSwitchPortScheduleRequest) PortSchedulesApiCreateNetworkSwitchPortScheduleRequest {
+func (r PortSchedulesAPICreateNetworkSwitchPortScheduleRequest) CreateNetworkSwitchPortScheduleRequest(createNetworkSwitchPortScheduleRequest CreateNetworkSwitchPortScheduleRequest) PortSchedulesAPICreateNetworkSwitchPortScheduleRequest {
 	r.createNetworkSwitchPortScheduleRequest = &createNetworkSwitchPortScheduleRequest
 	return r
 }
 
-func (r PortSchedulesApiCreateNetworkSwitchPortScheduleRequest) Execute() (*GetNetworkSwitchPortSchedules200ResponseInner, *http.Response, error) {
+func (r PortSchedulesAPICreateNetworkSwitchPortScheduleRequest) Execute() (*GetNetworkSwitchPortSchedules200ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateNetworkSwitchPortScheduleExecute(r)
 }
 
@@ -46,10 +46,10 @@ Add a switch port schedule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return PortSchedulesApiCreateNetworkSwitchPortScheduleRequest
+ @return PortSchedulesAPICreateNetworkSwitchPortScheduleRequest
 */
-func (a *PortSchedulesApiService) CreateNetworkSwitchPortSchedule(ctx context.Context, networkId string) PortSchedulesApiCreateNetworkSwitchPortScheduleRequest {
-	return PortSchedulesApiCreateNetworkSwitchPortScheduleRequest{
+func (a *PortSchedulesAPIService) CreateNetworkSwitchPortSchedule(ctx context.Context, networkId string) PortSchedulesAPICreateNetworkSwitchPortScheduleRequest {
+	return PortSchedulesAPICreateNetworkSwitchPortScheduleRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -58,7 +58,7 @@ func (a *PortSchedulesApiService) CreateNetworkSwitchPortSchedule(ctx context.Co
 
 // Execute executes the request
 //  @return GetNetworkSwitchPortSchedules200ResponseInner
-func (a *PortSchedulesApiService) CreateNetworkSwitchPortScheduleExecute(r PortSchedulesApiCreateNetworkSwitchPortScheduleRequest) (*GetNetworkSwitchPortSchedules200ResponseInner, *http.Response, error) {
+func (a *PortSchedulesAPIService) CreateNetworkSwitchPortScheduleExecute(r PortSchedulesAPICreateNetworkSwitchPortScheduleRequest) (*GetNetworkSwitchPortSchedules200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *PortSchedulesApiService) CreateNetworkSwitchPortScheduleExecute(r PortS
 		localVarReturnValue  *GetNetworkSwitchPortSchedules200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortSchedulesApiService.CreateNetworkSwitchPortSchedule")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortSchedulesAPIService.CreateNetworkSwitchPortSchedule")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,14 +151,14 @@ func (a *PortSchedulesApiService) CreateNetworkSwitchPortScheduleExecute(r PortS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PortSchedulesApiDeleteNetworkSwitchPortScheduleRequest struct {
+type PortSchedulesAPIDeleteNetworkSwitchPortScheduleRequest struct {
 	ctx context.Context
-	ApiService *PortSchedulesApiService
+	ApiService *PortSchedulesAPIService
 	networkId string
 	portScheduleId string
 }
 
-func (r PortSchedulesApiDeleteNetworkSwitchPortScheduleRequest) Execute() (*http.Response, error) {
+func (r PortSchedulesAPIDeleteNetworkSwitchPortScheduleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkSwitchPortScheduleExecute(r)
 }
 
@@ -170,10 +170,10 @@ Delete a switch port schedule
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param portScheduleId Port schedule ID
- @return PortSchedulesApiDeleteNetworkSwitchPortScheduleRequest
+ @return PortSchedulesAPIDeleteNetworkSwitchPortScheduleRequest
 */
-func (a *PortSchedulesApiService) DeleteNetworkSwitchPortSchedule(ctx context.Context, networkId string, portScheduleId string) PortSchedulesApiDeleteNetworkSwitchPortScheduleRequest {
-	return PortSchedulesApiDeleteNetworkSwitchPortScheduleRequest{
+func (a *PortSchedulesAPIService) DeleteNetworkSwitchPortSchedule(ctx context.Context, networkId string, portScheduleId string) PortSchedulesAPIDeleteNetworkSwitchPortScheduleRequest {
+	return PortSchedulesAPIDeleteNetworkSwitchPortScheduleRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -182,14 +182,14 @@ func (a *PortSchedulesApiService) DeleteNetworkSwitchPortSchedule(ctx context.Co
 }
 
 // Execute executes the request
-func (a *PortSchedulesApiService) DeleteNetworkSwitchPortScheduleExecute(r PortSchedulesApiDeleteNetworkSwitchPortScheduleRequest) (*http.Response, error) {
+func (a *PortSchedulesAPIService) DeleteNetworkSwitchPortScheduleExecute(r PortSchedulesAPIDeleteNetworkSwitchPortScheduleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortSchedulesApiService.DeleteNetworkSwitchPortSchedule")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortSchedulesAPIService.DeleteNetworkSwitchPortSchedule")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -261,13 +261,13 @@ func (a *PortSchedulesApiService) DeleteNetworkSwitchPortScheduleExecute(r PortS
 	return localVarHTTPResponse, nil
 }
 
-type PortSchedulesApiGetNetworkSwitchPortSchedulesRequest struct {
+type PortSchedulesAPIGetNetworkSwitchPortSchedulesRequest struct {
 	ctx context.Context
-	ApiService *PortSchedulesApiService
+	ApiService *PortSchedulesAPIService
 	networkId string
 }
 
-func (r PortSchedulesApiGetNetworkSwitchPortSchedulesRequest) Execute() ([]GetNetworkSwitchPortSchedules200ResponseInner, *http.Response, error) {
+func (r PortSchedulesAPIGetNetworkSwitchPortSchedulesRequest) Execute() ([]GetNetworkSwitchPortSchedules200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchPortSchedulesExecute(r)
 }
 
@@ -278,10 +278,10 @@ List switch port schedules
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return PortSchedulesApiGetNetworkSwitchPortSchedulesRequest
+ @return PortSchedulesAPIGetNetworkSwitchPortSchedulesRequest
 */
-func (a *PortSchedulesApiService) GetNetworkSwitchPortSchedules(ctx context.Context, networkId string) PortSchedulesApiGetNetworkSwitchPortSchedulesRequest {
-	return PortSchedulesApiGetNetworkSwitchPortSchedulesRequest{
+func (a *PortSchedulesAPIService) GetNetworkSwitchPortSchedules(ctx context.Context, networkId string) PortSchedulesAPIGetNetworkSwitchPortSchedulesRequest {
+	return PortSchedulesAPIGetNetworkSwitchPortSchedulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -290,7 +290,7 @@ func (a *PortSchedulesApiService) GetNetworkSwitchPortSchedules(ctx context.Cont
 
 // Execute executes the request
 //  @return []GetNetworkSwitchPortSchedules200ResponseInner
-func (a *PortSchedulesApiService) GetNetworkSwitchPortSchedulesExecute(r PortSchedulesApiGetNetworkSwitchPortSchedulesRequest) ([]GetNetworkSwitchPortSchedules200ResponseInner, *http.Response, error) {
+func (a *PortSchedulesAPIService) GetNetworkSwitchPortSchedulesExecute(r PortSchedulesAPIGetNetworkSwitchPortSchedulesRequest) ([]GetNetworkSwitchPortSchedules200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -298,7 +298,7 @@ func (a *PortSchedulesApiService) GetNetworkSwitchPortSchedulesExecute(r PortSch
 		localVarReturnValue  []GetNetworkSwitchPortSchedules200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortSchedulesApiService.GetNetworkSwitchPortSchedules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortSchedulesAPIService.GetNetworkSwitchPortSchedules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -378,20 +378,20 @@ func (a *PortSchedulesApiService) GetNetworkSwitchPortSchedulesExecute(r PortSch
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PortSchedulesApiUpdateNetworkSwitchPortScheduleRequest struct {
+type PortSchedulesAPIUpdateNetworkSwitchPortScheduleRequest struct {
 	ctx context.Context
-	ApiService *PortSchedulesApiService
+	ApiService *PortSchedulesAPIService
 	networkId string
 	portScheduleId string
 	updateNetworkSwitchPortScheduleRequest *UpdateNetworkSwitchPortScheduleRequest
 }
 
-func (r PortSchedulesApiUpdateNetworkSwitchPortScheduleRequest) UpdateNetworkSwitchPortScheduleRequest(updateNetworkSwitchPortScheduleRequest UpdateNetworkSwitchPortScheduleRequest) PortSchedulesApiUpdateNetworkSwitchPortScheduleRequest {
+func (r PortSchedulesAPIUpdateNetworkSwitchPortScheduleRequest) UpdateNetworkSwitchPortScheduleRequest(updateNetworkSwitchPortScheduleRequest UpdateNetworkSwitchPortScheduleRequest) PortSchedulesAPIUpdateNetworkSwitchPortScheduleRequest {
 	r.updateNetworkSwitchPortScheduleRequest = &updateNetworkSwitchPortScheduleRequest
 	return r
 }
 
-func (r PortSchedulesApiUpdateNetworkSwitchPortScheduleRequest) Execute() (*GetNetworkSwitchPortSchedules200ResponseInner, *http.Response, error) {
+func (r PortSchedulesAPIUpdateNetworkSwitchPortScheduleRequest) Execute() (*GetNetworkSwitchPortSchedules200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchPortScheduleExecute(r)
 }
 
@@ -403,10 +403,10 @@ Update a switch port schedule
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param portScheduleId Port schedule ID
- @return PortSchedulesApiUpdateNetworkSwitchPortScheduleRequest
+ @return PortSchedulesAPIUpdateNetworkSwitchPortScheduleRequest
 */
-func (a *PortSchedulesApiService) UpdateNetworkSwitchPortSchedule(ctx context.Context, networkId string, portScheduleId string) PortSchedulesApiUpdateNetworkSwitchPortScheduleRequest {
-	return PortSchedulesApiUpdateNetworkSwitchPortScheduleRequest{
+func (a *PortSchedulesAPIService) UpdateNetworkSwitchPortSchedule(ctx context.Context, networkId string, portScheduleId string) PortSchedulesAPIUpdateNetworkSwitchPortScheduleRequest {
+	return PortSchedulesAPIUpdateNetworkSwitchPortScheduleRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -416,7 +416,7 @@ func (a *PortSchedulesApiService) UpdateNetworkSwitchPortSchedule(ctx context.Co
 
 // Execute executes the request
 //  @return GetNetworkSwitchPortSchedules200ResponseInner
-func (a *PortSchedulesApiService) UpdateNetworkSwitchPortScheduleExecute(r PortSchedulesApiUpdateNetworkSwitchPortScheduleRequest) (*GetNetworkSwitchPortSchedules200ResponseInner, *http.Response, error) {
+func (a *PortSchedulesAPIService) UpdateNetworkSwitchPortScheduleExecute(r PortSchedulesAPIUpdateNetworkSwitchPortScheduleRequest) (*GetNetworkSwitchPortSchedules200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -424,7 +424,7 @@ func (a *PortSchedulesApiService) UpdateNetworkSwitchPortScheduleExecute(r PortS
 		localVarReturnValue  *GetNetworkSwitchPortSchedules200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortSchedulesApiService.UpdateNetworkSwitchPortSchedule")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortSchedulesAPIService.UpdateNetworkSwitchPortSchedule")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -21,16 +21,16 @@ import (
 )
 
 
-// ApplianceApiService ApplianceApi service
-type ApplianceApiService service
+// ApplianceAPIService ApplianceAPI service
+type ApplianceAPIService service
 
-type ApplianceApiCreateDeviceApplianceVmxAuthenticationTokenRequest struct {
+type ApplianceAPICreateDeviceApplianceVmxAuthenticationTokenRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	serial string
 }
 
-func (r ApplianceApiCreateDeviceApplianceVmxAuthenticationTokenRequest) Execute() (*CreateDeviceApplianceVmxAuthenticationToken201Response, *http.Response, error) {
+func (r ApplianceAPICreateDeviceApplianceVmxAuthenticationTokenRequest) Execute() (*CreateDeviceApplianceVmxAuthenticationToken201Response, *http.Response, error) {
 	return r.ApiService.CreateDeviceApplianceVmxAuthenticationTokenExecute(r)
 }
 
@@ -41,10 +41,10 @@ Generate a new vMX authentication token
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return ApplianceApiCreateDeviceApplianceVmxAuthenticationTokenRequest
+ @return ApplianceAPICreateDeviceApplianceVmxAuthenticationTokenRequest
 */
-func (a *ApplianceApiService) CreateDeviceApplianceVmxAuthenticationToken(ctx context.Context, serial string) ApplianceApiCreateDeviceApplianceVmxAuthenticationTokenRequest {
-	return ApplianceApiCreateDeviceApplianceVmxAuthenticationTokenRequest{
+func (a *ApplianceAPIService) CreateDeviceApplianceVmxAuthenticationToken(ctx context.Context, serial string) ApplianceAPICreateDeviceApplianceVmxAuthenticationTokenRequest {
+	return ApplianceAPICreateDeviceApplianceVmxAuthenticationTokenRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -53,7 +53,7 @@ func (a *ApplianceApiService) CreateDeviceApplianceVmxAuthenticationToken(ctx co
 
 // Execute executes the request
 //  @return CreateDeviceApplianceVmxAuthenticationToken201Response
-func (a *ApplianceApiService) CreateDeviceApplianceVmxAuthenticationTokenExecute(r ApplianceApiCreateDeviceApplianceVmxAuthenticationTokenRequest) (*CreateDeviceApplianceVmxAuthenticationToken201Response, *http.Response, error) {
+func (a *ApplianceAPIService) CreateDeviceApplianceVmxAuthenticationTokenExecute(r ApplianceAPICreateDeviceApplianceVmxAuthenticationTokenRequest) (*CreateDeviceApplianceVmxAuthenticationToken201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -61,7 +61,7 @@ func (a *ApplianceApiService) CreateDeviceApplianceVmxAuthenticationTokenExecute
 		localVarReturnValue  *CreateDeviceApplianceVmxAuthenticationToken201Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.CreateDeviceApplianceVmxAuthenticationToken")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.CreateDeviceApplianceVmxAuthenticationToken")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -141,19 +141,19 @@ func (a *ApplianceApiService) CreateDeviceApplianceVmxAuthenticationTokenExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiCreateNetworkAppliancePrefixesDelegatedStaticRequest struct {
+type ApplianceAPICreateNetworkAppliancePrefixesDelegatedStaticRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	createNetworkAppliancePrefixesDelegatedStaticRequest *CreateNetworkAppliancePrefixesDelegatedStaticRequest
 }
 
-func (r ApplianceApiCreateNetworkAppliancePrefixesDelegatedStaticRequest) CreateNetworkAppliancePrefixesDelegatedStaticRequest(createNetworkAppliancePrefixesDelegatedStaticRequest CreateNetworkAppliancePrefixesDelegatedStaticRequest) ApplianceApiCreateNetworkAppliancePrefixesDelegatedStaticRequest {
+func (r ApplianceAPICreateNetworkAppliancePrefixesDelegatedStaticRequest) CreateNetworkAppliancePrefixesDelegatedStaticRequest(createNetworkAppliancePrefixesDelegatedStaticRequest CreateNetworkAppliancePrefixesDelegatedStaticRequest) ApplianceAPICreateNetworkAppliancePrefixesDelegatedStaticRequest {
 	r.createNetworkAppliancePrefixesDelegatedStaticRequest = &createNetworkAppliancePrefixesDelegatedStaticRequest
 	return r
 }
 
-func (r ApplianceApiCreateNetworkAppliancePrefixesDelegatedStaticRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPICreateNetworkAppliancePrefixesDelegatedStaticRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkAppliancePrefixesDelegatedStaticExecute(r)
 }
 
@@ -164,10 +164,10 @@ Add a static delegated prefix from a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiCreateNetworkAppliancePrefixesDelegatedStaticRequest
+ @return ApplianceAPICreateNetworkAppliancePrefixesDelegatedStaticRequest
 */
-func (a *ApplianceApiService) CreateNetworkAppliancePrefixesDelegatedStatic(ctx context.Context, networkId string) ApplianceApiCreateNetworkAppliancePrefixesDelegatedStaticRequest {
-	return ApplianceApiCreateNetworkAppliancePrefixesDelegatedStaticRequest{
+func (a *ApplianceAPIService) CreateNetworkAppliancePrefixesDelegatedStatic(ctx context.Context, networkId string) ApplianceAPICreateNetworkAppliancePrefixesDelegatedStaticRequest {
+	return ApplianceAPICreateNetworkAppliancePrefixesDelegatedStaticRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -176,7 +176,7 @@ func (a *ApplianceApiService) CreateNetworkAppliancePrefixesDelegatedStatic(ctx 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) CreateNetworkAppliancePrefixesDelegatedStaticExecute(r ApplianceApiCreateNetworkAppliancePrefixesDelegatedStaticRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) CreateNetworkAppliancePrefixesDelegatedStaticExecute(r ApplianceAPICreateNetworkAppliancePrefixesDelegatedStaticRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -184,7 +184,7 @@ func (a *ApplianceApiService) CreateNetworkAppliancePrefixesDelegatedStaticExecu
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.CreateNetworkAppliancePrefixesDelegatedStatic")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.CreateNetworkAppliancePrefixesDelegatedStatic")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -269,19 +269,19 @@ func (a *ApplianceApiService) CreateNetworkAppliancePrefixesDelegatedStaticExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiCreateNetworkApplianceRfProfileRequest struct {
+type ApplianceAPICreateNetworkApplianceRfProfileRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	createNetworkApplianceRfProfileRequest *CreateNetworkApplianceRfProfileRequest
 }
 
-func (r ApplianceApiCreateNetworkApplianceRfProfileRequest) CreateNetworkApplianceRfProfileRequest(createNetworkApplianceRfProfileRequest CreateNetworkApplianceRfProfileRequest) ApplianceApiCreateNetworkApplianceRfProfileRequest {
+func (r ApplianceAPICreateNetworkApplianceRfProfileRequest) CreateNetworkApplianceRfProfileRequest(createNetworkApplianceRfProfileRequest CreateNetworkApplianceRfProfileRequest) ApplianceAPICreateNetworkApplianceRfProfileRequest {
 	r.createNetworkApplianceRfProfileRequest = &createNetworkApplianceRfProfileRequest
 	return r
 }
 
-func (r ApplianceApiCreateNetworkApplianceRfProfileRequest) Execute() (*GetNetworkApplianceRfProfiles200ResponseAssignedInner, *http.Response, error) {
+func (r ApplianceAPICreateNetworkApplianceRfProfileRequest) Execute() (*GetNetworkApplianceRfProfiles200ResponseAssignedInner, *http.Response, error) {
 	return r.ApiService.CreateNetworkApplianceRfProfileExecute(r)
 }
 
@@ -292,10 +292,10 @@ Creates new RF profile for this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiCreateNetworkApplianceRfProfileRequest
+ @return ApplianceAPICreateNetworkApplianceRfProfileRequest
 */
-func (a *ApplianceApiService) CreateNetworkApplianceRfProfile(ctx context.Context, networkId string) ApplianceApiCreateNetworkApplianceRfProfileRequest {
-	return ApplianceApiCreateNetworkApplianceRfProfileRequest{
+func (a *ApplianceAPIService) CreateNetworkApplianceRfProfile(ctx context.Context, networkId string) ApplianceAPICreateNetworkApplianceRfProfileRequest {
+	return ApplianceAPICreateNetworkApplianceRfProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -304,7 +304,7 @@ func (a *ApplianceApiService) CreateNetworkApplianceRfProfile(ctx context.Contex
 
 // Execute executes the request
 //  @return GetNetworkApplianceRfProfiles200ResponseAssignedInner
-func (a *ApplianceApiService) CreateNetworkApplianceRfProfileExecute(r ApplianceApiCreateNetworkApplianceRfProfileRequest) (*GetNetworkApplianceRfProfiles200ResponseAssignedInner, *http.Response, error) {
+func (a *ApplianceAPIService) CreateNetworkApplianceRfProfileExecute(r ApplianceAPICreateNetworkApplianceRfProfileRequest) (*GetNetworkApplianceRfProfiles200ResponseAssignedInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -312,7 +312,7 @@ func (a *ApplianceApiService) CreateNetworkApplianceRfProfileExecute(r Appliance
 		localVarReturnValue  *GetNetworkApplianceRfProfiles200ResponseAssignedInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.CreateNetworkApplianceRfProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.CreateNetworkApplianceRfProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -397,19 +397,19 @@ func (a *ApplianceApiService) CreateNetworkApplianceRfProfileExecute(r Appliance
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiCreateNetworkApplianceStaticRouteRequest struct {
+type ApplianceAPICreateNetworkApplianceStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	createNetworkApplianceStaticRouteRequest *CreateNetworkApplianceStaticRouteRequest
 }
 
-func (r ApplianceApiCreateNetworkApplianceStaticRouteRequest) CreateNetworkApplianceStaticRouteRequest(createNetworkApplianceStaticRouteRequest CreateNetworkApplianceStaticRouteRequest) ApplianceApiCreateNetworkApplianceStaticRouteRequest {
+func (r ApplianceAPICreateNetworkApplianceStaticRouteRequest) CreateNetworkApplianceStaticRouteRequest(createNetworkApplianceStaticRouteRequest CreateNetworkApplianceStaticRouteRequest) ApplianceAPICreateNetworkApplianceStaticRouteRequest {
 	r.createNetworkApplianceStaticRouteRequest = &createNetworkApplianceStaticRouteRequest
 	return r
 }
 
-func (r ApplianceApiCreateNetworkApplianceStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPICreateNetworkApplianceStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkApplianceStaticRouteExecute(r)
 }
 
@@ -420,10 +420,10 @@ Add a static route for an MX or teleworker network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiCreateNetworkApplianceStaticRouteRequest
+ @return ApplianceAPICreateNetworkApplianceStaticRouteRequest
 */
-func (a *ApplianceApiService) CreateNetworkApplianceStaticRoute(ctx context.Context, networkId string) ApplianceApiCreateNetworkApplianceStaticRouteRequest {
-	return ApplianceApiCreateNetworkApplianceStaticRouteRequest{
+func (a *ApplianceAPIService) CreateNetworkApplianceStaticRoute(ctx context.Context, networkId string) ApplianceAPICreateNetworkApplianceStaticRouteRequest {
+	return ApplianceAPICreateNetworkApplianceStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -432,7 +432,7 @@ func (a *ApplianceApiService) CreateNetworkApplianceStaticRoute(ctx context.Cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) CreateNetworkApplianceStaticRouteExecute(r ApplianceApiCreateNetworkApplianceStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) CreateNetworkApplianceStaticRouteExecute(r ApplianceAPICreateNetworkApplianceStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -440,7 +440,7 @@ func (a *ApplianceApiService) CreateNetworkApplianceStaticRouteExecute(r Applian
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.CreateNetworkApplianceStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.CreateNetworkApplianceStaticRoute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -525,19 +525,19 @@ func (a *ApplianceApiService) CreateNetworkApplianceStaticRouteExecute(r Applian
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiCreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest struct {
+type ApplianceAPICreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	createNetworkApplianceTrafficShapingCustomPerformanceClassRequest *CreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest
 }
 
-func (r ApplianceApiCreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) CreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest(createNetworkApplianceTrafficShapingCustomPerformanceClassRequest CreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) ApplianceApiCreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest {
+func (r ApplianceAPICreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) CreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest(createNetworkApplianceTrafficShapingCustomPerformanceClassRequest CreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) ApplianceAPICreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest {
 	r.createNetworkApplianceTrafficShapingCustomPerformanceClassRequest = &createNetworkApplianceTrafficShapingCustomPerformanceClassRequest
 	return r
 }
 
-func (r ApplianceApiCreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPICreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkApplianceTrafficShapingCustomPerformanceClassExecute(r)
 }
 
@@ -548,10 +548,10 @@ Add a custom performance class for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiCreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest
+ @return ApplianceAPICreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest
 */
-func (a *ApplianceApiService) CreateNetworkApplianceTrafficShapingCustomPerformanceClass(ctx context.Context, networkId string) ApplianceApiCreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest {
-	return ApplianceApiCreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest{
+func (a *ApplianceAPIService) CreateNetworkApplianceTrafficShapingCustomPerformanceClass(ctx context.Context, networkId string) ApplianceAPICreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest {
+	return ApplianceAPICreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -560,7 +560,7 @@ func (a *ApplianceApiService) CreateNetworkApplianceTrafficShapingCustomPerforma
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) CreateNetworkApplianceTrafficShapingCustomPerformanceClassExecute(r ApplianceApiCreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) CreateNetworkApplianceTrafficShapingCustomPerformanceClassExecute(r ApplianceAPICreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -568,7 +568,7 @@ func (a *ApplianceApiService) CreateNetworkApplianceTrafficShapingCustomPerforma
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.CreateNetworkApplianceTrafficShapingCustomPerformanceClass")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.CreateNetworkApplianceTrafficShapingCustomPerformanceClass")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -653,19 +653,19 @@ func (a *ApplianceApiService) CreateNetworkApplianceTrafficShapingCustomPerforma
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiCreateNetworkApplianceVlanRequest struct {
+type ApplianceAPICreateNetworkApplianceVlanRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	createNetworkApplianceVlanRequest *CreateNetworkApplianceVlanRequest
 }
 
-func (r ApplianceApiCreateNetworkApplianceVlanRequest) CreateNetworkApplianceVlanRequest(createNetworkApplianceVlanRequest CreateNetworkApplianceVlanRequest) ApplianceApiCreateNetworkApplianceVlanRequest {
+func (r ApplianceAPICreateNetworkApplianceVlanRequest) CreateNetworkApplianceVlanRequest(createNetworkApplianceVlanRequest CreateNetworkApplianceVlanRequest) ApplianceAPICreateNetworkApplianceVlanRequest {
 	r.createNetworkApplianceVlanRequest = &createNetworkApplianceVlanRequest
 	return r
 }
 
-func (r ApplianceApiCreateNetworkApplianceVlanRequest) Execute() (*CreateNetworkApplianceVlan201Response, *http.Response, error) {
+func (r ApplianceAPICreateNetworkApplianceVlanRequest) Execute() (*CreateNetworkApplianceVlan201Response, *http.Response, error) {
 	return r.ApiService.CreateNetworkApplianceVlanExecute(r)
 }
 
@@ -676,10 +676,10 @@ Add a VLAN
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiCreateNetworkApplianceVlanRequest
+ @return ApplianceAPICreateNetworkApplianceVlanRequest
 */
-func (a *ApplianceApiService) CreateNetworkApplianceVlan(ctx context.Context, networkId string) ApplianceApiCreateNetworkApplianceVlanRequest {
-	return ApplianceApiCreateNetworkApplianceVlanRequest{
+func (a *ApplianceAPIService) CreateNetworkApplianceVlan(ctx context.Context, networkId string) ApplianceAPICreateNetworkApplianceVlanRequest {
+	return ApplianceAPICreateNetworkApplianceVlanRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -688,7 +688,7 @@ func (a *ApplianceApiService) CreateNetworkApplianceVlan(ctx context.Context, ne
 
 // Execute executes the request
 //  @return CreateNetworkApplianceVlan201Response
-func (a *ApplianceApiService) CreateNetworkApplianceVlanExecute(r ApplianceApiCreateNetworkApplianceVlanRequest) (*CreateNetworkApplianceVlan201Response, *http.Response, error) {
+func (a *ApplianceAPIService) CreateNetworkApplianceVlanExecute(r ApplianceAPICreateNetworkApplianceVlanRequest) (*CreateNetworkApplianceVlan201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -696,7 +696,7 @@ func (a *ApplianceApiService) CreateNetworkApplianceVlanExecute(r ApplianceApiCr
 		localVarReturnValue  *CreateNetworkApplianceVlan201Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.CreateNetworkApplianceVlan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.CreateNetworkApplianceVlan")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -781,14 +781,14 @@ func (a *ApplianceApiService) CreateNetworkApplianceVlanExecute(r ApplianceApiCr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiDeleteNetworkAppliancePrefixesDelegatedStaticRequest struct {
+type ApplianceAPIDeleteNetworkAppliancePrefixesDelegatedStaticRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	staticDelegatedPrefixId string
 }
 
-func (r ApplianceApiDeleteNetworkAppliancePrefixesDelegatedStaticRequest) Execute() (*http.Response, error) {
+func (r ApplianceAPIDeleteNetworkAppliancePrefixesDelegatedStaticRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkAppliancePrefixesDelegatedStaticExecute(r)
 }
 
@@ -800,10 +800,10 @@ Delete a static delegated prefix from a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param staticDelegatedPrefixId Static delegated prefix ID
- @return ApplianceApiDeleteNetworkAppliancePrefixesDelegatedStaticRequest
+ @return ApplianceAPIDeleteNetworkAppliancePrefixesDelegatedStaticRequest
 */
-func (a *ApplianceApiService) DeleteNetworkAppliancePrefixesDelegatedStatic(ctx context.Context, networkId string, staticDelegatedPrefixId string) ApplianceApiDeleteNetworkAppliancePrefixesDelegatedStaticRequest {
-	return ApplianceApiDeleteNetworkAppliancePrefixesDelegatedStaticRequest{
+func (a *ApplianceAPIService) DeleteNetworkAppliancePrefixesDelegatedStatic(ctx context.Context, networkId string, staticDelegatedPrefixId string) ApplianceAPIDeleteNetworkAppliancePrefixesDelegatedStaticRequest {
+	return ApplianceAPIDeleteNetworkAppliancePrefixesDelegatedStaticRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -812,14 +812,14 @@ func (a *ApplianceApiService) DeleteNetworkAppliancePrefixesDelegatedStatic(ctx 
 }
 
 // Execute executes the request
-func (a *ApplianceApiService) DeleteNetworkAppliancePrefixesDelegatedStaticExecute(r ApplianceApiDeleteNetworkAppliancePrefixesDelegatedStaticRequest) (*http.Response, error) {
+func (a *ApplianceAPIService) DeleteNetworkAppliancePrefixesDelegatedStaticExecute(r ApplianceAPIDeleteNetworkAppliancePrefixesDelegatedStaticRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.DeleteNetworkAppliancePrefixesDelegatedStatic")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.DeleteNetworkAppliancePrefixesDelegatedStatic")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -891,14 +891,14 @@ func (a *ApplianceApiService) DeleteNetworkAppliancePrefixesDelegatedStaticExecu
 	return localVarHTTPResponse, nil
 }
 
-type ApplianceApiDeleteNetworkApplianceRfProfileRequest struct {
+type ApplianceAPIDeleteNetworkApplianceRfProfileRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	rfProfileId string
 }
 
-func (r ApplianceApiDeleteNetworkApplianceRfProfileRequest) Execute() (*http.Response, error) {
+func (r ApplianceAPIDeleteNetworkApplianceRfProfileRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkApplianceRfProfileExecute(r)
 }
 
@@ -910,10 +910,10 @@ Delete a RF Profile
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param rfProfileId Rf profile ID
- @return ApplianceApiDeleteNetworkApplianceRfProfileRequest
+ @return ApplianceAPIDeleteNetworkApplianceRfProfileRequest
 */
-func (a *ApplianceApiService) DeleteNetworkApplianceRfProfile(ctx context.Context, networkId string, rfProfileId string) ApplianceApiDeleteNetworkApplianceRfProfileRequest {
-	return ApplianceApiDeleteNetworkApplianceRfProfileRequest{
+func (a *ApplianceAPIService) DeleteNetworkApplianceRfProfile(ctx context.Context, networkId string, rfProfileId string) ApplianceAPIDeleteNetworkApplianceRfProfileRequest {
+	return ApplianceAPIDeleteNetworkApplianceRfProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -922,14 +922,14 @@ func (a *ApplianceApiService) DeleteNetworkApplianceRfProfile(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *ApplianceApiService) DeleteNetworkApplianceRfProfileExecute(r ApplianceApiDeleteNetworkApplianceRfProfileRequest) (*http.Response, error) {
+func (a *ApplianceAPIService) DeleteNetworkApplianceRfProfileExecute(r ApplianceAPIDeleteNetworkApplianceRfProfileRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.DeleteNetworkApplianceRfProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.DeleteNetworkApplianceRfProfile")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1001,14 +1001,14 @@ func (a *ApplianceApiService) DeleteNetworkApplianceRfProfileExecute(r Appliance
 	return localVarHTTPResponse, nil
 }
 
-type ApplianceApiDeleteNetworkApplianceStaticRouteRequest struct {
+type ApplianceAPIDeleteNetworkApplianceStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	staticRouteId string
 }
 
-func (r ApplianceApiDeleteNetworkApplianceStaticRouteRequest) Execute() (*http.Response, error) {
+func (r ApplianceAPIDeleteNetworkApplianceStaticRouteRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkApplianceStaticRouteExecute(r)
 }
 
@@ -1020,10 +1020,10 @@ Delete a static route from an MX or teleworker network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param staticRouteId Static route ID
- @return ApplianceApiDeleteNetworkApplianceStaticRouteRequest
+ @return ApplianceAPIDeleteNetworkApplianceStaticRouteRequest
 */
-func (a *ApplianceApiService) DeleteNetworkApplianceStaticRoute(ctx context.Context, networkId string, staticRouteId string) ApplianceApiDeleteNetworkApplianceStaticRouteRequest {
-	return ApplianceApiDeleteNetworkApplianceStaticRouteRequest{
+func (a *ApplianceAPIService) DeleteNetworkApplianceStaticRoute(ctx context.Context, networkId string, staticRouteId string) ApplianceAPIDeleteNetworkApplianceStaticRouteRequest {
+	return ApplianceAPIDeleteNetworkApplianceStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1032,14 +1032,14 @@ func (a *ApplianceApiService) DeleteNetworkApplianceStaticRoute(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *ApplianceApiService) DeleteNetworkApplianceStaticRouteExecute(r ApplianceApiDeleteNetworkApplianceStaticRouteRequest) (*http.Response, error) {
+func (a *ApplianceAPIService) DeleteNetworkApplianceStaticRouteExecute(r ApplianceAPIDeleteNetworkApplianceStaticRouteRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.DeleteNetworkApplianceStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.DeleteNetworkApplianceStaticRoute")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1111,14 +1111,14 @@ func (a *ApplianceApiService) DeleteNetworkApplianceStaticRouteExecute(r Applian
 	return localVarHTTPResponse, nil
 }
 
-type ApplianceApiDeleteNetworkApplianceTrafficShapingCustomPerformanceClassRequest struct {
+type ApplianceAPIDeleteNetworkApplianceTrafficShapingCustomPerformanceClassRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	customPerformanceClassId string
 }
 
-func (r ApplianceApiDeleteNetworkApplianceTrafficShapingCustomPerformanceClassRequest) Execute() (*http.Response, error) {
+func (r ApplianceAPIDeleteNetworkApplianceTrafficShapingCustomPerformanceClassRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkApplianceTrafficShapingCustomPerformanceClassExecute(r)
 }
 
@@ -1130,10 +1130,10 @@ Delete a custom performance class from an MX network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param customPerformanceClassId Custom performance class ID
- @return ApplianceApiDeleteNetworkApplianceTrafficShapingCustomPerformanceClassRequest
+ @return ApplianceAPIDeleteNetworkApplianceTrafficShapingCustomPerformanceClassRequest
 */
-func (a *ApplianceApiService) DeleteNetworkApplianceTrafficShapingCustomPerformanceClass(ctx context.Context, networkId string, customPerformanceClassId string) ApplianceApiDeleteNetworkApplianceTrafficShapingCustomPerformanceClassRequest {
-	return ApplianceApiDeleteNetworkApplianceTrafficShapingCustomPerformanceClassRequest{
+func (a *ApplianceAPIService) DeleteNetworkApplianceTrafficShapingCustomPerformanceClass(ctx context.Context, networkId string, customPerformanceClassId string) ApplianceAPIDeleteNetworkApplianceTrafficShapingCustomPerformanceClassRequest {
+	return ApplianceAPIDeleteNetworkApplianceTrafficShapingCustomPerformanceClassRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1142,14 +1142,14 @@ func (a *ApplianceApiService) DeleteNetworkApplianceTrafficShapingCustomPerforma
 }
 
 // Execute executes the request
-func (a *ApplianceApiService) DeleteNetworkApplianceTrafficShapingCustomPerformanceClassExecute(r ApplianceApiDeleteNetworkApplianceTrafficShapingCustomPerformanceClassRequest) (*http.Response, error) {
+func (a *ApplianceAPIService) DeleteNetworkApplianceTrafficShapingCustomPerformanceClassExecute(r ApplianceAPIDeleteNetworkApplianceTrafficShapingCustomPerformanceClassRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.DeleteNetworkApplianceTrafficShapingCustomPerformanceClass")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.DeleteNetworkApplianceTrafficShapingCustomPerformanceClass")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1221,14 +1221,14 @@ func (a *ApplianceApiService) DeleteNetworkApplianceTrafficShapingCustomPerforma
 	return localVarHTTPResponse, nil
 }
 
-type ApplianceApiDeleteNetworkApplianceVlanRequest struct {
+type ApplianceAPIDeleteNetworkApplianceVlanRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	vlanId string
 }
 
-func (r ApplianceApiDeleteNetworkApplianceVlanRequest) Execute() (*http.Response, error) {
+func (r ApplianceAPIDeleteNetworkApplianceVlanRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkApplianceVlanExecute(r)
 }
 
@@ -1240,10 +1240,10 @@ Delete a VLAN from a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param vlanId Vlan ID
- @return ApplianceApiDeleteNetworkApplianceVlanRequest
+ @return ApplianceAPIDeleteNetworkApplianceVlanRequest
 */
-func (a *ApplianceApiService) DeleteNetworkApplianceVlan(ctx context.Context, networkId string, vlanId string) ApplianceApiDeleteNetworkApplianceVlanRequest {
-	return ApplianceApiDeleteNetworkApplianceVlanRequest{
+func (a *ApplianceAPIService) DeleteNetworkApplianceVlan(ctx context.Context, networkId string, vlanId string) ApplianceAPIDeleteNetworkApplianceVlanRequest {
+	return ApplianceAPIDeleteNetworkApplianceVlanRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1252,14 +1252,14 @@ func (a *ApplianceApiService) DeleteNetworkApplianceVlan(ctx context.Context, ne
 }
 
 // Execute executes the request
-func (a *ApplianceApiService) DeleteNetworkApplianceVlanExecute(r ApplianceApiDeleteNetworkApplianceVlanRequest) (*http.Response, error) {
+func (a *ApplianceAPIService) DeleteNetworkApplianceVlanExecute(r ApplianceAPIDeleteNetworkApplianceVlanRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.DeleteNetworkApplianceVlan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.DeleteNetworkApplianceVlan")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1331,13 +1331,13 @@ func (a *ApplianceApiService) DeleteNetworkApplianceVlanExecute(r ApplianceApiDe
 	return localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetDeviceApplianceDhcpSubnetsRequest struct {
+type ApplianceAPIGetDeviceApplianceDhcpSubnetsRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	serial string
 }
 
-func (r ApplianceApiGetDeviceApplianceDhcpSubnetsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetDeviceApplianceDhcpSubnetsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceApplianceDhcpSubnetsExecute(r)
 }
 
@@ -1348,10 +1348,10 @@ Return the DHCP subnet information for an appliance
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return ApplianceApiGetDeviceApplianceDhcpSubnetsRequest
+ @return ApplianceAPIGetDeviceApplianceDhcpSubnetsRequest
 */
-func (a *ApplianceApiService) GetDeviceApplianceDhcpSubnets(ctx context.Context, serial string) ApplianceApiGetDeviceApplianceDhcpSubnetsRequest {
-	return ApplianceApiGetDeviceApplianceDhcpSubnetsRequest{
+func (a *ApplianceAPIService) GetDeviceApplianceDhcpSubnets(ctx context.Context, serial string) ApplianceAPIGetDeviceApplianceDhcpSubnetsRequest {
+	return ApplianceAPIGetDeviceApplianceDhcpSubnetsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1360,7 +1360,7 @@ func (a *ApplianceApiService) GetDeviceApplianceDhcpSubnets(ctx context.Context,
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ApplianceApiService) GetDeviceApplianceDhcpSubnetsExecute(r ApplianceApiGetDeviceApplianceDhcpSubnetsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetDeviceApplianceDhcpSubnetsExecute(r ApplianceAPIGetDeviceApplianceDhcpSubnetsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1368,7 +1368,7 @@ func (a *ApplianceApiService) GetDeviceApplianceDhcpSubnetsExecute(r ApplianceAp
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetDeviceApplianceDhcpSubnets")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetDeviceApplianceDhcpSubnets")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1448,13 +1448,13 @@ func (a *ApplianceApiService) GetDeviceApplianceDhcpSubnetsExecute(r ApplianceAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetDeviceAppliancePerformanceRequest struct {
+type ApplianceAPIGetDeviceAppliancePerformanceRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	serial string
 }
 
-func (r ApplianceApiGetDeviceAppliancePerformanceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetDeviceAppliancePerformanceRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceAppliancePerformanceExecute(r)
 }
 
@@ -1465,10 +1465,10 @@ Return the performance score for a single MX. Only primary MX devices supported.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return ApplianceApiGetDeviceAppliancePerformanceRequest
+ @return ApplianceAPIGetDeviceAppliancePerformanceRequest
 */
-func (a *ApplianceApiService) GetDeviceAppliancePerformance(ctx context.Context, serial string) ApplianceApiGetDeviceAppliancePerformanceRequest {
-	return ApplianceApiGetDeviceAppliancePerformanceRequest{
+func (a *ApplianceAPIService) GetDeviceAppliancePerformance(ctx context.Context, serial string) ApplianceAPIGetDeviceAppliancePerformanceRequest {
+	return ApplianceAPIGetDeviceAppliancePerformanceRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1477,7 +1477,7 @@ func (a *ApplianceApiService) GetDeviceAppliancePerformance(ctx context.Context,
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) GetDeviceAppliancePerformanceExecute(r ApplianceApiGetDeviceAppliancePerformanceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetDeviceAppliancePerformanceExecute(r ApplianceAPIGetDeviceAppliancePerformanceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1485,7 +1485,7 @@ func (a *ApplianceApiService) GetDeviceAppliancePerformanceExecute(r ApplianceAp
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetDeviceAppliancePerformance")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetDeviceAppliancePerformance")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1565,13 +1565,13 @@ func (a *ApplianceApiService) GetDeviceAppliancePerformanceExecute(r ApplianceAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetDeviceAppliancePrefixesDelegatedRequest struct {
+type ApplianceAPIGetDeviceAppliancePrefixesDelegatedRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	serial string
 }
 
-func (r ApplianceApiGetDeviceAppliancePrefixesDelegatedRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetDeviceAppliancePrefixesDelegatedRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceAppliancePrefixesDelegatedExecute(r)
 }
 
@@ -1582,10 +1582,10 @@ Return current delegated IPv6 prefixes on an appliance.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return ApplianceApiGetDeviceAppliancePrefixesDelegatedRequest
+ @return ApplianceAPIGetDeviceAppliancePrefixesDelegatedRequest
 */
-func (a *ApplianceApiService) GetDeviceAppliancePrefixesDelegated(ctx context.Context, serial string) ApplianceApiGetDeviceAppliancePrefixesDelegatedRequest {
-	return ApplianceApiGetDeviceAppliancePrefixesDelegatedRequest{
+func (a *ApplianceAPIService) GetDeviceAppliancePrefixesDelegated(ctx context.Context, serial string) ApplianceAPIGetDeviceAppliancePrefixesDelegatedRequest {
+	return ApplianceAPIGetDeviceAppliancePrefixesDelegatedRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1594,7 +1594,7 @@ func (a *ApplianceApiService) GetDeviceAppliancePrefixesDelegated(ctx context.Co
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ApplianceApiService) GetDeviceAppliancePrefixesDelegatedExecute(r ApplianceApiGetDeviceAppliancePrefixesDelegatedRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetDeviceAppliancePrefixesDelegatedExecute(r ApplianceAPIGetDeviceAppliancePrefixesDelegatedRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1602,7 +1602,7 @@ func (a *ApplianceApiService) GetDeviceAppliancePrefixesDelegatedExecute(r Appli
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetDeviceAppliancePrefixesDelegated")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetDeviceAppliancePrefixesDelegated")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1682,13 +1682,13 @@ func (a *ApplianceApiService) GetDeviceAppliancePrefixesDelegatedExecute(r Appli
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest struct {
+type ApplianceAPIGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	serial string
 }
 
-func (r ApplianceApiGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceAppliancePrefixesDelegatedVlanAssignmentsExecute(r)
 }
 
@@ -1699,10 +1699,10 @@ Return prefixes assigned to all IPv6 enabled VLANs on an appliance.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return ApplianceApiGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest
+ @return ApplianceAPIGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest
 */
-func (a *ApplianceApiService) GetDeviceAppliancePrefixesDelegatedVlanAssignments(ctx context.Context, serial string) ApplianceApiGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest {
-	return ApplianceApiGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest{
+func (a *ApplianceAPIService) GetDeviceAppliancePrefixesDelegatedVlanAssignments(ctx context.Context, serial string) ApplianceAPIGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest {
+	return ApplianceAPIGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1711,7 +1711,7 @@ func (a *ApplianceApiService) GetDeviceAppliancePrefixesDelegatedVlanAssignments
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ApplianceApiService) GetDeviceAppliancePrefixesDelegatedVlanAssignmentsExecute(r ApplianceApiGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetDeviceAppliancePrefixesDelegatedVlanAssignmentsExecute(r ApplianceAPIGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1719,7 +1719,7 @@ func (a *ApplianceApiService) GetDeviceAppliancePrefixesDelegatedVlanAssignments
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetDeviceAppliancePrefixesDelegatedVlanAssignments")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetDeviceAppliancePrefixesDelegatedVlanAssignments")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1799,13 +1799,13 @@ func (a *ApplianceApiService) GetDeviceAppliancePrefixesDelegatedVlanAssignments
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetDeviceApplianceRadioSettingsRequest struct {
+type ApplianceAPIGetDeviceApplianceRadioSettingsRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	serial string
 }
 
-func (r ApplianceApiGetDeviceApplianceRadioSettingsRequest) Execute() (*GetDeviceApplianceRadioSettings200Response, *http.Response, error) {
+func (r ApplianceAPIGetDeviceApplianceRadioSettingsRequest) Execute() (*GetDeviceApplianceRadioSettings200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceApplianceRadioSettingsExecute(r)
 }
 
@@ -1816,10 +1816,10 @@ Return the radio settings of an appliance
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return ApplianceApiGetDeviceApplianceRadioSettingsRequest
+ @return ApplianceAPIGetDeviceApplianceRadioSettingsRequest
 */
-func (a *ApplianceApiService) GetDeviceApplianceRadioSettings(ctx context.Context, serial string) ApplianceApiGetDeviceApplianceRadioSettingsRequest {
-	return ApplianceApiGetDeviceApplianceRadioSettingsRequest{
+func (a *ApplianceAPIService) GetDeviceApplianceRadioSettings(ctx context.Context, serial string) ApplianceAPIGetDeviceApplianceRadioSettingsRequest {
+	return ApplianceAPIGetDeviceApplianceRadioSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1828,7 +1828,7 @@ func (a *ApplianceApiService) GetDeviceApplianceRadioSettings(ctx context.Contex
 
 // Execute executes the request
 //  @return GetDeviceApplianceRadioSettings200Response
-func (a *ApplianceApiService) GetDeviceApplianceRadioSettingsExecute(r ApplianceApiGetDeviceApplianceRadioSettingsRequest) (*GetDeviceApplianceRadioSettings200Response, *http.Response, error) {
+func (a *ApplianceAPIService) GetDeviceApplianceRadioSettingsExecute(r ApplianceAPIGetDeviceApplianceRadioSettingsRequest) (*GetDeviceApplianceRadioSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1836,7 +1836,7 @@ func (a *ApplianceApiService) GetDeviceApplianceRadioSettingsExecute(r Appliance
 		localVarReturnValue  *GetDeviceApplianceRadioSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetDeviceApplianceRadioSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetDeviceApplianceRadioSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1916,13 +1916,13 @@ func (a *ApplianceApiService) GetDeviceApplianceRadioSettingsExecute(r Appliance
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetDeviceApplianceUplinksSettingsRequest struct {
+type ApplianceAPIGetDeviceApplianceUplinksSettingsRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	serial string
 }
 
-func (r ApplianceApiGetDeviceApplianceUplinksSettingsRequest) Execute() (*GetDeviceApplianceUplinksSettings200Response, *http.Response, error) {
+func (r ApplianceAPIGetDeviceApplianceUplinksSettingsRequest) Execute() (*GetDeviceApplianceUplinksSettings200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceApplianceUplinksSettingsExecute(r)
 }
 
@@ -1933,10 +1933,10 @@ Return the uplink settings for an MX appliance
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return ApplianceApiGetDeviceApplianceUplinksSettingsRequest
+ @return ApplianceAPIGetDeviceApplianceUplinksSettingsRequest
 */
-func (a *ApplianceApiService) GetDeviceApplianceUplinksSettings(ctx context.Context, serial string) ApplianceApiGetDeviceApplianceUplinksSettingsRequest {
-	return ApplianceApiGetDeviceApplianceUplinksSettingsRequest{
+func (a *ApplianceAPIService) GetDeviceApplianceUplinksSettings(ctx context.Context, serial string) ApplianceAPIGetDeviceApplianceUplinksSettingsRequest {
+	return ApplianceAPIGetDeviceApplianceUplinksSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1945,7 +1945,7 @@ func (a *ApplianceApiService) GetDeviceApplianceUplinksSettings(ctx context.Cont
 
 // Execute executes the request
 //  @return GetDeviceApplianceUplinksSettings200Response
-func (a *ApplianceApiService) GetDeviceApplianceUplinksSettingsExecute(r ApplianceApiGetDeviceApplianceUplinksSettingsRequest) (*GetDeviceApplianceUplinksSettings200Response, *http.Response, error) {
+func (a *ApplianceAPIService) GetDeviceApplianceUplinksSettingsExecute(r ApplianceAPIGetDeviceApplianceUplinksSettingsRequest) (*GetDeviceApplianceUplinksSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1953,7 +1953,7 @@ func (a *ApplianceApiService) GetDeviceApplianceUplinksSettingsExecute(r Applian
 		localVarReturnValue  *GetDeviceApplianceUplinksSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetDeviceApplianceUplinksSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetDeviceApplianceUplinksSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2033,9 +2033,9 @@ func (a *ApplianceApiService) GetDeviceApplianceUplinksSettingsExecute(r Applian
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceClientSecurityEventsRequest struct {
+type ApplianceAPIGetNetworkApplianceClientSecurityEventsRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	clientId string
 	t0 *string
@@ -2048,48 +2048,48 @@ type ApplianceApiGetNetworkApplianceClientSecurityEventsRequest struct {
 }
 
 // The beginning of the timespan for the data. Data is gathered after the specified t0 value. The maximum lookback period is 791 days from today.
-func (r ApplianceApiGetNetworkApplianceClientSecurityEventsRequest) T0(t0 string) ApplianceApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r ApplianceAPIGetNetworkApplianceClientSecurityEventsRequest) T0(t0 string) ApplianceAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 791 days after t0.
-func (r ApplianceApiGetNetworkApplianceClientSecurityEventsRequest) T1(t1 string) ApplianceApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r ApplianceAPIGetNetworkApplianceClientSecurityEventsRequest) T1(t1 string) ApplianceAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 791 days. The default is 31 days.
-func (r ApplianceApiGetNetworkApplianceClientSecurityEventsRequest) Timespan(timespan float32) ApplianceApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r ApplianceAPIGetNetworkApplianceClientSecurityEventsRequest) Timespan(timespan float32) ApplianceAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
-func (r ApplianceApiGetNetworkApplianceClientSecurityEventsRequest) PerPage(perPage int32) ApplianceApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r ApplianceAPIGetNetworkApplianceClientSecurityEventsRequest) PerPage(perPage int32) ApplianceAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ApplianceApiGetNetworkApplianceClientSecurityEventsRequest) StartingAfter(startingAfter string) ApplianceApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r ApplianceAPIGetNetworkApplianceClientSecurityEventsRequest) StartingAfter(startingAfter string) ApplianceAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ApplianceApiGetNetworkApplianceClientSecurityEventsRequest) EndingBefore(endingBefore string) ApplianceApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r ApplianceAPIGetNetworkApplianceClientSecurityEventsRequest) EndingBefore(endingBefore string) ApplianceAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Sorted order of security events based on event detection time. Order options are &#39;ascending&#39; or &#39;descending&#39;. Default is ascending order.
-func (r ApplianceApiGetNetworkApplianceClientSecurityEventsRequest) SortOrder(sortOrder string) ApplianceApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r ApplianceAPIGetNetworkApplianceClientSecurityEventsRequest) SortOrder(sortOrder string) ApplianceAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
-func (r ApplianceApiGetNetworkApplianceClientSecurityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceClientSecurityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceClientSecurityEventsExecute(r)
 }
 
@@ -2101,10 +2101,10 @@ List the security events for a client. Clients can be identified by a client key
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return ApplianceApiGetNetworkApplianceClientSecurityEventsRequest
+ @return ApplianceAPIGetNetworkApplianceClientSecurityEventsRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceClientSecurityEvents(ctx context.Context, networkId string, clientId string) ApplianceApiGetNetworkApplianceClientSecurityEventsRequest {
-	return ApplianceApiGetNetworkApplianceClientSecurityEventsRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceClientSecurityEvents(ctx context.Context, networkId string, clientId string) ApplianceAPIGetNetworkApplianceClientSecurityEventsRequest {
+	return ApplianceAPIGetNetworkApplianceClientSecurityEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2114,7 +2114,7 @@ func (a *ApplianceApiService) GetNetworkApplianceClientSecurityEvents(ctx contex
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceClientSecurityEventsExecute(r ApplianceApiGetNetworkApplianceClientSecurityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceClientSecurityEventsExecute(r ApplianceAPIGetNetworkApplianceClientSecurityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2122,7 +2122,7 @@ func (a *ApplianceApiService) GetNetworkApplianceClientSecurityEventsExecute(r A
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceClientSecurityEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceClientSecurityEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2224,13 +2224,13 @@ func (a *ApplianceApiService) GetNetworkApplianceClientSecurityEventsExecute(r A
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceConnectivityMonitoringDestinationsRequest struct {
+type ApplianceAPIGetNetworkApplianceConnectivityMonitoringDestinationsRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceConnectivityMonitoringDestinationsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceConnectivityMonitoringDestinationsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceConnectivityMonitoringDestinationsExecute(r)
 }
 
@@ -2241,10 +2241,10 @@ Return the connectivity testing destinations for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceConnectivityMonitoringDestinationsRequest
+ @return ApplianceAPIGetNetworkApplianceConnectivityMonitoringDestinationsRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceConnectivityMonitoringDestinations(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceConnectivityMonitoringDestinationsRequest {
-	return ApplianceApiGetNetworkApplianceConnectivityMonitoringDestinationsRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceConnectivityMonitoringDestinations(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceConnectivityMonitoringDestinationsRequest {
+	return ApplianceAPIGetNetworkApplianceConnectivityMonitoringDestinationsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2253,7 +2253,7 @@ func (a *ApplianceApiService) GetNetworkApplianceConnectivityMonitoringDestinati
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceConnectivityMonitoringDestinationsExecute(r ApplianceApiGetNetworkApplianceConnectivityMonitoringDestinationsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceConnectivityMonitoringDestinationsExecute(r ApplianceAPIGetNetworkApplianceConnectivityMonitoringDestinationsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2261,7 +2261,7 @@ func (a *ApplianceApiService) GetNetworkApplianceConnectivityMonitoringDestinati
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceConnectivityMonitoringDestinations")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceConnectivityMonitoringDestinations")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2341,13 +2341,13 @@ func (a *ApplianceApiService) GetNetworkApplianceConnectivityMonitoringDestinati
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceContentFilteringRequest struct {
+type ApplianceAPIGetNetworkApplianceContentFilteringRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceContentFilteringRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceContentFilteringRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceContentFilteringExecute(r)
 }
 
@@ -2358,10 +2358,10 @@ Return the content filtering settings for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceContentFilteringRequest
+ @return ApplianceAPIGetNetworkApplianceContentFilteringRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceContentFiltering(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceContentFilteringRequest {
-	return ApplianceApiGetNetworkApplianceContentFilteringRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceContentFiltering(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceContentFilteringRequest {
+	return ApplianceAPIGetNetworkApplianceContentFilteringRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2370,7 +2370,7 @@ func (a *ApplianceApiService) GetNetworkApplianceContentFiltering(ctx context.Co
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceContentFilteringExecute(r ApplianceApiGetNetworkApplianceContentFilteringRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceContentFilteringExecute(r ApplianceAPIGetNetworkApplianceContentFilteringRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2378,7 +2378,7 @@ func (a *ApplianceApiService) GetNetworkApplianceContentFilteringExecute(r Appli
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceContentFiltering")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceContentFiltering")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2458,13 +2458,13 @@ func (a *ApplianceApiService) GetNetworkApplianceContentFilteringExecute(r Appli
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceContentFilteringCategoriesRequest struct {
+type ApplianceAPIGetNetworkApplianceContentFilteringCategoriesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceContentFilteringCategoriesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceContentFilteringCategoriesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceContentFilteringCategoriesExecute(r)
 }
 
@@ -2475,10 +2475,10 @@ List all available content filtering categories for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceContentFilteringCategoriesRequest
+ @return ApplianceAPIGetNetworkApplianceContentFilteringCategoriesRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceContentFilteringCategories(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceContentFilteringCategoriesRequest {
-	return ApplianceApiGetNetworkApplianceContentFilteringCategoriesRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceContentFilteringCategories(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceContentFilteringCategoriesRequest {
+	return ApplianceAPIGetNetworkApplianceContentFilteringCategoriesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2487,7 +2487,7 @@ func (a *ApplianceApiService) GetNetworkApplianceContentFilteringCategories(ctx 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceContentFilteringCategoriesExecute(r ApplianceApiGetNetworkApplianceContentFilteringCategoriesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceContentFilteringCategoriesExecute(r ApplianceAPIGetNetworkApplianceContentFilteringCategoriesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2495,7 +2495,7 @@ func (a *ApplianceApiService) GetNetworkApplianceContentFilteringCategoriesExecu
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceContentFilteringCategories")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceContentFilteringCategories")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2575,13 +2575,13 @@ func (a *ApplianceApiService) GetNetworkApplianceContentFilteringCategoriesExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceFirewallCellularFirewallRulesRequest struct {
+type ApplianceAPIGetNetworkApplianceFirewallCellularFirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceFirewallCellularFirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceFirewallCellularFirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceFirewallCellularFirewallRulesExecute(r)
 }
 
@@ -2592,10 +2592,10 @@ Return the cellular firewall rules for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceFirewallCellularFirewallRulesRequest
+ @return ApplianceAPIGetNetworkApplianceFirewallCellularFirewallRulesRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceFirewallCellularFirewallRules(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceFirewallCellularFirewallRulesRequest {
-	return ApplianceApiGetNetworkApplianceFirewallCellularFirewallRulesRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceFirewallCellularFirewallRules(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceFirewallCellularFirewallRulesRequest {
+	return ApplianceAPIGetNetworkApplianceFirewallCellularFirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2604,7 +2604,7 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallCellularFirewallRules(c
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceFirewallCellularFirewallRulesExecute(r ApplianceApiGetNetworkApplianceFirewallCellularFirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceFirewallCellularFirewallRulesExecute(r ApplianceAPIGetNetworkApplianceFirewallCellularFirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2612,7 +2612,7 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallCellularFirewallRulesEx
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceFirewallCellularFirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceFirewallCellularFirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2692,14 +2692,14 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallCellularFirewallRulesEx
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceFirewallFirewalledServiceRequest struct {
+type ApplianceAPIGetNetworkApplianceFirewallFirewalledServiceRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	service string
 }
 
-func (r ApplianceApiGetNetworkApplianceFirewallFirewalledServiceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceFirewallFirewalledServiceRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceFirewallFirewalledServiceExecute(r)
 }
 
@@ -2711,10 +2711,10 @@ Return the accessibility settings of the given service ('ICMP', 'web', or 'SNMP'
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param service Service
- @return ApplianceApiGetNetworkApplianceFirewallFirewalledServiceRequest
+ @return ApplianceAPIGetNetworkApplianceFirewallFirewalledServiceRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceFirewallFirewalledService(ctx context.Context, networkId string, service string) ApplianceApiGetNetworkApplianceFirewallFirewalledServiceRequest {
-	return ApplianceApiGetNetworkApplianceFirewallFirewalledServiceRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceFirewallFirewalledService(ctx context.Context, networkId string, service string) ApplianceAPIGetNetworkApplianceFirewallFirewalledServiceRequest {
+	return ApplianceAPIGetNetworkApplianceFirewallFirewalledServiceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2724,7 +2724,7 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallFirewalledService(ctx c
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceFirewallFirewalledServiceExecute(r ApplianceApiGetNetworkApplianceFirewallFirewalledServiceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceFirewallFirewalledServiceExecute(r ApplianceAPIGetNetworkApplianceFirewallFirewalledServiceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2732,7 +2732,7 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallFirewalledServiceExecut
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceFirewallFirewalledService")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceFirewallFirewalledService")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2813,13 +2813,13 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallFirewalledServiceExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceFirewallFirewalledServicesRequest struct {
+type ApplianceAPIGetNetworkApplianceFirewallFirewalledServicesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceFirewallFirewalledServicesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceFirewallFirewalledServicesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceFirewallFirewalledServicesExecute(r)
 }
 
@@ -2830,10 +2830,10 @@ List the appliance services and their accessibility rules
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceFirewallFirewalledServicesRequest
+ @return ApplianceAPIGetNetworkApplianceFirewallFirewalledServicesRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceFirewallFirewalledServices(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceFirewallFirewalledServicesRequest {
-	return ApplianceApiGetNetworkApplianceFirewallFirewalledServicesRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceFirewallFirewalledServices(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceFirewallFirewalledServicesRequest {
+	return ApplianceAPIGetNetworkApplianceFirewallFirewalledServicesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2842,7 +2842,7 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallFirewalledServices(ctx 
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceFirewallFirewalledServicesExecute(r ApplianceApiGetNetworkApplianceFirewallFirewalledServicesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceFirewallFirewalledServicesExecute(r ApplianceAPIGetNetworkApplianceFirewallFirewalledServicesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2850,7 +2850,7 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallFirewalledServicesExecu
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceFirewallFirewalledServices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceFirewallFirewalledServices")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2930,13 +2930,13 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallFirewalledServicesExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceFirewallInboundCellularFirewallRulesRequest struct {
+type ApplianceAPIGetNetworkApplianceFirewallInboundCellularFirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceFirewallInboundCellularFirewallRulesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceFirewallInboundCellularFirewallRulesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceFirewallInboundCellularFirewallRulesExecute(r)
 }
 
@@ -2947,10 +2947,10 @@ Return the inbound cellular firewall rules for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceFirewallInboundCellularFirewallRulesRequest
+ @return ApplianceAPIGetNetworkApplianceFirewallInboundCellularFirewallRulesRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceFirewallInboundCellularFirewallRules(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceFirewallInboundCellularFirewallRulesRequest {
-	return ApplianceApiGetNetworkApplianceFirewallInboundCellularFirewallRulesRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceFirewallInboundCellularFirewallRules(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceFirewallInboundCellularFirewallRulesRequest {
+	return ApplianceAPIGetNetworkApplianceFirewallInboundCellularFirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2959,7 +2959,7 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallInboundCellularFirewall
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceFirewallInboundCellularFirewallRulesExecute(r ApplianceApiGetNetworkApplianceFirewallInboundCellularFirewallRulesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceFirewallInboundCellularFirewallRulesExecute(r ApplianceAPIGetNetworkApplianceFirewallInboundCellularFirewallRulesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2967,7 +2967,7 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallInboundCellularFirewall
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceFirewallInboundCellularFirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceFirewallInboundCellularFirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3047,13 +3047,13 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallInboundCellularFirewall
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceFirewallInboundFirewallRulesRequest struct {
+type ApplianceAPIGetNetworkApplianceFirewallInboundFirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceFirewallInboundFirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceFirewallInboundFirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceFirewallInboundFirewallRulesExecute(r)
 }
 
@@ -3064,10 +3064,10 @@ Return the inbound firewall rules for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceFirewallInboundFirewallRulesRequest
+ @return ApplianceAPIGetNetworkApplianceFirewallInboundFirewallRulesRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceFirewallInboundFirewallRules(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceFirewallInboundFirewallRulesRequest {
-	return ApplianceApiGetNetworkApplianceFirewallInboundFirewallRulesRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceFirewallInboundFirewallRules(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceFirewallInboundFirewallRulesRequest {
+	return ApplianceAPIGetNetworkApplianceFirewallInboundFirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3076,7 +3076,7 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallInboundFirewallRules(ct
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceFirewallInboundFirewallRulesExecute(r ApplianceApiGetNetworkApplianceFirewallInboundFirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceFirewallInboundFirewallRulesExecute(r ApplianceAPIGetNetworkApplianceFirewallInboundFirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3084,7 +3084,7 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallInboundFirewallRulesExe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceFirewallInboundFirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceFirewallInboundFirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3164,13 +3164,13 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallInboundFirewallRulesExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceFirewallL3FirewallRulesRequest struct {
+type ApplianceAPIGetNetworkApplianceFirewallL3FirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceFirewallL3FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceFirewallL3FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceFirewallL3FirewallRulesExecute(r)
 }
 
@@ -3181,10 +3181,10 @@ Return the L3 firewall rules for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceFirewallL3FirewallRulesRequest
+ @return ApplianceAPIGetNetworkApplianceFirewallL3FirewallRulesRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceFirewallL3FirewallRules(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceFirewallL3FirewallRulesRequest {
-	return ApplianceApiGetNetworkApplianceFirewallL3FirewallRulesRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceFirewallL3FirewallRules(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceFirewallL3FirewallRulesRequest {
+	return ApplianceAPIGetNetworkApplianceFirewallL3FirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3193,7 +3193,7 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallL3FirewallRules(ctx con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceFirewallL3FirewallRulesExecute(r ApplianceApiGetNetworkApplianceFirewallL3FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceFirewallL3FirewallRulesExecute(r ApplianceAPIGetNetworkApplianceFirewallL3FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3201,7 +3201,7 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallL3FirewallRulesExecute(
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceFirewallL3FirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceFirewallL3FirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3281,13 +3281,13 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallL3FirewallRulesExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceFirewallL7FirewallRulesRequest struct {
+type ApplianceAPIGetNetworkApplianceFirewallL7FirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceFirewallL7FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceFirewallL7FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceFirewallL7FirewallRulesExecute(r)
 }
 
@@ -3298,10 +3298,10 @@ List the MX L7 firewall rules for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceFirewallL7FirewallRulesRequest
+ @return ApplianceAPIGetNetworkApplianceFirewallL7FirewallRulesRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceFirewallL7FirewallRules(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceFirewallL7FirewallRulesRequest {
-	return ApplianceApiGetNetworkApplianceFirewallL7FirewallRulesRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceFirewallL7FirewallRules(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceFirewallL7FirewallRulesRequest {
+	return ApplianceAPIGetNetworkApplianceFirewallL7FirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3310,7 +3310,7 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallL7FirewallRules(ctx con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceFirewallL7FirewallRulesExecute(r ApplianceApiGetNetworkApplianceFirewallL7FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceFirewallL7FirewallRulesExecute(r ApplianceAPIGetNetworkApplianceFirewallL7FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3318,7 +3318,7 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallL7FirewallRulesExecute(
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceFirewallL7FirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceFirewallL7FirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3398,13 +3398,13 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallL7FirewallRulesExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest struct {
+type ApplianceAPIGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest) Execute() (*GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories200Response, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest) Execute() (*GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesExecute(r)
 }
 
@@ -3415,10 +3415,10 @@ Return the L7 firewall application categories and their associated applications 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest
+ @return ApplianceAPIGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest {
-	return ApplianceApiGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest {
+	return ApplianceAPIGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3427,7 +3427,7 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallL7FirewallRulesApplicat
 
 // Execute executes the request
 //  @return GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories200Response
-func (a *ApplianceApiService) GetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesExecute(r ApplianceApiGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest) (*GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories200Response, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesExecute(r ApplianceAPIGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest) (*GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3435,7 +3435,7 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallL7FirewallRulesApplicat
 		localVarReturnValue  *GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3515,13 +3515,13 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallL7FirewallRulesApplicat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceFirewallOneToManyNatRulesRequest struct {
+type ApplianceAPIGetNetworkApplianceFirewallOneToManyNatRulesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceFirewallOneToManyNatRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceFirewallOneToManyNatRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceFirewallOneToManyNatRulesExecute(r)
 }
 
@@ -3532,10 +3532,10 @@ Return the 1:Many NAT mapping rules for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceFirewallOneToManyNatRulesRequest
+ @return ApplianceAPIGetNetworkApplianceFirewallOneToManyNatRulesRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceFirewallOneToManyNatRules(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceFirewallOneToManyNatRulesRequest {
-	return ApplianceApiGetNetworkApplianceFirewallOneToManyNatRulesRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceFirewallOneToManyNatRules(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceFirewallOneToManyNatRulesRequest {
+	return ApplianceAPIGetNetworkApplianceFirewallOneToManyNatRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3544,7 +3544,7 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallOneToManyNatRules(ctx c
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceFirewallOneToManyNatRulesExecute(r ApplianceApiGetNetworkApplianceFirewallOneToManyNatRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceFirewallOneToManyNatRulesExecute(r ApplianceAPIGetNetworkApplianceFirewallOneToManyNatRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3552,7 +3552,7 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallOneToManyNatRulesExecut
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceFirewallOneToManyNatRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceFirewallOneToManyNatRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3632,13 +3632,13 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallOneToManyNatRulesExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceFirewallOneToOneNatRulesRequest struct {
+type ApplianceAPIGetNetworkApplianceFirewallOneToOneNatRulesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceFirewallOneToOneNatRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceFirewallOneToOneNatRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceFirewallOneToOneNatRulesExecute(r)
 }
 
@@ -3649,10 +3649,10 @@ Return the 1:1 NAT mapping rules for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceFirewallOneToOneNatRulesRequest
+ @return ApplianceAPIGetNetworkApplianceFirewallOneToOneNatRulesRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceFirewallOneToOneNatRules(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceFirewallOneToOneNatRulesRequest {
-	return ApplianceApiGetNetworkApplianceFirewallOneToOneNatRulesRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceFirewallOneToOneNatRules(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceFirewallOneToOneNatRulesRequest {
+	return ApplianceAPIGetNetworkApplianceFirewallOneToOneNatRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3661,7 +3661,7 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallOneToOneNatRules(ctx co
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceFirewallOneToOneNatRulesExecute(r ApplianceApiGetNetworkApplianceFirewallOneToOneNatRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceFirewallOneToOneNatRulesExecute(r ApplianceAPIGetNetworkApplianceFirewallOneToOneNatRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3669,7 +3669,7 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallOneToOneNatRulesExecute
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceFirewallOneToOneNatRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceFirewallOneToOneNatRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3749,13 +3749,13 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallOneToOneNatRulesExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceFirewallPortForwardingRulesRequest struct {
+type ApplianceAPIGetNetworkApplianceFirewallPortForwardingRulesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceFirewallPortForwardingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceFirewallPortForwardingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceFirewallPortForwardingRulesExecute(r)
 }
 
@@ -3766,10 +3766,10 @@ Return the port forwarding rules for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceFirewallPortForwardingRulesRequest
+ @return ApplianceAPIGetNetworkApplianceFirewallPortForwardingRulesRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceFirewallPortForwardingRules(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceFirewallPortForwardingRulesRequest {
-	return ApplianceApiGetNetworkApplianceFirewallPortForwardingRulesRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceFirewallPortForwardingRules(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceFirewallPortForwardingRulesRequest {
+	return ApplianceAPIGetNetworkApplianceFirewallPortForwardingRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3778,7 +3778,7 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallPortForwardingRules(ctx
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceFirewallPortForwardingRulesExecute(r ApplianceApiGetNetworkApplianceFirewallPortForwardingRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceFirewallPortForwardingRulesExecute(r ApplianceAPIGetNetworkApplianceFirewallPortForwardingRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3786,7 +3786,7 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallPortForwardingRulesExec
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceFirewallPortForwardingRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceFirewallPortForwardingRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3866,13 +3866,13 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallPortForwardingRulesExec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceFirewallSettingsRequest struct {
+type ApplianceAPIGetNetworkApplianceFirewallSettingsRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceFirewallSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceFirewallSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceFirewallSettingsExecute(r)
 }
 
@@ -3883,10 +3883,10 @@ Return the firewall settings for this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceFirewallSettingsRequest
+ @return ApplianceAPIGetNetworkApplianceFirewallSettingsRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceFirewallSettings(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceFirewallSettingsRequest {
-	return ApplianceApiGetNetworkApplianceFirewallSettingsRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceFirewallSettings(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceFirewallSettingsRequest {
+	return ApplianceAPIGetNetworkApplianceFirewallSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3895,7 +3895,7 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallSettings(ctx context.Co
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceFirewallSettingsExecute(r ApplianceApiGetNetworkApplianceFirewallSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceFirewallSettingsExecute(r ApplianceAPIGetNetworkApplianceFirewallSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3903,7 +3903,7 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallSettingsExecute(r Appli
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceFirewallSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceFirewallSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3983,14 +3983,14 @@ func (a *ApplianceApiService) GetNetworkApplianceFirewallSettingsExecute(r Appli
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkAppliancePortRequest struct {
+type ApplianceAPIGetNetworkAppliancePortRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	portId string
 }
 
-func (r ApplianceApiGetNetworkAppliancePortRequest) Execute() (*GetNetworkAppliancePorts200ResponseInner, *http.Response, error) {
+func (r ApplianceAPIGetNetworkAppliancePortRequest) Execute() (*GetNetworkAppliancePorts200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkAppliancePortExecute(r)
 }
 
@@ -4002,10 +4002,10 @@ Return per-port VLAN settings for a single MX port.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param portId Port ID
- @return ApplianceApiGetNetworkAppliancePortRequest
+ @return ApplianceAPIGetNetworkAppliancePortRequest
 */
-func (a *ApplianceApiService) GetNetworkAppliancePort(ctx context.Context, networkId string, portId string) ApplianceApiGetNetworkAppliancePortRequest {
-	return ApplianceApiGetNetworkAppliancePortRequest{
+func (a *ApplianceAPIService) GetNetworkAppliancePort(ctx context.Context, networkId string, portId string) ApplianceAPIGetNetworkAppliancePortRequest {
+	return ApplianceAPIGetNetworkAppliancePortRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4015,7 +4015,7 @@ func (a *ApplianceApiService) GetNetworkAppliancePort(ctx context.Context, netwo
 
 // Execute executes the request
 //  @return GetNetworkAppliancePorts200ResponseInner
-func (a *ApplianceApiService) GetNetworkAppliancePortExecute(r ApplianceApiGetNetworkAppliancePortRequest) (*GetNetworkAppliancePorts200ResponseInner, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkAppliancePortExecute(r ApplianceAPIGetNetworkAppliancePortRequest) (*GetNetworkAppliancePorts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4023,7 +4023,7 @@ func (a *ApplianceApiService) GetNetworkAppliancePortExecute(r ApplianceApiGetNe
 		localVarReturnValue  *GetNetworkAppliancePorts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkAppliancePort")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkAppliancePort")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4104,13 +4104,13 @@ func (a *ApplianceApiService) GetNetworkAppliancePortExecute(r ApplianceApiGetNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkAppliancePortsRequest struct {
+type ApplianceAPIGetNetworkAppliancePortsRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkAppliancePortsRequest) Execute() ([]GetNetworkAppliancePorts200ResponseInner, *http.Response, error) {
+func (r ApplianceAPIGetNetworkAppliancePortsRequest) Execute() ([]GetNetworkAppliancePorts200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkAppliancePortsExecute(r)
 }
 
@@ -4121,10 +4121,10 @@ List per-port VLAN settings for all ports of a MX.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkAppliancePortsRequest
+ @return ApplianceAPIGetNetworkAppliancePortsRequest
 */
-func (a *ApplianceApiService) GetNetworkAppliancePorts(ctx context.Context, networkId string) ApplianceApiGetNetworkAppliancePortsRequest {
-	return ApplianceApiGetNetworkAppliancePortsRequest{
+func (a *ApplianceAPIService) GetNetworkAppliancePorts(ctx context.Context, networkId string) ApplianceAPIGetNetworkAppliancePortsRequest {
+	return ApplianceAPIGetNetworkAppliancePortsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4133,7 +4133,7 @@ func (a *ApplianceApiService) GetNetworkAppliancePorts(ctx context.Context, netw
 
 // Execute executes the request
 //  @return []GetNetworkAppliancePorts200ResponseInner
-func (a *ApplianceApiService) GetNetworkAppliancePortsExecute(r ApplianceApiGetNetworkAppliancePortsRequest) ([]GetNetworkAppliancePorts200ResponseInner, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkAppliancePortsExecute(r ApplianceAPIGetNetworkAppliancePortsRequest) ([]GetNetworkAppliancePorts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4141,7 +4141,7 @@ func (a *ApplianceApiService) GetNetworkAppliancePortsExecute(r ApplianceApiGetN
 		localVarReturnValue  []GetNetworkAppliancePorts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkAppliancePorts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkAppliancePorts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4221,14 +4221,14 @@ func (a *ApplianceApiService) GetNetworkAppliancePortsExecute(r ApplianceApiGetN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkAppliancePrefixesDelegatedStaticRequest struct {
+type ApplianceAPIGetNetworkAppliancePrefixesDelegatedStaticRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	staticDelegatedPrefixId string
 }
 
-func (r ApplianceApiGetNetworkAppliancePrefixesDelegatedStaticRequest) Execute() (*GetNetworkAppliancePrefixesDelegatedStatics200ResponseInner, *http.Response, error) {
+func (r ApplianceAPIGetNetworkAppliancePrefixesDelegatedStaticRequest) Execute() (*GetNetworkAppliancePrefixesDelegatedStatics200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkAppliancePrefixesDelegatedStaticExecute(r)
 }
 
@@ -4240,10 +4240,10 @@ Return a static delegated prefix from a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param staticDelegatedPrefixId Static delegated prefix ID
- @return ApplianceApiGetNetworkAppliancePrefixesDelegatedStaticRequest
+ @return ApplianceAPIGetNetworkAppliancePrefixesDelegatedStaticRequest
 */
-func (a *ApplianceApiService) GetNetworkAppliancePrefixesDelegatedStatic(ctx context.Context, networkId string, staticDelegatedPrefixId string) ApplianceApiGetNetworkAppliancePrefixesDelegatedStaticRequest {
-	return ApplianceApiGetNetworkAppliancePrefixesDelegatedStaticRequest{
+func (a *ApplianceAPIService) GetNetworkAppliancePrefixesDelegatedStatic(ctx context.Context, networkId string, staticDelegatedPrefixId string) ApplianceAPIGetNetworkAppliancePrefixesDelegatedStaticRequest {
+	return ApplianceAPIGetNetworkAppliancePrefixesDelegatedStaticRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4253,7 +4253,7 @@ func (a *ApplianceApiService) GetNetworkAppliancePrefixesDelegatedStatic(ctx con
 
 // Execute executes the request
 //  @return GetNetworkAppliancePrefixesDelegatedStatics200ResponseInner
-func (a *ApplianceApiService) GetNetworkAppliancePrefixesDelegatedStaticExecute(r ApplianceApiGetNetworkAppliancePrefixesDelegatedStaticRequest) (*GetNetworkAppliancePrefixesDelegatedStatics200ResponseInner, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkAppliancePrefixesDelegatedStaticExecute(r ApplianceAPIGetNetworkAppliancePrefixesDelegatedStaticRequest) (*GetNetworkAppliancePrefixesDelegatedStatics200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4261,7 +4261,7 @@ func (a *ApplianceApiService) GetNetworkAppliancePrefixesDelegatedStaticExecute(
 		localVarReturnValue  *GetNetworkAppliancePrefixesDelegatedStatics200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkAppliancePrefixesDelegatedStatic")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkAppliancePrefixesDelegatedStatic")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4342,13 +4342,13 @@ func (a *ApplianceApiService) GetNetworkAppliancePrefixesDelegatedStaticExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkAppliancePrefixesDelegatedStaticsRequest struct {
+type ApplianceAPIGetNetworkAppliancePrefixesDelegatedStaticsRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkAppliancePrefixesDelegatedStaticsRequest) Execute() ([]GetNetworkAppliancePrefixesDelegatedStatics200ResponseInner, *http.Response, error) {
+func (r ApplianceAPIGetNetworkAppliancePrefixesDelegatedStaticsRequest) Execute() ([]GetNetworkAppliancePrefixesDelegatedStatics200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkAppliancePrefixesDelegatedStaticsExecute(r)
 }
 
@@ -4359,10 +4359,10 @@ List static delegated prefixes for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkAppliancePrefixesDelegatedStaticsRequest
+ @return ApplianceAPIGetNetworkAppliancePrefixesDelegatedStaticsRequest
 */
-func (a *ApplianceApiService) GetNetworkAppliancePrefixesDelegatedStatics(ctx context.Context, networkId string) ApplianceApiGetNetworkAppliancePrefixesDelegatedStaticsRequest {
-	return ApplianceApiGetNetworkAppliancePrefixesDelegatedStaticsRequest{
+func (a *ApplianceAPIService) GetNetworkAppliancePrefixesDelegatedStatics(ctx context.Context, networkId string) ApplianceAPIGetNetworkAppliancePrefixesDelegatedStaticsRequest {
+	return ApplianceAPIGetNetworkAppliancePrefixesDelegatedStaticsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4371,7 +4371,7 @@ func (a *ApplianceApiService) GetNetworkAppliancePrefixesDelegatedStatics(ctx co
 
 // Execute executes the request
 //  @return []GetNetworkAppliancePrefixesDelegatedStatics200ResponseInner
-func (a *ApplianceApiService) GetNetworkAppliancePrefixesDelegatedStaticsExecute(r ApplianceApiGetNetworkAppliancePrefixesDelegatedStaticsRequest) ([]GetNetworkAppliancePrefixesDelegatedStatics200ResponseInner, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkAppliancePrefixesDelegatedStaticsExecute(r ApplianceAPIGetNetworkAppliancePrefixesDelegatedStaticsRequest) ([]GetNetworkAppliancePrefixesDelegatedStatics200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4379,7 +4379,7 @@ func (a *ApplianceApiService) GetNetworkAppliancePrefixesDelegatedStaticsExecute
 		localVarReturnValue  []GetNetworkAppliancePrefixesDelegatedStatics200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkAppliancePrefixesDelegatedStatics")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkAppliancePrefixesDelegatedStatics")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4459,14 +4459,14 @@ func (a *ApplianceApiService) GetNetworkAppliancePrefixesDelegatedStaticsExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceRfProfileRequest struct {
+type ApplianceAPIGetNetworkApplianceRfProfileRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	rfProfileId string
 }
 
-func (r ApplianceApiGetNetworkApplianceRfProfileRequest) Execute() (*GetNetworkApplianceRfProfiles200ResponseAssignedInner, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceRfProfileRequest) Execute() (*GetNetworkApplianceRfProfiles200ResponseAssignedInner, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceRfProfileExecute(r)
 }
 
@@ -4478,10 +4478,10 @@ Return a RF profile
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param rfProfileId Rf profile ID
- @return ApplianceApiGetNetworkApplianceRfProfileRequest
+ @return ApplianceAPIGetNetworkApplianceRfProfileRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceRfProfile(ctx context.Context, networkId string, rfProfileId string) ApplianceApiGetNetworkApplianceRfProfileRequest {
-	return ApplianceApiGetNetworkApplianceRfProfileRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceRfProfile(ctx context.Context, networkId string, rfProfileId string) ApplianceAPIGetNetworkApplianceRfProfileRequest {
+	return ApplianceAPIGetNetworkApplianceRfProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4491,7 +4491,7 @@ func (a *ApplianceApiService) GetNetworkApplianceRfProfile(ctx context.Context, 
 
 // Execute executes the request
 //  @return GetNetworkApplianceRfProfiles200ResponseAssignedInner
-func (a *ApplianceApiService) GetNetworkApplianceRfProfileExecute(r ApplianceApiGetNetworkApplianceRfProfileRequest) (*GetNetworkApplianceRfProfiles200ResponseAssignedInner, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceRfProfileExecute(r ApplianceAPIGetNetworkApplianceRfProfileRequest) (*GetNetworkApplianceRfProfiles200ResponseAssignedInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4499,7 +4499,7 @@ func (a *ApplianceApiService) GetNetworkApplianceRfProfileExecute(r ApplianceApi
 		localVarReturnValue  *GetNetworkApplianceRfProfiles200ResponseAssignedInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceRfProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceRfProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4580,13 +4580,13 @@ func (a *ApplianceApiService) GetNetworkApplianceRfProfileExecute(r ApplianceApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceRfProfilesRequest struct {
+type ApplianceAPIGetNetworkApplianceRfProfilesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceRfProfilesRequest) Execute() (*GetNetworkApplianceRfProfiles200Response, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceRfProfilesRequest) Execute() (*GetNetworkApplianceRfProfiles200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceRfProfilesExecute(r)
 }
 
@@ -4597,10 +4597,10 @@ List the RF profiles for this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceRfProfilesRequest
+ @return ApplianceAPIGetNetworkApplianceRfProfilesRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceRfProfiles(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceRfProfilesRequest {
-	return ApplianceApiGetNetworkApplianceRfProfilesRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceRfProfiles(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceRfProfilesRequest {
+	return ApplianceAPIGetNetworkApplianceRfProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4609,7 +4609,7 @@ func (a *ApplianceApiService) GetNetworkApplianceRfProfiles(ctx context.Context,
 
 // Execute executes the request
 //  @return GetNetworkApplianceRfProfiles200Response
-func (a *ApplianceApiService) GetNetworkApplianceRfProfilesExecute(r ApplianceApiGetNetworkApplianceRfProfilesRequest) (*GetNetworkApplianceRfProfiles200Response, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceRfProfilesExecute(r ApplianceAPIGetNetworkApplianceRfProfilesRequest) (*GetNetworkApplianceRfProfiles200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4617,7 +4617,7 @@ func (a *ApplianceApiService) GetNetworkApplianceRfProfilesExecute(r ApplianceAp
 		localVarReturnValue  *GetNetworkApplianceRfProfiles200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceRfProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceRfProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4697,9 +4697,9 @@ func (a *ApplianceApiService) GetNetworkApplianceRfProfilesExecute(r ApplianceAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceSecurityEventsRequest struct {
+type ApplianceAPIGetNetworkApplianceSecurityEventsRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -4711,48 +4711,48 @@ type ApplianceApiGetNetworkApplianceSecurityEventsRequest struct {
 }
 
 // The beginning of the timespan for the data. Data is gathered after the specified t0 value. The maximum lookback period is 365 days from today.
-func (r ApplianceApiGetNetworkApplianceSecurityEventsRequest) T0(t0 string) ApplianceApiGetNetworkApplianceSecurityEventsRequest {
+func (r ApplianceAPIGetNetworkApplianceSecurityEventsRequest) T0(t0 string) ApplianceAPIGetNetworkApplianceSecurityEventsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 365 days after t0.
-func (r ApplianceApiGetNetworkApplianceSecurityEventsRequest) T1(t1 string) ApplianceApiGetNetworkApplianceSecurityEventsRequest {
+func (r ApplianceAPIGetNetworkApplianceSecurityEventsRequest) T1(t1 string) ApplianceAPIGetNetworkApplianceSecurityEventsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 365 days. The default is 31 days.
-func (r ApplianceApiGetNetworkApplianceSecurityEventsRequest) Timespan(timespan float32) ApplianceApiGetNetworkApplianceSecurityEventsRequest {
+func (r ApplianceAPIGetNetworkApplianceSecurityEventsRequest) Timespan(timespan float32) ApplianceAPIGetNetworkApplianceSecurityEventsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
-func (r ApplianceApiGetNetworkApplianceSecurityEventsRequest) PerPage(perPage int32) ApplianceApiGetNetworkApplianceSecurityEventsRequest {
+func (r ApplianceAPIGetNetworkApplianceSecurityEventsRequest) PerPage(perPage int32) ApplianceAPIGetNetworkApplianceSecurityEventsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ApplianceApiGetNetworkApplianceSecurityEventsRequest) StartingAfter(startingAfter string) ApplianceApiGetNetworkApplianceSecurityEventsRequest {
+func (r ApplianceAPIGetNetworkApplianceSecurityEventsRequest) StartingAfter(startingAfter string) ApplianceAPIGetNetworkApplianceSecurityEventsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ApplianceApiGetNetworkApplianceSecurityEventsRequest) EndingBefore(endingBefore string) ApplianceApiGetNetworkApplianceSecurityEventsRequest {
+func (r ApplianceAPIGetNetworkApplianceSecurityEventsRequest) EndingBefore(endingBefore string) ApplianceAPIGetNetworkApplianceSecurityEventsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Sorted order of security events based on event detection time. Order options are &#39;ascending&#39; or &#39;descending&#39;. Default is ascending order.
-func (r ApplianceApiGetNetworkApplianceSecurityEventsRequest) SortOrder(sortOrder string) ApplianceApiGetNetworkApplianceSecurityEventsRequest {
+func (r ApplianceAPIGetNetworkApplianceSecurityEventsRequest) SortOrder(sortOrder string) ApplianceAPIGetNetworkApplianceSecurityEventsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
-func (r ApplianceApiGetNetworkApplianceSecurityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceSecurityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceSecurityEventsExecute(r)
 }
 
@@ -4763,10 +4763,10 @@ List the security events for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceSecurityEventsRequest
+ @return ApplianceAPIGetNetworkApplianceSecurityEventsRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceSecurityEvents(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceSecurityEventsRequest {
-	return ApplianceApiGetNetworkApplianceSecurityEventsRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceSecurityEvents(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceSecurityEventsRequest {
+	return ApplianceAPIGetNetworkApplianceSecurityEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4775,7 +4775,7 @@ func (a *ApplianceApiService) GetNetworkApplianceSecurityEvents(ctx context.Cont
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceSecurityEventsExecute(r ApplianceApiGetNetworkApplianceSecurityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceSecurityEventsExecute(r ApplianceAPIGetNetworkApplianceSecurityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4783,7 +4783,7 @@ func (a *ApplianceApiService) GetNetworkApplianceSecurityEventsExecute(r Applian
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceSecurityEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceSecurityEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4884,13 +4884,13 @@ func (a *ApplianceApiService) GetNetworkApplianceSecurityEventsExecute(r Applian
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceSecurityIntrusionRequest struct {
+type ApplianceAPIGetNetworkApplianceSecurityIntrusionRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceSecurityIntrusionRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceSecurityIntrusionRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceSecurityIntrusionExecute(r)
 }
 
@@ -4901,10 +4901,10 @@ Returns all supported intrusion settings for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceSecurityIntrusionRequest
+ @return ApplianceAPIGetNetworkApplianceSecurityIntrusionRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceSecurityIntrusion(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceSecurityIntrusionRequest {
-	return ApplianceApiGetNetworkApplianceSecurityIntrusionRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceSecurityIntrusion(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceSecurityIntrusionRequest {
+	return ApplianceAPIGetNetworkApplianceSecurityIntrusionRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4913,7 +4913,7 @@ func (a *ApplianceApiService) GetNetworkApplianceSecurityIntrusion(ctx context.C
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceSecurityIntrusionExecute(r ApplianceApiGetNetworkApplianceSecurityIntrusionRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceSecurityIntrusionExecute(r ApplianceAPIGetNetworkApplianceSecurityIntrusionRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4921,7 +4921,7 @@ func (a *ApplianceApiService) GetNetworkApplianceSecurityIntrusionExecute(r Appl
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceSecurityIntrusion")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceSecurityIntrusion")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5001,13 +5001,13 @@ func (a *ApplianceApiService) GetNetworkApplianceSecurityIntrusionExecute(r Appl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceSecurityMalwareRequest struct {
+type ApplianceAPIGetNetworkApplianceSecurityMalwareRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceSecurityMalwareRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceSecurityMalwareRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceSecurityMalwareExecute(r)
 }
 
@@ -5018,10 +5018,10 @@ Returns all supported malware settings for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceSecurityMalwareRequest
+ @return ApplianceAPIGetNetworkApplianceSecurityMalwareRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceSecurityMalware(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceSecurityMalwareRequest {
-	return ApplianceApiGetNetworkApplianceSecurityMalwareRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceSecurityMalware(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceSecurityMalwareRequest {
+	return ApplianceAPIGetNetworkApplianceSecurityMalwareRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5030,7 +5030,7 @@ func (a *ApplianceApiService) GetNetworkApplianceSecurityMalware(ctx context.Con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceSecurityMalwareExecute(r ApplianceApiGetNetworkApplianceSecurityMalwareRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceSecurityMalwareExecute(r ApplianceAPIGetNetworkApplianceSecurityMalwareRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5038,7 +5038,7 @@ func (a *ApplianceApiService) GetNetworkApplianceSecurityMalwareExecute(r Applia
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceSecurityMalware")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceSecurityMalware")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5118,13 +5118,13 @@ func (a *ApplianceApiService) GetNetworkApplianceSecurityMalwareExecute(r Applia
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceSettingsRequest struct {
+type ApplianceAPIGetNetworkApplianceSettingsRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceSettingsRequest) Execute() (*GetNetworkApplianceSettings200Response, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceSettingsRequest) Execute() (*GetNetworkApplianceSettings200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceSettingsExecute(r)
 }
 
@@ -5135,10 +5135,10 @@ Return the appliance settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceSettingsRequest
+ @return ApplianceAPIGetNetworkApplianceSettingsRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceSettings(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceSettingsRequest {
-	return ApplianceApiGetNetworkApplianceSettingsRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceSettings(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceSettingsRequest {
+	return ApplianceAPIGetNetworkApplianceSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5147,7 +5147,7 @@ func (a *ApplianceApiService) GetNetworkApplianceSettings(ctx context.Context, n
 
 // Execute executes the request
 //  @return GetNetworkApplianceSettings200Response
-func (a *ApplianceApiService) GetNetworkApplianceSettingsExecute(r ApplianceApiGetNetworkApplianceSettingsRequest) (*GetNetworkApplianceSettings200Response, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceSettingsExecute(r ApplianceAPIGetNetworkApplianceSettingsRequest) (*GetNetworkApplianceSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5155,7 +5155,7 @@ func (a *ApplianceApiService) GetNetworkApplianceSettingsExecute(r ApplianceApiG
 		localVarReturnValue  *GetNetworkApplianceSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5235,13 +5235,13 @@ func (a *ApplianceApiService) GetNetworkApplianceSettingsExecute(r ApplianceApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceSingleLanRequest struct {
+type ApplianceAPIGetNetworkApplianceSingleLanRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceSingleLanRequest) Execute() (*GetNetworkApplianceSingleLan200Response, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceSingleLanRequest) Execute() (*GetNetworkApplianceSingleLan200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceSingleLanExecute(r)
 }
 
@@ -5252,10 +5252,10 @@ Return single LAN configuration
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceSingleLanRequest
+ @return ApplianceAPIGetNetworkApplianceSingleLanRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceSingleLan(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceSingleLanRequest {
-	return ApplianceApiGetNetworkApplianceSingleLanRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceSingleLan(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceSingleLanRequest {
+	return ApplianceAPIGetNetworkApplianceSingleLanRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5264,7 +5264,7 @@ func (a *ApplianceApiService) GetNetworkApplianceSingleLan(ctx context.Context, 
 
 // Execute executes the request
 //  @return GetNetworkApplianceSingleLan200Response
-func (a *ApplianceApiService) GetNetworkApplianceSingleLanExecute(r ApplianceApiGetNetworkApplianceSingleLanRequest) (*GetNetworkApplianceSingleLan200Response, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceSingleLanExecute(r ApplianceAPIGetNetworkApplianceSingleLanRequest) (*GetNetworkApplianceSingleLan200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5272,7 +5272,7 @@ func (a *ApplianceApiService) GetNetworkApplianceSingleLanExecute(r ApplianceApi
 		localVarReturnValue  *GetNetworkApplianceSingleLan200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceSingleLan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceSingleLan")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5352,14 +5352,14 @@ func (a *ApplianceApiService) GetNetworkApplianceSingleLanExecute(r ApplianceApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceSsidRequest struct {
+type ApplianceAPIGetNetworkApplianceSsidRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	number string
 }
 
-func (r ApplianceApiGetNetworkApplianceSsidRequest) Execute() (*GetNetworkApplianceSsids200ResponseInner, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceSsidRequest) Execute() (*GetNetworkApplianceSsids200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceSsidExecute(r)
 }
 
@@ -5371,10 +5371,10 @@ Return a single MX SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return ApplianceApiGetNetworkApplianceSsidRequest
+ @return ApplianceAPIGetNetworkApplianceSsidRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceSsid(ctx context.Context, networkId string, number string) ApplianceApiGetNetworkApplianceSsidRequest {
-	return ApplianceApiGetNetworkApplianceSsidRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceSsid(ctx context.Context, networkId string, number string) ApplianceAPIGetNetworkApplianceSsidRequest {
+	return ApplianceAPIGetNetworkApplianceSsidRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5384,7 +5384,7 @@ func (a *ApplianceApiService) GetNetworkApplianceSsid(ctx context.Context, netwo
 
 // Execute executes the request
 //  @return GetNetworkApplianceSsids200ResponseInner
-func (a *ApplianceApiService) GetNetworkApplianceSsidExecute(r ApplianceApiGetNetworkApplianceSsidRequest) (*GetNetworkApplianceSsids200ResponseInner, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceSsidExecute(r ApplianceAPIGetNetworkApplianceSsidRequest) (*GetNetworkApplianceSsids200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5392,7 +5392,7 @@ func (a *ApplianceApiService) GetNetworkApplianceSsidExecute(r ApplianceApiGetNe
 		localVarReturnValue  *GetNetworkApplianceSsids200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceSsid")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceSsid")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5473,13 +5473,13 @@ func (a *ApplianceApiService) GetNetworkApplianceSsidExecute(r ApplianceApiGetNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceSsidsRequest struct {
+type ApplianceAPIGetNetworkApplianceSsidsRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceSsidsRequest) Execute() ([]GetNetworkApplianceSsids200ResponseInner, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceSsidsRequest) Execute() ([]GetNetworkApplianceSsids200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceSsidsExecute(r)
 }
 
@@ -5490,10 +5490,10 @@ List the MX SSIDs in a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceSsidsRequest
+ @return ApplianceAPIGetNetworkApplianceSsidsRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceSsids(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceSsidsRequest {
-	return ApplianceApiGetNetworkApplianceSsidsRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceSsids(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceSsidsRequest {
+	return ApplianceAPIGetNetworkApplianceSsidsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5502,7 +5502,7 @@ func (a *ApplianceApiService) GetNetworkApplianceSsids(ctx context.Context, netw
 
 // Execute executes the request
 //  @return []GetNetworkApplianceSsids200ResponseInner
-func (a *ApplianceApiService) GetNetworkApplianceSsidsExecute(r ApplianceApiGetNetworkApplianceSsidsRequest) ([]GetNetworkApplianceSsids200ResponseInner, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceSsidsExecute(r ApplianceAPIGetNetworkApplianceSsidsRequest) ([]GetNetworkApplianceSsids200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5510,7 +5510,7 @@ func (a *ApplianceApiService) GetNetworkApplianceSsidsExecute(r ApplianceApiGetN
 		localVarReturnValue  []GetNetworkApplianceSsids200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceSsids")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceSsids")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5590,14 +5590,14 @@ func (a *ApplianceApiService) GetNetworkApplianceSsidsExecute(r ApplianceApiGetN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceStaticRouteRequest struct {
+type ApplianceAPIGetNetworkApplianceStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	staticRouteId string
 }
 
-func (r ApplianceApiGetNetworkApplianceStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceStaticRouteExecute(r)
 }
 
@@ -5609,10 +5609,10 @@ Return a static route for an MX or teleworker network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param staticRouteId Static route ID
- @return ApplianceApiGetNetworkApplianceStaticRouteRequest
+ @return ApplianceAPIGetNetworkApplianceStaticRouteRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceStaticRoute(ctx context.Context, networkId string, staticRouteId string) ApplianceApiGetNetworkApplianceStaticRouteRequest {
-	return ApplianceApiGetNetworkApplianceStaticRouteRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceStaticRoute(ctx context.Context, networkId string, staticRouteId string) ApplianceAPIGetNetworkApplianceStaticRouteRequest {
+	return ApplianceAPIGetNetworkApplianceStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5622,7 +5622,7 @@ func (a *ApplianceApiService) GetNetworkApplianceStaticRoute(ctx context.Context
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceStaticRouteExecute(r ApplianceApiGetNetworkApplianceStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceStaticRouteExecute(r ApplianceAPIGetNetworkApplianceStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5630,7 +5630,7 @@ func (a *ApplianceApiService) GetNetworkApplianceStaticRouteExecute(r ApplianceA
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceStaticRoute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5711,13 +5711,13 @@ func (a *ApplianceApiService) GetNetworkApplianceStaticRouteExecute(r ApplianceA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceStaticRoutesRequest struct {
+type ApplianceAPIGetNetworkApplianceStaticRoutesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceStaticRoutesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceStaticRoutesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceStaticRoutesExecute(r)
 }
 
@@ -5728,10 +5728,10 @@ List the static routes for an MX or teleworker network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceStaticRoutesRequest
+ @return ApplianceAPIGetNetworkApplianceStaticRoutesRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceStaticRoutes(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceStaticRoutesRequest {
-	return ApplianceApiGetNetworkApplianceStaticRoutesRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceStaticRoutes(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceStaticRoutesRequest {
+	return ApplianceAPIGetNetworkApplianceStaticRoutesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5740,7 +5740,7 @@ func (a *ApplianceApiService) GetNetworkApplianceStaticRoutes(ctx context.Contex
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceStaticRoutesExecute(r ApplianceApiGetNetworkApplianceStaticRoutesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceStaticRoutesExecute(r ApplianceAPIGetNetworkApplianceStaticRoutesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5748,7 +5748,7 @@ func (a *ApplianceApiService) GetNetworkApplianceStaticRoutesExecute(r Appliance
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceStaticRoutes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceStaticRoutes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5828,13 +5828,13 @@ func (a *ApplianceApiService) GetNetworkApplianceStaticRoutesExecute(r Appliance
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceTrafficShapingRequest struct {
+type ApplianceAPIGetNetworkApplianceTrafficShapingRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceTrafficShapingRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceTrafficShapingRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceTrafficShapingExecute(r)
 }
 
@@ -5845,10 +5845,10 @@ Display the traffic shaping settings for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceTrafficShapingRequest
+ @return ApplianceAPIGetNetworkApplianceTrafficShapingRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceTrafficShaping(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceTrafficShapingRequest {
-	return ApplianceApiGetNetworkApplianceTrafficShapingRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceTrafficShaping(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceTrafficShapingRequest {
+	return ApplianceAPIGetNetworkApplianceTrafficShapingRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5857,7 +5857,7 @@ func (a *ApplianceApiService) GetNetworkApplianceTrafficShaping(ctx context.Cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingExecute(r ApplianceApiGetNetworkApplianceTrafficShapingRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceTrafficShapingExecute(r ApplianceAPIGetNetworkApplianceTrafficShapingRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5865,7 +5865,7 @@ func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingExecute(r Applian
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceTrafficShaping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceTrafficShaping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5945,14 +5945,14 @@ func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingExecute(r Applian
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceTrafficShapingCustomPerformanceClassRequest struct {
+type ApplianceAPIGetNetworkApplianceTrafficShapingCustomPerformanceClassRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	customPerformanceClassId string
 }
 
-func (r ApplianceApiGetNetworkApplianceTrafficShapingCustomPerformanceClassRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceTrafficShapingCustomPerformanceClassRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceTrafficShapingCustomPerformanceClassExecute(r)
 }
 
@@ -5964,10 +5964,10 @@ Return a custom performance class for an MX network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param customPerformanceClassId Custom performance class ID
- @return ApplianceApiGetNetworkApplianceTrafficShapingCustomPerformanceClassRequest
+ @return ApplianceAPIGetNetworkApplianceTrafficShapingCustomPerformanceClassRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingCustomPerformanceClass(ctx context.Context, networkId string, customPerformanceClassId string) ApplianceApiGetNetworkApplianceTrafficShapingCustomPerformanceClassRequest {
-	return ApplianceApiGetNetworkApplianceTrafficShapingCustomPerformanceClassRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceTrafficShapingCustomPerformanceClass(ctx context.Context, networkId string, customPerformanceClassId string) ApplianceAPIGetNetworkApplianceTrafficShapingCustomPerformanceClassRequest {
+	return ApplianceAPIGetNetworkApplianceTrafficShapingCustomPerformanceClassRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5977,7 +5977,7 @@ func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingCustomPerformance
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingCustomPerformanceClassExecute(r ApplianceApiGetNetworkApplianceTrafficShapingCustomPerformanceClassRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceTrafficShapingCustomPerformanceClassExecute(r ApplianceAPIGetNetworkApplianceTrafficShapingCustomPerformanceClassRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5985,7 +5985,7 @@ func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingCustomPerformance
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceTrafficShapingCustomPerformanceClass")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceTrafficShapingCustomPerformanceClass")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6066,13 +6066,13 @@ func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingCustomPerformance
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceTrafficShapingCustomPerformanceClassesRequest struct {
+type ApplianceAPIGetNetworkApplianceTrafficShapingCustomPerformanceClassesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceTrafficShapingCustomPerformanceClassesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceTrafficShapingCustomPerformanceClassesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceTrafficShapingCustomPerformanceClassesExecute(r)
 }
 
@@ -6083,10 +6083,10 @@ List all custom performance classes for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceTrafficShapingCustomPerformanceClassesRequest
+ @return ApplianceAPIGetNetworkApplianceTrafficShapingCustomPerformanceClassesRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingCustomPerformanceClasses(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceTrafficShapingCustomPerformanceClassesRequest {
-	return ApplianceApiGetNetworkApplianceTrafficShapingCustomPerformanceClassesRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceTrafficShapingCustomPerformanceClasses(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceTrafficShapingCustomPerformanceClassesRequest {
+	return ApplianceAPIGetNetworkApplianceTrafficShapingCustomPerformanceClassesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6095,7 +6095,7 @@ func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingCustomPerformance
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingCustomPerformanceClassesExecute(r ApplianceApiGetNetworkApplianceTrafficShapingCustomPerformanceClassesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceTrafficShapingCustomPerformanceClassesExecute(r ApplianceAPIGetNetworkApplianceTrafficShapingCustomPerformanceClassesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6103,7 +6103,7 @@ func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingCustomPerformance
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceTrafficShapingCustomPerformanceClasses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceTrafficShapingCustomPerformanceClasses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6183,13 +6183,13 @@ func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingCustomPerformance
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceTrafficShapingRulesRequest struct {
+type ApplianceAPIGetNetworkApplianceTrafficShapingRulesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceTrafficShapingRulesExecute(r)
 }
 
@@ -6200,10 +6200,10 @@ Display the traffic shaping settings rules for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceTrafficShapingRulesRequest
+ @return ApplianceAPIGetNetworkApplianceTrafficShapingRulesRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingRules(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceTrafficShapingRulesRequest {
-	return ApplianceApiGetNetworkApplianceTrafficShapingRulesRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceTrafficShapingRules(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceTrafficShapingRulesRequest {
+	return ApplianceAPIGetNetworkApplianceTrafficShapingRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6212,7 +6212,7 @@ func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingRules(ctx context
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingRulesExecute(r ApplianceApiGetNetworkApplianceTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceTrafficShapingRulesExecute(r ApplianceAPIGetNetworkApplianceTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6220,7 +6220,7 @@ func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingRulesExecute(r Ap
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceTrafficShapingRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceTrafficShapingRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6300,13 +6300,13 @@ func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingRulesExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceTrafficShapingUplinkBandwidthRequest struct {
+type ApplianceAPIGetNetworkApplianceTrafficShapingUplinkBandwidthRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceTrafficShapingUplinkBandwidthRequest) Execute() (*GetNetworkApplianceTrafficShapingUplinkBandwidth200Response, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceTrafficShapingUplinkBandwidthRequest) Execute() (*GetNetworkApplianceTrafficShapingUplinkBandwidth200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceTrafficShapingUplinkBandwidthExecute(r)
 }
 
@@ -6317,10 +6317,10 @@ Returns the uplink bandwidth limits for your MX network. This may not reflect th
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceTrafficShapingUplinkBandwidthRequest
+ @return ApplianceAPIGetNetworkApplianceTrafficShapingUplinkBandwidthRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingUplinkBandwidth(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceTrafficShapingUplinkBandwidthRequest {
-	return ApplianceApiGetNetworkApplianceTrafficShapingUplinkBandwidthRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceTrafficShapingUplinkBandwidth(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceTrafficShapingUplinkBandwidthRequest {
+	return ApplianceAPIGetNetworkApplianceTrafficShapingUplinkBandwidthRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6329,7 +6329,7 @@ func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingUplinkBandwidth(c
 
 // Execute executes the request
 //  @return GetNetworkApplianceTrafficShapingUplinkBandwidth200Response
-func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingUplinkBandwidthExecute(r ApplianceApiGetNetworkApplianceTrafficShapingUplinkBandwidthRequest) (*GetNetworkApplianceTrafficShapingUplinkBandwidth200Response, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceTrafficShapingUplinkBandwidthExecute(r ApplianceAPIGetNetworkApplianceTrafficShapingUplinkBandwidthRequest) (*GetNetworkApplianceTrafficShapingUplinkBandwidth200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6337,7 +6337,7 @@ func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingUplinkBandwidthEx
 		localVarReturnValue  *GetNetworkApplianceTrafficShapingUplinkBandwidth200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceTrafficShapingUplinkBandwidth")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceTrafficShapingUplinkBandwidth")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6417,13 +6417,13 @@ func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingUplinkBandwidthEx
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceTrafficShapingUplinkSelectionRequest struct {
+type ApplianceAPIGetNetworkApplianceTrafficShapingUplinkSelectionRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceTrafficShapingUplinkSelectionRequest) Execute() (*GetNetworkApplianceTrafficShapingUplinkSelection200Response, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceTrafficShapingUplinkSelectionRequest) Execute() (*GetNetworkApplianceTrafficShapingUplinkSelection200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceTrafficShapingUplinkSelectionExecute(r)
 }
 
@@ -6434,10 +6434,10 @@ Show uplink selection settings for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceTrafficShapingUplinkSelectionRequest
+ @return ApplianceAPIGetNetworkApplianceTrafficShapingUplinkSelectionRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingUplinkSelection(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceTrafficShapingUplinkSelectionRequest {
-	return ApplianceApiGetNetworkApplianceTrafficShapingUplinkSelectionRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceTrafficShapingUplinkSelection(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceTrafficShapingUplinkSelectionRequest {
+	return ApplianceAPIGetNetworkApplianceTrafficShapingUplinkSelectionRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6446,7 +6446,7 @@ func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingUplinkSelection(c
 
 // Execute executes the request
 //  @return GetNetworkApplianceTrafficShapingUplinkSelection200Response
-func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingUplinkSelectionExecute(r ApplianceApiGetNetworkApplianceTrafficShapingUplinkSelectionRequest) (*GetNetworkApplianceTrafficShapingUplinkSelection200Response, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceTrafficShapingUplinkSelectionExecute(r ApplianceAPIGetNetworkApplianceTrafficShapingUplinkSelectionRequest) (*GetNetworkApplianceTrafficShapingUplinkSelection200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6454,7 +6454,7 @@ func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingUplinkSelectionEx
 		localVarReturnValue  *GetNetworkApplianceTrafficShapingUplinkSelection200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceTrafficShapingUplinkSelection")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceTrafficShapingUplinkSelection")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6534,9 +6534,9 @@ func (a *ApplianceApiService) GetNetworkApplianceTrafficShapingUplinkSelectionEx
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceUplinksUsageHistoryRequest struct {
+type ApplianceAPIGetNetworkApplianceUplinksUsageHistoryRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -6545,30 +6545,30 @@ type ApplianceApiGetNetworkApplianceUplinksUsageHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
-func (r ApplianceApiGetNetworkApplianceUplinksUsageHistoryRequest) T0(t0 string) ApplianceApiGetNetworkApplianceUplinksUsageHistoryRequest {
+func (r ApplianceAPIGetNetworkApplianceUplinksUsageHistoryRequest) T0(t0 string) ApplianceAPIGetNetworkApplianceUplinksUsageHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ApplianceApiGetNetworkApplianceUplinksUsageHistoryRequest) T1(t1 string) ApplianceApiGetNetworkApplianceUplinksUsageHistoryRequest {
+func (r ApplianceAPIGetNetworkApplianceUplinksUsageHistoryRequest) T1(t1 string) ApplianceAPIGetNetworkApplianceUplinksUsageHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 10 minutes.
-func (r ApplianceApiGetNetworkApplianceUplinksUsageHistoryRequest) Timespan(timespan float32) ApplianceApiGetNetworkApplianceUplinksUsageHistoryRequest {
+func (r ApplianceAPIGetNetworkApplianceUplinksUsageHistoryRequest) Timespan(timespan float32) ApplianceAPIGetNetworkApplianceUplinksUsageHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 60, 300, 600, 1800, 3600, 86400. The default is 60.
-func (r ApplianceApiGetNetworkApplianceUplinksUsageHistoryRequest) Resolution(resolution int32) ApplianceApiGetNetworkApplianceUplinksUsageHistoryRequest {
+func (r ApplianceAPIGetNetworkApplianceUplinksUsageHistoryRequest) Resolution(resolution int32) ApplianceAPIGetNetworkApplianceUplinksUsageHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
-func (r ApplianceApiGetNetworkApplianceUplinksUsageHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceUplinksUsageHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceUplinksUsageHistoryExecute(r)
 }
 
@@ -6579,10 +6579,10 @@ Get the sent and received bytes for each uplink of a network.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceUplinksUsageHistoryRequest
+ @return ApplianceAPIGetNetworkApplianceUplinksUsageHistoryRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceUplinksUsageHistory(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceUplinksUsageHistoryRequest {
-	return ApplianceApiGetNetworkApplianceUplinksUsageHistoryRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceUplinksUsageHistory(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceUplinksUsageHistoryRequest {
+	return ApplianceAPIGetNetworkApplianceUplinksUsageHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6591,7 +6591,7 @@ func (a *ApplianceApiService) GetNetworkApplianceUplinksUsageHistory(ctx context
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceUplinksUsageHistoryExecute(r ApplianceApiGetNetworkApplianceUplinksUsageHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceUplinksUsageHistoryExecute(r ApplianceAPIGetNetworkApplianceUplinksUsageHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6599,7 +6599,7 @@ func (a *ApplianceApiService) GetNetworkApplianceUplinksUsageHistoryExecute(r Ap
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceUplinksUsageHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceUplinksUsageHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6691,14 +6691,14 @@ func (a *ApplianceApiService) GetNetworkApplianceUplinksUsageHistoryExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceVlanRequest struct {
+type ApplianceAPIGetNetworkApplianceVlanRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	vlanId string
 }
 
-func (r ApplianceApiGetNetworkApplianceVlanRequest) Execute() (*GetNetworkApplianceVlans200ResponseInner, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceVlanRequest) Execute() (*GetNetworkApplianceVlans200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceVlanExecute(r)
 }
 
@@ -6710,10 +6710,10 @@ Return a VLAN
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param vlanId Vlan ID
- @return ApplianceApiGetNetworkApplianceVlanRequest
+ @return ApplianceAPIGetNetworkApplianceVlanRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceVlan(ctx context.Context, networkId string, vlanId string) ApplianceApiGetNetworkApplianceVlanRequest {
-	return ApplianceApiGetNetworkApplianceVlanRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceVlan(ctx context.Context, networkId string, vlanId string) ApplianceAPIGetNetworkApplianceVlanRequest {
+	return ApplianceAPIGetNetworkApplianceVlanRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6723,7 +6723,7 @@ func (a *ApplianceApiService) GetNetworkApplianceVlan(ctx context.Context, netwo
 
 // Execute executes the request
 //  @return GetNetworkApplianceVlans200ResponseInner
-func (a *ApplianceApiService) GetNetworkApplianceVlanExecute(r ApplianceApiGetNetworkApplianceVlanRequest) (*GetNetworkApplianceVlans200ResponseInner, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceVlanExecute(r ApplianceAPIGetNetworkApplianceVlanRequest) (*GetNetworkApplianceVlans200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6731,7 +6731,7 @@ func (a *ApplianceApiService) GetNetworkApplianceVlanExecute(r ApplianceApiGetNe
 		localVarReturnValue  *GetNetworkApplianceVlans200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceVlan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceVlan")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6812,13 +6812,13 @@ func (a *ApplianceApiService) GetNetworkApplianceVlanExecute(r ApplianceApiGetNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceVlansRequest struct {
+type ApplianceAPIGetNetworkApplianceVlansRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceVlansRequest) Execute() ([]GetNetworkApplianceVlans200ResponseInner, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceVlansRequest) Execute() ([]GetNetworkApplianceVlans200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceVlansExecute(r)
 }
 
@@ -6829,10 +6829,10 @@ List the VLANs for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceVlansRequest
+ @return ApplianceAPIGetNetworkApplianceVlansRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceVlans(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceVlansRequest {
-	return ApplianceApiGetNetworkApplianceVlansRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceVlans(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceVlansRequest {
+	return ApplianceAPIGetNetworkApplianceVlansRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6841,7 +6841,7 @@ func (a *ApplianceApiService) GetNetworkApplianceVlans(ctx context.Context, netw
 
 // Execute executes the request
 //  @return []GetNetworkApplianceVlans200ResponseInner
-func (a *ApplianceApiService) GetNetworkApplianceVlansExecute(r ApplianceApiGetNetworkApplianceVlansRequest) ([]GetNetworkApplianceVlans200ResponseInner, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceVlansExecute(r ApplianceAPIGetNetworkApplianceVlansRequest) ([]GetNetworkApplianceVlans200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6849,7 +6849,7 @@ func (a *ApplianceApiService) GetNetworkApplianceVlansExecute(r ApplianceApiGetN
 		localVarReturnValue  []GetNetworkApplianceVlans200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceVlans")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceVlans")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6929,13 +6929,13 @@ func (a *ApplianceApiService) GetNetworkApplianceVlansExecute(r ApplianceApiGetN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceVlansSettingsRequest struct {
+type ApplianceAPIGetNetworkApplianceVlansSettingsRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceVlansSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceVlansSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceVlansSettingsExecute(r)
 }
 
@@ -6946,10 +6946,10 @@ Returns the enabled status of VLANs for the network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceVlansSettingsRequest
+ @return ApplianceAPIGetNetworkApplianceVlansSettingsRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceVlansSettings(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceVlansSettingsRequest {
-	return ApplianceApiGetNetworkApplianceVlansSettingsRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceVlansSettings(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceVlansSettingsRequest {
+	return ApplianceAPIGetNetworkApplianceVlansSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6958,7 +6958,7 @@ func (a *ApplianceApiService) GetNetworkApplianceVlansSettings(ctx context.Conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceVlansSettingsExecute(r ApplianceApiGetNetworkApplianceVlansSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceVlansSettingsExecute(r ApplianceAPIGetNetworkApplianceVlansSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6966,7 +6966,7 @@ func (a *ApplianceApiService) GetNetworkApplianceVlansSettingsExecute(r Applianc
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceVlansSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceVlansSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7046,13 +7046,13 @@ func (a *ApplianceApiService) GetNetworkApplianceVlansSettingsExecute(r Applianc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceVpnBgpRequest struct {
+type ApplianceAPIGetNetworkApplianceVpnBgpRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceVpnBgpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceVpnBgpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceVpnBgpExecute(r)
 }
 
@@ -7063,10 +7063,10 @@ Return a Hub BGP Configuration
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceVpnBgpRequest
+ @return ApplianceAPIGetNetworkApplianceVpnBgpRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceVpnBgp(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceVpnBgpRequest {
-	return ApplianceApiGetNetworkApplianceVpnBgpRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceVpnBgp(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceVpnBgpRequest {
+	return ApplianceAPIGetNetworkApplianceVpnBgpRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -7075,7 +7075,7 @@ func (a *ApplianceApiService) GetNetworkApplianceVpnBgp(ctx context.Context, net
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceVpnBgpExecute(r ApplianceApiGetNetworkApplianceVpnBgpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceVpnBgpExecute(r ApplianceAPIGetNetworkApplianceVpnBgpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7083,7 +7083,7 @@ func (a *ApplianceApiService) GetNetworkApplianceVpnBgpExecute(r ApplianceApiGet
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceVpnBgp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceVpnBgp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7163,13 +7163,13 @@ func (a *ApplianceApiService) GetNetworkApplianceVpnBgpExecute(r ApplianceApiGet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceVpnSiteToSiteVpnRequest struct {
+type ApplianceAPIGetNetworkApplianceVpnSiteToSiteVpnRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceVpnSiteToSiteVpnRequest) Execute() (*GetNetworkApplianceVpnSiteToSiteVpn200Response, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceVpnSiteToSiteVpnRequest) Execute() (*GetNetworkApplianceVpnSiteToSiteVpn200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceVpnSiteToSiteVpnExecute(r)
 }
 
@@ -7180,10 +7180,10 @@ Return the site-to-site VPN settings of a network. Only valid for MX networks.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceVpnSiteToSiteVpnRequest
+ @return ApplianceAPIGetNetworkApplianceVpnSiteToSiteVpnRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceVpnSiteToSiteVpn(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceVpnSiteToSiteVpnRequest {
-	return ApplianceApiGetNetworkApplianceVpnSiteToSiteVpnRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceVpnSiteToSiteVpn(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceVpnSiteToSiteVpnRequest {
+	return ApplianceAPIGetNetworkApplianceVpnSiteToSiteVpnRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -7192,7 +7192,7 @@ func (a *ApplianceApiService) GetNetworkApplianceVpnSiteToSiteVpn(ctx context.Co
 
 // Execute executes the request
 //  @return GetNetworkApplianceVpnSiteToSiteVpn200Response
-func (a *ApplianceApiService) GetNetworkApplianceVpnSiteToSiteVpnExecute(r ApplianceApiGetNetworkApplianceVpnSiteToSiteVpnRequest) (*GetNetworkApplianceVpnSiteToSiteVpn200Response, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceVpnSiteToSiteVpnExecute(r ApplianceAPIGetNetworkApplianceVpnSiteToSiteVpnRequest) (*GetNetworkApplianceVpnSiteToSiteVpn200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7200,7 +7200,7 @@ func (a *ApplianceApiService) GetNetworkApplianceVpnSiteToSiteVpnExecute(r Appli
 		localVarReturnValue  *GetNetworkApplianceVpnSiteToSiteVpn200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceVpnSiteToSiteVpn")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceVpnSiteToSiteVpn")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7280,13 +7280,13 @@ func (a *ApplianceApiService) GetNetworkApplianceVpnSiteToSiteVpnExecute(r Appli
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetNetworkApplianceWarmSpareRequest struct {
+type ApplianceAPIGetNetworkApplianceWarmSpareRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiGetNetworkApplianceWarmSpareRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetNetworkApplianceWarmSpareRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceWarmSpareExecute(r)
 }
 
@@ -7297,10 +7297,10 @@ Return MX warm spare settings
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiGetNetworkApplianceWarmSpareRequest
+ @return ApplianceAPIGetNetworkApplianceWarmSpareRequest
 */
-func (a *ApplianceApiService) GetNetworkApplianceWarmSpare(ctx context.Context, networkId string) ApplianceApiGetNetworkApplianceWarmSpareRequest {
-	return ApplianceApiGetNetworkApplianceWarmSpareRequest{
+func (a *ApplianceAPIService) GetNetworkApplianceWarmSpare(ctx context.Context, networkId string) ApplianceAPIGetNetworkApplianceWarmSpareRequest {
+	return ApplianceAPIGetNetworkApplianceWarmSpareRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -7309,7 +7309,7 @@ func (a *ApplianceApiService) GetNetworkApplianceWarmSpare(ctx context.Context, 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) GetNetworkApplianceWarmSpareExecute(r ApplianceApiGetNetworkApplianceWarmSpareRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetNetworkApplianceWarmSpareExecute(r ApplianceAPIGetNetworkApplianceWarmSpareRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7317,7 +7317,7 @@ func (a *ApplianceApiService) GetNetworkApplianceWarmSpareExecute(r ApplianceApi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetNetworkApplianceWarmSpare")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetNetworkApplianceWarmSpare")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7397,9 +7397,9 @@ func (a *ApplianceApiService) GetNetworkApplianceWarmSpareExecute(r ApplianceApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetOrganizationApplianceSecurityEventsRequest struct {
+type ApplianceAPIGetOrganizationApplianceSecurityEventsRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -7411,48 +7411,48 @@ type ApplianceApiGetOrganizationApplianceSecurityEventsRequest struct {
 }
 
 // The beginning of the timespan for the data. Data is gathered after the specified t0 value. The maximum lookback period is 365 days from today.
-func (r ApplianceApiGetOrganizationApplianceSecurityEventsRequest) T0(t0 string) ApplianceApiGetOrganizationApplianceSecurityEventsRequest {
+func (r ApplianceAPIGetOrganizationApplianceSecurityEventsRequest) T0(t0 string) ApplianceAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 365 days after t0.
-func (r ApplianceApiGetOrganizationApplianceSecurityEventsRequest) T1(t1 string) ApplianceApiGetOrganizationApplianceSecurityEventsRequest {
+func (r ApplianceAPIGetOrganizationApplianceSecurityEventsRequest) T1(t1 string) ApplianceAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 365 days. The default is 31 days.
-func (r ApplianceApiGetOrganizationApplianceSecurityEventsRequest) Timespan(timespan float32) ApplianceApiGetOrganizationApplianceSecurityEventsRequest {
+func (r ApplianceAPIGetOrganizationApplianceSecurityEventsRequest) Timespan(timespan float32) ApplianceAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
-func (r ApplianceApiGetOrganizationApplianceSecurityEventsRequest) PerPage(perPage int32) ApplianceApiGetOrganizationApplianceSecurityEventsRequest {
+func (r ApplianceAPIGetOrganizationApplianceSecurityEventsRequest) PerPage(perPage int32) ApplianceAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ApplianceApiGetOrganizationApplianceSecurityEventsRequest) StartingAfter(startingAfter string) ApplianceApiGetOrganizationApplianceSecurityEventsRequest {
+func (r ApplianceAPIGetOrganizationApplianceSecurityEventsRequest) StartingAfter(startingAfter string) ApplianceAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ApplianceApiGetOrganizationApplianceSecurityEventsRequest) EndingBefore(endingBefore string) ApplianceApiGetOrganizationApplianceSecurityEventsRequest {
+func (r ApplianceAPIGetOrganizationApplianceSecurityEventsRequest) EndingBefore(endingBefore string) ApplianceAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Sorted order of security events based on event detection time. Order options are &#39;ascending&#39; or &#39;descending&#39;. Default is ascending order.
-func (r ApplianceApiGetOrganizationApplianceSecurityEventsRequest) SortOrder(sortOrder string) ApplianceApiGetOrganizationApplianceSecurityEventsRequest {
+func (r ApplianceAPIGetOrganizationApplianceSecurityEventsRequest) SortOrder(sortOrder string) ApplianceAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
-func (r ApplianceApiGetOrganizationApplianceSecurityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetOrganizationApplianceSecurityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceSecurityEventsExecute(r)
 }
 
@@ -7463,10 +7463,10 @@ List the security events for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ApplianceApiGetOrganizationApplianceSecurityEventsRequest
+ @return ApplianceAPIGetOrganizationApplianceSecurityEventsRequest
 */
-func (a *ApplianceApiService) GetOrganizationApplianceSecurityEvents(ctx context.Context, organizationId string) ApplianceApiGetOrganizationApplianceSecurityEventsRequest {
-	return ApplianceApiGetOrganizationApplianceSecurityEventsRequest{
+func (a *ApplianceAPIService) GetOrganizationApplianceSecurityEvents(ctx context.Context, organizationId string) ApplianceAPIGetOrganizationApplianceSecurityEventsRequest {
+	return ApplianceAPIGetOrganizationApplianceSecurityEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -7475,7 +7475,7 @@ func (a *ApplianceApiService) GetOrganizationApplianceSecurityEvents(ctx context
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ApplianceApiService) GetOrganizationApplianceSecurityEventsExecute(r ApplianceApiGetOrganizationApplianceSecurityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetOrganizationApplianceSecurityEventsExecute(r ApplianceAPIGetOrganizationApplianceSecurityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7483,7 +7483,7 @@ func (a *ApplianceApiService) GetOrganizationApplianceSecurityEventsExecute(r Ap
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetOrganizationApplianceSecurityEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetOrganizationApplianceSecurityEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7584,13 +7584,13 @@ func (a *ApplianceApiService) GetOrganizationApplianceSecurityEventsExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetOrganizationApplianceSecurityIntrusionRequest struct {
+type ApplianceAPIGetOrganizationApplianceSecurityIntrusionRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	organizationId string
 }
 
-func (r ApplianceApiGetOrganizationApplianceSecurityIntrusionRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetOrganizationApplianceSecurityIntrusionRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceSecurityIntrusionExecute(r)
 }
 
@@ -7601,10 +7601,10 @@ Returns all supported intrusion settings for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ApplianceApiGetOrganizationApplianceSecurityIntrusionRequest
+ @return ApplianceAPIGetOrganizationApplianceSecurityIntrusionRequest
 */
-func (a *ApplianceApiService) GetOrganizationApplianceSecurityIntrusion(ctx context.Context, organizationId string) ApplianceApiGetOrganizationApplianceSecurityIntrusionRequest {
-	return ApplianceApiGetOrganizationApplianceSecurityIntrusionRequest{
+func (a *ApplianceAPIService) GetOrganizationApplianceSecurityIntrusion(ctx context.Context, organizationId string) ApplianceAPIGetOrganizationApplianceSecurityIntrusionRequest {
+	return ApplianceAPIGetOrganizationApplianceSecurityIntrusionRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -7613,7 +7613,7 @@ func (a *ApplianceApiService) GetOrganizationApplianceSecurityIntrusion(ctx cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) GetOrganizationApplianceSecurityIntrusionExecute(r ApplianceApiGetOrganizationApplianceSecurityIntrusionRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetOrganizationApplianceSecurityIntrusionExecute(r ApplianceAPIGetOrganizationApplianceSecurityIntrusionRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7621,7 +7621,7 @@ func (a *ApplianceApiService) GetOrganizationApplianceSecurityIntrusionExecute(r
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetOrganizationApplianceSecurityIntrusion")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetOrganizationApplianceSecurityIntrusion")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7701,9 +7701,9 @@ func (a *ApplianceApiService) GetOrganizationApplianceSecurityIntrusionExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetOrganizationApplianceUplinkStatusesRequest struct {
+type ApplianceAPIGetOrganizationApplianceUplinkStatusesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -7714,42 +7714,42 @@ type ApplianceApiGetOrganizationApplianceUplinkStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r ApplianceApiGetOrganizationApplianceUplinkStatusesRequest) PerPage(perPage int32) ApplianceApiGetOrganizationApplianceUplinkStatusesRequest {
+func (r ApplianceAPIGetOrganizationApplianceUplinkStatusesRequest) PerPage(perPage int32) ApplianceAPIGetOrganizationApplianceUplinkStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ApplianceApiGetOrganizationApplianceUplinkStatusesRequest) StartingAfter(startingAfter string) ApplianceApiGetOrganizationApplianceUplinkStatusesRequest {
+func (r ApplianceAPIGetOrganizationApplianceUplinkStatusesRequest) StartingAfter(startingAfter string) ApplianceAPIGetOrganizationApplianceUplinkStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ApplianceApiGetOrganizationApplianceUplinkStatusesRequest) EndingBefore(endingBefore string) ApplianceApiGetOrganizationApplianceUplinkStatusesRequest {
+func (r ApplianceAPIGetOrganizationApplianceUplinkStatusesRequest) EndingBefore(endingBefore string) ApplianceAPIGetOrganizationApplianceUplinkStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // A list of network IDs. The returned devices will be filtered to only include these networks.
-func (r ApplianceApiGetOrganizationApplianceUplinkStatusesRequest) NetworkIds(networkIds []string) ApplianceApiGetOrganizationApplianceUplinkStatusesRequest {
+func (r ApplianceAPIGetOrganizationApplianceUplinkStatusesRequest) NetworkIds(networkIds []string) ApplianceAPIGetOrganizationApplianceUplinkStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // A list of serial numbers. The returned devices will be filtered to only include these serials.
-func (r ApplianceApiGetOrganizationApplianceUplinkStatusesRequest) Serials(serials []string) ApplianceApiGetOrganizationApplianceUplinkStatusesRequest {
+func (r ApplianceAPIGetOrganizationApplianceUplinkStatusesRequest) Serials(serials []string) ApplianceAPIGetOrganizationApplianceUplinkStatusesRequest {
 	r.serials = &serials
 	return r
 }
 
 // A list of ICCIDs. The returned devices will be filtered to only include these ICCIDs.
-func (r ApplianceApiGetOrganizationApplianceUplinkStatusesRequest) Iccids(iccids []string) ApplianceApiGetOrganizationApplianceUplinkStatusesRequest {
+func (r ApplianceAPIGetOrganizationApplianceUplinkStatusesRequest) Iccids(iccids []string) ApplianceAPIGetOrganizationApplianceUplinkStatusesRequest {
 	r.iccids = &iccids
 	return r
 }
 
-func (r ApplianceApiGetOrganizationApplianceUplinkStatusesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetOrganizationApplianceUplinkStatusesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceUplinkStatusesExecute(r)
 }
 
@@ -7760,10 +7760,10 @@ List the uplink status of every Meraki MX and Z series appliances in the organiz
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ApplianceApiGetOrganizationApplianceUplinkStatusesRequest
+ @return ApplianceAPIGetOrganizationApplianceUplinkStatusesRequest
 */
-func (a *ApplianceApiService) GetOrganizationApplianceUplinkStatuses(ctx context.Context, organizationId string) ApplianceApiGetOrganizationApplianceUplinkStatusesRequest {
-	return ApplianceApiGetOrganizationApplianceUplinkStatusesRequest{
+func (a *ApplianceAPIService) GetOrganizationApplianceUplinkStatuses(ctx context.Context, organizationId string) ApplianceAPIGetOrganizationApplianceUplinkStatusesRequest {
+	return ApplianceAPIGetOrganizationApplianceUplinkStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -7772,7 +7772,7 @@ func (a *ApplianceApiService) GetOrganizationApplianceUplinkStatuses(ctx context
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ApplianceApiService) GetOrganizationApplianceUplinkStatusesExecute(r ApplianceApiGetOrganizationApplianceUplinkStatusesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetOrganizationApplianceUplinkStatusesExecute(r ApplianceAPIGetOrganizationApplianceUplinkStatusesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7780,7 +7780,7 @@ func (a *ApplianceApiService) GetOrganizationApplianceUplinkStatusesExecute(r Ap
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetOrganizationApplianceUplinkStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetOrganizationApplianceUplinkStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7902,9 +7902,9 @@ func (a *ApplianceApiService) GetOrganizationApplianceUplinkStatusesExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetOrganizationApplianceUplinksUsageByNetworkRequest struct {
+type ApplianceAPIGetOrganizationApplianceUplinksUsageByNetworkRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -7912,24 +7912,24 @@ type ApplianceApiGetOrganizationApplianceUplinksUsageByNetworkRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
-func (r ApplianceApiGetOrganizationApplianceUplinksUsageByNetworkRequest) T0(t0 string) ApplianceApiGetOrganizationApplianceUplinksUsageByNetworkRequest {
+func (r ApplianceAPIGetOrganizationApplianceUplinksUsageByNetworkRequest) T0(t0 string) ApplianceAPIGetOrganizationApplianceUplinksUsageByNetworkRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 14 days after t0.
-func (r ApplianceApiGetOrganizationApplianceUplinksUsageByNetworkRequest) T1(t1 string) ApplianceApiGetOrganizationApplianceUplinksUsageByNetworkRequest {
+func (r ApplianceAPIGetOrganizationApplianceUplinksUsageByNetworkRequest) T1(t1 string) ApplianceAPIGetOrganizationApplianceUplinksUsageByNetworkRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 14 days. The default is 1 day.
-func (r ApplianceApiGetOrganizationApplianceUplinksUsageByNetworkRequest) Timespan(timespan float32) ApplianceApiGetOrganizationApplianceUplinksUsageByNetworkRequest {
+func (r ApplianceAPIGetOrganizationApplianceUplinksUsageByNetworkRequest) Timespan(timespan float32) ApplianceAPIGetOrganizationApplianceUplinksUsageByNetworkRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r ApplianceApiGetOrganizationApplianceUplinksUsageByNetworkRequest) Execute() ([]GetOrganizationApplianceUplinksUsageByNetwork200ResponseInner, *http.Response, error) {
+func (r ApplianceAPIGetOrganizationApplianceUplinksUsageByNetworkRequest) Execute() ([]GetOrganizationApplianceUplinksUsageByNetwork200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceUplinksUsageByNetworkExecute(r)
 }
 
@@ -7940,10 +7940,10 @@ Get the sent and received bytes for each uplink of all MX and Z networks within 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ApplianceApiGetOrganizationApplianceUplinksUsageByNetworkRequest
+ @return ApplianceAPIGetOrganizationApplianceUplinksUsageByNetworkRequest
 */
-func (a *ApplianceApiService) GetOrganizationApplianceUplinksUsageByNetwork(ctx context.Context, organizationId string) ApplianceApiGetOrganizationApplianceUplinksUsageByNetworkRequest {
-	return ApplianceApiGetOrganizationApplianceUplinksUsageByNetworkRequest{
+func (a *ApplianceAPIService) GetOrganizationApplianceUplinksUsageByNetwork(ctx context.Context, organizationId string) ApplianceAPIGetOrganizationApplianceUplinksUsageByNetworkRequest {
+	return ApplianceAPIGetOrganizationApplianceUplinksUsageByNetworkRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -7952,7 +7952,7 @@ func (a *ApplianceApiService) GetOrganizationApplianceUplinksUsageByNetwork(ctx 
 
 // Execute executes the request
 //  @return []GetOrganizationApplianceUplinksUsageByNetwork200ResponseInner
-func (a *ApplianceApiService) GetOrganizationApplianceUplinksUsageByNetworkExecute(r ApplianceApiGetOrganizationApplianceUplinksUsageByNetworkRequest) ([]GetOrganizationApplianceUplinksUsageByNetwork200ResponseInner, *http.Response, error) {
+func (a *ApplianceAPIService) GetOrganizationApplianceUplinksUsageByNetworkExecute(r ApplianceAPIGetOrganizationApplianceUplinksUsageByNetworkRequest) ([]GetOrganizationApplianceUplinksUsageByNetwork200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7960,7 +7960,7 @@ func (a *ApplianceApiService) GetOrganizationApplianceUplinksUsageByNetworkExecu
 		localVarReturnValue  []GetOrganizationApplianceUplinksUsageByNetwork200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetOrganizationApplianceUplinksUsageByNetwork")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetOrganizationApplianceUplinksUsageByNetwork")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8049,9 +8049,9 @@ func (a *ApplianceApiService) GetOrganizationApplianceUplinksUsageByNetworkExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetOrganizationApplianceVpnStatsRequest struct {
+type ApplianceAPIGetOrganizationApplianceVpnStatsRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -8063,48 +8063,48 @@ type ApplianceApiGetOrganizationApplianceVpnStatsRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 300. Default is 300.
-func (r ApplianceApiGetOrganizationApplianceVpnStatsRequest) PerPage(perPage int32) ApplianceApiGetOrganizationApplianceVpnStatsRequest {
+func (r ApplianceAPIGetOrganizationApplianceVpnStatsRequest) PerPage(perPage int32) ApplianceAPIGetOrganizationApplianceVpnStatsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ApplianceApiGetOrganizationApplianceVpnStatsRequest) StartingAfter(startingAfter string) ApplianceApiGetOrganizationApplianceVpnStatsRequest {
+func (r ApplianceAPIGetOrganizationApplianceVpnStatsRequest) StartingAfter(startingAfter string) ApplianceAPIGetOrganizationApplianceVpnStatsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ApplianceApiGetOrganizationApplianceVpnStatsRequest) EndingBefore(endingBefore string) ApplianceApiGetOrganizationApplianceVpnStatsRequest {
+func (r ApplianceAPIGetOrganizationApplianceVpnStatsRequest) EndingBefore(endingBefore string) ApplianceAPIGetOrganizationApplianceVpnStatsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // A list of Meraki network IDs to filter results to contain only specified networks. E.g.: networkIds[]&#x3D;N_12345678&amp;networkIds[]&#x3D;L_3456
-func (r ApplianceApiGetOrganizationApplianceVpnStatsRequest) NetworkIds(networkIds []string) ApplianceApiGetOrganizationApplianceVpnStatsRequest {
+func (r ApplianceAPIGetOrganizationApplianceVpnStatsRequest) NetworkIds(networkIds []string) ApplianceAPIGetOrganizationApplianceVpnStatsRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r ApplianceApiGetOrganizationApplianceVpnStatsRequest) T0(t0 string) ApplianceApiGetOrganizationApplianceVpnStatsRequest {
+func (r ApplianceAPIGetOrganizationApplianceVpnStatsRequest) T0(t0 string) ApplianceAPIGetOrganizationApplianceVpnStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ApplianceApiGetOrganizationApplianceVpnStatsRequest) T1(t1 string) ApplianceApiGetOrganizationApplianceVpnStatsRequest {
+func (r ApplianceAPIGetOrganizationApplianceVpnStatsRequest) T1(t1 string) ApplianceAPIGetOrganizationApplianceVpnStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r ApplianceApiGetOrganizationApplianceVpnStatsRequest) Timespan(timespan float32) ApplianceApiGetOrganizationApplianceVpnStatsRequest {
+func (r ApplianceAPIGetOrganizationApplianceVpnStatsRequest) Timespan(timespan float32) ApplianceAPIGetOrganizationApplianceVpnStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r ApplianceApiGetOrganizationApplianceVpnStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetOrganizationApplianceVpnStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceVpnStatsExecute(r)
 }
 
@@ -8115,10 +8115,10 @@ Show VPN history stat for networks in an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ApplianceApiGetOrganizationApplianceVpnStatsRequest
+ @return ApplianceAPIGetOrganizationApplianceVpnStatsRequest
 */
-func (a *ApplianceApiService) GetOrganizationApplianceVpnStats(ctx context.Context, organizationId string) ApplianceApiGetOrganizationApplianceVpnStatsRequest {
-	return ApplianceApiGetOrganizationApplianceVpnStatsRequest{
+func (a *ApplianceAPIService) GetOrganizationApplianceVpnStats(ctx context.Context, organizationId string) ApplianceAPIGetOrganizationApplianceVpnStatsRequest {
+	return ApplianceAPIGetOrganizationApplianceVpnStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -8127,7 +8127,7 @@ func (a *ApplianceApiService) GetOrganizationApplianceVpnStats(ctx context.Conte
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ApplianceApiService) GetOrganizationApplianceVpnStatsExecute(r ApplianceApiGetOrganizationApplianceVpnStatsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetOrganizationApplianceVpnStatsExecute(r ApplianceAPIGetOrganizationApplianceVpnStatsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -8135,7 +8135,7 @@ func (a *ApplianceApiService) GetOrganizationApplianceVpnStatsExecute(r Applianc
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetOrganizationApplianceVpnStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetOrganizationApplianceVpnStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8244,9 +8244,9 @@ func (a *ApplianceApiService) GetOrganizationApplianceVpnStatsExecute(r Applianc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetOrganizationApplianceVpnStatusesRequest struct {
+type ApplianceAPIGetOrganizationApplianceVpnStatusesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -8255,30 +8255,30 @@ type ApplianceApiGetOrganizationApplianceVpnStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 300. Default is 300.
-func (r ApplianceApiGetOrganizationApplianceVpnStatusesRequest) PerPage(perPage int32) ApplianceApiGetOrganizationApplianceVpnStatusesRequest {
+func (r ApplianceAPIGetOrganizationApplianceVpnStatusesRequest) PerPage(perPage int32) ApplianceAPIGetOrganizationApplianceVpnStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ApplianceApiGetOrganizationApplianceVpnStatusesRequest) StartingAfter(startingAfter string) ApplianceApiGetOrganizationApplianceVpnStatusesRequest {
+func (r ApplianceAPIGetOrganizationApplianceVpnStatusesRequest) StartingAfter(startingAfter string) ApplianceAPIGetOrganizationApplianceVpnStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ApplianceApiGetOrganizationApplianceVpnStatusesRequest) EndingBefore(endingBefore string) ApplianceApiGetOrganizationApplianceVpnStatusesRequest {
+func (r ApplianceAPIGetOrganizationApplianceVpnStatusesRequest) EndingBefore(endingBefore string) ApplianceAPIGetOrganizationApplianceVpnStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // A list of Meraki network IDs to filter results to contain only specified networks. E.g.: networkIds[]&#x3D;N_12345678&amp;networkIds[]&#x3D;L_3456
-func (r ApplianceApiGetOrganizationApplianceVpnStatusesRequest) NetworkIds(networkIds []string) ApplianceApiGetOrganizationApplianceVpnStatusesRequest {
+func (r ApplianceAPIGetOrganizationApplianceVpnStatusesRequest) NetworkIds(networkIds []string) ApplianceAPIGetOrganizationApplianceVpnStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
-func (r ApplianceApiGetOrganizationApplianceVpnStatusesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetOrganizationApplianceVpnStatusesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceVpnStatusesExecute(r)
 }
 
@@ -8289,10 +8289,10 @@ Show VPN status for networks in an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ApplianceApiGetOrganizationApplianceVpnStatusesRequest
+ @return ApplianceAPIGetOrganizationApplianceVpnStatusesRequest
 */
-func (a *ApplianceApiService) GetOrganizationApplianceVpnStatuses(ctx context.Context, organizationId string) ApplianceApiGetOrganizationApplianceVpnStatusesRequest {
-	return ApplianceApiGetOrganizationApplianceVpnStatusesRequest{
+func (a *ApplianceAPIService) GetOrganizationApplianceVpnStatuses(ctx context.Context, organizationId string) ApplianceAPIGetOrganizationApplianceVpnStatusesRequest {
+	return ApplianceAPIGetOrganizationApplianceVpnStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -8301,7 +8301,7 @@ func (a *ApplianceApiService) GetOrganizationApplianceVpnStatuses(ctx context.Co
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ApplianceApiService) GetOrganizationApplianceVpnStatusesExecute(r ApplianceApiGetOrganizationApplianceVpnStatusesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetOrganizationApplianceVpnStatusesExecute(r ApplianceAPIGetOrganizationApplianceVpnStatusesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -8309,7 +8309,7 @@ func (a *ApplianceApiService) GetOrganizationApplianceVpnStatusesExecute(r Appli
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetOrganizationApplianceVpnStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetOrganizationApplianceVpnStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8409,13 +8409,13 @@ func (a *ApplianceApiService) GetOrganizationApplianceVpnStatusesExecute(r Appli
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetOrganizationApplianceVpnThirdPartyVPNPeersRequest struct {
+type ApplianceAPIGetOrganizationApplianceVpnThirdPartyVPNPeersRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	organizationId string
 }
 
-func (r ApplianceApiGetOrganizationApplianceVpnThirdPartyVPNPeersRequest) Execute() (*GetOrganizationApplianceVpnThirdPartyVPNPeers200Response, *http.Response, error) {
+func (r ApplianceAPIGetOrganizationApplianceVpnThirdPartyVPNPeersRequest) Execute() (*GetOrganizationApplianceVpnThirdPartyVPNPeers200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceVpnThirdPartyVPNPeersExecute(r)
 }
 
@@ -8426,10 +8426,10 @@ Return the third party VPN peers for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ApplianceApiGetOrganizationApplianceVpnThirdPartyVPNPeersRequest
+ @return ApplianceAPIGetOrganizationApplianceVpnThirdPartyVPNPeersRequest
 */
-func (a *ApplianceApiService) GetOrganizationApplianceVpnThirdPartyVPNPeers(ctx context.Context, organizationId string) ApplianceApiGetOrganizationApplianceVpnThirdPartyVPNPeersRequest {
-	return ApplianceApiGetOrganizationApplianceVpnThirdPartyVPNPeersRequest{
+func (a *ApplianceAPIService) GetOrganizationApplianceVpnThirdPartyVPNPeers(ctx context.Context, organizationId string) ApplianceAPIGetOrganizationApplianceVpnThirdPartyVPNPeersRequest {
+	return ApplianceAPIGetOrganizationApplianceVpnThirdPartyVPNPeersRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -8438,7 +8438,7 @@ func (a *ApplianceApiService) GetOrganizationApplianceVpnThirdPartyVPNPeers(ctx 
 
 // Execute executes the request
 //  @return GetOrganizationApplianceVpnThirdPartyVPNPeers200Response
-func (a *ApplianceApiService) GetOrganizationApplianceVpnThirdPartyVPNPeersExecute(r ApplianceApiGetOrganizationApplianceVpnThirdPartyVPNPeersRequest) (*GetOrganizationApplianceVpnThirdPartyVPNPeers200Response, *http.Response, error) {
+func (a *ApplianceAPIService) GetOrganizationApplianceVpnThirdPartyVPNPeersExecute(r ApplianceAPIGetOrganizationApplianceVpnThirdPartyVPNPeersRequest) (*GetOrganizationApplianceVpnThirdPartyVPNPeers200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -8446,7 +8446,7 @@ func (a *ApplianceApiService) GetOrganizationApplianceVpnThirdPartyVPNPeersExecu
 		localVarReturnValue  *GetOrganizationApplianceVpnThirdPartyVPNPeers200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetOrganizationApplianceVpnThirdPartyVPNPeers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetOrganizationApplianceVpnThirdPartyVPNPeers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8526,13 +8526,13 @@ func (a *ApplianceApiService) GetOrganizationApplianceVpnThirdPartyVPNPeersExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiGetOrganizationApplianceVpnVpnFirewallRulesRequest struct {
+type ApplianceAPIGetOrganizationApplianceVpnVpnFirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	organizationId string
 }
 
-func (r ApplianceApiGetOrganizationApplianceVpnVpnFirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIGetOrganizationApplianceVpnVpnFirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceVpnVpnFirewallRulesExecute(r)
 }
 
@@ -8543,10 +8543,10 @@ Return the firewall rules for an organization's site-to-site VPN
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ApplianceApiGetOrganizationApplianceVpnVpnFirewallRulesRequest
+ @return ApplianceAPIGetOrganizationApplianceVpnVpnFirewallRulesRequest
 */
-func (a *ApplianceApiService) GetOrganizationApplianceVpnVpnFirewallRules(ctx context.Context, organizationId string) ApplianceApiGetOrganizationApplianceVpnVpnFirewallRulesRequest {
-	return ApplianceApiGetOrganizationApplianceVpnVpnFirewallRulesRequest{
+func (a *ApplianceAPIService) GetOrganizationApplianceVpnVpnFirewallRules(ctx context.Context, organizationId string) ApplianceAPIGetOrganizationApplianceVpnVpnFirewallRulesRequest {
+	return ApplianceAPIGetOrganizationApplianceVpnVpnFirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -8555,7 +8555,7 @@ func (a *ApplianceApiService) GetOrganizationApplianceVpnVpnFirewallRules(ctx co
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) GetOrganizationApplianceVpnVpnFirewallRulesExecute(r ApplianceApiGetOrganizationApplianceVpnVpnFirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) GetOrganizationApplianceVpnVpnFirewallRulesExecute(r ApplianceAPIGetOrganizationApplianceVpnVpnFirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -8563,7 +8563,7 @@ func (a *ApplianceApiService) GetOrganizationApplianceVpnVpnFirewallRulesExecute
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.GetOrganizationApplianceVpnVpnFirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.GetOrganizationApplianceVpnVpnFirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8643,13 +8643,13 @@ func (a *ApplianceApiService) GetOrganizationApplianceVpnVpnFirewallRulesExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiSwapNetworkApplianceWarmSpareRequest struct {
+type ApplianceAPISwapNetworkApplianceWarmSpareRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 }
 
-func (r ApplianceApiSwapNetworkApplianceWarmSpareRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPISwapNetworkApplianceWarmSpareRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.SwapNetworkApplianceWarmSpareExecute(r)
 }
 
@@ -8660,10 +8660,10 @@ Swap MX primary and warm spare appliances
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiSwapNetworkApplianceWarmSpareRequest
+ @return ApplianceAPISwapNetworkApplianceWarmSpareRequest
 */
-func (a *ApplianceApiService) SwapNetworkApplianceWarmSpare(ctx context.Context, networkId string) ApplianceApiSwapNetworkApplianceWarmSpareRequest {
-	return ApplianceApiSwapNetworkApplianceWarmSpareRequest{
+func (a *ApplianceAPIService) SwapNetworkApplianceWarmSpare(ctx context.Context, networkId string) ApplianceAPISwapNetworkApplianceWarmSpareRequest {
+	return ApplianceAPISwapNetworkApplianceWarmSpareRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -8672,7 +8672,7 @@ func (a *ApplianceApiService) SwapNetworkApplianceWarmSpare(ctx context.Context,
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) SwapNetworkApplianceWarmSpareExecute(r ApplianceApiSwapNetworkApplianceWarmSpareRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) SwapNetworkApplianceWarmSpareExecute(r ApplianceAPISwapNetworkApplianceWarmSpareRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -8680,7 +8680,7 @@ func (a *ApplianceApiService) SwapNetworkApplianceWarmSpareExecute(r ApplianceAp
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.SwapNetworkApplianceWarmSpare")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.SwapNetworkApplianceWarmSpare")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8760,19 +8760,19 @@ func (a *ApplianceApiService) SwapNetworkApplianceWarmSpareExecute(r ApplianceAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateDeviceApplianceRadioSettingsRequest struct {
+type ApplianceAPIUpdateDeviceApplianceRadioSettingsRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	serial string
 	updateDeviceApplianceRadioSettingsRequest *UpdateDeviceApplianceRadioSettingsRequest
 }
 
-func (r ApplianceApiUpdateDeviceApplianceRadioSettingsRequest) UpdateDeviceApplianceRadioSettingsRequest(updateDeviceApplianceRadioSettingsRequest UpdateDeviceApplianceRadioSettingsRequest) ApplianceApiUpdateDeviceApplianceRadioSettingsRequest {
+func (r ApplianceAPIUpdateDeviceApplianceRadioSettingsRequest) UpdateDeviceApplianceRadioSettingsRequest(updateDeviceApplianceRadioSettingsRequest UpdateDeviceApplianceRadioSettingsRequest) ApplianceAPIUpdateDeviceApplianceRadioSettingsRequest {
 	r.updateDeviceApplianceRadioSettingsRequest = &updateDeviceApplianceRadioSettingsRequest
 	return r
 }
 
-func (r ApplianceApiUpdateDeviceApplianceRadioSettingsRequest) Execute() (*GetDeviceApplianceRadioSettings200Response, *http.Response, error) {
+func (r ApplianceAPIUpdateDeviceApplianceRadioSettingsRequest) Execute() (*GetDeviceApplianceRadioSettings200Response, *http.Response, error) {
 	return r.ApiService.UpdateDeviceApplianceRadioSettingsExecute(r)
 }
 
@@ -8783,10 +8783,10 @@ Update the radio settings of an appliance
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return ApplianceApiUpdateDeviceApplianceRadioSettingsRequest
+ @return ApplianceAPIUpdateDeviceApplianceRadioSettingsRequest
 */
-func (a *ApplianceApiService) UpdateDeviceApplianceRadioSettings(ctx context.Context, serial string) ApplianceApiUpdateDeviceApplianceRadioSettingsRequest {
-	return ApplianceApiUpdateDeviceApplianceRadioSettingsRequest{
+func (a *ApplianceAPIService) UpdateDeviceApplianceRadioSettings(ctx context.Context, serial string) ApplianceAPIUpdateDeviceApplianceRadioSettingsRequest {
+	return ApplianceAPIUpdateDeviceApplianceRadioSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -8795,7 +8795,7 @@ func (a *ApplianceApiService) UpdateDeviceApplianceRadioSettings(ctx context.Con
 
 // Execute executes the request
 //  @return GetDeviceApplianceRadioSettings200Response
-func (a *ApplianceApiService) UpdateDeviceApplianceRadioSettingsExecute(r ApplianceApiUpdateDeviceApplianceRadioSettingsRequest) (*GetDeviceApplianceRadioSettings200Response, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateDeviceApplianceRadioSettingsExecute(r ApplianceAPIUpdateDeviceApplianceRadioSettingsRequest) (*GetDeviceApplianceRadioSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -8803,7 +8803,7 @@ func (a *ApplianceApiService) UpdateDeviceApplianceRadioSettingsExecute(r Applia
 		localVarReturnValue  *GetDeviceApplianceRadioSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateDeviceApplianceRadioSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateDeviceApplianceRadioSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8885,19 +8885,19 @@ func (a *ApplianceApiService) UpdateDeviceApplianceRadioSettingsExecute(r Applia
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateDeviceApplianceUplinksSettingsRequest struct {
+type ApplianceAPIUpdateDeviceApplianceUplinksSettingsRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	serial string
 	updateDeviceApplianceUplinksSettingsRequest *UpdateDeviceApplianceUplinksSettingsRequest
 }
 
-func (r ApplianceApiUpdateDeviceApplianceUplinksSettingsRequest) UpdateDeviceApplianceUplinksSettingsRequest(updateDeviceApplianceUplinksSettingsRequest UpdateDeviceApplianceUplinksSettingsRequest) ApplianceApiUpdateDeviceApplianceUplinksSettingsRequest {
+func (r ApplianceAPIUpdateDeviceApplianceUplinksSettingsRequest) UpdateDeviceApplianceUplinksSettingsRequest(updateDeviceApplianceUplinksSettingsRequest UpdateDeviceApplianceUplinksSettingsRequest) ApplianceAPIUpdateDeviceApplianceUplinksSettingsRequest {
 	r.updateDeviceApplianceUplinksSettingsRequest = &updateDeviceApplianceUplinksSettingsRequest
 	return r
 }
 
-func (r ApplianceApiUpdateDeviceApplianceUplinksSettingsRequest) Execute() (*GetDeviceApplianceUplinksSettings200Response, *http.Response, error) {
+func (r ApplianceAPIUpdateDeviceApplianceUplinksSettingsRequest) Execute() (*GetDeviceApplianceUplinksSettings200Response, *http.Response, error) {
 	return r.ApiService.UpdateDeviceApplianceUplinksSettingsExecute(r)
 }
 
@@ -8908,10 +8908,10 @@ Update the uplink settings for an MX appliance
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return ApplianceApiUpdateDeviceApplianceUplinksSettingsRequest
+ @return ApplianceAPIUpdateDeviceApplianceUplinksSettingsRequest
 */
-func (a *ApplianceApiService) UpdateDeviceApplianceUplinksSettings(ctx context.Context, serial string) ApplianceApiUpdateDeviceApplianceUplinksSettingsRequest {
-	return ApplianceApiUpdateDeviceApplianceUplinksSettingsRequest{
+func (a *ApplianceAPIService) UpdateDeviceApplianceUplinksSettings(ctx context.Context, serial string) ApplianceAPIUpdateDeviceApplianceUplinksSettingsRequest {
+	return ApplianceAPIUpdateDeviceApplianceUplinksSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -8920,7 +8920,7 @@ func (a *ApplianceApiService) UpdateDeviceApplianceUplinksSettings(ctx context.C
 
 // Execute executes the request
 //  @return GetDeviceApplianceUplinksSettings200Response
-func (a *ApplianceApiService) UpdateDeviceApplianceUplinksSettingsExecute(r ApplianceApiUpdateDeviceApplianceUplinksSettingsRequest) (*GetDeviceApplianceUplinksSettings200Response, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateDeviceApplianceUplinksSettingsExecute(r ApplianceAPIUpdateDeviceApplianceUplinksSettingsRequest) (*GetDeviceApplianceUplinksSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -8928,7 +8928,7 @@ func (a *ApplianceApiService) UpdateDeviceApplianceUplinksSettingsExecute(r Appl
 		localVarReturnValue  *GetDeviceApplianceUplinksSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateDeviceApplianceUplinksSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateDeviceApplianceUplinksSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9013,19 +9013,19 @@ func (a *ApplianceApiService) UpdateDeviceApplianceUplinksSettingsExecute(r Appl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest struct {
+type ApplianceAPIUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	updateNetworkApplianceConnectivityMonitoringDestinationsRequest *UpdateNetworkApplianceConnectivityMonitoringDestinationsRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest) UpdateNetworkApplianceConnectivityMonitoringDestinationsRequest(updateNetworkApplianceConnectivityMonitoringDestinationsRequest UpdateNetworkApplianceConnectivityMonitoringDestinationsRequest) ApplianceApiUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest {
+func (r ApplianceAPIUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest) UpdateNetworkApplianceConnectivityMonitoringDestinationsRequest(updateNetworkApplianceConnectivityMonitoringDestinationsRequest UpdateNetworkApplianceConnectivityMonitoringDestinationsRequest) ApplianceAPIUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest {
 	r.updateNetworkApplianceConnectivityMonitoringDestinationsRequest = &updateNetworkApplianceConnectivityMonitoringDestinationsRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceConnectivityMonitoringDestinationsExecute(r)
 }
 
@@ -9036,10 +9036,10 @@ Update the connectivity testing destinations for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest
+ @return ApplianceAPIUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceConnectivityMonitoringDestinations(ctx context.Context, networkId string) ApplianceApiUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest {
-	return ApplianceApiUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceConnectivityMonitoringDestinations(ctx context.Context, networkId string) ApplianceAPIUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest {
+	return ApplianceAPIUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9048,7 +9048,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceConnectivityMonitoringDestin
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) UpdateNetworkApplianceConnectivityMonitoringDestinationsExecute(r ApplianceApiUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceConnectivityMonitoringDestinationsExecute(r ApplianceAPIUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9056,7 +9056,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceConnectivityMonitoringDestin
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceConnectivityMonitoringDestinations")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceConnectivityMonitoringDestinations")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9138,19 +9138,19 @@ func (a *ApplianceApiService) UpdateNetworkApplianceConnectivityMonitoringDestin
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceContentFilteringRequest struct {
+type ApplianceAPIUpdateNetworkApplianceContentFilteringRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	updateNetworkApplianceContentFilteringRequest *UpdateNetworkApplianceContentFilteringRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceContentFilteringRequest) UpdateNetworkApplianceContentFilteringRequest(updateNetworkApplianceContentFilteringRequest UpdateNetworkApplianceContentFilteringRequest) ApplianceApiUpdateNetworkApplianceContentFilteringRequest {
+func (r ApplianceAPIUpdateNetworkApplianceContentFilteringRequest) UpdateNetworkApplianceContentFilteringRequest(updateNetworkApplianceContentFilteringRequest UpdateNetworkApplianceContentFilteringRequest) ApplianceAPIUpdateNetworkApplianceContentFilteringRequest {
 	r.updateNetworkApplianceContentFilteringRequest = &updateNetworkApplianceContentFilteringRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceContentFilteringRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceContentFilteringRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceContentFilteringExecute(r)
 }
 
@@ -9161,10 +9161,10 @@ Update the content filtering settings for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiUpdateNetworkApplianceContentFilteringRequest
+ @return ApplianceAPIUpdateNetworkApplianceContentFilteringRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceContentFiltering(ctx context.Context, networkId string) ApplianceApiUpdateNetworkApplianceContentFilteringRequest {
-	return ApplianceApiUpdateNetworkApplianceContentFilteringRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceContentFiltering(ctx context.Context, networkId string) ApplianceAPIUpdateNetworkApplianceContentFilteringRequest {
+	return ApplianceAPIUpdateNetworkApplianceContentFilteringRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9173,7 +9173,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceContentFiltering(ctx context
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) UpdateNetworkApplianceContentFilteringExecute(r ApplianceApiUpdateNetworkApplianceContentFilteringRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceContentFilteringExecute(r ApplianceAPIUpdateNetworkApplianceContentFilteringRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9181,7 +9181,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceContentFilteringExecute(r Ap
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceContentFiltering")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceContentFiltering")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9263,19 +9263,19 @@ func (a *ApplianceApiService) UpdateNetworkApplianceContentFilteringExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceFirewallCellularFirewallRulesRequest struct {
+type ApplianceAPIUpdateNetworkApplianceFirewallCellularFirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	updateNetworkApplianceFirewallCellularFirewallRulesRequest *UpdateNetworkApplianceFirewallCellularFirewallRulesRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceFirewallCellularFirewallRulesRequest) UpdateNetworkApplianceFirewallCellularFirewallRulesRequest(updateNetworkApplianceFirewallCellularFirewallRulesRequest UpdateNetworkApplianceFirewallCellularFirewallRulesRequest) ApplianceApiUpdateNetworkApplianceFirewallCellularFirewallRulesRequest {
+func (r ApplianceAPIUpdateNetworkApplianceFirewallCellularFirewallRulesRequest) UpdateNetworkApplianceFirewallCellularFirewallRulesRequest(updateNetworkApplianceFirewallCellularFirewallRulesRequest UpdateNetworkApplianceFirewallCellularFirewallRulesRequest) ApplianceAPIUpdateNetworkApplianceFirewallCellularFirewallRulesRequest {
 	r.updateNetworkApplianceFirewallCellularFirewallRulesRequest = &updateNetworkApplianceFirewallCellularFirewallRulesRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceFirewallCellularFirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceFirewallCellularFirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceFirewallCellularFirewallRulesExecute(r)
 }
 
@@ -9286,10 +9286,10 @@ Update the cellular firewall rules of an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiUpdateNetworkApplianceFirewallCellularFirewallRulesRequest
+ @return ApplianceAPIUpdateNetworkApplianceFirewallCellularFirewallRulesRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceFirewallCellularFirewallRules(ctx context.Context, networkId string) ApplianceApiUpdateNetworkApplianceFirewallCellularFirewallRulesRequest {
-	return ApplianceApiUpdateNetworkApplianceFirewallCellularFirewallRulesRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceFirewallCellularFirewallRules(ctx context.Context, networkId string) ApplianceAPIUpdateNetworkApplianceFirewallCellularFirewallRulesRequest {
+	return ApplianceAPIUpdateNetworkApplianceFirewallCellularFirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9298,7 +9298,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallCellularFirewallRule
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) UpdateNetworkApplianceFirewallCellularFirewallRulesExecute(r ApplianceApiUpdateNetworkApplianceFirewallCellularFirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceFirewallCellularFirewallRulesExecute(r ApplianceAPIUpdateNetworkApplianceFirewallCellularFirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9306,7 +9306,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallCellularFirewallRule
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceFirewallCellularFirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceFirewallCellularFirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9388,20 +9388,20 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallCellularFirewallRule
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceFirewallFirewalledServiceRequest struct {
+type ApplianceAPIUpdateNetworkApplianceFirewallFirewalledServiceRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	service string
 	updateNetworkApplianceFirewallFirewalledServiceRequest *UpdateNetworkApplianceFirewallFirewalledServiceRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceFirewallFirewalledServiceRequest) UpdateNetworkApplianceFirewallFirewalledServiceRequest(updateNetworkApplianceFirewallFirewalledServiceRequest UpdateNetworkApplianceFirewallFirewalledServiceRequest) ApplianceApiUpdateNetworkApplianceFirewallFirewalledServiceRequest {
+func (r ApplianceAPIUpdateNetworkApplianceFirewallFirewalledServiceRequest) UpdateNetworkApplianceFirewallFirewalledServiceRequest(updateNetworkApplianceFirewallFirewalledServiceRequest UpdateNetworkApplianceFirewallFirewalledServiceRequest) ApplianceAPIUpdateNetworkApplianceFirewallFirewalledServiceRequest {
 	r.updateNetworkApplianceFirewallFirewalledServiceRequest = &updateNetworkApplianceFirewallFirewalledServiceRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceFirewallFirewalledServiceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceFirewallFirewalledServiceRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceFirewallFirewalledServiceExecute(r)
 }
 
@@ -9413,10 +9413,10 @@ Updates the accessibility settings for the given service ('ICMP', 'web', or 'SNM
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param service Service
- @return ApplianceApiUpdateNetworkApplianceFirewallFirewalledServiceRequest
+ @return ApplianceAPIUpdateNetworkApplianceFirewallFirewalledServiceRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceFirewallFirewalledService(ctx context.Context, networkId string, service string) ApplianceApiUpdateNetworkApplianceFirewallFirewalledServiceRequest {
-	return ApplianceApiUpdateNetworkApplianceFirewallFirewalledServiceRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceFirewallFirewalledService(ctx context.Context, networkId string, service string) ApplianceAPIUpdateNetworkApplianceFirewallFirewalledServiceRequest {
+	return ApplianceAPIUpdateNetworkApplianceFirewallFirewalledServiceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9426,7 +9426,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallFirewalledService(ct
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) UpdateNetworkApplianceFirewallFirewalledServiceExecute(r ApplianceApiUpdateNetworkApplianceFirewallFirewalledServiceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceFirewallFirewalledServiceExecute(r ApplianceAPIUpdateNetworkApplianceFirewallFirewalledServiceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9434,7 +9434,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallFirewalledServiceExe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceFirewallFirewalledService")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceFirewallFirewalledService")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9520,19 +9520,19 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallFirewalledServiceExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest struct {
+type ApplianceAPIUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	updateNetworkApplianceFirewallCellularFirewallRulesRequest *UpdateNetworkApplianceFirewallCellularFirewallRulesRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest) UpdateNetworkApplianceFirewallCellularFirewallRulesRequest(updateNetworkApplianceFirewallCellularFirewallRulesRequest UpdateNetworkApplianceFirewallCellularFirewallRulesRequest) ApplianceApiUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest {
+func (r ApplianceAPIUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest) UpdateNetworkApplianceFirewallCellularFirewallRulesRequest(updateNetworkApplianceFirewallCellularFirewallRulesRequest UpdateNetworkApplianceFirewallCellularFirewallRulesRequest) ApplianceAPIUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest {
 	r.updateNetworkApplianceFirewallCellularFirewallRulesRequest = &updateNetworkApplianceFirewallCellularFirewallRulesRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceFirewallInboundCellularFirewallRulesExecute(r)
 }
 
@@ -9543,10 +9543,10 @@ Update the inbound cellular firewall rules of an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest
+ @return ApplianceAPIUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceFirewallInboundCellularFirewallRules(ctx context.Context, networkId string) ApplianceApiUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest {
-	return ApplianceApiUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceFirewallInboundCellularFirewallRules(ctx context.Context, networkId string) ApplianceAPIUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest {
+	return ApplianceAPIUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9555,7 +9555,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallInboundCellularFirew
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ApplianceApiService) UpdateNetworkApplianceFirewallInboundCellularFirewallRulesExecute(r ApplianceApiUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceFirewallInboundCellularFirewallRulesExecute(r ApplianceAPIUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9563,7 +9563,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallInboundCellularFirew
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceFirewallInboundCellularFirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceFirewallInboundCellularFirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9645,19 +9645,19 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallInboundCellularFirew
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceFirewallInboundFirewallRulesRequest struct {
+type ApplianceAPIUpdateNetworkApplianceFirewallInboundFirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	updateNetworkApplianceFirewallInboundFirewallRulesRequest *UpdateNetworkApplianceFirewallInboundFirewallRulesRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceFirewallInboundFirewallRulesRequest) UpdateNetworkApplianceFirewallInboundFirewallRulesRequest(updateNetworkApplianceFirewallInboundFirewallRulesRequest UpdateNetworkApplianceFirewallInboundFirewallRulesRequest) ApplianceApiUpdateNetworkApplianceFirewallInboundFirewallRulesRequest {
+func (r ApplianceAPIUpdateNetworkApplianceFirewallInboundFirewallRulesRequest) UpdateNetworkApplianceFirewallInboundFirewallRulesRequest(updateNetworkApplianceFirewallInboundFirewallRulesRequest UpdateNetworkApplianceFirewallInboundFirewallRulesRequest) ApplianceAPIUpdateNetworkApplianceFirewallInboundFirewallRulesRequest {
 	r.updateNetworkApplianceFirewallInboundFirewallRulesRequest = &updateNetworkApplianceFirewallInboundFirewallRulesRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceFirewallInboundFirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceFirewallInboundFirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceFirewallInboundFirewallRulesExecute(r)
 }
 
@@ -9668,10 +9668,10 @@ Update the inbound firewall rules of an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiUpdateNetworkApplianceFirewallInboundFirewallRulesRequest
+ @return ApplianceAPIUpdateNetworkApplianceFirewallInboundFirewallRulesRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceFirewallInboundFirewallRules(ctx context.Context, networkId string) ApplianceApiUpdateNetworkApplianceFirewallInboundFirewallRulesRequest {
-	return ApplianceApiUpdateNetworkApplianceFirewallInboundFirewallRulesRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceFirewallInboundFirewallRules(ctx context.Context, networkId string) ApplianceAPIUpdateNetworkApplianceFirewallInboundFirewallRulesRequest {
+	return ApplianceAPIUpdateNetworkApplianceFirewallInboundFirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9680,7 +9680,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallInboundFirewallRules
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) UpdateNetworkApplianceFirewallInboundFirewallRulesExecute(r ApplianceApiUpdateNetworkApplianceFirewallInboundFirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceFirewallInboundFirewallRulesExecute(r ApplianceAPIUpdateNetworkApplianceFirewallInboundFirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9688,7 +9688,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallInboundFirewallRules
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceFirewallInboundFirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceFirewallInboundFirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9770,19 +9770,19 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallInboundFirewallRules
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceFirewallL3FirewallRulesRequest struct {
+type ApplianceAPIUpdateNetworkApplianceFirewallL3FirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	updateNetworkApplianceFirewallInboundFirewallRulesRequest *UpdateNetworkApplianceFirewallInboundFirewallRulesRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceFirewallL3FirewallRulesRequest) UpdateNetworkApplianceFirewallInboundFirewallRulesRequest(updateNetworkApplianceFirewallInboundFirewallRulesRequest UpdateNetworkApplianceFirewallInboundFirewallRulesRequest) ApplianceApiUpdateNetworkApplianceFirewallL3FirewallRulesRequest {
+func (r ApplianceAPIUpdateNetworkApplianceFirewallL3FirewallRulesRequest) UpdateNetworkApplianceFirewallInboundFirewallRulesRequest(updateNetworkApplianceFirewallInboundFirewallRulesRequest UpdateNetworkApplianceFirewallInboundFirewallRulesRequest) ApplianceAPIUpdateNetworkApplianceFirewallL3FirewallRulesRequest {
 	r.updateNetworkApplianceFirewallInboundFirewallRulesRequest = &updateNetworkApplianceFirewallInboundFirewallRulesRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceFirewallL3FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceFirewallL3FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceFirewallL3FirewallRulesExecute(r)
 }
 
@@ -9793,10 +9793,10 @@ Update the L3 firewall rules of an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiUpdateNetworkApplianceFirewallL3FirewallRulesRequest
+ @return ApplianceAPIUpdateNetworkApplianceFirewallL3FirewallRulesRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceFirewallL3FirewallRules(ctx context.Context, networkId string) ApplianceApiUpdateNetworkApplianceFirewallL3FirewallRulesRequest {
-	return ApplianceApiUpdateNetworkApplianceFirewallL3FirewallRulesRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceFirewallL3FirewallRules(ctx context.Context, networkId string) ApplianceAPIUpdateNetworkApplianceFirewallL3FirewallRulesRequest {
+	return ApplianceAPIUpdateNetworkApplianceFirewallL3FirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9805,7 +9805,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallL3FirewallRules(ctx 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) UpdateNetworkApplianceFirewallL3FirewallRulesExecute(r ApplianceApiUpdateNetworkApplianceFirewallL3FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceFirewallL3FirewallRulesExecute(r ApplianceAPIUpdateNetworkApplianceFirewallL3FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9813,7 +9813,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallL3FirewallRulesExecu
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceFirewallL3FirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceFirewallL3FirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9895,19 +9895,19 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallL3FirewallRulesExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceFirewallL7FirewallRulesRequest struct {
+type ApplianceAPIUpdateNetworkApplianceFirewallL7FirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	updateNetworkApplianceFirewallL7FirewallRulesRequest *UpdateNetworkApplianceFirewallL7FirewallRulesRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceFirewallL7FirewallRulesRequest) UpdateNetworkApplianceFirewallL7FirewallRulesRequest(updateNetworkApplianceFirewallL7FirewallRulesRequest UpdateNetworkApplianceFirewallL7FirewallRulesRequest) ApplianceApiUpdateNetworkApplianceFirewallL7FirewallRulesRequest {
+func (r ApplianceAPIUpdateNetworkApplianceFirewallL7FirewallRulesRequest) UpdateNetworkApplianceFirewallL7FirewallRulesRequest(updateNetworkApplianceFirewallL7FirewallRulesRequest UpdateNetworkApplianceFirewallL7FirewallRulesRequest) ApplianceAPIUpdateNetworkApplianceFirewallL7FirewallRulesRequest {
 	r.updateNetworkApplianceFirewallL7FirewallRulesRequest = &updateNetworkApplianceFirewallL7FirewallRulesRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceFirewallL7FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceFirewallL7FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceFirewallL7FirewallRulesExecute(r)
 }
 
@@ -9918,10 +9918,10 @@ Update the MX L7 firewall rules for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiUpdateNetworkApplianceFirewallL7FirewallRulesRequest
+ @return ApplianceAPIUpdateNetworkApplianceFirewallL7FirewallRulesRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceFirewallL7FirewallRules(ctx context.Context, networkId string) ApplianceApiUpdateNetworkApplianceFirewallL7FirewallRulesRequest {
-	return ApplianceApiUpdateNetworkApplianceFirewallL7FirewallRulesRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceFirewallL7FirewallRules(ctx context.Context, networkId string) ApplianceAPIUpdateNetworkApplianceFirewallL7FirewallRulesRequest {
+	return ApplianceAPIUpdateNetworkApplianceFirewallL7FirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9930,7 +9930,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallL7FirewallRules(ctx 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) UpdateNetworkApplianceFirewallL7FirewallRulesExecute(r ApplianceApiUpdateNetworkApplianceFirewallL7FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceFirewallL7FirewallRulesExecute(r ApplianceAPIUpdateNetworkApplianceFirewallL7FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9938,7 +9938,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallL7FirewallRulesExecu
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceFirewallL7FirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceFirewallL7FirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10020,19 +10020,19 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallL7FirewallRulesExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceFirewallOneToManyNatRulesRequest struct {
+type ApplianceAPIUpdateNetworkApplianceFirewallOneToManyNatRulesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	updateNetworkApplianceFirewallOneToManyNatRulesRequest *UpdateNetworkApplianceFirewallOneToManyNatRulesRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceFirewallOneToManyNatRulesRequest) UpdateNetworkApplianceFirewallOneToManyNatRulesRequest(updateNetworkApplianceFirewallOneToManyNatRulesRequest UpdateNetworkApplianceFirewallOneToManyNatRulesRequest) ApplianceApiUpdateNetworkApplianceFirewallOneToManyNatRulesRequest {
+func (r ApplianceAPIUpdateNetworkApplianceFirewallOneToManyNatRulesRequest) UpdateNetworkApplianceFirewallOneToManyNatRulesRequest(updateNetworkApplianceFirewallOneToManyNatRulesRequest UpdateNetworkApplianceFirewallOneToManyNatRulesRequest) ApplianceAPIUpdateNetworkApplianceFirewallOneToManyNatRulesRequest {
 	r.updateNetworkApplianceFirewallOneToManyNatRulesRequest = &updateNetworkApplianceFirewallOneToManyNatRulesRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceFirewallOneToManyNatRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceFirewallOneToManyNatRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceFirewallOneToManyNatRulesExecute(r)
 }
 
@@ -10043,10 +10043,10 @@ Set the 1:Many NAT mapping rules for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiUpdateNetworkApplianceFirewallOneToManyNatRulesRequest
+ @return ApplianceAPIUpdateNetworkApplianceFirewallOneToManyNatRulesRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceFirewallOneToManyNatRules(ctx context.Context, networkId string) ApplianceApiUpdateNetworkApplianceFirewallOneToManyNatRulesRequest {
-	return ApplianceApiUpdateNetworkApplianceFirewallOneToManyNatRulesRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceFirewallOneToManyNatRules(ctx context.Context, networkId string) ApplianceAPIUpdateNetworkApplianceFirewallOneToManyNatRulesRequest {
+	return ApplianceAPIUpdateNetworkApplianceFirewallOneToManyNatRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10055,7 +10055,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallOneToManyNatRules(ct
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) UpdateNetworkApplianceFirewallOneToManyNatRulesExecute(r ApplianceApiUpdateNetworkApplianceFirewallOneToManyNatRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceFirewallOneToManyNatRulesExecute(r ApplianceAPIUpdateNetworkApplianceFirewallOneToManyNatRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -10063,7 +10063,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallOneToManyNatRulesExe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceFirewallOneToManyNatRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceFirewallOneToManyNatRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10148,19 +10148,19 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallOneToManyNatRulesExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceFirewallOneToOneNatRulesRequest struct {
+type ApplianceAPIUpdateNetworkApplianceFirewallOneToOneNatRulesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	updateNetworkApplianceFirewallOneToOneNatRulesRequest *UpdateNetworkApplianceFirewallOneToOneNatRulesRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceFirewallOneToOneNatRulesRequest) UpdateNetworkApplianceFirewallOneToOneNatRulesRequest(updateNetworkApplianceFirewallOneToOneNatRulesRequest UpdateNetworkApplianceFirewallOneToOneNatRulesRequest) ApplianceApiUpdateNetworkApplianceFirewallOneToOneNatRulesRequest {
+func (r ApplianceAPIUpdateNetworkApplianceFirewallOneToOneNatRulesRequest) UpdateNetworkApplianceFirewallOneToOneNatRulesRequest(updateNetworkApplianceFirewallOneToOneNatRulesRequest UpdateNetworkApplianceFirewallOneToOneNatRulesRequest) ApplianceAPIUpdateNetworkApplianceFirewallOneToOneNatRulesRequest {
 	r.updateNetworkApplianceFirewallOneToOneNatRulesRequest = &updateNetworkApplianceFirewallOneToOneNatRulesRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceFirewallOneToOneNatRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceFirewallOneToOneNatRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceFirewallOneToOneNatRulesExecute(r)
 }
 
@@ -10171,10 +10171,10 @@ Set the 1:1 NAT mapping rules for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiUpdateNetworkApplianceFirewallOneToOneNatRulesRequest
+ @return ApplianceAPIUpdateNetworkApplianceFirewallOneToOneNatRulesRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceFirewallOneToOneNatRules(ctx context.Context, networkId string) ApplianceApiUpdateNetworkApplianceFirewallOneToOneNatRulesRequest {
-	return ApplianceApiUpdateNetworkApplianceFirewallOneToOneNatRulesRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceFirewallOneToOneNatRules(ctx context.Context, networkId string) ApplianceAPIUpdateNetworkApplianceFirewallOneToOneNatRulesRequest {
+	return ApplianceAPIUpdateNetworkApplianceFirewallOneToOneNatRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10183,7 +10183,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallOneToOneNatRules(ctx
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) UpdateNetworkApplianceFirewallOneToOneNatRulesExecute(r ApplianceApiUpdateNetworkApplianceFirewallOneToOneNatRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceFirewallOneToOneNatRulesExecute(r ApplianceAPIUpdateNetworkApplianceFirewallOneToOneNatRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -10191,7 +10191,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallOneToOneNatRulesExec
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceFirewallOneToOneNatRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceFirewallOneToOneNatRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10276,19 +10276,19 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallOneToOneNatRulesExec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceFirewallPortForwardingRulesRequest struct {
+type ApplianceAPIUpdateNetworkApplianceFirewallPortForwardingRulesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	updateNetworkApplianceFirewallPortForwardingRulesRequest *UpdateNetworkApplianceFirewallPortForwardingRulesRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceFirewallPortForwardingRulesRequest) UpdateNetworkApplianceFirewallPortForwardingRulesRequest(updateNetworkApplianceFirewallPortForwardingRulesRequest UpdateNetworkApplianceFirewallPortForwardingRulesRequest) ApplianceApiUpdateNetworkApplianceFirewallPortForwardingRulesRequest {
+func (r ApplianceAPIUpdateNetworkApplianceFirewallPortForwardingRulesRequest) UpdateNetworkApplianceFirewallPortForwardingRulesRequest(updateNetworkApplianceFirewallPortForwardingRulesRequest UpdateNetworkApplianceFirewallPortForwardingRulesRequest) ApplianceAPIUpdateNetworkApplianceFirewallPortForwardingRulesRequest {
 	r.updateNetworkApplianceFirewallPortForwardingRulesRequest = &updateNetworkApplianceFirewallPortForwardingRulesRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceFirewallPortForwardingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceFirewallPortForwardingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceFirewallPortForwardingRulesExecute(r)
 }
 
@@ -10299,10 +10299,10 @@ Update the port forwarding rules for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiUpdateNetworkApplianceFirewallPortForwardingRulesRequest
+ @return ApplianceAPIUpdateNetworkApplianceFirewallPortForwardingRulesRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceFirewallPortForwardingRules(ctx context.Context, networkId string) ApplianceApiUpdateNetworkApplianceFirewallPortForwardingRulesRequest {
-	return ApplianceApiUpdateNetworkApplianceFirewallPortForwardingRulesRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceFirewallPortForwardingRules(ctx context.Context, networkId string) ApplianceAPIUpdateNetworkApplianceFirewallPortForwardingRulesRequest {
+	return ApplianceAPIUpdateNetworkApplianceFirewallPortForwardingRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10311,7 +10311,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallPortForwardingRules(
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) UpdateNetworkApplianceFirewallPortForwardingRulesExecute(r ApplianceApiUpdateNetworkApplianceFirewallPortForwardingRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceFirewallPortForwardingRulesExecute(r ApplianceAPIUpdateNetworkApplianceFirewallPortForwardingRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -10319,7 +10319,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallPortForwardingRulesE
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceFirewallPortForwardingRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceFirewallPortForwardingRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10404,19 +10404,19 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallPortForwardingRulesE
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceFirewallSettingsRequest struct {
+type ApplianceAPIUpdateNetworkApplianceFirewallSettingsRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	updateNetworkApplianceFirewallSettingsRequest *UpdateNetworkApplianceFirewallSettingsRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceFirewallSettingsRequest) UpdateNetworkApplianceFirewallSettingsRequest(updateNetworkApplianceFirewallSettingsRequest UpdateNetworkApplianceFirewallSettingsRequest) ApplianceApiUpdateNetworkApplianceFirewallSettingsRequest {
+func (r ApplianceAPIUpdateNetworkApplianceFirewallSettingsRequest) UpdateNetworkApplianceFirewallSettingsRequest(updateNetworkApplianceFirewallSettingsRequest UpdateNetworkApplianceFirewallSettingsRequest) ApplianceAPIUpdateNetworkApplianceFirewallSettingsRequest {
 	r.updateNetworkApplianceFirewallSettingsRequest = &updateNetworkApplianceFirewallSettingsRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceFirewallSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceFirewallSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceFirewallSettingsExecute(r)
 }
 
@@ -10427,10 +10427,10 @@ Update the firewall settings for this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiUpdateNetworkApplianceFirewallSettingsRequest
+ @return ApplianceAPIUpdateNetworkApplianceFirewallSettingsRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceFirewallSettings(ctx context.Context, networkId string) ApplianceApiUpdateNetworkApplianceFirewallSettingsRequest {
-	return ApplianceApiUpdateNetworkApplianceFirewallSettingsRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceFirewallSettings(ctx context.Context, networkId string) ApplianceAPIUpdateNetworkApplianceFirewallSettingsRequest {
+	return ApplianceAPIUpdateNetworkApplianceFirewallSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10439,7 +10439,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallSettings(ctx context
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) UpdateNetworkApplianceFirewallSettingsExecute(r ApplianceApiUpdateNetworkApplianceFirewallSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceFirewallSettingsExecute(r ApplianceAPIUpdateNetworkApplianceFirewallSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -10447,7 +10447,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallSettingsExecute(r Ap
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceFirewallSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceFirewallSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10529,20 +10529,20 @@ func (a *ApplianceApiService) UpdateNetworkApplianceFirewallSettingsExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkAppliancePortRequest struct {
+type ApplianceAPIUpdateNetworkAppliancePortRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	portId string
 	updateNetworkAppliancePortRequest *UpdateNetworkAppliancePortRequest
 }
 
-func (r ApplianceApiUpdateNetworkAppliancePortRequest) UpdateNetworkAppliancePortRequest(updateNetworkAppliancePortRequest UpdateNetworkAppliancePortRequest) ApplianceApiUpdateNetworkAppliancePortRequest {
+func (r ApplianceAPIUpdateNetworkAppliancePortRequest) UpdateNetworkAppliancePortRequest(updateNetworkAppliancePortRequest UpdateNetworkAppliancePortRequest) ApplianceAPIUpdateNetworkAppliancePortRequest {
 	r.updateNetworkAppliancePortRequest = &updateNetworkAppliancePortRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkAppliancePortRequest) Execute() (*GetNetworkAppliancePorts200ResponseInner, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkAppliancePortRequest) Execute() (*GetNetworkAppliancePorts200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkAppliancePortExecute(r)
 }
 
@@ -10554,10 +10554,10 @@ Update the per-port VLAN settings for a single MX port.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param portId Port ID
- @return ApplianceApiUpdateNetworkAppliancePortRequest
+ @return ApplianceAPIUpdateNetworkAppliancePortRequest
 */
-func (a *ApplianceApiService) UpdateNetworkAppliancePort(ctx context.Context, networkId string, portId string) ApplianceApiUpdateNetworkAppliancePortRequest {
-	return ApplianceApiUpdateNetworkAppliancePortRequest{
+func (a *ApplianceAPIService) UpdateNetworkAppliancePort(ctx context.Context, networkId string, portId string) ApplianceAPIUpdateNetworkAppliancePortRequest {
+	return ApplianceAPIUpdateNetworkAppliancePortRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10567,7 +10567,7 @@ func (a *ApplianceApiService) UpdateNetworkAppliancePort(ctx context.Context, ne
 
 // Execute executes the request
 //  @return GetNetworkAppliancePorts200ResponseInner
-func (a *ApplianceApiService) UpdateNetworkAppliancePortExecute(r ApplianceApiUpdateNetworkAppliancePortRequest) (*GetNetworkAppliancePorts200ResponseInner, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkAppliancePortExecute(r ApplianceAPIUpdateNetworkAppliancePortRequest) (*GetNetworkAppliancePorts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -10575,7 +10575,7 @@ func (a *ApplianceApiService) UpdateNetworkAppliancePortExecute(r ApplianceApiUp
 		localVarReturnValue  *GetNetworkAppliancePorts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkAppliancePort")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkAppliancePort")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10658,20 +10658,20 @@ func (a *ApplianceApiService) UpdateNetworkAppliancePortExecute(r ApplianceApiUp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkAppliancePrefixesDelegatedStaticRequest struct {
+type ApplianceAPIUpdateNetworkAppliancePrefixesDelegatedStaticRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	staticDelegatedPrefixId string
 	updateNetworkAppliancePrefixesDelegatedStaticRequest *UpdateNetworkAppliancePrefixesDelegatedStaticRequest
 }
 
-func (r ApplianceApiUpdateNetworkAppliancePrefixesDelegatedStaticRequest) UpdateNetworkAppliancePrefixesDelegatedStaticRequest(updateNetworkAppliancePrefixesDelegatedStaticRequest UpdateNetworkAppliancePrefixesDelegatedStaticRequest) ApplianceApiUpdateNetworkAppliancePrefixesDelegatedStaticRequest {
+func (r ApplianceAPIUpdateNetworkAppliancePrefixesDelegatedStaticRequest) UpdateNetworkAppliancePrefixesDelegatedStaticRequest(updateNetworkAppliancePrefixesDelegatedStaticRequest UpdateNetworkAppliancePrefixesDelegatedStaticRequest) ApplianceAPIUpdateNetworkAppliancePrefixesDelegatedStaticRequest {
 	r.updateNetworkAppliancePrefixesDelegatedStaticRequest = &updateNetworkAppliancePrefixesDelegatedStaticRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkAppliancePrefixesDelegatedStaticRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkAppliancePrefixesDelegatedStaticRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkAppliancePrefixesDelegatedStaticExecute(r)
 }
 
@@ -10683,10 +10683,10 @@ Update a static delegated prefix from a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param staticDelegatedPrefixId Static delegated prefix ID
- @return ApplianceApiUpdateNetworkAppliancePrefixesDelegatedStaticRequest
+ @return ApplianceAPIUpdateNetworkAppliancePrefixesDelegatedStaticRequest
 */
-func (a *ApplianceApiService) UpdateNetworkAppliancePrefixesDelegatedStatic(ctx context.Context, networkId string, staticDelegatedPrefixId string) ApplianceApiUpdateNetworkAppliancePrefixesDelegatedStaticRequest {
-	return ApplianceApiUpdateNetworkAppliancePrefixesDelegatedStaticRequest{
+func (a *ApplianceAPIService) UpdateNetworkAppliancePrefixesDelegatedStatic(ctx context.Context, networkId string, staticDelegatedPrefixId string) ApplianceAPIUpdateNetworkAppliancePrefixesDelegatedStaticRequest {
+	return ApplianceAPIUpdateNetworkAppliancePrefixesDelegatedStaticRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10696,7 +10696,7 @@ func (a *ApplianceApiService) UpdateNetworkAppliancePrefixesDelegatedStatic(ctx 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) UpdateNetworkAppliancePrefixesDelegatedStaticExecute(r ApplianceApiUpdateNetworkAppliancePrefixesDelegatedStaticRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkAppliancePrefixesDelegatedStaticExecute(r ApplianceAPIUpdateNetworkAppliancePrefixesDelegatedStaticRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -10704,7 +10704,7 @@ func (a *ApplianceApiService) UpdateNetworkAppliancePrefixesDelegatedStaticExecu
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkAppliancePrefixesDelegatedStatic")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkAppliancePrefixesDelegatedStatic")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10787,20 +10787,20 @@ func (a *ApplianceApiService) UpdateNetworkAppliancePrefixesDelegatedStaticExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceRfProfileRequest struct {
+type ApplianceAPIUpdateNetworkApplianceRfProfileRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	rfProfileId string
 	updateNetworkApplianceRfProfileRequest *UpdateNetworkApplianceRfProfileRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceRfProfileRequest) UpdateNetworkApplianceRfProfileRequest(updateNetworkApplianceRfProfileRequest UpdateNetworkApplianceRfProfileRequest) ApplianceApiUpdateNetworkApplianceRfProfileRequest {
+func (r ApplianceAPIUpdateNetworkApplianceRfProfileRequest) UpdateNetworkApplianceRfProfileRequest(updateNetworkApplianceRfProfileRequest UpdateNetworkApplianceRfProfileRequest) ApplianceAPIUpdateNetworkApplianceRfProfileRequest {
 	r.updateNetworkApplianceRfProfileRequest = &updateNetworkApplianceRfProfileRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceRfProfileRequest) Execute() (*GetNetworkApplianceRfProfiles200ResponseAssignedInner, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceRfProfileRequest) Execute() (*GetNetworkApplianceRfProfiles200ResponseAssignedInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceRfProfileExecute(r)
 }
 
@@ -10812,10 +10812,10 @@ Updates specified RF profile for this network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param rfProfileId Rf profile ID
- @return ApplianceApiUpdateNetworkApplianceRfProfileRequest
+ @return ApplianceAPIUpdateNetworkApplianceRfProfileRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceRfProfile(ctx context.Context, networkId string, rfProfileId string) ApplianceApiUpdateNetworkApplianceRfProfileRequest {
-	return ApplianceApiUpdateNetworkApplianceRfProfileRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceRfProfile(ctx context.Context, networkId string, rfProfileId string) ApplianceAPIUpdateNetworkApplianceRfProfileRequest {
+	return ApplianceAPIUpdateNetworkApplianceRfProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10825,7 +10825,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceRfProfile(ctx context.Contex
 
 // Execute executes the request
 //  @return GetNetworkApplianceRfProfiles200ResponseAssignedInner
-func (a *ApplianceApiService) UpdateNetworkApplianceRfProfileExecute(r ApplianceApiUpdateNetworkApplianceRfProfileRequest) (*GetNetworkApplianceRfProfiles200ResponseAssignedInner, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceRfProfileExecute(r ApplianceAPIUpdateNetworkApplianceRfProfileRequest) (*GetNetworkApplianceRfProfiles200ResponseAssignedInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -10833,7 +10833,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceRfProfileExecute(r Appliance
 		localVarReturnValue  *GetNetworkApplianceRfProfiles200ResponseAssignedInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceRfProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceRfProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10916,19 +10916,19 @@ func (a *ApplianceApiService) UpdateNetworkApplianceRfProfileExecute(r Appliance
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceSecurityIntrusionRequest struct {
+type ApplianceAPIUpdateNetworkApplianceSecurityIntrusionRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	updateNetworkApplianceSecurityIntrusionRequest *UpdateNetworkApplianceSecurityIntrusionRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceSecurityIntrusionRequest) UpdateNetworkApplianceSecurityIntrusionRequest(updateNetworkApplianceSecurityIntrusionRequest UpdateNetworkApplianceSecurityIntrusionRequest) ApplianceApiUpdateNetworkApplianceSecurityIntrusionRequest {
+func (r ApplianceAPIUpdateNetworkApplianceSecurityIntrusionRequest) UpdateNetworkApplianceSecurityIntrusionRequest(updateNetworkApplianceSecurityIntrusionRequest UpdateNetworkApplianceSecurityIntrusionRequest) ApplianceAPIUpdateNetworkApplianceSecurityIntrusionRequest {
 	r.updateNetworkApplianceSecurityIntrusionRequest = &updateNetworkApplianceSecurityIntrusionRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceSecurityIntrusionRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceSecurityIntrusionRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceSecurityIntrusionExecute(r)
 }
 
@@ -10939,10 +10939,10 @@ Set the supported intrusion settings for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiUpdateNetworkApplianceSecurityIntrusionRequest
+ @return ApplianceAPIUpdateNetworkApplianceSecurityIntrusionRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceSecurityIntrusion(ctx context.Context, networkId string) ApplianceApiUpdateNetworkApplianceSecurityIntrusionRequest {
-	return ApplianceApiUpdateNetworkApplianceSecurityIntrusionRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceSecurityIntrusion(ctx context.Context, networkId string) ApplianceAPIUpdateNetworkApplianceSecurityIntrusionRequest {
+	return ApplianceAPIUpdateNetworkApplianceSecurityIntrusionRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10951,7 +10951,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceSecurityIntrusion(ctx contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) UpdateNetworkApplianceSecurityIntrusionExecute(r ApplianceApiUpdateNetworkApplianceSecurityIntrusionRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceSecurityIntrusionExecute(r ApplianceAPIUpdateNetworkApplianceSecurityIntrusionRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -10959,7 +10959,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceSecurityIntrusionExecute(r A
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceSecurityIntrusion")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceSecurityIntrusion")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11041,19 +11041,19 @@ func (a *ApplianceApiService) UpdateNetworkApplianceSecurityIntrusionExecute(r A
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceSecurityMalwareRequest struct {
+type ApplianceAPIUpdateNetworkApplianceSecurityMalwareRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	updateNetworkApplianceSecurityMalwareRequest *UpdateNetworkApplianceSecurityMalwareRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceSecurityMalwareRequest) UpdateNetworkApplianceSecurityMalwareRequest(updateNetworkApplianceSecurityMalwareRequest UpdateNetworkApplianceSecurityMalwareRequest) ApplianceApiUpdateNetworkApplianceSecurityMalwareRequest {
+func (r ApplianceAPIUpdateNetworkApplianceSecurityMalwareRequest) UpdateNetworkApplianceSecurityMalwareRequest(updateNetworkApplianceSecurityMalwareRequest UpdateNetworkApplianceSecurityMalwareRequest) ApplianceAPIUpdateNetworkApplianceSecurityMalwareRequest {
 	r.updateNetworkApplianceSecurityMalwareRequest = &updateNetworkApplianceSecurityMalwareRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceSecurityMalwareRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceSecurityMalwareRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceSecurityMalwareExecute(r)
 }
 
@@ -11064,10 +11064,10 @@ Set the supported malware settings for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiUpdateNetworkApplianceSecurityMalwareRequest
+ @return ApplianceAPIUpdateNetworkApplianceSecurityMalwareRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceSecurityMalware(ctx context.Context, networkId string) ApplianceApiUpdateNetworkApplianceSecurityMalwareRequest {
-	return ApplianceApiUpdateNetworkApplianceSecurityMalwareRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceSecurityMalware(ctx context.Context, networkId string) ApplianceAPIUpdateNetworkApplianceSecurityMalwareRequest {
+	return ApplianceAPIUpdateNetworkApplianceSecurityMalwareRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -11076,7 +11076,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceSecurityMalware(ctx context.
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) UpdateNetworkApplianceSecurityMalwareExecute(r ApplianceApiUpdateNetworkApplianceSecurityMalwareRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceSecurityMalwareExecute(r ApplianceAPIUpdateNetworkApplianceSecurityMalwareRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -11084,7 +11084,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceSecurityMalwareExecute(r App
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceSecurityMalware")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceSecurityMalware")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11169,19 +11169,19 @@ func (a *ApplianceApiService) UpdateNetworkApplianceSecurityMalwareExecute(r App
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceSettingsRequest struct {
+type ApplianceAPIUpdateNetworkApplianceSettingsRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	updateNetworkApplianceSettingsRequest *UpdateNetworkApplianceSettingsRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceSettingsRequest) UpdateNetworkApplianceSettingsRequest(updateNetworkApplianceSettingsRequest UpdateNetworkApplianceSettingsRequest) ApplianceApiUpdateNetworkApplianceSettingsRequest {
+func (r ApplianceAPIUpdateNetworkApplianceSettingsRequest) UpdateNetworkApplianceSettingsRequest(updateNetworkApplianceSettingsRequest UpdateNetworkApplianceSettingsRequest) ApplianceAPIUpdateNetworkApplianceSettingsRequest {
 	r.updateNetworkApplianceSettingsRequest = &updateNetworkApplianceSettingsRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceSettingsRequest) Execute() (*GetNetworkApplianceSettings200Response, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceSettingsRequest) Execute() (*GetNetworkApplianceSettings200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceSettingsExecute(r)
 }
 
@@ -11192,10 +11192,10 @@ Update the appliance settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiUpdateNetworkApplianceSettingsRequest
+ @return ApplianceAPIUpdateNetworkApplianceSettingsRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceSettings(ctx context.Context, networkId string) ApplianceApiUpdateNetworkApplianceSettingsRequest {
-	return ApplianceApiUpdateNetworkApplianceSettingsRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceSettings(ctx context.Context, networkId string) ApplianceAPIUpdateNetworkApplianceSettingsRequest {
+	return ApplianceAPIUpdateNetworkApplianceSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -11204,7 +11204,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceSettings(ctx context.Context
 
 // Execute executes the request
 //  @return GetNetworkApplianceSettings200Response
-func (a *ApplianceApiService) UpdateNetworkApplianceSettingsExecute(r ApplianceApiUpdateNetworkApplianceSettingsRequest) (*GetNetworkApplianceSettings200Response, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceSettingsExecute(r ApplianceAPIUpdateNetworkApplianceSettingsRequest) (*GetNetworkApplianceSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -11212,7 +11212,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceSettingsExecute(r ApplianceA
 		localVarReturnValue  *GetNetworkApplianceSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11294,19 +11294,19 @@ func (a *ApplianceApiService) UpdateNetworkApplianceSettingsExecute(r ApplianceA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceSingleLanRequest struct {
+type ApplianceAPIUpdateNetworkApplianceSingleLanRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	updateNetworkApplianceSingleLanRequest *UpdateNetworkApplianceSingleLanRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceSingleLanRequest) UpdateNetworkApplianceSingleLanRequest(updateNetworkApplianceSingleLanRequest UpdateNetworkApplianceSingleLanRequest) ApplianceApiUpdateNetworkApplianceSingleLanRequest {
+func (r ApplianceAPIUpdateNetworkApplianceSingleLanRequest) UpdateNetworkApplianceSingleLanRequest(updateNetworkApplianceSingleLanRequest UpdateNetworkApplianceSingleLanRequest) ApplianceAPIUpdateNetworkApplianceSingleLanRequest {
 	r.updateNetworkApplianceSingleLanRequest = &updateNetworkApplianceSingleLanRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceSingleLanRequest) Execute() (*GetNetworkApplianceSingleLan200Response, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceSingleLanRequest) Execute() (*GetNetworkApplianceSingleLan200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceSingleLanExecute(r)
 }
 
@@ -11317,10 +11317,10 @@ Update single LAN configuration
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiUpdateNetworkApplianceSingleLanRequest
+ @return ApplianceAPIUpdateNetworkApplianceSingleLanRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceSingleLan(ctx context.Context, networkId string) ApplianceApiUpdateNetworkApplianceSingleLanRequest {
-	return ApplianceApiUpdateNetworkApplianceSingleLanRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceSingleLan(ctx context.Context, networkId string) ApplianceAPIUpdateNetworkApplianceSingleLanRequest {
+	return ApplianceAPIUpdateNetworkApplianceSingleLanRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -11329,7 +11329,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceSingleLan(ctx context.Contex
 
 // Execute executes the request
 //  @return GetNetworkApplianceSingleLan200Response
-func (a *ApplianceApiService) UpdateNetworkApplianceSingleLanExecute(r ApplianceApiUpdateNetworkApplianceSingleLanRequest) (*GetNetworkApplianceSingleLan200Response, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceSingleLanExecute(r ApplianceAPIUpdateNetworkApplianceSingleLanRequest) (*GetNetworkApplianceSingleLan200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -11337,7 +11337,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceSingleLanExecute(r Appliance
 		localVarReturnValue  *GetNetworkApplianceSingleLan200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceSingleLan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceSingleLan")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11419,20 +11419,20 @@ func (a *ApplianceApiService) UpdateNetworkApplianceSingleLanExecute(r Appliance
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceSsidRequest struct {
+type ApplianceAPIUpdateNetworkApplianceSsidRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	number string
 	updateNetworkApplianceSsidRequest *UpdateNetworkApplianceSsidRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceSsidRequest) UpdateNetworkApplianceSsidRequest(updateNetworkApplianceSsidRequest UpdateNetworkApplianceSsidRequest) ApplianceApiUpdateNetworkApplianceSsidRequest {
+func (r ApplianceAPIUpdateNetworkApplianceSsidRequest) UpdateNetworkApplianceSsidRequest(updateNetworkApplianceSsidRequest UpdateNetworkApplianceSsidRequest) ApplianceAPIUpdateNetworkApplianceSsidRequest {
 	r.updateNetworkApplianceSsidRequest = &updateNetworkApplianceSsidRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceSsidRequest) Execute() (*GetNetworkApplianceSsids200ResponseInner, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceSsidRequest) Execute() (*GetNetworkApplianceSsids200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceSsidExecute(r)
 }
 
@@ -11444,10 +11444,10 @@ Update the attributes of an MX SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return ApplianceApiUpdateNetworkApplianceSsidRequest
+ @return ApplianceAPIUpdateNetworkApplianceSsidRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceSsid(ctx context.Context, networkId string, number string) ApplianceApiUpdateNetworkApplianceSsidRequest {
-	return ApplianceApiUpdateNetworkApplianceSsidRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceSsid(ctx context.Context, networkId string, number string) ApplianceAPIUpdateNetworkApplianceSsidRequest {
+	return ApplianceAPIUpdateNetworkApplianceSsidRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -11457,7 +11457,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceSsid(ctx context.Context, ne
 
 // Execute executes the request
 //  @return GetNetworkApplianceSsids200ResponseInner
-func (a *ApplianceApiService) UpdateNetworkApplianceSsidExecute(r ApplianceApiUpdateNetworkApplianceSsidRequest) (*GetNetworkApplianceSsids200ResponseInner, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceSsidExecute(r ApplianceAPIUpdateNetworkApplianceSsidRequest) (*GetNetworkApplianceSsids200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -11465,7 +11465,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceSsidExecute(r ApplianceApiUp
 		localVarReturnValue  *GetNetworkApplianceSsids200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceSsid")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceSsid")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11548,20 +11548,20 @@ func (a *ApplianceApiService) UpdateNetworkApplianceSsidExecute(r ApplianceApiUp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceStaticRouteRequest struct {
+type ApplianceAPIUpdateNetworkApplianceStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	staticRouteId string
 	updateNetworkApplianceStaticRouteRequest *UpdateNetworkApplianceStaticRouteRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceStaticRouteRequest) UpdateNetworkApplianceStaticRouteRequest(updateNetworkApplianceStaticRouteRequest UpdateNetworkApplianceStaticRouteRequest) ApplianceApiUpdateNetworkApplianceStaticRouteRequest {
+func (r ApplianceAPIUpdateNetworkApplianceStaticRouteRequest) UpdateNetworkApplianceStaticRouteRequest(updateNetworkApplianceStaticRouteRequest UpdateNetworkApplianceStaticRouteRequest) ApplianceAPIUpdateNetworkApplianceStaticRouteRequest {
 	r.updateNetworkApplianceStaticRouteRequest = &updateNetworkApplianceStaticRouteRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceStaticRouteExecute(r)
 }
 
@@ -11573,10 +11573,10 @@ Update a static route for an MX or teleworker network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param staticRouteId Static route ID
- @return ApplianceApiUpdateNetworkApplianceStaticRouteRequest
+ @return ApplianceAPIUpdateNetworkApplianceStaticRouteRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceStaticRoute(ctx context.Context, networkId string, staticRouteId string) ApplianceApiUpdateNetworkApplianceStaticRouteRequest {
-	return ApplianceApiUpdateNetworkApplianceStaticRouteRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceStaticRoute(ctx context.Context, networkId string, staticRouteId string) ApplianceAPIUpdateNetworkApplianceStaticRouteRequest {
+	return ApplianceAPIUpdateNetworkApplianceStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -11586,7 +11586,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceStaticRoute(ctx context.Cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) UpdateNetworkApplianceStaticRouteExecute(r ApplianceApiUpdateNetworkApplianceStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceStaticRouteExecute(r ApplianceAPIUpdateNetworkApplianceStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -11594,7 +11594,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceStaticRouteExecute(r Applian
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceStaticRoute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11677,19 +11677,19 @@ func (a *ApplianceApiService) UpdateNetworkApplianceStaticRouteExecute(r Applian
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceTrafficShapingRequest struct {
+type ApplianceAPIUpdateNetworkApplianceTrafficShapingRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	updateNetworkApplianceTrafficShapingRequest *UpdateNetworkApplianceTrafficShapingRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceTrafficShapingRequest) UpdateNetworkApplianceTrafficShapingRequest(updateNetworkApplianceTrafficShapingRequest UpdateNetworkApplianceTrafficShapingRequest) ApplianceApiUpdateNetworkApplianceTrafficShapingRequest {
+func (r ApplianceAPIUpdateNetworkApplianceTrafficShapingRequest) UpdateNetworkApplianceTrafficShapingRequest(updateNetworkApplianceTrafficShapingRequest UpdateNetworkApplianceTrafficShapingRequest) ApplianceAPIUpdateNetworkApplianceTrafficShapingRequest {
 	r.updateNetworkApplianceTrafficShapingRequest = &updateNetworkApplianceTrafficShapingRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceTrafficShapingRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceTrafficShapingRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceTrafficShapingExecute(r)
 }
 
@@ -11700,10 +11700,10 @@ Update the traffic shaping settings for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiUpdateNetworkApplianceTrafficShapingRequest
+ @return ApplianceAPIUpdateNetworkApplianceTrafficShapingRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceTrafficShaping(ctx context.Context, networkId string) ApplianceApiUpdateNetworkApplianceTrafficShapingRequest {
-	return ApplianceApiUpdateNetworkApplianceTrafficShapingRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceTrafficShaping(ctx context.Context, networkId string) ApplianceAPIUpdateNetworkApplianceTrafficShapingRequest {
+	return ApplianceAPIUpdateNetworkApplianceTrafficShapingRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -11712,7 +11712,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceTrafficShaping(ctx context.C
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) UpdateNetworkApplianceTrafficShapingExecute(r ApplianceApiUpdateNetworkApplianceTrafficShapingRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceTrafficShapingExecute(r ApplianceAPIUpdateNetworkApplianceTrafficShapingRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -11720,7 +11720,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceTrafficShapingExecute(r Appl
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceTrafficShaping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceTrafficShaping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11802,20 +11802,20 @@ func (a *ApplianceApiService) UpdateNetworkApplianceTrafficShapingExecute(r Appl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest struct {
+type ApplianceAPIUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	customPerformanceClassId string
 	updateNetworkApplianceTrafficShapingCustomPerformanceClassRequest *UpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) UpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest(updateNetworkApplianceTrafficShapingCustomPerformanceClassRequest UpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) ApplianceApiUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest {
+func (r ApplianceAPIUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) UpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest(updateNetworkApplianceTrafficShapingCustomPerformanceClassRequest UpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) ApplianceAPIUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest {
 	r.updateNetworkApplianceTrafficShapingCustomPerformanceClassRequest = &updateNetworkApplianceTrafficShapingCustomPerformanceClassRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceTrafficShapingCustomPerformanceClassExecute(r)
 }
 
@@ -11827,10 +11827,10 @@ Update a custom performance class for an MX network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param customPerformanceClassId Custom performance class ID
- @return ApplianceApiUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest
+ @return ApplianceAPIUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceTrafficShapingCustomPerformanceClass(ctx context.Context, networkId string, customPerformanceClassId string) ApplianceApiUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest {
-	return ApplianceApiUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceTrafficShapingCustomPerformanceClass(ctx context.Context, networkId string, customPerformanceClassId string) ApplianceAPIUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest {
+	return ApplianceAPIUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -11840,7 +11840,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceTrafficShapingCustomPerforma
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) UpdateNetworkApplianceTrafficShapingCustomPerformanceClassExecute(r ApplianceApiUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceTrafficShapingCustomPerformanceClassExecute(r ApplianceAPIUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -11848,7 +11848,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceTrafficShapingCustomPerforma
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceTrafficShapingCustomPerformanceClass")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceTrafficShapingCustomPerformanceClass")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11931,19 +11931,19 @@ func (a *ApplianceApiService) UpdateNetworkApplianceTrafficShapingCustomPerforma
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceTrafficShapingRulesRequest struct {
+type ApplianceAPIUpdateNetworkApplianceTrafficShapingRulesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	updateNetworkApplianceTrafficShapingRulesRequest *UpdateNetworkApplianceTrafficShapingRulesRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceTrafficShapingRulesRequest) UpdateNetworkApplianceTrafficShapingRulesRequest(updateNetworkApplianceTrafficShapingRulesRequest UpdateNetworkApplianceTrafficShapingRulesRequest) ApplianceApiUpdateNetworkApplianceTrafficShapingRulesRequest {
+func (r ApplianceAPIUpdateNetworkApplianceTrafficShapingRulesRequest) UpdateNetworkApplianceTrafficShapingRulesRequest(updateNetworkApplianceTrafficShapingRulesRequest UpdateNetworkApplianceTrafficShapingRulesRequest) ApplianceAPIUpdateNetworkApplianceTrafficShapingRulesRequest {
 	r.updateNetworkApplianceTrafficShapingRulesRequest = &updateNetworkApplianceTrafficShapingRulesRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceTrafficShapingRulesExecute(r)
 }
 
@@ -11954,10 +11954,10 @@ Update the traffic shaping settings rules for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiUpdateNetworkApplianceTrafficShapingRulesRequest
+ @return ApplianceAPIUpdateNetworkApplianceTrafficShapingRulesRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceTrafficShapingRules(ctx context.Context, networkId string) ApplianceApiUpdateNetworkApplianceTrafficShapingRulesRequest {
-	return ApplianceApiUpdateNetworkApplianceTrafficShapingRulesRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceTrafficShapingRules(ctx context.Context, networkId string) ApplianceAPIUpdateNetworkApplianceTrafficShapingRulesRequest {
+	return ApplianceAPIUpdateNetworkApplianceTrafficShapingRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -11966,7 +11966,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceTrafficShapingRules(ctx cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) UpdateNetworkApplianceTrafficShapingRulesExecute(r ApplianceApiUpdateNetworkApplianceTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceTrafficShapingRulesExecute(r ApplianceAPIUpdateNetworkApplianceTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -11974,7 +11974,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceTrafficShapingRulesExecute(r
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceTrafficShapingRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceTrafficShapingRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12056,19 +12056,19 @@ func (a *ApplianceApiService) UpdateNetworkApplianceTrafficShapingRulesExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest struct {
+type ApplianceAPIUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	updateNetworkApplianceTrafficShapingUplinkBandwidthRequest *UpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest) UpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest(updateNetworkApplianceTrafficShapingUplinkBandwidthRequest UpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest) ApplianceApiUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest {
+func (r ApplianceAPIUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest) UpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest(updateNetworkApplianceTrafficShapingUplinkBandwidthRequest UpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest) ApplianceAPIUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest {
 	r.updateNetworkApplianceTrafficShapingUplinkBandwidthRequest = &updateNetworkApplianceTrafficShapingUplinkBandwidthRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceTrafficShapingUplinkBandwidthExecute(r)
 }
 
@@ -12079,10 +12079,10 @@ Updates the uplink bandwidth settings for your MX network.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest
+ @return ApplianceAPIUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceTrafficShapingUplinkBandwidth(ctx context.Context, networkId string) ApplianceApiUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest {
-	return ApplianceApiUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceTrafficShapingUplinkBandwidth(ctx context.Context, networkId string) ApplianceAPIUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest {
+	return ApplianceAPIUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -12091,7 +12091,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceTrafficShapingUplinkBandwidt
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) UpdateNetworkApplianceTrafficShapingUplinkBandwidthExecute(r ApplianceApiUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceTrafficShapingUplinkBandwidthExecute(r ApplianceAPIUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -12099,7 +12099,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceTrafficShapingUplinkBandwidt
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceTrafficShapingUplinkBandwidth")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceTrafficShapingUplinkBandwidth")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12181,19 +12181,19 @@ func (a *ApplianceApiService) UpdateNetworkApplianceTrafficShapingUplinkBandwidt
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest struct {
+type ApplianceAPIUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	updateNetworkApplianceTrafficShapingUplinkSelectionRequest *UpdateNetworkApplianceTrafficShapingUplinkSelectionRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest) UpdateNetworkApplianceTrafficShapingUplinkSelectionRequest(updateNetworkApplianceTrafficShapingUplinkSelectionRequest UpdateNetworkApplianceTrafficShapingUplinkSelectionRequest) ApplianceApiUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest {
+func (r ApplianceAPIUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest) UpdateNetworkApplianceTrafficShapingUplinkSelectionRequest(updateNetworkApplianceTrafficShapingUplinkSelectionRequest UpdateNetworkApplianceTrafficShapingUplinkSelectionRequest) ApplianceAPIUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest {
 	r.updateNetworkApplianceTrafficShapingUplinkSelectionRequest = &updateNetworkApplianceTrafficShapingUplinkSelectionRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest) Execute() (*GetNetworkApplianceTrafficShapingUplinkSelection200Response, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest) Execute() (*GetNetworkApplianceTrafficShapingUplinkSelection200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceTrafficShapingUplinkSelectionExecute(r)
 }
 
@@ -12204,10 +12204,10 @@ Update uplink selection settings for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest
+ @return ApplianceAPIUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceTrafficShapingUplinkSelection(ctx context.Context, networkId string) ApplianceApiUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest {
-	return ApplianceApiUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceTrafficShapingUplinkSelection(ctx context.Context, networkId string) ApplianceAPIUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest {
+	return ApplianceAPIUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -12216,7 +12216,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceTrafficShapingUplinkSelectio
 
 // Execute executes the request
 //  @return GetNetworkApplianceTrafficShapingUplinkSelection200Response
-func (a *ApplianceApiService) UpdateNetworkApplianceTrafficShapingUplinkSelectionExecute(r ApplianceApiUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest) (*GetNetworkApplianceTrafficShapingUplinkSelection200Response, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceTrafficShapingUplinkSelectionExecute(r ApplianceAPIUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest) (*GetNetworkApplianceTrafficShapingUplinkSelection200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -12224,7 +12224,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceTrafficShapingUplinkSelectio
 		localVarReturnValue  *GetNetworkApplianceTrafficShapingUplinkSelection200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceTrafficShapingUplinkSelection")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceTrafficShapingUplinkSelection")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12306,20 +12306,20 @@ func (a *ApplianceApiService) UpdateNetworkApplianceTrafficShapingUplinkSelectio
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceVlanRequest struct {
+type ApplianceAPIUpdateNetworkApplianceVlanRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	vlanId string
 	updateNetworkApplianceVlanRequest *UpdateNetworkApplianceVlanRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceVlanRequest) UpdateNetworkApplianceVlanRequest(updateNetworkApplianceVlanRequest UpdateNetworkApplianceVlanRequest) ApplianceApiUpdateNetworkApplianceVlanRequest {
+func (r ApplianceAPIUpdateNetworkApplianceVlanRequest) UpdateNetworkApplianceVlanRequest(updateNetworkApplianceVlanRequest UpdateNetworkApplianceVlanRequest) ApplianceAPIUpdateNetworkApplianceVlanRequest {
 	r.updateNetworkApplianceVlanRequest = &updateNetworkApplianceVlanRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceVlanRequest) Execute() (*GetNetworkApplianceVlans200ResponseInner, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceVlanRequest) Execute() (*GetNetworkApplianceVlans200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceVlanExecute(r)
 }
 
@@ -12331,10 +12331,10 @@ Update a VLAN
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param vlanId Vlan ID
- @return ApplianceApiUpdateNetworkApplianceVlanRequest
+ @return ApplianceAPIUpdateNetworkApplianceVlanRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceVlan(ctx context.Context, networkId string, vlanId string) ApplianceApiUpdateNetworkApplianceVlanRequest {
-	return ApplianceApiUpdateNetworkApplianceVlanRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceVlan(ctx context.Context, networkId string, vlanId string) ApplianceAPIUpdateNetworkApplianceVlanRequest {
+	return ApplianceAPIUpdateNetworkApplianceVlanRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -12344,7 +12344,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceVlan(ctx context.Context, ne
 
 // Execute executes the request
 //  @return GetNetworkApplianceVlans200ResponseInner
-func (a *ApplianceApiService) UpdateNetworkApplianceVlanExecute(r ApplianceApiUpdateNetworkApplianceVlanRequest) (*GetNetworkApplianceVlans200ResponseInner, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceVlanExecute(r ApplianceAPIUpdateNetworkApplianceVlanRequest) (*GetNetworkApplianceVlans200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -12352,7 +12352,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceVlanExecute(r ApplianceApiUp
 		localVarReturnValue  *GetNetworkApplianceVlans200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceVlan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceVlan")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12435,19 +12435,19 @@ func (a *ApplianceApiService) UpdateNetworkApplianceVlanExecute(r ApplianceApiUp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceVlansSettingsRequest struct {
+type ApplianceAPIUpdateNetworkApplianceVlansSettingsRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	updateNetworkApplianceVlansSettingsRequest *UpdateNetworkApplianceVlansSettingsRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceVlansSettingsRequest) UpdateNetworkApplianceVlansSettingsRequest(updateNetworkApplianceVlansSettingsRequest UpdateNetworkApplianceVlansSettingsRequest) ApplianceApiUpdateNetworkApplianceVlansSettingsRequest {
+func (r ApplianceAPIUpdateNetworkApplianceVlansSettingsRequest) UpdateNetworkApplianceVlansSettingsRequest(updateNetworkApplianceVlansSettingsRequest UpdateNetworkApplianceVlansSettingsRequest) ApplianceAPIUpdateNetworkApplianceVlansSettingsRequest {
 	r.updateNetworkApplianceVlansSettingsRequest = &updateNetworkApplianceVlansSettingsRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceVlansSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceVlansSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceVlansSettingsExecute(r)
 }
 
@@ -12458,10 +12458,10 @@ Enable/Disable VLANs for the given network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiUpdateNetworkApplianceVlansSettingsRequest
+ @return ApplianceAPIUpdateNetworkApplianceVlansSettingsRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceVlansSettings(ctx context.Context, networkId string) ApplianceApiUpdateNetworkApplianceVlansSettingsRequest {
-	return ApplianceApiUpdateNetworkApplianceVlansSettingsRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceVlansSettings(ctx context.Context, networkId string) ApplianceAPIUpdateNetworkApplianceVlansSettingsRequest {
+	return ApplianceAPIUpdateNetworkApplianceVlansSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -12470,7 +12470,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceVlansSettings(ctx context.Co
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) UpdateNetworkApplianceVlansSettingsExecute(r ApplianceApiUpdateNetworkApplianceVlansSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceVlansSettingsExecute(r ApplianceAPIUpdateNetworkApplianceVlansSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -12478,7 +12478,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceVlansSettingsExecute(r Appli
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceVlansSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceVlansSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12560,19 +12560,19 @@ func (a *ApplianceApiService) UpdateNetworkApplianceVlansSettingsExecute(r Appli
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceVpnBgpRequest struct {
+type ApplianceAPIUpdateNetworkApplianceVpnBgpRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	updateNetworkApplianceVpnBgpRequest *UpdateNetworkApplianceVpnBgpRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceVpnBgpRequest) UpdateNetworkApplianceVpnBgpRequest(updateNetworkApplianceVpnBgpRequest UpdateNetworkApplianceVpnBgpRequest) ApplianceApiUpdateNetworkApplianceVpnBgpRequest {
+func (r ApplianceAPIUpdateNetworkApplianceVpnBgpRequest) UpdateNetworkApplianceVpnBgpRequest(updateNetworkApplianceVpnBgpRequest UpdateNetworkApplianceVpnBgpRequest) ApplianceAPIUpdateNetworkApplianceVpnBgpRequest {
 	r.updateNetworkApplianceVpnBgpRequest = &updateNetworkApplianceVpnBgpRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceVpnBgpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceVpnBgpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceVpnBgpExecute(r)
 }
 
@@ -12583,10 +12583,10 @@ Update a Hub BGP Configuration
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiUpdateNetworkApplianceVpnBgpRequest
+ @return ApplianceAPIUpdateNetworkApplianceVpnBgpRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceVpnBgp(ctx context.Context, networkId string) ApplianceApiUpdateNetworkApplianceVpnBgpRequest {
-	return ApplianceApiUpdateNetworkApplianceVpnBgpRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceVpnBgp(ctx context.Context, networkId string) ApplianceAPIUpdateNetworkApplianceVpnBgpRequest {
+	return ApplianceAPIUpdateNetworkApplianceVpnBgpRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -12595,7 +12595,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceVpnBgp(ctx context.Context, 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) UpdateNetworkApplianceVpnBgpExecute(r ApplianceApiUpdateNetworkApplianceVpnBgpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceVpnBgpExecute(r ApplianceAPIUpdateNetworkApplianceVpnBgpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -12603,7 +12603,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceVpnBgpExecute(r ApplianceApi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceVpnBgp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceVpnBgp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12688,19 +12688,19 @@ func (a *ApplianceApiService) UpdateNetworkApplianceVpnBgpExecute(r ApplianceApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceVpnSiteToSiteVpnRequest struct {
+type ApplianceAPIUpdateNetworkApplianceVpnSiteToSiteVpnRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	updateNetworkApplianceVpnSiteToSiteVpnRequest *UpdateNetworkApplianceVpnSiteToSiteVpnRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceVpnSiteToSiteVpnRequest) UpdateNetworkApplianceVpnSiteToSiteVpnRequest(updateNetworkApplianceVpnSiteToSiteVpnRequest UpdateNetworkApplianceVpnSiteToSiteVpnRequest) ApplianceApiUpdateNetworkApplianceVpnSiteToSiteVpnRequest {
+func (r ApplianceAPIUpdateNetworkApplianceVpnSiteToSiteVpnRequest) UpdateNetworkApplianceVpnSiteToSiteVpnRequest(updateNetworkApplianceVpnSiteToSiteVpnRequest UpdateNetworkApplianceVpnSiteToSiteVpnRequest) ApplianceAPIUpdateNetworkApplianceVpnSiteToSiteVpnRequest {
 	r.updateNetworkApplianceVpnSiteToSiteVpnRequest = &updateNetworkApplianceVpnSiteToSiteVpnRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceVpnSiteToSiteVpnRequest) Execute() (*GetNetworkApplianceVpnSiteToSiteVpn200Response, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceVpnSiteToSiteVpnRequest) Execute() (*GetNetworkApplianceVpnSiteToSiteVpn200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceVpnSiteToSiteVpnExecute(r)
 }
 
@@ -12711,10 +12711,10 @@ Update the site-to-site VPN settings of a network. Only valid for MX networks in
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiUpdateNetworkApplianceVpnSiteToSiteVpnRequest
+ @return ApplianceAPIUpdateNetworkApplianceVpnSiteToSiteVpnRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceVpnSiteToSiteVpn(ctx context.Context, networkId string) ApplianceApiUpdateNetworkApplianceVpnSiteToSiteVpnRequest {
-	return ApplianceApiUpdateNetworkApplianceVpnSiteToSiteVpnRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceVpnSiteToSiteVpn(ctx context.Context, networkId string) ApplianceAPIUpdateNetworkApplianceVpnSiteToSiteVpnRequest {
+	return ApplianceAPIUpdateNetworkApplianceVpnSiteToSiteVpnRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -12723,7 +12723,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceVpnSiteToSiteVpn(ctx context
 
 // Execute executes the request
 //  @return GetNetworkApplianceVpnSiteToSiteVpn200Response
-func (a *ApplianceApiService) UpdateNetworkApplianceVpnSiteToSiteVpnExecute(r ApplianceApiUpdateNetworkApplianceVpnSiteToSiteVpnRequest) (*GetNetworkApplianceVpnSiteToSiteVpn200Response, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceVpnSiteToSiteVpnExecute(r ApplianceAPIUpdateNetworkApplianceVpnSiteToSiteVpnRequest) (*GetNetworkApplianceVpnSiteToSiteVpn200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -12731,7 +12731,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceVpnSiteToSiteVpnExecute(r Ap
 		localVarReturnValue  *GetNetworkApplianceVpnSiteToSiteVpn200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceVpnSiteToSiteVpn")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceVpnSiteToSiteVpn")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12816,19 +12816,19 @@ func (a *ApplianceApiService) UpdateNetworkApplianceVpnSiteToSiteVpnExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateNetworkApplianceWarmSpareRequest struct {
+type ApplianceAPIUpdateNetworkApplianceWarmSpareRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	networkId string
 	updateNetworkApplianceWarmSpareRequest *UpdateNetworkApplianceWarmSpareRequest
 }
 
-func (r ApplianceApiUpdateNetworkApplianceWarmSpareRequest) UpdateNetworkApplianceWarmSpareRequest(updateNetworkApplianceWarmSpareRequest UpdateNetworkApplianceWarmSpareRequest) ApplianceApiUpdateNetworkApplianceWarmSpareRequest {
+func (r ApplianceAPIUpdateNetworkApplianceWarmSpareRequest) UpdateNetworkApplianceWarmSpareRequest(updateNetworkApplianceWarmSpareRequest UpdateNetworkApplianceWarmSpareRequest) ApplianceAPIUpdateNetworkApplianceWarmSpareRequest {
 	r.updateNetworkApplianceWarmSpareRequest = &updateNetworkApplianceWarmSpareRequest
 	return r
 }
 
-func (r ApplianceApiUpdateNetworkApplianceWarmSpareRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIUpdateNetworkApplianceWarmSpareRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceWarmSpareExecute(r)
 }
 
@@ -12839,10 +12839,10 @@ Update MX warm spare settings
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplianceApiUpdateNetworkApplianceWarmSpareRequest
+ @return ApplianceAPIUpdateNetworkApplianceWarmSpareRequest
 */
-func (a *ApplianceApiService) UpdateNetworkApplianceWarmSpare(ctx context.Context, networkId string) ApplianceApiUpdateNetworkApplianceWarmSpareRequest {
-	return ApplianceApiUpdateNetworkApplianceWarmSpareRequest{
+func (a *ApplianceAPIService) UpdateNetworkApplianceWarmSpare(ctx context.Context, networkId string) ApplianceAPIUpdateNetworkApplianceWarmSpareRequest {
+	return ApplianceAPIUpdateNetworkApplianceWarmSpareRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -12851,7 +12851,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceWarmSpare(ctx context.Contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) UpdateNetworkApplianceWarmSpareExecute(r ApplianceApiUpdateNetworkApplianceWarmSpareRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateNetworkApplianceWarmSpareExecute(r ApplianceAPIUpdateNetworkApplianceWarmSpareRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -12859,7 +12859,7 @@ func (a *ApplianceApiService) UpdateNetworkApplianceWarmSpareExecute(r Appliance
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateNetworkApplianceWarmSpare")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateNetworkApplianceWarmSpare")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12944,19 +12944,19 @@ func (a *ApplianceApiService) UpdateNetworkApplianceWarmSpareExecute(r Appliance
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateOrganizationApplianceSecurityIntrusionRequest struct {
+type ApplianceAPIUpdateOrganizationApplianceSecurityIntrusionRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	organizationId string
 	updateOrganizationApplianceSecurityIntrusionRequest *UpdateOrganizationApplianceSecurityIntrusionRequest
 }
 
-func (r ApplianceApiUpdateOrganizationApplianceSecurityIntrusionRequest) UpdateOrganizationApplianceSecurityIntrusionRequest(updateOrganizationApplianceSecurityIntrusionRequest UpdateOrganizationApplianceSecurityIntrusionRequest) ApplianceApiUpdateOrganizationApplianceSecurityIntrusionRequest {
+func (r ApplianceAPIUpdateOrganizationApplianceSecurityIntrusionRequest) UpdateOrganizationApplianceSecurityIntrusionRequest(updateOrganizationApplianceSecurityIntrusionRequest UpdateOrganizationApplianceSecurityIntrusionRequest) ApplianceAPIUpdateOrganizationApplianceSecurityIntrusionRequest {
 	r.updateOrganizationApplianceSecurityIntrusionRequest = &updateOrganizationApplianceSecurityIntrusionRequest
 	return r
 }
 
-func (r ApplianceApiUpdateOrganizationApplianceSecurityIntrusionRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplianceAPIUpdateOrganizationApplianceSecurityIntrusionRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationApplianceSecurityIntrusionExecute(r)
 }
 
@@ -12967,10 +12967,10 @@ Sets supported intrusion settings for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ApplianceApiUpdateOrganizationApplianceSecurityIntrusionRequest
+ @return ApplianceAPIUpdateOrganizationApplianceSecurityIntrusionRequest
 */
-func (a *ApplianceApiService) UpdateOrganizationApplianceSecurityIntrusion(ctx context.Context, organizationId string) ApplianceApiUpdateOrganizationApplianceSecurityIntrusionRequest {
-	return ApplianceApiUpdateOrganizationApplianceSecurityIntrusionRequest{
+func (a *ApplianceAPIService) UpdateOrganizationApplianceSecurityIntrusion(ctx context.Context, organizationId string) ApplianceAPIUpdateOrganizationApplianceSecurityIntrusionRequest {
+	return ApplianceAPIUpdateOrganizationApplianceSecurityIntrusionRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -12979,7 +12979,7 @@ func (a *ApplianceApiService) UpdateOrganizationApplianceSecurityIntrusion(ctx c
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplianceApiService) UpdateOrganizationApplianceSecurityIntrusionExecute(r ApplianceApiUpdateOrganizationApplianceSecurityIntrusionRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateOrganizationApplianceSecurityIntrusionExecute(r ApplianceAPIUpdateOrganizationApplianceSecurityIntrusionRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -12987,7 +12987,7 @@ func (a *ApplianceApiService) UpdateOrganizationApplianceSecurityIntrusionExecut
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateOrganizationApplianceSecurityIntrusion")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateOrganizationApplianceSecurityIntrusion")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13072,19 +13072,19 @@ func (a *ApplianceApiService) UpdateOrganizationApplianceSecurityIntrusionExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest struct {
+type ApplianceAPIUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	organizationId string
 	updateOrganizationApplianceVpnThirdPartyVPNPeersRequest *UpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest
 }
 
-func (r ApplianceApiUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest) UpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest(updateOrganizationApplianceVpnThirdPartyVPNPeersRequest UpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest) ApplianceApiUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest {
+func (r ApplianceAPIUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest) UpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest(updateOrganizationApplianceVpnThirdPartyVPNPeersRequest UpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest) ApplianceAPIUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest {
 	r.updateOrganizationApplianceVpnThirdPartyVPNPeersRequest = &updateOrganizationApplianceVpnThirdPartyVPNPeersRequest
 	return r
 }
 
-func (r ApplianceApiUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest) Execute() (*GetOrganizationApplianceVpnThirdPartyVPNPeers200Response, *http.Response, error) {
+func (r ApplianceAPIUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest) Execute() (*GetOrganizationApplianceVpnThirdPartyVPNPeers200Response, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationApplianceVpnThirdPartyVPNPeersExecute(r)
 }
 
@@ -13095,10 +13095,10 @@ Update the third party VPN peers for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ApplianceApiUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest
+ @return ApplianceAPIUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest
 */
-func (a *ApplianceApiService) UpdateOrganizationApplianceVpnThirdPartyVPNPeers(ctx context.Context, organizationId string) ApplianceApiUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest {
-	return ApplianceApiUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest{
+func (a *ApplianceAPIService) UpdateOrganizationApplianceVpnThirdPartyVPNPeers(ctx context.Context, organizationId string) ApplianceAPIUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest {
+	return ApplianceAPIUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -13107,7 +13107,7 @@ func (a *ApplianceApiService) UpdateOrganizationApplianceVpnThirdPartyVPNPeers(c
 
 // Execute executes the request
 //  @return GetOrganizationApplianceVpnThirdPartyVPNPeers200Response
-func (a *ApplianceApiService) UpdateOrganizationApplianceVpnThirdPartyVPNPeersExecute(r ApplianceApiUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest) (*GetOrganizationApplianceVpnThirdPartyVPNPeers200Response, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateOrganizationApplianceVpnThirdPartyVPNPeersExecute(r ApplianceAPIUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest) (*GetOrganizationApplianceVpnThirdPartyVPNPeers200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -13115,7 +13115,7 @@ func (a *ApplianceApiService) UpdateOrganizationApplianceVpnThirdPartyVPNPeersEx
 		localVarReturnValue  *GetOrganizationApplianceVpnThirdPartyVPNPeers200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateOrganizationApplianceVpnThirdPartyVPNPeers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateOrganizationApplianceVpnThirdPartyVPNPeers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13200,19 +13200,19 @@ func (a *ApplianceApiService) UpdateOrganizationApplianceVpnThirdPartyVPNPeersEx
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplianceApiUpdateOrganizationApplianceVpnVpnFirewallRulesRequest struct {
+type ApplianceAPIUpdateOrganizationApplianceVpnVpnFirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *ApplianceApiService
+	ApiService *ApplianceAPIService
 	organizationId string
 	updateOrganizationApplianceVpnVpnFirewallRulesRequest *UpdateOrganizationApplianceVpnVpnFirewallRulesRequest
 }
 
-func (r ApplianceApiUpdateOrganizationApplianceVpnVpnFirewallRulesRequest) UpdateOrganizationApplianceVpnVpnFirewallRulesRequest(updateOrganizationApplianceVpnVpnFirewallRulesRequest UpdateOrganizationApplianceVpnVpnFirewallRulesRequest) ApplianceApiUpdateOrganizationApplianceVpnVpnFirewallRulesRequest {
+func (r ApplianceAPIUpdateOrganizationApplianceVpnVpnFirewallRulesRequest) UpdateOrganizationApplianceVpnVpnFirewallRulesRequest(updateOrganizationApplianceVpnVpnFirewallRulesRequest UpdateOrganizationApplianceVpnVpnFirewallRulesRequest) ApplianceAPIUpdateOrganizationApplianceVpnVpnFirewallRulesRequest {
 	r.updateOrganizationApplianceVpnVpnFirewallRulesRequest = &updateOrganizationApplianceVpnVpnFirewallRulesRequest
 	return r
 }
 
-func (r ApplianceApiUpdateOrganizationApplianceVpnVpnFirewallRulesRequest) Execute() (*UpdateOrganizationApplianceVpnVpnFirewallRules200Response, *http.Response, error) {
+func (r ApplianceAPIUpdateOrganizationApplianceVpnVpnFirewallRulesRequest) Execute() (*UpdateOrganizationApplianceVpnVpnFirewallRules200Response, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationApplianceVpnVpnFirewallRulesExecute(r)
 }
 
@@ -13223,10 +13223,10 @@ Update the firewall rules of an organization's site-to-site VPN
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ApplianceApiUpdateOrganizationApplianceVpnVpnFirewallRulesRequest
+ @return ApplianceAPIUpdateOrganizationApplianceVpnVpnFirewallRulesRequest
 */
-func (a *ApplianceApiService) UpdateOrganizationApplianceVpnVpnFirewallRules(ctx context.Context, organizationId string) ApplianceApiUpdateOrganizationApplianceVpnVpnFirewallRulesRequest {
-	return ApplianceApiUpdateOrganizationApplianceVpnVpnFirewallRulesRequest{
+func (a *ApplianceAPIService) UpdateOrganizationApplianceVpnVpnFirewallRules(ctx context.Context, organizationId string) ApplianceAPIUpdateOrganizationApplianceVpnVpnFirewallRulesRequest {
+	return ApplianceAPIUpdateOrganizationApplianceVpnVpnFirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -13235,7 +13235,7 @@ func (a *ApplianceApiService) UpdateOrganizationApplianceVpnVpnFirewallRules(ctx
 
 // Execute executes the request
 //  @return UpdateOrganizationApplianceVpnVpnFirewallRules200Response
-func (a *ApplianceApiService) UpdateOrganizationApplianceVpnVpnFirewallRulesExecute(r ApplianceApiUpdateOrganizationApplianceVpnVpnFirewallRulesRequest) (*UpdateOrganizationApplianceVpnVpnFirewallRules200Response, *http.Response, error) {
+func (a *ApplianceAPIService) UpdateOrganizationApplianceVpnVpnFirewallRulesExecute(r ApplianceAPIUpdateOrganizationApplianceVpnVpnFirewallRulesRequest) (*UpdateOrganizationApplianceVpnVpnFirewallRules200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -13243,7 +13243,7 @@ func (a *ApplianceApiService) UpdateOrganizationApplianceVpnVpnFirewallRulesExec
 		localVarReturnValue  *UpdateOrganizationApplianceVpnVpnFirewallRules200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceApiService.UpdateOrganizationApplianceVpnVpnFirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplianceAPIService.UpdateOrganizationApplianceVpnVpnFirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

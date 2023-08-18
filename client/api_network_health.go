@@ -20,12 +20,12 @@ import (
 )
 
 
-// NetworkHealthApiService NetworkHealthApi service
-type NetworkHealthApiService service
+// NetworkHealthAPIService NetworkHealthAPI service
+type NetworkHealthAPIService service
 
-type NetworkHealthApiGetNetworkNetworkHealthChannelUtilizationRequest struct {
+type NetworkHealthAPIGetNetworkNetworkHealthChannelUtilizationRequest struct {
 	ctx context.Context
-	ApiService *NetworkHealthApiService
+	ApiService *NetworkHealthAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -37,48 +37,48 @@ type NetworkHealthApiGetNetworkNetworkHealthChannelUtilizationRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r NetworkHealthApiGetNetworkNetworkHealthChannelUtilizationRequest) T0(t0 string) NetworkHealthApiGetNetworkNetworkHealthChannelUtilizationRequest {
+func (r NetworkHealthAPIGetNetworkNetworkHealthChannelUtilizationRequest) T0(t0 string) NetworkHealthAPIGetNetworkNetworkHealthChannelUtilizationRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r NetworkHealthApiGetNetworkNetworkHealthChannelUtilizationRequest) T1(t1 string) NetworkHealthApiGetNetworkNetworkHealthChannelUtilizationRequest {
+func (r NetworkHealthAPIGetNetworkNetworkHealthChannelUtilizationRequest) T1(t1 string) NetworkHealthAPIGetNetworkNetworkHealthChannelUtilizationRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r NetworkHealthApiGetNetworkNetworkHealthChannelUtilizationRequest) Timespan(timespan float32) NetworkHealthApiGetNetworkNetworkHealthChannelUtilizationRequest {
+func (r NetworkHealthAPIGetNetworkNetworkHealthChannelUtilizationRequest) Timespan(timespan float32) NetworkHealthAPIGetNetworkNetworkHealthChannelUtilizationRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 600. The default is 600.
-func (r NetworkHealthApiGetNetworkNetworkHealthChannelUtilizationRequest) Resolution(resolution int32) NetworkHealthApiGetNetworkNetworkHealthChannelUtilizationRequest {
+func (r NetworkHealthAPIGetNetworkNetworkHealthChannelUtilizationRequest) Resolution(resolution int32) NetworkHealthAPIGetNetworkNetworkHealthChannelUtilizationRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 100. Default is 10.
-func (r NetworkHealthApiGetNetworkNetworkHealthChannelUtilizationRequest) PerPage(perPage int32) NetworkHealthApiGetNetworkNetworkHealthChannelUtilizationRequest {
+func (r NetworkHealthAPIGetNetworkNetworkHealthChannelUtilizationRequest) PerPage(perPage int32) NetworkHealthAPIGetNetworkNetworkHealthChannelUtilizationRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r NetworkHealthApiGetNetworkNetworkHealthChannelUtilizationRequest) StartingAfter(startingAfter string) NetworkHealthApiGetNetworkNetworkHealthChannelUtilizationRequest {
+func (r NetworkHealthAPIGetNetworkNetworkHealthChannelUtilizationRequest) StartingAfter(startingAfter string) NetworkHealthAPIGetNetworkNetworkHealthChannelUtilizationRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r NetworkHealthApiGetNetworkNetworkHealthChannelUtilizationRequest) EndingBefore(endingBefore string) NetworkHealthApiGetNetworkNetworkHealthChannelUtilizationRequest {
+func (r NetworkHealthAPIGetNetworkNetworkHealthChannelUtilizationRequest) EndingBefore(endingBefore string) NetworkHealthAPIGetNetworkNetworkHealthChannelUtilizationRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r NetworkHealthApiGetNetworkNetworkHealthChannelUtilizationRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r NetworkHealthAPIGetNetworkNetworkHealthChannelUtilizationRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkNetworkHealthChannelUtilizationExecute(r)
 }
 
@@ -89,10 +89,10 @@ Get the channel utilization over each radio for all APs in a network.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetworkHealthApiGetNetworkNetworkHealthChannelUtilizationRequest
+ @return NetworkHealthAPIGetNetworkNetworkHealthChannelUtilizationRequest
 */
-func (a *NetworkHealthApiService) GetNetworkNetworkHealthChannelUtilization(ctx context.Context, networkId string) NetworkHealthApiGetNetworkNetworkHealthChannelUtilizationRequest {
-	return NetworkHealthApiGetNetworkNetworkHealthChannelUtilizationRequest{
+func (a *NetworkHealthAPIService) GetNetworkNetworkHealthChannelUtilization(ctx context.Context, networkId string) NetworkHealthAPIGetNetworkNetworkHealthChannelUtilizationRequest {
+	return NetworkHealthAPIGetNetworkNetworkHealthChannelUtilizationRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -101,7 +101,7 @@ func (a *NetworkHealthApiService) GetNetworkNetworkHealthChannelUtilization(ctx 
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *NetworkHealthApiService) GetNetworkNetworkHealthChannelUtilizationExecute(r NetworkHealthApiGetNetworkNetworkHealthChannelUtilizationRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *NetworkHealthAPIService) GetNetworkNetworkHealthChannelUtilizationExecute(r NetworkHealthAPIGetNetworkNetworkHealthChannelUtilizationRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -109,7 +109,7 @@ func (a *NetworkHealthApiService) GetNetworkNetworkHealthChannelUtilizationExecu
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworkHealthApiService.GetNetworkNetworkHealthChannelUtilization")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworkHealthAPIService.GetNetworkNetworkHealthChannelUtilization")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

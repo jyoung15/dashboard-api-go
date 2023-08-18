@@ -21,12 +21,12 @@ import (
 )
 
 
-// PowerModulesApiService PowerModulesApi service
-type PowerModulesApiService service
+// PowerModulesAPIService PowerModulesAPI service
+type PowerModulesAPIService service
 
-type PowerModulesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest struct {
+type PowerModulesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest struct {
 	ctx context.Context
-	ApiService *PowerModulesApiService
+	ApiService *PowerModulesAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -39,54 +39,54 @@ type PowerModulesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest st
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r PowerModulesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) PerPage(perPage int32) PowerModulesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r PowerModulesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) PerPage(perPage int32) PowerModulesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r PowerModulesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) StartingAfter(startingAfter string) PowerModulesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r PowerModulesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) StartingAfter(startingAfter string) PowerModulesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r PowerModulesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) EndingBefore(endingBefore string) PowerModulesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r PowerModulesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) EndingBefore(endingBefore string) PowerModulesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter device availabilities by network ID. This filter uses multiple exact matches.
-func (r PowerModulesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) NetworkIds(networkIds []string) PowerModulesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r PowerModulesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) NetworkIds(networkIds []string) PowerModulesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter device availabilities by device product types. This filter uses multiple exact matches.
-func (r PowerModulesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) ProductTypes(productTypes []string) PowerModulesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r PowerModulesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) ProductTypes(productTypes []string) PowerModulesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter device availabilities by device serial numbers. This filter uses multiple exact matches.
-func (r PowerModulesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Serials(serials []string) PowerModulesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r PowerModulesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Serials(serials []string) PowerModulesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.serials = &serials
 	return r
 }
 
 // An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below). This filter uses multiple exact matches.
-func (r PowerModulesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Tags(tags []string) PowerModulesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r PowerModulesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Tags(tags []string) PowerModulesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.tags = &tags
 	return r
 }
 
 // An optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return devices which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r PowerModulesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) TagsFilterType(tagsFilterType string) PowerModulesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r PowerModulesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) TagsFilterType(tagsFilterType string) PowerModulesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
-func (r PowerModulesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Execute() ([]GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner, *http.Response, error) {
+func (r PowerModulesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Execute() ([]GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesPowerModulesStatusesByDeviceExecute(r)
 }
 
@@ -97,10 +97,10 @@ List the power status information for devices in an organization. The data retur
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return PowerModulesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest
+ @return PowerModulesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest
 */
-func (a *PowerModulesApiService) GetOrganizationDevicesPowerModulesStatusesByDevice(ctx context.Context, organizationId string) PowerModulesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
-	return PowerModulesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest{
+func (a *PowerModulesAPIService) GetOrganizationDevicesPowerModulesStatusesByDevice(ctx context.Context, organizationId string) PowerModulesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+	return PowerModulesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -109,7 +109,7 @@ func (a *PowerModulesApiService) GetOrganizationDevicesPowerModulesStatusesByDev
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner
-func (a *PowerModulesApiService) GetOrganizationDevicesPowerModulesStatusesByDeviceExecute(r PowerModulesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) ([]GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner, *http.Response, error) {
+func (a *PowerModulesAPIService) GetOrganizationDevicesPowerModulesStatusesByDeviceExecute(r PowerModulesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) ([]GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -117,7 +117,7 @@ func (a *PowerModulesApiService) GetOrganizationDevicesPowerModulesStatusesByDev
 		localVarReturnValue  []GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PowerModulesApiService.GetOrganizationDevicesPowerModulesStatusesByDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PowerModulesAPIService.GetOrganizationDevicesPowerModulesStatusesByDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

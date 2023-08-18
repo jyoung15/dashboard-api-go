@@ -21,22 +21,22 @@ import (
 )
 
 
-// InventoryApiService InventoryApi service
-type InventoryApiService service
+// InventoryAPIService InventoryAPI service
+type InventoryAPIService service
 
-type InventoryApiClaimIntoOrganizationInventoryRequest struct {
+type InventoryAPIClaimIntoOrganizationInventoryRequest struct {
 	ctx context.Context
-	ApiService *InventoryApiService
+	ApiService *InventoryAPIService
 	organizationId string
 	claimIntoOrganizationInventoryRequest *ClaimIntoOrganizationInventoryRequest
 }
 
-func (r InventoryApiClaimIntoOrganizationInventoryRequest) ClaimIntoOrganizationInventoryRequest(claimIntoOrganizationInventoryRequest ClaimIntoOrganizationInventoryRequest) InventoryApiClaimIntoOrganizationInventoryRequest {
+func (r InventoryAPIClaimIntoOrganizationInventoryRequest) ClaimIntoOrganizationInventoryRequest(claimIntoOrganizationInventoryRequest ClaimIntoOrganizationInventoryRequest) InventoryAPIClaimIntoOrganizationInventoryRequest {
 	r.claimIntoOrganizationInventoryRequest = &claimIntoOrganizationInventoryRequest
 	return r
 }
 
-func (r InventoryApiClaimIntoOrganizationInventoryRequest) Execute() (*ClaimIntoOrganization200Response, *http.Response, error) {
+func (r InventoryAPIClaimIntoOrganizationInventoryRequest) Execute() (*ClaimIntoOrganization200Response, *http.Response, error) {
 	return r.ApiService.ClaimIntoOrganizationInventoryExecute(r)
 }
 
@@ -47,10 +47,10 @@ Claim a list of devices, licenses, and/or orders into an organization inventory.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return InventoryApiClaimIntoOrganizationInventoryRequest
+ @return InventoryAPIClaimIntoOrganizationInventoryRequest
 */
-func (a *InventoryApiService) ClaimIntoOrganizationInventory(ctx context.Context, organizationId string) InventoryApiClaimIntoOrganizationInventoryRequest {
-	return InventoryApiClaimIntoOrganizationInventoryRequest{
+func (a *InventoryAPIService) ClaimIntoOrganizationInventory(ctx context.Context, organizationId string) InventoryAPIClaimIntoOrganizationInventoryRequest {
+	return InventoryAPIClaimIntoOrganizationInventoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -59,7 +59,7 @@ func (a *InventoryApiService) ClaimIntoOrganizationInventory(ctx context.Context
 
 // Execute executes the request
 //  @return ClaimIntoOrganization200Response
-func (a *InventoryApiService) ClaimIntoOrganizationInventoryExecute(r InventoryApiClaimIntoOrganizationInventoryRequest) (*ClaimIntoOrganization200Response, *http.Response, error) {
+func (a *InventoryAPIService) ClaimIntoOrganizationInventoryExecute(r InventoryAPIClaimIntoOrganizationInventoryRequest) (*ClaimIntoOrganization200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -67,7 +67,7 @@ func (a *InventoryApiService) ClaimIntoOrganizationInventoryExecute(r InventoryA
 		localVarReturnValue  *ClaimIntoOrganization200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryApiService.ClaimIntoOrganizationInventory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryAPIService.ClaimIntoOrganizationInventory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -149,19 +149,19 @@ func (a *InventoryApiService) ClaimIntoOrganizationInventoryExecute(r InventoryA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type InventoryApiCreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest struct {
+type InventoryAPICreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest struct {
 	ctx context.Context
-	ApiService *InventoryApiService
+	ApiService *InventoryAPIService
 	organizationId string
 	createOrganizationInventoryOnboardingCloudMonitoringExportEventRequest *CreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest
 }
 
-func (r InventoryApiCreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest) CreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest(createOrganizationInventoryOnboardingCloudMonitoringExportEventRequest CreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest) InventoryApiCreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest {
+func (r InventoryAPICreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest) CreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest(createOrganizationInventoryOnboardingCloudMonitoringExportEventRequest CreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest) InventoryAPICreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest {
 	r.createOrganizationInventoryOnboardingCloudMonitoringExportEventRequest = &createOrganizationInventoryOnboardingCloudMonitoringExportEventRequest
 	return r
 }
 
-func (r InventoryApiCreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r InventoryAPICreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateOrganizationInventoryOnboardingCloudMonitoringExportEventExecute(r)
 }
 
@@ -172,10 +172,10 @@ Imports event logs related to the onboarding app into elastisearch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return InventoryApiCreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest
+ @return InventoryAPICreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest
 */
-func (a *InventoryApiService) CreateOrganizationInventoryOnboardingCloudMonitoringExportEvent(ctx context.Context, organizationId string) InventoryApiCreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest {
-	return InventoryApiCreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest{
+func (a *InventoryAPIService) CreateOrganizationInventoryOnboardingCloudMonitoringExportEvent(ctx context.Context, organizationId string) InventoryAPICreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest {
+	return InventoryAPICreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -184,7 +184,7 @@ func (a *InventoryApiService) CreateOrganizationInventoryOnboardingCloudMonitori
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *InventoryApiService) CreateOrganizationInventoryOnboardingCloudMonitoringExportEventExecute(r InventoryApiCreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest) (map[string]interface{}, *http.Response, error) {
+func (a *InventoryAPIService) CreateOrganizationInventoryOnboardingCloudMonitoringExportEventExecute(r InventoryAPICreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -192,7 +192,7 @@ func (a *InventoryApiService) CreateOrganizationInventoryOnboardingCloudMonitori
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryApiService.CreateOrganizationInventoryOnboardingCloudMonitoringExportEvent")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryAPIService.CreateOrganizationInventoryOnboardingCloudMonitoringExportEvent")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -277,19 +277,19 @@ func (a *InventoryApiService) CreateOrganizationInventoryOnboardingCloudMonitori
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type InventoryApiCreateOrganizationInventoryOnboardingCloudMonitoringImportRequest struct {
+type InventoryAPICreateOrganizationInventoryOnboardingCloudMonitoringImportRequest struct {
 	ctx context.Context
-	ApiService *InventoryApiService
+	ApiService *InventoryAPIService
 	organizationId string
 	createOrganizationInventoryOnboardingCloudMonitoringImportRequest *CreateOrganizationInventoryOnboardingCloudMonitoringImportRequest
 }
 
-func (r InventoryApiCreateOrganizationInventoryOnboardingCloudMonitoringImportRequest) CreateOrganizationInventoryOnboardingCloudMonitoringImportRequest(createOrganizationInventoryOnboardingCloudMonitoringImportRequest CreateOrganizationInventoryOnboardingCloudMonitoringImportRequest) InventoryApiCreateOrganizationInventoryOnboardingCloudMonitoringImportRequest {
+func (r InventoryAPICreateOrganizationInventoryOnboardingCloudMonitoringImportRequest) CreateOrganizationInventoryOnboardingCloudMonitoringImportRequest(createOrganizationInventoryOnboardingCloudMonitoringImportRequest CreateOrganizationInventoryOnboardingCloudMonitoringImportRequest) InventoryAPICreateOrganizationInventoryOnboardingCloudMonitoringImportRequest {
 	r.createOrganizationInventoryOnboardingCloudMonitoringImportRequest = &createOrganizationInventoryOnboardingCloudMonitoringImportRequest
 	return r
 }
 
-func (r InventoryApiCreateOrganizationInventoryOnboardingCloudMonitoringImportRequest) Execute() ([]CreateOrganizationInventoryOnboardingCloudMonitoringImport201ResponseInner, *http.Response, error) {
+func (r InventoryAPICreateOrganizationInventoryOnboardingCloudMonitoringImportRequest) Execute() ([]CreateOrganizationInventoryOnboardingCloudMonitoringImport201ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateOrganizationInventoryOnboardingCloudMonitoringImportExecute(r)
 }
 
@@ -300,10 +300,10 @@ Commits the import operation to complete the onboarding of a device into Dashboa
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return InventoryApiCreateOrganizationInventoryOnboardingCloudMonitoringImportRequest
+ @return InventoryAPICreateOrganizationInventoryOnboardingCloudMonitoringImportRequest
 */
-func (a *InventoryApiService) CreateOrganizationInventoryOnboardingCloudMonitoringImport(ctx context.Context, organizationId string) InventoryApiCreateOrganizationInventoryOnboardingCloudMonitoringImportRequest {
-	return InventoryApiCreateOrganizationInventoryOnboardingCloudMonitoringImportRequest{
+func (a *InventoryAPIService) CreateOrganizationInventoryOnboardingCloudMonitoringImport(ctx context.Context, organizationId string) InventoryAPICreateOrganizationInventoryOnboardingCloudMonitoringImportRequest {
+	return InventoryAPICreateOrganizationInventoryOnboardingCloudMonitoringImportRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -312,7 +312,7 @@ func (a *InventoryApiService) CreateOrganizationInventoryOnboardingCloudMonitori
 
 // Execute executes the request
 //  @return []CreateOrganizationInventoryOnboardingCloudMonitoringImport201ResponseInner
-func (a *InventoryApiService) CreateOrganizationInventoryOnboardingCloudMonitoringImportExecute(r InventoryApiCreateOrganizationInventoryOnboardingCloudMonitoringImportRequest) ([]CreateOrganizationInventoryOnboardingCloudMonitoringImport201ResponseInner, *http.Response, error) {
+func (a *InventoryAPIService) CreateOrganizationInventoryOnboardingCloudMonitoringImportExecute(r InventoryAPICreateOrganizationInventoryOnboardingCloudMonitoringImportRequest) ([]CreateOrganizationInventoryOnboardingCloudMonitoringImport201ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -320,7 +320,7 @@ func (a *InventoryApiService) CreateOrganizationInventoryOnboardingCloudMonitori
 		localVarReturnValue  []CreateOrganizationInventoryOnboardingCloudMonitoringImport201ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryApiService.CreateOrganizationInventoryOnboardingCloudMonitoringImport")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryAPIService.CreateOrganizationInventoryOnboardingCloudMonitoringImport")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -405,19 +405,19 @@ func (a *InventoryApiService) CreateOrganizationInventoryOnboardingCloudMonitori
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type InventoryApiCreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest struct {
+type InventoryAPICreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest struct {
 	ctx context.Context
-	ApiService *InventoryApiService
+	ApiService *InventoryAPIService
 	organizationId string
 	createOrganizationInventoryOnboardingCloudMonitoringPrepareRequest *CreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest
 }
 
-func (r InventoryApiCreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest) CreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest(createOrganizationInventoryOnboardingCloudMonitoringPrepareRequest CreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest) InventoryApiCreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest {
+func (r InventoryAPICreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest) CreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest(createOrganizationInventoryOnboardingCloudMonitoringPrepareRequest CreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest) InventoryAPICreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest {
 	r.createOrganizationInventoryOnboardingCloudMonitoringPrepareRequest = &createOrganizationInventoryOnboardingCloudMonitoringPrepareRequest
 	return r
 }
 
-func (r InventoryApiCreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest) Execute() ([]CreateOrganizationInventoryOnboardingCloudMonitoringPrepare201ResponseInner, *http.Response, error) {
+func (r InventoryAPICreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest) Execute() ([]CreateOrganizationInventoryOnboardingCloudMonitoringPrepare201ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateOrganizationInventoryOnboardingCloudMonitoringPrepareExecute(r)
 }
 
@@ -428,10 +428,10 @@ Initiates or updates an import session. An import ID will be generated and used 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return InventoryApiCreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest
+ @return InventoryAPICreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest
 */
-func (a *InventoryApiService) CreateOrganizationInventoryOnboardingCloudMonitoringPrepare(ctx context.Context, organizationId string) InventoryApiCreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest {
-	return InventoryApiCreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest{
+func (a *InventoryAPIService) CreateOrganizationInventoryOnboardingCloudMonitoringPrepare(ctx context.Context, organizationId string) InventoryAPICreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest {
+	return InventoryAPICreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -440,7 +440,7 @@ func (a *InventoryApiService) CreateOrganizationInventoryOnboardingCloudMonitori
 
 // Execute executes the request
 //  @return []CreateOrganizationInventoryOnboardingCloudMonitoringPrepare201ResponseInner
-func (a *InventoryApiService) CreateOrganizationInventoryOnboardingCloudMonitoringPrepareExecute(r InventoryApiCreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest) ([]CreateOrganizationInventoryOnboardingCloudMonitoringPrepare201ResponseInner, *http.Response, error) {
+func (a *InventoryAPIService) CreateOrganizationInventoryOnboardingCloudMonitoringPrepareExecute(r InventoryAPICreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest) ([]CreateOrganizationInventoryOnboardingCloudMonitoringPrepare201ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -448,7 +448,7 @@ func (a *InventoryApiService) CreateOrganizationInventoryOnboardingCloudMonitori
 		localVarReturnValue  []CreateOrganizationInventoryOnboardingCloudMonitoringPrepare201ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryApiService.CreateOrganizationInventoryOnboardingCloudMonitoringPrepare")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryAPIService.CreateOrganizationInventoryOnboardingCloudMonitoringPrepare")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -533,14 +533,14 @@ func (a *InventoryApiService) CreateOrganizationInventoryOnboardingCloudMonitori
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type InventoryApiGetOrganizationInventoryDeviceRequest struct {
+type InventoryAPIGetOrganizationInventoryDeviceRequest struct {
 	ctx context.Context
-	ApiService *InventoryApiService
+	ApiService *InventoryAPIService
 	organizationId string
 	serial string
 }
 
-func (r InventoryApiGetOrganizationInventoryDeviceRequest) Execute() (*GetOrganizationInventoryDevices200ResponseInner, *http.Response, error) {
+func (r InventoryAPIGetOrganizationInventoryDeviceRequest) Execute() (*GetOrganizationInventoryDevices200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationInventoryDeviceExecute(r)
 }
 
@@ -552,10 +552,10 @@ Return a single device from the inventory of an organization
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param serial Serial
- @return InventoryApiGetOrganizationInventoryDeviceRequest
+ @return InventoryAPIGetOrganizationInventoryDeviceRequest
 */
-func (a *InventoryApiService) GetOrganizationInventoryDevice(ctx context.Context, organizationId string, serial string) InventoryApiGetOrganizationInventoryDeviceRequest {
-	return InventoryApiGetOrganizationInventoryDeviceRequest{
+func (a *InventoryAPIService) GetOrganizationInventoryDevice(ctx context.Context, organizationId string, serial string) InventoryAPIGetOrganizationInventoryDeviceRequest {
+	return InventoryAPIGetOrganizationInventoryDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -565,7 +565,7 @@ func (a *InventoryApiService) GetOrganizationInventoryDevice(ctx context.Context
 
 // Execute executes the request
 //  @return GetOrganizationInventoryDevices200ResponseInner
-func (a *InventoryApiService) GetOrganizationInventoryDeviceExecute(r InventoryApiGetOrganizationInventoryDeviceRequest) (*GetOrganizationInventoryDevices200ResponseInner, *http.Response, error) {
+func (a *InventoryAPIService) GetOrganizationInventoryDeviceExecute(r InventoryAPIGetOrganizationInventoryDeviceRequest) (*GetOrganizationInventoryDevices200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -573,7 +573,7 @@ func (a *InventoryApiService) GetOrganizationInventoryDeviceExecute(r InventoryA
 		localVarReturnValue  *GetOrganizationInventoryDevices200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryApiService.GetOrganizationInventoryDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryAPIService.GetOrganizationInventoryDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -654,9 +654,9 @@ func (a *InventoryApiService) GetOrganizationInventoryDeviceExecute(r InventoryA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type InventoryApiGetOrganizationInventoryDevicesRequest struct {
+type InventoryAPIGetOrganizationInventoryDevicesRequest struct {
 	ctx context.Context
-	ApiService *InventoryApiService
+	ApiService *InventoryAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -674,84 +674,84 @@ type InventoryApiGetOrganizationInventoryDevicesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r InventoryApiGetOrganizationInventoryDevicesRequest) PerPage(perPage int32) InventoryApiGetOrganizationInventoryDevicesRequest {
+func (r InventoryAPIGetOrganizationInventoryDevicesRequest) PerPage(perPage int32) InventoryAPIGetOrganizationInventoryDevicesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r InventoryApiGetOrganizationInventoryDevicesRequest) StartingAfter(startingAfter string) InventoryApiGetOrganizationInventoryDevicesRequest {
+func (r InventoryAPIGetOrganizationInventoryDevicesRequest) StartingAfter(startingAfter string) InventoryAPIGetOrganizationInventoryDevicesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r InventoryApiGetOrganizationInventoryDevicesRequest) EndingBefore(endingBefore string) InventoryApiGetOrganizationInventoryDevicesRequest {
+func (r InventoryAPIGetOrganizationInventoryDevicesRequest) EndingBefore(endingBefore string) InventoryAPIGetOrganizationInventoryDevicesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Filter results by used or unused inventory. Accepted values are &#39;used&#39; or &#39;unused&#39;.
-func (r InventoryApiGetOrganizationInventoryDevicesRequest) UsedState(usedState string) InventoryApiGetOrganizationInventoryDevicesRequest {
+func (r InventoryAPIGetOrganizationInventoryDevicesRequest) UsedState(usedState string) InventoryAPIGetOrganizationInventoryDevicesRequest {
 	r.usedState = &usedState
 	return r
 }
 
 // Search for devices in inventory based on serial number, mac address, or model.
-func (r InventoryApiGetOrganizationInventoryDevicesRequest) Search(search string) InventoryApiGetOrganizationInventoryDevicesRequest {
+func (r InventoryAPIGetOrganizationInventoryDevicesRequest) Search(search string) InventoryAPIGetOrganizationInventoryDevicesRequest {
 	r.search = &search
 	return r
 }
 
 // Search for devices in inventory based on mac addresses.
-func (r InventoryApiGetOrganizationInventoryDevicesRequest) Macs(macs []string) InventoryApiGetOrganizationInventoryDevicesRequest {
+func (r InventoryAPIGetOrganizationInventoryDevicesRequest) Macs(macs []string) InventoryAPIGetOrganizationInventoryDevicesRequest {
 	r.macs = &macs
 	return r
 }
 
 // Search for devices in inventory based on network ids.
-func (r InventoryApiGetOrganizationInventoryDevicesRequest) NetworkIds(networkIds []string) InventoryApiGetOrganizationInventoryDevicesRequest {
+func (r InventoryAPIGetOrganizationInventoryDevicesRequest) NetworkIds(networkIds []string) InventoryAPIGetOrganizationInventoryDevicesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Search for devices in inventory based on serials.
-func (r InventoryApiGetOrganizationInventoryDevicesRequest) Serials(serials []string) InventoryApiGetOrganizationInventoryDevicesRequest {
+func (r InventoryAPIGetOrganizationInventoryDevicesRequest) Serials(serials []string) InventoryAPIGetOrganizationInventoryDevicesRequest {
 	r.serials = &serials
 	return r
 }
 
 // Search for devices in inventory based on model.
-func (r InventoryApiGetOrganizationInventoryDevicesRequest) Models(models []string) InventoryApiGetOrganizationInventoryDevicesRequest {
+func (r InventoryAPIGetOrganizationInventoryDevicesRequest) Models(models []string) InventoryAPIGetOrganizationInventoryDevicesRequest {
 	r.models = &models
 	return r
 }
 
 // Search for devices in inventory based on order numbers.
-func (r InventoryApiGetOrganizationInventoryDevicesRequest) OrderNumbers(orderNumbers []string) InventoryApiGetOrganizationInventoryDevicesRequest {
+func (r InventoryAPIGetOrganizationInventoryDevicesRequest) OrderNumbers(orderNumbers []string) InventoryAPIGetOrganizationInventoryDevicesRequest {
 	r.orderNumbers = &orderNumbers
 	return r
 }
 
 // Filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below).
-func (r InventoryApiGetOrganizationInventoryDevicesRequest) Tags(tags []string) InventoryApiGetOrganizationInventoryDevicesRequest {
+func (r InventoryAPIGetOrganizationInventoryDevicesRequest) Tags(tags []string) InventoryAPIGetOrganizationInventoryDevicesRequest {
 	r.tags = &tags
 	return r
 }
 
 // To use with &#39;tags&#39; parameter, to filter devices which contain ANY or ALL given tags. Accepted values are &#39;withAnyTags&#39; or &#39;withAllTags&#39;, default is &#39;withAnyTags&#39;.
-func (r InventoryApiGetOrganizationInventoryDevicesRequest) TagsFilterType(tagsFilterType string) InventoryApiGetOrganizationInventoryDevicesRequest {
+func (r InventoryAPIGetOrganizationInventoryDevicesRequest) TagsFilterType(tagsFilterType string) InventoryAPIGetOrganizationInventoryDevicesRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
 // Filter devices by product type. Accepted values are appliance, camera, cellularGateway, cloudGateway, sensor, switch, systemsManager, and wireless.
-func (r InventoryApiGetOrganizationInventoryDevicesRequest) ProductTypes(productTypes []string) InventoryApiGetOrganizationInventoryDevicesRequest {
+func (r InventoryAPIGetOrganizationInventoryDevicesRequest) ProductTypes(productTypes []string) InventoryAPIGetOrganizationInventoryDevicesRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
-func (r InventoryApiGetOrganizationInventoryDevicesRequest) Execute() ([]GetOrganizationInventoryDevices200ResponseInner, *http.Response, error) {
+func (r InventoryAPIGetOrganizationInventoryDevicesRequest) Execute() ([]GetOrganizationInventoryDevices200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationInventoryDevicesExecute(r)
 }
 
@@ -762,10 +762,10 @@ Return the device inventory for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return InventoryApiGetOrganizationInventoryDevicesRequest
+ @return InventoryAPIGetOrganizationInventoryDevicesRequest
 */
-func (a *InventoryApiService) GetOrganizationInventoryDevices(ctx context.Context, organizationId string) InventoryApiGetOrganizationInventoryDevicesRequest {
-	return InventoryApiGetOrganizationInventoryDevicesRequest{
+func (a *InventoryAPIService) GetOrganizationInventoryDevices(ctx context.Context, organizationId string) InventoryAPIGetOrganizationInventoryDevicesRequest {
+	return InventoryAPIGetOrganizationInventoryDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -774,7 +774,7 @@ func (a *InventoryApiService) GetOrganizationInventoryDevices(ctx context.Contex
 
 // Execute executes the request
 //  @return []GetOrganizationInventoryDevices200ResponseInner
-func (a *InventoryApiService) GetOrganizationInventoryDevicesExecute(r InventoryApiGetOrganizationInventoryDevicesRequest) ([]GetOrganizationInventoryDevices200ResponseInner, *http.Response, error) {
+func (a *InventoryAPIService) GetOrganizationInventoryDevicesExecute(r InventoryAPIGetOrganizationInventoryDevicesRequest) ([]GetOrganizationInventoryDevices200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -782,7 +782,7 @@ func (a *InventoryApiService) GetOrganizationInventoryDevicesExecute(r Inventory
 		localVarReturnValue  []GetOrganizationInventoryDevices200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryApiService.GetOrganizationInventoryDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryAPIService.GetOrganizationInventoryDevices")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -957,20 +957,20 @@ func (a *InventoryApiService) GetOrganizationInventoryDevicesExecute(r Inventory
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type InventoryApiGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest struct {
+type InventoryAPIGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest struct {
 	ctx context.Context
-	ApiService *InventoryApiService
+	ApiService *InventoryAPIService
 	organizationId string
 	importIds *[]string
 }
 
 // import ids from an imports
-func (r InventoryApiGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest) ImportIds(importIds []string) InventoryApiGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest {
+func (r InventoryAPIGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest) ImportIds(importIds []string) InventoryAPIGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest {
 	r.importIds = &importIds
 	return r
 }
 
-func (r InventoryApiGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest) Execute() ([]GetOrganizationInventoryOnboardingCloudMonitoringImports200ResponseInner, *http.Response, error) {
+func (r InventoryAPIGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest) Execute() ([]GetOrganizationInventoryOnboardingCloudMonitoringImports200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationInventoryOnboardingCloudMonitoringImportsExecute(r)
 }
 
@@ -981,10 +981,10 @@ Check the status of a committed Import operation
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return InventoryApiGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest
+ @return InventoryAPIGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest
 */
-func (a *InventoryApiService) GetOrganizationInventoryOnboardingCloudMonitoringImports(ctx context.Context, organizationId string) InventoryApiGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest {
-	return InventoryApiGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest{
+func (a *InventoryAPIService) GetOrganizationInventoryOnboardingCloudMonitoringImports(ctx context.Context, organizationId string) InventoryAPIGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest {
+	return InventoryAPIGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -993,7 +993,7 @@ func (a *InventoryApiService) GetOrganizationInventoryOnboardingCloudMonitoringI
 
 // Execute executes the request
 //  @return []GetOrganizationInventoryOnboardingCloudMonitoringImports200ResponseInner
-func (a *InventoryApiService) GetOrganizationInventoryOnboardingCloudMonitoringImportsExecute(r InventoryApiGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest) ([]GetOrganizationInventoryOnboardingCloudMonitoringImports200ResponseInner, *http.Response, error) {
+func (a *InventoryAPIService) GetOrganizationInventoryOnboardingCloudMonitoringImportsExecute(r InventoryAPIGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest) ([]GetOrganizationInventoryOnboardingCloudMonitoringImports200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1001,7 +1001,7 @@ func (a *InventoryApiService) GetOrganizationInventoryOnboardingCloudMonitoringI
 		localVarReturnValue  []GetOrganizationInventoryOnboardingCloudMonitoringImports200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryApiService.GetOrganizationInventoryOnboardingCloudMonitoringImports")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryAPIService.GetOrganizationInventoryOnboardingCloudMonitoringImports")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1095,9 +1095,9 @@ func (a *InventoryApiService) GetOrganizationInventoryOnboardingCloudMonitoringI
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type InventoryApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest struct {
+type InventoryAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest struct {
 	ctx context.Context
-	ApiService *InventoryApiService
+	ApiService *InventoryAPIService
 	organizationId string
 	deviceType *string
 	perPage *int32
@@ -1106,30 +1106,30 @@ type InventoryApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksReques
 }
 
 // Device Type switch or wireless controller
-func (r InventoryApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) DeviceType(deviceType string) InventoryApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
+func (r InventoryAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) DeviceType(deviceType string) InventoryAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
 	r.deviceType = &deviceType
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 100000. Default is 1000.
-func (r InventoryApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) PerPage(perPage int32) InventoryApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
+func (r InventoryAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) PerPage(perPage int32) InventoryAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r InventoryApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) StartingAfter(startingAfter string) InventoryApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
+func (r InventoryAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) StartingAfter(startingAfter string) InventoryAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r InventoryApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) EndingBefore(endingBefore string) InventoryApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
+func (r InventoryAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) EndingBefore(endingBefore string) InventoryAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r InventoryApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) Execute() ([]GetNetwork200Response, *http.Response, error) {
+func (r InventoryAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) Execute() ([]GetNetwork200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationInventoryOnboardingCloudMonitoringNetworksExecute(r)
 }
 
@@ -1140,10 +1140,10 @@ Returns list of networks eligible for adding cloud monitored device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return InventoryApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest
+ @return InventoryAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest
 */
-func (a *InventoryApiService) GetOrganizationInventoryOnboardingCloudMonitoringNetworks(ctx context.Context, organizationId string) InventoryApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
-	return InventoryApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest{
+func (a *InventoryAPIService) GetOrganizationInventoryOnboardingCloudMonitoringNetworks(ctx context.Context, organizationId string) InventoryAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
+	return InventoryAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1152,7 +1152,7 @@ func (a *InventoryApiService) GetOrganizationInventoryOnboardingCloudMonitoringN
 
 // Execute executes the request
 //  @return []GetNetwork200Response
-func (a *InventoryApiService) GetOrganizationInventoryOnboardingCloudMonitoringNetworksExecute(r InventoryApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) ([]GetNetwork200Response, *http.Response, error) {
+func (a *InventoryAPIService) GetOrganizationInventoryOnboardingCloudMonitoringNetworksExecute(r InventoryAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) ([]GetNetwork200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1160,7 +1160,7 @@ func (a *InventoryApiService) GetOrganizationInventoryOnboardingCloudMonitoringN
 		localVarReturnValue  []GetNetwork200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryApiService.GetOrganizationInventoryOnboardingCloudMonitoringNetworks")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryAPIService.GetOrganizationInventoryOnboardingCloudMonitoringNetworks")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1253,19 +1253,19 @@ func (a *InventoryApiService) GetOrganizationInventoryOnboardingCloudMonitoringN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type InventoryApiReleaseFromOrganizationInventoryRequest struct {
+type InventoryAPIReleaseFromOrganizationInventoryRequest struct {
 	ctx context.Context
-	ApiService *InventoryApiService
+	ApiService *InventoryAPIService
 	organizationId string
 	releaseFromOrganizationInventoryRequest *ReleaseFromOrganizationInventoryRequest
 }
 
-func (r InventoryApiReleaseFromOrganizationInventoryRequest) ReleaseFromOrganizationInventoryRequest(releaseFromOrganizationInventoryRequest ReleaseFromOrganizationInventoryRequest) InventoryApiReleaseFromOrganizationInventoryRequest {
+func (r InventoryAPIReleaseFromOrganizationInventoryRequest) ReleaseFromOrganizationInventoryRequest(releaseFromOrganizationInventoryRequest ReleaseFromOrganizationInventoryRequest) InventoryAPIReleaseFromOrganizationInventoryRequest {
 	r.releaseFromOrganizationInventoryRequest = &releaseFromOrganizationInventoryRequest
 	return r
 }
 
-func (r InventoryApiReleaseFromOrganizationInventoryRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r InventoryAPIReleaseFromOrganizationInventoryRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.ReleaseFromOrganizationInventoryExecute(r)
 }
 
@@ -1276,10 +1276,10 @@ Release a list of claimed devices from an organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return InventoryApiReleaseFromOrganizationInventoryRequest
+ @return InventoryAPIReleaseFromOrganizationInventoryRequest
 */
-func (a *InventoryApiService) ReleaseFromOrganizationInventory(ctx context.Context, organizationId string) InventoryApiReleaseFromOrganizationInventoryRequest {
-	return InventoryApiReleaseFromOrganizationInventoryRequest{
+func (a *InventoryAPIService) ReleaseFromOrganizationInventory(ctx context.Context, organizationId string) InventoryAPIReleaseFromOrganizationInventoryRequest {
+	return InventoryAPIReleaseFromOrganizationInventoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1288,7 +1288,7 @@ func (a *InventoryApiService) ReleaseFromOrganizationInventory(ctx context.Conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *InventoryApiService) ReleaseFromOrganizationInventoryExecute(r InventoryApiReleaseFromOrganizationInventoryRequest) (map[string]interface{}, *http.Response, error) {
+func (a *InventoryAPIService) ReleaseFromOrganizationInventoryExecute(r InventoryAPIReleaseFromOrganizationInventoryRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1296,7 +1296,7 @@ func (a *InventoryApiService) ReleaseFromOrganizationInventoryExecute(r Inventor
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryApiService.ReleaseFromOrganizationInventory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryAPIService.ReleaseFromOrganizationInventory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

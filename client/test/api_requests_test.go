@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing RequestsApiService
+Testing RequestsAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_RequestsApiService(t *testing.T) {
+func Test_client_RequestsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test RequestsApiService CreateNetworkPiiRequest", func(t *testing.T) {
+	t.Run("Test RequestsAPIService CreateNetworkPiiRequest", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.RequestsApi.CreateNetworkPiiRequest(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.RequestsAPI.CreateNetworkPiiRequest(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,28 +36,28 @@ func Test_client_RequestsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RequestsApiService DeleteNetworkPiiRequest", func(t *testing.T) {
+	t.Run("Test RequestsAPIService DeleteNetworkPiiRequest", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var requestId string
 
-		httpRes, err := apiClient.RequestsApi.DeleteNetworkPiiRequest(context.Background(), networkId, requestId).Execute()
+		httpRes, err := apiClient.RequestsAPI.DeleteNetworkPiiRequest(context.Background(), networkId, requestId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RequestsApiService GetNetworkPiiRequest", func(t *testing.T) {
+	t.Run("Test RequestsAPIService GetNetworkPiiRequest", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var requestId string
 
-		resp, httpRes, err := apiClient.RequestsApi.GetNetworkPiiRequest(context.Background(), networkId, requestId).Execute()
+		resp, httpRes, err := apiClient.RequestsAPI.GetNetworkPiiRequest(context.Background(), networkId, requestId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -65,13 +65,13 @@ func Test_client_RequestsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RequestsApiService GetNetworkPiiRequests", func(t *testing.T) {
+	t.Run("Test RequestsAPIService GetNetworkPiiRequests", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.RequestsApi.GetNetworkPiiRequests(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.RequestsAPI.GetNetworkPiiRequests(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

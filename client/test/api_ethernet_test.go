@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing EthernetApiService
+Testing EthernetAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_EthernetApiService(t *testing.T) {
+func Test_client_EthernetAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test EthernetApiService GetOrganizationWirelessDevicesEthernetStatuses", func(t *testing.T) {
+	t.Run("Test EthernetAPIService GetOrganizationWirelessDevicesEthernetStatuses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.EthernetApi.GetOrganizationWirelessDevicesEthernetStatuses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.EthernetAPI.GetOrganizationWirelessDevicesEthernetStatuses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

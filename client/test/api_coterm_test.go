@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing CotermApiService
+Testing CotermAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_CotermApiService(t *testing.T) {
+func Test_client_CotermAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test CotermApiService GetOrganizationLicensingCotermLicenses", func(t *testing.T) {
+	t.Run("Test CotermAPIService GetOrganizationLicensingCotermLicenses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.CotermApi.GetOrganizationLicensingCotermLicenses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.CotermAPI.GetOrganizationLicensingCotermLicenses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_CotermApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test CotermApiService MoveOrganizationLicensingCotermLicenses", func(t *testing.T) {
+	t.Run("Test CotermAPIService MoveOrganizationLicensingCotermLicenses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.CotermApi.MoveOrganizationLicensingCotermLicenses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.CotermAPI.MoveOrganizationLicensingCotermLicenses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

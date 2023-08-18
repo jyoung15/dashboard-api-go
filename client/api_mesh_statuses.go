@@ -20,12 +20,12 @@ import (
 )
 
 
-// MeshStatusesApiService MeshStatusesApi service
-type MeshStatusesApiService service
+// MeshStatusesAPIService MeshStatusesAPI service
+type MeshStatusesAPIService service
 
-type MeshStatusesApiGetNetworkWirelessMeshStatusesRequest struct {
+type MeshStatusesAPIGetNetworkWirelessMeshStatusesRequest struct {
 	ctx context.Context
-	ApiService *MeshStatusesApiService
+	ApiService *MeshStatusesAPIService
 	networkId string
 	perPage *int32
 	startingAfter *string
@@ -33,24 +33,24 @@ type MeshStatusesApiGetNetworkWirelessMeshStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 500. Default is 50.
-func (r MeshStatusesApiGetNetworkWirelessMeshStatusesRequest) PerPage(perPage int32) MeshStatusesApiGetNetworkWirelessMeshStatusesRequest {
+func (r MeshStatusesAPIGetNetworkWirelessMeshStatusesRequest) PerPage(perPage int32) MeshStatusesAPIGetNetworkWirelessMeshStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MeshStatusesApiGetNetworkWirelessMeshStatusesRequest) StartingAfter(startingAfter string) MeshStatusesApiGetNetworkWirelessMeshStatusesRequest {
+func (r MeshStatusesAPIGetNetworkWirelessMeshStatusesRequest) StartingAfter(startingAfter string) MeshStatusesAPIGetNetworkWirelessMeshStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MeshStatusesApiGetNetworkWirelessMeshStatusesRequest) EndingBefore(endingBefore string) MeshStatusesApiGetNetworkWirelessMeshStatusesRequest {
+func (r MeshStatusesAPIGetNetworkWirelessMeshStatusesRequest) EndingBefore(endingBefore string) MeshStatusesAPIGetNetworkWirelessMeshStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r MeshStatusesApiGetNetworkWirelessMeshStatusesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r MeshStatusesAPIGetNetworkWirelessMeshStatusesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessMeshStatusesExecute(r)
 }
 
@@ -61,10 +61,10 @@ List wireless mesh statuses for repeaters
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MeshStatusesApiGetNetworkWirelessMeshStatusesRequest
+ @return MeshStatusesAPIGetNetworkWirelessMeshStatusesRequest
 */
-func (a *MeshStatusesApiService) GetNetworkWirelessMeshStatuses(ctx context.Context, networkId string) MeshStatusesApiGetNetworkWirelessMeshStatusesRequest {
-	return MeshStatusesApiGetNetworkWirelessMeshStatusesRequest{
+func (a *MeshStatusesAPIService) GetNetworkWirelessMeshStatuses(ctx context.Context, networkId string) MeshStatusesAPIGetNetworkWirelessMeshStatusesRequest {
+	return MeshStatusesAPIGetNetworkWirelessMeshStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -73,7 +73,7 @@ func (a *MeshStatusesApiService) GetNetworkWirelessMeshStatuses(ctx context.Cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *MeshStatusesApiService) GetNetworkWirelessMeshStatusesExecute(r MeshStatusesApiGetNetworkWirelessMeshStatusesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *MeshStatusesAPIService) GetNetworkWirelessMeshStatusesExecute(r MeshStatusesAPIGetNetworkWirelessMeshStatusesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -81,7 +81,7 @@ func (a *MeshStatusesApiService) GetNetworkWirelessMeshStatusesExecute(r MeshSta
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeshStatusesApiService.GetNetworkWirelessMeshStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeshStatusesAPIService.GetNetworkWirelessMeshStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

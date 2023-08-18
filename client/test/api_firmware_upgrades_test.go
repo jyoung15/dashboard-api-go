@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing FirmwareUpgradesApiService
+Testing FirmwareUpgradesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_FirmwareUpgradesApiService(t *testing.T) {
+func Test_client_FirmwareUpgradesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test FirmwareUpgradesApiService CreateNetworkFirmwareUpgradesRollback", func(t *testing.T) {
+	t.Run("Test FirmwareUpgradesAPIService CreateNetworkFirmwareUpgradesRollback", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirmwareUpgradesApi.CreateNetworkFirmwareUpgradesRollback(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirmwareUpgradesAPI.CreateNetworkFirmwareUpgradesRollback(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_FirmwareUpgradesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirmwareUpgradesApiService CreateNetworkFirmwareUpgradesStagedEvent", func(t *testing.T) {
+	t.Run("Test FirmwareUpgradesAPIService CreateNetworkFirmwareUpgradesStagedEvent", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirmwareUpgradesApi.CreateNetworkFirmwareUpgradesStagedEvent(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirmwareUpgradesAPI.CreateNetworkFirmwareUpgradesStagedEvent(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,13 +50,13 @@ func Test_client_FirmwareUpgradesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirmwareUpgradesApiService CreateNetworkFirmwareUpgradesStagedGroup", func(t *testing.T) {
+	t.Run("Test FirmwareUpgradesAPIService CreateNetworkFirmwareUpgradesStagedGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirmwareUpgradesApi.CreateNetworkFirmwareUpgradesStagedGroup(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirmwareUpgradesAPI.CreateNetworkFirmwareUpgradesStagedGroup(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,13 +64,13 @@ func Test_client_FirmwareUpgradesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirmwareUpgradesApiService DeferNetworkFirmwareUpgradesStagedEvents", func(t *testing.T) {
+	t.Run("Test FirmwareUpgradesAPIService DeferNetworkFirmwareUpgradesStagedEvents", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirmwareUpgradesApi.DeferNetworkFirmwareUpgradesStagedEvents(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirmwareUpgradesAPI.DeferNetworkFirmwareUpgradesStagedEvents(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -78,27 +78,27 @@ func Test_client_FirmwareUpgradesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirmwareUpgradesApiService DeleteNetworkFirmwareUpgradesStagedGroup", func(t *testing.T) {
+	t.Run("Test FirmwareUpgradesAPIService DeleteNetworkFirmwareUpgradesStagedGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var groupId string
 
-		httpRes, err := apiClient.FirmwareUpgradesApi.DeleteNetworkFirmwareUpgradesStagedGroup(context.Background(), networkId, groupId).Execute()
+		httpRes, err := apiClient.FirmwareUpgradesAPI.DeleteNetworkFirmwareUpgradesStagedGroup(context.Background(), networkId, groupId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test FirmwareUpgradesApiService GetNetworkFirmwareUpgrades", func(t *testing.T) {
+	t.Run("Test FirmwareUpgradesAPIService GetNetworkFirmwareUpgrades", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirmwareUpgradesApi.GetNetworkFirmwareUpgrades(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirmwareUpgradesAPI.GetNetworkFirmwareUpgrades(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -106,13 +106,13 @@ func Test_client_FirmwareUpgradesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirmwareUpgradesApiService GetNetworkFirmwareUpgradesStagedEvents", func(t *testing.T) {
+	t.Run("Test FirmwareUpgradesAPIService GetNetworkFirmwareUpgradesStagedEvents", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirmwareUpgradesApi.GetNetworkFirmwareUpgradesStagedEvents(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirmwareUpgradesAPI.GetNetworkFirmwareUpgradesStagedEvents(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -120,14 +120,14 @@ func Test_client_FirmwareUpgradesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirmwareUpgradesApiService GetNetworkFirmwareUpgradesStagedGroup", func(t *testing.T) {
+	t.Run("Test FirmwareUpgradesAPIService GetNetworkFirmwareUpgradesStagedGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var groupId string
 
-		resp, httpRes, err := apiClient.FirmwareUpgradesApi.GetNetworkFirmwareUpgradesStagedGroup(context.Background(), networkId, groupId).Execute()
+		resp, httpRes, err := apiClient.FirmwareUpgradesAPI.GetNetworkFirmwareUpgradesStagedGroup(context.Background(), networkId, groupId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -135,13 +135,13 @@ func Test_client_FirmwareUpgradesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirmwareUpgradesApiService GetNetworkFirmwareUpgradesStagedGroups", func(t *testing.T) {
+	t.Run("Test FirmwareUpgradesAPIService GetNetworkFirmwareUpgradesStagedGroups", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirmwareUpgradesApi.GetNetworkFirmwareUpgradesStagedGroups(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirmwareUpgradesAPI.GetNetworkFirmwareUpgradesStagedGroups(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -149,13 +149,13 @@ func Test_client_FirmwareUpgradesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirmwareUpgradesApiService GetNetworkFirmwareUpgradesStagedStages", func(t *testing.T) {
+	t.Run("Test FirmwareUpgradesAPIService GetNetworkFirmwareUpgradesStagedStages", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirmwareUpgradesApi.GetNetworkFirmwareUpgradesStagedStages(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirmwareUpgradesAPI.GetNetworkFirmwareUpgradesStagedStages(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -163,13 +163,13 @@ func Test_client_FirmwareUpgradesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirmwareUpgradesApiService RollbacksNetworkFirmwareUpgradesStagedEvents", func(t *testing.T) {
+	t.Run("Test FirmwareUpgradesAPIService RollbacksNetworkFirmwareUpgradesStagedEvents", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirmwareUpgradesApi.RollbacksNetworkFirmwareUpgradesStagedEvents(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirmwareUpgradesAPI.RollbacksNetworkFirmwareUpgradesStagedEvents(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -177,13 +177,13 @@ func Test_client_FirmwareUpgradesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirmwareUpgradesApiService UpdateNetworkFirmwareUpgrades", func(t *testing.T) {
+	t.Run("Test FirmwareUpgradesAPIService UpdateNetworkFirmwareUpgrades", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirmwareUpgradesApi.UpdateNetworkFirmwareUpgrades(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirmwareUpgradesAPI.UpdateNetworkFirmwareUpgrades(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -191,13 +191,13 @@ func Test_client_FirmwareUpgradesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirmwareUpgradesApiService UpdateNetworkFirmwareUpgradesStagedEvents", func(t *testing.T) {
+	t.Run("Test FirmwareUpgradesAPIService UpdateNetworkFirmwareUpgradesStagedEvents", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirmwareUpgradesApi.UpdateNetworkFirmwareUpgradesStagedEvents(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirmwareUpgradesAPI.UpdateNetworkFirmwareUpgradesStagedEvents(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -205,14 +205,14 @@ func Test_client_FirmwareUpgradesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirmwareUpgradesApiService UpdateNetworkFirmwareUpgradesStagedGroup", func(t *testing.T) {
+	t.Run("Test FirmwareUpgradesAPIService UpdateNetworkFirmwareUpgradesStagedGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var groupId string
 
-		resp, httpRes, err := apiClient.FirmwareUpgradesApi.UpdateNetworkFirmwareUpgradesStagedGroup(context.Background(), networkId, groupId).Execute()
+		resp, httpRes, err := apiClient.FirmwareUpgradesAPI.UpdateNetworkFirmwareUpgradesStagedGroup(context.Background(), networkId, groupId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -220,13 +220,13 @@ func Test_client_FirmwareUpgradesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirmwareUpgradesApiService UpdateNetworkFirmwareUpgradesStagedStages", func(t *testing.T) {
+	t.Run("Test FirmwareUpgradesAPIService UpdateNetworkFirmwareUpgradesStagedStages", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirmwareUpgradesApi.UpdateNetworkFirmwareUpgradesStagedStages(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirmwareUpgradesAPI.UpdateNetworkFirmwareUpgradesStagedStages(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

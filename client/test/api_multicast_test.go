@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing MulticastApiService
+Testing MulticastAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_MulticastApiService(t *testing.T) {
+func Test_client_MulticastAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test MulticastApiService CreateNetworkSwitchRoutingMulticastRendezvousPoint", func(t *testing.T) {
+	t.Run("Test MulticastAPIService CreateNetworkSwitchRoutingMulticastRendezvousPoint", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.MulticastApi.CreateNetworkSwitchRoutingMulticastRendezvousPoint(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.MulticastAPI.CreateNetworkSwitchRoutingMulticastRendezvousPoint(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,27 +36,27 @@ func Test_client_MulticastApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test MulticastApiService DeleteNetworkSwitchRoutingMulticastRendezvousPoint", func(t *testing.T) {
+	t.Run("Test MulticastAPIService DeleteNetworkSwitchRoutingMulticastRendezvousPoint", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var rendezvousPointId string
 
-		httpRes, err := apiClient.MulticastApi.DeleteNetworkSwitchRoutingMulticastRendezvousPoint(context.Background(), networkId, rendezvousPointId).Execute()
+		httpRes, err := apiClient.MulticastAPI.DeleteNetworkSwitchRoutingMulticastRendezvousPoint(context.Background(), networkId, rendezvousPointId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test MulticastApiService GetNetworkSwitchRoutingMulticast", func(t *testing.T) {
+	t.Run("Test MulticastAPIService GetNetworkSwitchRoutingMulticast", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.MulticastApi.GetNetworkSwitchRoutingMulticast(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.MulticastAPI.GetNetworkSwitchRoutingMulticast(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,14 +64,14 @@ func Test_client_MulticastApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test MulticastApiService GetNetworkSwitchRoutingMulticastRendezvousPoint", func(t *testing.T) {
+	t.Run("Test MulticastAPIService GetNetworkSwitchRoutingMulticastRendezvousPoint", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var rendezvousPointId string
 
-		resp, httpRes, err := apiClient.MulticastApi.GetNetworkSwitchRoutingMulticastRendezvousPoint(context.Background(), networkId, rendezvousPointId).Execute()
+		resp, httpRes, err := apiClient.MulticastAPI.GetNetworkSwitchRoutingMulticastRendezvousPoint(context.Background(), networkId, rendezvousPointId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,13 +79,13 @@ func Test_client_MulticastApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test MulticastApiService GetNetworkSwitchRoutingMulticastRendezvousPoints", func(t *testing.T) {
+	t.Run("Test MulticastAPIService GetNetworkSwitchRoutingMulticastRendezvousPoints", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.MulticastApi.GetNetworkSwitchRoutingMulticastRendezvousPoints(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.MulticastAPI.GetNetworkSwitchRoutingMulticastRendezvousPoints(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -93,13 +93,13 @@ func Test_client_MulticastApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test MulticastApiService UpdateNetworkSwitchRoutingMulticast", func(t *testing.T) {
+	t.Run("Test MulticastAPIService UpdateNetworkSwitchRoutingMulticast", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.MulticastApi.UpdateNetworkSwitchRoutingMulticast(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.MulticastAPI.UpdateNetworkSwitchRoutingMulticast(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -107,14 +107,14 @@ func Test_client_MulticastApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test MulticastApiService UpdateNetworkSwitchRoutingMulticastRendezvousPoint", func(t *testing.T) {
+	t.Run("Test MulticastAPIService UpdateNetworkSwitchRoutingMulticastRendezvousPoint", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var rendezvousPointId string
 
-		resp, httpRes, err := apiClient.MulticastApi.UpdateNetworkSwitchRoutingMulticastRendezvousPoint(context.Background(), networkId, rendezvousPointId).Execute()
+		resp, httpRes, err := apiClient.MulticastAPI.UpdateNetworkSwitchRoutingMulticastRendezvousPoint(context.Background(), networkId, rendezvousPointId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

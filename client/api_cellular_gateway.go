@@ -21,16 +21,16 @@ import (
 )
 
 
-// CellularGatewayApiService CellularGatewayApi service
-type CellularGatewayApiService service
+// CellularGatewayAPIService CellularGatewayAPI service
+type CellularGatewayAPIService service
 
-type CellularGatewayApiGetDeviceCellularGatewayLanRequest struct {
+type CellularGatewayAPIGetDeviceCellularGatewayLanRequest struct {
 	ctx context.Context
-	ApiService *CellularGatewayApiService
+	ApiService *CellularGatewayAPIService
 	serial string
 }
 
-func (r CellularGatewayApiGetDeviceCellularGatewayLanRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CellularGatewayAPIGetDeviceCellularGatewayLanRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCellularGatewayLanExecute(r)
 }
 
@@ -41,10 +41,10 @@ Show the LAN Settings of a MG
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return CellularGatewayApiGetDeviceCellularGatewayLanRequest
+ @return CellularGatewayAPIGetDeviceCellularGatewayLanRequest
 */
-func (a *CellularGatewayApiService) GetDeviceCellularGatewayLan(ctx context.Context, serial string) CellularGatewayApiGetDeviceCellularGatewayLanRequest {
-	return CellularGatewayApiGetDeviceCellularGatewayLanRequest{
+func (a *CellularGatewayAPIService) GetDeviceCellularGatewayLan(ctx context.Context, serial string) CellularGatewayAPIGetDeviceCellularGatewayLanRequest {
+	return CellularGatewayAPIGetDeviceCellularGatewayLanRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -53,7 +53,7 @@ func (a *CellularGatewayApiService) GetDeviceCellularGatewayLan(ctx context.Cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CellularGatewayApiService) GetDeviceCellularGatewayLanExecute(r CellularGatewayApiGetDeviceCellularGatewayLanRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CellularGatewayAPIService) GetDeviceCellularGatewayLanExecute(r CellularGatewayAPIGetDeviceCellularGatewayLanRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -61,7 +61,7 @@ func (a *CellularGatewayApiService) GetDeviceCellularGatewayLanExecute(r Cellula
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularGatewayApiService.GetDeviceCellularGatewayLan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularGatewayAPIService.GetDeviceCellularGatewayLan")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -141,13 +141,13 @@ func (a *CellularGatewayApiService) GetDeviceCellularGatewayLanExecute(r Cellula
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CellularGatewayApiGetDeviceCellularGatewayPortForwardingRulesRequest struct {
+type CellularGatewayAPIGetDeviceCellularGatewayPortForwardingRulesRequest struct {
 	ctx context.Context
-	ApiService *CellularGatewayApiService
+	ApiService *CellularGatewayAPIService
 	serial string
 }
 
-func (r CellularGatewayApiGetDeviceCellularGatewayPortForwardingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CellularGatewayAPIGetDeviceCellularGatewayPortForwardingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCellularGatewayPortForwardingRulesExecute(r)
 }
 
@@ -158,10 +158,10 @@ Returns the port forwarding rules for a single MG.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return CellularGatewayApiGetDeviceCellularGatewayPortForwardingRulesRequest
+ @return CellularGatewayAPIGetDeviceCellularGatewayPortForwardingRulesRequest
 */
-func (a *CellularGatewayApiService) GetDeviceCellularGatewayPortForwardingRules(ctx context.Context, serial string) CellularGatewayApiGetDeviceCellularGatewayPortForwardingRulesRequest {
-	return CellularGatewayApiGetDeviceCellularGatewayPortForwardingRulesRequest{
+func (a *CellularGatewayAPIService) GetDeviceCellularGatewayPortForwardingRules(ctx context.Context, serial string) CellularGatewayAPIGetDeviceCellularGatewayPortForwardingRulesRequest {
+	return CellularGatewayAPIGetDeviceCellularGatewayPortForwardingRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -170,7 +170,7 @@ func (a *CellularGatewayApiService) GetDeviceCellularGatewayPortForwardingRules(
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CellularGatewayApiService) GetDeviceCellularGatewayPortForwardingRulesExecute(r CellularGatewayApiGetDeviceCellularGatewayPortForwardingRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CellularGatewayAPIService) GetDeviceCellularGatewayPortForwardingRulesExecute(r CellularGatewayAPIGetDeviceCellularGatewayPortForwardingRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -178,7 +178,7 @@ func (a *CellularGatewayApiService) GetDeviceCellularGatewayPortForwardingRulesE
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularGatewayApiService.GetDeviceCellularGatewayPortForwardingRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularGatewayAPIService.GetDeviceCellularGatewayPortForwardingRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -258,13 +258,13 @@ func (a *CellularGatewayApiService) GetDeviceCellularGatewayPortForwardingRulesE
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CellularGatewayApiGetNetworkCellularGatewayConnectivityMonitoringDestinationsRequest struct {
+type CellularGatewayAPIGetNetworkCellularGatewayConnectivityMonitoringDestinationsRequest struct {
 	ctx context.Context
-	ApiService *CellularGatewayApiService
+	ApiService *CellularGatewayAPIService
 	networkId string
 }
 
-func (r CellularGatewayApiGetNetworkCellularGatewayConnectivityMonitoringDestinationsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CellularGatewayAPIGetNetworkCellularGatewayConnectivityMonitoringDestinationsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkCellularGatewayConnectivityMonitoringDestinationsExecute(r)
 }
 
@@ -275,10 +275,10 @@ Return the connectivity testing destinations for an MG network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return CellularGatewayApiGetNetworkCellularGatewayConnectivityMonitoringDestinationsRequest
+ @return CellularGatewayAPIGetNetworkCellularGatewayConnectivityMonitoringDestinationsRequest
 */
-func (a *CellularGatewayApiService) GetNetworkCellularGatewayConnectivityMonitoringDestinations(ctx context.Context, networkId string) CellularGatewayApiGetNetworkCellularGatewayConnectivityMonitoringDestinationsRequest {
-	return CellularGatewayApiGetNetworkCellularGatewayConnectivityMonitoringDestinationsRequest{
+func (a *CellularGatewayAPIService) GetNetworkCellularGatewayConnectivityMonitoringDestinations(ctx context.Context, networkId string) CellularGatewayAPIGetNetworkCellularGatewayConnectivityMonitoringDestinationsRequest {
+	return CellularGatewayAPIGetNetworkCellularGatewayConnectivityMonitoringDestinationsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -287,7 +287,7 @@ func (a *CellularGatewayApiService) GetNetworkCellularGatewayConnectivityMonitor
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CellularGatewayApiService) GetNetworkCellularGatewayConnectivityMonitoringDestinationsExecute(r CellularGatewayApiGetNetworkCellularGatewayConnectivityMonitoringDestinationsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CellularGatewayAPIService) GetNetworkCellularGatewayConnectivityMonitoringDestinationsExecute(r CellularGatewayAPIGetNetworkCellularGatewayConnectivityMonitoringDestinationsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -295,7 +295,7 @@ func (a *CellularGatewayApiService) GetNetworkCellularGatewayConnectivityMonitor
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularGatewayApiService.GetNetworkCellularGatewayConnectivityMonitoringDestinations")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularGatewayAPIService.GetNetworkCellularGatewayConnectivityMonitoringDestinations")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -375,13 +375,13 @@ func (a *CellularGatewayApiService) GetNetworkCellularGatewayConnectivityMonitor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CellularGatewayApiGetNetworkCellularGatewayDhcpRequest struct {
+type CellularGatewayAPIGetNetworkCellularGatewayDhcpRequest struct {
 	ctx context.Context
-	ApiService *CellularGatewayApiService
+	ApiService *CellularGatewayAPIService
 	networkId string
 }
 
-func (r CellularGatewayApiGetNetworkCellularGatewayDhcpRequest) Execute() (*GetNetworkCellularGatewayDhcp200Response, *http.Response, error) {
+func (r CellularGatewayAPIGetNetworkCellularGatewayDhcpRequest) Execute() (*GetNetworkCellularGatewayDhcp200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkCellularGatewayDhcpExecute(r)
 }
 
@@ -392,10 +392,10 @@ List common DHCP settings of MGs
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return CellularGatewayApiGetNetworkCellularGatewayDhcpRequest
+ @return CellularGatewayAPIGetNetworkCellularGatewayDhcpRequest
 */
-func (a *CellularGatewayApiService) GetNetworkCellularGatewayDhcp(ctx context.Context, networkId string) CellularGatewayApiGetNetworkCellularGatewayDhcpRequest {
-	return CellularGatewayApiGetNetworkCellularGatewayDhcpRequest{
+func (a *CellularGatewayAPIService) GetNetworkCellularGatewayDhcp(ctx context.Context, networkId string) CellularGatewayAPIGetNetworkCellularGatewayDhcpRequest {
+	return CellularGatewayAPIGetNetworkCellularGatewayDhcpRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -404,7 +404,7 @@ func (a *CellularGatewayApiService) GetNetworkCellularGatewayDhcp(ctx context.Co
 
 // Execute executes the request
 //  @return GetNetworkCellularGatewayDhcp200Response
-func (a *CellularGatewayApiService) GetNetworkCellularGatewayDhcpExecute(r CellularGatewayApiGetNetworkCellularGatewayDhcpRequest) (*GetNetworkCellularGatewayDhcp200Response, *http.Response, error) {
+func (a *CellularGatewayAPIService) GetNetworkCellularGatewayDhcpExecute(r CellularGatewayAPIGetNetworkCellularGatewayDhcpRequest) (*GetNetworkCellularGatewayDhcp200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -412,7 +412,7 @@ func (a *CellularGatewayApiService) GetNetworkCellularGatewayDhcpExecute(r Cellu
 		localVarReturnValue  *GetNetworkCellularGatewayDhcp200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularGatewayApiService.GetNetworkCellularGatewayDhcp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularGatewayAPIService.GetNetworkCellularGatewayDhcp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -492,13 +492,13 @@ func (a *CellularGatewayApiService) GetNetworkCellularGatewayDhcpExecute(r Cellu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CellularGatewayApiGetNetworkCellularGatewaySubnetPoolRequest struct {
+type CellularGatewayAPIGetNetworkCellularGatewaySubnetPoolRequest struct {
 	ctx context.Context
-	ApiService *CellularGatewayApiService
+	ApiService *CellularGatewayAPIService
 	networkId string
 }
 
-func (r CellularGatewayApiGetNetworkCellularGatewaySubnetPoolRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CellularGatewayAPIGetNetworkCellularGatewaySubnetPoolRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkCellularGatewaySubnetPoolExecute(r)
 }
 
@@ -509,10 +509,10 @@ Return the subnet pool and mask configured for MGs in the network.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return CellularGatewayApiGetNetworkCellularGatewaySubnetPoolRequest
+ @return CellularGatewayAPIGetNetworkCellularGatewaySubnetPoolRequest
 */
-func (a *CellularGatewayApiService) GetNetworkCellularGatewaySubnetPool(ctx context.Context, networkId string) CellularGatewayApiGetNetworkCellularGatewaySubnetPoolRequest {
-	return CellularGatewayApiGetNetworkCellularGatewaySubnetPoolRequest{
+func (a *CellularGatewayAPIService) GetNetworkCellularGatewaySubnetPool(ctx context.Context, networkId string) CellularGatewayAPIGetNetworkCellularGatewaySubnetPoolRequest {
+	return CellularGatewayAPIGetNetworkCellularGatewaySubnetPoolRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -521,7 +521,7 @@ func (a *CellularGatewayApiService) GetNetworkCellularGatewaySubnetPool(ctx cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CellularGatewayApiService) GetNetworkCellularGatewaySubnetPoolExecute(r CellularGatewayApiGetNetworkCellularGatewaySubnetPoolRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CellularGatewayAPIService) GetNetworkCellularGatewaySubnetPoolExecute(r CellularGatewayAPIGetNetworkCellularGatewaySubnetPoolRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -529,7 +529,7 @@ func (a *CellularGatewayApiService) GetNetworkCellularGatewaySubnetPoolExecute(r
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularGatewayApiService.GetNetworkCellularGatewaySubnetPool")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularGatewayAPIService.GetNetworkCellularGatewaySubnetPool")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -609,13 +609,13 @@ func (a *CellularGatewayApiService) GetNetworkCellularGatewaySubnetPoolExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CellularGatewayApiGetNetworkCellularGatewayUplinkRequest struct {
+type CellularGatewayAPIGetNetworkCellularGatewayUplinkRequest struct {
 	ctx context.Context
-	ApiService *CellularGatewayApiService
+	ApiService *CellularGatewayAPIService
 	networkId string
 }
 
-func (r CellularGatewayApiGetNetworkCellularGatewayUplinkRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CellularGatewayAPIGetNetworkCellularGatewayUplinkRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkCellularGatewayUplinkExecute(r)
 }
 
@@ -626,10 +626,10 @@ Returns the uplink settings for your MG network.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return CellularGatewayApiGetNetworkCellularGatewayUplinkRequest
+ @return CellularGatewayAPIGetNetworkCellularGatewayUplinkRequest
 */
-func (a *CellularGatewayApiService) GetNetworkCellularGatewayUplink(ctx context.Context, networkId string) CellularGatewayApiGetNetworkCellularGatewayUplinkRequest {
-	return CellularGatewayApiGetNetworkCellularGatewayUplinkRequest{
+func (a *CellularGatewayAPIService) GetNetworkCellularGatewayUplink(ctx context.Context, networkId string) CellularGatewayAPIGetNetworkCellularGatewayUplinkRequest {
+	return CellularGatewayAPIGetNetworkCellularGatewayUplinkRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -638,7 +638,7 @@ func (a *CellularGatewayApiService) GetNetworkCellularGatewayUplink(ctx context.
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CellularGatewayApiService) GetNetworkCellularGatewayUplinkExecute(r CellularGatewayApiGetNetworkCellularGatewayUplinkRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CellularGatewayAPIService) GetNetworkCellularGatewayUplinkExecute(r CellularGatewayAPIGetNetworkCellularGatewayUplinkRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -646,7 +646,7 @@ func (a *CellularGatewayApiService) GetNetworkCellularGatewayUplinkExecute(r Cel
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularGatewayApiService.GetNetworkCellularGatewayUplink")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularGatewayAPIService.GetNetworkCellularGatewayUplink")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -726,9 +726,9 @@ func (a *CellularGatewayApiService) GetNetworkCellularGatewayUplinkExecute(r Cel
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CellularGatewayApiGetOrganizationCellularGatewayUplinkStatusesRequest struct {
+type CellularGatewayAPIGetOrganizationCellularGatewayUplinkStatusesRequest struct {
 	ctx context.Context
-	ApiService *CellularGatewayApiService
+	ApiService *CellularGatewayAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -739,42 +739,42 @@ type CellularGatewayApiGetOrganizationCellularGatewayUplinkStatusesRequest struc
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r CellularGatewayApiGetOrganizationCellularGatewayUplinkStatusesRequest) PerPage(perPage int32) CellularGatewayApiGetOrganizationCellularGatewayUplinkStatusesRequest {
+func (r CellularGatewayAPIGetOrganizationCellularGatewayUplinkStatusesRequest) PerPage(perPage int32) CellularGatewayAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r CellularGatewayApiGetOrganizationCellularGatewayUplinkStatusesRequest) StartingAfter(startingAfter string) CellularGatewayApiGetOrganizationCellularGatewayUplinkStatusesRequest {
+func (r CellularGatewayAPIGetOrganizationCellularGatewayUplinkStatusesRequest) StartingAfter(startingAfter string) CellularGatewayAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r CellularGatewayApiGetOrganizationCellularGatewayUplinkStatusesRequest) EndingBefore(endingBefore string) CellularGatewayApiGetOrganizationCellularGatewayUplinkStatusesRequest {
+func (r CellularGatewayAPIGetOrganizationCellularGatewayUplinkStatusesRequest) EndingBefore(endingBefore string) CellularGatewayAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // A list of network IDs. The returned devices will be filtered to only include these networks.
-func (r CellularGatewayApiGetOrganizationCellularGatewayUplinkStatusesRequest) NetworkIds(networkIds []string) CellularGatewayApiGetOrganizationCellularGatewayUplinkStatusesRequest {
+func (r CellularGatewayAPIGetOrganizationCellularGatewayUplinkStatusesRequest) NetworkIds(networkIds []string) CellularGatewayAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // A list of serial numbers. The returned devices will be filtered to only include these serials.
-func (r CellularGatewayApiGetOrganizationCellularGatewayUplinkStatusesRequest) Serials(serials []string) CellularGatewayApiGetOrganizationCellularGatewayUplinkStatusesRequest {
+func (r CellularGatewayAPIGetOrganizationCellularGatewayUplinkStatusesRequest) Serials(serials []string) CellularGatewayAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
 	r.serials = &serials
 	return r
 }
 
 // A list of ICCIDs. The returned devices will be filtered to only include these ICCIDs.
-func (r CellularGatewayApiGetOrganizationCellularGatewayUplinkStatusesRequest) Iccids(iccids []string) CellularGatewayApiGetOrganizationCellularGatewayUplinkStatusesRequest {
+func (r CellularGatewayAPIGetOrganizationCellularGatewayUplinkStatusesRequest) Iccids(iccids []string) CellularGatewayAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
 	r.iccids = &iccids
 	return r
 }
 
-func (r CellularGatewayApiGetOrganizationCellularGatewayUplinkStatusesRequest) Execute() ([]GetOrganizationCellularGatewayUplinkStatuses200ResponseInner, *http.Response, error) {
+func (r CellularGatewayAPIGetOrganizationCellularGatewayUplinkStatusesRequest) Execute() ([]GetOrganizationCellularGatewayUplinkStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationCellularGatewayUplinkStatusesExecute(r)
 }
 
@@ -785,10 +785,10 @@ List the uplink status of every Meraki MG cellular gateway in the organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return CellularGatewayApiGetOrganizationCellularGatewayUplinkStatusesRequest
+ @return CellularGatewayAPIGetOrganizationCellularGatewayUplinkStatusesRequest
 */
-func (a *CellularGatewayApiService) GetOrganizationCellularGatewayUplinkStatuses(ctx context.Context, organizationId string) CellularGatewayApiGetOrganizationCellularGatewayUplinkStatusesRequest {
-	return CellularGatewayApiGetOrganizationCellularGatewayUplinkStatusesRequest{
+func (a *CellularGatewayAPIService) GetOrganizationCellularGatewayUplinkStatuses(ctx context.Context, organizationId string) CellularGatewayAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
+	return CellularGatewayAPIGetOrganizationCellularGatewayUplinkStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -797,7 +797,7 @@ func (a *CellularGatewayApiService) GetOrganizationCellularGatewayUplinkStatuses
 
 // Execute executes the request
 //  @return []GetOrganizationCellularGatewayUplinkStatuses200ResponseInner
-func (a *CellularGatewayApiService) GetOrganizationCellularGatewayUplinkStatusesExecute(r CellularGatewayApiGetOrganizationCellularGatewayUplinkStatusesRequest) ([]GetOrganizationCellularGatewayUplinkStatuses200ResponseInner, *http.Response, error) {
+func (a *CellularGatewayAPIService) GetOrganizationCellularGatewayUplinkStatusesExecute(r CellularGatewayAPIGetOrganizationCellularGatewayUplinkStatusesRequest) ([]GetOrganizationCellularGatewayUplinkStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -805,7 +805,7 @@ func (a *CellularGatewayApiService) GetOrganizationCellularGatewayUplinkStatuses
 		localVarReturnValue  []GetOrganizationCellularGatewayUplinkStatuses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularGatewayApiService.GetOrganizationCellularGatewayUplinkStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularGatewayAPIService.GetOrganizationCellularGatewayUplinkStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -927,19 +927,19 @@ func (a *CellularGatewayApiService) GetOrganizationCellularGatewayUplinkStatuses
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CellularGatewayApiUpdateDeviceCellularGatewayLanRequest struct {
+type CellularGatewayAPIUpdateDeviceCellularGatewayLanRequest struct {
 	ctx context.Context
-	ApiService *CellularGatewayApiService
+	ApiService *CellularGatewayAPIService
 	serial string
 	updateDeviceCellularGatewayLanRequest *UpdateDeviceCellularGatewayLanRequest
 }
 
-func (r CellularGatewayApiUpdateDeviceCellularGatewayLanRequest) UpdateDeviceCellularGatewayLanRequest(updateDeviceCellularGatewayLanRequest UpdateDeviceCellularGatewayLanRequest) CellularGatewayApiUpdateDeviceCellularGatewayLanRequest {
+func (r CellularGatewayAPIUpdateDeviceCellularGatewayLanRequest) UpdateDeviceCellularGatewayLanRequest(updateDeviceCellularGatewayLanRequest UpdateDeviceCellularGatewayLanRequest) CellularGatewayAPIUpdateDeviceCellularGatewayLanRequest {
 	r.updateDeviceCellularGatewayLanRequest = &updateDeviceCellularGatewayLanRequest
 	return r
 }
 
-func (r CellularGatewayApiUpdateDeviceCellularGatewayLanRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CellularGatewayAPIUpdateDeviceCellularGatewayLanRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceCellularGatewayLanExecute(r)
 }
 
@@ -950,10 +950,10 @@ Update the LAN Settings for a single MG.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return CellularGatewayApiUpdateDeviceCellularGatewayLanRequest
+ @return CellularGatewayAPIUpdateDeviceCellularGatewayLanRequest
 */
-func (a *CellularGatewayApiService) UpdateDeviceCellularGatewayLan(ctx context.Context, serial string) CellularGatewayApiUpdateDeviceCellularGatewayLanRequest {
-	return CellularGatewayApiUpdateDeviceCellularGatewayLanRequest{
+func (a *CellularGatewayAPIService) UpdateDeviceCellularGatewayLan(ctx context.Context, serial string) CellularGatewayAPIUpdateDeviceCellularGatewayLanRequest {
+	return CellularGatewayAPIUpdateDeviceCellularGatewayLanRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -962,7 +962,7 @@ func (a *CellularGatewayApiService) UpdateDeviceCellularGatewayLan(ctx context.C
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CellularGatewayApiService) UpdateDeviceCellularGatewayLanExecute(r CellularGatewayApiUpdateDeviceCellularGatewayLanRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CellularGatewayAPIService) UpdateDeviceCellularGatewayLanExecute(r CellularGatewayAPIUpdateDeviceCellularGatewayLanRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -970,7 +970,7 @@ func (a *CellularGatewayApiService) UpdateDeviceCellularGatewayLanExecute(r Cell
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularGatewayApiService.UpdateDeviceCellularGatewayLan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularGatewayAPIService.UpdateDeviceCellularGatewayLan")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1052,19 +1052,19 @@ func (a *CellularGatewayApiService) UpdateDeviceCellularGatewayLanExecute(r Cell
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CellularGatewayApiUpdateDeviceCellularGatewayPortForwardingRulesRequest struct {
+type CellularGatewayAPIUpdateDeviceCellularGatewayPortForwardingRulesRequest struct {
 	ctx context.Context
-	ApiService *CellularGatewayApiService
+	ApiService *CellularGatewayAPIService
 	serial string
 	updateDeviceCellularGatewayPortForwardingRulesRequest *UpdateDeviceCellularGatewayPortForwardingRulesRequest
 }
 
-func (r CellularGatewayApiUpdateDeviceCellularGatewayPortForwardingRulesRequest) UpdateDeviceCellularGatewayPortForwardingRulesRequest(updateDeviceCellularGatewayPortForwardingRulesRequest UpdateDeviceCellularGatewayPortForwardingRulesRequest) CellularGatewayApiUpdateDeviceCellularGatewayPortForwardingRulesRequest {
+func (r CellularGatewayAPIUpdateDeviceCellularGatewayPortForwardingRulesRequest) UpdateDeviceCellularGatewayPortForwardingRulesRequest(updateDeviceCellularGatewayPortForwardingRulesRequest UpdateDeviceCellularGatewayPortForwardingRulesRequest) CellularGatewayAPIUpdateDeviceCellularGatewayPortForwardingRulesRequest {
 	r.updateDeviceCellularGatewayPortForwardingRulesRequest = &updateDeviceCellularGatewayPortForwardingRulesRequest
 	return r
 }
 
-func (r CellularGatewayApiUpdateDeviceCellularGatewayPortForwardingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CellularGatewayAPIUpdateDeviceCellularGatewayPortForwardingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceCellularGatewayPortForwardingRulesExecute(r)
 }
 
@@ -1075,10 +1075,10 @@ Updates the port forwarding rules for a single MG.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return CellularGatewayApiUpdateDeviceCellularGatewayPortForwardingRulesRequest
+ @return CellularGatewayAPIUpdateDeviceCellularGatewayPortForwardingRulesRequest
 */
-func (a *CellularGatewayApiService) UpdateDeviceCellularGatewayPortForwardingRules(ctx context.Context, serial string) CellularGatewayApiUpdateDeviceCellularGatewayPortForwardingRulesRequest {
-	return CellularGatewayApiUpdateDeviceCellularGatewayPortForwardingRulesRequest{
+func (a *CellularGatewayAPIService) UpdateDeviceCellularGatewayPortForwardingRules(ctx context.Context, serial string) CellularGatewayAPIUpdateDeviceCellularGatewayPortForwardingRulesRequest {
+	return CellularGatewayAPIUpdateDeviceCellularGatewayPortForwardingRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1087,7 +1087,7 @@ func (a *CellularGatewayApiService) UpdateDeviceCellularGatewayPortForwardingRul
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CellularGatewayApiService) UpdateDeviceCellularGatewayPortForwardingRulesExecute(r CellularGatewayApiUpdateDeviceCellularGatewayPortForwardingRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CellularGatewayAPIService) UpdateDeviceCellularGatewayPortForwardingRulesExecute(r CellularGatewayAPIUpdateDeviceCellularGatewayPortForwardingRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1095,7 +1095,7 @@ func (a *CellularGatewayApiService) UpdateDeviceCellularGatewayPortForwardingRul
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularGatewayApiService.UpdateDeviceCellularGatewayPortForwardingRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularGatewayAPIService.UpdateDeviceCellularGatewayPortForwardingRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1177,19 +1177,19 @@ func (a *CellularGatewayApiService) UpdateDeviceCellularGatewayPortForwardingRul
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CellularGatewayApiUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest struct {
+type CellularGatewayAPIUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest struct {
 	ctx context.Context
-	ApiService *CellularGatewayApiService
+	ApiService *CellularGatewayAPIService
 	networkId string
 	updateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest *UpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest
 }
 
-func (r CellularGatewayApiUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest) UpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest(updateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest UpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest) CellularGatewayApiUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest {
+func (r CellularGatewayAPIUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest) UpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest(updateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest UpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest) CellularGatewayAPIUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest {
 	r.updateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest = &updateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest
 	return r
 }
 
-func (r CellularGatewayApiUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CellularGatewayAPIUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkCellularGatewayConnectivityMonitoringDestinationsExecute(r)
 }
 
@@ -1200,10 +1200,10 @@ Update the connectivity testing destinations for an MG network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return CellularGatewayApiUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest
+ @return CellularGatewayAPIUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest
 */
-func (a *CellularGatewayApiService) UpdateNetworkCellularGatewayConnectivityMonitoringDestinations(ctx context.Context, networkId string) CellularGatewayApiUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest {
-	return CellularGatewayApiUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest{
+func (a *CellularGatewayAPIService) UpdateNetworkCellularGatewayConnectivityMonitoringDestinations(ctx context.Context, networkId string) CellularGatewayAPIUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest {
+	return CellularGatewayAPIUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1212,7 +1212,7 @@ func (a *CellularGatewayApiService) UpdateNetworkCellularGatewayConnectivityMoni
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CellularGatewayApiService) UpdateNetworkCellularGatewayConnectivityMonitoringDestinationsExecute(r CellularGatewayApiUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CellularGatewayAPIService) UpdateNetworkCellularGatewayConnectivityMonitoringDestinationsExecute(r CellularGatewayAPIUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1220,7 +1220,7 @@ func (a *CellularGatewayApiService) UpdateNetworkCellularGatewayConnectivityMoni
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularGatewayApiService.UpdateNetworkCellularGatewayConnectivityMonitoringDestinations")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularGatewayAPIService.UpdateNetworkCellularGatewayConnectivityMonitoringDestinations")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1302,19 +1302,19 @@ func (a *CellularGatewayApiService) UpdateNetworkCellularGatewayConnectivityMoni
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CellularGatewayApiUpdateNetworkCellularGatewayDhcpRequest struct {
+type CellularGatewayAPIUpdateNetworkCellularGatewayDhcpRequest struct {
 	ctx context.Context
-	ApiService *CellularGatewayApiService
+	ApiService *CellularGatewayAPIService
 	networkId string
 	updateNetworkCellularGatewayDhcpRequest *UpdateNetworkCellularGatewayDhcpRequest
 }
 
-func (r CellularGatewayApiUpdateNetworkCellularGatewayDhcpRequest) UpdateNetworkCellularGatewayDhcpRequest(updateNetworkCellularGatewayDhcpRequest UpdateNetworkCellularGatewayDhcpRequest) CellularGatewayApiUpdateNetworkCellularGatewayDhcpRequest {
+func (r CellularGatewayAPIUpdateNetworkCellularGatewayDhcpRequest) UpdateNetworkCellularGatewayDhcpRequest(updateNetworkCellularGatewayDhcpRequest UpdateNetworkCellularGatewayDhcpRequest) CellularGatewayAPIUpdateNetworkCellularGatewayDhcpRequest {
 	r.updateNetworkCellularGatewayDhcpRequest = &updateNetworkCellularGatewayDhcpRequest
 	return r
 }
 
-func (r CellularGatewayApiUpdateNetworkCellularGatewayDhcpRequest) Execute() (*GetNetworkCellularGatewayDhcp200Response, *http.Response, error) {
+func (r CellularGatewayAPIUpdateNetworkCellularGatewayDhcpRequest) Execute() (*GetNetworkCellularGatewayDhcp200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkCellularGatewayDhcpExecute(r)
 }
 
@@ -1325,10 +1325,10 @@ Update common DHCP settings of MGs
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return CellularGatewayApiUpdateNetworkCellularGatewayDhcpRequest
+ @return CellularGatewayAPIUpdateNetworkCellularGatewayDhcpRequest
 */
-func (a *CellularGatewayApiService) UpdateNetworkCellularGatewayDhcp(ctx context.Context, networkId string) CellularGatewayApiUpdateNetworkCellularGatewayDhcpRequest {
-	return CellularGatewayApiUpdateNetworkCellularGatewayDhcpRequest{
+func (a *CellularGatewayAPIService) UpdateNetworkCellularGatewayDhcp(ctx context.Context, networkId string) CellularGatewayAPIUpdateNetworkCellularGatewayDhcpRequest {
+	return CellularGatewayAPIUpdateNetworkCellularGatewayDhcpRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1337,7 +1337,7 @@ func (a *CellularGatewayApiService) UpdateNetworkCellularGatewayDhcp(ctx context
 
 // Execute executes the request
 //  @return GetNetworkCellularGatewayDhcp200Response
-func (a *CellularGatewayApiService) UpdateNetworkCellularGatewayDhcpExecute(r CellularGatewayApiUpdateNetworkCellularGatewayDhcpRequest) (*GetNetworkCellularGatewayDhcp200Response, *http.Response, error) {
+func (a *CellularGatewayAPIService) UpdateNetworkCellularGatewayDhcpExecute(r CellularGatewayAPIUpdateNetworkCellularGatewayDhcpRequest) (*GetNetworkCellularGatewayDhcp200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1345,7 +1345,7 @@ func (a *CellularGatewayApiService) UpdateNetworkCellularGatewayDhcpExecute(r Ce
 		localVarReturnValue  *GetNetworkCellularGatewayDhcp200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularGatewayApiService.UpdateNetworkCellularGatewayDhcp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularGatewayAPIService.UpdateNetworkCellularGatewayDhcp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1427,19 +1427,19 @@ func (a *CellularGatewayApiService) UpdateNetworkCellularGatewayDhcpExecute(r Ce
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CellularGatewayApiUpdateNetworkCellularGatewaySubnetPoolRequest struct {
+type CellularGatewayAPIUpdateNetworkCellularGatewaySubnetPoolRequest struct {
 	ctx context.Context
-	ApiService *CellularGatewayApiService
+	ApiService *CellularGatewayAPIService
 	networkId string
 	updateNetworkCellularGatewaySubnetPoolRequest *UpdateNetworkCellularGatewaySubnetPoolRequest
 }
 
-func (r CellularGatewayApiUpdateNetworkCellularGatewaySubnetPoolRequest) UpdateNetworkCellularGatewaySubnetPoolRequest(updateNetworkCellularGatewaySubnetPoolRequest UpdateNetworkCellularGatewaySubnetPoolRequest) CellularGatewayApiUpdateNetworkCellularGatewaySubnetPoolRequest {
+func (r CellularGatewayAPIUpdateNetworkCellularGatewaySubnetPoolRequest) UpdateNetworkCellularGatewaySubnetPoolRequest(updateNetworkCellularGatewaySubnetPoolRequest UpdateNetworkCellularGatewaySubnetPoolRequest) CellularGatewayAPIUpdateNetworkCellularGatewaySubnetPoolRequest {
 	r.updateNetworkCellularGatewaySubnetPoolRequest = &updateNetworkCellularGatewaySubnetPoolRequest
 	return r
 }
 
-func (r CellularGatewayApiUpdateNetworkCellularGatewaySubnetPoolRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CellularGatewayAPIUpdateNetworkCellularGatewaySubnetPoolRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkCellularGatewaySubnetPoolExecute(r)
 }
 
@@ -1450,10 +1450,10 @@ Update the subnet pool and mask configuration for MGs in the network.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return CellularGatewayApiUpdateNetworkCellularGatewaySubnetPoolRequest
+ @return CellularGatewayAPIUpdateNetworkCellularGatewaySubnetPoolRequest
 */
-func (a *CellularGatewayApiService) UpdateNetworkCellularGatewaySubnetPool(ctx context.Context, networkId string) CellularGatewayApiUpdateNetworkCellularGatewaySubnetPoolRequest {
-	return CellularGatewayApiUpdateNetworkCellularGatewaySubnetPoolRequest{
+func (a *CellularGatewayAPIService) UpdateNetworkCellularGatewaySubnetPool(ctx context.Context, networkId string) CellularGatewayAPIUpdateNetworkCellularGatewaySubnetPoolRequest {
+	return CellularGatewayAPIUpdateNetworkCellularGatewaySubnetPoolRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1462,7 +1462,7 @@ func (a *CellularGatewayApiService) UpdateNetworkCellularGatewaySubnetPool(ctx c
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CellularGatewayApiService) UpdateNetworkCellularGatewaySubnetPoolExecute(r CellularGatewayApiUpdateNetworkCellularGatewaySubnetPoolRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CellularGatewayAPIService) UpdateNetworkCellularGatewaySubnetPoolExecute(r CellularGatewayAPIUpdateNetworkCellularGatewaySubnetPoolRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1470,7 +1470,7 @@ func (a *CellularGatewayApiService) UpdateNetworkCellularGatewaySubnetPoolExecut
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularGatewayApiService.UpdateNetworkCellularGatewaySubnetPool")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularGatewayAPIService.UpdateNetworkCellularGatewaySubnetPool")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1552,19 +1552,19 @@ func (a *CellularGatewayApiService) UpdateNetworkCellularGatewaySubnetPoolExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CellularGatewayApiUpdateNetworkCellularGatewayUplinkRequest struct {
+type CellularGatewayAPIUpdateNetworkCellularGatewayUplinkRequest struct {
 	ctx context.Context
-	ApiService *CellularGatewayApiService
+	ApiService *CellularGatewayAPIService
 	networkId string
 	updateNetworkCellularGatewayUplinkRequest *UpdateNetworkCellularGatewayUplinkRequest
 }
 
-func (r CellularGatewayApiUpdateNetworkCellularGatewayUplinkRequest) UpdateNetworkCellularGatewayUplinkRequest(updateNetworkCellularGatewayUplinkRequest UpdateNetworkCellularGatewayUplinkRequest) CellularGatewayApiUpdateNetworkCellularGatewayUplinkRequest {
+func (r CellularGatewayAPIUpdateNetworkCellularGatewayUplinkRequest) UpdateNetworkCellularGatewayUplinkRequest(updateNetworkCellularGatewayUplinkRequest UpdateNetworkCellularGatewayUplinkRequest) CellularGatewayAPIUpdateNetworkCellularGatewayUplinkRequest {
 	r.updateNetworkCellularGatewayUplinkRequest = &updateNetworkCellularGatewayUplinkRequest
 	return r
 }
 
-func (r CellularGatewayApiUpdateNetworkCellularGatewayUplinkRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CellularGatewayAPIUpdateNetworkCellularGatewayUplinkRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkCellularGatewayUplinkExecute(r)
 }
 
@@ -1575,10 +1575,10 @@ Updates the uplink settings for your MG network.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return CellularGatewayApiUpdateNetworkCellularGatewayUplinkRequest
+ @return CellularGatewayAPIUpdateNetworkCellularGatewayUplinkRequest
 */
-func (a *CellularGatewayApiService) UpdateNetworkCellularGatewayUplink(ctx context.Context, networkId string) CellularGatewayApiUpdateNetworkCellularGatewayUplinkRequest {
-	return CellularGatewayApiUpdateNetworkCellularGatewayUplinkRequest{
+func (a *CellularGatewayAPIService) UpdateNetworkCellularGatewayUplink(ctx context.Context, networkId string) CellularGatewayAPIUpdateNetworkCellularGatewayUplinkRequest {
+	return CellularGatewayAPIUpdateNetworkCellularGatewayUplinkRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1587,7 +1587,7 @@ func (a *CellularGatewayApiService) UpdateNetworkCellularGatewayUplink(ctx conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CellularGatewayApiService) UpdateNetworkCellularGatewayUplinkExecute(r CellularGatewayApiUpdateNetworkCellularGatewayUplinkRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CellularGatewayAPIService) UpdateNetworkCellularGatewayUplinkExecute(r CellularGatewayAPIUpdateNetworkCellularGatewayUplinkRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1595,7 +1595,7 @@ func (a *CellularGatewayApiService) UpdateNetworkCellularGatewayUplinkExecute(r 
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularGatewayApiService.UpdateNetworkCellularGatewayUplink")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularGatewayAPIService.UpdateNetworkCellularGatewayUplink")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

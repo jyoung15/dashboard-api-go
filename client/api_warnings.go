@@ -20,12 +20,12 @@ import (
 )
 
 
-// WarningsApiService WarningsApi service
-type WarningsApiService service
+// WarningsAPIService WarningsAPI service
+type WarningsAPIService service
 
-type WarningsApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest struct {
+type WarningsAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest struct {
 	ctx context.Context
-	ApiService *WarningsApiService
+	ApiService *WarningsAPIService
 	networkId string
 	perPage *int32
 	startingAfter *string
@@ -33,24 +33,24 @@ type WarningsApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceReq
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r WarningsApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) PerPage(perPage int32) WarningsApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest {
+func (r WarningsAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) PerPage(perPage int32) WarningsAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r WarningsApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) StartingAfter(startingAfter string) WarningsApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest {
+func (r WarningsAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) StartingAfter(startingAfter string) WarningsAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r WarningsApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) EndingBefore(endingBefore string) WarningsApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest {
+func (r WarningsAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) EndingBefore(endingBefore string) WarningsAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r WarningsApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) Execute() ([]GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice200ResponseInner, *http.Response, error) {
+func (r WarningsAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) Execute() ([]GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceExecute(r)
 }
 
@@ -61,10 +61,10 @@ Return the devices that have a Dynamic ARP Inspection warning and their warnings
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WarningsApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest
+ @return WarningsAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest
 */
-func (a *WarningsApiService) GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice(ctx context.Context, networkId string) WarningsApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest {
-	return WarningsApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest{
+func (a *WarningsAPIService) GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice(ctx context.Context, networkId string) WarningsAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest {
+	return WarningsAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -73,7 +73,7 @@ func (a *WarningsApiService) GetNetworkSwitchDhcpServerPolicyArpInspectionWarnin
 
 // Execute executes the request
 //  @return []GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice200ResponseInner
-func (a *WarningsApiService) GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceExecute(r WarningsApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) ([]GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice200ResponseInner, *http.Response, error) {
+func (a *WarningsAPIService) GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceExecute(r WarningsAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) ([]GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -81,7 +81,7 @@ func (a *WarningsApiService) GetNetworkSwitchDhcpServerPolicyArpInspectionWarnin
 		localVarReturnValue  []GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WarningsApiService.GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WarningsAPIService.GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

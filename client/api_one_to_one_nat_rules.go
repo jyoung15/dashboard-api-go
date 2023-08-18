@@ -20,16 +20,16 @@ import (
 )
 
 
-// OneToOneNatRulesApiService OneToOneNatRulesApi service
-type OneToOneNatRulesApiService service
+// OneToOneNatRulesAPIService OneToOneNatRulesAPI service
+type OneToOneNatRulesAPIService service
 
-type OneToOneNatRulesApiGetNetworkApplianceFirewallOneToOneNatRulesRequest struct {
+type OneToOneNatRulesAPIGetNetworkApplianceFirewallOneToOneNatRulesRequest struct {
 	ctx context.Context
-	ApiService *OneToOneNatRulesApiService
+	ApiService *OneToOneNatRulesAPIService
 	networkId string
 }
 
-func (r OneToOneNatRulesApiGetNetworkApplianceFirewallOneToOneNatRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OneToOneNatRulesAPIGetNetworkApplianceFirewallOneToOneNatRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceFirewallOneToOneNatRulesExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the 1:1 NAT mapping rules for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return OneToOneNatRulesApiGetNetworkApplianceFirewallOneToOneNatRulesRequest
+ @return OneToOneNatRulesAPIGetNetworkApplianceFirewallOneToOneNatRulesRequest
 */
-func (a *OneToOneNatRulesApiService) GetNetworkApplianceFirewallOneToOneNatRules(ctx context.Context, networkId string) OneToOneNatRulesApiGetNetworkApplianceFirewallOneToOneNatRulesRequest {
-	return OneToOneNatRulesApiGetNetworkApplianceFirewallOneToOneNatRulesRequest{
+func (a *OneToOneNatRulesAPIService) GetNetworkApplianceFirewallOneToOneNatRules(ctx context.Context, networkId string) OneToOneNatRulesAPIGetNetworkApplianceFirewallOneToOneNatRulesRequest {
+	return OneToOneNatRulesAPIGetNetworkApplianceFirewallOneToOneNatRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *OneToOneNatRulesApiService) GetNetworkApplianceFirewallOneToOneNatRules
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OneToOneNatRulesApiService) GetNetworkApplianceFirewallOneToOneNatRulesExecute(r OneToOneNatRulesApiGetNetworkApplianceFirewallOneToOneNatRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OneToOneNatRulesAPIService) GetNetworkApplianceFirewallOneToOneNatRulesExecute(r OneToOneNatRulesAPIGetNetworkApplianceFirewallOneToOneNatRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *OneToOneNatRulesApiService) GetNetworkApplianceFirewallOneToOneNatRules
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OneToOneNatRulesApiService.GetNetworkApplianceFirewallOneToOneNatRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OneToOneNatRulesAPIService.GetNetworkApplianceFirewallOneToOneNatRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *OneToOneNatRulesApiService) GetNetworkApplianceFirewallOneToOneNatRules
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OneToOneNatRulesApiUpdateNetworkApplianceFirewallOneToOneNatRulesRequest struct {
+type OneToOneNatRulesAPIUpdateNetworkApplianceFirewallOneToOneNatRulesRequest struct {
 	ctx context.Context
-	ApiService *OneToOneNatRulesApiService
+	ApiService *OneToOneNatRulesAPIService
 	networkId string
 	updateNetworkApplianceFirewallOneToOneNatRulesRequest *UpdateNetworkApplianceFirewallOneToOneNatRulesRequest
 }
 
-func (r OneToOneNatRulesApiUpdateNetworkApplianceFirewallOneToOneNatRulesRequest) UpdateNetworkApplianceFirewallOneToOneNatRulesRequest(updateNetworkApplianceFirewallOneToOneNatRulesRequest UpdateNetworkApplianceFirewallOneToOneNatRulesRequest) OneToOneNatRulesApiUpdateNetworkApplianceFirewallOneToOneNatRulesRequest {
+func (r OneToOneNatRulesAPIUpdateNetworkApplianceFirewallOneToOneNatRulesRequest) UpdateNetworkApplianceFirewallOneToOneNatRulesRequest(updateNetworkApplianceFirewallOneToOneNatRulesRequest UpdateNetworkApplianceFirewallOneToOneNatRulesRequest) OneToOneNatRulesAPIUpdateNetworkApplianceFirewallOneToOneNatRulesRequest {
 	r.updateNetworkApplianceFirewallOneToOneNatRulesRequest = &updateNetworkApplianceFirewallOneToOneNatRulesRequest
 	return r
 }
 
-func (r OneToOneNatRulesApiUpdateNetworkApplianceFirewallOneToOneNatRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OneToOneNatRulesAPIUpdateNetworkApplianceFirewallOneToOneNatRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceFirewallOneToOneNatRulesExecute(r)
 }
 
@@ -163,10 +163,10 @@ Set the 1:1 NAT mapping rules for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return OneToOneNatRulesApiUpdateNetworkApplianceFirewallOneToOneNatRulesRequest
+ @return OneToOneNatRulesAPIUpdateNetworkApplianceFirewallOneToOneNatRulesRequest
 */
-func (a *OneToOneNatRulesApiService) UpdateNetworkApplianceFirewallOneToOneNatRules(ctx context.Context, networkId string) OneToOneNatRulesApiUpdateNetworkApplianceFirewallOneToOneNatRulesRequest {
-	return OneToOneNatRulesApiUpdateNetworkApplianceFirewallOneToOneNatRulesRequest{
+func (a *OneToOneNatRulesAPIService) UpdateNetworkApplianceFirewallOneToOneNatRules(ctx context.Context, networkId string) OneToOneNatRulesAPIUpdateNetworkApplianceFirewallOneToOneNatRulesRequest {
+	return OneToOneNatRulesAPIUpdateNetworkApplianceFirewallOneToOneNatRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -175,7 +175,7 @@ func (a *OneToOneNatRulesApiService) UpdateNetworkApplianceFirewallOneToOneNatRu
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OneToOneNatRulesApiService) UpdateNetworkApplianceFirewallOneToOneNatRulesExecute(r OneToOneNatRulesApiUpdateNetworkApplianceFirewallOneToOneNatRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OneToOneNatRulesAPIService) UpdateNetworkApplianceFirewallOneToOneNatRulesExecute(r OneToOneNatRulesAPIUpdateNetworkApplianceFirewallOneToOneNatRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *OneToOneNatRulesApiService) UpdateNetworkApplianceFirewallOneToOneNatRu
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OneToOneNatRulesApiService.UpdateNetworkApplianceFirewallOneToOneNatRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OneToOneNatRulesAPIService.UpdateNetworkApplianceFirewallOneToOneNatRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

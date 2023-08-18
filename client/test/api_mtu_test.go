@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing MtuApiService
+Testing MtuAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_MtuApiService(t *testing.T) {
+func Test_client_MtuAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test MtuApiService GetNetworkSwitchMtu", func(t *testing.T) {
+	t.Run("Test MtuAPIService GetNetworkSwitchMtu", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.MtuApi.GetNetworkSwitchMtu(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.MtuAPI.GetNetworkSwitchMtu(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_MtuApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test MtuApiService UpdateNetworkSwitchMtu", func(t *testing.T) {
+	t.Run("Test MtuAPIService UpdateNetworkSwitchMtu", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.MtuApi.UpdateNetworkSwitchMtu(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.MtuAPI.UpdateNetworkSwitchMtu(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

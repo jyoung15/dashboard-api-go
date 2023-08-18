@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing VpnApiService
+Testing VpnAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_VpnApiService(t *testing.T) {
+func Test_client_VpnAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test VpnApiService GetNetworkApplianceVpnBgp", func(t *testing.T) {
+	t.Run("Test VpnAPIService GetNetworkApplianceVpnBgp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.VpnApi.GetNetworkApplianceVpnBgp(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.VpnAPI.GetNetworkApplianceVpnBgp(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_VpnApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VpnApiService GetNetworkApplianceVpnSiteToSiteVpn", func(t *testing.T) {
+	t.Run("Test VpnAPIService GetNetworkApplianceVpnSiteToSiteVpn", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.VpnApi.GetNetworkApplianceVpnSiteToSiteVpn(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.VpnAPI.GetNetworkApplianceVpnSiteToSiteVpn(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,113 +50,14 @@ func Test_client_VpnApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VpnApiService GetNetworkWirelessSsidVpn", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-		var number string
-
-		resp, httpRes, err := apiClient.VpnApi.GetNetworkWirelessSsidVpn(context.Background(), networkId, number).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test VpnApiService GetOrganizationApplianceVpnStats", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var organizationId string
-
-		resp, httpRes, err := apiClient.VpnApi.GetOrganizationApplianceVpnStats(context.Background(), organizationId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test VpnApiService GetOrganizationApplianceVpnStatuses", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var organizationId string
-
-		resp, httpRes, err := apiClient.VpnApi.GetOrganizationApplianceVpnStatuses(context.Background(), organizationId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test VpnApiService GetOrganizationApplianceVpnThirdPartyVPNPeers", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var organizationId string
-
-		resp, httpRes, err := apiClient.VpnApi.GetOrganizationApplianceVpnThirdPartyVPNPeers(context.Background(), organizationId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test VpnApiService GetOrganizationApplianceVpnVpnFirewallRules", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var organizationId string
-
-		resp, httpRes, err := apiClient.VpnApi.GetOrganizationApplianceVpnVpnFirewallRules(context.Background(), organizationId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test VpnApiService UpdateNetworkApplianceVpnBgp", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-
-		resp, httpRes, err := apiClient.VpnApi.UpdateNetworkApplianceVpnBgp(context.Background(), networkId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test VpnApiService UpdateNetworkApplianceVpnSiteToSiteVpn", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-
-		resp, httpRes, err := apiClient.VpnApi.UpdateNetworkApplianceVpnSiteToSiteVpn(context.Background(), networkId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test VpnApiService UpdateNetworkWirelessSsidVpn", func(t *testing.T) {
+	t.Run("Test VpnAPIService GetNetworkWirelessSsidVpn", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.VpnApi.UpdateNetworkWirelessSsidVpn(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.VpnAPI.GetNetworkWirelessSsidVpn(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -164,13 +65,13 @@ func Test_client_VpnApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VpnApiService UpdateOrganizationApplianceVpnThirdPartyVPNPeers", func(t *testing.T) {
+	t.Run("Test VpnAPIService GetOrganizationApplianceVpnStats", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.VpnApi.UpdateOrganizationApplianceVpnThirdPartyVPNPeers(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.VpnAPI.GetOrganizationApplianceVpnStats(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -178,13 +79,112 @@ func Test_client_VpnApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VpnApiService UpdateOrganizationApplianceVpnVpnFirewallRules", func(t *testing.T) {
+	t.Run("Test VpnAPIService GetOrganizationApplianceVpnStatuses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.VpnApi.UpdateOrganizationApplianceVpnVpnFirewallRules(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.VpnAPI.GetOrganizationApplianceVpnStatuses(context.Background(), organizationId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VpnAPIService GetOrganizationApplianceVpnThirdPartyVPNPeers", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var organizationId string
+
+		resp, httpRes, err := apiClient.VpnAPI.GetOrganizationApplianceVpnThirdPartyVPNPeers(context.Background(), organizationId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VpnAPIService GetOrganizationApplianceVpnVpnFirewallRules", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var organizationId string
+
+		resp, httpRes, err := apiClient.VpnAPI.GetOrganizationApplianceVpnVpnFirewallRules(context.Background(), organizationId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VpnAPIService UpdateNetworkApplianceVpnBgp", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+
+		resp, httpRes, err := apiClient.VpnAPI.UpdateNetworkApplianceVpnBgp(context.Background(), networkId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VpnAPIService UpdateNetworkApplianceVpnSiteToSiteVpn", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+
+		resp, httpRes, err := apiClient.VpnAPI.UpdateNetworkApplianceVpnSiteToSiteVpn(context.Background(), networkId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VpnAPIService UpdateNetworkWirelessSsidVpn", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+		var number string
+
+		resp, httpRes, err := apiClient.VpnAPI.UpdateNetworkWirelessSsidVpn(context.Background(), networkId, number).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VpnAPIService UpdateOrganizationApplianceVpnThirdPartyVPNPeers", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var organizationId string
+
+		resp, httpRes, err := apiClient.VpnAPI.UpdateOrganizationApplianceVpnThirdPartyVPNPeers(context.Background(), organizationId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VpnAPIService UpdateOrganizationApplianceVpnVpnFirewallRules", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var organizationId string
+
+		resp, httpRes, err := apiClient.VpnAPI.UpdateOrganizationApplianceVpnVpnFirewallRules(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

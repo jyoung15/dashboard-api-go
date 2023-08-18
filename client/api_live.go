@@ -20,16 +20,16 @@ import (
 )
 
 
-// LiveApiService LiveApi service
-type LiveApiService service
+// LiveAPIService LiveAPI service
+type LiveAPIService service
 
-type LiveApiGetDeviceCameraAnalyticsLiveRequest struct {
+type LiveAPIGetDeviceCameraAnalyticsLiveRequest struct {
 	ctx context.Context
-	ApiService *LiveApiService
+	ApiService *LiveAPIService
 	serial string
 }
 
-func (r LiveApiGetDeviceCameraAnalyticsLiveRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r LiveAPIGetDeviceCameraAnalyticsLiveRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraAnalyticsLiveExecute(r)
 }
 
@@ -40,10 +40,10 @@ Returns live state from camera of analytics zones
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return LiveApiGetDeviceCameraAnalyticsLiveRequest
+ @return LiveAPIGetDeviceCameraAnalyticsLiveRequest
 */
-func (a *LiveApiService) GetDeviceCameraAnalyticsLive(ctx context.Context, serial string) LiveApiGetDeviceCameraAnalyticsLiveRequest {
-	return LiveApiGetDeviceCameraAnalyticsLiveRequest{
+func (a *LiveAPIService) GetDeviceCameraAnalyticsLive(ctx context.Context, serial string) LiveAPIGetDeviceCameraAnalyticsLiveRequest {
+	return LiveAPIGetDeviceCameraAnalyticsLiveRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -52,7 +52,7 @@ func (a *LiveApiService) GetDeviceCameraAnalyticsLive(ctx context.Context, seria
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *LiveApiService) GetDeviceCameraAnalyticsLiveExecute(r LiveApiGetDeviceCameraAnalyticsLiveRequest) (map[string]interface{}, *http.Response, error) {
+func (a *LiveAPIService) GetDeviceCameraAnalyticsLiveExecute(r LiveAPIGetDeviceCameraAnalyticsLiveRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *LiveApiService) GetDeviceCameraAnalyticsLiveExecute(r LiveApiGetDeviceC
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveApiService.GetDeviceCameraAnalyticsLive")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveAPIService.GetDeviceCameraAnalyticsLive")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

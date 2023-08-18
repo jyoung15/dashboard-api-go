@@ -20,12 +20,12 @@ import (
 )
 
 
-// PiiKeysApiService PiiKeysApi service
-type PiiKeysApiService service
+// PiiKeysAPIService PiiKeysAPI service
+type PiiKeysAPIService service
 
-type PiiKeysApiGetNetworkPiiPiiKeysRequest struct {
+type PiiKeysAPIGetNetworkPiiPiiKeysRequest struct {
 	ctx context.Context
-	ApiService *PiiKeysApiService
+	ApiService *PiiKeysAPIService
 	networkId string
 	username *string
 	email *string
@@ -36,42 +36,42 @@ type PiiKeysApiGetNetworkPiiPiiKeysRequest struct {
 }
 
 // The username of a Systems Manager user
-func (r PiiKeysApiGetNetworkPiiPiiKeysRequest) Username(username string) PiiKeysApiGetNetworkPiiPiiKeysRequest {
+func (r PiiKeysAPIGetNetworkPiiPiiKeysRequest) Username(username string) PiiKeysAPIGetNetworkPiiPiiKeysRequest {
 	r.username = &username
 	return r
 }
 
 // The email of a network user account or a Systems Manager device
-func (r PiiKeysApiGetNetworkPiiPiiKeysRequest) Email(email string) PiiKeysApiGetNetworkPiiPiiKeysRequest {
+func (r PiiKeysAPIGetNetworkPiiPiiKeysRequest) Email(email string) PiiKeysAPIGetNetworkPiiPiiKeysRequest {
 	r.email = &email
 	return r
 }
 
 // The MAC of a network client device or a Systems Manager device
-func (r PiiKeysApiGetNetworkPiiPiiKeysRequest) Mac(mac string) PiiKeysApiGetNetworkPiiPiiKeysRequest {
+func (r PiiKeysAPIGetNetworkPiiPiiKeysRequest) Mac(mac string) PiiKeysAPIGetNetworkPiiPiiKeysRequest {
 	r.mac = &mac
 	return r
 }
 
 // The serial of a Systems Manager device
-func (r PiiKeysApiGetNetworkPiiPiiKeysRequest) Serial(serial string) PiiKeysApiGetNetworkPiiPiiKeysRequest {
+func (r PiiKeysAPIGetNetworkPiiPiiKeysRequest) Serial(serial string) PiiKeysAPIGetNetworkPiiPiiKeysRequest {
 	r.serial = &serial
 	return r
 }
 
 // The IMEI of a Systems Manager device
-func (r PiiKeysApiGetNetworkPiiPiiKeysRequest) Imei(imei string) PiiKeysApiGetNetworkPiiPiiKeysRequest {
+func (r PiiKeysAPIGetNetworkPiiPiiKeysRequest) Imei(imei string) PiiKeysAPIGetNetworkPiiPiiKeysRequest {
 	r.imei = &imei
 	return r
 }
 
 // The MAC of a Bluetooth client
-func (r PiiKeysApiGetNetworkPiiPiiKeysRequest) BluetoothMac(bluetoothMac string) PiiKeysApiGetNetworkPiiPiiKeysRequest {
+func (r PiiKeysAPIGetNetworkPiiPiiKeysRequest) BluetoothMac(bluetoothMac string) PiiKeysAPIGetNetworkPiiPiiKeysRequest {
 	r.bluetoothMac = &bluetoothMac
 	return r
 }
 
-func (r PiiKeysApiGetNetworkPiiPiiKeysRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r PiiKeysAPIGetNetworkPiiPiiKeysRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkPiiPiiKeysExecute(r)
 }
 
@@ -88,10 +88,10 @@ List the keys required to access Personally Identifiable Information (PII) for a
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return PiiKeysApiGetNetworkPiiPiiKeysRequest
+ @return PiiKeysAPIGetNetworkPiiPiiKeysRequest
 */
-func (a *PiiKeysApiService) GetNetworkPiiPiiKeys(ctx context.Context, networkId string) PiiKeysApiGetNetworkPiiPiiKeysRequest {
-	return PiiKeysApiGetNetworkPiiPiiKeysRequest{
+func (a *PiiKeysAPIService) GetNetworkPiiPiiKeys(ctx context.Context, networkId string) PiiKeysAPIGetNetworkPiiPiiKeysRequest {
+	return PiiKeysAPIGetNetworkPiiPiiKeysRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -100,7 +100,7 @@ func (a *PiiKeysApiService) GetNetworkPiiPiiKeys(ctx context.Context, networkId 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PiiKeysApiService) GetNetworkPiiPiiKeysExecute(r PiiKeysApiGetNetworkPiiPiiKeysRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PiiKeysAPIService) GetNetworkPiiPiiKeysExecute(r PiiKeysAPIGetNetworkPiiPiiKeysRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -108,7 +108,7 @@ func (a *PiiKeysApiService) GetNetworkPiiPiiKeysExecute(r PiiKeysApiGetNetworkPi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PiiKeysApiService.GetNetworkPiiPiiKeys")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PiiKeysAPIService.GetNetworkPiiPiiKeys")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

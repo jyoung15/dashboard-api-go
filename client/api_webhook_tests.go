@@ -20,22 +20,22 @@ import (
 )
 
 
-// WebhookTestsApiService WebhookTestsApi service
-type WebhookTestsApiService service
+// WebhookTestsAPIService WebhookTestsAPI service
+type WebhookTestsAPIService service
 
-type WebhookTestsApiCreateNetworkWebhooksWebhookTestRequest struct {
+type WebhookTestsAPICreateNetworkWebhooksWebhookTestRequest struct {
 	ctx context.Context
-	ApiService *WebhookTestsApiService
+	ApiService *WebhookTestsAPIService
 	networkId string
 	createNetworkWebhooksWebhookTestRequest *CreateNetworkWebhooksWebhookTestRequest
 }
 
-func (r WebhookTestsApiCreateNetworkWebhooksWebhookTestRequest) CreateNetworkWebhooksWebhookTestRequest(createNetworkWebhooksWebhookTestRequest CreateNetworkWebhooksWebhookTestRequest) WebhookTestsApiCreateNetworkWebhooksWebhookTestRequest {
+func (r WebhookTestsAPICreateNetworkWebhooksWebhookTestRequest) CreateNetworkWebhooksWebhookTestRequest(createNetworkWebhooksWebhookTestRequest CreateNetworkWebhooksWebhookTestRequest) WebhookTestsAPICreateNetworkWebhooksWebhookTestRequest {
 	r.createNetworkWebhooksWebhookTestRequest = &createNetworkWebhooksWebhookTestRequest
 	return r
 }
 
-func (r WebhookTestsApiCreateNetworkWebhooksWebhookTestRequest) Execute() (*CreateNetworkWebhooksWebhookTest201Response, *http.Response, error) {
+func (r WebhookTestsAPICreateNetworkWebhooksWebhookTestRequest) Execute() (*CreateNetworkWebhooksWebhookTest201Response, *http.Response, error) {
 	return r.ApiService.CreateNetworkWebhooksWebhookTestExecute(r)
 }
 
@@ -46,10 +46,10 @@ Send a test webhook for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WebhookTestsApiCreateNetworkWebhooksWebhookTestRequest
+ @return WebhookTestsAPICreateNetworkWebhooksWebhookTestRequest
 */
-func (a *WebhookTestsApiService) CreateNetworkWebhooksWebhookTest(ctx context.Context, networkId string) WebhookTestsApiCreateNetworkWebhooksWebhookTestRequest {
-	return WebhookTestsApiCreateNetworkWebhooksWebhookTestRequest{
+func (a *WebhookTestsAPIService) CreateNetworkWebhooksWebhookTest(ctx context.Context, networkId string) WebhookTestsAPICreateNetworkWebhooksWebhookTestRequest {
+	return WebhookTestsAPICreateNetworkWebhooksWebhookTestRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -58,7 +58,7 @@ func (a *WebhookTestsApiService) CreateNetworkWebhooksWebhookTest(ctx context.Co
 
 // Execute executes the request
 //  @return CreateNetworkWebhooksWebhookTest201Response
-func (a *WebhookTestsApiService) CreateNetworkWebhooksWebhookTestExecute(r WebhookTestsApiCreateNetworkWebhooksWebhookTestRequest) (*CreateNetworkWebhooksWebhookTest201Response, *http.Response, error) {
+func (a *WebhookTestsAPIService) CreateNetworkWebhooksWebhookTestExecute(r WebhookTestsAPICreateNetworkWebhooksWebhookTestRequest) (*CreateNetworkWebhooksWebhookTest201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *WebhookTestsApiService) CreateNetworkWebhooksWebhookTestExecute(r Webho
 		localVarReturnValue  *CreateNetworkWebhooksWebhookTest201Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhookTestsApiService.CreateNetworkWebhooksWebhookTest")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhookTestsAPIService.CreateNetworkWebhooksWebhookTest")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,14 +151,14 @@ func (a *WebhookTestsApiService) CreateNetworkWebhooksWebhookTestExecute(r Webho
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WebhookTestsApiGetNetworkWebhooksWebhookTestRequest struct {
+type WebhookTestsAPIGetNetworkWebhooksWebhookTestRequest struct {
 	ctx context.Context
-	ApiService *WebhookTestsApiService
+	ApiService *WebhookTestsAPIService
 	networkId string
 	webhookTestId string
 }
 
-func (r WebhookTestsApiGetNetworkWebhooksWebhookTestRequest) Execute() (*CreateNetworkWebhooksWebhookTest201Response, *http.Response, error) {
+func (r WebhookTestsAPIGetNetworkWebhooksWebhookTestRequest) Execute() (*CreateNetworkWebhooksWebhookTest201Response, *http.Response, error) {
 	return r.ApiService.GetNetworkWebhooksWebhookTestExecute(r)
 }
 
@@ -170,10 +170,10 @@ Return the status of a webhook test for a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param webhookTestId Webhook test ID
- @return WebhookTestsApiGetNetworkWebhooksWebhookTestRequest
+ @return WebhookTestsAPIGetNetworkWebhooksWebhookTestRequest
 */
-func (a *WebhookTestsApiService) GetNetworkWebhooksWebhookTest(ctx context.Context, networkId string, webhookTestId string) WebhookTestsApiGetNetworkWebhooksWebhookTestRequest {
-	return WebhookTestsApiGetNetworkWebhooksWebhookTestRequest{
+func (a *WebhookTestsAPIService) GetNetworkWebhooksWebhookTest(ctx context.Context, networkId string, webhookTestId string) WebhookTestsAPIGetNetworkWebhooksWebhookTestRequest {
+	return WebhookTestsAPIGetNetworkWebhooksWebhookTestRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -183,7 +183,7 @@ func (a *WebhookTestsApiService) GetNetworkWebhooksWebhookTest(ctx context.Conte
 
 // Execute executes the request
 //  @return CreateNetworkWebhooksWebhookTest201Response
-func (a *WebhookTestsApiService) GetNetworkWebhooksWebhookTestExecute(r WebhookTestsApiGetNetworkWebhooksWebhookTestRequest) (*CreateNetworkWebhooksWebhookTest201Response, *http.Response, error) {
+func (a *WebhookTestsAPIService) GetNetworkWebhooksWebhookTestExecute(r WebhookTestsAPIGetNetworkWebhooksWebhookTestRequest) (*CreateNetworkWebhooksWebhookTest201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -191,7 +191,7 @@ func (a *WebhookTestsApiService) GetNetworkWebhooksWebhookTestExecute(r WebhookT
 		localVarReturnValue  *CreateNetworkWebhooksWebhookTest201Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhookTestsApiService.GetNetworkWebhooksWebhookTest")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhookTestsAPIService.GetNetworkWebhooksWebhookTest")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

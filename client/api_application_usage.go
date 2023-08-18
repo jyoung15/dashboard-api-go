@@ -20,12 +20,12 @@ import (
 )
 
 
-// ApplicationUsageApiService ApplicationUsageApi service
-type ApplicationUsageApiService service
+// ApplicationUsageAPIService ApplicationUsageAPI service
+type ApplicationUsageAPIService service
 
-type ApplicationUsageApiGetNetworkClientsApplicationUsageRequest struct {
+type ApplicationUsageAPIGetNetworkClientsApplicationUsageRequest struct {
 	ctx context.Context
-	ApiService *ApplicationUsageApiService
+	ApiService *ApplicationUsageAPIService
 	networkId string
 	clients *string
 	ssidNumber *int32
@@ -38,54 +38,54 @@ type ApplicationUsageApiGetNetworkClientsApplicationUsageRequest struct {
 }
 
 // A list of client keys, MACs or IPs separated by comma.
-func (r ApplicationUsageApiGetNetworkClientsApplicationUsageRequest) Clients(clients string) ApplicationUsageApiGetNetworkClientsApplicationUsageRequest {
+func (r ApplicationUsageAPIGetNetworkClientsApplicationUsageRequest) Clients(clients string) ApplicationUsageAPIGetNetworkClientsApplicationUsageRequest {
 	r.clients = &clients
 	return r
 }
 
 // An SSID number to include. If not specified, eveusage histories application usagents for all SSIDs will be returned.
-func (r ApplicationUsageApiGetNetworkClientsApplicationUsageRequest) SsidNumber(ssidNumber int32) ApplicationUsageApiGetNetworkClientsApplicationUsageRequest {
+func (r ApplicationUsageAPIGetNetworkClientsApplicationUsageRequest) SsidNumber(ssidNumber int32) ApplicationUsageAPIGetNetworkClientsApplicationUsageRequest {
 	r.ssidNumber = &ssidNumber
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000.
-func (r ApplicationUsageApiGetNetworkClientsApplicationUsageRequest) PerPage(perPage int32) ApplicationUsageApiGetNetworkClientsApplicationUsageRequest {
+func (r ApplicationUsageAPIGetNetworkClientsApplicationUsageRequest) PerPage(perPage int32) ApplicationUsageAPIGetNetworkClientsApplicationUsageRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ApplicationUsageApiGetNetworkClientsApplicationUsageRequest) StartingAfter(startingAfter string) ApplicationUsageApiGetNetworkClientsApplicationUsageRequest {
+func (r ApplicationUsageAPIGetNetworkClientsApplicationUsageRequest) StartingAfter(startingAfter string) ApplicationUsageAPIGetNetworkClientsApplicationUsageRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ApplicationUsageApiGetNetworkClientsApplicationUsageRequest) EndingBefore(endingBefore string) ApplicationUsageApiGetNetworkClientsApplicationUsageRequest {
+func (r ApplicationUsageAPIGetNetworkClientsApplicationUsageRequest) EndingBefore(endingBefore string) ApplicationUsageAPIGetNetworkClientsApplicationUsageRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r ApplicationUsageApiGetNetworkClientsApplicationUsageRequest) T0(t0 string) ApplicationUsageApiGetNetworkClientsApplicationUsageRequest {
+func (r ApplicationUsageAPIGetNetworkClientsApplicationUsageRequest) T0(t0 string) ApplicationUsageAPIGetNetworkClientsApplicationUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ApplicationUsageApiGetNetworkClientsApplicationUsageRequest) T1(t1 string) ApplicationUsageApiGetNetworkClientsApplicationUsageRequest {
+func (r ApplicationUsageAPIGetNetworkClientsApplicationUsageRequest) T1(t1 string) ApplicationUsageAPIGetNetworkClientsApplicationUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r ApplicationUsageApiGetNetworkClientsApplicationUsageRequest) Timespan(timespan float32) ApplicationUsageApiGetNetworkClientsApplicationUsageRequest {
+func (r ApplicationUsageAPIGetNetworkClientsApplicationUsageRequest) Timespan(timespan float32) ApplicationUsageAPIGetNetworkClientsApplicationUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r ApplicationUsageApiGetNetworkClientsApplicationUsageRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ApplicationUsageAPIGetNetworkClientsApplicationUsageRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientsApplicationUsageExecute(r)
 }
 
@@ -96,10 +96,10 @@ Return the application usage data for clients. Usage data is in kilobytes. Clien
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplicationUsageApiGetNetworkClientsApplicationUsageRequest
+ @return ApplicationUsageAPIGetNetworkClientsApplicationUsageRequest
 */
-func (a *ApplicationUsageApiService) GetNetworkClientsApplicationUsage(ctx context.Context, networkId string) ApplicationUsageApiGetNetworkClientsApplicationUsageRequest {
-	return ApplicationUsageApiGetNetworkClientsApplicationUsageRequest{
+func (a *ApplicationUsageAPIService) GetNetworkClientsApplicationUsage(ctx context.Context, networkId string) ApplicationUsageAPIGetNetworkClientsApplicationUsageRequest {
+	return ApplicationUsageAPIGetNetworkClientsApplicationUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -108,7 +108,7 @@ func (a *ApplicationUsageApiService) GetNetworkClientsApplicationUsage(ctx conte
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ApplicationUsageApiService) GetNetworkClientsApplicationUsageExecute(r ApplicationUsageApiGetNetworkClientsApplicationUsageRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ApplicationUsageAPIService) GetNetworkClientsApplicationUsageExecute(r ApplicationUsageAPIGetNetworkClientsApplicationUsageRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -116,7 +116,7 @@ func (a *ApplicationUsageApiService) GetNetworkClientsApplicationUsageExecute(r 
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationUsageApiService.GetNetworkClientsApplicationUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationUsageAPIService.GetNetworkClientsApplicationUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

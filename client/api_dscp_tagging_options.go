@@ -20,16 +20,16 @@ import (
 )
 
 
-// DscpTaggingOptionsApiService DscpTaggingOptionsApi service
-type DscpTaggingOptionsApiService service
+// DscpTaggingOptionsAPIService DscpTaggingOptionsAPI service
+type DscpTaggingOptionsAPIService service
 
-type DscpTaggingOptionsApiGetNetworkTrafficShapingDscpTaggingOptionsRequest struct {
+type DscpTaggingOptionsAPIGetNetworkTrafficShapingDscpTaggingOptionsRequest struct {
 	ctx context.Context
-	ApiService *DscpTaggingOptionsApiService
+	ApiService *DscpTaggingOptionsAPIService
 	networkId string
 }
 
-func (r DscpTaggingOptionsApiGetNetworkTrafficShapingDscpTaggingOptionsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r DscpTaggingOptionsAPIGetNetworkTrafficShapingDscpTaggingOptionsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkTrafficShapingDscpTaggingOptionsExecute(r)
 }
 
@@ -40,10 +40,10 @@ Returns the available DSCP tagging options for your traffic shaping rules.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return DscpTaggingOptionsApiGetNetworkTrafficShapingDscpTaggingOptionsRequest
+ @return DscpTaggingOptionsAPIGetNetworkTrafficShapingDscpTaggingOptionsRequest
 */
-func (a *DscpTaggingOptionsApiService) GetNetworkTrafficShapingDscpTaggingOptions(ctx context.Context, networkId string) DscpTaggingOptionsApiGetNetworkTrafficShapingDscpTaggingOptionsRequest {
-	return DscpTaggingOptionsApiGetNetworkTrafficShapingDscpTaggingOptionsRequest{
+func (a *DscpTaggingOptionsAPIService) GetNetworkTrafficShapingDscpTaggingOptions(ctx context.Context, networkId string) DscpTaggingOptionsAPIGetNetworkTrafficShapingDscpTaggingOptionsRequest {
+	return DscpTaggingOptionsAPIGetNetworkTrafficShapingDscpTaggingOptionsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *DscpTaggingOptionsApiService) GetNetworkTrafficShapingDscpTaggingOption
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *DscpTaggingOptionsApiService) GetNetworkTrafficShapingDscpTaggingOptionsExecute(r DscpTaggingOptionsApiGetNetworkTrafficShapingDscpTaggingOptionsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *DscpTaggingOptionsAPIService) GetNetworkTrafficShapingDscpTaggingOptionsExecute(r DscpTaggingOptionsAPIGetNetworkTrafficShapingDscpTaggingOptionsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *DscpTaggingOptionsApiService) GetNetworkTrafficShapingDscpTaggingOption
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DscpTaggingOptionsApiService.GetNetworkTrafficShapingDscpTaggingOptions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DscpTaggingOptionsAPIService.GetNetworkTrafficShapingDscpTaggingOptions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

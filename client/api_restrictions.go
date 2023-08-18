@@ -20,17 +20,17 @@ import (
 )
 
 
-// RestrictionsApiService RestrictionsApi service
-type RestrictionsApiService service
+// RestrictionsAPIService RestrictionsAPI service
+type RestrictionsAPIService service
 
-type RestrictionsApiGetNetworkSmDeviceRestrictionsRequest struct {
+type RestrictionsAPIGetNetworkSmDeviceRestrictionsRequest struct {
 	ctx context.Context
-	ApiService *RestrictionsApiService
+	ApiService *RestrictionsAPIService
 	networkId string
 	deviceId string
 }
 
-func (r RestrictionsApiGetNetworkSmDeviceRestrictionsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r RestrictionsAPIGetNetworkSmDeviceRestrictionsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceRestrictionsExecute(r)
 }
 
@@ -42,10 +42,10 @@ List the restrictions on a device
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return RestrictionsApiGetNetworkSmDeviceRestrictionsRequest
+ @return RestrictionsAPIGetNetworkSmDeviceRestrictionsRequest
 */
-func (a *RestrictionsApiService) GetNetworkSmDeviceRestrictions(ctx context.Context, networkId string, deviceId string) RestrictionsApiGetNetworkSmDeviceRestrictionsRequest {
-	return RestrictionsApiGetNetworkSmDeviceRestrictionsRequest{
+func (a *RestrictionsAPIService) GetNetworkSmDeviceRestrictions(ctx context.Context, networkId string, deviceId string) RestrictionsAPIGetNetworkSmDeviceRestrictionsRequest {
+	return RestrictionsAPIGetNetworkSmDeviceRestrictionsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -55,7 +55,7 @@ func (a *RestrictionsApiService) GetNetworkSmDeviceRestrictions(ctx context.Cont
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *RestrictionsApiService) GetNetworkSmDeviceRestrictionsExecute(r RestrictionsApiGetNetworkSmDeviceRestrictionsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *RestrictionsAPIService) GetNetworkSmDeviceRestrictionsExecute(r RestrictionsAPIGetNetworkSmDeviceRestrictionsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -63,7 +63,7 @@ func (a *RestrictionsApiService) GetNetworkSmDeviceRestrictionsExecute(r Restric
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestrictionsApiService.GetNetworkSmDeviceRestrictions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestrictionsAPIService.GetNetworkSmDeviceRestrictions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

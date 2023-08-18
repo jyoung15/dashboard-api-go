@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing SenseApiService
+Testing SenseAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_SenseApiService(t *testing.T) {
+func Test_client_SenseAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test SenseApiService GetDeviceCameraSense", func(t *testing.T) {
+	t.Run("Test SenseAPIService GetDeviceCameraSense", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.SenseApi.GetDeviceCameraSense(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.SenseAPI.GetDeviceCameraSense(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_SenseApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SenseApiService GetDeviceCameraSenseObjectDetectionModels", func(t *testing.T) {
+	t.Run("Test SenseAPIService GetDeviceCameraSenseObjectDetectionModels", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.SenseApi.GetDeviceCameraSenseObjectDetectionModels(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.SenseAPI.GetDeviceCameraSenseObjectDetectionModels(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,13 +50,13 @@ func Test_client_SenseApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SenseApiService UpdateDeviceCameraSense", func(t *testing.T) {
+	t.Run("Test SenseAPIService UpdateDeviceCameraSense", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.SenseApi.UpdateDeviceCameraSense(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.SenseAPI.UpdateDeviceCameraSense(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

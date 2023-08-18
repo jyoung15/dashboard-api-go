@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing SeenApiService
+Testing SeenAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_SeenApiService(t *testing.T) {
+func Test_client_SeenAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test SeenApiService GetNetworkSwitchDhcpV4ServersSeen", func(t *testing.T) {
+	t.Run("Test SeenAPIService GetNetworkSwitchDhcpV4ServersSeen", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SeenApi.GetNetworkSwitchDhcpV4ServersSeen(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SeenAPI.GetNetworkSwitchDhcpV4ServersSeen(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

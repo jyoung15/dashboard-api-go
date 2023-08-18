@@ -20,12 +20,12 @@ import (
 )
 
 
-// FailedConnectionsApiService FailedConnectionsApi service
-type FailedConnectionsApiService service
+// FailedConnectionsAPIService FailedConnectionsAPI service
+type FailedConnectionsAPIService service
 
-type FailedConnectionsApiGetNetworkWirelessFailedConnectionsRequest struct {
+type FailedConnectionsAPIGetNetworkWirelessFailedConnectionsRequest struct {
 	ctx context.Context
-	ApiService *FailedConnectionsApiService
+	ApiService *FailedConnectionsAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -39,60 +39,60 @@ type FailedConnectionsApiGetNetworkWirelessFailedConnectionsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r FailedConnectionsApiGetNetworkWirelessFailedConnectionsRequest) T0(t0 string) FailedConnectionsApiGetNetworkWirelessFailedConnectionsRequest {
+func (r FailedConnectionsAPIGetNetworkWirelessFailedConnectionsRequest) T0(t0 string) FailedConnectionsAPIGetNetworkWirelessFailedConnectionsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r FailedConnectionsApiGetNetworkWirelessFailedConnectionsRequest) T1(t1 string) FailedConnectionsApiGetNetworkWirelessFailedConnectionsRequest {
+func (r FailedConnectionsAPIGetNetworkWirelessFailedConnectionsRequest) T1(t1 string) FailedConnectionsAPIGetNetworkWirelessFailedConnectionsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r FailedConnectionsApiGetNetworkWirelessFailedConnectionsRequest) Timespan(timespan float32) FailedConnectionsApiGetNetworkWirelessFailedConnectionsRequest {
+func (r FailedConnectionsAPIGetNetworkWirelessFailedConnectionsRequest) Timespan(timespan float32) FailedConnectionsAPIGetNetworkWirelessFailedConnectionsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r FailedConnectionsApiGetNetworkWirelessFailedConnectionsRequest) Band(band string) FailedConnectionsApiGetNetworkWirelessFailedConnectionsRequest {
+func (r FailedConnectionsAPIGetNetworkWirelessFailedConnectionsRequest) Band(band string) FailedConnectionsAPIGetNetworkWirelessFailedConnectionsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r FailedConnectionsApiGetNetworkWirelessFailedConnectionsRequest) Ssid(ssid int32) FailedConnectionsApiGetNetworkWirelessFailedConnectionsRequest {
+func (r FailedConnectionsAPIGetNetworkWirelessFailedConnectionsRequest) Ssid(ssid int32) FailedConnectionsAPIGetNetworkWirelessFailedConnectionsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r FailedConnectionsApiGetNetworkWirelessFailedConnectionsRequest) Vlan(vlan int32) FailedConnectionsApiGetNetworkWirelessFailedConnectionsRequest {
+func (r FailedConnectionsAPIGetNetworkWirelessFailedConnectionsRequest) Vlan(vlan int32) FailedConnectionsAPIGetNetworkWirelessFailedConnectionsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r FailedConnectionsApiGetNetworkWirelessFailedConnectionsRequest) ApTag(apTag string) FailedConnectionsApiGetNetworkWirelessFailedConnectionsRequest {
+func (r FailedConnectionsAPIGetNetworkWirelessFailedConnectionsRequest) ApTag(apTag string) FailedConnectionsAPIGetNetworkWirelessFailedConnectionsRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Filter by AP
-func (r FailedConnectionsApiGetNetworkWirelessFailedConnectionsRequest) Serial(serial string) FailedConnectionsApiGetNetworkWirelessFailedConnectionsRequest {
+func (r FailedConnectionsAPIGetNetworkWirelessFailedConnectionsRequest) Serial(serial string) FailedConnectionsAPIGetNetworkWirelessFailedConnectionsRequest {
 	r.serial = &serial
 	return r
 }
 
 // Filter by client MAC
-func (r FailedConnectionsApiGetNetworkWirelessFailedConnectionsRequest) ClientId(clientId string) FailedConnectionsApiGetNetworkWirelessFailedConnectionsRequest {
+func (r FailedConnectionsAPIGetNetworkWirelessFailedConnectionsRequest) ClientId(clientId string) FailedConnectionsAPIGetNetworkWirelessFailedConnectionsRequest {
 	r.clientId = &clientId
 	return r
 }
 
-func (r FailedConnectionsApiGetNetworkWirelessFailedConnectionsRequest) Execute() ([]GetNetworkWirelessFailedConnections200ResponseInner, *http.Response, error) {
+func (r FailedConnectionsAPIGetNetworkWirelessFailedConnectionsRequest) Execute() ([]GetNetworkWirelessFailedConnections200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessFailedConnectionsExecute(r)
 }
 
@@ -103,10 +103,10 @@ List of all failed client connection events on this network in a given time rang
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return FailedConnectionsApiGetNetworkWirelessFailedConnectionsRequest
+ @return FailedConnectionsAPIGetNetworkWirelessFailedConnectionsRequest
 */
-func (a *FailedConnectionsApiService) GetNetworkWirelessFailedConnections(ctx context.Context, networkId string) FailedConnectionsApiGetNetworkWirelessFailedConnectionsRequest {
-	return FailedConnectionsApiGetNetworkWirelessFailedConnectionsRequest{
+func (a *FailedConnectionsAPIService) GetNetworkWirelessFailedConnections(ctx context.Context, networkId string) FailedConnectionsAPIGetNetworkWirelessFailedConnectionsRequest {
+	return FailedConnectionsAPIGetNetworkWirelessFailedConnectionsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -115,7 +115,7 @@ func (a *FailedConnectionsApiService) GetNetworkWirelessFailedConnections(ctx co
 
 // Execute executes the request
 //  @return []GetNetworkWirelessFailedConnections200ResponseInner
-func (a *FailedConnectionsApiService) GetNetworkWirelessFailedConnectionsExecute(r FailedConnectionsApiGetNetworkWirelessFailedConnectionsRequest) ([]GetNetworkWirelessFailedConnections200ResponseInner, *http.Response, error) {
+func (a *FailedConnectionsAPIService) GetNetworkWirelessFailedConnectionsExecute(r FailedConnectionsAPIGetNetworkWirelessFailedConnectionsRequest) ([]GetNetworkWirelessFailedConnections200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -123,7 +123,7 @@ func (a *FailedConnectionsApiService) GetNetworkWirelessFailedConnectionsExecute
 		localVarReturnValue  []GetNetworkWirelessFailedConnections200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FailedConnectionsApiService.GetNetworkWirelessFailedConnections")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FailedConnectionsAPIService.GetNetworkWirelessFailedConnections")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

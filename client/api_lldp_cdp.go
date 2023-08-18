@@ -20,16 +20,16 @@ import (
 )
 
 
-// LldpCdpApiService LldpCdpApi service
-type LldpCdpApiService service
+// LldpCdpAPIService LldpCdpAPI service
+type LldpCdpAPIService service
 
-type LldpCdpApiGetDeviceLldpCdpRequest struct {
+type LldpCdpAPIGetDeviceLldpCdpRequest struct {
 	ctx context.Context
-	ApiService *LldpCdpApiService
+	ApiService *LldpCdpAPIService
 	serial string
 }
 
-func (r LldpCdpApiGetDeviceLldpCdpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r LldpCdpAPIGetDeviceLldpCdpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceLldpCdpExecute(r)
 }
 
@@ -40,10 +40,10 @@ List LLDP and CDP information for a device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return LldpCdpApiGetDeviceLldpCdpRequest
+ @return LldpCdpAPIGetDeviceLldpCdpRequest
 */
-func (a *LldpCdpApiService) GetDeviceLldpCdp(ctx context.Context, serial string) LldpCdpApiGetDeviceLldpCdpRequest {
-	return LldpCdpApiGetDeviceLldpCdpRequest{
+func (a *LldpCdpAPIService) GetDeviceLldpCdp(ctx context.Context, serial string) LldpCdpAPIGetDeviceLldpCdpRequest {
+	return LldpCdpAPIGetDeviceLldpCdpRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -52,7 +52,7 @@ func (a *LldpCdpApiService) GetDeviceLldpCdp(ctx context.Context, serial string)
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *LldpCdpApiService) GetDeviceLldpCdpExecute(r LldpCdpApiGetDeviceLldpCdpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *LldpCdpAPIService) GetDeviceLldpCdpExecute(r LldpCdpAPIGetDeviceLldpCdpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *LldpCdpApiService) GetDeviceLldpCdpExecute(r LldpCdpApiGetDeviceLldpCdp
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LldpCdpApiService.GetDeviceLldpCdp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LldpCdpAPIService.GetDeviceLldpCdp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

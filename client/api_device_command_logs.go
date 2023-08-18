@@ -20,12 +20,12 @@ import (
 )
 
 
-// DeviceCommandLogsApiService DeviceCommandLogsApi service
-type DeviceCommandLogsApiService service
+// DeviceCommandLogsAPIService DeviceCommandLogsAPI service
+type DeviceCommandLogsAPIService service
 
-type DeviceCommandLogsApiGetNetworkSmDeviceDeviceCommandLogsRequest struct {
+type DeviceCommandLogsAPIGetNetworkSmDeviceDeviceCommandLogsRequest struct {
 	ctx context.Context
-	ApiService *DeviceCommandLogsApiService
+	ApiService *DeviceCommandLogsAPIService
 	networkId string
 	deviceId string
 	perPage *int32
@@ -34,24 +34,24 @@ type DeviceCommandLogsApiGetNetworkSmDeviceDeviceCommandLogsRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r DeviceCommandLogsApiGetNetworkSmDeviceDeviceCommandLogsRequest) PerPage(perPage int32) DeviceCommandLogsApiGetNetworkSmDeviceDeviceCommandLogsRequest {
+func (r DeviceCommandLogsAPIGetNetworkSmDeviceDeviceCommandLogsRequest) PerPage(perPage int32) DeviceCommandLogsAPIGetNetworkSmDeviceDeviceCommandLogsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DeviceCommandLogsApiGetNetworkSmDeviceDeviceCommandLogsRequest) StartingAfter(startingAfter string) DeviceCommandLogsApiGetNetworkSmDeviceDeviceCommandLogsRequest {
+func (r DeviceCommandLogsAPIGetNetworkSmDeviceDeviceCommandLogsRequest) StartingAfter(startingAfter string) DeviceCommandLogsAPIGetNetworkSmDeviceDeviceCommandLogsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DeviceCommandLogsApiGetNetworkSmDeviceDeviceCommandLogsRequest) EndingBefore(endingBefore string) DeviceCommandLogsApiGetNetworkSmDeviceDeviceCommandLogsRequest {
+func (r DeviceCommandLogsAPIGetNetworkSmDeviceDeviceCommandLogsRequest) EndingBefore(endingBefore string) DeviceCommandLogsAPIGetNetworkSmDeviceDeviceCommandLogsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r DeviceCommandLogsApiGetNetworkSmDeviceDeviceCommandLogsRequest) Execute() ([]GetNetworkSmDeviceDeviceCommandLogs200ResponseInner, *http.Response, error) {
+func (r DeviceCommandLogsAPIGetNetworkSmDeviceDeviceCommandLogsRequest) Execute() ([]GetNetworkSmDeviceDeviceCommandLogs200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceDeviceCommandLogsExecute(r)
 }
 
@@ -63,10 +63,10 @@ Return historical records of commands sent to Systems Manager devices. Note that
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return DeviceCommandLogsApiGetNetworkSmDeviceDeviceCommandLogsRequest
+ @return DeviceCommandLogsAPIGetNetworkSmDeviceDeviceCommandLogsRequest
 */
-func (a *DeviceCommandLogsApiService) GetNetworkSmDeviceDeviceCommandLogs(ctx context.Context, networkId string, deviceId string) DeviceCommandLogsApiGetNetworkSmDeviceDeviceCommandLogsRequest {
-	return DeviceCommandLogsApiGetNetworkSmDeviceDeviceCommandLogsRequest{
+func (a *DeviceCommandLogsAPIService) GetNetworkSmDeviceDeviceCommandLogs(ctx context.Context, networkId string, deviceId string) DeviceCommandLogsAPIGetNetworkSmDeviceDeviceCommandLogsRequest {
+	return DeviceCommandLogsAPIGetNetworkSmDeviceDeviceCommandLogsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -76,7 +76,7 @@ func (a *DeviceCommandLogsApiService) GetNetworkSmDeviceDeviceCommandLogs(ctx co
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceDeviceCommandLogs200ResponseInner
-func (a *DeviceCommandLogsApiService) GetNetworkSmDeviceDeviceCommandLogsExecute(r DeviceCommandLogsApiGetNetworkSmDeviceDeviceCommandLogsRequest) ([]GetNetworkSmDeviceDeviceCommandLogs200ResponseInner, *http.Response, error) {
+func (a *DeviceCommandLogsAPIService) GetNetworkSmDeviceDeviceCommandLogsExecute(r DeviceCommandLogsAPIGetNetworkSmDeviceDeviceCommandLogsRequest) ([]GetNetworkSmDeviceDeviceCommandLogs200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -84,7 +84,7 @@ func (a *DeviceCommandLogsApiService) GetNetworkSmDeviceDeviceCommandLogsExecute
 		localVarReturnValue  []GetNetworkSmDeviceDeviceCommandLogs200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceCommandLogsApiService.GetNetworkSmDeviceDeviceCommandLogs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceCommandLogsAPIService.GetNetworkSmDeviceDeviceCommandLogs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -20,16 +20,16 @@ import (
 )
 
 
-// TopologyApiService TopologyApi service
-type TopologyApiService service
+// TopologyAPIService TopologyAPI service
+type TopologyAPIService service
 
-type TopologyApiGetNetworkTopologyLinkLayerRequest struct {
+type TopologyAPIGetNetworkTopologyLinkLayerRequest struct {
 	ctx context.Context
-	ApiService *TopologyApiService
+	ApiService *TopologyAPIService
 	networkId string
 }
 
-func (r TopologyApiGetNetworkTopologyLinkLayerRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r TopologyAPIGetNetworkTopologyLinkLayerRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkTopologyLinkLayerExecute(r)
 }
 
@@ -40,10 +40,10 @@ List the LLDP and CDP information for all discovered devices and connections in 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return TopologyApiGetNetworkTopologyLinkLayerRequest
+ @return TopologyAPIGetNetworkTopologyLinkLayerRequest
 */
-func (a *TopologyApiService) GetNetworkTopologyLinkLayer(ctx context.Context, networkId string) TopologyApiGetNetworkTopologyLinkLayerRequest {
-	return TopologyApiGetNetworkTopologyLinkLayerRequest{
+func (a *TopologyAPIService) GetNetworkTopologyLinkLayer(ctx context.Context, networkId string) TopologyAPIGetNetworkTopologyLinkLayerRequest {
+	return TopologyAPIGetNetworkTopologyLinkLayerRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *TopologyApiService) GetNetworkTopologyLinkLayer(ctx context.Context, ne
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *TopologyApiService) GetNetworkTopologyLinkLayerExecute(r TopologyApiGetNetworkTopologyLinkLayerRequest) (map[string]interface{}, *http.Response, error) {
+func (a *TopologyAPIService) GetNetworkTopologyLinkLayerExecute(r TopologyAPIGetNetworkTopologyLinkLayerRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *TopologyApiService) GetNetworkTopologyLinkLayerExecute(r TopologyApiGet
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TopologyApiService.GetNetworkTopologyLinkLayer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TopologyAPIService.GetNetworkTopologyLinkLayer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

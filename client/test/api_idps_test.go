@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing IdpsApiService
+Testing IdpsAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_IdpsApiService(t *testing.T) {
+func Test_client_IdpsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test IdpsApiService CreateOrganizationSamlIdp", func(t *testing.T) {
+	t.Run("Test IdpsAPIService CreateOrganizationSamlIdp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.IdpsApi.CreateOrganizationSamlIdp(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.IdpsAPI.CreateOrganizationSamlIdp(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,42 +36,28 @@ func Test_client_IdpsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test IdpsApiService DeleteOrganizationSamlIdp", func(t *testing.T) {
+	t.Run("Test IdpsAPIService DeleteOrganizationSamlIdp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var idpId string
 
-		httpRes, err := apiClient.IdpsApi.DeleteOrganizationSamlIdp(context.Background(), organizationId, idpId).Execute()
+		httpRes, err := apiClient.IdpsAPI.DeleteOrganizationSamlIdp(context.Background(), organizationId, idpId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test IdpsApiService GetOrganizationSamlIdp", func(t *testing.T) {
+	t.Run("Test IdpsAPIService GetOrganizationSamlIdp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var idpId string
 
-		resp, httpRes, err := apiClient.IdpsApi.GetOrganizationSamlIdp(context.Background(), organizationId, idpId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test IdpsApiService GetOrganizationSamlIdps", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var organizationId string
-
-		resp, httpRes, err := apiClient.IdpsApi.GetOrganizationSamlIdps(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.IdpsAPI.GetOrganizationSamlIdp(context.Background(), organizationId, idpId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,14 +65,28 @@ func Test_client_IdpsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test IdpsApiService UpdateOrganizationSamlIdp", func(t *testing.T) {
+	t.Run("Test IdpsAPIService GetOrganizationSamlIdps", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var organizationId string
+
+		resp, httpRes, err := apiClient.IdpsAPI.GetOrganizationSamlIdps(context.Background(), organizationId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test IdpsAPIService UpdateOrganizationSamlIdp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var idpId string
 
-		resp, httpRes, err := apiClient.IdpsApi.UpdateOrganizationSamlIdp(context.Background(), organizationId, idpId).Execute()
+		resp, httpRes, err := apiClient.IdpsAPI.UpdateOrganizationSamlIdp(context.Background(), organizationId, idpId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

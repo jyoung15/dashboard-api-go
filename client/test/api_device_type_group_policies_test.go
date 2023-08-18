@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing DeviceTypeGroupPoliciesApiService
+Testing DeviceTypeGroupPoliciesAPIService
 
 */
 
@@ -17,19 +17,19 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_DeviceTypeGroupPoliciesApiService(t *testing.T) {
+func Test_client_DeviceTypeGroupPoliciesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test DeviceTypeGroupPoliciesApiService GetNetworkWirelessSsidDeviceTypeGroupPolicies", func(t *testing.T) {
+	t.Run("Test DeviceTypeGroupPoliciesAPIService GetNetworkWirelessSsidDeviceTypeGroupPolicies", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.DeviceTypeGroupPoliciesApi.GetNetworkWirelessSsidDeviceTypeGroupPolicies(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.DeviceTypeGroupPoliciesAPI.GetNetworkWirelessSsidDeviceTypeGroupPolicies(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -37,14 +37,14 @@ func Test_client_DeviceTypeGroupPoliciesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DeviceTypeGroupPoliciesApiService UpdateNetworkWirelessSsidDeviceTypeGroupPolicies", func(t *testing.T) {
+	t.Run("Test DeviceTypeGroupPoliciesAPIService UpdateNetworkWirelessSsidDeviceTypeGroupPolicies", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.DeviceTypeGroupPoliciesApi.UpdateNetworkWirelessSsidDeviceTypeGroupPolicies(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.DeviceTypeGroupPoliciesAPI.UpdateNetworkWirelessSsidDeviceTypeGroupPolicies(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

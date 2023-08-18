@@ -20,16 +20,16 @@ import (
 )
 
 
-// SubnetsApiService SubnetsApi service
-type SubnetsApiService service
+// SubnetsAPIService SubnetsAPI service
+type SubnetsAPIService service
 
-type SubnetsApiGetDeviceApplianceDhcpSubnetsRequest struct {
+type SubnetsAPIGetDeviceApplianceDhcpSubnetsRequest struct {
 	ctx context.Context
-	ApiService *SubnetsApiService
+	ApiService *SubnetsAPIService
 	serial string
 }
 
-func (r SubnetsApiGetDeviceApplianceDhcpSubnetsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r SubnetsAPIGetDeviceApplianceDhcpSubnetsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceApplianceDhcpSubnetsExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the DHCP subnet information for an appliance
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return SubnetsApiGetDeviceApplianceDhcpSubnetsRequest
+ @return SubnetsAPIGetDeviceApplianceDhcpSubnetsRequest
 */
-func (a *SubnetsApiService) GetDeviceApplianceDhcpSubnets(ctx context.Context, serial string) SubnetsApiGetDeviceApplianceDhcpSubnetsRequest {
-	return SubnetsApiGetDeviceApplianceDhcpSubnetsRequest{
+func (a *SubnetsAPIService) GetDeviceApplianceDhcpSubnets(ctx context.Context, serial string) SubnetsAPIGetDeviceApplianceDhcpSubnetsRequest {
+	return SubnetsAPIGetDeviceApplianceDhcpSubnetsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -52,7 +52,7 @@ func (a *SubnetsApiService) GetDeviceApplianceDhcpSubnets(ctx context.Context, s
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *SubnetsApiService) GetDeviceApplianceDhcpSubnetsExecute(r SubnetsApiGetDeviceApplianceDhcpSubnetsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *SubnetsAPIService) GetDeviceApplianceDhcpSubnetsExecute(r SubnetsAPIGetDeviceApplianceDhcpSubnetsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *SubnetsApiService) GetDeviceApplianceDhcpSubnetsExecute(r SubnetsApiGet
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SubnetsApiService.GetDeviceApplianceDhcpSubnets")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SubnetsAPIService.GetDeviceApplianceDhcpSubnets")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

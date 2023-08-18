@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing UplinkApiService
+Testing UplinkAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_UplinkApiService(t *testing.T) {
+func Test_client_UplinkAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test UplinkApiService GetNetworkCellularGatewayUplink", func(t *testing.T) {
+	t.Run("Test UplinkAPIService GetNetworkCellularGatewayUplink", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.UplinkApi.GetNetworkCellularGatewayUplink(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.UplinkAPI.GetNetworkCellularGatewayUplink(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_UplinkApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UplinkApiService GetOrganizationCellularGatewayUplinkStatuses", func(t *testing.T) {
+	t.Run("Test UplinkAPIService GetOrganizationCellularGatewayUplinkStatuses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.UplinkApi.GetOrganizationCellularGatewayUplinkStatuses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.UplinkAPI.GetOrganizationCellularGatewayUplinkStatuses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,13 +50,13 @@ func Test_client_UplinkApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UplinkApiService UpdateNetworkCellularGatewayUplink", func(t *testing.T) {
+	t.Run("Test UplinkAPIService UpdateNetworkCellularGatewayUplink", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.UplinkApi.UpdateNetworkCellularGatewayUplink(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.UplinkAPI.UpdateNetworkCellularGatewayUplink(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

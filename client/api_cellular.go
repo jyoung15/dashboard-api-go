@@ -20,16 +20,16 @@ import (
 )
 
 
-// CellularApiService CellularApi service
-type CellularApiService service
+// CellularAPIService CellularAPI service
+type CellularAPIService service
 
-type CellularApiGetDeviceCellularSimsRequest struct {
+type CellularAPIGetDeviceCellularSimsRequest struct {
 	ctx context.Context
-	ApiService *CellularApiService
+	ApiService *CellularAPIService
 	serial string
 }
 
-func (r CellularApiGetDeviceCellularSimsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CellularAPIGetDeviceCellularSimsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCellularSimsExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the SIM and APN configurations for a cellular device.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return CellularApiGetDeviceCellularSimsRequest
+ @return CellularAPIGetDeviceCellularSimsRequest
 */
-func (a *CellularApiService) GetDeviceCellularSims(ctx context.Context, serial string) CellularApiGetDeviceCellularSimsRequest {
-	return CellularApiGetDeviceCellularSimsRequest{
+func (a *CellularAPIService) GetDeviceCellularSims(ctx context.Context, serial string) CellularAPIGetDeviceCellularSimsRequest {
+	return CellularAPIGetDeviceCellularSimsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -52,7 +52,7 @@ func (a *CellularApiService) GetDeviceCellularSims(ctx context.Context, serial s
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CellularApiService) GetDeviceCellularSimsExecute(r CellularApiGetDeviceCellularSimsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CellularAPIService) GetDeviceCellularSimsExecute(r CellularAPIGetDeviceCellularSimsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *CellularApiService) GetDeviceCellularSimsExecute(r CellularApiGetDevice
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularApiService.GetDeviceCellularSims")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularAPIService.GetDeviceCellularSims")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *CellularApiService) GetDeviceCellularSimsExecute(r CellularApiGetDevice
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CellularApiUpdateDeviceCellularSimsRequest struct {
+type CellularAPIUpdateDeviceCellularSimsRequest struct {
 	ctx context.Context
-	ApiService *CellularApiService
+	ApiService *CellularAPIService
 	serial string
 	updateDeviceCellularSimsRequest *UpdateDeviceCellularSimsRequest
 }
 
-func (r CellularApiUpdateDeviceCellularSimsRequest) UpdateDeviceCellularSimsRequest(updateDeviceCellularSimsRequest UpdateDeviceCellularSimsRequest) CellularApiUpdateDeviceCellularSimsRequest {
+func (r CellularAPIUpdateDeviceCellularSimsRequest) UpdateDeviceCellularSimsRequest(updateDeviceCellularSimsRequest UpdateDeviceCellularSimsRequest) CellularAPIUpdateDeviceCellularSimsRequest {
 	r.updateDeviceCellularSimsRequest = &updateDeviceCellularSimsRequest
 	return r
 }
 
-func (r CellularApiUpdateDeviceCellularSimsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CellularAPIUpdateDeviceCellularSimsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceCellularSimsExecute(r)
 }
 
@@ -163,10 +163,10 @@ Updates the SIM and APN configurations for a cellular device.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return CellularApiUpdateDeviceCellularSimsRequest
+ @return CellularAPIUpdateDeviceCellularSimsRequest
 */
-func (a *CellularApiService) UpdateDeviceCellularSims(ctx context.Context, serial string) CellularApiUpdateDeviceCellularSimsRequest {
-	return CellularApiUpdateDeviceCellularSimsRequest{
+func (a *CellularAPIService) UpdateDeviceCellularSims(ctx context.Context, serial string) CellularAPIUpdateDeviceCellularSimsRequest {
+	return CellularAPIUpdateDeviceCellularSimsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -175,7 +175,7 @@ func (a *CellularApiService) UpdateDeviceCellularSims(ctx context.Context, seria
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CellularApiService) UpdateDeviceCellularSimsExecute(r CellularApiUpdateDeviceCellularSimsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CellularAPIService) UpdateDeviceCellularSimsExecute(r CellularAPIUpdateDeviceCellularSimsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *CellularApiService) UpdateDeviceCellularSimsExecute(r CellularApiUpdate
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularApiService.UpdateDeviceCellularSims")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularAPIService.UpdateDeviceCellularSims")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

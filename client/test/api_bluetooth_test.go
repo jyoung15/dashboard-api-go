@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing BluetoothApiService
+Testing BluetoothAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_BluetoothApiService(t *testing.T) {
+func Test_client_BluetoothAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test BluetoothApiService GetDeviceWirelessBluetoothSettings", func(t *testing.T) {
+	t.Run("Test BluetoothAPIService GetDeviceWirelessBluetoothSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.BluetoothApi.GetDeviceWirelessBluetoothSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.BluetoothAPI.GetDeviceWirelessBluetoothSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_BluetoothApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test BluetoothApiService GetNetworkWirelessBluetoothSettings", func(t *testing.T) {
+	t.Run("Test BluetoothAPIService GetNetworkWirelessBluetoothSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.BluetoothApi.GetNetworkWirelessBluetoothSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.BluetoothAPI.GetNetworkWirelessBluetoothSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,13 +50,13 @@ func Test_client_BluetoothApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test BluetoothApiService UpdateDeviceWirelessBluetoothSettings", func(t *testing.T) {
+	t.Run("Test BluetoothAPIService UpdateDeviceWirelessBluetoothSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.BluetoothApi.UpdateDeviceWirelessBluetoothSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.BluetoothAPI.UpdateDeviceWirelessBluetoothSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,13 +64,13 @@ func Test_client_BluetoothApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test BluetoothApiService UpdateNetworkWirelessBluetoothSettings", func(t *testing.T) {
+	t.Run("Test BluetoothAPIService UpdateNetworkWirelessBluetoothSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.BluetoothApi.UpdateNetworkWirelessBluetoothSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.BluetoothAPI.UpdateNetworkWirelessBluetoothSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

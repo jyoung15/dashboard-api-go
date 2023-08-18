@@ -20,12 +20,12 @@ import (
 )
 
 
-// ModelsApiService ModelsApi service
-type ModelsApiService service
+// ModelsAPIService ModelsAPI service
+type ModelsAPIService service
 
-type ModelsApiGetOrganizationSummaryTopDevicesModelsByUsageRequest struct {
+type ModelsAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest struct {
 	ctx context.Context
-	ApiService *ModelsApiService
+	ApiService *ModelsAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -33,24 +33,24 @@ type ModelsApiGetOrganizationSummaryTopDevicesModelsByUsageRequest struct {
 }
 
 // The beginning of the timespan for the data.
-func (r ModelsApiGetOrganizationSummaryTopDevicesModelsByUsageRequest) T0(t0 string) ModelsApiGetOrganizationSummaryTopDevicesModelsByUsageRequest {
+func (r ModelsAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest) T0(t0 string) ModelsAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ModelsApiGetOrganizationSummaryTopDevicesModelsByUsageRequest) T1(t1 string) ModelsApiGetOrganizationSummaryTopDevicesModelsByUsageRequest {
+func (r ModelsAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest) T1(t1 string) ModelsAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r ModelsApiGetOrganizationSummaryTopDevicesModelsByUsageRequest) Timespan(timespan float32) ModelsApiGetOrganizationSummaryTopDevicesModelsByUsageRequest {
+func (r ModelsAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest) Timespan(timespan float32) ModelsAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r ModelsApiGetOrganizationSummaryTopDevicesModelsByUsageRequest) Execute() ([]GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner, *http.Response, error) {
+func (r ModelsAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest) Execute() ([]GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSummaryTopDevicesModelsByUsageExecute(r)
 }
 
@@ -61,10 +61,10 @@ Return metrics for organization's top 10 device models sorted by data usage over
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ModelsApiGetOrganizationSummaryTopDevicesModelsByUsageRequest
+ @return ModelsAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest
 */
-func (a *ModelsApiService) GetOrganizationSummaryTopDevicesModelsByUsage(ctx context.Context, organizationId string) ModelsApiGetOrganizationSummaryTopDevicesModelsByUsageRequest {
-	return ModelsApiGetOrganizationSummaryTopDevicesModelsByUsageRequest{
+func (a *ModelsAPIService) GetOrganizationSummaryTopDevicesModelsByUsage(ctx context.Context, organizationId string) ModelsAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest {
+	return ModelsAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -73,7 +73,7 @@ func (a *ModelsApiService) GetOrganizationSummaryTopDevicesModelsByUsage(ctx con
 
 // Execute executes the request
 //  @return []GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner
-func (a *ModelsApiService) GetOrganizationSummaryTopDevicesModelsByUsageExecute(r ModelsApiGetOrganizationSummaryTopDevicesModelsByUsageRequest) ([]GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner, *http.Response, error) {
+func (a *ModelsAPIService) GetOrganizationSummaryTopDevicesModelsByUsageExecute(r ModelsAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest) ([]GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -81,7 +81,7 @@ func (a *ModelsApiService) GetOrganizationSummaryTopDevicesModelsByUsageExecute(
 		localVarReturnValue  []GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ModelsApiService.GetOrganizationSummaryTopDevicesModelsByUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ModelsAPIService.GetOrganizationSummaryTopDevicesModelsByUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -20,22 +20,22 @@ import (
 )
 
 
-// WebhooksApiService WebhooksApi service
-type WebhooksApiService service
+// WebhooksAPIService WebhooksAPI service
+type WebhooksAPIService service
 
-type WebhooksApiCreateNetworkWebhooksHttpServerRequest struct {
+type WebhooksAPICreateNetworkWebhooksHttpServerRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	networkId string
 	createNetworkWebhooksHttpServerRequest *CreateNetworkWebhooksHttpServerRequest
 }
 
-func (r WebhooksApiCreateNetworkWebhooksHttpServerRequest) CreateNetworkWebhooksHttpServerRequest(createNetworkWebhooksHttpServerRequest CreateNetworkWebhooksHttpServerRequest) WebhooksApiCreateNetworkWebhooksHttpServerRequest {
+func (r WebhooksAPICreateNetworkWebhooksHttpServerRequest) CreateNetworkWebhooksHttpServerRequest(createNetworkWebhooksHttpServerRequest CreateNetworkWebhooksHttpServerRequest) WebhooksAPICreateNetworkWebhooksHttpServerRequest {
 	r.createNetworkWebhooksHttpServerRequest = &createNetworkWebhooksHttpServerRequest
 	return r
 }
 
-func (r WebhooksApiCreateNetworkWebhooksHttpServerRequest) Execute() (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
+func (r WebhooksAPICreateNetworkWebhooksHttpServerRequest) Execute() (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateNetworkWebhooksHttpServerExecute(r)
 }
 
@@ -46,10 +46,10 @@ Add an HTTP server to a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WebhooksApiCreateNetworkWebhooksHttpServerRequest
+ @return WebhooksAPICreateNetworkWebhooksHttpServerRequest
 */
-func (a *WebhooksApiService) CreateNetworkWebhooksHttpServer(ctx context.Context, networkId string) WebhooksApiCreateNetworkWebhooksHttpServerRequest {
-	return WebhooksApiCreateNetworkWebhooksHttpServerRequest{
+func (a *WebhooksAPIService) CreateNetworkWebhooksHttpServer(ctx context.Context, networkId string) WebhooksAPICreateNetworkWebhooksHttpServerRequest {
+	return WebhooksAPICreateNetworkWebhooksHttpServerRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -58,7 +58,7 @@ func (a *WebhooksApiService) CreateNetworkWebhooksHttpServer(ctx context.Context
 
 // Execute executes the request
 //  @return GetNetworkWebhooksHttpServers200ResponseInner
-func (a *WebhooksApiService) CreateNetworkWebhooksHttpServerExecute(r WebhooksApiCreateNetworkWebhooksHttpServerRequest) (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
+func (a *WebhooksAPIService) CreateNetworkWebhooksHttpServerExecute(r WebhooksAPICreateNetworkWebhooksHttpServerRequest) (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *WebhooksApiService) CreateNetworkWebhooksHttpServerExecute(r WebhooksAp
 		localVarReturnValue  *GetNetworkWebhooksHttpServers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.CreateNetworkWebhooksHttpServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.CreateNetworkWebhooksHttpServer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,19 +151,19 @@ func (a *WebhooksApiService) CreateNetworkWebhooksHttpServerExecute(r WebhooksAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WebhooksApiCreateNetworkWebhooksPayloadTemplateRequest struct {
+type WebhooksAPICreateNetworkWebhooksPayloadTemplateRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	networkId string
 	createNetworkWebhooksPayloadTemplateRequest *CreateNetworkWebhooksPayloadTemplateRequest
 }
 
-func (r WebhooksApiCreateNetworkWebhooksPayloadTemplateRequest) CreateNetworkWebhooksPayloadTemplateRequest(createNetworkWebhooksPayloadTemplateRequest CreateNetworkWebhooksPayloadTemplateRequest) WebhooksApiCreateNetworkWebhooksPayloadTemplateRequest {
+func (r WebhooksAPICreateNetworkWebhooksPayloadTemplateRequest) CreateNetworkWebhooksPayloadTemplateRequest(createNetworkWebhooksPayloadTemplateRequest CreateNetworkWebhooksPayloadTemplateRequest) WebhooksAPICreateNetworkWebhooksPayloadTemplateRequest {
 	r.createNetworkWebhooksPayloadTemplateRequest = &createNetworkWebhooksPayloadTemplateRequest
 	return r
 }
 
-func (r WebhooksApiCreateNetworkWebhooksPayloadTemplateRequest) Execute() (*GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
+func (r WebhooksAPICreateNetworkWebhooksPayloadTemplateRequest) Execute() (*GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateNetworkWebhooksPayloadTemplateExecute(r)
 }
 
@@ -174,10 +174,10 @@ Create a webhook payload template for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WebhooksApiCreateNetworkWebhooksPayloadTemplateRequest
+ @return WebhooksAPICreateNetworkWebhooksPayloadTemplateRequest
 */
-func (a *WebhooksApiService) CreateNetworkWebhooksPayloadTemplate(ctx context.Context, networkId string) WebhooksApiCreateNetworkWebhooksPayloadTemplateRequest {
-	return WebhooksApiCreateNetworkWebhooksPayloadTemplateRequest{
+func (a *WebhooksAPIService) CreateNetworkWebhooksPayloadTemplate(ctx context.Context, networkId string) WebhooksAPICreateNetworkWebhooksPayloadTemplateRequest {
+	return WebhooksAPICreateNetworkWebhooksPayloadTemplateRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -186,7 +186,7 @@ func (a *WebhooksApiService) CreateNetworkWebhooksPayloadTemplate(ctx context.Co
 
 // Execute executes the request
 //  @return GetNetworkWebhooksPayloadTemplates200ResponseInner
-func (a *WebhooksApiService) CreateNetworkWebhooksPayloadTemplateExecute(r WebhooksApiCreateNetworkWebhooksPayloadTemplateRequest) (*GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
+func (a *WebhooksAPIService) CreateNetworkWebhooksPayloadTemplateExecute(r WebhooksAPICreateNetworkWebhooksPayloadTemplateRequest) (*GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -194,7 +194,7 @@ func (a *WebhooksApiService) CreateNetworkWebhooksPayloadTemplateExecute(r Webho
 		localVarReturnValue  *GetNetworkWebhooksPayloadTemplates200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.CreateNetworkWebhooksPayloadTemplate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.CreateNetworkWebhooksPayloadTemplate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -279,19 +279,19 @@ func (a *WebhooksApiService) CreateNetworkWebhooksPayloadTemplateExecute(r Webho
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WebhooksApiCreateNetworkWebhooksWebhookTestRequest struct {
+type WebhooksAPICreateNetworkWebhooksWebhookTestRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	networkId string
 	createNetworkWebhooksWebhookTestRequest *CreateNetworkWebhooksWebhookTestRequest
 }
 
-func (r WebhooksApiCreateNetworkWebhooksWebhookTestRequest) CreateNetworkWebhooksWebhookTestRequest(createNetworkWebhooksWebhookTestRequest CreateNetworkWebhooksWebhookTestRequest) WebhooksApiCreateNetworkWebhooksWebhookTestRequest {
+func (r WebhooksAPICreateNetworkWebhooksWebhookTestRequest) CreateNetworkWebhooksWebhookTestRequest(createNetworkWebhooksWebhookTestRequest CreateNetworkWebhooksWebhookTestRequest) WebhooksAPICreateNetworkWebhooksWebhookTestRequest {
 	r.createNetworkWebhooksWebhookTestRequest = &createNetworkWebhooksWebhookTestRequest
 	return r
 }
 
-func (r WebhooksApiCreateNetworkWebhooksWebhookTestRequest) Execute() (*CreateNetworkWebhooksWebhookTest201Response, *http.Response, error) {
+func (r WebhooksAPICreateNetworkWebhooksWebhookTestRequest) Execute() (*CreateNetworkWebhooksWebhookTest201Response, *http.Response, error) {
 	return r.ApiService.CreateNetworkWebhooksWebhookTestExecute(r)
 }
 
@@ -302,10 +302,10 @@ Send a test webhook for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WebhooksApiCreateNetworkWebhooksWebhookTestRequest
+ @return WebhooksAPICreateNetworkWebhooksWebhookTestRequest
 */
-func (a *WebhooksApiService) CreateNetworkWebhooksWebhookTest(ctx context.Context, networkId string) WebhooksApiCreateNetworkWebhooksWebhookTestRequest {
-	return WebhooksApiCreateNetworkWebhooksWebhookTestRequest{
+func (a *WebhooksAPIService) CreateNetworkWebhooksWebhookTest(ctx context.Context, networkId string) WebhooksAPICreateNetworkWebhooksWebhookTestRequest {
+	return WebhooksAPICreateNetworkWebhooksWebhookTestRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -314,7 +314,7 @@ func (a *WebhooksApiService) CreateNetworkWebhooksWebhookTest(ctx context.Contex
 
 // Execute executes the request
 //  @return CreateNetworkWebhooksWebhookTest201Response
-func (a *WebhooksApiService) CreateNetworkWebhooksWebhookTestExecute(r WebhooksApiCreateNetworkWebhooksWebhookTestRequest) (*CreateNetworkWebhooksWebhookTest201Response, *http.Response, error) {
+func (a *WebhooksAPIService) CreateNetworkWebhooksWebhookTestExecute(r WebhooksAPICreateNetworkWebhooksWebhookTestRequest) (*CreateNetworkWebhooksWebhookTest201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -322,7 +322,7 @@ func (a *WebhooksApiService) CreateNetworkWebhooksWebhookTestExecute(r WebhooksA
 		localVarReturnValue  *CreateNetworkWebhooksWebhookTest201Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.CreateNetworkWebhooksWebhookTest")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.CreateNetworkWebhooksWebhookTest")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -407,14 +407,14 @@ func (a *WebhooksApiService) CreateNetworkWebhooksWebhookTestExecute(r WebhooksA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WebhooksApiDeleteNetworkWebhooksHttpServerRequest struct {
+type WebhooksAPIDeleteNetworkWebhooksHttpServerRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	networkId string
 	httpServerId string
 }
 
-func (r WebhooksApiDeleteNetworkWebhooksHttpServerRequest) Execute() (*http.Response, error) {
+func (r WebhooksAPIDeleteNetworkWebhooksHttpServerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkWebhooksHttpServerExecute(r)
 }
 
@@ -426,10 +426,10 @@ Delete an HTTP server from a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param httpServerId Http server ID
- @return WebhooksApiDeleteNetworkWebhooksHttpServerRequest
+ @return WebhooksAPIDeleteNetworkWebhooksHttpServerRequest
 */
-func (a *WebhooksApiService) DeleteNetworkWebhooksHttpServer(ctx context.Context, networkId string, httpServerId string) WebhooksApiDeleteNetworkWebhooksHttpServerRequest {
-	return WebhooksApiDeleteNetworkWebhooksHttpServerRequest{
+func (a *WebhooksAPIService) DeleteNetworkWebhooksHttpServer(ctx context.Context, networkId string, httpServerId string) WebhooksAPIDeleteNetworkWebhooksHttpServerRequest {
+	return WebhooksAPIDeleteNetworkWebhooksHttpServerRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -438,14 +438,14 @@ func (a *WebhooksApiService) DeleteNetworkWebhooksHttpServer(ctx context.Context
 }
 
 // Execute executes the request
-func (a *WebhooksApiService) DeleteNetworkWebhooksHttpServerExecute(r WebhooksApiDeleteNetworkWebhooksHttpServerRequest) (*http.Response, error) {
+func (a *WebhooksAPIService) DeleteNetworkWebhooksHttpServerExecute(r WebhooksAPIDeleteNetworkWebhooksHttpServerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.DeleteNetworkWebhooksHttpServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.DeleteNetworkWebhooksHttpServer")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -517,14 +517,14 @@ func (a *WebhooksApiService) DeleteNetworkWebhooksHttpServerExecute(r WebhooksAp
 	return localVarHTTPResponse, nil
 }
 
-type WebhooksApiDeleteNetworkWebhooksPayloadTemplateRequest struct {
+type WebhooksAPIDeleteNetworkWebhooksPayloadTemplateRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	networkId string
 	payloadTemplateId string
 }
 
-func (r WebhooksApiDeleteNetworkWebhooksPayloadTemplateRequest) Execute() (*http.Response, error) {
+func (r WebhooksAPIDeleteNetworkWebhooksPayloadTemplateRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkWebhooksPayloadTemplateExecute(r)
 }
 
@@ -536,10 +536,10 @@ Destroy a webhook payload template for a network. Does not work for included tem
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param payloadTemplateId Payload template ID
- @return WebhooksApiDeleteNetworkWebhooksPayloadTemplateRequest
+ @return WebhooksAPIDeleteNetworkWebhooksPayloadTemplateRequest
 */
-func (a *WebhooksApiService) DeleteNetworkWebhooksPayloadTemplate(ctx context.Context, networkId string, payloadTemplateId string) WebhooksApiDeleteNetworkWebhooksPayloadTemplateRequest {
-	return WebhooksApiDeleteNetworkWebhooksPayloadTemplateRequest{
+func (a *WebhooksAPIService) DeleteNetworkWebhooksPayloadTemplate(ctx context.Context, networkId string, payloadTemplateId string) WebhooksAPIDeleteNetworkWebhooksPayloadTemplateRequest {
+	return WebhooksAPIDeleteNetworkWebhooksPayloadTemplateRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -548,14 +548,14 @@ func (a *WebhooksApiService) DeleteNetworkWebhooksPayloadTemplate(ctx context.Co
 }
 
 // Execute executes the request
-func (a *WebhooksApiService) DeleteNetworkWebhooksPayloadTemplateExecute(r WebhooksApiDeleteNetworkWebhooksPayloadTemplateRequest) (*http.Response, error) {
+func (a *WebhooksAPIService) DeleteNetworkWebhooksPayloadTemplateExecute(r WebhooksAPIDeleteNetworkWebhooksPayloadTemplateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.DeleteNetworkWebhooksPayloadTemplate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.DeleteNetworkWebhooksPayloadTemplate")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -627,14 +627,14 @@ func (a *WebhooksApiService) DeleteNetworkWebhooksPayloadTemplateExecute(r Webho
 	return localVarHTTPResponse, nil
 }
 
-type WebhooksApiGetNetworkWebhooksHttpServerRequest struct {
+type WebhooksAPIGetNetworkWebhooksHttpServerRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	networkId string
 	httpServerId string
 }
 
-func (r WebhooksApiGetNetworkWebhooksHttpServerRequest) Execute() (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
+func (r WebhooksAPIGetNetworkWebhooksHttpServerRequest) Execute() (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWebhooksHttpServerExecute(r)
 }
 
@@ -646,10 +646,10 @@ Return an HTTP server for a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param httpServerId Http server ID
- @return WebhooksApiGetNetworkWebhooksHttpServerRequest
+ @return WebhooksAPIGetNetworkWebhooksHttpServerRequest
 */
-func (a *WebhooksApiService) GetNetworkWebhooksHttpServer(ctx context.Context, networkId string, httpServerId string) WebhooksApiGetNetworkWebhooksHttpServerRequest {
-	return WebhooksApiGetNetworkWebhooksHttpServerRequest{
+func (a *WebhooksAPIService) GetNetworkWebhooksHttpServer(ctx context.Context, networkId string, httpServerId string) WebhooksAPIGetNetworkWebhooksHttpServerRequest {
+	return WebhooksAPIGetNetworkWebhooksHttpServerRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -659,7 +659,7 @@ func (a *WebhooksApiService) GetNetworkWebhooksHttpServer(ctx context.Context, n
 
 // Execute executes the request
 //  @return GetNetworkWebhooksHttpServers200ResponseInner
-func (a *WebhooksApiService) GetNetworkWebhooksHttpServerExecute(r WebhooksApiGetNetworkWebhooksHttpServerRequest) (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
+func (a *WebhooksAPIService) GetNetworkWebhooksHttpServerExecute(r WebhooksAPIGetNetworkWebhooksHttpServerRequest) (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -667,7 +667,7 @@ func (a *WebhooksApiService) GetNetworkWebhooksHttpServerExecute(r WebhooksApiGe
 		localVarReturnValue  *GetNetworkWebhooksHttpServers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.GetNetworkWebhooksHttpServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.GetNetworkWebhooksHttpServer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -748,13 +748,13 @@ func (a *WebhooksApiService) GetNetworkWebhooksHttpServerExecute(r WebhooksApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WebhooksApiGetNetworkWebhooksHttpServersRequest struct {
+type WebhooksAPIGetNetworkWebhooksHttpServersRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	networkId string
 }
 
-func (r WebhooksApiGetNetworkWebhooksHttpServersRequest) Execute() ([]GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
+func (r WebhooksAPIGetNetworkWebhooksHttpServersRequest) Execute() ([]GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWebhooksHttpServersExecute(r)
 }
 
@@ -765,10 +765,10 @@ List the HTTP servers for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WebhooksApiGetNetworkWebhooksHttpServersRequest
+ @return WebhooksAPIGetNetworkWebhooksHttpServersRequest
 */
-func (a *WebhooksApiService) GetNetworkWebhooksHttpServers(ctx context.Context, networkId string) WebhooksApiGetNetworkWebhooksHttpServersRequest {
-	return WebhooksApiGetNetworkWebhooksHttpServersRequest{
+func (a *WebhooksAPIService) GetNetworkWebhooksHttpServers(ctx context.Context, networkId string) WebhooksAPIGetNetworkWebhooksHttpServersRequest {
+	return WebhooksAPIGetNetworkWebhooksHttpServersRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -777,7 +777,7 @@ func (a *WebhooksApiService) GetNetworkWebhooksHttpServers(ctx context.Context, 
 
 // Execute executes the request
 //  @return []GetNetworkWebhooksHttpServers200ResponseInner
-func (a *WebhooksApiService) GetNetworkWebhooksHttpServersExecute(r WebhooksApiGetNetworkWebhooksHttpServersRequest) ([]GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
+func (a *WebhooksAPIService) GetNetworkWebhooksHttpServersExecute(r WebhooksAPIGetNetworkWebhooksHttpServersRequest) ([]GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -785,7 +785,7 @@ func (a *WebhooksApiService) GetNetworkWebhooksHttpServersExecute(r WebhooksApiG
 		localVarReturnValue  []GetNetworkWebhooksHttpServers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.GetNetworkWebhooksHttpServers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.GetNetworkWebhooksHttpServers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -865,14 +865,14 @@ func (a *WebhooksApiService) GetNetworkWebhooksHttpServersExecute(r WebhooksApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WebhooksApiGetNetworkWebhooksPayloadTemplateRequest struct {
+type WebhooksAPIGetNetworkWebhooksPayloadTemplateRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	networkId string
 	payloadTemplateId string
 }
 
-func (r WebhooksApiGetNetworkWebhooksPayloadTemplateRequest) Execute() (*GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
+func (r WebhooksAPIGetNetworkWebhooksPayloadTemplateRequest) Execute() (*GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWebhooksPayloadTemplateExecute(r)
 }
 
@@ -884,10 +884,10 @@ Get the webhook payload template for a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param payloadTemplateId Payload template ID
- @return WebhooksApiGetNetworkWebhooksPayloadTemplateRequest
+ @return WebhooksAPIGetNetworkWebhooksPayloadTemplateRequest
 */
-func (a *WebhooksApiService) GetNetworkWebhooksPayloadTemplate(ctx context.Context, networkId string, payloadTemplateId string) WebhooksApiGetNetworkWebhooksPayloadTemplateRequest {
-	return WebhooksApiGetNetworkWebhooksPayloadTemplateRequest{
+func (a *WebhooksAPIService) GetNetworkWebhooksPayloadTemplate(ctx context.Context, networkId string, payloadTemplateId string) WebhooksAPIGetNetworkWebhooksPayloadTemplateRequest {
+	return WebhooksAPIGetNetworkWebhooksPayloadTemplateRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -897,7 +897,7 @@ func (a *WebhooksApiService) GetNetworkWebhooksPayloadTemplate(ctx context.Conte
 
 // Execute executes the request
 //  @return GetNetworkWebhooksPayloadTemplates200ResponseInner
-func (a *WebhooksApiService) GetNetworkWebhooksPayloadTemplateExecute(r WebhooksApiGetNetworkWebhooksPayloadTemplateRequest) (*GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
+func (a *WebhooksAPIService) GetNetworkWebhooksPayloadTemplateExecute(r WebhooksAPIGetNetworkWebhooksPayloadTemplateRequest) (*GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -905,7 +905,7 @@ func (a *WebhooksApiService) GetNetworkWebhooksPayloadTemplateExecute(r Webhooks
 		localVarReturnValue  *GetNetworkWebhooksPayloadTemplates200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.GetNetworkWebhooksPayloadTemplate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.GetNetworkWebhooksPayloadTemplate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -986,13 +986,13 @@ func (a *WebhooksApiService) GetNetworkWebhooksPayloadTemplateExecute(r Webhooks
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WebhooksApiGetNetworkWebhooksPayloadTemplatesRequest struct {
+type WebhooksAPIGetNetworkWebhooksPayloadTemplatesRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	networkId string
 }
 
-func (r WebhooksApiGetNetworkWebhooksPayloadTemplatesRequest) Execute() ([]GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
+func (r WebhooksAPIGetNetworkWebhooksPayloadTemplatesRequest) Execute() ([]GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWebhooksPayloadTemplatesExecute(r)
 }
 
@@ -1003,10 +1003,10 @@ List the webhook payload templates for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WebhooksApiGetNetworkWebhooksPayloadTemplatesRequest
+ @return WebhooksAPIGetNetworkWebhooksPayloadTemplatesRequest
 */
-func (a *WebhooksApiService) GetNetworkWebhooksPayloadTemplates(ctx context.Context, networkId string) WebhooksApiGetNetworkWebhooksPayloadTemplatesRequest {
-	return WebhooksApiGetNetworkWebhooksPayloadTemplatesRequest{
+func (a *WebhooksAPIService) GetNetworkWebhooksPayloadTemplates(ctx context.Context, networkId string) WebhooksAPIGetNetworkWebhooksPayloadTemplatesRequest {
+	return WebhooksAPIGetNetworkWebhooksPayloadTemplatesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1015,7 +1015,7 @@ func (a *WebhooksApiService) GetNetworkWebhooksPayloadTemplates(ctx context.Cont
 
 // Execute executes the request
 //  @return []GetNetworkWebhooksPayloadTemplates200ResponseInner
-func (a *WebhooksApiService) GetNetworkWebhooksPayloadTemplatesExecute(r WebhooksApiGetNetworkWebhooksPayloadTemplatesRequest) ([]GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
+func (a *WebhooksAPIService) GetNetworkWebhooksPayloadTemplatesExecute(r WebhooksAPIGetNetworkWebhooksPayloadTemplatesRequest) ([]GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1023,7 +1023,7 @@ func (a *WebhooksApiService) GetNetworkWebhooksPayloadTemplatesExecute(r Webhook
 		localVarReturnValue  []GetNetworkWebhooksPayloadTemplates200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.GetNetworkWebhooksPayloadTemplates")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.GetNetworkWebhooksPayloadTemplates")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1103,14 +1103,14 @@ func (a *WebhooksApiService) GetNetworkWebhooksPayloadTemplatesExecute(r Webhook
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WebhooksApiGetNetworkWebhooksWebhookTestRequest struct {
+type WebhooksAPIGetNetworkWebhooksWebhookTestRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	networkId string
 	webhookTestId string
 }
 
-func (r WebhooksApiGetNetworkWebhooksWebhookTestRequest) Execute() (*CreateNetworkWebhooksWebhookTest201Response, *http.Response, error) {
+func (r WebhooksAPIGetNetworkWebhooksWebhookTestRequest) Execute() (*CreateNetworkWebhooksWebhookTest201Response, *http.Response, error) {
 	return r.ApiService.GetNetworkWebhooksWebhookTestExecute(r)
 }
 
@@ -1122,10 +1122,10 @@ Return the status of a webhook test for a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param webhookTestId Webhook test ID
- @return WebhooksApiGetNetworkWebhooksWebhookTestRequest
+ @return WebhooksAPIGetNetworkWebhooksWebhookTestRequest
 */
-func (a *WebhooksApiService) GetNetworkWebhooksWebhookTest(ctx context.Context, networkId string, webhookTestId string) WebhooksApiGetNetworkWebhooksWebhookTestRequest {
-	return WebhooksApiGetNetworkWebhooksWebhookTestRequest{
+func (a *WebhooksAPIService) GetNetworkWebhooksWebhookTest(ctx context.Context, networkId string, webhookTestId string) WebhooksAPIGetNetworkWebhooksWebhookTestRequest {
+	return WebhooksAPIGetNetworkWebhooksWebhookTestRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1135,7 +1135,7 @@ func (a *WebhooksApiService) GetNetworkWebhooksWebhookTest(ctx context.Context, 
 
 // Execute executes the request
 //  @return CreateNetworkWebhooksWebhookTest201Response
-func (a *WebhooksApiService) GetNetworkWebhooksWebhookTestExecute(r WebhooksApiGetNetworkWebhooksWebhookTestRequest) (*CreateNetworkWebhooksWebhookTest201Response, *http.Response, error) {
+func (a *WebhooksAPIService) GetNetworkWebhooksWebhookTestExecute(r WebhooksAPIGetNetworkWebhooksWebhookTestRequest) (*CreateNetworkWebhooksWebhookTest201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1143,7 +1143,7 @@ func (a *WebhooksApiService) GetNetworkWebhooksWebhookTestExecute(r WebhooksApiG
 		localVarReturnValue  *CreateNetworkWebhooksWebhookTest201Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.GetNetworkWebhooksWebhookTest")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.GetNetworkWebhooksWebhookTest")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1224,20 +1224,20 @@ func (a *WebhooksApiService) GetNetworkWebhooksWebhookTestExecute(r WebhooksApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WebhooksApiGetOrganizationWebhooksAlertTypesRequest struct {
+type WebhooksAPIGetOrganizationWebhooksAlertTypesRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	organizationId string
 	productType *string
 }
 
 // Filter sample alerts to a specific product type
-func (r WebhooksApiGetOrganizationWebhooksAlertTypesRequest) ProductType(productType string) WebhooksApiGetOrganizationWebhooksAlertTypesRequest {
+func (r WebhooksAPIGetOrganizationWebhooksAlertTypesRequest) ProductType(productType string) WebhooksAPIGetOrganizationWebhooksAlertTypesRequest {
 	r.productType = &productType
 	return r
 }
 
-func (r WebhooksApiGetOrganizationWebhooksAlertTypesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r WebhooksAPIGetOrganizationWebhooksAlertTypesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationWebhooksAlertTypesExecute(r)
 }
 
@@ -1248,10 +1248,10 @@ Return a list of alert types to be used with managing webhook alerts
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return WebhooksApiGetOrganizationWebhooksAlertTypesRequest
+ @return WebhooksAPIGetOrganizationWebhooksAlertTypesRequest
 */
-func (a *WebhooksApiService) GetOrganizationWebhooksAlertTypes(ctx context.Context, organizationId string) WebhooksApiGetOrganizationWebhooksAlertTypesRequest {
-	return WebhooksApiGetOrganizationWebhooksAlertTypesRequest{
+func (a *WebhooksAPIService) GetOrganizationWebhooksAlertTypes(ctx context.Context, organizationId string) WebhooksAPIGetOrganizationWebhooksAlertTypesRequest {
+	return WebhooksAPIGetOrganizationWebhooksAlertTypesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1260,7 +1260,7 @@ func (a *WebhooksApiService) GetOrganizationWebhooksAlertTypes(ctx context.Conte
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *WebhooksApiService) GetOrganizationWebhooksAlertTypesExecute(r WebhooksApiGetOrganizationWebhooksAlertTypesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *WebhooksAPIService) GetOrganizationWebhooksAlertTypesExecute(r WebhooksAPIGetOrganizationWebhooksAlertTypesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1268,7 +1268,7 @@ func (a *WebhooksApiService) GetOrganizationWebhooksAlertTypesExecute(r Webhooks
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.GetOrganizationWebhooksAlertTypes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.GetOrganizationWebhooksAlertTypes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1351,9 +1351,9 @@ func (a *WebhooksApiService) GetOrganizationWebhooksAlertTypesExecute(r Webhooks
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WebhooksApiGetOrganizationWebhooksLogsRequest struct {
+type WebhooksAPIGetOrganizationWebhooksLogsRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -1365,48 +1365,48 @@ type WebhooksApiGetOrganizationWebhooksLogsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 90 days from today.
-func (r WebhooksApiGetOrganizationWebhooksLogsRequest) T0(t0 string) WebhooksApiGetOrganizationWebhooksLogsRequest {
+func (r WebhooksAPIGetOrganizationWebhooksLogsRequest) T0(t0 string) WebhooksAPIGetOrganizationWebhooksLogsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r WebhooksApiGetOrganizationWebhooksLogsRequest) T1(t1 string) WebhooksApiGetOrganizationWebhooksLogsRequest {
+func (r WebhooksAPIGetOrganizationWebhooksLogsRequest) T1(t1 string) WebhooksAPIGetOrganizationWebhooksLogsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r WebhooksApiGetOrganizationWebhooksLogsRequest) Timespan(timespan float32) WebhooksApiGetOrganizationWebhooksLogsRequest {
+func (r WebhooksAPIGetOrganizationWebhooksLogsRequest) Timespan(timespan float32) WebhooksAPIGetOrganizationWebhooksLogsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.
-func (r WebhooksApiGetOrganizationWebhooksLogsRequest) PerPage(perPage int32) WebhooksApiGetOrganizationWebhooksLogsRequest {
+func (r WebhooksAPIGetOrganizationWebhooksLogsRequest) PerPage(perPage int32) WebhooksAPIGetOrganizationWebhooksLogsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r WebhooksApiGetOrganizationWebhooksLogsRequest) StartingAfter(startingAfter string) WebhooksApiGetOrganizationWebhooksLogsRequest {
+func (r WebhooksAPIGetOrganizationWebhooksLogsRequest) StartingAfter(startingAfter string) WebhooksAPIGetOrganizationWebhooksLogsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r WebhooksApiGetOrganizationWebhooksLogsRequest) EndingBefore(endingBefore string) WebhooksApiGetOrganizationWebhooksLogsRequest {
+func (r WebhooksAPIGetOrganizationWebhooksLogsRequest) EndingBefore(endingBefore string) WebhooksAPIGetOrganizationWebhooksLogsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The URL the webhook was sent to
-func (r WebhooksApiGetOrganizationWebhooksLogsRequest) Url(url string) WebhooksApiGetOrganizationWebhooksLogsRequest {
+func (r WebhooksAPIGetOrganizationWebhooksLogsRequest) Url(url string) WebhooksAPIGetOrganizationWebhooksLogsRequest {
 	r.url = &url
 	return r
 }
 
-func (r WebhooksApiGetOrganizationWebhooksLogsRequest) Execute() ([]GetOrganizationWebhooksLogs200ResponseInner, *http.Response, error) {
+func (r WebhooksAPIGetOrganizationWebhooksLogsRequest) Execute() ([]GetOrganizationWebhooksLogs200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationWebhooksLogsExecute(r)
 }
 
@@ -1417,10 +1417,10 @@ Return the log of webhook POSTs sent
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return WebhooksApiGetOrganizationWebhooksLogsRequest
+ @return WebhooksAPIGetOrganizationWebhooksLogsRequest
 */
-func (a *WebhooksApiService) GetOrganizationWebhooksLogs(ctx context.Context, organizationId string) WebhooksApiGetOrganizationWebhooksLogsRequest {
-	return WebhooksApiGetOrganizationWebhooksLogsRequest{
+func (a *WebhooksAPIService) GetOrganizationWebhooksLogs(ctx context.Context, organizationId string) WebhooksAPIGetOrganizationWebhooksLogsRequest {
+	return WebhooksAPIGetOrganizationWebhooksLogsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1429,7 +1429,7 @@ func (a *WebhooksApiService) GetOrganizationWebhooksLogs(ctx context.Context, or
 
 // Execute executes the request
 //  @return []GetOrganizationWebhooksLogs200ResponseInner
-func (a *WebhooksApiService) GetOrganizationWebhooksLogsExecute(r WebhooksApiGetOrganizationWebhooksLogsRequest) ([]GetOrganizationWebhooksLogs200ResponseInner, *http.Response, error) {
+func (a *WebhooksAPIService) GetOrganizationWebhooksLogsExecute(r WebhooksAPIGetOrganizationWebhooksLogsRequest) ([]GetOrganizationWebhooksLogs200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1437,7 +1437,7 @@ func (a *WebhooksApiService) GetOrganizationWebhooksLogsExecute(r WebhooksApiGet
 		localVarReturnValue  []GetOrganizationWebhooksLogs200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.GetOrganizationWebhooksLogs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.GetOrganizationWebhooksLogs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1538,20 +1538,20 @@ func (a *WebhooksApiService) GetOrganizationWebhooksLogsExecute(r WebhooksApiGet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WebhooksApiUpdateNetworkWebhooksHttpServerRequest struct {
+type WebhooksAPIUpdateNetworkWebhooksHttpServerRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	networkId string
 	httpServerId string
 	updateNetworkWebhooksHttpServerRequest *UpdateNetworkWebhooksHttpServerRequest
 }
 
-func (r WebhooksApiUpdateNetworkWebhooksHttpServerRequest) UpdateNetworkWebhooksHttpServerRequest(updateNetworkWebhooksHttpServerRequest UpdateNetworkWebhooksHttpServerRequest) WebhooksApiUpdateNetworkWebhooksHttpServerRequest {
+func (r WebhooksAPIUpdateNetworkWebhooksHttpServerRequest) UpdateNetworkWebhooksHttpServerRequest(updateNetworkWebhooksHttpServerRequest UpdateNetworkWebhooksHttpServerRequest) WebhooksAPIUpdateNetworkWebhooksHttpServerRequest {
 	r.updateNetworkWebhooksHttpServerRequest = &updateNetworkWebhooksHttpServerRequest
 	return r
 }
 
-func (r WebhooksApiUpdateNetworkWebhooksHttpServerRequest) Execute() (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
+func (r WebhooksAPIUpdateNetworkWebhooksHttpServerRequest) Execute() (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWebhooksHttpServerExecute(r)
 }
 
@@ -1563,10 +1563,10 @@ Update an HTTP server. To change a URL, create a new HTTP server.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param httpServerId Http server ID
- @return WebhooksApiUpdateNetworkWebhooksHttpServerRequest
+ @return WebhooksAPIUpdateNetworkWebhooksHttpServerRequest
 */
-func (a *WebhooksApiService) UpdateNetworkWebhooksHttpServer(ctx context.Context, networkId string, httpServerId string) WebhooksApiUpdateNetworkWebhooksHttpServerRequest {
-	return WebhooksApiUpdateNetworkWebhooksHttpServerRequest{
+func (a *WebhooksAPIService) UpdateNetworkWebhooksHttpServer(ctx context.Context, networkId string, httpServerId string) WebhooksAPIUpdateNetworkWebhooksHttpServerRequest {
+	return WebhooksAPIUpdateNetworkWebhooksHttpServerRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1576,7 +1576,7 @@ func (a *WebhooksApiService) UpdateNetworkWebhooksHttpServer(ctx context.Context
 
 // Execute executes the request
 //  @return GetNetworkWebhooksHttpServers200ResponseInner
-func (a *WebhooksApiService) UpdateNetworkWebhooksHttpServerExecute(r WebhooksApiUpdateNetworkWebhooksHttpServerRequest) (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
+func (a *WebhooksAPIService) UpdateNetworkWebhooksHttpServerExecute(r WebhooksAPIUpdateNetworkWebhooksHttpServerRequest) (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1584,7 +1584,7 @@ func (a *WebhooksApiService) UpdateNetworkWebhooksHttpServerExecute(r WebhooksAp
 		localVarReturnValue  *GetNetworkWebhooksHttpServers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.UpdateNetworkWebhooksHttpServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.UpdateNetworkWebhooksHttpServer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1667,20 +1667,20 @@ func (a *WebhooksApiService) UpdateNetworkWebhooksHttpServerExecute(r WebhooksAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WebhooksApiUpdateNetworkWebhooksPayloadTemplateRequest struct {
+type WebhooksAPIUpdateNetworkWebhooksPayloadTemplateRequest struct {
 	ctx context.Context
-	ApiService *WebhooksApiService
+	ApiService *WebhooksAPIService
 	networkId string
 	payloadTemplateId string
 	updateNetworkWebhooksPayloadTemplateRequest *UpdateNetworkWebhooksPayloadTemplateRequest
 }
 
-func (r WebhooksApiUpdateNetworkWebhooksPayloadTemplateRequest) UpdateNetworkWebhooksPayloadTemplateRequest(updateNetworkWebhooksPayloadTemplateRequest UpdateNetworkWebhooksPayloadTemplateRequest) WebhooksApiUpdateNetworkWebhooksPayloadTemplateRequest {
+func (r WebhooksAPIUpdateNetworkWebhooksPayloadTemplateRequest) UpdateNetworkWebhooksPayloadTemplateRequest(updateNetworkWebhooksPayloadTemplateRequest UpdateNetworkWebhooksPayloadTemplateRequest) WebhooksAPIUpdateNetworkWebhooksPayloadTemplateRequest {
 	r.updateNetworkWebhooksPayloadTemplateRequest = &updateNetworkWebhooksPayloadTemplateRequest
 	return r
 }
 
-func (r WebhooksApiUpdateNetworkWebhooksPayloadTemplateRequest) Execute() (*GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
+func (r WebhooksAPIUpdateNetworkWebhooksPayloadTemplateRequest) Execute() (*GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWebhooksPayloadTemplateExecute(r)
 }
 
@@ -1692,10 +1692,10 @@ Update a webhook payload template for a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param payloadTemplateId Payload template ID
- @return WebhooksApiUpdateNetworkWebhooksPayloadTemplateRequest
+ @return WebhooksAPIUpdateNetworkWebhooksPayloadTemplateRequest
 */
-func (a *WebhooksApiService) UpdateNetworkWebhooksPayloadTemplate(ctx context.Context, networkId string, payloadTemplateId string) WebhooksApiUpdateNetworkWebhooksPayloadTemplateRequest {
-	return WebhooksApiUpdateNetworkWebhooksPayloadTemplateRequest{
+func (a *WebhooksAPIService) UpdateNetworkWebhooksPayloadTemplate(ctx context.Context, networkId string, payloadTemplateId string) WebhooksAPIUpdateNetworkWebhooksPayloadTemplateRequest {
+	return WebhooksAPIUpdateNetworkWebhooksPayloadTemplateRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1705,7 +1705,7 @@ func (a *WebhooksApiService) UpdateNetworkWebhooksPayloadTemplate(ctx context.Co
 
 // Execute executes the request
 //  @return GetNetworkWebhooksPayloadTemplates200ResponseInner
-func (a *WebhooksApiService) UpdateNetworkWebhooksPayloadTemplateExecute(r WebhooksApiUpdateNetworkWebhooksPayloadTemplateRequest) (*GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
+func (a *WebhooksAPIService) UpdateNetworkWebhooksPayloadTemplateExecute(r WebhooksAPIUpdateNetworkWebhooksPayloadTemplateRequest) (*GetNetworkWebhooksPayloadTemplates200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1713,7 +1713,7 @@ func (a *WebhooksApiService) UpdateNetworkWebhooksPayloadTemplateExecute(r Webho
 		localVarReturnValue  *GetNetworkWebhooksPayloadTemplates200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.UpdateNetworkWebhooksPayloadTemplate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksAPIService.UpdateNetworkWebhooksPayloadTemplate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

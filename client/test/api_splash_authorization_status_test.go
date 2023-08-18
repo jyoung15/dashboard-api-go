@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing SplashAuthorizationStatusApiService
+Testing SplashAuthorizationStatusAPIService
 
 */
 
@@ -17,19 +17,19 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_SplashAuthorizationStatusApiService(t *testing.T) {
+func Test_client_SplashAuthorizationStatusAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test SplashAuthorizationStatusApiService GetNetworkClientSplashAuthorizationStatus", func(t *testing.T) {
+	t.Run("Test SplashAuthorizationStatusAPIService GetNetworkClientSplashAuthorizationStatus", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var clientId string
 
-		resp, httpRes, err := apiClient.SplashAuthorizationStatusApi.GetNetworkClientSplashAuthorizationStatus(context.Background(), networkId, clientId).Execute()
+		resp, httpRes, err := apiClient.SplashAuthorizationStatusAPI.GetNetworkClientSplashAuthorizationStatus(context.Background(), networkId, clientId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -37,14 +37,14 @@ func Test_client_SplashAuthorizationStatusApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SplashAuthorizationStatusApiService UpdateNetworkClientSplashAuthorizationStatus", func(t *testing.T) {
+	t.Run("Test SplashAuthorizationStatusAPIService UpdateNetworkClientSplashAuthorizationStatus", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var clientId string
 
-		resp, httpRes, err := apiClient.SplashAuthorizationStatusApi.UpdateNetworkClientSplashAuthorizationStatus(context.Background(), networkId, clientId).Execute()
+		resp, httpRes, err := apiClient.SplashAuthorizationStatusAPI.UpdateNetworkClientSplashAuthorizationStatus(context.Background(), networkId, clientId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

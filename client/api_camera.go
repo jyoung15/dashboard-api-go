@@ -22,22 +22,22 @@ import (
 )
 
 
-// CameraApiService CameraApi service
-type CameraApiService service
+// CameraAPIService CameraAPI service
+type CameraAPIService service
 
-type CameraApiCreateNetworkCameraQualityRetentionProfileRequest struct {
+type CameraAPICreateNetworkCameraQualityRetentionProfileRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	networkId string
 	createNetworkCameraQualityRetentionProfileRequest *CreateNetworkCameraQualityRetentionProfileRequest
 }
 
-func (r CameraApiCreateNetworkCameraQualityRetentionProfileRequest) CreateNetworkCameraQualityRetentionProfileRequest(createNetworkCameraQualityRetentionProfileRequest CreateNetworkCameraQualityRetentionProfileRequest) CameraApiCreateNetworkCameraQualityRetentionProfileRequest {
+func (r CameraAPICreateNetworkCameraQualityRetentionProfileRequest) CreateNetworkCameraQualityRetentionProfileRequest(createNetworkCameraQualityRetentionProfileRequest CreateNetworkCameraQualityRetentionProfileRequest) CameraAPICreateNetworkCameraQualityRetentionProfileRequest {
 	r.createNetworkCameraQualityRetentionProfileRequest = &createNetworkCameraQualityRetentionProfileRequest
 	return r
 }
 
-func (r CameraApiCreateNetworkCameraQualityRetentionProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CameraAPICreateNetworkCameraQualityRetentionProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkCameraQualityRetentionProfileExecute(r)
 }
 
@@ -48,10 +48,10 @@ Creates new quality retention profile for this network.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return CameraApiCreateNetworkCameraQualityRetentionProfileRequest
+ @return CameraAPICreateNetworkCameraQualityRetentionProfileRequest
 */
-func (a *CameraApiService) CreateNetworkCameraQualityRetentionProfile(ctx context.Context, networkId string) CameraApiCreateNetworkCameraQualityRetentionProfileRequest {
-	return CameraApiCreateNetworkCameraQualityRetentionProfileRequest{
+func (a *CameraAPIService) CreateNetworkCameraQualityRetentionProfile(ctx context.Context, networkId string) CameraAPICreateNetworkCameraQualityRetentionProfileRequest {
+	return CameraAPICreateNetworkCameraQualityRetentionProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -60,7 +60,7 @@ func (a *CameraApiService) CreateNetworkCameraQualityRetentionProfile(ctx contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CameraApiService) CreateNetworkCameraQualityRetentionProfileExecute(r CameraApiCreateNetworkCameraQualityRetentionProfileRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) CreateNetworkCameraQualityRetentionProfileExecute(r CameraAPICreateNetworkCameraQualityRetentionProfileRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -68,7 +68,7 @@ func (a *CameraApiService) CreateNetworkCameraQualityRetentionProfileExecute(r C
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.CreateNetworkCameraQualityRetentionProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.CreateNetworkCameraQualityRetentionProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -153,19 +153,19 @@ func (a *CameraApiService) CreateNetworkCameraQualityRetentionProfileExecute(r C
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiCreateNetworkCameraWirelessProfileRequest struct {
+type CameraAPICreateNetworkCameraWirelessProfileRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	networkId string
 	createNetworkCameraWirelessProfileRequest *CreateNetworkCameraWirelessProfileRequest
 }
 
-func (r CameraApiCreateNetworkCameraWirelessProfileRequest) CreateNetworkCameraWirelessProfileRequest(createNetworkCameraWirelessProfileRequest CreateNetworkCameraWirelessProfileRequest) CameraApiCreateNetworkCameraWirelessProfileRequest {
+func (r CameraAPICreateNetworkCameraWirelessProfileRequest) CreateNetworkCameraWirelessProfileRequest(createNetworkCameraWirelessProfileRequest CreateNetworkCameraWirelessProfileRequest) CameraAPICreateNetworkCameraWirelessProfileRequest {
 	r.createNetworkCameraWirelessProfileRequest = &createNetworkCameraWirelessProfileRequest
 	return r
 }
 
-func (r CameraApiCreateNetworkCameraWirelessProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CameraAPICreateNetworkCameraWirelessProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkCameraWirelessProfileExecute(r)
 }
 
@@ -176,10 +176,10 @@ Creates a new camera wireless profile for this network.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return CameraApiCreateNetworkCameraWirelessProfileRequest
+ @return CameraAPICreateNetworkCameraWirelessProfileRequest
 */
-func (a *CameraApiService) CreateNetworkCameraWirelessProfile(ctx context.Context, networkId string) CameraApiCreateNetworkCameraWirelessProfileRequest {
-	return CameraApiCreateNetworkCameraWirelessProfileRequest{
+func (a *CameraAPIService) CreateNetworkCameraWirelessProfile(ctx context.Context, networkId string) CameraAPICreateNetworkCameraWirelessProfileRequest {
+	return CameraAPICreateNetworkCameraWirelessProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -188,7 +188,7 @@ func (a *CameraApiService) CreateNetworkCameraWirelessProfile(ctx context.Contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CameraApiService) CreateNetworkCameraWirelessProfileExecute(r CameraApiCreateNetworkCameraWirelessProfileRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) CreateNetworkCameraWirelessProfileExecute(r CameraAPICreateNetworkCameraWirelessProfileRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -196,7 +196,7 @@ func (a *CameraApiService) CreateNetworkCameraWirelessProfileExecute(r CameraApi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.CreateNetworkCameraWirelessProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.CreateNetworkCameraWirelessProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -281,19 +281,19 @@ func (a *CameraApiService) CreateNetworkCameraWirelessProfileExecute(r CameraApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiCreateOrganizationCameraCustomAnalyticsArtifactRequest struct {
+type CameraAPICreateOrganizationCameraCustomAnalyticsArtifactRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	organizationId string
 	createOrganizationCameraCustomAnalyticsArtifactRequest *CreateOrganizationCameraCustomAnalyticsArtifactRequest
 }
 
-func (r CameraApiCreateOrganizationCameraCustomAnalyticsArtifactRequest) CreateOrganizationCameraCustomAnalyticsArtifactRequest(createOrganizationCameraCustomAnalyticsArtifactRequest CreateOrganizationCameraCustomAnalyticsArtifactRequest) CameraApiCreateOrganizationCameraCustomAnalyticsArtifactRequest {
+func (r CameraAPICreateOrganizationCameraCustomAnalyticsArtifactRequest) CreateOrganizationCameraCustomAnalyticsArtifactRequest(createOrganizationCameraCustomAnalyticsArtifactRequest CreateOrganizationCameraCustomAnalyticsArtifactRequest) CameraAPICreateOrganizationCameraCustomAnalyticsArtifactRequest {
 	r.createOrganizationCameraCustomAnalyticsArtifactRequest = &createOrganizationCameraCustomAnalyticsArtifactRequest
 	return r
 }
 
-func (r CameraApiCreateOrganizationCameraCustomAnalyticsArtifactRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CameraAPICreateOrganizationCameraCustomAnalyticsArtifactRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateOrganizationCameraCustomAnalyticsArtifactExecute(r)
 }
 
@@ -304,10 +304,10 @@ Create custom analytics artifact. Returns an artifact upload URL with expiry tim
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return CameraApiCreateOrganizationCameraCustomAnalyticsArtifactRequest
+ @return CameraAPICreateOrganizationCameraCustomAnalyticsArtifactRequest
 */
-func (a *CameraApiService) CreateOrganizationCameraCustomAnalyticsArtifact(ctx context.Context, organizationId string) CameraApiCreateOrganizationCameraCustomAnalyticsArtifactRequest {
-	return CameraApiCreateOrganizationCameraCustomAnalyticsArtifactRequest{
+func (a *CameraAPIService) CreateOrganizationCameraCustomAnalyticsArtifact(ctx context.Context, organizationId string) CameraAPICreateOrganizationCameraCustomAnalyticsArtifactRequest {
+	return CameraAPICreateOrganizationCameraCustomAnalyticsArtifactRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -316,7 +316,7 @@ func (a *CameraApiService) CreateOrganizationCameraCustomAnalyticsArtifact(ctx c
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CameraApiService) CreateOrganizationCameraCustomAnalyticsArtifactExecute(r CameraApiCreateOrganizationCameraCustomAnalyticsArtifactRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) CreateOrganizationCameraCustomAnalyticsArtifactExecute(r CameraAPICreateOrganizationCameraCustomAnalyticsArtifactRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -324,7 +324,7 @@ func (a *CameraApiService) CreateOrganizationCameraCustomAnalyticsArtifactExecut
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.CreateOrganizationCameraCustomAnalyticsArtifact")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.CreateOrganizationCameraCustomAnalyticsArtifact")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -406,14 +406,14 @@ func (a *CameraApiService) CreateOrganizationCameraCustomAnalyticsArtifactExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiDeleteNetworkCameraQualityRetentionProfileRequest struct {
+type CameraAPIDeleteNetworkCameraQualityRetentionProfileRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	networkId string
 	qualityRetentionProfileId string
 }
 
-func (r CameraApiDeleteNetworkCameraQualityRetentionProfileRequest) Execute() (*http.Response, error) {
+func (r CameraAPIDeleteNetworkCameraQualityRetentionProfileRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkCameraQualityRetentionProfileExecute(r)
 }
 
@@ -425,10 +425,10 @@ Delete an existing quality retention profile for this network.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param qualityRetentionProfileId Quality retention profile ID
- @return CameraApiDeleteNetworkCameraQualityRetentionProfileRequest
+ @return CameraAPIDeleteNetworkCameraQualityRetentionProfileRequest
 */
-func (a *CameraApiService) DeleteNetworkCameraQualityRetentionProfile(ctx context.Context, networkId string, qualityRetentionProfileId string) CameraApiDeleteNetworkCameraQualityRetentionProfileRequest {
-	return CameraApiDeleteNetworkCameraQualityRetentionProfileRequest{
+func (a *CameraAPIService) DeleteNetworkCameraQualityRetentionProfile(ctx context.Context, networkId string, qualityRetentionProfileId string) CameraAPIDeleteNetworkCameraQualityRetentionProfileRequest {
+	return CameraAPIDeleteNetworkCameraQualityRetentionProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -437,14 +437,14 @@ func (a *CameraApiService) DeleteNetworkCameraQualityRetentionProfile(ctx contex
 }
 
 // Execute executes the request
-func (a *CameraApiService) DeleteNetworkCameraQualityRetentionProfileExecute(r CameraApiDeleteNetworkCameraQualityRetentionProfileRequest) (*http.Response, error) {
+func (a *CameraAPIService) DeleteNetworkCameraQualityRetentionProfileExecute(r CameraAPIDeleteNetworkCameraQualityRetentionProfileRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.DeleteNetworkCameraQualityRetentionProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.DeleteNetworkCameraQualityRetentionProfile")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -516,14 +516,14 @@ func (a *CameraApiService) DeleteNetworkCameraQualityRetentionProfileExecute(r C
 	return localVarHTTPResponse, nil
 }
 
-type CameraApiDeleteNetworkCameraWirelessProfileRequest struct {
+type CameraAPIDeleteNetworkCameraWirelessProfileRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	networkId string
 	wirelessProfileId string
 }
 
-func (r CameraApiDeleteNetworkCameraWirelessProfileRequest) Execute() (*http.Response, error) {
+func (r CameraAPIDeleteNetworkCameraWirelessProfileRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkCameraWirelessProfileExecute(r)
 }
 
@@ -535,10 +535,10 @@ Delete an existing camera wireless profile for this network.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param wirelessProfileId Wireless profile ID
- @return CameraApiDeleteNetworkCameraWirelessProfileRequest
+ @return CameraAPIDeleteNetworkCameraWirelessProfileRequest
 */
-func (a *CameraApiService) DeleteNetworkCameraWirelessProfile(ctx context.Context, networkId string, wirelessProfileId string) CameraApiDeleteNetworkCameraWirelessProfileRequest {
-	return CameraApiDeleteNetworkCameraWirelessProfileRequest{
+func (a *CameraAPIService) DeleteNetworkCameraWirelessProfile(ctx context.Context, networkId string, wirelessProfileId string) CameraAPIDeleteNetworkCameraWirelessProfileRequest {
+	return CameraAPIDeleteNetworkCameraWirelessProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -547,14 +547,14 @@ func (a *CameraApiService) DeleteNetworkCameraWirelessProfile(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *CameraApiService) DeleteNetworkCameraWirelessProfileExecute(r CameraApiDeleteNetworkCameraWirelessProfileRequest) (*http.Response, error) {
+func (a *CameraAPIService) DeleteNetworkCameraWirelessProfileExecute(r CameraAPIDeleteNetworkCameraWirelessProfileRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.DeleteNetworkCameraWirelessProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.DeleteNetworkCameraWirelessProfile")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -626,14 +626,14 @@ func (a *CameraApiService) DeleteNetworkCameraWirelessProfileExecute(r CameraApi
 	return localVarHTTPResponse, nil
 }
 
-type CameraApiDeleteOrganizationCameraCustomAnalyticsArtifactRequest struct {
+type CameraAPIDeleteOrganizationCameraCustomAnalyticsArtifactRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	organizationId string
 	artifactId string
 }
 
-func (r CameraApiDeleteOrganizationCameraCustomAnalyticsArtifactRequest) Execute() (*http.Response, error) {
+func (r CameraAPIDeleteOrganizationCameraCustomAnalyticsArtifactRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationCameraCustomAnalyticsArtifactExecute(r)
 }
 
@@ -645,10 +645,10 @@ Delete Custom Analytics Artifact
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param artifactId Artifact ID
- @return CameraApiDeleteOrganizationCameraCustomAnalyticsArtifactRequest
+ @return CameraAPIDeleteOrganizationCameraCustomAnalyticsArtifactRequest
 */
-func (a *CameraApiService) DeleteOrganizationCameraCustomAnalyticsArtifact(ctx context.Context, organizationId string, artifactId string) CameraApiDeleteOrganizationCameraCustomAnalyticsArtifactRequest {
-	return CameraApiDeleteOrganizationCameraCustomAnalyticsArtifactRequest{
+func (a *CameraAPIService) DeleteOrganizationCameraCustomAnalyticsArtifact(ctx context.Context, organizationId string, artifactId string) CameraAPIDeleteOrganizationCameraCustomAnalyticsArtifactRequest {
+	return CameraAPIDeleteOrganizationCameraCustomAnalyticsArtifactRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -657,14 +657,14 @@ func (a *CameraApiService) DeleteOrganizationCameraCustomAnalyticsArtifact(ctx c
 }
 
 // Execute executes the request
-func (a *CameraApiService) DeleteOrganizationCameraCustomAnalyticsArtifactExecute(r CameraApiDeleteOrganizationCameraCustomAnalyticsArtifactRequest) (*http.Response, error) {
+func (a *CameraAPIService) DeleteOrganizationCameraCustomAnalyticsArtifactExecute(r CameraAPIDeleteOrganizationCameraCustomAnalyticsArtifactRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.DeleteOrganizationCameraCustomAnalyticsArtifact")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.DeleteOrganizationCameraCustomAnalyticsArtifact")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -736,19 +736,19 @@ func (a *CameraApiService) DeleteOrganizationCameraCustomAnalyticsArtifactExecut
 	return localVarHTTPResponse, nil
 }
 
-type CameraApiGenerateDeviceCameraSnapshotRequest struct {
+type CameraAPIGenerateDeviceCameraSnapshotRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	serial string
 	generateDeviceCameraSnapshotRequest *GenerateDeviceCameraSnapshotRequest
 }
 
-func (r CameraApiGenerateDeviceCameraSnapshotRequest) GenerateDeviceCameraSnapshotRequest(generateDeviceCameraSnapshotRequest GenerateDeviceCameraSnapshotRequest) CameraApiGenerateDeviceCameraSnapshotRequest {
+func (r CameraAPIGenerateDeviceCameraSnapshotRequest) GenerateDeviceCameraSnapshotRequest(generateDeviceCameraSnapshotRequest GenerateDeviceCameraSnapshotRequest) CameraAPIGenerateDeviceCameraSnapshotRequest {
 	r.generateDeviceCameraSnapshotRequest = &generateDeviceCameraSnapshotRequest
 	return r
 }
 
-func (r CameraApiGenerateDeviceCameraSnapshotRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CameraAPIGenerateDeviceCameraSnapshotRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GenerateDeviceCameraSnapshotExecute(r)
 }
 
@@ -759,10 +759,10 @@ Generate a snapshot of what the camera sees at the specified time and return a l
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return CameraApiGenerateDeviceCameraSnapshotRequest
+ @return CameraAPIGenerateDeviceCameraSnapshotRequest
 */
-func (a *CameraApiService) GenerateDeviceCameraSnapshot(ctx context.Context, serial string) CameraApiGenerateDeviceCameraSnapshotRequest {
-	return CameraApiGenerateDeviceCameraSnapshotRequest{
+func (a *CameraAPIService) GenerateDeviceCameraSnapshot(ctx context.Context, serial string) CameraAPIGenerateDeviceCameraSnapshotRequest {
+	return CameraAPIGenerateDeviceCameraSnapshotRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -771,7 +771,7 @@ func (a *CameraApiService) GenerateDeviceCameraSnapshot(ctx context.Context, ser
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CameraApiService) GenerateDeviceCameraSnapshotExecute(r CameraApiGenerateDeviceCameraSnapshotRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) GenerateDeviceCameraSnapshotExecute(r CameraAPIGenerateDeviceCameraSnapshotRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -779,7 +779,7 @@ func (a *CameraApiService) GenerateDeviceCameraSnapshotExecute(r CameraApiGenera
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.GenerateDeviceCameraSnapshot")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.GenerateDeviceCameraSnapshot")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -861,13 +861,13 @@ func (a *CameraApiService) GenerateDeviceCameraSnapshotExecute(r CameraApiGenera
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiGetDeviceCameraAnalyticsLiveRequest struct {
+type CameraAPIGetDeviceCameraAnalyticsLiveRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	serial string
 }
 
-func (r CameraApiGetDeviceCameraAnalyticsLiveRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CameraAPIGetDeviceCameraAnalyticsLiveRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraAnalyticsLiveExecute(r)
 }
 
@@ -878,10 +878,10 @@ Returns live state from camera of analytics zones
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return CameraApiGetDeviceCameraAnalyticsLiveRequest
+ @return CameraAPIGetDeviceCameraAnalyticsLiveRequest
 */
-func (a *CameraApiService) GetDeviceCameraAnalyticsLive(ctx context.Context, serial string) CameraApiGetDeviceCameraAnalyticsLiveRequest {
-	return CameraApiGetDeviceCameraAnalyticsLiveRequest{
+func (a *CameraAPIService) GetDeviceCameraAnalyticsLive(ctx context.Context, serial string) CameraAPIGetDeviceCameraAnalyticsLiveRequest {
+	return CameraAPIGetDeviceCameraAnalyticsLiveRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -890,7 +890,7 @@ func (a *CameraApiService) GetDeviceCameraAnalyticsLive(ctx context.Context, ser
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CameraApiService) GetDeviceCameraAnalyticsLiveExecute(r CameraApiGetDeviceCameraAnalyticsLiveRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) GetDeviceCameraAnalyticsLiveExecute(r CameraAPIGetDeviceCameraAnalyticsLiveRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -898,7 +898,7 @@ func (a *CameraApiService) GetDeviceCameraAnalyticsLiveExecute(r CameraApiGetDev
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.GetDeviceCameraAnalyticsLive")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.GetDeviceCameraAnalyticsLive")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -978,9 +978,9 @@ func (a *CameraApiService) GetDeviceCameraAnalyticsLiveExecute(r CameraApiGetDev
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiGetDeviceCameraAnalyticsOverviewRequest struct {
+type CameraAPIGetDeviceCameraAnalyticsOverviewRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	serial string
 	t0 *string
 	t1 *string
@@ -989,30 +989,30 @@ type CameraApiGetDeviceCameraAnalyticsOverviewRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
-func (r CameraApiGetDeviceCameraAnalyticsOverviewRequest) T0(t0 string) CameraApiGetDeviceCameraAnalyticsOverviewRequest {
+func (r CameraAPIGetDeviceCameraAnalyticsOverviewRequest) T0(t0 string) CameraAPIGetDeviceCameraAnalyticsOverviewRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r CameraApiGetDeviceCameraAnalyticsOverviewRequest) T1(t1 string) CameraApiGetDeviceCameraAnalyticsOverviewRequest {
+func (r CameraAPIGetDeviceCameraAnalyticsOverviewRequest) T1(t1 string) CameraAPIGetDeviceCameraAnalyticsOverviewRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. The default is 1 hour.
-func (r CameraApiGetDeviceCameraAnalyticsOverviewRequest) Timespan(timespan float32) CameraApiGetDeviceCameraAnalyticsOverviewRequest {
+func (r CameraAPIGetDeviceCameraAnalyticsOverviewRequest) Timespan(timespan float32) CameraAPIGetDeviceCameraAnalyticsOverviewRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // [optional] The object type for which analytics will be retrieved. The default object type is person. The available types are [person, vehicle].
-func (r CameraApiGetDeviceCameraAnalyticsOverviewRequest) ObjectType(objectType string) CameraApiGetDeviceCameraAnalyticsOverviewRequest {
+func (r CameraAPIGetDeviceCameraAnalyticsOverviewRequest) ObjectType(objectType string) CameraAPIGetDeviceCameraAnalyticsOverviewRequest {
 	r.objectType = &objectType
 	return r
 }
 
-func (r CameraApiGetDeviceCameraAnalyticsOverviewRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r CameraAPIGetDeviceCameraAnalyticsOverviewRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraAnalyticsOverviewExecute(r)
 }
 
@@ -1023,10 +1023,10 @@ Returns an overview of aggregate analytics data for a timespan
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return CameraApiGetDeviceCameraAnalyticsOverviewRequest
+ @return CameraAPIGetDeviceCameraAnalyticsOverviewRequest
 */
-func (a *CameraApiService) GetDeviceCameraAnalyticsOverview(ctx context.Context, serial string) CameraApiGetDeviceCameraAnalyticsOverviewRequest {
-	return CameraApiGetDeviceCameraAnalyticsOverviewRequest{
+func (a *CameraAPIService) GetDeviceCameraAnalyticsOverview(ctx context.Context, serial string) CameraAPIGetDeviceCameraAnalyticsOverviewRequest {
+	return CameraAPIGetDeviceCameraAnalyticsOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1035,7 +1035,7 @@ func (a *CameraApiService) GetDeviceCameraAnalyticsOverview(ctx context.Context,
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *CameraApiService) GetDeviceCameraAnalyticsOverviewExecute(r CameraApiGetDeviceCameraAnalyticsOverviewRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) GetDeviceCameraAnalyticsOverviewExecute(r CameraAPIGetDeviceCameraAnalyticsOverviewRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1043,7 +1043,7 @@ func (a *CameraApiService) GetDeviceCameraAnalyticsOverviewExecute(r CameraApiGe
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.GetDeviceCameraAnalyticsOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.GetDeviceCameraAnalyticsOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1135,20 +1135,20 @@ func (a *CameraApiService) GetDeviceCameraAnalyticsOverviewExecute(r CameraApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiGetDeviceCameraAnalyticsRecentRequest struct {
+type CameraAPIGetDeviceCameraAnalyticsRecentRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	serial string
 	objectType *string
 }
 
 // [optional] The object type for which analytics will be retrieved. The default object type is person. The available types are [person, vehicle].
-func (r CameraApiGetDeviceCameraAnalyticsRecentRequest) ObjectType(objectType string) CameraApiGetDeviceCameraAnalyticsRecentRequest {
+func (r CameraAPIGetDeviceCameraAnalyticsRecentRequest) ObjectType(objectType string) CameraAPIGetDeviceCameraAnalyticsRecentRequest {
 	r.objectType = &objectType
 	return r
 }
 
-func (r CameraApiGetDeviceCameraAnalyticsRecentRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r CameraAPIGetDeviceCameraAnalyticsRecentRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraAnalyticsRecentExecute(r)
 }
 
@@ -1159,10 +1159,10 @@ Returns most recent record for analytics zones
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return CameraApiGetDeviceCameraAnalyticsRecentRequest
+ @return CameraAPIGetDeviceCameraAnalyticsRecentRequest
 */
-func (a *CameraApiService) GetDeviceCameraAnalyticsRecent(ctx context.Context, serial string) CameraApiGetDeviceCameraAnalyticsRecentRequest {
-	return CameraApiGetDeviceCameraAnalyticsRecentRequest{
+func (a *CameraAPIService) GetDeviceCameraAnalyticsRecent(ctx context.Context, serial string) CameraAPIGetDeviceCameraAnalyticsRecentRequest {
+	return CameraAPIGetDeviceCameraAnalyticsRecentRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1171,7 +1171,7 @@ func (a *CameraApiService) GetDeviceCameraAnalyticsRecent(ctx context.Context, s
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *CameraApiService) GetDeviceCameraAnalyticsRecentExecute(r CameraApiGetDeviceCameraAnalyticsRecentRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) GetDeviceCameraAnalyticsRecentExecute(r CameraAPIGetDeviceCameraAnalyticsRecentRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1179,7 +1179,7 @@ func (a *CameraApiService) GetDeviceCameraAnalyticsRecentExecute(r CameraApiGetD
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.GetDeviceCameraAnalyticsRecent")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.GetDeviceCameraAnalyticsRecent")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1262,9 +1262,9 @@ func (a *CameraApiService) GetDeviceCameraAnalyticsRecentExecute(r CameraApiGetD
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiGetDeviceCameraAnalyticsZoneHistoryRequest struct {
+type CameraAPIGetDeviceCameraAnalyticsZoneHistoryRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	serial string
 	zoneId string
 	t0 *string
@@ -1275,36 +1275,36 @@ type CameraApiGetDeviceCameraAnalyticsZoneHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
-func (r CameraApiGetDeviceCameraAnalyticsZoneHistoryRequest) T0(t0 string) CameraApiGetDeviceCameraAnalyticsZoneHistoryRequest {
+func (r CameraAPIGetDeviceCameraAnalyticsZoneHistoryRequest) T0(t0 string) CameraAPIGetDeviceCameraAnalyticsZoneHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 14 hours after t0.
-func (r CameraApiGetDeviceCameraAnalyticsZoneHistoryRequest) T1(t1 string) CameraApiGetDeviceCameraAnalyticsZoneHistoryRequest {
+func (r CameraAPIGetDeviceCameraAnalyticsZoneHistoryRequest) T1(t1 string) CameraAPIGetDeviceCameraAnalyticsZoneHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 14 hours. The default is 1 hour.
-func (r CameraApiGetDeviceCameraAnalyticsZoneHistoryRequest) Timespan(timespan float32) CameraApiGetDeviceCameraAnalyticsZoneHistoryRequest {
+func (r CameraAPIGetDeviceCameraAnalyticsZoneHistoryRequest) Timespan(timespan float32) CameraAPIGetDeviceCameraAnalyticsZoneHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 60. The default is 60.
-func (r CameraApiGetDeviceCameraAnalyticsZoneHistoryRequest) Resolution(resolution int32) CameraApiGetDeviceCameraAnalyticsZoneHistoryRequest {
+func (r CameraAPIGetDeviceCameraAnalyticsZoneHistoryRequest) Resolution(resolution int32) CameraAPIGetDeviceCameraAnalyticsZoneHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // [optional] The object type for which analytics will be retrieved. The default object type is person. The available types are [person, vehicle].
-func (r CameraApiGetDeviceCameraAnalyticsZoneHistoryRequest) ObjectType(objectType string) CameraApiGetDeviceCameraAnalyticsZoneHistoryRequest {
+func (r CameraAPIGetDeviceCameraAnalyticsZoneHistoryRequest) ObjectType(objectType string) CameraAPIGetDeviceCameraAnalyticsZoneHistoryRequest {
 	r.objectType = &objectType
 	return r
 }
 
-func (r CameraApiGetDeviceCameraAnalyticsZoneHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r CameraAPIGetDeviceCameraAnalyticsZoneHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraAnalyticsZoneHistoryExecute(r)
 }
 
@@ -1316,10 +1316,10 @@ Return historical records for analytic zones
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param zoneId Zone ID
- @return CameraApiGetDeviceCameraAnalyticsZoneHistoryRequest
+ @return CameraAPIGetDeviceCameraAnalyticsZoneHistoryRequest
 */
-func (a *CameraApiService) GetDeviceCameraAnalyticsZoneHistory(ctx context.Context, serial string, zoneId string) CameraApiGetDeviceCameraAnalyticsZoneHistoryRequest {
-	return CameraApiGetDeviceCameraAnalyticsZoneHistoryRequest{
+func (a *CameraAPIService) GetDeviceCameraAnalyticsZoneHistory(ctx context.Context, serial string, zoneId string) CameraAPIGetDeviceCameraAnalyticsZoneHistoryRequest {
+	return CameraAPIGetDeviceCameraAnalyticsZoneHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1329,7 +1329,7 @@ func (a *CameraApiService) GetDeviceCameraAnalyticsZoneHistory(ctx context.Conte
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *CameraApiService) GetDeviceCameraAnalyticsZoneHistoryExecute(r CameraApiGetDeviceCameraAnalyticsZoneHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) GetDeviceCameraAnalyticsZoneHistoryExecute(r CameraAPIGetDeviceCameraAnalyticsZoneHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1337,7 +1337,7 @@ func (a *CameraApiService) GetDeviceCameraAnalyticsZoneHistoryExecute(r CameraAp
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.GetDeviceCameraAnalyticsZoneHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.GetDeviceCameraAnalyticsZoneHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1433,13 +1433,13 @@ func (a *CameraApiService) GetDeviceCameraAnalyticsZoneHistoryExecute(r CameraAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiGetDeviceCameraAnalyticsZonesRequest struct {
+type CameraAPIGetDeviceCameraAnalyticsZonesRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	serial string
 }
 
-func (r CameraApiGetDeviceCameraAnalyticsZonesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r CameraAPIGetDeviceCameraAnalyticsZonesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraAnalyticsZonesExecute(r)
 }
 
@@ -1450,10 +1450,10 @@ Returns all configured analytic zones for this camera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return CameraApiGetDeviceCameraAnalyticsZonesRequest
+ @return CameraAPIGetDeviceCameraAnalyticsZonesRequest
 */
-func (a *CameraApiService) GetDeviceCameraAnalyticsZones(ctx context.Context, serial string) CameraApiGetDeviceCameraAnalyticsZonesRequest {
-	return CameraApiGetDeviceCameraAnalyticsZonesRequest{
+func (a *CameraAPIService) GetDeviceCameraAnalyticsZones(ctx context.Context, serial string) CameraAPIGetDeviceCameraAnalyticsZonesRequest {
+	return CameraAPIGetDeviceCameraAnalyticsZonesRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1462,7 +1462,7 @@ func (a *CameraApiService) GetDeviceCameraAnalyticsZones(ctx context.Context, se
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *CameraApiService) GetDeviceCameraAnalyticsZonesExecute(r CameraApiGetDeviceCameraAnalyticsZonesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) GetDeviceCameraAnalyticsZonesExecute(r CameraAPIGetDeviceCameraAnalyticsZonesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1470,7 +1470,7 @@ func (a *CameraApiService) GetDeviceCameraAnalyticsZonesExecute(r CameraApiGetDe
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.GetDeviceCameraAnalyticsZones")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.GetDeviceCameraAnalyticsZones")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1550,13 +1550,13 @@ func (a *CameraApiService) GetDeviceCameraAnalyticsZonesExecute(r CameraApiGetDe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiGetDeviceCameraCustomAnalyticsRequest struct {
+type CameraAPIGetDeviceCameraCustomAnalyticsRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	serial string
 }
 
-func (r CameraApiGetDeviceCameraCustomAnalyticsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CameraAPIGetDeviceCameraCustomAnalyticsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraCustomAnalyticsExecute(r)
 }
 
@@ -1567,10 +1567,10 @@ Return custom analytics settings for a camera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return CameraApiGetDeviceCameraCustomAnalyticsRequest
+ @return CameraAPIGetDeviceCameraCustomAnalyticsRequest
 */
-func (a *CameraApiService) GetDeviceCameraCustomAnalytics(ctx context.Context, serial string) CameraApiGetDeviceCameraCustomAnalyticsRequest {
-	return CameraApiGetDeviceCameraCustomAnalyticsRequest{
+func (a *CameraAPIService) GetDeviceCameraCustomAnalytics(ctx context.Context, serial string) CameraAPIGetDeviceCameraCustomAnalyticsRequest {
+	return CameraAPIGetDeviceCameraCustomAnalyticsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1579,7 +1579,7 @@ func (a *CameraApiService) GetDeviceCameraCustomAnalytics(ctx context.Context, s
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CameraApiService) GetDeviceCameraCustomAnalyticsExecute(r CameraApiGetDeviceCameraCustomAnalyticsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) GetDeviceCameraCustomAnalyticsExecute(r CameraAPIGetDeviceCameraCustomAnalyticsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1587,7 +1587,7 @@ func (a *CameraApiService) GetDeviceCameraCustomAnalyticsExecute(r CameraApiGetD
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.GetDeviceCameraCustomAnalytics")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.GetDeviceCameraCustomAnalytics")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1667,13 +1667,13 @@ func (a *CameraApiService) GetDeviceCameraCustomAnalyticsExecute(r CameraApiGetD
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiGetDeviceCameraQualityAndRetentionRequest struct {
+type CameraAPIGetDeviceCameraQualityAndRetentionRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	serial string
 }
 
-func (r CameraApiGetDeviceCameraQualityAndRetentionRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CameraAPIGetDeviceCameraQualityAndRetentionRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraQualityAndRetentionExecute(r)
 }
 
@@ -1684,10 +1684,10 @@ Returns quality and retention settings for the given camera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return CameraApiGetDeviceCameraQualityAndRetentionRequest
+ @return CameraAPIGetDeviceCameraQualityAndRetentionRequest
 */
-func (a *CameraApiService) GetDeviceCameraQualityAndRetention(ctx context.Context, serial string) CameraApiGetDeviceCameraQualityAndRetentionRequest {
-	return CameraApiGetDeviceCameraQualityAndRetentionRequest{
+func (a *CameraAPIService) GetDeviceCameraQualityAndRetention(ctx context.Context, serial string) CameraAPIGetDeviceCameraQualityAndRetentionRequest {
+	return CameraAPIGetDeviceCameraQualityAndRetentionRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1696,7 +1696,7 @@ func (a *CameraApiService) GetDeviceCameraQualityAndRetention(ctx context.Contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CameraApiService) GetDeviceCameraQualityAndRetentionExecute(r CameraApiGetDeviceCameraQualityAndRetentionRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) GetDeviceCameraQualityAndRetentionExecute(r CameraAPIGetDeviceCameraQualityAndRetentionRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1704,7 +1704,7 @@ func (a *CameraApiService) GetDeviceCameraQualityAndRetentionExecute(r CameraApi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.GetDeviceCameraQualityAndRetention")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.GetDeviceCameraQualityAndRetention")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1784,13 +1784,13 @@ func (a *CameraApiService) GetDeviceCameraQualityAndRetentionExecute(r CameraApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiGetDeviceCameraSenseRequest struct {
+type CameraAPIGetDeviceCameraSenseRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	serial string
 }
 
-func (r CameraApiGetDeviceCameraSenseRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CameraAPIGetDeviceCameraSenseRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraSenseExecute(r)
 }
 
@@ -1801,10 +1801,10 @@ Returns sense settings for a given camera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return CameraApiGetDeviceCameraSenseRequest
+ @return CameraAPIGetDeviceCameraSenseRequest
 */
-func (a *CameraApiService) GetDeviceCameraSense(ctx context.Context, serial string) CameraApiGetDeviceCameraSenseRequest {
-	return CameraApiGetDeviceCameraSenseRequest{
+func (a *CameraAPIService) GetDeviceCameraSense(ctx context.Context, serial string) CameraAPIGetDeviceCameraSenseRequest {
+	return CameraAPIGetDeviceCameraSenseRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1813,7 +1813,7 @@ func (a *CameraApiService) GetDeviceCameraSense(ctx context.Context, serial stri
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CameraApiService) GetDeviceCameraSenseExecute(r CameraApiGetDeviceCameraSenseRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) GetDeviceCameraSenseExecute(r CameraAPIGetDeviceCameraSenseRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1821,7 +1821,7 @@ func (a *CameraApiService) GetDeviceCameraSenseExecute(r CameraApiGetDeviceCamer
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.GetDeviceCameraSense")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.GetDeviceCameraSense")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1901,13 +1901,13 @@ func (a *CameraApiService) GetDeviceCameraSenseExecute(r CameraApiGetDeviceCamer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiGetDeviceCameraSenseObjectDetectionModelsRequest struct {
+type CameraAPIGetDeviceCameraSenseObjectDetectionModelsRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	serial string
 }
 
-func (r CameraApiGetDeviceCameraSenseObjectDetectionModelsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r CameraAPIGetDeviceCameraSenseObjectDetectionModelsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraSenseObjectDetectionModelsExecute(r)
 }
 
@@ -1918,10 +1918,10 @@ Returns the MV Sense object detection model list for the given camera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return CameraApiGetDeviceCameraSenseObjectDetectionModelsRequest
+ @return CameraAPIGetDeviceCameraSenseObjectDetectionModelsRequest
 */
-func (a *CameraApiService) GetDeviceCameraSenseObjectDetectionModels(ctx context.Context, serial string) CameraApiGetDeviceCameraSenseObjectDetectionModelsRequest {
-	return CameraApiGetDeviceCameraSenseObjectDetectionModelsRequest{
+func (a *CameraAPIService) GetDeviceCameraSenseObjectDetectionModels(ctx context.Context, serial string) CameraAPIGetDeviceCameraSenseObjectDetectionModelsRequest {
+	return CameraAPIGetDeviceCameraSenseObjectDetectionModelsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1930,7 +1930,7 @@ func (a *CameraApiService) GetDeviceCameraSenseObjectDetectionModels(ctx context
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *CameraApiService) GetDeviceCameraSenseObjectDetectionModelsExecute(r CameraApiGetDeviceCameraSenseObjectDetectionModelsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) GetDeviceCameraSenseObjectDetectionModelsExecute(r CameraAPIGetDeviceCameraSenseObjectDetectionModelsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1938,7 +1938,7 @@ func (a *CameraApiService) GetDeviceCameraSenseObjectDetectionModelsExecute(r Ca
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.GetDeviceCameraSenseObjectDetectionModels")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.GetDeviceCameraSenseObjectDetectionModels")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2018,20 +2018,20 @@ func (a *CameraApiService) GetDeviceCameraSenseObjectDetectionModelsExecute(r Ca
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiGetDeviceCameraVideoLinkRequest struct {
+type CameraAPIGetDeviceCameraVideoLinkRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	serial string
 	timestamp *time.Time
 }
 
 // [optional] The video link will start at this time. The timestamp should be a string in ISO8601 format. If no timestamp is specified, we will assume current time.
-func (r CameraApiGetDeviceCameraVideoLinkRequest) Timestamp(timestamp time.Time) CameraApiGetDeviceCameraVideoLinkRequest {
+func (r CameraAPIGetDeviceCameraVideoLinkRequest) Timestamp(timestamp time.Time) CameraAPIGetDeviceCameraVideoLinkRequest {
 	r.timestamp = &timestamp
 	return r
 }
 
-func (r CameraApiGetDeviceCameraVideoLinkRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CameraAPIGetDeviceCameraVideoLinkRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraVideoLinkExecute(r)
 }
 
@@ -2042,10 +2042,10 @@ Returns video link to the specified camera. If a timestamp is supplied, it links
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return CameraApiGetDeviceCameraVideoLinkRequest
+ @return CameraAPIGetDeviceCameraVideoLinkRequest
 */
-func (a *CameraApiService) GetDeviceCameraVideoLink(ctx context.Context, serial string) CameraApiGetDeviceCameraVideoLinkRequest {
-	return CameraApiGetDeviceCameraVideoLinkRequest{
+func (a *CameraAPIService) GetDeviceCameraVideoLink(ctx context.Context, serial string) CameraAPIGetDeviceCameraVideoLinkRequest {
+	return CameraAPIGetDeviceCameraVideoLinkRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -2054,7 +2054,7 @@ func (a *CameraApiService) GetDeviceCameraVideoLink(ctx context.Context, serial 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CameraApiService) GetDeviceCameraVideoLinkExecute(r CameraApiGetDeviceCameraVideoLinkRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) GetDeviceCameraVideoLinkExecute(r CameraAPIGetDeviceCameraVideoLinkRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2062,7 +2062,7 @@ func (a *CameraApiService) GetDeviceCameraVideoLinkExecute(r CameraApiGetDeviceC
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.GetDeviceCameraVideoLink")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.GetDeviceCameraVideoLink")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2145,13 +2145,13 @@ func (a *CameraApiService) GetDeviceCameraVideoLinkExecute(r CameraApiGetDeviceC
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiGetDeviceCameraVideoSettingsRequest struct {
+type CameraAPIGetDeviceCameraVideoSettingsRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	serial string
 }
 
-func (r CameraApiGetDeviceCameraVideoSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CameraAPIGetDeviceCameraVideoSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraVideoSettingsExecute(r)
 }
 
@@ -2162,10 +2162,10 @@ Returns video settings for the given camera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return CameraApiGetDeviceCameraVideoSettingsRequest
+ @return CameraAPIGetDeviceCameraVideoSettingsRequest
 */
-func (a *CameraApiService) GetDeviceCameraVideoSettings(ctx context.Context, serial string) CameraApiGetDeviceCameraVideoSettingsRequest {
-	return CameraApiGetDeviceCameraVideoSettingsRequest{
+func (a *CameraAPIService) GetDeviceCameraVideoSettings(ctx context.Context, serial string) CameraAPIGetDeviceCameraVideoSettingsRequest {
+	return CameraAPIGetDeviceCameraVideoSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -2174,7 +2174,7 @@ func (a *CameraApiService) GetDeviceCameraVideoSettings(ctx context.Context, ser
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CameraApiService) GetDeviceCameraVideoSettingsExecute(r CameraApiGetDeviceCameraVideoSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) GetDeviceCameraVideoSettingsExecute(r CameraAPIGetDeviceCameraVideoSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2182,7 +2182,7 @@ func (a *CameraApiService) GetDeviceCameraVideoSettingsExecute(r CameraApiGetDev
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.GetDeviceCameraVideoSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.GetDeviceCameraVideoSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2262,13 +2262,13 @@ func (a *CameraApiService) GetDeviceCameraVideoSettingsExecute(r CameraApiGetDev
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiGetDeviceCameraWirelessProfilesRequest struct {
+type CameraAPIGetDeviceCameraWirelessProfilesRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	serial string
 }
 
-func (r CameraApiGetDeviceCameraWirelessProfilesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CameraAPIGetDeviceCameraWirelessProfilesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraWirelessProfilesExecute(r)
 }
 
@@ -2279,10 +2279,10 @@ Returns wireless profile assigned to the given camera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return CameraApiGetDeviceCameraWirelessProfilesRequest
+ @return CameraAPIGetDeviceCameraWirelessProfilesRequest
 */
-func (a *CameraApiService) GetDeviceCameraWirelessProfiles(ctx context.Context, serial string) CameraApiGetDeviceCameraWirelessProfilesRequest {
-	return CameraApiGetDeviceCameraWirelessProfilesRequest{
+func (a *CameraAPIService) GetDeviceCameraWirelessProfiles(ctx context.Context, serial string) CameraAPIGetDeviceCameraWirelessProfilesRequest {
+	return CameraAPIGetDeviceCameraWirelessProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -2291,7 +2291,7 @@ func (a *CameraApiService) GetDeviceCameraWirelessProfiles(ctx context.Context, 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CameraApiService) GetDeviceCameraWirelessProfilesExecute(r CameraApiGetDeviceCameraWirelessProfilesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) GetDeviceCameraWirelessProfilesExecute(r CameraAPIGetDeviceCameraWirelessProfilesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2299,7 +2299,7 @@ func (a *CameraApiService) GetDeviceCameraWirelessProfilesExecute(r CameraApiGet
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.GetDeviceCameraWirelessProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.GetDeviceCameraWirelessProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2379,14 +2379,14 @@ func (a *CameraApiService) GetDeviceCameraWirelessProfilesExecute(r CameraApiGet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiGetNetworkCameraQualityRetentionProfileRequest struct {
+type CameraAPIGetNetworkCameraQualityRetentionProfileRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	networkId string
 	qualityRetentionProfileId string
 }
 
-func (r CameraApiGetNetworkCameraQualityRetentionProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CameraAPIGetNetworkCameraQualityRetentionProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkCameraQualityRetentionProfileExecute(r)
 }
 
@@ -2398,10 +2398,10 @@ Retrieve a single quality retention profile
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param qualityRetentionProfileId Quality retention profile ID
- @return CameraApiGetNetworkCameraQualityRetentionProfileRequest
+ @return CameraAPIGetNetworkCameraQualityRetentionProfileRequest
 */
-func (a *CameraApiService) GetNetworkCameraQualityRetentionProfile(ctx context.Context, networkId string, qualityRetentionProfileId string) CameraApiGetNetworkCameraQualityRetentionProfileRequest {
-	return CameraApiGetNetworkCameraQualityRetentionProfileRequest{
+func (a *CameraAPIService) GetNetworkCameraQualityRetentionProfile(ctx context.Context, networkId string, qualityRetentionProfileId string) CameraAPIGetNetworkCameraQualityRetentionProfileRequest {
+	return CameraAPIGetNetworkCameraQualityRetentionProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2411,7 +2411,7 @@ func (a *CameraApiService) GetNetworkCameraQualityRetentionProfile(ctx context.C
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CameraApiService) GetNetworkCameraQualityRetentionProfileExecute(r CameraApiGetNetworkCameraQualityRetentionProfileRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) GetNetworkCameraQualityRetentionProfileExecute(r CameraAPIGetNetworkCameraQualityRetentionProfileRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2419,7 +2419,7 @@ func (a *CameraApiService) GetNetworkCameraQualityRetentionProfileExecute(r Came
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.GetNetworkCameraQualityRetentionProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.GetNetworkCameraQualityRetentionProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2500,13 +2500,13 @@ func (a *CameraApiService) GetNetworkCameraQualityRetentionProfileExecute(r Came
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiGetNetworkCameraQualityRetentionProfilesRequest struct {
+type CameraAPIGetNetworkCameraQualityRetentionProfilesRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	networkId string
 }
 
-func (r CameraApiGetNetworkCameraQualityRetentionProfilesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r CameraAPIGetNetworkCameraQualityRetentionProfilesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkCameraQualityRetentionProfilesExecute(r)
 }
 
@@ -2517,10 +2517,10 @@ List the quality retention profiles for this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return CameraApiGetNetworkCameraQualityRetentionProfilesRequest
+ @return CameraAPIGetNetworkCameraQualityRetentionProfilesRequest
 */
-func (a *CameraApiService) GetNetworkCameraQualityRetentionProfiles(ctx context.Context, networkId string) CameraApiGetNetworkCameraQualityRetentionProfilesRequest {
-	return CameraApiGetNetworkCameraQualityRetentionProfilesRequest{
+func (a *CameraAPIService) GetNetworkCameraQualityRetentionProfiles(ctx context.Context, networkId string) CameraAPIGetNetworkCameraQualityRetentionProfilesRequest {
+	return CameraAPIGetNetworkCameraQualityRetentionProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2529,7 +2529,7 @@ func (a *CameraApiService) GetNetworkCameraQualityRetentionProfiles(ctx context.
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *CameraApiService) GetNetworkCameraQualityRetentionProfilesExecute(r CameraApiGetNetworkCameraQualityRetentionProfilesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) GetNetworkCameraQualityRetentionProfilesExecute(r CameraAPIGetNetworkCameraQualityRetentionProfilesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2537,7 +2537,7 @@ func (a *CameraApiService) GetNetworkCameraQualityRetentionProfilesExecute(r Cam
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.GetNetworkCameraQualityRetentionProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.GetNetworkCameraQualityRetentionProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2617,13 +2617,13 @@ func (a *CameraApiService) GetNetworkCameraQualityRetentionProfilesExecute(r Cam
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiGetNetworkCameraSchedulesRequest struct {
+type CameraAPIGetNetworkCameraSchedulesRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	networkId string
 }
 
-func (r CameraApiGetNetworkCameraSchedulesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r CameraAPIGetNetworkCameraSchedulesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkCameraSchedulesExecute(r)
 }
 
@@ -2634,10 +2634,10 @@ Returns a list of all camera recording schedules.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return CameraApiGetNetworkCameraSchedulesRequest
+ @return CameraAPIGetNetworkCameraSchedulesRequest
 */
-func (a *CameraApiService) GetNetworkCameraSchedules(ctx context.Context, networkId string) CameraApiGetNetworkCameraSchedulesRequest {
-	return CameraApiGetNetworkCameraSchedulesRequest{
+func (a *CameraAPIService) GetNetworkCameraSchedules(ctx context.Context, networkId string) CameraAPIGetNetworkCameraSchedulesRequest {
+	return CameraAPIGetNetworkCameraSchedulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2646,7 +2646,7 @@ func (a *CameraApiService) GetNetworkCameraSchedules(ctx context.Context, networ
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *CameraApiService) GetNetworkCameraSchedulesExecute(r CameraApiGetNetworkCameraSchedulesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) GetNetworkCameraSchedulesExecute(r CameraAPIGetNetworkCameraSchedulesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2654,7 +2654,7 @@ func (a *CameraApiService) GetNetworkCameraSchedulesExecute(r CameraApiGetNetwor
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.GetNetworkCameraSchedules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.GetNetworkCameraSchedules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2734,14 +2734,14 @@ func (a *CameraApiService) GetNetworkCameraSchedulesExecute(r CameraApiGetNetwor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiGetNetworkCameraWirelessProfileRequest struct {
+type CameraAPIGetNetworkCameraWirelessProfileRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	networkId string
 	wirelessProfileId string
 }
 
-func (r CameraApiGetNetworkCameraWirelessProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CameraAPIGetNetworkCameraWirelessProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkCameraWirelessProfileExecute(r)
 }
 
@@ -2753,10 +2753,10 @@ Retrieve a single camera wireless profile.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param wirelessProfileId Wireless profile ID
- @return CameraApiGetNetworkCameraWirelessProfileRequest
+ @return CameraAPIGetNetworkCameraWirelessProfileRequest
 */
-func (a *CameraApiService) GetNetworkCameraWirelessProfile(ctx context.Context, networkId string, wirelessProfileId string) CameraApiGetNetworkCameraWirelessProfileRequest {
-	return CameraApiGetNetworkCameraWirelessProfileRequest{
+func (a *CameraAPIService) GetNetworkCameraWirelessProfile(ctx context.Context, networkId string, wirelessProfileId string) CameraAPIGetNetworkCameraWirelessProfileRequest {
+	return CameraAPIGetNetworkCameraWirelessProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2766,7 +2766,7 @@ func (a *CameraApiService) GetNetworkCameraWirelessProfile(ctx context.Context, 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CameraApiService) GetNetworkCameraWirelessProfileExecute(r CameraApiGetNetworkCameraWirelessProfileRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) GetNetworkCameraWirelessProfileExecute(r CameraAPIGetNetworkCameraWirelessProfileRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2774,7 +2774,7 @@ func (a *CameraApiService) GetNetworkCameraWirelessProfileExecute(r CameraApiGet
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.GetNetworkCameraWirelessProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.GetNetworkCameraWirelessProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2855,13 +2855,13 @@ func (a *CameraApiService) GetNetworkCameraWirelessProfileExecute(r CameraApiGet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiGetNetworkCameraWirelessProfilesRequest struct {
+type CameraAPIGetNetworkCameraWirelessProfilesRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	networkId string
 }
 
-func (r CameraApiGetNetworkCameraWirelessProfilesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r CameraAPIGetNetworkCameraWirelessProfilesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkCameraWirelessProfilesExecute(r)
 }
 
@@ -2872,10 +2872,10 @@ List the camera wireless profiles for this network.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return CameraApiGetNetworkCameraWirelessProfilesRequest
+ @return CameraAPIGetNetworkCameraWirelessProfilesRequest
 */
-func (a *CameraApiService) GetNetworkCameraWirelessProfiles(ctx context.Context, networkId string) CameraApiGetNetworkCameraWirelessProfilesRequest {
-	return CameraApiGetNetworkCameraWirelessProfilesRequest{
+func (a *CameraAPIService) GetNetworkCameraWirelessProfiles(ctx context.Context, networkId string) CameraAPIGetNetworkCameraWirelessProfilesRequest {
+	return CameraAPIGetNetworkCameraWirelessProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2884,7 +2884,7 @@ func (a *CameraApiService) GetNetworkCameraWirelessProfiles(ctx context.Context,
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *CameraApiService) GetNetworkCameraWirelessProfilesExecute(r CameraApiGetNetworkCameraWirelessProfilesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) GetNetworkCameraWirelessProfilesExecute(r CameraAPIGetNetworkCameraWirelessProfilesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2892,7 +2892,7 @@ func (a *CameraApiService) GetNetworkCameraWirelessProfilesExecute(r CameraApiGe
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.GetNetworkCameraWirelessProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.GetNetworkCameraWirelessProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2972,14 +2972,14 @@ func (a *CameraApiService) GetNetworkCameraWirelessProfilesExecute(r CameraApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiGetOrganizationCameraCustomAnalyticsArtifactRequest struct {
+type CameraAPIGetOrganizationCameraCustomAnalyticsArtifactRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	organizationId string
 	artifactId string
 }
 
-func (r CameraApiGetOrganizationCameraCustomAnalyticsArtifactRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CameraAPIGetOrganizationCameraCustomAnalyticsArtifactRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationCameraCustomAnalyticsArtifactExecute(r)
 }
 
@@ -2991,10 +2991,10 @@ Get Custom Analytics Artifact
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param artifactId Artifact ID
- @return CameraApiGetOrganizationCameraCustomAnalyticsArtifactRequest
+ @return CameraAPIGetOrganizationCameraCustomAnalyticsArtifactRequest
 */
-func (a *CameraApiService) GetOrganizationCameraCustomAnalyticsArtifact(ctx context.Context, organizationId string, artifactId string) CameraApiGetOrganizationCameraCustomAnalyticsArtifactRequest {
-	return CameraApiGetOrganizationCameraCustomAnalyticsArtifactRequest{
+func (a *CameraAPIService) GetOrganizationCameraCustomAnalyticsArtifact(ctx context.Context, organizationId string, artifactId string) CameraAPIGetOrganizationCameraCustomAnalyticsArtifactRequest {
+	return CameraAPIGetOrganizationCameraCustomAnalyticsArtifactRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -3004,7 +3004,7 @@ func (a *CameraApiService) GetOrganizationCameraCustomAnalyticsArtifact(ctx cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CameraApiService) GetOrganizationCameraCustomAnalyticsArtifactExecute(r CameraApiGetOrganizationCameraCustomAnalyticsArtifactRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) GetOrganizationCameraCustomAnalyticsArtifactExecute(r CameraAPIGetOrganizationCameraCustomAnalyticsArtifactRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3012,7 +3012,7 @@ func (a *CameraApiService) GetOrganizationCameraCustomAnalyticsArtifactExecute(r
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.GetOrganizationCameraCustomAnalyticsArtifact")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.GetOrganizationCameraCustomAnalyticsArtifact")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3093,13 +3093,13 @@ func (a *CameraApiService) GetOrganizationCameraCustomAnalyticsArtifactExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiGetOrganizationCameraCustomAnalyticsArtifactsRequest struct {
+type CameraAPIGetOrganizationCameraCustomAnalyticsArtifactsRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	organizationId string
 }
 
-func (r CameraApiGetOrganizationCameraCustomAnalyticsArtifactsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r CameraAPIGetOrganizationCameraCustomAnalyticsArtifactsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationCameraCustomAnalyticsArtifactsExecute(r)
 }
 
@@ -3110,10 +3110,10 @@ List Custom Analytics Artifacts
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return CameraApiGetOrganizationCameraCustomAnalyticsArtifactsRequest
+ @return CameraAPIGetOrganizationCameraCustomAnalyticsArtifactsRequest
 */
-func (a *CameraApiService) GetOrganizationCameraCustomAnalyticsArtifacts(ctx context.Context, organizationId string) CameraApiGetOrganizationCameraCustomAnalyticsArtifactsRequest {
-	return CameraApiGetOrganizationCameraCustomAnalyticsArtifactsRequest{
+func (a *CameraAPIService) GetOrganizationCameraCustomAnalyticsArtifacts(ctx context.Context, organizationId string) CameraAPIGetOrganizationCameraCustomAnalyticsArtifactsRequest {
+	return CameraAPIGetOrganizationCameraCustomAnalyticsArtifactsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -3122,7 +3122,7 @@ func (a *CameraApiService) GetOrganizationCameraCustomAnalyticsArtifacts(ctx con
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *CameraApiService) GetOrganizationCameraCustomAnalyticsArtifactsExecute(r CameraApiGetOrganizationCameraCustomAnalyticsArtifactsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) GetOrganizationCameraCustomAnalyticsArtifactsExecute(r CameraAPIGetOrganizationCameraCustomAnalyticsArtifactsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3130,7 +3130,7 @@ func (a *CameraApiService) GetOrganizationCameraCustomAnalyticsArtifactsExecute(
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.GetOrganizationCameraCustomAnalyticsArtifacts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.GetOrganizationCameraCustomAnalyticsArtifacts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3210,27 +3210,27 @@ func (a *CameraApiService) GetOrganizationCameraCustomAnalyticsArtifactsExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiGetOrganizationCameraOnboardingStatusesRequest struct {
+type CameraAPIGetOrganizationCameraOnboardingStatusesRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	organizationId string
 	serials *[]string
 	networkIds *[]string
 }
 
 // A list of serial numbers. The returned cameras will be filtered to only include these serials.
-func (r CameraApiGetOrganizationCameraOnboardingStatusesRequest) Serials(serials []string) CameraApiGetOrganizationCameraOnboardingStatusesRequest {
+func (r CameraAPIGetOrganizationCameraOnboardingStatusesRequest) Serials(serials []string) CameraAPIGetOrganizationCameraOnboardingStatusesRequest {
 	r.serials = &serials
 	return r
 }
 
 // A list of network IDs. The returned cameras will be filtered to only include these networks.
-func (r CameraApiGetOrganizationCameraOnboardingStatusesRequest) NetworkIds(networkIds []string) CameraApiGetOrganizationCameraOnboardingStatusesRequest {
+func (r CameraAPIGetOrganizationCameraOnboardingStatusesRequest) NetworkIds(networkIds []string) CameraAPIGetOrganizationCameraOnboardingStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
-func (r CameraApiGetOrganizationCameraOnboardingStatusesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r CameraAPIGetOrganizationCameraOnboardingStatusesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationCameraOnboardingStatusesExecute(r)
 }
 
@@ -3241,10 +3241,10 @@ Fetch onboarding status of cameras
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return CameraApiGetOrganizationCameraOnboardingStatusesRequest
+ @return CameraAPIGetOrganizationCameraOnboardingStatusesRequest
 */
-func (a *CameraApiService) GetOrganizationCameraOnboardingStatuses(ctx context.Context, organizationId string) CameraApiGetOrganizationCameraOnboardingStatusesRequest {
-	return CameraApiGetOrganizationCameraOnboardingStatusesRequest{
+func (a *CameraAPIService) GetOrganizationCameraOnboardingStatuses(ctx context.Context, organizationId string) CameraAPIGetOrganizationCameraOnboardingStatusesRequest {
+	return CameraAPIGetOrganizationCameraOnboardingStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -3253,7 +3253,7 @@ func (a *CameraApiService) GetOrganizationCameraOnboardingStatuses(ctx context.C
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *CameraApiService) GetOrganizationCameraOnboardingStatusesExecute(r CameraApiGetOrganizationCameraOnboardingStatusesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) GetOrganizationCameraOnboardingStatusesExecute(r CameraAPIGetOrganizationCameraOnboardingStatusesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3261,7 +3261,7 @@ func (a *CameraApiService) GetOrganizationCameraOnboardingStatusesExecute(r Came
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.GetOrganizationCameraOnboardingStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.GetOrganizationCameraOnboardingStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3363,19 +3363,19 @@ func (a *CameraApiService) GetOrganizationCameraOnboardingStatusesExecute(r Came
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiUpdateDeviceCameraCustomAnalyticsRequest struct {
+type CameraAPIUpdateDeviceCameraCustomAnalyticsRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	serial string
 	updateDeviceCameraCustomAnalyticsRequest *UpdateDeviceCameraCustomAnalyticsRequest
 }
 
-func (r CameraApiUpdateDeviceCameraCustomAnalyticsRequest) UpdateDeviceCameraCustomAnalyticsRequest(updateDeviceCameraCustomAnalyticsRequest UpdateDeviceCameraCustomAnalyticsRequest) CameraApiUpdateDeviceCameraCustomAnalyticsRequest {
+func (r CameraAPIUpdateDeviceCameraCustomAnalyticsRequest) UpdateDeviceCameraCustomAnalyticsRequest(updateDeviceCameraCustomAnalyticsRequest UpdateDeviceCameraCustomAnalyticsRequest) CameraAPIUpdateDeviceCameraCustomAnalyticsRequest {
 	r.updateDeviceCameraCustomAnalyticsRequest = &updateDeviceCameraCustomAnalyticsRequest
 	return r
 }
 
-func (r CameraApiUpdateDeviceCameraCustomAnalyticsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CameraAPIUpdateDeviceCameraCustomAnalyticsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceCameraCustomAnalyticsExecute(r)
 }
 
@@ -3386,10 +3386,10 @@ Update custom analytics settings for a camera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return CameraApiUpdateDeviceCameraCustomAnalyticsRequest
+ @return CameraAPIUpdateDeviceCameraCustomAnalyticsRequest
 */
-func (a *CameraApiService) UpdateDeviceCameraCustomAnalytics(ctx context.Context, serial string) CameraApiUpdateDeviceCameraCustomAnalyticsRequest {
-	return CameraApiUpdateDeviceCameraCustomAnalyticsRequest{
+func (a *CameraAPIService) UpdateDeviceCameraCustomAnalytics(ctx context.Context, serial string) CameraAPIUpdateDeviceCameraCustomAnalyticsRequest {
+	return CameraAPIUpdateDeviceCameraCustomAnalyticsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -3398,7 +3398,7 @@ func (a *CameraApiService) UpdateDeviceCameraCustomAnalytics(ctx context.Context
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CameraApiService) UpdateDeviceCameraCustomAnalyticsExecute(r CameraApiUpdateDeviceCameraCustomAnalyticsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) UpdateDeviceCameraCustomAnalyticsExecute(r CameraAPIUpdateDeviceCameraCustomAnalyticsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -3406,7 +3406,7 @@ func (a *CameraApiService) UpdateDeviceCameraCustomAnalyticsExecute(r CameraApiU
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.UpdateDeviceCameraCustomAnalytics")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.UpdateDeviceCameraCustomAnalytics")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3488,19 +3488,19 @@ func (a *CameraApiService) UpdateDeviceCameraCustomAnalyticsExecute(r CameraApiU
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiUpdateDeviceCameraQualityAndRetentionRequest struct {
+type CameraAPIUpdateDeviceCameraQualityAndRetentionRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	serial string
 	updateDeviceCameraQualityAndRetentionRequest *UpdateDeviceCameraQualityAndRetentionRequest
 }
 
-func (r CameraApiUpdateDeviceCameraQualityAndRetentionRequest) UpdateDeviceCameraQualityAndRetentionRequest(updateDeviceCameraQualityAndRetentionRequest UpdateDeviceCameraQualityAndRetentionRequest) CameraApiUpdateDeviceCameraQualityAndRetentionRequest {
+func (r CameraAPIUpdateDeviceCameraQualityAndRetentionRequest) UpdateDeviceCameraQualityAndRetentionRequest(updateDeviceCameraQualityAndRetentionRequest UpdateDeviceCameraQualityAndRetentionRequest) CameraAPIUpdateDeviceCameraQualityAndRetentionRequest {
 	r.updateDeviceCameraQualityAndRetentionRequest = &updateDeviceCameraQualityAndRetentionRequest
 	return r
 }
 
-func (r CameraApiUpdateDeviceCameraQualityAndRetentionRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CameraAPIUpdateDeviceCameraQualityAndRetentionRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceCameraQualityAndRetentionExecute(r)
 }
 
@@ -3511,10 +3511,10 @@ Update quality and retention settings for the given camera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return CameraApiUpdateDeviceCameraQualityAndRetentionRequest
+ @return CameraAPIUpdateDeviceCameraQualityAndRetentionRequest
 */
-func (a *CameraApiService) UpdateDeviceCameraQualityAndRetention(ctx context.Context, serial string) CameraApiUpdateDeviceCameraQualityAndRetentionRequest {
-	return CameraApiUpdateDeviceCameraQualityAndRetentionRequest{
+func (a *CameraAPIService) UpdateDeviceCameraQualityAndRetention(ctx context.Context, serial string) CameraAPIUpdateDeviceCameraQualityAndRetentionRequest {
+	return CameraAPIUpdateDeviceCameraQualityAndRetentionRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -3523,7 +3523,7 @@ func (a *CameraApiService) UpdateDeviceCameraQualityAndRetention(ctx context.Con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CameraApiService) UpdateDeviceCameraQualityAndRetentionExecute(r CameraApiUpdateDeviceCameraQualityAndRetentionRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) UpdateDeviceCameraQualityAndRetentionExecute(r CameraAPIUpdateDeviceCameraQualityAndRetentionRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -3531,7 +3531,7 @@ func (a *CameraApiService) UpdateDeviceCameraQualityAndRetentionExecute(r Camera
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.UpdateDeviceCameraQualityAndRetention")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.UpdateDeviceCameraQualityAndRetention")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3613,19 +3613,19 @@ func (a *CameraApiService) UpdateDeviceCameraQualityAndRetentionExecute(r Camera
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiUpdateDeviceCameraSenseRequest struct {
+type CameraAPIUpdateDeviceCameraSenseRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	serial string
 	updateDeviceCameraSenseRequest *UpdateDeviceCameraSenseRequest
 }
 
-func (r CameraApiUpdateDeviceCameraSenseRequest) UpdateDeviceCameraSenseRequest(updateDeviceCameraSenseRequest UpdateDeviceCameraSenseRequest) CameraApiUpdateDeviceCameraSenseRequest {
+func (r CameraAPIUpdateDeviceCameraSenseRequest) UpdateDeviceCameraSenseRequest(updateDeviceCameraSenseRequest UpdateDeviceCameraSenseRequest) CameraAPIUpdateDeviceCameraSenseRequest {
 	r.updateDeviceCameraSenseRequest = &updateDeviceCameraSenseRequest
 	return r
 }
 
-func (r CameraApiUpdateDeviceCameraSenseRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CameraAPIUpdateDeviceCameraSenseRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceCameraSenseExecute(r)
 }
 
@@ -3636,10 +3636,10 @@ Update sense settings for the given camera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return CameraApiUpdateDeviceCameraSenseRequest
+ @return CameraAPIUpdateDeviceCameraSenseRequest
 */
-func (a *CameraApiService) UpdateDeviceCameraSense(ctx context.Context, serial string) CameraApiUpdateDeviceCameraSenseRequest {
-	return CameraApiUpdateDeviceCameraSenseRequest{
+func (a *CameraAPIService) UpdateDeviceCameraSense(ctx context.Context, serial string) CameraAPIUpdateDeviceCameraSenseRequest {
+	return CameraAPIUpdateDeviceCameraSenseRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -3648,7 +3648,7 @@ func (a *CameraApiService) UpdateDeviceCameraSense(ctx context.Context, serial s
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CameraApiService) UpdateDeviceCameraSenseExecute(r CameraApiUpdateDeviceCameraSenseRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) UpdateDeviceCameraSenseExecute(r CameraAPIUpdateDeviceCameraSenseRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -3656,7 +3656,7 @@ func (a *CameraApiService) UpdateDeviceCameraSenseExecute(r CameraApiUpdateDevic
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.UpdateDeviceCameraSense")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.UpdateDeviceCameraSense")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3738,19 +3738,19 @@ func (a *CameraApiService) UpdateDeviceCameraSenseExecute(r CameraApiUpdateDevic
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiUpdateDeviceCameraVideoSettingsRequest struct {
+type CameraAPIUpdateDeviceCameraVideoSettingsRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	serial string
 	updateDeviceCameraVideoSettingsRequest *UpdateDeviceCameraVideoSettingsRequest
 }
 
-func (r CameraApiUpdateDeviceCameraVideoSettingsRequest) UpdateDeviceCameraVideoSettingsRequest(updateDeviceCameraVideoSettingsRequest UpdateDeviceCameraVideoSettingsRequest) CameraApiUpdateDeviceCameraVideoSettingsRequest {
+func (r CameraAPIUpdateDeviceCameraVideoSettingsRequest) UpdateDeviceCameraVideoSettingsRequest(updateDeviceCameraVideoSettingsRequest UpdateDeviceCameraVideoSettingsRequest) CameraAPIUpdateDeviceCameraVideoSettingsRequest {
 	r.updateDeviceCameraVideoSettingsRequest = &updateDeviceCameraVideoSettingsRequest
 	return r
 }
 
-func (r CameraApiUpdateDeviceCameraVideoSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CameraAPIUpdateDeviceCameraVideoSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceCameraVideoSettingsExecute(r)
 }
 
@@ -3761,10 +3761,10 @@ Update video settings for the given camera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return CameraApiUpdateDeviceCameraVideoSettingsRequest
+ @return CameraAPIUpdateDeviceCameraVideoSettingsRequest
 */
-func (a *CameraApiService) UpdateDeviceCameraVideoSettings(ctx context.Context, serial string) CameraApiUpdateDeviceCameraVideoSettingsRequest {
-	return CameraApiUpdateDeviceCameraVideoSettingsRequest{
+func (a *CameraAPIService) UpdateDeviceCameraVideoSettings(ctx context.Context, serial string) CameraAPIUpdateDeviceCameraVideoSettingsRequest {
+	return CameraAPIUpdateDeviceCameraVideoSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -3773,7 +3773,7 @@ func (a *CameraApiService) UpdateDeviceCameraVideoSettings(ctx context.Context, 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CameraApiService) UpdateDeviceCameraVideoSettingsExecute(r CameraApiUpdateDeviceCameraVideoSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) UpdateDeviceCameraVideoSettingsExecute(r CameraAPIUpdateDeviceCameraVideoSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -3781,7 +3781,7 @@ func (a *CameraApiService) UpdateDeviceCameraVideoSettingsExecute(r CameraApiUpd
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.UpdateDeviceCameraVideoSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.UpdateDeviceCameraVideoSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3863,19 +3863,19 @@ func (a *CameraApiService) UpdateDeviceCameraVideoSettingsExecute(r CameraApiUpd
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiUpdateDeviceCameraWirelessProfilesRequest struct {
+type CameraAPIUpdateDeviceCameraWirelessProfilesRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	serial string
 	updateDeviceCameraWirelessProfilesRequest *UpdateDeviceCameraWirelessProfilesRequest
 }
 
-func (r CameraApiUpdateDeviceCameraWirelessProfilesRequest) UpdateDeviceCameraWirelessProfilesRequest(updateDeviceCameraWirelessProfilesRequest UpdateDeviceCameraWirelessProfilesRequest) CameraApiUpdateDeviceCameraWirelessProfilesRequest {
+func (r CameraAPIUpdateDeviceCameraWirelessProfilesRequest) UpdateDeviceCameraWirelessProfilesRequest(updateDeviceCameraWirelessProfilesRequest UpdateDeviceCameraWirelessProfilesRequest) CameraAPIUpdateDeviceCameraWirelessProfilesRequest {
 	r.updateDeviceCameraWirelessProfilesRequest = &updateDeviceCameraWirelessProfilesRequest
 	return r
 }
 
-func (r CameraApiUpdateDeviceCameraWirelessProfilesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CameraAPIUpdateDeviceCameraWirelessProfilesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceCameraWirelessProfilesExecute(r)
 }
 
@@ -3886,10 +3886,10 @@ Assign wireless profiles to the given camera. Incremental updates are not suppor
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return CameraApiUpdateDeviceCameraWirelessProfilesRequest
+ @return CameraAPIUpdateDeviceCameraWirelessProfilesRequest
 */
-func (a *CameraApiService) UpdateDeviceCameraWirelessProfiles(ctx context.Context, serial string) CameraApiUpdateDeviceCameraWirelessProfilesRequest {
-	return CameraApiUpdateDeviceCameraWirelessProfilesRequest{
+func (a *CameraAPIService) UpdateDeviceCameraWirelessProfiles(ctx context.Context, serial string) CameraAPIUpdateDeviceCameraWirelessProfilesRequest {
+	return CameraAPIUpdateDeviceCameraWirelessProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -3898,7 +3898,7 @@ func (a *CameraApiService) UpdateDeviceCameraWirelessProfiles(ctx context.Contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CameraApiService) UpdateDeviceCameraWirelessProfilesExecute(r CameraApiUpdateDeviceCameraWirelessProfilesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) UpdateDeviceCameraWirelessProfilesExecute(r CameraAPIUpdateDeviceCameraWirelessProfilesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -3906,7 +3906,7 @@ func (a *CameraApiService) UpdateDeviceCameraWirelessProfilesExecute(r CameraApi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.UpdateDeviceCameraWirelessProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.UpdateDeviceCameraWirelessProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3991,20 +3991,20 @@ func (a *CameraApiService) UpdateDeviceCameraWirelessProfilesExecute(r CameraApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiUpdateNetworkCameraQualityRetentionProfileRequest struct {
+type CameraAPIUpdateNetworkCameraQualityRetentionProfileRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	networkId string
 	qualityRetentionProfileId string
 	updateNetworkCameraQualityRetentionProfileRequest *UpdateNetworkCameraQualityRetentionProfileRequest
 }
 
-func (r CameraApiUpdateNetworkCameraQualityRetentionProfileRequest) UpdateNetworkCameraQualityRetentionProfileRequest(updateNetworkCameraQualityRetentionProfileRequest UpdateNetworkCameraQualityRetentionProfileRequest) CameraApiUpdateNetworkCameraQualityRetentionProfileRequest {
+func (r CameraAPIUpdateNetworkCameraQualityRetentionProfileRequest) UpdateNetworkCameraQualityRetentionProfileRequest(updateNetworkCameraQualityRetentionProfileRequest UpdateNetworkCameraQualityRetentionProfileRequest) CameraAPIUpdateNetworkCameraQualityRetentionProfileRequest {
 	r.updateNetworkCameraQualityRetentionProfileRequest = &updateNetworkCameraQualityRetentionProfileRequest
 	return r
 }
 
-func (r CameraApiUpdateNetworkCameraQualityRetentionProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CameraAPIUpdateNetworkCameraQualityRetentionProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkCameraQualityRetentionProfileExecute(r)
 }
 
@@ -4016,10 +4016,10 @@ Update an existing quality retention profile for this network.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param qualityRetentionProfileId Quality retention profile ID
- @return CameraApiUpdateNetworkCameraQualityRetentionProfileRequest
+ @return CameraAPIUpdateNetworkCameraQualityRetentionProfileRequest
 */
-func (a *CameraApiService) UpdateNetworkCameraQualityRetentionProfile(ctx context.Context, networkId string, qualityRetentionProfileId string) CameraApiUpdateNetworkCameraQualityRetentionProfileRequest {
-	return CameraApiUpdateNetworkCameraQualityRetentionProfileRequest{
+func (a *CameraAPIService) UpdateNetworkCameraQualityRetentionProfile(ctx context.Context, networkId string, qualityRetentionProfileId string) CameraAPIUpdateNetworkCameraQualityRetentionProfileRequest {
+	return CameraAPIUpdateNetworkCameraQualityRetentionProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4029,7 +4029,7 @@ func (a *CameraApiService) UpdateNetworkCameraQualityRetentionProfile(ctx contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CameraApiService) UpdateNetworkCameraQualityRetentionProfileExecute(r CameraApiUpdateNetworkCameraQualityRetentionProfileRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) UpdateNetworkCameraQualityRetentionProfileExecute(r CameraAPIUpdateNetworkCameraQualityRetentionProfileRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -4037,7 +4037,7 @@ func (a *CameraApiService) UpdateNetworkCameraQualityRetentionProfileExecute(r C
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.UpdateNetworkCameraQualityRetentionProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.UpdateNetworkCameraQualityRetentionProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4120,20 +4120,20 @@ func (a *CameraApiService) UpdateNetworkCameraQualityRetentionProfileExecute(r C
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiUpdateNetworkCameraWirelessProfileRequest struct {
+type CameraAPIUpdateNetworkCameraWirelessProfileRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	networkId string
 	wirelessProfileId string
 	updateNetworkCameraWirelessProfileRequest *UpdateNetworkCameraWirelessProfileRequest
 }
 
-func (r CameraApiUpdateNetworkCameraWirelessProfileRequest) UpdateNetworkCameraWirelessProfileRequest(updateNetworkCameraWirelessProfileRequest UpdateNetworkCameraWirelessProfileRequest) CameraApiUpdateNetworkCameraWirelessProfileRequest {
+func (r CameraAPIUpdateNetworkCameraWirelessProfileRequest) UpdateNetworkCameraWirelessProfileRequest(updateNetworkCameraWirelessProfileRequest UpdateNetworkCameraWirelessProfileRequest) CameraAPIUpdateNetworkCameraWirelessProfileRequest {
 	r.updateNetworkCameraWirelessProfileRequest = &updateNetworkCameraWirelessProfileRequest
 	return r
 }
 
-func (r CameraApiUpdateNetworkCameraWirelessProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CameraAPIUpdateNetworkCameraWirelessProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkCameraWirelessProfileExecute(r)
 }
 
@@ -4145,10 +4145,10 @@ Update an existing camera wireless profile in this network.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param wirelessProfileId Wireless profile ID
- @return CameraApiUpdateNetworkCameraWirelessProfileRequest
+ @return CameraAPIUpdateNetworkCameraWirelessProfileRequest
 */
-func (a *CameraApiService) UpdateNetworkCameraWirelessProfile(ctx context.Context, networkId string, wirelessProfileId string) CameraApiUpdateNetworkCameraWirelessProfileRequest {
-	return CameraApiUpdateNetworkCameraWirelessProfileRequest{
+func (a *CameraAPIService) UpdateNetworkCameraWirelessProfile(ctx context.Context, networkId string, wirelessProfileId string) CameraAPIUpdateNetworkCameraWirelessProfileRequest {
+	return CameraAPIUpdateNetworkCameraWirelessProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4158,7 +4158,7 @@ func (a *CameraApiService) UpdateNetworkCameraWirelessProfile(ctx context.Contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CameraApiService) UpdateNetworkCameraWirelessProfileExecute(r CameraApiUpdateNetworkCameraWirelessProfileRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) UpdateNetworkCameraWirelessProfileExecute(r CameraAPIUpdateNetworkCameraWirelessProfileRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -4166,7 +4166,7 @@ func (a *CameraApiService) UpdateNetworkCameraWirelessProfileExecute(r CameraApi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.UpdateNetworkCameraWirelessProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.UpdateNetworkCameraWirelessProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4249,19 +4249,19 @@ func (a *CameraApiService) UpdateNetworkCameraWirelessProfileExecute(r CameraApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CameraApiUpdateOrganizationCameraOnboardingStatusesRequest struct {
+type CameraAPIUpdateOrganizationCameraOnboardingStatusesRequest struct {
 	ctx context.Context
-	ApiService *CameraApiService
+	ApiService *CameraAPIService
 	organizationId string
 	updateOrganizationCameraOnboardingStatusesRequest *UpdateOrganizationCameraOnboardingStatusesRequest
 }
 
-func (r CameraApiUpdateOrganizationCameraOnboardingStatusesRequest) UpdateOrganizationCameraOnboardingStatusesRequest(updateOrganizationCameraOnboardingStatusesRequest UpdateOrganizationCameraOnboardingStatusesRequest) CameraApiUpdateOrganizationCameraOnboardingStatusesRequest {
+func (r CameraAPIUpdateOrganizationCameraOnboardingStatusesRequest) UpdateOrganizationCameraOnboardingStatusesRequest(updateOrganizationCameraOnboardingStatusesRequest UpdateOrganizationCameraOnboardingStatusesRequest) CameraAPIUpdateOrganizationCameraOnboardingStatusesRequest {
 	r.updateOrganizationCameraOnboardingStatusesRequest = &updateOrganizationCameraOnboardingStatusesRequest
 	return r
 }
 
-func (r CameraApiUpdateOrganizationCameraOnboardingStatusesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CameraAPIUpdateOrganizationCameraOnboardingStatusesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationCameraOnboardingStatusesExecute(r)
 }
 
@@ -4272,10 +4272,10 @@ Notify that credential handoff to camera has completed
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return CameraApiUpdateOrganizationCameraOnboardingStatusesRequest
+ @return CameraAPIUpdateOrganizationCameraOnboardingStatusesRequest
 */
-func (a *CameraApiService) UpdateOrganizationCameraOnboardingStatuses(ctx context.Context, organizationId string) CameraApiUpdateOrganizationCameraOnboardingStatusesRequest {
-	return CameraApiUpdateOrganizationCameraOnboardingStatusesRequest{
+func (a *CameraAPIService) UpdateOrganizationCameraOnboardingStatuses(ctx context.Context, organizationId string) CameraAPIUpdateOrganizationCameraOnboardingStatusesRequest {
+	return CameraAPIUpdateOrganizationCameraOnboardingStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -4284,7 +4284,7 @@ func (a *CameraApiService) UpdateOrganizationCameraOnboardingStatuses(ctx contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CameraApiService) UpdateOrganizationCameraOnboardingStatusesExecute(r CameraApiUpdateOrganizationCameraOnboardingStatusesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CameraAPIService) UpdateOrganizationCameraOnboardingStatusesExecute(r CameraAPIUpdateOrganizationCameraOnboardingStatusesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -4292,7 +4292,7 @@ func (a *CameraApiService) UpdateOrganizationCameraOnboardingStatusesExecute(r C
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraApiService.UpdateOrganizationCameraOnboardingStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CameraAPIService.UpdateOrganizationCameraOnboardingStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

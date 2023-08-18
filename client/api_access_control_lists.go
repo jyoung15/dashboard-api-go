@@ -20,16 +20,16 @@ import (
 )
 
 
-// AccessControlListsApiService AccessControlListsApi service
-type AccessControlListsApiService service
+// AccessControlListsAPIService AccessControlListsAPI service
+type AccessControlListsAPIService service
 
-type AccessControlListsApiGetNetworkSwitchAccessControlListsRequest struct {
+type AccessControlListsAPIGetNetworkSwitchAccessControlListsRequest struct {
 	ctx context.Context
-	ApiService *AccessControlListsApiService
+	ApiService *AccessControlListsAPIService
 	networkId string
 }
 
-func (r AccessControlListsApiGetNetworkSwitchAccessControlListsRequest) Execute() (*GetNetworkSwitchAccessControlLists200Response, *http.Response, error) {
+func (r AccessControlListsAPIGetNetworkSwitchAccessControlListsRequest) Execute() (*GetNetworkSwitchAccessControlLists200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchAccessControlListsExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the access control lists for a MS network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return AccessControlListsApiGetNetworkSwitchAccessControlListsRequest
+ @return AccessControlListsAPIGetNetworkSwitchAccessControlListsRequest
 */
-func (a *AccessControlListsApiService) GetNetworkSwitchAccessControlLists(ctx context.Context, networkId string) AccessControlListsApiGetNetworkSwitchAccessControlListsRequest {
-	return AccessControlListsApiGetNetworkSwitchAccessControlListsRequest{
+func (a *AccessControlListsAPIService) GetNetworkSwitchAccessControlLists(ctx context.Context, networkId string) AccessControlListsAPIGetNetworkSwitchAccessControlListsRequest {
+	return AccessControlListsAPIGetNetworkSwitchAccessControlListsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *AccessControlListsApiService) GetNetworkSwitchAccessControlLists(ctx co
 
 // Execute executes the request
 //  @return GetNetworkSwitchAccessControlLists200Response
-func (a *AccessControlListsApiService) GetNetworkSwitchAccessControlListsExecute(r AccessControlListsApiGetNetworkSwitchAccessControlListsRequest) (*GetNetworkSwitchAccessControlLists200Response, *http.Response, error) {
+func (a *AccessControlListsAPIService) GetNetworkSwitchAccessControlListsExecute(r AccessControlListsAPIGetNetworkSwitchAccessControlListsRequest) (*GetNetworkSwitchAccessControlLists200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *AccessControlListsApiService) GetNetworkSwitchAccessControlListsExecute
 		localVarReturnValue  *GetNetworkSwitchAccessControlLists200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessControlListsApiService.GetNetworkSwitchAccessControlLists")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessControlListsAPIService.GetNetworkSwitchAccessControlLists")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *AccessControlListsApiService) GetNetworkSwitchAccessControlListsExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AccessControlListsApiUpdateNetworkSwitchAccessControlListsRequest struct {
+type AccessControlListsAPIUpdateNetworkSwitchAccessControlListsRequest struct {
 	ctx context.Context
-	ApiService *AccessControlListsApiService
+	ApiService *AccessControlListsAPIService
 	networkId string
 	updateNetworkSwitchAccessControlListsRequest *UpdateNetworkSwitchAccessControlListsRequest
 }
 
-func (r AccessControlListsApiUpdateNetworkSwitchAccessControlListsRequest) UpdateNetworkSwitchAccessControlListsRequest(updateNetworkSwitchAccessControlListsRequest UpdateNetworkSwitchAccessControlListsRequest) AccessControlListsApiUpdateNetworkSwitchAccessControlListsRequest {
+func (r AccessControlListsAPIUpdateNetworkSwitchAccessControlListsRequest) UpdateNetworkSwitchAccessControlListsRequest(updateNetworkSwitchAccessControlListsRequest UpdateNetworkSwitchAccessControlListsRequest) AccessControlListsAPIUpdateNetworkSwitchAccessControlListsRequest {
 	r.updateNetworkSwitchAccessControlListsRequest = &updateNetworkSwitchAccessControlListsRequest
 	return r
 }
 
-func (r AccessControlListsApiUpdateNetworkSwitchAccessControlListsRequest) Execute() (*GetNetworkSwitchAccessControlLists200Response, *http.Response, error) {
+func (r AccessControlListsAPIUpdateNetworkSwitchAccessControlListsRequest) Execute() (*GetNetworkSwitchAccessControlLists200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchAccessControlListsExecute(r)
 }
 
@@ -163,10 +163,10 @@ Update the access control lists for a MS network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return AccessControlListsApiUpdateNetworkSwitchAccessControlListsRequest
+ @return AccessControlListsAPIUpdateNetworkSwitchAccessControlListsRequest
 */
-func (a *AccessControlListsApiService) UpdateNetworkSwitchAccessControlLists(ctx context.Context, networkId string) AccessControlListsApiUpdateNetworkSwitchAccessControlListsRequest {
-	return AccessControlListsApiUpdateNetworkSwitchAccessControlListsRequest{
+func (a *AccessControlListsAPIService) UpdateNetworkSwitchAccessControlLists(ctx context.Context, networkId string) AccessControlListsAPIUpdateNetworkSwitchAccessControlListsRequest {
+	return AccessControlListsAPIUpdateNetworkSwitchAccessControlListsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -175,7 +175,7 @@ func (a *AccessControlListsApiService) UpdateNetworkSwitchAccessControlLists(ctx
 
 // Execute executes the request
 //  @return GetNetworkSwitchAccessControlLists200Response
-func (a *AccessControlListsApiService) UpdateNetworkSwitchAccessControlListsExecute(r AccessControlListsApiUpdateNetworkSwitchAccessControlListsRequest) (*GetNetworkSwitchAccessControlLists200Response, *http.Response, error) {
+func (a *AccessControlListsAPIService) UpdateNetworkSwitchAccessControlListsExecute(r AccessControlListsAPIUpdateNetworkSwitchAccessControlListsRequest) (*GetNetworkSwitchAccessControlLists200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *AccessControlListsApiService) UpdateNetworkSwitchAccessControlListsExec
 		localVarReturnValue  *GetNetworkSwitchAccessControlLists200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessControlListsApiService.UpdateNetworkSwitchAccessControlLists")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessControlListsAPIService.UpdateNetworkSwitchAccessControlLists")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

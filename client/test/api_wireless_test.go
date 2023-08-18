@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing WirelessApiService
+Testing WirelessAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_WirelessApiService(t *testing.T) {
+func Test_client_WirelessAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test WirelessApiService CreateNetworkWirelessRfProfile", func(t *testing.T) {
+	t.Run("Test WirelessAPIService CreateNetworkWirelessRfProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessApi.CreateNetworkWirelessRfProfile(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.CreateNetworkWirelessRfProfile(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,14 +36,14 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService CreateNetworkWirelessSsidIdentityPsk", func(t *testing.T) {
+	t.Run("Test WirelessAPIService CreateNetworkWirelessSsidIdentityPsk", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.WirelessApi.CreateNetworkWirelessSsidIdentityPsk(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.CreateNetworkWirelessSsidIdentityPsk(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -51,21 +51,21 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService DeleteNetworkWirelessRfProfile", func(t *testing.T) {
+	t.Run("Test WirelessAPIService DeleteNetworkWirelessRfProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var rfProfileId string
 
-		httpRes, err := apiClient.WirelessApi.DeleteNetworkWirelessRfProfile(context.Background(), networkId, rfProfileId).Execute()
+		httpRes, err := apiClient.WirelessAPI.DeleteNetworkWirelessRfProfile(context.Background(), networkId, rfProfileId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test WirelessApiService DeleteNetworkWirelessSsidIdentityPsk", func(t *testing.T) {
+	t.Run("Test WirelessAPIService DeleteNetworkWirelessSsidIdentityPsk", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -73,20 +73,20 @@ func Test_client_WirelessApiService(t *testing.T) {
 		var number string
 		var identityPskId string
 
-		httpRes, err := apiClient.WirelessApi.DeleteNetworkWirelessSsidIdentityPsk(context.Background(), networkId, number, identityPskId).Execute()
+		httpRes, err := apiClient.WirelessAPI.DeleteNetworkWirelessSsidIdentityPsk(context.Background(), networkId, number, identityPskId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test WirelessApiService GetDeviceWirelessBluetoothSettings", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetDeviceWirelessBluetoothSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetDeviceWirelessBluetoothSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetDeviceWirelessBluetoothSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -94,13 +94,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetDeviceWirelessConnectionStats", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetDeviceWirelessConnectionStats", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetDeviceWirelessConnectionStats(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetDeviceWirelessConnectionStats(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -108,13 +108,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetDeviceWirelessLatencyStats", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetDeviceWirelessLatencyStats", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetDeviceWirelessLatencyStats(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetDeviceWirelessLatencyStats(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -122,13 +122,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetDeviceWirelessRadioSettings", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetDeviceWirelessRadioSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetDeviceWirelessRadioSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetDeviceWirelessRadioSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -136,13 +136,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetDeviceWirelessStatus", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetDeviceWirelessStatus", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetDeviceWirelessStatus(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetDeviceWirelessStatus(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -150,13 +150,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessAirMarshal", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessAirMarshal", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessAirMarshal(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessAirMarshal(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -164,13 +164,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessAlternateManagementInterface", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessAlternateManagementInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessAlternateManagementInterface(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessAlternateManagementInterface(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -178,13 +178,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessBilling", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessBilling", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessBilling(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessBilling(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -192,13 +192,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessBluetoothSettings", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessBluetoothSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessBluetoothSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessBluetoothSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -206,13 +206,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessChannelUtilizationHistory", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessChannelUtilizationHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessChannelUtilizationHistory(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessChannelUtilizationHistory(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -220,14 +220,14 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessClientConnectionStats", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessClientConnectionStats", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var clientId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessClientConnectionStats(context.Background(), networkId, clientId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessClientConnectionStats(context.Background(), networkId, clientId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -235,14 +235,14 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessClientConnectivityEvents", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessClientConnectivityEvents", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var clientId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessClientConnectivityEvents(context.Background(), networkId, clientId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessClientConnectivityEvents(context.Background(), networkId, clientId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -250,13 +250,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessClientCountHistory", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessClientCountHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessClientCountHistory(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessClientCountHistory(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -264,29 +264,14 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessClientLatencyHistory", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-		var clientId string
-
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessClientLatencyHistory(context.Background(), networkId, clientId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test WirelessApiService GetNetworkWirelessClientLatencyStats", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessClientLatencyHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var clientId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessClientLatencyStats(context.Background(), networkId, clientId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessClientLatencyHistory(context.Background(), networkId, clientId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -294,13 +279,28 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessClientsConnectionStats", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessClientLatencyStats", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+		var clientId string
+
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessClientLatencyStats(context.Background(), networkId, clientId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WirelessAPIService GetNetworkWirelessClientsConnectionStats", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessClientsConnectionStats(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessClientsConnectionStats(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -308,13 +308,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessClientsLatencyStats", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessClientsLatencyStats", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessClientsLatencyStats(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessClientsLatencyStats(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -322,13 +322,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessConnectionStats", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessConnectionStats", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessConnectionStats(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessConnectionStats(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -336,13 +336,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessDataRateHistory", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessDataRateHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessDataRateHistory(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessDataRateHistory(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -350,13 +350,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessDevicesConnectionStats", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessDevicesConnectionStats", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessDevicesConnectionStats(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessDevicesConnectionStats(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -364,13 +364,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessDevicesLatencyStats", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessDevicesLatencyStats", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessDevicesLatencyStats(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessDevicesLatencyStats(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -378,13 +378,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessFailedConnections", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessFailedConnections", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessFailedConnections(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessFailedConnections(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -392,13 +392,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessLatencyHistory", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessLatencyHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessLatencyHistory(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessLatencyHistory(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -406,13 +406,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessLatencyStats", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessLatencyStats", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessLatencyStats(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessLatencyStats(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -420,13 +420,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessMeshStatuses", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessMeshStatuses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessMeshStatuses(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessMeshStatuses(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -434,14 +434,14 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessRfProfile", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessRfProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var rfProfileId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessRfProfile(context.Background(), networkId, rfProfileId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessRfProfile(context.Background(), networkId, rfProfileId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -449,13 +449,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessRfProfiles", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessRfProfiles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessRfProfiles(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessRfProfiles(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -463,13 +463,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessSettings", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -477,13 +477,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessSignalQualityHistory", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessSignalQualityHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessSignalQualityHistory(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessSignalQualityHistory(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -491,29 +491,14 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessSsid", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-		var number string
-
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessSsid(context.Background(), networkId, number).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test WirelessApiService GetNetworkWirelessSsidBonjourForwarding", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessSsid", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessSsidBonjourForwarding(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessSsid(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -521,14 +506,14 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessSsidDeviceTypeGroupPolicies", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessSsidBonjourForwarding", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessSsidDeviceTypeGroupPolicies(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessSsidBonjourForwarding(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -536,14 +521,14 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessSsidEapOverride", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessSsidDeviceTypeGroupPolicies", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessSsidEapOverride(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessSsidDeviceTypeGroupPolicies(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -551,14 +536,14 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessSsidFirewallL3FirewallRules", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessSsidEapOverride", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessSsidFirewallL3FirewallRules(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessSsidEapOverride(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -566,14 +551,14 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessSsidFirewallL7FirewallRules", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessSsidFirewallL3FirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessSsidFirewallL7FirewallRules(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessSsidFirewallL3FirewallRules(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -581,14 +566,14 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessSsidHotspot20", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessSsidFirewallL7FirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessSsidHotspot20(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessSsidFirewallL7FirewallRules(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -596,7 +581,22 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessSsidIdentityPsk", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessSsidHotspot20", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+		var number string
+
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessSsidHotspot20(context.Background(), networkId, number).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WirelessAPIService GetNetworkWirelessSsidIdentityPsk", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -604,7 +604,7 @@ func Test_client_WirelessApiService(t *testing.T) {
 		var number string
 		var identityPskId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessSsidIdentityPsk(context.Background(), networkId, number, identityPskId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessSsidIdentityPsk(context.Background(), networkId, number, identityPskId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -612,14 +612,14 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessSsidIdentityPsks", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessSsidIdentityPsks", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessSsidIdentityPsks(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessSsidIdentityPsks(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -627,14 +627,14 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessSsidSchedules", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessSsidSchedules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessSsidSchedules(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessSsidSchedules(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -642,14 +642,14 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessSsidSplashSettings", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessSsidSplashSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessSsidSplashSettings(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessSsidSplashSettings(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -657,14 +657,14 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessSsidTrafficShapingRules", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessSsidTrafficShapingRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessSsidTrafficShapingRules(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessSsidTrafficShapingRules(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -672,14 +672,14 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessSsidVpn", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessSsidVpn", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessSsidVpn(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessSsidVpn(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -687,13 +687,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessSsids", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessSsids", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessSsids(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessSsids(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -701,13 +701,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetNetworkWirelessUsageHistory", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetNetworkWirelessUsageHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetNetworkWirelessUsageHistory(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetNetworkWirelessUsageHistory(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -715,13 +715,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetOrganizationWirelessDevicesChannelUtilizationByDevice", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetOrganizationWirelessDevicesChannelUtilizationByDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetOrganizationWirelessDevicesChannelUtilizationByDevice(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetOrganizationWirelessDevicesChannelUtilizationByDevice(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -729,13 +729,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetOrganizationWirelessDevicesChannelUtilizationByNetwork", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetOrganizationWirelessDevicesChannelUtilizationByNetwork", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetOrganizationWirelessDevicesChannelUtilizationByNetwork(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetOrganizationWirelessDevicesChannelUtilizationByNetwork(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -743,13 +743,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -757,13 +757,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -771,13 +771,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService GetOrganizationWirelessDevicesEthernetStatuses", func(t *testing.T) {
+	t.Run("Test WirelessAPIService GetOrganizationWirelessDevicesEthernetStatuses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.WirelessApi.GetOrganizationWirelessDevicesEthernetStatuses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.GetOrganizationWirelessDevicesEthernetStatuses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -785,13 +785,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService UpdateDeviceWirelessBluetoothSettings", func(t *testing.T) {
+	t.Run("Test WirelessAPIService UpdateDeviceWirelessBluetoothSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.WirelessApi.UpdateDeviceWirelessBluetoothSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.UpdateDeviceWirelessBluetoothSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -799,13 +799,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService UpdateDeviceWirelessRadioSettings", func(t *testing.T) {
+	t.Run("Test WirelessAPIService UpdateDeviceWirelessRadioSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.WirelessApi.UpdateDeviceWirelessRadioSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.UpdateDeviceWirelessRadioSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -813,13 +813,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService UpdateNetworkWirelessAlternateManagementInterface", func(t *testing.T) {
+	t.Run("Test WirelessAPIService UpdateNetworkWirelessAlternateManagementInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessApi.UpdateNetworkWirelessAlternateManagementInterface(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.UpdateNetworkWirelessAlternateManagementInterface(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -827,13 +827,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService UpdateNetworkWirelessBilling", func(t *testing.T) {
+	t.Run("Test WirelessAPIService UpdateNetworkWirelessBilling", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessApi.UpdateNetworkWirelessBilling(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.UpdateNetworkWirelessBilling(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -841,13 +841,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService UpdateNetworkWirelessBluetoothSettings", func(t *testing.T) {
+	t.Run("Test WirelessAPIService UpdateNetworkWirelessBluetoothSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessApi.UpdateNetworkWirelessBluetoothSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.UpdateNetworkWirelessBluetoothSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -855,14 +855,14 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService UpdateNetworkWirelessRfProfile", func(t *testing.T) {
+	t.Run("Test WirelessAPIService UpdateNetworkWirelessRfProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var rfProfileId string
 
-		resp, httpRes, err := apiClient.WirelessApi.UpdateNetworkWirelessRfProfile(context.Background(), networkId, rfProfileId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.UpdateNetworkWirelessRfProfile(context.Background(), networkId, rfProfileId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -870,13 +870,13 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService UpdateNetworkWirelessSettings", func(t *testing.T) {
+	t.Run("Test WirelessAPIService UpdateNetworkWirelessSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessApi.UpdateNetworkWirelessSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.UpdateNetworkWirelessSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -884,29 +884,14 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService UpdateNetworkWirelessSsid", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-		var number string
-
-		resp, httpRes, err := apiClient.WirelessApi.UpdateNetworkWirelessSsid(context.Background(), networkId, number).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test WirelessApiService UpdateNetworkWirelessSsidBonjourForwarding", func(t *testing.T) {
+	t.Run("Test WirelessAPIService UpdateNetworkWirelessSsid", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.WirelessApi.UpdateNetworkWirelessSsidBonjourForwarding(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.UpdateNetworkWirelessSsid(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -914,14 +899,14 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService UpdateNetworkWirelessSsidDeviceTypeGroupPolicies", func(t *testing.T) {
+	t.Run("Test WirelessAPIService UpdateNetworkWirelessSsidBonjourForwarding", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.WirelessApi.UpdateNetworkWirelessSsidDeviceTypeGroupPolicies(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.UpdateNetworkWirelessSsidBonjourForwarding(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -929,14 +914,14 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService UpdateNetworkWirelessSsidEapOverride", func(t *testing.T) {
+	t.Run("Test WirelessAPIService UpdateNetworkWirelessSsidDeviceTypeGroupPolicies", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.WirelessApi.UpdateNetworkWirelessSsidEapOverride(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.UpdateNetworkWirelessSsidDeviceTypeGroupPolicies(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -944,14 +929,14 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService UpdateNetworkWirelessSsidFirewallL3FirewallRules", func(t *testing.T) {
+	t.Run("Test WirelessAPIService UpdateNetworkWirelessSsidEapOverride", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.WirelessApi.UpdateNetworkWirelessSsidFirewallL3FirewallRules(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.UpdateNetworkWirelessSsidEapOverride(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -959,14 +944,14 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService UpdateNetworkWirelessSsidFirewallL7FirewallRules", func(t *testing.T) {
+	t.Run("Test WirelessAPIService UpdateNetworkWirelessSsidFirewallL3FirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.WirelessApi.UpdateNetworkWirelessSsidFirewallL7FirewallRules(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.UpdateNetworkWirelessSsidFirewallL3FirewallRules(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -974,14 +959,14 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService UpdateNetworkWirelessSsidHotspot20", func(t *testing.T) {
+	t.Run("Test WirelessAPIService UpdateNetworkWirelessSsidFirewallL7FirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.WirelessApi.UpdateNetworkWirelessSsidHotspot20(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.UpdateNetworkWirelessSsidFirewallL7FirewallRules(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -989,7 +974,22 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService UpdateNetworkWirelessSsidIdentityPsk", func(t *testing.T) {
+	t.Run("Test WirelessAPIService UpdateNetworkWirelessSsidHotspot20", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+		var number string
+
+		resp, httpRes, err := apiClient.WirelessAPI.UpdateNetworkWirelessSsidHotspot20(context.Background(), networkId, number).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test WirelessAPIService UpdateNetworkWirelessSsidIdentityPsk", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -997,7 +997,7 @@ func Test_client_WirelessApiService(t *testing.T) {
 		var number string
 		var identityPskId string
 
-		resp, httpRes, err := apiClient.WirelessApi.UpdateNetworkWirelessSsidIdentityPsk(context.Background(), networkId, number, identityPskId).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.UpdateNetworkWirelessSsidIdentityPsk(context.Background(), networkId, number, identityPskId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1005,14 +1005,14 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService UpdateNetworkWirelessSsidSchedules", func(t *testing.T) {
+	t.Run("Test WirelessAPIService UpdateNetworkWirelessSsidSchedules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.WirelessApi.UpdateNetworkWirelessSsidSchedules(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.UpdateNetworkWirelessSsidSchedules(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1020,14 +1020,14 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService UpdateNetworkWirelessSsidSplashSettings", func(t *testing.T) {
+	t.Run("Test WirelessAPIService UpdateNetworkWirelessSsidSplashSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.WirelessApi.UpdateNetworkWirelessSsidSplashSettings(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.UpdateNetworkWirelessSsidSplashSettings(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1035,14 +1035,14 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService UpdateNetworkWirelessSsidTrafficShapingRules", func(t *testing.T) {
+	t.Run("Test WirelessAPIService UpdateNetworkWirelessSsidTrafficShapingRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.WirelessApi.UpdateNetworkWirelessSsidTrafficShapingRules(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.UpdateNetworkWirelessSsidTrafficShapingRules(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1050,14 +1050,14 @@ func Test_client_WirelessApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessApiService UpdateNetworkWirelessSsidVpn", func(t *testing.T) {
+	t.Run("Test WirelessAPIService UpdateNetworkWirelessSsidVpn", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.WirelessApi.UpdateNetworkWirelessSsidVpn(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.WirelessAPI.UpdateNetworkWirelessSsidVpn(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

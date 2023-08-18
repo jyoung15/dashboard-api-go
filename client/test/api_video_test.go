@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing VideoApiService
+Testing VideoAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_VideoApiService(t *testing.T) {
+func Test_client_VideoAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test VideoApiService GetDeviceCameraVideoSettings", func(t *testing.T) {
+	t.Run("Test VideoAPIService GetDeviceCameraVideoSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.VideoApi.GetDeviceCameraVideoSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.VideoAPI.GetDeviceCameraVideoSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_VideoApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VideoApiService UpdateDeviceCameraVideoSettings", func(t *testing.T) {
+	t.Run("Test VideoAPIService UpdateDeviceCameraVideoSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.VideoApi.UpdateDeviceCameraVideoSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.VideoAPI.UpdateDeviceCameraVideoSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -20,22 +20,22 @@ import (
 )
 
 
-// HttpServersApiService HttpServersApi service
-type HttpServersApiService service
+// HttpServersAPIService HttpServersAPI service
+type HttpServersAPIService service
 
-type HttpServersApiCreateNetworkWebhooksHttpServerRequest struct {
+type HttpServersAPICreateNetworkWebhooksHttpServerRequest struct {
 	ctx context.Context
-	ApiService *HttpServersApiService
+	ApiService *HttpServersAPIService
 	networkId string
 	createNetworkWebhooksHttpServerRequest *CreateNetworkWebhooksHttpServerRequest
 }
 
-func (r HttpServersApiCreateNetworkWebhooksHttpServerRequest) CreateNetworkWebhooksHttpServerRequest(createNetworkWebhooksHttpServerRequest CreateNetworkWebhooksHttpServerRequest) HttpServersApiCreateNetworkWebhooksHttpServerRequest {
+func (r HttpServersAPICreateNetworkWebhooksHttpServerRequest) CreateNetworkWebhooksHttpServerRequest(createNetworkWebhooksHttpServerRequest CreateNetworkWebhooksHttpServerRequest) HttpServersAPICreateNetworkWebhooksHttpServerRequest {
 	r.createNetworkWebhooksHttpServerRequest = &createNetworkWebhooksHttpServerRequest
 	return r
 }
 
-func (r HttpServersApiCreateNetworkWebhooksHttpServerRequest) Execute() (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
+func (r HttpServersAPICreateNetworkWebhooksHttpServerRequest) Execute() (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateNetworkWebhooksHttpServerExecute(r)
 }
 
@@ -46,10 +46,10 @@ Add an HTTP server to a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return HttpServersApiCreateNetworkWebhooksHttpServerRequest
+ @return HttpServersAPICreateNetworkWebhooksHttpServerRequest
 */
-func (a *HttpServersApiService) CreateNetworkWebhooksHttpServer(ctx context.Context, networkId string) HttpServersApiCreateNetworkWebhooksHttpServerRequest {
-	return HttpServersApiCreateNetworkWebhooksHttpServerRequest{
+func (a *HttpServersAPIService) CreateNetworkWebhooksHttpServer(ctx context.Context, networkId string) HttpServersAPICreateNetworkWebhooksHttpServerRequest {
+	return HttpServersAPICreateNetworkWebhooksHttpServerRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -58,7 +58,7 @@ func (a *HttpServersApiService) CreateNetworkWebhooksHttpServer(ctx context.Cont
 
 // Execute executes the request
 //  @return GetNetworkWebhooksHttpServers200ResponseInner
-func (a *HttpServersApiService) CreateNetworkWebhooksHttpServerExecute(r HttpServersApiCreateNetworkWebhooksHttpServerRequest) (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
+func (a *HttpServersAPIService) CreateNetworkWebhooksHttpServerExecute(r HttpServersAPICreateNetworkWebhooksHttpServerRequest) (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *HttpServersApiService) CreateNetworkWebhooksHttpServerExecute(r HttpSer
 		localVarReturnValue  *GetNetworkWebhooksHttpServers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpServersApiService.CreateNetworkWebhooksHttpServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpServersAPIService.CreateNetworkWebhooksHttpServer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,14 +151,14 @@ func (a *HttpServersApiService) CreateNetworkWebhooksHttpServerExecute(r HttpSer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type HttpServersApiDeleteNetworkWebhooksHttpServerRequest struct {
+type HttpServersAPIDeleteNetworkWebhooksHttpServerRequest struct {
 	ctx context.Context
-	ApiService *HttpServersApiService
+	ApiService *HttpServersAPIService
 	networkId string
 	httpServerId string
 }
 
-func (r HttpServersApiDeleteNetworkWebhooksHttpServerRequest) Execute() (*http.Response, error) {
+func (r HttpServersAPIDeleteNetworkWebhooksHttpServerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkWebhooksHttpServerExecute(r)
 }
 
@@ -170,10 +170,10 @@ Delete an HTTP server from a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param httpServerId Http server ID
- @return HttpServersApiDeleteNetworkWebhooksHttpServerRequest
+ @return HttpServersAPIDeleteNetworkWebhooksHttpServerRequest
 */
-func (a *HttpServersApiService) DeleteNetworkWebhooksHttpServer(ctx context.Context, networkId string, httpServerId string) HttpServersApiDeleteNetworkWebhooksHttpServerRequest {
-	return HttpServersApiDeleteNetworkWebhooksHttpServerRequest{
+func (a *HttpServersAPIService) DeleteNetworkWebhooksHttpServer(ctx context.Context, networkId string, httpServerId string) HttpServersAPIDeleteNetworkWebhooksHttpServerRequest {
+	return HttpServersAPIDeleteNetworkWebhooksHttpServerRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -182,14 +182,14 @@ func (a *HttpServersApiService) DeleteNetworkWebhooksHttpServer(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *HttpServersApiService) DeleteNetworkWebhooksHttpServerExecute(r HttpServersApiDeleteNetworkWebhooksHttpServerRequest) (*http.Response, error) {
+func (a *HttpServersAPIService) DeleteNetworkWebhooksHttpServerExecute(r HttpServersAPIDeleteNetworkWebhooksHttpServerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpServersApiService.DeleteNetworkWebhooksHttpServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpServersAPIService.DeleteNetworkWebhooksHttpServer")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -261,14 +261,14 @@ func (a *HttpServersApiService) DeleteNetworkWebhooksHttpServerExecute(r HttpSer
 	return localVarHTTPResponse, nil
 }
 
-type HttpServersApiGetNetworkWebhooksHttpServerRequest struct {
+type HttpServersAPIGetNetworkWebhooksHttpServerRequest struct {
 	ctx context.Context
-	ApiService *HttpServersApiService
+	ApiService *HttpServersAPIService
 	networkId string
 	httpServerId string
 }
 
-func (r HttpServersApiGetNetworkWebhooksHttpServerRequest) Execute() (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
+func (r HttpServersAPIGetNetworkWebhooksHttpServerRequest) Execute() (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWebhooksHttpServerExecute(r)
 }
 
@@ -280,10 +280,10 @@ Return an HTTP server for a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param httpServerId Http server ID
- @return HttpServersApiGetNetworkWebhooksHttpServerRequest
+ @return HttpServersAPIGetNetworkWebhooksHttpServerRequest
 */
-func (a *HttpServersApiService) GetNetworkWebhooksHttpServer(ctx context.Context, networkId string, httpServerId string) HttpServersApiGetNetworkWebhooksHttpServerRequest {
-	return HttpServersApiGetNetworkWebhooksHttpServerRequest{
+func (a *HttpServersAPIService) GetNetworkWebhooksHttpServer(ctx context.Context, networkId string, httpServerId string) HttpServersAPIGetNetworkWebhooksHttpServerRequest {
+	return HttpServersAPIGetNetworkWebhooksHttpServerRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -293,7 +293,7 @@ func (a *HttpServersApiService) GetNetworkWebhooksHttpServer(ctx context.Context
 
 // Execute executes the request
 //  @return GetNetworkWebhooksHttpServers200ResponseInner
-func (a *HttpServersApiService) GetNetworkWebhooksHttpServerExecute(r HttpServersApiGetNetworkWebhooksHttpServerRequest) (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
+func (a *HttpServersAPIService) GetNetworkWebhooksHttpServerExecute(r HttpServersAPIGetNetworkWebhooksHttpServerRequest) (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -301,7 +301,7 @@ func (a *HttpServersApiService) GetNetworkWebhooksHttpServerExecute(r HttpServer
 		localVarReturnValue  *GetNetworkWebhooksHttpServers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpServersApiService.GetNetworkWebhooksHttpServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpServersAPIService.GetNetworkWebhooksHttpServer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -382,13 +382,13 @@ func (a *HttpServersApiService) GetNetworkWebhooksHttpServerExecute(r HttpServer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type HttpServersApiGetNetworkWebhooksHttpServersRequest struct {
+type HttpServersAPIGetNetworkWebhooksHttpServersRequest struct {
 	ctx context.Context
-	ApiService *HttpServersApiService
+	ApiService *HttpServersAPIService
 	networkId string
 }
 
-func (r HttpServersApiGetNetworkWebhooksHttpServersRequest) Execute() ([]GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
+func (r HttpServersAPIGetNetworkWebhooksHttpServersRequest) Execute() ([]GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWebhooksHttpServersExecute(r)
 }
 
@@ -399,10 +399,10 @@ List the HTTP servers for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return HttpServersApiGetNetworkWebhooksHttpServersRequest
+ @return HttpServersAPIGetNetworkWebhooksHttpServersRequest
 */
-func (a *HttpServersApiService) GetNetworkWebhooksHttpServers(ctx context.Context, networkId string) HttpServersApiGetNetworkWebhooksHttpServersRequest {
-	return HttpServersApiGetNetworkWebhooksHttpServersRequest{
+func (a *HttpServersAPIService) GetNetworkWebhooksHttpServers(ctx context.Context, networkId string) HttpServersAPIGetNetworkWebhooksHttpServersRequest {
+	return HttpServersAPIGetNetworkWebhooksHttpServersRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -411,7 +411,7 @@ func (a *HttpServersApiService) GetNetworkWebhooksHttpServers(ctx context.Contex
 
 // Execute executes the request
 //  @return []GetNetworkWebhooksHttpServers200ResponseInner
-func (a *HttpServersApiService) GetNetworkWebhooksHttpServersExecute(r HttpServersApiGetNetworkWebhooksHttpServersRequest) ([]GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
+func (a *HttpServersAPIService) GetNetworkWebhooksHttpServersExecute(r HttpServersAPIGetNetworkWebhooksHttpServersRequest) ([]GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -419,7 +419,7 @@ func (a *HttpServersApiService) GetNetworkWebhooksHttpServersExecute(r HttpServe
 		localVarReturnValue  []GetNetworkWebhooksHttpServers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpServersApiService.GetNetworkWebhooksHttpServers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpServersAPIService.GetNetworkWebhooksHttpServers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -499,20 +499,20 @@ func (a *HttpServersApiService) GetNetworkWebhooksHttpServersExecute(r HttpServe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type HttpServersApiUpdateNetworkWebhooksHttpServerRequest struct {
+type HttpServersAPIUpdateNetworkWebhooksHttpServerRequest struct {
 	ctx context.Context
-	ApiService *HttpServersApiService
+	ApiService *HttpServersAPIService
 	networkId string
 	httpServerId string
 	updateNetworkWebhooksHttpServerRequest *UpdateNetworkWebhooksHttpServerRequest
 }
 
-func (r HttpServersApiUpdateNetworkWebhooksHttpServerRequest) UpdateNetworkWebhooksHttpServerRequest(updateNetworkWebhooksHttpServerRequest UpdateNetworkWebhooksHttpServerRequest) HttpServersApiUpdateNetworkWebhooksHttpServerRequest {
+func (r HttpServersAPIUpdateNetworkWebhooksHttpServerRequest) UpdateNetworkWebhooksHttpServerRequest(updateNetworkWebhooksHttpServerRequest UpdateNetworkWebhooksHttpServerRequest) HttpServersAPIUpdateNetworkWebhooksHttpServerRequest {
 	r.updateNetworkWebhooksHttpServerRequest = &updateNetworkWebhooksHttpServerRequest
 	return r
 }
 
-func (r HttpServersApiUpdateNetworkWebhooksHttpServerRequest) Execute() (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
+func (r HttpServersAPIUpdateNetworkWebhooksHttpServerRequest) Execute() (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWebhooksHttpServerExecute(r)
 }
 
@@ -524,10 +524,10 @@ Update an HTTP server. To change a URL, create a new HTTP server.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param httpServerId Http server ID
- @return HttpServersApiUpdateNetworkWebhooksHttpServerRequest
+ @return HttpServersAPIUpdateNetworkWebhooksHttpServerRequest
 */
-func (a *HttpServersApiService) UpdateNetworkWebhooksHttpServer(ctx context.Context, networkId string, httpServerId string) HttpServersApiUpdateNetworkWebhooksHttpServerRequest {
-	return HttpServersApiUpdateNetworkWebhooksHttpServerRequest{
+func (a *HttpServersAPIService) UpdateNetworkWebhooksHttpServer(ctx context.Context, networkId string, httpServerId string) HttpServersAPIUpdateNetworkWebhooksHttpServerRequest {
+	return HttpServersAPIUpdateNetworkWebhooksHttpServerRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -537,7 +537,7 @@ func (a *HttpServersApiService) UpdateNetworkWebhooksHttpServer(ctx context.Cont
 
 // Execute executes the request
 //  @return GetNetworkWebhooksHttpServers200ResponseInner
-func (a *HttpServersApiService) UpdateNetworkWebhooksHttpServerExecute(r HttpServersApiUpdateNetworkWebhooksHttpServerRequest) (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
+func (a *HttpServersAPIService) UpdateNetworkWebhooksHttpServerExecute(r HttpServersAPIUpdateNetworkWebhooksHttpServerRequest) (*GetNetworkWebhooksHttpServers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -545,7 +545,7 @@ func (a *HttpServersApiService) UpdateNetworkWebhooksHttpServerExecute(r HttpSer
 		localVarReturnValue  *GetNetworkWebhooksHttpServers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpServersApiService.UpdateNetworkWebhooksHttpServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpServersAPIService.UpdateNetworkWebhooksHttpServer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

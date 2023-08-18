@@ -20,12 +20,12 @@ import (
 )
 
 
-// DesktopLogsApiService DesktopLogsApi service
-type DesktopLogsApiService service
+// DesktopLogsAPIService DesktopLogsAPI service
+type DesktopLogsAPIService service
 
-type DesktopLogsApiGetNetworkSmDeviceDesktopLogsRequest struct {
+type DesktopLogsAPIGetNetworkSmDeviceDesktopLogsRequest struct {
 	ctx context.Context
-	ApiService *DesktopLogsApiService
+	ApiService *DesktopLogsAPIService
 	networkId string
 	deviceId string
 	perPage *int32
@@ -34,24 +34,24 @@ type DesktopLogsApiGetNetworkSmDeviceDesktopLogsRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r DesktopLogsApiGetNetworkSmDeviceDesktopLogsRequest) PerPage(perPage int32) DesktopLogsApiGetNetworkSmDeviceDesktopLogsRequest {
+func (r DesktopLogsAPIGetNetworkSmDeviceDesktopLogsRequest) PerPage(perPage int32) DesktopLogsAPIGetNetworkSmDeviceDesktopLogsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DesktopLogsApiGetNetworkSmDeviceDesktopLogsRequest) StartingAfter(startingAfter string) DesktopLogsApiGetNetworkSmDeviceDesktopLogsRequest {
+func (r DesktopLogsAPIGetNetworkSmDeviceDesktopLogsRequest) StartingAfter(startingAfter string) DesktopLogsAPIGetNetworkSmDeviceDesktopLogsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DesktopLogsApiGetNetworkSmDeviceDesktopLogsRequest) EndingBefore(endingBefore string) DesktopLogsApiGetNetworkSmDeviceDesktopLogsRequest {
+func (r DesktopLogsAPIGetNetworkSmDeviceDesktopLogsRequest) EndingBefore(endingBefore string) DesktopLogsAPIGetNetworkSmDeviceDesktopLogsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r DesktopLogsApiGetNetworkSmDeviceDesktopLogsRequest) Execute() ([]GetNetworkSmDeviceDesktopLogs200ResponseInner, *http.Response, error) {
+func (r DesktopLogsAPIGetNetworkSmDeviceDesktopLogsRequest) Execute() ([]GetNetworkSmDeviceDesktopLogs200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceDesktopLogsExecute(r)
 }
 
@@ -63,10 +63,10 @@ Return historical records of various Systems Manager network connection details 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return DesktopLogsApiGetNetworkSmDeviceDesktopLogsRequest
+ @return DesktopLogsAPIGetNetworkSmDeviceDesktopLogsRequest
 */
-func (a *DesktopLogsApiService) GetNetworkSmDeviceDesktopLogs(ctx context.Context, networkId string, deviceId string) DesktopLogsApiGetNetworkSmDeviceDesktopLogsRequest {
-	return DesktopLogsApiGetNetworkSmDeviceDesktopLogsRequest{
+func (a *DesktopLogsAPIService) GetNetworkSmDeviceDesktopLogs(ctx context.Context, networkId string, deviceId string) DesktopLogsAPIGetNetworkSmDeviceDesktopLogsRequest {
+	return DesktopLogsAPIGetNetworkSmDeviceDesktopLogsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -76,7 +76,7 @@ func (a *DesktopLogsApiService) GetNetworkSmDeviceDesktopLogs(ctx context.Contex
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceDesktopLogs200ResponseInner
-func (a *DesktopLogsApiService) GetNetworkSmDeviceDesktopLogsExecute(r DesktopLogsApiGetNetworkSmDeviceDesktopLogsRequest) ([]GetNetworkSmDeviceDesktopLogs200ResponseInner, *http.Response, error) {
+func (a *DesktopLogsAPIService) GetNetworkSmDeviceDesktopLogsExecute(r DesktopLogsAPIGetNetworkSmDeviceDesktopLogsRequest) ([]GetNetworkSmDeviceDesktopLogs200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -84,7 +84,7 @@ func (a *DesktopLogsApiService) GetNetworkSmDeviceDesktopLogsExecute(r DesktopLo
 		localVarReturnValue  []GetNetworkSmDeviceDesktopLogs200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DesktopLogsApiService.GetNetworkSmDeviceDesktopLogs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DesktopLogsAPIService.GetNetworkSmDeviceDesktopLogs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

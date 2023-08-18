@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing VmxApiService
+Testing VmxAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_VmxApiService(t *testing.T) {
+func Test_client_VmxAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test VmxApiService CreateDeviceApplianceVmxAuthenticationToken", func(t *testing.T) {
+	t.Run("Test VmxAPIService CreateDeviceApplianceVmxAuthenticationToken", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.VmxApi.CreateDeviceApplianceVmxAuthenticationToken(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.VmxAPI.CreateDeviceApplianceVmxAuthenticationToken(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

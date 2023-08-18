@@ -20,22 +20,22 @@ import (
 )
 
 
-// LinkAggregationsApiService LinkAggregationsApi service
-type LinkAggregationsApiService service
+// LinkAggregationsAPIService LinkAggregationsAPI service
+type LinkAggregationsAPIService service
 
-type LinkAggregationsApiCreateNetworkSwitchLinkAggregationRequest struct {
+type LinkAggregationsAPICreateNetworkSwitchLinkAggregationRequest struct {
 	ctx context.Context
-	ApiService *LinkAggregationsApiService
+	ApiService *LinkAggregationsAPIService
 	networkId string
 	createNetworkSwitchLinkAggregationRequest *CreateNetworkSwitchLinkAggregationRequest
 }
 
-func (r LinkAggregationsApiCreateNetworkSwitchLinkAggregationRequest) CreateNetworkSwitchLinkAggregationRequest(createNetworkSwitchLinkAggregationRequest CreateNetworkSwitchLinkAggregationRequest) LinkAggregationsApiCreateNetworkSwitchLinkAggregationRequest {
+func (r LinkAggregationsAPICreateNetworkSwitchLinkAggregationRequest) CreateNetworkSwitchLinkAggregationRequest(createNetworkSwitchLinkAggregationRequest CreateNetworkSwitchLinkAggregationRequest) LinkAggregationsAPICreateNetworkSwitchLinkAggregationRequest {
 	r.createNetworkSwitchLinkAggregationRequest = &createNetworkSwitchLinkAggregationRequest
 	return r
 }
 
-func (r LinkAggregationsApiCreateNetworkSwitchLinkAggregationRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r LinkAggregationsAPICreateNetworkSwitchLinkAggregationRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkSwitchLinkAggregationExecute(r)
 }
 
@@ -46,10 +46,10 @@ Create a link aggregation group
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return LinkAggregationsApiCreateNetworkSwitchLinkAggregationRequest
+ @return LinkAggregationsAPICreateNetworkSwitchLinkAggregationRequest
 */
-func (a *LinkAggregationsApiService) CreateNetworkSwitchLinkAggregation(ctx context.Context, networkId string) LinkAggregationsApiCreateNetworkSwitchLinkAggregationRequest {
-	return LinkAggregationsApiCreateNetworkSwitchLinkAggregationRequest{
+func (a *LinkAggregationsAPIService) CreateNetworkSwitchLinkAggregation(ctx context.Context, networkId string) LinkAggregationsAPICreateNetworkSwitchLinkAggregationRequest {
+	return LinkAggregationsAPICreateNetworkSwitchLinkAggregationRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -58,7 +58,7 @@ func (a *LinkAggregationsApiService) CreateNetworkSwitchLinkAggregation(ctx cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *LinkAggregationsApiService) CreateNetworkSwitchLinkAggregationExecute(r LinkAggregationsApiCreateNetworkSwitchLinkAggregationRequest) (map[string]interface{}, *http.Response, error) {
+func (a *LinkAggregationsAPIService) CreateNetworkSwitchLinkAggregationExecute(r LinkAggregationsAPICreateNetworkSwitchLinkAggregationRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *LinkAggregationsApiService) CreateNetworkSwitchLinkAggregationExecute(r
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LinkAggregationsApiService.CreateNetworkSwitchLinkAggregation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LinkAggregationsAPIService.CreateNetworkSwitchLinkAggregation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -148,14 +148,14 @@ func (a *LinkAggregationsApiService) CreateNetworkSwitchLinkAggregationExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type LinkAggregationsApiDeleteNetworkSwitchLinkAggregationRequest struct {
+type LinkAggregationsAPIDeleteNetworkSwitchLinkAggregationRequest struct {
 	ctx context.Context
-	ApiService *LinkAggregationsApiService
+	ApiService *LinkAggregationsAPIService
 	networkId string
 	linkAggregationId string
 }
 
-func (r LinkAggregationsApiDeleteNetworkSwitchLinkAggregationRequest) Execute() (*http.Response, error) {
+func (r LinkAggregationsAPIDeleteNetworkSwitchLinkAggregationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkSwitchLinkAggregationExecute(r)
 }
 
@@ -167,10 +167,10 @@ Split a link aggregation group into separate ports
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param linkAggregationId Link aggregation ID
- @return LinkAggregationsApiDeleteNetworkSwitchLinkAggregationRequest
+ @return LinkAggregationsAPIDeleteNetworkSwitchLinkAggregationRequest
 */
-func (a *LinkAggregationsApiService) DeleteNetworkSwitchLinkAggregation(ctx context.Context, networkId string, linkAggregationId string) LinkAggregationsApiDeleteNetworkSwitchLinkAggregationRequest {
-	return LinkAggregationsApiDeleteNetworkSwitchLinkAggregationRequest{
+func (a *LinkAggregationsAPIService) DeleteNetworkSwitchLinkAggregation(ctx context.Context, networkId string, linkAggregationId string) LinkAggregationsAPIDeleteNetworkSwitchLinkAggregationRequest {
+	return LinkAggregationsAPIDeleteNetworkSwitchLinkAggregationRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -179,14 +179,14 @@ func (a *LinkAggregationsApiService) DeleteNetworkSwitchLinkAggregation(ctx cont
 }
 
 // Execute executes the request
-func (a *LinkAggregationsApiService) DeleteNetworkSwitchLinkAggregationExecute(r LinkAggregationsApiDeleteNetworkSwitchLinkAggregationRequest) (*http.Response, error) {
+func (a *LinkAggregationsAPIService) DeleteNetworkSwitchLinkAggregationExecute(r LinkAggregationsAPIDeleteNetworkSwitchLinkAggregationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LinkAggregationsApiService.DeleteNetworkSwitchLinkAggregation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LinkAggregationsAPIService.DeleteNetworkSwitchLinkAggregation")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -258,13 +258,13 @@ func (a *LinkAggregationsApiService) DeleteNetworkSwitchLinkAggregationExecute(r
 	return localVarHTTPResponse, nil
 }
 
-type LinkAggregationsApiGetNetworkSwitchLinkAggregationsRequest struct {
+type LinkAggregationsAPIGetNetworkSwitchLinkAggregationsRequest struct {
 	ctx context.Context
-	ApiService *LinkAggregationsApiService
+	ApiService *LinkAggregationsAPIService
 	networkId string
 }
 
-func (r LinkAggregationsApiGetNetworkSwitchLinkAggregationsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r LinkAggregationsAPIGetNetworkSwitchLinkAggregationsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchLinkAggregationsExecute(r)
 }
 
@@ -275,10 +275,10 @@ List link aggregation groups
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return LinkAggregationsApiGetNetworkSwitchLinkAggregationsRequest
+ @return LinkAggregationsAPIGetNetworkSwitchLinkAggregationsRequest
 */
-func (a *LinkAggregationsApiService) GetNetworkSwitchLinkAggregations(ctx context.Context, networkId string) LinkAggregationsApiGetNetworkSwitchLinkAggregationsRequest {
-	return LinkAggregationsApiGetNetworkSwitchLinkAggregationsRequest{
+func (a *LinkAggregationsAPIService) GetNetworkSwitchLinkAggregations(ctx context.Context, networkId string) LinkAggregationsAPIGetNetworkSwitchLinkAggregationsRequest {
+	return LinkAggregationsAPIGetNetworkSwitchLinkAggregationsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -287,7 +287,7 @@ func (a *LinkAggregationsApiService) GetNetworkSwitchLinkAggregations(ctx contex
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *LinkAggregationsApiService) GetNetworkSwitchLinkAggregationsExecute(r LinkAggregationsApiGetNetworkSwitchLinkAggregationsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *LinkAggregationsAPIService) GetNetworkSwitchLinkAggregationsExecute(r LinkAggregationsAPIGetNetworkSwitchLinkAggregationsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -295,7 +295,7 @@ func (a *LinkAggregationsApiService) GetNetworkSwitchLinkAggregationsExecute(r L
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LinkAggregationsApiService.GetNetworkSwitchLinkAggregations")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LinkAggregationsAPIService.GetNetworkSwitchLinkAggregations")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -375,20 +375,20 @@ func (a *LinkAggregationsApiService) GetNetworkSwitchLinkAggregationsExecute(r L
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type LinkAggregationsApiUpdateNetworkSwitchLinkAggregationRequest struct {
+type LinkAggregationsAPIUpdateNetworkSwitchLinkAggregationRequest struct {
 	ctx context.Context
-	ApiService *LinkAggregationsApiService
+	ApiService *LinkAggregationsAPIService
 	networkId string
 	linkAggregationId string
 	updateNetworkSwitchLinkAggregationRequest *UpdateNetworkSwitchLinkAggregationRequest
 }
 
-func (r LinkAggregationsApiUpdateNetworkSwitchLinkAggregationRequest) UpdateNetworkSwitchLinkAggregationRequest(updateNetworkSwitchLinkAggregationRequest UpdateNetworkSwitchLinkAggregationRequest) LinkAggregationsApiUpdateNetworkSwitchLinkAggregationRequest {
+func (r LinkAggregationsAPIUpdateNetworkSwitchLinkAggregationRequest) UpdateNetworkSwitchLinkAggregationRequest(updateNetworkSwitchLinkAggregationRequest UpdateNetworkSwitchLinkAggregationRequest) LinkAggregationsAPIUpdateNetworkSwitchLinkAggregationRequest {
 	r.updateNetworkSwitchLinkAggregationRequest = &updateNetworkSwitchLinkAggregationRequest
 	return r
 }
 
-func (r LinkAggregationsApiUpdateNetworkSwitchLinkAggregationRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r LinkAggregationsAPIUpdateNetworkSwitchLinkAggregationRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchLinkAggregationExecute(r)
 }
 
@@ -400,10 +400,10 @@ Update a link aggregation group
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param linkAggregationId Link aggregation ID
- @return LinkAggregationsApiUpdateNetworkSwitchLinkAggregationRequest
+ @return LinkAggregationsAPIUpdateNetworkSwitchLinkAggregationRequest
 */
-func (a *LinkAggregationsApiService) UpdateNetworkSwitchLinkAggregation(ctx context.Context, networkId string, linkAggregationId string) LinkAggregationsApiUpdateNetworkSwitchLinkAggregationRequest {
-	return LinkAggregationsApiUpdateNetworkSwitchLinkAggregationRequest{
+func (a *LinkAggregationsAPIService) UpdateNetworkSwitchLinkAggregation(ctx context.Context, networkId string, linkAggregationId string) LinkAggregationsAPIUpdateNetworkSwitchLinkAggregationRequest {
+	return LinkAggregationsAPIUpdateNetworkSwitchLinkAggregationRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -413,7 +413,7 @@ func (a *LinkAggregationsApiService) UpdateNetworkSwitchLinkAggregation(ctx cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *LinkAggregationsApiService) UpdateNetworkSwitchLinkAggregationExecute(r LinkAggregationsApiUpdateNetworkSwitchLinkAggregationRequest) (map[string]interface{}, *http.Response, error) {
+func (a *LinkAggregationsAPIService) UpdateNetworkSwitchLinkAggregationExecute(r LinkAggregationsAPIUpdateNetworkSwitchLinkAggregationRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -421,7 +421,7 @@ func (a *LinkAggregationsApiService) UpdateNetworkSwitchLinkAggregationExecute(r
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LinkAggregationsApiService.UpdateNetworkSwitchLinkAggregation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LinkAggregationsAPIService.UpdateNetworkSwitchLinkAggregation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

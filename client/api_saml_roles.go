@@ -20,22 +20,22 @@ import (
 )
 
 
-// SamlRolesApiService SamlRolesApi service
-type SamlRolesApiService service
+// SamlRolesAPIService SamlRolesAPI service
+type SamlRolesAPIService service
 
-type SamlRolesApiCreateOrganizationSamlRoleRequest struct {
+type SamlRolesAPICreateOrganizationSamlRoleRequest struct {
 	ctx context.Context
-	ApiService *SamlRolesApiService
+	ApiService *SamlRolesAPIService
 	organizationId string
 	createOrganizationSamlRoleRequest *CreateOrganizationSamlRoleRequest
 }
 
-func (r SamlRolesApiCreateOrganizationSamlRoleRequest) CreateOrganizationSamlRoleRequest(createOrganizationSamlRoleRequest CreateOrganizationSamlRoleRequest) SamlRolesApiCreateOrganizationSamlRoleRequest {
+func (r SamlRolesAPICreateOrganizationSamlRoleRequest) CreateOrganizationSamlRoleRequest(createOrganizationSamlRoleRequest CreateOrganizationSamlRoleRequest) SamlRolesAPICreateOrganizationSamlRoleRequest {
 	r.createOrganizationSamlRoleRequest = &createOrganizationSamlRoleRequest
 	return r
 }
 
-func (r SamlRolesApiCreateOrganizationSamlRoleRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SamlRolesAPICreateOrganizationSamlRoleRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateOrganizationSamlRoleExecute(r)
 }
 
@@ -46,10 +46,10 @@ Create a SAML role
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return SamlRolesApiCreateOrganizationSamlRoleRequest
+ @return SamlRolesAPICreateOrganizationSamlRoleRequest
 */
-func (a *SamlRolesApiService) CreateOrganizationSamlRole(ctx context.Context, organizationId string) SamlRolesApiCreateOrganizationSamlRoleRequest {
-	return SamlRolesApiCreateOrganizationSamlRoleRequest{
+func (a *SamlRolesAPIService) CreateOrganizationSamlRole(ctx context.Context, organizationId string) SamlRolesAPICreateOrganizationSamlRoleRequest {
+	return SamlRolesAPICreateOrganizationSamlRoleRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -58,7 +58,7 @@ func (a *SamlRolesApiService) CreateOrganizationSamlRole(ctx context.Context, or
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SamlRolesApiService) CreateOrganizationSamlRoleExecute(r SamlRolesApiCreateOrganizationSamlRoleRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SamlRolesAPIService) CreateOrganizationSamlRoleExecute(r SamlRolesAPICreateOrganizationSamlRoleRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *SamlRolesApiService) CreateOrganizationSamlRoleExecute(r SamlRolesApiCr
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SamlRolesApiService.CreateOrganizationSamlRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SamlRolesAPIService.CreateOrganizationSamlRole")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,14 +151,14 @@ func (a *SamlRolesApiService) CreateOrganizationSamlRoleExecute(r SamlRolesApiCr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SamlRolesApiDeleteOrganizationSamlRoleRequest struct {
+type SamlRolesAPIDeleteOrganizationSamlRoleRequest struct {
 	ctx context.Context
-	ApiService *SamlRolesApiService
+	ApiService *SamlRolesAPIService
 	organizationId string
 	samlRoleId string
 }
 
-func (r SamlRolesApiDeleteOrganizationSamlRoleRequest) Execute() (*http.Response, error) {
+func (r SamlRolesAPIDeleteOrganizationSamlRoleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationSamlRoleExecute(r)
 }
 
@@ -170,10 +170,10 @@ Remove a SAML role
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param samlRoleId Saml role ID
- @return SamlRolesApiDeleteOrganizationSamlRoleRequest
+ @return SamlRolesAPIDeleteOrganizationSamlRoleRequest
 */
-func (a *SamlRolesApiService) DeleteOrganizationSamlRole(ctx context.Context, organizationId string, samlRoleId string) SamlRolesApiDeleteOrganizationSamlRoleRequest {
-	return SamlRolesApiDeleteOrganizationSamlRoleRequest{
+func (a *SamlRolesAPIService) DeleteOrganizationSamlRole(ctx context.Context, organizationId string, samlRoleId string) SamlRolesAPIDeleteOrganizationSamlRoleRequest {
+	return SamlRolesAPIDeleteOrganizationSamlRoleRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -182,14 +182,14 @@ func (a *SamlRolesApiService) DeleteOrganizationSamlRole(ctx context.Context, or
 }
 
 // Execute executes the request
-func (a *SamlRolesApiService) DeleteOrganizationSamlRoleExecute(r SamlRolesApiDeleteOrganizationSamlRoleRequest) (*http.Response, error) {
+func (a *SamlRolesAPIService) DeleteOrganizationSamlRoleExecute(r SamlRolesAPIDeleteOrganizationSamlRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SamlRolesApiService.DeleteOrganizationSamlRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SamlRolesAPIService.DeleteOrganizationSamlRole")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -261,14 +261,14 @@ func (a *SamlRolesApiService) DeleteOrganizationSamlRoleExecute(r SamlRolesApiDe
 	return localVarHTTPResponse, nil
 }
 
-type SamlRolesApiGetOrganizationSamlRoleRequest struct {
+type SamlRolesAPIGetOrganizationSamlRoleRequest struct {
 	ctx context.Context
-	ApiService *SamlRolesApiService
+	ApiService *SamlRolesAPIService
 	organizationId string
 	samlRoleId string
 }
 
-func (r SamlRolesApiGetOrganizationSamlRoleRequest) Execute() (*GetOrganizationSamlRoles200ResponseInner, *http.Response, error) {
+func (r SamlRolesAPIGetOrganizationSamlRoleRequest) Execute() (*GetOrganizationSamlRoles200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSamlRoleExecute(r)
 }
 
@@ -280,10 +280,10 @@ Return a SAML role
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param samlRoleId Saml role ID
- @return SamlRolesApiGetOrganizationSamlRoleRequest
+ @return SamlRolesAPIGetOrganizationSamlRoleRequest
 */
-func (a *SamlRolesApiService) GetOrganizationSamlRole(ctx context.Context, organizationId string, samlRoleId string) SamlRolesApiGetOrganizationSamlRoleRequest {
-	return SamlRolesApiGetOrganizationSamlRoleRequest{
+func (a *SamlRolesAPIService) GetOrganizationSamlRole(ctx context.Context, organizationId string, samlRoleId string) SamlRolesAPIGetOrganizationSamlRoleRequest {
+	return SamlRolesAPIGetOrganizationSamlRoleRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -293,7 +293,7 @@ func (a *SamlRolesApiService) GetOrganizationSamlRole(ctx context.Context, organ
 
 // Execute executes the request
 //  @return GetOrganizationSamlRoles200ResponseInner
-func (a *SamlRolesApiService) GetOrganizationSamlRoleExecute(r SamlRolesApiGetOrganizationSamlRoleRequest) (*GetOrganizationSamlRoles200ResponseInner, *http.Response, error) {
+func (a *SamlRolesAPIService) GetOrganizationSamlRoleExecute(r SamlRolesAPIGetOrganizationSamlRoleRequest) (*GetOrganizationSamlRoles200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -301,7 +301,7 @@ func (a *SamlRolesApiService) GetOrganizationSamlRoleExecute(r SamlRolesApiGetOr
 		localVarReturnValue  *GetOrganizationSamlRoles200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SamlRolesApiService.GetOrganizationSamlRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SamlRolesAPIService.GetOrganizationSamlRole")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -382,13 +382,13 @@ func (a *SamlRolesApiService) GetOrganizationSamlRoleExecute(r SamlRolesApiGetOr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SamlRolesApiGetOrganizationSamlRolesRequest struct {
+type SamlRolesAPIGetOrganizationSamlRolesRequest struct {
 	ctx context.Context
-	ApiService *SamlRolesApiService
+	ApiService *SamlRolesAPIService
 	organizationId string
 }
 
-func (r SamlRolesApiGetOrganizationSamlRolesRequest) Execute() ([]GetOrganizationSamlRoles200ResponseInner, *http.Response, error) {
+func (r SamlRolesAPIGetOrganizationSamlRolesRequest) Execute() ([]GetOrganizationSamlRoles200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSamlRolesExecute(r)
 }
 
@@ -399,10 +399,10 @@ List the SAML roles for this organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return SamlRolesApiGetOrganizationSamlRolesRequest
+ @return SamlRolesAPIGetOrganizationSamlRolesRequest
 */
-func (a *SamlRolesApiService) GetOrganizationSamlRoles(ctx context.Context, organizationId string) SamlRolesApiGetOrganizationSamlRolesRequest {
-	return SamlRolesApiGetOrganizationSamlRolesRequest{
+func (a *SamlRolesAPIService) GetOrganizationSamlRoles(ctx context.Context, organizationId string) SamlRolesAPIGetOrganizationSamlRolesRequest {
+	return SamlRolesAPIGetOrganizationSamlRolesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -411,7 +411,7 @@ func (a *SamlRolesApiService) GetOrganizationSamlRoles(ctx context.Context, orga
 
 // Execute executes the request
 //  @return []GetOrganizationSamlRoles200ResponseInner
-func (a *SamlRolesApiService) GetOrganizationSamlRolesExecute(r SamlRolesApiGetOrganizationSamlRolesRequest) ([]GetOrganizationSamlRoles200ResponseInner, *http.Response, error) {
+func (a *SamlRolesAPIService) GetOrganizationSamlRolesExecute(r SamlRolesAPIGetOrganizationSamlRolesRequest) ([]GetOrganizationSamlRoles200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -419,7 +419,7 @@ func (a *SamlRolesApiService) GetOrganizationSamlRolesExecute(r SamlRolesApiGetO
 		localVarReturnValue  []GetOrganizationSamlRoles200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SamlRolesApiService.GetOrganizationSamlRoles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SamlRolesAPIService.GetOrganizationSamlRoles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -499,20 +499,20 @@ func (a *SamlRolesApiService) GetOrganizationSamlRolesExecute(r SamlRolesApiGetO
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SamlRolesApiUpdateOrganizationSamlRoleRequest struct {
+type SamlRolesAPIUpdateOrganizationSamlRoleRequest struct {
 	ctx context.Context
-	ApiService *SamlRolesApiService
+	ApiService *SamlRolesAPIService
 	organizationId string
 	samlRoleId string
 	updateOrganizationSamlRoleRequest *UpdateOrganizationSamlRoleRequest
 }
 
-func (r SamlRolesApiUpdateOrganizationSamlRoleRequest) UpdateOrganizationSamlRoleRequest(updateOrganizationSamlRoleRequest UpdateOrganizationSamlRoleRequest) SamlRolesApiUpdateOrganizationSamlRoleRequest {
+func (r SamlRolesAPIUpdateOrganizationSamlRoleRequest) UpdateOrganizationSamlRoleRequest(updateOrganizationSamlRoleRequest UpdateOrganizationSamlRoleRequest) SamlRolesAPIUpdateOrganizationSamlRoleRequest {
 	r.updateOrganizationSamlRoleRequest = &updateOrganizationSamlRoleRequest
 	return r
 }
 
-func (r SamlRolesApiUpdateOrganizationSamlRoleRequest) Execute() (*GetOrganizationSamlRoles200ResponseInner, *http.Response, error) {
+func (r SamlRolesAPIUpdateOrganizationSamlRoleRequest) Execute() (*GetOrganizationSamlRoles200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationSamlRoleExecute(r)
 }
 
@@ -524,10 +524,10 @@ Update a SAML role
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param samlRoleId Saml role ID
- @return SamlRolesApiUpdateOrganizationSamlRoleRequest
+ @return SamlRolesAPIUpdateOrganizationSamlRoleRequest
 */
-func (a *SamlRolesApiService) UpdateOrganizationSamlRole(ctx context.Context, organizationId string, samlRoleId string) SamlRolesApiUpdateOrganizationSamlRoleRequest {
-	return SamlRolesApiUpdateOrganizationSamlRoleRequest{
+func (a *SamlRolesAPIService) UpdateOrganizationSamlRole(ctx context.Context, organizationId string, samlRoleId string) SamlRolesAPIUpdateOrganizationSamlRoleRequest {
+	return SamlRolesAPIUpdateOrganizationSamlRoleRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -537,7 +537,7 @@ func (a *SamlRolesApiService) UpdateOrganizationSamlRole(ctx context.Context, or
 
 // Execute executes the request
 //  @return GetOrganizationSamlRoles200ResponseInner
-func (a *SamlRolesApiService) UpdateOrganizationSamlRoleExecute(r SamlRolesApiUpdateOrganizationSamlRoleRequest) (*GetOrganizationSamlRoles200ResponseInner, *http.Response, error) {
+func (a *SamlRolesAPIService) UpdateOrganizationSamlRoleExecute(r SamlRolesAPIUpdateOrganizationSamlRoleRequest) (*GetOrganizationSamlRoles200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -545,7 +545,7 @@ func (a *SamlRolesApiService) UpdateOrganizationSamlRoleExecute(r SamlRolesApiUp
 		localVarReturnValue  *GetOrganizationSamlRoles200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SamlRolesApiService.UpdateOrganizationSamlRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SamlRolesAPIService.UpdateOrganizationSamlRole")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

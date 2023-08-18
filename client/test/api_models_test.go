@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing ModelsApiService
+Testing ModelsAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_ModelsApiService(t *testing.T) {
+func Test_client_ModelsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test ModelsApiService GetOrganizationSummaryTopDevicesModelsByUsage", func(t *testing.T) {
+	t.Run("Test ModelsAPIService GetOrganizationSummaryTopDevicesModelsByUsage", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ModelsApi.GetOrganizationSummaryTopDevicesModelsByUsage(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ModelsAPI.GetOrganizationSummaryTopDevicesModelsByUsage(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

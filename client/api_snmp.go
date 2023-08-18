@@ -20,16 +20,16 @@ import (
 )
 
 
-// SnmpApiService SnmpApi service
-type SnmpApiService service
+// SnmpAPIService SnmpAPI service
+type SnmpAPIService service
 
-type SnmpApiGetNetworkSnmpRequest struct {
+type SnmpAPIGetNetworkSnmpRequest struct {
 	ctx context.Context
-	ApiService *SnmpApiService
+	ApiService *SnmpAPIService
 	networkId string
 }
 
-func (r SnmpApiGetNetworkSnmpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SnmpAPIGetNetworkSnmpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSnmpExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the SNMP settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SnmpApiGetNetworkSnmpRequest
+ @return SnmpAPIGetNetworkSnmpRequest
 */
-func (a *SnmpApiService) GetNetworkSnmp(ctx context.Context, networkId string) SnmpApiGetNetworkSnmpRequest {
-	return SnmpApiGetNetworkSnmpRequest{
+func (a *SnmpAPIService) GetNetworkSnmp(ctx context.Context, networkId string) SnmpAPIGetNetworkSnmpRequest {
+	return SnmpAPIGetNetworkSnmpRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *SnmpApiService) GetNetworkSnmp(ctx context.Context, networkId string) S
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SnmpApiService) GetNetworkSnmpExecute(r SnmpApiGetNetworkSnmpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SnmpAPIService) GetNetworkSnmpExecute(r SnmpAPIGetNetworkSnmpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *SnmpApiService) GetNetworkSnmpExecute(r SnmpApiGetNetworkSnmpRequest) (
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SnmpApiService.GetNetworkSnmp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SnmpAPIService.GetNetworkSnmp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,13 +140,13 @@ func (a *SnmpApiService) GetNetworkSnmpExecute(r SnmpApiGetNetworkSnmpRequest) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SnmpApiGetOrganizationSnmpRequest struct {
+type SnmpAPIGetOrganizationSnmpRequest struct {
 	ctx context.Context
-	ApiService *SnmpApiService
+	ApiService *SnmpAPIService
 	organizationId string
 }
 
-func (r SnmpApiGetOrganizationSnmpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SnmpAPIGetOrganizationSnmpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationSnmpExecute(r)
 }
 
@@ -157,10 +157,10 @@ Return the SNMP settings for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return SnmpApiGetOrganizationSnmpRequest
+ @return SnmpAPIGetOrganizationSnmpRequest
 */
-func (a *SnmpApiService) GetOrganizationSnmp(ctx context.Context, organizationId string) SnmpApiGetOrganizationSnmpRequest {
-	return SnmpApiGetOrganizationSnmpRequest{
+func (a *SnmpAPIService) GetOrganizationSnmp(ctx context.Context, organizationId string) SnmpAPIGetOrganizationSnmpRequest {
+	return SnmpAPIGetOrganizationSnmpRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -169,7 +169,7 @@ func (a *SnmpApiService) GetOrganizationSnmp(ctx context.Context, organizationId
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SnmpApiService) GetOrganizationSnmpExecute(r SnmpApiGetOrganizationSnmpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SnmpAPIService) GetOrganizationSnmpExecute(r SnmpAPIGetOrganizationSnmpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -177,7 +177,7 @@ func (a *SnmpApiService) GetOrganizationSnmpExecute(r SnmpApiGetOrganizationSnmp
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SnmpApiService.GetOrganizationSnmp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SnmpAPIService.GetOrganizationSnmp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -257,19 +257,19 @@ func (a *SnmpApiService) GetOrganizationSnmpExecute(r SnmpApiGetOrganizationSnmp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SnmpApiUpdateNetworkSnmpRequest struct {
+type SnmpAPIUpdateNetworkSnmpRequest struct {
 	ctx context.Context
-	ApiService *SnmpApiService
+	ApiService *SnmpAPIService
 	networkId string
 	updateNetworkSnmpRequest *UpdateNetworkSnmpRequest
 }
 
-func (r SnmpApiUpdateNetworkSnmpRequest) UpdateNetworkSnmpRequest(updateNetworkSnmpRequest UpdateNetworkSnmpRequest) SnmpApiUpdateNetworkSnmpRequest {
+func (r SnmpAPIUpdateNetworkSnmpRequest) UpdateNetworkSnmpRequest(updateNetworkSnmpRequest UpdateNetworkSnmpRequest) SnmpAPIUpdateNetworkSnmpRequest {
 	r.updateNetworkSnmpRequest = &updateNetworkSnmpRequest
 	return r
 }
 
-func (r SnmpApiUpdateNetworkSnmpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SnmpAPIUpdateNetworkSnmpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSnmpExecute(r)
 }
 
@@ -280,10 +280,10 @@ Update the SNMP settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SnmpApiUpdateNetworkSnmpRequest
+ @return SnmpAPIUpdateNetworkSnmpRequest
 */
-func (a *SnmpApiService) UpdateNetworkSnmp(ctx context.Context, networkId string) SnmpApiUpdateNetworkSnmpRequest {
-	return SnmpApiUpdateNetworkSnmpRequest{
+func (a *SnmpAPIService) UpdateNetworkSnmp(ctx context.Context, networkId string) SnmpAPIUpdateNetworkSnmpRequest {
+	return SnmpAPIUpdateNetworkSnmpRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -292,7 +292,7 @@ func (a *SnmpApiService) UpdateNetworkSnmp(ctx context.Context, networkId string
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SnmpApiService) UpdateNetworkSnmpExecute(r SnmpApiUpdateNetworkSnmpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SnmpAPIService) UpdateNetworkSnmpExecute(r SnmpAPIUpdateNetworkSnmpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -300,7 +300,7 @@ func (a *SnmpApiService) UpdateNetworkSnmpExecute(r SnmpApiUpdateNetworkSnmpRequ
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SnmpApiService.UpdateNetworkSnmp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SnmpAPIService.UpdateNetworkSnmp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -382,19 +382,19 @@ func (a *SnmpApiService) UpdateNetworkSnmpExecute(r SnmpApiUpdateNetworkSnmpRequ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SnmpApiUpdateOrganizationSnmpRequest struct {
+type SnmpAPIUpdateOrganizationSnmpRequest struct {
 	ctx context.Context
-	ApiService *SnmpApiService
+	ApiService *SnmpAPIService
 	organizationId string
 	updateOrganizationSnmpRequest *UpdateOrganizationSnmpRequest
 }
 
-func (r SnmpApiUpdateOrganizationSnmpRequest) UpdateOrganizationSnmpRequest(updateOrganizationSnmpRequest UpdateOrganizationSnmpRequest) SnmpApiUpdateOrganizationSnmpRequest {
+func (r SnmpAPIUpdateOrganizationSnmpRequest) UpdateOrganizationSnmpRequest(updateOrganizationSnmpRequest UpdateOrganizationSnmpRequest) SnmpAPIUpdateOrganizationSnmpRequest {
 	r.updateOrganizationSnmpRequest = &updateOrganizationSnmpRequest
 	return r
 }
 
-func (r SnmpApiUpdateOrganizationSnmpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SnmpAPIUpdateOrganizationSnmpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationSnmpExecute(r)
 }
 
@@ -405,10 +405,10 @@ Update the SNMP settings for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return SnmpApiUpdateOrganizationSnmpRequest
+ @return SnmpAPIUpdateOrganizationSnmpRequest
 */
-func (a *SnmpApiService) UpdateOrganizationSnmp(ctx context.Context, organizationId string) SnmpApiUpdateOrganizationSnmpRequest {
-	return SnmpApiUpdateOrganizationSnmpRequest{
+func (a *SnmpAPIService) UpdateOrganizationSnmp(ctx context.Context, organizationId string) SnmpAPIUpdateOrganizationSnmpRequest {
+	return SnmpAPIUpdateOrganizationSnmpRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -417,7 +417,7 @@ func (a *SnmpApiService) UpdateOrganizationSnmp(ctx context.Context, organizatio
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SnmpApiService) UpdateOrganizationSnmpExecute(r SnmpApiUpdateOrganizationSnmpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SnmpAPIService) UpdateOrganizationSnmpExecute(r SnmpAPIUpdateOrganizationSnmpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -425,7 +425,7 @@ func (a *SnmpApiService) UpdateOrganizationSnmpExecute(r SnmpApiUpdateOrganizati
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SnmpApiService.UpdateOrganizationSnmp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SnmpAPIService.UpdateOrganizationSnmp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

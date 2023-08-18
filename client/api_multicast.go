@@ -20,22 +20,22 @@ import (
 )
 
 
-// MulticastApiService MulticastApi service
-type MulticastApiService service
+// MulticastAPIService MulticastAPI service
+type MulticastAPIService service
 
-type MulticastApiCreateNetworkSwitchRoutingMulticastRendezvousPointRequest struct {
+type MulticastAPICreateNetworkSwitchRoutingMulticastRendezvousPointRequest struct {
 	ctx context.Context
-	ApiService *MulticastApiService
+	ApiService *MulticastAPIService
 	networkId string
 	createNetworkSwitchRoutingMulticastRendezvousPointRequest *CreateNetworkSwitchRoutingMulticastRendezvousPointRequest
 }
 
-func (r MulticastApiCreateNetworkSwitchRoutingMulticastRendezvousPointRequest) CreateNetworkSwitchRoutingMulticastRendezvousPointRequest(createNetworkSwitchRoutingMulticastRendezvousPointRequest CreateNetworkSwitchRoutingMulticastRendezvousPointRequest) MulticastApiCreateNetworkSwitchRoutingMulticastRendezvousPointRequest {
+func (r MulticastAPICreateNetworkSwitchRoutingMulticastRendezvousPointRequest) CreateNetworkSwitchRoutingMulticastRendezvousPointRequest(createNetworkSwitchRoutingMulticastRendezvousPointRequest CreateNetworkSwitchRoutingMulticastRendezvousPointRequest) MulticastAPICreateNetworkSwitchRoutingMulticastRendezvousPointRequest {
 	r.createNetworkSwitchRoutingMulticastRendezvousPointRequest = &createNetworkSwitchRoutingMulticastRendezvousPointRequest
 	return r
 }
 
-func (r MulticastApiCreateNetworkSwitchRoutingMulticastRendezvousPointRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r MulticastAPICreateNetworkSwitchRoutingMulticastRendezvousPointRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkSwitchRoutingMulticastRendezvousPointExecute(r)
 }
 
@@ -46,10 +46,10 @@ Create a multicast rendezvous point
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MulticastApiCreateNetworkSwitchRoutingMulticastRendezvousPointRequest
+ @return MulticastAPICreateNetworkSwitchRoutingMulticastRendezvousPointRequest
 */
-func (a *MulticastApiService) CreateNetworkSwitchRoutingMulticastRendezvousPoint(ctx context.Context, networkId string) MulticastApiCreateNetworkSwitchRoutingMulticastRendezvousPointRequest {
-	return MulticastApiCreateNetworkSwitchRoutingMulticastRendezvousPointRequest{
+func (a *MulticastAPIService) CreateNetworkSwitchRoutingMulticastRendezvousPoint(ctx context.Context, networkId string) MulticastAPICreateNetworkSwitchRoutingMulticastRendezvousPointRequest {
+	return MulticastAPICreateNetworkSwitchRoutingMulticastRendezvousPointRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -58,7 +58,7 @@ func (a *MulticastApiService) CreateNetworkSwitchRoutingMulticastRendezvousPoint
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *MulticastApiService) CreateNetworkSwitchRoutingMulticastRendezvousPointExecute(r MulticastApiCreateNetworkSwitchRoutingMulticastRendezvousPointRequest) (map[string]interface{}, *http.Response, error) {
+func (a *MulticastAPIService) CreateNetworkSwitchRoutingMulticastRendezvousPointExecute(r MulticastAPICreateNetworkSwitchRoutingMulticastRendezvousPointRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *MulticastApiService) CreateNetworkSwitchRoutingMulticastRendezvousPoint
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MulticastApiService.CreateNetworkSwitchRoutingMulticastRendezvousPoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MulticastAPIService.CreateNetworkSwitchRoutingMulticastRendezvousPoint")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,14 +151,14 @@ func (a *MulticastApiService) CreateNetworkSwitchRoutingMulticastRendezvousPoint
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MulticastApiDeleteNetworkSwitchRoutingMulticastRendezvousPointRequest struct {
+type MulticastAPIDeleteNetworkSwitchRoutingMulticastRendezvousPointRequest struct {
 	ctx context.Context
-	ApiService *MulticastApiService
+	ApiService *MulticastAPIService
 	networkId string
 	rendezvousPointId string
 }
 
-func (r MulticastApiDeleteNetworkSwitchRoutingMulticastRendezvousPointRequest) Execute() (*http.Response, error) {
+func (r MulticastAPIDeleteNetworkSwitchRoutingMulticastRendezvousPointRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkSwitchRoutingMulticastRendezvousPointExecute(r)
 }
 
@@ -170,10 +170,10 @@ Delete a multicast rendezvous point
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param rendezvousPointId Rendezvous point ID
- @return MulticastApiDeleteNetworkSwitchRoutingMulticastRendezvousPointRequest
+ @return MulticastAPIDeleteNetworkSwitchRoutingMulticastRendezvousPointRequest
 */
-func (a *MulticastApiService) DeleteNetworkSwitchRoutingMulticastRendezvousPoint(ctx context.Context, networkId string, rendezvousPointId string) MulticastApiDeleteNetworkSwitchRoutingMulticastRendezvousPointRequest {
-	return MulticastApiDeleteNetworkSwitchRoutingMulticastRendezvousPointRequest{
+func (a *MulticastAPIService) DeleteNetworkSwitchRoutingMulticastRendezvousPoint(ctx context.Context, networkId string, rendezvousPointId string) MulticastAPIDeleteNetworkSwitchRoutingMulticastRendezvousPointRequest {
+	return MulticastAPIDeleteNetworkSwitchRoutingMulticastRendezvousPointRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -182,14 +182,14 @@ func (a *MulticastApiService) DeleteNetworkSwitchRoutingMulticastRendezvousPoint
 }
 
 // Execute executes the request
-func (a *MulticastApiService) DeleteNetworkSwitchRoutingMulticastRendezvousPointExecute(r MulticastApiDeleteNetworkSwitchRoutingMulticastRendezvousPointRequest) (*http.Response, error) {
+func (a *MulticastAPIService) DeleteNetworkSwitchRoutingMulticastRendezvousPointExecute(r MulticastAPIDeleteNetworkSwitchRoutingMulticastRendezvousPointRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MulticastApiService.DeleteNetworkSwitchRoutingMulticastRendezvousPoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MulticastAPIService.DeleteNetworkSwitchRoutingMulticastRendezvousPoint")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -261,13 +261,13 @@ func (a *MulticastApiService) DeleteNetworkSwitchRoutingMulticastRendezvousPoint
 	return localVarHTTPResponse, nil
 }
 
-type MulticastApiGetNetworkSwitchRoutingMulticastRequest struct {
+type MulticastAPIGetNetworkSwitchRoutingMulticastRequest struct {
 	ctx context.Context
-	ApiService *MulticastApiService
+	ApiService *MulticastAPIService
 	networkId string
 }
 
-func (r MulticastApiGetNetworkSwitchRoutingMulticastRequest) Execute() (*GetNetworkSwitchRoutingMulticast200Response, *http.Response, error) {
+func (r MulticastAPIGetNetworkSwitchRoutingMulticastRequest) Execute() (*GetNetworkSwitchRoutingMulticast200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchRoutingMulticastExecute(r)
 }
 
@@ -278,10 +278,10 @@ Return multicast settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MulticastApiGetNetworkSwitchRoutingMulticastRequest
+ @return MulticastAPIGetNetworkSwitchRoutingMulticastRequest
 */
-func (a *MulticastApiService) GetNetworkSwitchRoutingMulticast(ctx context.Context, networkId string) MulticastApiGetNetworkSwitchRoutingMulticastRequest {
-	return MulticastApiGetNetworkSwitchRoutingMulticastRequest{
+func (a *MulticastAPIService) GetNetworkSwitchRoutingMulticast(ctx context.Context, networkId string) MulticastAPIGetNetworkSwitchRoutingMulticastRequest {
+	return MulticastAPIGetNetworkSwitchRoutingMulticastRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -290,7 +290,7 @@ func (a *MulticastApiService) GetNetworkSwitchRoutingMulticast(ctx context.Conte
 
 // Execute executes the request
 //  @return GetNetworkSwitchRoutingMulticast200Response
-func (a *MulticastApiService) GetNetworkSwitchRoutingMulticastExecute(r MulticastApiGetNetworkSwitchRoutingMulticastRequest) (*GetNetworkSwitchRoutingMulticast200Response, *http.Response, error) {
+func (a *MulticastAPIService) GetNetworkSwitchRoutingMulticastExecute(r MulticastAPIGetNetworkSwitchRoutingMulticastRequest) (*GetNetworkSwitchRoutingMulticast200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -298,7 +298,7 @@ func (a *MulticastApiService) GetNetworkSwitchRoutingMulticastExecute(r Multicas
 		localVarReturnValue  *GetNetworkSwitchRoutingMulticast200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MulticastApiService.GetNetworkSwitchRoutingMulticast")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MulticastAPIService.GetNetworkSwitchRoutingMulticast")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -378,14 +378,14 @@ func (a *MulticastApiService) GetNetworkSwitchRoutingMulticastExecute(r Multicas
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MulticastApiGetNetworkSwitchRoutingMulticastRendezvousPointRequest struct {
+type MulticastAPIGetNetworkSwitchRoutingMulticastRendezvousPointRequest struct {
 	ctx context.Context
-	ApiService *MulticastApiService
+	ApiService *MulticastAPIService
 	networkId string
 	rendezvousPointId string
 }
 
-func (r MulticastApiGetNetworkSwitchRoutingMulticastRendezvousPointRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r MulticastAPIGetNetworkSwitchRoutingMulticastRendezvousPointRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchRoutingMulticastRendezvousPointExecute(r)
 }
 
@@ -397,10 +397,10 @@ Return a multicast rendezvous point
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param rendezvousPointId Rendezvous point ID
- @return MulticastApiGetNetworkSwitchRoutingMulticastRendezvousPointRequest
+ @return MulticastAPIGetNetworkSwitchRoutingMulticastRendezvousPointRequest
 */
-func (a *MulticastApiService) GetNetworkSwitchRoutingMulticastRendezvousPoint(ctx context.Context, networkId string, rendezvousPointId string) MulticastApiGetNetworkSwitchRoutingMulticastRendezvousPointRequest {
-	return MulticastApiGetNetworkSwitchRoutingMulticastRendezvousPointRequest{
+func (a *MulticastAPIService) GetNetworkSwitchRoutingMulticastRendezvousPoint(ctx context.Context, networkId string, rendezvousPointId string) MulticastAPIGetNetworkSwitchRoutingMulticastRendezvousPointRequest {
+	return MulticastAPIGetNetworkSwitchRoutingMulticastRendezvousPointRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -410,7 +410,7 @@ func (a *MulticastApiService) GetNetworkSwitchRoutingMulticastRendezvousPoint(ct
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *MulticastApiService) GetNetworkSwitchRoutingMulticastRendezvousPointExecute(r MulticastApiGetNetworkSwitchRoutingMulticastRendezvousPointRequest) (map[string]interface{}, *http.Response, error) {
+func (a *MulticastAPIService) GetNetworkSwitchRoutingMulticastRendezvousPointExecute(r MulticastAPIGetNetworkSwitchRoutingMulticastRendezvousPointRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -418,7 +418,7 @@ func (a *MulticastApiService) GetNetworkSwitchRoutingMulticastRendezvousPointExe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MulticastApiService.GetNetworkSwitchRoutingMulticastRendezvousPoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MulticastAPIService.GetNetworkSwitchRoutingMulticastRendezvousPoint")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -499,13 +499,13 @@ func (a *MulticastApiService) GetNetworkSwitchRoutingMulticastRendezvousPointExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MulticastApiGetNetworkSwitchRoutingMulticastRendezvousPointsRequest struct {
+type MulticastAPIGetNetworkSwitchRoutingMulticastRendezvousPointsRequest struct {
 	ctx context.Context
-	ApiService *MulticastApiService
+	ApiService *MulticastAPIService
 	networkId string
 }
 
-func (r MulticastApiGetNetworkSwitchRoutingMulticastRendezvousPointsRequest) Execute() ([][]map[string]interface{}, *http.Response, error) {
+func (r MulticastAPIGetNetworkSwitchRoutingMulticastRendezvousPointsRequest) Execute() ([][]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchRoutingMulticastRendezvousPointsExecute(r)
 }
 
@@ -516,10 +516,10 @@ List multicast rendezvous points
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MulticastApiGetNetworkSwitchRoutingMulticastRendezvousPointsRequest
+ @return MulticastAPIGetNetworkSwitchRoutingMulticastRendezvousPointsRequest
 */
-func (a *MulticastApiService) GetNetworkSwitchRoutingMulticastRendezvousPoints(ctx context.Context, networkId string) MulticastApiGetNetworkSwitchRoutingMulticastRendezvousPointsRequest {
-	return MulticastApiGetNetworkSwitchRoutingMulticastRendezvousPointsRequest{
+func (a *MulticastAPIService) GetNetworkSwitchRoutingMulticastRendezvousPoints(ctx context.Context, networkId string) MulticastAPIGetNetworkSwitchRoutingMulticastRendezvousPointsRequest {
+	return MulticastAPIGetNetworkSwitchRoutingMulticastRendezvousPointsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -528,7 +528,7 @@ func (a *MulticastApiService) GetNetworkSwitchRoutingMulticastRendezvousPoints(c
 
 // Execute executes the request
 //  @return [][]map[string]interface{}
-func (a *MulticastApiService) GetNetworkSwitchRoutingMulticastRendezvousPointsExecute(r MulticastApiGetNetworkSwitchRoutingMulticastRendezvousPointsRequest) ([][]map[string]interface{}, *http.Response, error) {
+func (a *MulticastAPIService) GetNetworkSwitchRoutingMulticastRendezvousPointsExecute(r MulticastAPIGetNetworkSwitchRoutingMulticastRendezvousPointsRequest) ([][]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -536,7 +536,7 @@ func (a *MulticastApiService) GetNetworkSwitchRoutingMulticastRendezvousPointsEx
 		localVarReturnValue  [][]map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MulticastApiService.GetNetworkSwitchRoutingMulticastRendezvousPoints")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MulticastAPIService.GetNetworkSwitchRoutingMulticastRendezvousPoints")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -616,19 +616,19 @@ func (a *MulticastApiService) GetNetworkSwitchRoutingMulticastRendezvousPointsEx
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MulticastApiUpdateNetworkSwitchRoutingMulticastRequest struct {
+type MulticastAPIUpdateNetworkSwitchRoutingMulticastRequest struct {
 	ctx context.Context
-	ApiService *MulticastApiService
+	ApiService *MulticastAPIService
 	networkId string
 	updateNetworkSwitchRoutingMulticastRequest *UpdateNetworkSwitchRoutingMulticastRequest
 }
 
-func (r MulticastApiUpdateNetworkSwitchRoutingMulticastRequest) UpdateNetworkSwitchRoutingMulticastRequest(updateNetworkSwitchRoutingMulticastRequest UpdateNetworkSwitchRoutingMulticastRequest) MulticastApiUpdateNetworkSwitchRoutingMulticastRequest {
+func (r MulticastAPIUpdateNetworkSwitchRoutingMulticastRequest) UpdateNetworkSwitchRoutingMulticastRequest(updateNetworkSwitchRoutingMulticastRequest UpdateNetworkSwitchRoutingMulticastRequest) MulticastAPIUpdateNetworkSwitchRoutingMulticastRequest {
 	r.updateNetworkSwitchRoutingMulticastRequest = &updateNetworkSwitchRoutingMulticastRequest
 	return r
 }
 
-func (r MulticastApiUpdateNetworkSwitchRoutingMulticastRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r MulticastAPIUpdateNetworkSwitchRoutingMulticastRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchRoutingMulticastExecute(r)
 }
 
@@ -639,10 +639,10 @@ Update multicast settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MulticastApiUpdateNetworkSwitchRoutingMulticastRequest
+ @return MulticastAPIUpdateNetworkSwitchRoutingMulticastRequest
 */
-func (a *MulticastApiService) UpdateNetworkSwitchRoutingMulticast(ctx context.Context, networkId string) MulticastApiUpdateNetworkSwitchRoutingMulticastRequest {
-	return MulticastApiUpdateNetworkSwitchRoutingMulticastRequest{
+func (a *MulticastAPIService) UpdateNetworkSwitchRoutingMulticast(ctx context.Context, networkId string) MulticastAPIUpdateNetworkSwitchRoutingMulticastRequest {
+	return MulticastAPIUpdateNetworkSwitchRoutingMulticastRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -651,7 +651,7 @@ func (a *MulticastApiService) UpdateNetworkSwitchRoutingMulticast(ctx context.Co
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *MulticastApiService) UpdateNetworkSwitchRoutingMulticastExecute(r MulticastApiUpdateNetworkSwitchRoutingMulticastRequest) (map[string]interface{}, *http.Response, error) {
+func (a *MulticastAPIService) UpdateNetworkSwitchRoutingMulticastExecute(r MulticastAPIUpdateNetworkSwitchRoutingMulticastRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -659,7 +659,7 @@ func (a *MulticastApiService) UpdateNetworkSwitchRoutingMulticastExecute(r Multi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MulticastApiService.UpdateNetworkSwitchRoutingMulticast")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MulticastAPIService.UpdateNetworkSwitchRoutingMulticast")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -741,20 +741,20 @@ func (a *MulticastApiService) UpdateNetworkSwitchRoutingMulticastExecute(r Multi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MulticastApiUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest struct {
+type MulticastAPIUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest struct {
 	ctx context.Context
-	ApiService *MulticastApiService
+	ApiService *MulticastAPIService
 	networkId string
 	rendezvousPointId string
 	updateNetworkSwitchRoutingMulticastRendezvousPointRequest *UpdateNetworkSwitchRoutingMulticastRendezvousPointRequest
 }
 
-func (r MulticastApiUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest) UpdateNetworkSwitchRoutingMulticastRendezvousPointRequest(updateNetworkSwitchRoutingMulticastRendezvousPointRequest UpdateNetworkSwitchRoutingMulticastRendezvousPointRequest) MulticastApiUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest {
+func (r MulticastAPIUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest) UpdateNetworkSwitchRoutingMulticastRendezvousPointRequest(updateNetworkSwitchRoutingMulticastRendezvousPointRequest UpdateNetworkSwitchRoutingMulticastRendezvousPointRequest) MulticastAPIUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest {
 	r.updateNetworkSwitchRoutingMulticastRendezvousPointRequest = &updateNetworkSwitchRoutingMulticastRendezvousPointRequest
 	return r
 }
 
-func (r MulticastApiUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r MulticastAPIUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchRoutingMulticastRendezvousPointExecute(r)
 }
 
@@ -766,10 +766,10 @@ Update a multicast rendezvous point
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param rendezvousPointId Rendezvous point ID
- @return MulticastApiUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest
+ @return MulticastAPIUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest
 */
-func (a *MulticastApiService) UpdateNetworkSwitchRoutingMulticastRendezvousPoint(ctx context.Context, networkId string, rendezvousPointId string) MulticastApiUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest {
-	return MulticastApiUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest{
+func (a *MulticastAPIService) UpdateNetworkSwitchRoutingMulticastRendezvousPoint(ctx context.Context, networkId string, rendezvousPointId string) MulticastAPIUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest {
+	return MulticastAPIUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -779,7 +779,7 @@ func (a *MulticastApiService) UpdateNetworkSwitchRoutingMulticastRendezvousPoint
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *MulticastApiService) UpdateNetworkSwitchRoutingMulticastRendezvousPointExecute(r MulticastApiUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest) (map[string]interface{}, *http.Response, error) {
+func (a *MulticastAPIService) UpdateNetworkSwitchRoutingMulticastRendezvousPointExecute(r MulticastAPIUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -787,7 +787,7 @@ func (a *MulticastApiService) UpdateNetworkSwitchRoutingMulticastRendezvousPoint
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MulticastApiService.UpdateNetworkSwitchRoutingMulticastRendezvousPoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MulticastAPIService.UpdateNetworkSwitchRoutingMulticastRendezvousPoint")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

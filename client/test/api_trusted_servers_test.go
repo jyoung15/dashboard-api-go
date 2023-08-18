@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing TrustedServersApiService
+Testing TrustedServersAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_TrustedServersApiService(t *testing.T) {
+func Test_client_TrustedServersAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test TrustedServersApiService CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer", func(t *testing.T) {
+	t.Run("Test TrustedServersAPIService CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.TrustedServersApi.CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.TrustedServersAPI.CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,27 +36,27 @@ func Test_client_TrustedServersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test TrustedServersApiService DeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer", func(t *testing.T) {
+	t.Run("Test TrustedServersAPIService DeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var trustedServerId string
 
-		httpRes, err := apiClient.TrustedServersApi.DeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer(context.Background(), networkId, trustedServerId).Execute()
+		httpRes, err := apiClient.TrustedServersAPI.DeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer(context.Background(), networkId, trustedServerId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test TrustedServersApiService GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers", func(t *testing.T) {
+	t.Run("Test TrustedServersAPIService GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.TrustedServersApi.GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.TrustedServersAPI.GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,14 +64,14 @@ func Test_client_TrustedServersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test TrustedServersApiService UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer", func(t *testing.T) {
+	t.Run("Test TrustedServersAPIService UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var trustedServerId string
 
-		resp, httpRes, err := apiClient.TrustedServersApi.UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer(context.Background(), networkId, trustedServerId).Execute()
+		resp, httpRes, err := apiClient.TrustedServersAPI.UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer(context.Background(), networkId, trustedServerId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

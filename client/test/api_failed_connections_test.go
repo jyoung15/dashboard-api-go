@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing FailedConnectionsApiService
+Testing FailedConnectionsAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_FailedConnectionsApiService(t *testing.T) {
+func Test_client_FailedConnectionsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test FailedConnectionsApiService GetNetworkWirelessFailedConnections", func(t *testing.T) {
+	t.Run("Test FailedConnectionsAPIService GetNetworkWirelessFailedConnections", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FailedConnectionsApi.GetNetworkWirelessFailedConnections(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FailedConnectionsAPI.GetNetworkWirelessFailedConnections(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

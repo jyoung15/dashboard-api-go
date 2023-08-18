@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing AdminsApiService
+Testing AdminsAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_AdminsApiService(t *testing.T) {
+func Test_client_AdminsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test AdminsApiService CreateOrganizationAdmin", func(t *testing.T) {
+	t.Run("Test AdminsAPIService CreateOrganizationAdmin", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.AdminsApi.CreateOrganizationAdmin(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.AdminsAPI.CreateOrganizationAdmin(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,27 +36,27 @@ func Test_client_AdminsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AdminsApiService DeleteOrganizationAdmin", func(t *testing.T) {
+	t.Run("Test AdminsAPIService DeleteOrganizationAdmin", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var adminId string
 
-		httpRes, err := apiClient.AdminsApi.DeleteOrganizationAdmin(context.Background(), organizationId, adminId).Execute()
+		httpRes, err := apiClient.AdminsAPI.DeleteOrganizationAdmin(context.Background(), organizationId, adminId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test AdminsApiService GetOrganizationAdmins", func(t *testing.T) {
+	t.Run("Test AdminsAPIService GetOrganizationAdmins", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.AdminsApi.GetOrganizationAdmins(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.AdminsAPI.GetOrganizationAdmins(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,14 +64,14 @@ func Test_client_AdminsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AdminsApiService UpdateOrganizationAdmin", func(t *testing.T) {
+	t.Run("Test AdminsAPIService UpdateOrganizationAdmin", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var adminId string
 
-		resp, httpRes, err := apiClient.AdminsApi.UpdateOrganizationAdmin(context.Background(), organizationId, adminId).Execute()
+		resp, httpRes, err := apiClient.AdminsAPI.UpdateOrganizationAdmin(context.Background(), organizationId, adminId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

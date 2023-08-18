@@ -20,22 +20,22 @@ import (
 )
 
 
-// FirmwareUpgradesApiService FirmwareUpgradesApi service
-type FirmwareUpgradesApiService service
+// FirmwareUpgradesAPIService FirmwareUpgradesAPI service
+type FirmwareUpgradesAPIService service
 
-type FirmwareUpgradesApiCreateNetworkFirmwareUpgradesRollbackRequest struct {
+type FirmwareUpgradesAPICreateNetworkFirmwareUpgradesRollbackRequest struct {
 	ctx context.Context
-	ApiService *FirmwareUpgradesApiService
+	ApiService *FirmwareUpgradesAPIService
 	networkId string
 	createNetworkFirmwareUpgradesRollbackRequest *CreateNetworkFirmwareUpgradesRollbackRequest
 }
 
-func (r FirmwareUpgradesApiCreateNetworkFirmwareUpgradesRollbackRequest) CreateNetworkFirmwareUpgradesRollbackRequest(createNetworkFirmwareUpgradesRollbackRequest CreateNetworkFirmwareUpgradesRollbackRequest) FirmwareUpgradesApiCreateNetworkFirmwareUpgradesRollbackRequest {
+func (r FirmwareUpgradesAPICreateNetworkFirmwareUpgradesRollbackRequest) CreateNetworkFirmwareUpgradesRollbackRequest(createNetworkFirmwareUpgradesRollbackRequest CreateNetworkFirmwareUpgradesRollbackRequest) FirmwareUpgradesAPICreateNetworkFirmwareUpgradesRollbackRequest {
 	r.createNetworkFirmwareUpgradesRollbackRequest = &createNetworkFirmwareUpgradesRollbackRequest
 	return r
 }
 
-func (r FirmwareUpgradesApiCreateNetworkFirmwareUpgradesRollbackRequest) Execute() (*CreateNetworkFirmwareUpgradesRollback200Response, *http.Response, error) {
+func (r FirmwareUpgradesAPICreateNetworkFirmwareUpgradesRollbackRequest) Execute() (*CreateNetworkFirmwareUpgradesRollback200Response, *http.Response, error) {
 	return r.ApiService.CreateNetworkFirmwareUpgradesRollbackExecute(r)
 }
 
@@ -46,10 +46,10 @@ Rollback a Firmware Upgrade For A Network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return FirmwareUpgradesApiCreateNetworkFirmwareUpgradesRollbackRequest
+ @return FirmwareUpgradesAPICreateNetworkFirmwareUpgradesRollbackRequest
 */
-func (a *FirmwareUpgradesApiService) CreateNetworkFirmwareUpgradesRollback(ctx context.Context, networkId string) FirmwareUpgradesApiCreateNetworkFirmwareUpgradesRollbackRequest {
-	return FirmwareUpgradesApiCreateNetworkFirmwareUpgradesRollbackRequest{
+func (a *FirmwareUpgradesAPIService) CreateNetworkFirmwareUpgradesRollback(ctx context.Context, networkId string) FirmwareUpgradesAPICreateNetworkFirmwareUpgradesRollbackRequest {
+	return FirmwareUpgradesAPICreateNetworkFirmwareUpgradesRollbackRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -58,7 +58,7 @@ func (a *FirmwareUpgradesApiService) CreateNetworkFirmwareUpgradesRollback(ctx c
 
 // Execute executes the request
 //  @return CreateNetworkFirmwareUpgradesRollback200Response
-func (a *FirmwareUpgradesApiService) CreateNetworkFirmwareUpgradesRollbackExecute(r FirmwareUpgradesApiCreateNetworkFirmwareUpgradesRollbackRequest) (*CreateNetworkFirmwareUpgradesRollback200Response, *http.Response, error) {
+func (a *FirmwareUpgradesAPIService) CreateNetworkFirmwareUpgradesRollbackExecute(r FirmwareUpgradesAPICreateNetworkFirmwareUpgradesRollbackRequest) (*CreateNetworkFirmwareUpgradesRollback200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *FirmwareUpgradesApiService) CreateNetworkFirmwareUpgradesRollbackExecut
 		localVarReturnValue  *CreateNetworkFirmwareUpgradesRollback200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesApiService.CreateNetworkFirmwareUpgradesRollback")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesAPIService.CreateNetworkFirmwareUpgradesRollback")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,19 +151,19 @@ func (a *FirmwareUpgradesApiService) CreateNetworkFirmwareUpgradesRollbackExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type FirmwareUpgradesApiCreateNetworkFirmwareUpgradesStagedEventRequest struct {
+type FirmwareUpgradesAPICreateNetworkFirmwareUpgradesStagedEventRequest struct {
 	ctx context.Context
-	ApiService *FirmwareUpgradesApiService
+	ApiService *FirmwareUpgradesAPIService
 	networkId string
 	createNetworkFirmwareUpgradesStagedEventRequest *CreateNetworkFirmwareUpgradesStagedEventRequest
 }
 
-func (r FirmwareUpgradesApiCreateNetworkFirmwareUpgradesStagedEventRequest) CreateNetworkFirmwareUpgradesStagedEventRequest(createNetworkFirmwareUpgradesStagedEventRequest CreateNetworkFirmwareUpgradesStagedEventRequest) FirmwareUpgradesApiCreateNetworkFirmwareUpgradesStagedEventRequest {
+func (r FirmwareUpgradesAPICreateNetworkFirmwareUpgradesStagedEventRequest) CreateNetworkFirmwareUpgradesStagedEventRequest(createNetworkFirmwareUpgradesStagedEventRequest CreateNetworkFirmwareUpgradesStagedEventRequest) FirmwareUpgradesAPICreateNetworkFirmwareUpgradesStagedEventRequest {
 	r.createNetworkFirmwareUpgradesStagedEventRequest = &createNetworkFirmwareUpgradesStagedEventRequest
 	return r
 }
 
-func (r FirmwareUpgradesApiCreateNetworkFirmwareUpgradesStagedEventRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (r FirmwareUpgradesAPICreateNetworkFirmwareUpgradesStagedEventRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	return r.ApiService.CreateNetworkFirmwareUpgradesStagedEventExecute(r)
 }
 
@@ -174,10 +174,10 @@ Create a Staged Upgrade Event for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return FirmwareUpgradesApiCreateNetworkFirmwareUpgradesStagedEventRequest
+ @return FirmwareUpgradesAPICreateNetworkFirmwareUpgradesStagedEventRequest
 */
-func (a *FirmwareUpgradesApiService) CreateNetworkFirmwareUpgradesStagedEvent(ctx context.Context, networkId string) FirmwareUpgradesApiCreateNetworkFirmwareUpgradesStagedEventRequest {
-	return FirmwareUpgradesApiCreateNetworkFirmwareUpgradesStagedEventRequest{
+func (a *FirmwareUpgradesAPIService) CreateNetworkFirmwareUpgradesStagedEvent(ctx context.Context, networkId string) FirmwareUpgradesAPICreateNetworkFirmwareUpgradesStagedEventRequest {
+	return FirmwareUpgradesAPICreateNetworkFirmwareUpgradesStagedEventRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -186,7 +186,7 @@ func (a *FirmwareUpgradesApiService) CreateNetworkFirmwareUpgradesStagedEvent(ct
 
 // Execute executes the request
 //  @return GetNetworkFirmwareUpgradesStagedEvents200Response
-func (a *FirmwareUpgradesApiService) CreateNetworkFirmwareUpgradesStagedEventExecute(r FirmwareUpgradesApiCreateNetworkFirmwareUpgradesStagedEventRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (a *FirmwareUpgradesAPIService) CreateNetworkFirmwareUpgradesStagedEventExecute(r FirmwareUpgradesAPICreateNetworkFirmwareUpgradesStagedEventRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -194,7 +194,7 @@ func (a *FirmwareUpgradesApiService) CreateNetworkFirmwareUpgradesStagedEventExe
 		localVarReturnValue  *GetNetworkFirmwareUpgradesStagedEvents200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesApiService.CreateNetworkFirmwareUpgradesStagedEvent")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesAPIService.CreateNetworkFirmwareUpgradesStagedEvent")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -279,19 +279,19 @@ func (a *FirmwareUpgradesApiService) CreateNetworkFirmwareUpgradesStagedEventExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type FirmwareUpgradesApiCreateNetworkFirmwareUpgradesStagedGroupRequest struct {
+type FirmwareUpgradesAPICreateNetworkFirmwareUpgradesStagedGroupRequest struct {
 	ctx context.Context
-	ApiService *FirmwareUpgradesApiService
+	ApiService *FirmwareUpgradesAPIService
 	networkId string
 	createNetworkFirmwareUpgradesStagedGroupRequest *CreateNetworkFirmwareUpgradesStagedGroupRequest
 }
 
-func (r FirmwareUpgradesApiCreateNetworkFirmwareUpgradesStagedGroupRequest) CreateNetworkFirmwareUpgradesStagedGroupRequest(createNetworkFirmwareUpgradesStagedGroupRequest CreateNetworkFirmwareUpgradesStagedGroupRequest) FirmwareUpgradesApiCreateNetworkFirmwareUpgradesStagedGroupRequest {
+func (r FirmwareUpgradesAPICreateNetworkFirmwareUpgradesStagedGroupRequest) CreateNetworkFirmwareUpgradesStagedGroupRequest(createNetworkFirmwareUpgradesStagedGroupRequest CreateNetworkFirmwareUpgradesStagedGroupRequest) FirmwareUpgradesAPICreateNetworkFirmwareUpgradesStagedGroupRequest {
 	r.createNetworkFirmwareUpgradesStagedGroupRequest = &createNetworkFirmwareUpgradesStagedGroupRequest
 	return r
 }
 
-func (r FirmwareUpgradesApiCreateNetworkFirmwareUpgradesStagedGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r FirmwareUpgradesAPICreateNetworkFirmwareUpgradesStagedGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkFirmwareUpgradesStagedGroupExecute(r)
 }
 
@@ -302,10 +302,10 @@ Create a Staged Upgrade Group for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return FirmwareUpgradesApiCreateNetworkFirmwareUpgradesStagedGroupRequest
+ @return FirmwareUpgradesAPICreateNetworkFirmwareUpgradesStagedGroupRequest
 */
-func (a *FirmwareUpgradesApiService) CreateNetworkFirmwareUpgradesStagedGroup(ctx context.Context, networkId string) FirmwareUpgradesApiCreateNetworkFirmwareUpgradesStagedGroupRequest {
-	return FirmwareUpgradesApiCreateNetworkFirmwareUpgradesStagedGroupRequest{
+func (a *FirmwareUpgradesAPIService) CreateNetworkFirmwareUpgradesStagedGroup(ctx context.Context, networkId string) FirmwareUpgradesAPICreateNetworkFirmwareUpgradesStagedGroupRequest {
+	return FirmwareUpgradesAPICreateNetworkFirmwareUpgradesStagedGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -314,7 +314,7 @@ func (a *FirmwareUpgradesApiService) CreateNetworkFirmwareUpgradesStagedGroup(ct
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *FirmwareUpgradesApiService) CreateNetworkFirmwareUpgradesStagedGroupExecute(r FirmwareUpgradesApiCreateNetworkFirmwareUpgradesStagedGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *FirmwareUpgradesAPIService) CreateNetworkFirmwareUpgradesStagedGroupExecute(r FirmwareUpgradesAPICreateNetworkFirmwareUpgradesStagedGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -322,7 +322,7 @@ func (a *FirmwareUpgradesApiService) CreateNetworkFirmwareUpgradesStagedGroupExe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesApiService.CreateNetworkFirmwareUpgradesStagedGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesAPIService.CreateNetworkFirmwareUpgradesStagedGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -407,13 +407,13 @@ func (a *FirmwareUpgradesApiService) CreateNetworkFirmwareUpgradesStagedGroupExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type FirmwareUpgradesApiDeferNetworkFirmwareUpgradesStagedEventsRequest struct {
+type FirmwareUpgradesAPIDeferNetworkFirmwareUpgradesStagedEventsRequest struct {
 	ctx context.Context
-	ApiService *FirmwareUpgradesApiService
+	ApiService *FirmwareUpgradesAPIService
 	networkId string
 }
 
-func (r FirmwareUpgradesApiDeferNetworkFirmwareUpgradesStagedEventsRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (r FirmwareUpgradesAPIDeferNetworkFirmwareUpgradesStagedEventsRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	return r.ApiService.DeferNetworkFirmwareUpgradesStagedEventsExecute(r)
 }
 
@@ -424,10 +424,10 @@ Postpone by 1 week all pending staged upgrade stages for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return FirmwareUpgradesApiDeferNetworkFirmwareUpgradesStagedEventsRequest
+ @return FirmwareUpgradesAPIDeferNetworkFirmwareUpgradesStagedEventsRequest
 */
-func (a *FirmwareUpgradesApiService) DeferNetworkFirmwareUpgradesStagedEvents(ctx context.Context, networkId string) FirmwareUpgradesApiDeferNetworkFirmwareUpgradesStagedEventsRequest {
-	return FirmwareUpgradesApiDeferNetworkFirmwareUpgradesStagedEventsRequest{
+func (a *FirmwareUpgradesAPIService) DeferNetworkFirmwareUpgradesStagedEvents(ctx context.Context, networkId string) FirmwareUpgradesAPIDeferNetworkFirmwareUpgradesStagedEventsRequest {
+	return FirmwareUpgradesAPIDeferNetworkFirmwareUpgradesStagedEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -436,7 +436,7 @@ func (a *FirmwareUpgradesApiService) DeferNetworkFirmwareUpgradesStagedEvents(ct
 
 // Execute executes the request
 //  @return GetNetworkFirmwareUpgradesStagedEvents200Response
-func (a *FirmwareUpgradesApiService) DeferNetworkFirmwareUpgradesStagedEventsExecute(r FirmwareUpgradesApiDeferNetworkFirmwareUpgradesStagedEventsRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (a *FirmwareUpgradesAPIService) DeferNetworkFirmwareUpgradesStagedEventsExecute(r FirmwareUpgradesAPIDeferNetworkFirmwareUpgradesStagedEventsRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -444,7 +444,7 @@ func (a *FirmwareUpgradesApiService) DeferNetworkFirmwareUpgradesStagedEventsExe
 		localVarReturnValue  *GetNetworkFirmwareUpgradesStagedEvents200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesApiService.DeferNetworkFirmwareUpgradesStagedEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesAPIService.DeferNetworkFirmwareUpgradesStagedEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -524,14 +524,14 @@ func (a *FirmwareUpgradesApiService) DeferNetworkFirmwareUpgradesStagedEventsExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type FirmwareUpgradesApiDeleteNetworkFirmwareUpgradesStagedGroupRequest struct {
+type FirmwareUpgradesAPIDeleteNetworkFirmwareUpgradesStagedGroupRequest struct {
 	ctx context.Context
-	ApiService *FirmwareUpgradesApiService
+	ApiService *FirmwareUpgradesAPIService
 	networkId string
 	groupId string
 }
 
-func (r FirmwareUpgradesApiDeleteNetworkFirmwareUpgradesStagedGroupRequest) Execute() (*http.Response, error) {
+func (r FirmwareUpgradesAPIDeleteNetworkFirmwareUpgradesStagedGroupRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkFirmwareUpgradesStagedGroupExecute(r)
 }
 
@@ -543,10 +543,10 @@ Delete a Staged Upgrade Group
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param groupId Group ID
- @return FirmwareUpgradesApiDeleteNetworkFirmwareUpgradesStagedGroupRequest
+ @return FirmwareUpgradesAPIDeleteNetworkFirmwareUpgradesStagedGroupRequest
 */
-func (a *FirmwareUpgradesApiService) DeleteNetworkFirmwareUpgradesStagedGroup(ctx context.Context, networkId string, groupId string) FirmwareUpgradesApiDeleteNetworkFirmwareUpgradesStagedGroupRequest {
-	return FirmwareUpgradesApiDeleteNetworkFirmwareUpgradesStagedGroupRequest{
+func (a *FirmwareUpgradesAPIService) DeleteNetworkFirmwareUpgradesStagedGroup(ctx context.Context, networkId string, groupId string) FirmwareUpgradesAPIDeleteNetworkFirmwareUpgradesStagedGroupRequest {
+	return FirmwareUpgradesAPIDeleteNetworkFirmwareUpgradesStagedGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -555,14 +555,14 @@ func (a *FirmwareUpgradesApiService) DeleteNetworkFirmwareUpgradesStagedGroup(ct
 }
 
 // Execute executes the request
-func (a *FirmwareUpgradesApiService) DeleteNetworkFirmwareUpgradesStagedGroupExecute(r FirmwareUpgradesApiDeleteNetworkFirmwareUpgradesStagedGroupRequest) (*http.Response, error) {
+func (a *FirmwareUpgradesAPIService) DeleteNetworkFirmwareUpgradesStagedGroupExecute(r FirmwareUpgradesAPIDeleteNetworkFirmwareUpgradesStagedGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesApiService.DeleteNetworkFirmwareUpgradesStagedGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesAPIService.DeleteNetworkFirmwareUpgradesStagedGroup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -634,13 +634,13 @@ func (a *FirmwareUpgradesApiService) DeleteNetworkFirmwareUpgradesStagedGroupExe
 	return localVarHTTPResponse, nil
 }
 
-type FirmwareUpgradesApiGetNetworkFirmwareUpgradesRequest struct {
+type FirmwareUpgradesAPIGetNetworkFirmwareUpgradesRequest struct {
 	ctx context.Context
-	ApiService *FirmwareUpgradesApiService
+	ApiService *FirmwareUpgradesAPIService
 	networkId string
 }
 
-func (r FirmwareUpgradesApiGetNetworkFirmwareUpgradesRequest) Execute() (*GetNetworkFirmwareUpgrades200Response, *http.Response, error) {
+func (r FirmwareUpgradesAPIGetNetworkFirmwareUpgradesRequest) Execute() (*GetNetworkFirmwareUpgrades200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkFirmwareUpgradesExecute(r)
 }
 
@@ -651,10 +651,10 @@ Get firmware upgrade information for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return FirmwareUpgradesApiGetNetworkFirmwareUpgradesRequest
+ @return FirmwareUpgradesAPIGetNetworkFirmwareUpgradesRequest
 */
-func (a *FirmwareUpgradesApiService) GetNetworkFirmwareUpgrades(ctx context.Context, networkId string) FirmwareUpgradesApiGetNetworkFirmwareUpgradesRequest {
-	return FirmwareUpgradesApiGetNetworkFirmwareUpgradesRequest{
+func (a *FirmwareUpgradesAPIService) GetNetworkFirmwareUpgrades(ctx context.Context, networkId string) FirmwareUpgradesAPIGetNetworkFirmwareUpgradesRequest {
+	return FirmwareUpgradesAPIGetNetworkFirmwareUpgradesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -663,7 +663,7 @@ func (a *FirmwareUpgradesApiService) GetNetworkFirmwareUpgrades(ctx context.Cont
 
 // Execute executes the request
 //  @return GetNetworkFirmwareUpgrades200Response
-func (a *FirmwareUpgradesApiService) GetNetworkFirmwareUpgradesExecute(r FirmwareUpgradesApiGetNetworkFirmwareUpgradesRequest) (*GetNetworkFirmwareUpgrades200Response, *http.Response, error) {
+func (a *FirmwareUpgradesAPIService) GetNetworkFirmwareUpgradesExecute(r FirmwareUpgradesAPIGetNetworkFirmwareUpgradesRequest) (*GetNetworkFirmwareUpgrades200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -671,7 +671,7 @@ func (a *FirmwareUpgradesApiService) GetNetworkFirmwareUpgradesExecute(r Firmwar
 		localVarReturnValue  *GetNetworkFirmwareUpgrades200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesApiService.GetNetworkFirmwareUpgrades")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesAPIService.GetNetworkFirmwareUpgrades")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -751,13 +751,13 @@ func (a *FirmwareUpgradesApiService) GetNetworkFirmwareUpgradesExecute(r Firmwar
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type FirmwareUpgradesApiGetNetworkFirmwareUpgradesStagedEventsRequest struct {
+type FirmwareUpgradesAPIGetNetworkFirmwareUpgradesStagedEventsRequest struct {
 	ctx context.Context
-	ApiService *FirmwareUpgradesApiService
+	ApiService *FirmwareUpgradesAPIService
 	networkId string
 }
 
-func (r FirmwareUpgradesApiGetNetworkFirmwareUpgradesStagedEventsRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (r FirmwareUpgradesAPIGetNetworkFirmwareUpgradesStagedEventsRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkFirmwareUpgradesStagedEventsExecute(r)
 }
 
@@ -768,10 +768,10 @@ Get the Staged Upgrade Event from a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return FirmwareUpgradesApiGetNetworkFirmwareUpgradesStagedEventsRequest
+ @return FirmwareUpgradesAPIGetNetworkFirmwareUpgradesStagedEventsRequest
 */
-func (a *FirmwareUpgradesApiService) GetNetworkFirmwareUpgradesStagedEvents(ctx context.Context, networkId string) FirmwareUpgradesApiGetNetworkFirmwareUpgradesStagedEventsRequest {
-	return FirmwareUpgradesApiGetNetworkFirmwareUpgradesStagedEventsRequest{
+func (a *FirmwareUpgradesAPIService) GetNetworkFirmwareUpgradesStagedEvents(ctx context.Context, networkId string) FirmwareUpgradesAPIGetNetworkFirmwareUpgradesStagedEventsRequest {
+	return FirmwareUpgradesAPIGetNetworkFirmwareUpgradesStagedEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -780,7 +780,7 @@ func (a *FirmwareUpgradesApiService) GetNetworkFirmwareUpgradesStagedEvents(ctx 
 
 // Execute executes the request
 //  @return GetNetworkFirmwareUpgradesStagedEvents200Response
-func (a *FirmwareUpgradesApiService) GetNetworkFirmwareUpgradesStagedEventsExecute(r FirmwareUpgradesApiGetNetworkFirmwareUpgradesStagedEventsRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (a *FirmwareUpgradesAPIService) GetNetworkFirmwareUpgradesStagedEventsExecute(r FirmwareUpgradesAPIGetNetworkFirmwareUpgradesStagedEventsRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -788,7 +788,7 @@ func (a *FirmwareUpgradesApiService) GetNetworkFirmwareUpgradesStagedEventsExecu
 		localVarReturnValue  *GetNetworkFirmwareUpgradesStagedEvents200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesApiService.GetNetworkFirmwareUpgradesStagedEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesAPIService.GetNetworkFirmwareUpgradesStagedEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -868,14 +868,14 @@ func (a *FirmwareUpgradesApiService) GetNetworkFirmwareUpgradesStagedEventsExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type FirmwareUpgradesApiGetNetworkFirmwareUpgradesStagedGroupRequest struct {
+type FirmwareUpgradesAPIGetNetworkFirmwareUpgradesStagedGroupRequest struct {
 	ctx context.Context
-	ApiService *FirmwareUpgradesApiService
+	ApiService *FirmwareUpgradesAPIService
 	networkId string
 	groupId string
 }
 
-func (r FirmwareUpgradesApiGetNetworkFirmwareUpgradesStagedGroupRequest) Execute() (*GetNetworkFirmwareUpgradesStagedGroups200ResponseInner, *http.Response, error) {
+func (r FirmwareUpgradesAPIGetNetworkFirmwareUpgradesStagedGroupRequest) Execute() (*GetNetworkFirmwareUpgradesStagedGroups200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkFirmwareUpgradesStagedGroupExecute(r)
 }
 
@@ -887,10 +887,10 @@ Get a Staged Upgrade Group from a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param groupId Group ID
- @return FirmwareUpgradesApiGetNetworkFirmwareUpgradesStagedGroupRequest
+ @return FirmwareUpgradesAPIGetNetworkFirmwareUpgradesStagedGroupRequest
 */
-func (a *FirmwareUpgradesApiService) GetNetworkFirmwareUpgradesStagedGroup(ctx context.Context, networkId string, groupId string) FirmwareUpgradesApiGetNetworkFirmwareUpgradesStagedGroupRequest {
-	return FirmwareUpgradesApiGetNetworkFirmwareUpgradesStagedGroupRequest{
+func (a *FirmwareUpgradesAPIService) GetNetworkFirmwareUpgradesStagedGroup(ctx context.Context, networkId string, groupId string) FirmwareUpgradesAPIGetNetworkFirmwareUpgradesStagedGroupRequest {
+	return FirmwareUpgradesAPIGetNetworkFirmwareUpgradesStagedGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -900,7 +900,7 @@ func (a *FirmwareUpgradesApiService) GetNetworkFirmwareUpgradesStagedGroup(ctx c
 
 // Execute executes the request
 //  @return GetNetworkFirmwareUpgradesStagedGroups200ResponseInner
-func (a *FirmwareUpgradesApiService) GetNetworkFirmwareUpgradesStagedGroupExecute(r FirmwareUpgradesApiGetNetworkFirmwareUpgradesStagedGroupRequest) (*GetNetworkFirmwareUpgradesStagedGroups200ResponseInner, *http.Response, error) {
+func (a *FirmwareUpgradesAPIService) GetNetworkFirmwareUpgradesStagedGroupExecute(r FirmwareUpgradesAPIGetNetworkFirmwareUpgradesStagedGroupRequest) (*GetNetworkFirmwareUpgradesStagedGroups200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -908,7 +908,7 @@ func (a *FirmwareUpgradesApiService) GetNetworkFirmwareUpgradesStagedGroupExecut
 		localVarReturnValue  *GetNetworkFirmwareUpgradesStagedGroups200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesApiService.GetNetworkFirmwareUpgradesStagedGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesAPIService.GetNetworkFirmwareUpgradesStagedGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -989,13 +989,13 @@ func (a *FirmwareUpgradesApiService) GetNetworkFirmwareUpgradesStagedGroupExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type FirmwareUpgradesApiGetNetworkFirmwareUpgradesStagedGroupsRequest struct {
+type FirmwareUpgradesAPIGetNetworkFirmwareUpgradesStagedGroupsRequest struct {
 	ctx context.Context
-	ApiService *FirmwareUpgradesApiService
+	ApiService *FirmwareUpgradesAPIService
 	networkId string
 }
 
-func (r FirmwareUpgradesApiGetNetworkFirmwareUpgradesStagedGroupsRequest) Execute() ([]GetNetworkFirmwareUpgradesStagedGroups200ResponseInner, *http.Response, error) {
+func (r FirmwareUpgradesAPIGetNetworkFirmwareUpgradesStagedGroupsRequest) Execute() ([]GetNetworkFirmwareUpgradesStagedGroups200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkFirmwareUpgradesStagedGroupsExecute(r)
 }
 
@@ -1006,10 +1006,10 @@ List of Staged Upgrade Groups in a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return FirmwareUpgradesApiGetNetworkFirmwareUpgradesStagedGroupsRequest
+ @return FirmwareUpgradesAPIGetNetworkFirmwareUpgradesStagedGroupsRequest
 */
-func (a *FirmwareUpgradesApiService) GetNetworkFirmwareUpgradesStagedGroups(ctx context.Context, networkId string) FirmwareUpgradesApiGetNetworkFirmwareUpgradesStagedGroupsRequest {
-	return FirmwareUpgradesApiGetNetworkFirmwareUpgradesStagedGroupsRequest{
+func (a *FirmwareUpgradesAPIService) GetNetworkFirmwareUpgradesStagedGroups(ctx context.Context, networkId string) FirmwareUpgradesAPIGetNetworkFirmwareUpgradesStagedGroupsRequest {
+	return FirmwareUpgradesAPIGetNetworkFirmwareUpgradesStagedGroupsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1018,7 +1018,7 @@ func (a *FirmwareUpgradesApiService) GetNetworkFirmwareUpgradesStagedGroups(ctx 
 
 // Execute executes the request
 //  @return []GetNetworkFirmwareUpgradesStagedGroups200ResponseInner
-func (a *FirmwareUpgradesApiService) GetNetworkFirmwareUpgradesStagedGroupsExecute(r FirmwareUpgradesApiGetNetworkFirmwareUpgradesStagedGroupsRequest) ([]GetNetworkFirmwareUpgradesStagedGroups200ResponseInner, *http.Response, error) {
+func (a *FirmwareUpgradesAPIService) GetNetworkFirmwareUpgradesStagedGroupsExecute(r FirmwareUpgradesAPIGetNetworkFirmwareUpgradesStagedGroupsRequest) ([]GetNetworkFirmwareUpgradesStagedGroups200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1026,7 +1026,7 @@ func (a *FirmwareUpgradesApiService) GetNetworkFirmwareUpgradesStagedGroupsExecu
 		localVarReturnValue  []GetNetworkFirmwareUpgradesStagedGroups200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesApiService.GetNetworkFirmwareUpgradesStagedGroups")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesAPIService.GetNetworkFirmwareUpgradesStagedGroups")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1106,13 +1106,13 @@ func (a *FirmwareUpgradesApiService) GetNetworkFirmwareUpgradesStagedGroupsExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type FirmwareUpgradesApiGetNetworkFirmwareUpgradesStagedStagesRequest struct {
+type FirmwareUpgradesAPIGetNetworkFirmwareUpgradesStagedStagesRequest struct {
 	ctx context.Context
-	ApiService *FirmwareUpgradesApiService
+	ApiService *FirmwareUpgradesAPIService
 	networkId string
 }
 
-func (r FirmwareUpgradesApiGetNetworkFirmwareUpgradesStagedStagesRequest) Execute() ([]GetNetworkFirmwareUpgradesStagedStages200ResponseInner, *http.Response, error) {
+func (r FirmwareUpgradesAPIGetNetworkFirmwareUpgradesStagedStagesRequest) Execute() ([]GetNetworkFirmwareUpgradesStagedStages200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkFirmwareUpgradesStagedStagesExecute(r)
 }
 
@@ -1123,10 +1123,10 @@ Order of Staged Upgrade Groups in a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return FirmwareUpgradesApiGetNetworkFirmwareUpgradesStagedStagesRequest
+ @return FirmwareUpgradesAPIGetNetworkFirmwareUpgradesStagedStagesRequest
 */
-func (a *FirmwareUpgradesApiService) GetNetworkFirmwareUpgradesStagedStages(ctx context.Context, networkId string) FirmwareUpgradesApiGetNetworkFirmwareUpgradesStagedStagesRequest {
-	return FirmwareUpgradesApiGetNetworkFirmwareUpgradesStagedStagesRequest{
+func (a *FirmwareUpgradesAPIService) GetNetworkFirmwareUpgradesStagedStages(ctx context.Context, networkId string) FirmwareUpgradesAPIGetNetworkFirmwareUpgradesStagedStagesRequest {
+	return FirmwareUpgradesAPIGetNetworkFirmwareUpgradesStagedStagesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1135,7 +1135,7 @@ func (a *FirmwareUpgradesApiService) GetNetworkFirmwareUpgradesStagedStages(ctx 
 
 // Execute executes the request
 //  @return []GetNetworkFirmwareUpgradesStagedStages200ResponseInner
-func (a *FirmwareUpgradesApiService) GetNetworkFirmwareUpgradesStagedStagesExecute(r FirmwareUpgradesApiGetNetworkFirmwareUpgradesStagedStagesRequest) ([]GetNetworkFirmwareUpgradesStagedStages200ResponseInner, *http.Response, error) {
+func (a *FirmwareUpgradesAPIService) GetNetworkFirmwareUpgradesStagedStagesExecute(r FirmwareUpgradesAPIGetNetworkFirmwareUpgradesStagedStagesRequest) ([]GetNetworkFirmwareUpgradesStagedStages200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1143,7 +1143,7 @@ func (a *FirmwareUpgradesApiService) GetNetworkFirmwareUpgradesStagedStagesExecu
 		localVarReturnValue  []GetNetworkFirmwareUpgradesStagedStages200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesApiService.GetNetworkFirmwareUpgradesStagedStages")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesAPIService.GetNetworkFirmwareUpgradesStagedStages")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1223,19 +1223,19 @@ func (a *FirmwareUpgradesApiService) GetNetworkFirmwareUpgradesStagedStagesExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type FirmwareUpgradesApiRollbacksNetworkFirmwareUpgradesStagedEventsRequest struct {
+type FirmwareUpgradesAPIRollbacksNetworkFirmwareUpgradesStagedEventsRequest struct {
 	ctx context.Context
-	ApiService *FirmwareUpgradesApiService
+	ApiService *FirmwareUpgradesAPIService
 	networkId string
 	rollbacksNetworkFirmwareUpgradesStagedEventsRequest *RollbacksNetworkFirmwareUpgradesStagedEventsRequest
 }
 
-func (r FirmwareUpgradesApiRollbacksNetworkFirmwareUpgradesStagedEventsRequest) RollbacksNetworkFirmwareUpgradesStagedEventsRequest(rollbacksNetworkFirmwareUpgradesStagedEventsRequest RollbacksNetworkFirmwareUpgradesStagedEventsRequest) FirmwareUpgradesApiRollbacksNetworkFirmwareUpgradesStagedEventsRequest {
+func (r FirmwareUpgradesAPIRollbacksNetworkFirmwareUpgradesStagedEventsRequest) RollbacksNetworkFirmwareUpgradesStagedEventsRequest(rollbacksNetworkFirmwareUpgradesStagedEventsRequest RollbacksNetworkFirmwareUpgradesStagedEventsRequest) FirmwareUpgradesAPIRollbacksNetworkFirmwareUpgradesStagedEventsRequest {
 	r.rollbacksNetworkFirmwareUpgradesStagedEventsRequest = &rollbacksNetworkFirmwareUpgradesStagedEventsRequest
 	return r
 }
 
-func (r FirmwareUpgradesApiRollbacksNetworkFirmwareUpgradesStagedEventsRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (r FirmwareUpgradesAPIRollbacksNetworkFirmwareUpgradesStagedEventsRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	return r.ApiService.RollbacksNetworkFirmwareUpgradesStagedEventsExecute(r)
 }
 
@@ -1246,10 +1246,10 @@ Rollback a Staged Upgrade Event for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return FirmwareUpgradesApiRollbacksNetworkFirmwareUpgradesStagedEventsRequest
+ @return FirmwareUpgradesAPIRollbacksNetworkFirmwareUpgradesStagedEventsRequest
 */
-func (a *FirmwareUpgradesApiService) RollbacksNetworkFirmwareUpgradesStagedEvents(ctx context.Context, networkId string) FirmwareUpgradesApiRollbacksNetworkFirmwareUpgradesStagedEventsRequest {
-	return FirmwareUpgradesApiRollbacksNetworkFirmwareUpgradesStagedEventsRequest{
+func (a *FirmwareUpgradesAPIService) RollbacksNetworkFirmwareUpgradesStagedEvents(ctx context.Context, networkId string) FirmwareUpgradesAPIRollbacksNetworkFirmwareUpgradesStagedEventsRequest {
+	return FirmwareUpgradesAPIRollbacksNetworkFirmwareUpgradesStagedEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1258,7 +1258,7 @@ func (a *FirmwareUpgradesApiService) RollbacksNetworkFirmwareUpgradesStagedEvent
 
 // Execute executes the request
 //  @return GetNetworkFirmwareUpgradesStagedEvents200Response
-func (a *FirmwareUpgradesApiService) RollbacksNetworkFirmwareUpgradesStagedEventsExecute(r FirmwareUpgradesApiRollbacksNetworkFirmwareUpgradesStagedEventsRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (a *FirmwareUpgradesAPIService) RollbacksNetworkFirmwareUpgradesStagedEventsExecute(r FirmwareUpgradesAPIRollbacksNetworkFirmwareUpgradesStagedEventsRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1266,7 +1266,7 @@ func (a *FirmwareUpgradesApiService) RollbacksNetworkFirmwareUpgradesStagedEvent
 		localVarReturnValue  *GetNetworkFirmwareUpgradesStagedEvents200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesApiService.RollbacksNetworkFirmwareUpgradesStagedEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesAPIService.RollbacksNetworkFirmwareUpgradesStagedEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1351,19 +1351,19 @@ func (a *FirmwareUpgradesApiService) RollbacksNetworkFirmwareUpgradesStagedEvent
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesRequest struct {
+type FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesRequest struct {
 	ctx context.Context
-	ApiService *FirmwareUpgradesApiService
+	ApiService *FirmwareUpgradesAPIService
 	networkId string
 	updateNetworkFirmwareUpgradesRequest *UpdateNetworkFirmwareUpgradesRequest
 }
 
-func (r FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesRequest) UpdateNetworkFirmwareUpgradesRequest(updateNetworkFirmwareUpgradesRequest UpdateNetworkFirmwareUpgradesRequest) FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesRequest {
+func (r FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesRequest) UpdateNetworkFirmwareUpgradesRequest(updateNetworkFirmwareUpgradesRequest UpdateNetworkFirmwareUpgradesRequest) FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesRequest {
 	r.updateNetworkFirmwareUpgradesRequest = &updateNetworkFirmwareUpgradesRequest
 	return r
 }
 
-func (r FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesRequest) Execute() (*GetNetworkFirmwareUpgrades200Response, *http.Response, error) {
+func (r FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesRequest) Execute() (*GetNetworkFirmwareUpgrades200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkFirmwareUpgradesExecute(r)
 }
 
@@ -1374,10 +1374,10 @@ Update firmware upgrade information for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesRequest
+ @return FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesRequest
 */
-func (a *FirmwareUpgradesApiService) UpdateNetworkFirmwareUpgrades(ctx context.Context, networkId string) FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesRequest {
-	return FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesRequest{
+func (a *FirmwareUpgradesAPIService) UpdateNetworkFirmwareUpgrades(ctx context.Context, networkId string) FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesRequest {
+	return FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1386,7 +1386,7 @@ func (a *FirmwareUpgradesApiService) UpdateNetworkFirmwareUpgrades(ctx context.C
 
 // Execute executes the request
 //  @return GetNetworkFirmwareUpgrades200Response
-func (a *FirmwareUpgradesApiService) UpdateNetworkFirmwareUpgradesExecute(r FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesRequest) (*GetNetworkFirmwareUpgrades200Response, *http.Response, error) {
+func (a *FirmwareUpgradesAPIService) UpdateNetworkFirmwareUpgradesExecute(r FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesRequest) (*GetNetworkFirmwareUpgrades200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1394,7 +1394,7 @@ func (a *FirmwareUpgradesApiService) UpdateNetworkFirmwareUpgradesExecute(r Firm
 		localVarReturnValue  *GetNetworkFirmwareUpgrades200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesApiService.UpdateNetworkFirmwareUpgrades")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesAPIService.UpdateNetworkFirmwareUpgrades")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1476,19 +1476,19 @@ func (a *FirmwareUpgradesApiService) UpdateNetworkFirmwareUpgradesExecute(r Firm
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesStagedEventsRequest struct {
+type FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesStagedEventsRequest struct {
 	ctx context.Context
-	ApiService *FirmwareUpgradesApiService
+	ApiService *FirmwareUpgradesAPIService
 	networkId string
 	updateNetworkFirmwareUpgradesStagedEventsRequest *UpdateNetworkFirmwareUpgradesStagedEventsRequest
 }
 
-func (r FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesStagedEventsRequest) UpdateNetworkFirmwareUpgradesStagedEventsRequest(updateNetworkFirmwareUpgradesStagedEventsRequest UpdateNetworkFirmwareUpgradesStagedEventsRequest) FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesStagedEventsRequest {
+func (r FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesStagedEventsRequest) UpdateNetworkFirmwareUpgradesStagedEventsRequest(updateNetworkFirmwareUpgradesStagedEventsRequest UpdateNetworkFirmwareUpgradesStagedEventsRequest) FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesStagedEventsRequest {
 	r.updateNetworkFirmwareUpgradesStagedEventsRequest = &updateNetworkFirmwareUpgradesStagedEventsRequest
 	return r
 }
 
-func (r FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesStagedEventsRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (r FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesStagedEventsRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkFirmwareUpgradesStagedEventsExecute(r)
 }
 
@@ -1499,10 +1499,10 @@ Update the Staged Upgrade Event for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesStagedEventsRequest
+ @return FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesStagedEventsRequest
 */
-func (a *FirmwareUpgradesApiService) UpdateNetworkFirmwareUpgradesStagedEvents(ctx context.Context, networkId string) FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesStagedEventsRequest {
-	return FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesStagedEventsRequest{
+func (a *FirmwareUpgradesAPIService) UpdateNetworkFirmwareUpgradesStagedEvents(ctx context.Context, networkId string) FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesStagedEventsRequest {
+	return FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesStagedEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1511,7 +1511,7 @@ func (a *FirmwareUpgradesApiService) UpdateNetworkFirmwareUpgradesStagedEvents(c
 
 // Execute executes the request
 //  @return GetNetworkFirmwareUpgradesStagedEvents200Response
-func (a *FirmwareUpgradesApiService) UpdateNetworkFirmwareUpgradesStagedEventsExecute(r FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesStagedEventsRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (a *FirmwareUpgradesAPIService) UpdateNetworkFirmwareUpgradesStagedEventsExecute(r FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesStagedEventsRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1519,7 +1519,7 @@ func (a *FirmwareUpgradesApiService) UpdateNetworkFirmwareUpgradesStagedEventsEx
 		localVarReturnValue  *GetNetworkFirmwareUpgradesStagedEvents200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesApiService.UpdateNetworkFirmwareUpgradesStagedEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesAPIService.UpdateNetworkFirmwareUpgradesStagedEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1604,20 +1604,20 @@ func (a *FirmwareUpgradesApiService) UpdateNetworkFirmwareUpgradesStagedEventsEx
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesStagedGroupRequest struct {
+type FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesStagedGroupRequest struct {
 	ctx context.Context
-	ApiService *FirmwareUpgradesApiService
+	ApiService *FirmwareUpgradesAPIService
 	networkId string
 	groupId string
 	createNetworkFirmwareUpgradesStagedGroupRequest *CreateNetworkFirmwareUpgradesStagedGroupRequest
 }
 
-func (r FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesStagedGroupRequest) CreateNetworkFirmwareUpgradesStagedGroupRequest(createNetworkFirmwareUpgradesStagedGroupRequest CreateNetworkFirmwareUpgradesStagedGroupRequest) FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesStagedGroupRequest {
+func (r FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesStagedGroupRequest) CreateNetworkFirmwareUpgradesStagedGroupRequest(createNetworkFirmwareUpgradesStagedGroupRequest CreateNetworkFirmwareUpgradesStagedGroupRequest) FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesStagedGroupRequest {
 	r.createNetworkFirmwareUpgradesStagedGroupRequest = &createNetworkFirmwareUpgradesStagedGroupRequest
 	return r
 }
 
-func (r FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesStagedGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesStagedGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkFirmwareUpgradesStagedGroupExecute(r)
 }
 
@@ -1629,10 +1629,10 @@ Update a Staged Upgrade Group for a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param groupId Group ID
- @return FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesStagedGroupRequest
+ @return FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesStagedGroupRequest
 */
-func (a *FirmwareUpgradesApiService) UpdateNetworkFirmwareUpgradesStagedGroup(ctx context.Context, networkId string, groupId string) FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesStagedGroupRequest {
-	return FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesStagedGroupRequest{
+func (a *FirmwareUpgradesAPIService) UpdateNetworkFirmwareUpgradesStagedGroup(ctx context.Context, networkId string, groupId string) FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesStagedGroupRequest {
+	return FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesStagedGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1642,7 +1642,7 @@ func (a *FirmwareUpgradesApiService) UpdateNetworkFirmwareUpgradesStagedGroup(ct
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *FirmwareUpgradesApiService) UpdateNetworkFirmwareUpgradesStagedGroupExecute(r FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesStagedGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *FirmwareUpgradesAPIService) UpdateNetworkFirmwareUpgradesStagedGroupExecute(r FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesStagedGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1650,7 +1650,7 @@ func (a *FirmwareUpgradesApiService) UpdateNetworkFirmwareUpgradesStagedGroupExe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesApiService.UpdateNetworkFirmwareUpgradesStagedGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesAPIService.UpdateNetworkFirmwareUpgradesStagedGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1736,19 +1736,19 @@ func (a *FirmwareUpgradesApiService) UpdateNetworkFirmwareUpgradesStagedGroupExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesStagedStagesRequest struct {
+type FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesStagedStagesRequest struct {
 	ctx context.Context
-	ApiService *FirmwareUpgradesApiService
+	ApiService *FirmwareUpgradesAPIService
 	networkId string
 	updateNetworkFirmwareUpgradesStagedStagesRequest *UpdateNetworkFirmwareUpgradesStagedStagesRequest
 }
 
-func (r FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesStagedStagesRequest) UpdateNetworkFirmwareUpgradesStagedStagesRequest(updateNetworkFirmwareUpgradesStagedStagesRequest UpdateNetworkFirmwareUpgradesStagedStagesRequest) FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesStagedStagesRequest {
+func (r FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesStagedStagesRequest) UpdateNetworkFirmwareUpgradesStagedStagesRequest(updateNetworkFirmwareUpgradesStagedStagesRequest UpdateNetworkFirmwareUpgradesStagedStagesRequest) FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesStagedStagesRequest {
 	r.updateNetworkFirmwareUpgradesStagedStagesRequest = &updateNetworkFirmwareUpgradesStagedStagesRequest
 	return r
 }
 
-func (r FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesStagedStagesRequest) Execute() ([]GetNetworkFirmwareUpgradesStagedStages200ResponseInner, *http.Response, error) {
+func (r FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesStagedStagesRequest) Execute() ([]GetNetworkFirmwareUpgradesStagedStages200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkFirmwareUpgradesStagedStagesExecute(r)
 }
 
@@ -1759,10 +1759,10 @@ Assign Staged Upgrade Group order in the sequence.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesStagedStagesRequest
+ @return FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesStagedStagesRequest
 */
-func (a *FirmwareUpgradesApiService) UpdateNetworkFirmwareUpgradesStagedStages(ctx context.Context, networkId string) FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesStagedStagesRequest {
-	return FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesStagedStagesRequest{
+func (a *FirmwareUpgradesAPIService) UpdateNetworkFirmwareUpgradesStagedStages(ctx context.Context, networkId string) FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesStagedStagesRequest {
+	return FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesStagedStagesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1771,7 +1771,7 @@ func (a *FirmwareUpgradesApiService) UpdateNetworkFirmwareUpgradesStagedStages(c
 
 // Execute executes the request
 //  @return []GetNetworkFirmwareUpgradesStagedStages200ResponseInner
-func (a *FirmwareUpgradesApiService) UpdateNetworkFirmwareUpgradesStagedStagesExecute(r FirmwareUpgradesApiUpdateNetworkFirmwareUpgradesStagedStagesRequest) ([]GetNetworkFirmwareUpgradesStagedStages200ResponseInner, *http.Response, error) {
+func (a *FirmwareUpgradesAPIService) UpdateNetworkFirmwareUpgradesStagedStagesExecute(r FirmwareUpgradesAPIUpdateNetworkFirmwareUpgradesStagedStagesRequest) ([]GetNetworkFirmwareUpgradesStagedStages200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1779,7 +1779,7 @@ func (a *FirmwareUpgradesApiService) UpdateNetworkFirmwareUpgradesStagedStagesEx
 		localVarReturnValue  []GetNetworkFirmwareUpgradesStagedStages200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesApiService.UpdateNetworkFirmwareUpgradesStagedStages")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FirmwareUpgradesAPIService.UpdateNetworkFirmwareUpgradesStagedStages")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

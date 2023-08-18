@@ -21,12 +21,12 @@ import (
 )
 
 
-// EthernetApiService EthernetApi service
-type EthernetApiService service
+// EthernetAPIService EthernetAPI service
+type EthernetAPIService service
 
-type EthernetApiGetOrganizationWirelessDevicesEthernetStatusesRequest struct {
+type EthernetAPIGetOrganizationWirelessDevicesEthernetStatusesRequest struct {
 	ctx context.Context
-	ApiService *EthernetApiService
+	ApiService *EthernetAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -35,30 +35,30 @@ type EthernetApiGetOrganizationWirelessDevicesEthernetStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
-func (r EthernetApiGetOrganizationWirelessDevicesEthernetStatusesRequest) PerPage(perPage int32) EthernetApiGetOrganizationWirelessDevicesEthernetStatusesRequest {
+func (r EthernetAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) PerPage(perPage int32) EthernetAPIGetOrganizationWirelessDevicesEthernetStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r EthernetApiGetOrganizationWirelessDevicesEthernetStatusesRequest) StartingAfter(startingAfter string) EthernetApiGetOrganizationWirelessDevicesEthernetStatusesRequest {
+func (r EthernetAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) StartingAfter(startingAfter string) EthernetAPIGetOrganizationWirelessDevicesEthernetStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r EthernetApiGetOrganizationWirelessDevicesEthernetStatusesRequest) EndingBefore(endingBefore string) EthernetApiGetOrganizationWirelessDevicesEthernetStatusesRequest {
+func (r EthernetAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) EndingBefore(endingBefore string) EthernetAPIGetOrganizationWirelessDevicesEthernetStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // A list of Meraki network IDs to filter results to contain only specified networks. E.g.: networkIds[]&#x3D;N_12345678&amp;networkIds[]&#x3D;L_3456
-func (r EthernetApiGetOrganizationWirelessDevicesEthernetStatusesRequest) NetworkIds(networkIds []string) EthernetApiGetOrganizationWirelessDevicesEthernetStatusesRequest {
+func (r EthernetAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) NetworkIds(networkIds []string) EthernetAPIGetOrganizationWirelessDevicesEthernetStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
-func (r EthernetApiGetOrganizationWirelessDevicesEthernetStatusesRequest) Execute() ([]GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner, *http.Response, error) {
+func (r EthernetAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) Execute() ([]GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationWirelessDevicesEthernetStatusesExecute(r)
 }
 
@@ -69,10 +69,10 @@ List the most recent Ethernet link speed, duplex, aggregation and power mode and
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return EthernetApiGetOrganizationWirelessDevicesEthernetStatusesRequest
+ @return EthernetAPIGetOrganizationWirelessDevicesEthernetStatusesRequest
 */
-func (a *EthernetApiService) GetOrganizationWirelessDevicesEthernetStatuses(ctx context.Context, organizationId string) EthernetApiGetOrganizationWirelessDevicesEthernetStatusesRequest {
-	return EthernetApiGetOrganizationWirelessDevicesEthernetStatusesRequest{
+func (a *EthernetAPIService) GetOrganizationWirelessDevicesEthernetStatuses(ctx context.Context, organizationId string) EthernetAPIGetOrganizationWirelessDevicesEthernetStatusesRequest {
+	return EthernetAPIGetOrganizationWirelessDevicesEthernetStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -81,7 +81,7 @@ func (a *EthernetApiService) GetOrganizationWirelessDevicesEthernetStatuses(ctx 
 
 // Execute executes the request
 //  @return []GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner
-func (a *EthernetApiService) GetOrganizationWirelessDevicesEthernetStatusesExecute(r EthernetApiGetOrganizationWirelessDevicesEthernetStatusesRequest) ([]GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner, *http.Response, error) {
+func (a *EthernetAPIService) GetOrganizationWirelessDevicesEthernetStatusesExecute(r EthernetAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) ([]GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -89,7 +89,7 @@ func (a *EthernetApiService) GetOrganizationWirelessDevicesEthernetStatusesExecu
 		localVarReturnValue  []GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EthernetApiService.GetOrganizationWirelessDevicesEthernetStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EthernetAPIService.GetOrganizationWirelessDevicesEthernetStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

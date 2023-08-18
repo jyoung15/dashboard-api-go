@@ -20,16 +20,16 @@ import (
 )
 
 
-// OrderApiService OrderApi service
-type OrderApiService service
+// OrderAPIService OrderAPI service
+type OrderAPIService service
 
-type OrderApiGetNetworkSwitchQosRulesOrderRequest struct {
+type OrderAPIGetNetworkSwitchQosRulesOrderRequest struct {
 	ctx context.Context
-	ApiService *OrderApiService
+	ApiService *OrderAPIService
 	networkId string
 }
 
-func (r OrderApiGetNetworkSwitchQosRulesOrderRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrderAPIGetNetworkSwitchQosRulesOrderRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchQosRulesOrderExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the quality of service rule IDs by order in which they will be processed 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return OrderApiGetNetworkSwitchQosRulesOrderRequest
+ @return OrderAPIGetNetworkSwitchQosRulesOrderRequest
 */
-func (a *OrderApiService) GetNetworkSwitchQosRulesOrder(ctx context.Context, networkId string) OrderApiGetNetworkSwitchQosRulesOrderRequest {
-	return OrderApiGetNetworkSwitchQosRulesOrderRequest{
+func (a *OrderAPIService) GetNetworkSwitchQosRulesOrder(ctx context.Context, networkId string) OrderAPIGetNetworkSwitchQosRulesOrderRequest {
+	return OrderAPIGetNetworkSwitchQosRulesOrderRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *OrderApiService) GetNetworkSwitchQosRulesOrder(ctx context.Context, net
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrderApiService) GetNetworkSwitchQosRulesOrderExecute(r OrderApiGetNetworkSwitchQosRulesOrderRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrderAPIService) GetNetworkSwitchQosRulesOrderExecute(r OrderAPIGetNetworkSwitchQosRulesOrderRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *OrderApiService) GetNetworkSwitchQosRulesOrderExecute(r OrderApiGetNetw
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderApiService.GetNetworkSwitchQosRulesOrder")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderAPIService.GetNetworkSwitchQosRulesOrder")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *OrderApiService) GetNetworkSwitchQosRulesOrderExecute(r OrderApiGetNetw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrderApiUpdateNetworkSwitchQosRulesOrderRequest struct {
+type OrderAPIUpdateNetworkSwitchQosRulesOrderRequest struct {
 	ctx context.Context
-	ApiService *OrderApiService
+	ApiService *OrderAPIService
 	networkId string
 	updateNetworkSwitchQosRulesOrderRequest *UpdateNetworkSwitchQosRulesOrderRequest
 }
 
-func (r OrderApiUpdateNetworkSwitchQosRulesOrderRequest) UpdateNetworkSwitchQosRulesOrderRequest(updateNetworkSwitchQosRulesOrderRequest UpdateNetworkSwitchQosRulesOrderRequest) OrderApiUpdateNetworkSwitchQosRulesOrderRequest {
+func (r OrderAPIUpdateNetworkSwitchQosRulesOrderRequest) UpdateNetworkSwitchQosRulesOrderRequest(updateNetworkSwitchQosRulesOrderRequest UpdateNetworkSwitchQosRulesOrderRequest) OrderAPIUpdateNetworkSwitchQosRulesOrderRequest {
 	r.updateNetworkSwitchQosRulesOrderRequest = &updateNetworkSwitchQosRulesOrderRequest
 	return r
 }
 
-func (r OrderApiUpdateNetworkSwitchQosRulesOrderRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrderAPIUpdateNetworkSwitchQosRulesOrderRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchQosRulesOrderExecute(r)
 }
 
@@ -163,10 +163,10 @@ Update the order in which the rules should be processed by the switch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return OrderApiUpdateNetworkSwitchQosRulesOrderRequest
+ @return OrderAPIUpdateNetworkSwitchQosRulesOrderRequest
 */
-func (a *OrderApiService) UpdateNetworkSwitchQosRulesOrder(ctx context.Context, networkId string) OrderApiUpdateNetworkSwitchQosRulesOrderRequest {
-	return OrderApiUpdateNetworkSwitchQosRulesOrderRequest{
+func (a *OrderAPIService) UpdateNetworkSwitchQosRulesOrder(ctx context.Context, networkId string) OrderAPIUpdateNetworkSwitchQosRulesOrderRequest {
+	return OrderAPIUpdateNetworkSwitchQosRulesOrderRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -175,7 +175,7 @@ func (a *OrderApiService) UpdateNetworkSwitchQosRulesOrder(ctx context.Context, 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrderApiService) UpdateNetworkSwitchQosRulesOrderExecute(r OrderApiUpdateNetworkSwitchQosRulesOrderRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrderAPIService) UpdateNetworkSwitchQosRulesOrderExecute(r OrderAPIUpdateNetworkSwitchQosRulesOrderRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *OrderApiService) UpdateNetworkSwitchQosRulesOrderExecute(r OrderApiUpda
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderApiService.UpdateNetworkSwitchQosRulesOrder")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderAPIService.UpdateNetworkSwitchQosRulesOrder")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

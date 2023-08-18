@@ -20,17 +20,17 @@ import (
 )
 
 
-// DeviceProfilesApiService DeviceProfilesApi service
-type DeviceProfilesApiService service
+// DeviceProfilesAPIService DeviceProfilesAPI service
+type DeviceProfilesAPIService service
 
-type DeviceProfilesApiGetNetworkSmDeviceDeviceProfilesRequest struct {
+type DeviceProfilesAPIGetNetworkSmDeviceDeviceProfilesRequest struct {
 	ctx context.Context
-	ApiService *DeviceProfilesApiService
+	ApiService *DeviceProfilesAPIService
 	networkId string
 	deviceId string
 }
 
-func (r DeviceProfilesApiGetNetworkSmDeviceDeviceProfilesRequest) Execute() ([]GetNetworkSmDeviceDeviceProfiles200ResponseInner, *http.Response, error) {
+func (r DeviceProfilesAPIGetNetworkSmDeviceDeviceProfilesRequest) Execute() ([]GetNetworkSmDeviceDeviceProfiles200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceDeviceProfilesExecute(r)
 }
 
@@ -42,10 +42,10 @@ Get the installed profiles associated with a device
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return DeviceProfilesApiGetNetworkSmDeviceDeviceProfilesRequest
+ @return DeviceProfilesAPIGetNetworkSmDeviceDeviceProfilesRequest
 */
-func (a *DeviceProfilesApiService) GetNetworkSmDeviceDeviceProfiles(ctx context.Context, networkId string, deviceId string) DeviceProfilesApiGetNetworkSmDeviceDeviceProfilesRequest {
-	return DeviceProfilesApiGetNetworkSmDeviceDeviceProfilesRequest{
+func (a *DeviceProfilesAPIService) GetNetworkSmDeviceDeviceProfiles(ctx context.Context, networkId string, deviceId string) DeviceProfilesAPIGetNetworkSmDeviceDeviceProfilesRequest {
+	return DeviceProfilesAPIGetNetworkSmDeviceDeviceProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -55,7 +55,7 @@ func (a *DeviceProfilesApiService) GetNetworkSmDeviceDeviceProfiles(ctx context.
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceDeviceProfiles200ResponseInner
-func (a *DeviceProfilesApiService) GetNetworkSmDeviceDeviceProfilesExecute(r DeviceProfilesApiGetNetworkSmDeviceDeviceProfilesRequest) ([]GetNetworkSmDeviceDeviceProfiles200ResponseInner, *http.Response, error) {
+func (a *DeviceProfilesAPIService) GetNetworkSmDeviceDeviceProfilesExecute(r DeviceProfilesAPIGetNetworkSmDeviceDeviceProfilesRequest) ([]GetNetworkSmDeviceDeviceProfiles200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -63,7 +63,7 @@ func (a *DeviceProfilesApiService) GetNetworkSmDeviceDeviceProfilesExecute(r Dev
 		localVarReturnValue  []GetNetworkSmDeviceDeviceProfiles200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceProfilesApiService.GetNetworkSmDeviceDeviceProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceProfilesAPIService.GetNetworkSmDeviceDeviceProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -144,14 +144,14 @@ func (a *DeviceProfilesApiService) GetNetworkSmDeviceDeviceProfilesExecute(r Dev
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DeviceProfilesApiGetNetworkSmUserDeviceProfilesRequest struct {
+type DeviceProfilesAPIGetNetworkSmUserDeviceProfilesRequest struct {
 	ctx context.Context
-	ApiService *DeviceProfilesApiService
+	ApiService *DeviceProfilesAPIService
 	networkId string
 	userId string
 }
 
-func (r DeviceProfilesApiGetNetworkSmUserDeviceProfilesRequest) Execute() ([]GetNetworkSmDeviceDeviceProfiles200ResponseInner, *http.Response, error) {
+func (r DeviceProfilesAPIGetNetworkSmUserDeviceProfilesRequest) Execute() ([]GetNetworkSmDeviceDeviceProfiles200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmUserDeviceProfilesExecute(r)
 }
 
@@ -163,10 +163,10 @@ Get the profiles associated with a user
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param userId User ID
- @return DeviceProfilesApiGetNetworkSmUserDeviceProfilesRequest
+ @return DeviceProfilesAPIGetNetworkSmUserDeviceProfilesRequest
 */
-func (a *DeviceProfilesApiService) GetNetworkSmUserDeviceProfiles(ctx context.Context, networkId string, userId string) DeviceProfilesApiGetNetworkSmUserDeviceProfilesRequest {
-	return DeviceProfilesApiGetNetworkSmUserDeviceProfilesRequest{
+func (a *DeviceProfilesAPIService) GetNetworkSmUserDeviceProfiles(ctx context.Context, networkId string, userId string) DeviceProfilesAPIGetNetworkSmUserDeviceProfilesRequest {
+	return DeviceProfilesAPIGetNetworkSmUserDeviceProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -176,7 +176,7 @@ func (a *DeviceProfilesApiService) GetNetworkSmUserDeviceProfiles(ctx context.Co
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceDeviceProfiles200ResponseInner
-func (a *DeviceProfilesApiService) GetNetworkSmUserDeviceProfilesExecute(r DeviceProfilesApiGetNetworkSmUserDeviceProfilesRequest) ([]GetNetworkSmDeviceDeviceProfiles200ResponseInner, *http.Response, error) {
+func (a *DeviceProfilesAPIService) GetNetworkSmUserDeviceProfilesExecute(r DeviceProfilesAPIGetNetworkSmUserDeviceProfilesRequest) ([]GetNetworkSmDeviceDeviceProfiles200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -184,7 +184,7 @@ func (a *DeviceProfilesApiService) GetNetworkSmUserDeviceProfilesExecute(r Devic
 		localVarReturnValue  []GetNetworkSmDeviceDeviceProfiles200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceProfilesApiService.GetNetworkSmUserDeviceProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceProfilesAPIService.GetNetworkSmUserDeviceProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

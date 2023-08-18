@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing LoginSecurityApiService
+Testing LoginSecurityAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_LoginSecurityApiService(t *testing.T) {
+func Test_client_LoginSecurityAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test LoginSecurityApiService GetOrganizationLoginSecurity", func(t *testing.T) {
+	t.Run("Test LoginSecurityAPIService GetOrganizationLoginSecurity", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.LoginSecurityApi.GetOrganizationLoginSecurity(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.LoginSecurityAPI.GetOrganizationLoginSecurity(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_LoginSecurityApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test LoginSecurityApiService UpdateOrganizationLoginSecurity", func(t *testing.T) {
+	t.Run("Test LoginSecurityAPIService UpdateOrganizationLoginSecurity", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.LoginSecurityApi.UpdateOrganizationLoginSecurity(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.LoginSecurityAPI.UpdateOrganizationLoginSecurity(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

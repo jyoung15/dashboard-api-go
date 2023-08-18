@@ -20,22 +20,22 @@ import (
 )
 
 
-// ActionBatchesApiService ActionBatchesApi service
-type ActionBatchesApiService service
+// ActionBatchesAPIService ActionBatchesAPI service
+type ActionBatchesAPIService service
 
-type ActionBatchesApiCreateOrganizationActionBatchRequest struct {
+type ActionBatchesAPICreateOrganizationActionBatchRequest struct {
 	ctx context.Context
-	ApiService *ActionBatchesApiService
+	ApiService *ActionBatchesAPIService
 	organizationId string
 	createOrganizationActionBatchRequest *CreateOrganizationActionBatchRequest
 }
 
-func (r ActionBatchesApiCreateOrganizationActionBatchRequest) CreateOrganizationActionBatchRequest(createOrganizationActionBatchRequest CreateOrganizationActionBatchRequest) ActionBatchesApiCreateOrganizationActionBatchRequest {
+func (r ActionBatchesAPICreateOrganizationActionBatchRequest) CreateOrganizationActionBatchRequest(createOrganizationActionBatchRequest CreateOrganizationActionBatchRequest) ActionBatchesAPICreateOrganizationActionBatchRequest {
 	r.createOrganizationActionBatchRequest = &createOrganizationActionBatchRequest
 	return r
 }
 
-func (r ActionBatchesApiCreateOrganizationActionBatchRequest) Execute() (*CreateOrganizationActionBatch201Response, *http.Response, error) {
+func (r ActionBatchesAPICreateOrganizationActionBatchRequest) Execute() (*CreateOrganizationActionBatch201Response, *http.Response, error) {
 	return r.ApiService.CreateOrganizationActionBatchExecute(r)
 }
 
@@ -46,10 +46,10 @@ Create an action batch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ActionBatchesApiCreateOrganizationActionBatchRequest
+ @return ActionBatchesAPICreateOrganizationActionBatchRequest
 */
-func (a *ActionBatchesApiService) CreateOrganizationActionBatch(ctx context.Context, organizationId string) ActionBatchesApiCreateOrganizationActionBatchRequest {
-	return ActionBatchesApiCreateOrganizationActionBatchRequest{
+func (a *ActionBatchesAPIService) CreateOrganizationActionBatch(ctx context.Context, organizationId string) ActionBatchesAPICreateOrganizationActionBatchRequest {
+	return ActionBatchesAPICreateOrganizationActionBatchRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -58,7 +58,7 @@ func (a *ActionBatchesApiService) CreateOrganizationActionBatch(ctx context.Cont
 
 // Execute executes the request
 //  @return CreateOrganizationActionBatch201Response
-func (a *ActionBatchesApiService) CreateOrganizationActionBatchExecute(r ActionBatchesApiCreateOrganizationActionBatchRequest) (*CreateOrganizationActionBatch201Response, *http.Response, error) {
+func (a *ActionBatchesAPIService) CreateOrganizationActionBatchExecute(r ActionBatchesAPICreateOrganizationActionBatchRequest) (*CreateOrganizationActionBatch201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *ActionBatchesApiService) CreateOrganizationActionBatchExecute(r ActionB
 		localVarReturnValue  *CreateOrganizationActionBatch201Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ActionBatchesApiService.CreateOrganizationActionBatch")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ActionBatchesAPIService.CreateOrganizationActionBatch")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,14 +151,14 @@ func (a *ActionBatchesApiService) CreateOrganizationActionBatchExecute(r ActionB
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ActionBatchesApiDeleteOrganizationActionBatchRequest struct {
+type ActionBatchesAPIDeleteOrganizationActionBatchRequest struct {
 	ctx context.Context
-	ApiService *ActionBatchesApiService
+	ApiService *ActionBatchesAPIService
 	organizationId string
 	actionBatchId string
 }
 
-func (r ActionBatchesApiDeleteOrganizationActionBatchRequest) Execute() (*http.Response, error) {
+func (r ActionBatchesAPIDeleteOrganizationActionBatchRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationActionBatchExecute(r)
 }
 
@@ -170,10 +170,10 @@ Delete an action batch
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param actionBatchId Action batch ID
- @return ActionBatchesApiDeleteOrganizationActionBatchRequest
+ @return ActionBatchesAPIDeleteOrganizationActionBatchRequest
 */
-func (a *ActionBatchesApiService) DeleteOrganizationActionBatch(ctx context.Context, organizationId string, actionBatchId string) ActionBatchesApiDeleteOrganizationActionBatchRequest {
-	return ActionBatchesApiDeleteOrganizationActionBatchRequest{
+func (a *ActionBatchesAPIService) DeleteOrganizationActionBatch(ctx context.Context, organizationId string, actionBatchId string) ActionBatchesAPIDeleteOrganizationActionBatchRequest {
+	return ActionBatchesAPIDeleteOrganizationActionBatchRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -182,14 +182,14 @@ func (a *ActionBatchesApiService) DeleteOrganizationActionBatch(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *ActionBatchesApiService) DeleteOrganizationActionBatchExecute(r ActionBatchesApiDeleteOrganizationActionBatchRequest) (*http.Response, error) {
+func (a *ActionBatchesAPIService) DeleteOrganizationActionBatchExecute(r ActionBatchesAPIDeleteOrganizationActionBatchRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ActionBatchesApiService.DeleteOrganizationActionBatch")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ActionBatchesAPIService.DeleteOrganizationActionBatch")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -261,14 +261,14 @@ func (a *ActionBatchesApiService) DeleteOrganizationActionBatchExecute(r ActionB
 	return localVarHTTPResponse, nil
 }
 
-type ActionBatchesApiGetOrganizationActionBatchRequest struct {
+type ActionBatchesAPIGetOrganizationActionBatchRequest struct {
 	ctx context.Context
-	ApiService *ActionBatchesApiService
+	ApiService *ActionBatchesAPIService
 	organizationId string
 	actionBatchId string
 }
 
-func (r ActionBatchesApiGetOrganizationActionBatchRequest) Execute() (*CreateOrganizationActionBatch201Response, *http.Response, error) {
+func (r ActionBatchesAPIGetOrganizationActionBatchRequest) Execute() (*CreateOrganizationActionBatch201Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationActionBatchExecute(r)
 }
 
@@ -280,10 +280,10 @@ Return an action batch
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param actionBatchId Action batch ID
- @return ActionBatchesApiGetOrganizationActionBatchRequest
+ @return ActionBatchesAPIGetOrganizationActionBatchRequest
 */
-func (a *ActionBatchesApiService) GetOrganizationActionBatch(ctx context.Context, organizationId string, actionBatchId string) ActionBatchesApiGetOrganizationActionBatchRequest {
-	return ActionBatchesApiGetOrganizationActionBatchRequest{
+func (a *ActionBatchesAPIService) GetOrganizationActionBatch(ctx context.Context, organizationId string, actionBatchId string) ActionBatchesAPIGetOrganizationActionBatchRequest {
+	return ActionBatchesAPIGetOrganizationActionBatchRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -293,7 +293,7 @@ func (a *ActionBatchesApiService) GetOrganizationActionBatch(ctx context.Context
 
 // Execute executes the request
 //  @return CreateOrganizationActionBatch201Response
-func (a *ActionBatchesApiService) GetOrganizationActionBatchExecute(r ActionBatchesApiGetOrganizationActionBatchRequest) (*CreateOrganizationActionBatch201Response, *http.Response, error) {
+func (a *ActionBatchesAPIService) GetOrganizationActionBatchExecute(r ActionBatchesAPIGetOrganizationActionBatchRequest) (*CreateOrganizationActionBatch201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -301,7 +301,7 @@ func (a *ActionBatchesApiService) GetOrganizationActionBatchExecute(r ActionBatc
 		localVarReturnValue  *CreateOrganizationActionBatch201Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ActionBatchesApiService.GetOrganizationActionBatch")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ActionBatchesAPIService.GetOrganizationActionBatch")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -382,20 +382,20 @@ func (a *ActionBatchesApiService) GetOrganizationActionBatchExecute(r ActionBatc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ActionBatchesApiGetOrganizationActionBatchesRequest struct {
+type ActionBatchesAPIGetOrganizationActionBatchesRequest struct {
 	ctx context.Context
-	ApiService *ActionBatchesApiService
+	ApiService *ActionBatchesAPIService
 	organizationId string
 	status *string
 }
 
 // Filter batches by status. Valid types are pending, completed, and failed.
-func (r ActionBatchesApiGetOrganizationActionBatchesRequest) Status(status string) ActionBatchesApiGetOrganizationActionBatchesRequest {
+func (r ActionBatchesAPIGetOrganizationActionBatchesRequest) Status(status string) ActionBatchesAPIGetOrganizationActionBatchesRequest {
 	r.status = &status
 	return r
 }
 
-func (r ActionBatchesApiGetOrganizationActionBatchesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ActionBatchesAPIGetOrganizationActionBatchesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationActionBatchesExecute(r)
 }
 
@@ -406,10 +406,10 @@ Return the list of action batches in the organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ActionBatchesApiGetOrganizationActionBatchesRequest
+ @return ActionBatchesAPIGetOrganizationActionBatchesRequest
 */
-func (a *ActionBatchesApiService) GetOrganizationActionBatches(ctx context.Context, organizationId string) ActionBatchesApiGetOrganizationActionBatchesRequest {
-	return ActionBatchesApiGetOrganizationActionBatchesRequest{
+func (a *ActionBatchesAPIService) GetOrganizationActionBatches(ctx context.Context, organizationId string) ActionBatchesAPIGetOrganizationActionBatchesRequest {
+	return ActionBatchesAPIGetOrganizationActionBatchesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -418,7 +418,7 @@ func (a *ActionBatchesApiService) GetOrganizationActionBatches(ctx context.Conte
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ActionBatchesApiService) GetOrganizationActionBatchesExecute(r ActionBatchesApiGetOrganizationActionBatchesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ActionBatchesAPIService) GetOrganizationActionBatchesExecute(r ActionBatchesAPIGetOrganizationActionBatchesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -426,7 +426,7 @@ func (a *ActionBatchesApiService) GetOrganizationActionBatchesExecute(r ActionBa
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ActionBatchesApiService.GetOrganizationActionBatches")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ActionBatchesAPIService.GetOrganizationActionBatches")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -509,20 +509,20 @@ func (a *ActionBatchesApiService) GetOrganizationActionBatchesExecute(r ActionBa
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ActionBatchesApiUpdateOrganizationActionBatchRequest struct {
+type ActionBatchesAPIUpdateOrganizationActionBatchRequest struct {
 	ctx context.Context
-	ApiService *ActionBatchesApiService
+	ApiService *ActionBatchesAPIService
 	organizationId string
 	actionBatchId string
 	updateOrganizationActionBatchRequest *UpdateOrganizationActionBatchRequest
 }
 
-func (r ActionBatchesApiUpdateOrganizationActionBatchRequest) UpdateOrganizationActionBatchRequest(updateOrganizationActionBatchRequest UpdateOrganizationActionBatchRequest) ActionBatchesApiUpdateOrganizationActionBatchRequest {
+func (r ActionBatchesAPIUpdateOrganizationActionBatchRequest) UpdateOrganizationActionBatchRequest(updateOrganizationActionBatchRequest UpdateOrganizationActionBatchRequest) ActionBatchesAPIUpdateOrganizationActionBatchRequest {
 	r.updateOrganizationActionBatchRequest = &updateOrganizationActionBatchRequest
 	return r
 }
 
-func (r ActionBatchesApiUpdateOrganizationActionBatchRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ActionBatchesAPIUpdateOrganizationActionBatchRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationActionBatchExecute(r)
 }
 
@@ -534,10 +534,10 @@ Update an action batch
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param actionBatchId Action batch ID
- @return ActionBatchesApiUpdateOrganizationActionBatchRequest
+ @return ActionBatchesAPIUpdateOrganizationActionBatchRequest
 */
-func (a *ActionBatchesApiService) UpdateOrganizationActionBatch(ctx context.Context, organizationId string, actionBatchId string) ActionBatchesApiUpdateOrganizationActionBatchRequest {
-	return ActionBatchesApiUpdateOrganizationActionBatchRequest{
+func (a *ActionBatchesAPIService) UpdateOrganizationActionBatch(ctx context.Context, organizationId string, actionBatchId string) ActionBatchesAPIUpdateOrganizationActionBatchRequest {
+	return ActionBatchesAPIUpdateOrganizationActionBatchRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -547,7 +547,7 @@ func (a *ActionBatchesApiService) UpdateOrganizationActionBatch(ctx context.Cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ActionBatchesApiService) UpdateOrganizationActionBatchExecute(r ActionBatchesApiUpdateOrganizationActionBatchRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ActionBatchesAPIService) UpdateOrganizationActionBatchExecute(r ActionBatchesAPIUpdateOrganizationActionBatchRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -555,7 +555,7 @@ func (a *ActionBatchesApiService) UpdateOrganizationActionBatchExecute(r ActionB
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ActionBatchesApiService.UpdateOrganizationActionBatch")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ActionBatchesAPIService.UpdateOrganizationActionBatch")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

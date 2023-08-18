@@ -20,12 +20,12 @@ import (
 )
 
 
-// SmOwnersForKeyApiService SmOwnersForKeyApi service
-type SmOwnersForKeyApiService service
+// SmOwnersForKeyAPIService SmOwnersForKeyAPI service
+type SmOwnersForKeyAPIService service
 
-type SmOwnersForKeyApiGetNetworkPiiSmOwnersForKeyRequest struct {
+type SmOwnersForKeyAPIGetNetworkPiiSmOwnersForKeyRequest struct {
 	ctx context.Context
-	ApiService *SmOwnersForKeyApiService
+	ApiService *SmOwnersForKeyAPIService
 	networkId string
 	username *string
 	email *string
@@ -36,42 +36,42 @@ type SmOwnersForKeyApiGetNetworkPiiSmOwnersForKeyRequest struct {
 }
 
 // The username of a Systems Manager user
-func (r SmOwnersForKeyApiGetNetworkPiiSmOwnersForKeyRequest) Username(username string) SmOwnersForKeyApiGetNetworkPiiSmOwnersForKeyRequest {
+func (r SmOwnersForKeyAPIGetNetworkPiiSmOwnersForKeyRequest) Username(username string) SmOwnersForKeyAPIGetNetworkPiiSmOwnersForKeyRequest {
 	r.username = &username
 	return r
 }
 
 // The email of a network user account or a Systems Manager device
-func (r SmOwnersForKeyApiGetNetworkPiiSmOwnersForKeyRequest) Email(email string) SmOwnersForKeyApiGetNetworkPiiSmOwnersForKeyRequest {
+func (r SmOwnersForKeyAPIGetNetworkPiiSmOwnersForKeyRequest) Email(email string) SmOwnersForKeyAPIGetNetworkPiiSmOwnersForKeyRequest {
 	r.email = &email
 	return r
 }
 
 // The MAC of a network client device or a Systems Manager device
-func (r SmOwnersForKeyApiGetNetworkPiiSmOwnersForKeyRequest) Mac(mac string) SmOwnersForKeyApiGetNetworkPiiSmOwnersForKeyRequest {
+func (r SmOwnersForKeyAPIGetNetworkPiiSmOwnersForKeyRequest) Mac(mac string) SmOwnersForKeyAPIGetNetworkPiiSmOwnersForKeyRequest {
 	r.mac = &mac
 	return r
 }
 
 // The serial of a Systems Manager device
-func (r SmOwnersForKeyApiGetNetworkPiiSmOwnersForKeyRequest) Serial(serial string) SmOwnersForKeyApiGetNetworkPiiSmOwnersForKeyRequest {
+func (r SmOwnersForKeyAPIGetNetworkPiiSmOwnersForKeyRequest) Serial(serial string) SmOwnersForKeyAPIGetNetworkPiiSmOwnersForKeyRequest {
 	r.serial = &serial
 	return r
 }
 
 // The IMEI of a Systems Manager device
-func (r SmOwnersForKeyApiGetNetworkPiiSmOwnersForKeyRequest) Imei(imei string) SmOwnersForKeyApiGetNetworkPiiSmOwnersForKeyRequest {
+func (r SmOwnersForKeyAPIGetNetworkPiiSmOwnersForKeyRequest) Imei(imei string) SmOwnersForKeyAPIGetNetworkPiiSmOwnersForKeyRequest {
 	r.imei = &imei
 	return r
 }
 
 // The MAC of a Bluetooth client
-func (r SmOwnersForKeyApiGetNetworkPiiSmOwnersForKeyRequest) BluetoothMac(bluetoothMac string) SmOwnersForKeyApiGetNetworkPiiSmOwnersForKeyRequest {
+func (r SmOwnersForKeyAPIGetNetworkPiiSmOwnersForKeyRequest) BluetoothMac(bluetoothMac string) SmOwnersForKeyAPIGetNetworkPiiSmOwnersForKeyRequest {
 	r.bluetoothMac = &bluetoothMac
 	return r
 }
 
-func (r SmOwnersForKeyApiGetNetworkPiiSmOwnersForKeyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SmOwnersForKeyAPIGetNetworkPiiSmOwnersForKeyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkPiiSmOwnersForKeyExecute(r)
 }
 
@@ -88,10 +88,10 @@ Given a piece of Personally Identifiable Information (PII), return the Systems M
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SmOwnersForKeyApiGetNetworkPiiSmOwnersForKeyRequest
+ @return SmOwnersForKeyAPIGetNetworkPiiSmOwnersForKeyRequest
 */
-func (a *SmOwnersForKeyApiService) GetNetworkPiiSmOwnersForKey(ctx context.Context, networkId string) SmOwnersForKeyApiGetNetworkPiiSmOwnersForKeyRequest {
-	return SmOwnersForKeyApiGetNetworkPiiSmOwnersForKeyRequest{
+func (a *SmOwnersForKeyAPIService) GetNetworkPiiSmOwnersForKey(ctx context.Context, networkId string) SmOwnersForKeyAPIGetNetworkPiiSmOwnersForKeyRequest {
+	return SmOwnersForKeyAPIGetNetworkPiiSmOwnersForKeyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -100,7 +100,7 @@ func (a *SmOwnersForKeyApiService) GetNetworkPiiSmOwnersForKey(ctx context.Conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SmOwnersForKeyApiService) GetNetworkPiiSmOwnersForKeyExecute(r SmOwnersForKeyApiGetNetworkPiiSmOwnersForKeyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SmOwnersForKeyAPIService) GetNetworkPiiSmOwnersForKeyExecute(r SmOwnersForKeyAPIGetNetworkPiiSmOwnersForKeyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -108,7 +108,7 @@ func (a *SmOwnersForKeyApiService) GetNetworkPiiSmOwnersForKeyExecute(r SmOwners
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmOwnersForKeyApiService.GetNetworkPiiSmOwnersForKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmOwnersForKeyAPIService.GetNetworkPiiSmOwnersForKey")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

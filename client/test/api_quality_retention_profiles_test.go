@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing QualityRetentionProfilesApiService
+Testing QualityRetentionProfilesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_QualityRetentionProfilesApiService(t *testing.T) {
+func Test_client_QualityRetentionProfilesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test QualityRetentionProfilesApiService CreateNetworkCameraQualityRetentionProfile", func(t *testing.T) {
+	t.Run("Test QualityRetentionProfilesAPIService CreateNetworkCameraQualityRetentionProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.QualityRetentionProfilesApi.CreateNetworkCameraQualityRetentionProfile(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.QualityRetentionProfilesAPI.CreateNetworkCameraQualityRetentionProfile(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,42 +36,28 @@ func Test_client_QualityRetentionProfilesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test QualityRetentionProfilesApiService DeleteNetworkCameraQualityRetentionProfile", func(t *testing.T) {
+	t.Run("Test QualityRetentionProfilesAPIService DeleteNetworkCameraQualityRetentionProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var qualityRetentionProfileId string
 
-		httpRes, err := apiClient.QualityRetentionProfilesApi.DeleteNetworkCameraQualityRetentionProfile(context.Background(), networkId, qualityRetentionProfileId).Execute()
+		httpRes, err := apiClient.QualityRetentionProfilesAPI.DeleteNetworkCameraQualityRetentionProfile(context.Background(), networkId, qualityRetentionProfileId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test QualityRetentionProfilesApiService GetNetworkCameraQualityRetentionProfile", func(t *testing.T) {
+	t.Run("Test QualityRetentionProfilesAPIService GetNetworkCameraQualityRetentionProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var qualityRetentionProfileId string
 
-		resp, httpRes, err := apiClient.QualityRetentionProfilesApi.GetNetworkCameraQualityRetentionProfile(context.Background(), networkId, qualityRetentionProfileId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test QualityRetentionProfilesApiService GetNetworkCameraQualityRetentionProfiles", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-
-		resp, httpRes, err := apiClient.QualityRetentionProfilesApi.GetNetworkCameraQualityRetentionProfiles(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.QualityRetentionProfilesAPI.GetNetworkCameraQualityRetentionProfile(context.Background(), networkId, qualityRetentionProfileId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,14 +65,28 @@ func Test_client_QualityRetentionProfilesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test QualityRetentionProfilesApiService UpdateNetworkCameraQualityRetentionProfile", func(t *testing.T) {
+	t.Run("Test QualityRetentionProfilesAPIService GetNetworkCameraQualityRetentionProfiles", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+
+		resp, httpRes, err := apiClient.QualityRetentionProfilesAPI.GetNetworkCameraQualityRetentionProfiles(context.Background(), networkId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test QualityRetentionProfilesAPIService UpdateNetworkCameraQualityRetentionProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var qualityRetentionProfileId string
 
-		resp, httpRes, err := apiClient.QualityRetentionProfilesApi.UpdateNetworkCameraQualityRetentionProfile(context.Background(), networkId, qualityRetentionProfileId).Execute()
+		resp, httpRes, err := apiClient.QualityRetentionProfilesAPI.UpdateNetworkCameraQualityRetentionProfile(context.Background(), networkId, qualityRetentionProfileId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

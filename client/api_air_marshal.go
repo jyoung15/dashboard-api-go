@@ -20,30 +20,30 @@ import (
 )
 
 
-// AirMarshalApiService AirMarshalApi service
-type AirMarshalApiService service
+// AirMarshalAPIService AirMarshalAPI service
+type AirMarshalAPIService service
 
-type AirMarshalApiGetNetworkWirelessAirMarshalRequest struct {
+type AirMarshalAPIGetNetworkWirelessAirMarshalRequest struct {
 	ctx context.Context
-	ApiService *AirMarshalApiService
+	ApiService *AirMarshalAPIService
 	networkId string
 	t0 *string
 	timespan *float32
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r AirMarshalApiGetNetworkWirelessAirMarshalRequest) T0(t0 string) AirMarshalApiGetNetworkWirelessAirMarshalRequest {
+func (r AirMarshalAPIGetNetworkWirelessAirMarshalRequest) T0(t0 string) AirMarshalAPIGetNetworkWirelessAirMarshalRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r AirMarshalApiGetNetworkWirelessAirMarshalRequest) Timespan(timespan float32) AirMarshalApiGetNetworkWirelessAirMarshalRequest {
+func (r AirMarshalAPIGetNetworkWirelessAirMarshalRequest) Timespan(timespan float32) AirMarshalAPIGetNetworkWirelessAirMarshalRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r AirMarshalApiGetNetworkWirelessAirMarshalRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r AirMarshalAPIGetNetworkWirelessAirMarshalRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessAirMarshalExecute(r)
 }
 
@@ -54,10 +54,10 @@ List Air Marshal scan results from a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return AirMarshalApiGetNetworkWirelessAirMarshalRequest
+ @return AirMarshalAPIGetNetworkWirelessAirMarshalRequest
 */
-func (a *AirMarshalApiService) GetNetworkWirelessAirMarshal(ctx context.Context, networkId string) AirMarshalApiGetNetworkWirelessAirMarshalRequest {
-	return AirMarshalApiGetNetworkWirelessAirMarshalRequest{
+func (a *AirMarshalAPIService) GetNetworkWirelessAirMarshal(ctx context.Context, networkId string) AirMarshalAPIGetNetworkWirelessAirMarshalRequest {
+	return AirMarshalAPIGetNetworkWirelessAirMarshalRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -66,7 +66,7 @@ func (a *AirMarshalApiService) GetNetworkWirelessAirMarshal(ctx context.Context,
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *AirMarshalApiService) GetNetworkWirelessAirMarshalExecute(r AirMarshalApiGetNetworkWirelessAirMarshalRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *AirMarshalAPIService) GetNetworkWirelessAirMarshalExecute(r AirMarshalAPIGetNetworkWirelessAirMarshalRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -74,7 +74,7 @@ func (a *AirMarshalApiService) GetNetworkWirelessAirMarshalExecute(r AirMarshalA
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AirMarshalApiService.GetNetworkWirelessAirMarshal")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AirMarshalAPIService.GetNetworkWirelessAirMarshal")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

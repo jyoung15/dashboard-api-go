@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing UsersApiService
+Testing UsersAPIService
 
 */
 
@@ -17,19 +17,19 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_UsersApiService(t *testing.T) {
+func Test_client_UsersAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test UsersApiService GetNetworkSmUserDeviceProfiles", func(t *testing.T) {
+	t.Run("Test UsersAPIService GetNetworkSmUserDeviceProfiles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var userId string
 
-		resp, httpRes, err := apiClient.UsersApi.GetNetworkSmUserDeviceProfiles(context.Background(), networkId, userId).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.GetNetworkSmUserDeviceProfiles(context.Background(), networkId, userId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -37,14 +37,14 @@ func Test_client_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService GetNetworkSmUserSoftwares", func(t *testing.T) {
+	t.Run("Test UsersAPIService GetNetworkSmUserSoftwares", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var userId string
 
-		resp, httpRes, err := apiClient.UsersApi.GetNetworkSmUserSoftwares(context.Background(), networkId, userId).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.GetNetworkSmUserSoftwares(context.Background(), networkId, userId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -52,13 +52,13 @@ func Test_client_UsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsersApiService GetNetworkSmUsers", func(t *testing.T) {
+	t.Run("Test UsersAPIService GetNetworkSmUsers", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.UsersApi.GetNetworkSmUsers(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.UsersAPI.GetNetworkSmUsers(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

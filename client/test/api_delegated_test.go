@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing DelegatedApiService
+Testing DelegatedAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_DelegatedApiService(t *testing.T) {
+func Test_client_DelegatedAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test DelegatedApiService CreateNetworkAppliancePrefixesDelegatedStatic", func(t *testing.T) {
+	t.Run("Test DelegatedAPIService CreateNetworkAppliancePrefixesDelegatedStatic", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.DelegatedApi.CreateNetworkAppliancePrefixesDelegatedStatic(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.DelegatedAPI.CreateNetworkAppliancePrefixesDelegatedStatic(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,27 +36,27 @@ func Test_client_DelegatedApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DelegatedApiService DeleteNetworkAppliancePrefixesDelegatedStatic", func(t *testing.T) {
+	t.Run("Test DelegatedAPIService DeleteNetworkAppliancePrefixesDelegatedStatic", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var staticDelegatedPrefixId string
 
-		httpRes, err := apiClient.DelegatedApi.DeleteNetworkAppliancePrefixesDelegatedStatic(context.Background(), networkId, staticDelegatedPrefixId).Execute()
+		httpRes, err := apiClient.DelegatedAPI.DeleteNetworkAppliancePrefixesDelegatedStatic(context.Background(), networkId, staticDelegatedPrefixId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test DelegatedApiService GetDeviceAppliancePrefixesDelegated", func(t *testing.T) {
+	t.Run("Test DelegatedAPIService GetDeviceAppliancePrefixesDelegated", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.DelegatedApi.GetDeviceAppliancePrefixesDelegated(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.DelegatedAPI.GetDeviceAppliancePrefixesDelegated(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,13 +64,13 @@ func Test_client_DelegatedApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DelegatedApiService GetDeviceAppliancePrefixesDelegatedVlanAssignments", func(t *testing.T) {
+	t.Run("Test DelegatedAPIService GetDeviceAppliancePrefixesDelegatedVlanAssignments", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.DelegatedApi.GetDeviceAppliancePrefixesDelegatedVlanAssignments(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.DelegatedAPI.GetDeviceAppliancePrefixesDelegatedVlanAssignments(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -78,14 +78,14 @@ func Test_client_DelegatedApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DelegatedApiService GetNetworkAppliancePrefixesDelegatedStatic", func(t *testing.T) {
+	t.Run("Test DelegatedAPIService GetNetworkAppliancePrefixesDelegatedStatic", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var staticDelegatedPrefixId string
 
-		resp, httpRes, err := apiClient.DelegatedApi.GetNetworkAppliancePrefixesDelegatedStatic(context.Background(), networkId, staticDelegatedPrefixId).Execute()
+		resp, httpRes, err := apiClient.DelegatedAPI.GetNetworkAppliancePrefixesDelegatedStatic(context.Background(), networkId, staticDelegatedPrefixId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -93,13 +93,13 @@ func Test_client_DelegatedApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DelegatedApiService GetNetworkAppliancePrefixesDelegatedStatics", func(t *testing.T) {
+	t.Run("Test DelegatedAPIService GetNetworkAppliancePrefixesDelegatedStatics", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.DelegatedApi.GetNetworkAppliancePrefixesDelegatedStatics(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.DelegatedAPI.GetNetworkAppliancePrefixesDelegatedStatics(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -107,14 +107,14 @@ func Test_client_DelegatedApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DelegatedApiService UpdateNetworkAppliancePrefixesDelegatedStatic", func(t *testing.T) {
+	t.Run("Test DelegatedAPIService UpdateNetworkAppliancePrefixesDelegatedStatic", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var staticDelegatedPrefixId string
 
-		resp, httpRes, err := apiClient.DelegatedApi.UpdateNetworkAppliancePrefixesDelegatedStatic(context.Background(), networkId, staticDelegatedPrefixId).Execute()
+		resp, httpRes, err := apiClient.DelegatedAPI.UpdateNetworkAppliancePrefixesDelegatedStatic(context.Background(), networkId, staticDelegatedPrefixId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

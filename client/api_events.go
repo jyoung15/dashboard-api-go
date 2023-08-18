@@ -21,22 +21,22 @@ import (
 )
 
 
-// EventsApiService EventsApi service
-type EventsApiService service
+// EventsAPIService EventsAPI service
+type EventsAPIService service
 
-type EventsApiCreateNetworkFirmwareUpgradesStagedEventRequest struct {
+type EventsAPICreateNetworkFirmwareUpgradesStagedEventRequest struct {
 	ctx context.Context
-	ApiService *EventsApiService
+	ApiService *EventsAPIService
 	networkId string
 	createNetworkFirmwareUpgradesStagedEventRequest *CreateNetworkFirmwareUpgradesStagedEventRequest
 }
 
-func (r EventsApiCreateNetworkFirmwareUpgradesStagedEventRequest) CreateNetworkFirmwareUpgradesStagedEventRequest(createNetworkFirmwareUpgradesStagedEventRequest CreateNetworkFirmwareUpgradesStagedEventRequest) EventsApiCreateNetworkFirmwareUpgradesStagedEventRequest {
+func (r EventsAPICreateNetworkFirmwareUpgradesStagedEventRequest) CreateNetworkFirmwareUpgradesStagedEventRequest(createNetworkFirmwareUpgradesStagedEventRequest CreateNetworkFirmwareUpgradesStagedEventRequest) EventsAPICreateNetworkFirmwareUpgradesStagedEventRequest {
 	r.createNetworkFirmwareUpgradesStagedEventRequest = &createNetworkFirmwareUpgradesStagedEventRequest
 	return r
 }
 
-func (r EventsApiCreateNetworkFirmwareUpgradesStagedEventRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (r EventsAPICreateNetworkFirmwareUpgradesStagedEventRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	return r.ApiService.CreateNetworkFirmwareUpgradesStagedEventExecute(r)
 }
 
@@ -47,10 +47,10 @@ Create a Staged Upgrade Event for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return EventsApiCreateNetworkFirmwareUpgradesStagedEventRequest
+ @return EventsAPICreateNetworkFirmwareUpgradesStagedEventRequest
 */
-func (a *EventsApiService) CreateNetworkFirmwareUpgradesStagedEvent(ctx context.Context, networkId string) EventsApiCreateNetworkFirmwareUpgradesStagedEventRequest {
-	return EventsApiCreateNetworkFirmwareUpgradesStagedEventRequest{
+func (a *EventsAPIService) CreateNetworkFirmwareUpgradesStagedEvent(ctx context.Context, networkId string) EventsAPICreateNetworkFirmwareUpgradesStagedEventRequest {
+	return EventsAPICreateNetworkFirmwareUpgradesStagedEventRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -59,7 +59,7 @@ func (a *EventsApiService) CreateNetworkFirmwareUpgradesStagedEvent(ctx context.
 
 // Execute executes the request
 //  @return GetNetworkFirmwareUpgradesStagedEvents200Response
-func (a *EventsApiService) CreateNetworkFirmwareUpgradesStagedEventExecute(r EventsApiCreateNetworkFirmwareUpgradesStagedEventRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (a *EventsAPIService) CreateNetworkFirmwareUpgradesStagedEventExecute(r EventsAPICreateNetworkFirmwareUpgradesStagedEventRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -67,7 +67,7 @@ func (a *EventsApiService) CreateNetworkFirmwareUpgradesStagedEventExecute(r Eve
 		localVarReturnValue  *GetNetworkFirmwareUpgradesStagedEvents200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.CreateNetworkFirmwareUpgradesStagedEvent")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsAPIService.CreateNetworkFirmwareUpgradesStagedEvent")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -152,13 +152,13 @@ func (a *EventsApiService) CreateNetworkFirmwareUpgradesStagedEventExecute(r Eve
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type EventsApiDeferNetworkFirmwareUpgradesStagedEventsRequest struct {
+type EventsAPIDeferNetworkFirmwareUpgradesStagedEventsRequest struct {
 	ctx context.Context
-	ApiService *EventsApiService
+	ApiService *EventsAPIService
 	networkId string
 }
 
-func (r EventsApiDeferNetworkFirmwareUpgradesStagedEventsRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (r EventsAPIDeferNetworkFirmwareUpgradesStagedEventsRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	return r.ApiService.DeferNetworkFirmwareUpgradesStagedEventsExecute(r)
 }
 
@@ -169,10 +169,10 @@ Postpone by 1 week all pending staged upgrade stages for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return EventsApiDeferNetworkFirmwareUpgradesStagedEventsRequest
+ @return EventsAPIDeferNetworkFirmwareUpgradesStagedEventsRequest
 */
-func (a *EventsApiService) DeferNetworkFirmwareUpgradesStagedEvents(ctx context.Context, networkId string) EventsApiDeferNetworkFirmwareUpgradesStagedEventsRequest {
-	return EventsApiDeferNetworkFirmwareUpgradesStagedEventsRequest{
+func (a *EventsAPIService) DeferNetworkFirmwareUpgradesStagedEvents(ctx context.Context, networkId string) EventsAPIDeferNetworkFirmwareUpgradesStagedEventsRequest {
+	return EventsAPIDeferNetworkFirmwareUpgradesStagedEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -181,7 +181,7 @@ func (a *EventsApiService) DeferNetworkFirmwareUpgradesStagedEvents(ctx context.
 
 // Execute executes the request
 //  @return GetNetworkFirmwareUpgradesStagedEvents200Response
-func (a *EventsApiService) DeferNetworkFirmwareUpgradesStagedEventsExecute(r EventsApiDeferNetworkFirmwareUpgradesStagedEventsRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (a *EventsAPIService) DeferNetworkFirmwareUpgradesStagedEventsExecute(r EventsAPIDeferNetworkFirmwareUpgradesStagedEventsRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -189,7 +189,7 @@ func (a *EventsApiService) DeferNetworkFirmwareUpgradesStagedEventsExecute(r Eve
 		localVarReturnValue  *GetNetworkFirmwareUpgradesStagedEvents200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.DeferNetworkFirmwareUpgradesStagedEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsAPIService.DeferNetworkFirmwareUpgradesStagedEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -269,9 +269,9 @@ func (a *EventsApiService) DeferNetworkFirmwareUpgradesStagedEventsExecute(r Eve
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type EventsApiGetNetworkApplianceClientSecurityEventsRequest struct {
+type EventsAPIGetNetworkApplianceClientSecurityEventsRequest struct {
 	ctx context.Context
-	ApiService *EventsApiService
+	ApiService *EventsAPIService
 	networkId string
 	clientId string
 	t0 *string
@@ -284,48 +284,48 @@ type EventsApiGetNetworkApplianceClientSecurityEventsRequest struct {
 }
 
 // The beginning of the timespan for the data. Data is gathered after the specified t0 value. The maximum lookback period is 791 days from today.
-func (r EventsApiGetNetworkApplianceClientSecurityEventsRequest) T0(t0 string) EventsApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r EventsAPIGetNetworkApplianceClientSecurityEventsRequest) T0(t0 string) EventsAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 791 days after t0.
-func (r EventsApiGetNetworkApplianceClientSecurityEventsRequest) T1(t1 string) EventsApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r EventsAPIGetNetworkApplianceClientSecurityEventsRequest) T1(t1 string) EventsAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 791 days. The default is 31 days.
-func (r EventsApiGetNetworkApplianceClientSecurityEventsRequest) Timespan(timespan float32) EventsApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r EventsAPIGetNetworkApplianceClientSecurityEventsRequest) Timespan(timespan float32) EventsAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
-func (r EventsApiGetNetworkApplianceClientSecurityEventsRequest) PerPage(perPage int32) EventsApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r EventsAPIGetNetworkApplianceClientSecurityEventsRequest) PerPage(perPage int32) EventsAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r EventsApiGetNetworkApplianceClientSecurityEventsRequest) StartingAfter(startingAfter string) EventsApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r EventsAPIGetNetworkApplianceClientSecurityEventsRequest) StartingAfter(startingAfter string) EventsAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r EventsApiGetNetworkApplianceClientSecurityEventsRequest) EndingBefore(endingBefore string) EventsApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r EventsAPIGetNetworkApplianceClientSecurityEventsRequest) EndingBefore(endingBefore string) EventsAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Sorted order of security events based on event detection time. Order options are &#39;ascending&#39; or &#39;descending&#39;. Default is ascending order.
-func (r EventsApiGetNetworkApplianceClientSecurityEventsRequest) SortOrder(sortOrder string) EventsApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r EventsAPIGetNetworkApplianceClientSecurityEventsRequest) SortOrder(sortOrder string) EventsAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
-func (r EventsApiGetNetworkApplianceClientSecurityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r EventsAPIGetNetworkApplianceClientSecurityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceClientSecurityEventsExecute(r)
 }
 
@@ -337,10 +337,10 @@ List the security events for a client. Clients can be identified by a client key
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return EventsApiGetNetworkApplianceClientSecurityEventsRequest
+ @return EventsAPIGetNetworkApplianceClientSecurityEventsRequest
 */
-func (a *EventsApiService) GetNetworkApplianceClientSecurityEvents(ctx context.Context, networkId string, clientId string) EventsApiGetNetworkApplianceClientSecurityEventsRequest {
-	return EventsApiGetNetworkApplianceClientSecurityEventsRequest{
+func (a *EventsAPIService) GetNetworkApplianceClientSecurityEvents(ctx context.Context, networkId string, clientId string) EventsAPIGetNetworkApplianceClientSecurityEventsRequest {
+	return EventsAPIGetNetworkApplianceClientSecurityEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -350,7 +350,7 @@ func (a *EventsApiService) GetNetworkApplianceClientSecurityEvents(ctx context.C
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *EventsApiService) GetNetworkApplianceClientSecurityEventsExecute(r EventsApiGetNetworkApplianceClientSecurityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *EventsAPIService) GetNetworkApplianceClientSecurityEventsExecute(r EventsAPIGetNetworkApplianceClientSecurityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -358,7 +358,7 @@ func (a *EventsApiService) GetNetworkApplianceClientSecurityEventsExecute(r Even
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GetNetworkApplianceClientSecurityEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsAPIService.GetNetworkApplianceClientSecurityEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -460,9 +460,9 @@ func (a *EventsApiService) GetNetworkApplianceClientSecurityEventsExecute(r Even
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type EventsApiGetNetworkApplianceSecurityEventsRequest struct {
+type EventsAPIGetNetworkApplianceSecurityEventsRequest struct {
 	ctx context.Context
-	ApiService *EventsApiService
+	ApiService *EventsAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -474,48 +474,48 @@ type EventsApiGetNetworkApplianceSecurityEventsRequest struct {
 }
 
 // The beginning of the timespan for the data. Data is gathered after the specified t0 value. The maximum lookback period is 365 days from today.
-func (r EventsApiGetNetworkApplianceSecurityEventsRequest) T0(t0 string) EventsApiGetNetworkApplianceSecurityEventsRequest {
+func (r EventsAPIGetNetworkApplianceSecurityEventsRequest) T0(t0 string) EventsAPIGetNetworkApplianceSecurityEventsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 365 days after t0.
-func (r EventsApiGetNetworkApplianceSecurityEventsRequest) T1(t1 string) EventsApiGetNetworkApplianceSecurityEventsRequest {
+func (r EventsAPIGetNetworkApplianceSecurityEventsRequest) T1(t1 string) EventsAPIGetNetworkApplianceSecurityEventsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 365 days. The default is 31 days.
-func (r EventsApiGetNetworkApplianceSecurityEventsRequest) Timespan(timespan float32) EventsApiGetNetworkApplianceSecurityEventsRequest {
+func (r EventsAPIGetNetworkApplianceSecurityEventsRequest) Timespan(timespan float32) EventsAPIGetNetworkApplianceSecurityEventsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
-func (r EventsApiGetNetworkApplianceSecurityEventsRequest) PerPage(perPage int32) EventsApiGetNetworkApplianceSecurityEventsRequest {
+func (r EventsAPIGetNetworkApplianceSecurityEventsRequest) PerPage(perPage int32) EventsAPIGetNetworkApplianceSecurityEventsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r EventsApiGetNetworkApplianceSecurityEventsRequest) StartingAfter(startingAfter string) EventsApiGetNetworkApplianceSecurityEventsRequest {
+func (r EventsAPIGetNetworkApplianceSecurityEventsRequest) StartingAfter(startingAfter string) EventsAPIGetNetworkApplianceSecurityEventsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r EventsApiGetNetworkApplianceSecurityEventsRequest) EndingBefore(endingBefore string) EventsApiGetNetworkApplianceSecurityEventsRequest {
+func (r EventsAPIGetNetworkApplianceSecurityEventsRequest) EndingBefore(endingBefore string) EventsAPIGetNetworkApplianceSecurityEventsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Sorted order of security events based on event detection time. Order options are &#39;ascending&#39; or &#39;descending&#39;. Default is ascending order.
-func (r EventsApiGetNetworkApplianceSecurityEventsRequest) SortOrder(sortOrder string) EventsApiGetNetworkApplianceSecurityEventsRequest {
+func (r EventsAPIGetNetworkApplianceSecurityEventsRequest) SortOrder(sortOrder string) EventsAPIGetNetworkApplianceSecurityEventsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
-func (r EventsApiGetNetworkApplianceSecurityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r EventsAPIGetNetworkApplianceSecurityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceSecurityEventsExecute(r)
 }
 
@@ -526,10 +526,10 @@ List the security events for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return EventsApiGetNetworkApplianceSecurityEventsRequest
+ @return EventsAPIGetNetworkApplianceSecurityEventsRequest
 */
-func (a *EventsApiService) GetNetworkApplianceSecurityEvents(ctx context.Context, networkId string) EventsApiGetNetworkApplianceSecurityEventsRequest {
-	return EventsApiGetNetworkApplianceSecurityEventsRequest{
+func (a *EventsAPIService) GetNetworkApplianceSecurityEvents(ctx context.Context, networkId string) EventsAPIGetNetworkApplianceSecurityEventsRequest {
+	return EventsAPIGetNetworkApplianceSecurityEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -538,7 +538,7 @@ func (a *EventsApiService) GetNetworkApplianceSecurityEvents(ctx context.Context
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *EventsApiService) GetNetworkApplianceSecurityEventsExecute(r EventsApiGetNetworkApplianceSecurityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *EventsAPIService) GetNetworkApplianceSecurityEventsExecute(r EventsAPIGetNetworkApplianceSecurityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -546,7 +546,7 @@ func (a *EventsApiService) GetNetworkApplianceSecurityEventsExecute(r EventsApiG
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GetNetworkApplianceSecurityEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsAPIService.GetNetworkApplianceSecurityEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -647,9 +647,9 @@ func (a *EventsApiService) GetNetworkApplianceSecurityEventsExecute(r EventsApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type EventsApiGetNetworkEventsRequest struct {
+type EventsAPIGetNetworkEventsRequest struct {
 	ctx context.Context
-	ApiService *EventsApiService
+	ApiService *EventsAPIService
 	networkId string
 	productType *string
 	includedEventTypes *[]string
@@ -668,90 +668,90 @@ type EventsApiGetNetworkEventsRequest struct {
 }
 
 // The product type to fetch events for. This parameter is required for networks with multiple device types. Valid types are wireless, appliance, switch, systemsManager, camera, cellularGateway, and cloudGateway
-func (r EventsApiGetNetworkEventsRequest) ProductType(productType string) EventsApiGetNetworkEventsRequest {
+func (r EventsAPIGetNetworkEventsRequest) ProductType(productType string) EventsAPIGetNetworkEventsRequest {
 	r.productType = &productType
 	return r
 }
 
 // A list of event types. The returned events will be filtered to only include events with these types.
-func (r EventsApiGetNetworkEventsRequest) IncludedEventTypes(includedEventTypes []string) EventsApiGetNetworkEventsRequest {
+func (r EventsAPIGetNetworkEventsRequest) IncludedEventTypes(includedEventTypes []string) EventsAPIGetNetworkEventsRequest {
 	r.includedEventTypes = &includedEventTypes
 	return r
 }
 
 // A list of event types. The returned events will be filtered to exclude events with these types.
-func (r EventsApiGetNetworkEventsRequest) ExcludedEventTypes(excludedEventTypes []string) EventsApiGetNetworkEventsRequest {
+func (r EventsAPIGetNetworkEventsRequest) ExcludedEventTypes(excludedEventTypes []string) EventsAPIGetNetworkEventsRequest {
 	r.excludedEventTypes = &excludedEventTypes
 	return r
 }
 
 // The MAC address of the Meraki device which the list of events will be filtered with
-func (r EventsApiGetNetworkEventsRequest) DeviceMac(deviceMac string) EventsApiGetNetworkEventsRequest {
+func (r EventsAPIGetNetworkEventsRequest) DeviceMac(deviceMac string) EventsAPIGetNetworkEventsRequest {
 	r.deviceMac = &deviceMac
 	return r
 }
 
 // The serial of the Meraki device which the list of events will be filtered with
-func (r EventsApiGetNetworkEventsRequest) DeviceSerial(deviceSerial string) EventsApiGetNetworkEventsRequest {
+func (r EventsAPIGetNetworkEventsRequest) DeviceSerial(deviceSerial string) EventsAPIGetNetworkEventsRequest {
 	r.deviceSerial = &deviceSerial
 	return r
 }
 
 // The name of the Meraki device which the list of events will be filtered with
-func (r EventsApiGetNetworkEventsRequest) DeviceName(deviceName string) EventsApiGetNetworkEventsRequest {
+func (r EventsAPIGetNetworkEventsRequest) DeviceName(deviceName string) EventsAPIGetNetworkEventsRequest {
 	r.deviceName = &deviceName
 	return r
 }
 
 // The IP of the client which the list of events will be filtered with. Only supported for track-by-IP networks.
-func (r EventsApiGetNetworkEventsRequest) ClientIp(clientIp string) EventsApiGetNetworkEventsRequest {
+func (r EventsAPIGetNetworkEventsRequest) ClientIp(clientIp string) EventsAPIGetNetworkEventsRequest {
 	r.clientIp = &clientIp
 	return r
 }
 
 // The MAC address of the client which the list of events will be filtered with. Only supported for track-by-MAC networks.
-func (r EventsApiGetNetworkEventsRequest) ClientMac(clientMac string) EventsApiGetNetworkEventsRequest {
+func (r EventsAPIGetNetworkEventsRequest) ClientMac(clientMac string) EventsAPIGetNetworkEventsRequest {
 	r.clientMac = &clientMac
 	return r
 }
 
 // The name, or partial name, of the client which the list of events will be filtered with
-func (r EventsApiGetNetworkEventsRequest) ClientName(clientName string) EventsApiGetNetworkEventsRequest {
+func (r EventsAPIGetNetworkEventsRequest) ClientName(clientName string) EventsAPIGetNetworkEventsRequest {
 	r.clientName = &clientName
 	return r
 }
 
 // The MAC address of the Systems Manager device which the list of events will be filtered with
-func (r EventsApiGetNetworkEventsRequest) SmDeviceMac(smDeviceMac string) EventsApiGetNetworkEventsRequest {
+func (r EventsAPIGetNetworkEventsRequest) SmDeviceMac(smDeviceMac string) EventsAPIGetNetworkEventsRequest {
 	r.smDeviceMac = &smDeviceMac
 	return r
 }
 
 // The name of the Systems Manager device which the list of events will be filtered with
-func (r EventsApiGetNetworkEventsRequest) SmDeviceName(smDeviceName string) EventsApiGetNetworkEventsRequest {
+func (r EventsAPIGetNetworkEventsRequest) SmDeviceName(smDeviceName string) EventsAPIGetNetworkEventsRequest {
 	r.smDeviceName = &smDeviceName
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 10.
-func (r EventsApiGetNetworkEventsRequest) PerPage(perPage int32) EventsApiGetNetworkEventsRequest {
+func (r EventsAPIGetNetworkEventsRequest) PerPage(perPage int32) EventsAPIGetNetworkEventsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r EventsApiGetNetworkEventsRequest) StartingAfter(startingAfter string) EventsApiGetNetworkEventsRequest {
+func (r EventsAPIGetNetworkEventsRequest) StartingAfter(startingAfter string) EventsAPIGetNetworkEventsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r EventsApiGetNetworkEventsRequest) EndingBefore(endingBefore string) EventsApiGetNetworkEventsRequest {
+func (r EventsAPIGetNetworkEventsRequest) EndingBefore(endingBefore string) EventsAPIGetNetworkEventsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r EventsApiGetNetworkEventsRequest) Execute() (*GetNetworkEvents200Response, *http.Response, error) {
+func (r EventsAPIGetNetworkEventsRequest) Execute() (*GetNetworkEvents200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkEventsExecute(r)
 }
 
@@ -762,10 +762,10 @@ List the events for the network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return EventsApiGetNetworkEventsRequest
+ @return EventsAPIGetNetworkEventsRequest
 */
-func (a *EventsApiService) GetNetworkEvents(ctx context.Context, networkId string) EventsApiGetNetworkEventsRequest {
-	return EventsApiGetNetworkEventsRequest{
+func (a *EventsAPIService) GetNetworkEvents(ctx context.Context, networkId string) EventsAPIGetNetworkEventsRequest {
+	return EventsAPIGetNetworkEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -774,7 +774,7 @@ func (a *EventsApiService) GetNetworkEvents(ctx context.Context, networkId strin
 
 // Execute executes the request
 //  @return GetNetworkEvents200Response
-func (a *EventsApiService) GetNetworkEventsExecute(r EventsApiGetNetworkEventsRequest) (*GetNetworkEvents200Response, *http.Response, error) {
+func (a *EventsAPIService) GetNetworkEventsExecute(r EventsAPIGetNetworkEventsRequest) (*GetNetworkEvents200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -782,7 +782,7 @@ func (a *EventsApiService) GetNetworkEventsExecute(r EventsApiGetNetworkEventsRe
 		localVarReturnValue  *GetNetworkEvents200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GetNetworkEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsAPIService.GetNetworkEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -920,13 +920,13 @@ func (a *EventsApiService) GetNetworkEventsExecute(r EventsApiGetNetworkEventsRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type EventsApiGetNetworkEventsEventTypesRequest struct {
+type EventsAPIGetNetworkEventsEventTypesRequest struct {
 	ctx context.Context
-	ApiService *EventsApiService
+	ApiService *EventsAPIService
 	networkId string
 }
 
-func (r EventsApiGetNetworkEventsEventTypesRequest) Execute() ([]GetNetworkEventsEventTypes200ResponseInner, *http.Response, error) {
+func (r EventsAPIGetNetworkEventsEventTypesRequest) Execute() ([]GetNetworkEventsEventTypes200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkEventsEventTypesExecute(r)
 }
 
@@ -937,10 +937,10 @@ List the event type to human-readable description
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return EventsApiGetNetworkEventsEventTypesRequest
+ @return EventsAPIGetNetworkEventsEventTypesRequest
 */
-func (a *EventsApiService) GetNetworkEventsEventTypes(ctx context.Context, networkId string) EventsApiGetNetworkEventsEventTypesRequest {
-	return EventsApiGetNetworkEventsEventTypesRequest{
+func (a *EventsAPIService) GetNetworkEventsEventTypes(ctx context.Context, networkId string) EventsAPIGetNetworkEventsEventTypesRequest {
+	return EventsAPIGetNetworkEventsEventTypesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -949,7 +949,7 @@ func (a *EventsApiService) GetNetworkEventsEventTypes(ctx context.Context, netwo
 
 // Execute executes the request
 //  @return []GetNetworkEventsEventTypes200ResponseInner
-func (a *EventsApiService) GetNetworkEventsEventTypesExecute(r EventsApiGetNetworkEventsEventTypesRequest) ([]GetNetworkEventsEventTypes200ResponseInner, *http.Response, error) {
+func (a *EventsAPIService) GetNetworkEventsEventTypesExecute(r EventsAPIGetNetworkEventsEventTypesRequest) ([]GetNetworkEventsEventTypes200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -957,7 +957,7 @@ func (a *EventsApiService) GetNetworkEventsEventTypesExecute(r EventsApiGetNetwo
 		localVarReturnValue  []GetNetworkEventsEventTypes200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GetNetworkEventsEventTypes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsAPIService.GetNetworkEventsEventTypes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1037,13 +1037,13 @@ func (a *EventsApiService) GetNetworkEventsEventTypesExecute(r EventsApiGetNetwo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type EventsApiGetNetworkFirmwareUpgradesStagedEventsRequest struct {
+type EventsAPIGetNetworkFirmwareUpgradesStagedEventsRequest struct {
 	ctx context.Context
-	ApiService *EventsApiService
+	ApiService *EventsAPIService
 	networkId string
 }
 
-func (r EventsApiGetNetworkFirmwareUpgradesStagedEventsRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (r EventsAPIGetNetworkFirmwareUpgradesStagedEventsRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkFirmwareUpgradesStagedEventsExecute(r)
 }
 
@@ -1054,10 +1054,10 @@ Get the Staged Upgrade Event from a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return EventsApiGetNetworkFirmwareUpgradesStagedEventsRequest
+ @return EventsAPIGetNetworkFirmwareUpgradesStagedEventsRequest
 */
-func (a *EventsApiService) GetNetworkFirmwareUpgradesStagedEvents(ctx context.Context, networkId string) EventsApiGetNetworkFirmwareUpgradesStagedEventsRequest {
-	return EventsApiGetNetworkFirmwareUpgradesStagedEventsRequest{
+func (a *EventsAPIService) GetNetworkFirmwareUpgradesStagedEvents(ctx context.Context, networkId string) EventsAPIGetNetworkFirmwareUpgradesStagedEventsRequest {
+	return EventsAPIGetNetworkFirmwareUpgradesStagedEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1066,7 +1066,7 @@ func (a *EventsApiService) GetNetworkFirmwareUpgradesStagedEvents(ctx context.Co
 
 // Execute executes the request
 //  @return GetNetworkFirmwareUpgradesStagedEvents200Response
-func (a *EventsApiService) GetNetworkFirmwareUpgradesStagedEventsExecute(r EventsApiGetNetworkFirmwareUpgradesStagedEventsRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (a *EventsAPIService) GetNetworkFirmwareUpgradesStagedEventsExecute(r EventsAPIGetNetworkFirmwareUpgradesStagedEventsRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1074,7 +1074,7 @@ func (a *EventsApiService) GetNetworkFirmwareUpgradesStagedEventsExecute(r Event
 		localVarReturnValue  *GetNetworkFirmwareUpgradesStagedEvents200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GetNetworkFirmwareUpgradesStagedEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsAPIService.GetNetworkFirmwareUpgradesStagedEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1154,9 +1154,9 @@ func (a *EventsApiService) GetNetworkFirmwareUpgradesStagedEventsExecute(r Event
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type EventsApiGetOrganizationApplianceSecurityEventsRequest struct {
+type EventsAPIGetOrganizationApplianceSecurityEventsRequest struct {
 	ctx context.Context
-	ApiService *EventsApiService
+	ApiService *EventsAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -1168,48 +1168,48 @@ type EventsApiGetOrganizationApplianceSecurityEventsRequest struct {
 }
 
 // The beginning of the timespan for the data. Data is gathered after the specified t0 value. The maximum lookback period is 365 days from today.
-func (r EventsApiGetOrganizationApplianceSecurityEventsRequest) T0(t0 string) EventsApiGetOrganizationApplianceSecurityEventsRequest {
+func (r EventsAPIGetOrganizationApplianceSecurityEventsRequest) T0(t0 string) EventsAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 365 days after t0.
-func (r EventsApiGetOrganizationApplianceSecurityEventsRequest) T1(t1 string) EventsApiGetOrganizationApplianceSecurityEventsRequest {
+func (r EventsAPIGetOrganizationApplianceSecurityEventsRequest) T1(t1 string) EventsAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 365 days. The default is 31 days.
-func (r EventsApiGetOrganizationApplianceSecurityEventsRequest) Timespan(timespan float32) EventsApiGetOrganizationApplianceSecurityEventsRequest {
+func (r EventsAPIGetOrganizationApplianceSecurityEventsRequest) Timespan(timespan float32) EventsAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
-func (r EventsApiGetOrganizationApplianceSecurityEventsRequest) PerPage(perPage int32) EventsApiGetOrganizationApplianceSecurityEventsRequest {
+func (r EventsAPIGetOrganizationApplianceSecurityEventsRequest) PerPage(perPage int32) EventsAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r EventsApiGetOrganizationApplianceSecurityEventsRequest) StartingAfter(startingAfter string) EventsApiGetOrganizationApplianceSecurityEventsRequest {
+func (r EventsAPIGetOrganizationApplianceSecurityEventsRequest) StartingAfter(startingAfter string) EventsAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r EventsApiGetOrganizationApplianceSecurityEventsRequest) EndingBefore(endingBefore string) EventsApiGetOrganizationApplianceSecurityEventsRequest {
+func (r EventsAPIGetOrganizationApplianceSecurityEventsRequest) EndingBefore(endingBefore string) EventsAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Sorted order of security events based on event detection time. Order options are &#39;ascending&#39; or &#39;descending&#39;. Default is ascending order.
-func (r EventsApiGetOrganizationApplianceSecurityEventsRequest) SortOrder(sortOrder string) EventsApiGetOrganizationApplianceSecurityEventsRequest {
+func (r EventsAPIGetOrganizationApplianceSecurityEventsRequest) SortOrder(sortOrder string) EventsAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
-func (r EventsApiGetOrganizationApplianceSecurityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r EventsAPIGetOrganizationApplianceSecurityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceSecurityEventsExecute(r)
 }
 
@@ -1220,10 +1220,10 @@ List the security events for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return EventsApiGetOrganizationApplianceSecurityEventsRequest
+ @return EventsAPIGetOrganizationApplianceSecurityEventsRequest
 */
-func (a *EventsApiService) GetOrganizationApplianceSecurityEvents(ctx context.Context, organizationId string) EventsApiGetOrganizationApplianceSecurityEventsRequest {
-	return EventsApiGetOrganizationApplianceSecurityEventsRequest{
+func (a *EventsAPIService) GetOrganizationApplianceSecurityEvents(ctx context.Context, organizationId string) EventsAPIGetOrganizationApplianceSecurityEventsRequest {
+	return EventsAPIGetOrganizationApplianceSecurityEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1232,7 +1232,7 @@ func (a *EventsApiService) GetOrganizationApplianceSecurityEvents(ctx context.Co
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *EventsApiService) GetOrganizationApplianceSecurityEventsExecute(r EventsApiGetOrganizationApplianceSecurityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *EventsAPIService) GetOrganizationApplianceSecurityEventsExecute(r EventsAPIGetOrganizationApplianceSecurityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1240,7 +1240,7 @@ func (a *EventsApiService) GetOrganizationApplianceSecurityEventsExecute(r Event
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GetOrganizationApplianceSecurityEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsAPIService.GetOrganizationApplianceSecurityEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1341,19 +1341,19 @@ func (a *EventsApiService) GetOrganizationApplianceSecurityEventsExecute(r Event
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type EventsApiRollbacksNetworkFirmwareUpgradesStagedEventsRequest struct {
+type EventsAPIRollbacksNetworkFirmwareUpgradesStagedEventsRequest struct {
 	ctx context.Context
-	ApiService *EventsApiService
+	ApiService *EventsAPIService
 	networkId string
 	rollbacksNetworkFirmwareUpgradesStagedEventsRequest *RollbacksNetworkFirmwareUpgradesStagedEventsRequest
 }
 
-func (r EventsApiRollbacksNetworkFirmwareUpgradesStagedEventsRequest) RollbacksNetworkFirmwareUpgradesStagedEventsRequest(rollbacksNetworkFirmwareUpgradesStagedEventsRequest RollbacksNetworkFirmwareUpgradesStagedEventsRequest) EventsApiRollbacksNetworkFirmwareUpgradesStagedEventsRequest {
+func (r EventsAPIRollbacksNetworkFirmwareUpgradesStagedEventsRequest) RollbacksNetworkFirmwareUpgradesStagedEventsRequest(rollbacksNetworkFirmwareUpgradesStagedEventsRequest RollbacksNetworkFirmwareUpgradesStagedEventsRequest) EventsAPIRollbacksNetworkFirmwareUpgradesStagedEventsRequest {
 	r.rollbacksNetworkFirmwareUpgradesStagedEventsRequest = &rollbacksNetworkFirmwareUpgradesStagedEventsRequest
 	return r
 }
 
-func (r EventsApiRollbacksNetworkFirmwareUpgradesStagedEventsRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (r EventsAPIRollbacksNetworkFirmwareUpgradesStagedEventsRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	return r.ApiService.RollbacksNetworkFirmwareUpgradesStagedEventsExecute(r)
 }
 
@@ -1364,10 +1364,10 @@ Rollback a Staged Upgrade Event for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return EventsApiRollbacksNetworkFirmwareUpgradesStagedEventsRequest
+ @return EventsAPIRollbacksNetworkFirmwareUpgradesStagedEventsRequest
 */
-func (a *EventsApiService) RollbacksNetworkFirmwareUpgradesStagedEvents(ctx context.Context, networkId string) EventsApiRollbacksNetworkFirmwareUpgradesStagedEventsRequest {
-	return EventsApiRollbacksNetworkFirmwareUpgradesStagedEventsRequest{
+func (a *EventsAPIService) RollbacksNetworkFirmwareUpgradesStagedEvents(ctx context.Context, networkId string) EventsAPIRollbacksNetworkFirmwareUpgradesStagedEventsRequest {
+	return EventsAPIRollbacksNetworkFirmwareUpgradesStagedEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1376,7 +1376,7 @@ func (a *EventsApiService) RollbacksNetworkFirmwareUpgradesStagedEvents(ctx cont
 
 // Execute executes the request
 //  @return GetNetworkFirmwareUpgradesStagedEvents200Response
-func (a *EventsApiService) RollbacksNetworkFirmwareUpgradesStagedEventsExecute(r EventsApiRollbacksNetworkFirmwareUpgradesStagedEventsRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (a *EventsAPIService) RollbacksNetworkFirmwareUpgradesStagedEventsExecute(r EventsAPIRollbacksNetworkFirmwareUpgradesStagedEventsRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1384,7 +1384,7 @@ func (a *EventsApiService) RollbacksNetworkFirmwareUpgradesStagedEventsExecute(r
 		localVarReturnValue  *GetNetworkFirmwareUpgradesStagedEvents200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.RollbacksNetworkFirmwareUpgradesStagedEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsAPIService.RollbacksNetworkFirmwareUpgradesStagedEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1469,19 +1469,19 @@ func (a *EventsApiService) RollbacksNetworkFirmwareUpgradesStagedEventsExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type EventsApiUpdateNetworkFirmwareUpgradesStagedEventsRequest struct {
+type EventsAPIUpdateNetworkFirmwareUpgradesStagedEventsRequest struct {
 	ctx context.Context
-	ApiService *EventsApiService
+	ApiService *EventsAPIService
 	networkId string
 	updateNetworkFirmwareUpgradesStagedEventsRequest *UpdateNetworkFirmwareUpgradesStagedEventsRequest
 }
 
-func (r EventsApiUpdateNetworkFirmwareUpgradesStagedEventsRequest) UpdateNetworkFirmwareUpgradesStagedEventsRequest(updateNetworkFirmwareUpgradesStagedEventsRequest UpdateNetworkFirmwareUpgradesStagedEventsRequest) EventsApiUpdateNetworkFirmwareUpgradesStagedEventsRequest {
+func (r EventsAPIUpdateNetworkFirmwareUpgradesStagedEventsRequest) UpdateNetworkFirmwareUpgradesStagedEventsRequest(updateNetworkFirmwareUpgradesStagedEventsRequest UpdateNetworkFirmwareUpgradesStagedEventsRequest) EventsAPIUpdateNetworkFirmwareUpgradesStagedEventsRequest {
 	r.updateNetworkFirmwareUpgradesStagedEventsRequest = &updateNetworkFirmwareUpgradesStagedEventsRequest
 	return r
 }
 
-func (r EventsApiUpdateNetworkFirmwareUpgradesStagedEventsRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (r EventsAPIUpdateNetworkFirmwareUpgradesStagedEventsRequest) Execute() (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkFirmwareUpgradesStagedEventsExecute(r)
 }
 
@@ -1492,10 +1492,10 @@ Update the Staged Upgrade Event for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return EventsApiUpdateNetworkFirmwareUpgradesStagedEventsRequest
+ @return EventsAPIUpdateNetworkFirmwareUpgradesStagedEventsRequest
 */
-func (a *EventsApiService) UpdateNetworkFirmwareUpgradesStagedEvents(ctx context.Context, networkId string) EventsApiUpdateNetworkFirmwareUpgradesStagedEventsRequest {
-	return EventsApiUpdateNetworkFirmwareUpgradesStagedEventsRequest{
+func (a *EventsAPIService) UpdateNetworkFirmwareUpgradesStagedEvents(ctx context.Context, networkId string) EventsAPIUpdateNetworkFirmwareUpgradesStagedEventsRequest {
+	return EventsAPIUpdateNetworkFirmwareUpgradesStagedEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1504,7 +1504,7 @@ func (a *EventsApiService) UpdateNetworkFirmwareUpgradesStagedEvents(ctx context
 
 // Execute executes the request
 //  @return GetNetworkFirmwareUpgradesStagedEvents200Response
-func (a *EventsApiService) UpdateNetworkFirmwareUpgradesStagedEventsExecute(r EventsApiUpdateNetworkFirmwareUpgradesStagedEventsRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
+func (a *EventsAPIService) UpdateNetworkFirmwareUpgradesStagedEventsExecute(r EventsAPIUpdateNetworkFirmwareUpgradesStagedEventsRequest) (*GetNetworkFirmwareUpgradesStagedEvents200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1512,7 +1512,7 @@ func (a *EventsApiService) UpdateNetworkFirmwareUpgradesStagedEventsExecute(r Ev
 		localVarReturnValue  *GetNetworkFirmwareUpgradesStagedEvents200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.UpdateNetworkFirmwareUpgradesStagedEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsAPIService.UpdateNetworkFirmwareUpgradesStagedEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

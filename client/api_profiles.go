@@ -20,22 +20,22 @@ import (
 )
 
 
-// ProfilesApiService ProfilesApi service
-type ProfilesApiService service
+// ProfilesAPIService ProfilesAPI service
+type ProfilesAPIService service
 
-type ProfilesApiCreateNetworkSensorAlertsProfileRequest struct {
+type ProfilesAPICreateNetworkSensorAlertsProfileRequest struct {
 	ctx context.Context
-	ApiService *ProfilesApiService
+	ApiService *ProfilesAPIService
 	networkId string
 	createNetworkSensorAlertsProfileRequest *CreateNetworkSensorAlertsProfileRequest
 }
 
-func (r ProfilesApiCreateNetworkSensorAlertsProfileRequest) CreateNetworkSensorAlertsProfileRequest(createNetworkSensorAlertsProfileRequest CreateNetworkSensorAlertsProfileRequest) ProfilesApiCreateNetworkSensorAlertsProfileRequest {
+func (r ProfilesAPICreateNetworkSensorAlertsProfileRequest) CreateNetworkSensorAlertsProfileRequest(createNetworkSensorAlertsProfileRequest CreateNetworkSensorAlertsProfileRequest) ProfilesAPICreateNetworkSensorAlertsProfileRequest {
 	r.createNetworkSensorAlertsProfileRequest = &createNetworkSensorAlertsProfileRequest
 	return r
 }
 
-func (r ProfilesApiCreateNetworkSensorAlertsProfileRequest) Execute() (*GetNetworkSensorAlertsProfiles200ResponseInner, *http.Response, error) {
+func (r ProfilesAPICreateNetworkSensorAlertsProfileRequest) Execute() (*GetNetworkSensorAlertsProfiles200ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateNetworkSensorAlertsProfileExecute(r)
 }
 
@@ -46,10 +46,10 @@ Creates a sensor alert profile for a network.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ProfilesApiCreateNetworkSensorAlertsProfileRequest
+ @return ProfilesAPICreateNetworkSensorAlertsProfileRequest
 */
-func (a *ProfilesApiService) CreateNetworkSensorAlertsProfile(ctx context.Context, networkId string) ProfilesApiCreateNetworkSensorAlertsProfileRequest {
-	return ProfilesApiCreateNetworkSensorAlertsProfileRequest{
+func (a *ProfilesAPIService) CreateNetworkSensorAlertsProfile(ctx context.Context, networkId string) ProfilesAPICreateNetworkSensorAlertsProfileRequest {
+	return ProfilesAPICreateNetworkSensorAlertsProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -58,7 +58,7 @@ func (a *ProfilesApiService) CreateNetworkSensorAlertsProfile(ctx context.Contex
 
 // Execute executes the request
 //  @return GetNetworkSensorAlertsProfiles200ResponseInner
-func (a *ProfilesApiService) CreateNetworkSensorAlertsProfileExecute(r ProfilesApiCreateNetworkSensorAlertsProfileRequest) (*GetNetworkSensorAlertsProfiles200ResponseInner, *http.Response, error) {
+func (a *ProfilesAPIService) CreateNetworkSensorAlertsProfileExecute(r ProfilesAPICreateNetworkSensorAlertsProfileRequest) (*GetNetworkSensorAlertsProfiles200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *ProfilesApiService) CreateNetworkSensorAlertsProfileExecute(r ProfilesA
 		localVarReturnValue  *GetNetworkSensorAlertsProfiles200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesApiService.CreateNetworkSensorAlertsProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesAPIService.CreateNetworkSensorAlertsProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,19 +151,19 @@ func (a *ProfilesApiService) CreateNetworkSensorAlertsProfileExecute(r ProfilesA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProfilesApiCreateOrganizationAlertsProfileRequest struct {
+type ProfilesAPICreateOrganizationAlertsProfileRequest struct {
 	ctx context.Context
-	ApiService *ProfilesApiService
+	ApiService *ProfilesAPIService
 	organizationId string
 	createOrganizationAlertsProfileRequest *CreateOrganizationAlertsProfileRequest
 }
 
-func (r ProfilesApiCreateOrganizationAlertsProfileRequest) CreateOrganizationAlertsProfileRequest(createOrganizationAlertsProfileRequest CreateOrganizationAlertsProfileRequest) ProfilesApiCreateOrganizationAlertsProfileRequest {
+func (r ProfilesAPICreateOrganizationAlertsProfileRequest) CreateOrganizationAlertsProfileRequest(createOrganizationAlertsProfileRequest CreateOrganizationAlertsProfileRequest) ProfilesAPICreateOrganizationAlertsProfileRequest {
 	r.createOrganizationAlertsProfileRequest = &createOrganizationAlertsProfileRequest
 	return r
 }
 
-func (r ProfilesApiCreateOrganizationAlertsProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ProfilesAPICreateOrganizationAlertsProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateOrganizationAlertsProfileExecute(r)
 }
 
@@ -174,10 +174,10 @@ Create an organization-wide alert configuration
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ProfilesApiCreateOrganizationAlertsProfileRequest
+ @return ProfilesAPICreateOrganizationAlertsProfileRequest
 */
-func (a *ProfilesApiService) CreateOrganizationAlertsProfile(ctx context.Context, organizationId string) ProfilesApiCreateOrganizationAlertsProfileRequest {
-	return ProfilesApiCreateOrganizationAlertsProfileRequest{
+func (a *ProfilesAPIService) CreateOrganizationAlertsProfile(ctx context.Context, organizationId string) ProfilesAPICreateOrganizationAlertsProfileRequest {
+	return ProfilesAPICreateOrganizationAlertsProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -186,7 +186,7 @@ func (a *ProfilesApiService) CreateOrganizationAlertsProfile(ctx context.Context
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ProfilesApiService) CreateOrganizationAlertsProfileExecute(r ProfilesApiCreateOrganizationAlertsProfileRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ProfilesAPIService) CreateOrganizationAlertsProfileExecute(r ProfilesAPICreateOrganizationAlertsProfileRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -194,7 +194,7 @@ func (a *ProfilesApiService) CreateOrganizationAlertsProfileExecute(r ProfilesAp
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesApiService.CreateOrganizationAlertsProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesAPIService.CreateOrganizationAlertsProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -279,14 +279,14 @@ func (a *ProfilesApiService) CreateOrganizationAlertsProfileExecute(r ProfilesAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProfilesApiDeleteNetworkSensorAlertsProfileRequest struct {
+type ProfilesAPIDeleteNetworkSensorAlertsProfileRequest struct {
 	ctx context.Context
-	ApiService *ProfilesApiService
+	ApiService *ProfilesAPIService
 	networkId string
 	id string
 }
 
-func (r ProfilesApiDeleteNetworkSensorAlertsProfileRequest) Execute() (*http.Response, error) {
+func (r ProfilesAPIDeleteNetworkSensorAlertsProfileRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkSensorAlertsProfileExecute(r)
 }
 
@@ -298,10 +298,10 @@ Deletes a sensor alert profile from a network.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param id ID
- @return ProfilesApiDeleteNetworkSensorAlertsProfileRequest
+ @return ProfilesAPIDeleteNetworkSensorAlertsProfileRequest
 */
-func (a *ProfilesApiService) DeleteNetworkSensorAlertsProfile(ctx context.Context, networkId string, id string) ProfilesApiDeleteNetworkSensorAlertsProfileRequest {
-	return ProfilesApiDeleteNetworkSensorAlertsProfileRequest{
+func (a *ProfilesAPIService) DeleteNetworkSensorAlertsProfile(ctx context.Context, networkId string, id string) ProfilesAPIDeleteNetworkSensorAlertsProfileRequest {
+	return ProfilesAPIDeleteNetworkSensorAlertsProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -310,14 +310,14 @@ func (a *ProfilesApiService) DeleteNetworkSensorAlertsProfile(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *ProfilesApiService) DeleteNetworkSensorAlertsProfileExecute(r ProfilesApiDeleteNetworkSensorAlertsProfileRequest) (*http.Response, error) {
+func (a *ProfilesAPIService) DeleteNetworkSensorAlertsProfileExecute(r ProfilesAPIDeleteNetworkSensorAlertsProfileRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesApiService.DeleteNetworkSensorAlertsProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesAPIService.DeleteNetworkSensorAlertsProfile")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -389,14 +389,14 @@ func (a *ProfilesApiService) DeleteNetworkSensorAlertsProfileExecute(r ProfilesA
 	return localVarHTTPResponse, nil
 }
 
-type ProfilesApiDeleteOrganizationAlertsProfileRequest struct {
+type ProfilesAPIDeleteOrganizationAlertsProfileRequest struct {
 	ctx context.Context
-	ApiService *ProfilesApiService
+	ApiService *ProfilesAPIService
 	organizationId string
 	alertConfigId string
 }
 
-func (r ProfilesApiDeleteOrganizationAlertsProfileRequest) Execute() (*http.Response, error) {
+func (r ProfilesAPIDeleteOrganizationAlertsProfileRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationAlertsProfileExecute(r)
 }
 
@@ -408,10 +408,10 @@ Removes an organization-wide alert config
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param alertConfigId Alert config ID
- @return ProfilesApiDeleteOrganizationAlertsProfileRequest
+ @return ProfilesAPIDeleteOrganizationAlertsProfileRequest
 */
-func (a *ProfilesApiService) DeleteOrganizationAlertsProfile(ctx context.Context, organizationId string, alertConfigId string) ProfilesApiDeleteOrganizationAlertsProfileRequest {
-	return ProfilesApiDeleteOrganizationAlertsProfileRequest{
+func (a *ProfilesAPIService) DeleteOrganizationAlertsProfile(ctx context.Context, organizationId string, alertConfigId string) ProfilesAPIDeleteOrganizationAlertsProfileRequest {
+	return ProfilesAPIDeleteOrganizationAlertsProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -420,14 +420,14 @@ func (a *ProfilesApiService) DeleteOrganizationAlertsProfile(ctx context.Context
 }
 
 // Execute executes the request
-func (a *ProfilesApiService) DeleteOrganizationAlertsProfileExecute(r ProfilesApiDeleteOrganizationAlertsProfileRequest) (*http.Response, error) {
+func (a *ProfilesAPIService) DeleteOrganizationAlertsProfileExecute(r ProfilesAPIDeleteOrganizationAlertsProfileRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesApiService.DeleteOrganizationAlertsProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesAPIService.DeleteOrganizationAlertsProfile")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -499,14 +499,14 @@ func (a *ProfilesApiService) DeleteOrganizationAlertsProfileExecute(r ProfilesAp
 	return localVarHTTPResponse, nil
 }
 
-type ProfilesApiGetNetworkSensorAlertsProfileRequest struct {
+type ProfilesAPIGetNetworkSensorAlertsProfileRequest struct {
 	ctx context.Context
-	ApiService *ProfilesApiService
+	ApiService *ProfilesAPIService
 	networkId string
 	id string
 }
 
-func (r ProfilesApiGetNetworkSensorAlertsProfileRequest) Execute() (*GetNetworkSensorAlertsProfiles200ResponseInner, *http.Response, error) {
+func (r ProfilesAPIGetNetworkSensorAlertsProfileRequest) Execute() (*GetNetworkSensorAlertsProfiles200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSensorAlertsProfileExecute(r)
 }
 
@@ -518,10 +518,10 @@ Show details of a sensor alert profile for a network.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param id ID
- @return ProfilesApiGetNetworkSensorAlertsProfileRequest
+ @return ProfilesAPIGetNetworkSensorAlertsProfileRequest
 */
-func (a *ProfilesApiService) GetNetworkSensorAlertsProfile(ctx context.Context, networkId string, id string) ProfilesApiGetNetworkSensorAlertsProfileRequest {
-	return ProfilesApiGetNetworkSensorAlertsProfileRequest{
+func (a *ProfilesAPIService) GetNetworkSensorAlertsProfile(ctx context.Context, networkId string, id string) ProfilesAPIGetNetworkSensorAlertsProfileRequest {
+	return ProfilesAPIGetNetworkSensorAlertsProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -531,7 +531,7 @@ func (a *ProfilesApiService) GetNetworkSensorAlertsProfile(ctx context.Context, 
 
 // Execute executes the request
 //  @return GetNetworkSensorAlertsProfiles200ResponseInner
-func (a *ProfilesApiService) GetNetworkSensorAlertsProfileExecute(r ProfilesApiGetNetworkSensorAlertsProfileRequest) (*GetNetworkSensorAlertsProfiles200ResponseInner, *http.Response, error) {
+func (a *ProfilesAPIService) GetNetworkSensorAlertsProfileExecute(r ProfilesAPIGetNetworkSensorAlertsProfileRequest) (*GetNetworkSensorAlertsProfiles200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -539,7 +539,7 @@ func (a *ProfilesApiService) GetNetworkSensorAlertsProfileExecute(r ProfilesApiG
 		localVarReturnValue  *GetNetworkSensorAlertsProfiles200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesApiService.GetNetworkSensorAlertsProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesAPIService.GetNetworkSensorAlertsProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -620,13 +620,13 @@ func (a *ProfilesApiService) GetNetworkSensorAlertsProfileExecute(r ProfilesApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProfilesApiGetNetworkSensorAlertsProfilesRequest struct {
+type ProfilesAPIGetNetworkSensorAlertsProfilesRequest struct {
 	ctx context.Context
-	ApiService *ProfilesApiService
+	ApiService *ProfilesAPIService
 	networkId string
 }
 
-func (r ProfilesApiGetNetworkSensorAlertsProfilesRequest) Execute() ([]GetNetworkSensorAlertsProfiles200ResponseInner, *http.Response, error) {
+func (r ProfilesAPIGetNetworkSensorAlertsProfilesRequest) Execute() ([]GetNetworkSensorAlertsProfiles200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSensorAlertsProfilesExecute(r)
 }
 
@@ -637,10 +637,10 @@ Lists all sensor alert profiles for a network.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ProfilesApiGetNetworkSensorAlertsProfilesRequest
+ @return ProfilesAPIGetNetworkSensorAlertsProfilesRequest
 */
-func (a *ProfilesApiService) GetNetworkSensorAlertsProfiles(ctx context.Context, networkId string) ProfilesApiGetNetworkSensorAlertsProfilesRequest {
-	return ProfilesApiGetNetworkSensorAlertsProfilesRequest{
+func (a *ProfilesAPIService) GetNetworkSensorAlertsProfiles(ctx context.Context, networkId string) ProfilesAPIGetNetworkSensorAlertsProfilesRequest {
+	return ProfilesAPIGetNetworkSensorAlertsProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -649,7 +649,7 @@ func (a *ProfilesApiService) GetNetworkSensorAlertsProfiles(ctx context.Context,
 
 // Execute executes the request
 //  @return []GetNetworkSensorAlertsProfiles200ResponseInner
-func (a *ProfilesApiService) GetNetworkSensorAlertsProfilesExecute(r ProfilesApiGetNetworkSensorAlertsProfilesRequest) ([]GetNetworkSensorAlertsProfiles200ResponseInner, *http.Response, error) {
+func (a *ProfilesAPIService) GetNetworkSensorAlertsProfilesExecute(r ProfilesAPIGetNetworkSensorAlertsProfilesRequest) ([]GetNetworkSensorAlertsProfiles200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -657,7 +657,7 @@ func (a *ProfilesApiService) GetNetworkSensorAlertsProfilesExecute(r ProfilesApi
 		localVarReturnValue  []GetNetworkSensorAlertsProfiles200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesApiService.GetNetworkSensorAlertsProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesAPIService.GetNetworkSensorAlertsProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -737,13 +737,13 @@ func (a *ProfilesApiService) GetNetworkSensorAlertsProfilesExecute(r ProfilesApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProfilesApiGetNetworkSmProfilesRequest struct {
+type ProfilesAPIGetNetworkSmProfilesRequest struct {
 	ctx context.Context
-	ApiService *ProfilesApiService
+	ApiService *ProfilesAPIService
 	networkId string
 }
 
-func (r ProfilesApiGetNetworkSmProfilesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ProfilesAPIGetNetworkSmProfilesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSmProfilesExecute(r)
 }
 
@@ -754,10 +754,10 @@ List all the profiles in the network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ProfilesApiGetNetworkSmProfilesRequest
+ @return ProfilesAPIGetNetworkSmProfilesRequest
 */
-func (a *ProfilesApiService) GetNetworkSmProfiles(ctx context.Context, networkId string) ProfilesApiGetNetworkSmProfilesRequest {
-	return ProfilesApiGetNetworkSmProfilesRequest{
+func (a *ProfilesAPIService) GetNetworkSmProfiles(ctx context.Context, networkId string) ProfilesAPIGetNetworkSmProfilesRequest {
+	return ProfilesAPIGetNetworkSmProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -766,7 +766,7 @@ func (a *ProfilesApiService) GetNetworkSmProfiles(ctx context.Context, networkId
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ProfilesApiService) GetNetworkSmProfilesExecute(r ProfilesApiGetNetworkSmProfilesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ProfilesAPIService) GetNetworkSmProfilesExecute(r ProfilesAPIGetNetworkSmProfilesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -774,7 +774,7 @@ func (a *ProfilesApiService) GetNetworkSmProfilesExecute(r ProfilesApiGetNetwork
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesApiService.GetNetworkSmProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesAPIService.GetNetworkSmProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -854,13 +854,13 @@ func (a *ProfilesApiService) GetNetworkSmProfilesExecute(r ProfilesApiGetNetwork
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProfilesApiGetOrganizationAlertsProfilesRequest struct {
+type ProfilesAPIGetOrganizationAlertsProfilesRequest struct {
 	ctx context.Context
-	ApiService *ProfilesApiService
+	ApiService *ProfilesAPIService
 	organizationId string
 }
 
-func (r ProfilesApiGetOrganizationAlertsProfilesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ProfilesAPIGetOrganizationAlertsProfilesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationAlertsProfilesExecute(r)
 }
 
@@ -871,10 +871,10 @@ List all organization-wide alert configurations
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ProfilesApiGetOrganizationAlertsProfilesRequest
+ @return ProfilesAPIGetOrganizationAlertsProfilesRequest
 */
-func (a *ProfilesApiService) GetOrganizationAlertsProfiles(ctx context.Context, organizationId string) ProfilesApiGetOrganizationAlertsProfilesRequest {
-	return ProfilesApiGetOrganizationAlertsProfilesRequest{
+func (a *ProfilesAPIService) GetOrganizationAlertsProfiles(ctx context.Context, organizationId string) ProfilesAPIGetOrganizationAlertsProfilesRequest {
+	return ProfilesAPIGetOrganizationAlertsProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -883,7 +883,7 @@ func (a *ProfilesApiService) GetOrganizationAlertsProfiles(ctx context.Context, 
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ProfilesApiService) GetOrganizationAlertsProfilesExecute(r ProfilesApiGetOrganizationAlertsProfilesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ProfilesAPIService) GetOrganizationAlertsProfilesExecute(r ProfilesAPIGetOrganizationAlertsProfilesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -891,7 +891,7 @@ func (a *ProfilesApiService) GetOrganizationAlertsProfilesExecute(r ProfilesApiG
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesApiService.GetOrganizationAlertsProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesAPIService.GetOrganizationAlertsProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -971,16 +971,16 @@ func (a *ProfilesApiService) GetOrganizationAlertsProfilesExecute(r ProfilesApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProfilesApiGetOrganizationConfigTemplateSwitchProfilePortRequest struct {
+type ProfilesAPIGetOrganizationConfigTemplateSwitchProfilePortRequest struct {
 	ctx context.Context
-	ApiService *ProfilesApiService
+	ApiService *ProfilesAPIService
 	organizationId string
 	configTemplateId string
 	profileId string
 	portId string
 }
 
-func (r ProfilesApiGetOrganizationConfigTemplateSwitchProfilePortRequest) Execute() (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
+func (r ProfilesAPIGetOrganizationConfigTemplateSwitchProfilePortRequest) Execute() (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationConfigTemplateSwitchProfilePortExecute(r)
 }
 
@@ -994,10 +994,10 @@ Return a switch template port
  @param configTemplateId Config template ID
  @param profileId Profile ID
  @param portId Port ID
- @return ProfilesApiGetOrganizationConfigTemplateSwitchProfilePortRequest
+ @return ProfilesAPIGetOrganizationConfigTemplateSwitchProfilePortRequest
 */
-func (a *ProfilesApiService) GetOrganizationConfigTemplateSwitchProfilePort(ctx context.Context, organizationId string, configTemplateId string, profileId string, portId string) ProfilesApiGetOrganizationConfigTemplateSwitchProfilePortRequest {
-	return ProfilesApiGetOrganizationConfigTemplateSwitchProfilePortRequest{
+func (a *ProfilesAPIService) GetOrganizationConfigTemplateSwitchProfilePort(ctx context.Context, organizationId string, configTemplateId string, profileId string, portId string) ProfilesAPIGetOrganizationConfigTemplateSwitchProfilePortRequest {
+	return ProfilesAPIGetOrganizationConfigTemplateSwitchProfilePortRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1009,7 +1009,7 @@ func (a *ProfilesApiService) GetOrganizationConfigTemplateSwitchProfilePort(ctx 
 
 // Execute executes the request
 //  @return GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner
-func (a *ProfilesApiService) GetOrganizationConfigTemplateSwitchProfilePortExecute(r ProfilesApiGetOrganizationConfigTemplateSwitchProfilePortRequest) (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
+func (a *ProfilesAPIService) GetOrganizationConfigTemplateSwitchProfilePortExecute(r ProfilesAPIGetOrganizationConfigTemplateSwitchProfilePortRequest) (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1017,7 +1017,7 @@ func (a *ProfilesApiService) GetOrganizationConfigTemplateSwitchProfilePortExecu
 		localVarReturnValue  *GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesApiService.GetOrganizationConfigTemplateSwitchProfilePort")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesAPIService.GetOrganizationConfigTemplateSwitchProfilePort")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1100,15 +1100,15 @@ func (a *ProfilesApiService) GetOrganizationConfigTemplateSwitchProfilePortExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProfilesApiGetOrganizationConfigTemplateSwitchProfilePortsRequest struct {
+type ProfilesAPIGetOrganizationConfigTemplateSwitchProfilePortsRequest struct {
 	ctx context.Context
-	ApiService *ProfilesApiService
+	ApiService *ProfilesAPIService
 	organizationId string
 	configTemplateId string
 	profileId string
 }
 
-func (r ProfilesApiGetOrganizationConfigTemplateSwitchProfilePortsRequest) Execute() ([]GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
+func (r ProfilesAPIGetOrganizationConfigTemplateSwitchProfilePortsRequest) Execute() ([]GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationConfigTemplateSwitchProfilePortsExecute(r)
 }
 
@@ -1121,10 +1121,10 @@ Return all the ports of a switch template
  @param organizationId Organization ID
  @param configTemplateId Config template ID
  @param profileId Profile ID
- @return ProfilesApiGetOrganizationConfigTemplateSwitchProfilePortsRequest
+ @return ProfilesAPIGetOrganizationConfigTemplateSwitchProfilePortsRequest
 */
-func (a *ProfilesApiService) GetOrganizationConfigTemplateSwitchProfilePorts(ctx context.Context, organizationId string, configTemplateId string, profileId string) ProfilesApiGetOrganizationConfigTemplateSwitchProfilePortsRequest {
-	return ProfilesApiGetOrganizationConfigTemplateSwitchProfilePortsRequest{
+func (a *ProfilesAPIService) GetOrganizationConfigTemplateSwitchProfilePorts(ctx context.Context, organizationId string, configTemplateId string, profileId string) ProfilesAPIGetOrganizationConfigTemplateSwitchProfilePortsRequest {
+	return ProfilesAPIGetOrganizationConfigTemplateSwitchProfilePortsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1135,7 +1135,7 @@ func (a *ProfilesApiService) GetOrganizationConfigTemplateSwitchProfilePorts(ctx
 
 // Execute executes the request
 //  @return []GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner
-func (a *ProfilesApiService) GetOrganizationConfigTemplateSwitchProfilePortsExecute(r ProfilesApiGetOrganizationConfigTemplateSwitchProfilePortsRequest) ([]GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
+func (a *ProfilesAPIService) GetOrganizationConfigTemplateSwitchProfilePortsExecute(r ProfilesAPIGetOrganizationConfigTemplateSwitchProfilePortsRequest) ([]GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1143,7 +1143,7 @@ func (a *ProfilesApiService) GetOrganizationConfigTemplateSwitchProfilePortsExec
 		localVarReturnValue  []GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesApiService.GetOrganizationConfigTemplateSwitchProfilePorts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesAPIService.GetOrganizationConfigTemplateSwitchProfilePorts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1225,14 +1225,14 @@ func (a *ProfilesApiService) GetOrganizationConfigTemplateSwitchProfilePortsExec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProfilesApiGetOrganizationConfigTemplateSwitchProfilesRequest struct {
+type ProfilesAPIGetOrganizationConfigTemplateSwitchProfilesRequest struct {
 	ctx context.Context
-	ApiService *ProfilesApiService
+	ApiService *ProfilesAPIService
 	organizationId string
 	configTemplateId string
 }
 
-func (r ProfilesApiGetOrganizationConfigTemplateSwitchProfilesRequest) Execute() ([]GetOrganizationConfigTemplateSwitchProfiles200ResponseInner, *http.Response, error) {
+func (r ProfilesAPIGetOrganizationConfigTemplateSwitchProfilesRequest) Execute() ([]GetOrganizationConfigTemplateSwitchProfiles200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationConfigTemplateSwitchProfilesExecute(r)
 }
 
@@ -1244,10 +1244,10 @@ List the switch templates for your switch template configuration
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param configTemplateId Config template ID
- @return ProfilesApiGetOrganizationConfigTemplateSwitchProfilesRequest
+ @return ProfilesAPIGetOrganizationConfigTemplateSwitchProfilesRequest
 */
-func (a *ProfilesApiService) GetOrganizationConfigTemplateSwitchProfiles(ctx context.Context, organizationId string, configTemplateId string) ProfilesApiGetOrganizationConfigTemplateSwitchProfilesRequest {
-	return ProfilesApiGetOrganizationConfigTemplateSwitchProfilesRequest{
+func (a *ProfilesAPIService) GetOrganizationConfigTemplateSwitchProfiles(ctx context.Context, organizationId string, configTemplateId string) ProfilesAPIGetOrganizationConfigTemplateSwitchProfilesRequest {
+	return ProfilesAPIGetOrganizationConfigTemplateSwitchProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1257,7 +1257,7 @@ func (a *ProfilesApiService) GetOrganizationConfigTemplateSwitchProfiles(ctx con
 
 // Execute executes the request
 //  @return []GetOrganizationConfigTemplateSwitchProfiles200ResponseInner
-func (a *ProfilesApiService) GetOrganizationConfigTemplateSwitchProfilesExecute(r ProfilesApiGetOrganizationConfigTemplateSwitchProfilesRequest) ([]GetOrganizationConfigTemplateSwitchProfiles200ResponseInner, *http.Response, error) {
+func (a *ProfilesAPIService) GetOrganizationConfigTemplateSwitchProfilesExecute(r ProfilesAPIGetOrganizationConfigTemplateSwitchProfilesRequest) ([]GetOrganizationConfigTemplateSwitchProfiles200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1265,7 +1265,7 @@ func (a *ProfilesApiService) GetOrganizationConfigTemplateSwitchProfilesExecute(
 		localVarReturnValue  []GetOrganizationConfigTemplateSwitchProfiles200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesApiService.GetOrganizationConfigTemplateSwitchProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesAPIService.GetOrganizationConfigTemplateSwitchProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1346,20 +1346,20 @@ func (a *ProfilesApiService) GetOrganizationConfigTemplateSwitchProfilesExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProfilesApiUpdateNetworkSensorAlertsProfileRequest struct {
+type ProfilesAPIUpdateNetworkSensorAlertsProfileRequest struct {
 	ctx context.Context
-	ApiService *ProfilesApiService
+	ApiService *ProfilesAPIService
 	networkId string
 	id string
 	updateNetworkSensorAlertsProfileRequest *UpdateNetworkSensorAlertsProfileRequest
 }
 
-func (r ProfilesApiUpdateNetworkSensorAlertsProfileRequest) UpdateNetworkSensorAlertsProfileRequest(updateNetworkSensorAlertsProfileRequest UpdateNetworkSensorAlertsProfileRequest) ProfilesApiUpdateNetworkSensorAlertsProfileRequest {
+func (r ProfilesAPIUpdateNetworkSensorAlertsProfileRequest) UpdateNetworkSensorAlertsProfileRequest(updateNetworkSensorAlertsProfileRequest UpdateNetworkSensorAlertsProfileRequest) ProfilesAPIUpdateNetworkSensorAlertsProfileRequest {
 	r.updateNetworkSensorAlertsProfileRequest = &updateNetworkSensorAlertsProfileRequest
 	return r
 }
 
-func (r ProfilesApiUpdateNetworkSensorAlertsProfileRequest) Execute() (*GetNetworkSensorAlertsProfiles200ResponseInner, *http.Response, error) {
+func (r ProfilesAPIUpdateNetworkSensorAlertsProfileRequest) Execute() (*GetNetworkSensorAlertsProfiles200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSensorAlertsProfileExecute(r)
 }
 
@@ -1371,10 +1371,10 @@ Updates a sensor alert profile for a network.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param id ID
- @return ProfilesApiUpdateNetworkSensorAlertsProfileRequest
+ @return ProfilesAPIUpdateNetworkSensorAlertsProfileRequest
 */
-func (a *ProfilesApiService) UpdateNetworkSensorAlertsProfile(ctx context.Context, networkId string, id string) ProfilesApiUpdateNetworkSensorAlertsProfileRequest {
-	return ProfilesApiUpdateNetworkSensorAlertsProfileRequest{
+func (a *ProfilesAPIService) UpdateNetworkSensorAlertsProfile(ctx context.Context, networkId string, id string) ProfilesAPIUpdateNetworkSensorAlertsProfileRequest {
+	return ProfilesAPIUpdateNetworkSensorAlertsProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1384,7 +1384,7 @@ func (a *ProfilesApiService) UpdateNetworkSensorAlertsProfile(ctx context.Contex
 
 // Execute executes the request
 //  @return GetNetworkSensorAlertsProfiles200ResponseInner
-func (a *ProfilesApiService) UpdateNetworkSensorAlertsProfileExecute(r ProfilesApiUpdateNetworkSensorAlertsProfileRequest) (*GetNetworkSensorAlertsProfiles200ResponseInner, *http.Response, error) {
+func (a *ProfilesAPIService) UpdateNetworkSensorAlertsProfileExecute(r ProfilesAPIUpdateNetworkSensorAlertsProfileRequest) (*GetNetworkSensorAlertsProfiles200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1392,7 +1392,7 @@ func (a *ProfilesApiService) UpdateNetworkSensorAlertsProfileExecute(r ProfilesA
 		localVarReturnValue  *GetNetworkSensorAlertsProfiles200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesApiService.UpdateNetworkSensorAlertsProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesAPIService.UpdateNetworkSensorAlertsProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1475,20 +1475,20 @@ func (a *ProfilesApiService) UpdateNetworkSensorAlertsProfileExecute(r ProfilesA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProfilesApiUpdateOrganizationAlertsProfileRequest struct {
+type ProfilesAPIUpdateOrganizationAlertsProfileRequest struct {
 	ctx context.Context
-	ApiService *ProfilesApiService
+	ApiService *ProfilesAPIService
 	organizationId string
 	alertConfigId string
 	updateOrganizationAlertsProfileRequest *UpdateOrganizationAlertsProfileRequest
 }
 
-func (r ProfilesApiUpdateOrganizationAlertsProfileRequest) UpdateOrganizationAlertsProfileRequest(updateOrganizationAlertsProfileRequest UpdateOrganizationAlertsProfileRequest) ProfilesApiUpdateOrganizationAlertsProfileRequest {
+func (r ProfilesAPIUpdateOrganizationAlertsProfileRequest) UpdateOrganizationAlertsProfileRequest(updateOrganizationAlertsProfileRequest UpdateOrganizationAlertsProfileRequest) ProfilesAPIUpdateOrganizationAlertsProfileRequest {
 	r.updateOrganizationAlertsProfileRequest = &updateOrganizationAlertsProfileRequest
 	return r
 }
 
-func (r ProfilesApiUpdateOrganizationAlertsProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ProfilesAPIUpdateOrganizationAlertsProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationAlertsProfileExecute(r)
 }
 
@@ -1500,10 +1500,10 @@ Update an organization-wide alert config
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param alertConfigId Alert config ID
- @return ProfilesApiUpdateOrganizationAlertsProfileRequest
+ @return ProfilesAPIUpdateOrganizationAlertsProfileRequest
 */
-func (a *ProfilesApiService) UpdateOrganizationAlertsProfile(ctx context.Context, organizationId string, alertConfigId string) ProfilesApiUpdateOrganizationAlertsProfileRequest {
-	return ProfilesApiUpdateOrganizationAlertsProfileRequest{
+func (a *ProfilesAPIService) UpdateOrganizationAlertsProfile(ctx context.Context, organizationId string, alertConfigId string) ProfilesAPIUpdateOrganizationAlertsProfileRequest {
+	return ProfilesAPIUpdateOrganizationAlertsProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1513,7 +1513,7 @@ func (a *ProfilesApiService) UpdateOrganizationAlertsProfile(ctx context.Context
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ProfilesApiService) UpdateOrganizationAlertsProfileExecute(r ProfilesApiUpdateOrganizationAlertsProfileRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ProfilesAPIService) UpdateOrganizationAlertsProfileExecute(r ProfilesAPIUpdateOrganizationAlertsProfileRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1521,7 +1521,7 @@ func (a *ProfilesApiService) UpdateOrganizationAlertsProfileExecute(r ProfilesAp
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesApiService.UpdateOrganizationAlertsProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesAPIService.UpdateOrganizationAlertsProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1604,9 +1604,9 @@ func (a *ProfilesApiService) UpdateOrganizationAlertsProfileExecute(r ProfilesAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ProfilesApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest struct {
+type ProfilesAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest struct {
 	ctx context.Context
-	ApiService *ProfilesApiService
+	ApiService *ProfilesAPIService
 	organizationId string
 	configTemplateId string
 	profileId string
@@ -1614,12 +1614,12 @@ type ProfilesApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest struct 
 	updateOrganizationConfigTemplateSwitchProfilePortRequest *UpdateOrganizationConfigTemplateSwitchProfilePortRequest
 }
 
-func (r ProfilesApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest) UpdateOrganizationConfigTemplateSwitchProfilePortRequest(updateOrganizationConfigTemplateSwitchProfilePortRequest UpdateOrganizationConfigTemplateSwitchProfilePortRequest) ProfilesApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest {
+func (r ProfilesAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest) UpdateOrganizationConfigTemplateSwitchProfilePortRequest(updateOrganizationConfigTemplateSwitchProfilePortRequest UpdateOrganizationConfigTemplateSwitchProfilePortRequest) ProfilesAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest {
 	r.updateOrganizationConfigTemplateSwitchProfilePortRequest = &updateOrganizationConfigTemplateSwitchProfilePortRequest
 	return r
 }
 
-func (r ProfilesApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest) Execute() (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
+func (r ProfilesAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest) Execute() (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationConfigTemplateSwitchProfilePortExecute(r)
 }
 
@@ -1633,10 +1633,10 @@ Update a switch template port
  @param configTemplateId Config template ID
  @param profileId Profile ID
  @param portId Port ID
- @return ProfilesApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest
+ @return ProfilesAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest
 */
-func (a *ProfilesApiService) UpdateOrganizationConfigTemplateSwitchProfilePort(ctx context.Context, organizationId string, configTemplateId string, profileId string, portId string) ProfilesApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest {
-	return ProfilesApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest{
+func (a *ProfilesAPIService) UpdateOrganizationConfigTemplateSwitchProfilePort(ctx context.Context, organizationId string, configTemplateId string, profileId string, portId string) ProfilesAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest {
+	return ProfilesAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1648,7 +1648,7 @@ func (a *ProfilesApiService) UpdateOrganizationConfigTemplateSwitchProfilePort(c
 
 // Execute executes the request
 //  @return GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner
-func (a *ProfilesApiService) UpdateOrganizationConfigTemplateSwitchProfilePortExecute(r ProfilesApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest) (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
+func (a *ProfilesAPIService) UpdateOrganizationConfigTemplateSwitchProfilePortExecute(r ProfilesAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest) (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1656,7 +1656,7 @@ func (a *ProfilesApiService) UpdateOrganizationConfigTemplateSwitchProfilePortEx
 		localVarReturnValue  *GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesApiService.UpdateOrganizationConfigTemplateSwitchProfilePort")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfilesAPIService.UpdateOrganizationConfigTemplateSwitchProfilePort")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing L7FirewallRulesApiService
+Testing L7FirewallRulesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_L7FirewallRulesApiService(t *testing.T) {
+func Test_client_L7FirewallRulesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test L7FirewallRulesApiService GetNetworkApplianceFirewallL7FirewallRules", func(t *testing.T) {
+	t.Run("Test L7FirewallRulesAPIService GetNetworkApplianceFirewallL7FirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.L7FirewallRulesApi.GetNetworkApplianceFirewallL7FirewallRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.L7FirewallRulesAPI.GetNetworkApplianceFirewallL7FirewallRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_L7FirewallRulesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test L7FirewallRulesApiService GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories", func(t *testing.T) {
+	t.Run("Test L7FirewallRulesAPIService GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.L7FirewallRulesApi.GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.L7FirewallRulesAPI.GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,14 +50,14 @@ func Test_client_L7FirewallRulesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test L7FirewallRulesApiService GetNetworkWirelessSsidFirewallL7FirewallRules", func(t *testing.T) {
+	t.Run("Test L7FirewallRulesAPIService GetNetworkWirelessSsidFirewallL7FirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.L7FirewallRulesApi.GetNetworkWirelessSsidFirewallL7FirewallRules(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.L7FirewallRulesAPI.GetNetworkWirelessSsidFirewallL7FirewallRules(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -65,13 +65,13 @@ func Test_client_L7FirewallRulesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test L7FirewallRulesApiService UpdateNetworkApplianceFirewallL7FirewallRules", func(t *testing.T) {
+	t.Run("Test L7FirewallRulesAPIService UpdateNetworkApplianceFirewallL7FirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.L7FirewallRulesApi.UpdateNetworkApplianceFirewallL7FirewallRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.L7FirewallRulesAPI.UpdateNetworkApplianceFirewallL7FirewallRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,14 +79,14 @@ func Test_client_L7FirewallRulesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test L7FirewallRulesApiService UpdateNetworkWirelessSsidFirewallL7FirewallRules", func(t *testing.T) {
+	t.Run("Test L7FirewallRulesAPIService UpdateNetworkWirelessSsidFirewallL7FirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.L7FirewallRulesApi.UpdateNetworkWirelessSsidFirewallL7FirewallRules(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.L7FirewallRulesAPI.UpdateNetworkWirelessSsidFirewallL7FirewallRules(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

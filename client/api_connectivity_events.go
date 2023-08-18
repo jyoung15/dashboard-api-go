@@ -21,12 +21,12 @@ import (
 )
 
 
-// ConnectivityEventsApiService ConnectivityEventsApi service
-type ConnectivityEventsApiService service
+// ConnectivityEventsAPIService ConnectivityEventsAPI service
+type ConnectivityEventsAPIService service
 
-type ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest struct {
+type ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest struct {
 	ctx context.Context
-	ApiService *ConnectivityEventsApiService
+	ApiService *ConnectivityEventsAPIService
 	networkId string
 	clientId string
 	perPage *int32
@@ -43,72 +43,72 @@ type ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest stru
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000.
-func (r ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest) PerPage(perPage int32) ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest) PerPage(perPage int32) ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest) StartingAfter(startingAfter string) ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest) StartingAfter(startingAfter string) ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest) EndingBefore(endingBefore string) ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest) EndingBefore(endingBefore string) ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest) T0(t0 string) ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest) T0(t0 string) ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest) T1(t1 string) ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest) T1(t1 string) ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest) Timespan(timespan float32) ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest) Timespan(timespan float32) ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // A list of event types to include. If not specified, events of all types will be returned. Valid types are &#39;assoc&#39;, &#39;disassoc&#39;, &#39;auth&#39;, &#39;deauth&#39;, &#39;dns&#39;, &#39;dhcp&#39;, &#39;roam&#39;, &#39;connection&#39; and/or &#39;sticky&#39;.
-func (r ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest) Types(types []string) ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest) Types(types []string) ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.types = &types
 	return r
 }
 
 // A list of severities to include. If not specified, events of all severities will be returned. Valid severities are &#39;good&#39;, &#39;info&#39;, &#39;warn&#39; and/or &#39;bad&#39;.
-func (r ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest) IncludedSeverities(includedSeverities []string) ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest) IncludedSeverities(includedSeverities []string) ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.includedSeverities = &includedSeverities
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39;, &#39;6&#39;).
-func (r ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest) Band(band string) ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest) Band(band string) ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.band = &band
 	return r
 }
 
 // An SSID number to include. If not specified, events for all SSIDs will be returned.
-func (r ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest) SsidNumber(ssidNumber int32) ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest) SsidNumber(ssidNumber int32) ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.ssidNumber = &ssidNumber
 	return r
 }
 
 // Filter results by an AP&#39;s serial number.
-func (r ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest) DeviceSerial(deviceSerial string) ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest) DeviceSerial(deviceSerial string) ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.deviceSerial = &deviceSerial
 	return r
 }
 
-func (r ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessClientConnectivityEventsExecute(r)
 }
 
@@ -120,10 +120,10 @@ List the wireless connectivity events for a client within a network in the times
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest
+ @return ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest
 */
-func (a *ConnectivityEventsApiService) GetNetworkWirelessClientConnectivityEvents(ctx context.Context, networkId string, clientId string) ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest {
-	return ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest{
+func (a *ConnectivityEventsAPIService) GetNetworkWirelessClientConnectivityEvents(ctx context.Context, networkId string, clientId string) ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest {
+	return ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -133,7 +133,7 @@ func (a *ConnectivityEventsApiService) GetNetworkWirelessClientConnectivityEvent
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ConnectivityEventsApiService) GetNetworkWirelessClientConnectivityEventsExecute(r ConnectivityEventsApiGetNetworkWirelessClientConnectivityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ConnectivityEventsAPIService) GetNetworkWirelessClientConnectivityEventsExecute(r ConnectivityEventsAPIGetNetworkWirelessClientConnectivityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -141,7 +141,7 @@ func (a *ConnectivityEventsApiService) GetNetworkWirelessClientConnectivityEvent
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectivityEventsApiService.GetNetworkWirelessClientConnectivityEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectivityEventsAPIService.GetNetworkWirelessClientConnectivityEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

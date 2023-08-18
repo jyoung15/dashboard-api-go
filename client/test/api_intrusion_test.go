@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing IntrusionApiService
+Testing IntrusionAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_IntrusionApiService(t *testing.T) {
+func Test_client_IntrusionAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test IntrusionApiService GetNetworkApplianceSecurityIntrusion", func(t *testing.T) {
+	t.Run("Test IntrusionAPIService GetNetworkApplianceSecurityIntrusion", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.IntrusionApi.GetNetworkApplianceSecurityIntrusion(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.IntrusionAPI.GetNetworkApplianceSecurityIntrusion(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_IntrusionApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test IntrusionApiService GetOrganizationApplianceSecurityIntrusion", func(t *testing.T) {
+	t.Run("Test IntrusionAPIService GetOrganizationApplianceSecurityIntrusion", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.IntrusionApi.GetOrganizationApplianceSecurityIntrusion(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.IntrusionAPI.GetOrganizationApplianceSecurityIntrusion(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,13 +50,13 @@ func Test_client_IntrusionApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test IntrusionApiService UpdateNetworkApplianceSecurityIntrusion", func(t *testing.T) {
+	t.Run("Test IntrusionAPIService UpdateNetworkApplianceSecurityIntrusion", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.IntrusionApi.UpdateNetworkApplianceSecurityIntrusion(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.IntrusionAPI.UpdateNetworkApplianceSecurityIntrusion(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,13 +64,13 @@ func Test_client_IntrusionApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test IntrusionApiService UpdateOrganizationApplianceSecurityIntrusion", func(t *testing.T) {
+	t.Run("Test IntrusionAPIService UpdateOrganizationApplianceSecurityIntrusion", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.IntrusionApi.UpdateOrganizationApplianceSecurityIntrusion(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.IntrusionAPI.UpdateOrganizationApplianceSecurityIntrusion(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

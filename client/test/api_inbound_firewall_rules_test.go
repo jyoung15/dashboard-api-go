@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing InboundFirewallRulesApiService
+Testing InboundFirewallRulesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_InboundFirewallRulesApiService(t *testing.T) {
+func Test_client_InboundFirewallRulesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test InboundFirewallRulesApiService GetNetworkApplianceFirewallInboundFirewallRules", func(t *testing.T) {
+	t.Run("Test InboundFirewallRulesAPIService GetNetworkApplianceFirewallInboundFirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.InboundFirewallRulesApi.GetNetworkApplianceFirewallInboundFirewallRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.InboundFirewallRulesAPI.GetNetworkApplianceFirewallInboundFirewallRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_InboundFirewallRulesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test InboundFirewallRulesApiService UpdateNetworkApplianceFirewallInboundFirewallRules", func(t *testing.T) {
+	t.Run("Test InboundFirewallRulesAPIService UpdateNetworkApplianceFirewallInboundFirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.InboundFirewallRulesApi.UpdateNetworkApplianceFirewallInboundFirewallRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.InboundFirewallRulesAPI.UpdateNetworkApplianceFirewallInboundFirewallRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

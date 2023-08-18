@@ -20,22 +20,22 @@ import (
 )
 
 
-// SamlApiService SamlApi service
-type SamlApiService service
+// SamlAPIService SamlAPI service
+type SamlAPIService service
 
-type SamlApiCreateOrganizationSamlIdpRequest struct {
+type SamlAPICreateOrganizationSamlIdpRequest struct {
 	ctx context.Context
-	ApiService *SamlApiService
+	ApiService *SamlAPIService
 	organizationId string
 	createOrganizationSamlIdpRequest *CreateOrganizationSamlIdpRequest
 }
 
-func (r SamlApiCreateOrganizationSamlIdpRequest) CreateOrganizationSamlIdpRequest(createOrganizationSamlIdpRequest CreateOrganizationSamlIdpRequest) SamlApiCreateOrganizationSamlIdpRequest {
+func (r SamlAPICreateOrganizationSamlIdpRequest) CreateOrganizationSamlIdpRequest(createOrganizationSamlIdpRequest CreateOrganizationSamlIdpRequest) SamlAPICreateOrganizationSamlIdpRequest {
 	r.createOrganizationSamlIdpRequest = &createOrganizationSamlIdpRequest
 	return r
 }
 
-func (r SamlApiCreateOrganizationSamlIdpRequest) Execute() ([]GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
+func (r SamlAPICreateOrganizationSamlIdpRequest) Execute() ([]GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateOrganizationSamlIdpExecute(r)
 }
 
@@ -46,10 +46,10 @@ Create a SAML IdP for your organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return SamlApiCreateOrganizationSamlIdpRequest
+ @return SamlAPICreateOrganizationSamlIdpRequest
 */
-func (a *SamlApiService) CreateOrganizationSamlIdp(ctx context.Context, organizationId string) SamlApiCreateOrganizationSamlIdpRequest {
-	return SamlApiCreateOrganizationSamlIdpRequest{
+func (a *SamlAPIService) CreateOrganizationSamlIdp(ctx context.Context, organizationId string) SamlAPICreateOrganizationSamlIdpRequest {
+	return SamlAPICreateOrganizationSamlIdpRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -58,7 +58,7 @@ func (a *SamlApiService) CreateOrganizationSamlIdp(ctx context.Context, organiza
 
 // Execute executes the request
 //  @return []GetOrganizationSamlIdps200ResponseInner
-func (a *SamlApiService) CreateOrganizationSamlIdpExecute(r SamlApiCreateOrganizationSamlIdpRequest) ([]GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
+func (a *SamlAPIService) CreateOrganizationSamlIdpExecute(r SamlAPICreateOrganizationSamlIdpRequest) ([]GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *SamlApiService) CreateOrganizationSamlIdpExecute(r SamlApiCreateOrganiz
 		localVarReturnValue  []GetOrganizationSamlIdps200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SamlApiService.CreateOrganizationSamlIdp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SamlAPIService.CreateOrganizationSamlIdp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,14 +151,14 @@ func (a *SamlApiService) CreateOrganizationSamlIdpExecute(r SamlApiCreateOrganiz
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SamlApiDeleteOrganizationSamlIdpRequest struct {
+type SamlAPIDeleteOrganizationSamlIdpRequest struct {
 	ctx context.Context
-	ApiService *SamlApiService
+	ApiService *SamlAPIService
 	organizationId string
 	idpId string
 }
 
-func (r SamlApiDeleteOrganizationSamlIdpRequest) Execute() (*http.Response, error) {
+func (r SamlAPIDeleteOrganizationSamlIdpRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationSamlIdpExecute(r)
 }
 
@@ -170,10 +170,10 @@ Remove a SAML IdP in your organization.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param idpId Idp ID
- @return SamlApiDeleteOrganizationSamlIdpRequest
+ @return SamlAPIDeleteOrganizationSamlIdpRequest
 */
-func (a *SamlApiService) DeleteOrganizationSamlIdp(ctx context.Context, organizationId string, idpId string) SamlApiDeleteOrganizationSamlIdpRequest {
-	return SamlApiDeleteOrganizationSamlIdpRequest{
+func (a *SamlAPIService) DeleteOrganizationSamlIdp(ctx context.Context, organizationId string, idpId string) SamlAPIDeleteOrganizationSamlIdpRequest {
+	return SamlAPIDeleteOrganizationSamlIdpRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -182,14 +182,14 @@ func (a *SamlApiService) DeleteOrganizationSamlIdp(ctx context.Context, organiza
 }
 
 // Execute executes the request
-func (a *SamlApiService) DeleteOrganizationSamlIdpExecute(r SamlApiDeleteOrganizationSamlIdpRequest) (*http.Response, error) {
+func (a *SamlAPIService) DeleteOrganizationSamlIdpExecute(r SamlAPIDeleteOrganizationSamlIdpRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SamlApiService.DeleteOrganizationSamlIdp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SamlAPIService.DeleteOrganizationSamlIdp")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -261,13 +261,13 @@ func (a *SamlApiService) DeleteOrganizationSamlIdpExecute(r SamlApiDeleteOrganiz
 	return localVarHTTPResponse, nil
 }
 
-type SamlApiGetOrganizationSamlRequest struct {
+type SamlAPIGetOrganizationSamlRequest struct {
 	ctx context.Context
-	ApiService *SamlApiService
+	ApiService *SamlAPIService
 	organizationId string
 }
 
-func (r SamlApiGetOrganizationSamlRequest) Execute() (*GetOrganizationSaml200Response, *http.Response, error) {
+func (r SamlAPIGetOrganizationSamlRequest) Execute() (*GetOrganizationSaml200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationSamlExecute(r)
 }
 
@@ -278,10 +278,10 @@ Returns the SAML SSO enabled settings for an organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return SamlApiGetOrganizationSamlRequest
+ @return SamlAPIGetOrganizationSamlRequest
 */
-func (a *SamlApiService) GetOrganizationSaml(ctx context.Context, organizationId string) SamlApiGetOrganizationSamlRequest {
-	return SamlApiGetOrganizationSamlRequest{
+func (a *SamlAPIService) GetOrganizationSaml(ctx context.Context, organizationId string) SamlAPIGetOrganizationSamlRequest {
+	return SamlAPIGetOrganizationSamlRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -290,7 +290,7 @@ func (a *SamlApiService) GetOrganizationSaml(ctx context.Context, organizationId
 
 // Execute executes the request
 //  @return GetOrganizationSaml200Response
-func (a *SamlApiService) GetOrganizationSamlExecute(r SamlApiGetOrganizationSamlRequest) (*GetOrganizationSaml200Response, *http.Response, error) {
+func (a *SamlAPIService) GetOrganizationSamlExecute(r SamlAPIGetOrganizationSamlRequest) (*GetOrganizationSaml200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -298,7 +298,7 @@ func (a *SamlApiService) GetOrganizationSamlExecute(r SamlApiGetOrganizationSaml
 		localVarReturnValue  *GetOrganizationSaml200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SamlApiService.GetOrganizationSaml")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SamlAPIService.GetOrganizationSaml")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -378,14 +378,14 @@ func (a *SamlApiService) GetOrganizationSamlExecute(r SamlApiGetOrganizationSaml
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SamlApiGetOrganizationSamlIdpRequest struct {
+type SamlAPIGetOrganizationSamlIdpRequest struct {
 	ctx context.Context
-	ApiService *SamlApiService
+	ApiService *SamlAPIService
 	organizationId string
 	idpId string
 }
 
-func (r SamlApiGetOrganizationSamlIdpRequest) Execute() (*GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
+func (r SamlAPIGetOrganizationSamlIdpRequest) Execute() (*GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSamlIdpExecute(r)
 }
 
@@ -397,10 +397,10 @@ Get a SAML IdP from your organization.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param idpId Idp ID
- @return SamlApiGetOrganizationSamlIdpRequest
+ @return SamlAPIGetOrganizationSamlIdpRequest
 */
-func (a *SamlApiService) GetOrganizationSamlIdp(ctx context.Context, organizationId string, idpId string) SamlApiGetOrganizationSamlIdpRequest {
-	return SamlApiGetOrganizationSamlIdpRequest{
+func (a *SamlAPIService) GetOrganizationSamlIdp(ctx context.Context, organizationId string, idpId string) SamlAPIGetOrganizationSamlIdpRequest {
+	return SamlAPIGetOrganizationSamlIdpRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -410,7 +410,7 @@ func (a *SamlApiService) GetOrganizationSamlIdp(ctx context.Context, organizatio
 
 // Execute executes the request
 //  @return GetOrganizationSamlIdps200ResponseInner
-func (a *SamlApiService) GetOrganizationSamlIdpExecute(r SamlApiGetOrganizationSamlIdpRequest) (*GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
+func (a *SamlAPIService) GetOrganizationSamlIdpExecute(r SamlAPIGetOrganizationSamlIdpRequest) (*GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -418,7 +418,7 @@ func (a *SamlApiService) GetOrganizationSamlIdpExecute(r SamlApiGetOrganizationS
 		localVarReturnValue  *GetOrganizationSamlIdps200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SamlApiService.GetOrganizationSamlIdp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SamlAPIService.GetOrganizationSamlIdp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -499,13 +499,13 @@ func (a *SamlApiService) GetOrganizationSamlIdpExecute(r SamlApiGetOrganizationS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SamlApiGetOrganizationSamlIdpsRequest struct {
+type SamlAPIGetOrganizationSamlIdpsRequest struct {
 	ctx context.Context
-	ApiService *SamlApiService
+	ApiService *SamlAPIService
 	organizationId string
 }
 
-func (r SamlApiGetOrganizationSamlIdpsRequest) Execute() ([]GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
+func (r SamlAPIGetOrganizationSamlIdpsRequest) Execute() ([]GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSamlIdpsExecute(r)
 }
 
@@ -516,10 +516,10 @@ List the SAML IdPs in your organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return SamlApiGetOrganizationSamlIdpsRequest
+ @return SamlAPIGetOrganizationSamlIdpsRequest
 */
-func (a *SamlApiService) GetOrganizationSamlIdps(ctx context.Context, organizationId string) SamlApiGetOrganizationSamlIdpsRequest {
-	return SamlApiGetOrganizationSamlIdpsRequest{
+func (a *SamlAPIService) GetOrganizationSamlIdps(ctx context.Context, organizationId string) SamlAPIGetOrganizationSamlIdpsRequest {
+	return SamlAPIGetOrganizationSamlIdpsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -528,7 +528,7 @@ func (a *SamlApiService) GetOrganizationSamlIdps(ctx context.Context, organizati
 
 // Execute executes the request
 //  @return []GetOrganizationSamlIdps200ResponseInner
-func (a *SamlApiService) GetOrganizationSamlIdpsExecute(r SamlApiGetOrganizationSamlIdpsRequest) ([]GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
+func (a *SamlAPIService) GetOrganizationSamlIdpsExecute(r SamlAPIGetOrganizationSamlIdpsRequest) ([]GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -536,7 +536,7 @@ func (a *SamlApiService) GetOrganizationSamlIdpsExecute(r SamlApiGetOrganization
 		localVarReturnValue  []GetOrganizationSamlIdps200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SamlApiService.GetOrganizationSamlIdps")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SamlAPIService.GetOrganizationSamlIdps")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -616,19 +616,19 @@ func (a *SamlApiService) GetOrganizationSamlIdpsExecute(r SamlApiGetOrganization
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SamlApiUpdateOrganizationSamlRequest struct {
+type SamlAPIUpdateOrganizationSamlRequest struct {
 	ctx context.Context
-	ApiService *SamlApiService
+	ApiService *SamlAPIService
 	organizationId string
 	updateOrganizationSamlRequest *UpdateOrganizationSamlRequest
 }
 
-func (r SamlApiUpdateOrganizationSamlRequest) UpdateOrganizationSamlRequest(updateOrganizationSamlRequest UpdateOrganizationSamlRequest) SamlApiUpdateOrganizationSamlRequest {
+func (r SamlAPIUpdateOrganizationSamlRequest) UpdateOrganizationSamlRequest(updateOrganizationSamlRequest UpdateOrganizationSamlRequest) SamlAPIUpdateOrganizationSamlRequest {
 	r.updateOrganizationSamlRequest = &updateOrganizationSamlRequest
 	return r
 }
 
-func (r SamlApiUpdateOrganizationSamlRequest) Execute() (*GetOrganizationSaml200Response, *http.Response, error) {
+func (r SamlAPIUpdateOrganizationSamlRequest) Execute() (*GetOrganizationSaml200Response, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationSamlExecute(r)
 }
 
@@ -639,10 +639,10 @@ Updates the SAML SSO enabled settings for an organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return SamlApiUpdateOrganizationSamlRequest
+ @return SamlAPIUpdateOrganizationSamlRequest
 */
-func (a *SamlApiService) UpdateOrganizationSaml(ctx context.Context, organizationId string) SamlApiUpdateOrganizationSamlRequest {
-	return SamlApiUpdateOrganizationSamlRequest{
+func (a *SamlAPIService) UpdateOrganizationSaml(ctx context.Context, organizationId string) SamlAPIUpdateOrganizationSamlRequest {
+	return SamlAPIUpdateOrganizationSamlRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -651,7 +651,7 @@ func (a *SamlApiService) UpdateOrganizationSaml(ctx context.Context, organizatio
 
 // Execute executes the request
 //  @return GetOrganizationSaml200Response
-func (a *SamlApiService) UpdateOrganizationSamlExecute(r SamlApiUpdateOrganizationSamlRequest) (*GetOrganizationSaml200Response, *http.Response, error) {
+func (a *SamlAPIService) UpdateOrganizationSamlExecute(r SamlAPIUpdateOrganizationSamlRequest) (*GetOrganizationSaml200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -659,7 +659,7 @@ func (a *SamlApiService) UpdateOrganizationSamlExecute(r SamlApiUpdateOrganizati
 		localVarReturnValue  *GetOrganizationSaml200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SamlApiService.UpdateOrganizationSaml")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SamlAPIService.UpdateOrganizationSaml")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -741,20 +741,20 @@ func (a *SamlApiService) UpdateOrganizationSamlExecute(r SamlApiUpdateOrganizati
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SamlApiUpdateOrganizationSamlIdpRequest struct {
+type SamlAPIUpdateOrganizationSamlIdpRequest struct {
 	ctx context.Context
-	ApiService *SamlApiService
+	ApiService *SamlAPIService
 	organizationId string
 	idpId string
 	updateOrganizationSamlIdpRequest *UpdateOrganizationSamlIdpRequest
 }
 
-func (r SamlApiUpdateOrganizationSamlIdpRequest) UpdateOrganizationSamlIdpRequest(updateOrganizationSamlIdpRequest UpdateOrganizationSamlIdpRequest) SamlApiUpdateOrganizationSamlIdpRequest {
+func (r SamlAPIUpdateOrganizationSamlIdpRequest) UpdateOrganizationSamlIdpRequest(updateOrganizationSamlIdpRequest UpdateOrganizationSamlIdpRequest) SamlAPIUpdateOrganizationSamlIdpRequest {
 	r.updateOrganizationSamlIdpRequest = &updateOrganizationSamlIdpRequest
 	return r
 }
 
-func (r SamlApiUpdateOrganizationSamlIdpRequest) Execute() ([]GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
+func (r SamlAPIUpdateOrganizationSamlIdpRequest) Execute() ([]GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationSamlIdpExecute(r)
 }
 
@@ -766,10 +766,10 @@ Update a SAML IdP in your organization
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param idpId Idp ID
- @return SamlApiUpdateOrganizationSamlIdpRequest
+ @return SamlAPIUpdateOrganizationSamlIdpRequest
 */
-func (a *SamlApiService) UpdateOrganizationSamlIdp(ctx context.Context, organizationId string, idpId string) SamlApiUpdateOrganizationSamlIdpRequest {
-	return SamlApiUpdateOrganizationSamlIdpRequest{
+func (a *SamlAPIService) UpdateOrganizationSamlIdp(ctx context.Context, organizationId string, idpId string) SamlAPIUpdateOrganizationSamlIdpRequest {
+	return SamlAPIUpdateOrganizationSamlIdpRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -779,7 +779,7 @@ func (a *SamlApiService) UpdateOrganizationSamlIdp(ctx context.Context, organiza
 
 // Execute executes the request
 //  @return []GetOrganizationSamlIdps200ResponseInner
-func (a *SamlApiService) UpdateOrganizationSamlIdpExecute(r SamlApiUpdateOrganizationSamlIdpRequest) ([]GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
+func (a *SamlAPIService) UpdateOrganizationSamlIdpExecute(r SamlAPIUpdateOrganizationSamlIdpRequest) ([]GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -787,7 +787,7 @@ func (a *SamlApiService) UpdateOrganizationSamlIdpExecute(r SamlApiUpdateOrganiz
 		localVarReturnValue  []GetOrganizationSamlIdps200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SamlApiService.UpdateOrganizationSamlIdp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SamlAPIService.UpdateOrganizationSamlIdp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -20,22 +20,22 @@ import (
 )
 
 
-// PolicyObjectsApiService PolicyObjectsApi service
-type PolicyObjectsApiService service
+// PolicyObjectsAPIService PolicyObjectsAPI service
+type PolicyObjectsAPIService service
 
-type PolicyObjectsApiCreateOrganizationPolicyObjectRequest struct {
+type PolicyObjectsAPICreateOrganizationPolicyObjectRequest struct {
 	ctx context.Context
-	ApiService *PolicyObjectsApiService
+	ApiService *PolicyObjectsAPIService
 	organizationId string
 	createOrganizationPolicyObjectRequest *CreateOrganizationPolicyObjectRequest
 }
 
-func (r PolicyObjectsApiCreateOrganizationPolicyObjectRequest) CreateOrganizationPolicyObjectRequest(createOrganizationPolicyObjectRequest CreateOrganizationPolicyObjectRequest) PolicyObjectsApiCreateOrganizationPolicyObjectRequest {
+func (r PolicyObjectsAPICreateOrganizationPolicyObjectRequest) CreateOrganizationPolicyObjectRequest(createOrganizationPolicyObjectRequest CreateOrganizationPolicyObjectRequest) PolicyObjectsAPICreateOrganizationPolicyObjectRequest {
 	r.createOrganizationPolicyObjectRequest = &createOrganizationPolicyObjectRequest
 	return r
 }
 
-func (r PolicyObjectsApiCreateOrganizationPolicyObjectRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r PolicyObjectsAPICreateOrganizationPolicyObjectRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateOrganizationPolicyObjectExecute(r)
 }
 
@@ -46,10 +46,10 @@ Creates a new Policy Object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return PolicyObjectsApiCreateOrganizationPolicyObjectRequest
+ @return PolicyObjectsAPICreateOrganizationPolicyObjectRequest
 */
-func (a *PolicyObjectsApiService) CreateOrganizationPolicyObject(ctx context.Context, organizationId string) PolicyObjectsApiCreateOrganizationPolicyObjectRequest {
-	return PolicyObjectsApiCreateOrganizationPolicyObjectRequest{
+func (a *PolicyObjectsAPIService) CreateOrganizationPolicyObject(ctx context.Context, organizationId string) PolicyObjectsAPICreateOrganizationPolicyObjectRequest {
+	return PolicyObjectsAPICreateOrganizationPolicyObjectRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -58,7 +58,7 @@ func (a *PolicyObjectsApiService) CreateOrganizationPolicyObject(ctx context.Con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PolicyObjectsApiService) CreateOrganizationPolicyObjectExecute(r PolicyObjectsApiCreateOrganizationPolicyObjectRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PolicyObjectsAPIService) CreateOrganizationPolicyObjectExecute(r PolicyObjectsAPICreateOrganizationPolicyObjectRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *PolicyObjectsApiService) CreateOrganizationPolicyObjectExecute(r Policy
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PolicyObjectsApiService.CreateOrganizationPolicyObject")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PolicyObjectsAPIService.CreateOrganizationPolicyObject")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,19 +151,19 @@ func (a *PolicyObjectsApiService) CreateOrganizationPolicyObjectExecute(r Policy
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PolicyObjectsApiCreateOrganizationPolicyObjectsGroupRequest struct {
+type PolicyObjectsAPICreateOrganizationPolicyObjectsGroupRequest struct {
 	ctx context.Context
-	ApiService *PolicyObjectsApiService
+	ApiService *PolicyObjectsAPIService
 	organizationId string
 	createOrganizationPolicyObjectsGroupRequest *CreateOrganizationPolicyObjectsGroupRequest
 }
 
-func (r PolicyObjectsApiCreateOrganizationPolicyObjectsGroupRequest) CreateOrganizationPolicyObjectsGroupRequest(createOrganizationPolicyObjectsGroupRequest CreateOrganizationPolicyObjectsGroupRequest) PolicyObjectsApiCreateOrganizationPolicyObjectsGroupRequest {
+func (r PolicyObjectsAPICreateOrganizationPolicyObjectsGroupRequest) CreateOrganizationPolicyObjectsGroupRequest(createOrganizationPolicyObjectsGroupRequest CreateOrganizationPolicyObjectsGroupRequest) PolicyObjectsAPICreateOrganizationPolicyObjectsGroupRequest {
 	r.createOrganizationPolicyObjectsGroupRequest = &createOrganizationPolicyObjectsGroupRequest
 	return r
 }
 
-func (r PolicyObjectsApiCreateOrganizationPolicyObjectsGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r PolicyObjectsAPICreateOrganizationPolicyObjectsGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateOrganizationPolicyObjectsGroupExecute(r)
 }
 
@@ -174,10 +174,10 @@ Creates a new Policy Object Group.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return PolicyObjectsApiCreateOrganizationPolicyObjectsGroupRequest
+ @return PolicyObjectsAPICreateOrganizationPolicyObjectsGroupRequest
 */
-func (a *PolicyObjectsApiService) CreateOrganizationPolicyObjectsGroup(ctx context.Context, organizationId string) PolicyObjectsApiCreateOrganizationPolicyObjectsGroupRequest {
-	return PolicyObjectsApiCreateOrganizationPolicyObjectsGroupRequest{
+func (a *PolicyObjectsAPIService) CreateOrganizationPolicyObjectsGroup(ctx context.Context, organizationId string) PolicyObjectsAPICreateOrganizationPolicyObjectsGroupRequest {
+	return PolicyObjectsAPICreateOrganizationPolicyObjectsGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -186,7 +186,7 @@ func (a *PolicyObjectsApiService) CreateOrganizationPolicyObjectsGroup(ctx conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PolicyObjectsApiService) CreateOrganizationPolicyObjectsGroupExecute(r PolicyObjectsApiCreateOrganizationPolicyObjectsGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PolicyObjectsAPIService) CreateOrganizationPolicyObjectsGroupExecute(r PolicyObjectsAPICreateOrganizationPolicyObjectsGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -194,7 +194,7 @@ func (a *PolicyObjectsApiService) CreateOrganizationPolicyObjectsGroupExecute(r 
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PolicyObjectsApiService.CreateOrganizationPolicyObjectsGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PolicyObjectsAPIService.CreateOrganizationPolicyObjectsGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -279,14 +279,14 @@ func (a *PolicyObjectsApiService) CreateOrganizationPolicyObjectsGroupExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PolicyObjectsApiDeleteOrganizationPolicyObjectRequest struct {
+type PolicyObjectsAPIDeleteOrganizationPolicyObjectRequest struct {
 	ctx context.Context
-	ApiService *PolicyObjectsApiService
+	ApiService *PolicyObjectsAPIService
 	organizationId string
 	policyObjectId string
 }
 
-func (r PolicyObjectsApiDeleteOrganizationPolicyObjectRequest) Execute() (*http.Response, error) {
+func (r PolicyObjectsAPIDeleteOrganizationPolicyObjectRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationPolicyObjectExecute(r)
 }
 
@@ -298,10 +298,10 @@ Deletes a Policy Object.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param policyObjectId Policy object ID
- @return PolicyObjectsApiDeleteOrganizationPolicyObjectRequest
+ @return PolicyObjectsAPIDeleteOrganizationPolicyObjectRequest
 */
-func (a *PolicyObjectsApiService) DeleteOrganizationPolicyObject(ctx context.Context, organizationId string, policyObjectId string) PolicyObjectsApiDeleteOrganizationPolicyObjectRequest {
-	return PolicyObjectsApiDeleteOrganizationPolicyObjectRequest{
+func (a *PolicyObjectsAPIService) DeleteOrganizationPolicyObject(ctx context.Context, organizationId string, policyObjectId string) PolicyObjectsAPIDeleteOrganizationPolicyObjectRequest {
+	return PolicyObjectsAPIDeleteOrganizationPolicyObjectRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -310,14 +310,14 @@ func (a *PolicyObjectsApiService) DeleteOrganizationPolicyObject(ctx context.Con
 }
 
 // Execute executes the request
-func (a *PolicyObjectsApiService) DeleteOrganizationPolicyObjectExecute(r PolicyObjectsApiDeleteOrganizationPolicyObjectRequest) (*http.Response, error) {
+func (a *PolicyObjectsAPIService) DeleteOrganizationPolicyObjectExecute(r PolicyObjectsAPIDeleteOrganizationPolicyObjectRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PolicyObjectsApiService.DeleteOrganizationPolicyObject")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PolicyObjectsAPIService.DeleteOrganizationPolicyObject")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -389,14 +389,14 @@ func (a *PolicyObjectsApiService) DeleteOrganizationPolicyObjectExecute(r Policy
 	return localVarHTTPResponse, nil
 }
 
-type PolicyObjectsApiDeleteOrganizationPolicyObjectsGroupRequest struct {
+type PolicyObjectsAPIDeleteOrganizationPolicyObjectsGroupRequest struct {
 	ctx context.Context
-	ApiService *PolicyObjectsApiService
+	ApiService *PolicyObjectsAPIService
 	organizationId string
 	policyObjectGroupId string
 }
 
-func (r PolicyObjectsApiDeleteOrganizationPolicyObjectsGroupRequest) Execute() (*http.Response, error) {
+func (r PolicyObjectsAPIDeleteOrganizationPolicyObjectsGroupRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationPolicyObjectsGroupExecute(r)
 }
 
@@ -408,10 +408,10 @@ Deletes a Policy Object Group.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param policyObjectGroupId Policy object group ID
- @return PolicyObjectsApiDeleteOrganizationPolicyObjectsGroupRequest
+ @return PolicyObjectsAPIDeleteOrganizationPolicyObjectsGroupRequest
 */
-func (a *PolicyObjectsApiService) DeleteOrganizationPolicyObjectsGroup(ctx context.Context, organizationId string, policyObjectGroupId string) PolicyObjectsApiDeleteOrganizationPolicyObjectsGroupRequest {
-	return PolicyObjectsApiDeleteOrganizationPolicyObjectsGroupRequest{
+func (a *PolicyObjectsAPIService) DeleteOrganizationPolicyObjectsGroup(ctx context.Context, organizationId string, policyObjectGroupId string) PolicyObjectsAPIDeleteOrganizationPolicyObjectsGroupRequest {
+	return PolicyObjectsAPIDeleteOrganizationPolicyObjectsGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -420,14 +420,14 @@ func (a *PolicyObjectsApiService) DeleteOrganizationPolicyObjectsGroup(ctx conte
 }
 
 // Execute executes the request
-func (a *PolicyObjectsApiService) DeleteOrganizationPolicyObjectsGroupExecute(r PolicyObjectsApiDeleteOrganizationPolicyObjectsGroupRequest) (*http.Response, error) {
+func (a *PolicyObjectsAPIService) DeleteOrganizationPolicyObjectsGroupExecute(r PolicyObjectsAPIDeleteOrganizationPolicyObjectsGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PolicyObjectsApiService.DeleteOrganizationPolicyObjectsGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PolicyObjectsAPIService.DeleteOrganizationPolicyObjectsGroup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -499,14 +499,14 @@ func (a *PolicyObjectsApiService) DeleteOrganizationPolicyObjectsGroupExecute(r 
 	return localVarHTTPResponse, nil
 }
 
-type PolicyObjectsApiGetOrganizationPolicyObjectRequest struct {
+type PolicyObjectsAPIGetOrganizationPolicyObjectRequest struct {
 	ctx context.Context
-	ApiService *PolicyObjectsApiService
+	ApiService *PolicyObjectsAPIService
 	organizationId string
 	policyObjectId string
 }
 
-func (r PolicyObjectsApiGetOrganizationPolicyObjectRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r PolicyObjectsAPIGetOrganizationPolicyObjectRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationPolicyObjectExecute(r)
 }
 
@@ -518,10 +518,10 @@ Shows details of a Policy Object.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param policyObjectId Policy object ID
- @return PolicyObjectsApiGetOrganizationPolicyObjectRequest
+ @return PolicyObjectsAPIGetOrganizationPolicyObjectRequest
 */
-func (a *PolicyObjectsApiService) GetOrganizationPolicyObject(ctx context.Context, organizationId string, policyObjectId string) PolicyObjectsApiGetOrganizationPolicyObjectRequest {
-	return PolicyObjectsApiGetOrganizationPolicyObjectRequest{
+func (a *PolicyObjectsAPIService) GetOrganizationPolicyObject(ctx context.Context, organizationId string, policyObjectId string) PolicyObjectsAPIGetOrganizationPolicyObjectRequest {
+	return PolicyObjectsAPIGetOrganizationPolicyObjectRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -531,7 +531,7 @@ func (a *PolicyObjectsApiService) GetOrganizationPolicyObject(ctx context.Contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PolicyObjectsApiService) GetOrganizationPolicyObjectExecute(r PolicyObjectsApiGetOrganizationPolicyObjectRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PolicyObjectsAPIService) GetOrganizationPolicyObjectExecute(r PolicyObjectsAPIGetOrganizationPolicyObjectRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -539,7 +539,7 @@ func (a *PolicyObjectsApiService) GetOrganizationPolicyObjectExecute(r PolicyObj
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PolicyObjectsApiService.GetOrganizationPolicyObject")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PolicyObjectsAPIService.GetOrganizationPolicyObject")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -620,9 +620,9 @@ func (a *PolicyObjectsApiService) GetOrganizationPolicyObjectExecute(r PolicyObj
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PolicyObjectsApiGetOrganizationPolicyObjectsRequest struct {
+type PolicyObjectsAPIGetOrganizationPolicyObjectsRequest struct {
 	ctx context.Context
-	ApiService *PolicyObjectsApiService
+	ApiService *PolicyObjectsAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -630,24 +630,24 @@ type PolicyObjectsApiGetOrganizationPolicyObjectsRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 10 - 5000. Default is 5000.
-func (r PolicyObjectsApiGetOrganizationPolicyObjectsRequest) PerPage(perPage int32) PolicyObjectsApiGetOrganizationPolicyObjectsRequest {
+func (r PolicyObjectsAPIGetOrganizationPolicyObjectsRequest) PerPage(perPage int32) PolicyObjectsAPIGetOrganizationPolicyObjectsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r PolicyObjectsApiGetOrganizationPolicyObjectsRequest) StartingAfter(startingAfter string) PolicyObjectsApiGetOrganizationPolicyObjectsRequest {
+func (r PolicyObjectsAPIGetOrganizationPolicyObjectsRequest) StartingAfter(startingAfter string) PolicyObjectsAPIGetOrganizationPolicyObjectsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r PolicyObjectsApiGetOrganizationPolicyObjectsRequest) EndingBefore(endingBefore string) PolicyObjectsApiGetOrganizationPolicyObjectsRequest {
+func (r PolicyObjectsAPIGetOrganizationPolicyObjectsRequest) EndingBefore(endingBefore string) PolicyObjectsAPIGetOrganizationPolicyObjectsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r PolicyObjectsApiGetOrganizationPolicyObjectsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r PolicyObjectsAPIGetOrganizationPolicyObjectsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationPolicyObjectsExecute(r)
 }
 
@@ -658,10 +658,10 @@ Lists Policy Objects belonging to the organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return PolicyObjectsApiGetOrganizationPolicyObjectsRequest
+ @return PolicyObjectsAPIGetOrganizationPolicyObjectsRequest
 */
-func (a *PolicyObjectsApiService) GetOrganizationPolicyObjects(ctx context.Context, organizationId string) PolicyObjectsApiGetOrganizationPolicyObjectsRequest {
-	return PolicyObjectsApiGetOrganizationPolicyObjectsRequest{
+func (a *PolicyObjectsAPIService) GetOrganizationPolicyObjects(ctx context.Context, organizationId string) PolicyObjectsAPIGetOrganizationPolicyObjectsRequest {
+	return PolicyObjectsAPIGetOrganizationPolicyObjectsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -670,7 +670,7 @@ func (a *PolicyObjectsApiService) GetOrganizationPolicyObjects(ctx context.Conte
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *PolicyObjectsApiService) GetOrganizationPolicyObjectsExecute(r PolicyObjectsApiGetOrganizationPolicyObjectsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *PolicyObjectsAPIService) GetOrganizationPolicyObjectsExecute(r PolicyObjectsAPIGetOrganizationPolicyObjectsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -678,7 +678,7 @@ func (a *PolicyObjectsApiService) GetOrganizationPolicyObjectsExecute(r PolicyOb
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PolicyObjectsApiService.GetOrganizationPolicyObjects")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PolicyObjectsAPIService.GetOrganizationPolicyObjects")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -767,14 +767,14 @@ func (a *PolicyObjectsApiService) GetOrganizationPolicyObjectsExecute(r PolicyOb
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PolicyObjectsApiGetOrganizationPolicyObjectsGroupRequest struct {
+type PolicyObjectsAPIGetOrganizationPolicyObjectsGroupRequest struct {
 	ctx context.Context
-	ApiService *PolicyObjectsApiService
+	ApiService *PolicyObjectsAPIService
 	organizationId string
 	policyObjectGroupId string
 }
 
-func (r PolicyObjectsApiGetOrganizationPolicyObjectsGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r PolicyObjectsAPIGetOrganizationPolicyObjectsGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationPolicyObjectsGroupExecute(r)
 }
 
@@ -786,10 +786,10 @@ Shows details of a Policy Object Group.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param policyObjectGroupId Policy object group ID
- @return PolicyObjectsApiGetOrganizationPolicyObjectsGroupRequest
+ @return PolicyObjectsAPIGetOrganizationPolicyObjectsGroupRequest
 */
-func (a *PolicyObjectsApiService) GetOrganizationPolicyObjectsGroup(ctx context.Context, organizationId string, policyObjectGroupId string) PolicyObjectsApiGetOrganizationPolicyObjectsGroupRequest {
-	return PolicyObjectsApiGetOrganizationPolicyObjectsGroupRequest{
+func (a *PolicyObjectsAPIService) GetOrganizationPolicyObjectsGroup(ctx context.Context, organizationId string, policyObjectGroupId string) PolicyObjectsAPIGetOrganizationPolicyObjectsGroupRequest {
+	return PolicyObjectsAPIGetOrganizationPolicyObjectsGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -799,7 +799,7 @@ func (a *PolicyObjectsApiService) GetOrganizationPolicyObjectsGroup(ctx context.
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PolicyObjectsApiService) GetOrganizationPolicyObjectsGroupExecute(r PolicyObjectsApiGetOrganizationPolicyObjectsGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PolicyObjectsAPIService) GetOrganizationPolicyObjectsGroupExecute(r PolicyObjectsAPIGetOrganizationPolicyObjectsGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -807,7 +807,7 @@ func (a *PolicyObjectsApiService) GetOrganizationPolicyObjectsGroupExecute(r Pol
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PolicyObjectsApiService.GetOrganizationPolicyObjectsGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PolicyObjectsAPIService.GetOrganizationPolicyObjectsGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -888,9 +888,9 @@ func (a *PolicyObjectsApiService) GetOrganizationPolicyObjectsGroupExecute(r Pol
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PolicyObjectsApiGetOrganizationPolicyObjectsGroupsRequest struct {
+type PolicyObjectsAPIGetOrganizationPolicyObjectsGroupsRequest struct {
 	ctx context.Context
-	ApiService *PolicyObjectsApiService
+	ApiService *PolicyObjectsAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -898,24 +898,24 @@ type PolicyObjectsApiGetOrganizationPolicyObjectsGroupsRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 10 - 1000. Default is 1000.
-func (r PolicyObjectsApiGetOrganizationPolicyObjectsGroupsRequest) PerPage(perPage int32) PolicyObjectsApiGetOrganizationPolicyObjectsGroupsRequest {
+func (r PolicyObjectsAPIGetOrganizationPolicyObjectsGroupsRequest) PerPage(perPage int32) PolicyObjectsAPIGetOrganizationPolicyObjectsGroupsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r PolicyObjectsApiGetOrganizationPolicyObjectsGroupsRequest) StartingAfter(startingAfter string) PolicyObjectsApiGetOrganizationPolicyObjectsGroupsRequest {
+func (r PolicyObjectsAPIGetOrganizationPolicyObjectsGroupsRequest) StartingAfter(startingAfter string) PolicyObjectsAPIGetOrganizationPolicyObjectsGroupsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r PolicyObjectsApiGetOrganizationPolicyObjectsGroupsRequest) EndingBefore(endingBefore string) PolicyObjectsApiGetOrganizationPolicyObjectsGroupsRequest {
+func (r PolicyObjectsAPIGetOrganizationPolicyObjectsGroupsRequest) EndingBefore(endingBefore string) PolicyObjectsAPIGetOrganizationPolicyObjectsGroupsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r PolicyObjectsApiGetOrganizationPolicyObjectsGroupsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r PolicyObjectsAPIGetOrganizationPolicyObjectsGroupsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationPolicyObjectsGroupsExecute(r)
 }
 
@@ -926,10 +926,10 @@ Lists Policy Object Groups belonging to the organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return PolicyObjectsApiGetOrganizationPolicyObjectsGroupsRequest
+ @return PolicyObjectsAPIGetOrganizationPolicyObjectsGroupsRequest
 */
-func (a *PolicyObjectsApiService) GetOrganizationPolicyObjectsGroups(ctx context.Context, organizationId string) PolicyObjectsApiGetOrganizationPolicyObjectsGroupsRequest {
-	return PolicyObjectsApiGetOrganizationPolicyObjectsGroupsRequest{
+func (a *PolicyObjectsAPIService) GetOrganizationPolicyObjectsGroups(ctx context.Context, organizationId string) PolicyObjectsAPIGetOrganizationPolicyObjectsGroupsRequest {
+	return PolicyObjectsAPIGetOrganizationPolicyObjectsGroupsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -938,7 +938,7 @@ func (a *PolicyObjectsApiService) GetOrganizationPolicyObjectsGroups(ctx context
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *PolicyObjectsApiService) GetOrganizationPolicyObjectsGroupsExecute(r PolicyObjectsApiGetOrganizationPolicyObjectsGroupsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *PolicyObjectsAPIService) GetOrganizationPolicyObjectsGroupsExecute(r PolicyObjectsAPIGetOrganizationPolicyObjectsGroupsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -946,7 +946,7 @@ func (a *PolicyObjectsApiService) GetOrganizationPolicyObjectsGroupsExecute(r Po
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PolicyObjectsApiService.GetOrganizationPolicyObjectsGroups")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PolicyObjectsAPIService.GetOrganizationPolicyObjectsGroups")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1035,20 +1035,20 @@ func (a *PolicyObjectsApiService) GetOrganizationPolicyObjectsGroupsExecute(r Po
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PolicyObjectsApiUpdateOrganizationPolicyObjectRequest struct {
+type PolicyObjectsAPIUpdateOrganizationPolicyObjectRequest struct {
 	ctx context.Context
-	ApiService *PolicyObjectsApiService
+	ApiService *PolicyObjectsAPIService
 	organizationId string
 	policyObjectId string
 	updateOrganizationPolicyObjectRequest *UpdateOrganizationPolicyObjectRequest
 }
 
-func (r PolicyObjectsApiUpdateOrganizationPolicyObjectRequest) UpdateOrganizationPolicyObjectRequest(updateOrganizationPolicyObjectRequest UpdateOrganizationPolicyObjectRequest) PolicyObjectsApiUpdateOrganizationPolicyObjectRequest {
+func (r PolicyObjectsAPIUpdateOrganizationPolicyObjectRequest) UpdateOrganizationPolicyObjectRequest(updateOrganizationPolicyObjectRequest UpdateOrganizationPolicyObjectRequest) PolicyObjectsAPIUpdateOrganizationPolicyObjectRequest {
 	r.updateOrganizationPolicyObjectRequest = &updateOrganizationPolicyObjectRequest
 	return r
 }
 
-func (r PolicyObjectsApiUpdateOrganizationPolicyObjectRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r PolicyObjectsAPIUpdateOrganizationPolicyObjectRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationPolicyObjectExecute(r)
 }
 
@@ -1060,10 +1060,10 @@ Updates a Policy Object.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param policyObjectId Policy object ID
- @return PolicyObjectsApiUpdateOrganizationPolicyObjectRequest
+ @return PolicyObjectsAPIUpdateOrganizationPolicyObjectRequest
 */
-func (a *PolicyObjectsApiService) UpdateOrganizationPolicyObject(ctx context.Context, organizationId string, policyObjectId string) PolicyObjectsApiUpdateOrganizationPolicyObjectRequest {
-	return PolicyObjectsApiUpdateOrganizationPolicyObjectRequest{
+func (a *PolicyObjectsAPIService) UpdateOrganizationPolicyObject(ctx context.Context, organizationId string, policyObjectId string) PolicyObjectsAPIUpdateOrganizationPolicyObjectRequest {
+	return PolicyObjectsAPIUpdateOrganizationPolicyObjectRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1073,7 +1073,7 @@ func (a *PolicyObjectsApiService) UpdateOrganizationPolicyObject(ctx context.Con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PolicyObjectsApiService) UpdateOrganizationPolicyObjectExecute(r PolicyObjectsApiUpdateOrganizationPolicyObjectRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PolicyObjectsAPIService) UpdateOrganizationPolicyObjectExecute(r PolicyObjectsAPIUpdateOrganizationPolicyObjectRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1081,7 +1081,7 @@ func (a *PolicyObjectsApiService) UpdateOrganizationPolicyObjectExecute(r Policy
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PolicyObjectsApiService.UpdateOrganizationPolicyObject")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PolicyObjectsAPIService.UpdateOrganizationPolicyObject")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1164,20 +1164,20 @@ func (a *PolicyObjectsApiService) UpdateOrganizationPolicyObjectExecute(r Policy
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PolicyObjectsApiUpdateOrganizationPolicyObjectsGroupRequest struct {
+type PolicyObjectsAPIUpdateOrganizationPolicyObjectsGroupRequest struct {
 	ctx context.Context
-	ApiService *PolicyObjectsApiService
+	ApiService *PolicyObjectsAPIService
 	organizationId string
 	policyObjectGroupId string
 	updateOrganizationPolicyObjectsGroupRequest *UpdateOrganizationPolicyObjectsGroupRequest
 }
 
-func (r PolicyObjectsApiUpdateOrganizationPolicyObjectsGroupRequest) UpdateOrganizationPolicyObjectsGroupRequest(updateOrganizationPolicyObjectsGroupRequest UpdateOrganizationPolicyObjectsGroupRequest) PolicyObjectsApiUpdateOrganizationPolicyObjectsGroupRequest {
+func (r PolicyObjectsAPIUpdateOrganizationPolicyObjectsGroupRequest) UpdateOrganizationPolicyObjectsGroupRequest(updateOrganizationPolicyObjectsGroupRequest UpdateOrganizationPolicyObjectsGroupRequest) PolicyObjectsAPIUpdateOrganizationPolicyObjectsGroupRequest {
 	r.updateOrganizationPolicyObjectsGroupRequest = &updateOrganizationPolicyObjectsGroupRequest
 	return r
 }
 
-func (r PolicyObjectsApiUpdateOrganizationPolicyObjectsGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r PolicyObjectsAPIUpdateOrganizationPolicyObjectsGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationPolicyObjectsGroupExecute(r)
 }
 
@@ -1189,10 +1189,10 @@ Updates a Policy Object Group.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param policyObjectGroupId Policy object group ID
- @return PolicyObjectsApiUpdateOrganizationPolicyObjectsGroupRequest
+ @return PolicyObjectsAPIUpdateOrganizationPolicyObjectsGroupRequest
 */
-func (a *PolicyObjectsApiService) UpdateOrganizationPolicyObjectsGroup(ctx context.Context, organizationId string, policyObjectGroupId string) PolicyObjectsApiUpdateOrganizationPolicyObjectsGroupRequest {
-	return PolicyObjectsApiUpdateOrganizationPolicyObjectsGroupRequest{
+func (a *PolicyObjectsAPIService) UpdateOrganizationPolicyObjectsGroup(ctx context.Context, organizationId string, policyObjectGroupId string) PolicyObjectsAPIUpdateOrganizationPolicyObjectsGroupRequest {
+	return PolicyObjectsAPIUpdateOrganizationPolicyObjectsGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1202,7 +1202,7 @@ func (a *PolicyObjectsApiService) UpdateOrganizationPolicyObjectsGroup(ctx conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PolicyObjectsApiService) UpdateOrganizationPolicyObjectsGroupExecute(r PolicyObjectsApiUpdateOrganizationPolicyObjectsGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PolicyObjectsAPIService) UpdateOrganizationPolicyObjectsGroupExecute(r PolicyObjectsAPIUpdateOrganizationPolicyObjectsGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1210,7 +1210,7 @@ func (a *PolicyObjectsApiService) UpdateOrganizationPolicyObjectsGroupExecute(r 
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PolicyObjectsApiService.UpdateOrganizationPolicyObjectsGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PolicyObjectsAPIService.UpdateOrganizationPolicyObjectsGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

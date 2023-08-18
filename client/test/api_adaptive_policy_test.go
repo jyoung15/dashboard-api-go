@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing AdaptivePolicyApiService
+Testing AdaptivePolicyAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_AdaptivePolicyApiService(t *testing.T) {
+func Test_client_AdaptivePolicyAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test AdaptivePolicyApiService CreateOrganizationAdaptivePolicyAcl", func(t *testing.T) {
+	t.Run("Test AdaptivePolicyAPIService CreateOrganizationAdaptivePolicyAcl", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.AdaptivePolicyApi.CreateOrganizationAdaptivePolicyAcl(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.AdaptivePolicyAPI.CreateOrganizationAdaptivePolicyAcl(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_AdaptivePolicyApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AdaptivePolicyApiService CreateOrganizationAdaptivePolicyGroup", func(t *testing.T) {
+	t.Run("Test AdaptivePolicyAPIService CreateOrganizationAdaptivePolicyGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.AdaptivePolicyApi.CreateOrganizationAdaptivePolicyGroup(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.AdaptivePolicyAPI.CreateOrganizationAdaptivePolicyGroup(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,13 +50,13 @@ func Test_client_AdaptivePolicyApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AdaptivePolicyApiService CreateOrganizationAdaptivePolicyPolicy", func(t *testing.T) {
+	t.Run("Test AdaptivePolicyAPIService CreateOrganizationAdaptivePolicyPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.AdaptivePolicyApi.CreateOrganizationAdaptivePolicyPolicy(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.AdaptivePolicyAPI.CreateOrganizationAdaptivePolicyPolicy(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,56 +64,56 @@ func Test_client_AdaptivePolicyApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AdaptivePolicyApiService DeleteOrganizationAdaptivePolicyAcl", func(t *testing.T) {
+	t.Run("Test AdaptivePolicyAPIService DeleteOrganizationAdaptivePolicyAcl", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var aclId string
 
-		httpRes, err := apiClient.AdaptivePolicyApi.DeleteOrganizationAdaptivePolicyAcl(context.Background(), organizationId, aclId).Execute()
+		httpRes, err := apiClient.AdaptivePolicyAPI.DeleteOrganizationAdaptivePolicyAcl(context.Background(), organizationId, aclId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test AdaptivePolicyApiService DeleteOrganizationAdaptivePolicyGroup", func(t *testing.T) {
+	t.Run("Test AdaptivePolicyAPIService DeleteOrganizationAdaptivePolicyGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var id string
 
-		httpRes, err := apiClient.AdaptivePolicyApi.DeleteOrganizationAdaptivePolicyGroup(context.Background(), organizationId, id).Execute()
+		httpRes, err := apiClient.AdaptivePolicyAPI.DeleteOrganizationAdaptivePolicyGroup(context.Background(), organizationId, id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test AdaptivePolicyApiService DeleteOrganizationAdaptivePolicyPolicy", func(t *testing.T) {
+	t.Run("Test AdaptivePolicyAPIService DeleteOrganizationAdaptivePolicyPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var id string
 
-		httpRes, err := apiClient.AdaptivePolicyApi.DeleteOrganizationAdaptivePolicyPolicy(context.Background(), organizationId, id).Execute()
+		httpRes, err := apiClient.AdaptivePolicyAPI.DeleteOrganizationAdaptivePolicyPolicy(context.Background(), organizationId, id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test AdaptivePolicyApiService GetOrganizationAdaptivePolicyAcl", func(t *testing.T) {
+	t.Run("Test AdaptivePolicyAPIService GetOrganizationAdaptivePolicyAcl", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var aclId string
 
-		resp, httpRes, err := apiClient.AdaptivePolicyApi.GetOrganizationAdaptivePolicyAcl(context.Background(), organizationId, aclId).Execute()
+		resp, httpRes, err := apiClient.AdaptivePolicyAPI.GetOrganizationAdaptivePolicyAcl(context.Background(), organizationId, aclId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -121,13 +121,13 @@ func Test_client_AdaptivePolicyApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AdaptivePolicyApiService GetOrganizationAdaptivePolicyAcls", func(t *testing.T) {
+	t.Run("Test AdaptivePolicyAPIService GetOrganizationAdaptivePolicyAcls", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.AdaptivePolicyApi.GetOrganizationAdaptivePolicyAcls(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.AdaptivePolicyAPI.GetOrganizationAdaptivePolicyAcls(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -135,71 +135,14 @@ func Test_client_AdaptivePolicyApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AdaptivePolicyApiService GetOrganizationAdaptivePolicyGroup", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var organizationId string
-		var id string
-
-		resp, httpRes, err := apiClient.AdaptivePolicyApi.GetOrganizationAdaptivePolicyGroup(context.Background(), organizationId, id).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test AdaptivePolicyApiService GetOrganizationAdaptivePolicyGroups", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var organizationId string
-
-		resp, httpRes, err := apiClient.AdaptivePolicyApi.GetOrganizationAdaptivePolicyGroups(context.Background(), organizationId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test AdaptivePolicyApiService GetOrganizationAdaptivePolicyOverview", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var organizationId string
-
-		resp, httpRes, err := apiClient.AdaptivePolicyApi.GetOrganizationAdaptivePolicyOverview(context.Background(), organizationId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test AdaptivePolicyApiService GetOrganizationAdaptivePolicyPolicies", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var organizationId string
-
-		resp, httpRes, err := apiClient.AdaptivePolicyApi.GetOrganizationAdaptivePolicyPolicies(context.Background(), organizationId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test AdaptivePolicyApiService GetOrganizationAdaptivePolicyPolicy", func(t *testing.T) {
+	t.Run("Test AdaptivePolicyAPIService GetOrganizationAdaptivePolicyGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var id string
 
-		resp, httpRes, err := apiClient.AdaptivePolicyApi.GetOrganizationAdaptivePolicyPolicy(context.Background(), organizationId, id).Execute()
+		resp, httpRes, err := apiClient.AdaptivePolicyAPI.GetOrganizationAdaptivePolicyGroup(context.Background(), organizationId, id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -207,13 +150,13 @@ func Test_client_AdaptivePolicyApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AdaptivePolicyApiService GetOrganizationAdaptivePolicySettings", func(t *testing.T) {
+	t.Run("Test AdaptivePolicyAPIService GetOrganizationAdaptivePolicyGroups", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.AdaptivePolicyApi.GetOrganizationAdaptivePolicySettings(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.AdaptivePolicyAPI.GetOrganizationAdaptivePolicyGroups(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -221,14 +164,71 @@ func Test_client_AdaptivePolicyApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AdaptivePolicyApiService UpdateOrganizationAdaptivePolicyAcl", func(t *testing.T) {
+	t.Run("Test AdaptivePolicyAPIService GetOrganizationAdaptivePolicyOverview", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var organizationId string
+
+		resp, httpRes, err := apiClient.AdaptivePolicyAPI.GetOrganizationAdaptivePolicyOverview(context.Background(), organizationId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AdaptivePolicyAPIService GetOrganizationAdaptivePolicyPolicies", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var organizationId string
+
+		resp, httpRes, err := apiClient.AdaptivePolicyAPI.GetOrganizationAdaptivePolicyPolicies(context.Background(), organizationId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AdaptivePolicyAPIService GetOrganizationAdaptivePolicyPolicy", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var organizationId string
+		var id string
+
+		resp, httpRes, err := apiClient.AdaptivePolicyAPI.GetOrganizationAdaptivePolicyPolicy(context.Background(), organizationId, id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AdaptivePolicyAPIService GetOrganizationAdaptivePolicySettings", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var organizationId string
+
+		resp, httpRes, err := apiClient.AdaptivePolicyAPI.GetOrganizationAdaptivePolicySettings(context.Background(), organizationId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AdaptivePolicyAPIService UpdateOrganizationAdaptivePolicyAcl", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var aclId string
 
-		resp, httpRes, err := apiClient.AdaptivePolicyApi.UpdateOrganizationAdaptivePolicyAcl(context.Background(), organizationId, aclId).Execute()
+		resp, httpRes, err := apiClient.AdaptivePolicyAPI.UpdateOrganizationAdaptivePolicyAcl(context.Background(), organizationId, aclId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -236,14 +236,14 @@ func Test_client_AdaptivePolicyApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AdaptivePolicyApiService UpdateOrganizationAdaptivePolicyGroup", func(t *testing.T) {
+	t.Run("Test AdaptivePolicyAPIService UpdateOrganizationAdaptivePolicyGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var id string
 
-		resp, httpRes, err := apiClient.AdaptivePolicyApi.UpdateOrganizationAdaptivePolicyGroup(context.Background(), organizationId, id).Execute()
+		resp, httpRes, err := apiClient.AdaptivePolicyAPI.UpdateOrganizationAdaptivePolicyGroup(context.Background(), organizationId, id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -251,14 +251,14 @@ func Test_client_AdaptivePolicyApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AdaptivePolicyApiService UpdateOrganizationAdaptivePolicyPolicy", func(t *testing.T) {
+	t.Run("Test AdaptivePolicyAPIService UpdateOrganizationAdaptivePolicyPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var id string
 
-		resp, httpRes, err := apiClient.AdaptivePolicyApi.UpdateOrganizationAdaptivePolicyPolicy(context.Background(), organizationId, id).Execute()
+		resp, httpRes, err := apiClient.AdaptivePolicyAPI.UpdateOrganizationAdaptivePolicyPolicy(context.Background(), organizationId, id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -266,13 +266,13 @@ func Test_client_AdaptivePolicyApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AdaptivePolicyApiService UpdateOrganizationAdaptivePolicySettings", func(t *testing.T) {
+	t.Run("Test AdaptivePolicyAPIService UpdateOrganizationAdaptivePolicySettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.AdaptivePolicyApi.UpdateOrganizationAdaptivePolicySettings(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.AdaptivePolicyAPI.UpdateOrganizationAdaptivePolicySettings(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing RulesApiService
+Testing RulesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_RulesApiService(t *testing.T) {
+func Test_client_RulesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test RulesApiService GetNetworkApplianceTrafficShapingRules", func(t *testing.T) {
+	t.Run("Test RulesAPIService GetNetworkApplianceTrafficShapingRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.RulesApi.GetNetworkApplianceTrafficShapingRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.RulesAPI.GetNetworkApplianceTrafficShapingRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,14 +36,14 @@ func Test_client_RulesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RulesApiService GetNetworkWirelessSsidTrafficShapingRules", func(t *testing.T) {
+	t.Run("Test RulesAPIService GetNetworkWirelessSsidTrafficShapingRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.RulesApi.GetNetworkWirelessSsidTrafficShapingRules(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.RulesAPI.GetNetworkWirelessSsidTrafficShapingRules(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -51,13 +51,13 @@ func Test_client_RulesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RulesApiService UpdateNetworkApplianceTrafficShapingRules", func(t *testing.T) {
+	t.Run("Test RulesAPIService UpdateNetworkApplianceTrafficShapingRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.RulesApi.UpdateNetworkApplianceTrafficShapingRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.RulesAPI.UpdateNetworkApplianceTrafficShapingRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -65,14 +65,14 @@ func Test_client_RulesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RulesApiService UpdateNetworkWirelessSsidTrafficShapingRules", func(t *testing.T) {
+	t.Run("Test RulesAPIService UpdateNetworkWirelessSsidTrafficShapingRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.RulesApi.UpdateNetworkWirelessSsidTrafficShapingRules(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.RulesAPI.UpdateNetworkWirelessSsidTrafficShapingRules(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

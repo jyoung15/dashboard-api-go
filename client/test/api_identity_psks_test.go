@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing IdentityPsksApiService
+Testing IdentityPsksAPIService
 
 */
 
@@ -17,19 +17,19 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_IdentityPsksApiService(t *testing.T) {
+func Test_client_IdentityPsksAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test IdentityPsksApiService CreateNetworkWirelessSsidIdentityPsk", func(t *testing.T) {
+	t.Run("Test IdentityPsksAPIService CreateNetworkWirelessSsidIdentityPsk", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.IdentityPsksApi.CreateNetworkWirelessSsidIdentityPsk(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.IdentityPsksAPI.CreateNetworkWirelessSsidIdentityPsk(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -37,7 +37,7 @@ func Test_client_IdentityPsksApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test IdentityPsksApiService DeleteNetworkWirelessSsidIdentityPsk", func(t *testing.T) {
+	t.Run("Test IdentityPsksAPIService DeleteNetworkWirelessSsidIdentityPsk", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -45,14 +45,14 @@ func Test_client_IdentityPsksApiService(t *testing.T) {
 		var number string
 		var identityPskId string
 
-		httpRes, err := apiClient.IdentityPsksApi.DeleteNetworkWirelessSsidIdentityPsk(context.Background(), networkId, number, identityPskId).Execute()
+		httpRes, err := apiClient.IdentityPsksAPI.DeleteNetworkWirelessSsidIdentityPsk(context.Background(), networkId, number, identityPskId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test IdentityPsksApiService GetNetworkWirelessSsidIdentityPsk", func(t *testing.T) {
+	t.Run("Test IdentityPsksAPIService GetNetworkWirelessSsidIdentityPsk", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -60,22 +60,7 @@ func Test_client_IdentityPsksApiService(t *testing.T) {
 		var number string
 		var identityPskId string
 
-		resp, httpRes, err := apiClient.IdentityPsksApi.GetNetworkWirelessSsidIdentityPsk(context.Background(), networkId, number, identityPskId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test IdentityPsksApiService GetNetworkWirelessSsidIdentityPsks", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-		var number string
-
-		resp, httpRes, err := apiClient.IdentityPsksApi.GetNetworkWirelessSsidIdentityPsks(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.IdentityPsksAPI.GetNetworkWirelessSsidIdentityPsk(context.Background(), networkId, number, identityPskId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -83,7 +68,22 @@ func Test_client_IdentityPsksApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test IdentityPsksApiService UpdateNetworkWirelessSsidIdentityPsk", func(t *testing.T) {
+	t.Run("Test IdentityPsksAPIService GetNetworkWirelessSsidIdentityPsks", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+		var number string
+
+		resp, httpRes, err := apiClient.IdentityPsksAPI.GetNetworkWirelessSsidIdentityPsks(context.Background(), networkId, number).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test IdentityPsksAPIService UpdateNetworkWirelessSsidIdentityPsk", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -91,7 +91,7 @@ func Test_client_IdentityPsksApiService(t *testing.T) {
 		var number string
 		var identityPskId string
 
-		resp, httpRes, err := apiClient.IdentityPsksApi.UpdateNetworkWirelessSsidIdentityPsk(context.Background(), networkId, number, identityPskId).Execute()
+		resp, httpRes, err := apiClient.IdentityPsksAPI.UpdateNetworkWirelessSsidIdentityPsk(context.Background(), networkId, number, identityPskId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

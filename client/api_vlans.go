@@ -20,22 +20,22 @@ import (
 )
 
 
-// VlansApiService VlansApi service
-type VlansApiService service
+// VlansAPIService VlansAPI service
+type VlansAPIService service
 
-type VlansApiCreateNetworkApplianceVlanRequest struct {
+type VlansAPICreateNetworkApplianceVlanRequest struct {
 	ctx context.Context
-	ApiService *VlansApiService
+	ApiService *VlansAPIService
 	networkId string
 	createNetworkApplianceVlanRequest *CreateNetworkApplianceVlanRequest
 }
 
-func (r VlansApiCreateNetworkApplianceVlanRequest) CreateNetworkApplianceVlanRequest(createNetworkApplianceVlanRequest CreateNetworkApplianceVlanRequest) VlansApiCreateNetworkApplianceVlanRequest {
+func (r VlansAPICreateNetworkApplianceVlanRequest) CreateNetworkApplianceVlanRequest(createNetworkApplianceVlanRequest CreateNetworkApplianceVlanRequest) VlansAPICreateNetworkApplianceVlanRequest {
 	r.createNetworkApplianceVlanRequest = &createNetworkApplianceVlanRequest
 	return r
 }
 
-func (r VlansApiCreateNetworkApplianceVlanRequest) Execute() (*CreateNetworkApplianceVlan201Response, *http.Response, error) {
+func (r VlansAPICreateNetworkApplianceVlanRequest) Execute() (*CreateNetworkApplianceVlan201Response, *http.Response, error) {
 	return r.ApiService.CreateNetworkApplianceVlanExecute(r)
 }
 
@@ -46,10 +46,10 @@ Add a VLAN
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return VlansApiCreateNetworkApplianceVlanRequest
+ @return VlansAPICreateNetworkApplianceVlanRequest
 */
-func (a *VlansApiService) CreateNetworkApplianceVlan(ctx context.Context, networkId string) VlansApiCreateNetworkApplianceVlanRequest {
-	return VlansApiCreateNetworkApplianceVlanRequest{
+func (a *VlansAPIService) CreateNetworkApplianceVlan(ctx context.Context, networkId string) VlansAPICreateNetworkApplianceVlanRequest {
+	return VlansAPICreateNetworkApplianceVlanRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -58,7 +58,7 @@ func (a *VlansApiService) CreateNetworkApplianceVlan(ctx context.Context, networ
 
 // Execute executes the request
 //  @return CreateNetworkApplianceVlan201Response
-func (a *VlansApiService) CreateNetworkApplianceVlanExecute(r VlansApiCreateNetworkApplianceVlanRequest) (*CreateNetworkApplianceVlan201Response, *http.Response, error) {
+func (a *VlansAPIService) CreateNetworkApplianceVlanExecute(r VlansAPICreateNetworkApplianceVlanRequest) (*CreateNetworkApplianceVlan201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *VlansApiService) CreateNetworkApplianceVlanExecute(r VlansApiCreateNetw
 		localVarReturnValue  *CreateNetworkApplianceVlan201Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VlansApiService.CreateNetworkApplianceVlan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VlansAPIService.CreateNetworkApplianceVlan")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,14 +151,14 @@ func (a *VlansApiService) CreateNetworkApplianceVlanExecute(r VlansApiCreateNetw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type VlansApiDeleteNetworkApplianceVlanRequest struct {
+type VlansAPIDeleteNetworkApplianceVlanRequest struct {
 	ctx context.Context
-	ApiService *VlansApiService
+	ApiService *VlansAPIService
 	networkId string
 	vlanId string
 }
 
-func (r VlansApiDeleteNetworkApplianceVlanRequest) Execute() (*http.Response, error) {
+func (r VlansAPIDeleteNetworkApplianceVlanRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkApplianceVlanExecute(r)
 }
 
@@ -170,10 +170,10 @@ Delete a VLAN from a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param vlanId Vlan ID
- @return VlansApiDeleteNetworkApplianceVlanRequest
+ @return VlansAPIDeleteNetworkApplianceVlanRequest
 */
-func (a *VlansApiService) DeleteNetworkApplianceVlan(ctx context.Context, networkId string, vlanId string) VlansApiDeleteNetworkApplianceVlanRequest {
-	return VlansApiDeleteNetworkApplianceVlanRequest{
+func (a *VlansAPIService) DeleteNetworkApplianceVlan(ctx context.Context, networkId string, vlanId string) VlansAPIDeleteNetworkApplianceVlanRequest {
+	return VlansAPIDeleteNetworkApplianceVlanRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -182,14 +182,14 @@ func (a *VlansApiService) DeleteNetworkApplianceVlan(ctx context.Context, networ
 }
 
 // Execute executes the request
-func (a *VlansApiService) DeleteNetworkApplianceVlanExecute(r VlansApiDeleteNetworkApplianceVlanRequest) (*http.Response, error) {
+func (a *VlansAPIService) DeleteNetworkApplianceVlanExecute(r VlansAPIDeleteNetworkApplianceVlanRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VlansApiService.DeleteNetworkApplianceVlan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VlansAPIService.DeleteNetworkApplianceVlan")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -261,14 +261,14 @@ func (a *VlansApiService) DeleteNetworkApplianceVlanExecute(r VlansApiDeleteNetw
 	return localVarHTTPResponse, nil
 }
 
-type VlansApiGetNetworkApplianceVlanRequest struct {
+type VlansAPIGetNetworkApplianceVlanRequest struct {
 	ctx context.Context
-	ApiService *VlansApiService
+	ApiService *VlansAPIService
 	networkId string
 	vlanId string
 }
 
-func (r VlansApiGetNetworkApplianceVlanRequest) Execute() (*GetNetworkApplianceVlans200ResponseInner, *http.Response, error) {
+func (r VlansAPIGetNetworkApplianceVlanRequest) Execute() (*GetNetworkApplianceVlans200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceVlanExecute(r)
 }
 
@@ -280,10 +280,10 @@ Return a VLAN
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param vlanId Vlan ID
- @return VlansApiGetNetworkApplianceVlanRequest
+ @return VlansAPIGetNetworkApplianceVlanRequest
 */
-func (a *VlansApiService) GetNetworkApplianceVlan(ctx context.Context, networkId string, vlanId string) VlansApiGetNetworkApplianceVlanRequest {
-	return VlansApiGetNetworkApplianceVlanRequest{
+func (a *VlansAPIService) GetNetworkApplianceVlan(ctx context.Context, networkId string, vlanId string) VlansAPIGetNetworkApplianceVlanRequest {
+	return VlansAPIGetNetworkApplianceVlanRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -293,7 +293,7 @@ func (a *VlansApiService) GetNetworkApplianceVlan(ctx context.Context, networkId
 
 // Execute executes the request
 //  @return GetNetworkApplianceVlans200ResponseInner
-func (a *VlansApiService) GetNetworkApplianceVlanExecute(r VlansApiGetNetworkApplianceVlanRequest) (*GetNetworkApplianceVlans200ResponseInner, *http.Response, error) {
+func (a *VlansAPIService) GetNetworkApplianceVlanExecute(r VlansAPIGetNetworkApplianceVlanRequest) (*GetNetworkApplianceVlans200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -301,7 +301,7 @@ func (a *VlansApiService) GetNetworkApplianceVlanExecute(r VlansApiGetNetworkApp
 		localVarReturnValue  *GetNetworkApplianceVlans200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VlansApiService.GetNetworkApplianceVlan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VlansAPIService.GetNetworkApplianceVlan")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -382,13 +382,13 @@ func (a *VlansApiService) GetNetworkApplianceVlanExecute(r VlansApiGetNetworkApp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type VlansApiGetNetworkApplianceVlansRequest struct {
+type VlansAPIGetNetworkApplianceVlansRequest struct {
 	ctx context.Context
-	ApiService *VlansApiService
+	ApiService *VlansAPIService
 	networkId string
 }
 
-func (r VlansApiGetNetworkApplianceVlansRequest) Execute() ([]GetNetworkApplianceVlans200ResponseInner, *http.Response, error) {
+func (r VlansAPIGetNetworkApplianceVlansRequest) Execute() ([]GetNetworkApplianceVlans200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceVlansExecute(r)
 }
 
@@ -399,10 +399,10 @@ List the VLANs for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return VlansApiGetNetworkApplianceVlansRequest
+ @return VlansAPIGetNetworkApplianceVlansRequest
 */
-func (a *VlansApiService) GetNetworkApplianceVlans(ctx context.Context, networkId string) VlansApiGetNetworkApplianceVlansRequest {
-	return VlansApiGetNetworkApplianceVlansRequest{
+func (a *VlansAPIService) GetNetworkApplianceVlans(ctx context.Context, networkId string) VlansAPIGetNetworkApplianceVlansRequest {
+	return VlansAPIGetNetworkApplianceVlansRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -411,7 +411,7 @@ func (a *VlansApiService) GetNetworkApplianceVlans(ctx context.Context, networkI
 
 // Execute executes the request
 //  @return []GetNetworkApplianceVlans200ResponseInner
-func (a *VlansApiService) GetNetworkApplianceVlansExecute(r VlansApiGetNetworkApplianceVlansRequest) ([]GetNetworkApplianceVlans200ResponseInner, *http.Response, error) {
+func (a *VlansAPIService) GetNetworkApplianceVlansExecute(r VlansAPIGetNetworkApplianceVlansRequest) ([]GetNetworkApplianceVlans200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -419,7 +419,7 @@ func (a *VlansApiService) GetNetworkApplianceVlansExecute(r VlansApiGetNetworkAp
 		localVarReturnValue  []GetNetworkApplianceVlans200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VlansApiService.GetNetworkApplianceVlans")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VlansAPIService.GetNetworkApplianceVlans")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -499,13 +499,13 @@ func (a *VlansApiService) GetNetworkApplianceVlansExecute(r VlansApiGetNetworkAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type VlansApiGetNetworkApplianceVlansSettingsRequest struct {
+type VlansAPIGetNetworkApplianceVlansSettingsRequest struct {
 	ctx context.Context
-	ApiService *VlansApiService
+	ApiService *VlansAPIService
 	networkId string
 }
 
-func (r VlansApiGetNetworkApplianceVlansSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r VlansAPIGetNetworkApplianceVlansSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceVlansSettingsExecute(r)
 }
 
@@ -516,10 +516,10 @@ Returns the enabled status of VLANs for the network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return VlansApiGetNetworkApplianceVlansSettingsRequest
+ @return VlansAPIGetNetworkApplianceVlansSettingsRequest
 */
-func (a *VlansApiService) GetNetworkApplianceVlansSettings(ctx context.Context, networkId string) VlansApiGetNetworkApplianceVlansSettingsRequest {
-	return VlansApiGetNetworkApplianceVlansSettingsRequest{
+func (a *VlansAPIService) GetNetworkApplianceVlansSettings(ctx context.Context, networkId string) VlansAPIGetNetworkApplianceVlansSettingsRequest {
+	return VlansAPIGetNetworkApplianceVlansSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -528,7 +528,7 @@ func (a *VlansApiService) GetNetworkApplianceVlansSettings(ctx context.Context, 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *VlansApiService) GetNetworkApplianceVlansSettingsExecute(r VlansApiGetNetworkApplianceVlansSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *VlansAPIService) GetNetworkApplianceVlansSettingsExecute(r VlansAPIGetNetworkApplianceVlansSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -536,7 +536,7 @@ func (a *VlansApiService) GetNetworkApplianceVlansSettingsExecute(r VlansApiGetN
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VlansApiService.GetNetworkApplianceVlansSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VlansAPIService.GetNetworkApplianceVlansSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -616,20 +616,20 @@ func (a *VlansApiService) GetNetworkApplianceVlansSettingsExecute(r VlansApiGetN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type VlansApiUpdateNetworkApplianceVlanRequest struct {
+type VlansAPIUpdateNetworkApplianceVlanRequest struct {
 	ctx context.Context
-	ApiService *VlansApiService
+	ApiService *VlansAPIService
 	networkId string
 	vlanId string
 	updateNetworkApplianceVlanRequest *UpdateNetworkApplianceVlanRequest
 }
 
-func (r VlansApiUpdateNetworkApplianceVlanRequest) UpdateNetworkApplianceVlanRequest(updateNetworkApplianceVlanRequest UpdateNetworkApplianceVlanRequest) VlansApiUpdateNetworkApplianceVlanRequest {
+func (r VlansAPIUpdateNetworkApplianceVlanRequest) UpdateNetworkApplianceVlanRequest(updateNetworkApplianceVlanRequest UpdateNetworkApplianceVlanRequest) VlansAPIUpdateNetworkApplianceVlanRequest {
 	r.updateNetworkApplianceVlanRequest = &updateNetworkApplianceVlanRequest
 	return r
 }
 
-func (r VlansApiUpdateNetworkApplianceVlanRequest) Execute() (*GetNetworkApplianceVlans200ResponseInner, *http.Response, error) {
+func (r VlansAPIUpdateNetworkApplianceVlanRequest) Execute() (*GetNetworkApplianceVlans200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceVlanExecute(r)
 }
 
@@ -641,10 +641,10 @@ Update a VLAN
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param vlanId Vlan ID
- @return VlansApiUpdateNetworkApplianceVlanRequest
+ @return VlansAPIUpdateNetworkApplianceVlanRequest
 */
-func (a *VlansApiService) UpdateNetworkApplianceVlan(ctx context.Context, networkId string, vlanId string) VlansApiUpdateNetworkApplianceVlanRequest {
-	return VlansApiUpdateNetworkApplianceVlanRequest{
+func (a *VlansAPIService) UpdateNetworkApplianceVlan(ctx context.Context, networkId string, vlanId string) VlansAPIUpdateNetworkApplianceVlanRequest {
+	return VlansAPIUpdateNetworkApplianceVlanRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -654,7 +654,7 @@ func (a *VlansApiService) UpdateNetworkApplianceVlan(ctx context.Context, networ
 
 // Execute executes the request
 //  @return GetNetworkApplianceVlans200ResponseInner
-func (a *VlansApiService) UpdateNetworkApplianceVlanExecute(r VlansApiUpdateNetworkApplianceVlanRequest) (*GetNetworkApplianceVlans200ResponseInner, *http.Response, error) {
+func (a *VlansAPIService) UpdateNetworkApplianceVlanExecute(r VlansAPIUpdateNetworkApplianceVlanRequest) (*GetNetworkApplianceVlans200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -662,7 +662,7 @@ func (a *VlansApiService) UpdateNetworkApplianceVlanExecute(r VlansApiUpdateNetw
 		localVarReturnValue  *GetNetworkApplianceVlans200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VlansApiService.UpdateNetworkApplianceVlan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VlansAPIService.UpdateNetworkApplianceVlan")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -745,19 +745,19 @@ func (a *VlansApiService) UpdateNetworkApplianceVlanExecute(r VlansApiUpdateNetw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type VlansApiUpdateNetworkApplianceVlansSettingsRequest struct {
+type VlansAPIUpdateNetworkApplianceVlansSettingsRequest struct {
 	ctx context.Context
-	ApiService *VlansApiService
+	ApiService *VlansAPIService
 	networkId string
 	updateNetworkApplianceVlansSettingsRequest *UpdateNetworkApplianceVlansSettingsRequest
 }
 
-func (r VlansApiUpdateNetworkApplianceVlansSettingsRequest) UpdateNetworkApplianceVlansSettingsRequest(updateNetworkApplianceVlansSettingsRequest UpdateNetworkApplianceVlansSettingsRequest) VlansApiUpdateNetworkApplianceVlansSettingsRequest {
+func (r VlansAPIUpdateNetworkApplianceVlansSettingsRequest) UpdateNetworkApplianceVlansSettingsRequest(updateNetworkApplianceVlansSettingsRequest UpdateNetworkApplianceVlansSettingsRequest) VlansAPIUpdateNetworkApplianceVlansSettingsRequest {
 	r.updateNetworkApplianceVlansSettingsRequest = &updateNetworkApplianceVlansSettingsRequest
 	return r
 }
 
-func (r VlansApiUpdateNetworkApplianceVlansSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r VlansAPIUpdateNetworkApplianceVlansSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceVlansSettingsExecute(r)
 }
 
@@ -768,10 +768,10 @@ Enable/Disable VLANs for the given network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return VlansApiUpdateNetworkApplianceVlansSettingsRequest
+ @return VlansAPIUpdateNetworkApplianceVlansSettingsRequest
 */
-func (a *VlansApiService) UpdateNetworkApplianceVlansSettings(ctx context.Context, networkId string) VlansApiUpdateNetworkApplianceVlansSettingsRequest {
-	return VlansApiUpdateNetworkApplianceVlansSettingsRequest{
+func (a *VlansAPIService) UpdateNetworkApplianceVlansSettings(ctx context.Context, networkId string) VlansAPIUpdateNetworkApplianceVlansSettingsRequest {
+	return VlansAPIUpdateNetworkApplianceVlansSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -780,7 +780,7 @@ func (a *VlansApiService) UpdateNetworkApplianceVlansSettings(ctx context.Contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *VlansApiService) UpdateNetworkApplianceVlansSettingsExecute(r VlansApiUpdateNetworkApplianceVlansSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *VlansAPIService) UpdateNetworkApplianceVlansSettingsExecute(r VlansAPIUpdateNetworkApplianceVlansSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -788,7 +788,7 @@ func (a *VlansApiService) UpdateNetworkApplianceVlansSettingsExecute(r VlansApiU
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VlansApiService.UpdateNetworkApplianceVlansSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VlansAPIService.UpdateNetworkApplianceVlansSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

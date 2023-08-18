@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing FloorPlansApiService
+Testing FloorPlansAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_FloorPlansApiService(t *testing.T) {
+func Test_client_FloorPlansAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test FloorPlansApiService CreateNetworkFloorPlan", func(t *testing.T) {
+	t.Run("Test FloorPlansAPIService CreateNetworkFloorPlan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FloorPlansApi.CreateNetworkFloorPlan(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FloorPlansAPI.CreateNetworkFloorPlan(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,14 +36,14 @@ func Test_client_FloorPlansApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FloorPlansApiService DeleteNetworkFloorPlan", func(t *testing.T) {
+	t.Run("Test FloorPlansAPIService DeleteNetworkFloorPlan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var floorPlanId string
 
-		resp, httpRes, err := apiClient.FloorPlansApi.DeleteNetworkFloorPlan(context.Background(), networkId, floorPlanId).Execute()
+		resp, httpRes, err := apiClient.FloorPlansAPI.DeleteNetworkFloorPlan(context.Background(), networkId, floorPlanId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -51,14 +51,14 @@ func Test_client_FloorPlansApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FloorPlansApiService GetNetworkFloorPlan", func(t *testing.T) {
+	t.Run("Test FloorPlansAPIService GetNetworkFloorPlan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var floorPlanId string
 
-		resp, httpRes, err := apiClient.FloorPlansApi.GetNetworkFloorPlan(context.Background(), networkId, floorPlanId).Execute()
+		resp, httpRes, err := apiClient.FloorPlansAPI.GetNetworkFloorPlan(context.Background(), networkId, floorPlanId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -66,13 +66,13 @@ func Test_client_FloorPlansApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FloorPlansApiService GetNetworkFloorPlans", func(t *testing.T) {
+	t.Run("Test FloorPlansAPIService GetNetworkFloorPlans", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FloorPlansApi.GetNetworkFloorPlans(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FloorPlansAPI.GetNetworkFloorPlans(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -80,14 +80,14 @@ func Test_client_FloorPlansApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FloorPlansApiService UpdateNetworkFloorPlan", func(t *testing.T) {
+	t.Run("Test FloorPlansAPIService UpdateNetworkFloorPlan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var floorPlanId string
 
-		resp, httpRes, err := apiClient.FloorPlansApi.UpdateNetworkFloorPlan(context.Background(), networkId, floorPlanId).Execute()
+		resp, httpRes, err := apiClient.FloorPlansAPI.UpdateNetworkFloorPlan(context.Background(), networkId, floorPlanId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

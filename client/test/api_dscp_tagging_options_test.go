@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing DscpTaggingOptionsApiService
+Testing DscpTaggingOptionsAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_DscpTaggingOptionsApiService(t *testing.T) {
+func Test_client_DscpTaggingOptionsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test DscpTaggingOptionsApiService GetNetworkTrafficShapingDscpTaggingOptions", func(t *testing.T) {
+	t.Run("Test DscpTaggingOptionsAPIService GetNetworkTrafficShapingDscpTaggingOptions", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.DscpTaggingOptionsApi.GetNetworkTrafficShapingDscpTaggingOptions(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.DscpTaggingOptionsAPI.GetNetworkTrafficShapingDscpTaggingOptions(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

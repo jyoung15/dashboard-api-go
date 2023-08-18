@@ -20,12 +20,12 @@ import (
 )
 
 
-// ByUsageApiService ByUsageApi service
-type ByUsageApiService service
+// ByUsageAPIService ByUsageAPI service
+type ByUsageAPIService service
 
-type ByUsageApiGetOrganizationSummaryTopClientsByUsageRequest struct {
+type ByUsageAPIGetOrganizationSummaryTopClientsByUsageRequest struct {
 	ctx context.Context
-	ApiService *ByUsageApiService
+	ApiService *ByUsageAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -33,24 +33,24 @@ type ByUsageApiGetOrganizationSummaryTopClientsByUsageRequest struct {
 }
 
 // The beginning of the timespan for the data.
-func (r ByUsageApiGetOrganizationSummaryTopClientsByUsageRequest) T0(t0 string) ByUsageApiGetOrganizationSummaryTopClientsByUsageRequest {
+func (r ByUsageAPIGetOrganizationSummaryTopClientsByUsageRequest) T0(t0 string) ByUsageAPIGetOrganizationSummaryTopClientsByUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ByUsageApiGetOrganizationSummaryTopClientsByUsageRequest) T1(t1 string) ByUsageApiGetOrganizationSummaryTopClientsByUsageRequest {
+func (r ByUsageAPIGetOrganizationSummaryTopClientsByUsageRequest) T1(t1 string) ByUsageAPIGetOrganizationSummaryTopClientsByUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r ByUsageApiGetOrganizationSummaryTopClientsByUsageRequest) Timespan(timespan float32) ByUsageApiGetOrganizationSummaryTopClientsByUsageRequest {
+func (r ByUsageAPIGetOrganizationSummaryTopClientsByUsageRequest) Timespan(timespan float32) ByUsageAPIGetOrganizationSummaryTopClientsByUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r ByUsageApiGetOrganizationSummaryTopClientsByUsageRequest) Execute() ([]GetOrganizationSummaryTopClientsByUsage200ResponseInner, *http.Response, error) {
+func (r ByUsageAPIGetOrganizationSummaryTopClientsByUsageRequest) Execute() ([]GetOrganizationSummaryTopClientsByUsage200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSummaryTopClientsByUsageExecute(r)
 }
 
@@ -61,10 +61,10 @@ Return metrics for organization's top 10 clients by data usage (in mb) over give
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ByUsageApiGetOrganizationSummaryTopClientsByUsageRequest
+ @return ByUsageAPIGetOrganizationSummaryTopClientsByUsageRequest
 */
-func (a *ByUsageApiService) GetOrganizationSummaryTopClientsByUsage(ctx context.Context, organizationId string) ByUsageApiGetOrganizationSummaryTopClientsByUsageRequest {
-	return ByUsageApiGetOrganizationSummaryTopClientsByUsageRequest{
+func (a *ByUsageAPIService) GetOrganizationSummaryTopClientsByUsage(ctx context.Context, organizationId string) ByUsageAPIGetOrganizationSummaryTopClientsByUsageRequest {
+	return ByUsageAPIGetOrganizationSummaryTopClientsByUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -73,7 +73,7 @@ func (a *ByUsageApiService) GetOrganizationSummaryTopClientsByUsage(ctx context.
 
 // Execute executes the request
 //  @return []GetOrganizationSummaryTopClientsByUsage200ResponseInner
-func (a *ByUsageApiService) GetOrganizationSummaryTopClientsByUsageExecute(r ByUsageApiGetOrganizationSummaryTopClientsByUsageRequest) ([]GetOrganizationSummaryTopClientsByUsage200ResponseInner, *http.Response, error) {
+func (a *ByUsageAPIService) GetOrganizationSummaryTopClientsByUsageExecute(r ByUsageAPIGetOrganizationSummaryTopClientsByUsageRequest) ([]GetOrganizationSummaryTopClientsByUsage200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -81,7 +81,7 @@ func (a *ByUsageApiService) GetOrganizationSummaryTopClientsByUsageExecute(r ByU
 		localVarReturnValue  []GetOrganizationSummaryTopClientsByUsage200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByUsageApiService.GetOrganizationSummaryTopClientsByUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByUsageAPIService.GetOrganizationSummaryTopClientsByUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -170,9 +170,9 @@ func (a *ByUsageApiService) GetOrganizationSummaryTopClientsByUsageExecute(r ByU
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ByUsageApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest struct {
+type ByUsageAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest struct {
 	ctx context.Context
-	ApiService *ByUsageApiService
+	ApiService *ByUsageAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -180,24 +180,24 @@ type ByUsageApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest struc
 }
 
 // The beginning of the timespan for the data.
-func (r ByUsageApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest) T0(t0 string) ByUsageApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
+func (r ByUsageAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest) T0(t0 string) ByUsageAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ByUsageApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest) T1(t1 string) ByUsageApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
+func (r ByUsageAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest) T1(t1 string) ByUsageAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r ByUsageApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest) Timespan(timespan float32) ByUsageApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
+func (r ByUsageAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest) Timespan(timespan float32) ByUsageAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r ByUsageApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest) Execute() ([]GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner, *http.Response, error) {
+func (r ByUsageAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest) Execute() ([]GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSummaryTopClientsManufacturersByUsageExecute(r)
 }
 
@@ -208,10 +208,10 @@ Return metrics for organization's top clients by data usage (in mb) over given t
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ByUsageApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest
+ @return ByUsageAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest
 */
-func (a *ByUsageApiService) GetOrganizationSummaryTopClientsManufacturersByUsage(ctx context.Context, organizationId string) ByUsageApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
-	return ByUsageApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest{
+func (a *ByUsageAPIService) GetOrganizationSummaryTopClientsManufacturersByUsage(ctx context.Context, organizationId string) ByUsageAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
+	return ByUsageAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -220,7 +220,7 @@ func (a *ByUsageApiService) GetOrganizationSummaryTopClientsManufacturersByUsage
 
 // Execute executes the request
 //  @return []GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner
-func (a *ByUsageApiService) GetOrganizationSummaryTopClientsManufacturersByUsageExecute(r ByUsageApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest) ([]GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner, *http.Response, error) {
+func (a *ByUsageAPIService) GetOrganizationSummaryTopClientsManufacturersByUsageExecute(r ByUsageAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest) ([]GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -228,7 +228,7 @@ func (a *ByUsageApiService) GetOrganizationSummaryTopClientsManufacturersByUsage
 		localVarReturnValue  []GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByUsageApiService.GetOrganizationSummaryTopClientsManufacturersByUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByUsageAPIService.GetOrganizationSummaryTopClientsManufacturersByUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -317,9 +317,9 @@ func (a *ByUsageApiService) GetOrganizationSummaryTopClientsManufacturersByUsage
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ByUsageApiGetOrganizationSummaryTopDevicesByUsageRequest struct {
+type ByUsageAPIGetOrganizationSummaryTopDevicesByUsageRequest struct {
 	ctx context.Context
-	ApiService *ByUsageApiService
+	ApiService *ByUsageAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -327,24 +327,24 @@ type ByUsageApiGetOrganizationSummaryTopDevicesByUsageRequest struct {
 }
 
 // The beginning of the timespan for the data.
-func (r ByUsageApiGetOrganizationSummaryTopDevicesByUsageRequest) T0(t0 string) ByUsageApiGetOrganizationSummaryTopDevicesByUsageRequest {
+func (r ByUsageAPIGetOrganizationSummaryTopDevicesByUsageRequest) T0(t0 string) ByUsageAPIGetOrganizationSummaryTopDevicesByUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ByUsageApiGetOrganizationSummaryTopDevicesByUsageRequest) T1(t1 string) ByUsageApiGetOrganizationSummaryTopDevicesByUsageRequest {
+func (r ByUsageAPIGetOrganizationSummaryTopDevicesByUsageRequest) T1(t1 string) ByUsageAPIGetOrganizationSummaryTopDevicesByUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r ByUsageApiGetOrganizationSummaryTopDevicesByUsageRequest) Timespan(timespan float32) ByUsageApiGetOrganizationSummaryTopDevicesByUsageRequest {
+func (r ByUsageAPIGetOrganizationSummaryTopDevicesByUsageRequest) Timespan(timespan float32) ByUsageAPIGetOrganizationSummaryTopDevicesByUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r ByUsageApiGetOrganizationSummaryTopDevicesByUsageRequest) Execute() ([]GetOrganizationSummaryTopDevicesByUsage200ResponseInner, *http.Response, error) {
+func (r ByUsageAPIGetOrganizationSummaryTopDevicesByUsageRequest) Execute() ([]GetOrganizationSummaryTopDevicesByUsage200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSummaryTopDevicesByUsageExecute(r)
 }
 
@@ -355,10 +355,10 @@ Return metrics for organization's top 10 devices sorted by data usage over given
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ByUsageApiGetOrganizationSummaryTopDevicesByUsageRequest
+ @return ByUsageAPIGetOrganizationSummaryTopDevicesByUsageRequest
 */
-func (a *ByUsageApiService) GetOrganizationSummaryTopDevicesByUsage(ctx context.Context, organizationId string) ByUsageApiGetOrganizationSummaryTopDevicesByUsageRequest {
-	return ByUsageApiGetOrganizationSummaryTopDevicesByUsageRequest{
+func (a *ByUsageAPIService) GetOrganizationSummaryTopDevicesByUsage(ctx context.Context, organizationId string) ByUsageAPIGetOrganizationSummaryTopDevicesByUsageRequest {
+	return ByUsageAPIGetOrganizationSummaryTopDevicesByUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -367,7 +367,7 @@ func (a *ByUsageApiService) GetOrganizationSummaryTopDevicesByUsage(ctx context.
 
 // Execute executes the request
 //  @return []GetOrganizationSummaryTopDevicesByUsage200ResponseInner
-func (a *ByUsageApiService) GetOrganizationSummaryTopDevicesByUsageExecute(r ByUsageApiGetOrganizationSummaryTopDevicesByUsageRequest) ([]GetOrganizationSummaryTopDevicesByUsage200ResponseInner, *http.Response, error) {
+func (a *ByUsageAPIService) GetOrganizationSummaryTopDevicesByUsageExecute(r ByUsageAPIGetOrganizationSummaryTopDevicesByUsageRequest) ([]GetOrganizationSummaryTopDevicesByUsage200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -375,7 +375,7 @@ func (a *ByUsageApiService) GetOrganizationSummaryTopDevicesByUsageExecute(r ByU
 		localVarReturnValue  []GetOrganizationSummaryTopDevicesByUsage200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByUsageApiService.GetOrganizationSummaryTopDevicesByUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByUsageAPIService.GetOrganizationSummaryTopDevicesByUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -464,9 +464,9 @@ func (a *ByUsageApiService) GetOrganizationSummaryTopDevicesByUsageExecute(r ByU
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ByUsageApiGetOrganizationSummaryTopDevicesModelsByUsageRequest struct {
+type ByUsageAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest struct {
 	ctx context.Context
-	ApiService *ByUsageApiService
+	ApiService *ByUsageAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -474,24 +474,24 @@ type ByUsageApiGetOrganizationSummaryTopDevicesModelsByUsageRequest struct {
 }
 
 // The beginning of the timespan for the data.
-func (r ByUsageApiGetOrganizationSummaryTopDevicesModelsByUsageRequest) T0(t0 string) ByUsageApiGetOrganizationSummaryTopDevicesModelsByUsageRequest {
+func (r ByUsageAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest) T0(t0 string) ByUsageAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ByUsageApiGetOrganizationSummaryTopDevicesModelsByUsageRequest) T1(t1 string) ByUsageApiGetOrganizationSummaryTopDevicesModelsByUsageRequest {
+func (r ByUsageAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest) T1(t1 string) ByUsageAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r ByUsageApiGetOrganizationSummaryTopDevicesModelsByUsageRequest) Timespan(timespan float32) ByUsageApiGetOrganizationSummaryTopDevicesModelsByUsageRequest {
+func (r ByUsageAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest) Timespan(timespan float32) ByUsageAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r ByUsageApiGetOrganizationSummaryTopDevicesModelsByUsageRequest) Execute() ([]GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner, *http.Response, error) {
+func (r ByUsageAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest) Execute() ([]GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSummaryTopDevicesModelsByUsageExecute(r)
 }
 
@@ -502,10 +502,10 @@ Return metrics for organization's top 10 device models sorted by data usage over
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ByUsageApiGetOrganizationSummaryTopDevicesModelsByUsageRequest
+ @return ByUsageAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest
 */
-func (a *ByUsageApiService) GetOrganizationSummaryTopDevicesModelsByUsage(ctx context.Context, organizationId string) ByUsageApiGetOrganizationSummaryTopDevicesModelsByUsageRequest {
-	return ByUsageApiGetOrganizationSummaryTopDevicesModelsByUsageRequest{
+func (a *ByUsageAPIService) GetOrganizationSummaryTopDevicesModelsByUsage(ctx context.Context, organizationId string) ByUsageAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest {
+	return ByUsageAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -514,7 +514,7 @@ func (a *ByUsageApiService) GetOrganizationSummaryTopDevicesModelsByUsage(ctx co
 
 // Execute executes the request
 //  @return []GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner
-func (a *ByUsageApiService) GetOrganizationSummaryTopDevicesModelsByUsageExecute(r ByUsageApiGetOrganizationSummaryTopDevicesModelsByUsageRequest) ([]GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner, *http.Response, error) {
+func (a *ByUsageAPIService) GetOrganizationSummaryTopDevicesModelsByUsageExecute(r ByUsageAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest) ([]GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -522,7 +522,7 @@ func (a *ByUsageApiService) GetOrganizationSummaryTopDevicesModelsByUsageExecute
 		localVarReturnValue  []GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByUsageApiService.GetOrganizationSummaryTopDevicesModelsByUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByUsageAPIService.GetOrganizationSummaryTopDevicesModelsByUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -611,9 +611,9 @@ func (a *ByUsageApiService) GetOrganizationSummaryTopDevicesModelsByUsageExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ByUsageApiGetOrganizationSummaryTopSsidsByUsageRequest struct {
+type ByUsageAPIGetOrganizationSummaryTopSsidsByUsageRequest struct {
 	ctx context.Context
-	ApiService *ByUsageApiService
+	ApiService *ByUsageAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -621,24 +621,24 @@ type ByUsageApiGetOrganizationSummaryTopSsidsByUsageRequest struct {
 }
 
 // The beginning of the timespan for the data.
-func (r ByUsageApiGetOrganizationSummaryTopSsidsByUsageRequest) T0(t0 string) ByUsageApiGetOrganizationSummaryTopSsidsByUsageRequest {
+func (r ByUsageAPIGetOrganizationSummaryTopSsidsByUsageRequest) T0(t0 string) ByUsageAPIGetOrganizationSummaryTopSsidsByUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ByUsageApiGetOrganizationSummaryTopSsidsByUsageRequest) T1(t1 string) ByUsageApiGetOrganizationSummaryTopSsidsByUsageRequest {
+func (r ByUsageAPIGetOrganizationSummaryTopSsidsByUsageRequest) T1(t1 string) ByUsageAPIGetOrganizationSummaryTopSsidsByUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r ByUsageApiGetOrganizationSummaryTopSsidsByUsageRequest) Timespan(timespan float32) ByUsageApiGetOrganizationSummaryTopSsidsByUsageRequest {
+func (r ByUsageAPIGetOrganizationSummaryTopSsidsByUsageRequest) Timespan(timespan float32) ByUsageAPIGetOrganizationSummaryTopSsidsByUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r ByUsageApiGetOrganizationSummaryTopSsidsByUsageRequest) Execute() ([]GetOrganizationSummaryTopSsidsByUsage200ResponseInner, *http.Response, error) {
+func (r ByUsageAPIGetOrganizationSummaryTopSsidsByUsageRequest) Execute() ([]GetOrganizationSummaryTopSsidsByUsage200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSummaryTopSsidsByUsageExecute(r)
 }
 
@@ -649,10 +649,10 @@ Return metrics for organization's top 10 ssids by data usage over given time ran
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ByUsageApiGetOrganizationSummaryTopSsidsByUsageRequest
+ @return ByUsageAPIGetOrganizationSummaryTopSsidsByUsageRequest
 */
-func (a *ByUsageApiService) GetOrganizationSummaryTopSsidsByUsage(ctx context.Context, organizationId string) ByUsageApiGetOrganizationSummaryTopSsidsByUsageRequest {
-	return ByUsageApiGetOrganizationSummaryTopSsidsByUsageRequest{
+func (a *ByUsageAPIService) GetOrganizationSummaryTopSsidsByUsage(ctx context.Context, organizationId string) ByUsageAPIGetOrganizationSummaryTopSsidsByUsageRequest {
+	return ByUsageAPIGetOrganizationSummaryTopSsidsByUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -661,7 +661,7 @@ func (a *ByUsageApiService) GetOrganizationSummaryTopSsidsByUsage(ctx context.Co
 
 // Execute executes the request
 //  @return []GetOrganizationSummaryTopSsidsByUsage200ResponseInner
-func (a *ByUsageApiService) GetOrganizationSummaryTopSsidsByUsageExecute(r ByUsageApiGetOrganizationSummaryTopSsidsByUsageRequest) ([]GetOrganizationSummaryTopSsidsByUsage200ResponseInner, *http.Response, error) {
+func (a *ByUsageAPIService) GetOrganizationSummaryTopSsidsByUsageExecute(r ByUsageAPIGetOrganizationSummaryTopSsidsByUsageRequest) ([]GetOrganizationSummaryTopSsidsByUsage200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -669,7 +669,7 @@ func (a *ByUsageApiService) GetOrganizationSummaryTopSsidsByUsageExecute(r ByUsa
 		localVarReturnValue  []GetOrganizationSummaryTopSsidsByUsage200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByUsageApiService.GetOrganizationSummaryTopSsidsByUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByUsageAPIService.GetOrganizationSummaryTopSsidsByUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

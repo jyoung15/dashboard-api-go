@@ -20,23 +20,23 @@ import (
 )
 
 
-// RecentApiService RecentApi service
-type RecentApiService service
+// RecentAPIService RecentAPI service
+type RecentAPIService service
 
-type RecentApiGetDeviceCameraAnalyticsRecentRequest struct {
+type RecentAPIGetDeviceCameraAnalyticsRecentRequest struct {
 	ctx context.Context
-	ApiService *RecentApiService
+	ApiService *RecentAPIService
 	serial string
 	objectType *string
 }
 
 // [optional] The object type for which analytics will be retrieved. The default object type is person. The available types are [person, vehicle].
-func (r RecentApiGetDeviceCameraAnalyticsRecentRequest) ObjectType(objectType string) RecentApiGetDeviceCameraAnalyticsRecentRequest {
+func (r RecentAPIGetDeviceCameraAnalyticsRecentRequest) ObjectType(objectType string) RecentAPIGetDeviceCameraAnalyticsRecentRequest {
 	r.objectType = &objectType
 	return r
 }
 
-func (r RecentApiGetDeviceCameraAnalyticsRecentRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r RecentAPIGetDeviceCameraAnalyticsRecentRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraAnalyticsRecentExecute(r)
 }
 
@@ -47,10 +47,10 @@ Returns most recent record for analytics zones
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return RecentApiGetDeviceCameraAnalyticsRecentRequest
+ @return RecentAPIGetDeviceCameraAnalyticsRecentRequest
 */
-func (a *RecentApiService) GetDeviceCameraAnalyticsRecent(ctx context.Context, serial string) RecentApiGetDeviceCameraAnalyticsRecentRequest {
-	return RecentApiGetDeviceCameraAnalyticsRecentRequest{
+func (a *RecentAPIService) GetDeviceCameraAnalyticsRecent(ctx context.Context, serial string) RecentAPIGetDeviceCameraAnalyticsRecentRequest {
+	return RecentAPIGetDeviceCameraAnalyticsRecentRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -59,7 +59,7 @@ func (a *RecentApiService) GetDeviceCameraAnalyticsRecent(ctx context.Context, s
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *RecentApiService) GetDeviceCameraAnalyticsRecentExecute(r RecentApiGetDeviceCameraAnalyticsRecentRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *RecentAPIService) GetDeviceCameraAnalyticsRecentExecute(r RecentAPIGetDeviceCameraAnalyticsRecentRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -67,7 +67,7 @@ func (a *RecentApiService) GetDeviceCameraAnalyticsRecentExecute(r RecentApiGetD
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecentApiService.GetDeviceCameraAnalyticsRecent")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecentAPIService.GetDeviceCameraAnalyticsRecent")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

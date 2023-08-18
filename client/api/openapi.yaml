@@ -9305,7 +9305,9 @@ paths:
                 groupPolicy8021x: Student_Access
                 pskGroup: Group 1
               schema:
-                $ref: '#/components/schemas/getNetworkClients_200_response'
+                items:
+                  $ref: '#/components/schemas/getNetworkClients_200_response_inner'
+                type: array
           description: Successful operation
           headers:
             Link:
@@ -41048,6 +41050,130 @@ components:
             for the switch.
           type: string
       type: object
+    getNetworkClients_200_response_inner:
+      example:
+        notes: notes
+        usage:
+          recv: 6.0274563
+          sent: 0.8008282
+        recentDeviceMac: recentDeviceMac
+        description: description
+        ssid: ssid
+        mac: mac
+        manufacturer: manufacturer
+        adaptivePolicyGroup: adaptivePolicyGroup
+        groupPolicy8021x: groupPolicy8021x
+        vlan: vlan
+        id: id
+        deviceTypePrediction: deviceTypePrediction
+        ip6Local: ip6Local
+        recentDeviceSerial: recentDeviceSerial
+        os: os
+        wirelessCapabilities: wirelessCapabilities
+        firstSeen: firstSeen
+        ip: ip
+        recentDeviceConnection: Wired
+        switchport: switchport
+        recentDeviceName: recentDeviceName
+        ip6: ip6
+        smInstalled: true
+        lastSeen: lastSeen
+        pskGroup: pskGroup
+        namedVlan: namedVlan
+        user: user
+        status: Offline
+      properties:
+        id:
+          description: The ID of the client
+          type: string
+        mac:
+          description: The MAC address of the client
+          type: string
+        ip:
+          description: The IP address of the client
+          type: string
+        ip6:
+          description: The IPv6 address of the client
+          type: string
+        description:
+          description: Short description of the client
+          type: string
+        firstSeen:
+          description: Timestamp client was first seen in the network
+          type: string
+        lastSeen:
+          description: Timestamp client was last seen in the network
+          type: string
+        manufacturer:
+          description: Manufacturer of the client
+          type: string
+        os:
+          description: The operating system of the client
+          type: string
+        user:
+          description: The username of the user of the client
+          type: string
+        vlan:
+          description: The name of the VLAN that the client is connected to
+          type: string
+        ssid:
+          description: The name of the SSID that the client is connected to
+          type: string
+        switchport:
+          description: The switch port that the client is connected to
+          type: string
+        wirelessCapabilities:
+          description: Wireless capabilities of the client
+          type: string
+        smInstalled:
+          description: Status of SM for the client
+          type: boolean
+        recentDeviceMac:
+          description: The MAC address of the node that the device was last connected
+            to
+          type: string
+        status:
+          description: The connection status of the client
+          enum:
+          - Offline
+          - Online
+          type: string
+        usage:
+          $ref: '#/components/schemas/getNetworkClients_200_response_inner_usage'
+        namedVlan:
+          description: Named VLAN of the client
+          type: string
+        adaptivePolicyGroup:
+          description: The adaptive policy group of the client
+          type: string
+        deviceTypePrediction:
+          description: Prediction of the client's device type
+          type: string
+        recentDeviceSerial:
+          description: The serial of the node the device was last connected to
+          type: string
+        recentDeviceName:
+          description: The name of the node the device was last connected to
+          type: string
+        recentDeviceConnection:
+          description: Client's most recent connection type
+          enum:
+          - Wired
+          - Wireless
+          type: string
+        notes:
+          description: Notes on the client
+          type: string
+        ip6Local:
+          description: Local IPv6 address of the client
+          type: string
+        groupPolicy8021x:
+          description: 802.1x group policy of the client
+          type: string
+        pskGroup:
+          description: iPSK name of the client
+          type: string
+      type: object
     updateNetworkApplianceRfProfile_request_twoFourGhzSettings:
       description: Settings related to 2.4Ghz band
       properties:
@@ -43879,6 +44005,21 @@ components:
           description: User supplied description of the alert
           type: string
       type: object
+    getNetworkClients_200_response_inner_usage:
+      description: "Usage, sent and received"
+      example:
+        recv: 6.0274563
+        sent: 0.8008282
+      properties:
+        sent:
+          description: Usage sent by the client
+          format: float
+          type: number
+        recv:
+          description: Usage received by the client
+          format: float
+          type: number
+      type: object
     getNetworkWirelessSettings_200_response:
       example:
         ipv6BridgeEnabled: true
@@ -46581,6 +46722,27 @@ components:
           description: Port Id
           type: string
       type: object
+    getOrganizationDevicesStatuses_200_response_inner_components_powerSupplies_inner:
+      example:
+        serial: serial
+        poe:
+          unit: unit
+          maximum: 6
+        model: model
+        slot: 0
+        status: status
+      properties:
+        slot:
+          type: integer
+        serial:
+          type: string
+        model:
+          type: string
+        status:
+          type: string
+        poe:
+          $ref: '#/components/schemas/getOrganizationDevicesStatuses_200_response_inner_components_powerSupplies_inner_poe'
+      type: object
     createNetworkApplianceStaticRoute_request:
       example:
         name: My route
@@ -47121,130 +47283,6 @@ components:
           items:
             $ref: '#/components/schemas/getNetworkSwitchStackRoutingInterfaceDhcp_200_response_fixedIpAssignments_inner'
           type: array
-      type: object
-    getNetworkClients_200_response:
-      example:
-        notes: notes
-        usage:
-          recv: 5.962134
-          sent: 1.4658129
-        recentDeviceMac: recentDeviceMac
-        description: description
-        ssid: ssid
-        mac: mac
-        manufacturer: manufacturer
-        adaptivePolicyGroup: adaptivePolicyGroup
-        groupPolicy8021x: groupPolicy8021x
-        vlan: vlan
-        id: id
-        deviceTypePrediction: deviceTypePrediction
-        ip6Local: ip6Local
-        recentDeviceSerial: recentDeviceSerial
-        os: os
-        wirelessCapabilities: wirelessCapabilities
-        firstSeen: 0
-        ip: ip
-        recentDeviceConnection: Wired
-        switchport: switchport
-        recentDeviceName: recentDeviceName
-        ip6: ip6
-        smInstalled: true
-        lastSeen: 6
-        pskGroup: pskGroup
-        namedVlan: namedVlan
-        user: user
-        status: Offline
-      properties:
-        id:
-          description: The ID of the client
-          type: string
-        mac:
-          description: The MAC address of the client
-          type: string
-        ip:
-          description: The IP address of the client
-          type: string
-        ip6:
-          description: The IPv6 address of the client
-          type: string
-        description:
-          description: Short description of the client
-          type: string
-        firstSeen:
-          description: Timestamp client was first seen in the network
-          type: integer
-        lastSeen:
-          description: Timestamp client was last seen in the network
-          type: integer
-        manufacturer:
-          description: Manufacturer of the client
-          type: string
-        os:
-          description: The operating system of the client
-          type: string
-        user:
-          description: The username of the user of the client
-          type: string
-        vlan:
-          description: The name of the VLAN that the client is connected to
-          type: string
-        ssid:
-          description: The name of the SSID that the client is connected to
-          type: string
-        switchport:
-          description: The switch port that the client is connected to
-          type: string
-        wirelessCapabilities:
-          description: Wireless capabilities of the client
-          type: string
-        smInstalled:
-          description: Status of SM for the client
-          type: boolean
-        recentDeviceMac:
-          description: The MAC address of the node that the device was last connected
-            to
-          type: string
-        status:
-          description: The connection status of the client
-          enum:
-          - Offline
-          - Online
-          type: string
-        usage:
-          $ref: '#/components/schemas/getNetworkClients_200_response_usage'
-        namedVlan:
-          description: Named VLAN of the client
-          type: string
-        adaptivePolicyGroup:
-          description: The adaptive policy group of the client
-          type: string
-        deviceTypePrediction:
-          description: Prediction of the client's device type
-          type: string
-        recentDeviceSerial:
-          description: The serial of the node the device was last connected to
-          type: string
-        recentDeviceName:
-          description: The name of the node the device was last connected to
-          type: string
-        recentDeviceConnection:
-          description: Client's most recent connection type
-          enum:
-          - Wired
-          - Wireless
-          type: string
-        notes:
-          description: Notes on the client
-          type: string
-        ip6Local:
-          description: Local IPv6 address of the client
-          type: string
-        groupPolicy8021x:
-          description: 802.1x group policy of the client
-          type: string
-        pskGroup:
-          description: iPSK name of the client
-          type: string
       type: object
     createNetworkFirmwareUpgradesStagedGroup_request_assignedDevices_switchStacks_inner:
       properties:
@@ -48122,21 +48160,6 @@ components:
       properties:
         immediate:
           $ref: '#/components/schemas/getNetworkApplianceTrafficShapingUplinkSelection_200_response_failoverAndFailback_immediate'
-      type: object
-    getNetworkClients_200_response_usage:
-      description: "Usage, sent and received"
-      example:
-        recv: 5.962134
-        sent: 1.4658129
-      properties:
-        sent:
-          description: Usage sent by the client
-          format: float
-          type: number
-        recv:
-          description: Usage received by the client
-          format: float
-          type: number
       type: object
     getNetworkApplianceRfProfiles_200_response_assigned_inner_fiveGhzSettings:
       description: Settings related to 5Ghz band.
@@ -56798,8 +56821,20 @@ components:
         lastReportedAt: lastReportedAt
         components:
           powerSupplies:
-          - powerSupplies
-          - powerSupplies
+          - serial: serial
+            poe:
+              unit: unit
+              maximum: 6
+            model: model
+            slot: 0
+            status: status
+          - serial: serial
+            poe:
+              unit: unit
+              maximum: 6
+            model: model
+            slot: 0
+            status: status
         primaryDns: primaryDns
         publicIp: publicIp
         mac: mac
@@ -67853,17 +67888,39 @@ components:
       required:
       - target
       type: object
+    getOrganizationDevicesStatuses_200_response_inner_components_powerSupplies_inner_poe:
+      example:
+        unit: unit
+        maximum: 6
+      properties:
+        unit:
+          type: string
+        maximum:
+          type: integer
+      type: object
     getOrganizationDevicesStatuses_200_response_inner_components:
       description: Components
       example:
         powerSupplies:
-        - powerSupplies
-        - powerSupplies
+        - serial: serial
+          poe:
+            unit: unit
+            maximum: 6
+          model: model
+          slot: 0
+          status: status
+        - serial: serial
+          poe:
+            unit: unit
+            maximum: 6
+          model: model
+          slot: 0
+          status: status
       properties:
         powerSupplies:
           description: Power Supplies
           items:
-            type: string
+            $ref: '#/components/schemas/getOrganizationDevicesStatuses_200_response_inner_components_powerSupplies_inner'
           type: array
       type: object
     createNetworkWirelessRfProfile_request_flexRadios_byModel_inner:

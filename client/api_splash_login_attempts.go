@@ -20,12 +20,12 @@ import (
 )
 
 
-// SplashLoginAttemptsApiService SplashLoginAttemptsApi service
-type SplashLoginAttemptsApiService service
+// SplashLoginAttemptsAPIService SplashLoginAttemptsAPI service
+type SplashLoginAttemptsAPIService service
 
-type SplashLoginAttemptsApiGetNetworkSplashLoginAttemptsRequest struct {
+type SplashLoginAttemptsAPIGetNetworkSplashLoginAttemptsRequest struct {
 	ctx context.Context
-	ApiService *SplashLoginAttemptsApiService
+	ApiService *SplashLoginAttemptsAPIService
 	networkId string
 	ssidNumber *int32
 	loginIdentifier *string
@@ -33,24 +33,24 @@ type SplashLoginAttemptsApiGetNetworkSplashLoginAttemptsRequest struct {
 }
 
 // Only return the login attempts for the specified SSID
-func (r SplashLoginAttemptsApiGetNetworkSplashLoginAttemptsRequest) SsidNumber(ssidNumber int32) SplashLoginAttemptsApiGetNetworkSplashLoginAttemptsRequest {
+func (r SplashLoginAttemptsAPIGetNetworkSplashLoginAttemptsRequest) SsidNumber(ssidNumber int32) SplashLoginAttemptsAPIGetNetworkSplashLoginAttemptsRequest {
 	r.ssidNumber = &ssidNumber
 	return r
 }
 
 // The username, email, or phone number used during login
-func (r SplashLoginAttemptsApiGetNetworkSplashLoginAttemptsRequest) LoginIdentifier(loginIdentifier string) SplashLoginAttemptsApiGetNetworkSplashLoginAttemptsRequest {
+func (r SplashLoginAttemptsAPIGetNetworkSplashLoginAttemptsRequest) LoginIdentifier(loginIdentifier string) SplashLoginAttemptsAPIGetNetworkSplashLoginAttemptsRequest {
 	r.loginIdentifier = &loginIdentifier
 	return r
 }
 
 // The timespan, in seconds, for the login attempts. The period will be from [timespan] seconds ago until now. The maximum timespan is 3 months
-func (r SplashLoginAttemptsApiGetNetworkSplashLoginAttemptsRequest) Timespan(timespan int32) SplashLoginAttemptsApiGetNetworkSplashLoginAttemptsRequest {
+func (r SplashLoginAttemptsAPIGetNetworkSplashLoginAttemptsRequest) Timespan(timespan int32) SplashLoginAttemptsAPIGetNetworkSplashLoginAttemptsRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r SplashLoginAttemptsApiGetNetworkSplashLoginAttemptsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r SplashLoginAttemptsAPIGetNetworkSplashLoginAttemptsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSplashLoginAttemptsExecute(r)
 }
 
@@ -61,10 +61,10 @@ List the splash login attempts for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SplashLoginAttemptsApiGetNetworkSplashLoginAttemptsRequest
+ @return SplashLoginAttemptsAPIGetNetworkSplashLoginAttemptsRequest
 */
-func (a *SplashLoginAttemptsApiService) GetNetworkSplashLoginAttempts(ctx context.Context, networkId string) SplashLoginAttemptsApiGetNetworkSplashLoginAttemptsRequest {
-	return SplashLoginAttemptsApiGetNetworkSplashLoginAttemptsRequest{
+func (a *SplashLoginAttemptsAPIService) GetNetworkSplashLoginAttempts(ctx context.Context, networkId string) SplashLoginAttemptsAPIGetNetworkSplashLoginAttemptsRequest {
+	return SplashLoginAttemptsAPIGetNetworkSplashLoginAttemptsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -73,7 +73,7 @@ func (a *SplashLoginAttemptsApiService) GetNetworkSplashLoginAttempts(ctx contex
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *SplashLoginAttemptsApiService) GetNetworkSplashLoginAttemptsExecute(r SplashLoginAttemptsApiGetNetworkSplashLoginAttemptsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *SplashLoginAttemptsAPIService) GetNetworkSplashLoginAttemptsExecute(r SplashLoginAttemptsAPIGetNetworkSplashLoginAttemptsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -81,7 +81,7 @@ func (a *SplashLoginAttemptsApiService) GetNetworkSplashLoginAttemptsExecute(r S
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SplashLoginAttemptsApiService.GetNetworkSplashLoginAttempts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SplashLoginAttemptsAPIService.GetNetworkSplashLoginAttempts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

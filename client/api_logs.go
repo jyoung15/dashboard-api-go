@@ -20,12 +20,12 @@ import (
 )
 
 
-// LogsApiService LogsApi service
-type LogsApiService service
+// LogsAPIService LogsAPI service
+type LogsAPIService service
 
-type LogsApiGetOrganizationWebhooksLogsRequest struct {
+type LogsAPIGetOrganizationWebhooksLogsRequest struct {
 	ctx context.Context
-	ApiService *LogsApiService
+	ApiService *LogsAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -37,48 +37,48 @@ type LogsApiGetOrganizationWebhooksLogsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 90 days from today.
-func (r LogsApiGetOrganizationWebhooksLogsRequest) T0(t0 string) LogsApiGetOrganizationWebhooksLogsRequest {
+func (r LogsAPIGetOrganizationWebhooksLogsRequest) T0(t0 string) LogsAPIGetOrganizationWebhooksLogsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r LogsApiGetOrganizationWebhooksLogsRequest) T1(t1 string) LogsApiGetOrganizationWebhooksLogsRequest {
+func (r LogsAPIGetOrganizationWebhooksLogsRequest) T1(t1 string) LogsAPIGetOrganizationWebhooksLogsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r LogsApiGetOrganizationWebhooksLogsRequest) Timespan(timespan float32) LogsApiGetOrganizationWebhooksLogsRequest {
+func (r LogsAPIGetOrganizationWebhooksLogsRequest) Timespan(timespan float32) LogsAPIGetOrganizationWebhooksLogsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.
-func (r LogsApiGetOrganizationWebhooksLogsRequest) PerPage(perPage int32) LogsApiGetOrganizationWebhooksLogsRequest {
+func (r LogsAPIGetOrganizationWebhooksLogsRequest) PerPage(perPage int32) LogsAPIGetOrganizationWebhooksLogsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r LogsApiGetOrganizationWebhooksLogsRequest) StartingAfter(startingAfter string) LogsApiGetOrganizationWebhooksLogsRequest {
+func (r LogsAPIGetOrganizationWebhooksLogsRequest) StartingAfter(startingAfter string) LogsAPIGetOrganizationWebhooksLogsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r LogsApiGetOrganizationWebhooksLogsRequest) EndingBefore(endingBefore string) LogsApiGetOrganizationWebhooksLogsRequest {
+func (r LogsAPIGetOrganizationWebhooksLogsRequest) EndingBefore(endingBefore string) LogsAPIGetOrganizationWebhooksLogsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The URL the webhook was sent to
-func (r LogsApiGetOrganizationWebhooksLogsRequest) Url(url string) LogsApiGetOrganizationWebhooksLogsRequest {
+func (r LogsAPIGetOrganizationWebhooksLogsRequest) Url(url string) LogsAPIGetOrganizationWebhooksLogsRequest {
 	r.url = &url
 	return r
 }
 
-func (r LogsApiGetOrganizationWebhooksLogsRequest) Execute() ([]GetOrganizationWebhooksLogs200ResponseInner, *http.Response, error) {
+func (r LogsAPIGetOrganizationWebhooksLogsRequest) Execute() ([]GetOrganizationWebhooksLogs200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationWebhooksLogsExecute(r)
 }
 
@@ -89,10 +89,10 @@ Return the log of webhook POSTs sent
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return LogsApiGetOrganizationWebhooksLogsRequest
+ @return LogsAPIGetOrganizationWebhooksLogsRequest
 */
-func (a *LogsApiService) GetOrganizationWebhooksLogs(ctx context.Context, organizationId string) LogsApiGetOrganizationWebhooksLogsRequest {
-	return LogsApiGetOrganizationWebhooksLogsRequest{
+func (a *LogsAPIService) GetOrganizationWebhooksLogs(ctx context.Context, organizationId string) LogsAPIGetOrganizationWebhooksLogsRequest {
+	return LogsAPIGetOrganizationWebhooksLogsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -101,7 +101,7 @@ func (a *LogsApiService) GetOrganizationWebhooksLogs(ctx context.Context, organi
 
 // Execute executes the request
 //  @return []GetOrganizationWebhooksLogs200ResponseInner
-func (a *LogsApiService) GetOrganizationWebhooksLogsExecute(r LogsApiGetOrganizationWebhooksLogsRequest) ([]GetOrganizationWebhooksLogs200ResponseInner, *http.Response, error) {
+func (a *LogsAPIService) GetOrganizationWebhooksLogsExecute(r LogsAPIGetOrganizationWebhooksLogsRequest) ([]GetOrganizationWebhooksLogs200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -109,7 +109,7 @@ func (a *LogsApiService) GetOrganizationWebhooksLogsExecute(r LogsApiGetOrganiza
 		localVarReturnValue  []GetOrganizationWebhooksLogs200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogsApiService.GetOrganizationWebhooksLogs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogsAPIService.GetOrganizationWebhooksLogs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

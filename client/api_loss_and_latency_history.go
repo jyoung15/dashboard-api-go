@@ -20,12 +20,12 @@ import (
 )
 
 
-// LossAndLatencyHistoryApiService LossAndLatencyHistoryApi service
-type LossAndLatencyHistoryApiService service
+// LossAndLatencyHistoryAPIService LossAndLatencyHistoryAPI service
+type LossAndLatencyHistoryAPIService service
 
-type LossAndLatencyHistoryApiGetDeviceLossAndLatencyHistoryRequest struct {
+type LossAndLatencyHistoryAPIGetDeviceLossAndLatencyHistoryRequest struct {
 	ctx context.Context
-	ApiService *LossAndLatencyHistoryApiService
+	ApiService *LossAndLatencyHistoryAPIService
 	serial string
 	ip *string
 	t0 *string
@@ -36,42 +36,42 @@ type LossAndLatencyHistoryApiGetDeviceLossAndLatencyHistoryRequest struct {
 }
 
 // The destination IP used to obtain the requested stats. This is required.
-func (r LossAndLatencyHistoryApiGetDeviceLossAndLatencyHistoryRequest) Ip(ip string) LossAndLatencyHistoryApiGetDeviceLossAndLatencyHistoryRequest {
+func (r LossAndLatencyHistoryAPIGetDeviceLossAndLatencyHistoryRequest) Ip(ip string) LossAndLatencyHistoryAPIGetDeviceLossAndLatencyHistoryRequest {
 	r.ip = &ip
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 60 days from today.
-func (r LossAndLatencyHistoryApiGetDeviceLossAndLatencyHistoryRequest) T0(t0 string) LossAndLatencyHistoryApiGetDeviceLossAndLatencyHistoryRequest {
+func (r LossAndLatencyHistoryAPIGetDeviceLossAndLatencyHistoryRequest) T0(t0 string) LossAndLatencyHistoryAPIGetDeviceLossAndLatencyHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r LossAndLatencyHistoryApiGetDeviceLossAndLatencyHistoryRequest) T1(t1 string) LossAndLatencyHistoryApiGetDeviceLossAndLatencyHistoryRequest {
+func (r LossAndLatencyHistoryAPIGetDeviceLossAndLatencyHistoryRequest) T1(t1 string) LossAndLatencyHistoryAPIGetDeviceLossAndLatencyHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r LossAndLatencyHistoryApiGetDeviceLossAndLatencyHistoryRequest) Timespan(timespan float32) LossAndLatencyHistoryApiGetDeviceLossAndLatencyHistoryRequest {
+func (r LossAndLatencyHistoryAPIGetDeviceLossAndLatencyHistoryRequest) Timespan(timespan float32) LossAndLatencyHistoryAPIGetDeviceLossAndLatencyHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 60, 600, 3600, 86400. The default is 60.
-func (r LossAndLatencyHistoryApiGetDeviceLossAndLatencyHistoryRequest) Resolution(resolution int32) LossAndLatencyHistoryApiGetDeviceLossAndLatencyHistoryRequest {
+func (r LossAndLatencyHistoryAPIGetDeviceLossAndLatencyHistoryRequest) Resolution(resolution int32) LossAndLatencyHistoryAPIGetDeviceLossAndLatencyHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // The WAN uplink used to obtain the requested stats. Valid uplinks are wan1, wan2, wan3, cellular. The default is wan1.
-func (r LossAndLatencyHistoryApiGetDeviceLossAndLatencyHistoryRequest) Uplink(uplink string) LossAndLatencyHistoryApiGetDeviceLossAndLatencyHistoryRequest {
+func (r LossAndLatencyHistoryAPIGetDeviceLossAndLatencyHistoryRequest) Uplink(uplink string) LossAndLatencyHistoryAPIGetDeviceLossAndLatencyHistoryRequest {
 	r.uplink = &uplink
 	return r
 }
 
-func (r LossAndLatencyHistoryApiGetDeviceLossAndLatencyHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r LossAndLatencyHistoryAPIGetDeviceLossAndLatencyHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceLossAndLatencyHistoryExecute(r)
 }
 
@@ -82,10 +82,10 @@ Get the uplink loss percentage and latency in milliseconds, and goodput in kilob
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return LossAndLatencyHistoryApiGetDeviceLossAndLatencyHistoryRequest
+ @return LossAndLatencyHistoryAPIGetDeviceLossAndLatencyHistoryRequest
 */
-func (a *LossAndLatencyHistoryApiService) GetDeviceLossAndLatencyHistory(ctx context.Context, serial string) LossAndLatencyHistoryApiGetDeviceLossAndLatencyHistoryRequest {
-	return LossAndLatencyHistoryApiGetDeviceLossAndLatencyHistoryRequest{
+func (a *LossAndLatencyHistoryAPIService) GetDeviceLossAndLatencyHistory(ctx context.Context, serial string) LossAndLatencyHistoryAPIGetDeviceLossAndLatencyHistoryRequest {
+	return LossAndLatencyHistoryAPIGetDeviceLossAndLatencyHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -94,7 +94,7 @@ func (a *LossAndLatencyHistoryApiService) GetDeviceLossAndLatencyHistory(ctx con
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *LossAndLatencyHistoryApiService) GetDeviceLossAndLatencyHistoryExecute(r LossAndLatencyHistoryApiGetDeviceLossAndLatencyHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *LossAndLatencyHistoryAPIService) GetDeviceLossAndLatencyHistoryExecute(r LossAndLatencyHistoryAPIGetDeviceLossAndLatencyHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -102,7 +102,7 @@ func (a *LossAndLatencyHistoryApiService) GetDeviceLossAndLatencyHistoryExecute(
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LossAndLatencyHistoryApiService.GetDeviceLossAndLatencyHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LossAndLatencyHistoryAPIService.GetDeviceLossAndLatencyHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

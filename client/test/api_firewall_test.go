@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing FirewallApiService
+Testing FirewallAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_FirewallApiService(t *testing.T) {
+func Test_client_FirewallAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test FirewallApiService GetNetworkApplianceFirewallCellularFirewallRules", func(t *testing.T) {
+	t.Run("Test FirewallAPIService GetNetworkApplianceFirewallCellularFirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirewallApi.GetNetworkApplianceFirewallCellularFirewallRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirewallAPI.GetNetworkApplianceFirewallCellularFirewallRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,14 +36,14 @@ func Test_client_FirewallApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirewallApiService GetNetworkApplianceFirewallFirewalledService", func(t *testing.T) {
+	t.Run("Test FirewallAPIService GetNetworkApplianceFirewallFirewalledService", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var service string
 
-		resp, httpRes, err := apiClient.FirewallApi.GetNetworkApplianceFirewallFirewalledService(context.Background(), networkId, service).Execute()
+		resp, httpRes, err := apiClient.FirewallAPI.GetNetworkApplianceFirewallFirewalledService(context.Background(), networkId, service).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -51,13 +51,13 @@ func Test_client_FirewallApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirewallApiService GetNetworkApplianceFirewallFirewalledServices", func(t *testing.T) {
+	t.Run("Test FirewallAPIService GetNetworkApplianceFirewallFirewalledServices", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirewallApi.GetNetworkApplianceFirewallFirewalledServices(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirewallAPI.GetNetworkApplianceFirewallFirewalledServices(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -65,13 +65,13 @@ func Test_client_FirewallApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirewallApiService GetNetworkApplianceFirewallInboundCellularFirewallRules", func(t *testing.T) {
+	t.Run("Test FirewallAPIService GetNetworkApplianceFirewallInboundCellularFirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirewallApi.GetNetworkApplianceFirewallInboundCellularFirewallRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirewallAPI.GetNetworkApplianceFirewallInboundCellularFirewallRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,13 +79,13 @@ func Test_client_FirewallApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirewallApiService GetNetworkApplianceFirewallInboundFirewallRules", func(t *testing.T) {
+	t.Run("Test FirewallAPIService GetNetworkApplianceFirewallInboundFirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirewallApi.GetNetworkApplianceFirewallInboundFirewallRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirewallAPI.GetNetworkApplianceFirewallInboundFirewallRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -93,13 +93,13 @@ func Test_client_FirewallApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirewallApiService GetNetworkApplianceFirewallL3FirewallRules", func(t *testing.T) {
+	t.Run("Test FirewallAPIService GetNetworkApplianceFirewallL3FirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirewallApi.GetNetworkApplianceFirewallL3FirewallRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirewallAPI.GetNetworkApplianceFirewallL3FirewallRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -107,13 +107,13 @@ func Test_client_FirewallApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirewallApiService GetNetworkApplianceFirewallL7FirewallRules", func(t *testing.T) {
+	t.Run("Test FirewallAPIService GetNetworkApplianceFirewallL7FirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirewallApi.GetNetworkApplianceFirewallL7FirewallRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirewallAPI.GetNetworkApplianceFirewallL7FirewallRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -121,13 +121,13 @@ func Test_client_FirewallApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirewallApiService GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories", func(t *testing.T) {
+	t.Run("Test FirewallAPIService GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirewallApi.GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirewallAPI.GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -135,13 +135,13 @@ func Test_client_FirewallApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirewallApiService GetNetworkApplianceFirewallOneToManyNatRules", func(t *testing.T) {
+	t.Run("Test FirewallAPIService GetNetworkApplianceFirewallOneToManyNatRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirewallApi.GetNetworkApplianceFirewallOneToManyNatRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirewallAPI.GetNetworkApplianceFirewallOneToManyNatRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -149,13 +149,13 @@ func Test_client_FirewallApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirewallApiService GetNetworkApplianceFirewallOneToOneNatRules", func(t *testing.T) {
+	t.Run("Test FirewallAPIService GetNetworkApplianceFirewallOneToOneNatRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirewallApi.GetNetworkApplianceFirewallOneToOneNatRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirewallAPI.GetNetworkApplianceFirewallOneToOneNatRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -163,13 +163,13 @@ func Test_client_FirewallApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirewallApiService GetNetworkApplianceFirewallPortForwardingRules", func(t *testing.T) {
+	t.Run("Test FirewallAPIService GetNetworkApplianceFirewallPortForwardingRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirewallApi.GetNetworkApplianceFirewallPortForwardingRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirewallAPI.GetNetworkApplianceFirewallPortForwardingRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -177,13 +177,13 @@ func Test_client_FirewallApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirewallApiService GetNetworkApplianceFirewallSettings", func(t *testing.T) {
+	t.Run("Test FirewallAPIService GetNetworkApplianceFirewallSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirewallApi.GetNetworkApplianceFirewallSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirewallAPI.GetNetworkApplianceFirewallSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -191,29 +191,14 @@ func Test_client_FirewallApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirewallApiService GetNetworkWirelessSsidFirewallL3FirewallRules", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-		var number string
-
-		resp, httpRes, err := apiClient.FirewallApi.GetNetworkWirelessSsidFirewallL3FirewallRules(context.Background(), networkId, number).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test FirewallApiService GetNetworkWirelessSsidFirewallL7FirewallRules", func(t *testing.T) {
+	t.Run("Test FirewallAPIService GetNetworkWirelessSsidFirewallL3FirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.FirewallApi.GetNetworkWirelessSsidFirewallL7FirewallRules(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.FirewallAPI.GetNetworkWirelessSsidFirewallL3FirewallRules(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -221,13 +206,28 @@ func Test_client_FirewallApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirewallApiService UpdateNetworkApplianceFirewallCellularFirewallRules", func(t *testing.T) {
+	t.Run("Test FirewallAPIService GetNetworkWirelessSsidFirewallL7FirewallRules", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+		var number string
+
+		resp, httpRes, err := apiClient.FirewallAPI.GetNetworkWirelessSsidFirewallL7FirewallRules(context.Background(), networkId, number).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test FirewallAPIService UpdateNetworkApplianceFirewallCellularFirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirewallApi.UpdateNetworkApplianceFirewallCellularFirewallRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirewallAPI.UpdateNetworkApplianceFirewallCellularFirewallRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -235,14 +235,14 @@ func Test_client_FirewallApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirewallApiService UpdateNetworkApplianceFirewallFirewalledService", func(t *testing.T) {
+	t.Run("Test FirewallAPIService UpdateNetworkApplianceFirewallFirewalledService", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var service string
 
-		resp, httpRes, err := apiClient.FirewallApi.UpdateNetworkApplianceFirewallFirewalledService(context.Background(), networkId, service).Execute()
+		resp, httpRes, err := apiClient.FirewallAPI.UpdateNetworkApplianceFirewallFirewalledService(context.Background(), networkId, service).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -250,13 +250,13 @@ func Test_client_FirewallApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirewallApiService UpdateNetworkApplianceFirewallInboundCellularFirewallRules", func(t *testing.T) {
+	t.Run("Test FirewallAPIService UpdateNetworkApplianceFirewallInboundCellularFirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirewallApi.UpdateNetworkApplianceFirewallInboundCellularFirewallRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirewallAPI.UpdateNetworkApplianceFirewallInboundCellularFirewallRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -264,13 +264,13 @@ func Test_client_FirewallApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirewallApiService UpdateNetworkApplianceFirewallInboundFirewallRules", func(t *testing.T) {
+	t.Run("Test FirewallAPIService UpdateNetworkApplianceFirewallInboundFirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirewallApi.UpdateNetworkApplianceFirewallInboundFirewallRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirewallAPI.UpdateNetworkApplianceFirewallInboundFirewallRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -278,13 +278,13 @@ func Test_client_FirewallApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirewallApiService UpdateNetworkApplianceFirewallL3FirewallRules", func(t *testing.T) {
+	t.Run("Test FirewallAPIService UpdateNetworkApplianceFirewallL3FirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirewallApi.UpdateNetworkApplianceFirewallL3FirewallRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirewallAPI.UpdateNetworkApplianceFirewallL3FirewallRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -292,13 +292,13 @@ func Test_client_FirewallApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirewallApiService UpdateNetworkApplianceFirewallL7FirewallRules", func(t *testing.T) {
+	t.Run("Test FirewallAPIService UpdateNetworkApplianceFirewallL7FirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirewallApi.UpdateNetworkApplianceFirewallL7FirewallRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirewallAPI.UpdateNetworkApplianceFirewallL7FirewallRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -306,13 +306,13 @@ func Test_client_FirewallApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirewallApiService UpdateNetworkApplianceFirewallOneToManyNatRules", func(t *testing.T) {
+	t.Run("Test FirewallAPIService UpdateNetworkApplianceFirewallOneToManyNatRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirewallApi.UpdateNetworkApplianceFirewallOneToManyNatRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirewallAPI.UpdateNetworkApplianceFirewallOneToManyNatRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -320,13 +320,13 @@ func Test_client_FirewallApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirewallApiService UpdateNetworkApplianceFirewallOneToOneNatRules", func(t *testing.T) {
+	t.Run("Test FirewallAPIService UpdateNetworkApplianceFirewallOneToOneNatRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirewallApi.UpdateNetworkApplianceFirewallOneToOneNatRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirewallAPI.UpdateNetworkApplianceFirewallOneToOneNatRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -334,13 +334,13 @@ func Test_client_FirewallApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirewallApiService UpdateNetworkApplianceFirewallPortForwardingRules", func(t *testing.T) {
+	t.Run("Test FirewallAPIService UpdateNetworkApplianceFirewallPortForwardingRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirewallApi.UpdateNetworkApplianceFirewallPortForwardingRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirewallAPI.UpdateNetworkApplianceFirewallPortForwardingRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -348,13 +348,13 @@ func Test_client_FirewallApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirewallApiService UpdateNetworkApplianceFirewallSettings", func(t *testing.T) {
+	t.Run("Test FirewallAPIService UpdateNetworkApplianceFirewallSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirewallApi.UpdateNetworkApplianceFirewallSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirewallAPI.UpdateNetworkApplianceFirewallSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -362,29 +362,29 @@ func Test_client_FirewallApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirewallApiService UpdateNetworkWirelessSsidFirewallL3FirewallRules", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-		var number string
-
-		resp, httpRes, err := apiClient.FirewallApi.UpdateNetworkWirelessSsidFirewallL3FirewallRules(context.Background(), networkId, number).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test FirewallApiService UpdateNetworkWirelessSsidFirewallL7FirewallRules", func(t *testing.T) {
+	t.Run("Test FirewallAPIService UpdateNetworkWirelessSsidFirewallL3FirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.FirewallApi.UpdateNetworkWirelessSsidFirewallL7FirewallRules(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.FirewallAPI.UpdateNetworkWirelessSsidFirewallL3FirewallRules(context.Background(), networkId, number).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test FirewallAPIService UpdateNetworkWirelessSsidFirewallL7FirewallRules", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+		var number string
+
+		resp, httpRes, err := apiClient.FirewallAPI.UpdateNetworkWirelessSsidFirewallL7FirewallRules(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

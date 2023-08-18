@@ -21,12 +21,12 @@ import (
 )
 
 
-// ResponseCodesApiService ResponseCodesApi service
-type ResponseCodesApiService service
+// ResponseCodesAPIService ResponseCodesAPI service
+type ResponseCodesAPIService service
 
-type ResponseCodesApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest struct {
+type ResponseCodesAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest struct {
 	ctx context.Context
-	ApiService *ResponseCodesApiService
+	ApiService *ResponseCodesAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -40,60 +40,60 @@ type ResponseCodesApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRe
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r ResponseCodesApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) T0(t0 string) ResponseCodesApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r ResponseCodesAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) T0(t0 string) ResponseCodesAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ResponseCodesApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) T1(t1 string) ResponseCodesApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r ResponseCodesAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) T1(t1 string) ResponseCodesAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 31 days. If interval is provided, the timespan will be autocalculated.
-func (r ResponseCodesApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Timespan(timespan float32) ResponseCodesApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r ResponseCodesAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Timespan(timespan float32) ResponseCodesAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time interval in seconds for returned data. The valid intervals are: 120, 3600, 14400, 21600. The default is 21600. Interval is calculated if time params are provided.
-func (r ResponseCodesApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Interval(interval int32) ResponseCodesApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r ResponseCodesAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Interval(interval int32) ResponseCodesAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.interval = &interval
 	return r
 }
 
 // Filter by API version of the endpoint. Allowable values are: [0, 1]
-func (r ResponseCodesApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Version(version int32) ResponseCodesApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r ResponseCodesAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Version(version int32) ResponseCodesAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.version = &version
 	return r
 }
 
 // Filter by operation ID of the endpoint
-func (r ResponseCodesApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) OperationIds(operationIds []string) ResponseCodesApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r ResponseCodesAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) OperationIds(operationIds []string) ResponseCodesAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.operationIds = &operationIds
 	return r
 }
 
 // Filter by source IP that made the API request
-func (r ResponseCodesApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) SourceIps(sourceIps []string) ResponseCodesApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r ResponseCodesAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) SourceIps(sourceIps []string) ResponseCodesAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.sourceIps = &sourceIps
 	return r
 }
 
 // Filter by admin ID of user that made the API request
-func (r ResponseCodesApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) AdminIds(adminIds []string) ResponseCodesApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r ResponseCodesAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) AdminIds(adminIds []string) ResponseCodesAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.adminIds = &adminIds
 	return r
 }
 
 // Filter by user agent string for API request. This will filter by a complete or partial match.
-func (r ResponseCodesApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) UserAgent(userAgent string) ResponseCodesApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r ResponseCodesAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) UserAgent(userAgent string) ResponseCodesAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.userAgent = &userAgent
 	return r
 }
 
-func (r ResponseCodesApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Execute() ([]GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner, *http.Response, error) {
+func (r ResponseCodesAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Execute() ([]GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationApiRequestsOverviewResponseCodesByIntervalExecute(r)
 }
 
@@ -104,10 +104,10 @@ Tracks organizations' API requests by response code across a given time period
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ResponseCodesApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest
+ @return ResponseCodesAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest
 */
-func (a *ResponseCodesApiService) GetOrganizationApiRequestsOverviewResponseCodesByInterval(ctx context.Context, organizationId string) ResponseCodesApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
-	return ResponseCodesApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest{
+func (a *ResponseCodesAPIService) GetOrganizationApiRequestsOverviewResponseCodesByInterval(ctx context.Context, organizationId string) ResponseCodesAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+	return ResponseCodesAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -116,7 +116,7 @@ func (a *ResponseCodesApiService) GetOrganizationApiRequestsOverviewResponseCode
 
 // Execute executes the request
 //  @return []GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner
-func (a *ResponseCodesApiService) GetOrganizationApiRequestsOverviewResponseCodesByIntervalExecute(r ResponseCodesApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) ([]GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner, *http.Response, error) {
+func (a *ResponseCodesAPIService) GetOrganizationApiRequestsOverviewResponseCodesByIntervalExecute(r ResponseCodesAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) ([]GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -124,7 +124,7 @@ func (a *ResponseCodesApiService) GetOrganizationApiRequestsOverviewResponseCode
 		localVarReturnValue  []GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ResponseCodesApiService.GetOrganizationApiRequestsOverviewResponseCodesByInterval")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ResponseCodesAPIService.GetOrganizationApiRequestsOverviewResponseCodesByInterval")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

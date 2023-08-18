@@ -20,16 +20,16 @@ import (
 )
 
 
-// QualityAndRetentionApiService QualityAndRetentionApi service
-type QualityAndRetentionApiService service
+// QualityAndRetentionAPIService QualityAndRetentionAPI service
+type QualityAndRetentionAPIService service
 
-type QualityAndRetentionApiGetDeviceCameraQualityAndRetentionRequest struct {
+type QualityAndRetentionAPIGetDeviceCameraQualityAndRetentionRequest struct {
 	ctx context.Context
-	ApiService *QualityAndRetentionApiService
+	ApiService *QualityAndRetentionAPIService
 	serial string
 }
 
-func (r QualityAndRetentionApiGetDeviceCameraQualityAndRetentionRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r QualityAndRetentionAPIGetDeviceCameraQualityAndRetentionRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraQualityAndRetentionExecute(r)
 }
 
@@ -40,10 +40,10 @@ Returns quality and retention settings for the given camera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return QualityAndRetentionApiGetDeviceCameraQualityAndRetentionRequest
+ @return QualityAndRetentionAPIGetDeviceCameraQualityAndRetentionRequest
 */
-func (a *QualityAndRetentionApiService) GetDeviceCameraQualityAndRetention(ctx context.Context, serial string) QualityAndRetentionApiGetDeviceCameraQualityAndRetentionRequest {
-	return QualityAndRetentionApiGetDeviceCameraQualityAndRetentionRequest{
+func (a *QualityAndRetentionAPIService) GetDeviceCameraQualityAndRetention(ctx context.Context, serial string) QualityAndRetentionAPIGetDeviceCameraQualityAndRetentionRequest {
+	return QualityAndRetentionAPIGetDeviceCameraQualityAndRetentionRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -52,7 +52,7 @@ func (a *QualityAndRetentionApiService) GetDeviceCameraQualityAndRetention(ctx c
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *QualityAndRetentionApiService) GetDeviceCameraQualityAndRetentionExecute(r QualityAndRetentionApiGetDeviceCameraQualityAndRetentionRequest) (map[string]interface{}, *http.Response, error) {
+func (a *QualityAndRetentionAPIService) GetDeviceCameraQualityAndRetentionExecute(r QualityAndRetentionAPIGetDeviceCameraQualityAndRetentionRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *QualityAndRetentionApiService) GetDeviceCameraQualityAndRetentionExecut
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityAndRetentionApiService.GetDeviceCameraQualityAndRetention")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityAndRetentionAPIService.GetDeviceCameraQualityAndRetention")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *QualityAndRetentionApiService) GetDeviceCameraQualityAndRetentionExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type QualityAndRetentionApiUpdateDeviceCameraQualityAndRetentionRequest struct {
+type QualityAndRetentionAPIUpdateDeviceCameraQualityAndRetentionRequest struct {
 	ctx context.Context
-	ApiService *QualityAndRetentionApiService
+	ApiService *QualityAndRetentionAPIService
 	serial string
 	updateDeviceCameraQualityAndRetentionRequest *UpdateDeviceCameraQualityAndRetentionRequest
 }
 
-func (r QualityAndRetentionApiUpdateDeviceCameraQualityAndRetentionRequest) UpdateDeviceCameraQualityAndRetentionRequest(updateDeviceCameraQualityAndRetentionRequest UpdateDeviceCameraQualityAndRetentionRequest) QualityAndRetentionApiUpdateDeviceCameraQualityAndRetentionRequest {
+func (r QualityAndRetentionAPIUpdateDeviceCameraQualityAndRetentionRequest) UpdateDeviceCameraQualityAndRetentionRequest(updateDeviceCameraQualityAndRetentionRequest UpdateDeviceCameraQualityAndRetentionRequest) QualityAndRetentionAPIUpdateDeviceCameraQualityAndRetentionRequest {
 	r.updateDeviceCameraQualityAndRetentionRequest = &updateDeviceCameraQualityAndRetentionRequest
 	return r
 }
 
-func (r QualityAndRetentionApiUpdateDeviceCameraQualityAndRetentionRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r QualityAndRetentionAPIUpdateDeviceCameraQualityAndRetentionRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceCameraQualityAndRetentionExecute(r)
 }
 
@@ -163,10 +163,10 @@ Update quality and retention settings for the given camera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return QualityAndRetentionApiUpdateDeviceCameraQualityAndRetentionRequest
+ @return QualityAndRetentionAPIUpdateDeviceCameraQualityAndRetentionRequest
 */
-func (a *QualityAndRetentionApiService) UpdateDeviceCameraQualityAndRetention(ctx context.Context, serial string) QualityAndRetentionApiUpdateDeviceCameraQualityAndRetentionRequest {
-	return QualityAndRetentionApiUpdateDeviceCameraQualityAndRetentionRequest{
+func (a *QualityAndRetentionAPIService) UpdateDeviceCameraQualityAndRetention(ctx context.Context, serial string) QualityAndRetentionAPIUpdateDeviceCameraQualityAndRetentionRequest {
+	return QualityAndRetentionAPIUpdateDeviceCameraQualityAndRetentionRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -175,7 +175,7 @@ func (a *QualityAndRetentionApiService) UpdateDeviceCameraQualityAndRetention(ct
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *QualityAndRetentionApiService) UpdateDeviceCameraQualityAndRetentionExecute(r QualityAndRetentionApiUpdateDeviceCameraQualityAndRetentionRequest) (map[string]interface{}, *http.Response, error) {
+func (a *QualityAndRetentionAPIService) UpdateDeviceCameraQualityAndRetentionExecute(r QualityAndRetentionAPIUpdateDeviceCameraQualityAndRetentionRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *QualityAndRetentionApiService) UpdateDeviceCameraQualityAndRetentionExe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityAndRetentionApiService.UpdateDeviceCameraQualityAndRetention")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityAndRetentionAPIService.UpdateDeviceCameraQualityAndRetention")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

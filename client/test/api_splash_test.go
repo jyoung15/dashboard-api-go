@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing SplashApiService
+Testing SplashAPIService
 
 */
 
@@ -17,19 +17,19 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_SplashApiService(t *testing.T) {
+func Test_client_SplashAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test SplashApiService GetNetworkWirelessSsidSplashSettings", func(t *testing.T) {
+	t.Run("Test SplashAPIService GetNetworkWirelessSsidSplashSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.SplashApi.GetNetworkWirelessSsidSplashSettings(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.SplashAPI.GetNetworkWirelessSsidSplashSettings(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -37,14 +37,14 @@ func Test_client_SplashApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SplashApiService UpdateNetworkWirelessSsidSplashSettings", func(t *testing.T) {
+	t.Run("Test SplashAPIService UpdateNetworkWirelessSsidSplashSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.SplashApi.UpdateNetworkWirelessSsidSplashSettings(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.SplashAPI.UpdateNetworkWirelessSsidSplashSettings(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

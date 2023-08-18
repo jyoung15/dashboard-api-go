@@ -20,23 +20,23 @@ import (
 )
 
 
-// StacksApiService StacksApi service
-type StacksApiService service
+// StacksAPIService StacksAPI service
+type StacksAPIService service
 
-type StacksApiAddNetworkSwitchStackRequest struct {
+type StacksAPIAddNetworkSwitchStackRequest struct {
 	ctx context.Context
-	ApiService *StacksApiService
+	ApiService *StacksAPIService
 	networkId string
 	switchStackId string
 	addNetworkSwitchStackRequest *AddNetworkSwitchStackRequest
 }
 
-func (r StacksApiAddNetworkSwitchStackRequest) AddNetworkSwitchStackRequest(addNetworkSwitchStackRequest AddNetworkSwitchStackRequest) StacksApiAddNetworkSwitchStackRequest {
+func (r StacksAPIAddNetworkSwitchStackRequest) AddNetworkSwitchStackRequest(addNetworkSwitchStackRequest AddNetworkSwitchStackRequest) StacksAPIAddNetworkSwitchStackRequest {
 	r.addNetworkSwitchStackRequest = &addNetworkSwitchStackRequest
 	return r
 }
 
-func (r StacksApiAddNetworkSwitchStackRequest) Execute() (*GetNetworkSwitchStack200Response, *http.Response, error) {
+func (r StacksAPIAddNetworkSwitchStackRequest) Execute() (*GetNetworkSwitchStack200Response, *http.Response, error) {
 	return r.ApiService.AddNetworkSwitchStackExecute(r)
 }
 
@@ -48,10 +48,10 @@ Add a switch to a stack
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param switchStackId Switch stack ID
- @return StacksApiAddNetworkSwitchStackRequest
+ @return StacksAPIAddNetworkSwitchStackRequest
 */
-func (a *StacksApiService) AddNetworkSwitchStack(ctx context.Context, networkId string, switchStackId string) StacksApiAddNetworkSwitchStackRequest {
-	return StacksApiAddNetworkSwitchStackRequest{
+func (a *StacksAPIService) AddNetworkSwitchStack(ctx context.Context, networkId string, switchStackId string) StacksAPIAddNetworkSwitchStackRequest {
+	return StacksAPIAddNetworkSwitchStackRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -61,7 +61,7 @@ func (a *StacksApiService) AddNetworkSwitchStack(ctx context.Context, networkId 
 
 // Execute executes the request
 //  @return GetNetworkSwitchStack200Response
-func (a *StacksApiService) AddNetworkSwitchStackExecute(r StacksApiAddNetworkSwitchStackRequest) (*GetNetworkSwitchStack200Response, *http.Response, error) {
+func (a *StacksAPIService) AddNetworkSwitchStackExecute(r StacksAPIAddNetworkSwitchStackRequest) (*GetNetworkSwitchStack200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -69,7 +69,7 @@ func (a *StacksApiService) AddNetworkSwitchStackExecute(r StacksApiAddNetworkSwi
 		localVarReturnValue  *GetNetworkSwitchStack200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksApiService.AddNetworkSwitchStack")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksAPIService.AddNetworkSwitchStack")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -155,19 +155,19 @@ func (a *StacksApiService) AddNetworkSwitchStackExecute(r StacksApiAddNetworkSwi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StacksApiCreateNetworkSwitchStackRequest struct {
+type StacksAPICreateNetworkSwitchStackRequest struct {
 	ctx context.Context
-	ApiService *StacksApiService
+	ApiService *StacksAPIService
 	networkId string
 	createNetworkSwitchStackRequest *CreateNetworkSwitchStackRequest
 }
 
-func (r StacksApiCreateNetworkSwitchStackRequest) CreateNetworkSwitchStackRequest(createNetworkSwitchStackRequest CreateNetworkSwitchStackRequest) StacksApiCreateNetworkSwitchStackRequest {
+func (r StacksAPICreateNetworkSwitchStackRequest) CreateNetworkSwitchStackRequest(createNetworkSwitchStackRequest CreateNetworkSwitchStackRequest) StacksAPICreateNetworkSwitchStackRequest {
 	r.createNetworkSwitchStackRequest = &createNetworkSwitchStackRequest
 	return r
 }
 
-func (r StacksApiCreateNetworkSwitchStackRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r StacksAPICreateNetworkSwitchStackRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkSwitchStackExecute(r)
 }
 
@@ -178,10 +178,10 @@ Create a stack
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return StacksApiCreateNetworkSwitchStackRequest
+ @return StacksAPICreateNetworkSwitchStackRequest
 */
-func (a *StacksApiService) CreateNetworkSwitchStack(ctx context.Context, networkId string) StacksApiCreateNetworkSwitchStackRequest {
-	return StacksApiCreateNetworkSwitchStackRequest{
+func (a *StacksAPIService) CreateNetworkSwitchStack(ctx context.Context, networkId string) StacksAPICreateNetworkSwitchStackRequest {
+	return StacksAPICreateNetworkSwitchStackRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -190,7 +190,7 @@ func (a *StacksApiService) CreateNetworkSwitchStack(ctx context.Context, network
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *StacksApiService) CreateNetworkSwitchStackExecute(r StacksApiCreateNetworkSwitchStackRequest) (map[string]interface{}, *http.Response, error) {
+func (a *StacksAPIService) CreateNetworkSwitchStackExecute(r StacksAPICreateNetworkSwitchStackRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -198,7 +198,7 @@ func (a *StacksApiService) CreateNetworkSwitchStackExecute(r StacksApiCreateNetw
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksApiService.CreateNetworkSwitchStack")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksAPIService.CreateNetworkSwitchStack")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -283,20 +283,20 @@ func (a *StacksApiService) CreateNetworkSwitchStackExecute(r StacksApiCreateNetw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StacksApiCreateNetworkSwitchStackRoutingInterfaceRequest struct {
+type StacksAPICreateNetworkSwitchStackRoutingInterfaceRequest struct {
 	ctx context.Context
-	ApiService *StacksApiService
+	ApiService *StacksAPIService
 	networkId string
 	switchStackId string
 	createNetworkSwitchStackRoutingInterfaceRequest *CreateNetworkSwitchStackRoutingInterfaceRequest
 }
 
-func (r StacksApiCreateNetworkSwitchStackRoutingInterfaceRequest) CreateNetworkSwitchStackRoutingInterfaceRequest(createNetworkSwitchStackRoutingInterfaceRequest CreateNetworkSwitchStackRoutingInterfaceRequest) StacksApiCreateNetworkSwitchStackRoutingInterfaceRequest {
+func (r StacksAPICreateNetworkSwitchStackRoutingInterfaceRequest) CreateNetworkSwitchStackRoutingInterfaceRequest(createNetworkSwitchStackRoutingInterfaceRequest CreateNetworkSwitchStackRoutingInterfaceRequest) StacksAPICreateNetworkSwitchStackRoutingInterfaceRequest {
 	r.createNetworkSwitchStackRoutingInterfaceRequest = &createNetworkSwitchStackRoutingInterfaceRequest
 	return r
 }
 
-func (r StacksApiCreateNetworkSwitchStackRoutingInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r StacksAPICreateNetworkSwitchStackRoutingInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkSwitchStackRoutingInterfaceExecute(r)
 }
 
@@ -308,10 +308,10 @@ Create a layer 3 interface for a switch stack
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param switchStackId Switch stack ID
- @return StacksApiCreateNetworkSwitchStackRoutingInterfaceRequest
+ @return StacksAPICreateNetworkSwitchStackRoutingInterfaceRequest
 */
-func (a *StacksApiService) CreateNetworkSwitchStackRoutingInterface(ctx context.Context, networkId string, switchStackId string) StacksApiCreateNetworkSwitchStackRoutingInterfaceRequest {
-	return StacksApiCreateNetworkSwitchStackRoutingInterfaceRequest{
+func (a *StacksAPIService) CreateNetworkSwitchStackRoutingInterface(ctx context.Context, networkId string, switchStackId string) StacksAPICreateNetworkSwitchStackRoutingInterfaceRequest {
+	return StacksAPICreateNetworkSwitchStackRoutingInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -321,7 +321,7 @@ func (a *StacksApiService) CreateNetworkSwitchStackRoutingInterface(ctx context.
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *StacksApiService) CreateNetworkSwitchStackRoutingInterfaceExecute(r StacksApiCreateNetworkSwitchStackRoutingInterfaceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *StacksAPIService) CreateNetworkSwitchStackRoutingInterfaceExecute(r StacksAPICreateNetworkSwitchStackRoutingInterfaceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -329,7 +329,7 @@ func (a *StacksApiService) CreateNetworkSwitchStackRoutingInterfaceExecute(r Sta
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksApiService.CreateNetworkSwitchStackRoutingInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksAPIService.CreateNetworkSwitchStackRoutingInterface")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -415,20 +415,20 @@ func (a *StacksApiService) CreateNetworkSwitchStackRoutingInterfaceExecute(r Sta
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StacksApiCreateNetworkSwitchStackRoutingStaticRouteRequest struct {
+type StacksAPICreateNetworkSwitchStackRoutingStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *StacksApiService
+	ApiService *StacksAPIService
 	networkId string
 	switchStackId string
 	createDeviceSwitchRoutingStaticRouteRequest *CreateDeviceSwitchRoutingStaticRouteRequest
 }
 
-func (r StacksApiCreateNetworkSwitchStackRoutingStaticRouteRequest) CreateDeviceSwitchRoutingStaticRouteRequest(createDeviceSwitchRoutingStaticRouteRequest CreateDeviceSwitchRoutingStaticRouteRequest) StacksApiCreateNetworkSwitchStackRoutingStaticRouteRequest {
+func (r StacksAPICreateNetworkSwitchStackRoutingStaticRouteRequest) CreateDeviceSwitchRoutingStaticRouteRequest(createDeviceSwitchRoutingStaticRouteRequest CreateDeviceSwitchRoutingStaticRouteRequest) StacksAPICreateNetworkSwitchStackRoutingStaticRouteRequest {
 	r.createDeviceSwitchRoutingStaticRouteRequest = &createDeviceSwitchRoutingStaticRouteRequest
 	return r
 }
 
-func (r StacksApiCreateNetworkSwitchStackRoutingStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r StacksAPICreateNetworkSwitchStackRoutingStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkSwitchStackRoutingStaticRouteExecute(r)
 }
 
@@ -440,10 +440,10 @@ Create a layer 3 static route for a switch stack
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param switchStackId Switch stack ID
- @return StacksApiCreateNetworkSwitchStackRoutingStaticRouteRequest
+ @return StacksAPICreateNetworkSwitchStackRoutingStaticRouteRequest
 */
-func (a *StacksApiService) CreateNetworkSwitchStackRoutingStaticRoute(ctx context.Context, networkId string, switchStackId string) StacksApiCreateNetworkSwitchStackRoutingStaticRouteRequest {
-	return StacksApiCreateNetworkSwitchStackRoutingStaticRouteRequest{
+func (a *StacksAPIService) CreateNetworkSwitchStackRoutingStaticRoute(ctx context.Context, networkId string, switchStackId string) StacksAPICreateNetworkSwitchStackRoutingStaticRouteRequest {
+	return StacksAPICreateNetworkSwitchStackRoutingStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -453,7 +453,7 @@ func (a *StacksApiService) CreateNetworkSwitchStackRoutingStaticRoute(ctx contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *StacksApiService) CreateNetworkSwitchStackRoutingStaticRouteExecute(r StacksApiCreateNetworkSwitchStackRoutingStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
+func (a *StacksAPIService) CreateNetworkSwitchStackRoutingStaticRouteExecute(r StacksAPICreateNetworkSwitchStackRoutingStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -461,7 +461,7 @@ func (a *StacksApiService) CreateNetworkSwitchStackRoutingStaticRouteExecute(r S
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksApiService.CreateNetworkSwitchStackRoutingStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksAPIService.CreateNetworkSwitchStackRoutingStaticRoute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -547,14 +547,14 @@ func (a *StacksApiService) CreateNetworkSwitchStackRoutingStaticRouteExecute(r S
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StacksApiDeleteNetworkSwitchStackRequest struct {
+type StacksAPIDeleteNetworkSwitchStackRequest struct {
 	ctx context.Context
-	ApiService *StacksApiService
+	ApiService *StacksAPIService
 	networkId string
 	switchStackId string
 }
 
-func (r StacksApiDeleteNetworkSwitchStackRequest) Execute() (*http.Response, error) {
+func (r StacksAPIDeleteNetworkSwitchStackRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkSwitchStackExecute(r)
 }
 
@@ -566,10 +566,10 @@ Delete a stack
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param switchStackId Switch stack ID
- @return StacksApiDeleteNetworkSwitchStackRequest
+ @return StacksAPIDeleteNetworkSwitchStackRequest
 */
-func (a *StacksApiService) DeleteNetworkSwitchStack(ctx context.Context, networkId string, switchStackId string) StacksApiDeleteNetworkSwitchStackRequest {
-	return StacksApiDeleteNetworkSwitchStackRequest{
+func (a *StacksAPIService) DeleteNetworkSwitchStack(ctx context.Context, networkId string, switchStackId string) StacksAPIDeleteNetworkSwitchStackRequest {
+	return StacksAPIDeleteNetworkSwitchStackRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -578,14 +578,14 @@ func (a *StacksApiService) DeleteNetworkSwitchStack(ctx context.Context, network
 }
 
 // Execute executes the request
-func (a *StacksApiService) DeleteNetworkSwitchStackExecute(r StacksApiDeleteNetworkSwitchStackRequest) (*http.Response, error) {
+func (a *StacksAPIService) DeleteNetworkSwitchStackExecute(r StacksAPIDeleteNetworkSwitchStackRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksApiService.DeleteNetworkSwitchStack")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksAPIService.DeleteNetworkSwitchStack")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -657,15 +657,15 @@ func (a *StacksApiService) DeleteNetworkSwitchStackExecute(r StacksApiDeleteNetw
 	return localVarHTTPResponse, nil
 }
 
-type StacksApiDeleteNetworkSwitchStackRoutingInterfaceRequest struct {
+type StacksAPIDeleteNetworkSwitchStackRoutingInterfaceRequest struct {
 	ctx context.Context
-	ApiService *StacksApiService
+	ApiService *StacksAPIService
 	networkId string
 	switchStackId string
 	interfaceId string
 }
 
-func (r StacksApiDeleteNetworkSwitchStackRoutingInterfaceRequest) Execute() (*http.Response, error) {
+func (r StacksAPIDeleteNetworkSwitchStackRoutingInterfaceRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkSwitchStackRoutingInterfaceExecute(r)
 }
 
@@ -678,10 +678,10 @@ Delete a layer 3 interface from a switch stack
  @param networkId Network ID
  @param switchStackId Switch stack ID
  @param interfaceId Interface ID
- @return StacksApiDeleteNetworkSwitchStackRoutingInterfaceRequest
+ @return StacksAPIDeleteNetworkSwitchStackRoutingInterfaceRequest
 */
-func (a *StacksApiService) DeleteNetworkSwitchStackRoutingInterface(ctx context.Context, networkId string, switchStackId string, interfaceId string) StacksApiDeleteNetworkSwitchStackRoutingInterfaceRequest {
-	return StacksApiDeleteNetworkSwitchStackRoutingInterfaceRequest{
+func (a *StacksAPIService) DeleteNetworkSwitchStackRoutingInterface(ctx context.Context, networkId string, switchStackId string, interfaceId string) StacksAPIDeleteNetworkSwitchStackRoutingInterfaceRequest {
+	return StacksAPIDeleteNetworkSwitchStackRoutingInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -691,14 +691,14 @@ func (a *StacksApiService) DeleteNetworkSwitchStackRoutingInterface(ctx context.
 }
 
 // Execute executes the request
-func (a *StacksApiService) DeleteNetworkSwitchStackRoutingInterfaceExecute(r StacksApiDeleteNetworkSwitchStackRoutingInterfaceRequest) (*http.Response, error) {
+func (a *StacksAPIService) DeleteNetworkSwitchStackRoutingInterfaceExecute(r StacksAPIDeleteNetworkSwitchStackRoutingInterfaceRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksApiService.DeleteNetworkSwitchStackRoutingInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksAPIService.DeleteNetworkSwitchStackRoutingInterface")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -771,15 +771,15 @@ func (a *StacksApiService) DeleteNetworkSwitchStackRoutingInterfaceExecute(r Sta
 	return localVarHTTPResponse, nil
 }
 
-type StacksApiDeleteNetworkSwitchStackRoutingStaticRouteRequest struct {
+type StacksAPIDeleteNetworkSwitchStackRoutingStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *StacksApiService
+	ApiService *StacksAPIService
 	networkId string
 	switchStackId string
 	staticRouteId string
 }
 
-func (r StacksApiDeleteNetworkSwitchStackRoutingStaticRouteRequest) Execute() (*http.Response, error) {
+func (r StacksAPIDeleteNetworkSwitchStackRoutingStaticRouteRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkSwitchStackRoutingStaticRouteExecute(r)
 }
 
@@ -792,10 +792,10 @@ Delete a layer 3 static route for a switch stack
  @param networkId Network ID
  @param switchStackId Switch stack ID
  @param staticRouteId Static route ID
- @return StacksApiDeleteNetworkSwitchStackRoutingStaticRouteRequest
+ @return StacksAPIDeleteNetworkSwitchStackRoutingStaticRouteRequest
 */
-func (a *StacksApiService) DeleteNetworkSwitchStackRoutingStaticRoute(ctx context.Context, networkId string, switchStackId string, staticRouteId string) StacksApiDeleteNetworkSwitchStackRoutingStaticRouteRequest {
-	return StacksApiDeleteNetworkSwitchStackRoutingStaticRouteRequest{
+func (a *StacksAPIService) DeleteNetworkSwitchStackRoutingStaticRoute(ctx context.Context, networkId string, switchStackId string, staticRouteId string) StacksAPIDeleteNetworkSwitchStackRoutingStaticRouteRequest {
+	return StacksAPIDeleteNetworkSwitchStackRoutingStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -805,14 +805,14 @@ func (a *StacksApiService) DeleteNetworkSwitchStackRoutingStaticRoute(ctx contex
 }
 
 // Execute executes the request
-func (a *StacksApiService) DeleteNetworkSwitchStackRoutingStaticRouteExecute(r StacksApiDeleteNetworkSwitchStackRoutingStaticRouteRequest) (*http.Response, error) {
+func (a *StacksAPIService) DeleteNetworkSwitchStackRoutingStaticRouteExecute(r StacksAPIDeleteNetworkSwitchStackRoutingStaticRouteRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksApiService.DeleteNetworkSwitchStackRoutingStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksAPIService.DeleteNetworkSwitchStackRoutingStaticRoute")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -885,14 +885,14 @@ func (a *StacksApiService) DeleteNetworkSwitchStackRoutingStaticRouteExecute(r S
 	return localVarHTTPResponse, nil
 }
 
-type StacksApiGetNetworkSwitchStackRequest struct {
+type StacksAPIGetNetworkSwitchStackRequest struct {
 	ctx context.Context
-	ApiService *StacksApiService
+	ApiService *StacksAPIService
 	networkId string
 	switchStackId string
 }
 
-func (r StacksApiGetNetworkSwitchStackRequest) Execute() (*GetNetworkSwitchStack200Response, *http.Response, error) {
+func (r StacksAPIGetNetworkSwitchStackRequest) Execute() (*GetNetworkSwitchStack200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchStackExecute(r)
 }
 
@@ -904,10 +904,10 @@ Show a switch stack
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param switchStackId Switch stack ID
- @return StacksApiGetNetworkSwitchStackRequest
+ @return StacksAPIGetNetworkSwitchStackRequest
 */
-func (a *StacksApiService) GetNetworkSwitchStack(ctx context.Context, networkId string, switchStackId string) StacksApiGetNetworkSwitchStackRequest {
-	return StacksApiGetNetworkSwitchStackRequest{
+func (a *StacksAPIService) GetNetworkSwitchStack(ctx context.Context, networkId string, switchStackId string) StacksAPIGetNetworkSwitchStackRequest {
+	return StacksAPIGetNetworkSwitchStackRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -917,7 +917,7 @@ func (a *StacksApiService) GetNetworkSwitchStack(ctx context.Context, networkId 
 
 // Execute executes the request
 //  @return GetNetworkSwitchStack200Response
-func (a *StacksApiService) GetNetworkSwitchStackExecute(r StacksApiGetNetworkSwitchStackRequest) (*GetNetworkSwitchStack200Response, *http.Response, error) {
+func (a *StacksAPIService) GetNetworkSwitchStackExecute(r StacksAPIGetNetworkSwitchStackRequest) (*GetNetworkSwitchStack200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -925,7 +925,7 @@ func (a *StacksApiService) GetNetworkSwitchStackExecute(r StacksApiGetNetworkSwi
 		localVarReturnValue  *GetNetworkSwitchStack200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksApiService.GetNetworkSwitchStack")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksAPIService.GetNetworkSwitchStack")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1006,15 +1006,15 @@ func (a *StacksApiService) GetNetworkSwitchStackExecute(r StacksApiGetNetworkSwi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StacksApiGetNetworkSwitchStackRoutingInterfaceRequest struct {
+type StacksAPIGetNetworkSwitchStackRoutingInterfaceRequest struct {
 	ctx context.Context
-	ApiService *StacksApiService
+	ApiService *StacksAPIService
 	networkId string
 	switchStackId string
 	interfaceId string
 }
 
-func (r StacksApiGetNetworkSwitchStackRoutingInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r StacksAPIGetNetworkSwitchStackRoutingInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchStackRoutingInterfaceExecute(r)
 }
 
@@ -1027,10 +1027,10 @@ Return a layer 3 interface from a switch stack
  @param networkId Network ID
  @param switchStackId Switch stack ID
  @param interfaceId Interface ID
- @return StacksApiGetNetworkSwitchStackRoutingInterfaceRequest
+ @return StacksAPIGetNetworkSwitchStackRoutingInterfaceRequest
 */
-func (a *StacksApiService) GetNetworkSwitchStackRoutingInterface(ctx context.Context, networkId string, switchStackId string, interfaceId string) StacksApiGetNetworkSwitchStackRoutingInterfaceRequest {
-	return StacksApiGetNetworkSwitchStackRoutingInterfaceRequest{
+func (a *StacksAPIService) GetNetworkSwitchStackRoutingInterface(ctx context.Context, networkId string, switchStackId string, interfaceId string) StacksAPIGetNetworkSwitchStackRoutingInterfaceRequest {
+	return StacksAPIGetNetworkSwitchStackRoutingInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1041,7 +1041,7 @@ func (a *StacksApiService) GetNetworkSwitchStackRoutingInterface(ctx context.Con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *StacksApiService) GetNetworkSwitchStackRoutingInterfaceExecute(r StacksApiGetNetworkSwitchStackRoutingInterfaceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *StacksAPIService) GetNetworkSwitchStackRoutingInterfaceExecute(r StacksAPIGetNetworkSwitchStackRoutingInterfaceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1049,7 +1049,7 @@ func (a *StacksApiService) GetNetworkSwitchStackRoutingInterfaceExecute(r Stacks
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksApiService.GetNetworkSwitchStackRoutingInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksAPIService.GetNetworkSwitchStackRoutingInterface")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1131,15 +1131,15 @@ func (a *StacksApiService) GetNetworkSwitchStackRoutingInterfaceExecute(r Stacks
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StacksApiGetNetworkSwitchStackRoutingInterfaceDhcpRequest struct {
+type StacksAPIGetNetworkSwitchStackRoutingInterfaceDhcpRequest struct {
 	ctx context.Context
-	ApiService *StacksApiService
+	ApiService *StacksAPIService
 	networkId string
 	switchStackId string
 	interfaceId string
 }
 
-func (r StacksApiGetNetworkSwitchStackRoutingInterfaceDhcpRequest) Execute() (*GetNetworkSwitchStackRoutingInterfaceDhcp200Response, *http.Response, error) {
+func (r StacksAPIGetNetworkSwitchStackRoutingInterfaceDhcpRequest) Execute() (*GetNetworkSwitchStackRoutingInterfaceDhcp200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchStackRoutingInterfaceDhcpExecute(r)
 }
 
@@ -1152,10 +1152,10 @@ Return a layer 3 interface DHCP configuration for a switch stack
  @param networkId Network ID
  @param switchStackId Switch stack ID
  @param interfaceId Interface ID
- @return StacksApiGetNetworkSwitchStackRoutingInterfaceDhcpRequest
+ @return StacksAPIGetNetworkSwitchStackRoutingInterfaceDhcpRequest
 */
-func (a *StacksApiService) GetNetworkSwitchStackRoutingInterfaceDhcp(ctx context.Context, networkId string, switchStackId string, interfaceId string) StacksApiGetNetworkSwitchStackRoutingInterfaceDhcpRequest {
-	return StacksApiGetNetworkSwitchStackRoutingInterfaceDhcpRequest{
+func (a *StacksAPIService) GetNetworkSwitchStackRoutingInterfaceDhcp(ctx context.Context, networkId string, switchStackId string, interfaceId string) StacksAPIGetNetworkSwitchStackRoutingInterfaceDhcpRequest {
+	return StacksAPIGetNetworkSwitchStackRoutingInterfaceDhcpRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1166,7 +1166,7 @@ func (a *StacksApiService) GetNetworkSwitchStackRoutingInterfaceDhcp(ctx context
 
 // Execute executes the request
 //  @return GetNetworkSwitchStackRoutingInterfaceDhcp200Response
-func (a *StacksApiService) GetNetworkSwitchStackRoutingInterfaceDhcpExecute(r StacksApiGetNetworkSwitchStackRoutingInterfaceDhcpRequest) (*GetNetworkSwitchStackRoutingInterfaceDhcp200Response, *http.Response, error) {
+func (a *StacksAPIService) GetNetworkSwitchStackRoutingInterfaceDhcpExecute(r StacksAPIGetNetworkSwitchStackRoutingInterfaceDhcpRequest) (*GetNetworkSwitchStackRoutingInterfaceDhcp200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1174,7 +1174,7 @@ func (a *StacksApiService) GetNetworkSwitchStackRoutingInterfaceDhcpExecute(r St
 		localVarReturnValue  *GetNetworkSwitchStackRoutingInterfaceDhcp200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksApiService.GetNetworkSwitchStackRoutingInterfaceDhcp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksAPIService.GetNetworkSwitchStackRoutingInterfaceDhcp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1256,14 +1256,14 @@ func (a *StacksApiService) GetNetworkSwitchStackRoutingInterfaceDhcpExecute(r St
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StacksApiGetNetworkSwitchStackRoutingInterfacesRequest struct {
+type StacksAPIGetNetworkSwitchStackRoutingInterfacesRequest struct {
 	ctx context.Context
-	ApiService *StacksApiService
+	ApiService *StacksAPIService
 	networkId string
 	switchStackId string
 }
 
-func (r StacksApiGetNetworkSwitchStackRoutingInterfacesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r StacksAPIGetNetworkSwitchStackRoutingInterfacesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchStackRoutingInterfacesExecute(r)
 }
 
@@ -1275,10 +1275,10 @@ List layer 3 interfaces for a switch stack
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param switchStackId Switch stack ID
- @return StacksApiGetNetworkSwitchStackRoutingInterfacesRequest
+ @return StacksAPIGetNetworkSwitchStackRoutingInterfacesRequest
 */
-func (a *StacksApiService) GetNetworkSwitchStackRoutingInterfaces(ctx context.Context, networkId string, switchStackId string) StacksApiGetNetworkSwitchStackRoutingInterfacesRequest {
-	return StacksApiGetNetworkSwitchStackRoutingInterfacesRequest{
+func (a *StacksAPIService) GetNetworkSwitchStackRoutingInterfaces(ctx context.Context, networkId string, switchStackId string) StacksAPIGetNetworkSwitchStackRoutingInterfacesRequest {
+	return StacksAPIGetNetworkSwitchStackRoutingInterfacesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1288,7 +1288,7 @@ func (a *StacksApiService) GetNetworkSwitchStackRoutingInterfaces(ctx context.Co
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *StacksApiService) GetNetworkSwitchStackRoutingInterfacesExecute(r StacksApiGetNetworkSwitchStackRoutingInterfacesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *StacksAPIService) GetNetworkSwitchStackRoutingInterfacesExecute(r StacksAPIGetNetworkSwitchStackRoutingInterfacesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1296,7 +1296,7 @@ func (a *StacksApiService) GetNetworkSwitchStackRoutingInterfacesExecute(r Stack
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksApiService.GetNetworkSwitchStackRoutingInterfaces")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksAPIService.GetNetworkSwitchStackRoutingInterfaces")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1377,15 +1377,15 @@ func (a *StacksApiService) GetNetworkSwitchStackRoutingInterfacesExecute(r Stack
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StacksApiGetNetworkSwitchStackRoutingStaticRouteRequest struct {
+type StacksAPIGetNetworkSwitchStackRoutingStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *StacksApiService
+	ApiService *StacksAPIService
 	networkId string
 	switchStackId string
 	staticRouteId string
 }
 
-func (r StacksApiGetNetworkSwitchStackRoutingStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r StacksAPIGetNetworkSwitchStackRoutingStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchStackRoutingStaticRouteExecute(r)
 }
 
@@ -1398,10 +1398,10 @@ Return a layer 3 static route for a switch stack
  @param networkId Network ID
  @param switchStackId Switch stack ID
  @param staticRouteId Static route ID
- @return StacksApiGetNetworkSwitchStackRoutingStaticRouteRequest
+ @return StacksAPIGetNetworkSwitchStackRoutingStaticRouteRequest
 */
-func (a *StacksApiService) GetNetworkSwitchStackRoutingStaticRoute(ctx context.Context, networkId string, switchStackId string, staticRouteId string) StacksApiGetNetworkSwitchStackRoutingStaticRouteRequest {
-	return StacksApiGetNetworkSwitchStackRoutingStaticRouteRequest{
+func (a *StacksAPIService) GetNetworkSwitchStackRoutingStaticRoute(ctx context.Context, networkId string, switchStackId string, staticRouteId string) StacksAPIGetNetworkSwitchStackRoutingStaticRouteRequest {
+	return StacksAPIGetNetworkSwitchStackRoutingStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1412,7 +1412,7 @@ func (a *StacksApiService) GetNetworkSwitchStackRoutingStaticRoute(ctx context.C
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *StacksApiService) GetNetworkSwitchStackRoutingStaticRouteExecute(r StacksApiGetNetworkSwitchStackRoutingStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
+func (a *StacksAPIService) GetNetworkSwitchStackRoutingStaticRouteExecute(r StacksAPIGetNetworkSwitchStackRoutingStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1420,7 +1420,7 @@ func (a *StacksApiService) GetNetworkSwitchStackRoutingStaticRouteExecute(r Stac
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksApiService.GetNetworkSwitchStackRoutingStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksAPIService.GetNetworkSwitchStackRoutingStaticRoute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1502,14 +1502,14 @@ func (a *StacksApiService) GetNetworkSwitchStackRoutingStaticRouteExecute(r Stac
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StacksApiGetNetworkSwitchStackRoutingStaticRoutesRequest struct {
+type StacksAPIGetNetworkSwitchStackRoutingStaticRoutesRequest struct {
 	ctx context.Context
-	ApiService *StacksApiService
+	ApiService *StacksAPIService
 	networkId string
 	switchStackId string
 }
 
-func (r StacksApiGetNetworkSwitchStackRoutingStaticRoutesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r StacksAPIGetNetworkSwitchStackRoutingStaticRoutesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchStackRoutingStaticRoutesExecute(r)
 }
 
@@ -1521,10 +1521,10 @@ List layer 3 static routes for a switch stack
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param switchStackId Switch stack ID
- @return StacksApiGetNetworkSwitchStackRoutingStaticRoutesRequest
+ @return StacksAPIGetNetworkSwitchStackRoutingStaticRoutesRequest
 */
-func (a *StacksApiService) GetNetworkSwitchStackRoutingStaticRoutes(ctx context.Context, networkId string, switchStackId string) StacksApiGetNetworkSwitchStackRoutingStaticRoutesRequest {
-	return StacksApiGetNetworkSwitchStackRoutingStaticRoutesRequest{
+func (a *StacksAPIService) GetNetworkSwitchStackRoutingStaticRoutes(ctx context.Context, networkId string, switchStackId string) StacksAPIGetNetworkSwitchStackRoutingStaticRoutesRequest {
+	return StacksAPIGetNetworkSwitchStackRoutingStaticRoutesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1534,7 +1534,7 @@ func (a *StacksApiService) GetNetworkSwitchStackRoutingStaticRoutes(ctx context.
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *StacksApiService) GetNetworkSwitchStackRoutingStaticRoutesExecute(r StacksApiGetNetworkSwitchStackRoutingStaticRoutesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *StacksAPIService) GetNetworkSwitchStackRoutingStaticRoutesExecute(r StacksAPIGetNetworkSwitchStackRoutingStaticRoutesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1542,7 +1542,7 @@ func (a *StacksApiService) GetNetworkSwitchStackRoutingStaticRoutesExecute(r Sta
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksApiService.GetNetworkSwitchStackRoutingStaticRoutes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksAPIService.GetNetworkSwitchStackRoutingStaticRoutes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1623,13 +1623,13 @@ func (a *StacksApiService) GetNetworkSwitchStackRoutingStaticRoutesExecute(r Sta
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StacksApiGetNetworkSwitchStacksRequest struct {
+type StacksAPIGetNetworkSwitchStacksRequest struct {
 	ctx context.Context
-	ApiService *StacksApiService
+	ApiService *StacksAPIService
 	networkId string
 }
 
-func (r StacksApiGetNetworkSwitchStacksRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r StacksAPIGetNetworkSwitchStacksRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchStacksExecute(r)
 }
 
@@ -1640,10 +1640,10 @@ List the switch stacks in a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return StacksApiGetNetworkSwitchStacksRequest
+ @return StacksAPIGetNetworkSwitchStacksRequest
 */
-func (a *StacksApiService) GetNetworkSwitchStacks(ctx context.Context, networkId string) StacksApiGetNetworkSwitchStacksRequest {
-	return StacksApiGetNetworkSwitchStacksRequest{
+func (a *StacksAPIService) GetNetworkSwitchStacks(ctx context.Context, networkId string) StacksAPIGetNetworkSwitchStacksRequest {
+	return StacksAPIGetNetworkSwitchStacksRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1652,7 +1652,7 @@ func (a *StacksApiService) GetNetworkSwitchStacks(ctx context.Context, networkId
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *StacksApiService) GetNetworkSwitchStacksExecute(r StacksApiGetNetworkSwitchStacksRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *StacksAPIService) GetNetworkSwitchStacksExecute(r StacksAPIGetNetworkSwitchStacksRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1660,7 +1660,7 @@ func (a *StacksApiService) GetNetworkSwitchStacksExecute(r StacksApiGetNetworkSw
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksApiService.GetNetworkSwitchStacks")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksAPIService.GetNetworkSwitchStacks")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1740,20 +1740,20 @@ func (a *StacksApiService) GetNetworkSwitchStacksExecute(r StacksApiGetNetworkSw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StacksApiRemoveNetworkSwitchStackRequest struct {
+type StacksAPIRemoveNetworkSwitchStackRequest struct {
 	ctx context.Context
-	ApiService *StacksApiService
+	ApiService *StacksAPIService
 	networkId string
 	switchStackId string
 	removeNetworkSwitchStackRequest *RemoveNetworkSwitchStackRequest
 }
 
-func (r StacksApiRemoveNetworkSwitchStackRequest) RemoveNetworkSwitchStackRequest(removeNetworkSwitchStackRequest RemoveNetworkSwitchStackRequest) StacksApiRemoveNetworkSwitchStackRequest {
+func (r StacksAPIRemoveNetworkSwitchStackRequest) RemoveNetworkSwitchStackRequest(removeNetworkSwitchStackRequest RemoveNetworkSwitchStackRequest) StacksAPIRemoveNetworkSwitchStackRequest {
 	r.removeNetworkSwitchStackRequest = &removeNetworkSwitchStackRequest
 	return r
 }
 
-func (r StacksApiRemoveNetworkSwitchStackRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r StacksAPIRemoveNetworkSwitchStackRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.RemoveNetworkSwitchStackExecute(r)
 }
 
@@ -1765,10 +1765,10 @@ Remove a switch from a stack
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param switchStackId Switch stack ID
- @return StacksApiRemoveNetworkSwitchStackRequest
+ @return StacksAPIRemoveNetworkSwitchStackRequest
 */
-func (a *StacksApiService) RemoveNetworkSwitchStack(ctx context.Context, networkId string, switchStackId string) StacksApiRemoveNetworkSwitchStackRequest {
-	return StacksApiRemoveNetworkSwitchStackRequest{
+func (a *StacksAPIService) RemoveNetworkSwitchStack(ctx context.Context, networkId string, switchStackId string) StacksAPIRemoveNetworkSwitchStackRequest {
+	return StacksAPIRemoveNetworkSwitchStackRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1778,7 +1778,7 @@ func (a *StacksApiService) RemoveNetworkSwitchStack(ctx context.Context, network
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *StacksApiService) RemoveNetworkSwitchStackExecute(r StacksApiRemoveNetworkSwitchStackRequest) (map[string]interface{}, *http.Response, error) {
+func (a *StacksAPIService) RemoveNetworkSwitchStackExecute(r StacksAPIRemoveNetworkSwitchStackRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1786,7 +1786,7 @@ func (a *StacksApiService) RemoveNetworkSwitchStackExecute(r StacksApiRemoveNetw
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksApiService.RemoveNetworkSwitchStack")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksAPIService.RemoveNetworkSwitchStack")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1872,21 +1872,21 @@ func (a *StacksApiService) RemoveNetworkSwitchStackExecute(r StacksApiRemoveNetw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StacksApiUpdateNetworkSwitchStackRoutingInterfaceRequest struct {
+type StacksAPIUpdateNetworkSwitchStackRoutingInterfaceRequest struct {
 	ctx context.Context
-	ApiService *StacksApiService
+	ApiService *StacksAPIService
 	networkId string
 	switchStackId string
 	interfaceId string
 	updateNetworkSwitchStackRoutingInterfaceRequest *UpdateNetworkSwitchStackRoutingInterfaceRequest
 }
 
-func (r StacksApiUpdateNetworkSwitchStackRoutingInterfaceRequest) UpdateNetworkSwitchStackRoutingInterfaceRequest(updateNetworkSwitchStackRoutingInterfaceRequest UpdateNetworkSwitchStackRoutingInterfaceRequest) StacksApiUpdateNetworkSwitchStackRoutingInterfaceRequest {
+func (r StacksAPIUpdateNetworkSwitchStackRoutingInterfaceRequest) UpdateNetworkSwitchStackRoutingInterfaceRequest(updateNetworkSwitchStackRoutingInterfaceRequest UpdateNetworkSwitchStackRoutingInterfaceRequest) StacksAPIUpdateNetworkSwitchStackRoutingInterfaceRequest {
 	r.updateNetworkSwitchStackRoutingInterfaceRequest = &updateNetworkSwitchStackRoutingInterfaceRequest
 	return r
 }
 
-func (r StacksApiUpdateNetworkSwitchStackRoutingInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r StacksAPIUpdateNetworkSwitchStackRoutingInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchStackRoutingInterfaceExecute(r)
 }
 
@@ -1899,10 +1899,10 @@ Update a layer 3 interface for a switch stack
  @param networkId Network ID
  @param switchStackId Switch stack ID
  @param interfaceId Interface ID
- @return StacksApiUpdateNetworkSwitchStackRoutingInterfaceRequest
+ @return StacksAPIUpdateNetworkSwitchStackRoutingInterfaceRequest
 */
-func (a *StacksApiService) UpdateNetworkSwitchStackRoutingInterface(ctx context.Context, networkId string, switchStackId string, interfaceId string) StacksApiUpdateNetworkSwitchStackRoutingInterfaceRequest {
-	return StacksApiUpdateNetworkSwitchStackRoutingInterfaceRequest{
+func (a *StacksAPIService) UpdateNetworkSwitchStackRoutingInterface(ctx context.Context, networkId string, switchStackId string, interfaceId string) StacksAPIUpdateNetworkSwitchStackRoutingInterfaceRequest {
+	return StacksAPIUpdateNetworkSwitchStackRoutingInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1913,7 +1913,7 @@ func (a *StacksApiService) UpdateNetworkSwitchStackRoutingInterface(ctx context.
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *StacksApiService) UpdateNetworkSwitchStackRoutingInterfaceExecute(r StacksApiUpdateNetworkSwitchStackRoutingInterfaceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *StacksAPIService) UpdateNetworkSwitchStackRoutingInterfaceExecute(r StacksAPIUpdateNetworkSwitchStackRoutingInterfaceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1921,7 +1921,7 @@ func (a *StacksApiService) UpdateNetworkSwitchStackRoutingInterfaceExecute(r Sta
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksApiService.UpdateNetworkSwitchStackRoutingInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksAPIService.UpdateNetworkSwitchStackRoutingInterface")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2005,21 +2005,21 @@ func (a *StacksApiService) UpdateNetworkSwitchStackRoutingInterfaceExecute(r Sta
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StacksApiUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest struct {
+type StacksAPIUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest struct {
 	ctx context.Context
-	ApiService *StacksApiService
+	ApiService *StacksAPIService
 	networkId string
 	switchStackId string
 	interfaceId string
 	updateNetworkSwitchStackRoutingInterfaceDhcpRequest *UpdateNetworkSwitchStackRoutingInterfaceDhcpRequest
 }
 
-func (r StacksApiUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest) UpdateNetworkSwitchStackRoutingInterfaceDhcpRequest(updateNetworkSwitchStackRoutingInterfaceDhcpRequest UpdateNetworkSwitchStackRoutingInterfaceDhcpRequest) StacksApiUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest {
+func (r StacksAPIUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest) UpdateNetworkSwitchStackRoutingInterfaceDhcpRequest(updateNetworkSwitchStackRoutingInterfaceDhcpRequest UpdateNetworkSwitchStackRoutingInterfaceDhcpRequest) StacksAPIUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest {
 	r.updateNetworkSwitchStackRoutingInterfaceDhcpRequest = &updateNetworkSwitchStackRoutingInterfaceDhcpRequest
 	return r
 }
 
-func (r StacksApiUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r StacksAPIUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchStackRoutingInterfaceDhcpExecute(r)
 }
 
@@ -2032,10 +2032,10 @@ Update a layer 3 interface DHCP configuration for a switch stack
  @param networkId Network ID
  @param switchStackId Switch stack ID
  @param interfaceId Interface ID
- @return StacksApiUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest
+ @return StacksAPIUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest
 */
-func (a *StacksApiService) UpdateNetworkSwitchStackRoutingInterfaceDhcp(ctx context.Context, networkId string, switchStackId string, interfaceId string) StacksApiUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest {
-	return StacksApiUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest{
+func (a *StacksAPIService) UpdateNetworkSwitchStackRoutingInterfaceDhcp(ctx context.Context, networkId string, switchStackId string, interfaceId string) StacksAPIUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest {
+	return StacksAPIUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2046,7 +2046,7 @@ func (a *StacksApiService) UpdateNetworkSwitchStackRoutingInterfaceDhcp(ctx cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *StacksApiService) UpdateNetworkSwitchStackRoutingInterfaceDhcpExecute(r StacksApiUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *StacksAPIService) UpdateNetworkSwitchStackRoutingInterfaceDhcpExecute(r StacksAPIUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -2054,7 +2054,7 @@ func (a *StacksApiService) UpdateNetworkSwitchStackRoutingInterfaceDhcpExecute(r
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksApiService.UpdateNetworkSwitchStackRoutingInterfaceDhcp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksAPIService.UpdateNetworkSwitchStackRoutingInterfaceDhcp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2138,21 +2138,21 @@ func (a *StacksApiService) UpdateNetworkSwitchStackRoutingInterfaceDhcpExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StacksApiUpdateNetworkSwitchStackRoutingStaticRouteRequest struct {
+type StacksAPIUpdateNetworkSwitchStackRoutingStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *StacksApiService
+	ApiService *StacksAPIService
 	networkId string
 	switchStackId string
 	staticRouteId string
 	updateDeviceSwitchRoutingStaticRouteRequest *UpdateDeviceSwitchRoutingStaticRouteRequest
 }
 
-func (r StacksApiUpdateNetworkSwitchStackRoutingStaticRouteRequest) UpdateDeviceSwitchRoutingStaticRouteRequest(updateDeviceSwitchRoutingStaticRouteRequest UpdateDeviceSwitchRoutingStaticRouteRequest) StacksApiUpdateNetworkSwitchStackRoutingStaticRouteRequest {
+func (r StacksAPIUpdateNetworkSwitchStackRoutingStaticRouteRequest) UpdateDeviceSwitchRoutingStaticRouteRequest(updateDeviceSwitchRoutingStaticRouteRequest UpdateDeviceSwitchRoutingStaticRouteRequest) StacksAPIUpdateNetworkSwitchStackRoutingStaticRouteRequest {
 	r.updateDeviceSwitchRoutingStaticRouteRequest = &updateDeviceSwitchRoutingStaticRouteRequest
 	return r
 }
 
-func (r StacksApiUpdateNetworkSwitchStackRoutingStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r StacksAPIUpdateNetworkSwitchStackRoutingStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchStackRoutingStaticRouteExecute(r)
 }
 
@@ -2165,10 +2165,10 @@ Update a layer 3 static route for a switch stack
  @param networkId Network ID
  @param switchStackId Switch stack ID
  @param staticRouteId Static route ID
- @return StacksApiUpdateNetworkSwitchStackRoutingStaticRouteRequest
+ @return StacksAPIUpdateNetworkSwitchStackRoutingStaticRouteRequest
 */
-func (a *StacksApiService) UpdateNetworkSwitchStackRoutingStaticRoute(ctx context.Context, networkId string, switchStackId string, staticRouteId string) StacksApiUpdateNetworkSwitchStackRoutingStaticRouteRequest {
-	return StacksApiUpdateNetworkSwitchStackRoutingStaticRouteRequest{
+func (a *StacksAPIService) UpdateNetworkSwitchStackRoutingStaticRoute(ctx context.Context, networkId string, switchStackId string, staticRouteId string) StacksAPIUpdateNetworkSwitchStackRoutingStaticRouteRequest {
+	return StacksAPIUpdateNetworkSwitchStackRoutingStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2179,7 +2179,7 @@ func (a *StacksApiService) UpdateNetworkSwitchStackRoutingStaticRoute(ctx contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *StacksApiService) UpdateNetworkSwitchStackRoutingStaticRouteExecute(r StacksApiUpdateNetworkSwitchStackRoutingStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
+func (a *StacksAPIService) UpdateNetworkSwitchStackRoutingStaticRouteExecute(r StacksAPIUpdateNetworkSwitchStackRoutingStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -2187,7 +2187,7 @@ func (a *StacksApiService) UpdateNetworkSwitchStackRoutingStaticRouteExecute(r S
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksApiService.UpdateNetworkSwitchStackRoutingStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StacksAPIService.UpdateNetworkSwitchStackRoutingStaticRoute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

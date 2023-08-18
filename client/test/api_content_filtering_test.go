@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing ContentFilteringApiService
+Testing ContentFilteringAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_ContentFilteringApiService(t *testing.T) {
+func Test_client_ContentFilteringAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test ContentFilteringApiService GetNetworkApplianceContentFiltering", func(t *testing.T) {
+	t.Run("Test ContentFilteringAPIService GetNetworkApplianceContentFiltering", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ContentFilteringApi.GetNetworkApplianceContentFiltering(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ContentFilteringAPI.GetNetworkApplianceContentFiltering(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_ContentFilteringApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ContentFilteringApiService GetNetworkApplianceContentFilteringCategories", func(t *testing.T) {
+	t.Run("Test ContentFilteringAPIService GetNetworkApplianceContentFilteringCategories", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ContentFilteringApi.GetNetworkApplianceContentFilteringCategories(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ContentFilteringAPI.GetNetworkApplianceContentFilteringCategories(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,13 +50,13 @@ func Test_client_ContentFilteringApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ContentFilteringApiService UpdateNetworkApplianceContentFiltering", func(t *testing.T) {
+	t.Run("Test ContentFilteringAPIService UpdateNetworkApplianceContentFiltering", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ContentFilteringApi.UpdateNetworkApplianceContentFiltering(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ContentFilteringAPI.UpdateNetworkApplianceContentFiltering(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

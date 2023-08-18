@@ -20,12 +20,12 @@ import (
 )
 
 
-// PerformanceHistoryApiService PerformanceHistoryApi service
-type PerformanceHistoryApiService service
+// PerformanceHistoryAPIService PerformanceHistoryAPI service
+type PerformanceHistoryAPIService service
 
-type PerformanceHistoryApiGetNetworkSmDevicePerformanceHistoryRequest struct {
+type PerformanceHistoryAPIGetNetworkSmDevicePerformanceHistoryRequest struct {
 	ctx context.Context
-	ApiService *PerformanceHistoryApiService
+	ApiService *PerformanceHistoryAPIService
 	networkId string
 	deviceId string
 	perPage *int32
@@ -34,24 +34,24 @@ type PerformanceHistoryApiGetNetworkSmDevicePerformanceHistoryRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r PerformanceHistoryApiGetNetworkSmDevicePerformanceHistoryRequest) PerPage(perPage int32) PerformanceHistoryApiGetNetworkSmDevicePerformanceHistoryRequest {
+func (r PerformanceHistoryAPIGetNetworkSmDevicePerformanceHistoryRequest) PerPage(perPage int32) PerformanceHistoryAPIGetNetworkSmDevicePerformanceHistoryRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r PerformanceHistoryApiGetNetworkSmDevicePerformanceHistoryRequest) StartingAfter(startingAfter string) PerformanceHistoryApiGetNetworkSmDevicePerformanceHistoryRequest {
+func (r PerformanceHistoryAPIGetNetworkSmDevicePerformanceHistoryRequest) StartingAfter(startingAfter string) PerformanceHistoryAPIGetNetworkSmDevicePerformanceHistoryRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r PerformanceHistoryApiGetNetworkSmDevicePerformanceHistoryRequest) EndingBefore(endingBefore string) PerformanceHistoryApiGetNetworkSmDevicePerformanceHistoryRequest {
+func (r PerformanceHistoryAPIGetNetworkSmDevicePerformanceHistoryRequest) EndingBefore(endingBefore string) PerformanceHistoryAPIGetNetworkSmDevicePerformanceHistoryRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r PerformanceHistoryApiGetNetworkSmDevicePerformanceHistoryRequest) Execute() ([]GetNetworkSmDevicePerformanceHistory200ResponseInner, *http.Response, error) {
+func (r PerformanceHistoryAPIGetNetworkSmDevicePerformanceHistoryRequest) Execute() ([]GetNetworkSmDevicePerformanceHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDevicePerformanceHistoryExecute(r)
 }
 
@@ -63,10 +63,10 @@ Return historical records of various Systems Manager client metrics for desktop 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return PerformanceHistoryApiGetNetworkSmDevicePerformanceHistoryRequest
+ @return PerformanceHistoryAPIGetNetworkSmDevicePerformanceHistoryRequest
 */
-func (a *PerformanceHistoryApiService) GetNetworkSmDevicePerformanceHistory(ctx context.Context, networkId string, deviceId string) PerformanceHistoryApiGetNetworkSmDevicePerformanceHistoryRequest {
-	return PerformanceHistoryApiGetNetworkSmDevicePerformanceHistoryRequest{
+func (a *PerformanceHistoryAPIService) GetNetworkSmDevicePerformanceHistory(ctx context.Context, networkId string, deviceId string) PerformanceHistoryAPIGetNetworkSmDevicePerformanceHistoryRequest {
+	return PerformanceHistoryAPIGetNetworkSmDevicePerformanceHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -76,7 +76,7 @@ func (a *PerformanceHistoryApiService) GetNetworkSmDevicePerformanceHistory(ctx 
 
 // Execute executes the request
 //  @return []GetNetworkSmDevicePerformanceHistory200ResponseInner
-func (a *PerformanceHistoryApiService) GetNetworkSmDevicePerformanceHistoryExecute(r PerformanceHistoryApiGetNetworkSmDevicePerformanceHistoryRequest) ([]GetNetworkSmDevicePerformanceHistory200ResponseInner, *http.Response, error) {
+func (a *PerformanceHistoryAPIService) GetNetworkSmDevicePerformanceHistoryExecute(r PerformanceHistoryAPIGetNetworkSmDevicePerformanceHistoryRequest) ([]GetNetworkSmDevicePerformanceHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -84,7 +84,7 @@ func (a *PerformanceHistoryApiService) GetNetworkSmDevicePerformanceHistoryExecu
 		localVarReturnValue  []GetNetworkSmDevicePerformanceHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PerformanceHistoryApiService.GetNetworkSmDevicePerformanceHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PerformanceHistoryAPIService.GetNetworkSmDevicePerformanceHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -21,12 +21,12 @@ import (
 )
 
 
-// BySwitchApiService BySwitchApi service
-type BySwitchApiService service
+// BySwitchAPIService BySwitchAPI service
+type BySwitchAPIService service
 
-type BySwitchApiGetOrganizationSwitchPortsBySwitchRequest struct {
+type BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest struct {
 	ctx context.Context
-	ApiService *BySwitchApiService
+	ApiService *BySwitchAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -42,72 +42,72 @@ type BySwitchApiGetOrganizationSwitchPortsBySwitchRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 50. Default is 50.
-func (r BySwitchApiGetOrganizationSwitchPortsBySwitchRequest) PerPage(perPage int32) BySwitchApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest) PerPage(perPage int32) BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r BySwitchApiGetOrganizationSwitchPortsBySwitchRequest) StartingAfter(startingAfter string) BySwitchApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest) StartingAfter(startingAfter string) BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r BySwitchApiGetOrganizationSwitchPortsBySwitchRequest) EndingBefore(endingBefore string) BySwitchApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest) EndingBefore(endingBefore string) BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter switchports by network.
-func (r BySwitchApiGetOrganizationSwitchPortsBySwitchRequest) NetworkIds(networkIds []string) BySwitchApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest) NetworkIds(networkIds []string) BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter switchports belonging to the specified port profiles.
-func (r BySwitchApiGetOrganizationSwitchPortsBySwitchRequest) PortProfileIds(portProfileIds []string) BySwitchApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest) PortProfileIds(portProfileIds []string) BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.portProfileIds = &portProfileIds
 	return r
 }
 
 // Optional parameter to filter switchports belonging to switches by name. All returned switches will have a name that contains the search term or is an exact match.
-func (r BySwitchApiGetOrganizationSwitchPortsBySwitchRequest) Name(name string) BySwitchApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest) Name(name string) BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.name = &name
 	return r
 }
 
 // Optional parameter to filter switchports belonging to switches by MAC address. All returned switches will have a MAC address that contains the search term or is an exact match.
-func (r BySwitchApiGetOrganizationSwitchPortsBySwitchRequest) Mac(mac string) BySwitchApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest) Mac(mac string) BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.mac = &mac
 	return r
 }
 
 // Optional parameter to filter switchports by one or more MAC addresses belonging to devices. All switchports returned belong to MAC addresses of switches that are an exact match.
-func (r BySwitchApiGetOrganizationSwitchPortsBySwitchRequest) Macs(macs []string) BySwitchApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest) Macs(macs []string) BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.macs = &macs
 	return r
 }
 
 // Optional parameter to filter switchports belonging to switches by serial number. All returned switches will have a serial number that contains the search term or is an exact match.
-func (r BySwitchApiGetOrganizationSwitchPortsBySwitchRequest) Serial(serial string) BySwitchApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest) Serial(serial string) BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.serial = &serial
 	return r
 }
 
 // Optional parameter to filter switchports belonging to switches with one or more serial numbers. All switchports returned belong to serial numbers of switches that are an exact match.
-func (r BySwitchApiGetOrganizationSwitchPortsBySwitchRequest) Serials(serials []string) BySwitchApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest) Serials(serials []string) BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.serials = &serials
 	return r
 }
 
 // Optional parameter to filter results by switches where the configuration has been updated after the given timestamp.
-func (r BySwitchApiGetOrganizationSwitchPortsBySwitchRequest) ConfigurationUpdatedAfter(configurationUpdatedAfter string) BySwitchApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest) ConfigurationUpdatedAfter(configurationUpdatedAfter string) BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.configurationUpdatedAfter = &configurationUpdatedAfter
 	return r
 }
 
-func (r BySwitchApiGetOrganizationSwitchPortsBySwitchRequest) Execute() ([]GetOrganizationSwitchPortsBySwitch200ResponseInner, *http.Response, error) {
+func (r BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest) Execute() ([]GetOrganizationSwitchPortsBySwitch200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSwitchPortsBySwitchExecute(r)
 }
 
@@ -118,10 +118,10 @@ List the switchports in an organization by switch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return BySwitchApiGetOrganizationSwitchPortsBySwitchRequest
+ @return BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest
 */
-func (a *BySwitchApiService) GetOrganizationSwitchPortsBySwitch(ctx context.Context, organizationId string) BySwitchApiGetOrganizationSwitchPortsBySwitchRequest {
-	return BySwitchApiGetOrganizationSwitchPortsBySwitchRequest{
+func (a *BySwitchAPIService) GetOrganizationSwitchPortsBySwitch(ctx context.Context, organizationId string) BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest {
+	return BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -130,7 +130,7 @@ func (a *BySwitchApiService) GetOrganizationSwitchPortsBySwitch(ctx context.Cont
 
 // Execute executes the request
 //  @return []GetOrganizationSwitchPortsBySwitch200ResponseInner
-func (a *BySwitchApiService) GetOrganizationSwitchPortsBySwitchExecute(r BySwitchApiGetOrganizationSwitchPortsBySwitchRequest) ([]GetOrganizationSwitchPortsBySwitch200ResponseInner, *http.Response, error) {
+func (a *BySwitchAPIService) GetOrganizationSwitchPortsBySwitchExecute(r BySwitchAPIGetOrganizationSwitchPortsBySwitchRequest) ([]GetOrganizationSwitchPortsBySwitch200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -138,7 +138,7 @@ func (a *BySwitchApiService) GetOrganizationSwitchPortsBySwitchExecute(r BySwitc
 		localVarReturnValue  []GetOrganizationSwitchPortsBySwitch200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BySwitchApiService.GetOrganizationSwitchPortsBySwitch")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BySwitchAPIService.GetOrganizationSwitchPortsBySwitch")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

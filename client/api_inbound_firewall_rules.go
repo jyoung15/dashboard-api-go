@@ -20,16 +20,16 @@ import (
 )
 
 
-// InboundFirewallRulesApiService InboundFirewallRulesApi service
-type InboundFirewallRulesApiService service
+// InboundFirewallRulesAPIService InboundFirewallRulesAPI service
+type InboundFirewallRulesAPIService service
 
-type InboundFirewallRulesApiGetNetworkApplianceFirewallInboundFirewallRulesRequest struct {
+type InboundFirewallRulesAPIGetNetworkApplianceFirewallInboundFirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *InboundFirewallRulesApiService
+	ApiService *InboundFirewallRulesAPIService
 	networkId string
 }
 
-func (r InboundFirewallRulesApiGetNetworkApplianceFirewallInboundFirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r InboundFirewallRulesAPIGetNetworkApplianceFirewallInboundFirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceFirewallInboundFirewallRulesExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the inbound firewall rules for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return InboundFirewallRulesApiGetNetworkApplianceFirewallInboundFirewallRulesRequest
+ @return InboundFirewallRulesAPIGetNetworkApplianceFirewallInboundFirewallRulesRequest
 */
-func (a *InboundFirewallRulesApiService) GetNetworkApplianceFirewallInboundFirewallRules(ctx context.Context, networkId string) InboundFirewallRulesApiGetNetworkApplianceFirewallInboundFirewallRulesRequest {
-	return InboundFirewallRulesApiGetNetworkApplianceFirewallInboundFirewallRulesRequest{
+func (a *InboundFirewallRulesAPIService) GetNetworkApplianceFirewallInboundFirewallRules(ctx context.Context, networkId string) InboundFirewallRulesAPIGetNetworkApplianceFirewallInboundFirewallRulesRequest {
+	return InboundFirewallRulesAPIGetNetworkApplianceFirewallInboundFirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *InboundFirewallRulesApiService) GetNetworkApplianceFirewallInboundFirew
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *InboundFirewallRulesApiService) GetNetworkApplianceFirewallInboundFirewallRulesExecute(r InboundFirewallRulesApiGetNetworkApplianceFirewallInboundFirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *InboundFirewallRulesAPIService) GetNetworkApplianceFirewallInboundFirewallRulesExecute(r InboundFirewallRulesAPIGetNetworkApplianceFirewallInboundFirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *InboundFirewallRulesApiService) GetNetworkApplianceFirewallInboundFirew
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InboundFirewallRulesApiService.GetNetworkApplianceFirewallInboundFirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InboundFirewallRulesAPIService.GetNetworkApplianceFirewallInboundFirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *InboundFirewallRulesApiService) GetNetworkApplianceFirewallInboundFirew
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type InboundFirewallRulesApiUpdateNetworkApplianceFirewallInboundFirewallRulesRequest struct {
+type InboundFirewallRulesAPIUpdateNetworkApplianceFirewallInboundFirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *InboundFirewallRulesApiService
+	ApiService *InboundFirewallRulesAPIService
 	networkId string
 	updateNetworkApplianceFirewallInboundFirewallRulesRequest *UpdateNetworkApplianceFirewallInboundFirewallRulesRequest
 }
 
-func (r InboundFirewallRulesApiUpdateNetworkApplianceFirewallInboundFirewallRulesRequest) UpdateNetworkApplianceFirewallInboundFirewallRulesRequest(updateNetworkApplianceFirewallInboundFirewallRulesRequest UpdateNetworkApplianceFirewallInboundFirewallRulesRequest) InboundFirewallRulesApiUpdateNetworkApplianceFirewallInboundFirewallRulesRequest {
+func (r InboundFirewallRulesAPIUpdateNetworkApplianceFirewallInboundFirewallRulesRequest) UpdateNetworkApplianceFirewallInboundFirewallRulesRequest(updateNetworkApplianceFirewallInboundFirewallRulesRequest UpdateNetworkApplianceFirewallInboundFirewallRulesRequest) InboundFirewallRulesAPIUpdateNetworkApplianceFirewallInboundFirewallRulesRequest {
 	r.updateNetworkApplianceFirewallInboundFirewallRulesRequest = &updateNetworkApplianceFirewallInboundFirewallRulesRequest
 	return r
 }
 
-func (r InboundFirewallRulesApiUpdateNetworkApplianceFirewallInboundFirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r InboundFirewallRulesAPIUpdateNetworkApplianceFirewallInboundFirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceFirewallInboundFirewallRulesExecute(r)
 }
 
@@ -163,10 +163,10 @@ Update the inbound firewall rules of an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return InboundFirewallRulesApiUpdateNetworkApplianceFirewallInboundFirewallRulesRequest
+ @return InboundFirewallRulesAPIUpdateNetworkApplianceFirewallInboundFirewallRulesRequest
 */
-func (a *InboundFirewallRulesApiService) UpdateNetworkApplianceFirewallInboundFirewallRules(ctx context.Context, networkId string) InboundFirewallRulesApiUpdateNetworkApplianceFirewallInboundFirewallRulesRequest {
-	return InboundFirewallRulesApiUpdateNetworkApplianceFirewallInboundFirewallRulesRequest{
+func (a *InboundFirewallRulesAPIService) UpdateNetworkApplianceFirewallInboundFirewallRules(ctx context.Context, networkId string) InboundFirewallRulesAPIUpdateNetworkApplianceFirewallInboundFirewallRulesRequest {
+	return InboundFirewallRulesAPIUpdateNetworkApplianceFirewallInboundFirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -175,7 +175,7 @@ func (a *InboundFirewallRulesApiService) UpdateNetworkApplianceFirewallInboundFi
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *InboundFirewallRulesApiService) UpdateNetworkApplianceFirewallInboundFirewallRulesExecute(r InboundFirewallRulesApiUpdateNetworkApplianceFirewallInboundFirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *InboundFirewallRulesAPIService) UpdateNetworkApplianceFirewallInboundFirewallRulesExecute(r InboundFirewallRulesAPIUpdateNetworkApplianceFirewallInboundFirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *InboundFirewallRulesApiService) UpdateNetworkApplianceFirewallInboundFi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InboundFirewallRulesApiService.UpdateNetworkApplianceFirewallInboundFirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InboundFirewallRulesAPIService.UpdateNetworkApplianceFirewallInboundFirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing SearchApiService
+Testing SearchAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_SearchApiService(t *testing.T) {
+func Test_client_SearchAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test SearchApiService GetOrganizationClientsSearch", func(t *testing.T) {
+	t.Run("Test SearchAPIService GetOrganizationClientsSearch", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.SearchApi.GetOrganizationClientsSearch(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.SearchAPI.GetOrganizationClientsSearch(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing SnmpApiService
+Testing SnmpAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_SnmpApiService(t *testing.T) {
+func Test_client_SnmpAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test SnmpApiService GetNetworkSnmp", func(t *testing.T) {
+	t.Run("Test SnmpAPIService GetNetworkSnmp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SnmpApi.GetNetworkSnmp(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SnmpAPI.GetNetworkSnmp(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_SnmpApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SnmpApiService GetOrganizationSnmp", func(t *testing.T) {
+	t.Run("Test SnmpAPIService GetOrganizationSnmp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.SnmpApi.GetOrganizationSnmp(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.SnmpAPI.GetOrganizationSnmp(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,13 +50,13 @@ func Test_client_SnmpApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SnmpApiService UpdateNetworkSnmp", func(t *testing.T) {
+	t.Run("Test SnmpAPIService UpdateNetworkSnmp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SnmpApi.UpdateNetworkSnmp(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SnmpAPI.UpdateNetworkSnmp(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,13 +64,13 @@ func Test_client_SnmpApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SnmpApiService UpdateOrganizationSnmp", func(t *testing.T) {
+	t.Run("Test SnmpAPIService UpdateOrganizationSnmp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.SnmpApi.UpdateOrganizationSnmp(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.SnmpAPI.UpdateOrganizationSnmp(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

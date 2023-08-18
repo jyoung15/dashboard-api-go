@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing UsageHistoriesApiService
+Testing UsageHistoriesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_UsageHistoriesApiService(t *testing.T) {
+func Test_client_UsageHistoriesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test UsageHistoriesApiService GetNetworkClientsUsageHistories", func(t *testing.T) {
+	t.Run("Test UsageHistoriesAPIService GetNetworkClientsUsageHistories", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.UsageHistoriesApi.GetNetworkClientsUsageHistories(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.UsageHistoriesAPI.GetNetworkClientsUsageHistories(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

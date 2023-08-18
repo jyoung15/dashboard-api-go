@@ -20,16 +20,16 @@ import (
 )
 
 
-// ByMetricApiService ByMetricApi service
-type ByMetricApiService service
+// ByMetricAPIService ByMetricAPI service
+type ByMetricAPIService service
 
-type ByMetricApiGetNetworkSensorAlertsCurrentOverviewByMetricRequest struct {
+type ByMetricAPIGetNetworkSensorAlertsCurrentOverviewByMetricRequest struct {
 	ctx context.Context
-	ApiService *ByMetricApiService
+	ApiService *ByMetricAPIService
 	networkId string
 }
 
-func (r ByMetricApiGetNetworkSensorAlertsCurrentOverviewByMetricRequest) Execute() (*GetNetworkSensorAlertsCurrentOverviewByMetric200Response, *http.Response, error) {
+func (r ByMetricAPIGetNetworkSensorAlertsCurrentOverviewByMetricRequest) Execute() (*GetNetworkSensorAlertsCurrentOverviewByMetric200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSensorAlertsCurrentOverviewByMetricExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return an overview of currently alerting sensors by metric
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ByMetricApiGetNetworkSensorAlertsCurrentOverviewByMetricRequest
+ @return ByMetricAPIGetNetworkSensorAlertsCurrentOverviewByMetricRequest
 */
-func (a *ByMetricApiService) GetNetworkSensorAlertsCurrentOverviewByMetric(ctx context.Context, networkId string) ByMetricApiGetNetworkSensorAlertsCurrentOverviewByMetricRequest {
-	return ByMetricApiGetNetworkSensorAlertsCurrentOverviewByMetricRequest{
+func (a *ByMetricAPIService) GetNetworkSensorAlertsCurrentOverviewByMetric(ctx context.Context, networkId string) ByMetricAPIGetNetworkSensorAlertsCurrentOverviewByMetricRequest {
+	return ByMetricAPIGetNetworkSensorAlertsCurrentOverviewByMetricRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *ByMetricApiService) GetNetworkSensorAlertsCurrentOverviewByMetric(ctx c
 
 // Execute executes the request
 //  @return GetNetworkSensorAlertsCurrentOverviewByMetric200Response
-func (a *ByMetricApiService) GetNetworkSensorAlertsCurrentOverviewByMetricExecute(r ByMetricApiGetNetworkSensorAlertsCurrentOverviewByMetricRequest) (*GetNetworkSensorAlertsCurrentOverviewByMetric200Response, *http.Response, error) {
+func (a *ByMetricAPIService) GetNetworkSensorAlertsCurrentOverviewByMetricExecute(r ByMetricAPIGetNetworkSensorAlertsCurrentOverviewByMetricRequest) (*GetNetworkSensorAlertsCurrentOverviewByMetric200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *ByMetricApiService) GetNetworkSensorAlertsCurrentOverviewByMetricExecut
 		localVarReturnValue  *GetNetworkSensorAlertsCurrentOverviewByMetric200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByMetricApiService.GetNetworkSensorAlertsCurrentOverviewByMetric")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByMetricAPIService.GetNetworkSensorAlertsCurrentOverviewByMetric")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,9 +140,9 @@ func (a *ByMetricApiService) GetNetworkSensorAlertsCurrentOverviewByMetricExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ByMetricApiGetNetworkSensorAlertsOverviewByMetricRequest struct {
+type ByMetricAPIGetNetworkSensorAlertsOverviewByMetricRequest struct {
 	ctx context.Context
-	ApiService *ByMetricApiService
+	ApiService *ByMetricAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -151,30 +151,30 @@ type ByMetricApiGetNetworkSensorAlertsOverviewByMetricRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
-func (r ByMetricApiGetNetworkSensorAlertsOverviewByMetricRequest) T0(t0 string) ByMetricApiGetNetworkSensorAlertsOverviewByMetricRequest {
+func (r ByMetricAPIGetNetworkSensorAlertsOverviewByMetricRequest) T0(t0 string) ByMetricAPIGetNetworkSensorAlertsOverviewByMetricRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ByMetricApiGetNetworkSensorAlertsOverviewByMetricRequest) T1(t1 string) ByMetricApiGetNetworkSensorAlertsOverviewByMetricRequest {
+func (r ByMetricAPIGetNetworkSensorAlertsOverviewByMetricRequest) T1(t1 string) ByMetricAPIGetNetworkSensorAlertsOverviewByMetricRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r ByMetricApiGetNetworkSensorAlertsOverviewByMetricRequest) Timespan(timespan float32) ByMetricApiGetNetworkSensorAlertsOverviewByMetricRequest {
+func (r ByMetricAPIGetNetworkSensorAlertsOverviewByMetricRequest) Timespan(timespan float32) ByMetricAPIGetNetworkSensorAlertsOverviewByMetricRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time interval in seconds for returned data. The valid intervals are: 86400, 604800. The default is 604800.
-func (r ByMetricApiGetNetworkSensorAlertsOverviewByMetricRequest) Interval(interval int32) ByMetricApiGetNetworkSensorAlertsOverviewByMetricRequest {
+func (r ByMetricAPIGetNetworkSensorAlertsOverviewByMetricRequest) Interval(interval int32) ByMetricAPIGetNetworkSensorAlertsOverviewByMetricRequest {
 	r.interval = &interval
 	return r
 }
 
-func (r ByMetricApiGetNetworkSensorAlertsOverviewByMetricRequest) Execute() ([]GetNetworkSensorAlertsOverviewByMetric200ResponseInner, *http.Response, error) {
+func (r ByMetricAPIGetNetworkSensorAlertsOverviewByMetricRequest) Execute() ([]GetNetworkSensorAlertsOverviewByMetric200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSensorAlertsOverviewByMetricExecute(r)
 }
 
@@ -185,10 +185,10 @@ Return an overview of alert occurrences over a timespan, by metric
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ByMetricApiGetNetworkSensorAlertsOverviewByMetricRequest
+ @return ByMetricAPIGetNetworkSensorAlertsOverviewByMetricRequest
 */
-func (a *ByMetricApiService) GetNetworkSensorAlertsOverviewByMetric(ctx context.Context, networkId string) ByMetricApiGetNetworkSensorAlertsOverviewByMetricRequest {
-	return ByMetricApiGetNetworkSensorAlertsOverviewByMetricRequest{
+func (a *ByMetricAPIService) GetNetworkSensorAlertsOverviewByMetric(ctx context.Context, networkId string) ByMetricAPIGetNetworkSensorAlertsOverviewByMetricRequest {
+	return ByMetricAPIGetNetworkSensorAlertsOverviewByMetricRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -197,7 +197,7 @@ func (a *ByMetricApiService) GetNetworkSensorAlertsOverviewByMetric(ctx context.
 
 // Execute executes the request
 //  @return []GetNetworkSensorAlertsOverviewByMetric200ResponseInner
-func (a *ByMetricApiService) GetNetworkSensorAlertsOverviewByMetricExecute(r ByMetricApiGetNetworkSensorAlertsOverviewByMetricRequest) ([]GetNetworkSensorAlertsOverviewByMetric200ResponseInner, *http.Response, error) {
+func (a *ByMetricAPIService) GetNetworkSensorAlertsOverviewByMetricExecute(r ByMetricAPIGetNetworkSensorAlertsOverviewByMetricRequest) ([]GetNetworkSensorAlertsOverviewByMetric200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -205,7 +205,7 @@ func (a *ByMetricApiService) GetNetworkSensorAlertsOverviewByMetricExecute(r ByM
 		localVarReturnValue  []GetNetworkSensorAlertsOverviewByMetric200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByMetricApiService.GetNetworkSensorAlertsOverviewByMetric")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByMetricAPIService.GetNetworkSensorAlertsOverviewByMetric")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

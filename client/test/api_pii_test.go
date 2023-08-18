@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing PiiApiService
+Testing PiiAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_PiiApiService(t *testing.T) {
+func Test_client_PiiAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test PiiApiService CreateNetworkPiiRequest", func(t *testing.T) {
+	t.Run("Test PiiAPIService CreateNetworkPiiRequest", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.PiiApi.CreateNetworkPiiRequest(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.PiiAPI.CreateNetworkPiiRequest(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,27 +36,27 @@ func Test_client_PiiApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PiiApiService DeleteNetworkPiiRequest", func(t *testing.T) {
+	t.Run("Test PiiAPIService DeleteNetworkPiiRequest", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var requestId string
 
-		httpRes, err := apiClient.PiiApi.DeleteNetworkPiiRequest(context.Background(), networkId, requestId).Execute()
+		httpRes, err := apiClient.PiiAPI.DeleteNetworkPiiRequest(context.Background(), networkId, requestId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test PiiApiService GetNetworkPiiPiiKeys", func(t *testing.T) {
+	t.Run("Test PiiAPIService GetNetworkPiiPiiKeys", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.PiiApi.GetNetworkPiiPiiKeys(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.PiiAPI.GetNetworkPiiPiiKeys(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,14 +64,14 @@ func Test_client_PiiApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PiiApiService GetNetworkPiiRequest", func(t *testing.T) {
+	t.Run("Test PiiAPIService GetNetworkPiiRequest", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var requestId string
 
-		resp, httpRes, err := apiClient.PiiApi.GetNetworkPiiRequest(context.Background(), networkId, requestId).Execute()
+		resp, httpRes, err := apiClient.PiiAPI.GetNetworkPiiRequest(context.Background(), networkId, requestId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,13 +79,13 @@ func Test_client_PiiApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PiiApiService GetNetworkPiiRequests", func(t *testing.T) {
+	t.Run("Test PiiAPIService GetNetworkPiiRequests", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.PiiApi.GetNetworkPiiRequests(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.PiiAPI.GetNetworkPiiRequests(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -93,13 +93,13 @@ func Test_client_PiiApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PiiApiService GetNetworkPiiSmDevicesForKey", func(t *testing.T) {
+	t.Run("Test PiiAPIService GetNetworkPiiSmDevicesForKey", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.PiiApi.GetNetworkPiiSmDevicesForKey(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.PiiAPI.GetNetworkPiiSmDevicesForKey(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -107,13 +107,13 @@ func Test_client_PiiApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PiiApiService GetNetworkPiiSmOwnersForKey", func(t *testing.T) {
+	t.Run("Test PiiAPIService GetNetworkPiiSmOwnersForKey", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.PiiApi.GetNetworkPiiSmOwnersForKey(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.PiiAPI.GetNetworkPiiSmOwnersForKey(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

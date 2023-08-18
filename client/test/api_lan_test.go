@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing LanApiService
+Testing LanAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_LanApiService(t *testing.T) {
+func Test_client_LanAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test LanApiService GetDeviceCellularGatewayLan", func(t *testing.T) {
+	t.Run("Test LanAPIService GetDeviceCellularGatewayLan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.LanApi.GetDeviceCellularGatewayLan(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.LanAPI.GetDeviceCellularGatewayLan(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_LanApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test LanApiService UpdateDeviceCellularGatewayLan", func(t *testing.T) {
+	t.Run("Test LanAPIService UpdateDeviceCellularGatewayLan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.LanApi.UpdateDeviceCellularGatewayLan(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.LanAPI.UpdateDeviceCellularGatewayLan(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -20,12 +20,12 @@ import (
 )
 
 
-// BluetoothClientsApiService BluetoothClientsApi service
-type BluetoothClientsApiService service
+// BluetoothClientsAPIService BluetoothClientsAPI service
+type BluetoothClientsAPIService service
 
-type BluetoothClientsApiGetNetworkBluetoothClientRequest struct {
+type BluetoothClientsAPIGetNetworkBluetoothClientRequest struct {
 	ctx context.Context
-	ApiService *BluetoothClientsApiService
+	ApiService *BluetoothClientsAPIService
 	networkId string
 	bluetoothClientId string
 	includeConnectivityHistory *bool
@@ -33,18 +33,18 @@ type BluetoothClientsApiGetNetworkBluetoothClientRequest struct {
 }
 
 // Include the connectivity history for this client
-func (r BluetoothClientsApiGetNetworkBluetoothClientRequest) IncludeConnectivityHistory(includeConnectivityHistory bool) BluetoothClientsApiGetNetworkBluetoothClientRequest {
+func (r BluetoothClientsAPIGetNetworkBluetoothClientRequest) IncludeConnectivityHistory(includeConnectivityHistory bool) BluetoothClientsAPIGetNetworkBluetoothClientRequest {
 	r.includeConnectivityHistory = &includeConnectivityHistory
 	return r
 }
 
 // The timespan, in seconds, for the connectivityHistory data. By default 1 day, 86400, will be used.
-func (r BluetoothClientsApiGetNetworkBluetoothClientRequest) ConnectivityHistoryTimespan(connectivityHistoryTimespan int32) BluetoothClientsApiGetNetworkBluetoothClientRequest {
+func (r BluetoothClientsAPIGetNetworkBluetoothClientRequest) ConnectivityHistoryTimespan(connectivityHistoryTimespan int32) BluetoothClientsAPIGetNetworkBluetoothClientRequest {
 	r.connectivityHistoryTimespan = &connectivityHistoryTimespan
 	return r
 }
 
-func (r BluetoothClientsApiGetNetworkBluetoothClientRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r BluetoothClientsAPIGetNetworkBluetoothClientRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkBluetoothClientExecute(r)
 }
 
@@ -56,10 +56,10 @@ Return a Bluetooth client. Bluetooth clients can be identified by their ID or th
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param bluetoothClientId Bluetooth client ID
- @return BluetoothClientsApiGetNetworkBluetoothClientRequest
+ @return BluetoothClientsAPIGetNetworkBluetoothClientRequest
 */
-func (a *BluetoothClientsApiService) GetNetworkBluetoothClient(ctx context.Context, networkId string, bluetoothClientId string) BluetoothClientsApiGetNetworkBluetoothClientRequest {
-	return BluetoothClientsApiGetNetworkBluetoothClientRequest{
+func (a *BluetoothClientsAPIService) GetNetworkBluetoothClient(ctx context.Context, networkId string, bluetoothClientId string) BluetoothClientsAPIGetNetworkBluetoothClientRequest {
+	return BluetoothClientsAPIGetNetworkBluetoothClientRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -69,7 +69,7 @@ func (a *BluetoothClientsApiService) GetNetworkBluetoothClient(ctx context.Conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *BluetoothClientsApiService) GetNetworkBluetoothClientExecute(r BluetoothClientsApiGetNetworkBluetoothClientRequest) (map[string]interface{}, *http.Response, error) {
+func (a *BluetoothClientsAPIService) GetNetworkBluetoothClientExecute(r BluetoothClientsAPIGetNetworkBluetoothClientRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -77,7 +77,7 @@ func (a *BluetoothClientsApiService) GetNetworkBluetoothClientExecute(r Bluetoot
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BluetoothClientsApiService.GetNetworkBluetoothClient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BluetoothClientsAPIService.GetNetworkBluetoothClient")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -164,9 +164,9 @@ func (a *BluetoothClientsApiService) GetNetworkBluetoothClientExecute(r Bluetoot
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BluetoothClientsApiGetNetworkBluetoothClientsRequest struct {
+type BluetoothClientsAPIGetNetworkBluetoothClientsRequest struct {
 	ctx context.Context
-	ApiService *BluetoothClientsApiService
+	ApiService *BluetoothClientsAPIService
 	networkId string
 	t0 *string
 	timespan *float32
@@ -177,42 +177,42 @@ type BluetoothClientsApiGetNetworkBluetoothClientsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 7 days from today.
-func (r BluetoothClientsApiGetNetworkBluetoothClientsRequest) T0(t0 string) BluetoothClientsApiGetNetworkBluetoothClientsRequest {
+func (r BluetoothClientsAPIGetNetworkBluetoothClientsRequest) T0(t0 string) BluetoothClientsAPIGetNetworkBluetoothClientsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 7 days. The default is 1 day.
-func (r BluetoothClientsApiGetNetworkBluetoothClientsRequest) Timespan(timespan float32) BluetoothClientsApiGetNetworkBluetoothClientsRequest {
+func (r BluetoothClientsAPIGetNetworkBluetoothClientsRequest) Timespan(timespan float32) BluetoothClientsAPIGetNetworkBluetoothClientsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 5 - 1000. Default is 10.
-func (r BluetoothClientsApiGetNetworkBluetoothClientsRequest) PerPage(perPage int32) BluetoothClientsApiGetNetworkBluetoothClientsRequest {
+func (r BluetoothClientsAPIGetNetworkBluetoothClientsRequest) PerPage(perPage int32) BluetoothClientsAPIGetNetworkBluetoothClientsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r BluetoothClientsApiGetNetworkBluetoothClientsRequest) StartingAfter(startingAfter string) BluetoothClientsApiGetNetworkBluetoothClientsRequest {
+func (r BluetoothClientsAPIGetNetworkBluetoothClientsRequest) StartingAfter(startingAfter string) BluetoothClientsAPIGetNetworkBluetoothClientsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r BluetoothClientsApiGetNetworkBluetoothClientsRequest) EndingBefore(endingBefore string) BluetoothClientsApiGetNetworkBluetoothClientsRequest {
+func (r BluetoothClientsAPIGetNetworkBluetoothClientsRequest) EndingBefore(endingBefore string) BluetoothClientsAPIGetNetworkBluetoothClientsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Include the connectivity history for this client
-func (r BluetoothClientsApiGetNetworkBluetoothClientsRequest) IncludeConnectivityHistory(includeConnectivityHistory bool) BluetoothClientsApiGetNetworkBluetoothClientsRequest {
+func (r BluetoothClientsAPIGetNetworkBluetoothClientsRequest) IncludeConnectivityHistory(includeConnectivityHistory bool) BluetoothClientsAPIGetNetworkBluetoothClientsRequest {
 	r.includeConnectivityHistory = &includeConnectivityHistory
 	return r
 }
 
-func (r BluetoothClientsApiGetNetworkBluetoothClientsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r BluetoothClientsAPIGetNetworkBluetoothClientsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkBluetoothClientsExecute(r)
 }
 
@@ -223,10 +223,10 @@ List the Bluetooth clients seen by APs in this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return BluetoothClientsApiGetNetworkBluetoothClientsRequest
+ @return BluetoothClientsAPIGetNetworkBluetoothClientsRequest
 */
-func (a *BluetoothClientsApiService) GetNetworkBluetoothClients(ctx context.Context, networkId string) BluetoothClientsApiGetNetworkBluetoothClientsRequest {
-	return BluetoothClientsApiGetNetworkBluetoothClientsRequest{
+func (a *BluetoothClientsAPIService) GetNetworkBluetoothClients(ctx context.Context, networkId string) BluetoothClientsAPIGetNetworkBluetoothClientsRequest {
+	return BluetoothClientsAPIGetNetworkBluetoothClientsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -235,7 +235,7 @@ func (a *BluetoothClientsApiService) GetNetworkBluetoothClients(ctx context.Cont
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *BluetoothClientsApiService) GetNetworkBluetoothClientsExecute(r BluetoothClientsApiGetNetworkBluetoothClientsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *BluetoothClientsAPIService) GetNetworkBluetoothClientsExecute(r BluetoothClientsAPIGetNetworkBluetoothClientsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -243,7 +243,7 @@ func (a *BluetoothClientsApiService) GetNetworkBluetoothClientsExecute(r Bluetoo
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BluetoothClientsApiService.GetNetworkBluetoothClients")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BluetoothClientsAPIService.GetNetworkBluetoothClients")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

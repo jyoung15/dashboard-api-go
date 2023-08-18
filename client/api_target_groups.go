@@ -20,22 +20,22 @@ import (
 )
 
 
-// TargetGroupsApiService TargetGroupsApi service
-type TargetGroupsApiService service
+// TargetGroupsAPIService TargetGroupsAPI service
+type TargetGroupsAPIService service
 
-type TargetGroupsApiCreateNetworkSmTargetGroupRequest struct {
+type TargetGroupsAPICreateNetworkSmTargetGroupRequest struct {
 	ctx context.Context
-	ApiService *TargetGroupsApiService
+	ApiService *TargetGroupsAPIService
 	networkId string
 	createNetworkSmTargetGroupRequest *CreateNetworkSmTargetGroupRequest
 }
 
-func (r TargetGroupsApiCreateNetworkSmTargetGroupRequest) CreateNetworkSmTargetGroupRequest(createNetworkSmTargetGroupRequest CreateNetworkSmTargetGroupRequest) TargetGroupsApiCreateNetworkSmTargetGroupRequest {
+func (r TargetGroupsAPICreateNetworkSmTargetGroupRequest) CreateNetworkSmTargetGroupRequest(createNetworkSmTargetGroupRequest CreateNetworkSmTargetGroupRequest) TargetGroupsAPICreateNetworkSmTargetGroupRequest {
 	r.createNetworkSmTargetGroupRequest = &createNetworkSmTargetGroupRequest
 	return r
 }
 
-func (r TargetGroupsApiCreateNetworkSmTargetGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r TargetGroupsAPICreateNetworkSmTargetGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkSmTargetGroupExecute(r)
 }
 
@@ -46,10 +46,10 @@ Add a target group
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return TargetGroupsApiCreateNetworkSmTargetGroupRequest
+ @return TargetGroupsAPICreateNetworkSmTargetGroupRequest
 */
-func (a *TargetGroupsApiService) CreateNetworkSmTargetGroup(ctx context.Context, networkId string) TargetGroupsApiCreateNetworkSmTargetGroupRequest {
-	return TargetGroupsApiCreateNetworkSmTargetGroupRequest{
+func (a *TargetGroupsAPIService) CreateNetworkSmTargetGroup(ctx context.Context, networkId string) TargetGroupsAPICreateNetworkSmTargetGroupRequest {
+	return TargetGroupsAPICreateNetworkSmTargetGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -58,7 +58,7 @@ func (a *TargetGroupsApiService) CreateNetworkSmTargetGroup(ctx context.Context,
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *TargetGroupsApiService) CreateNetworkSmTargetGroupExecute(r TargetGroupsApiCreateNetworkSmTargetGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *TargetGroupsAPIService) CreateNetworkSmTargetGroupExecute(r TargetGroupsAPICreateNetworkSmTargetGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *TargetGroupsApiService) CreateNetworkSmTargetGroupExecute(r TargetGroup
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TargetGroupsApiService.CreateNetworkSmTargetGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TargetGroupsAPIService.CreateNetworkSmTargetGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -148,14 +148,14 @@ func (a *TargetGroupsApiService) CreateNetworkSmTargetGroupExecute(r TargetGroup
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type TargetGroupsApiDeleteNetworkSmTargetGroupRequest struct {
+type TargetGroupsAPIDeleteNetworkSmTargetGroupRequest struct {
 	ctx context.Context
-	ApiService *TargetGroupsApiService
+	ApiService *TargetGroupsAPIService
 	networkId string
 	targetGroupId string
 }
 
-func (r TargetGroupsApiDeleteNetworkSmTargetGroupRequest) Execute() (*http.Response, error) {
+func (r TargetGroupsAPIDeleteNetworkSmTargetGroupRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkSmTargetGroupExecute(r)
 }
 
@@ -167,10 +167,10 @@ Delete a target group from a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param targetGroupId Target group ID
- @return TargetGroupsApiDeleteNetworkSmTargetGroupRequest
+ @return TargetGroupsAPIDeleteNetworkSmTargetGroupRequest
 */
-func (a *TargetGroupsApiService) DeleteNetworkSmTargetGroup(ctx context.Context, networkId string, targetGroupId string) TargetGroupsApiDeleteNetworkSmTargetGroupRequest {
-	return TargetGroupsApiDeleteNetworkSmTargetGroupRequest{
+func (a *TargetGroupsAPIService) DeleteNetworkSmTargetGroup(ctx context.Context, networkId string, targetGroupId string) TargetGroupsAPIDeleteNetworkSmTargetGroupRequest {
+	return TargetGroupsAPIDeleteNetworkSmTargetGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -179,14 +179,14 @@ func (a *TargetGroupsApiService) DeleteNetworkSmTargetGroup(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *TargetGroupsApiService) DeleteNetworkSmTargetGroupExecute(r TargetGroupsApiDeleteNetworkSmTargetGroupRequest) (*http.Response, error) {
+func (a *TargetGroupsAPIService) DeleteNetworkSmTargetGroupExecute(r TargetGroupsAPIDeleteNetworkSmTargetGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TargetGroupsApiService.DeleteNetworkSmTargetGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TargetGroupsAPIService.DeleteNetworkSmTargetGroup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -258,21 +258,21 @@ func (a *TargetGroupsApiService) DeleteNetworkSmTargetGroupExecute(r TargetGroup
 	return localVarHTTPResponse, nil
 }
 
-type TargetGroupsApiGetNetworkSmTargetGroupRequest struct {
+type TargetGroupsAPIGetNetworkSmTargetGroupRequest struct {
 	ctx context.Context
-	ApiService *TargetGroupsApiService
+	ApiService *TargetGroupsAPIService
 	networkId string
 	targetGroupId string
 	withDetails *bool
 }
 
 // Boolean indicating if the the ids of the devices or users scoped by the target group should be included in the response
-func (r TargetGroupsApiGetNetworkSmTargetGroupRequest) WithDetails(withDetails bool) TargetGroupsApiGetNetworkSmTargetGroupRequest {
+func (r TargetGroupsAPIGetNetworkSmTargetGroupRequest) WithDetails(withDetails bool) TargetGroupsAPIGetNetworkSmTargetGroupRequest {
 	r.withDetails = &withDetails
 	return r
 }
 
-func (r TargetGroupsApiGetNetworkSmTargetGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r TargetGroupsAPIGetNetworkSmTargetGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSmTargetGroupExecute(r)
 }
 
@@ -284,10 +284,10 @@ Return a target group
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param targetGroupId Target group ID
- @return TargetGroupsApiGetNetworkSmTargetGroupRequest
+ @return TargetGroupsAPIGetNetworkSmTargetGroupRequest
 */
-func (a *TargetGroupsApiService) GetNetworkSmTargetGroup(ctx context.Context, networkId string, targetGroupId string) TargetGroupsApiGetNetworkSmTargetGroupRequest {
-	return TargetGroupsApiGetNetworkSmTargetGroupRequest{
+func (a *TargetGroupsAPIService) GetNetworkSmTargetGroup(ctx context.Context, networkId string, targetGroupId string) TargetGroupsAPIGetNetworkSmTargetGroupRequest {
+	return TargetGroupsAPIGetNetworkSmTargetGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -297,7 +297,7 @@ func (a *TargetGroupsApiService) GetNetworkSmTargetGroup(ctx context.Context, ne
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *TargetGroupsApiService) GetNetworkSmTargetGroupExecute(r TargetGroupsApiGetNetworkSmTargetGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *TargetGroupsAPIService) GetNetworkSmTargetGroupExecute(r TargetGroupsAPIGetNetworkSmTargetGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -305,7 +305,7 @@ func (a *TargetGroupsApiService) GetNetworkSmTargetGroupExecute(r TargetGroupsAp
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TargetGroupsApiService.GetNetworkSmTargetGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TargetGroupsAPIService.GetNetworkSmTargetGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -389,20 +389,20 @@ func (a *TargetGroupsApiService) GetNetworkSmTargetGroupExecute(r TargetGroupsAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type TargetGroupsApiGetNetworkSmTargetGroupsRequest struct {
+type TargetGroupsAPIGetNetworkSmTargetGroupsRequest struct {
 	ctx context.Context
-	ApiService *TargetGroupsApiService
+	ApiService *TargetGroupsAPIService
 	networkId string
 	withDetails *bool
 }
 
 // Boolean indicating if the the ids of the devices or users scoped by the target group should be included in the response
-func (r TargetGroupsApiGetNetworkSmTargetGroupsRequest) WithDetails(withDetails bool) TargetGroupsApiGetNetworkSmTargetGroupsRequest {
+func (r TargetGroupsAPIGetNetworkSmTargetGroupsRequest) WithDetails(withDetails bool) TargetGroupsAPIGetNetworkSmTargetGroupsRequest {
 	r.withDetails = &withDetails
 	return r
 }
 
-func (r TargetGroupsApiGetNetworkSmTargetGroupsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r TargetGroupsAPIGetNetworkSmTargetGroupsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSmTargetGroupsExecute(r)
 }
 
@@ -413,10 +413,10 @@ List the target groups in this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return TargetGroupsApiGetNetworkSmTargetGroupsRequest
+ @return TargetGroupsAPIGetNetworkSmTargetGroupsRequest
 */
-func (a *TargetGroupsApiService) GetNetworkSmTargetGroups(ctx context.Context, networkId string) TargetGroupsApiGetNetworkSmTargetGroupsRequest {
-	return TargetGroupsApiGetNetworkSmTargetGroupsRequest{
+func (a *TargetGroupsAPIService) GetNetworkSmTargetGroups(ctx context.Context, networkId string) TargetGroupsAPIGetNetworkSmTargetGroupsRequest {
+	return TargetGroupsAPIGetNetworkSmTargetGroupsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -425,7 +425,7 @@ func (a *TargetGroupsApiService) GetNetworkSmTargetGroups(ctx context.Context, n
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *TargetGroupsApiService) GetNetworkSmTargetGroupsExecute(r TargetGroupsApiGetNetworkSmTargetGroupsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *TargetGroupsAPIService) GetNetworkSmTargetGroupsExecute(r TargetGroupsAPIGetNetworkSmTargetGroupsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -433,7 +433,7 @@ func (a *TargetGroupsApiService) GetNetworkSmTargetGroupsExecute(r TargetGroupsA
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TargetGroupsApiService.GetNetworkSmTargetGroups")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TargetGroupsAPIService.GetNetworkSmTargetGroups")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -516,20 +516,20 @@ func (a *TargetGroupsApiService) GetNetworkSmTargetGroupsExecute(r TargetGroupsA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type TargetGroupsApiUpdateNetworkSmTargetGroupRequest struct {
+type TargetGroupsAPIUpdateNetworkSmTargetGroupRequest struct {
 	ctx context.Context
-	ApiService *TargetGroupsApiService
+	ApiService *TargetGroupsAPIService
 	networkId string
 	targetGroupId string
 	createNetworkSmTargetGroupRequest *CreateNetworkSmTargetGroupRequest
 }
 
-func (r TargetGroupsApiUpdateNetworkSmTargetGroupRequest) CreateNetworkSmTargetGroupRequest(createNetworkSmTargetGroupRequest CreateNetworkSmTargetGroupRequest) TargetGroupsApiUpdateNetworkSmTargetGroupRequest {
+func (r TargetGroupsAPIUpdateNetworkSmTargetGroupRequest) CreateNetworkSmTargetGroupRequest(createNetworkSmTargetGroupRequest CreateNetworkSmTargetGroupRequest) TargetGroupsAPIUpdateNetworkSmTargetGroupRequest {
 	r.createNetworkSmTargetGroupRequest = &createNetworkSmTargetGroupRequest
 	return r
 }
 
-func (r TargetGroupsApiUpdateNetworkSmTargetGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r TargetGroupsAPIUpdateNetworkSmTargetGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSmTargetGroupExecute(r)
 }
 
@@ -541,10 +541,10 @@ Update a target group
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param targetGroupId Target group ID
- @return TargetGroupsApiUpdateNetworkSmTargetGroupRequest
+ @return TargetGroupsAPIUpdateNetworkSmTargetGroupRequest
 */
-func (a *TargetGroupsApiService) UpdateNetworkSmTargetGroup(ctx context.Context, networkId string, targetGroupId string) TargetGroupsApiUpdateNetworkSmTargetGroupRequest {
-	return TargetGroupsApiUpdateNetworkSmTargetGroupRequest{
+func (a *TargetGroupsAPIService) UpdateNetworkSmTargetGroup(ctx context.Context, networkId string, targetGroupId string) TargetGroupsAPIUpdateNetworkSmTargetGroupRequest {
+	return TargetGroupsAPIUpdateNetworkSmTargetGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -554,7 +554,7 @@ func (a *TargetGroupsApiService) UpdateNetworkSmTargetGroup(ctx context.Context,
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *TargetGroupsApiService) UpdateNetworkSmTargetGroupExecute(r TargetGroupsApiUpdateNetworkSmTargetGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *TargetGroupsAPIService) UpdateNetworkSmTargetGroupExecute(r TargetGroupsAPIUpdateNetworkSmTargetGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -562,7 +562,7 @@ func (a *TargetGroupsApiService) UpdateNetworkSmTargetGroupExecute(r TargetGroup
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TargetGroupsApiService.UpdateNetworkSmTargetGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TargetGroupsAPIService.UpdateNetworkSmTargetGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

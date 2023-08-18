@@ -20,22 +20,22 @@ import (
 )
 
 
-// ClaimApiService ClaimApi service
-type ClaimApiService service
+// ClaimAPIService ClaimAPI service
+type ClaimAPIService service
 
-type ClaimApiVmxNetworkDevicesClaimRequest struct {
+type ClaimAPIVmxNetworkDevicesClaimRequest struct {
 	ctx context.Context
-	ApiService *ClaimApiService
+	ApiService *ClaimAPIService
 	networkId string
 	vmxNetworkDevicesClaimRequest *VmxNetworkDevicesClaimRequest
 }
 
-func (r ClaimApiVmxNetworkDevicesClaimRequest) VmxNetworkDevicesClaimRequest(vmxNetworkDevicesClaimRequest VmxNetworkDevicesClaimRequest) ClaimApiVmxNetworkDevicesClaimRequest {
+func (r ClaimAPIVmxNetworkDevicesClaimRequest) VmxNetworkDevicesClaimRequest(vmxNetworkDevicesClaimRequest VmxNetworkDevicesClaimRequest) ClaimAPIVmxNetworkDevicesClaimRequest {
 	r.vmxNetworkDevicesClaimRequest = &vmxNetworkDevicesClaimRequest
 	return r
 }
 
-func (r ClaimApiVmxNetworkDevicesClaimRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ClaimAPIVmxNetworkDevicesClaimRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.VmxNetworkDevicesClaimExecute(r)
 }
 
@@ -46,10 +46,10 @@ Claim a vMX into a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ClaimApiVmxNetworkDevicesClaimRequest
+ @return ClaimAPIVmxNetworkDevicesClaimRequest
 */
-func (a *ClaimApiService) VmxNetworkDevicesClaim(ctx context.Context, networkId string) ClaimApiVmxNetworkDevicesClaimRequest {
-	return ClaimApiVmxNetworkDevicesClaimRequest{
+func (a *ClaimAPIService) VmxNetworkDevicesClaim(ctx context.Context, networkId string) ClaimAPIVmxNetworkDevicesClaimRequest {
+	return ClaimAPIVmxNetworkDevicesClaimRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -58,7 +58,7 @@ func (a *ClaimApiService) VmxNetworkDevicesClaim(ctx context.Context, networkId 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ClaimApiService) VmxNetworkDevicesClaimExecute(r ClaimApiVmxNetworkDevicesClaimRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ClaimAPIService) VmxNetworkDevicesClaimExecute(r ClaimAPIVmxNetworkDevicesClaimRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *ClaimApiService) VmxNetworkDevicesClaimExecute(r ClaimApiVmxNetworkDevi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClaimApiService.VmxNetworkDevicesClaim")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClaimAPIService.VmxNetworkDevicesClaim")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing StpApiService
+Testing StpAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_StpApiService(t *testing.T) {
+func Test_client_StpAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test StpApiService GetNetworkSwitchStp", func(t *testing.T) {
+	t.Run("Test StpAPIService GetNetworkSwitchStp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.StpApi.GetNetworkSwitchStp(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.StpAPI.GetNetworkSwitchStp(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_StpApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test StpApiService UpdateNetworkSwitchStp", func(t *testing.T) {
+	t.Run("Test StpAPIService UpdateNetworkSwitchStp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.StpApi.UpdateNetworkSwitchStp(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.StpAPI.UpdateNetworkSwitchStp(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

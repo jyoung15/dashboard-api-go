@@ -20,16 +20,16 @@ import (
 )
 
 
-// SyslogServersApiService SyslogServersApi service
-type SyslogServersApiService service
+// SyslogServersAPIService SyslogServersAPI service
+type SyslogServersAPIService service
 
-type SyslogServersApiGetNetworkSyslogServersRequest struct {
+type SyslogServersAPIGetNetworkSyslogServersRequest struct {
 	ctx context.Context
-	ApiService *SyslogServersApiService
+	ApiService *SyslogServersAPIService
 	networkId string
 }
 
-func (r SyslogServersApiGetNetworkSyslogServersRequest) Execute() (*GetNetworkSyslogServers200Response, *http.Response, error) {
+func (r SyslogServersAPIGetNetworkSyslogServersRequest) Execute() (*GetNetworkSyslogServers200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSyslogServersExecute(r)
 }
 
@@ -40,10 +40,10 @@ List the syslog servers for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SyslogServersApiGetNetworkSyslogServersRequest
+ @return SyslogServersAPIGetNetworkSyslogServersRequest
 */
-func (a *SyslogServersApiService) GetNetworkSyslogServers(ctx context.Context, networkId string) SyslogServersApiGetNetworkSyslogServersRequest {
-	return SyslogServersApiGetNetworkSyslogServersRequest{
+func (a *SyslogServersAPIService) GetNetworkSyslogServers(ctx context.Context, networkId string) SyslogServersAPIGetNetworkSyslogServersRequest {
+	return SyslogServersAPIGetNetworkSyslogServersRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *SyslogServersApiService) GetNetworkSyslogServers(ctx context.Context, n
 
 // Execute executes the request
 //  @return GetNetworkSyslogServers200Response
-func (a *SyslogServersApiService) GetNetworkSyslogServersExecute(r SyslogServersApiGetNetworkSyslogServersRequest) (*GetNetworkSyslogServers200Response, *http.Response, error) {
+func (a *SyslogServersAPIService) GetNetworkSyslogServersExecute(r SyslogServersAPIGetNetworkSyslogServersRequest) (*GetNetworkSyslogServers200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *SyslogServersApiService) GetNetworkSyslogServersExecute(r SyslogServers
 		localVarReturnValue  *GetNetworkSyslogServers200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SyslogServersApiService.GetNetworkSyslogServers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SyslogServersAPIService.GetNetworkSyslogServers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *SyslogServersApiService) GetNetworkSyslogServersExecute(r SyslogServers
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SyslogServersApiUpdateNetworkSyslogServersRequest struct {
+type SyslogServersAPIUpdateNetworkSyslogServersRequest struct {
 	ctx context.Context
-	ApiService *SyslogServersApiService
+	ApiService *SyslogServersAPIService
 	networkId string
 	updateNetworkSyslogServersRequest *UpdateNetworkSyslogServersRequest
 }
 
-func (r SyslogServersApiUpdateNetworkSyslogServersRequest) UpdateNetworkSyslogServersRequest(updateNetworkSyslogServersRequest UpdateNetworkSyslogServersRequest) SyslogServersApiUpdateNetworkSyslogServersRequest {
+func (r SyslogServersAPIUpdateNetworkSyslogServersRequest) UpdateNetworkSyslogServersRequest(updateNetworkSyslogServersRequest UpdateNetworkSyslogServersRequest) SyslogServersAPIUpdateNetworkSyslogServersRequest {
 	r.updateNetworkSyslogServersRequest = &updateNetworkSyslogServersRequest
 	return r
 }
 
-func (r SyslogServersApiUpdateNetworkSyslogServersRequest) Execute() (*GetNetworkSyslogServers200Response, *http.Response, error) {
+func (r SyslogServersAPIUpdateNetworkSyslogServersRequest) Execute() (*GetNetworkSyslogServers200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSyslogServersExecute(r)
 }
 
@@ -163,10 +163,10 @@ Update the syslog servers for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SyslogServersApiUpdateNetworkSyslogServersRequest
+ @return SyslogServersAPIUpdateNetworkSyslogServersRequest
 */
-func (a *SyslogServersApiService) UpdateNetworkSyslogServers(ctx context.Context, networkId string) SyslogServersApiUpdateNetworkSyslogServersRequest {
-	return SyslogServersApiUpdateNetworkSyslogServersRequest{
+func (a *SyslogServersAPIService) UpdateNetworkSyslogServers(ctx context.Context, networkId string) SyslogServersAPIUpdateNetworkSyslogServersRequest {
+	return SyslogServersAPIUpdateNetworkSyslogServersRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -175,7 +175,7 @@ func (a *SyslogServersApiService) UpdateNetworkSyslogServers(ctx context.Context
 
 // Execute executes the request
 //  @return GetNetworkSyslogServers200Response
-func (a *SyslogServersApiService) UpdateNetworkSyslogServersExecute(r SyslogServersApiUpdateNetworkSyslogServersRequest) (*GetNetworkSyslogServers200Response, *http.Response, error) {
+func (a *SyslogServersAPIService) UpdateNetworkSyslogServersExecute(r SyslogServersAPIUpdateNetworkSyslogServersRequest) (*GetNetworkSyslogServers200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *SyslogServersApiService) UpdateNetworkSyslogServersExecute(r SyslogServ
 		localVarReturnValue  *GetNetworkSyslogServers200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SyslogServersApiService.UpdateNetworkSyslogServers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SyslogServersAPIService.UpdateNetworkSyslogServers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

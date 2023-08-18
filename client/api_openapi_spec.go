@@ -20,23 +20,23 @@ import (
 )
 
 
-// OpenapiSpecApiService OpenapiSpecApi service
-type OpenapiSpecApiService service
+// OpenapiSpecAPIService OpenapiSpecAPI service
+type OpenapiSpecAPIService service
 
-type OpenapiSpecApiGetOrganizationOpenapiSpecRequest struct {
+type OpenapiSpecAPIGetOrganizationOpenapiSpecRequest struct {
 	ctx context.Context
-	ApiService *OpenapiSpecApiService
+	ApiService *OpenapiSpecAPIService
 	organizationId string
 	version *int32
 }
 
 // OpenAPI Specification version to return. Default is 2
-func (r OpenapiSpecApiGetOrganizationOpenapiSpecRequest) Version(version int32) OpenapiSpecApiGetOrganizationOpenapiSpecRequest {
+func (r OpenapiSpecAPIGetOrganizationOpenapiSpecRequest) Version(version int32) OpenapiSpecAPIGetOrganizationOpenapiSpecRequest {
 	r.version = &version
 	return r
 }
 
-func (r OpenapiSpecApiGetOrganizationOpenapiSpecRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OpenapiSpecAPIGetOrganizationOpenapiSpecRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationOpenapiSpecExecute(r)
 }
 
@@ -47,10 +47,10 @@ Return the OpenAPI Specification of the organization's API documentation in JSON
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OpenapiSpecApiGetOrganizationOpenapiSpecRequest
+ @return OpenapiSpecAPIGetOrganizationOpenapiSpecRequest
 */
-func (a *OpenapiSpecApiService) GetOrganizationOpenapiSpec(ctx context.Context, organizationId string) OpenapiSpecApiGetOrganizationOpenapiSpecRequest {
-	return OpenapiSpecApiGetOrganizationOpenapiSpecRequest{
+func (a *OpenapiSpecAPIService) GetOrganizationOpenapiSpec(ctx context.Context, organizationId string) OpenapiSpecAPIGetOrganizationOpenapiSpecRequest {
+	return OpenapiSpecAPIGetOrganizationOpenapiSpecRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -59,7 +59,7 @@ func (a *OpenapiSpecApiService) GetOrganizationOpenapiSpec(ctx context.Context, 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OpenapiSpecApiService) GetOrganizationOpenapiSpecExecute(r OpenapiSpecApiGetOrganizationOpenapiSpecRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OpenapiSpecAPIService) GetOrganizationOpenapiSpecExecute(r OpenapiSpecAPIGetOrganizationOpenapiSpecRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -67,7 +67,7 @@ func (a *OpenapiSpecApiService) GetOrganizationOpenapiSpecExecute(r OpenapiSpecA
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OpenapiSpecApiService.GetOrganizationOpenapiSpec")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OpenapiSpecAPIService.GetOrganizationOpenapiSpec")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

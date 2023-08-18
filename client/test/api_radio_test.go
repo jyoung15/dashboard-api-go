@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing RadioApiService
+Testing RadioAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_RadioApiService(t *testing.T) {
+func Test_client_RadioAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test RadioApiService GetDeviceApplianceRadioSettings", func(t *testing.T) {
+	t.Run("Test RadioAPIService GetDeviceApplianceRadioSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.RadioApi.GetDeviceApplianceRadioSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.RadioAPI.GetDeviceApplianceRadioSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_RadioApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RadioApiService GetDeviceWirelessRadioSettings", func(t *testing.T) {
+	t.Run("Test RadioAPIService GetDeviceWirelessRadioSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.RadioApi.GetDeviceWirelessRadioSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.RadioAPI.GetDeviceWirelessRadioSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,13 +50,13 @@ func Test_client_RadioApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RadioApiService UpdateDeviceApplianceRadioSettings", func(t *testing.T) {
+	t.Run("Test RadioAPIService UpdateDeviceApplianceRadioSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.RadioApi.UpdateDeviceApplianceRadioSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.RadioAPI.UpdateDeviceApplianceRadioSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,13 +64,13 @@ func Test_client_RadioApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RadioApiService UpdateDeviceWirelessRadioSettings", func(t *testing.T) {
+	t.Run("Test RadioAPIService UpdateDeviceWirelessRadioSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.RadioApi.UpdateDeviceWirelessRadioSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.RadioAPI.UpdateDeviceWirelessRadioSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing SettingsApiService
+Testing SettingsAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_SettingsApiService(t *testing.T) {
+func Test_client_SettingsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test SettingsApiService GetDeviceApplianceRadioSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService GetDeviceApplianceRadioSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.SettingsApi.GetDeviceApplianceRadioSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.GetDeviceApplianceRadioSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService GetDeviceApplianceUplinksSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService GetDeviceApplianceUplinksSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.SettingsApi.GetDeviceApplianceUplinksSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.GetDeviceApplianceUplinksSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,13 +50,13 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService GetDeviceCameraVideoSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService GetDeviceCameraVideoSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.SettingsApi.GetDeviceCameraVideoSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.GetDeviceCameraVideoSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,13 +64,13 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService GetDeviceWirelessBluetoothSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService GetDeviceWirelessBluetoothSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.SettingsApi.GetDeviceWirelessBluetoothSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.GetDeviceWirelessBluetoothSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -78,13 +78,13 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService GetDeviceWirelessRadioSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService GetDeviceWirelessRadioSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.SettingsApi.GetDeviceWirelessRadioSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.GetDeviceWirelessRadioSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -92,13 +92,13 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService GetNetworkAlertsSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService GetNetworkAlertsSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SettingsApi.GetNetworkAlertsSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.GetNetworkAlertsSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -106,13 +106,13 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService GetNetworkApplianceFirewallSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService GetNetworkApplianceFirewallSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SettingsApi.GetNetworkApplianceFirewallSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.GetNetworkApplianceFirewallSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -120,13 +120,13 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService GetNetworkApplianceSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService GetNetworkApplianceSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SettingsApi.GetNetworkApplianceSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.GetNetworkApplianceSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -134,13 +134,13 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService GetNetworkApplianceVlansSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService GetNetworkApplianceVlansSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SettingsApi.GetNetworkApplianceVlansSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.GetNetworkApplianceVlansSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -148,13 +148,13 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService GetNetworkSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService GetNetworkSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SettingsApi.GetNetworkSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.GetNetworkSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -162,13 +162,13 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService GetNetworkSwitchSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService GetNetworkSwitchSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SettingsApi.GetNetworkSwitchSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.GetNetworkSwitchSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -176,13 +176,13 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService GetNetworkWirelessBluetoothSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService GetNetworkWirelessBluetoothSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SettingsApi.GetNetworkWirelessBluetoothSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.GetNetworkWirelessBluetoothSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -190,13 +190,13 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService GetNetworkWirelessSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService GetNetworkWirelessSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SettingsApi.GetNetworkWirelessSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.GetNetworkWirelessSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -204,14 +204,14 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService GetNetworkWirelessSsidSplashSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService GetNetworkWirelessSsidSplashSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.SettingsApi.GetNetworkWirelessSsidSplashSettings(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.GetNetworkWirelessSsidSplashSettings(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -219,13 +219,13 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService GetOrganizationAdaptivePolicySettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService GetOrganizationAdaptivePolicySettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.SettingsApi.GetOrganizationAdaptivePolicySettings(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.GetOrganizationAdaptivePolicySettings(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -233,13 +233,13 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService UpdateDeviceApplianceRadioSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService UpdateDeviceApplianceRadioSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.SettingsApi.UpdateDeviceApplianceRadioSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.UpdateDeviceApplianceRadioSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -247,13 +247,13 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService UpdateDeviceApplianceUplinksSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService UpdateDeviceApplianceUplinksSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.SettingsApi.UpdateDeviceApplianceUplinksSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.UpdateDeviceApplianceUplinksSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -261,13 +261,13 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService UpdateDeviceCameraVideoSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService UpdateDeviceCameraVideoSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.SettingsApi.UpdateDeviceCameraVideoSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.UpdateDeviceCameraVideoSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -275,13 +275,13 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService UpdateDeviceWirelessBluetoothSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService UpdateDeviceWirelessBluetoothSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.SettingsApi.UpdateDeviceWirelessBluetoothSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.UpdateDeviceWirelessBluetoothSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -289,13 +289,13 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService UpdateDeviceWirelessRadioSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService UpdateDeviceWirelessRadioSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.SettingsApi.UpdateDeviceWirelessRadioSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.UpdateDeviceWirelessRadioSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -303,13 +303,13 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService UpdateNetworkAlertsSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService UpdateNetworkAlertsSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SettingsApi.UpdateNetworkAlertsSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.UpdateNetworkAlertsSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -317,13 +317,13 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService UpdateNetworkApplianceFirewallSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService UpdateNetworkApplianceFirewallSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SettingsApi.UpdateNetworkApplianceFirewallSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.UpdateNetworkApplianceFirewallSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -331,13 +331,13 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService UpdateNetworkApplianceSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService UpdateNetworkApplianceSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SettingsApi.UpdateNetworkApplianceSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.UpdateNetworkApplianceSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -345,13 +345,13 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService UpdateNetworkApplianceVlansSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService UpdateNetworkApplianceVlansSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SettingsApi.UpdateNetworkApplianceVlansSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.UpdateNetworkApplianceVlansSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -359,13 +359,13 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService UpdateNetworkSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService UpdateNetworkSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SettingsApi.UpdateNetworkSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.UpdateNetworkSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -373,13 +373,13 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService UpdateNetworkSwitchSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService UpdateNetworkSwitchSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SettingsApi.UpdateNetworkSwitchSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.UpdateNetworkSwitchSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -387,13 +387,13 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService UpdateNetworkWirelessBluetoothSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService UpdateNetworkWirelessBluetoothSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SettingsApi.UpdateNetworkWirelessBluetoothSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.UpdateNetworkWirelessBluetoothSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -401,13 +401,13 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService UpdateNetworkWirelessSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService UpdateNetworkWirelessSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SettingsApi.UpdateNetworkWirelessSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.UpdateNetworkWirelessSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -415,14 +415,14 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService UpdateNetworkWirelessSsidSplashSettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService UpdateNetworkWirelessSsidSplashSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.SettingsApi.UpdateNetworkWirelessSsidSplashSettings(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.UpdateNetworkWirelessSsidSplashSettings(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -430,13 +430,13 @@ func Test_client_SettingsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SettingsApiService UpdateOrganizationAdaptivePolicySettings", func(t *testing.T) {
+	t.Run("Test SettingsAPIService UpdateOrganizationAdaptivePolicySettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.SettingsApi.UpdateOrganizationAdaptivePolicySettings(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.SettingsAPI.UpdateOrganizationAdaptivePolicySettings(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -21,12 +21,12 @@ import (
 )
 
 
-// ApiRequestsApiService ApiRequestsApi service
-type ApiRequestsApiService service
+// ApiRequestsAPIService ApiRequestsAPI service
+type ApiRequestsAPIService service
 
-type ApiRequestsApiGetOrganizationApiRequestsRequest struct {
+type ApiRequestsAPIGetOrganizationApiRequestsRequest struct {
 	ctx context.Context
-	ApiService *ApiRequestsApiService
+	ApiService *ApiRequestsAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -45,90 +45,90 @@ type ApiRequestsApiGetOrganizationApiRequestsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r ApiRequestsApiGetOrganizationApiRequestsRequest) T0(t0 string) ApiRequestsApiGetOrganizationApiRequestsRequest {
+func (r ApiRequestsAPIGetOrganizationApiRequestsRequest) T0(t0 string) ApiRequestsAPIGetOrganizationApiRequestsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ApiRequestsApiGetOrganizationApiRequestsRequest) T1(t1 string) ApiRequestsApiGetOrganizationApiRequestsRequest {
+func (r ApiRequestsAPIGetOrganizationApiRequestsRequest) T1(t1 string) ApiRequestsAPIGetOrganizationApiRequestsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 31 days.
-func (r ApiRequestsApiGetOrganizationApiRequestsRequest) Timespan(timespan float32) ApiRequestsApiGetOrganizationApiRequestsRequest {
+func (r ApiRequestsAPIGetOrganizationApiRequestsRequest) Timespan(timespan float32) ApiRequestsAPIGetOrganizationApiRequestsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.
-func (r ApiRequestsApiGetOrganizationApiRequestsRequest) PerPage(perPage int32) ApiRequestsApiGetOrganizationApiRequestsRequest {
+func (r ApiRequestsAPIGetOrganizationApiRequestsRequest) PerPage(perPage int32) ApiRequestsAPIGetOrganizationApiRequestsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ApiRequestsApiGetOrganizationApiRequestsRequest) StartingAfter(startingAfter string) ApiRequestsApiGetOrganizationApiRequestsRequest {
+func (r ApiRequestsAPIGetOrganizationApiRequestsRequest) StartingAfter(startingAfter string) ApiRequestsAPIGetOrganizationApiRequestsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ApiRequestsApiGetOrganizationApiRequestsRequest) EndingBefore(endingBefore string) ApiRequestsApiGetOrganizationApiRequestsRequest {
+func (r ApiRequestsAPIGetOrganizationApiRequestsRequest) EndingBefore(endingBefore string) ApiRequestsAPIGetOrganizationApiRequestsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Filter the results by the ID of the admin who made the API requests
-func (r ApiRequestsApiGetOrganizationApiRequestsRequest) AdminId(adminId string) ApiRequestsApiGetOrganizationApiRequestsRequest {
+func (r ApiRequestsAPIGetOrganizationApiRequestsRequest) AdminId(adminId string) ApiRequestsAPIGetOrganizationApiRequestsRequest {
 	r.adminId = &adminId
 	return r
 }
 
 // Filter the results by the path of the API requests
-func (r ApiRequestsApiGetOrganizationApiRequestsRequest) Path(path string) ApiRequestsApiGetOrganizationApiRequestsRequest {
+func (r ApiRequestsAPIGetOrganizationApiRequestsRequest) Path(path string) ApiRequestsAPIGetOrganizationApiRequestsRequest {
 	r.path = &path
 	return r
 }
 
 // Filter the results by the method of the API requests (must be &#39;GET&#39;, &#39;PUT&#39;, &#39;POST&#39; or &#39;DELETE&#39;)
-func (r ApiRequestsApiGetOrganizationApiRequestsRequest) Method(method string) ApiRequestsApiGetOrganizationApiRequestsRequest {
+func (r ApiRequestsAPIGetOrganizationApiRequestsRequest) Method(method string) ApiRequestsAPIGetOrganizationApiRequestsRequest {
 	r.method = &method
 	return r
 }
 
 // Filter the results by the response code of the API requests
-func (r ApiRequestsApiGetOrganizationApiRequestsRequest) ResponseCode(responseCode int32) ApiRequestsApiGetOrganizationApiRequestsRequest {
+func (r ApiRequestsAPIGetOrganizationApiRequestsRequest) ResponseCode(responseCode int32) ApiRequestsAPIGetOrganizationApiRequestsRequest {
 	r.responseCode = &responseCode
 	return r
 }
 
 // Filter the results by the IP address of the originating API request
-func (r ApiRequestsApiGetOrganizationApiRequestsRequest) SourceIp(sourceIp string) ApiRequestsApiGetOrganizationApiRequestsRequest {
+func (r ApiRequestsAPIGetOrganizationApiRequestsRequest) SourceIp(sourceIp string) ApiRequestsAPIGetOrganizationApiRequestsRequest {
 	r.sourceIp = &sourceIp
 	return r
 }
 
 // Filter the results by the user agent string of the API request
-func (r ApiRequestsApiGetOrganizationApiRequestsRequest) UserAgent(userAgent string) ApiRequestsApiGetOrganizationApiRequestsRequest {
+func (r ApiRequestsAPIGetOrganizationApiRequestsRequest) UserAgent(userAgent string) ApiRequestsAPIGetOrganizationApiRequestsRequest {
 	r.userAgent = &userAgent
 	return r
 }
 
 // Filter the results by the API version of the API request
-func (r ApiRequestsApiGetOrganizationApiRequestsRequest) Version(version int32) ApiRequestsApiGetOrganizationApiRequestsRequest {
+func (r ApiRequestsAPIGetOrganizationApiRequestsRequest) Version(version int32) ApiRequestsAPIGetOrganizationApiRequestsRequest {
 	r.version = &version
 	return r
 }
 
 // Filter the results by one or more operation IDs for the API request
-func (r ApiRequestsApiGetOrganizationApiRequestsRequest) OperationIds(operationIds []string) ApiRequestsApiGetOrganizationApiRequestsRequest {
+func (r ApiRequestsAPIGetOrganizationApiRequestsRequest) OperationIds(operationIds []string) ApiRequestsAPIGetOrganizationApiRequestsRequest {
 	r.operationIds = &operationIds
 	return r
 }
 
-func (r ApiRequestsApiGetOrganizationApiRequestsRequest) Execute() ([]GetOrganizationApiRequests200ResponseInner, *http.Response, error) {
+func (r ApiRequestsAPIGetOrganizationApiRequestsRequest) Execute() ([]GetOrganizationApiRequests200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationApiRequestsExecute(r)
 }
 
@@ -139,10 +139,10 @@ List the API requests made by an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ApiRequestsApiGetOrganizationApiRequestsRequest
+ @return ApiRequestsAPIGetOrganizationApiRequestsRequest
 */
-func (a *ApiRequestsApiService) GetOrganizationApiRequests(ctx context.Context, organizationId string) ApiRequestsApiGetOrganizationApiRequestsRequest {
-	return ApiRequestsApiGetOrganizationApiRequestsRequest{
+func (a *ApiRequestsAPIService) GetOrganizationApiRequests(ctx context.Context, organizationId string) ApiRequestsAPIGetOrganizationApiRequestsRequest {
+	return ApiRequestsAPIGetOrganizationApiRequestsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -151,7 +151,7 @@ func (a *ApiRequestsApiService) GetOrganizationApiRequests(ctx context.Context, 
 
 // Execute executes the request
 //  @return []GetOrganizationApiRequests200ResponseInner
-func (a *ApiRequestsApiService) GetOrganizationApiRequestsExecute(r ApiRequestsApiGetOrganizationApiRequestsRequest) ([]GetOrganizationApiRequests200ResponseInner, *http.Response, error) {
+func (a *ApiRequestsAPIService) GetOrganizationApiRequestsExecute(r ApiRequestsAPIGetOrganizationApiRequestsRequest) ([]GetOrganizationApiRequests200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -159,7 +159,7 @@ func (a *ApiRequestsApiService) GetOrganizationApiRequestsExecute(r ApiRequestsA
 		localVarReturnValue  []GetOrganizationApiRequests200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiRequestsApiService.GetOrganizationApiRequests")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiRequestsAPIService.GetOrganizationApiRequests")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -289,9 +289,9 @@ func (a *ApiRequestsApiService) GetOrganizationApiRequestsExecute(r ApiRequestsA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiRequestsApiGetOrganizationApiRequestsOverviewRequest struct {
+type ApiRequestsAPIGetOrganizationApiRequestsOverviewRequest struct {
 	ctx context.Context
-	ApiService *ApiRequestsApiService
+	ApiService *ApiRequestsAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -299,24 +299,24 @@ type ApiRequestsApiGetOrganizationApiRequestsOverviewRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r ApiRequestsApiGetOrganizationApiRequestsOverviewRequest) T0(t0 string) ApiRequestsApiGetOrganizationApiRequestsOverviewRequest {
+func (r ApiRequestsAPIGetOrganizationApiRequestsOverviewRequest) T0(t0 string) ApiRequestsAPIGetOrganizationApiRequestsOverviewRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ApiRequestsApiGetOrganizationApiRequestsOverviewRequest) T1(t1 string) ApiRequestsApiGetOrganizationApiRequestsOverviewRequest {
+func (r ApiRequestsAPIGetOrganizationApiRequestsOverviewRequest) T1(t1 string) ApiRequestsAPIGetOrganizationApiRequestsOverviewRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 31 days.
-func (r ApiRequestsApiGetOrganizationApiRequestsOverviewRequest) Timespan(timespan float32) ApiRequestsApiGetOrganizationApiRequestsOverviewRequest {
+func (r ApiRequestsAPIGetOrganizationApiRequestsOverviewRequest) Timespan(timespan float32) ApiRequestsAPIGetOrganizationApiRequestsOverviewRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r ApiRequestsApiGetOrganizationApiRequestsOverviewRequest) Execute() (*GetOrganizationApiRequestsOverview200Response, *http.Response, error) {
+func (r ApiRequestsAPIGetOrganizationApiRequestsOverviewRequest) Execute() (*GetOrganizationApiRequestsOverview200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationApiRequestsOverviewExecute(r)
 }
 
@@ -327,10 +327,10 @@ Return an aggregated overview of API requests data
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ApiRequestsApiGetOrganizationApiRequestsOverviewRequest
+ @return ApiRequestsAPIGetOrganizationApiRequestsOverviewRequest
 */
-func (a *ApiRequestsApiService) GetOrganizationApiRequestsOverview(ctx context.Context, organizationId string) ApiRequestsApiGetOrganizationApiRequestsOverviewRequest {
-	return ApiRequestsApiGetOrganizationApiRequestsOverviewRequest{
+func (a *ApiRequestsAPIService) GetOrganizationApiRequestsOverview(ctx context.Context, organizationId string) ApiRequestsAPIGetOrganizationApiRequestsOverviewRequest {
+	return ApiRequestsAPIGetOrganizationApiRequestsOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -339,7 +339,7 @@ func (a *ApiRequestsApiService) GetOrganizationApiRequestsOverview(ctx context.C
 
 // Execute executes the request
 //  @return GetOrganizationApiRequestsOverview200Response
-func (a *ApiRequestsApiService) GetOrganizationApiRequestsOverviewExecute(r ApiRequestsApiGetOrganizationApiRequestsOverviewRequest) (*GetOrganizationApiRequestsOverview200Response, *http.Response, error) {
+func (a *ApiRequestsAPIService) GetOrganizationApiRequestsOverviewExecute(r ApiRequestsAPIGetOrganizationApiRequestsOverviewRequest) (*GetOrganizationApiRequestsOverview200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -347,7 +347,7 @@ func (a *ApiRequestsApiService) GetOrganizationApiRequestsOverviewExecute(r ApiR
 		localVarReturnValue  *GetOrganizationApiRequestsOverview200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiRequestsApiService.GetOrganizationApiRequestsOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiRequestsAPIService.GetOrganizationApiRequestsOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -436,9 +436,9 @@ func (a *ApiRequestsApiService) GetOrganizationApiRequestsOverviewExecute(r ApiR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiRequestsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest struct {
+type ApiRequestsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest struct {
 	ctx context.Context
-	ApiService *ApiRequestsApiService
+	ApiService *ApiRequestsAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -452,60 +452,60 @@ type ApiRequestsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequ
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r ApiRequestsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) T0(t0 string) ApiRequestsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r ApiRequestsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) T0(t0 string) ApiRequestsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ApiRequestsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) T1(t1 string) ApiRequestsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r ApiRequestsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) T1(t1 string) ApiRequestsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 31 days. If interval is provided, the timespan will be autocalculated.
-func (r ApiRequestsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Timespan(timespan float32) ApiRequestsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r ApiRequestsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Timespan(timespan float32) ApiRequestsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time interval in seconds for returned data. The valid intervals are: 120, 3600, 14400, 21600. The default is 21600. Interval is calculated if time params are provided.
-func (r ApiRequestsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Interval(interval int32) ApiRequestsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r ApiRequestsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Interval(interval int32) ApiRequestsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.interval = &interval
 	return r
 }
 
 // Filter by API version of the endpoint. Allowable values are: [0, 1]
-func (r ApiRequestsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Version(version int32) ApiRequestsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r ApiRequestsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Version(version int32) ApiRequestsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.version = &version
 	return r
 }
 
 // Filter by operation ID of the endpoint
-func (r ApiRequestsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) OperationIds(operationIds []string) ApiRequestsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r ApiRequestsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) OperationIds(operationIds []string) ApiRequestsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.operationIds = &operationIds
 	return r
 }
 
 // Filter by source IP that made the API request
-func (r ApiRequestsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) SourceIps(sourceIps []string) ApiRequestsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r ApiRequestsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) SourceIps(sourceIps []string) ApiRequestsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.sourceIps = &sourceIps
 	return r
 }
 
 // Filter by admin ID of user that made the API request
-func (r ApiRequestsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) AdminIds(adminIds []string) ApiRequestsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r ApiRequestsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) AdminIds(adminIds []string) ApiRequestsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.adminIds = &adminIds
 	return r
 }
 
 // Filter by user agent string for API request. This will filter by a complete or partial match.
-func (r ApiRequestsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) UserAgent(userAgent string) ApiRequestsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r ApiRequestsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) UserAgent(userAgent string) ApiRequestsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.userAgent = &userAgent
 	return r
 }
 
-func (r ApiRequestsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Execute() ([]GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner, *http.Response, error) {
+func (r ApiRequestsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Execute() ([]GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationApiRequestsOverviewResponseCodesByIntervalExecute(r)
 }
 
@@ -516,10 +516,10 @@ Tracks organizations' API requests by response code across a given time period
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ApiRequestsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest
+ @return ApiRequestsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest
 */
-func (a *ApiRequestsApiService) GetOrganizationApiRequestsOverviewResponseCodesByInterval(ctx context.Context, organizationId string) ApiRequestsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
-	return ApiRequestsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest{
+func (a *ApiRequestsAPIService) GetOrganizationApiRequestsOverviewResponseCodesByInterval(ctx context.Context, organizationId string) ApiRequestsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+	return ApiRequestsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -528,7 +528,7 @@ func (a *ApiRequestsApiService) GetOrganizationApiRequestsOverviewResponseCodesB
 
 // Execute executes the request
 //  @return []GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner
-func (a *ApiRequestsApiService) GetOrganizationApiRequestsOverviewResponseCodesByIntervalExecute(r ApiRequestsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) ([]GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner, *http.Response, error) {
+func (a *ApiRequestsAPIService) GetOrganizationApiRequestsOverviewResponseCodesByIntervalExecute(r ApiRequestsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) ([]GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -536,7 +536,7 @@ func (a *ApiRequestsApiService) GetOrganizationApiRequestsOverviewResponseCodesB
 		localVarReturnValue  []GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiRequestsApiService.GetOrganizationApiRequestsOverviewResponseCodesByInterval")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiRequestsAPIService.GetOrganizationApiRequestsOverviewResponseCodesByInterval")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

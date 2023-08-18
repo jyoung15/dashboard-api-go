@@ -21,12 +21,12 @@ import (
 )
 
 
-// ChangeHistoryApiService ChangeHistoryApi service
-type ChangeHistoryApiService service
+// ChangeHistoryAPIService ChangeHistoryAPI service
+type ChangeHistoryAPIService service
 
-type ChangeHistoryApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest struct {
+type ChangeHistoryAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest struct {
 	ctx context.Context
-	ApiService *ChangeHistoryApiService
+	ApiService *ChangeHistoryAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -41,66 +41,66 @@ type ChangeHistoryApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest st
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r ChangeHistoryApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) PerPage(perPage int32) ChangeHistoryApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r ChangeHistoryAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) PerPage(perPage int32) ChangeHistoryAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ChangeHistoryApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) StartingAfter(startingAfter string) ChangeHistoryApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r ChangeHistoryAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) StartingAfter(startingAfter string) ChangeHistoryAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ChangeHistoryApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) EndingBefore(endingBefore string) ChangeHistoryApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r ChangeHistoryAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) EndingBefore(endingBefore string) ChangeHistoryAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 14 days from today.
-func (r ChangeHistoryApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) T0(t0 string) ChangeHistoryApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r ChangeHistoryAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) T0(t0 string) ChangeHistoryAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 14 days after t0.
-func (r ChangeHistoryApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) T1(t1 string) ChangeHistoryApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r ChangeHistoryAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) T1(t1 string) ChangeHistoryAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 14 days. The default is 1 day.
-func (r ChangeHistoryApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Timespan(timespan float32) ChangeHistoryApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r ChangeHistoryAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Timespan(timespan float32) ChangeHistoryAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Optional parameter to filter device availabilities history by device serial numbers
-func (r ChangeHistoryApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Serials(serials []string) ChangeHistoryApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r ChangeHistoryAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Serials(serials []string) ChangeHistoryAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.serials = &serials
 	return r
 }
 
 // Optional parameter to filter device availabilities history by device product types
-func (r ChangeHistoryApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) ProductTypes(productTypes []string) ChangeHistoryApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r ChangeHistoryAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) ProductTypes(productTypes []string) ChangeHistoryAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter device availabilities history by network IDs
-func (r ChangeHistoryApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) NetworkIds(networkIds []string) ChangeHistoryApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r ChangeHistoryAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) NetworkIds(networkIds []string) ChangeHistoryAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter device availabilities history by device statuses
-func (r ChangeHistoryApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Statuses(statuses []string) ChangeHistoryApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r ChangeHistoryAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Statuses(statuses []string) ChangeHistoryAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.statuses = &statuses
 	return r
 }
 
-func (r ChangeHistoryApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Execute() ([]GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner, *http.Response, error) {
+func (r ChangeHistoryAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Execute() ([]GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesAvailabilitiesChangeHistoryExecute(r)
 }
 
@@ -111,10 +111,10 @@ List the availability history information for devices in an organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ChangeHistoryApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest
+ @return ChangeHistoryAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest
 */
-func (a *ChangeHistoryApiService) GetOrganizationDevicesAvailabilitiesChangeHistory(ctx context.Context, organizationId string) ChangeHistoryApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
-	return ChangeHistoryApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest{
+func (a *ChangeHistoryAPIService) GetOrganizationDevicesAvailabilitiesChangeHistory(ctx context.Context, organizationId string) ChangeHistoryAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+	return ChangeHistoryAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -123,7 +123,7 @@ func (a *ChangeHistoryApiService) GetOrganizationDevicesAvailabilitiesChangeHist
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner
-func (a *ChangeHistoryApiService) GetOrganizationDevicesAvailabilitiesChangeHistoryExecute(r ChangeHistoryApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) ([]GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner, *http.Response, error) {
+func (a *ChangeHistoryAPIService) GetOrganizationDevicesAvailabilitiesChangeHistoryExecute(r ChangeHistoryAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) ([]GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -131,7 +131,7 @@ func (a *ChangeHistoryApiService) GetOrganizationDevicesAvailabilitiesChangeHist
 		localVarReturnValue  []GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChangeHistoryApiService.GetOrganizationDevicesAvailabilitiesChangeHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChangeHistoryAPIService.GetOrganizationDevicesAvailabilitiesChangeHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

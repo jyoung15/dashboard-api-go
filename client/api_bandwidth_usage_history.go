@@ -20,12 +20,12 @@ import (
 )
 
 
-// BandwidthUsageHistoryApiService BandwidthUsageHistoryApi service
-type BandwidthUsageHistoryApiService service
+// BandwidthUsageHistoryAPIService BandwidthUsageHistoryAPI service
+type BandwidthUsageHistoryAPIService service
 
-type BandwidthUsageHistoryApiGetNetworkClientsBandwidthUsageHistoryRequest struct {
+type BandwidthUsageHistoryAPIGetNetworkClientsBandwidthUsageHistoryRequest struct {
 	ctx context.Context
-	ApiService *BandwidthUsageHistoryApiService
+	ApiService *BandwidthUsageHistoryAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -36,42 +36,42 @@ type BandwidthUsageHistoryApiGetNetworkClientsBandwidthUsageHistoryRequest struc
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 30 days from today.
-func (r BandwidthUsageHistoryApiGetNetworkClientsBandwidthUsageHistoryRequest) T0(t0 string) BandwidthUsageHistoryApiGetNetworkClientsBandwidthUsageHistoryRequest {
+func (r BandwidthUsageHistoryAPIGetNetworkClientsBandwidthUsageHistoryRequest) T0(t0 string) BandwidthUsageHistoryAPIGetNetworkClientsBandwidthUsageHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r BandwidthUsageHistoryApiGetNetworkClientsBandwidthUsageHistoryRequest) T1(t1 string) BandwidthUsageHistoryApiGetNetworkClientsBandwidthUsageHistoryRequest {
+func (r BandwidthUsageHistoryAPIGetNetworkClientsBandwidthUsageHistoryRequest) T1(t1 string) BandwidthUsageHistoryAPIGetNetworkClientsBandwidthUsageHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r BandwidthUsageHistoryApiGetNetworkClientsBandwidthUsageHistoryRequest) Timespan(timespan float32) BandwidthUsageHistoryApiGetNetworkClientsBandwidthUsageHistoryRequest {
+func (r BandwidthUsageHistoryAPIGetNetworkClientsBandwidthUsageHistoryRequest) Timespan(timespan float32) BandwidthUsageHistoryAPIGetNetworkClientsBandwidthUsageHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r BandwidthUsageHistoryApiGetNetworkClientsBandwidthUsageHistoryRequest) PerPage(perPage int32) BandwidthUsageHistoryApiGetNetworkClientsBandwidthUsageHistoryRequest {
+func (r BandwidthUsageHistoryAPIGetNetworkClientsBandwidthUsageHistoryRequest) PerPage(perPage int32) BandwidthUsageHistoryAPIGetNetworkClientsBandwidthUsageHistoryRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r BandwidthUsageHistoryApiGetNetworkClientsBandwidthUsageHistoryRequest) StartingAfter(startingAfter string) BandwidthUsageHistoryApiGetNetworkClientsBandwidthUsageHistoryRequest {
+func (r BandwidthUsageHistoryAPIGetNetworkClientsBandwidthUsageHistoryRequest) StartingAfter(startingAfter string) BandwidthUsageHistoryAPIGetNetworkClientsBandwidthUsageHistoryRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r BandwidthUsageHistoryApiGetNetworkClientsBandwidthUsageHistoryRequest) EndingBefore(endingBefore string) BandwidthUsageHistoryApiGetNetworkClientsBandwidthUsageHistoryRequest {
+func (r BandwidthUsageHistoryAPIGetNetworkClientsBandwidthUsageHistoryRequest) EndingBefore(endingBefore string) BandwidthUsageHistoryAPIGetNetworkClientsBandwidthUsageHistoryRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r BandwidthUsageHistoryApiGetNetworkClientsBandwidthUsageHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r BandwidthUsageHistoryAPIGetNetworkClientsBandwidthUsageHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientsBandwidthUsageHistoryExecute(r)
 }
 
@@ -82,10 +82,10 @@ Returns a timeseries of total traffic consumption rates for all clients on a net
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return BandwidthUsageHistoryApiGetNetworkClientsBandwidthUsageHistoryRequest
+ @return BandwidthUsageHistoryAPIGetNetworkClientsBandwidthUsageHistoryRequest
 */
-func (a *BandwidthUsageHistoryApiService) GetNetworkClientsBandwidthUsageHistory(ctx context.Context, networkId string) BandwidthUsageHistoryApiGetNetworkClientsBandwidthUsageHistoryRequest {
-	return BandwidthUsageHistoryApiGetNetworkClientsBandwidthUsageHistoryRequest{
+func (a *BandwidthUsageHistoryAPIService) GetNetworkClientsBandwidthUsageHistory(ctx context.Context, networkId string) BandwidthUsageHistoryAPIGetNetworkClientsBandwidthUsageHistoryRequest {
+	return BandwidthUsageHistoryAPIGetNetworkClientsBandwidthUsageHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -94,7 +94,7 @@ func (a *BandwidthUsageHistoryApiService) GetNetworkClientsBandwidthUsageHistory
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *BandwidthUsageHistoryApiService) GetNetworkClientsBandwidthUsageHistoryExecute(r BandwidthUsageHistoryApiGetNetworkClientsBandwidthUsageHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *BandwidthUsageHistoryAPIService) GetNetworkClientsBandwidthUsageHistoryExecute(r BandwidthUsageHistoryAPIGetNetworkClientsBandwidthUsageHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -102,7 +102,7 @@ func (a *BandwidthUsageHistoryApiService) GetNetworkClientsBandwidthUsageHistory
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BandwidthUsageHistoryApiService.GetNetworkClientsBandwidthUsageHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BandwidthUsageHistoryAPIService.GetNetworkClientsBandwidthUsageHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -200,9 +200,9 @@ func (a *BandwidthUsageHistoryApiService) GetNetworkClientsBandwidthUsageHistory
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BandwidthUsageHistoryApiGetOrganizationClientsBandwidthUsageHistoryRequest struct {
+type BandwidthUsageHistoryAPIGetOrganizationClientsBandwidthUsageHistoryRequest struct {
 	ctx context.Context
-	ApiService *BandwidthUsageHistoryApiService
+	ApiService *BandwidthUsageHistoryAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -210,24 +210,24 @@ type BandwidthUsageHistoryApiGetOrganizationClientsBandwidthUsageHistoryRequest 
 }
 
 // The beginning of the timespan for the data.
-func (r BandwidthUsageHistoryApiGetOrganizationClientsBandwidthUsageHistoryRequest) T0(t0 string) BandwidthUsageHistoryApiGetOrganizationClientsBandwidthUsageHistoryRequest {
+func (r BandwidthUsageHistoryAPIGetOrganizationClientsBandwidthUsageHistoryRequest) T0(t0 string) BandwidthUsageHistoryAPIGetOrganizationClientsBandwidthUsageHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r BandwidthUsageHistoryApiGetOrganizationClientsBandwidthUsageHistoryRequest) T1(t1 string) BandwidthUsageHistoryApiGetOrganizationClientsBandwidthUsageHistoryRequest {
+func (r BandwidthUsageHistoryAPIGetOrganizationClientsBandwidthUsageHistoryRequest) T1(t1 string) BandwidthUsageHistoryAPIGetOrganizationClientsBandwidthUsageHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r BandwidthUsageHistoryApiGetOrganizationClientsBandwidthUsageHistoryRequest) Timespan(timespan float32) BandwidthUsageHistoryApiGetOrganizationClientsBandwidthUsageHistoryRequest {
+func (r BandwidthUsageHistoryAPIGetOrganizationClientsBandwidthUsageHistoryRequest) Timespan(timespan float32) BandwidthUsageHistoryAPIGetOrganizationClientsBandwidthUsageHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r BandwidthUsageHistoryApiGetOrganizationClientsBandwidthUsageHistoryRequest) Execute() ([]GetOrganizationClientsBandwidthUsageHistory200ResponseInner, *http.Response, error) {
+func (r BandwidthUsageHistoryAPIGetOrganizationClientsBandwidthUsageHistoryRequest) Execute() ([]GetOrganizationClientsBandwidthUsageHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationClientsBandwidthUsageHistoryExecute(r)
 }
 
@@ -238,10 +238,10 @@ Return data usage (in megabits per second) over time for all clients in the give
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return BandwidthUsageHistoryApiGetOrganizationClientsBandwidthUsageHistoryRequest
+ @return BandwidthUsageHistoryAPIGetOrganizationClientsBandwidthUsageHistoryRequest
 */
-func (a *BandwidthUsageHistoryApiService) GetOrganizationClientsBandwidthUsageHistory(ctx context.Context, organizationId string) BandwidthUsageHistoryApiGetOrganizationClientsBandwidthUsageHistoryRequest {
-	return BandwidthUsageHistoryApiGetOrganizationClientsBandwidthUsageHistoryRequest{
+func (a *BandwidthUsageHistoryAPIService) GetOrganizationClientsBandwidthUsageHistory(ctx context.Context, organizationId string) BandwidthUsageHistoryAPIGetOrganizationClientsBandwidthUsageHistoryRequest {
+	return BandwidthUsageHistoryAPIGetOrganizationClientsBandwidthUsageHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -250,7 +250,7 @@ func (a *BandwidthUsageHistoryApiService) GetOrganizationClientsBandwidthUsageHi
 
 // Execute executes the request
 //  @return []GetOrganizationClientsBandwidthUsageHistory200ResponseInner
-func (a *BandwidthUsageHistoryApiService) GetOrganizationClientsBandwidthUsageHistoryExecute(r BandwidthUsageHistoryApiGetOrganizationClientsBandwidthUsageHistoryRequest) ([]GetOrganizationClientsBandwidthUsageHistory200ResponseInner, *http.Response, error) {
+func (a *BandwidthUsageHistoryAPIService) GetOrganizationClientsBandwidthUsageHistoryExecute(r BandwidthUsageHistoryAPIGetOrganizationClientsBandwidthUsageHistoryRequest) ([]GetOrganizationClientsBandwidthUsageHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -258,7 +258,7 @@ func (a *BandwidthUsageHistoryApiService) GetOrganizationClientsBandwidthUsageHi
 		localVarReturnValue  []GetOrganizationClientsBandwidthUsageHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BandwidthUsageHistoryApiService.GetOrganizationClientsBandwidthUsageHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BandwidthUsageHistoryAPIService.GetOrganizationClientsBandwidthUsageHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

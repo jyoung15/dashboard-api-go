@@ -20,12 +20,12 @@ import (
 )
 
 
-// UsageApiService UsageApi service
-type UsageApiService service
+// UsageAPIService UsageAPI service
+type UsageAPIService service
 
-type UsageApiGetOrganizationApplianceUplinksUsageByNetworkRequest struct {
+type UsageAPIGetOrganizationApplianceUplinksUsageByNetworkRequest struct {
 	ctx context.Context
-	ApiService *UsageApiService
+	ApiService *UsageAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -33,24 +33,24 @@ type UsageApiGetOrganizationApplianceUplinksUsageByNetworkRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
-func (r UsageApiGetOrganizationApplianceUplinksUsageByNetworkRequest) T0(t0 string) UsageApiGetOrganizationApplianceUplinksUsageByNetworkRequest {
+func (r UsageAPIGetOrganizationApplianceUplinksUsageByNetworkRequest) T0(t0 string) UsageAPIGetOrganizationApplianceUplinksUsageByNetworkRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 14 days after t0.
-func (r UsageApiGetOrganizationApplianceUplinksUsageByNetworkRequest) T1(t1 string) UsageApiGetOrganizationApplianceUplinksUsageByNetworkRequest {
+func (r UsageAPIGetOrganizationApplianceUplinksUsageByNetworkRequest) T1(t1 string) UsageAPIGetOrganizationApplianceUplinksUsageByNetworkRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 14 days. The default is 1 day.
-func (r UsageApiGetOrganizationApplianceUplinksUsageByNetworkRequest) Timespan(timespan float32) UsageApiGetOrganizationApplianceUplinksUsageByNetworkRequest {
+func (r UsageAPIGetOrganizationApplianceUplinksUsageByNetworkRequest) Timespan(timespan float32) UsageAPIGetOrganizationApplianceUplinksUsageByNetworkRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r UsageApiGetOrganizationApplianceUplinksUsageByNetworkRequest) Execute() ([]GetOrganizationApplianceUplinksUsageByNetwork200ResponseInner, *http.Response, error) {
+func (r UsageAPIGetOrganizationApplianceUplinksUsageByNetworkRequest) Execute() ([]GetOrganizationApplianceUplinksUsageByNetwork200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceUplinksUsageByNetworkExecute(r)
 }
 
@@ -61,10 +61,10 @@ Get the sent and received bytes for each uplink of all MX and Z networks within 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return UsageApiGetOrganizationApplianceUplinksUsageByNetworkRequest
+ @return UsageAPIGetOrganizationApplianceUplinksUsageByNetworkRequest
 */
-func (a *UsageApiService) GetOrganizationApplianceUplinksUsageByNetwork(ctx context.Context, organizationId string) UsageApiGetOrganizationApplianceUplinksUsageByNetworkRequest {
-	return UsageApiGetOrganizationApplianceUplinksUsageByNetworkRequest{
+func (a *UsageAPIService) GetOrganizationApplianceUplinksUsageByNetwork(ctx context.Context, organizationId string) UsageAPIGetOrganizationApplianceUplinksUsageByNetworkRequest {
+	return UsageAPIGetOrganizationApplianceUplinksUsageByNetworkRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -73,7 +73,7 @@ func (a *UsageApiService) GetOrganizationApplianceUplinksUsageByNetwork(ctx cont
 
 // Execute executes the request
 //  @return []GetOrganizationApplianceUplinksUsageByNetwork200ResponseInner
-func (a *UsageApiService) GetOrganizationApplianceUplinksUsageByNetworkExecute(r UsageApiGetOrganizationApplianceUplinksUsageByNetworkRequest) ([]GetOrganizationApplianceUplinksUsageByNetwork200ResponseInner, *http.Response, error) {
+func (a *UsageAPIService) GetOrganizationApplianceUplinksUsageByNetworkExecute(r UsageAPIGetOrganizationApplianceUplinksUsageByNetworkRequest) ([]GetOrganizationApplianceUplinksUsageByNetwork200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -81,7 +81,7 @@ func (a *UsageApiService) GetOrganizationApplianceUplinksUsageByNetworkExecute(r
 		localVarReturnValue  []GetOrganizationApplianceUplinksUsageByNetwork200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsageApiService.GetOrganizationApplianceUplinksUsageByNetwork")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsageAPIService.GetOrganizationApplianceUplinksUsageByNetwork")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

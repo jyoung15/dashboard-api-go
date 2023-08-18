@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing SiteToSiteVpnApiService
+Testing SiteToSiteVpnAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_SiteToSiteVpnApiService(t *testing.T) {
+func Test_client_SiteToSiteVpnAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test SiteToSiteVpnApiService GetNetworkApplianceVpnSiteToSiteVpn", func(t *testing.T) {
+	t.Run("Test SiteToSiteVpnAPIService GetNetworkApplianceVpnSiteToSiteVpn", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SiteToSiteVpnApi.GetNetworkApplianceVpnSiteToSiteVpn(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SiteToSiteVpnAPI.GetNetworkApplianceVpnSiteToSiteVpn(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_SiteToSiteVpnApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SiteToSiteVpnApiService UpdateNetworkApplianceVpnSiteToSiteVpn", func(t *testing.T) {
+	t.Run("Test SiteToSiteVpnAPIService UpdateNetworkApplianceVpnSiteToSiteVpn", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SiteToSiteVpnApi.UpdateNetworkApplianceVpnSiteToSiteVpn(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SiteToSiteVpnAPI.UpdateNetworkApplianceVpnSiteToSiteVpn(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

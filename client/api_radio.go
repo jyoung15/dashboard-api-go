@@ -20,16 +20,16 @@ import (
 )
 
 
-// RadioApiService RadioApi service
-type RadioApiService service
+// RadioAPIService RadioAPI service
+type RadioAPIService service
 
-type RadioApiGetDeviceApplianceRadioSettingsRequest struct {
+type RadioAPIGetDeviceApplianceRadioSettingsRequest struct {
 	ctx context.Context
-	ApiService *RadioApiService
+	ApiService *RadioAPIService
 	serial string
 }
 
-func (r RadioApiGetDeviceApplianceRadioSettingsRequest) Execute() (*GetDeviceApplianceRadioSettings200Response, *http.Response, error) {
+func (r RadioAPIGetDeviceApplianceRadioSettingsRequest) Execute() (*GetDeviceApplianceRadioSettings200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceApplianceRadioSettingsExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the radio settings of an appliance
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return RadioApiGetDeviceApplianceRadioSettingsRequest
+ @return RadioAPIGetDeviceApplianceRadioSettingsRequest
 */
-func (a *RadioApiService) GetDeviceApplianceRadioSettings(ctx context.Context, serial string) RadioApiGetDeviceApplianceRadioSettingsRequest {
-	return RadioApiGetDeviceApplianceRadioSettingsRequest{
+func (a *RadioAPIService) GetDeviceApplianceRadioSettings(ctx context.Context, serial string) RadioAPIGetDeviceApplianceRadioSettingsRequest {
+	return RadioAPIGetDeviceApplianceRadioSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -52,7 +52,7 @@ func (a *RadioApiService) GetDeviceApplianceRadioSettings(ctx context.Context, s
 
 // Execute executes the request
 //  @return GetDeviceApplianceRadioSettings200Response
-func (a *RadioApiService) GetDeviceApplianceRadioSettingsExecute(r RadioApiGetDeviceApplianceRadioSettingsRequest) (*GetDeviceApplianceRadioSettings200Response, *http.Response, error) {
+func (a *RadioAPIService) GetDeviceApplianceRadioSettingsExecute(r RadioAPIGetDeviceApplianceRadioSettingsRequest) (*GetDeviceApplianceRadioSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *RadioApiService) GetDeviceApplianceRadioSettingsExecute(r RadioApiGetDe
 		localVarReturnValue  *GetDeviceApplianceRadioSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RadioApiService.GetDeviceApplianceRadioSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RadioAPIService.GetDeviceApplianceRadioSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,13 +140,13 @@ func (a *RadioApiService) GetDeviceApplianceRadioSettingsExecute(r RadioApiGetDe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type RadioApiGetDeviceWirelessRadioSettingsRequest struct {
+type RadioAPIGetDeviceWirelessRadioSettingsRequest struct {
 	ctx context.Context
-	ApiService *RadioApiService
+	ApiService *RadioAPIService
 	serial string
 }
 
-func (r RadioApiGetDeviceWirelessRadioSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r RadioAPIGetDeviceWirelessRadioSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceWirelessRadioSettingsExecute(r)
 }
 
@@ -157,10 +157,10 @@ Return the radio settings of a device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return RadioApiGetDeviceWirelessRadioSettingsRequest
+ @return RadioAPIGetDeviceWirelessRadioSettingsRequest
 */
-func (a *RadioApiService) GetDeviceWirelessRadioSettings(ctx context.Context, serial string) RadioApiGetDeviceWirelessRadioSettingsRequest {
-	return RadioApiGetDeviceWirelessRadioSettingsRequest{
+func (a *RadioAPIService) GetDeviceWirelessRadioSettings(ctx context.Context, serial string) RadioAPIGetDeviceWirelessRadioSettingsRequest {
+	return RadioAPIGetDeviceWirelessRadioSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -169,7 +169,7 @@ func (a *RadioApiService) GetDeviceWirelessRadioSettings(ctx context.Context, se
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *RadioApiService) GetDeviceWirelessRadioSettingsExecute(r RadioApiGetDeviceWirelessRadioSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *RadioAPIService) GetDeviceWirelessRadioSettingsExecute(r RadioAPIGetDeviceWirelessRadioSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -177,7 +177,7 @@ func (a *RadioApiService) GetDeviceWirelessRadioSettingsExecute(r RadioApiGetDev
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RadioApiService.GetDeviceWirelessRadioSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RadioAPIService.GetDeviceWirelessRadioSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -257,19 +257,19 @@ func (a *RadioApiService) GetDeviceWirelessRadioSettingsExecute(r RadioApiGetDev
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type RadioApiUpdateDeviceApplianceRadioSettingsRequest struct {
+type RadioAPIUpdateDeviceApplianceRadioSettingsRequest struct {
 	ctx context.Context
-	ApiService *RadioApiService
+	ApiService *RadioAPIService
 	serial string
 	updateDeviceApplianceRadioSettingsRequest *UpdateDeviceApplianceRadioSettingsRequest
 }
 
-func (r RadioApiUpdateDeviceApplianceRadioSettingsRequest) UpdateDeviceApplianceRadioSettingsRequest(updateDeviceApplianceRadioSettingsRequest UpdateDeviceApplianceRadioSettingsRequest) RadioApiUpdateDeviceApplianceRadioSettingsRequest {
+func (r RadioAPIUpdateDeviceApplianceRadioSettingsRequest) UpdateDeviceApplianceRadioSettingsRequest(updateDeviceApplianceRadioSettingsRequest UpdateDeviceApplianceRadioSettingsRequest) RadioAPIUpdateDeviceApplianceRadioSettingsRequest {
 	r.updateDeviceApplianceRadioSettingsRequest = &updateDeviceApplianceRadioSettingsRequest
 	return r
 }
 
-func (r RadioApiUpdateDeviceApplianceRadioSettingsRequest) Execute() (*GetDeviceApplianceRadioSettings200Response, *http.Response, error) {
+func (r RadioAPIUpdateDeviceApplianceRadioSettingsRequest) Execute() (*GetDeviceApplianceRadioSettings200Response, *http.Response, error) {
 	return r.ApiService.UpdateDeviceApplianceRadioSettingsExecute(r)
 }
 
@@ -280,10 +280,10 @@ Update the radio settings of an appliance
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return RadioApiUpdateDeviceApplianceRadioSettingsRequest
+ @return RadioAPIUpdateDeviceApplianceRadioSettingsRequest
 */
-func (a *RadioApiService) UpdateDeviceApplianceRadioSettings(ctx context.Context, serial string) RadioApiUpdateDeviceApplianceRadioSettingsRequest {
-	return RadioApiUpdateDeviceApplianceRadioSettingsRequest{
+func (a *RadioAPIService) UpdateDeviceApplianceRadioSettings(ctx context.Context, serial string) RadioAPIUpdateDeviceApplianceRadioSettingsRequest {
+	return RadioAPIUpdateDeviceApplianceRadioSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -292,7 +292,7 @@ func (a *RadioApiService) UpdateDeviceApplianceRadioSettings(ctx context.Context
 
 // Execute executes the request
 //  @return GetDeviceApplianceRadioSettings200Response
-func (a *RadioApiService) UpdateDeviceApplianceRadioSettingsExecute(r RadioApiUpdateDeviceApplianceRadioSettingsRequest) (*GetDeviceApplianceRadioSettings200Response, *http.Response, error) {
+func (a *RadioAPIService) UpdateDeviceApplianceRadioSettingsExecute(r RadioAPIUpdateDeviceApplianceRadioSettingsRequest) (*GetDeviceApplianceRadioSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -300,7 +300,7 @@ func (a *RadioApiService) UpdateDeviceApplianceRadioSettingsExecute(r RadioApiUp
 		localVarReturnValue  *GetDeviceApplianceRadioSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RadioApiService.UpdateDeviceApplianceRadioSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RadioAPIService.UpdateDeviceApplianceRadioSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -382,19 +382,19 @@ func (a *RadioApiService) UpdateDeviceApplianceRadioSettingsExecute(r RadioApiUp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type RadioApiUpdateDeviceWirelessRadioSettingsRequest struct {
+type RadioAPIUpdateDeviceWirelessRadioSettingsRequest struct {
 	ctx context.Context
-	ApiService *RadioApiService
+	ApiService *RadioAPIService
 	serial string
 	updateDeviceWirelessRadioSettingsRequest *UpdateDeviceWirelessRadioSettingsRequest
 }
 
-func (r RadioApiUpdateDeviceWirelessRadioSettingsRequest) UpdateDeviceWirelessRadioSettingsRequest(updateDeviceWirelessRadioSettingsRequest UpdateDeviceWirelessRadioSettingsRequest) RadioApiUpdateDeviceWirelessRadioSettingsRequest {
+func (r RadioAPIUpdateDeviceWirelessRadioSettingsRequest) UpdateDeviceWirelessRadioSettingsRequest(updateDeviceWirelessRadioSettingsRequest UpdateDeviceWirelessRadioSettingsRequest) RadioAPIUpdateDeviceWirelessRadioSettingsRequest {
 	r.updateDeviceWirelessRadioSettingsRequest = &updateDeviceWirelessRadioSettingsRequest
 	return r
 }
 
-func (r RadioApiUpdateDeviceWirelessRadioSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r RadioAPIUpdateDeviceWirelessRadioSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceWirelessRadioSettingsExecute(r)
 }
 
@@ -405,10 +405,10 @@ Update the radio settings of a device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return RadioApiUpdateDeviceWirelessRadioSettingsRequest
+ @return RadioAPIUpdateDeviceWirelessRadioSettingsRequest
 */
-func (a *RadioApiService) UpdateDeviceWirelessRadioSettings(ctx context.Context, serial string) RadioApiUpdateDeviceWirelessRadioSettingsRequest {
-	return RadioApiUpdateDeviceWirelessRadioSettingsRequest{
+func (a *RadioAPIService) UpdateDeviceWirelessRadioSettings(ctx context.Context, serial string) RadioAPIUpdateDeviceWirelessRadioSettingsRequest {
+	return RadioAPIUpdateDeviceWirelessRadioSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -417,7 +417,7 @@ func (a *RadioApiService) UpdateDeviceWirelessRadioSettings(ctx context.Context,
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *RadioApiService) UpdateDeviceWirelessRadioSettingsExecute(r RadioApiUpdateDeviceWirelessRadioSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *RadioAPIService) UpdateDeviceWirelessRadioSettingsExecute(r RadioAPIUpdateDeviceWirelessRadioSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -425,7 +425,7 @@ func (a *RadioApiService) UpdateDeviceWirelessRadioSettingsExecute(r RadioApiUpd
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RadioApiService.UpdateDeviceWirelessRadioSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RadioAPIService.UpdateDeviceWirelessRadioSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -20,16 +20,16 @@ import (
 )
 
 
-// SettingsApiService SettingsApi service
-type SettingsApiService service
+// SettingsAPIService SettingsAPI service
+type SettingsAPIService service
 
-type SettingsApiGetDeviceApplianceRadioSettingsRequest struct {
+type SettingsAPIGetDeviceApplianceRadioSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	serial string
 }
 
-func (r SettingsApiGetDeviceApplianceRadioSettingsRequest) Execute() (*GetDeviceApplianceRadioSettings200Response, *http.Response, error) {
+func (r SettingsAPIGetDeviceApplianceRadioSettingsRequest) Execute() (*GetDeviceApplianceRadioSettings200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceApplianceRadioSettingsExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the radio settings of an appliance
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return SettingsApiGetDeviceApplianceRadioSettingsRequest
+ @return SettingsAPIGetDeviceApplianceRadioSettingsRequest
 */
-func (a *SettingsApiService) GetDeviceApplianceRadioSettings(ctx context.Context, serial string) SettingsApiGetDeviceApplianceRadioSettingsRequest {
-	return SettingsApiGetDeviceApplianceRadioSettingsRequest{
+func (a *SettingsAPIService) GetDeviceApplianceRadioSettings(ctx context.Context, serial string) SettingsAPIGetDeviceApplianceRadioSettingsRequest {
+	return SettingsAPIGetDeviceApplianceRadioSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -52,7 +52,7 @@ func (a *SettingsApiService) GetDeviceApplianceRadioSettings(ctx context.Context
 
 // Execute executes the request
 //  @return GetDeviceApplianceRadioSettings200Response
-func (a *SettingsApiService) GetDeviceApplianceRadioSettingsExecute(r SettingsApiGetDeviceApplianceRadioSettingsRequest) (*GetDeviceApplianceRadioSettings200Response, *http.Response, error) {
+func (a *SettingsAPIService) GetDeviceApplianceRadioSettingsExecute(r SettingsAPIGetDeviceApplianceRadioSettingsRequest) (*GetDeviceApplianceRadioSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *SettingsApiService) GetDeviceApplianceRadioSettingsExecute(r SettingsAp
 		localVarReturnValue  *GetDeviceApplianceRadioSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.GetDeviceApplianceRadioSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.GetDeviceApplianceRadioSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,13 +140,13 @@ func (a *SettingsApiService) GetDeviceApplianceRadioSettingsExecute(r SettingsAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiGetDeviceApplianceUplinksSettingsRequest struct {
+type SettingsAPIGetDeviceApplianceUplinksSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	serial string
 }
 
-func (r SettingsApiGetDeviceApplianceUplinksSettingsRequest) Execute() (*GetDeviceApplianceUplinksSettings200Response, *http.Response, error) {
+func (r SettingsAPIGetDeviceApplianceUplinksSettingsRequest) Execute() (*GetDeviceApplianceUplinksSettings200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceApplianceUplinksSettingsExecute(r)
 }
 
@@ -157,10 +157,10 @@ Return the uplink settings for an MX appliance
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return SettingsApiGetDeviceApplianceUplinksSettingsRequest
+ @return SettingsAPIGetDeviceApplianceUplinksSettingsRequest
 */
-func (a *SettingsApiService) GetDeviceApplianceUplinksSettings(ctx context.Context, serial string) SettingsApiGetDeviceApplianceUplinksSettingsRequest {
-	return SettingsApiGetDeviceApplianceUplinksSettingsRequest{
+func (a *SettingsAPIService) GetDeviceApplianceUplinksSettings(ctx context.Context, serial string) SettingsAPIGetDeviceApplianceUplinksSettingsRequest {
+	return SettingsAPIGetDeviceApplianceUplinksSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -169,7 +169,7 @@ func (a *SettingsApiService) GetDeviceApplianceUplinksSettings(ctx context.Conte
 
 // Execute executes the request
 //  @return GetDeviceApplianceUplinksSettings200Response
-func (a *SettingsApiService) GetDeviceApplianceUplinksSettingsExecute(r SettingsApiGetDeviceApplianceUplinksSettingsRequest) (*GetDeviceApplianceUplinksSettings200Response, *http.Response, error) {
+func (a *SettingsAPIService) GetDeviceApplianceUplinksSettingsExecute(r SettingsAPIGetDeviceApplianceUplinksSettingsRequest) (*GetDeviceApplianceUplinksSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -177,7 +177,7 @@ func (a *SettingsApiService) GetDeviceApplianceUplinksSettingsExecute(r Settings
 		localVarReturnValue  *GetDeviceApplianceUplinksSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.GetDeviceApplianceUplinksSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.GetDeviceApplianceUplinksSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -257,13 +257,13 @@ func (a *SettingsApiService) GetDeviceApplianceUplinksSettingsExecute(r Settings
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiGetDeviceCameraVideoSettingsRequest struct {
+type SettingsAPIGetDeviceCameraVideoSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	serial string
 }
 
-func (r SettingsApiGetDeviceCameraVideoSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SettingsAPIGetDeviceCameraVideoSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraVideoSettingsExecute(r)
 }
 
@@ -274,10 +274,10 @@ Returns video settings for the given camera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return SettingsApiGetDeviceCameraVideoSettingsRequest
+ @return SettingsAPIGetDeviceCameraVideoSettingsRequest
 */
-func (a *SettingsApiService) GetDeviceCameraVideoSettings(ctx context.Context, serial string) SettingsApiGetDeviceCameraVideoSettingsRequest {
-	return SettingsApiGetDeviceCameraVideoSettingsRequest{
+func (a *SettingsAPIService) GetDeviceCameraVideoSettings(ctx context.Context, serial string) SettingsAPIGetDeviceCameraVideoSettingsRequest {
+	return SettingsAPIGetDeviceCameraVideoSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -286,7 +286,7 @@ func (a *SettingsApiService) GetDeviceCameraVideoSettings(ctx context.Context, s
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SettingsApiService) GetDeviceCameraVideoSettingsExecute(r SettingsApiGetDeviceCameraVideoSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SettingsAPIService) GetDeviceCameraVideoSettingsExecute(r SettingsAPIGetDeviceCameraVideoSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -294,7 +294,7 @@ func (a *SettingsApiService) GetDeviceCameraVideoSettingsExecute(r SettingsApiGe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.GetDeviceCameraVideoSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.GetDeviceCameraVideoSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -374,13 +374,13 @@ func (a *SettingsApiService) GetDeviceCameraVideoSettingsExecute(r SettingsApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiGetDeviceWirelessBluetoothSettingsRequest struct {
+type SettingsAPIGetDeviceWirelessBluetoothSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	serial string
 }
 
-func (r SettingsApiGetDeviceWirelessBluetoothSettingsRequest) Execute() (*GetDeviceWirelessBluetoothSettings200Response, *http.Response, error) {
+func (r SettingsAPIGetDeviceWirelessBluetoothSettingsRequest) Execute() (*GetDeviceWirelessBluetoothSettings200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceWirelessBluetoothSettingsExecute(r)
 }
 
@@ -391,10 +391,10 @@ Return the bluetooth settings for a wireless device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return SettingsApiGetDeviceWirelessBluetoothSettingsRequest
+ @return SettingsAPIGetDeviceWirelessBluetoothSettingsRequest
 */
-func (a *SettingsApiService) GetDeviceWirelessBluetoothSettings(ctx context.Context, serial string) SettingsApiGetDeviceWirelessBluetoothSettingsRequest {
-	return SettingsApiGetDeviceWirelessBluetoothSettingsRequest{
+func (a *SettingsAPIService) GetDeviceWirelessBluetoothSettings(ctx context.Context, serial string) SettingsAPIGetDeviceWirelessBluetoothSettingsRequest {
+	return SettingsAPIGetDeviceWirelessBluetoothSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -403,7 +403,7 @@ func (a *SettingsApiService) GetDeviceWirelessBluetoothSettings(ctx context.Cont
 
 // Execute executes the request
 //  @return GetDeviceWirelessBluetoothSettings200Response
-func (a *SettingsApiService) GetDeviceWirelessBluetoothSettingsExecute(r SettingsApiGetDeviceWirelessBluetoothSettingsRequest) (*GetDeviceWirelessBluetoothSettings200Response, *http.Response, error) {
+func (a *SettingsAPIService) GetDeviceWirelessBluetoothSettingsExecute(r SettingsAPIGetDeviceWirelessBluetoothSettingsRequest) (*GetDeviceWirelessBluetoothSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -411,7 +411,7 @@ func (a *SettingsApiService) GetDeviceWirelessBluetoothSettingsExecute(r Setting
 		localVarReturnValue  *GetDeviceWirelessBluetoothSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.GetDeviceWirelessBluetoothSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.GetDeviceWirelessBluetoothSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -491,13 +491,13 @@ func (a *SettingsApiService) GetDeviceWirelessBluetoothSettingsExecute(r Setting
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiGetDeviceWirelessRadioSettingsRequest struct {
+type SettingsAPIGetDeviceWirelessRadioSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	serial string
 }
 
-func (r SettingsApiGetDeviceWirelessRadioSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SettingsAPIGetDeviceWirelessRadioSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceWirelessRadioSettingsExecute(r)
 }
 
@@ -508,10 +508,10 @@ Return the radio settings of a device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return SettingsApiGetDeviceWirelessRadioSettingsRequest
+ @return SettingsAPIGetDeviceWirelessRadioSettingsRequest
 */
-func (a *SettingsApiService) GetDeviceWirelessRadioSettings(ctx context.Context, serial string) SettingsApiGetDeviceWirelessRadioSettingsRequest {
-	return SettingsApiGetDeviceWirelessRadioSettingsRequest{
+func (a *SettingsAPIService) GetDeviceWirelessRadioSettings(ctx context.Context, serial string) SettingsAPIGetDeviceWirelessRadioSettingsRequest {
+	return SettingsAPIGetDeviceWirelessRadioSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -520,7 +520,7 @@ func (a *SettingsApiService) GetDeviceWirelessRadioSettings(ctx context.Context,
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SettingsApiService) GetDeviceWirelessRadioSettingsExecute(r SettingsApiGetDeviceWirelessRadioSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SettingsAPIService) GetDeviceWirelessRadioSettingsExecute(r SettingsAPIGetDeviceWirelessRadioSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -528,7 +528,7 @@ func (a *SettingsApiService) GetDeviceWirelessRadioSettingsExecute(r SettingsApi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.GetDeviceWirelessRadioSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.GetDeviceWirelessRadioSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -608,13 +608,13 @@ func (a *SettingsApiService) GetDeviceWirelessRadioSettingsExecute(r SettingsApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiGetNetworkAlertsSettingsRequest struct {
+type SettingsAPIGetNetworkAlertsSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	networkId string
 }
 
-func (r SettingsApiGetNetworkAlertsSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SettingsAPIGetNetworkAlertsSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkAlertsSettingsExecute(r)
 }
 
@@ -625,10 +625,10 @@ Return the alert configuration for this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SettingsApiGetNetworkAlertsSettingsRequest
+ @return SettingsAPIGetNetworkAlertsSettingsRequest
 */
-func (a *SettingsApiService) GetNetworkAlertsSettings(ctx context.Context, networkId string) SettingsApiGetNetworkAlertsSettingsRequest {
-	return SettingsApiGetNetworkAlertsSettingsRequest{
+func (a *SettingsAPIService) GetNetworkAlertsSettings(ctx context.Context, networkId string) SettingsAPIGetNetworkAlertsSettingsRequest {
+	return SettingsAPIGetNetworkAlertsSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -637,7 +637,7 @@ func (a *SettingsApiService) GetNetworkAlertsSettings(ctx context.Context, netwo
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SettingsApiService) GetNetworkAlertsSettingsExecute(r SettingsApiGetNetworkAlertsSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SettingsAPIService) GetNetworkAlertsSettingsExecute(r SettingsAPIGetNetworkAlertsSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -645,7 +645,7 @@ func (a *SettingsApiService) GetNetworkAlertsSettingsExecute(r SettingsApiGetNet
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.GetNetworkAlertsSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.GetNetworkAlertsSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -725,13 +725,13 @@ func (a *SettingsApiService) GetNetworkAlertsSettingsExecute(r SettingsApiGetNet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiGetNetworkApplianceFirewallSettingsRequest struct {
+type SettingsAPIGetNetworkApplianceFirewallSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	networkId string
 }
 
-func (r SettingsApiGetNetworkApplianceFirewallSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SettingsAPIGetNetworkApplianceFirewallSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceFirewallSettingsExecute(r)
 }
 
@@ -742,10 +742,10 @@ Return the firewall settings for this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SettingsApiGetNetworkApplianceFirewallSettingsRequest
+ @return SettingsAPIGetNetworkApplianceFirewallSettingsRequest
 */
-func (a *SettingsApiService) GetNetworkApplianceFirewallSettings(ctx context.Context, networkId string) SettingsApiGetNetworkApplianceFirewallSettingsRequest {
-	return SettingsApiGetNetworkApplianceFirewallSettingsRequest{
+func (a *SettingsAPIService) GetNetworkApplianceFirewallSettings(ctx context.Context, networkId string) SettingsAPIGetNetworkApplianceFirewallSettingsRequest {
+	return SettingsAPIGetNetworkApplianceFirewallSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -754,7 +754,7 @@ func (a *SettingsApiService) GetNetworkApplianceFirewallSettings(ctx context.Con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SettingsApiService) GetNetworkApplianceFirewallSettingsExecute(r SettingsApiGetNetworkApplianceFirewallSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SettingsAPIService) GetNetworkApplianceFirewallSettingsExecute(r SettingsAPIGetNetworkApplianceFirewallSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -762,7 +762,7 @@ func (a *SettingsApiService) GetNetworkApplianceFirewallSettingsExecute(r Settin
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.GetNetworkApplianceFirewallSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.GetNetworkApplianceFirewallSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -842,13 +842,13 @@ func (a *SettingsApiService) GetNetworkApplianceFirewallSettingsExecute(r Settin
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiGetNetworkApplianceSettingsRequest struct {
+type SettingsAPIGetNetworkApplianceSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	networkId string
 }
 
-func (r SettingsApiGetNetworkApplianceSettingsRequest) Execute() (*GetNetworkApplianceSettings200Response, *http.Response, error) {
+func (r SettingsAPIGetNetworkApplianceSettingsRequest) Execute() (*GetNetworkApplianceSettings200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceSettingsExecute(r)
 }
 
@@ -859,10 +859,10 @@ Return the appliance settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SettingsApiGetNetworkApplianceSettingsRequest
+ @return SettingsAPIGetNetworkApplianceSettingsRequest
 */
-func (a *SettingsApiService) GetNetworkApplianceSettings(ctx context.Context, networkId string) SettingsApiGetNetworkApplianceSettingsRequest {
-	return SettingsApiGetNetworkApplianceSettingsRequest{
+func (a *SettingsAPIService) GetNetworkApplianceSettings(ctx context.Context, networkId string) SettingsAPIGetNetworkApplianceSettingsRequest {
+	return SettingsAPIGetNetworkApplianceSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -871,7 +871,7 @@ func (a *SettingsApiService) GetNetworkApplianceSettings(ctx context.Context, ne
 
 // Execute executes the request
 //  @return GetNetworkApplianceSettings200Response
-func (a *SettingsApiService) GetNetworkApplianceSettingsExecute(r SettingsApiGetNetworkApplianceSettingsRequest) (*GetNetworkApplianceSettings200Response, *http.Response, error) {
+func (a *SettingsAPIService) GetNetworkApplianceSettingsExecute(r SettingsAPIGetNetworkApplianceSettingsRequest) (*GetNetworkApplianceSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -879,7 +879,7 @@ func (a *SettingsApiService) GetNetworkApplianceSettingsExecute(r SettingsApiGet
 		localVarReturnValue  *GetNetworkApplianceSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.GetNetworkApplianceSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.GetNetworkApplianceSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -959,13 +959,13 @@ func (a *SettingsApiService) GetNetworkApplianceSettingsExecute(r SettingsApiGet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiGetNetworkApplianceVlansSettingsRequest struct {
+type SettingsAPIGetNetworkApplianceVlansSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	networkId string
 }
 
-func (r SettingsApiGetNetworkApplianceVlansSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SettingsAPIGetNetworkApplianceVlansSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceVlansSettingsExecute(r)
 }
 
@@ -976,10 +976,10 @@ Returns the enabled status of VLANs for the network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SettingsApiGetNetworkApplianceVlansSettingsRequest
+ @return SettingsAPIGetNetworkApplianceVlansSettingsRequest
 */
-func (a *SettingsApiService) GetNetworkApplianceVlansSettings(ctx context.Context, networkId string) SettingsApiGetNetworkApplianceVlansSettingsRequest {
-	return SettingsApiGetNetworkApplianceVlansSettingsRequest{
+func (a *SettingsAPIService) GetNetworkApplianceVlansSettings(ctx context.Context, networkId string) SettingsAPIGetNetworkApplianceVlansSettingsRequest {
+	return SettingsAPIGetNetworkApplianceVlansSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -988,7 +988,7 @@ func (a *SettingsApiService) GetNetworkApplianceVlansSettings(ctx context.Contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SettingsApiService) GetNetworkApplianceVlansSettingsExecute(r SettingsApiGetNetworkApplianceVlansSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SettingsAPIService) GetNetworkApplianceVlansSettingsExecute(r SettingsAPIGetNetworkApplianceVlansSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -996,7 +996,7 @@ func (a *SettingsApiService) GetNetworkApplianceVlansSettingsExecute(r SettingsA
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.GetNetworkApplianceVlansSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.GetNetworkApplianceVlansSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1076,13 +1076,13 @@ func (a *SettingsApiService) GetNetworkApplianceVlansSettingsExecute(r SettingsA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiGetNetworkSettingsRequest struct {
+type SettingsAPIGetNetworkSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	networkId string
 }
 
-func (r SettingsApiGetNetworkSettingsRequest) Execute() (*GetNetworkSettings200Response, *http.Response, error) {
+func (r SettingsAPIGetNetworkSettingsRequest) Execute() (*GetNetworkSettings200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSettingsExecute(r)
 }
 
@@ -1093,10 +1093,10 @@ Return the settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SettingsApiGetNetworkSettingsRequest
+ @return SettingsAPIGetNetworkSettingsRequest
 */
-func (a *SettingsApiService) GetNetworkSettings(ctx context.Context, networkId string) SettingsApiGetNetworkSettingsRequest {
-	return SettingsApiGetNetworkSettingsRequest{
+func (a *SettingsAPIService) GetNetworkSettings(ctx context.Context, networkId string) SettingsAPIGetNetworkSettingsRequest {
+	return SettingsAPIGetNetworkSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1105,7 +1105,7 @@ func (a *SettingsApiService) GetNetworkSettings(ctx context.Context, networkId s
 
 // Execute executes the request
 //  @return GetNetworkSettings200Response
-func (a *SettingsApiService) GetNetworkSettingsExecute(r SettingsApiGetNetworkSettingsRequest) (*GetNetworkSettings200Response, *http.Response, error) {
+func (a *SettingsAPIService) GetNetworkSettingsExecute(r SettingsAPIGetNetworkSettingsRequest) (*GetNetworkSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1113,7 +1113,7 @@ func (a *SettingsApiService) GetNetworkSettingsExecute(r SettingsApiGetNetworkSe
 		localVarReturnValue  *GetNetworkSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.GetNetworkSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.GetNetworkSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1193,13 +1193,13 @@ func (a *SettingsApiService) GetNetworkSettingsExecute(r SettingsApiGetNetworkSe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiGetNetworkSwitchSettingsRequest struct {
+type SettingsAPIGetNetworkSwitchSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	networkId string
 }
 
-func (r SettingsApiGetNetworkSwitchSettingsRequest) Execute() (*GetNetworkSwitchSettings200Response, *http.Response, error) {
+func (r SettingsAPIGetNetworkSwitchSettingsRequest) Execute() (*GetNetworkSwitchSettings200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchSettingsExecute(r)
 }
 
@@ -1210,10 +1210,10 @@ Returns the switch network settings
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SettingsApiGetNetworkSwitchSettingsRequest
+ @return SettingsAPIGetNetworkSwitchSettingsRequest
 */
-func (a *SettingsApiService) GetNetworkSwitchSettings(ctx context.Context, networkId string) SettingsApiGetNetworkSwitchSettingsRequest {
-	return SettingsApiGetNetworkSwitchSettingsRequest{
+func (a *SettingsAPIService) GetNetworkSwitchSettings(ctx context.Context, networkId string) SettingsAPIGetNetworkSwitchSettingsRequest {
+	return SettingsAPIGetNetworkSwitchSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1222,7 +1222,7 @@ func (a *SettingsApiService) GetNetworkSwitchSettings(ctx context.Context, netwo
 
 // Execute executes the request
 //  @return GetNetworkSwitchSettings200Response
-func (a *SettingsApiService) GetNetworkSwitchSettingsExecute(r SettingsApiGetNetworkSwitchSettingsRequest) (*GetNetworkSwitchSettings200Response, *http.Response, error) {
+func (a *SettingsAPIService) GetNetworkSwitchSettingsExecute(r SettingsAPIGetNetworkSwitchSettingsRequest) (*GetNetworkSwitchSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1230,7 +1230,7 @@ func (a *SettingsApiService) GetNetworkSwitchSettingsExecute(r SettingsApiGetNet
 		localVarReturnValue  *GetNetworkSwitchSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.GetNetworkSwitchSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.GetNetworkSwitchSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1310,13 +1310,13 @@ func (a *SettingsApiService) GetNetworkSwitchSettingsExecute(r SettingsApiGetNet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiGetNetworkWirelessBluetoothSettingsRequest struct {
+type SettingsAPIGetNetworkWirelessBluetoothSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	networkId string
 }
 
-func (r SettingsApiGetNetworkWirelessBluetoothSettingsRequest) Execute() (*GetNetworkWirelessBluetoothSettings200Response, *http.Response, error) {
+func (r SettingsAPIGetNetworkWirelessBluetoothSettingsRequest) Execute() (*GetNetworkWirelessBluetoothSettings200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessBluetoothSettingsExecute(r)
 }
 
@@ -1327,10 +1327,10 @@ Return the Bluetooth settings for a network. <a href="https://documentation.mera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SettingsApiGetNetworkWirelessBluetoothSettingsRequest
+ @return SettingsAPIGetNetworkWirelessBluetoothSettingsRequest
 */
-func (a *SettingsApiService) GetNetworkWirelessBluetoothSettings(ctx context.Context, networkId string) SettingsApiGetNetworkWirelessBluetoothSettingsRequest {
-	return SettingsApiGetNetworkWirelessBluetoothSettingsRequest{
+func (a *SettingsAPIService) GetNetworkWirelessBluetoothSettings(ctx context.Context, networkId string) SettingsAPIGetNetworkWirelessBluetoothSettingsRequest {
+	return SettingsAPIGetNetworkWirelessBluetoothSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1339,7 +1339,7 @@ func (a *SettingsApiService) GetNetworkWirelessBluetoothSettings(ctx context.Con
 
 // Execute executes the request
 //  @return GetNetworkWirelessBluetoothSettings200Response
-func (a *SettingsApiService) GetNetworkWirelessBluetoothSettingsExecute(r SettingsApiGetNetworkWirelessBluetoothSettingsRequest) (*GetNetworkWirelessBluetoothSettings200Response, *http.Response, error) {
+func (a *SettingsAPIService) GetNetworkWirelessBluetoothSettingsExecute(r SettingsAPIGetNetworkWirelessBluetoothSettingsRequest) (*GetNetworkWirelessBluetoothSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1347,7 +1347,7 @@ func (a *SettingsApiService) GetNetworkWirelessBluetoothSettingsExecute(r Settin
 		localVarReturnValue  *GetNetworkWirelessBluetoothSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.GetNetworkWirelessBluetoothSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.GetNetworkWirelessBluetoothSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1427,13 +1427,13 @@ func (a *SettingsApiService) GetNetworkWirelessBluetoothSettingsExecute(r Settin
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiGetNetworkWirelessSettingsRequest struct {
+type SettingsAPIGetNetworkWirelessSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	networkId string
 }
 
-func (r SettingsApiGetNetworkWirelessSettingsRequest) Execute() (*GetNetworkWirelessSettings200Response, *http.Response, error) {
+func (r SettingsAPIGetNetworkWirelessSettingsRequest) Execute() (*GetNetworkWirelessSettings200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSettingsExecute(r)
 }
 
@@ -1444,10 +1444,10 @@ Return the wireless settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SettingsApiGetNetworkWirelessSettingsRequest
+ @return SettingsAPIGetNetworkWirelessSettingsRequest
 */
-func (a *SettingsApiService) GetNetworkWirelessSettings(ctx context.Context, networkId string) SettingsApiGetNetworkWirelessSettingsRequest {
-	return SettingsApiGetNetworkWirelessSettingsRequest{
+func (a *SettingsAPIService) GetNetworkWirelessSettings(ctx context.Context, networkId string) SettingsAPIGetNetworkWirelessSettingsRequest {
+	return SettingsAPIGetNetworkWirelessSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1456,7 +1456,7 @@ func (a *SettingsApiService) GetNetworkWirelessSettings(ctx context.Context, net
 
 // Execute executes the request
 //  @return GetNetworkWirelessSettings200Response
-func (a *SettingsApiService) GetNetworkWirelessSettingsExecute(r SettingsApiGetNetworkWirelessSettingsRequest) (*GetNetworkWirelessSettings200Response, *http.Response, error) {
+func (a *SettingsAPIService) GetNetworkWirelessSettingsExecute(r SettingsAPIGetNetworkWirelessSettingsRequest) (*GetNetworkWirelessSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1464,7 +1464,7 @@ func (a *SettingsApiService) GetNetworkWirelessSettingsExecute(r SettingsApiGetN
 		localVarReturnValue  *GetNetworkWirelessSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.GetNetworkWirelessSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.GetNetworkWirelessSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1544,14 +1544,14 @@ func (a *SettingsApiService) GetNetworkWirelessSettingsExecute(r SettingsApiGetN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiGetNetworkWirelessSsidSplashSettingsRequest struct {
+type SettingsAPIGetNetworkWirelessSsidSplashSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	networkId string
 	number string
 }
 
-func (r SettingsApiGetNetworkWirelessSsidSplashSettingsRequest) Execute() (*GetNetworkWirelessSsidSplashSettings200Response, *http.Response, error) {
+func (r SettingsAPIGetNetworkWirelessSsidSplashSettingsRequest) Execute() (*GetNetworkWirelessSsidSplashSettings200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidSplashSettingsExecute(r)
 }
 
@@ -1563,10 +1563,10 @@ Display the splash page settings for the given SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SettingsApiGetNetworkWirelessSsidSplashSettingsRequest
+ @return SettingsAPIGetNetworkWirelessSsidSplashSettingsRequest
 */
-func (a *SettingsApiService) GetNetworkWirelessSsidSplashSettings(ctx context.Context, networkId string, number string) SettingsApiGetNetworkWirelessSsidSplashSettingsRequest {
-	return SettingsApiGetNetworkWirelessSsidSplashSettingsRequest{
+func (a *SettingsAPIService) GetNetworkWirelessSsidSplashSettings(ctx context.Context, networkId string, number string) SettingsAPIGetNetworkWirelessSsidSplashSettingsRequest {
+	return SettingsAPIGetNetworkWirelessSsidSplashSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1576,7 +1576,7 @@ func (a *SettingsApiService) GetNetworkWirelessSsidSplashSettings(ctx context.Co
 
 // Execute executes the request
 //  @return GetNetworkWirelessSsidSplashSettings200Response
-func (a *SettingsApiService) GetNetworkWirelessSsidSplashSettingsExecute(r SettingsApiGetNetworkWirelessSsidSplashSettingsRequest) (*GetNetworkWirelessSsidSplashSettings200Response, *http.Response, error) {
+func (a *SettingsAPIService) GetNetworkWirelessSsidSplashSettingsExecute(r SettingsAPIGetNetworkWirelessSsidSplashSettingsRequest) (*GetNetworkWirelessSsidSplashSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1584,7 +1584,7 @@ func (a *SettingsApiService) GetNetworkWirelessSsidSplashSettingsExecute(r Setti
 		localVarReturnValue  *GetNetworkWirelessSsidSplashSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.GetNetworkWirelessSsidSplashSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.GetNetworkWirelessSsidSplashSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1665,13 +1665,13 @@ func (a *SettingsApiService) GetNetworkWirelessSsidSplashSettingsExecute(r Setti
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiGetOrganizationAdaptivePolicySettingsRequest struct {
+type SettingsAPIGetOrganizationAdaptivePolicySettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	organizationId string
 }
 
-func (r SettingsApiGetOrganizationAdaptivePolicySettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SettingsAPIGetOrganizationAdaptivePolicySettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationAdaptivePolicySettingsExecute(r)
 }
 
@@ -1682,10 +1682,10 @@ Returns global adaptive policy settings in an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return SettingsApiGetOrganizationAdaptivePolicySettingsRequest
+ @return SettingsAPIGetOrganizationAdaptivePolicySettingsRequest
 */
-func (a *SettingsApiService) GetOrganizationAdaptivePolicySettings(ctx context.Context, organizationId string) SettingsApiGetOrganizationAdaptivePolicySettingsRequest {
-	return SettingsApiGetOrganizationAdaptivePolicySettingsRequest{
+func (a *SettingsAPIService) GetOrganizationAdaptivePolicySettings(ctx context.Context, organizationId string) SettingsAPIGetOrganizationAdaptivePolicySettingsRequest {
+	return SettingsAPIGetOrganizationAdaptivePolicySettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1694,7 +1694,7 @@ func (a *SettingsApiService) GetOrganizationAdaptivePolicySettings(ctx context.C
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SettingsApiService) GetOrganizationAdaptivePolicySettingsExecute(r SettingsApiGetOrganizationAdaptivePolicySettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SettingsAPIService) GetOrganizationAdaptivePolicySettingsExecute(r SettingsAPIGetOrganizationAdaptivePolicySettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1702,7 +1702,7 @@ func (a *SettingsApiService) GetOrganizationAdaptivePolicySettingsExecute(r Sett
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.GetOrganizationAdaptivePolicySettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.GetOrganizationAdaptivePolicySettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1782,19 +1782,19 @@ func (a *SettingsApiService) GetOrganizationAdaptivePolicySettingsExecute(r Sett
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiUpdateDeviceApplianceRadioSettingsRequest struct {
+type SettingsAPIUpdateDeviceApplianceRadioSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	serial string
 	updateDeviceApplianceRadioSettingsRequest *UpdateDeviceApplianceRadioSettingsRequest
 }
 
-func (r SettingsApiUpdateDeviceApplianceRadioSettingsRequest) UpdateDeviceApplianceRadioSettingsRequest(updateDeviceApplianceRadioSettingsRequest UpdateDeviceApplianceRadioSettingsRequest) SettingsApiUpdateDeviceApplianceRadioSettingsRequest {
+func (r SettingsAPIUpdateDeviceApplianceRadioSettingsRequest) UpdateDeviceApplianceRadioSettingsRequest(updateDeviceApplianceRadioSettingsRequest UpdateDeviceApplianceRadioSettingsRequest) SettingsAPIUpdateDeviceApplianceRadioSettingsRequest {
 	r.updateDeviceApplianceRadioSettingsRequest = &updateDeviceApplianceRadioSettingsRequest
 	return r
 }
 
-func (r SettingsApiUpdateDeviceApplianceRadioSettingsRequest) Execute() (*GetDeviceApplianceRadioSettings200Response, *http.Response, error) {
+func (r SettingsAPIUpdateDeviceApplianceRadioSettingsRequest) Execute() (*GetDeviceApplianceRadioSettings200Response, *http.Response, error) {
 	return r.ApiService.UpdateDeviceApplianceRadioSettingsExecute(r)
 }
 
@@ -1805,10 +1805,10 @@ Update the radio settings of an appliance
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return SettingsApiUpdateDeviceApplianceRadioSettingsRequest
+ @return SettingsAPIUpdateDeviceApplianceRadioSettingsRequest
 */
-func (a *SettingsApiService) UpdateDeviceApplianceRadioSettings(ctx context.Context, serial string) SettingsApiUpdateDeviceApplianceRadioSettingsRequest {
-	return SettingsApiUpdateDeviceApplianceRadioSettingsRequest{
+func (a *SettingsAPIService) UpdateDeviceApplianceRadioSettings(ctx context.Context, serial string) SettingsAPIUpdateDeviceApplianceRadioSettingsRequest {
+	return SettingsAPIUpdateDeviceApplianceRadioSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1817,7 +1817,7 @@ func (a *SettingsApiService) UpdateDeviceApplianceRadioSettings(ctx context.Cont
 
 // Execute executes the request
 //  @return GetDeviceApplianceRadioSettings200Response
-func (a *SettingsApiService) UpdateDeviceApplianceRadioSettingsExecute(r SettingsApiUpdateDeviceApplianceRadioSettingsRequest) (*GetDeviceApplianceRadioSettings200Response, *http.Response, error) {
+func (a *SettingsAPIService) UpdateDeviceApplianceRadioSettingsExecute(r SettingsAPIUpdateDeviceApplianceRadioSettingsRequest) (*GetDeviceApplianceRadioSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1825,7 +1825,7 @@ func (a *SettingsApiService) UpdateDeviceApplianceRadioSettingsExecute(r Setting
 		localVarReturnValue  *GetDeviceApplianceRadioSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.UpdateDeviceApplianceRadioSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.UpdateDeviceApplianceRadioSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1907,19 +1907,19 @@ func (a *SettingsApiService) UpdateDeviceApplianceRadioSettingsExecute(r Setting
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiUpdateDeviceApplianceUplinksSettingsRequest struct {
+type SettingsAPIUpdateDeviceApplianceUplinksSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	serial string
 	updateDeviceApplianceUplinksSettingsRequest *UpdateDeviceApplianceUplinksSettingsRequest
 }
 
-func (r SettingsApiUpdateDeviceApplianceUplinksSettingsRequest) UpdateDeviceApplianceUplinksSettingsRequest(updateDeviceApplianceUplinksSettingsRequest UpdateDeviceApplianceUplinksSettingsRequest) SettingsApiUpdateDeviceApplianceUplinksSettingsRequest {
+func (r SettingsAPIUpdateDeviceApplianceUplinksSettingsRequest) UpdateDeviceApplianceUplinksSettingsRequest(updateDeviceApplianceUplinksSettingsRequest UpdateDeviceApplianceUplinksSettingsRequest) SettingsAPIUpdateDeviceApplianceUplinksSettingsRequest {
 	r.updateDeviceApplianceUplinksSettingsRequest = &updateDeviceApplianceUplinksSettingsRequest
 	return r
 }
 
-func (r SettingsApiUpdateDeviceApplianceUplinksSettingsRequest) Execute() (*GetDeviceApplianceUplinksSettings200Response, *http.Response, error) {
+func (r SettingsAPIUpdateDeviceApplianceUplinksSettingsRequest) Execute() (*GetDeviceApplianceUplinksSettings200Response, *http.Response, error) {
 	return r.ApiService.UpdateDeviceApplianceUplinksSettingsExecute(r)
 }
 
@@ -1930,10 +1930,10 @@ Update the uplink settings for an MX appliance
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return SettingsApiUpdateDeviceApplianceUplinksSettingsRequest
+ @return SettingsAPIUpdateDeviceApplianceUplinksSettingsRequest
 */
-func (a *SettingsApiService) UpdateDeviceApplianceUplinksSettings(ctx context.Context, serial string) SettingsApiUpdateDeviceApplianceUplinksSettingsRequest {
-	return SettingsApiUpdateDeviceApplianceUplinksSettingsRequest{
+func (a *SettingsAPIService) UpdateDeviceApplianceUplinksSettings(ctx context.Context, serial string) SettingsAPIUpdateDeviceApplianceUplinksSettingsRequest {
+	return SettingsAPIUpdateDeviceApplianceUplinksSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1942,7 +1942,7 @@ func (a *SettingsApiService) UpdateDeviceApplianceUplinksSettings(ctx context.Co
 
 // Execute executes the request
 //  @return GetDeviceApplianceUplinksSettings200Response
-func (a *SettingsApiService) UpdateDeviceApplianceUplinksSettingsExecute(r SettingsApiUpdateDeviceApplianceUplinksSettingsRequest) (*GetDeviceApplianceUplinksSettings200Response, *http.Response, error) {
+func (a *SettingsAPIService) UpdateDeviceApplianceUplinksSettingsExecute(r SettingsAPIUpdateDeviceApplianceUplinksSettingsRequest) (*GetDeviceApplianceUplinksSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1950,7 +1950,7 @@ func (a *SettingsApiService) UpdateDeviceApplianceUplinksSettingsExecute(r Setti
 		localVarReturnValue  *GetDeviceApplianceUplinksSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.UpdateDeviceApplianceUplinksSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.UpdateDeviceApplianceUplinksSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2035,19 +2035,19 @@ func (a *SettingsApiService) UpdateDeviceApplianceUplinksSettingsExecute(r Setti
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiUpdateDeviceCameraVideoSettingsRequest struct {
+type SettingsAPIUpdateDeviceCameraVideoSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	serial string
 	updateDeviceCameraVideoSettingsRequest *UpdateDeviceCameraVideoSettingsRequest
 }
 
-func (r SettingsApiUpdateDeviceCameraVideoSettingsRequest) UpdateDeviceCameraVideoSettingsRequest(updateDeviceCameraVideoSettingsRequest UpdateDeviceCameraVideoSettingsRequest) SettingsApiUpdateDeviceCameraVideoSettingsRequest {
+func (r SettingsAPIUpdateDeviceCameraVideoSettingsRequest) UpdateDeviceCameraVideoSettingsRequest(updateDeviceCameraVideoSettingsRequest UpdateDeviceCameraVideoSettingsRequest) SettingsAPIUpdateDeviceCameraVideoSettingsRequest {
 	r.updateDeviceCameraVideoSettingsRequest = &updateDeviceCameraVideoSettingsRequest
 	return r
 }
 
-func (r SettingsApiUpdateDeviceCameraVideoSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SettingsAPIUpdateDeviceCameraVideoSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceCameraVideoSettingsExecute(r)
 }
 
@@ -2058,10 +2058,10 @@ Update video settings for the given camera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return SettingsApiUpdateDeviceCameraVideoSettingsRequest
+ @return SettingsAPIUpdateDeviceCameraVideoSettingsRequest
 */
-func (a *SettingsApiService) UpdateDeviceCameraVideoSettings(ctx context.Context, serial string) SettingsApiUpdateDeviceCameraVideoSettingsRequest {
-	return SettingsApiUpdateDeviceCameraVideoSettingsRequest{
+func (a *SettingsAPIService) UpdateDeviceCameraVideoSettings(ctx context.Context, serial string) SettingsAPIUpdateDeviceCameraVideoSettingsRequest {
+	return SettingsAPIUpdateDeviceCameraVideoSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -2070,7 +2070,7 @@ func (a *SettingsApiService) UpdateDeviceCameraVideoSettings(ctx context.Context
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SettingsApiService) UpdateDeviceCameraVideoSettingsExecute(r SettingsApiUpdateDeviceCameraVideoSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SettingsAPIService) UpdateDeviceCameraVideoSettingsExecute(r SettingsAPIUpdateDeviceCameraVideoSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -2078,7 +2078,7 @@ func (a *SettingsApiService) UpdateDeviceCameraVideoSettingsExecute(r SettingsAp
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.UpdateDeviceCameraVideoSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.UpdateDeviceCameraVideoSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2160,19 +2160,19 @@ func (a *SettingsApiService) UpdateDeviceCameraVideoSettingsExecute(r SettingsAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiUpdateDeviceWirelessBluetoothSettingsRequest struct {
+type SettingsAPIUpdateDeviceWirelessBluetoothSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	serial string
 	updateDeviceWirelessBluetoothSettingsRequest *UpdateDeviceWirelessBluetoothSettingsRequest
 }
 
-func (r SettingsApiUpdateDeviceWirelessBluetoothSettingsRequest) UpdateDeviceWirelessBluetoothSettingsRequest(updateDeviceWirelessBluetoothSettingsRequest UpdateDeviceWirelessBluetoothSettingsRequest) SettingsApiUpdateDeviceWirelessBluetoothSettingsRequest {
+func (r SettingsAPIUpdateDeviceWirelessBluetoothSettingsRequest) UpdateDeviceWirelessBluetoothSettingsRequest(updateDeviceWirelessBluetoothSettingsRequest UpdateDeviceWirelessBluetoothSettingsRequest) SettingsAPIUpdateDeviceWirelessBluetoothSettingsRequest {
 	r.updateDeviceWirelessBluetoothSettingsRequest = &updateDeviceWirelessBluetoothSettingsRequest
 	return r
 }
 
-func (r SettingsApiUpdateDeviceWirelessBluetoothSettingsRequest) Execute() (*GetDeviceWirelessBluetoothSettings200Response, *http.Response, error) {
+func (r SettingsAPIUpdateDeviceWirelessBluetoothSettingsRequest) Execute() (*GetDeviceWirelessBluetoothSettings200Response, *http.Response, error) {
 	return r.ApiService.UpdateDeviceWirelessBluetoothSettingsExecute(r)
 }
 
@@ -2183,10 +2183,10 @@ Update the bluetooth settings for a wireless device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return SettingsApiUpdateDeviceWirelessBluetoothSettingsRequest
+ @return SettingsAPIUpdateDeviceWirelessBluetoothSettingsRequest
 */
-func (a *SettingsApiService) UpdateDeviceWirelessBluetoothSettings(ctx context.Context, serial string) SettingsApiUpdateDeviceWirelessBluetoothSettingsRequest {
-	return SettingsApiUpdateDeviceWirelessBluetoothSettingsRequest{
+func (a *SettingsAPIService) UpdateDeviceWirelessBluetoothSettings(ctx context.Context, serial string) SettingsAPIUpdateDeviceWirelessBluetoothSettingsRequest {
+	return SettingsAPIUpdateDeviceWirelessBluetoothSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -2195,7 +2195,7 @@ func (a *SettingsApiService) UpdateDeviceWirelessBluetoothSettings(ctx context.C
 
 // Execute executes the request
 //  @return GetDeviceWirelessBluetoothSettings200Response
-func (a *SettingsApiService) UpdateDeviceWirelessBluetoothSettingsExecute(r SettingsApiUpdateDeviceWirelessBluetoothSettingsRequest) (*GetDeviceWirelessBluetoothSettings200Response, *http.Response, error) {
+func (a *SettingsAPIService) UpdateDeviceWirelessBluetoothSettingsExecute(r SettingsAPIUpdateDeviceWirelessBluetoothSettingsRequest) (*GetDeviceWirelessBluetoothSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -2203,7 +2203,7 @@ func (a *SettingsApiService) UpdateDeviceWirelessBluetoothSettingsExecute(r Sett
 		localVarReturnValue  *GetDeviceWirelessBluetoothSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.UpdateDeviceWirelessBluetoothSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.UpdateDeviceWirelessBluetoothSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2285,19 +2285,19 @@ func (a *SettingsApiService) UpdateDeviceWirelessBluetoothSettingsExecute(r Sett
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiUpdateDeviceWirelessRadioSettingsRequest struct {
+type SettingsAPIUpdateDeviceWirelessRadioSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	serial string
 	updateDeviceWirelessRadioSettingsRequest *UpdateDeviceWirelessRadioSettingsRequest
 }
 
-func (r SettingsApiUpdateDeviceWirelessRadioSettingsRequest) UpdateDeviceWirelessRadioSettingsRequest(updateDeviceWirelessRadioSettingsRequest UpdateDeviceWirelessRadioSettingsRequest) SettingsApiUpdateDeviceWirelessRadioSettingsRequest {
+func (r SettingsAPIUpdateDeviceWirelessRadioSettingsRequest) UpdateDeviceWirelessRadioSettingsRequest(updateDeviceWirelessRadioSettingsRequest UpdateDeviceWirelessRadioSettingsRequest) SettingsAPIUpdateDeviceWirelessRadioSettingsRequest {
 	r.updateDeviceWirelessRadioSettingsRequest = &updateDeviceWirelessRadioSettingsRequest
 	return r
 }
 
-func (r SettingsApiUpdateDeviceWirelessRadioSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SettingsAPIUpdateDeviceWirelessRadioSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceWirelessRadioSettingsExecute(r)
 }
 
@@ -2308,10 +2308,10 @@ Update the radio settings of a device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return SettingsApiUpdateDeviceWirelessRadioSettingsRequest
+ @return SettingsAPIUpdateDeviceWirelessRadioSettingsRequest
 */
-func (a *SettingsApiService) UpdateDeviceWirelessRadioSettings(ctx context.Context, serial string) SettingsApiUpdateDeviceWirelessRadioSettingsRequest {
-	return SettingsApiUpdateDeviceWirelessRadioSettingsRequest{
+func (a *SettingsAPIService) UpdateDeviceWirelessRadioSettings(ctx context.Context, serial string) SettingsAPIUpdateDeviceWirelessRadioSettingsRequest {
+	return SettingsAPIUpdateDeviceWirelessRadioSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -2320,7 +2320,7 @@ func (a *SettingsApiService) UpdateDeviceWirelessRadioSettings(ctx context.Conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SettingsApiService) UpdateDeviceWirelessRadioSettingsExecute(r SettingsApiUpdateDeviceWirelessRadioSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SettingsAPIService) UpdateDeviceWirelessRadioSettingsExecute(r SettingsAPIUpdateDeviceWirelessRadioSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -2328,7 +2328,7 @@ func (a *SettingsApiService) UpdateDeviceWirelessRadioSettingsExecute(r Settings
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.UpdateDeviceWirelessRadioSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.UpdateDeviceWirelessRadioSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2410,19 +2410,19 @@ func (a *SettingsApiService) UpdateDeviceWirelessRadioSettingsExecute(r Settings
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiUpdateNetworkAlertsSettingsRequest struct {
+type SettingsAPIUpdateNetworkAlertsSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	networkId string
 	updateNetworkAlertsSettingsRequest *UpdateNetworkAlertsSettingsRequest
 }
 
-func (r SettingsApiUpdateNetworkAlertsSettingsRequest) UpdateNetworkAlertsSettingsRequest(updateNetworkAlertsSettingsRequest UpdateNetworkAlertsSettingsRequest) SettingsApiUpdateNetworkAlertsSettingsRequest {
+func (r SettingsAPIUpdateNetworkAlertsSettingsRequest) UpdateNetworkAlertsSettingsRequest(updateNetworkAlertsSettingsRequest UpdateNetworkAlertsSettingsRequest) SettingsAPIUpdateNetworkAlertsSettingsRequest {
 	r.updateNetworkAlertsSettingsRequest = &updateNetworkAlertsSettingsRequest
 	return r
 }
 
-func (r SettingsApiUpdateNetworkAlertsSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SettingsAPIUpdateNetworkAlertsSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkAlertsSettingsExecute(r)
 }
 
@@ -2433,10 +2433,10 @@ Update the alert configuration for this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SettingsApiUpdateNetworkAlertsSettingsRequest
+ @return SettingsAPIUpdateNetworkAlertsSettingsRequest
 */
-func (a *SettingsApiService) UpdateNetworkAlertsSettings(ctx context.Context, networkId string) SettingsApiUpdateNetworkAlertsSettingsRequest {
-	return SettingsApiUpdateNetworkAlertsSettingsRequest{
+func (a *SettingsAPIService) UpdateNetworkAlertsSettings(ctx context.Context, networkId string) SettingsAPIUpdateNetworkAlertsSettingsRequest {
+	return SettingsAPIUpdateNetworkAlertsSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2445,7 +2445,7 @@ func (a *SettingsApiService) UpdateNetworkAlertsSettings(ctx context.Context, ne
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SettingsApiService) UpdateNetworkAlertsSettingsExecute(r SettingsApiUpdateNetworkAlertsSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SettingsAPIService) UpdateNetworkAlertsSettingsExecute(r SettingsAPIUpdateNetworkAlertsSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -2453,7 +2453,7 @@ func (a *SettingsApiService) UpdateNetworkAlertsSettingsExecute(r SettingsApiUpd
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.UpdateNetworkAlertsSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.UpdateNetworkAlertsSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2535,19 +2535,19 @@ func (a *SettingsApiService) UpdateNetworkAlertsSettingsExecute(r SettingsApiUpd
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiUpdateNetworkApplianceFirewallSettingsRequest struct {
+type SettingsAPIUpdateNetworkApplianceFirewallSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	networkId string
 	updateNetworkApplianceFirewallSettingsRequest *UpdateNetworkApplianceFirewallSettingsRequest
 }
 
-func (r SettingsApiUpdateNetworkApplianceFirewallSettingsRequest) UpdateNetworkApplianceFirewallSettingsRequest(updateNetworkApplianceFirewallSettingsRequest UpdateNetworkApplianceFirewallSettingsRequest) SettingsApiUpdateNetworkApplianceFirewallSettingsRequest {
+func (r SettingsAPIUpdateNetworkApplianceFirewallSettingsRequest) UpdateNetworkApplianceFirewallSettingsRequest(updateNetworkApplianceFirewallSettingsRequest UpdateNetworkApplianceFirewallSettingsRequest) SettingsAPIUpdateNetworkApplianceFirewallSettingsRequest {
 	r.updateNetworkApplianceFirewallSettingsRequest = &updateNetworkApplianceFirewallSettingsRequest
 	return r
 }
 
-func (r SettingsApiUpdateNetworkApplianceFirewallSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SettingsAPIUpdateNetworkApplianceFirewallSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceFirewallSettingsExecute(r)
 }
 
@@ -2558,10 +2558,10 @@ Update the firewall settings for this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SettingsApiUpdateNetworkApplianceFirewallSettingsRequest
+ @return SettingsAPIUpdateNetworkApplianceFirewallSettingsRequest
 */
-func (a *SettingsApiService) UpdateNetworkApplianceFirewallSettings(ctx context.Context, networkId string) SettingsApiUpdateNetworkApplianceFirewallSettingsRequest {
-	return SettingsApiUpdateNetworkApplianceFirewallSettingsRequest{
+func (a *SettingsAPIService) UpdateNetworkApplianceFirewallSettings(ctx context.Context, networkId string) SettingsAPIUpdateNetworkApplianceFirewallSettingsRequest {
+	return SettingsAPIUpdateNetworkApplianceFirewallSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2570,7 +2570,7 @@ func (a *SettingsApiService) UpdateNetworkApplianceFirewallSettings(ctx context.
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SettingsApiService) UpdateNetworkApplianceFirewallSettingsExecute(r SettingsApiUpdateNetworkApplianceFirewallSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SettingsAPIService) UpdateNetworkApplianceFirewallSettingsExecute(r SettingsAPIUpdateNetworkApplianceFirewallSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -2578,7 +2578,7 @@ func (a *SettingsApiService) UpdateNetworkApplianceFirewallSettingsExecute(r Set
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.UpdateNetworkApplianceFirewallSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.UpdateNetworkApplianceFirewallSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2660,19 +2660,19 @@ func (a *SettingsApiService) UpdateNetworkApplianceFirewallSettingsExecute(r Set
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiUpdateNetworkApplianceSettingsRequest struct {
+type SettingsAPIUpdateNetworkApplianceSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	networkId string
 	updateNetworkApplianceSettingsRequest *UpdateNetworkApplianceSettingsRequest
 }
 
-func (r SettingsApiUpdateNetworkApplianceSettingsRequest) UpdateNetworkApplianceSettingsRequest(updateNetworkApplianceSettingsRequest UpdateNetworkApplianceSettingsRequest) SettingsApiUpdateNetworkApplianceSettingsRequest {
+func (r SettingsAPIUpdateNetworkApplianceSettingsRequest) UpdateNetworkApplianceSettingsRequest(updateNetworkApplianceSettingsRequest UpdateNetworkApplianceSettingsRequest) SettingsAPIUpdateNetworkApplianceSettingsRequest {
 	r.updateNetworkApplianceSettingsRequest = &updateNetworkApplianceSettingsRequest
 	return r
 }
 
-func (r SettingsApiUpdateNetworkApplianceSettingsRequest) Execute() (*GetNetworkApplianceSettings200Response, *http.Response, error) {
+func (r SettingsAPIUpdateNetworkApplianceSettingsRequest) Execute() (*GetNetworkApplianceSettings200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceSettingsExecute(r)
 }
 
@@ -2683,10 +2683,10 @@ Update the appliance settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SettingsApiUpdateNetworkApplianceSettingsRequest
+ @return SettingsAPIUpdateNetworkApplianceSettingsRequest
 */
-func (a *SettingsApiService) UpdateNetworkApplianceSettings(ctx context.Context, networkId string) SettingsApiUpdateNetworkApplianceSettingsRequest {
-	return SettingsApiUpdateNetworkApplianceSettingsRequest{
+func (a *SettingsAPIService) UpdateNetworkApplianceSettings(ctx context.Context, networkId string) SettingsAPIUpdateNetworkApplianceSettingsRequest {
+	return SettingsAPIUpdateNetworkApplianceSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2695,7 +2695,7 @@ func (a *SettingsApiService) UpdateNetworkApplianceSettings(ctx context.Context,
 
 // Execute executes the request
 //  @return GetNetworkApplianceSettings200Response
-func (a *SettingsApiService) UpdateNetworkApplianceSettingsExecute(r SettingsApiUpdateNetworkApplianceSettingsRequest) (*GetNetworkApplianceSettings200Response, *http.Response, error) {
+func (a *SettingsAPIService) UpdateNetworkApplianceSettingsExecute(r SettingsAPIUpdateNetworkApplianceSettingsRequest) (*GetNetworkApplianceSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -2703,7 +2703,7 @@ func (a *SettingsApiService) UpdateNetworkApplianceSettingsExecute(r SettingsApi
 		localVarReturnValue  *GetNetworkApplianceSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.UpdateNetworkApplianceSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.UpdateNetworkApplianceSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2785,19 +2785,19 @@ func (a *SettingsApiService) UpdateNetworkApplianceSettingsExecute(r SettingsApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiUpdateNetworkApplianceVlansSettingsRequest struct {
+type SettingsAPIUpdateNetworkApplianceVlansSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	networkId string
 	updateNetworkApplianceVlansSettingsRequest *UpdateNetworkApplianceVlansSettingsRequest
 }
 
-func (r SettingsApiUpdateNetworkApplianceVlansSettingsRequest) UpdateNetworkApplianceVlansSettingsRequest(updateNetworkApplianceVlansSettingsRequest UpdateNetworkApplianceVlansSettingsRequest) SettingsApiUpdateNetworkApplianceVlansSettingsRequest {
+func (r SettingsAPIUpdateNetworkApplianceVlansSettingsRequest) UpdateNetworkApplianceVlansSettingsRequest(updateNetworkApplianceVlansSettingsRequest UpdateNetworkApplianceVlansSettingsRequest) SettingsAPIUpdateNetworkApplianceVlansSettingsRequest {
 	r.updateNetworkApplianceVlansSettingsRequest = &updateNetworkApplianceVlansSettingsRequest
 	return r
 }
 
-func (r SettingsApiUpdateNetworkApplianceVlansSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SettingsAPIUpdateNetworkApplianceVlansSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceVlansSettingsExecute(r)
 }
 
@@ -2808,10 +2808,10 @@ Enable/Disable VLANs for the given network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SettingsApiUpdateNetworkApplianceVlansSettingsRequest
+ @return SettingsAPIUpdateNetworkApplianceVlansSettingsRequest
 */
-func (a *SettingsApiService) UpdateNetworkApplianceVlansSettings(ctx context.Context, networkId string) SettingsApiUpdateNetworkApplianceVlansSettingsRequest {
-	return SettingsApiUpdateNetworkApplianceVlansSettingsRequest{
+func (a *SettingsAPIService) UpdateNetworkApplianceVlansSettings(ctx context.Context, networkId string) SettingsAPIUpdateNetworkApplianceVlansSettingsRequest {
+	return SettingsAPIUpdateNetworkApplianceVlansSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2820,7 +2820,7 @@ func (a *SettingsApiService) UpdateNetworkApplianceVlansSettings(ctx context.Con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SettingsApiService) UpdateNetworkApplianceVlansSettingsExecute(r SettingsApiUpdateNetworkApplianceVlansSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SettingsAPIService) UpdateNetworkApplianceVlansSettingsExecute(r SettingsAPIUpdateNetworkApplianceVlansSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -2828,7 +2828,7 @@ func (a *SettingsApiService) UpdateNetworkApplianceVlansSettingsExecute(r Settin
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.UpdateNetworkApplianceVlansSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.UpdateNetworkApplianceVlansSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2910,19 +2910,19 @@ func (a *SettingsApiService) UpdateNetworkApplianceVlansSettingsExecute(r Settin
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiUpdateNetworkSettingsRequest struct {
+type SettingsAPIUpdateNetworkSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	networkId string
 	updateNetworkSettingsRequest *UpdateNetworkSettingsRequest
 }
 
-func (r SettingsApiUpdateNetworkSettingsRequest) UpdateNetworkSettingsRequest(updateNetworkSettingsRequest UpdateNetworkSettingsRequest) SettingsApiUpdateNetworkSettingsRequest {
+func (r SettingsAPIUpdateNetworkSettingsRequest) UpdateNetworkSettingsRequest(updateNetworkSettingsRequest UpdateNetworkSettingsRequest) SettingsAPIUpdateNetworkSettingsRequest {
 	r.updateNetworkSettingsRequest = &updateNetworkSettingsRequest
 	return r
 }
 
-func (r SettingsApiUpdateNetworkSettingsRequest) Execute() (*GetNetworkSettings200Response, *http.Response, error) {
+func (r SettingsAPIUpdateNetworkSettingsRequest) Execute() (*GetNetworkSettings200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSettingsExecute(r)
 }
 
@@ -2933,10 +2933,10 @@ Update the settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SettingsApiUpdateNetworkSettingsRequest
+ @return SettingsAPIUpdateNetworkSettingsRequest
 */
-func (a *SettingsApiService) UpdateNetworkSettings(ctx context.Context, networkId string) SettingsApiUpdateNetworkSettingsRequest {
-	return SettingsApiUpdateNetworkSettingsRequest{
+func (a *SettingsAPIService) UpdateNetworkSettings(ctx context.Context, networkId string) SettingsAPIUpdateNetworkSettingsRequest {
+	return SettingsAPIUpdateNetworkSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2945,7 +2945,7 @@ func (a *SettingsApiService) UpdateNetworkSettings(ctx context.Context, networkI
 
 // Execute executes the request
 //  @return GetNetworkSettings200Response
-func (a *SettingsApiService) UpdateNetworkSettingsExecute(r SettingsApiUpdateNetworkSettingsRequest) (*GetNetworkSettings200Response, *http.Response, error) {
+func (a *SettingsAPIService) UpdateNetworkSettingsExecute(r SettingsAPIUpdateNetworkSettingsRequest) (*GetNetworkSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -2953,7 +2953,7 @@ func (a *SettingsApiService) UpdateNetworkSettingsExecute(r SettingsApiUpdateNet
 		localVarReturnValue  *GetNetworkSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.UpdateNetworkSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.UpdateNetworkSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3035,19 +3035,19 @@ func (a *SettingsApiService) UpdateNetworkSettingsExecute(r SettingsApiUpdateNet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiUpdateNetworkSwitchSettingsRequest struct {
+type SettingsAPIUpdateNetworkSwitchSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	networkId string
 	updateNetworkSwitchSettingsRequest *UpdateNetworkSwitchSettingsRequest
 }
 
-func (r SettingsApiUpdateNetworkSwitchSettingsRequest) UpdateNetworkSwitchSettingsRequest(updateNetworkSwitchSettingsRequest UpdateNetworkSwitchSettingsRequest) SettingsApiUpdateNetworkSwitchSettingsRequest {
+func (r SettingsAPIUpdateNetworkSwitchSettingsRequest) UpdateNetworkSwitchSettingsRequest(updateNetworkSwitchSettingsRequest UpdateNetworkSwitchSettingsRequest) SettingsAPIUpdateNetworkSwitchSettingsRequest {
 	r.updateNetworkSwitchSettingsRequest = &updateNetworkSwitchSettingsRequest
 	return r
 }
 
-func (r SettingsApiUpdateNetworkSwitchSettingsRequest) Execute() (*GetNetworkSwitchSettings200Response, *http.Response, error) {
+func (r SettingsAPIUpdateNetworkSwitchSettingsRequest) Execute() (*GetNetworkSwitchSettings200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchSettingsExecute(r)
 }
 
@@ -3058,10 +3058,10 @@ Update switch network settings
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SettingsApiUpdateNetworkSwitchSettingsRequest
+ @return SettingsAPIUpdateNetworkSwitchSettingsRequest
 */
-func (a *SettingsApiService) UpdateNetworkSwitchSettings(ctx context.Context, networkId string) SettingsApiUpdateNetworkSwitchSettingsRequest {
-	return SettingsApiUpdateNetworkSwitchSettingsRequest{
+func (a *SettingsAPIService) UpdateNetworkSwitchSettings(ctx context.Context, networkId string) SettingsAPIUpdateNetworkSwitchSettingsRequest {
+	return SettingsAPIUpdateNetworkSwitchSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3070,7 +3070,7 @@ func (a *SettingsApiService) UpdateNetworkSwitchSettings(ctx context.Context, ne
 
 // Execute executes the request
 //  @return GetNetworkSwitchSettings200Response
-func (a *SettingsApiService) UpdateNetworkSwitchSettingsExecute(r SettingsApiUpdateNetworkSwitchSettingsRequest) (*GetNetworkSwitchSettings200Response, *http.Response, error) {
+func (a *SettingsAPIService) UpdateNetworkSwitchSettingsExecute(r SettingsAPIUpdateNetworkSwitchSettingsRequest) (*GetNetworkSwitchSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -3078,7 +3078,7 @@ func (a *SettingsApiService) UpdateNetworkSwitchSettingsExecute(r SettingsApiUpd
 		localVarReturnValue  *GetNetworkSwitchSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.UpdateNetworkSwitchSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.UpdateNetworkSwitchSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3160,19 +3160,19 @@ func (a *SettingsApiService) UpdateNetworkSwitchSettingsExecute(r SettingsApiUpd
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiUpdateNetworkWirelessBluetoothSettingsRequest struct {
+type SettingsAPIUpdateNetworkWirelessBluetoothSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	networkId string
 	updateNetworkWirelessBluetoothSettingsRequest *UpdateNetworkWirelessBluetoothSettingsRequest
 }
 
-func (r SettingsApiUpdateNetworkWirelessBluetoothSettingsRequest) UpdateNetworkWirelessBluetoothSettingsRequest(updateNetworkWirelessBluetoothSettingsRequest UpdateNetworkWirelessBluetoothSettingsRequest) SettingsApiUpdateNetworkWirelessBluetoothSettingsRequest {
+func (r SettingsAPIUpdateNetworkWirelessBluetoothSettingsRequest) UpdateNetworkWirelessBluetoothSettingsRequest(updateNetworkWirelessBluetoothSettingsRequest UpdateNetworkWirelessBluetoothSettingsRequest) SettingsAPIUpdateNetworkWirelessBluetoothSettingsRequest {
 	r.updateNetworkWirelessBluetoothSettingsRequest = &updateNetworkWirelessBluetoothSettingsRequest
 	return r
 }
 
-func (r SettingsApiUpdateNetworkWirelessBluetoothSettingsRequest) Execute() (*GetNetworkWirelessBluetoothSettings200Response, *http.Response, error) {
+func (r SettingsAPIUpdateNetworkWirelessBluetoothSettingsRequest) Execute() (*GetNetworkWirelessBluetoothSettings200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessBluetoothSettingsExecute(r)
 }
 
@@ -3183,10 +3183,10 @@ Update the Bluetooth settings for a network. See the docs page for <a href="http
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SettingsApiUpdateNetworkWirelessBluetoothSettingsRequest
+ @return SettingsAPIUpdateNetworkWirelessBluetoothSettingsRequest
 */
-func (a *SettingsApiService) UpdateNetworkWirelessBluetoothSettings(ctx context.Context, networkId string) SettingsApiUpdateNetworkWirelessBluetoothSettingsRequest {
-	return SettingsApiUpdateNetworkWirelessBluetoothSettingsRequest{
+func (a *SettingsAPIService) UpdateNetworkWirelessBluetoothSettings(ctx context.Context, networkId string) SettingsAPIUpdateNetworkWirelessBluetoothSettingsRequest {
+	return SettingsAPIUpdateNetworkWirelessBluetoothSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3195,7 +3195,7 @@ func (a *SettingsApiService) UpdateNetworkWirelessBluetoothSettings(ctx context.
 
 // Execute executes the request
 //  @return GetNetworkWirelessBluetoothSettings200Response
-func (a *SettingsApiService) UpdateNetworkWirelessBluetoothSettingsExecute(r SettingsApiUpdateNetworkWirelessBluetoothSettingsRequest) (*GetNetworkWirelessBluetoothSettings200Response, *http.Response, error) {
+func (a *SettingsAPIService) UpdateNetworkWirelessBluetoothSettingsExecute(r SettingsAPIUpdateNetworkWirelessBluetoothSettingsRequest) (*GetNetworkWirelessBluetoothSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -3203,7 +3203,7 @@ func (a *SettingsApiService) UpdateNetworkWirelessBluetoothSettingsExecute(r Set
 		localVarReturnValue  *GetNetworkWirelessBluetoothSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.UpdateNetworkWirelessBluetoothSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.UpdateNetworkWirelessBluetoothSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3285,19 +3285,19 @@ func (a *SettingsApiService) UpdateNetworkWirelessBluetoothSettingsExecute(r Set
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiUpdateNetworkWirelessSettingsRequest struct {
+type SettingsAPIUpdateNetworkWirelessSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	networkId string
 	updateNetworkWirelessSettingsRequest *UpdateNetworkWirelessSettingsRequest
 }
 
-func (r SettingsApiUpdateNetworkWirelessSettingsRequest) UpdateNetworkWirelessSettingsRequest(updateNetworkWirelessSettingsRequest UpdateNetworkWirelessSettingsRequest) SettingsApiUpdateNetworkWirelessSettingsRequest {
+func (r SettingsAPIUpdateNetworkWirelessSettingsRequest) UpdateNetworkWirelessSettingsRequest(updateNetworkWirelessSettingsRequest UpdateNetworkWirelessSettingsRequest) SettingsAPIUpdateNetworkWirelessSettingsRequest {
 	r.updateNetworkWirelessSettingsRequest = &updateNetworkWirelessSettingsRequest
 	return r
 }
 
-func (r SettingsApiUpdateNetworkWirelessSettingsRequest) Execute() (*GetNetworkWirelessSettings200Response, *http.Response, error) {
+func (r SettingsAPIUpdateNetworkWirelessSettingsRequest) Execute() (*GetNetworkWirelessSettings200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSettingsExecute(r)
 }
 
@@ -3308,10 +3308,10 @@ Update the wireless settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SettingsApiUpdateNetworkWirelessSettingsRequest
+ @return SettingsAPIUpdateNetworkWirelessSettingsRequest
 */
-func (a *SettingsApiService) UpdateNetworkWirelessSettings(ctx context.Context, networkId string) SettingsApiUpdateNetworkWirelessSettingsRequest {
-	return SettingsApiUpdateNetworkWirelessSettingsRequest{
+func (a *SettingsAPIService) UpdateNetworkWirelessSettings(ctx context.Context, networkId string) SettingsAPIUpdateNetworkWirelessSettingsRequest {
+	return SettingsAPIUpdateNetworkWirelessSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3320,7 +3320,7 @@ func (a *SettingsApiService) UpdateNetworkWirelessSettings(ctx context.Context, 
 
 // Execute executes the request
 //  @return GetNetworkWirelessSettings200Response
-func (a *SettingsApiService) UpdateNetworkWirelessSettingsExecute(r SettingsApiUpdateNetworkWirelessSettingsRequest) (*GetNetworkWirelessSettings200Response, *http.Response, error) {
+func (a *SettingsAPIService) UpdateNetworkWirelessSettingsExecute(r SettingsAPIUpdateNetworkWirelessSettingsRequest) (*GetNetworkWirelessSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -3328,7 +3328,7 @@ func (a *SettingsApiService) UpdateNetworkWirelessSettingsExecute(r SettingsApiU
 		localVarReturnValue  *GetNetworkWirelessSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.UpdateNetworkWirelessSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.UpdateNetworkWirelessSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3410,20 +3410,20 @@ func (a *SettingsApiService) UpdateNetworkWirelessSettingsExecute(r SettingsApiU
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiUpdateNetworkWirelessSsidSplashSettingsRequest struct {
+type SettingsAPIUpdateNetworkWirelessSsidSplashSettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidSplashSettingsRequest *UpdateNetworkWirelessSsidSplashSettingsRequest
 }
 
-func (r SettingsApiUpdateNetworkWirelessSsidSplashSettingsRequest) UpdateNetworkWirelessSsidSplashSettingsRequest(updateNetworkWirelessSsidSplashSettingsRequest UpdateNetworkWirelessSsidSplashSettingsRequest) SettingsApiUpdateNetworkWirelessSsidSplashSettingsRequest {
+func (r SettingsAPIUpdateNetworkWirelessSsidSplashSettingsRequest) UpdateNetworkWirelessSsidSplashSettingsRequest(updateNetworkWirelessSsidSplashSettingsRequest UpdateNetworkWirelessSsidSplashSettingsRequest) SettingsAPIUpdateNetworkWirelessSsidSplashSettingsRequest {
 	r.updateNetworkWirelessSsidSplashSettingsRequest = &updateNetworkWirelessSsidSplashSettingsRequest
 	return r
 }
 
-func (r SettingsApiUpdateNetworkWirelessSsidSplashSettingsRequest) Execute() (*GetNetworkWirelessSsidSplashSettings200Response, *http.Response, error) {
+func (r SettingsAPIUpdateNetworkWirelessSsidSplashSettingsRequest) Execute() (*GetNetworkWirelessSsidSplashSettings200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidSplashSettingsExecute(r)
 }
 
@@ -3435,10 +3435,10 @@ Modify the splash page settings for the given SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SettingsApiUpdateNetworkWirelessSsidSplashSettingsRequest
+ @return SettingsAPIUpdateNetworkWirelessSsidSplashSettingsRequest
 */
-func (a *SettingsApiService) UpdateNetworkWirelessSsidSplashSettings(ctx context.Context, networkId string, number string) SettingsApiUpdateNetworkWirelessSsidSplashSettingsRequest {
-	return SettingsApiUpdateNetworkWirelessSsidSplashSettingsRequest{
+func (a *SettingsAPIService) UpdateNetworkWirelessSsidSplashSettings(ctx context.Context, networkId string, number string) SettingsAPIUpdateNetworkWirelessSsidSplashSettingsRequest {
+	return SettingsAPIUpdateNetworkWirelessSsidSplashSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3448,7 +3448,7 @@ func (a *SettingsApiService) UpdateNetworkWirelessSsidSplashSettings(ctx context
 
 // Execute executes the request
 //  @return GetNetworkWirelessSsidSplashSettings200Response
-func (a *SettingsApiService) UpdateNetworkWirelessSsidSplashSettingsExecute(r SettingsApiUpdateNetworkWirelessSsidSplashSettingsRequest) (*GetNetworkWirelessSsidSplashSettings200Response, *http.Response, error) {
+func (a *SettingsAPIService) UpdateNetworkWirelessSsidSplashSettingsExecute(r SettingsAPIUpdateNetworkWirelessSsidSplashSettingsRequest) (*GetNetworkWirelessSsidSplashSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -3456,7 +3456,7 @@ func (a *SettingsApiService) UpdateNetworkWirelessSsidSplashSettingsExecute(r Se
 		localVarReturnValue  *GetNetworkWirelessSsidSplashSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.UpdateNetworkWirelessSsidSplashSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.UpdateNetworkWirelessSsidSplashSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3539,19 +3539,19 @@ func (a *SettingsApiService) UpdateNetworkWirelessSsidSplashSettingsExecute(r Se
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SettingsApiUpdateOrganizationAdaptivePolicySettingsRequest struct {
+type SettingsAPIUpdateOrganizationAdaptivePolicySettingsRequest struct {
 	ctx context.Context
-	ApiService *SettingsApiService
+	ApiService *SettingsAPIService
 	organizationId string
 	updateOrganizationAdaptivePolicySettingsRequest *UpdateOrganizationAdaptivePolicySettingsRequest
 }
 
-func (r SettingsApiUpdateOrganizationAdaptivePolicySettingsRequest) UpdateOrganizationAdaptivePolicySettingsRequest(updateOrganizationAdaptivePolicySettingsRequest UpdateOrganizationAdaptivePolicySettingsRequest) SettingsApiUpdateOrganizationAdaptivePolicySettingsRequest {
+func (r SettingsAPIUpdateOrganizationAdaptivePolicySettingsRequest) UpdateOrganizationAdaptivePolicySettingsRequest(updateOrganizationAdaptivePolicySettingsRequest UpdateOrganizationAdaptivePolicySettingsRequest) SettingsAPIUpdateOrganizationAdaptivePolicySettingsRequest {
 	r.updateOrganizationAdaptivePolicySettingsRequest = &updateOrganizationAdaptivePolicySettingsRequest
 	return r
 }
 
-func (r SettingsApiUpdateOrganizationAdaptivePolicySettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SettingsAPIUpdateOrganizationAdaptivePolicySettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationAdaptivePolicySettingsExecute(r)
 }
 
@@ -3562,10 +3562,10 @@ Update global adaptive policy settings
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return SettingsApiUpdateOrganizationAdaptivePolicySettingsRequest
+ @return SettingsAPIUpdateOrganizationAdaptivePolicySettingsRequest
 */
-func (a *SettingsApiService) UpdateOrganizationAdaptivePolicySettings(ctx context.Context, organizationId string) SettingsApiUpdateOrganizationAdaptivePolicySettingsRequest {
-	return SettingsApiUpdateOrganizationAdaptivePolicySettingsRequest{
+func (a *SettingsAPIService) UpdateOrganizationAdaptivePolicySettings(ctx context.Context, organizationId string) SettingsAPIUpdateOrganizationAdaptivePolicySettingsRequest {
+	return SettingsAPIUpdateOrganizationAdaptivePolicySettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -3574,7 +3574,7 @@ func (a *SettingsApiService) UpdateOrganizationAdaptivePolicySettings(ctx contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SettingsApiService) UpdateOrganizationAdaptivePolicySettingsExecute(r SettingsApiUpdateOrganizationAdaptivePolicySettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SettingsAPIService) UpdateOrganizationAdaptivePolicySettingsExecute(r SettingsAPIUpdateOrganizationAdaptivePolicySettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -3582,7 +3582,7 @@ func (a *SettingsApiService) UpdateOrganizationAdaptivePolicySettingsExecute(r S
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsApiService.UpdateOrganizationAdaptivePolicySettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.UpdateOrganizationAdaptivePolicySettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

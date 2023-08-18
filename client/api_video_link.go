@@ -21,23 +21,23 @@ import (
 )
 
 
-// VideoLinkApiService VideoLinkApi service
-type VideoLinkApiService service
+// VideoLinkAPIService VideoLinkAPI service
+type VideoLinkAPIService service
 
-type VideoLinkApiGetDeviceCameraVideoLinkRequest struct {
+type VideoLinkAPIGetDeviceCameraVideoLinkRequest struct {
 	ctx context.Context
-	ApiService *VideoLinkApiService
+	ApiService *VideoLinkAPIService
 	serial string
 	timestamp *time.Time
 }
 
 // [optional] The video link will start at this time. The timestamp should be a string in ISO8601 format. If no timestamp is specified, we will assume current time.
-func (r VideoLinkApiGetDeviceCameraVideoLinkRequest) Timestamp(timestamp time.Time) VideoLinkApiGetDeviceCameraVideoLinkRequest {
+func (r VideoLinkAPIGetDeviceCameraVideoLinkRequest) Timestamp(timestamp time.Time) VideoLinkAPIGetDeviceCameraVideoLinkRequest {
 	r.timestamp = &timestamp
 	return r
 }
 
-func (r VideoLinkApiGetDeviceCameraVideoLinkRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r VideoLinkAPIGetDeviceCameraVideoLinkRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraVideoLinkExecute(r)
 }
 
@@ -48,10 +48,10 @@ Returns video link to the specified camera. If a timestamp is supplied, it links
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return VideoLinkApiGetDeviceCameraVideoLinkRequest
+ @return VideoLinkAPIGetDeviceCameraVideoLinkRequest
 */
-func (a *VideoLinkApiService) GetDeviceCameraVideoLink(ctx context.Context, serial string) VideoLinkApiGetDeviceCameraVideoLinkRequest {
-	return VideoLinkApiGetDeviceCameraVideoLinkRequest{
+func (a *VideoLinkAPIService) GetDeviceCameraVideoLink(ctx context.Context, serial string) VideoLinkAPIGetDeviceCameraVideoLinkRequest {
+	return VideoLinkAPIGetDeviceCameraVideoLinkRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -60,7 +60,7 @@ func (a *VideoLinkApiService) GetDeviceCameraVideoLink(ctx context.Context, seri
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *VideoLinkApiService) GetDeviceCameraVideoLinkExecute(r VideoLinkApiGetDeviceCameraVideoLinkRequest) (map[string]interface{}, *http.Response, error) {
+func (a *VideoLinkAPIService) GetDeviceCameraVideoLinkExecute(r VideoLinkAPIGetDeviceCameraVideoLinkRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -68,7 +68,7 @@ func (a *VideoLinkApiService) GetDeviceCameraVideoLinkExecute(r VideoLinkApiGetD
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VideoLinkApiService.GetDeviceCameraVideoLink")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VideoLinkAPIService.GetDeviceCameraVideoLink")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

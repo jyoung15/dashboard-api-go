@@ -20,22 +20,22 @@ import (
 )
 
 
-// FieldsApiService FieldsApi service
-type FieldsApiService service
+// FieldsAPIService FieldsAPI service
+type FieldsAPIService service
 
-type FieldsApiUpdateNetworkSmDevicesFieldsRequest struct {
+type FieldsAPIUpdateNetworkSmDevicesFieldsRequest struct {
 	ctx context.Context
-	ApiService *FieldsApiService
+	ApiService *FieldsAPIService
 	networkId string
 	updateNetworkSmDevicesFieldsRequest *UpdateNetworkSmDevicesFieldsRequest
 }
 
-func (r FieldsApiUpdateNetworkSmDevicesFieldsRequest) UpdateNetworkSmDevicesFieldsRequest(updateNetworkSmDevicesFieldsRequest UpdateNetworkSmDevicesFieldsRequest) FieldsApiUpdateNetworkSmDevicesFieldsRequest {
+func (r FieldsAPIUpdateNetworkSmDevicesFieldsRequest) UpdateNetworkSmDevicesFieldsRequest(updateNetworkSmDevicesFieldsRequest UpdateNetworkSmDevicesFieldsRequest) FieldsAPIUpdateNetworkSmDevicesFieldsRequest {
 	r.updateNetworkSmDevicesFieldsRequest = &updateNetworkSmDevicesFieldsRequest
 	return r
 }
 
-func (r FieldsApiUpdateNetworkSmDevicesFieldsRequest) Execute() ([]UpdateNetworkSmDevicesFields200ResponseInner, *http.Response, error) {
+func (r FieldsAPIUpdateNetworkSmDevicesFieldsRequest) Execute() ([]UpdateNetworkSmDevicesFields200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSmDevicesFieldsExecute(r)
 }
 
@@ -46,10 +46,10 @@ Modify the fields of a device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return FieldsApiUpdateNetworkSmDevicesFieldsRequest
+ @return FieldsAPIUpdateNetworkSmDevicesFieldsRequest
 */
-func (a *FieldsApiService) UpdateNetworkSmDevicesFields(ctx context.Context, networkId string) FieldsApiUpdateNetworkSmDevicesFieldsRequest {
-	return FieldsApiUpdateNetworkSmDevicesFieldsRequest{
+func (a *FieldsAPIService) UpdateNetworkSmDevicesFields(ctx context.Context, networkId string) FieldsAPIUpdateNetworkSmDevicesFieldsRequest {
+	return FieldsAPIUpdateNetworkSmDevicesFieldsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -58,7 +58,7 @@ func (a *FieldsApiService) UpdateNetworkSmDevicesFields(ctx context.Context, net
 
 // Execute executes the request
 //  @return []UpdateNetworkSmDevicesFields200ResponseInner
-func (a *FieldsApiService) UpdateNetworkSmDevicesFieldsExecute(r FieldsApiUpdateNetworkSmDevicesFieldsRequest) ([]UpdateNetworkSmDevicesFields200ResponseInner, *http.Response, error) {
+func (a *FieldsAPIService) UpdateNetworkSmDevicesFieldsExecute(r FieldsAPIUpdateNetworkSmDevicesFieldsRequest) ([]UpdateNetworkSmDevicesFields200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *FieldsApiService) UpdateNetworkSmDevicesFieldsExecute(r FieldsApiUpdate
 		localVarReturnValue  []UpdateNetworkSmDevicesFields200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FieldsApiService.UpdateNetworkSmDevicesFields")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FieldsAPIService.UpdateNetworkSmDevicesFields")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

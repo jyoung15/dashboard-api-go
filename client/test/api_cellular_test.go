@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing CellularApiService
+Testing CellularAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_CellularApiService(t *testing.T) {
+func Test_client_CellularAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test CellularApiService GetDeviceCellularSims", func(t *testing.T) {
+	t.Run("Test CellularAPIService GetDeviceCellularSims", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.CellularApi.GetDeviceCellularSims(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.CellularAPI.GetDeviceCellularSims(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_CellularApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test CellularApiService UpdateDeviceCellularSims", func(t *testing.T) {
+	t.Run("Test CellularAPIService UpdateDeviceCellularSims", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.CellularApi.UpdateDeviceCellularSims(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.CellularAPI.UpdateDeviceCellularSims(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

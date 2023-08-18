@@ -20,12 +20,12 @@ import (
 )
 
 
-// HealthByTimeApiService HealthByTimeApi service
-type HealthByTimeApiService service
+// HealthByTimeAPIService HealthByTimeAPI service
+type HealthByTimeAPIService service
 
-type HealthByTimeApiGetNetworkInsightApplicationHealthByTimeRequest struct {
+type HealthByTimeAPIGetNetworkInsightApplicationHealthByTimeRequest struct {
 	ctx context.Context
-	ApiService *HealthByTimeApiService
+	ApiService *HealthByTimeAPIService
 	networkId string
 	applicationId string
 	t0 *string
@@ -35,30 +35,30 @@ type HealthByTimeApiGetNetworkInsightApplicationHealthByTimeRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 7 days from today.
-func (r HealthByTimeApiGetNetworkInsightApplicationHealthByTimeRequest) T0(t0 string) HealthByTimeApiGetNetworkInsightApplicationHealthByTimeRequest {
+func (r HealthByTimeAPIGetNetworkInsightApplicationHealthByTimeRequest) T0(t0 string) HealthByTimeAPIGetNetworkInsightApplicationHealthByTimeRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r HealthByTimeApiGetNetworkInsightApplicationHealthByTimeRequest) T1(t1 string) HealthByTimeApiGetNetworkInsightApplicationHealthByTimeRequest {
+func (r HealthByTimeAPIGetNetworkInsightApplicationHealthByTimeRequest) T1(t1 string) HealthByTimeAPIGetNetworkInsightApplicationHealthByTimeRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. The default is 2 hours.
-func (r HealthByTimeApiGetNetworkInsightApplicationHealthByTimeRequest) Timespan(timespan float32) HealthByTimeApiGetNetworkInsightApplicationHealthByTimeRequest {
+func (r HealthByTimeAPIGetNetworkInsightApplicationHealthByTimeRequest) Timespan(timespan float32) HealthByTimeAPIGetNetworkInsightApplicationHealthByTimeRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 60, 300, 3600, 86400. The default is 300.
-func (r HealthByTimeApiGetNetworkInsightApplicationHealthByTimeRequest) Resolution(resolution int32) HealthByTimeApiGetNetworkInsightApplicationHealthByTimeRequest {
+func (r HealthByTimeAPIGetNetworkInsightApplicationHealthByTimeRequest) Resolution(resolution int32) HealthByTimeAPIGetNetworkInsightApplicationHealthByTimeRequest {
 	r.resolution = &resolution
 	return r
 }
 
-func (r HealthByTimeApiGetNetworkInsightApplicationHealthByTimeRequest) Execute() ([]GetNetworkInsightApplicationHealthByTime200ResponseInner, *http.Response, error) {
+func (r HealthByTimeAPIGetNetworkInsightApplicationHealthByTimeRequest) Execute() ([]GetNetworkInsightApplicationHealthByTime200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkInsightApplicationHealthByTimeExecute(r)
 }
 
@@ -70,10 +70,10 @@ Get application health by time
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param applicationId Application ID
- @return HealthByTimeApiGetNetworkInsightApplicationHealthByTimeRequest
+ @return HealthByTimeAPIGetNetworkInsightApplicationHealthByTimeRequest
 */
-func (a *HealthByTimeApiService) GetNetworkInsightApplicationHealthByTime(ctx context.Context, networkId string, applicationId string) HealthByTimeApiGetNetworkInsightApplicationHealthByTimeRequest {
-	return HealthByTimeApiGetNetworkInsightApplicationHealthByTimeRequest{
+func (a *HealthByTimeAPIService) GetNetworkInsightApplicationHealthByTime(ctx context.Context, networkId string, applicationId string) HealthByTimeAPIGetNetworkInsightApplicationHealthByTimeRequest {
+	return HealthByTimeAPIGetNetworkInsightApplicationHealthByTimeRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -83,7 +83,7 @@ func (a *HealthByTimeApiService) GetNetworkInsightApplicationHealthByTime(ctx co
 
 // Execute executes the request
 //  @return []GetNetworkInsightApplicationHealthByTime200ResponseInner
-func (a *HealthByTimeApiService) GetNetworkInsightApplicationHealthByTimeExecute(r HealthByTimeApiGetNetworkInsightApplicationHealthByTimeRequest) ([]GetNetworkInsightApplicationHealthByTime200ResponseInner, *http.Response, error) {
+func (a *HealthByTimeAPIService) GetNetworkInsightApplicationHealthByTimeExecute(r HealthByTimeAPIGetNetworkInsightApplicationHealthByTimeRequest) ([]GetNetworkInsightApplicationHealthByTime200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -91,7 +91,7 @@ func (a *HealthByTimeApiService) GetNetworkInsightApplicationHealthByTimeExecute
 		localVarReturnValue  []GetNetworkInsightApplicationHealthByTime200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HealthByTimeApiService.GetNetworkInsightApplicationHealthByTime")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HealthByTimeAPIService.GetNetworkInsightApplicationHealthByTime")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

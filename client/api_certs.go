@@ -20,17 +20,17 @@ import (
 )
 
 
-// CertsApiService CertsApi service
-type CertsApiService service
+// CertsAPIService CertsAPI service
+type CertsAPIService service
 
-type CertsApiGetNetworkSmDeviceCertsRequest struct {
+type CertsAPIGetNetworkSmDeviceCertsRequest struct {
 	ctx context.Context
-	ApiService *CertsApiService
+	ApiService *CertsAPIService
 	networkId string
 	deviceId string
 }
 
-func (r CertsApiGetNetworkSmDeviceCertsRequest) Execute() ([]GetNetworkSmDeviceCerts200ResponseInner, *http.Response, error) {
+func (r CertsAPIGetNetworkSmDeviceCertsRequest) Execute() ([]GetNetworkSmDeviceCerts200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceCertsExecute(r)
 }
 
@@ -42,10 +42,10 @@ List the certs on a device
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return CertsApiGetNetworkSmDeviceCertsRequest
+ @return CertsAPIGetNetworkSmDeviceCertsRequest
 */
-func (a *CertsApiService) GetNetworkSmDeviceCerts(ctx context.Context, networkId string, deviceId string) CertsApiGetNetworkSmDeviceCertsRequest {
-	return CertsApiGetNetworkSmDeviceCertsRequest{
+func (a *CertsAPIService) GetNetworkSmDeviceCerts(ctx context.Context, networkId string, deviceId string) CertsAPIGetNetworkSmDeviceCertsRequest {
+	return CertsAPIGetNetworkSmDeviceCertsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -55,7 +55,7 @@ func (a *CertsApiService) GetNetworkSmDeviceCerts(ctx context.Context, networkId
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceCerts200ResponseInner
-func (a *CertsApiService) GetNetworkSmDeviceCertsExecute(r CertsApiGetNetworkSmDeviceCertsRequest) ([]GetNetworkSmDeviceCerts200ResponseInner, *http.Response, error) {
+func (a *CertsAPIService) GetNetworkSmDeviceCertsExecute(r CertsAPIGetNetworkSmDeviceCertsRequest) ([]GetNetworkSmDeviceCerts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -63,7 +63,7 @@ func (a *CertsApiService) GetNetworkSmDeviceCertsExecute(r CertsApiGetNetworkSmD
 		localVarReturnValue  []GetNetworkSmDeviceCerts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertsApiService.GetNetworkSmDeviceCerts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertsAPIService.GetNetworkSmDeviceCerts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

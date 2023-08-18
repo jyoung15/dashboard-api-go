@@ -20,16 +20,16 @@ import (
 )
 
 
-// UplinkBandwidthApiService UplinkBandwidthApi service
-type UplinkBandwidthApiService service
+// UplinkBandwidthAPIService UplinkBandwidthAPI service
+type UplinkBandwidthAPIService service
 
-type UplinkBandwidthApiGetNetworkApplianceTrafficShapingUplinkBandwidthRequest struct {
+type UplinkBandwidthAPIGetNetworkApplianceTrafficShapingUplinkBandwidthRequest struct {
 	ctx context.Context
-	ApiService *UplinkBandwidthApiService
+	ApiService *UplinkBandwidthAPIService
 	networkId string
 }
 
-func (r UplinkBandwidthApiGetNetworkApplianceTrafficShapingUplinkBandwidthRequest) Execute() (*GetNetworkApplianceTrafficShapingUplinkBandwidth200Response, *http.Response, error) {
+func (r UplinkBandwidthAPIGetNetworkApplianceTrafficShapingUplinkBandwidthRequest) Execute() (*GetNetworkApplianceTrafficShapingUplinkBandwidth200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceTrafficShapingUplinkBandwidthExecute(r)
 }
 
@@ -40,10 +40,10 @@ Returns the uplink bandwidth limits for your MX network. This may not reflect th
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return UplinkBandwidthApiGetNetworkApplianceTrafficShapingUplinkBandwidthRequest
+ @return UplinkBandwidthAPIGetNetworkApplianceTrafficShapingUplinkBandwidthRequest
 */
-func (a *UplinkBandwidthApiService) GetNetworkApplianceTrafficShapingUplinkBandwidth(ctx context.Context, networkId string) UplinkBandwidthApiGetNetworkApplianceTrafficShapingUplinkBandwidthRequest {
-	return UplinkBandwidthApiGetNetworkApplianceTrafficShapingUplinkBandwidthRequest{
+func (a *UplinkBandwidthAPIService) GetNetworkApplianceTrafficShapingUplinkBandwidth(ctx context.Context, networkId string) UplinkBandwidthAPIGetNetworkApplianceTrafficShapingUplinkBandwidthRequest {
+	return UplinkBandwidthAPIGetNetworkApplianceTrafficShapingUplinkBandwidthRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *UplinkBandwidthApiService) GetNetworkApplianceTrafficShapingUplinkBandw
 
 // Execute executes the request
 //  @return GetNetworkApplianceTrafficShapingUplinkBandwidth200Response
-func (a *UplinkBandwidthApiService) GetNetworkApplianceTrafficShapingUplinkBandwidthExecute(r UplinkBandwidthApiGetNetworkApplianceTrafficShapingUplinkBandwidthRequest) (*GetNetworkApplianceTrafficShapingUplinkBandwidth200Response, *http.Response, error) {
+func (a *UplinkBandwidthAPIService) GetNetworkApplianceTrafficShapingUplinkBandwidthExecute(r UplinkBandwidthAPIGetNetworkApplianceTrafficShapingUplinkBandwidthRequest) (*GetNetworkApplianceTrafficShapingUplinkBandwidth200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *UplinkBandwidthApiService) GetNetworkApplianceTrafficShapingUplinkBandw
 		localVarReturnValue  *GetNetworkApplianceTrafficShapingUplinkBandwidth200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinkBandwidthApiService.GetNetworkApplianceTrafficShapingUplinkBandwidth")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinkBandwidthAPIService.GetNetworkApplianceTrafficShapingUplinkBandwidth")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *UplinkBandwidthApiService) GetNetworkApplianceTrafficShapingUplinkBandw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type UplinkBandwidthApiUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest struct {
+type UplinkBandwidthAPIUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest struct {
 	ctx context.Context
-	ApiService *UplinkBandwidthApiService
+	ApiService *UplinkBandwidthAPIService
 	networkId string
 	updateNetworkApplianceTrafficShapingUplinkBandwidthRequest *UpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest
 }
 
-func (r UplinkBandwidthApiUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest) UpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest(updateNetworkApplianceTrafficShapingUplinkBandwidthRequest UpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest) UplinkBandwidthApiUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest {
+func (r UplinkBandwidthAPIUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest) UpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest(updateNetworkApplianceTrafficShapingUplinkBandwidthRequest UpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest) UplinkBandwidthAPIUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest {
 	r.updateNetworkApplianceTrafficShapingUplinkBandwidthRequest = &updateNetworkApplianceTrafficShapingUplinkBandwidthRequest
 	return r
 }
 
-func (r UplinkBandwidthApiUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r UplinkBandwidthAPIUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceTrafficShapingUplinkBandwidthExecute(r)
 }
 
@@ -163,10 +163,10 @@ Updates the uplink bandwidth settings for your MX network.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return UplinkBandwidthApiUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest
+ @return UplinkBandwidthAPIUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest
 */
-func (a *UplinkBandwidthApiService) UpdateNetworkApplianceTrafficShapingUplinkBandwidth(ctx context.Context, networkId string) UplinkBandwidthApiUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest {
-	return UplinkBandwidthApiUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest{
+func (a *UplinkBandwidthAPIService) UpdateNetworkApplianceTrafficShapingUplinkBandwidth(ctx context.Context, networkId string) UplinkBandwidthAPIUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest {
+	return UplinkBandwidthAPIUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -175,7 +175,7 @@ func (a *UplinkBandwidthApiService) UpdateNetworkApplianceTrafficShapingUplinkBa
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *UplinkBandwidthApiService) UpdateNetworkApplianceTrafficShapingUplinkBandwidthExecute(r UplinkBandwidthApiUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest) (map[string]interface{}, *http.Response, error) {
+func (a *UplinkBandwidthAPIService) UpdateNetworkApplianceTrafficShapingUplinkBandwidthExecute(r UplinkBandwidthAPIUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *UplinkBandwidthApiService) UpdateNetworkApplianceTrafficShapingUplinkBa
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinkBandwidthApiService.UpdateNetworkApplianceTrafficShapingUplinkBandwidth")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinkBandwidthAPIService.UpdateNetworkApplianceTrafficShapingUplinkBandwidth")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

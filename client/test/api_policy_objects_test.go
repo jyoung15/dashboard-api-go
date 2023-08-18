@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing PolicyObjectsApiService
+Testing PolicyObjectsAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_PolicyObjectsApiService(t *testing.T) {
+func Test_client_PolicyObjectsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test PolicyObjectsApiService CreateOrganizationPolicyObject", func(t *testing.T) {
+	t.Run("Test PolicyObjectsAPIService CreateOrganizationPolicyObject", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.PolicyObjectsApi.CreateOrganizationPolicyObject(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.PolicyObjectsAPI.CreateOrganizationPolicyObject(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_PolicyObjectsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PolicyObjectsApiService CreateOrganizationPolicyObjectsGroup", func(t *testing.T) {
+	t.Run("Test PolicyObjectsAPIService CreateOrganizationPolicyObjectsGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.PolicyObjectsApi.CreateOrganizationPolicyObjectsGroup(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.PolicyObjectsAPI.CreateOrganizationPolicyObjectsGroup(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,42 +50,42 @@ func Test_client_PolicyObjectsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PolicyObjectsApiService DeleteOrganizationPolicyObject", func(t *testing.T) {
+	t.Run("Test PolicyObjectsAPIService DeleteOrganizationPolicyObject", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var policyObjectId string
 
-		httpRes, err := apiClient.PolicyObjectsApi.DeleteOrganizationPolicyObject(context.Background(), organizationId, policyObjectId).Execute()
+		httpRes, err := apiClient.PolicyObjectsAPI.DeleteOrganizationPolicyObject(context.Background(), organizationId, policyObjectId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test PolicyObjectsApiService DeleteOrganizationPolicyObjectsGroup", func(t *testing.T) {
+	t.Run("Test PolicyObjectsAPIService DeleteOrganizationPolicyObjectsGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var policyObjectGroupId string
 
-		httpRes, err := apiClient.PolicyObjectsApi.DeleteOrganizationPolicyObjectsGroup(context.Background(), organizationId, policyObjectGroupId).Execute()
+		httpRes, err := apiClient.PolicyObjectsAPI.DeleteOrganizationPolicyObjectsGroup(context.Background(), organizationId, policyObjectGroupId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test PolicyObjectsApiService GetOrganizationPolicyObject", func(t *testing.T) {
+	t.Run("Test PolicyObjectsAPIService GetOrganizationPolicyObject", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var policyObjectId string
 
-		resp, httpRes, err := apiClient.PolicyObjectsApi.GetOrganizationPolicyObject(context.Background(), organizationId, policyObjectId).Execute()
+		resp, httpRes, err := apiClient.PolicyObjectsAPI.GetOrganizationPolicyObject(context.Background(), organizationId, policyObjectId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -93,13 +93,13 @@ func Test_client_PolicyObjectsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PolicyObjectsApiService GetOrganizationPolicyObjects", func(t *testing.T) {
+	t.Run("Test PolicyObjectsAPIService GetOrganizationPolicyObjects", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.PolicyObjectsApi.GetOrganizationPolicyObjects(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.PolicyObjectsAPI.GetOrganizationPolicyObjects(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -107,14 +107,14 @@ func Test_client_PolicyObjectsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PolicyObjectsApiService GetOrganizationPolicyObjectsGroup", func(t *testing.T) {
+	t.Run("Test PolicyObjectsAPIService GetOrganizationPolicyObjectsGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var policyObjectGroupId string
 
-		resp, httpRes, err := apiClient.PolicyObjectsApi.GetOrganizationPolicyObjectsGroup(context.Background(), organizationId, policyObjectGroupId).Execute()
+		resp, httpRes, err := apiClient.PolicyObjectsAPI.GetOrganizationPolicyObjectsGroup(context.Background(), organizationId, policyObjectGroupId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -122,13 +122,13 @@ func Test_client_PolicyObjectsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PolicyObjectsApiService GetOrganizationPolicyObjectsGroups", func(t *testing.T) {
+	t.Run("Test PolicyObjectsAPIService GetOrganizationPolicyObjectsGroups", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.PolicyObjectsApi.GetOrganizationPolicyObjectsGroups(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.PolicyObjectsAPI.GetOrganizationPolicyObjectsGroups(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -136,14 +136,14 @@ func Test_client_PolicyObjectsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PolicyObjectsApiService UpdateOrganizationPolicyObject", func(t *testing.T) {
+	t.Run("Test PolicyObjectsAPIService UpdateOrganizationPolicyObject", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var policyObjectId string
 
-		resp, httpRes, err := apiClient.PolicyObjectsApi.UpdateOrganizationPolicyObject(context.Background(), organizationId, policyObjectId).Execute()
+		resp, httpRes, err := apiClient.PolicyObjectsAPI.UpdateOrganizationPolicyObject(context.Background(), organizationId, policyObjectId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -151,14 +151,14 @@ func Test_client_PolicyObjectsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PolicyObjectsApiService UpdateOrganizationPolicyObjectsGroup", func(t *testing.T) {
+	t.Run("Test PolicyObjectsAPIService UpdateOrganizationPolicyObjectsGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var policyObjectGroupId string
 
-		resp, httpRes, err := apiClient.PolicyObjectsApi.UpdateOrganizationPolicyObjectsGroup(context.Background(), organizationId, policyObjectGroupId).Execute()
+		resp, httpRes, err := apiClient.PolicyObjectsAPI.UpdateOrganizationPolicyObjectsGroup(context.Background(), organizationId, policyObjectGroupId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

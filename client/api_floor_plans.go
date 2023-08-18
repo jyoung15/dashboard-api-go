@@ -20,22 +20,22 @@ import (
 )
 
 
-// FloorPlansApiService FloorPlansApi service
-type FloorPlansApiService service
+// FloorPlansAPIService FloorPlansAPI service
+type FloorPlansAPIService service
 
-type FloorPlansApiCreateNetworkFloorPlanRequest struct {
+type FloorPlansAPICreateNetworkFloorPlanRequest struct {
 	ctx context.Context
-	ApiService *FloorPlansApiService
+	ApiService *FloorPlansAPIService
 	networkId string
 	createNetworkFloorPlanRequest *CreateNetworkFloorPlanRequest
 }
 
-func (r FloorPlansApiCreateNetworkFloorPlanRequest) CreateNetworkFloorPlanRequest(createNetworkFloorPlanRequest CreateNetworkFloorPlanRequest) FloorPlansApiCreateNetworkFloorPlanRequest {
+func (r FloorPlansAPICreateNetworkFloorPlanRequest) CreateNetworkFloorPlanRequest(createNetworkFloorPlanRequest CreateNetworkFloorPlanRequest) FloorPlansAPICreateNetworkFloorPlanRequest {
 	r.createNetworkFloorPlanRequest = &createNetworkFloorPlanRequest
 	return r
 }
 
-func (r FloorPlansApiCreateNetworkFloorPlanRequest) Execute() (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
+func (r FloorPlansAPICreateNetworkFloorPlanRequest) Execute() (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateNetworkFloorPlanExecute(r)
 }
 
@@ -46,10 +46,10 @@ Upload a floor plan
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return FloorPlansApiCreateNetworkFloorPlanRequest
+ @return FloorPlansAPICreateNetworkFloorPlanRequest
 */
-func (a *FloorPlansApiService) CreateNetworkFloorPlan(ctx context.Context, networkId string) FloorPlansApiCreateNetworkFloorPlanRequest {
-	return FloorPlansApiCreateNetworkFloorPlanRequest{
+func (a *FloorPlansAPIService) CreateNetworkFloorPlan(ctx context.Context, networkId string) FloorPlansAPICreateNetworkFloorPlanRequest {
+	return FloorPlansAPICreateNetworkFloorPlanRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -58,7 +58,7 @@ func (a *FloorPlansApiService) CreateNetworkFloorPlan(ctx context.Context, netwo
 
 // Execute executes the request
 //  @return GetNetworkFloorPlans200ResponseInner
-func (a *FloorPlansApiService) CreateNetworkFloorPlanExecute(r FloorPlansApiCreateNetworkFloorPlanRequest) (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
+func (a *FloorPlansAPIService) CreateNetworkFloorPlanExecute(r FloorPlansAPICreateNetworkFloorPlanRequest) (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *FloorPlansApiService) CreateNetworkFloorPlanExecute(r FloorPlansApiCrea
 		localVarReturnValue  *GetNetworkFloorPlans200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FloorPlansApiService.CreateNetworkFloorPlan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FloorPlansAPIService.CreateNetworkFloorPlan")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,14 +151,14 @@ func (a *FloorPlansApiService) CreateNetworkFloorPlanExecute(r FloorPlansApiCrea
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type FloorPlansApiDeleteNetworkFloorPlanRequest struct {
+type FloorPlansAPIDeleteNetworkFloorPlanRequest struct {
 	ctx context.Context
-	ApiService *FloorPlansApiService
+	ApiService *FloorPlansAPIService
 	networkId string
 	floorPlanId string
 }
 
-func (r FloorPlansApiDeleteNetworkFloorPlanRequest) Execute() (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
+func (r FloorPlansAPIDeleteNetworkFloorPlanRequest) Execute() (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
 	return r.ApiService.DeleteNetworkFloorPlanExecute(r)
 }
 
@@ -170,10 +170,10 @@ Destroy a floor plan
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param floorPlanId Floor plan ID
- @return FloorPlansApiDeleteNetworkFloorPlanRequest
+ @return FloorPlansAPIDeleteNetworkFloorPlanRequest
 */
-func (a *FloorPlansApiService) DeleteNetworkFloorPlan(ctx context.Context, networkId string, floorPlanId string) FloorPlansApiDeleteNetworkFloorPlanRequest {
-	return FloorPlansApiDeleteNetworkFloorPlanRequest{
+func (a *FloorPlansAPIService) DeleteNetworkFloorPlan(ctx context.Context, networkId string, floorPlanId string) FloorPlansAPIDeleteNetworkFloorPlanRequest {
+	return FloorPlansAPIDeleteNetworkFloorPlanRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -183,7 +183,7 @@ func (a *FloorPlansApiService) DeleteNetworkFloorPlan(ctx context.Context, netwo
 
 // Execute executes the request
 //  @return GetNetworkFloorPlans200ResponseInner
-func (a *FloorPlansApiService) DeleteNetworkFloorPlanExecute(r FloorPlansApiDeleteNetworkFloorPlanRequest) (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
+func (a *FloorPlansAPIService) DeleteNetworkFloorPlanExecute(r FloorPlansAPIDeleteNetworkFloorPlanRequest) (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -191,7 +191,7 @@ func (a *FloorPlansApiService) DeleteNetworkFloorPlanExecute(r FloorPlansApiDele
 		localVarReturnValue  *GetNetworkFloorPlans200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FloorPlansApiService.DeleteNetworkFloorPlan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FloorPlansAPIService.DeleteNetworkFloorPlan")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -272,14 +272,14 @@ func (a *FloorPlansApiService) DeleteNetworkFloorPlanExecute(r FloorPlansApiDele
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type FloorPlansApiGetNetworkFloorPlanRequest struct {
+type FloorPlansAPIGetNetworkFloorPlanRequest struct {
 	ctx context.Context
-	ApiService *FloorPlansApiService
+	ApiService *FloorPlansAPIService
 	networkId string
 	floorPlanId string
 }
 
-func (r FloorPlansApiGetNetworkFloorPlanRequest) Execute() (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
+func (r FloorPlansAPIGetNetworkFloorPlanRequest) Execute() (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkFloorPlanExecute(r)
 }
 
@@ -291,10 +291,10 @@ Find a floor plan by ID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param floorPlanId Floor plan ID
- @return FloorPlansApiGetNetworkFloorPlanRequest
+ @return FloorPlansAPIGetNetworkFloorPlanRequest
 */
-func (a *FloorPlansApiService) GetNetworkFloorPlan(ctx context.Context, networkId string, floorPlanId string) FloorPlansApiGetNetworkFloorPlanRequest {
-	return FloorPlansApiGetNetworkFloorPlanRequest{
+func (a *FloorPlansAPIService) GetNetworkFloorPlan(ctx context.Context, networkId string, floorPlanId string) FloorPlansAPIGetNetworkFloorPlanRequest {
+	return FloorPlansAPIGetNetworkFloorPlanRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -304,7 +304,7 @@ func (a *FloorPlansApiService) GetNetworkFloorPlan(ctx context.Context, networkI
 
 // Execute executes the request
 //  @return GetNetworkFloorPlans200ResponseInner
-func (a *FloorPlansApiService) GetNetworkFloorPlanExecute(r FloorPlansApiGetNetworkFloorPlanRequest) (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
+func (a *FloorPlansAPIService) GetNetworkFloorPlanExecute(r FloorPlansAPIGetNetworkFloorPlanRequest) (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -312,7 +312,7 @@ func (a *FloorPlansApiService) GetNetworkFloorPlanExecute(r FloorPlansApiGetNetw
 		localVarReturnValue  *GetNetworkFloorPlans200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FloorPlansApiService.GetNetworkFloorPlan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FloorPlansAPIService.GetNetworkFloorPlan")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -393,13 +393,13 @@ func (a *FloorPlansApiService) GetNetworkFloorPlanExecute(r FloorPlansApiGetNetw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type FloorPlansApiGetNetworkFloorPlansRequest struct {
+type FloorPlansAPIGetNetworkFloorPlansRequest struct {
 	ctx context.Context
-	ApiService *FloorPlansApiService
+	ApiService *FloorPlansAPIService
 	networkId string
 }
 
-func (r FloorPlansApiGetNetworkFloorPlansRequest) Execute() ([]GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
+func (r FloorPlansAPIGetNetworkFloorPlansRequest) Execute() ([]GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkFloorPlansExecute(r)
 }
 
@@ -410,10 +410,10 @@ List the floor plans that belong to your network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return FloorPlansApiGetNetworkFloorPlansRequest
+ @return FloorPlansAPIGetNetworkFloorPlansRequest
 */
-func (a *FloorPlansApiService) GetNetworkFloorPlans(ctx context.Context, networkId string) FloorPlansApiGetNetworkFloorPlansRequest {
-	return FloorPlansApiGetNetworkFloorPlansRequest{
+func (a *FloorPlansAPIService) GetNetworkFloorPlans(ctx context.Context, networkId string) FloorPlansAPIGetNetworkFloorPlansRequest {
+	return FloorPlansAPIGetNetworkFloorPlansRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -422,7 +422,7 @@ func (a *FloorPlansApiService) GetNetworkFloorPlans(ctx context.Context, network
 
 // Execute executes the request
 //  @return []GetNetworkFloorPlans200ResponseInner
-func (a *FloorPlansApiService) GetNetworkFloorPlansExecute(r FloorPlansApiGetNetworkFloorPlansRequest) ([]GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
+func (a *FloorPlansAPIService) GetNetworkFloorPlansExecute(r FloorPlansAPIGetNetworkFloorPlansRequest) ([]GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -430,7 +430,7 @@ func (a *FloorPlansApiService) GetNetworkFloorPlansExecute(r FloorPlansApiGetNet
 		localVarReturnValue  []GetNetworkFloorPlans200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FloorPlansApiService.GetNetworkFloorPlans")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FloorPlansAPIService.GetNetworkFloorPlans")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -510,20 +510,20 @@ func (a *FloorPlansApiService) GetNetworkFloorPlansExecute(r FloorPlansApiGetNet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type FloorPlansApiUpdateNetworkFloorPlanRequest struct {
+type FloorPlansAPIUpdateNetworkFloorPlanRequest struct {
 	ctx context.Context
-	ApiService *FloorPlansApiService
+	ApiService *FloorPlansAPIService
 	networkId string
 	floorPlanId string
 	updateNetworkFloorPlanRequest *UpdateNetworkFloorPlanRequest
 }
 
-func (r FloorPlansApiUpdateNetworkFloorPlanRequest) UpdateNetworkFloorPlanRequest(updateNetworkFloorPlanRequest UpdateNetworkFloorPlanRequest) FloorPlansApiUpdateNetworkFloorPlanRequest {
+func (r FloorPlansAPIUpdateNetworkFloorPlanRequest) UpdateNetworkFloorPlanRequest(updateNetworkFloorPlanRequest UpdateNetworkFloorPlanRequest) FloorPlansAPIUpdateNetworkFloorPlanRequest {
 	r.updateNetworkFloorPlanRequest = &updateNetworkFloorPlanRequest
 	return r
 }
 
-func (r FloorPlansApiUpdateNetworkFloorPlanRequest) Execute() (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
+func (r FloorPlansAPIUpdateNetworkFloorPlanRequest) Execute() (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkFloorPlanExecute(r)
 }
 
@@ -535,10 +535,10 @@ Update a floor plan's geolocation and other meta data
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param floorPlanId Floor plan ID
- @return FloorPlansApiUpdateNetworkFloorPlanRequest
+ @return FloorPlansAPIUpdateNetworkFloorPlanRequest
 */
-func (a *FloorPlansApiService) UpdateNetworkFloorPlan(ctx context.Context, networkId string, floorPlanId string) FloorPlansApiUpdateNetworkFloorPlanRequest {
-	return FloorPlansApiUpdateNetworkFloorPlanRequest{
+func (a *FloorPlansAPIService) UpdateNetworkFloorPlan(ctx context.Context, networkId string, floorPlanId string) FloorPlansAPIUpdateNetworkFloorPlanRequest {
+	return FloorPlansAPIUpdateNetworkFloorPlanRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -548,7 +548,7 @@ func (a *FloorPlansApiService) UpdateNetworkFloorPlan(ctx context.Context, netwo
 
 // Execute executes the request
 //  @return GetNetworkFloorPlans200ResponseInner
-func (a *FloorPlansApiService) UpdateNetworkFloorPlanExecute(r FloorPlansApiUpdateNetworkFloorPlanRequest) (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
+func (a *FloorPlansAPIService) UpdateNetworkFloorPlanExecute(r FloorPlansAPIUpdateNetworkFloorPlanRequest) (*GetNetworkFloorPlans200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -556,7 +556,7 @@ func (a *FloorPlansApiService) UpdateNetworkFloorPlanExecute(r FloorPlansApiUpda
 		localVarReturnValue  *GetNetworkFloorPlans200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FloorPlansApiService.UpdateNetworkFloorPlan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FloorPlansAPIService.UpdateNetworkFloorPlan")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

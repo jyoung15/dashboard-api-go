@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing AirMarshalApiService
+Testing AirMarshalAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_AirMarshalApiService(t *testing.T) {
+func Test_client_AirMarshalAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test AirMarshalApiService GetNetworkWirelessAirMarshal", func(t *testing.T) {
+	t.Run("Test AirMarshalAPIService GetNetworkWirelessAirMarshal", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.AirMarshalApi.GetNetworkWirelessAirMarshal(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.AirMarshalAPI.GetNetworkWirelessAirMarshal(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

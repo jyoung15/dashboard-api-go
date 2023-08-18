@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing QualityAndRetentionApiService
+Testing QualityAndRetentionAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_QualityAndRetentionApiService(t *testing.T) {
+func Test_client_QualityAndRetentionAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test QualityAndRetentionApiService GetDeviceCameraQualityAndRetention", func(t *testing.T) {
+	t.Run("Test QualityAndRetentionAPIService GetDeviceCameraQualityAndRetention", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.QualityAndRetentionApi.GetDeviceCameraQualityAndRetention(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.QualityAndRetentionAPI.GetDeviceCameraQualityAndRetention(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_QualityAndRetentionApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test QualityAndRetentionApiService UpdateDeviceCameraQualityAndRetention", func(t *testing.T) {
+	t.Run("Test QualityAndRetentionAPIService UpdateDeviceCameraQualityAndRetention", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.QualityAndRetentionApi.UpdateDeviceCameraQualityAndRetention(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.QualityAndRetentionAPI.UpdateDeviceCameraQualityAndRetention(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -20,16 +20,16 @@ import (
 )
 
 
-// ConnectivityMonitoringDestinationsApiService ConnectivityMonitoringDestinationsApi service
-type ConnectivityMonitoringDestinationsApiService service
+// ConnectivityMonitoringDestinationsAPIService ConnectivityMonitoringDestinationsAPI service
+type ConnectivityMonitoringDestinationsAPIService service
 
-type ConnectivityMonitoringDestinationsApiGetNetworkApplianceConnectivityMonitoringDestinationsRequest struct {
+type ConnectivityMonitoringDestinationsAPIGetNetworkApplianceConnectivityMonitoringDestinationsRequest struct {
 	ctx context.Context
-	ApiService *ConnectivityMonitoringDestinationsApiService
+	ApiService *ConnectivityMonitoringDestinationsAPIService
 	networkId string
 }
 
-func (r ConnectivityMonitoringDestinationsApiGetNetworkApplianceConnectivityMonitoringDestinationsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ConnectivityMonitoringDestinationsAPIGetNetworkApplianceConnectivityMonitoringDestinationsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceConnectivityMonitoringDestinationsExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the connectivity testing destinations for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ConnectivityMonitoringDestinationsApiGetNetworkApplianceConnectivityMonitoringDestinationsRequest
+ @return ConnectivityMonitoringDestinationsAPIGetNetworkApplianceConnectivityMonitoringDestinationsRequest
 */
-func (a *ConnectivityMonitoringDestinationsApiService) GetNetworkApplianceConnectivityMonitoringDestinations(ctx context.Context, networkId string) ConnectivityMonitoringDestinationsApiGetNetworkApplianceConnectivityMonitoringDestinationsRequest {
-	return ConnectivityMonitoringDestinationsApiGetNetworkApplianceConnectivityMonitoringDestinationsRequest{
+func (a *ConnectivityMonitoringDestinationsAPIService) GetNetworkApplianceConnectivityMonitoringDestinations(ctx context.Context, networkId string) ConnectivityMonitoringDestinationsAPIGetNetworkApplianceConnectivityMonitoringDestinationsRequest {
+	return ConnectivityMonitoringDestinationsAPIGetNetworkApplianceConnectivityMonitoringDestinationsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *ConnectivityMonitoringDestinationsApiService) GetNetworkApplianceConnec
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ConnectivityMonitoringDestinationsApiService) GetNetworkApplianceConnectivityMonitoringDestinationsExecute(r ConnectivityMonitoringDestinationsApiGetNetworkApplianceConnectivityMonitoringDestinationsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ConnectivityMonitoringDestinationsAPIService) GetNetworkApplianceConnectivityMonitoringDestinationsExecute(r ConnectivityMonitoringDestinationsAPIGetNetworkApplianceConnectivityMonitoringDestinationsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *ConnectivityMonitoringDestinationsApiService) GetNetworkApplianceConnec
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectivityMonitoringDestinationsApiService.GetNetworkApplianceConnectivityMonitoringDestinations")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectivityMonitoringDestinationsAPIService.GetNetworkApplianceConnectivityMonitoringDestinations")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,13 +140,13 @@ func (a *ConnectivityMonitoringDestinationsApiService) GetNetworkApplianceConnec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ConnectivityMonitoringDestinationsApiGetNetworkCellularGatewayConnectivityMonitoringDestinationsRequest struct {
+type ConnectivityMonitoringDestinationsAPIGetNetworkCellularGatewayConnectivityMonitoringDestinationsRequest struct {
 	ctx context.Context
-	ApiService *ConnectivityMonitoringDestinationsApiService
+	ApiService *ConnectivityMonitoringDestinationsAPIService
 	networkId string
 }
 
-func (r ConnectivityMonitoringDestinationsApiGetNetworkCellularGatewayConnectivityMonitoringDestinationsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ConnectivityMonitoringDestinationsAPIGetNetworkCellularGatewayConnectivityMonitoringDestinationsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkCellularGatewayConnectivityMonitoringDestinationsExecute(r)
 }
 
@@ -157,10 +157,10 @@ Return the connectivity testing destinations for an MG network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ConnectivityMonitoringDestinationsApiGetNetworkCellularGatewayConnectivityMonitoringDestinationsRequest
+ @return ConnectivityMonitoringDestinationsAPIGetNetworkCellularGatewayConnectivityMonitoringDestinationsRequest
 */
-func (a *ConnectivityMonitoringDestinationsApiService) GetNetworkCellularGatewayConnectivityMonitoringDestinations(ctx context.Context, networkId string) ConnectivityMonitoringDestinationsApiGetNetworkCellularGatewayConnectivityMonitoringDestinationsRequest {
-	return ConnectivityMonitoringDestinationsApiGetNetworkCellularGatewayConnectivityMonitoringDestinationsRequest{
+func (a *ConnectivityMonitoringDestinationsAPIService) GetNetworkCellularGatewayConnectivityMonitoringDestinations(ctx context.Context, networkId string) ConnectivityMonitoringDestinationsAPIGetNetworkCellularGatewayConnectivityMonitoringDestinationsRequest {
+	return ConnectivityMonitoringDestinationsAPIGetNetworkCellularGatewayConnectivityMonitoringDestinationsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -169,7 +169,7 @@ func (a *ConnectivityMonitoringDestinationsApiService) GetNetworkCellularGateway
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ConnectivityMonitoringDestinationsApiService) GetNetworkCellularGatewayConnectivityMonitoringDestinationsExecute(r ConnectivityMonitoringDestinationsApiGetNetworkCellularGatewayConnectivityMonitoringDestinationsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ConnectivityMonitoringDestinationsAPIService) GetNetworkCellularGatewayConnectivityMonitoringDestinationsExecute(r ConnectivityMonitoringDestinationsAPIGetNetworkCellularGatewayConnectivityMonitoringDestinationsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -177,7 +177,7 @@ func (a *ConnectivityMonitoringDestinationsApiService) GetNetworkCellularGateway
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectivityMonitoringDestinationsApiService.GetNetworkCellularGatewayConnectivityMonitoringDestinations")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectivityMonitoringDestinationsAPIService.GetNetworkCellularGatewayConnectivityMonitoringDestinations")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -257,19 +257,19 @@ func (a *ConnectivityMonitoringDestinationsApiService) GetNetworkCellularGateway
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ConnectivityMonitoringDestinationsApiUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest struct {
+type ConnectivityMonitoringDestinationsAPIUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest struct {
 	ctx context.Context
-	ApiService *ConnectivityMonitoringDestinationsApiService
+	ApiService *ConnectivityMonitoringDestinationsAPIService
 	networkId string
 	updateNetworkApplianceConnectivityMonitoringDestinationsRequest *UpdateNetworkApplianceConnectivityMonitoringDestinationsRequest
 }
 
-func (r ConnectivityMonitoringDestinationsApiUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest) UpdateNetworkApplianceConnectivityMonitoringDestinationsRequest(updateNetworkApplianceConnectivityMonitoringDestinationsRequest UpdateNetworkApplianceConnectivityMonitoringDestinationsRequest) ConnectivityMonitoringDestinationsApiUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest {
+func (r ConnectivityMonitoringDestinationsAPIUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest) UpdateNetworkApplianceConnectivityMonitoringDestinationsRequest(updateNetworkApplianceConnectivityMonitoringDestinationsRequest UpdateNetworkApplianceConnectivityMonitoringDestinationsRequest) ConnectivityMonitoringDestinationsAPIUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest {
 	r.updateNetworkApplianceConnectivityMonitoringDestinationsRequest = &updateNetworkApplianceConnectivityMonitoringDestinationsRequest
 	return r
 }
 
-func (r ConnectivityMonitoringDestinationsApiUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ConnectivityMonitoringDestinationsAPIUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceConnectivityMonitoringDestinationsExecute(r)
 }
 
@@ -280,10 +280,10 @@ Update the connectivity testing destinations for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ConnectivityMonitoringDestinationsApiUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest
+ @return ConnectivityMonitoringDestinationsAPIUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest
 */
-func (a *ConnectivityMonitoringDestinationsApiService) UpdateNetworkApplianceConnectivityMonitoringDestinations(ctx context.Context, networkId string) ConnectivityMonitoringDestinationsApiUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest {
-	return ConnectivityMonitoringDestinationsApiUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest{
+func (a *ConnectivityMonitoringDestinationsAPIService) UpdateNetworkApplianceConnectivityMonitoringDestinations(ctx context.Context, networkId string) ConnectivityMonitoringDestinationsAPIUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest {
+	return ConnectivityMonitoringDestinationsAPIUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -292,7 +292,7 @@ func (a *ConnectivityMonitoringDestinationsApiService) UpdateNetworkApplianceCon
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ConnectivityMonitoringDestinationsApiService) UpdateNetworkApplianceConnectivityMonitoringDestinationsExecute(r ConnectivityMonitoringDestinationsApiUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ConnectivityMonitoringDestinationsAPIService) UpdateNetworkApplianceConnectivityMonitoringDestinationsExecute(r ConnectivityMonitoringDestinationsAPIUpdateNetworkApplianceConnectivityMonitoringDestinationsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -300,7 +300,7 @@ func (a *ConnectivityMonitoringDestinationsApiService) UpdateNetworkApplianceCon
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectivityMonitoringDestinationsApiService.UpdateNetworkApplianceConnectivityMonitoringDestinations")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectivityMonitoringDestinationsAPIService.UpdateNetworkApplianceConnectivityMonitoringDestinations")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -382,19 +382,19 @@ func (a *ConnectivityMonitoringDestinationsApiService) UpdateNetworkApplianceCon
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ConnectivityMonitoringDestinationsApiUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest struct {
+type ConnectivityMonitoringDestinationsAPIUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest struct {
 	ctx context.Context
-	ApiService *ConnectivityMonitoringDestinationsApiService
+	ApiService *ConnectivityMonitoringDestinationsAPIService
 	networkId string
 	updateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest *UpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest
 }
 
-func (r ConnectivityMonitoringDestinationsApiUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest) UpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest(updateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest UpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest) ConnectivityMonitoringDestinationsApiUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest {
+func (r ConnectivityMonitoringDestinationsAPIUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest) UpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest(updateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest UpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest) ConnectivityMonitoringDestinationsAPIUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest {
 	r.updateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest = &updateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest
 	return r
 }
 
-func (r ConnectivityMonitoringDestinationsApiUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ConnectivityMonitoringDestinationsAPIUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkCellularGatewayConnectivityMonitoringDestinationsExecute(r)
 }
 
@@ -405,10 +405,10 @@ Update the connectivity testing destinations for an MG network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ConnectivityMonitoringDestinationsApiUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest
+ @return ConnectivityMonitoringDestinationsAPIUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest
 */
-func (a *ConnectivityMonitoringDestinationsApiService) UpdateNetworkCellularGatewayConnectivityMonitoringDestinations(ctx context.Context, networkId string) ConnectivityMonitoringDestinationsApiUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest {
-	return ConnectivityMonitoringDestinationsApiUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest{
+func (a *ConnectivityMonitoringDestinationsAPIService) UpdateNetworkCellularGatewayConnectivityMonitoringDestinations(ctx context.Context, networkId string) ConnectivityMonitoringDestinationsAPIUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest {
+	return ConnectivityMonitoringDestinationsAPIUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -417,7 +417,7 @@ func (a *ConnectivityMonitoringDestinationsApiService) UpdateNetworkCellularGate
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ConnectivityMonitoringDestinationsApiService) UpdateNetworkCellularGatewayConnectivityMonitoringDestinationsExecute(r ConnectivityMonitoringDestinationsApiUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ConnectivityMonitoringDestinationsAPIService) UpdateNetworkCellularGatewayConnectivityMonitoringDestinationsExecute(r ConnectivityMonitoringDestinationsAPIUpdateNetworkCellularGatewayConnectivityMonitoringDestinationsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -425,7 +425,7 @@ func (a *ConnectivityMonitoringDestinationsApiService) UpdateNetworkCellularGate
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectivityMonitoringDestinationsApiService.UpdateNetworkCellularGatewayConnectivityMonitoringDestinations")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectivityMonitoringDestinationsAPIService.UpdateNetworkCellularGatewayConnectivityMonitoringDestinations")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -20,17 +20,17 @@ import (
 )
 
 
-// PolicyApiService PolicyApi service
-type PolicyApiService service
+// PolicyAPIService PolicyAPI service
+type PolicyAPIService service
 
-type PolicyApiGetNetworkClientPolicyRequest struct {
+type PolicyAPIGetNetworkClientPolicyRequest struct {
 	ctx context.Context
-	ApiService *PolicyApiService
+	ApiService *PolicyAPIService
 	networkId string
 	clientId string
 }
 
-func (r PolicyApiGetNetworkClientPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r PolicyAPIGetNetworkClientPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientPolicyExecute(r)
 }
 
@@ -42,10 +42,10 @@ Return the policy assigned to a client on the network. Clients can be identified
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return PolicyApiGetNetworkClientPolicyRequest
+ @return PolicyAPIGetNetworkClientPolicyRequest
 */
-func (a *PolicyApiService) GetNetworkClientPolicy(ctx context.Context, networkId string, clientId string) PolicyApiGetNetworkClientPolicyRequest {
-	return PolicyApiGetNetworkClientPolicyRequest{
+func (a *PolicyAPIService) GetNetworkClientPolicy(ctx context.Context, networkId string, clientId string) PolicyAPIGetNetworkClientPolicyRequest {
+	return PolicyAPIGetNetworkClientPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -55,7 +55,7 @@ func (a *PolicyApiService) GetNetworkClientPolicy(ctx context.Context, networkId
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PolicyApiService) GetNetworkClientPolicyExecute(r PolicyApiGetNetworkClientPolicyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PolicyAPIService) GetNetworkClientPolicyExecute(r PolicyAPIGetNetworkClientPolicyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -63,7 +63,7 @@ func (a *PolicyApiService) GetNetworkClientPolicyExecute(r PolicyApiGetNetworkCl
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PolicyApiService.GetNetworkClientPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PolicyAPIService.GetNetworkClientPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -144,20 +144,20 @@ func (a *PolicyApiService) GetNetworkClientPolicyExecute(r PolicyApiGetNetworkCl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PolicyApiUpdateNetworkClientPolicyRequest struct {
+type PolicyAPIUpdateNetworkClientPolicyRequest struct {
 	ctx context.Context
-	ApiService *PolicyApiService
+	ApiService *PolicyAPIService
 	networkId string
 	clientId string
 	updateNetworkClientPolicyRequest *UpdateNetworkClientPolicyRequest
 }
 
-func (r PolicyApiUpdateNetworkClientPolicyRequest) UpdateNetworkClientPolicyRequest(updateNetworkClientPolicyRequest UpdateNetworkClientPolicyRequest) PolicyApiUpdateNetworkClientPolicyRequest {
+func (r PolicyAPIUpdateNetworkClientPolicyRequest) UpdateNetworkClientPolicyRequest(updateNetworkClientPolicyRequest UpdateNetworkClientPolicyRequest) PolicyAPIUpdateNetworkClientPolicyRequest {
 	r.updateNetworkClientPolicyRequest = &updateNetworkClientPolicyRequest
 	return r
 }
 
-func (r PolicyApiUpdateNetworkClientPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r PolicyAPIUpdateNetworkClientPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkClientPolicyExecute(r)
 }
 
@@ -169,10 +169,10 @@ Update the policy assigned to a client on the network. Clients can be identified
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return PolicyApiUpdateNetworkClientPolicyRequest
+ @return PolicyAPIUpdateNetworkClientPolicyRequest
 */
-func (a *PolicyApiService) UpdateNetworkClientPolicy(ctx context.Context, networkId string, clientId string) PolicyApiUpdateNetworkClientPolicyRequest {
-	return PolicyApiUpdateNetworkClientPolicyRequest{
+func (a *PolicyAPIService) UpdateNetworkClientPolicy(ctx context.Context, networkId string, clientId string) PolicyAPIUpdateNetworkClientPolicyRequest {
+	return PolicyAPIUpdateNetworkClientPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -182,7 +182,7 @@ func (a *PolicyApiService) UpdateNetworkClientPolicy(ctx context.Context, networ
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PolicyApiService) UpdateNetworkClientPolicyExecute(r PolicyApiUpdateNetworkClientPolicyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PolicyAPIService) UpdateNetworkClientPolicyExecute(r PolicyAPIUpdateNetworkClientPolicyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -190,7 +190,7 @@ func (a *PolicyApiService) UpdateNetworkClientPolicyExecute(r PolicyApiUpdateNet
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PolicyApiService.UpdateNetworkClientPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PolicyAPIService.UpdateNetworkClientPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

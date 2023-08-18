@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing UsageHistoryApiService
+Testing UsageHistoryAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_UsageHistoryApiService(t *testing.T) {
+func Test_client_UsageHistoryAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test UsageHistoryApiService GetNetworkApplianceUplinksUsageHistory", func(t *testing.T) {
+	t.Run("Test UsageHistoryAPIService GetNetworkApplianceUplinksUsageHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.UsageHistoryApi.GetNetworkApplianceUplinksUsageHistory(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.UsageHistoryAPI.GetNetworkApplianceUplinksUsageHistory(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,14 +36,14 @@ func Test_client_UsageHistoryApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsageHistoryApiService GetNetworkClientUsageHistory", func(t *testing.T) {
+	t.Run("Test UsageHistoryAPIService GetNetworkClientUsageHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var clientId string
 
-		resp, httpRes, err := apiClient.UsageHistoryApi.GetNetworkClientUsageHistory(context.Background(), networkId, clientId).Execute()
+		resp, httpRes, err := apiClient.UsageHistoryAPI.GetNetworkClientUsageHistory(context.Background(), networkId, clientId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -51,13 +51,13 @@ func Test_client_UsageHistoryApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UsageHistoryApiService GetNetworkWirelessUsageHistory", func(t *testing.T) {
+	t.Run("Test UsageHistoryAPIService GetNetworkWirelessUsageHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.UsageHistoryApi.GetNetworkWirelessUsageHistory(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.UsageHistoryAPI.GetNetworkWirelessUsageHistory(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

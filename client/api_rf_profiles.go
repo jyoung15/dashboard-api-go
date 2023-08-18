@@ -20,22 +20,22 @@ import (
 )
 
 
-// RfProfilesApiService RfProfilesApi service
-type RfProfilesApiService service
+// RfProfilesAPIService RfProfilesAPI service
+type RfProfilesAPIService service
 
-type RfProfilesApiCreateNetworkApplianceRfProfileRequest struct {
+type RfProfilesAPICreateNetworkApplianceRfProfileRequest struct {
 	ctx context.Context
-	ApiService *RfProfilesApiService
+	ApiService *RfProfilesAPIService
 	networkId string
 	createNetworkApplianceRfProfileRequest *CreateNetworkApplianceRfProfileRequest
 }
 
-func (r RfProfilesApiCreateNetworkApplianceRfProfileRequest) CreateNetworkApplianceRfProfileRequest(createNetworkApplianceRfProfileRequest CreateNetworkApplianceRfProfileRequest) RfProfilesApiCreateNetworkApplianceRfProfileRequest {
+func (r RfProfilesAPICreateNetworkApplianceRfProfileRequest) CreateNetworkApplianceRfProfileRequest(createNetworkApplianceRfProfileRequest CreateNetworkApplianceRfProfileRequest) RfProfilesAPICreateNetworkApplianceRfProfileRequest {
 	r.createNetworkApplianceRfProfileRequest = &createNetworkApplianceRfProfileRequest
 	return r
 }
 
-func (r RfProfilesApiCreateNetworkApplianceRfProfileRequest) Execute() (*GetNetworkApplianceRfProfiles200ResponseAssignedInner, *http.Response, error) {
+func (r RfProfilesAPICreateNetworkApplianceRfProfileRequest) Execute() (*GetNetworkApplianceRfProfiles200ResponseAssignedInner, *http.Response, error) {
 	return r.ApiService.CreateNetworkApplianceRfProfileExecute(r)
 }
 
@@ -46,10 +46,10 @@ Creates new RF profile for this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return RfProfilesApiCreateNetworkApplianceRfProfileRequest
+ @return RfProfilesAPICreateNetworkApplianceRfProfileRequest
 */
-func (a *RfProfilesApiService) CreateNetworkApplianceRfProfile(ctx context.Context, networkId string) RfProfilesApiCreateNetworkApplianceRfProfileRequest {
-	return RfProfilesApiCreateNetworkApplianceRfProfileRequest{
+func (a *RfProfilesAPIService) CreateNetworkApplianceRfProfile(ctx context.Context, networkId string) RfProfilesAPICreateNetworkApplianceRfProfileRequest {
+	return RfProfilesAPICreateNetworkApplianceRfProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -58,7 +58,7 @@ func (a *RfProfilesApiService) CreateNetworkApplianceRfProfile(ctx context.Conte
 
 // Execute executes the request
 //  @return GetNetworkApplianceRfProfiles200ResponseAssignedInner
-func (a *RfProfilesApiService) CreateNetworkApplianceRfProfileExecute(r RfProfilesApiCreateNetworkApplianceRfProfileRequest) (*GetNetworkApplianceRfProfiles200ResponseAssignedInner, *http.Response, error) {
+func (a *RfProfilesAPIService) CreateNetworkApplianceRfProfileExecute(r RfProfilesAPICreateNetworkApplianceRfProfileRequest) (*GetNetworkApplianceRfProfiles200ResponseAssignedInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *RfProfilesApiService) CreateNetworkApplianceRfProfileExecute(r RfProfil
 		localVarReturnValue  *GetNetworkApplianceRfProfiles200ResponseAssignedInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RfProfilesApiService.CreateNetworkApplianceRfProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RfProfilesAPIService.CreateNetworkApplianceRfProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,19 +151,19 @@ func (a *RfProfilesApiService) CreateNetworkApplianceRfProfileExecute(r RfProfil
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type RfProfilesApiCreateNetworkWirelessRfProfileRequest struct {
+type RfProfilesAPICreateNetworkWirelessRfProfileRequest struct {
 	ctx context.Context
-	ApiService *RfProfilesApiService
+	ApiService *RfProfilesAPIService
 	networkId string
 	createNetworkWirelessRfProfileRequest *CreateNetworkWirelessRfProfileRequest
 }
 
-func (r RfProfilesApiCreateNetworkWirelessRfProfileRequest) CreateNetworkWirelessRfProfileRequest(createNetworkWirelessRfProfileRequest CreateNetworkWirelessRfProfileRequest) RfProfilesApiCreateNetworkWirelessRfProfileRequest {
+func (r RfProfilesAPICreateNetworkWirelessRfProfileRequest) CreateNetworkWirelessRfProfileRequest(createNetworkWirelessRfProfileRequest CreateNetworkWirelessRfProfileRequest) RfProfilesAPICreateNetworkWirelessRfProfileRequest {
 	r.createNetworkWirelessRfProfileRequest = &createNetworkWirelessRfProfileRequest
 	return r
 }
 
-func (r RfProfilesApiCreateNetworkWirelessRfProfileRequest) Execute() (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
+func (r RfProfilesAPICreateNetworkWirelessRfProfileRequest) Execute() (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
 	return r.ApiService.CreateNetworkWirelessRfProfileExecute(r)
 }
 
@@ -174,10 +174,10 @@ Creates new RF profile for this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return RfProfilesApiCreateNetworkWirelessRfProfileRequest
+ @return RfProfilesAPICreateNetworkWirelessRfProfileRequest
 */
-func (a *RfProfilesApiService) CreateNetworkWirelessRfProfile(ctx context.Context, networkId string) RfProfilesApiCreateNetworkWirelessRfProfileRequest {
-	return RfProfilesApiCreateNetworkWirelessRfProfileRequest{
+func (a *RfProfilesAPIService) CreateNetworkWirelessRfProfile(ctx context.Context, networkId string) RfProfilesAPICreateNetworkWirelessRfProfileRequest {
+	return RfProfilesAPICreateNetworkWirelessRfProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -186,7 +186,7 @@ func (a *RfProfilesApiService) CreateNetworkWirelessRfProfile(ctx context.Contex
 
 // Execute executes the request
 //  @return GetNetworkWirelessRfProfiles200Response
-func (a *RfProfilesApiService) CreateNetworkWirelessRfProfileExecute(r RfProfilesApiCreateNetworkWirelessRfProfileRequest) (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
+func (a *RfProfilesAPIService) CreateNetworkWirelessRfProfileExecute(r RfProfilesAPICreateNetworkWirelessRfProfileRequest) (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -194,7 +194,7 @@ func (a *RfProfilesApiService) CreateNetworkWirelessRfProfileExecute(r RfProfile
 		localVarReturnValue  *GetNetworkWirelessRfProfiles200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RfProfilesApiService.CreateNetworkWirelessRfProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RfProfilesAPIService.CreateNetworkWirelessRfProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -279,14 +279,14 @@ func (a *RfProfilesApiService) CreateNetworkWirelessRfProfileExecute(r RfProfile
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type RfProfilesApiDeleteNetworkApplianceRfProfileRequest struct {
+type RfProfilesAPIDeleteNetworkApplianceRfProfileRequest struct {
 	ctx context.Context
-	ApiService *RfProfilesApiService
+	ApiService *RfProfilesAPIService
 	networkId string
 	rfProfileId string
 }
 
-func (r RfProfilesApiDeleteNetworkApplianceRfProfileRequest) Execute() (*http.Response, error) {
+func (r RfProfilesAPIDeleteNetworkApplianceRfProfileRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkApplianceRfProfileExecute(r)
 }
 
@@ -298,10 +298,10 @@ Delete a RF Profile
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param rfProfileId Rf profile ID
- @return RfProfilesApiDeleteNetworkApplianceRfProfileRequest
+ @return RfProfilesAPIDeleteNetworkApplianceRfProfileRequest
 */
-func (a *RfProfilesApiService) DeleteNetworkApplianceRfProfile(ctx context.Context, networkId string, rfProfileId string) RfProfilesApiDeleteNetworkApplianceRfProfileRequest {
-	return RfProfilesApiDeleteNetworkApplianceRfProfileRequest{
+func (a *RfProfilesAPIService) DeleteNetworkApplianceRfProfile(ctx context.Context, networkId string, rfProfileId string) RfProfilesAPIDeleteNetworkApplianceRfProfileRequest {
+	return RfProfilesAPIDeleteNetworkApplianceRfProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -310,14 +310,14 @@ func (a *RfProfilesApiService) DeleteNetworkApplianceRfProfile(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *RfProfilesApiService) DeleteNetworkApplianceRfProfileExecute(r RfProfilesApiDeleteNetworkApplianceRfProfileRequest) (*http.Response, error) {
+func (a *RfProfilesAPIService) DeleteNetworkApplianceRfProfileExecute(r RfProfilesAPIDeleteNetworkApplianceRfProfileRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RfProfilesApiService.DeleteNetworkApplianceRfProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RfProfilesAPIService.DeleteNetworkApplianceRfProfile")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -389,14 +389,14 @@ func (a *RfProfilesApiService) DeleteNetworkApplianceRfProfileExecute(r RfProfil
 	return localVarHTTPResponse, nil
 }
 
-type RfProfilesApiDeleteNetworkWirelessRfProfileRequest struct {
+type RfProfilesAPIDeleteNetworkWirelessRfProfileRequest struct {
 	ctx context.Context
-	ApiService *RfProfilesApiService
+	ApiService *RfProfilesAPIService
 	networkId string
 	rfProfileId string
 }
 
-func (r RfProfilesApiDeleteNetworkWirelessRfProfileRequest) Execute() (*http.Response, error) {
+func (r RfProfilesAPIDeleteNetworkWirelessRfProfileRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkWirelessRfProfileExecute(r)
 }
 
@@ -408,10 +408,10 @@ Delete a RF Profile
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param rfProfileId Rf profile ID
- @return RfProfilesApiDeleteNetworkWirelessRfProfileRequest
+ @return RfProfilesAPIDeleteNetworkWirelessRfProfileRequest
 */
-func (a *RfProfilesApiService) DeleteNetworkWirelessRfProfile(ctx context.Context, networkId string, rfProfileId string) RfProfilesApiDeleteNetworkWirelessRfProfileRequest {
-	return RfProfilesApiDeleteNetworkWirelessRfProfileRequest{
+func (a *RfProfilesAPIService) DeleteNetworkWirelessRfProfile(ctx context.Context, networkId string, rfProfileId string) RfProfilesAPIDeleteNetworkWirelessRfProfileRequest {
+	return RfProfilesAPIDeleteNetworkWirelessRfProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -420,14 +420,14 @@ func (a *RfProfilesApiService) DeleteNetworkWirelessRfProfile(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *RfProfilesApiService) DeleteNetworkWirelessRfProfileExecute(r RfProfilesApiDeleteNetworkWirelessRfProfileRequest) (*http.Response, error) {
+func (a *RfProfilesAPIService) DeleteNetworkWirelessRfProfileExecute(r RfProfilesAPIDeleteNetworkWirelessRfProfileRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RfProfilesApiService.DeleteNetworkWirelessRfProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RfProfilesAPIService.DeleteNetworkWirelessRfProfile")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -499,14 +499,14 @@ func (a *RfProfilesApiService) DeleteNetworkWirelessRfProfileExecute(r RfProfile
 	return localVarHTTPResponse, nil
 }
 
-type RfProfilesApiGetNetworkApplianceRfProfileRequest struct {
+type RfProfilesAPIGetNetworkApplianceRfProfileRequest struct {
 	ctx context.Context
-	ApiService *RfProfilesApiService
+	ApiService *RfProfilesAPIService
 	networkId string
 	rfProfileId string
 }
 
-func (r RfProfilesApiGetNetworkApplianceRfProfileRequest) Execute() (*GetNetworkApplianceRfProfiles200ResponseAssignedInner, *http.Response, error) {
+func (r RfProfilesAPIGetNetworkApplianceRfProfileRequest) Execute() (*GetNetworkApplianceRfProfiles200ResponseAssignedInner, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceRfProfileExecute(r)
 }
 
@@ -518,10 +518,10 @@ Return a RF profile
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param rfProfileId Rf profile ID
- @return RfProfilesApiGetNetworkApplianceRfProfileRequest
+ @return RfProfilesAPIGetNetworkApplianceRfProfileRequest
 */
-func (a *RfProfilesApiService) GetNetworkApplianceRfProfile(ctx context.Context, networkId string, rfProfileId string) RfProfilesApiGetNetworkApplianceRfProfileRequest {
-	return RfProfilesApiGetNetworkApplianceRfProfileRequest{
+func (a *RfProfilesAPIService) GetNetworkApplianceRfProfile(ctx context.Context, networkId string, rfProfileId string) RfProfilesAPIGetNetworkApplianceRfProfileRequest {
+	return RfProfilesAPIGetNetworkApplianceRfProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -531,7 +531,7 @@ func (a *RfProfilesApiService) GetNetworkApplianceRfProfile(ctx context.Context,
 
 // Execute executes the request
 //  @return GetNetworkApplianceRfProfiles200ResponseAssignedInner
-func (a *RfProfilesApiService) GetNetworkApplianceRfProfileExecute(r RfProfilesApiGetNetworkApplianceRfProfileRequest) (*GetNetworkApplianceRfProfiles200ResponseAssignedInner, *http.Response, error) {
+func (a *RfProfilesAPIService) GetNetworkApplianceRfProfileExecute(r RfProfilesAPIGetNetworkApplianceRfProfileRequest) (*GetNetworkApplianceRfProfiles200ResponseAssignedInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -539,7 +539,7 @@ func (a *RfProfilesApiService) GetNetworkApplianceRfProfileExecute(r RfProfilesA
 		localVarReturnValue  *GetNetworkApplianceRfProfiles200ResponseAssignedInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RfProfilesApiService.GetNetworkApplianceRfProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RfProfilesAPIService.GetNetworkApplianceRfProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -620,13 +620,13 @@ func (a *RfProfilesApiService) GetNetworkApplianceRfProfileExecute(r RfProfilesA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type RfProfilesApiGetNetworkApplianceRfProfilesRequest struct {
+type RfProfilesAPIGetNetworkApplianceRfProfilesRequest struct {
 	ctx context.Context
-	ApiService *RfProfilesApiService
+	ApiService *RfProfilesAPIService
 	networkId string
 }
 
-func (r RfProfilesApiGetNetworkApplianceRfProfilesRequest) Execute() (*GetNetworkApplianceRfProfiles200Response, *http.Response, error) {
+func (r RfProfilesAPIGetNetworkApplianceRfProfilesRequest) Execute() (*GetNetworkApplianceRfProfiles200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceRfProfilesExecute(r)
 }
 
@@ -637,10 +637,10 @@ List the RF profiles for this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return RfProfilesApiGetNetworkApplianceRfProfilesRequest
+ @return RfProfilesAPIGetNetworkApplianceRfProfilesRequest
 */
-func (a *RfProfilesApiService) GetNetworkApplianceRfProfiles(ctx context.Context, networkId string) RfProfilesApiGetNetworkApplianceRfProfilesRequest {
-	return RfProfilesApiGetNetworkApplianceRfProfilesRequest{
+func (a *RfProfilesAPIService) GetNetworkApplianceRfProfiles(ctx context.Context, networkId string) RfProfilesAPIGetNetworkApplianceRfProfilesRequest {
+	return RfProfilesAPIGetNetworkApplianceRfProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -649,7 +649,7 @@ func (a *RfProfilesApiService) GetNetworkApplianceRfProfiles(ctx context.Context
 
 // Execute executes the request
 //  @return GetNetworkApplianceRfProfiles200Response
-func (a *RfProfilesApiService) GetNetworkApplianceRfProfilesExecute(r RfProfilesApiGetNetworkApplianceRfProfilesRequest) (*GetNetworkApplianceRfProfiles200Response, *http.Response, error) {
+func (a *RfProfilesAPIService) GetNetworkApplianceRfProfilesExecute(r RfProfilesAPIGetNetworkApplianceRfProfilesRequest) (*GetNetworkApplianceRfProfiles200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -657,7 +657,7 @@ func (a *RfProfilesApiService) GetNetworkApplianceRfProfilesExecute(r RfProfiles
 		localVarReturnValue  *GetNetworkApplianceRfProfiles200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RfProfilesApiService.GetNetworkApplianceRfProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RfProfilesAPIService.GetNetworkApplianceRfProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -737,14 +737,14 @@ func (a *RfProfilesApiService) GetNetworkApplianceRfProfilesExecute(r RfProfiles
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type RfProfilesApiGetNetworkWirelessRfProfileRequest struct {
+type RfProfilesAPIGetNetworkWirelessRfProfileRequest struct {
 	ctx context.Context
-	ApiService *RfProfilesApiService
+	ApiService *RfProfilesAPIService
 	networkId string
 	rfProfileId string
 }
 
-func (r RfProfilesApiGetNetworkWirelessRfProfileRequest) Execute() (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
+func (r RfProfilesAPIGetNetworkWirelessRfProfileRequest) Execute() (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessRfProfileExecute(r)
 }
 
@@ -756,10 +756,10 @@ Return a RF profile
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param rfProfileId Rf profile ID
- @return RfProfilesApiGetNetworkWirelessRfProfileRequest
+ @return RfProfilesAPIGetNetworkWirelessRfProfileRequest
 */
-func (a *RfProfilesApiService) GetNetworkWirelessRfProfile(ctx context.Context, networkId string, rfProfileId string) RfProfilesApiGetNetworkWirelessRfProfileRequest {
-	return RfProfilesApiGetNetworkWirelessRfProfileRequest{
+func (a *RfProfilesAPIService) GetNetworkWirelessRfProfile(ctx context.Context, networkId string, rfProfileId string) RfProfilesAPIGetNetworkWirelessRfProfileRequest {
+	return RfProfilesAPIGetNetworkWirelessRfProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -769,7 +769,7 @@ func (a *RfProfilesApiService) GetNetworkWirelessRfProfile(ctx context.Context, 
 
 // Execute executes the request
 //  @return GetNetworkWirelessRfProfiles200Response
-func (a *RfProfilesApiService) GetNetworkWirelessRfProfileExecute(r RfProfilesApiGetNetworkWirelessRfProfileRequest) (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
+func (a *RfProfilesAPIService) GetNetworkWirelessRfProfileExecute(r RfProfilesAPIGetNetworkWirelessRfProfileRequest) (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -777,7 +777,7 @@ func (a *RfProfilesApiService) GetNetworkWirelessRfProfileExecute(r RfProfilesAp
 		localVarReturnValue  *GetNetworkWirelessRfProfiles200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RfProfilesApiService.GetNetworkWirelessRfProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RfProfilesAPIService.GetNetworkWirelessRfProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -858,20 +858,20 @@ func (a *RfProfilesApiService) GetNetworkWirelessRfProfileExecute(r RfProfilesAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type RfProfilesApiGetNetworkWirelessRfProfilesRequest struct {
+type RfProfilesAPIGetNetworkWirelessRfProfilesRequest struct {
 	ctx context.Context
-	ApiService *RfProfilesApiService
+	ApiService *RfProfilesAPIService
 	networkId string
 	includeTemplateProfiles *bool
 }
 
 // If the network is bound to a template, this parameter controls whether or not the non-basic RF profiles defined on the template should be included in the response alongside the non-basic profiles defined on the bound network. Defaults to false.
-func (r RfProfilesApiGetNetworkWirelessRfProfilesRequest) IncludeTemplateProfiles(includeTemplateProfiles bool) RfProfilesApiGetNetworkWirelessRfProfilesRequest {
+func (r RfProfilesAPIGetNetworkWirelessRfProfilesRequest) IncludeTemplateProfiles(includeTemplateProfiles bool) RfProfilesAPIGetNetworkWirelessRfProfilesRequest {
 	r.includeTemplateProfiles = &includeTemplateProfiles
 	return r
 }
 
-func (r RfProfilesApiGetNetworkWirelessRfProfilesRequest) Execute() (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
+func (r RfProfilesAPIGetNetworkWirelessRfProfilesRequest) Execute() (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessRfProfilesExecute(r)
 }
 
@@ -882,10 +882,10 @@ List RF profiles for this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return RfProfilesApiGetNetworkWirelessRfProfilesRequest
+ @return RfProfilesAPIGetNetworkWirelessRfProfilesRequest
 */
-func (a *RfProfilesApiService) GetNetworkWirelessRfProfiles(ctx context.Context, networkId string) RfProfilesApiGetNetworkWirelessRfProfilesRequest {
-	return RfProfilesApiGetNetworkWirelessRfProfilesRequest{
+func (a *RfProfilesAPIService) GetNetworkWirelessRfProfiles(ctx context.Context, networkId string) RfProfilesAPIGetNetworkWirelessRfProfilesRequest {
+	return RfProfilesAPIGetNetworkWirelessRfProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -894,7 +894,7 @@ func (a *RfProfilesApiService) GetNetworkWirelessRfProfiles(ctx context.Context,
 
 // Execute executes the request
 //  @return GetNetworkWirelessRfProfiles200Response
-func (a *RfProfilesApiService) GetNetworkWirelessRfProfilesExecute(r RfProfilesApiGetNetworkWirelessRfProfilesRequest) (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
+func (a *RfProfilesAPIService) GetNetworkWirelessRfProfilesExecute(r RfProfilesAPIGetNetworkWirelessRfProfilesRequest) (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -902,7 +902,7 @@ func (a *RfProfilesApiService) GetNetworkWirelessRfProfilesExecute(r RfProfilesA
 		localVarReturnValue  *GetNetworkWirelessRfProfiles200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RfProfilesApiService.GetNetworkWirelessRfProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RfProfilesAPIService.GetNetworkWirelessRfProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -985,20 +985,20 @@ func (a *RfProfilesApiService) GetNetworkWirelessRfProfilesExecute(r RfProfilesA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type RfProfilesApiUpdateNetworkApplianceRfProfileRequest struct {
+type RfProfilesAPIUpdateNetworkApplianceRfProfileRequest struct {
 	ctx context.Context
-	ApiService *RfProfilesApiService
+	ApiService *RfProfilesAPIService
 	networkId string
 	rfProfileId string
 	updateNetworkApplianceRfProfileRequest *UpdateNetworkApplianceRfProfileRequest
 }
 
-func (r RfProfilesApiUpdateNetworkApplianceRfProfileRequest) UpdateNetworkApplianceRfProfileRequest(updateNetworkApplianceRfProfileRequest UpdateNetworkApplianceRfProfileRequest) RfProfilesApiUpdateNetworkApplianceRfProfileRequest {
+func (r RfProfilesAPIUpdateNetworkApplianceRfProfileRequest) UpdateNetworkApplianceRfProfileRequest(updateNetworkApplianceRfProfileRequest UpdateNetworkApplianceRfProfileRequest) RfProfilesAPIUpdateNetworkApplianceRfProfileRequest {
 	r.updateNetworkApplianceRfProfileRequest = &updateNetworkApplianceRfProfileRequest
 	return r
 }
 
-func (r RfProfilesApiUpdateNetworkApplianceRfProfileRequest) Execute() (*GetNetworkApplianceRfProfiles200ResponseAssignedInner, *http.Response, error) {
+func (r RfProfilesAPIUpdateNetworkApplianceRfProfileRequest) Execute() (*GetNetworkApplianceRfProfiles200ResponseAssignedInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceRfProfileExecute(r)
 }
 
@@ -1010,10 +1010,10 @@ Updates specified RF profile for this network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param rfProfileId Rf profile ID
- @return RfProfilesApiUpdateNetworkApplianceRfProfileRequest
+ @return RfProfilesAPIUpdateNetworkApplianceRfProfileRequest
 */
-func (a *RfProfilesApiService) UpdateNetworkApplianceRfProfile(ctx context.Context, networkId string, rfProfileId string) RfProfilesApiUpdateNetworkApplianceRfProfileRequest {
-	return RfProfilesApiUpdateNetworkApplianceRfProfileRequest{
+func (a *RfProfilesAPIService) UpdateNetworkApplianceRfProfile(ctx context.Context, networkId string, rfProfileId string) RfProfilesAPIUpdateNetworkApplianceRfProfileRequest {
+	return RfProfilesAPIUpdateNetworkApplianceRfProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1023,7 +1023,7 @@ func (a *RfProfilesApiService) UpdateNetworkApplianceRfProfile(ctx context.Conte
 
 // Execute executes the request
 //  @return GetNetworkApplianceRfProfiles200ResponseAssignedInner
-func (a *RfProfilesApiService) UpdateNetworkApplianceRfProfileExecute(r RfProfilesApiUpdateNetworkApplianceRfProfileRequest) (*GetNetworkApplianceRfProfiles200ResponseAssignedInner, *http.Response, error) {
+func (a *RfProfilesAPIService) UpdateNetworkApplianceRfProfileExecute(r RfProfilesAPIUpdateNetworkApplianceRfProfileRequest) (*GetNetworkApplianceRfProfiles200ResponseAssignedInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1031,7 +1031,7 @@ func (a *RfProfilesApiService) UpdateNetworkApplianceRfProfileExecute(r RfProfil
 		localVarReturnValue  *GetNetworkApplianceRfProfiles200ResponseAssignedInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RfProfilesApiService.UpdateNetworkApplianceRfProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RfProfilesAPIService.UpdateNetworkApplianceRfProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1114,20 +1114,20 @@ func (a *RfProfilesApiService) UpdateNetworkApplianceRfProfileExecute(r RfProfil
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type RfProfilesApiUpdateNetworkWirelessRfProfileRequest struct {
+type RfProfilesAPIUpdateNetworkWirelessRfProfileRequest struct {
 	ctx context.Context
-	ApiService *RfProfilesApiService
+	ApiService *RfProfilesAPIService
 	networkId string
 	rfProfileId string
 	updateNetworkWirelessRfProfileRequest *UpdateNetworkWirelessRfProfileRequest
 }
 
-func (r RfProfilesApiUpdateNetworkWirelessRfProfileRequest) UpdateNetworkWirelessRfProfileRequest(updateNetworkWirelessRfProfileRequest UpdateNetworkWirelessRfProfileRequest) RfProfilesApiUpdateNetworkWirelessRfProfileRequest {
+func (r RfProfilesAPIUpdateNetworkWirelessRfProfileRequest) UpdateNetworkWirelessRfProfileRequest(updateNetworkWirelessRfProfileRequest UpdateNetworkWirelessRfProfileRequest) RfProfilesAPIUpdateNetworkWirelessRfProfileRequest {
 	r.updateNetworkWirelessRfProfileRequest = &updateNetworkWirelessRfProfileRequest
 	return r
 }
 
-func (r RfProfilesApiUpdateNetworkWirelessRfProfileRequest) Execute() (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
+func (r RfProfilesAPIUpdateNetworkWirelessRfProfileRequest) Execute() (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessRfProfileExecute(r)
 }
 
@@ -1139,10 +1139,10 @@ Updates specified RF profile for this network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param rfProfileId Rf profile ID
- @return RfProfilesApiUpdateNetworkWirelessRfProfileRequest
+ @return RfProfilesAPIUpdateNetworkWirelessRfProfileRequest
 */
-func (a *RfProfilesApiService) UpdateNetworkWirelessRfProfile(ctx context.Context, networkId string, rfProfileId string) RfProfilesApiUpdateNetworkWirelessRfProfileRequest {
-	return RfProfilesApiUpdateNetworkWirelessRfProfileRequest{
+func (a *RfProfilesAPIService) UpdateNetworkWirelessRfProfile(ctx context.Context, networkId string, rfProfileId string) RfProfilesAPIUpdateNetworkWirelessRfProfileRequest {
+	return RfProfilesAPIUpdateNetworkWirelessRfProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1152,7 +1152,7 @@ func (a *RfProfilesApiService) UpdateNetworkWirelessRfProfile(ctx context.Contex
 
 // Execute executes the request
 //  @return GetNetworkWirelessRfProfiles200Response
-func (a *RfProfilesApiService) UpdateNetworkWirelessRfProfileExecute(r RfProfilesApiUpdateNetworkWirelessRfProfileRequest) (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
+func (a *RfProfilesAPIService) UpdateNetworkWirelessRfProfileExecute(r RfProfilesAPIUpdateNetworkWirelessRfProfileRequest) (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1160,7 +1160,7 @@ func (a *RfProfilesApiService) UpdateNetworkWirelessRfProfileExecute(r RfProfile
 		localVarReturnValue  *GetNetworkWirelessRfProfiles200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RfProfilesApiService.UpdateNetworkWirelessRfProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RfProfilesAPIService.UpdateNetworkWirelessRfProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

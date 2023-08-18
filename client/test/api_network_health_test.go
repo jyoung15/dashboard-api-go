@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing NetworkHealthApiService
+Testing NetworkHealthAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_NetworkHealthApiService(t *testing.T) {
+func Test_client_NetworkHealthAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test NetworkHealthApiService GetNetworkNetworkHealthChannelUtilization", func(t *testing.T) {
+	t.Run("Test NetworkHealthAPIService GetNetworkNetworkHealthChannelUtilization", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.NetworkHealthApi.GetNetworkNetworkHealthChannelUtilization(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.NetworkHealthAPI.GetNetworkNetworkHealthChannelUtilization(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

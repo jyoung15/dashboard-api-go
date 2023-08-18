@@ -20,16 +20,16 @@ import (
 )
 
 
-// VlanAssignmentsApiService VlanAssignmentsApi service
-type VlanAssignmentsApiService service
+// VlanAssignmentsAPIService VlanAssignmentsAPI service
+type VlanAssignmentsAPIService service
 
-type VlanAssignmentsApiGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest struct {
+type VlanAssignmentsAPIGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest struct {
 	ctx context.Context
-	ApiService *VlanAssignmentsApiService
+	ApiService *VlanAssignmentsAPIService
 	serial string
 }
 
-func (r VlanAssignmentsApiGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r VlanAssignmentsAPIGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceAppliancePrefixesDelegatedVlanAssignmentsExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return prefixes assigned to all IPv6 enabled VLANs on an appliance.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return VlanAssignmentsApiGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest
+ @return VlanAssignmentsAPIGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest
 */
-func (a *VlanAssignmentsApiService) GetDeviceAppliancePrefixesDelegatedVlanAssignments(ctx context.Context, serial string) VlanAssignmentsApiGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest {
-	return VlanAssignmentsApiGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest{
+func (a *VlanAssignmentsAPIService) GetDeviceAppliancePrefixesDelegatedVlanAssignments(ctx context.Context, serial string) VlanAssignmentsAPIGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest {
+	return VlanAssignmentsAPIGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -52,7 +52,7 @@ func (a *VlanAssignmentsApiService) GetDeviceAppliancePrefixesDelegatedVlanAssig
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *VlanAssignmentsApiService) GetDeviceAppliancePrefixesDelegatedVlanAssignmentsExecute(r VlanAssignmentsApiGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *VlanAssignmentsAPIService) GetDeviceAppliancePrefixesDelegatedVlanAssignmentsExecute(r VlanAssignmentsAPIGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *VlanAssignmentsApiService) GetDeviceAppliancePrefixesDelegatedVlanAssig
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VlanAssignmentsApiService.GetDeviceAppliancePrefixesDelegatedVlanAssignments")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VlanAssignmentsAPIService.GetDeviceAppliancePrefixesDelegatedVlanAssignments")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

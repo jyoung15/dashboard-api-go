@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing ApnsCertApiService
+Testing ApnsCertAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_ApnsCertApiService(t *testing.T) {
+func Test_client_ApnsCertAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test ApnsCertApiService GetOrganizationSmApnsCert", func(t *testing.T) {
+	t.Run("Test ApnsCertAPIService GetOrganizationSmApnsCert", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ApnsCertApi.GetOrganizationSmApnsCert(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ApnsCertAPI.GetOrganizationSmApnsCert(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

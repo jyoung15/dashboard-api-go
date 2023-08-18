@@ -20,22 +20,22 @@ import (
 )
 
 
-// AdminsApiService AdminsApi service
-type AdminsApiService service
+// AdminsAPIService AdminsAPI service
+type AdminsAPIService service
 
-type AdminsApiCreateOrganizationAdminRequest struct {
+type AdminsAPICreateOrganizationAdminRequest struct {
 	ctx context.Context
-	ApiService *AdminsApiService
+	ApiService *AdminsAPIService
 	organizationId string
 	createOrganizationAdminRequest *CreateOrganizationAdminRequest
 }
 
-func (r AdminsApiCreateOrganizationAdminRequest) CreateOrganizationAdminRequest(createOrganizationAdminRequest CreateOrganizationAdminRequest) AdminsApiCreateOrganizationAdminRequest {
+func (r AdminsAPICreateOrganizationAdminRequest) CreateOrganizationAdminRequest(createOrganizationAdminRequest CreateOrganizationAdminRequest) AdminsAPICreateOrganizationAdminRequest {
 	r.createOrganizationAdminRequest = &createOrganizationAdminRequest
 	return r
 }
 
-func (r AdminsApiCreateOrganizationAdminRequest) Execute() (*GetOrganizationAdmins200ResponseInner, *http.Response, error) {
+func (r AdminsAPICreateOrganizationAdminRequest) Execute() (*GetOrganizationAdmins200ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateOrganizationAdminExecute(r)
 }
 
@@ -46,10 +46,10 @@ Create a new dashboard administrator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return AdminsApiCreateOrganizationAdminRequest
+ @return AdminsAPICreateOrganizationAdminRequest
 */
-func (a *AdminsApiService) CreateOrganizationAdmin(ctx context.Context, organizationId string) AdminsApiCreateOrganizationAdminRequest {
-	return AdminsApiCreateOrganizationAdminRequest{
+func (a *AdminsAPIService) CreateOrganizationAdmin(ctx context.Context, organizationId string) AdminsAPICreateOrganizationAdminRequest {
+	return AdminsAPICreateOrganizationAdminRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -58,7 +58,7 @@ func (a *AdminsApiService) CreateOrganizationAdmin(ctx context.Context, organiza
 
 // Execute executes the request
 //  @return GetOrganizationAdmins200ResponseInner
-func (a *AdminsApiService) CreateOrganizationAdminExecute(r AdminsApiCreateOrganizationAdminRequest) (*GetOrganizationAdmins200ResponseInner, *http.Response, error) {
+func (a *AdminsAPIService) CreateOrganizationAdminExecute(r AdminsAPICreateOrganizationAdminRequest) (*GetOrganizationAdmins200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *AdminsApiService) CreateOrganizationAdminExecute(r AdminsApiCreateOrgan
 		localVarReturnValue  *GetOrganizationAdmins200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdminsApiService.CreateOrganizationAdmin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdminsAPIService.CreateOrganizationAdmin")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,14 +151,14 @@ func (a *AdminsApiService) CreateOrganizationAdminExecute(r AdminsApiCreateOrgan
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AdminsApiDeleteOrganizationAdminRequest struct {
+type AdminsAPIDeleteOrganizationAdminRequest struct {
 	ctx context.Context
-	ApiService *AdminsApiService
+	ApiService *AdminsAPIService
 	organizationId string
 	adminId string
 }
 
-func (r AdminsApiDeleteOrganizationAdminRequest) Execute() (*http.Response, error) {
+func (r AdminsAPIDeleteOrganizationAdminRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationAdminExecute(r)
 }
 
@@ -170,10 +170,10 @@ Revoke all access for a dashboard administrator within this organization
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param adminId Admin ID
- @return AdminsApiDeleteOrganizationAdminRequest
+ @return AdminsAPIDeleteOrganizationAdminRequest
 */
-func (a *AdminsApiService) DeleteOrganizationAdmin(ctx context.Context, organizationId string, adminId string) AdminsApiDeleteOrganizationAdminRequest {
-	return AdminsApiDeleteOrganizationAdminRequest{
+func (a *AdminsAPIService) DeleteOrganizationAdmin(ctx context.Context, organizationId string, adminId string) AdminsAPIDeleteOrganizationAdminRequest {
+	return AdminsAPIDeleteOrganizationAdminRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -182,14 +182,14 @@ func (a *AdminsApiService) DeleteOrganizationAdmin(ctx context.Context, organiza
 }
 
 // Execute executes the request
-func (a *AdminsApiService) DeleteOrganizationAdminExecute(r AdminsApiDeleteOrganizationAdminRequest) (*http.Response, error) {
+func (a *AdminsAPIService) DeleteOrganizationAdminExecute(r AdminsAPIDeleteOrganizationAdminRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdminsApiService.DeleteOrganizationAdmin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdminsAPIService.DeleteOrganizationAdmin")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -261,13 +261,13 @@ func (a *AdminsApiService) DeleteOrganizationAdminExecute(r AdminsApiDeleteOrgan
 	return localVarHTTPResponse, nil
 }
 
-type AdminsApiGetOrganizationAdminsRequest struct {
+type AdminsAPIGetOrganizationAdminsRequest struct {
 	ctx context.Context
-	ApiService *AdminsApiService
+	ApiService *AdminsAPIService
 	organizationId string
 }
 
-func (r AdminsApiGetOrganizationAdminsRequest) Execute() ([]GetOrganizationAdmins200ResponseInner, *http.Response, error) {
+func (r AdminsAPIGetOrganizationAdminsRequest) Execute() ([]GetOrganizationAdmins200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationAdminsExecute(r)
 }
 
@@ -278,10 +278,10 @@ List the dashboard administrators in this organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return AdminsApiGetOrganizationAdminsRequest
+ @return AdminsAPIGetOrganizationAdminsRequest
 */
-func (a *AdminsApiService) GetOrganizationAdmins(ctx context.Context, organizationId string) AdminsApiGetOrganizationAdminsRequest {
-	return AdminsApiGetOrganizationAdminsRequest{
+func (a *AdminsAPIService) GetOrganizationAdmins(ctx context.Context, organizationId string) AdminsAPIGetOrganizationAdminsRequest {
+	return AdminsAPIGetOrganizationAdminsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -290,7 +290,7 @@ func (a *AdminsApiService) GetOrganizationAdmins(ctx context.Context, organizati
 
 // Execute executes the request
 //  @return []GetOrganizationAdmins200ResponseInner
-func (a *AdminsApiService) GetOrganizationAdminsExecute(r AdminsApiGetOrganizationAdminsRequest) ([]GetOrganizationAdmins200ResponseInner, *http.Response, error) {
+func (a *AdminsAPIService) GetOrganizationAdminsExecute(r AdminsAPIGetOrganizationAdminsRequest) ([]GetOrganizationAdmins200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -298,7 +298,7 @@ func (a *AdminsApiService) GetOrganizationAdminsExecute(r AdminsApiGetOrganizati
 		localVarReturnValue  []GetOrganizationAdmins200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdminsApiService.GetOrganizationAdmins")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdminsAPIService.GetOrganizationAdmins")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -378,20 +378,20 @@ func (a *AdminsApiService) GetOrganizationAdminsExecute(r AdminsApiGetOrganizati
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AdminsApiUpdateOrganizationAdminRequest struct {
+type AdminsAPIUpdateOrganizationAdminRequest struct {
 	ctx context.Context
-	ApiService *AdminsApiService
+	ApiService *AdminsAPIService
 	organizationId string
 	adminId string
 	updateOrganizationAdminRequest *UpdateOrganizationAdminRequest
 }
 
-func (r AdminsApiUpdateOrganizationAdminRequest) UpdateOrganizationAdminRequest(updateOrganizationAdminRequest UpdateOrganizationAdminRequest) AdminsApiUpdateOrganizationAdminRequest {
+func (r AdminsAPIUpdateOrganizationAdminRequest) UpdateOrganizationAdminRequest(updateOrganizationAdminRequest UpdateOrganizationAdminRequest) AdminsAPIUpdateOrganizationAdminRequest {
 	r.updateOrganizationAdminRequest = &updateOrganizationAdminRequest
 	return r
 }
 
-func (r AdminsApiUpdateOrganizationAdminRequest) Execute() (*GetOrganizationAdmins200ResponseInner, *http.Response, error) {
+func (r AdminsAPIUpdateOrganizationAdminRequest) Execute() (*GetOrganizationAdmins200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationAdminExecute(r)
 }
 
@@ -403,10 +403,10 @@ Update an administrator
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param adminId Admin ID
- @return AdminsApiUpdateOrganizationAdminRequest
+ @return AdminsAPIUpdateOrganizationAdminRequest
 */
-func (a *AdminsApiService) UpdateOrganizationAdmin(ctx context.Context, organizationId string, adminId string) AdminsApiUpdateOrganizationAdminRequest {
-	return AdminsApiUpdateOrganizationAdminRequest{
+func (a *AdminsAPIService) UpdateOrganizationAdmin(ctx context.Context, organizationId string, adminId string) AdminsAPIUpdateOrganizationAdminRequest {
+	return AdminsAPIUpdateOrganizationAdminRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -416,7 +416,7 @@ func (a *AdminsApiService) UpdateOrganizationAdmin(ctx context.Context, organiza
 
 // Execute executes the request
 //  @return GetOrganizationAdmins200ResponseInner
-func (a *AdminsApiService) UpdateOrganizationAdminExecute(r AdminsApiUpdateOrganizationAdminRequest) (*GetOrganizationAdmins200ResponseInner, *http.Response, error) {
+func (a *AdminsAPIService) UpdateOrganizationAdminExecute(r AdminsAPIUpdateOrganizationAdminRequest) (*GetOrganizationAdmins200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -424,7 +424,7 @@ func (a *AdminsApiService) UpdateOrganizationAdminExecute(r AdminsApiUpdateOrgan
 		localVarReturnValue  *GetOrganizationAdmins200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdminsApiService.UpdateOrganizationAdmin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdminsAPIService.UpdateOrganizationAdmin")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

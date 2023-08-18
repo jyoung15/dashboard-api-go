@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing NetflowApiService
+Testing NetflowAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_NetflowApiService(t *testing.T) {
+func Test_client_NetflowAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test NetflowApiService GetNetworkNetflow", func(t *testing.T) {
+	t.Run("Test NetflowAPIService GetNetworkNetflow", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.NetflowApi.GetNetworkNetflow(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.NetflowAPI.GetNetworkNetflow(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_NetflowApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test NetflowApiService UpdateNetworkNetflow", func(t *testing.T) {
+	t.Run("Test NetflowAPIService UpdateNetworkNetflow", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.NetflowApi.UpdateNetworkNetflow(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.NetflowAPI.UpdateNetworkNetflow(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

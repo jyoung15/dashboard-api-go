@@ -20,16 +20,16 @@ import (
 )
 
 
-// ApnsCertApiService ApnsCertApi service
-type ApnsCertApiService service
+// ApnsCertAPIService ApnsCertAPI service
+type ApnsCertAPIService service
 
-type ApnsCertApiGetOrganizationSmApnsCertRequest struct {
+type ApnsCertAPIGetOrganizationSmApnsCertRequest struct {
 	ctx context.Context
-	ApiService *ApnsCertApiService
+	ApiService *ApnsCertAPIService
 	organizationId string
 }
 
-func (r ApnsCertApiGetOrganizationSmApnsCertRequest) Execute() (*GetOrganizationSmApnsCert200Response, *http.Response, error) {
+func (r ApnsCertAPIGetOrganizationSmApnsCertRequest) Execute() (*GetOrganizationSmApnsCert200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationSmApnsCertExecute(r)
 }
 
@@ -40,10 +40,10 @@ Get the organization's APNS certificate
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ApnsCertApiGetOrganizationSmApnsCertRequest
+ @return ApnsCertAPIGetOrganizationSmApnsCertRequest
 */
-func (a *ApnsCertApiService) GetOrganizationSmApnsCert(ctx context.Context, organizationId string) ApnsCertApiGetOrganizationSmApnsCertRequest {
-	return ApnsCertApiGetOrganizationSmApnsCertRequest{
+func (a *ApnsCertAPIService) GetOrganizationSmApnsCert(ctx context.Context, organizationId string) ApnsCertAPIGetOrganizationSmApnsCertRequest {
+	return ApnsCertAPIGetOrganizationSmApnsCertRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -52,7 +52,7 @@ func (a *ApnsCertApiService) GetOrganizationSmApnsCert(ctx context.Context, orga
 
 // Execute executes the request
 //  @return GetOrganizationSmApnsCert200Response
-func (a *ApnsCertApiService) GetOrganizationSmApnsCertExecute(r ApnsCertApiGetOrganizationSmApnsCertRequest) (*GetOrganizationSmApnsCert200Response, *http.Response, error) {
+func (a *ApnsCertAPIService) GetOrganizationSmApnsCertExecute(r ApnsCertAPIGetOrganizationSmApnsCertRequest) (*GetOrganizationSmApnsCert200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *ApnsCertApiService) GetOrganizationSmApnsCertExecute(r ApnsCertApiGetOr
 		localVarReturnValue  *GetOrganizationSmApnsCert200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApnsCertApiService.GetOrganizationSmApnsCert")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApnsCertAPIService.GetOrganizationSmApnsCert")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

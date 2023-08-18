@@ -20,12 +20,12 @@ import (
 )
 
 
-// ApplicationsApiService ApplicationsApi service
-type ApplicationsApiService service
+// ApplicationsAPIService ApplicationsAPI service
+type ApplicationsAPIService service
 
-type ApplicationsApiGetNetworkInsightApplicationHealthByTimeRequest struct {
+type ApplicationsAPIGetNetworkInsightApplicationHealthByTimeRequest struct {
 	ctx context.Context
-	ApiService *ApplicationsApiService
+	ApiService *ApplicationsAPIService
 	networkId string
 	applicationId string
 	t0 *string
@@ -35,30 +35,30 @@ type ApplicationsApiGetNetworkInsightApplicationHealthByTimeRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 7 days from today.
-func (r ApplicationsApiGetNetworkInsightApplicationHealthByTimeRequest) T0(t0 string) ApplicationsApiGetNetworkInsightApplicationHealthByTimeRequest {
+func (r ApplicationsAPIGetNetworkInsightApplicationHealthByTimeRequest) T0(t0 string) ApplicationsAPIGetNetworkInsightApplicationHealthByTimeRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r ApplicationsApiGetNetworkInsightApplicationHealthByTimeRequest) T1(t1 string) ApplicationsApiGetNetworkInsightApplicationHealthByTimeRequest {
+func (r ApplicationsAPIGetNetworkInsightApplicationHealthByTimeRequest) T1(t1 string) ApplicationsAPIGetNetworkInsightApplicationHealthByTimeRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. The default is 2 hours.
-func (r ApplicationsApiGetNetworkInsightApplicationHealthByTimeRequest) Timespan(timespan float32) ApplicationsApiGetNetworkInsightApplicationHealthByTimeRequest {
+func (r ApplicationsAPIGetNetworkInsightApplicationHealthByTimeRequest) Timespan(timespan float32) ApplicationsAPIGetNetworkInsightApplicationHealthByTimeRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 60, 300, 3600, 86400. The default is 300.
-func (r ApplicationsApiGetNetworkInsightApplicationHealthByTimeRequest) Resolution(resolution int32) ApplicationsApiGetNetworkInsightApplicationHealthByTimeRequest {
+func (r ApplicationsAPIGetNetworkInsightApplicationHealthByTimeRequest) Resolution(resolution int32) ApplicationsAPIGetNetworkInsightApplicationHealthByTimeRequest {
 	r.resolution = &resolution
 	return r
 }
 
-func (r ApplicationsApiGetNetworkInsightApplicationHealthByTimeRequest) Execute() ([]GetNetworkInsightApplicationHealthByTime200ResponseInner, *http.Response, error) {
+func (r ApplicationsAPIGetNetworkInsightApplicationHealthByTimeRequest) Execute() ([]GetNetworkInsightApplicationHealthByTime200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkInsightApplicationHealthByTimeExecute(r)
 }
 
@@ -70,10 +70,10 @@ Get application health by time
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param applicationId Application ID
- @return ApplicationsApiGetNetworkInsightApplicationHealthByTimeRequest
+ @return ApplicationsAPIGetNetworkInsightApplicationHealthByTimeRequest
 */
-func (a *ApplicationsApiService) GetNetworkInsightApplicationHealthByTime(ctx context.Context, networkId string, applicationId string) ApplicationsApiGetNetworkInsightApplicationHealthByTimeRequest {
-	return ApplicationsApiGetNetworkInsightApplicationHealthByTimeRequest{
+func (a *ApplicationsAPIService) GetNetworkInsightApplicationHealthByTime(ctx context.Context, networkId string, applicationId string) ApplicationsAPIGetNetworkInsightApplicationHealthByTimeRequest {
+	return ApplicationsAPIGetNetworkInsightApplicationHealthByTimeRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -83,7 +83,7 @@ func (a *ApplicationsApiService) GetNetworkInsightApplicationHealthByTime(ctx co
 
 // Execute executes the request
 //  @return []GetNetworkInsightApplicationHealthByTime200ResponseInner
-func (a *ApplicationsApiService) GetNetworkInsightApplicationHealthByTimeExecute(r ApplicationsApiGetNetworkInsightApplicationHealthByTimeRequest) ([]GetNetworkInsightApplicationHealthByTime200ResponseInner, *http.Response, error) {
+func (a *ApplicationsAPIService) GetNetworkInsightApplicationHealthByTimeExecute(r ApplicationsAPIGetNetworkInsightApplicationHealthByTimeRequest) ([]GetNetworkInsightApplicationHealthByTime200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -91,7 +91,7 @@ func (a *ApplicationsApiService) GetNetworkInsightApplicationHealthByTimeExecute
 		localVarReturnValue  []GetNetworkInsightApplicationHealthByTime200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationsApiService.GetNetworkInsightApplicationHealthByTime")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationsAPIService.GetNetworkInsightApplicationHealthByTime")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -184,13 +184,13 @@ func (a *ApplicationsApiService) GetNetworkInsightApplicationHealthByTimeExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplicationsApiGetOrganizationInsightApplicationsRequest struct {
+type ApplicationsAPIGetOrganizationInsightApplicationsRequest struct {
 	ctx context.Context
-	ApiService *ApplicationsApiService
+	ApiService *ApplicationsAPIService
 	organizationId string
 }
 
-func (r ApplicationsApiGetOrganizationInsightApplicationsRequest) Execute() ([]GetOrganizationInsightApplications200ResponseInner, *http.Response, error) {
+func (r ApplicationsAPIGetOrganizationInsightApplicationsRequest) Execute() ([]GetOrganizationInsightApplications200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationInsightApplicationsExecute(r)
 }
 
@@ -201,10 +201,10 @@ List all Insight tracked applications
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ApplicationsApiGetOrganizationInsightApplicationsRequest
+ @return ApplicationsAPIGetOrganizationInsightApplicationsRequest
 */
-func (a *ApplicationsApiService) GetOrganizationInsightApplications(ctx context.Context, organizationId string) ApplicationsApiGetOrganizationInsightApplicationsRequest {
-	return ApplicationsApiGetOrganizationInsightApplicationsRequest{
+func (a *ApplicationsAPIService) GetOrganizationInsightApplications(ctx context.Context, organizationId string) ApplicationsAPIGetOrganizationInsightApplicationsRequest {
+	return ApplicationsAPIGetOrganizationInsightApplicationsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -213,7 +213,7 @@ func (a *ApplicationsApiService) GetOrganizationInsightApplications(ctx context.
 
 // Execute executes the request
 //  @return []GetOrganizationInsightApplications200ResponseInner
-func (a *ApplicationsApiService) GetOrganizationInsightApplicationsExecute(r ApplicationsApiGetOrganizationInsightApplicationsRequest) ([]GetOrganizationInsightApplications200ResponseInner, *http.Response, error) {
+func (a *ApplicationsAPIService) GetOrganizationInsightApplicationsExecute(r ApplicationsAPIGetOrganizationInsightApplicationsRequest) ([]GetOrganizationInsightApplications200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -221,7 +221,7 @@ func (a *ApplicationsApiService) GetOrganizationInsightApplicationsExecute(r App
 		localVarReturnValue  []GetOrganizationInsightApplications200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationsApiService.GetOrganizationInsightApplications")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationsAPIService.GetOrganizationInsightApplications")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

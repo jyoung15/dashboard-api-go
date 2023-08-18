@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing AlertTypesApiService
+Testing AlertTypesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_AlertTypesApiService(t *testing.T) {
+func Test_client_AlertTypesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test AlertTypesApiService GetOrganizationWebhooksAlertTypes", func(t *testing.T) {
+	t.Run("Test AlertTypesAPIService GetOrganizationWebhooksAlertTypes", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.AlertTypesApi.GetOrganizationWebhooksAlertTypes(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.AlertTypesAPI.GetOrganizationWebhooksAlertTypes(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

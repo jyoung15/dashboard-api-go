@@ -20,7 +20,7 @@ var _ MappedNullable = &GetOrganizationDevicesStatuses200ResponseInnerComponents
 // GetOrganizationDevicesStatuses200ResponseInnerComponents Components
 type GetOrganizationDevicesStatuses200ResponseInnerComponents struct {
 	// Power Supplies
-	PowerSupplies []string `json:"powerSupplies,omitempty"`
+	PowerSupplies []GetOrganizationDevicesStatuses200ResponseInnerComponentsPowerSuppliesInner `json:"powerSupplies,omitempty"`
 }
 
 // NewGetOrganizationDevicesStatuses200ResponseInnerComponents instantiates a new GetOrganizationDevicesStatuses200ResponseInnerComponents object
@@ -41,9 +41,9 @@ func NewGetOrganizationDevicesStatuses200ResponseInnerComponentsWithDefaults() *
 }
 
 // GetPowerSupplies returns the PowerSupplies field value if set, zero value otherwise.
-func (o *GetOrganizationDevicesStatuses200ResponseInnerComponents) GetPowerSupplies() []string {
+func (o *GetOrganizationDevicesStatuses200ResponseInnerComponents) GetPowerSupplies() []GetOrganizationDevicesStatuses200ResponseInnerComponentsPowerSuppliesInner {
 	if o == nil || IsNil(o.PowerSupplies) {
-		var ret []string
+		var ret []GetOrganizationDevicesStatuses200ResponseInnerComponentsPowerSuppliesInner
 		return ret
 	}
 	return o.PowerSupplies
@@ -51,7 +51,7 @@ func (o *GetOrganizationDevicesStatuses200ResponseInnerComponents) GetPowerSuppl
 
 // GetPowerSuppliesOk returns a tuple with the PowerSupplies field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetOrganizationDevicesStatuses200ResponseInnerComponents) GetPowerSuppliesOk() ([]string, bool) {
+func (o *GetOrganizationDevicesStatuses200ResponseInnerComponents) GetPowerSuppliesOk() ([]GetOrganizationDevicesStatuses200ResponseInnerComponentsPowerSuppliesInner, bool) {
 	if o == nil || IsNil(o.PowerSupplies) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *GetOrganizationDevicesStatuses200ResponseInnerComponents) HasPowerSuppl
 	return false
 }
 
-// SetPowerSupplies gets a reference to the given []string and assigns it to the PowerSupplies field.
-func (o *GetOrganizationDevicesStatuses200ResponseInnerComponents) SetPowerSupplies(v []string) {
+// SetPowerSupplies gets a reference to the given []GetOrganizationDevicesStatuses200ResponseInnerComponentsPowerSuppliesInner and assigns it to the PowerSupplies field.
+func (o *GetOrganizationDevicesStatuses200ResponseInnerComponents) SetPowerSupplies(v []GetOrganizationDevicesStatuses200ResponseInnerComponentsPowerSuppliesInner) {
 	o.PowerSupplies = v
 }
 

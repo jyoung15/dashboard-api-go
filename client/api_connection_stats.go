@@ -20,12 +20,12 @@ import (
 )
 
 
-// ConnectionStatsApiService ConnectionStatsApi service
-type ConnectionStatsApiService service
+// ConnectionStatsAPIService ConnectionStatsAPI service
+type ConnectionStatsAPIService service
 
-type ConnectionStatsApiGetDeviceWirelessConnectionStatsRequest struct {
+type ConnectionStatsAPIGetDeviceWirelessConnectionStatsRequest struct {
 	ctx context.Context
-	ApiService *ConnectionStatsApiService
+	ApiService *ConnectionStatsAPIService
 	serial string
 	t0 *string
 	t1 *string
@@ -37,48 +37,48 @@ type ConnectionStatsApiGetDeviceWirelessConnectionStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r ConnectionStatsApiGetDeviceWirelessConnectionStatsRequest) T0(t0 string) ConnectionStatsApiGetDeviceWirelessConnectionStatsRequest {
+func (r ConnectionStatsAPIGetDeviceWirelessConnectionStatsRequest) T0(t0 string) ConnectionStatsAPIGetDeviceWirelessConnectionStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r ConnectionStatsApiGetDeviceWirelessConnectionStatsRequest) T1(t1 string) ConnectionStatsApiGetDeviceWirelessConnectionStatsRequest {
+func (r ConnectionStatsAPIGetDeviceWirelessConnectionStatsRequest) T1(t1 string) ConnectionStatsAPIGetDeviceWirelessConnectionStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r ConnectionStatsApiGetDeviceWirelessConnectionStatsRequest) Timespan(timespan float32) ConnectionStatsApiGetDeviceWirelessConnectionStatsRequest {
+func (r ConnectionStatsAPIGetDeviceWirelessConnectionStatsRequest) Timespan(timespan float32) ConnectionStatsAPIGetDeviceWirelessConnectionStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r ConnectionStatsApiGetDeviceWirelessConnectionStatsRequest) Band(band string) ConnectionStatsApiGetDeviceWirelessConnectionStatsRequest {
+func (r ConnectionStatsAPIGetDeviceWirelessConnectionStatsRequest) Band(band string) ConnectionStatsAPIGetDeviceWirelessConnectionStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r ConnectionStatsApiGetDeviceWirelessConnectionStatsRequest) Ssid(ssid int32) ConnectionStatsApiGetDeviceWirelessConnectionStatsRequest {
+func (r ConnectionStatsAPIGetDeviceWirelessConnectionStatsRequest) Ssid(ssid int32) ConnectionStatsAPIGetDeviceWirelessConnectionStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r ConnectionStatsApiGetDeviceWirelessConnectionStatsRequest) Vlan(vlan int32) ConnectionStatsApiGetDeviceWirelessConnectionStatsRequest {
+func (r ConnectionStatsAPIGetDeviceWirelessConnectionStatsRequest) Vlan(vlan int32) ConnectionStatsAPIGetDeviceWirelessConnectionStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r ConnectionStatsApiGetDeviceWirelessConnectionStatsRequest) ApTag(apTag string) ConnectionStatsApiGetDeviceWirelessConnectionStatsRequest {
+func (r ConnectionStatsAPIGetDeviceWirelessConnectionStatsRequest) ApTag(apTag string) ConnectionStatsAPIGetDeviceWirelessConnectionStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
-func (r ConnectionStatsApiGetDeviceWirelessConnectionStatsRequest) Execute() (*GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
+func (r ConnectionStatsAPIGetDeviceWirelessConnectionStatsRequest) Execute() (*GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceWirelessConnectionStatsExecute(r)
 }
 
@@ -89,10 +89,10 @@ Aggregated connectivity info for a given AP on this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return ConnectionStatsApiGetDeviceWirelessConnectionStatsRequest
+ @return ConnectionStatsAPIGetDeviceWirelessConnectionStatsRequest
 */
-func (a *ConnectionStatsApiService) GetDeviceWirelessConnectionStats(ctx context.Context, serial string) ConnectionStatsApiGetDeviceWirelessConnectionStatsRequest {
-	return ConnectionStatsApiGetDeviceWirelessConnectionStatsRequest{
+func (a *ConnectionStatsAPIService) GetDeviceWirelessConnectionStats(ctx context.Context, serial string) ConnectionStatsAPIGetDeviceWirelessConnectionStatsRequest {
+	return ConnectionStatsAPIGetDeviceWirelessConnectionStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -101,7 +101,7 @@ func (a *ConnectionStatsApiService) GetDeviceWirelessConnectionStats(ctx context
 
 // Execute executes the request
 //  @return GetDeviceWirelessConnectionStats200Response
-func (a *ConnectionStatsApiService) GetDeviceWirelessConnectionStatsExecute(r ConnectionStatsApiGetDeviceWirelessConnectionStatsRequest) (*GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
+func (a *ConnectionStatsAPIService) GetDeviceWirelessConnectionStatsExecute(r ConnectionStatsAPIGetDeviceWirelessConnectionStatsRequest) (*GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -109,7 +109,7 @@ func (a *ConnectionStatsApiService) GetDeviceWirelessConnectionStatsExecute(r Co
 		localVarReturnValue  *GetDeviceWirelessConnectionStats200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionStatsApiService.GetDeviceWirelessConnectionStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionStatsAPIService.GetDeviceWirelessConnectionStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -210,9 +210,9 @@ func (a *ConnectionStatsApiService) GetDeviceWirelessConnectionStatsExecute(r Co
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ConnectionStatsApiGetNetworkWirelessClientConnectionStatsRequest struct {
+type ConnectionStatsAPIGetNetworkWirelessClientConnectionStatsRequest struct {
 	ctx context.Context
-	ApiService *ConnectionStatsApiService
+	ApiService *ConnectionStatsAPIService
 	networkId string
 	clientId string
 	t0 *string
@@ -225,48 +225,48 @@ type ConnectionStatsApiGetNetworkWirelessClientConnectionStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r ConnectionStatsApiGetNetworkWirelessClientConnectionStatsRequest) T0(t0 string) ConnectionStatsApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessClientConnectionStatsRequest) T0(t0 string) ConnectionStatsAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r ConnectionStatsApiGetNetworkWirelessClientConnectionStatsRequest) T1(t1 string) ConnectionStatsApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessClientConnectionStatsRequest) T1(t1 string) ConnectionStatsAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r ConnectionStatsApiGetNetworkWirelessClientConnectionStatsRequest) Timespan(timespan float32) ConnectionStatsApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessClientConnectionStatsRequest) Timespan(timespan float32) ConnectionStatsAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r ConnectionStatsApiGetNetworkWirelessClientConnectionStatsRequest) Band(band string) ConnectionStatsApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessClientConnectionStatsRequest) Band(band string) ConnectionStatsAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r ConnectionStatsApiGetNetworkWirelessClientConnectionStatsRequest) Ssid(ssid int32) ConnectionStatsApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessClientConnectionStatsRequest) Ssid(ssid int32) ConnectionStatsAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r ConnectionStatsApiGetNetworkWirelessClientConnectionStatsRequest) Vlan(vlan int32) ConnectionStatsApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessClientConnectionStatsRequest) Vlan(vlan int32) ConnectionStatsAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r ConnectionStatsApiGetNetworkWirelessClientConnectionStatsRequest) ApTag(apTag string) ConnectionStatsApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessClientConnectionStatsRequest) ApTag(apTag string) ConnectionStatsAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
-func (r ConnectionStatsApiGetNetworkWirelessClientConnectionStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ConnectionStatsAPIGetNetworkWirelessClientConnectionStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessClientConnectionStatsExecute(r)
 }
 
@@ -278,10 +278,10 @@ Aggregated connectivity info for a given client on this network. Clients are ide
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return ConnectionStatsApiGetNetworkWirelessClientConnectionStatsRequest
+ @return ConnectionStatsAPIGetNetworkWirelessClientConnectionStatsRequest
 */
-func (a *ConnectionStatsApiService) GetNetworkWirelessClientConnectionStats(ctx context.Context, networkId string, clientId string) ConnectionStatsApiGetNetworkWirelessClientConnectionStatsRequest {
-	return ConnectionStatsApiGetNetworkWirelessClientConnectionStatsRequest{
+func (a *ConnectionStatsAPIService) GetNetworkWirelessClientConnectionStats(ctx context.Context, networkId string, clientId string) ConnectionStatsAPIGetNetworkWirelessClientConnectionStatsRequest {
+	return ConnectionStatsAPIGetNetworkWirelessClientConnectionStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -291,7 +291,7 @@ func (a *ConnectionStatsApiService) GetNetworkWirelessClientConnectionStats(ctx 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ConnectionStatsApiService) GetNetworkWirelessClientConnectionStatsExecute(r ConnectionStatsApiGetNetworkWirelessClientConnectionStatsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ConnectionStatsAPIService) GetNetworkWirelessClientConnectionStatsExecute(r ConnectionStatsAPIGetNetworkWirelessClientConnectionStatsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -299,7 +299,7 @@ func (a *ConnectionStatsApiService) GetNetworkWirelessClientConnectionStatsExecu
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionStatsApiService.GetNetworkWirelessClientConnectionStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionStatsAPIService.GetNetworkWirelessClientConnectionStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -401,9 +401,9 @@ func (a *ConnectionStatsApiService) GetNetworkWirelessClientConnectionStatsExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ConnectionStatsApiGetNetworkWirelessClientsConnectionStatsRequest struct {
+type ConnectionStatsAPIGetNetworkWirelessClientsConnectionStatsRequest struct {
 	ctx context.Context
-	ApiService *ConnectionStatsApiService
+	ApiService *ConnectionStatsAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -415,48 +415,48 @@ type ConnectionStatsApiGetNetworkWirelessClientsConnectionStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r ConnectionStatsApiGetNetworkWirelessClientsConnectionStatsRequest) T0(t0 string) ConnectionStatsApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessClientsConnectionStatsRequest) T0(t0 string) ConnectionStatsAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r ConnectionStatsApiGetNetworkWirelessClientsConnectionStatsRequest) T1(t1 string) ConnectionStatsApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessClientsConnectionStatsRequest) T1(t1 string) ConnectionStatsAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r ConnectionStatsApiGetNetworkWirelessClientsConnectionStatsRequest) Timespan(timespan float32) ConnectionStatsApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessClientsConnectionStatsRequest) Timespan(timespan float32) ConnectionStatsAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r ConnectionStatsApiGetNetworkWirelessClientsConnectionStatsRequest) Band(band string) ConnectionStatsApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessClientsConnectionStatsRequest) Band(band string) ConnectionStatsAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r ConnectionStatsApiGetNetworkWirelessClientsConnectionStatsRequest) Ssid(ssid int32) ConnectionStatsApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessClientsConnectionStatsRequest) Ssid(ssid int32) ConnectionStatsAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r ConnectionStatsApiGetNetworkWirelessClientsConnectionStatsRequest) Vlan(vlan int32) ConnectionStatsApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessClientsConnectionStatsRequest) Vlan(vlan int32) ConnectionStatsAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r ConnectionStatsApiGetNetworkWirelessClientsConnectionStatsRequest) ApTag(apTag string) ConnectionStatsApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessClientsConnectionStatsRequest) ApTag(apTag string) ConnectionStatsAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
-func (r ConnectionStatsApiGetNetworkWirelessClientsConnectionStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ConnectionStatsAPIGetNetworkWirelessClientsConnectionStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessClientsConnectionStatsExecute(r)
 }
 
@@ -467,10 +467,10 @@ Aggregated connectivity info for this network, grouped by clients
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ConnectionStatsApiGetNetworkWirelessClientsConnectionStatsRequest
+ @return ConnectionStatsAPIGetNetworkWirelessClientsConnectionStatsRequest
 */
-func (a *ConnectionStatsApiService) GetNetworkWirelessClientsConnectionStats(ctx context.Context, networkId string) ConnectionStatsApiGetNetworkWirelessClientsConnectionStatsRequest {
-	return ConnectionStatsApiGetNetworkWirelessClientsConnectionStatsRequest{
+func (a *ConnectionStatsAPIService) GetNetworkWirelessClientsConnectionStats(ctx context.Context, networkId string) ConnectionStatsAPIGetNetworkWirelessClientsConnectionStatsRequest {
+	return ConnectionStatsAPIGetNetworkWirelessClientsConnectionStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -479,7 +479,7 @@ func (a *ConnectionStatsApiService) GetNetworkWirelessClientsConnectionStats(ctx
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ConnectionStatsApiService) GetNetworkWirelessClientsConnectionStatsExecute(r ConnectionStatsApiGetNetworkWirelessClientsConnectionStatsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ConnectionStatsAPIService) GetNetworkWirelessClientsConnectionStatsExecute(r ConnectionStatsAPIGetNetworkWirelessClientsConnectionStatsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -487,7 +487,7 @@ func (a *ConnectionStatsApiService) GetNetworkWirelessClientsConnectionStatsExec
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionStatsApiService.GetNetworkWirelessClientsConnectionStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionStatsAPIService.GetNetworkWirelessClientsConnectionStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -588,9 +588,9 @@ func (a *ConnectionStatsApiService) GetNetworkWirelessClientsConnectionStatsExec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ConnectionStatsApiGetNetworkWirelessConnectionStatsRequest struct {
+type ConnectionStatsAPIGetNetworkWirelessConnectionStatsRequest struct {
 	ctx context.Context
-	ApiService *ConnectionStatsApiService
+	ApiService *ConnectionStatsAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -602,48 +602,48 @@ type ConnectionStatsApiGetNetworkWirelessConnectionStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r ConnectionStatsApiGetNetworkWirelessConnectionStatsRequest) T0(t0 string) ConnectionStatsApiGetNetworkWirelessConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessConnectionStatsRequest) T0(t0 string) ConnectionStatsAPIGetNetworkWirelessConnectionStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r ConnectionStatsApiGetNetworkWirelessConnectionStatsRequest) T1(t1 string) ConnectionStatsApiGetNetworkWirelessConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessConnectionStatsRequest) T1(t1 string) ConnectionStatsAPIGetNetworkWirelessConnectionStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r ConnectionStatsApiGetNetworkWirelessConnectionStatsRequest) Timespan(timespan float32) ConnectionStatsApiGetNetworkWirelessConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessConnectionStatsRequest) Timespan(timespan float32) ConnectionStatsAPIGetNetworkWirelessConnectionStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r ConnectionStatsApiGetNetworkWirelessConnectionStatsRequest) Band(band string) ConnectionStatsApiGetNetworkWirelessConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessConnectionStatsRequest) Band(band string) ConnectionStatsAPIGetNetworkWirelessConnectionStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r ConnectionStatsApiGetNetworkWirelessConnectionStatsRequest) Ssid(ssid int32) ConnectionStatsApiGetNetworkWirelessConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessConnectionStatsRequest) Ssid(ssid int32) ConnectionStatsAPIGetNetworkWirelessConnectionStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r ConnectionStatsApiGetNetworkWirelessConnectionStatsRequest) Vlan(vlan int32) ConnectionStatsApiGetNetworkWirelessConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessConnectionStatsRequest) Vlan(vlan int32) ConnectionStatsAPIGetNetworkWirelessConnectionStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r ConnectionStatsApiGetNetworkWirelessConnectionStatsRequest) ApTag(apTag string) ConnectionStatsApiGetNetworkWirelessConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessConnectionStatsRequest) ApTag(apTag string) ConnectionStatsAPIGetNetworkWirelessConnectionStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
-func (r ConnectionStatsApiGetNetworkWirelessConnectionStatsRequest) Execute() (*GetNetworkWirelessConnectionStats200Response, *http.Response, error) {
+func (r ConnectionStatsAPIGetNetworkWirelessConnectionStatsRequest) Execute() (*GetNetworkWirelessConnectionStats200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessConnectionStatsExecute(r)
 }
 
@@ -654,10 +654,10 @@ Aggregated connectivity info for this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ConnectionStatsApiGetNetworkWirelessConnectionStatsRequest
+ @return ConnectionStatsAPIGetNetworkWirelessConnectionStatsRequest
 */
-func (a *ConnectionStatsApiService) GetNetworkWirelessConnectionStats(ctx context.Context, networkId string) ConnectionStatsApiGetNetworkWirelessConnectionStatsRequest {
-	return ConnectionStatsApiGetNetworkWirelessConnectionStatsRequest{
+func (a *ConnectionStatsAPIService) GetNetworkWirelessConnectionStats(ctx context.Context, networkId string) ConnectionStatsAPIGetNetworkWirelessConnectionStatsRequest {
+	return ConnectionStatsAPIGetNetworkWirelessConnectionStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -666,7 +666,7 @@ func (a *ConnectionStatsApiService) GetNetworkWirelessConnectionStats(ctx contex
 
 // Execute executes the request
 //  @return GetNetworkWirelessConnectionStats200Response
-func (a *ConnectionStatsApiService) GetNetworkWirelessConnectionStatsExecute(r ConnectionStatsApiGetNetworkWirelessConnectionStatsRequest) (*GetNetworkWirelessConnectionStats200Response, *http.Response, error) {
+func (a *ConnectionStatsAPIService) GetNetworkWirelessConnectionStatsExecute(r ConnectionStatsAPIGetNetworkWirelessConnectionStatsRequest) (*GetNetworkWirelessConnectionStats200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -674,7 +674,7 @@ func (a *ConnectionStatsApiService) GetNetworkWirelessConnectionStatsExecute(r C
 		localVarReturnValue  *GetNetworkWirelessConnectionStats200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionStatsApiService.GetNetworkWirelessConnectionStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionStatsAPIService.GetNetworkWirelessConnectionStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -775,9 +775,9 @@ func (a *ConnectionStatsApiService) GetNetworkWirelessConnectionStatsExecute(r C
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ConnectionStatsApiGetNetworkWirelessDevicesConnectionStatsRequest struct {
+type ConnectionStatsAPIGetNetworkWirelessDevicesConnectionStatsRequest struct {
 	ctx context.Context
-	ApiService *ConnectionStatsApiService
+	ApiService *ConnectionStatsAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -789,48 +789,48 @@ type ConnectionStatsApiGetNetworkWirelessDevicesConnectionStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r ConnectionStatsApiGetNetworkWirelessDevicesConnectionStatsRequest) T0(t0 string) ConnectionStatsApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessDevicesConnectionStatsRequest) T0(t0 string) ConnectionStatsAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r ConnectionStatsApiGetNetworkWirelessDevicesConnectionStatsRequest) T1(t1 string) ConnectionStatsApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessDevicesConnectionStatsRequest) T1(t1 string) ConnectionStatsAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r ConnectionStatsApiGetNetworkWirelessDevicesConnectionStatsRequest) Timespan(timespan float32) ConnectionStatsApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessDevicesConnectionStatsRequest) Timespan(timespan float32) ConnectionStatsAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r ConnectionStatsApiGetNetworkWirelessDevicesConnectionStatsRequest) Band(band string) ConnectionStatsApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessDevicesConnectionStatsRequest) Band(band string) ConnectionStatsAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r ConnectionStatsApiGetNetworkWirelessDevicesConnectionStatsRequest) Ssid(ssid int32) ConnectionStatsApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessDevicesConnectionStatsRequest) Ssid(ssid int32) ConnectionStatsAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r ConnectionStatsApiGetNetworkWirelessDevicesConnectionStatsRequest) Vlan(vlan int32) ConnectionStatsApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessDevicesConnectionStatsRequest) Vlan(vlan int32) ConnectionStatsAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r ConnectionStatsApiGetNetworkWirelessDevicesConnectionStatsRequest) ApTag(apTag string) ConnectionStatsApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r ConnectionStatsAPIGetNetworkWirelessDevicesConnectionStatsRequest) ApTag(apTag string) ConnectionStatsAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
-func (r ConnectionStatsApiGetNetworkWirelessDevicesConnectionStatsRequest) Execute() ([]GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
+func (r ConnectionStatsAPIGetNetworkWirelessDevicesConnectionStatsRequest) Execute() ([]GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessDevicesConnectionStatsExecute(r)
 }
 
@@ -841,10 +841,10 @@ Aggregated connectivity info for this network, grouped by node
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ConnectionStatsApiGetNetworkWirelessDevicesConnectionStatsRequest
+ @return ConnectionStatsAPIGetNetworkWirelessDevicesConnectionStatsRequest
 */
-func (a *ConnectionStatsApiService) GetNetworkWirelessDevicesConnectionStats(ctx context.Context, networkId string) ConnectionStatsApiGetNetworkWirelessDevicesConnectionStatsRequest {
-	return ConnectionStatsApiGetNetworkWirelessDevicesConnectionStatsRequest{
+func (a *ConnectionStatsAPIService) GetNetworkWirelessDevicesConnectionStats(ctx context.Context, networkId string) ConnectionStatsAPIGetNetworkWirelessDevicesConnectionStatsRequest {
+	return ConnectionStatsAPIGetNetworkWirelessDevicesConnectionStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -853,7 +853,7 @@ func (a *ConnectionStatsApiService) GetNetworkWirelessDevicesConnectionStats(ctx
 
 // Execute executes the request
 //  @return []GetDeviceWirelessConnectionStats200Response
-func (a *ConnectionStatsApiService) GetNetworkWirelessDevicesConnectionStatsExecute(r ConnectionStatsApiGetNetworkWirelessDevicesConnectionStatsRequest) ([]GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
+func (a *ConnectionStatsAPIService) GetNetworkWirelessDevicesConnectionStatsExecute(r ConnectionStatsAPIGetNetworkWirelessDevicesConnectionStatsRequest) ([]GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -861,7 +861,7 @@ func (a *ConnectionStatsApiService) GetNetworkWirelessDevicesConnectionStatsExec
 		localVarReturnValue  []GetDeviceWirelessConnectionStats200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionStatsApiService.GetNetworkWirelessDevicesConnectionStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionStatsAPIService.GetNetworkWirelessDevicesConnectionStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing LinkLayerApiService
+Testing LinkLayerAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_LinkLayerApiService(t *testing.T) {
+func Test_client_LinkLayerAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test LinkLayerApiService GetNetworkTopologyLinkLayer", func(t *testing.T) {
+	t.Run("Test LinkLayerAPIService GetNetworkTopologyLinkLayer", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.LinkLayerApi.GetNetworkTopologyLinkLayer(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.LinkLayerAPI.GetNetworkTopologyLinkLayer(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

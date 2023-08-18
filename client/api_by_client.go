@@ -20,12 +20,12 @@ import (
 )
 
 
-// ByClientApiService ByClientApi service
-type ByClientApiService service
+// ByClientAPIService ByClientAPI service
+type ByClientAPIService service
 
-type ByClientApiGetNetworkPoliciesByClientRequest struct {
+type ByClientAPIGetNetworkPoliciesByClientRequest struct {
 	ctx context.Context
-	ApiService *ByClientApiService
+	ApiService *ByClientAPIService
 	networkId string
 	perPage *int32
 	startingAfter *string
@@ -35,36 +35,36 @@ type ByClientApiGetNetworkPoliciesByClientRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.
-func (r ByClientApiGetNetworkPoliciesByClientRequest) PerPage(perPage int32) ByClientApiGetNetworkPoliciesByClientRequest {
+func (r ByClientAPIGetNetworkPoliciesByClientRequest) PerPage(perPage int32) ByClientAPIGetNetworkPoliciesByClientRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ByClientApiGetNetworkPoliciesByClientRequest) StartingAfter(startingAfter string) ByClientApiGetNetworkPoliciesByClientRequest {
+func (r ByClientAPIGetNetworkPoliciesByClientRequest) StartingAfter(startingAfter string) ByClientAPIGetNetworkPoliciesByClientRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ByClientApiGetNetworkPoliciesByClientRequest) EndingBefore(endingBefore string) ByClientApiGetNetworkPoliciesByClientRequest {
+func (r ByClientAPIGetNetworkPoliciesByClientRequest) EndingBefore(endingBefore string) ByClientAPIGetNetworkPoliciesByClientRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r ByClientApiGetNetworkPoliciesByClientRequest) T0(t0 string) ByClientApiGetNetworkPoliciesByClientRequest {
+func (r ByClientAPIGetNetworkPoliciesByClientRequest) T0(t0 string) ByClientAPIGetNetworkPoliciesByClientRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r ByClientApiGetNetworkPoliciesByClientRequest) Timespan(timespan float32) ByClientApiGetNetworkPoliciesByClientRequest {
+func (r ByClientAPIGetNetworkPoliciesByClientRequest) Timespan(timespan float32) ByClientAPIGetNetworkPoliciesByClientRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r ByClientApiGetNetworkPoliciesByClientRequest) Execute() ([]GetNetworkPoliciesByClient200ResponseInner, *http.Response, error) {
+func (r ByClientAPIGetNetworkPoliciesByClientRequest) Execute() ([]GetNetworkPoliciesByClient200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkPoliciesByClientExecute(r)
 }
 
@@ -75,10 +75,10 @@ Get policies for all clients with policies
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ByClientApiGetNetworkPoliciesByClientRequest
+ @return ByClientAPIGetNetworkPoliciesByClientRequest
 */
-func (a *ByClientApiService) GetNetworkPoliciesByClient(ctx context.Context, networkId string) ByClientApiGetNetworkPoliciesByClientRequest {
-	return ByClientApiGetNetworkPoliciesByClientRequest{
+func (a *ByClientAPIService) GetNetworkPoliciesByClient(ctx context.Context, networkId string) ByClientAPIGetNetworkPoliciesByClientRequest {
+	return ByClientAPIGetNetworkPoliciesByClientRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -87,7 +87,7 @@ func (a *ByClientApiService) GetNetworkPoliciesByClient(ctx context.Context, net
 
 // Execute executes the request
 //  @return []GetNetworkPoliciesByClient200ResponseInner
-func (a *ByClientApiService) GetNetworkPoliciesByClientExecute(r ByClientApiGetNetworkPoliciesByClientRequest) ([]GetNetworkPoliciesByClient200ResponseInner, *http.Response, error) {
+func (a *ByClientAPIService) GetNetworkPoliciesByClientExecute(r ByClientAPIGetNetworkPoliciesByClientRequest) ([]GetNetworkPoliciesByClient200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -95,7 +95,7 @@ func (a *ByClientApiService) GetNetworkPoliciesByClientExecute(r ByClientApiGetN
 		localVarReturnValue  []GetNetworkPoliciesByClient200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByClientApiService.GetNetworkPoliciesByClient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByClientAPIService.GetNetworkPoliciesByClient")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing SyslogServersApiService
+Testing SyslogServersAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_SyslogServersApiService(t *testing.T) {
+func Test_client_SyslogServersAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test SyslogServersApiService GetNetworkSyslogServers", func(t *testing.T) {
+	t.Run("Test SyslogServersAPIService GetNetworkSyslogServers", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SyslogServersApi.GetNetworkSyslogServers(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SyslogServersAPI.GetNetworkSyslogServers(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_SyslogServersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SyslogServersApiService UpdateNetworkSyslogServers", func(t *testing.T) {
+	t.Run("Test SyslogServersAPIService UpdateNetworkSyslogServers", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SyslogServersApi.UpdateNetworkSyslogServers(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SyslogServersAPI.UpdateNetworkSyslogServers(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing ByDeviceApiService
+Testing ByDeviceAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_ByDeviceApiService(t *testing.T) {
+func Test_client_ByDeviceAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test ByDeviceApiService GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice", func(t *testing.T) {
+	t.Run("Test ByDeviceAPIService GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ByDeviceApi.GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ByDeviceAPI.GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_ByDeviceApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ByDeviceApiService GetOrganizationDevicesPowerModulesStatusesByDevice", func(t *testing.T) {
+	t.Run("Test ByDeviceAPIService GetOrganizationDevicesPowerModulesStatusesByDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ByDeviceApi.GetOrganizationDevicesPowerModulesStatusesByDevice(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ByDeviceAPI.GetOrganizationDevicesPowerModulesStatusesByDevice(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,13 +50,13 @@ func Test_client_ByDeviceApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ByDeviceApiService GetOrganizationDevicesUplinksAddressesByDevice", func(t *testing.T) {
+	t.Run("Test ByDeviceAPIService GetOrganizationDevicesUplinksAddressesByDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ByDeviceApi.GetOrganizationDevicesUplinksAddressesByDevice(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ByDeviceAPI.GetOrganizationDevicesUplinksAddressesByDevice(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,13 +64,13 @@ func Test_client_ByDeviceApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ByDeviceApiService GetOrganizationFirmwareUpgradesByDevice", func(t *testing.T) {
+	t.Run("Test ByDeviceAPIService GetOrganizationFirmwareUpgradesByDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ByDeviceApi.GetOrganizationFirmwareUpgradesByDevice(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ByDeviceAPI.GetOrganizationFirmwareUpgradesByDevice(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -78,13 +78,13 @@ func Test_client_ByDeviceApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ByDeviceApiService GetOrganizationWirelessDevicesChannelUtilizationByDevice", func(t *testing.T) {
+	t.Run("Test ByDeviceAPIService GetOrganizationWirelessDevicesChannelUtilizationByDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ByDeviceApi.GetOrganizationWirelessDevicesChannelUtilizationByDevice(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ByDeviceAPI.GetOrganizationWirelessDevicesChannelUtilizationByDevice(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -92,13 +92,13 @@ func Test_client_ByDeviceApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ByDeviceApiService GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval", func(t *testing.T) {
+	t.Run("Test ByDeviceAPIService GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ByDeviceApi.GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ByDeviceAPI.GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

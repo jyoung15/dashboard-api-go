@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing RelationshipsApiService
+Testing RelationshipsAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_RelationshipsApiService(t *testing.T) {
+func Test_client_RelationshipsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test RelationshipsApiService GetDeviceSensorRelationships", func(t *testing.T) {
+	t.Run("Test RelationshipsAPIService GetDeviceSensorRelationships", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.RelationshipsApi.GetDeviceSensorRelationships(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.RelationshipsAPI.GetDeviceSensorRelationships(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_RelationshipsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RelationshipsApiService GetNetworkSensorRelationships", func(t *testing.T) {
+	t.Run("Test RelationshipsAPIService GetNetworkSensorRelationships", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.RelationshipsApi.GetNetworkSensorRelationships(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.RelationshipsAPI.GetNetworkSensorRelationships(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,13 +50,13 @@ func Test_client_RelationshipsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RelationshipsApiService UpdateDeviceSensorRelationships", func(t *testing.T) {
+	t.Run("Test RelationshipsAPIService UpdateDeviceSensorRelationships", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.RelationshipsApi.UpdateDeviceSensorRelationships(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.RelationshipsAPI.UpdateDeviceSensorRelationships(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

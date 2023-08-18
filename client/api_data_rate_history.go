@@ -20,12 +20,12 @@ import (
 )
 
 
-// DataRateHistoryApiService DataRateHistoryApi service
-type DataRateHistoryApiService service
+// DataRateHistoryAPIService DataRateHistoryAPI service
+type DataRateHistoryAPIService service
 
-type DataRateHistoryApiGetNetworkWirelessDataRateHistoryRequest struct {
+type DataRateHistoryAPIGetNetworkWirelessDataRateHistoryRequest struct {
 	ctx context.Context
-	ApiService *DataRateHistoryApiService
+	ApiService *DataRateHistoryAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -40,66 +40,66 @@ type DataRateHistoryApiGetNetworkWirelessDataRateHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r DataRateHistoryApiGetNetworkWirelessDataRateHistoryRequest) T0(t0 string) DataRateHistoryApiGetNetworkWirelessDataRateHistoryRequest {
+func (r DataRateHistoryAPIGetNetworkWirelessDataRateHistoryRequest) T0(t0 string) DataRateHistoryAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r DataRateHistoryApiGetNetworkWirelessDataRateHistoryRequest) T1(t1 string) DataRateHistoryApiGetNetworkWirelessDataRateHistoryRequest {
+func (r DataRateHistoryAPIGetNetworkWirelessDataRateHistoryRequest) T1(t1 string) DataRateHistoryAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r DataRateHistoryApiGetNetworkWirelessDataRateHistoryRequest) Timespan(timespan float32) DataRateHistoryApiGetNetworkWirelessDataRateHistoryRequest {
+func (r DataRateHistoryAPIGetNetworkWirelessDataRateHistoryRequest) Timespan(timespan float32) DataRateHistoryAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 300, 600, 1200, 3600, 14400, 86400. The default is 86400.
-func (r DataRateHistoryApiGetNetworkWirelessDataRateHistoryRequest) Resolution(resolution int32) DataRateHistoryApiGetNetworkWirelessDataRateHistoryRequest {
+func (r DataRateHistoryAPIGetNetworkWirelessDataRateHistoryRequest) Resolution(resolution int32) DataRateHistoryAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // Automatically select a data resolution based on the given timespan; this overrides the value specified by the &#39;resolution&#39; parameter. The default setting is false.
-func (r DataRateHistoryApiGetNetworkWirelessDataRateHistoryRequest) AutoResolution(autoResolution bool) DataRateHistoryApiGetNetworkWirelessDataRateHistoryRequest {
+func (r DataRateHistoryAPIGetNetworkWirelessDataRateHistoryRequest) AutoResolution(autoResolution bool) DataRateHistoryAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.autoResolution = &autoResolution
 	return r
 }
 
 // Filter results by network client.
-func (r DataRateHistoryApiGetNetworkWirelessDataRateHistoryRequest) ClientId(clientId string) DataRateHistoryApiGetNetworkWirelessDataRateHistoryRequest {
+func (r DataRateHistoryAPIGetNetworkWirelessDataRateHistoryRequest) ClientId(clientId string) DataRateHistoryAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.clientId = &clientId
 	return r
 }
 
 // Filter results by device.
-func (r DataRateHistoryApiGetNetworkWirelessDataRateHistoryRequest) DeviceSerial(deviceSerial string) DataRateHistoryApiGetNetworkWirelessDataRateHistoryRequest {
+func (r DataRateHistoryAPIGetNetworkWirelessDataRateHistoryRequest) DeviceSerial(deviceSerial string) DataRateHistoryAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.deviceSerial = &deviceSerial
 	return r
 }
 
 // Filter results by AP tag.
-func (r DataRateHistoryApiGetNetworkWirelessDataRateHistoryRequest) ApTag(apTag string) DataRateHistoryApiGetNetworkWirelessDataRateHistoryRequest {
+func (r DataRateHistoryAPIGetNetworkWirelessDataRateHistoryRequest) ApTag(apTag string) DataRateHistoryAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;).
-func (r DataRateHistoryApiGetNetworkWirelessDataRateHistoryRequest) Band(band string) DataRateHistoryApiGetNetworkWirelessDataRateHistoryRequest {
+func (r DataRateHistoryAPIGetNetworkWirelessDataRateHistoryRequest) Band(band string) DataRateHistoryAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID number.
-func (r DataRateHistoryApiGetNetworkWirelessDataRateHistoryRequest) Ssid(ssid int32) DataRateHistoryApiGetNetworkWirelessDataRateHistoryRequest {
+func (r DataRateHistoryAPIGetNetworkWirelessDataRateHistoryRequest) Ssid(ssid int32) DataRateHistoryAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.ssid = &ssid
 	return r
 }
 
-func (r DataRateHistoryApiGetNetworkWirelessDataRateHistoryRequest) Execute() ([]GetNetworkWirelessDataRateHistory200ResponseInner, *http.Response, error) {
+func (r DataRateHistoryAPIGetNetworkWirelessDataRateHistoryRequest) Execute() ([]GetNetworkWirelessDataRateHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessDataRateHistoryExecute(r)
 }
 
@@ -110,10 +110,10 @@ Return PHY data rates over time for a network, device, or network client
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return DataRateHistoryApiGetNetworkWirelessDataRateHistoryRequest
+ @return DataRateHistoryAPIGetNetworkWirelessDataRateHistoryRequest
 */
-func (a *DataRateHistoryApiService) GetNetworkWirelessDataRateHistory(ctx context.Context, networkId string) DataRateHistoryApiGetNetworkWirelessDataRateHistoryRequest {
-	return DataRateHistoryApiGetNetworkWirelessDataRateHistoryRequest{
+func (a *DataRateHistoryAPIService) GetNetworkWirelessDataRateHistory(ctx context.Context, networkId string) DataRateHistoryAPIGetNetworkWirelessDataRateHistoryRequest {
+	return DataRateHistoryAPIGetNetworkWirelessDataRateHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -122,7 +122,7 @@ func (a *DataRateHistoryApiService) GetNetworkWirelessDataRateHistory(ctx contex
 
 // Execute executes the request
 //  @return []GetNetworkWirelessDataRateHistory200ResponseInner
-func (a *DataRateHistoryApiService) GetNetworkWirelessDataRateHistoryExecute(r DataRateHistoryApiGetNetworkWirelessDataRateHistoryRequest) ([]GetNetworkWirelessDataRateHistory200ResponseInner, *http.Response, error) {
+func (a *DataRateHistoryAPIService) GetNetworkWirelessDataRateHistoryExecute(r DataRateHistoryAPIGetNetworkWirelessDataRateHistoryRequest) ([]GetNetworkWirelessDataRateHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -130,7 +130,7 @@ func (a *DataRateHistoryApiService) GetNetworkWirelessDataRateHistoryExecute(r D
 		localVarReturnValue  []GetNetworkWirelessDataRateHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataRateHistoryApiService.GetNetworkWirelessDataRateHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataRateHistoryAPIService.GetNetworkWirelessDataRateHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

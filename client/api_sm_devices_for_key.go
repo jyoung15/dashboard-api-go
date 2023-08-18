@@ -20,12 +20,12 @@ import (
 )
 
 
-// SmDevicesForKeyApiService SmDevicesForKeyApi service
-type SmDevicesForKeyApiService service
+// SmDevicesForKeyAPIService SmDevicesForKeyAPI service
+type SmDevicesForKeyAPIService service
 
-type SmDevicesForKeyApiGetNetworkPiiSmDevicesForKeyRequest struct {
+type SmDevicesForKeyAPIGetNetworkPiiSmDevicesForKeyRequest struct {
 	ctx context.Context
-	ApiService *SmDevicesForKeyApiService
+	ApiService *SmDevicesForKeyAPIService
 	networkId string
 	username *string
 	email *string
@@ -36,42 +36,42 @@ type SmDevicesForKeyApiGetNetworkPiiSmDevicesForKeyRequest struct {
 }
 
 // The username of a Systems Manager user
-func (r SmDevicesForKeyApiGetNetworkPiiSmDevicesForKeyRequest) Username(username string) SmDevicesForKeyApiGetNetworkPiiSmDevicesForKeyRequest {
+func (r SmDevicesForKeyAPIGetNetworkPiiSmDevicesForKeyRequest) Username(username string) SmDevicesForKeyAPIGetNetworkPiiSmDevicesForKeyRequest {
 	r.username = &username
 	return r
 }
 
 // The email of a network user account or a Systems Manager device
-func (r SmDevicesForKeyApiGetNetworkPiiSmDevicesForKeyRequest) Email(email string) SmDevicesForKeyApiGetNetworkPiiSmDevicesForKeyRequest {
+func (r SmDevicesForKeyAPIGetNetworkPiiSmDevicesForKeyRequest) Email(email string) SmDevicesForKeyAPIGetNetworkPiiSmDevicesForKeyRequest {
 	r.email = &email
 	return r
 }
 
 // The MAC of a network client device or a Systems Manager device
-func (r SmDevicesForKeyApiGetNetworkPiiSmDevicesForKeyRequest) Mac(mac string) SmDevicesForKeyApiGetNetworkPiiSmDevicesForKeyRequest {
+func (r SmDevicesForKeyAPIGetNetworkPiiSmDevicesForKeyRequest) Mac(mac string) SmDevicesForKeyAPIGetNetworkPiiSmDevicesForKeyRequest {
 	r.mac = &mac
 	return r
 }
 
 // The serial of a Systems Manager device
-func (r SmDevicesForKeyApiGetNetworkPiiSmDevicesForKeyRequest) Serial(serial string) SmDevicesForKeyApiGetNetworkPiiSmDevicesForKeyRequest {
+func (r SmDevicesForKeyAPIGetNetworkPiiSmDevicesForKeyRequest) Serial(serial string) SmDevicesForKeyAPIGetNetworkPiiSmDevicesForKeyRequest {
 	r.serial = &serial
 	return r
 }
 
 // The IMEI of a Systems Manager device
-func (r SmDevicesForKeyApiGetNetworkPiiSmDevicesForKeyRequest) Imei(imei string) SmDevicesForKeyApiGetNetworkPiiSmDevicesForKeyRequest {
+func (r SmDevicesForKeyAPIGetNetworkPiiSmDevicesForKeyRequest) Imei(imei string) SmDevicesForKeyAPIGetNetworkPiiSmDevicesForKeyRequest {
 	r.imei = &imei
 	return r
 }
 
 // The MAC of a Bluetooth client
-func (r SmDevicesForKeyApiGetNetworkPiiSmDevicesForKeyRequest) BluetoothMac(bluetoothMac string) SmDevicesForKeyApiGetNetworkPiiSmDevicesForKeyRequest {
+func (r SmDevicesForKeyAPIGetNetworkPiiSmDevicesForKeyRequest) BluetoothMac(bluetoothMac string) SmDevicesForKeyAPIGetNetworkPiiSmDevicesForKeyRequest {
 	r.bluetoothMac = &bluetoothMac
 	return r
 }
 
-func (r SmDevicesForKeyApiGetNetworkPiiSmDevicesForKeyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SmDevicesForKeyAPIGetNetworkPiiSmDevicesForKeyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkPiiSmDevicesForKeyExecute(r)
 }
 
@@ -88,10 +88,10 @@ Given a piece of Personally Identifiable Information (PII), return the Systems M
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SmDevicesForKeyApiGetNetworkPiiSmDevicesForKeyRequest
+ @return SmDevicesForKeyAPIGetNetworkPiiSmDevicesForKeyRequest
 */
-func (a *SmDevicesForKeyApiService) GetNetworkPiiSmDevicesForKey(ctx context.Context, networkId string) SmDevicesForKeyApiGetNetworkPiiSmDevicesForKeyRequest {
-	return SmDevicesForKeyApiGetNetworkPiiSmDevicesForKeyRequest{
+func (a *SmDevicesForKeyAPIService) GetNetworkPiiSmDevicesForKey(ctx context.Context, networkId string) SmDevicesForKeyAPIGetNetworkPiiSmDevicesForKeyRequest {
+	return SmDevicesForKeyAPIGetNetworkPiiSmDevicesForKeyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -100,7 +100,7 @@ func (a *SmDevicesForKeyApiService) GetNetworkPiiSmDevicesForKey(ctx context.Con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SmDevicesForKeyApiService) GetNetworkPiiSmDevicesForKeyExecute(r SmDevicesForKeyApiGetNetworkPiiSmDevicesForKeyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SmDevicesForKeyAPIService) GetNetworkPiiSmDevicesForKeyExecute(r SmDevicesForKeyAPIGetNetworkPiiSmDevicesForKeyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -108,7 +108,7 @@ func (a *SmDevicesForKeyApiService) GetNetworkPiiSmDevicesForKeyExecute(r SmDevi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmDevicesForKeyApiService.GetNetworkPiiSmDevicesForKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmDevicesForKeyAPIService.GetNetworkPiiSmDevicesForKey")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

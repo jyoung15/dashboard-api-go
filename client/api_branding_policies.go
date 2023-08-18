@@ -20,22 +20,22 @@ import (
 )
 
 
-// BrandingPoliciesApiService BrandingPoliciesApi service
-type BrandingPoliciesApiService service
+// BrandingPoliciesAPIService BrandingPoliciesAPI service
+type BrandingPoliciesAPIService service
 
-type BrandingPoliciesApiCreateOrganizationBrandingPolicyRequest struct {
+type BrandingPoliciesAPICreateOrganizationBrandingPolicyRequest struct {
 	ctx context.Context
-	ApiService *BrandingPoliciesApiService
+	ApiService *BrandingPoliciesAPIService
 	organizationId string
 	createOrganizationBrandingPolicyRequest *CreateOrganizationBrandingPolicyRequest
 }
 
-func (r BrandingPoliciesApiCreateOrganizationBrandingPolicyRequest) CreateOrganizationBrandingPolicyRequest(createOrganizationBrandingPolicyRequest CreateOrganizationBrandingPolicyRequest) BrandingPoliciesApiCreateOrganizationBrandingPolicyRequest {
+func (r BrandingPoliciesAPICreateOrganizationBrandingPolicyRequest) CreateOrganizationBrandingPolicyRequest(createOrganizationBrandingPolicyRequest CreateOrganizationBrandingPolicyRequest) BrandingPoliciesAPICreateOrganizationBrandingPolicyRequest {
 	r.createOrganizationBrandingPolicyRequest = &createOrganizationBrandingPolicyRequest
 	return r
 }
 
-func (r BrandingPoliciesApiCreateOrganizationBrandingPolicyRequest) Execute() (*CreateOrganizationBrandingPolicy201Response, *http.Response, error) {
+func (r BrandingPoliciesAPICreateOrganizationBrandingPolicyRequest) Execute() (*CreateOrganizationBrandingPolicy201Response, *http.Response, error) {
 	return r.ApiService.CreateOrganizationBrandingPolicyExecute(r)
 }
 
@@ -46,10 +46,10 @@ Add a new branding policy to an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return BrandingPoliciesApiCreateOrganizationBrandingPolicyRequest
+ @return BrandingPoliciesAPICreateOrganizationBrandingPolicyRequest
 */
-func (a *BrandingPoliciesApiService) CreateOrganizationBrandingPolicy(ctx context.Context, organizationId string) BrandingPoliciesApiCreateOrganizationBrandingPolicyRequest {
-	return BrandingPoliciesApiCreateOrganizationBrandingPolicyRequest{
+func (a *BrandingPoliciesAPIService) CreateOrganizationBrandingPolicy(ctx context.Context, organizationId string) BrandingPoliciesAPICreateOrganizationBrandingPolicyRequest {
+	return BrandingPoliciesAPICreateOrganizationBrandingPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -58,7 +58,7 @@ func (a *BrandingPoliciesApiService) CreateOrganizationBrandingPolicy(ctx contex
 
 // Execute executes the request
 //  @return CreateOrganizationBrandingPolicy201Response
-func (a *BrandingPoliciesApiService) CreateOrganizationBrandingPolicyExecute(r BrandingPoliciesApiCreateOrganizationBrandingPolicyRequest) (*CreateOrganizationBrandingPolicy201Response, *http.Response, error) {
+func (a *BrandingPoliciesAPIService) CreateOrganizationBrandingPolicyExecute(r BrandingPoliciesAPICreateOrganizationBrandingPolicyRequest) (*CreateOrganizationBrandingPolicy201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *BrandingPoliciesApiService) CreateOrganizationBrandingPolicyExecute(r B
 		localVarReturnValue  *CreateOrganizationBrandingPolicy201Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BrandingPoliciesApiService.CreateOrganizationBrandingPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BrandingPoliciesAPIService.CreateOrganizationBrandingPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -148,14 +148,14 @@ func (a *BrandingPoliciesApiService) CreateOrganizationBrandingPolicyExecute(r B
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BrandingPoliciesApiDeleteOrganizationBrandingPolicyRequest struct {
+type BrandingPoliciesAPIDeleteOrganizationBrandingPolicyRequest struct {
 	ctx context.Context
-	ApiService *BrandingPoliciesApiService
+	ApiService *BrandingPoliciesAPIService
 	organizationId string
 	brandingPolicyId string
 }
 
-func (r BrandingPoliciesApiDeleteOrganizationBrandingPolicyRequest) Execute() (*http.Response, error) {
+func (r BrandingPoliciesAPIDeleteOrganizationBrandingPolicyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationBrandingPolicyExecute(r)
 }
 
@@ -167,10 +167,10 @@ Delete a branding policy
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param brandingPolicyId Branding policy ID
- @return BrandingPoliciesApiDeleteOrganizationBrandingPolicyRequest
+ @return BrandingPoliciesAPIDeleteOrganizationBrandingPolicyRequest
 */
-func (a *BrandingPoliciesApiService) DeleteOrganizationBrandingPolicy(ctx context.Context, organizationId string, brandingPolicyId string) BrandingPoliciesApiDeleteOrganizationBrandingPolicyRequest {
-	return BrandingPoliciesApiDeleteOrganizationBrandingPolicyRequest{
+func (a *BrandingPoliciesAPIService) DeleteOrganizationBrandingPolicy(ctx context.Context, organizationId string, brandingPolicyId string) BrandingPoliciesAPIDeleteOrganizationBrandingPolicyRequest {
+	return BrandingPoliciesAPIDeleteOrganizationBrandingPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -179,14 +179,14 @@ func (a *BrandingPoliciesApiService) DeleteOrganizationBrandingPolicy(ctx contex
 }
 
 // Execute executes the request
-func (a *BrandingPoliciesApiService) DeleteOrganizationBrandingPolicyExecute(r BrandingPoliciesApiDeleteOrganizationBrandingPolicyRequest) (*http.Response, error) {
+func (a *BrandingPoliciesAPIService) DeleteOrganizationBrandingPolicyExecute(r BrandingPoliciesAPIDeleteOrganizationBrandingPolicyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BrandingPoliciesApiService.DeleteOrganizationBrandingPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BrandingPoliciesAPIService.DeleteOrganizationBrandingPolicy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -258,13 +258,13 @@ func (a *BrandingPoliciesApiService) DeleteOrganizationBrandingPolicyExecute(r B
 	return localVarHTTPResponse, nil
 }
 
-type BrandingPoliciesApiGetOrganizationBrandingPoliciesRequest struct {
+type BrandingPoliciesAPIGetOrganizationBrandingPoliciesRequest struct {
 	ctx context.Context
-	ApiService *BrandingPoliciesApiService
+	ApiService *BrandingPoliciesAPIService
 	organizationId string
 }
 
-func (r BrandingPoliciesApiGetOrganizationBrandingPoliciesRequest) Execute() ([]GetOrganizationBrandingPolicies200ResponseInner, *http.Response, error) {
+func (r BrandingPoliciesAPIGetOrganizationBrandingPoliciesRequest) Execute() ([]GetOrganizationBrandingPolicies200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationBrandingPoliciesExecute(r)
 }
 
@@ -275,10 +275,10 @@ List the branding policies of an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return BrandingPoliciesApiGetOrganizationBrandingPoliciesRequest
+ @return BrandingPoliciesAPIGetOrganizationBrandingPoliciesRequest
 */
-func (a *BrandingPoliciesApiService) GetOrganizationBrandingPolicies(ctx context.Context, organizationId string) BrandingPoliciesApiGetOrganizationBrandingPoliciesRequest {
-	return BrandingPoliciesApiGetOrganizationBrandingPoliciesRequest{
+func (a *BrandingPoliciesAPIService) GetOrganizationBrandingPolicies(ctx context.Context, organizationId string) BrandingPoliciesAPIGetOrganizationBrandingPoliciesRequest {
+	return BrandingPoliciesAPIGetOrganizationBrandingPoliciesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -287,7 +287,7 @@ func (a *BrandingPoliciesApiService) GetOrganizationBrandingPolicies(ctx context
 
 // Execute executes the request
 //  @return []GetOrganizationBrandingPolicies200ResponseInner
-func (a *BrandingPoliciesApiService) GetOrganizationBrandingPoliciesExecute(r BrandingPoliciesApiGetOrganizationBrandingPoliciesRequest) ([]GetOrganizationBrandingPolicies200ResponseInner, *http.Response, error) {
+func (a *BrandingPoliciesAPIService) GetOrganizationBrandingPoliciesExecute(r BrandingPoliciesAPIGetOrganizationBrandingPoliciesRequest) ([]GetOrganizationBrandingPolicies200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -295,7 +295,7 @@ func (a *BrandingPoliciesApiService) GetOrganizationBrandingPoliciesExecute(r Br
 		localVarReturnValue  []GetOrganizationBrandingPolicies200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BrandingPoliciesApiService.GetOrganizationBrandingPolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BrandingPoliciesAPIService.GetOrganizationBrandingPolicies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -375,13 +375,13 @@ func (a *BrandingPoliciesApiService) GetOrganizationBrandingPoliciesExecute(r Br
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BrandingPoliciesApiGetOrganizationBrandingPoliciesPrioritiesRequest struct {
+type BrandingPoliciesAPIGetOrganizationBrandingPoliciesPrioritiesRequest struct {
 	ctx context.Context
-	ApiService *BrandingPoliciesApiService
+	ApiService *BrandingPoliciesAPIService
 	organizationId string
 }
 
-func (r BrandingPoliciesApiGetOrganizationBrandingPoliciesPrioritiesRequest) Execute() (*GetOrganizationBrandingPoliciesPriorities200Response, *http.Response, error) {
+func (r BrandingPoliciesAPIGetOrganizationBrandingPoliciesPrioritiesRequest) Execute() (*GetOrganizationBrandingPoliciesPriorities200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationBrandingPoliciesPrioritiesExecute(r)
 }
 
@@ -392,10 +392,10 @@ Return the branding policy IDs of an organization in priority order. IDs are ord
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return BrandingPoliciesApiGetOrganizationBrandingPoliciesPrioritiesRequest
+ @return BrandingPoliciesAPIGetOrganizationBrandingPoliciesPrioritiesRequest
 */
-func (a *BrandingPoliciesApiService) GetOrganizationBrandingPoliciesPriorities(ctx context.Context, organizationId string) BrandingPoliciesApiGetOrganizationBrandingPoliciesPrioritiesRequest {
-	return BrandingPoliciesApiGetOrganizationBrandingPoliciesPrioritiesRequest{
+func (a *BrandingPoliciesAPIService) GetOrganizationBrandingPoliciesPriorities(ctx context.Context, organizationId string) BrandingPoliciesAPIGetOrganizationBrandingPoliciesPrioritiesRequest {
+	return BrandingPoliciesAPIGetOrganizationBrandingPoliciesPrioritiesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -404,7 +404,7 @@ func (a *BrandingPoliciesApiService) GetOrganizationBrandingPoliciesPriorities(c
 
 // Execute executes the request
 //  @return GetOrganizationBrandingPoliciesPriorities200Response
-func (a *BrandingPoliciesApiService) GetOrganizationBrandingPoliciesPrioritiesExecute(r BrandingPoliciesApiGetOrganizationBrandingPoliciesPrioritiesRequest) (*GetOrganizationBrandingPoliciesPriorities200Response, *http.Response, error) {
+func (a *BrandingPoliciesAPIService) GetOrganizationBrandingPoliciesPrioritiesExecute(r BrandingPoliciesAPIGetOrganizationBrandingPoliciesPrioritiesRequest) (*GetOrganizationBrandingPoliciesPriorities200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -412,7 +412,7 @@ func (a *BrandingPoliciesApiService) GetOrganizationBrandingPoliciesPrioritiesEx
 		localVarReturnValue  *GetOrganizationBrandingPoliciesPriorities200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BrandingPoliciesApiService.GetOrganizationBrandingPoliciesPriorities")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BrandingPoliciesAPIService.GetOrganizationBrandingPoliciesPriorities")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -492,14 +492,14 @@ func (a *BrandingPoliciesApiService) GetOrganizationBrandingPoliciesPrioritiesEx
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BrandingPoliciesApiGetOrganizationBrandingPolicyRequest struct {
+type BrandingPoliciesAPIGetOrganizationBrandingPolicyRequest struct {
 	ctx context.Context
-	ApiService *BrandingPoliciesApiService
+	ApiService *BrandingPoliciesAPIService
 	organizationId string
 	brandingPolicyId string
 }
 
-func (r BrandingPoliciesApiGetOrganizationBrandingPolicyRequest) Execute() (*GetOrganizationBrandingPolicies200ResponseInner, *http.Response, error) {
+func (r BrandingPoliciesAPIGetOrganizationBrandingPolicyRequest) Execute() (*GetOrganizationBrandingPolicies200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationBrandingPolicyExecute(r)
 }
 
@@ -511,10 +511,10 @@ Return a branding policy
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param brandingPolicyId Branding policy ID
- @return BrandingPoliciesApiGetOrganizationBrandingPolicyRequest
+ @return BrandingPoliciesAPIGetOrganizationBrandingPolicyRequest
 */
-func (a *BrandingPoliciesApiService) GetOrganizationBrandingPolicy(ctx context.Context, organizationId string, brandingPolicyId string) BrandingPoliciesApiGetOrganizationBrandingPolicyRequest {
-	return BrandingPoliciesApiGetOrganizationBrandingPolicyRequest{
+func (a *BrandingPoliciesAPIService) GetOrganizationBrandingPolicy(ctx context.Context, organizationId string, brandingPolicyId string) BrandingPoliciesAPIGetOrganizationBrandingPolicyRequest {
+	return BrandingPoliciesAPIGetOrganizationBrandingPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -524,7 +524,7 @@ func (a *BrandingPoliciesApiService) GetOrganizationBrandingPolicy(ctx context.C
 
 // Execute executes the request
 //  @return GetOrganizationBrandingPolicies200ResponseInner
-func (a *BrandingPoliciesApiService) GetOrganizationBrandingPolicyExecute(r BrandingPoliciesApiGetOrganizationBrandingPolicyRequest) (*GetOrganizationBrandingPolicies200ResponseInner, *http.Response, error) {
+func (a *BrandingPoliciesAPIService) GetOrganizationBrandingPolicyExecute(r BrandingPoliciesAPIGetOrganizationBrandingPolicyRequest) (*GetOrganizationBrandingPolicies200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -532,7 +532,7 @@ func (a *BrandingPoliciesApiService) GetOrganizationBrandingPolicyExecute(r Bran
 		localVarReturnValue  *GetOrganizationBrandingPolicies200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BrandingPoliciesApiService.GetOrganizationBrandingPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BrandingPoliciesAPIService.GetOrganizationBrandingPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -613,19 +613,19 @@ func (a *BrandingPoliciesApiService) GetOrganizationBrandingPolicyExecute(r Bran
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BrandingPoliciesApiUpdateOrganizationBrandingPoliciesPrioritiesRequest struct {
+type BrandingPoliciesAPIUpdateOrganizationBrandingPoliciesPrioritiesRequest struct {
 	ctx context.Context
-	ApiService *BrandingPoliciesApiService
+	ApiService *BrandingPoliciesAPIService
 	organizationId string
 	updateOrganizationBrandingPoliciesPrioritiesRequest *UpdateOrganizationBrandingPoliciesPrioritiesRequest
 }
 
-func (r BrandingPoliciesApiUpdateOrganizationBrandingPoliciesPrioritiesRequest) UpdateOrganizationBrandingPoliciesPrioritiesRequest(updateOrganizationBrandingPoliciesPrioritiesRequest UpdateOrganizationBrandingPoliciesPrioritiesRequest) BrandingPoliciesApiUpdateOrganizationBrandingPoliciesPrioritiesRequest {
+func (r BrandingPoliciesAPIUpdateOrganizationBrandingPoliciesPrioritiesRequest) UpdateOrganizationBrandingPoliciesPrioritiesRequest(updateOrganizationBrandingPoliciesPrioritiesRequest UpdateOrganizationBrandingPoliciesPrioritiesRequest) BrandingPoliciesAPIUpdateOrganizationBrandingPoliciesPrioritiesRequest {
 	r.updateOrganizationBrandingPoliciesPrioritiesRequest = &updateOrganizationBrandingPoliciesPrioritiesRequest
 	return r
 }
 
-func (r BrandingPoliciesApiUpdateOrganizationBrandingPoliciesPrioritiesRequest) Execute() (*GetOrganizationBrandingPoliciesPriorities200Response, *http.Response, error) {
+func (r BrandingPoliciesAPIUpdateOrganizationBrandingPoliciesPrioritiesRequest) Execute() (*GetOrganizationBrandingPoliciesPriorities200Response, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationBrandingPoliciesPrioritiesExecute(r)
 }
 
@@ -636,10 +636,10 @@ Update the priority ordering of an organization's branding policies.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return BrandingPoliciesApiUpdateOrganizationBrandingPoliciesPrioritiesRequest
+ @return BrandingPoliciesAPIUpdateOrganizationBrandingPoliciesPrioritiesRequest
 */
-func (a *BrandingPoliciesApiService) UpdateOrganizationBrandingPoliciesPriorities(ctx context.Context, organizationId string) BrandingPoliciesApiUpdateOrganizationBrandingPoliciesPrioritiesRequest {
-	return BrandingPoliciesApiUpdateOrganizationBrandingPoliciesPrioritiesRequest{
+func (a *BrandingPoliciesAPIService) UpdateOrganizationBrandingPoliciesPriorities(ctx context.Context, organizationId string) BrandingPoliciesAPIUpdateOrganizationBrandingPoliciesPrioritiesRequest {
+	return BrandingPoliciesAPIUpdateOrganizationBrandingPoliciesPrioritiesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -648,7 +648,7 @@ func (a *BrandingPoliciesApiService) UpdateOrganizationBrandingPoliciesPrioritie
 
 // Execute executes the request
 //  @return GetOrganizationBrandingPoliciesPriorities200Response
-func (a *BrandingPoliciesApiService) UpdateOrganizationBrandingPoliciesPrioritiesExecute(r BrandingPoliciesApiUpdateOrganizationBrandingPoliciesPrioritiesRequest) (*GetOrganizationBrandingPoliciesPriorities200Response, *http.Response, error) {
+func (a *BrandingPoliciesAPIService) UpdateOrganizationBrandingPoliciesPrioritiesExecute(r BrandingPoliciesAPIUpdateOrganizationBrandingPoliciesPrioritiesRequest) (*GetOrganizationBrandingPoliciesPriorities200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -656,7 +656,7 @@ func (a *BrandingPoliciesApiService) UpdateOrganizationBrandingPoliciesPrioritie
 		localVarReturnValue  *GetOrganizationBrandingPoliciesPriorities200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BrandingPoliciesApiService.UpdateOrganizationBrandingPoliciesPriorities")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BrandingPoliciesAPIService.UpdateOrganizationBrandingPoliciesPriorities")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -738,20 +738,20 @@ func (a *BrandingPoliciesApiService) UpdateOrganizationBrandingPoliciesPrioritie
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BrandingPoliciesApiUpdateOrganizationBrandingPolicyRequest struct {
+type BrandingPoliciesAPIUpdateOrganizationBrandingPolicyRequest struct {
 	ctx context.Context
-	ApiService *BrandingPoliciesApiService
+	ApiService *BrandingPoliciesAPIService
 	organizationId string
 	brandingPolicyId string
 	updateOrganizationBrandingPolicyRequest *UpdateOrganizationBrandingPolicyRequest
 }
 
-func (r BrandingPoliciesApiUpdateOrganizationBrandingPolicyRequest) UpdateOrganizationBrandingPolicyRequest(updateOrganizationBrandingPolicyRequest UpdateOrganizationBrandingPolicyRequest) BrandingPoliciesApiUpdateOrganizationBrandingPolicyRequest {
+func (r BrandingPoliciesAPIUpdateOrganizationBrandingPolicyRequest) UpdateOrganizationBrandingPolicyRequest(updateOrganizationBrandingPolicyRequest UpdateOrganizationBrandingPolicyRequest) BrandingPoliciesAPIUpdateOrganizationBrandingPolicyRequest {
 	r.updateOrganizationBrandingPolicyRequest = &updateOrganizationBrandingPolicyRequest
 	return r
 }
 
-func (r BrandingPoliciesApiUpdateOrganizationBrandingPolicyRequest) Execute() (*GetOrganizationBrandingPolicies200ResponseInner, *http.Response, error) {
+func (r BrandingPoliciesAPIUpdateOrganizationBrandingPolicyRequest) Execute() (*GetOrganizationBrandingPolicies200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationBrandingPolicyExecute(r)
 }
 
@@ -763,10 +763,10 @@ Update a branding policy
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param brandingPolicyId Branding policy ID
- @return BrandingPoliciesApiUpdateOrganizationBrandingPolicyRequest
+ @return BrandingPoliciesAPIUpdateOrganizationBrandingPolicyRequest
 */
-func (a *BrandingPoliciesApiService) UpdateOrganizationBrandingPolicy(ctx context.Context, organizationId string, brandingPolicyId string) BrandingPoliciesApiUpdateOrganizationBrandingPolicyRequest {
-	return BrandingPoliciesApiUpdateOrganizationBrandingPolicyRequest{
+func (a *BrandingPoliciesAPIService) UpdateOrganizationBrandingPolicy(ctx context.Context, organizationId string, brandingPolicyId string) BrandingPoliciesAPIUpdateOrganizationBrandingPolicyRequest {
+	return BrandingPoliciesAPIUpdateOrganizationBrandingPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -776,7 +776,7 @@ func (a *BrandingPoliciesApiService) UpdateOrganizationBrandingPolicy(ctx contex
 
 // Execute executes the request
 //  @return GetOrganizationBrandingPolicies200ResponseInner
-func (a *BrandingPoliciesApiService) UpdateOrganizationBrandingPolicyExecute(r BrandingPoliciesApiUpdateOrganizationBrandingPolicyRequest) (*GetOrganizationBrandingPolicies200ResponseInner, *http.Response, error) {
+func (a *BrandingPoliciesAPIService) UpdateOrganizationBrandingPolicyExecute(r BrandingPoliciesAPIUpdateOrganizationBrandingPolicyRequest) (*GetOrganizationBrandingPolicies200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -784,7 +784,7 @@ func (a *BrandingPoliciesApiService) UpdateOrganizationBrandingPolicyExecute(r B
 		localVarReturnValue  *GetOrganizationBrandingPolicies200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BrandingPoliciesApiService.UpdateOrganizationBrandingPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BrandingPoliciesAPIService.UpdateOrganizationBrandingPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

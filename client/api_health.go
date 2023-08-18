@@ -20,16 +20,16 @@ import (
 )
 
 
-// HealthApiService HealthApi service
-type HealthApiService service
+// HealthAPIService HealthAPI service
+type HealthAPIService service
 
-type HealthApiGetNetworkHealthAlertsRequest struct {
+type HealthAPIGetNetworkHealthAlertsRequest struct {
 	ctx context.Context
-	ApiService *HealthApiService
+	ApiService *HealthAPIService
 	networkId string
 }
 
-func (r HealthApiGetNetworkHealthAlertsRequest) Execute() ([]GetNetworkHealthAlerts200ResponseInner, *http.Response, error) {
+func (r HealthAPIGetNetworkHealthAlertsRequest) Execute() ([]GetNetworkHealthAlerts200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkHealthAlertsExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return all global alerts on this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return HealthApiGetNetworkHealthAlertsRequest
+ @return HealthAPIGetNetworkHealthAlertsRequest
 */
-func (a *HealthApiService) GetNetworkHealthAlerts(ctx context.Context, networkId string) HealthApiGetNetworkHealthAlertsRequest {
-	return HealthApiGetNetworkHealthAlertsRequest{
+func (a *HealthAPIService) GetNetworkHealthAlerts(ctx context.Context, networkId string) HealthAPIGetNetworkHealthAlertsRequest {
+	return HealthAPIGetNetworkHealthAlertsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *HealthApiService) GetNetworkHealthAlerts(ctx context.Context, networkId
 
 // Execute executes the request
 //  @return []GetNetworkHealthAlerts200ResponseInner
-func (a *HealthApiService) GetNetworkHealthAlertsExecute(r HealthApiGetNetworkHealthAlertsRequest) ([]GetNetworkHealthAlerts200ResponseInner, *http.Response, error) {
+func (a *HealthAPIService) GetNetworkHealthAlertsExecute(r HealthAPIGetNetworkHealthAlertsRequest) ([]GetNetworkHealthAlerts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *HealthApiService) GetNetworkHealthAlertsExecute(r HealthApiGetNetworkHe
 		localVarReturnValue  []GetNetworkHealthAlerts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HealthApiService.GetNetworkHealthAlerts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HealthAPIService.GetNetworkHealthAlerts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

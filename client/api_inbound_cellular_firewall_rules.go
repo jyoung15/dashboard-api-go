@@ -20,16 +20,16 @@ import (
 )
 
 
-// InboundCellularFirewallRulesApiService InboundCellularFirewallRulesApi service
-type InboundCellularFirewallRulesApiService service
+// InboundCellularFirewallRulesAPIService InboundCellularFirewallRulesAPI service
+type InboundCellularFirewallRulesAPIService service
 
-type InboundCellularFirewallRulesApiGetNetworkApplianceFirewallInboundCellularFirewallRulesRequest struct {
+type InboundCellularFirewallRulesAPIGetNetworkApplianceFirewallInboundCellularFirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *InboundCellularFirewallRulesApiService
+	ApiService *InboundCellularFirewallRulesAPIService
 	networkId string
 }
 
-func (r InboundCellularFirewallRulesApiGetNetworkApplianceFirewallInboundCellularFirewallRulesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r InboundCellularFirewallRulesAPIGetNetworkApplianceFirewallInboundCellularFirewallRulesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceFirewallInboundCellularFirewallRulesExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the inbound cellular firewall rules for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return InboundCellularFirewallRulesApiGetNetworkApplianceFirewallInboundCellularFirewallRulesRequest
+ @return InboundCellularFirewallRulesAPIGetNetworkApplianceFirewallInboundCellularFirewallRulesRequest
 */
-func (a *InboundCellularFirewallRulesApiService) GetNetworkApplianceFirewallInboundCellularFirewallRules(ctx context.Context, networkId string) InboundCellularFirewallRulesApiGetNetworkApplianceFirewallInboundCellularFirewallRulesRequest {
-	return InboundCellularFirewallRulesApiGetNetworkApplianceFirewallInboundCellularFirewallRulesRequest{
+func (a *InboundCellularFirewallRulesAPIService) GetNetworkApplianceFirewallInboundCellularFirewallRules(ctx context.Context, networkId string) InboundCellularFirewallRulesAPIGetNetworkApplianceFirewallInboundCellularFirewallRulesRequest {
+	return InboundCellularFirewallRulesAPIGetNetworkApplianceFirewallInboundCellularFirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *InboundCellularFirewallRulesApiService) GetNetworkApplianceFirewallInbo
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *InboundCellularFirewallRulesApiService) GetNetworkApplianceFirewallInboundCellularFirewallRulesExecute(r InboundCellularFirewallRulesApiGetNetworkApplianceFirewallInboundCellularFirewallRulesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *InboundCellularFirewallRulesAPIService) GetNetworkApplianceFirewallInboundCellularFirewallRulesExecute(r InboundCellularFirewallRulesAPIGetNetworkApplianceFirewallInboundCellularFirewallRulesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *InboundCellularFirewallRulesApiService) GetNetworkApplianceFirewallInbo
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InboundCellularFirewallRulesApiService.GetNetworkApplianceFirewallInboundCellularFirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InboundCellularFirewallRulesAPIService.GetNetworkApplianceFirewallInboundCellularFirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *InboundCellularFirewallRulesApiService) GetNetworkApplianceFirewallInbo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type InboundCellularFirewallRulesApiUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest struct {
+type InboundCellularFirewallRulesAPIUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *InboundCellularFirewallRulesApiService
+	ApiService *InboundCellularFirewallRulesAPIService
 	networkId string
 	updateNetworkApplianceFirewallCellularFirewallRulesRequest *UpdateNetworkApplianceFirewallCellularFirewallRulesRequest
 }
 
-func (r InboundCellularFirewallRulesApiUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest) UpdateNetworkApplianceFirewallCellularFirewallRulesRequest(updateNetworkApplianceFirewallCellularFirewallRulesRequest UpdateNetworkApplianceFirewallCellularFirewallRulesRequest) InboundCellularFirewallRulesApiUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest {
+func (r InboundCellularFirewallRulesAPIUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest) UpdateNetworkApplianceFirewallCellularFirewallRulesRequest(updateNetworkApplianceFirewallCellularFirewallRulesRequest UpdateNetworkApplianceFirewallCellularFirewallRulesRequest) InboundCellularFirewallRulesAPIUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest {
 	r.updateNetworkApplianceFirewallCellularFirewallRulesRequest = &updateNetworkApplianceFirewallCellularFirewallRulesRequest
 	return r
 }
 
-func (r InboundCellularFirewallRulesApiUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r InboundCellularFirewallRulesAPIUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceFirewallInboundCellularFirewallRulesExecute(r)
 }
 
@@ -163,10 +163,10 @@ Update the inbound cellular firewall rules of an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return InboundCellularFirewallRulesApiUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest
+ @return InboundCellularFirewallRulesAPIUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest
 */
-func (a *InboundCellularFirewallRulesApiService) UpdateNetworkApplianceFirewallInboundCellularFirewallRules(ctx context.Context, networkId string) InboundCellularFirewallRulesApiUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest {
-	return InboundCellularFirewallRulesApiUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest{
+func (a *InboundCellularFirewallRulesAPIService) UpdateNetworkApplianceFirewallInboundCellularFirewallRules(ctx context.Context, networkId string) InboundCellularFirewallRulesAPIUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest {
+	return InboundCellularFirewallRulesAPIUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -175,7 +175,7 @@ func (a *InboundCellularFirewallRulesApiService) UpdateNetworkApplianceFirewallI
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *InboundCellularFirewallRulesApiService) UpdateNetworkApplianceFirewallInboundCellularFirewallRulesExecute(r InboundCellularFirewallRulesApiUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *InboundCellularFirewallRulesAPIService) UpdateNetworkApplianceFirewallInboundCellularFirewallRulesExecute(r InboundCellularFirewallRulesAPIUpdateNetworkApplianceFirewallInboundCellularFirewallRulesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *InboundCellularFirewallRulesApiService) UpdateNetworkApplianceFirewallI
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InboundCellularFirewallRulesApiService.UpdateNetworkApplianceFirewallInboundCellularFirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InboundCellularFirewallRulesAPIService.UpdateNetworkApplianceFirewallInboundCellularFirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -20,17 +20,17 @@ import (
 )
 
 
-// BonjourForwardingApiService BonjourForwardingApi service
-type BonjourForwardingApiService service
+// BonjourForwardingAPIService BonjourForwardingAPI service
+type BonjourForwardingAPIService service
 
-type BonjourForwardingApiGetNetworkWirelessSsidBonjourForwardingRequest struct {
+type BonjourForwardingAPIGetNetworkWirelessSsidBonjourForwardingRequest struct {
 	ctx context.Context
-	ApiService *BonjourForwardingApiService
+	ApiService *BonjourForwardingAPIService
 	networkId string
 	number string
 }
 
-func (r BonjourForwardingApiGetNetworkWirelessSsidBonjourForwardingRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r BonjourForwardingAPIGetNetworkWirelessSsidBonjourForwardingRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidBonjourForwardingExecute(r)
 }
 
@@ -42,10 +42,10 @@ List the Bonjour forwarding setting and rules for the SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return BonjourForwardingApiGetNetworkWirelessSsidBonjourForwardingRequest
+ @return BonjourForwardingAPIGetNetworkWirelessSsidBonjourForwardingRequest
 */
-func (a *BonjourForwardingApiService) GetNetworkWirelessSsidBonjourForwarding(ctx context.Context, networkId string, number string) BonjourForwardingApiGetNetworkWirelessSsidBonjourForwardingRequest {
-	return BonjourForwardingApiGetNetworkWirelessSsidBonjourForwardingRequest{
+func (a *BonjourForwardingAPIService) GetNetworkWirelessSsidBonjourForwarding(ctx context.Context, networkId string, number string) BonjourForwardingAPIGetNetworkWirelessSsidBonjourForwardingRequest {
+	return BonjourForwardingAPIGetNetworkWirelessSsidBonjourForwardingRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -55,7 +55,7 @@ func (a *BonjourForwardingApiService) GetNetworkWirelessSsidBonjourForwarding(ct
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *BonjourForwardingApiService) GetNetworkWirelessSsidBonjourForwardingExecute(r BonjourForwardingApiGetNetworkWirelessSsidBonjourForwardingRequest) (map[string]interface{}, *http.Response, error) {
+func (a *BonjourForwardingAPIService) GetNetworkWirelessSsidBonjourForwardingExecute(r BonjourForwardingAPIGetNetworkWirelessSsidBonjourForwardingRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -63,7 +63,7 @@ func (a *BonjourForwardingApiService) GetNetworkWirelessSsidBonjourForwardingExe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BonjourForwardingApiService.GetNetworkWirelessSsidBonjourForwarding")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BonjourForwardingAPIService.GetNetworkWirelessSsidBonjourForwarding")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -144,20 +144,20 @@ func (a *BonjourForwardingApiService) GetNetworkWirelessSsidBonjourForwardingExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BonjourForwardingApiUpdateNetworkWirelessSsidBonjourForwardingRequest struct {
+type BonjourForwardingAPIUpdateNetworkWirelessSsidBonjourForwardingRequest struct {
 	ctx context.Context
-	ApiService *BonjourForwardingApiService
+	ApiService *BonjourForwardingAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidBonjourForwardingRequest *UpdateNetworkWirelessSsidBonjourForwardingRequest
 }
 
-func (r BonjourForwardingApiUpdateNetworkWirelessSsidBonjourForwardingRequest) UpdateNetworkWirelessSsidBonjourForwardingRequest(updateNetworkWirelessSsidBonjourForwardingRequest UpdateNetworkWirelessSsidBonjourForwardingRequest) BonjourForwardingApiUpdateNetworkWirelessSsidBonjourForwardingRequest {
+func (r BonjourForwardingAPIUpdateNetworkWirelessSsidBonjourForwardingRequest) UpdateNetworkWirelessSsidBonjourForwardingRequest(updateNetworkWirelessSsidBonjourForwardingRequest UpdateNetworkWirelessSsidBonjourForwardingRequest) BonjourForwardingAPIUpdateNetworkWirelessSsidBonjourForwardingRequest {
 	r.updateNetworkWirelessSsidBonjourForwardingRequest = &updateNetworkWirelessSsidBonjourForwardingRequest
 	return r
 }
 
-func (r BonjourForwardingApiUpdateNetworkWirelessSsidBonjourForwardingRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r BonjourForwardingAPIUpdateNetworkWirelessSsidBonjourForwardingRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidBonjourForwardingExecute(r)
 }
 
@@ -169,10 +169,10 @@ Update the bonjour forwarding setting and rules for the SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return BonjourForwardingApiUpdateNetworkWirelessSsidBonjourForwardingRequest
+ @return BonjourForwardingAPIUpdateNetworkWirelessSsidBonjourForwardingRequest
 */
-func (a *BonjourForwardingApiService) UpdateNetworkWirelessSsidBonjourForwarding(ctx context.Context, networkId string, number string) BonjourForwardingApiUpdateNetworkWirelessSsidBonjourForwardingRequest {
-	return BonjourForwardingApiUpdateNetworkWirelessSsidBonjourForwardingRequest{
+func (a *BonjourForwardingAPIService) UpdateNetworkWirelessSsidBonjourForwarding(ctx context.Context, networkId string, number string) BonjourForwardingAPIUpdateNetworkWirelessSsidBonjourForwardingRequest {
+	return BonjourForwardingAPIUpdateNetworkWirelessSsidBonjourForwardingRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -182,7 +182,7 @@ func (a *BonjourForwardingApiService) UpdateNetworkWirelessSsidBonjourForwarding
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *BonjourForwardingApiService) UpdateNetworkWirelessSsidBonjourForwardingExecute(r BonjourForwardingApiUpdateNetworkWirelessSsidBonjourForwardingRequest) (map[string]interface{}, *http.Response, error) {
+func (a *BonjourForwardingAPIService) UpdateNetworkWirelessSsidBonjourForwardingExecute(r BonjourForwardingAPIUpdateNetworkWirelessSsidBonjourForwardingRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -190,7 +190,7 @@ func (a *BonjourForwardingApiService) UpdateNetworkWirelessSsidBonjourForwarding
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BonjourForwardingApiService.UpdateNetworkWirelessSsidBonjourForwarding")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BonjourForwardingAPIService.UpdateNetworkWirelessSsidBonjourForwarding")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -20,12 +20,12 @@ import (
 )
 
 
-// ManufacturersApiService ManufacturersApi service
-type ManufacturersApiService service
+// ManufacturersAPIService ManufacturersAPI service
+type ManufacturersAPIService service
 
-type ManufacturersApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest struct {
+type ManufacturersAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest struct {
 	ctx context.Context
-	ApiService *ManufacturersApiService
+	ApiService *ManufacturersAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -33,24 +33,24 @@ type ManufacturersApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest
 }
 
 // The beginning of the timespan for the data.
-func (r ManufacturersApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest) T0(t0 string) ManufacturersApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
+func (r ManufacturersAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest) T0(t0 string) ManufacturersAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ManufacturersApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest) T1(t1 string) ManufacturersApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
+func (r ManufacturersAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest) T1(t1 string) ManufacturersAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r ManufacturersApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest) Timespan(timespan float32) ManufacturersApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
+func (r ManufacturersAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest) Timespan(timespan float32) ManufacturersAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r ManufacturersApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest) Execute() ([]GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner, *http.Response, error) {
+func (r ManufacturersAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest) Execute() ([]GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSummaryTopClientsManufacturersByUsageExecute(r)
 }
 
@@ -61,10 +61,10 @@ Return metrics for organization's top clients by data usage (in mb) over given t
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ManufacturersApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest
+ @return ManufacturersAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest
 */
-func (a *ManufacturersApiService) GetOrganizationSummaryTopClientsManufacturersByUsage(ctx context.Context, organizationId string) ManufacturersApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
-	return ManufacturersApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest{
+func (a *ManufacturersAPIService) GetOrganizationSummaryTopClientsManufacturersByUsage(ctx context.Context, organizationId string) ManufacturersAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
+	return ManufacturersAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -73,7 +73,7 @@ func (a *ManufacturersApiService) GetOrganizationSummaryTopClientsManufacturersB
 
 // Execute executes the request
 //  @return []GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner
-func (a *ManufacturersApiService) GetOrganizationSummaryTopClientsManufacturersByUsageExecute(r ManufacturersApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest) ([]GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner, *http.Response, error) {
+func (a *ManufacturersAPIService) GetOrganizationSummaryTopClientsManufacturersByUsageExecute(r ManufacturersAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest) ([]GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -81,7 +81,7 @@ func (a *ManufacturersApiService) GetOrganizationSummaryTopClientsManufacturersB
 		localVarReturnValue  []GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManufacturersApiService.GetOrganizationSummaryTopClientsManufacturersByUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManufacturersAPIService.GetOrganizationSummaryTopClientsManufacturersByUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

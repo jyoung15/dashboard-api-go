@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing AccessPoliciesApiService
+Testing AccessPoliciesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_AccessPoliciesApiService(t *testing.T) {
+func Test_client_AccessPoliciesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test AccessPoliciesApiService CreateNetworkSwitchAccessPolicy", func(t *testing.T) {
+	t.Run("Test AccessPoliciesAPIService CreateNetworkSwitchAccessPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.AccessPoliciesApi.CreateNetworkSwitchAccessPolicy(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.AccessPoliciesAPI.CreateNetworkSwitchAccessPolicy(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,42 +36,27 @@ func Test_client_AccessPoliciesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AccessPoliciesApiService DeleteNetworkSwitchAccessPolicy", func(t *testing.T) {
+	t.Run("Test AccessPoliciesAPIService DeleteNetworkSwitchAccessPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var accessPolicyNumber string
 
-		httpRes, err := apiClient.AccessPoliciesApi.DeleteNetworkSwitchAccessPolicy(context.Background(), networkId, accessPolicyNumber).Execute()
+		httpRes, err := apiClient.AccessPoliciesAPI.DeleteNetworkSwitchAccessPolicy(context.Background(), networkId, accessPolicyNumber).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test AccessPoliciesApiService GetNetworkSwitchAccessPolicies", func(t *testing.T) {
+	t.Run("Test AccessPoliciesAPIService GetNetworkSwitchAccessPolicies", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.AccessPoliciesApi.GetNetworkSwitchAccessPolicies(context.Background(), networkId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test AccessPoliciesApiService GetNetworkSwitchAccessPolicy", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-		var accessPolicyNumber string
-
-		resp, httpRes, err := apiClient.AccessPoliciesApi.GetNetworkSwitchAccessPolicy(context.Background(), networkId, accessPolicyNumber).Execute()
+		resp, httpRes, err := apiClient.AccessPoliciesAPI.GetNetworkSwitchAccessPolicies(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,14 +64,29 @@ func Test_client_AccessPoliciesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AccessPoliciesApiService UpdateNetworkSwitchAccessPolicy", func(t *testing.T) {
+	t.Run("Test AccessPoliciesAPIService GetNetworkSwitchAccessPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var accessPolicyNumber string
 
-		resp, httpRes, err := apiClient.AccessPoliciesApi.UpdateNetworkSwitchAccessPolicy(context.Background(), networkId, accessPolicyNumber).Execute()
+		resp, httpRes, err := apiClient.AccessPoliciesAPI.GetNetworkSwitchAccessPolicy(context.Background(), networkId, accessPolicyNumber).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AccessPoliciesAPIService UpdateNetworkSwitchAccessPolicy", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+		var accessPolicyNumber string
+
+		resp, httpRes, err := apiClient.AccessPoliciesAPI.UpdateNetworkSwitchAccessPolicy(context.Background(), networkId, accessPolicyNumber).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

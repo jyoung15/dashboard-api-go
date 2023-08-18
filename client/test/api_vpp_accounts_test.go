@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing VppAccountsApiService
+Testing VppAccountsAPIService
 
 */
 
@@ -17,19 +17,19 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_VppAccountsApiService(t *testing.T) {
+func Test_client_VppAccountsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test VppAccountsApiService GetOrganizationSmVppAccount", func(t *testing.T) {
+	t.Run("Test VppAccountsAPIService GetOrganizationSmVppAccount", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var vppAccountId string
 
-		resp, httpRes, err := apiClient.VppAccountsApi.GetOrganizationSmVppAccount(context.Background(), organizationId, vppAccountId).Execute()
+		resp, httpRes, err := apiClient.VppAccountsAPI.GetOrganizationSmVppAccount(context.Background(), organizationId, vppAccountId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -37,13 +37,13 @@ func Test_client_VppAccountsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VppAccountsApiService GetOrganizationSmVppAccounts", func(t *testing.T) {
+	t.Run("Test VppAccountsAPIService GetOrganizationSmVppAccounts", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.VppAccountsApi.GetOrganizationSmVppAccounts(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.VppAccountsAPI.GetOrganizationSmVppAccounts(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -20,23 +20,23 @@ import (
 )
 
 
-// AlertTypesApiService AlertTypesApi service
-type AlertTypesApiService service
+// AlertTypesAPIService AlertTypesAPI service
+type AlertTypesAPIService service
 
-type AlertTypesApiGetOrganizationWebhooksAlertTypesRequest struct {
+type AlertTypesAPIGetOrganizationWebhooksAlertTypesRequest struct {
 	ctx context.Context
-	ApiService *AlertTypesApiService
+	ApiService *AlertTypesAPIService
 	organizationId string
 	productType *string
 }
 
 // Filter sample alerts to a specific product type
-func (r AlertTypesApiGetOrganizationWebhooksAlertTypesRequest) ProductType(productType string) AlertTypesApiGetOrganizationWebhooksAlertTypesRequest {
+func (r AlertTypesAPIGetOrganizationWebhooksAlertTypesRequest) ProductType(productType string) AlertTypesAPIGetOrganizationWebhooksAlertTypesRequest {
 	r.productType = &productType
 	return r
 }
 
-func (r AlertTypesApiGetOrganizationWebhooksAlertTypesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r AlertTypesAPIGetOrganizationWebhooksAlertTypesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationWebhooksAlertTypesExecute(r)
 }
 
@@ -47,10 +47,10 @@ Return a list of alert types to be used with managing webhook alerts
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return AlertTypesApiGetOrganizationWebhooksAlertTypesRequest
+ @return AlertTypesAPIGetOrganizationWebhooksAlertTypesRequest
 */
-func (a *AlertTypesApiService) GetOrganizationWebhooksAlertTypes(ctx context.Context, organizationId string) AlertTypesApiGetOrganizationWebhooksAlertTypesRequest {
-	return AlertTypesApiGetOrganizationWebhooksAlertTypesRequest{
+func (a *AlertTypesAPIService) GetOrganizationWebhooksAlertTypes(ctx context.Context, organizationId string) AlertTypesAPIGetOrganizationWebhooksAlertTypesRequest {
+	return AlertTypesAPIGetOrganizationWebhooksAlertTypesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -59,7 +59,7 @@ func (a *AlertTypesApiService) GetOrganizationWebhooksAlertTypes(ctx context.Con
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *AlertTypesApiService) GetOrganizationWebhooksAlertTypesExecute(r AlertTypesApiGetOrganizationWebhooksAlertTypesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *AlertTypesAPIService) GetOrganizationWebhooksAlertTypesExecute(r AlertTypesAPIGetOrganizationWebhooksAlertTypesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -67,7 +67,7 @@ func (a *AlertTypesApiService) GetOrganizationWebhooksAlertTypesExecute(r AlertT
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlertTypesApiService.GetOrganizationWebhooksAlertTypes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlertTypesAPIService.GetOrganizationWebhooksAlertTypes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

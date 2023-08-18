@@ -21,30 +21,30 @@ import (
 )
 
 
-// UpgradesApiService UpgradesApi service
-type UpgradesApiService service
+// UpgradesAPIService UpgradesAPI service
+type UpgradesAPIService service
 
-type UpgradesApiGetOrganizationFirmwareUpgradesRequest struct {
+type UpgradesAPIGetOrganizationFirmwareUpgradesRequest struct {
 	ctx context.Context
-	ApiService *UpgradesApiService
+	ApiService *UpgradesAPIService
 	organizationId string
 	status *[]string
 	productTypes *[]string
 }
 
 // The status of an upgrade 
-func (r UpgradesApiGetOrganizationFirmwareUpgradesRequest) Status(status []string) UpgradesApiGetOrganizationFirmwareUpgradesRequest {
+func (r UpgradesAPIGetOrganizationFirmwareUpgradesRequest) Status(status []string) UpgradesAPIGetOrganizationFirmwareUpgradesRequest {
 	r.status = &status
 	return r
 }
 
 // The product type in a given upgrade ID
-func (r UpgradesApiGetOrganizationFirmwareUpgradesRequest) ProductTypes(productTypes []string) UpgradesApiGetOrganizationFirmwareUpgradesRequest {
+func (r UpgradesAPIGetOrganizationFirmwareUpgradesRequest) ProductTypes(productTypes []string) UpgradesAPIGetOrganizationFirmwareUpgradesRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
-func (r UpgradesApiGetOrganizationFirmwareUpgradesRequest) Execute() ([]GetOrganizationFirmwareUpgrades200ResponseInner, *http.Response, error) {
+func (r UpgradesAPIGetOrganizationFirmwareUpgradesRequest) Execute() ([]GetOrganizationFirmwareUpgrades200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationFirmwareUpgradesExecute(r)
 }
 
@@ -55,10 +55,10 @@ Get firmware upgrade information for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return UpgradesApiGetOrganizationFirmwareUpgradesRequest
+ @return UpgradesAPIGetOrganizationFirmwareUpgradesRequest
 */
-func (a *UpgradesApiService) GetOrganizationFirmwareUpgrades(ctx context.Context, organizationId string) UpgradesApiGetOrganizationFirmwareUpgradesRequest {
-	return UpgradesApiGetOrganizationFirmwareUpgradesRequest{
+func (a *UpgradesAPIService) GetOrganizationFirmwareUpgrades(ctx context.Context, organizationId string) UpgradesAPIGetOrganizationFirmwareUpgradesRequest {
+	return UpgradesAPIGetOrganizationFirmwareUpgradesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -67,7 +67,7 @@ func (a *UpgradesApiService) GetOrganizationFirmwareUpgrades(ctx context.Context
 
 // Execute executes the request
 //  @return []GetOrganizationFirmwareUpgrades200ResponseInner
-func (a *UpgradesApiService) GetOrganizationFirmwareUpgradesExecute(r UpgradesApiGetOrganizationFirmwareUpgradesRequest) ([]GetOrganizationFirmwareUpgrades200ResponseInner, *http.Response, error) {
+func (a *UpgradesAPIService) GetOrganizationFirmwareUpgradesExecute(r UpgradesAPIGetOrganizationFirmwareUpgradesRequest) ([]GetOrganizationFirmwareUpgrades200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -75,7 +75,7 @@ func (a *UpgradesApiService) GetOrganizationFirmwareUpgradesExecute(r UpgradesAp
 		localVarReturnValue  []GetOrganizationFirmwareUpgrades200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UpgradesApiService.GetOrganizationFirmwareUpgrades")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UpgradesAPIService.GetOrganizationFirmwareUpgrades")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -177,9 +177,9 @@ func (a *UpgradesApiService) GetOrganizationFirmwareUpgradesExecute(r UpgradesAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type UpgradesApiGetOrganizationFirmwareUpgradesByDeviceRequest struct {
+type UpgradesAPIGetOrganizationFirmwareUpgradesByDeviceRequest struct {
 	ctx context.Context
-	ApiService *UpgradesApiService
+	ApiService *UpgradesAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -192,54 +192,54 @@ type UpgradesApiGetOrganizationFirmwareUpgradesByDeviceRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.
-func (r UpgradesApiGetOrganizationFirmwareUpgradesByDeviceRequest) PerPage(perPage int32) UpgradesApiGetOrganizationFirmwareUpgradesByDeviceRequest {
+func (r UpgradesAPIGetOrganizationFirmwareUpgradesByDeviceRequest) PerPage(perPage int32) UpgradesAPIGetOrganizationFirmwareUpgradesByDeviceRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r UpgradesApiGetOrganizationFirmwareUpgradesByDeviceRequest) StartingAfter(startingAfter string) UpgradesApiGetOrganizationFirmwareUpgradesByDeviceRequest {
+func (r UpgradesAPIGetOrganizationFirmwareUpgradesByDeviceRequest) StartingAfter(startingAfter string) UpgradesAPIGetOrganizationFirmwareUpgradesByDeviceRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r UpgradesApiGetOrganizationFirmwareUpgradesByDeviceRequest) EndingBefore(endingBefore string) UpgradesApiGetOrganizationFirmwareUpgradesByDeviceRequest {
+func (r UpgradesAPIGetOrganizationFirmwareUpgradesByDeviceRequest) EndingBefore(endingBefore string) UpgradesAPIGetOrganizationFirmwareUpgradesByDeviceRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter by network
-func (r UpgradesApiGetOrganizationFirmwareUpgradesByDeviceRequest) NetworkIds(networkIds []string) UpgradesApiGetOrganizationFirmwareUpgradesByDeviceRequest {
+func (r UpgradesAPIGetOrganizationFirmwareUpgradesByDeviceRequest) NetworkIds(networkIds []string) UpgradesAPIGetOrganizationFirmwareUpgradesByDeviceRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter by serial number.  All returned devices will have a serial number that is an exact match.
-func (r UpgradesApiGetOrganizationFirmwareUpgradesByDeviceRequest) Serials(serials []string) UpgradesApiGetOrganizationFirmwareUpgradesByDeviceRequest {
+func (r UpgradesAPIGetOrganizationFirmwareUpgradesByDeviceRequest) Serials(serials []string) UpgradesAPIGetOrganizationFirmwareUpgradesByDeviceRequest {
 	r.serials = &serials
 	return r
 }
 
 // Optional parameter to filter by one or more MAC addresses belonging to devices. All devices returned belong to MAC addresses that are an exact match.
-func (r UpgradesApiGetOrganizationFirmwareUpgradesByDeviceRequest) Macs(macs []string) UpgradesApiGetOrganizationFirmwareUpgradesByDeviceRequest {
+func (r UpgradesAPIGetOrganizationFirmwareUpgradesByDeviceRequest) Macs(macs []string) UpgradesAPIGetOrganizationFirmwareUpgradesByDeviceRequest {
 	r.macs = &macs
 	return r
 }
 
 // Optional parameter to filter by firmware upgrade batch ids.
-func (r UpgradesApiGetOrganizationFirmwareUpgradesByDeviceRequest) FirmwareUpgradeBatchIds(firmwareUpgradeBatchIds []string) UpgradesApiGetOrganizationFirmwareUpgradesByDeviceRequest {
+func (r UpgradesAPIGetOrganizationFirmwareUpgradesByDeviceRequest) FirmwareUpgradeBatchIds(firmwareUpgradeBatchIds []string) UpgradesAPIGetOrganizationFirmwareUpgradesByDeviceRequest {
 	r.firmwareUpgradeBatchIds = &firmwareUpgradeBatchIds
 	return r
 }
 
 // Optional parameter to filter by firmware upgrade statuses.
-func (r UpgradesApiGetOrganizationFirmwareUpgradesByDeviceRequest) UpgradeStatuses(upgradeStatuses []string) UpgradesApiGetOrganizationFirmwareUpgradesByDeviceRequest {
+func (r UpgradesAPIGetOrganizationFirmwareUpgradesByDeviceRequest) UpgradeStatuses(upgradeStatuses []string) UpgradesAPIGetOrganizationFirmwareUpgradesByDeviceRequest {
 	r.upgradeStatuses = &upgradeStatuses
 	return r
 }
 
-func (r UpgradesApiGetOrganizationFirmwareUpgradesByDeviceRequest) Execute() ([]GetOrganizationFirmwareUpgradesByDevice200ResponseInner, *http.Response, error) {
+func (r UpgradesAPIGetOrganizationFirmwareUpgradesByDeviceRequest) Execute() ([]GetOrganizationFirmwareUpgradesByDevice200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationFirmwareUpgradesByDeviceExecute(r)
 }
 
@@ -250,10 +250,10 @@ Get firmware upgrade status for the filtered devices
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return UpgradesApiGetOrganizationFirmwareUpgradesByDeviceRequest
+ @return UpgradesAPIGetOrganizationFirmwareUpgradesByDeviceRequest
 */
-func (a *UpgradesApiService) GetOrganizationFirmwareUpgradesByDevice(ctx context.Context, organizationId string) UpgradesApiGetOrganizationFirmwareUpgradesByDeviceRequest {
-	return UpgradesApiGetOrganizationFirmwareUpgradesByDeviceRequest{
+func (a *UpgradesAPIService) GetOrganizationFirmwareUpgradesByDevice(ctx context.Context, organizationId string) UpgradesAPIGetOrganizationFirmwareUpgradesByDeviceRequest {
+	return UpgradesAPIGetOrganizationFirmwareUpgradesByDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -262,7 +262,7 @@ func (a *UpgradesApiService) GetOrganizationFirmwareUpgradesByDevice(ctx context
 
 // Execute executes the request
 //  @return []GetOrganizationFirmwareUpgradesByDevice200ResponseInner
-func (a *UpgradesApiService) GetOrganizationFirmwareUpgradesByDeviceExecute(r UpgradesApiGetOrganizationFirmwareUpgradesByDeviceRequest) ([]GetOrganizationFirmwareUpgradesByDevice200ResponseInner, *http.Response, error) {
+func (a *UpgradesAPIService) GetOrganizationFirmwareUpgradesByDeviceExecute(r UpgradesAPIGetOrganizationFirmwareUpgradesByDeviceRequest) ([]GetOrganizationFirmwareUpgradesByDevice200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -270,7 +270,7 @@ func (a *UpgradesApiService) GetOrganizationFirmwareUpgradesByDeviceExecute(r Up
 		localVarReturnValue  []GetOrganizationFirmwareUpgradesByDevice200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UpgradesApiService.GetOrganizationFirmwareUpgradesByDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UpgradesAPIService.GetOrganizationFirmwareUpgradesByDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

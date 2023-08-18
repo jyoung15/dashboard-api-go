@@ -21,23 +21,23 @@ import (
 )
 
 
-// SwitchApiService SwitchApi service
-type SwitchApiService service
+// SwitchAPIService SwitchAPI service
+type SwitchAPIService service
 
-type SwitchApiAddNetworkSwitchStackRequest struct {
+type SwitchAPIAddNetworkSwitchStackRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	switchStackId string
 	addNetworkSwitchStackRequest *AddNetworkSwitchStackRequest
 }
 
-func (r SwitchApiAddNetworkSwitchStackRequest) AddNetworkSwitchStackRequest(addNetworkSwitchStackRequest AddNetworkSwitchStackRequest) SwitchApiAddNetworkSwitchStackRequest {
+func (r SwitchAPIAddNetworkSwitchStackRequest) AddNetworkSwitchStackRequest(addNetworkSwitchStackRequest AddNetworkSwitchStackRequest) SwitchAPIAddNetworkSwitchStackRequest {
 	r.addNetworkSwitchStackRequest = &addNetworkSwitchStackRequest
 	return r
 }
 
-func (r SwitchApiAddNetworkSwitchStackRequest) Execute() (*GetNetworkSwitchStack200Response, *http.Response, error) {
+func (r SwitchAPIAddNetworkSwitchStackRequest) Execute() (*GetNetworkSwitchStack200Response, *http.Response, error) {
 	return r.ApiService.AddNetworkSwitchStackExecute(r)
 }
 
@@ -49,10 +49,10 @@ Add a switch to a stack
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param switchStackId Switch stack ID
- @return SwitchApiAddNetworkSwitchStackRequest
+ @return SwitchAPIAddNetworkSwitchStackRequest
 */
-func (a *SwitchApiService) AddNetworkSwitchStack(ctx context.Context, networkId string, switchStackId string) SwitchApiAddNetworkSwitchStackRequest {
-	return SwitchApiAddNetworkSwitchStackRequest{
+func (a *SwitchAPIService) AddNetworkSwitchStack(ctx context.Context, networkId string, switchStackId string) SwitchAPIAddNetworkSwitchStackRequest {
+	return SwitchAPIAddNetworkSwitchStackRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -62,7 +62,7 @@ func (a *SwitchApiService) AddNetworkSwitchStack(ctx context.Context, networkId 
 
 // Execute executes the request
 //  @return GetNetworkSwitchStack200Response
-func (a *SwitchApiService) AddNetworkSwitchStackExecute(r SwitchApiAddNetworkSwitchStackRequest) (*GetNetworkSwitchStack200Response, *http.Response, error) {
+func (a *SwitchAPIService) AddNetworkSwitchStackExecute(r SwitchAPIAddNetworkSwitchStackRequest) (*GetNetworkSwitchStack200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -70,7 +70,7 @@ func (a *SwitchApiService) AddNetworkSwitchStackExecute(r SwitchApiAddNetworkSwi
 		localVarReturnValue  *GetNetworkSwitchStack200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.AddNetworkSwitchStack")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.AddNetworkSwitchStack")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -156,19 +156,19 @@ func (a *SwitchApiService) AddNetworkSwitchStackExecute(r SwitchApiAddNetworkSwi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiCloneOrganizationSwitchDevicesRequest struct {
+type SwitchAPICloneOrganizationSwitchDevicesRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	organizationId string
 	cloneOrganizationSwitchDevicesRequest *CloneOrganizationSwitchDevicesRequest
 }
 
-func (r SwitchApiCloneOrganizationSwitchDevicesRequest) CloneOrganizationSwitchDevicesRequest(cloneOrganizationSwitchDevicesRequest CloneOrganizationSwitchDevicesRequest) SwitchApiCloneOrganizationSwitchDevicesRequest {
+func (r SwitchAPICloneOrganizationSwitchDevicesRequest) CloneOrganizationSwitchDevicesRequest(cloneOrganizationSwitchDevicesRequest CloneOrganizationSwitchDevicesRequest) SwitchAPICloneOrganizationSwitchDevicesRequest {
 	r.cloneOrganizationSwitchDevicesRequest = &cloneOrganizationSwitchDevicesRequest
 	return r
 }
 
-func (r SwitchApiCloneOrganizationSwitchDevicesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPICloneOrganizationSwitchDevicesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CloneOrganizationSwitchDevicesExecute(r)
 }
 
@@ -179,10 +179,10 @@ Clone port-level and some switch-level configuration settings from a source swit
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return SwitchApiCloneOrganizationSwitchDevicesRequest
+ @return SwitchAPICloneOrganizationSwitchDevicesRequest
 */
-func (a *SwitchApiService) CloneOrganizationSwitchDevices(ctx context.Context, organizationId string) SwitchApiCloneOrganizationSwitchDevicesRequest {
-	return SwitchApiCloneOrganizationSwitchDevicesRequest{
+func (a *SwitchAPIService) CloneOrganizationSwitchDevices(ctx context.Context, organizationId string) SwitchAPICloneOrganizationSwitchDevicesRequest {
+	return SwitchAPICloneOrganizationSwitchDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -191,7 +191,7 @@ func (a *SwitchApiService) CloneOrganizationSwitchDevices(ctx context.Context, o
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) CloneOrganizationSwitchDevicesExecute(r SwitchApiCloneOrganizationSwitchDevicesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) CloneOrganizationSwitchDevicesExecute(r SwitchAPICloneOrganizationSwitchDevicesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -199,7 +199,7 @@ func (a *SwitchApiService) CloneOrganizationSwitchDevicesExecute(r SwitchApiClon
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.CloneOrganizationSwitchDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.CloneOrganizationSwitchDevices")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -284,19 +284,19 @@ func (a *SwitchApiService) CloneOrganizationSwitchDevicesExecute(r SwitchApiClon
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiCreateDeviceSwitchRoutingInterfaceRequest struct {
+type SwitchAPICreateDeviceSwitchRoutingInterfaceRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	serial string
 	createDeviceSwitchRoutingInterfaceRequest *CreateDeviceSwitchRoutingInterfaceRequest
 }
 
-func (r SwitchApiCreateDeviceSwitchRoutingInterfaceRequest) CreateDeviceSwitchRoutingInterfaceRequest(createDeviceSwitchRoutingInterfaceRequest CreateDeviceSwitchRoutingInterfaceRequest) SwitchApiCreateDeviceSwitchRoutingInterfaceRequest {
+func (r SwitchAPICreateDeviceSwitchRoutingInterfaceRequest) CreateDeviceSwitchRoutingInterfaceRequest(createDeviceSwitchRoutingInterfaceRequest CreateDeviceSwitchRoutingInterfaceRequest) SwitchAPICreateDeviceSwitchRoutingInterfaceRequest {
 	r.createDeviceSwitchRoutingInterfaceRequest = &createDeviceSwitchRoutingInterfaceRequest
 	return r
 }
 
-func (r SwitchApiCreateDeviceSwitchRoutingInterfaceRequest) Execute() (*GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
+func (r SwitchAPICreateDeviceSwitchRoutingInterfaceRequest) Execute() (*GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateDeviceSwitchRoutingInterfaceExecute(r)
 }
 
@@ -307,10 +307,10 @@ Create a layer 3 interface for a switch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return SwitchApiCreateDeviceSwitchRoutingInterfaceRequest
+ @return SwitchAPICreateDeviceSwitchRoutingInterfaceRequest
 */
-func (a *SwitchApiService) CreateDeviceSwitchRoutingInterface(ctx context.Context, serial string) SwitchApiCreateDeviceSwitchRoutingInterfaceRequest {
-	return SwitchApiCreateDeviceSwitchRoutingInterfaceRequest{
+func (a *SwitchAPIService) CreateDeviceSwitchRoutingInterface(ctx context.Context, serial string) SwitchAPICreateDeviceSwitchRoutingInterfaceRequest {
+	return SwitchAPICreateDeviceSwitchRoutingInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -319,7 +319,7 @@ func (a *SwitchApiService) CreateDeviceSwitchRoutingInterface(ctx context.Contex
 
 // Execute executes the request
 //  @return GetDeviceSwitchRoutingInterfaces200ResponseInner
-func (a *SwitchApiService) CreateDeviceSwitchRoutingInterfaceExecute(r SwitchApiCreateDeviceSwitchRoutingInterfaceRequest) (*GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
+func (a *SwitchAPIService) CreateDeviceSwitchRoutingInterfaceExecute(r SwitchAPICreateDeviceSwitchRoutingInterfaceRequest) (*GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -327,7 +327,7 @@ func (a *SwitchApiService) CreateDeviceSwitchRoutingInterfaceExecute(r SwitchApi
 		localVarReturnValue  *GetDeviceSwitchRoutingInterfaces200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.CreateDeviceSwitchRoutingInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.CreateDeviceSwitchRoutingInterface")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -409,19 +409,19 @@ func (a *SwitchApiService) CreateDeviceSwitchRoutingInterfaceExecute(r SwitchApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiCreateDeviceSwitchRoutingStaticRouteRequest struct {
+type SwitchAPICreateDeviceSwitchRoutingStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	serial string
 	createDeviceSwitchRoutingStaticRouteRequest *CreateDeviceSwitchRoutingStaticRouteRequest
 }
 
-func (r SwitchApiCreateDeviceSwitchRoutingStaticRouteRequest) CreateDeviceSwitchRoutingStaticRouteRequest(createDeviceSwitchRoutingStaticRouteRequest CreateDeviceSwitchRoutingStaticRouteRequest) SwitchApiCreateDeviceSwitchRoutingStaticRouteRequest {
+func (r SwitchAPICreateDeviceSwitchRoutingStaticRouteRequest) CreateDeviceSwitchRoutingStaticRouteRequest(createDeviceSwitchRoutingStaticRouteRequest CreateDeviceSwitchRoutingStaticRouteRequest) SwitchAPICreateDeviceSwitchRoutingStaticRouteRequest {
 	r.createDeviceSwitchRoutingStaticRouteRequest = &createDeviceSwitchRoutingStaticRouteRequest
 	return r
 }
 
-func (r SwitchApiCreateDeviceSwitchRoutingStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPICreateDeviceSwitchRoutingStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateDeviceSwitchRoutingStaticRouteExecute(r)
 }
 
@@ -432,10 +432,10 @@ Create a layer 3 static route for a switch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return SwitchApiCreateDeviceSwitchRoutingStaticRouteRequest
+ @return SwitchAPICreateDeviceSwitchRoutingStaticRouteRequest
 */
-func (a *SwitchApiService) CreateDeviceSwitchRoutingStaticRoute(ctx context.Context, serial string) SwitchApiCreateDeviceSwitchRoutingStaticRouteRequest {
-	return SwitchApiCreateDeviceSwitchRoutingStaticRouteRequest{
+func (a *SwitchAPIService) CreateDeviceSwitchRoutingStaticRoute(ctx context.Context, serial string) SwitchAPICreateDeviceSwitchRoutingStaticRouteRequest {
+	return SwitchAPICreateDeviceSwitchRoutingStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -444,7 +444,7 @@ func (a *SwitchApiService) CreateDeviceSwitchRoutingStaticRoute(ctx context.Cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) CreateDeviceSwitchRoutingStaticRouteExecute(r SwitchApiCreateDeviceSwitchRoutingStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) CreateDeviceSwitchRoutingStaticRouteExecute(r SwitchAPICreateDeviceSwitchRoutingStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -452,7 +452,7 @@ func (a *SwitchApiService) CreateDeviceSwitchRoutingStaticRouteExecute(r SwitchA
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.CreateDeviceSwitchRoutingStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.CreateDeviceSwitchRoutingStaticRoute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -537,19 +537,19 @@ func (a *SwitchApiService) CreateDeviceSwitchRoutingStaticRouteExecute(r SwitchA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiCreateNetworkSwitchAccessPolicyRequest struct {
+type SwitchAPICreateNetworkSwitchAccessPolicyRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	createNetworkSwitchAccessPolicyRequest *CreateNetworkSwitchAccessPolicyRequest
 }
 
-func (r SwitchApiCreateNetworkSwitchAccessPolicyRequest) CreateNetworkSwitchAccessPolicyRequest(createNetworkSwitchAccessPolicyRequest CreateNetworkSwitchAccessPolicyRequest) SwitchApiCreateNetworkSwitchAccessPolicyRequest {
+func (r SwitchAPICreateNetworkSwitchAccessPolicyRequest) CreateNetworkSwitchAccessPolicyRequest(createNetworkSwitchAccessPolicyRequest CreateNetworkSwitchAccessPolicyRequest) SwitchAPICreateNetworkSwitchAccessPolicyRequest {
 	r.createNetworkSwitchAccessPolicyRequest = &createNetworkSwitchAccessPolicyRequest
 	return r
 }
 
-func (r SwitchApiCreateNetworkSwitchAccessPolicyRequest) Execute() (*GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
+func (r SwitchAPICreateNetworkSwitchAccessPolicyRequest) Execute() (*GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateNetworkSwitchAccessPolicyExecute(r)
 }
 
@@ -560,10 +560,10 @@ Create an access policy for a switch network. If you would like to enable Meraki
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiCreateNetworkSwitchAccessPolicyRequest
+ @return SwitchAPICreateNetworkSwitchAccessPolicyRequest
 */
-func (a *SwitchApiService) CreateNetworkSwitchAccessPolicy(ctx context.Context, networkId string) SwitchApiCreateNetworkSwitchAccessPolicyRequest {
-	return SwitchApiCreateNetworkSwitchAccessPolicyRequest{
+func (a *SwitchAPIService) CreateNetworkSwitchAccessPolicy(ctx context.Context, networkId string) SwitchAPICreateNetworkSwitchAccessPolicyRequest {
+	return SwitchAPICreateNetworkSwitchAccessPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -572,7 +572,7 @@ func (a *SwitchApiService) CreateNetworkSwitchAccessPolicy(ctx context.Context, 
 
 // Execute executes the request
 //  @return GetNetworkSwitchAccessPolicies200ResponseInner
-func (a *SwitchApiService) CreateNetworkSwitchAccessPolicyExecute(r SwitchApiCreateNetworkSwitchAccessPolicyRequest) (*GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
+func (a *SwitchAPIService) CreateNetworkSwitchAccessPolicyExecute(r SwitchAPICreateNetworkSwitchAccessPolicyRequest) (*GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -580,7 +580,7 @@ func (a *SwitchApiService) CreateNetworkSwitchAccessPolicyExecute(r SwitchApiCre
 		localVarReturnValue  *GetNetworkSwitchAccessPolicies200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.CreateNetworkSwitchAccessPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.CreateNetworkSwitchAccessPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -665,19 +665,19 @@ func (a *SwitchApiService) CreateNetworkSwitchAccessPolicyExecute(r SwitchApiCre
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiCreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest struct {
+type SwitchAPICreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	createNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest *CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest
 }
 
-func (r SwitchApiCreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest(createNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) SwitchApiCreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest {
+func (r SwitchAPICreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest(createNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) SwitchAPICreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest {
 	r.createNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest = &createNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest
 	return r
 }
 
-func (r SwitchApiCreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) Execute() (*GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner, *http.Response, error) {
+func (r SwitchAPICreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) Execute() (*GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerExecute(r)
 }
 
@@ -688,10 +688,10 @@ Add a server to be trusted by Dynamic ARP Inspection on this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiCreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest
+ @return SwitchAPICreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest
 */
-func (a *SwitchApiService) CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer(ctx context.Context, networkId string) SwitchApiCreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest {
-	return SwitchApiCreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest{
+func (a *SwitchAPIService) CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer(ctx context.Context, networkId string) SwitchAPICreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest {
+	return SwitchAPICreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -700,7 +700,7 @@ func (a *SwitchApiService) CreateNetworkSwitchDhcpServerPolicyArpInspectionTrust
 
 // Execute executes the request
 //  @return GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner
-func (a *SwitchApiService) CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerExecute(r SwitchApiCreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) (*GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner, *http.Response, error) {
+func (a *SwitchAPIService) CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerExecute(r SwitchAPICreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) (*GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -708,7 +708,7 @@ func (a *SwitchApiService) CreateNetworkSwitchDhcpServerPolicyArpInspectionTrust
 		localVarReturnValue  *GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -793,19 +793,19 @@ func (a *SwitchApiService) CreateNetworkSwitchDhcpServerPolicyArpInspectionTrust
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiCreateNetworkSwitchLinkAggregationRequest struct {
+type SwitchAPICreateNetworkSwitchLinkAggregationRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	createNetworkSwitchLinkAggregationRequest *CreateNetworkSwitchLinkAggregationRequest
 }
 
-func (r SwitchApiCreateNetworkSwitchLinkAggregationRequest) CreateNetworkSwitchLinkAggregationRequest(createNetworkSwitchLinkAggregationRequest CreateNetworkSwitchLinkAggregationRequest) SwitchApiCreateNetworkSwitchLinkAggregationRequest {
+func (r SwitchAPICreateNetworkSwitchLinkAggregationRequest) CreateNetworkSwitchLinkAggregationRequest(createNetworkSwitchLinkAggregationRequest CreateNetworkSwitchLinkAggregationRequest) SwitchAPICreateNetworkSwitchLinkAggregationRequest {
 	r.createNetworkSwitchLinkAggregationRequest = &createNetworkSwitchLinkAggregationRequest
 	return r
 }
 
-func (r SwitchApiCreateNetworkSwitchLinkAggregationRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPICreateNetworkSwitchLinkAggregationRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkSwitchLinkAggregationExecute(r)
 }
 
@@ -816,10 +816,10 @@ Create a link aggregation group
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiCreateNetworkSwitchLinkAggregationRequest
+ @return SwitchAPICreateNetworkSwitchLinkAggregationRequest
 */
-func (a *SwitchApiService) CreateNetworkSwitchLinkAggregation(ctx context.Context, networkId string) SwitchApiCreateNetworkSwitchLinkAggregationRequest {
-	return SwitchApiCreateNetworkSwitchLinkAggregationRequest{
+func (a *SwitchAPIService) CreateNetworkSwitchLinkAggregation(ctx context.Context, networkId string) SwitchAPICreateNetworkSwitchLinkAggregationRequest {
+	return SwitchAPICreateNetworkSwitchLinkAggregationRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -828,7 +828,7 @@ func (a *SwitchApiService) CreateNetworkSwitchLinkAggregation(ctx context.Contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) CreateNetworkSwitchLinkAggregationExecute(r SwitchApiCreateNetworkSwitchLinkAggregationRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) CreateNetworkSwitchLinkAggregationExecute(r SwitchAPICreateNetworkSwitchLinkAggregationRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -836,7 +836,7 @@ func (a *SwitchApiService) CreateNetworkSwitchLinkAggregationExecute(r SwitchApi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.CreateNetworkSwitchLinkAggregation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.CreateNetworkSwitchLinkAggregation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -918,19 +918,19 @@ func (a *SwitchApiService) CreateNetworkSwitchLinkAggregationExecute(r SwitchApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiCreateNetworkSwitchPortScheduleRequest struct {
+type SwitchAPICreateNetworkSwitchPortScheduleRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	createNetworkSwitchPortScheduleRequest *CreateNetworkSwitchPortScheduleRequest
 }
 
-func (r SwitchApiCreateNetworkSwitchPortScheduleRequest) CreateNetworkSwitchPortScheduleRequest(createNetworkSwitchPortScheduleRequest CreateNetworkSwitchPortScheduleRequest) SwitchApiCreateNetworkSwitchPortScheduleRequest {
+func (r SwitchAPICreateNetworkSwitchPortScheduleRequest) CreateNetworkSwitchPortScheduleRequest(createNetworkSwitchPortScheduleRequest CreateNetworkSwitchPortScheduleRequest) SwitchAPICreateNetworkSwitchPortScheduleRequest {
 	r.createNetworkSwitchPortScheduleRequest = &createNetworkSwitchPortScheduleRequest
 	return r
 }
 
-func (r SwitchApiCreateNetworkSwitchPortScheduleRequest) Execute() (*GetNetworkSwitchPortSchedules200ResponseInner, *http.Response, error) {
+func (r SwitchAPICreateNetworkSwitchPortScheduleRequest) Execute() (*GetNetworkSwitchPortSchedules200ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateNetworkSwitchPortScheduleExecute(r)
 }
 
@@ -941,10 +941,10 @@ Add a switch port schedule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiCreateNetworkSwitchPortScheduleRequest
+ @return SwitchAPICreateNetworkSwitchPortScheduleRequest
 */
-func (a *SwitchApiService) CreateNetworkSwitchPortSchedule(ctx context.Context, networkId string) SwitchApiCreateNetworkSwitchPortScheduleRequest {
-	return SwitchApiCreateNetworkSwitchPortScheduleRequest{
+func (a *SwitchAPIService) CreateNetworkSwitchPortSchedule(ctx context.Context, networkId string) SwitchAPICreateNetworkSwitchPortScheduleRequest {
+	return SwitchAPICreateNetworkSwitchPortScheduleRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -953,7 +953,7 @@ func (a *SwitchApiService) CreateNetworkSwitchPortSchedule(ctx context.Context, 
 
 // Execute executes the request
 //  @return GetNetworkSwitchPortSchedules200ResponseInner
-func (a *SwitchApiService) CreateNetworkSwitchPortScheduleExecute(r SwitchApiCreateNetworkSwitchPortScheduleRequest) (*GetNetworkSwitchPortSchedules200ResponseInner, *http.Response, error) {
+func (a *SwitchAPIService) CreateNetworkSwitchPortScheduleExecute(r SwitchAPICreateNetworkSwitchPortScheduleRequest) (*GetNetworkSwitchPortSchedules200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -961,7 +961,7 @@ func (a *SwitchApiService) CreateNetworkSwitchPortScheduleExecute(r SwitchApiCre
 		localVarReturnValue  *GetNetworkSwitchPortSchedules200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.CreateNetworkSwitchPortSchedule")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.CreateNetworkSwitchPortSchedule")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1046,19 +1046,19 @@ func (a *SwitchApiService) CreateNetworkSwitchPortScheduleExecute(r SwitchApiCre
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiCreateNetworkSwitchQosRuleRequest struct {
+type SwitchAPICreateNetworkSwitchQosRuleRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	createNetworkSwitchQosRuleRequest *CreateNetworkSwitchQosRuleRequest
 }
 
-func (r SwitchApiCreateNetworkSwitchQosRuleRequest) CreateNetworkSwitchQosRuleRequest(createNetworkSwitchQosRuleRequest CreateNetworkSwitchQosRuleRequest) SwitchApiCreateNetworkSwitchQosRuleRequest {
+func (r SwitchAPICreateNetworkSwitchQosRuleRequest) CreateNetworkSwitchQosRuleRequest(createNetworkSwitchQosRuleRequest CreateNetworkSwitchQosRuleRequest) SwitchAPICreateNetworkSwitchQosRuleRequest {
 	r.createNetworkSwitchQosRuleRequest = &createNetworkSwitchQosRuleRequest
 	return r
 }
 
-func (r SwitchApiCreateNetworkSwitchQosRuleRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPICreateNetworkSwitchQosRuleRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkSwitchQosRuleExecute(r)
 }
 
@@ -1069,10 +1069,10 @@ Add a quality of service rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiCreateNetworkSwitchQosRuleRequest
+ @return SwitchAPICreateNetworkSwitchQosRuleRequest
 */
-func (a *SwitchApiService) CreateNetworkSwitchQosRule(ctx context.Context, networkId string) SwitchApiCreateNetworkSwitchQosRuleRequest {
-	return SwitchApiCreateNetworkSwitchQosRuleRequest{
+func (a *SwitchAPIService) CreateNetworkSwitchQosRule(ctx context.Context, networkId string) SwitchAPICreateNetworkSwitchQosRuleRequest {
+	return SwitchAPICreateNetworkSwitchQosRuleRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1081,7 +1081,7 @@ func (a *SwitchApiService) CreateNetworkSwitchQosRule(ctx context.Context, netwo
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) CreateNetworkSwitchQosRuleExecute(r SwitchApiCreateNetworkSwitchQosRuleRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) CreateNetworkSwitchQosRuleExecute(r SwitchAPICreateNetworkSwitchQosRuleRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1089,7 +1089,7 @@ func (a *SwitchApiService) CreateNetworkSwitchQosRuleExecute(r SwitchApiCreateNe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.CreateNetworkSwitchQosRule")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.CreateNetworkSwitchQosRule")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1174,19 +1174,19 @@ func (a *SwitchApiService) CreateNetworkSwitchQosRuleExecute(r SwitchApiCreateNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiCreateNetworkSwitchRoutingMulticastRendezvousPointRequest struct {
+type SwitchAPICreateNetworkSwitchRoutingMulticastRendezvousPointRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	createNetworkSwitchRoutingMulticastRendezvousPointRequest *CreateNetworkSwitchRoutingMulticastRendezvousPointRequest
 }
 
-func (r SwitchApiCreateNetworkSwitchRoutingMulticastRendezvousPointRequest) CreateNetworkSwitchRoutingMulticastRendezvousPointRequest(createNetworkSwitchRoutingMulticastRendezvousPointRequest CreateNetworkSwitchRoutingMulticastRendezvousPointRequest) SwitchApiCreateNetworkSwitchRoutingMulticastRendezvousPointRequest {
+func (r SwitchAPICreateNetworkSwitchRoutingMulticastRendezvousPointRequest) CreateNetworkSwitchRoutingMulticastRendezvousPointRequest(createNetworkSwitchRoutingMulticastRendezvousPointRequest CreateNetworkSwitchRoutingMulticastRendezvousPointRequest) SwitchAPICreateNetworkSwitchRoutingMulticastRendezvousPointRequest {
 	r.createNetworkSwitchRoutingMulticastRendezvousPointRequest = &createNetworkSwitchRoutingMulticastRendezvousPointRequest
 	return r
 }
 
-func (r SwitchApiCreateNetworkSwitchRoutingMulticastRendezvousPointRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPICreateNetworkSwitchRoutingMulticastRendezvousPointRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkSwitchRoutingMulticastRendezvousPointExecute(r)
 }
 
@@ -1197,10 +1197,10 @@ Create a multicast rendezvous point
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiCreateNetworkSwitchRoutingMulticastRendezvousPointRequest
+ @return SwitchAPICreateNetworkSwitchRoutingMulticastRendezvousPointRequest
 */
-func (a *SwitchApiService) CreateNetworkSwitchRoutingMulticastRendezvousPoint(ctx context.Context, networkId string) SwitchApiCreateNetworkSwitchRoutingMulticastRendezvousPointRequest {
-	return SwitchApiCreateNetworkSwitchRoutingMulticastRendezvousPointRequest{
+func (a *SwitchAPIService) CreateNetworkSwitchRoutingMulticastRendezvousPoint(ctx context.Context, networkId string) SwitchAPICreateNetworkSwitchRoutingMulticastRendezvousPointRequest {
+	return SwitchAPICreateNetworkSwitchRoutingMulticastRendezvousPointRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1209,7 +1209,7 @@ func (a *SwitchApiService) CreateNetworkSwitchRoutingMulticastRendezvousPoint(ct
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) CreateNetworkSwitchRoutingMulticastRendezvousPointExecute(r SwitchApiCreateNetworkSwitchRoutingMulticastRendezvousPointRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) CreateNetworkSwitchRoutingMulticastRendezvousPointExecute(r SwitchAPICreateNetworkSwitchRoutingMulticastRendezvousPointRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1217,7 +1217,7 @@ func (a *SwitchApiService) CreateNetworkSwitchRoutingMulticastRendezvousPointExe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.CreateNetworkSwitchRoutingMulticastRendezvousPoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.CreateNetworkSwitchRoutingMulticastRendezvousPoint")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1302,19 +1302,19 @@ func (a *SwitchApiService) CreateNetworkSwitchRoutingMulticastRendezvousPointExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiCreateNetworkSwitchStackRequest struct {
+type SwitchAPICreateNetworkSwitchStackRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	createNetworkSwitchStackRequest *CreateNetworkSwitchStackRequest
 }
 
-func (r SwitchApiCreateNetworkSwitchStackRequest) CreateNetworkSwitchStackRequest(createNetworkSwitchStackRequest CreateNetworkSwitchStackRequest) SwitchApiCreateNetworkSwitchStackRequest {
+func (r SwitchAPICreateNetworkSwitchStackRequest) CreateNetworkSwitchStackRequest(createNetworkSwitchStackRequest CreateNetworkSwitchStackRequest) SwitchAPICreateNetworkSwitchStackRequest {
 	r.createNetworkSwitchStackRequest = &createNetworkSwitchStackRequest
 	return r
 }
 
-func (r SwitchApiCreateNetworkSwitchStackRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPICreateNetworkSwitchStackRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkSwitchStackExecute(r)
 }
 
@@ -1325,10 +1325,10 @@ Create a stack
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiCreateNetworkSwitchStackRequest
+ @return SwitchAPICreateNetworkSwitchStackRequest
 */
-func (a *SwitchApiService) CreateNetworkSwitchStack(ctx context.Context, networkId string) SwitchApiCreateNetworkSwitchStackRequest {
-	return SwitchApiCreateNetworkSwitchStackRequest{
+func (a *SwitchAPIService) CreateNetworkSwitchStack(ctx context.Context, networkId string) SwitchAPICreateNetworkSwitchStackRequest {
+	return SwitchAPICreateNetworkSwitchStackRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1337,7 +1337,7 @@ func (a *SwitchApiService) CreateNetworkSwitchStack(ctx context.Context, network
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) CreateNetworkSwitchStackExecute(r SwitchApiCreateNetworkSwitchStackRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) CreateNetworkSwitchStackExecute(r SwitchAPICreateNetworkSwitchStackRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1345,7 +1345,7 @@ func (a *SwitchApiService) CreateNetworkSwitchStackExecute(r SwitchApiCreateNetw
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.CreateNetworkSwitchStack")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.CreateNetworkSwitchStack")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1430,20 +1430,20 @@ func (a *SwitchApiService) CreateNetworkSwitchStackExecute(r SwitchApiCreateNetw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiCreateNetworkSwitchStackRoutingInterfaceRequest struct {
+type SwitchAPICreateNetworkSwitchStackRoutingInterfaceRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	switchStackId string
 	createNetworkSwitchStackRoutingInterfaceRequest *CreateNetworkSwitchStackRoutingInterfaceRequest
 }
 
-func (r SwitchApiCreateNetworkSwitchStackRoutingInterfaceRequest) CreateNetworkSwitchStackRoutingInterfaceRequest(createNetworkSwitchStackRoutingInterfaceRequest CreateNetworkSwitchStackRoutingInterfaceRequest) SwitchApiCreateNetworkSwitchStackRoutingInterfaceRequest {
+func (r SwitchAPICreateNetworkSwitchStackRoutingInterfaceRequest) CreateNetworkSwitchStackRoutingInterfaceRequest(createNetworkSwitchStackRoutingInterfaceRequest CreateNetworkSwitchStackRoutingInterfaceRequest) SwitchAPICreateNetworkSwitchStackRoutingInterfaceRequest {
 	r.createNetworkSwitchStackRoutingInterfaceRequest = &createNetworkSwitchStackRoutingInterfaceRequest
 	return r
 }
 
-func (r SwitchApiCreateNetworkSwitchStackRoutingInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPICreateNetworkSwitchStackRoutingInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkSwitchStackRoutingInterfaceExecute(r)
 }
 
@@ -1455,10 +1455,10 @@ Create a layer 3 interface for a switch stack
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param switchStackId Switch stack ID
- @return SwitchApiCreateNetworkSwitchStackRoutingInterfaceRequest
+ @return SwitchAPICreateNetworkSwitchStackRoutingInterfaceRequest
 */
-func (a *SwitchApiService) CreateNetworkSwitchStackRoutingInterface(ctx context.Context, networkId string, switchStackId string) SwitchApiCreateNetworkSwitchStackRoutingInterfaceRequest {
-	return SwitchApiCreateNetworkSwitchStackRoutingInterfaceRequest{
+func (a *SwitchAPIService) CreateNetworkSwitchStackRoutingInterface(ctx context.Context, networkId string, switchStackId string) SwitchAPICreateNetworkSwitchStackRoutingInterfaceRequest {
+	return SwitchAPICreateNetworkSwitchStackRoutingInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1468,7 +1468,7 @@ func (a *SwitchApiService) CreateNetworkSwitchStackRoutingInterface(ctx context.
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) CreateNetworkSwitchStackRoutingInterfaceExecute(r SwitchApiCreateNetworkSwitchStackRoutingInterfaceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) CreateNetworkSwitchStackRoutingInterfaceExecute(r SwitchAPICreateNetworkSwitchStackRoutingInterfaceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1476,7 +1476,7 @@ func (a *SwitchApiService) CreateNetworkSwitchStackRoutingInterfaceExecute(r Swi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.CreateNetworkSwitchStackRoutingInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.CreateNetworkSwitchStackRoutingInterface")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1562,20 +1562,20 @@ func (a *SwitchApiService) CreateNetworkSwitchStackRoutingInterfaceExecute(r Swi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiCreateNetworkSwitchStackRoutingStaticRouteRequest struct {
+type SwitchAPICreateNetworkSwitchStackRoutingStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	switchStackId string
 	createDeviceSwitchRoutingStaticRouteRequest *CreateDeviceSwitchRoutingStaticRouteRequest
 }
 
-func (r SwitchApiCreateNetworkSwitchStackRoutingStaticRouteRequest) CreateDeviceSwitchRoutingStaticRouteRequest(createDeviceSwitchRoutingStaticRouteRequest CreateDeviceSwitchRoutingStaticRouteRequest) SwitchApiCreateNetworkSwitchStackRoutingStaticRouteRequest {
+func (r SwitchAPICreateNetworkSwitchStackRoutingStaticRouteRequest) CreateDeviceSwitchRoutingStaticRouteRequest(createDeviceSwitchRoutingStaticRouteRequest CreateDeviceSwitchRoutingStaticRouteRequest) SwitchAPICreateNetworkSwitchStackRoutingStaticRouteRequest {
 	r.createDeviceSwitchRoutingStaticRouteRequest = &createDeviceSwitchRoutingStaticRouteRequest
 	return r
 }
 
-func (r SwitchApiCreateNetworkSwitchStackRoutingStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPICreateNetworkSwitchStackRoutingStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkSwitchStackRoutingStaticRouteExecute(r)
 }
 
@@ -1587,10 +1587,10 @@ Create a layer 3 static route for a switch stack
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param switchStackId Switch stack ID
- @return SwitchApiCreateNetworkSwitchStackRoutingStaticRouteRequest
+ @return SwitchAPICreateNetworkSwitchStackRoutingStaticRouteRequest
 */
-func (a *SwitchApiService) CreateNetworkSwitchStackRoutingStaticRoute(ctx context.Context, networkId string, switchStackId string) SwitchApiCreateNetworkSwitchStackRoutingStaticRouteRequest {
-	return SwitchApiCreateNetworkSwitchStackRoutingStaticRouteRequest{
+func (a *SwitchAPIService) CreateNetworkSwitchStackRoutingStaticRoute(ctx context.Context, networkId string, switchStackId string) SwitchAPICreateNetworkSwitchStackRoutingStaticRouteRequest {
+	return SwitchAPICreateNetworkSwitchStackRoutingStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1600,7 +1600,7 @@ func (a *SwitchApiService) CreateNetworkSwitchStackRoutingStaticRoute(ctx contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) CreateNetworkSwitchStackRoutingStaticRouteExecute(r SwitchApiCreateNetworkSwitchStackRoutingStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) CreateNetworkSwitchStackRoutingStaticRouteExecute(r SwitchAPICreateNetworkSwitchStackRoutingStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1608,7 +1608,7 @@ func (a *SwitchApiService) CreateNetworkSwitchStackRoutingStaticRouteExecute(r S
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.CreateNetworkSwitchStackRoutingStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.CreateNetworkSwitchStackRoutingStaticRoute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1694,19 +1694,19 @@ func (a *SwitchApiService) CreateNetworkSwitchStackRoutingStaticRouteExecute(r S
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiCycleDeviceSwitchPortsRequest struct {
+type SwitchAPICycleDeviceSwitchPortsRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	serial string
 	cycleDeviceSwitchPortsRequest *CycleDeviceSwitchPortsRequest
 }
 
-func (r SwitchApiCycleDeviceSwitchPortsRequest) CycleDeviceSwitchPortsRequest(cycleDeviceSwitchPortsRequest CycleDeviceSwitchPortsRequest) SwitchApiCycleDeviceSwitchPortsRequest {
+func (r SwitchAPICycleDeviceSwitchPortsRequest) CycleDeviceSwitchPortsRequest(cycleDeviceSwitchPortsRequest CycleDeviceSwitchPortsRequest) SwitchAPICycleDeviceSwitchPortsRequest {
 	r.cycleDeviceSwitchPortsRequest = &cycleDeviceSwitchPortsRequest
 	return r
 }
 
-func (r SwitchApiCycleDeviceSwitchPortsRequest) Execute() (*CycleDeviceSwitchPorts200Response, *http.Response, error) {
+func (r SwitchAPICycleDeviceSwitchPortsRequest) Execute() (*CycleDeviceSwitchPorts200Response, *http.Response, error) {
 	return r.ApiService.CycleDeviceSwitchPortsExecute(r)
 }
 
@@ -1717,10 +1717,10 @@ Cycle a set of switch ports
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return SwitchApiCycleDeviceSwitchPortsRequest
+ @return SwitchAPICycleDeviceSwitchPortsRequest
 */
-func (a *SwitchApiService) CycleDeviceSwitchPorts(ctx context.Context, serial string) SwitchApiCycleDeviceSwitchPortsRequest {
-	return SwitchApiCycleDeviceSwitchPortsRequest{
+func (a *SwitchAPIService) CycleDeviceSwitchPorts(ctx context.Context, serial string) SwitchAPICycleDeviceSwitchPortsRequest {
+	return SwitchAPICycleDeviceSwitchPortsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1729,7 +1729,7 @@ func (a *SwitchApiService) CycleDeviceSwitchPorts(ctx context.Context, serial st
 
 // Execute executes the request
 //  @return CycleDeviceSwitchPorts200Response
-func (a *SwitchApiService) CycleDeviceSwitchPortsExecute(r SwitchApiCycleDeviceSwitchPortsRequest) (*CycleDeviceSwitchPorts200Response, *http.Response, error) {
+func (a *SwitchAPIService) CycleDeviceSwitchPortsExecute(r SwitchAPICycleDeviceSwitchPortsRequest) (*CycleDeviceSwitchPorts200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1737,7 +1737,7 @@ func (a *SwitchApiService) CycleDeviceSwitchPortsExecute(r SwitchApiCycleDeviceS
 		localVarReturnValue  *CycleDeviceSwitchPorts200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.CycleDeviceSwitchPorts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.CycleDeviceSwitchPorts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1822,14 +1822,14 @@ func (a *SwitchApiService) CycleDeviceSwitchPortsExecute(r SwitchApiCycleDeviceS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiDeleteDeviceSwitchRoutingInterfaceRequest struct {
+type SwitchAPIDeleteDeviceSwitchRoutingInterfaceRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	serial string
 	interfaceId string
 }
 
-func (r SwitchApiDeleteDeviceSwitchRoutingInterfaceRequest) Execute() (*http.Response, error) {
+func (r SwitchAPIDeleteDeviceSwitchRoutingInterfaceRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteDeviceSwitchRoutingInterfaceExecute(r)
 }
 
@@ -1841,10 +1841,10 @@ Delete a layer 3 interface from the switch
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param interfaceId Interface ID
- @return SwitchApiDeleteDeviceSwitchRoutingInterfaceRequest
+ @return SwitchAPIDeleteDeviceSwitchRoutingInterfaceRequest
 */
-func (a *SwitchApiService) DeleteDeviceSwitchRoutingInterface(ctx context.Context, serial string, interfaceId string) SwitchApiDeleteDeviceSwitchRoutingInterfaceRequest {
-	return SwitchApiDeleteDeviceSwitchRoutingInterfaceRequest{
+func (a *SwitchAPIService) DeleteDeviceSwitchRoutingInterface(ctx context.Context, serial string, interfaceId string) SwitchAPIDeleteDeviceSwitchRoutingInterfaceRequest {
+	return SwitchAPIDeleteDeviceSwitchRoutingInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1853,14 +1853,14 @@ func (a *SwitchApiService) DeleteDeviceSwitchRoutingInterface(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *SwitchApiService) DeleteDeviceSwitchRoutingInterfaceExecute(r SwitchApiDeleteDeviceSwitchRoutingInterfaceRequest) (*http.Response, error) {
+func (a *SwitchAPIService) DeleteDeviceSwitchRoutingInterfaceExecute(r SwitchAPIDeleteDeviceSwitchRoutingInterfaceRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.DeleteDeviceSwitchRoutingInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.DeleteDeviceSwitchRoutingInterface")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1932,14 +1932,14 @@ func (a *SwitchApiService) DeleteDeviceSwitchRoutingInterfaceExecute(r SwitchApi
 	return localVarHTTPResponse, nil
 }
 
-type SwitchApiDeleteDeviceSwitchRoutingStaticRouteRequest struct {
+type SwitchAPIDeleteDeviceSwitchRoutingStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	serial string
 	staticRouteId string
 }
 
-func (r SwitchApiDeleteDeviceSwitchRoutingStaticRouteRequest) Execute() (*http.Response, error) {
+func (r SwitchAPIDeleteDeviceSwitchRoutingStaticRouteRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteDeviceSwitchRoutingStaticRouteExecute(r)
 }
 
@@ -1951,10 +1951,10 @@ Delete a layer 3 static route for a switch
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param staticRouteId Static route ID
- @return SwitchApiDeleteDeviceSwitchRoutingStaticRouteRequest
+ @return SwitchAPIDeleteDeviceSwitchRoutingStaticRouteRequest
 */
-func (a *SwitchApiService) DeleteDeviceSwitchRoutingStaticRoute(ctx context.Context, serial string, staticRouteId string) SwitchApiDeleteDeviceSwitchRoutingStaticRouteRequest {
-	return SwitchApiDeleteDeviceSwitchRoutingStaticRouteRequest{
+func (a *SwitchAPIService) DeleteDeviceSwitchRoutingStaticRoute(ctx context.Context, serial string, staticRouteId string) SwitchAPIDeleteDeviceSwitchRoutingStaticRouteRequest {
+	return SwitchAPIDeleteDeviceSwitchRoutingStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1963,14 +1963,14 @@ func (a *SwitchApiService) DeleteDeviceSwitchRoutingStaticRoute(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *SwitchApiService) DeleteDeviceSwitchRoutingStaticRouteExecute(r SwitchApiDeleteDeviceSwitchRoutingStaticRouteRequest) (*http.Response, error) {
+func (a *SwitchAPIService) DeleteDeviceSwitchRoutingStaticRouteExecute(r SwitchAPIDeleteDeviceSwitchRoutingStaticRouteRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.DeleteDeviceSwitchRoutingStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.DeleteDeviceSwitchRoutingStaticRoute")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2042,14 +2042,14 @@ func (a *SwitchApiService) DeleteDeviceSwitchRoutingStaticRouteExecute(r SwitchA
 	return localVarHTTPResponse, nil
 }
 
-type SwitchApiDeleteNetworkSwitchAccessPolicyRequest struct {
+type SwitchAPIDeleteNetworkSwitchAccessPolicyRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	accessPolicyNumber string
 }
 
-func (r SwitchApiDeleteNetworkSwitchAccessPolicyRequest) Execute() (*http.Response, error) {
+func (r SwitchAPIDeleteNetworkSwitchAccessPolicyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkSwitchAccessPolicyExecute(r)
 }
 
@@ -2061,10 +2061,10 @@ Delete an access policy for a switch network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param accessPolicyNumber Access policy number
- @return SwitchApiDeleteNetworkSwitchAccessPolicyRequest
+ @return SwitchAPIDeleteNetworkSwitchAccessPolicyRequest
 */
-func (a *SwitchApiService) DeleteNetworkSwitchAccessPolicy(ctx context.Context, networkId string, accessPolicyNumber string) SwitchApiDeleteNetworkSwitchAccessPolicyRequest {
-	return SwitchApiDeleteNetworkSwitchAccessPolicyRequest{
+func (a *SwitchAPIService) DeleteNetworkSwitchAccessPolicy(ctx context.Context, networkId string, accessPolicyNumber string) SwitchAPIDeleteNetworkSwitchAccessPolicyRequest {
+	return SwitchAPIDeleteNetworkSwitchAccessPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2073,14 +2073,14 @@ func (a *SwitchApiService) DeleteNetworkSwitchAccessPolicy(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *SwitchApiService) DeleteNetworkSwitchAccessPolicyExecute(r SwitchApiDeleteNetworkSwitchAccessPolicyRequest) (*http.Response, error) {
+func (a *SwitchAPIService) DeleteNetworkSwitchAccessPolicyExecute(r SwitchAPIDeleteNetworkSwitchAccessPolicyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.DeleteNetworkSwitchAccessPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.DeleteNetworkSwitchAccessPolicy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2152,14 +2152,14 @@ func (a *SwitchApiService) DeleteNetworkSwitchAccessPolicyExecute(r SwitchApiDel
 	return localVarHTTPResponse, nil
 }
 
-type SwitchApiDeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest struct {
+type SwitchAPIDeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	trustedServerId string
 }
 
-func (r SwitchApiDeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) Execute() (*http.Response, error) {
+func (r SwitchAPIDeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerExecute(r)
 }
 
@@ -2171,10 +2171,10 @@ Remove a server from being trusted by Dynamic ARP Inspection on this network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param trustedServerId Trusted server ID
- @return SwitchApiDeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest
+ @return SwitchAPIDeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest
 */
-func (a *SwitchApiService) DeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer(ctx context.Context, networkId string, trustedServerId string) SwitchApiDeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest {
-	return SwitchApiDeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest{
+func (a *SwitchAPIService) DeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer(ctx context.Context, networkId string, trustedServerId string) SwitchAPIDeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest {
+	return SwitchAPIDeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2183,14 +2183,14 @@ func (a *SwitchApiService) DeleteNetworkSwitchDhcpServerPolicyArpInspectionTrust
 }
 
 // Execute executes the request
-func (a *SwitchApiService) DeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerExecute(r SwitchApiDeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) (*http.Response, error) {
+func (a *SwitchAPIService) DeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerExecute(r SwitchAPIDeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.DeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.DeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2262,14 +2262,14 @@ func (a *SwitchApiService) DeleteNetworkSwitchDhcpServerPolicyArpInspectionTrust
 	return localVarHTTPResponse, nil
 }
 
-type SwitchApiDeleteNetworkSwitchLinkAggregationRequest struct {
+type SwitchAPIDeleteNetworkSwitchLinkAggregationRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	linkAggregationId string
 }
 
-func (r SwitchApiDeleteNetworkSwitchLinkAggregationRequest) Execute() (*http.Response, error) {
+func (r SwitchAPIDeleteNetworkSwitchLinkAggregationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkSwitchLinkAggregationExecute(r)
 }
 
@@ -2281,10 +2281,10 @@ Split a link aggregation group into separate ports
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param linkAggregationId Link aggregation ID
- @return SwitchApiDeleteNetworkSwitchLinkAggregationRequest
+ @return SwitchAPIDeleteNetworkSwitchLinkAggregationRequest
 */
-func (a *SwitchApiService) DeleteNetworkSwitchLinkAggregation(ctx context.Context, networkId string, linkAggregationId string) SwitchApiDeleteNetworkSwitchLinkAggregationRequest {
-	return SwitchApiDeleteNetworkSwitchLinkAggregationRequest{
+func (a *SwitchAPIService) DeleteNetworkSwitchLinkAggregation(ctx context.Context, networkId string, linkAggregationId string) SwitchAPIDeleteNetworkSwitchLinkAggregationRequest {
+	return SwitchAPIDeleteNetworkSwitchLinkAggregationRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2293,14 +2293,14 @@ func (a *SwitchApiService) DeleteNetworkSwitchLinkAggregation(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *SwitchApiService) DeleteNetworkSwitchLinkAggregationExecute(r SwitchApiDeleteNetworkSwitchLinkAggregationRequest) (*http.Response, error) {
+func (a *SwitchAPIService) DeleteNetworkSwitchLinkAggregationExecute(r SwitchAPIDeleteNetworkSwitchLinkAggregationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.DeleteNetworkSwitchLinkAggregation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.DeleteNetworkSwitchLinkAggregation")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2372,14 +2372,14 @@ func (a *SwitchApiService) DeleteNetworkSwitchLinkAggregationExecute(r SwitchApi
 	return localVarHTTPResponse, nil
 }
 
-type SwitchApiDeleteNetworkSwitchPortScheduleRequest struct {
+type SwitchAPIDeleteNetworkSwitchPortScheduleRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	portScheduleId string
 }
 
-func (r SwitchApiDeleteNetworkSwitchPortScheduleRequest) Execute() (*http.Response, error) {
+func (r SwitchAPIDeleteNetworkSwitchPortScheduleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkSwitchPortScheduleExecute(r)
 }
 
@@ -2391,10 +2391,10 @@ Delete a switch port schedule
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param portScheduleId Port schedule ID
- @return SwitchApiDeleteNetworkSwitchPortScheduleRequest
+ @return SwitchAPIDeleteNetworkSwitchPortScheduleRequest
 */
-func (a *SwitchApiService) DeleteNetworkSwitchPortSchedule(ctx context.Context, networkId string, portScheduleId string) SwitchApiDeleteNetworkSwitchPortScheduleRequest {
-	return SwitchApiDeleteNetworkSwitchPortScheduleRequest{
+func (a *SwitchAPIService) DeleteNetworkSwitchPortSchedule(ctx context.Context, networkId string, portScheduleId string) SwitchAPIDeleteNetworkSwitchPortScheduleRequest {
+	return SwitchAPIDeleteNetworkSwitchPortScheduleRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2403,14 +2403,14 @@ func (a *SwitchApiService) DeleteNetworkSwitchPortSchedule(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *SwitchApiService) DeleteNetworkSwitchPortScheduleExecute(r SwitchApiDeleteNetworkSwitchPortScheduleRequest) (*http.Response, error) {
+func (a *SwitchAPIService) DeleteNetworkSwitchPortScheduleExecute(r SwitchAPIDeleteNetworkSwitchPortScheduleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.DeleteNetworkSwitchPortSchedule")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.DeleteNetworkSwitchPortSchedule")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2482,14 +2482,14 @@ func (a *SwitchApiService) DeleteNetworkSwitchPortScheduleExecute(r SwitchApiDel
 	return localVarHTTPResponse, nil
 }
 
-type SwitchApiDeleteNetworkSwitchQosRuleRequest struct {
+type SwitchAPIDeleteNetworkSwitchQosRuleRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	qosRuleId string
 }
 
-func (r SwitchApiDeleteNetworkSwitchQosRuleRequest) Execute() (*http.Response, error) {
+func (r SwitchAPIDeleteNetworkSwitchQosRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkSwitchQosRuleExecute(r)
 }
 
@@ -2501,10 +2501,10 @@ Delete a quality of service rule
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param qosRuleId Qos rule ID
- @return SwitchApiDeleteNetworkSwitchQosRuleRequest
+ @return SwitchAPIDeleteNetworkSwitchQosRuleRequest
 */
-func (a *SwitchApiService) DeleteNetworkSwitchQosRule(ctx context.Context, networkId string, qosRuleId string) SwitchApiDeleteNetworkSwitchQosRuleRequest {
-	return SwitchApiDeleteNetworkSwitchQosRuleRequest{
+func (a *SwitchAPIService) DeleteNetworkSwitchQosRule(ctx context.Context, networkId string, qosRuleId string) SwitchAPIDeleteNetworkSwitchQosRuleRequest {
+	return SwitchAPIDeleteNetworkSwitchQosRuleRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2513,14 +2513,14 @@ func (a *SwitchApiService) DeleteNetworkSwitchQosRule(ctx context.Context, netwo
 }
 
 // Execute executes the request
-func (a *SwitchApiService) DeleteNetworkSwitchQosRuleExecute(r SwitchApiDeleteNetworkSwitchQosRuleRequest) (*http.Response, error) {
+func (a *SwitchAPIService) DeleteNetworkSwitchQosRuleExecute(r SwitchAPIDeleteNetworkSwitchQosRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.DeleteNetworkSwitchQosRule")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.DeleteNetworkSwitchQosRule")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2592,14 +2592,14 @@ func (a *SwitchApiService) DeleteNetworkSwitchQosRuleExecute(r SwitchApiDeleteNe
 	return localVarHTTPResponse, nil
 }
 
-type SwitchApiDeleteNetworkSwitchRoutingMulticastRendezvousPointRequest struct {
+type SwitchAPIDeleteNetworkSwitchRoutingMulticastRendezvousPointRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	rendezvousPointId string
 }
 
-func (r SwitchApiDeleteNetworkSwitchRoutingMulticastRendezvousPointRequest) Execute() (*http.Response, error) {
+func (r SwitchAPIDeleteNetworkSwitchRoutingMulticastRendezvousPointRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkSwitchRoutingMulticastRendezvousPointExecute(r)
 }
 
@@ -2611,10 +2611,10 @@ Delete a multicast rendezvous point
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param rendezvousPointId Rendezvous point ID
- @return SwitchApiDeleteNetworkSwitchRoutingMulticastRendezvousPointRequest
+ @return SwitchAPIDeleteNetworkSwitchRoutingMulticastRendezvousPointRequest
 */
-func (a *SwitchApiService) DeleteNetworkSwitchRoutingMulticastRendezvousPoint(ctx context.Context, networkId string, rendezvousPointId string) SwitchApiDeleteNetworkSwitchRoutingMulticastRendezvousPointRequest {
-	return SwitchApiDeleteNetworkSwitchRoutingMulticastRendezvousPointRequest{
+func (a *SwitchAPIService) DeleteNetworkSwitchRoutingMulticastRendezvousPoint(ctx context.Context, networkId string, rendezvousPointId string) SwitchAPIDeleteNetworkSwitchRoutingMulticastRendezvousPointRequest {
+	return SwitchAPIDeleteNetworkSwitchRoutingMulticastRendezvousPointRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2623,14 +2623,14 @@ func (a *SwitchApiService) DeleteNetworkSwitchRoutingMulticastRendezvousPoint(ct
 }
 
 // Execute executes the request
-func (a *SwitchApiService) DeleteNetworkSwitchRoutingMulticastRendezvousPointExecute(r SwitchApiDeleteNetworkSwitchRoutingMulticastRendezvousPointRequest) (*http.Response, error) {
+func (a *SwitchAPIService) DeleteNetworkSwitchRoutingMulticastRendezvousPointExecute(r SwitchAPIDeleteNetworkSwitchRoutingMulticastRendezvousPointRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.DeleteNetworkSwitchRoutingMulticastRendezvousPoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.DeleteNetworkSwitchRoutingMulticastRendezvousPoint")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2702,14 +2702,14 @@ func (a *SwitchApiService) DeleteNetworkSwitchRoutingMulticastRendezvousPointExe
 	return localVarHTTPResponse, nil
 }
 
-type SwitchApiDeleteNetworkSwitchStackRequest struct {
+type SwitchAPIDeleteNetworkSwitchStackRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	switchStackId string
 }
 
-func (r SwitchApiDeleteNetworkSwitchStackRequest) Execute() (*http.Response, error) {
+func (r SwitchAPIDeleteNetworkSwitchStackRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkSwitchStackExecute(r)
 }
 
@@ -2721,10 +2721,10 @@ Delete a stack
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param switchStackId Switch stack ID
- @return SwitchApiDeleteNetworkSwitchStackRequest
+ @return SwitchAPIDeleteNetworkSwitchStackRequest
 */
-func (a *SwitchApiService) DeleteNetworkSwitchStack(ctx context.Context, networkId string, switchStackId string) SwitchApiDeleteNetworkSwitchStackRequest {
-	return SwitchApiDeleteNetworkSwitchStackRequest{
+func (a *SwitchAPIService) DeleteNetworkSwitchStack(ctx context.Context, networkId string, switchStackId string) SwitchAPIDeleteNetworkSwitchStackRequest {
+	return SwitchAPIDeleteNetworkSwitchStackRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2733,14 +2733,14 @@ func (a *SwitchApiService) DeleteNetworkSwitchStack(ctx context.Context, network
 }
 
 // Execute executes the request
-func (a *SwitchApiService) DeleteNetworkSwitchStackExecute(r SwitchApiDeleteNetworkSwitchStackRequest) (*http.Response, error) {
+func (a *SwitchAPIService) DeleteNetworkSwitchStackExecute(r SwitchAPIDeleteNetworkSwitchStackRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.DeleteNetworkSwitchStack")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.DeleteNetworkSwitchStack")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2812,15 +2812,15 @@ func (a *SwitchApiService) DeleteNetworkSwitchStackExecute(r SwitchApiDeleteNetw
 	return localVarHTTPResponse, nil
 }
 
-type SwitchApiDeleteNetworkSwitchStackRoutingInterfaceRequest struct {
+type SwitchAPIDeleteNetworkSwitchStackRoutingInterfaceRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	switchStackId string
 	interfaceId string
 }
 
-func (r SwitchApiDeleteNetworkSwitchStackRoutingInterfaceRequest) Execute() (*http.Response, error) {
+func (r SwitchAPIDeleteNetworkSwitchStackRoutingInterfaceRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkSwitchStackRoutingInterfaceExecute(r)
 }
 
@@ -2833,10 +2833,10 @@ Delete a layer 3 interface from a switch stack
  @param networkId Network ID
  @param switchStackId Switch stack ID
  @param interfaceId Interface ID
- @return SwitchApiDeleteNetworkSwitchStackRoutingInterfaceRequest
+ @return SwitchAPIDeleteNetworkSwitchStackRoutingInterfaceRequest
 */
-func (a *SwitchApiService) DeleteNetworkSwitchStackRoutingInterface(ctx context.Context, networkId string, switchStackId string, interfaceId string) SwitchApiDeleteNetworkSwitchStackRoutingInterfaceRequest {
-	return SwitchApiDeleteNetworkSwitchStackRoutingInterfaceRequest{
+func (a *SwitchAPIService) DeleteNetworkSwitchStackRoutingInterface(ctx context.Context, networkId string, switchStackId string, interfaceId string) SwitchAPIDeleteNetworkSwitchStackRoutingInterfaceRequest {
+	return SwitchAPIDeleteNetworkSwitchStackRoutingInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2846,14 +2846,14 @@ func (a *SwitchApiService) DeleteNetworkSwitchStackRoutingInterface(ctx context.
 }
 
 // Execute executes the request
-func (a *SwitchApiService) DeleteNetworkSwitchStackRoutingInterfaceExecute(r SwitchApiDeleteNetworkSwitchStackRoutingInterfaceRequest) (*http.Response, error) {
+func (a *SwitchAPIService) DeleteNetworkSwitchStackRoutingInterfaceExecute(r SwitchAPIDeleteNetworkSwitchStackRoutingInterfaceRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.DeleteNetworkSwitchStackRoutingInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.DeleteNetworkSwitchStackRoutingInterface")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2926,15 +2926,15 @@ func (a *SwitchApiService) DeleteNetworkSwitchStackRoutingInterfaceExecute(r Swi
 	return localVarHTTPResponse, nil
 }
 
-type SwitchApiDeleteNetworkSwitchStackRoutingStaticRouteRequest struct {
+type SwitchAPIDeleteNetworkSwitchStackRoutingStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	switchStackId string
 	staticRouteId string
 }
 
-func (r SwitchApiDeleteNetworkSwitchStackRoutingStaticRouteRequest) Execute() (*http.Response, error) {
+func (r SwitchAPIDeleteNetworkSwitchStackRoutingStaticRouteRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkSwitchStackRoutingStaticRouteExecute(r)
 }
 
@@ -2947,10 +2947,10 @@ Delete a layer 3 static route for a switch stack
  @param networkId Network ID
  @param switchStackId Switch stack ID
  @param staticRouteId Static route ID
- @return SwitchApiDeleteNetworkSwitchStackRoutingStaticRouteRequest
+ @return SwitchAPIDeleteNetworkSwitchStackRoutingStaticRouteRequest
 */
-func (a *SwitchApiService) DeleteNetworkSwitchStackRoutingStaticRoute(ctx context.Context, networkId string, switchStackId string, staticRouteId string) SwitchApiDeleteNetworkSwitchStackRoutingStaticRouteRequest {
-	return SwitchApiDeleteNetworkSwitchStackRoutingStaticRouteRequest{
+func (a *SwitchAPIService) DeleteNetworkSwitchStackRoutingStaticRoute(ctx context.Context, networkId string, switchStackId string, staticRouteId string) SwitchAPIDeleteNetworkSwitchStackRoutingStaticRouteRequest {
+	return SwitchAPIDeleteNetworkSwitchStackRoutingStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2960,14 +2960,14 @@ func (a *SwitchApiService) DeleteNetworkSwitchStackRoutingStaticRoute(ctx contex
 }
 
 // Execute executes the request
-func (a *SwitchApiService) DeleteNetworkSwitchStackRoutingStaticRouteExecute(r SwitchApiDeleteNetworkSwitchStackRoutingStaticRouteRequest) (*http.Response, error) {
+func (a *SwitchAPIService) DeleteNetworkSwitchStackRoutingStaticRouteExecute(r SwitchAPIDeleteNetworkSwitchStackRoutingStaticRouteRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.DeleteNetworkSwitchStackRoutingStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.DeleteNetworkSwitchStackRoutingStaticRoute")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3040,14 +3040,14 @@ func (a *SwitchApiService) DeleteNetworkSwitchStackRoutingStaticRouteExecute(r S
 	return localVarHTTPResponse, nil
 }
 
-type SwitchApiGetDeviceSwitchPortRequest struct {
+type SwitchAPIGetDeviceSwitchPortRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	serial string
 	portId string
 }
 
-func (r SwitchApiGetDeviceSwitchPortRequest) Execute() (*GetDeviceSwitchPorts200ResponseInner, *http.Response, error) {
+func (r SwitchAPIGetDeviceSwitchPortRequest) Execute() (*GetDeviceSwitchPorts200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetDeviceSwitchPortExecute(r)
 }
 
@@ -3059,10 +3059,10 @@ Return a switch port
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param portId Port ID
- @return SwitchApiGetDeviceSwitchPortRequest
+ @return SwitchAPIGetDeviceSwitchPortRequest
 */
-func (a *SwitchApiService) GetDeviceSwitchPort(ctx context.Context, serial string, portId string) SwitchApiGetDeviceSwitchPortRequest {
-	return SwitchApiGetDeviceSwitchPortRequest{
+func (a *SwitchAPIService) GetDeviceSwitchPort(ctx context.Context, serial string, portId string) SwitchAPIGetDeviceSwitchPortRequest {
+	return SwitchAPIGetDeviceSwitchPortRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -3072,7 +3072,7 @@ func (a *SwitchApiService) GetDeviceSwitchPort(ctx context.Context, serial strin
 
 // Execute executes the request
 //  @return GetDeviceSwitchPorts200ResponseInner
-func (a *SwitchApiService) GetDeviceSwitchPortExecute(r SwitchApiGetDeviceSwitchPortRequest) (*GetDeviceSwitchPorts200ResponseInner, *http.Response, error) {
+func (a *SwitchAPIService) GetDeviceSwitchPortExecute(r SwitchAPIGetDeviceSwitchPortRequest) (*GetDeviceSwitchPorts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3080,7 +3080,7 @@ func (a *SwitchApiService) GetDeviceSwitchPortExecute(r SwitchApiGetDeviceSwitch
 		localVarReturnValue  *GetDeviceSwitchPorts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetDeviceSwitchPort")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetDeviceSwitchPort")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3161,13 +3161,13 @@ func (a *SwitchApiService) GetDeviceSwitchPortExecute(r SwitchApiGetDeviceSwitch
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetDeviceSwitchPortsRequest struct {
+type SwitchAPIGetDeviceSwitchPortsRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	serial string
 }
 
-func (r SwitchApiGetDeviceSwitchPortsRequest) Execute() ([]GetDeviceSwitchPorts200ResponseInner, *http.Response, error) {
+func (r SwitchAPIGetDeviceSwitchPortsRequest) Execute() ([]GetDeviceSwitchPorts200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetDeviceSwitchPortsExecute(r)
 }
 
@@ -3178,10 +3178,10 @@ List the switch ports for a switch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return SwitchApiGetDeviceSwitchPortsRequest
+ @return SwitchAPIGetDeviceSwitchPortsRequest
 */
-func (a *SwitchApiService) GetDeviceSwitchPorts(ctx context.Context, serial string) SwitchApiGetDeviceSwitchPortsRequest {
-	return SwitchApiGetDeviceSwitchPortsRequest{
+func (a *SwitchAPIService) GetDeviceSwitchPorts(ctx context.Context, serial string) SwitchAPIGetDeviceSwitchPortsRequest {
+	return SwitchAPIGetDeviceSwitchPortsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -3190,7 +3190,7 @@ func (a *SwitchApiService) GetDeviceSwitchPorts(ctx context.Context, serial stri
 
 // Execute executes the request
 //  @return []GetDeviceSwitchPorts200ResponseInner
-func (a *SwitchApiService) GetDeviceSwitchPortsExecute(r SwitchApiGetDeviceSwitchPortsRequest) ([]GetDeviceSwitchPorts200ResponseInner, *http.Response, error) {
+func (a *SwitchAPIService) GetDeviceSwitchPortsExecute(r SwitchAPIGetDeviceSwitchPortsRequest) ([]GetDeviceSwitchPorts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3198,7 +3198,7 @@ func (a *SwitchApiService) GetDeviceSwitchPortsExecute(r SwitchApiGetDeviceSwitc
 		localVarReturnValue  []GetDeviceSwitchPorts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetDeviceSwitchPorts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetDeviceSwitchPorts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3278,27 +3278,27 @@ func (a *SwitchApiService) GetDeviceSwitchPortsExecute(r SwitchApiGetDeviceSwitc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetDeviceSwitchPortsStatusesRequest struct {
+type SwitchAPIGetDeviceSwitchPortsStatusesRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	serial string
 	t0 *string
 	timespan *float32
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r SwitchApiGetDeviceSwitchPortsStatusesRequest) T0(t0 string) SwitchApiGetDeviceSwitchPortsStatusesRequest {
+func (r SwitchAPIGetDeviceSwitchPortsStatusesRequest) T0(t0 string) SwitchAPIGetDeviceSwitchPortsStatusesRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r SwitchApiGetDeviceSwitchPortsStatusesRequest) Timespan(timespan float32) SwitchApiGetDeviceSwitchPortsStatusesRequest {
+func (r SwitchAPIGetDeviceSwitchPortsStatusesRequest) Timespan(timespan float32) SwitchAPIGetDeviceSwitchPortsStatusesRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r SwitchApiGetDeviceSwitchPortsStatusesRequest) Execute() ([]GetDeviceSwitchPortsStatuses200ResponseInner, *http.Response, error) {
+func (r SwitchAPIGetDeviceSwitchPortsStatusesRequest) Execute() ([]GetDeviceSwitchPortsStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetDeviceSwitchPortsStatusesExecute(r)
 }
 
@@ -3309,10 +3309,10 @@ Return the status for all the ports of a switch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return SwitchApiGetDeviceSwitchPortsStatusesRequest
+ @return SwitchAPIGetDeviceSwitchPortsStatusesRequest
 */
-func (a *SwitchApiService) GetDeviceSwitchPortsStatuses(ctx context.Context, serial string) SwitchApiGetDeviceSwitchPortsStatusesRequest {
-	return SwitchApiGetDeviceSwitchPortsStatusesRequest{
+func (a *SwitchAPIService) GetDeviceSwitchPortsStatuses(ctx context.Context, serial string) SwitchAPIGetDeviceSwitchPortsStatusesRequest {
+	return SwitchAPIGetDeviceSwitchPortsStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -3321,7 +3321,7 @@ func (a *SwitchApiService) GetDeviceSwitchPortsStatuses(ctx context.Context, ser
 
 // Execute executes the request
 //  @return []GetDeviceSwitchPortsStatuses200ResponseInner
-func (a *SwitchApiService) GetDeviceSwitchPortsStatusesExecute(r SwitchApiGetDeviceSwitchPortsStatusesRequest) ([]GetDeviceSwitchPortsStatuses200ResponseInner, *http.Response, error) {
+func (a *SwitchAPIService) GetDeviceSwitchPortsStatusesExecute(r SwitchAPIGetDeviceSwitchPortsStatusesRequest) ([]GetDeviceSwitchPortsStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3329,7 +3329,7 @@ func (a *SwitchApiService) GetDeviceSwitchPortsStatusesExecute(r SwitchApiGetDev
 		localVarReturnValue  []GetDeviceSwitchPortsStatuses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetDeviceSwitchPortsStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetDeviceSwitchPortsStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3415,27 +3415,27 @@ func (a *SwitchApiService) GetDeviceSwitchPortsStatusesExecute(r SwitchApiGetDev
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetDeviceSwitchPortsStatusesPacketsRequest struct {
+type SwitchAPIGetDeviceSwitchPortsStatusesPacketsRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	serial string
 	t0 *string
 	timespan *float32
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 1 day from today.
-func (r SwitchApiGetDeviceSwitchPortsStatusesPacketsRequest) T0(t0 string) SwitchApiGetDeviceSwitchPortsStatusesPacketsRequest {
+func (r SwitchAPIGetDeviceSwitchPortsStatusesPacketsRequest) T0(t0 string) SwitchAPIGetDeviceSwitchPortsStatusesPacketsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 1 day. The default is 1 day.
-func (r SwitchApiGetDeviceSwitchPortsStatusesPacketsRequest) Timespan(timespan float32) SwitchApiGetDeviceSwitchPortsStatusesPacketsRequest {
+func (r SwitchAPIGetDeviceSwitchPortsStatusesPacketsRequest) Timespan(timespan float32) SwitchAPIGetDeviceSwitchPortsStatusesPacketsRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r SwitchApiGetDeviceSwitchPortsStatusesPacketsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIGetDeviceSwitchPortsStatusesPacketsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceSwitchPortsStatusesPacketsExecute(r)
 }
 
@@ -3446,10 +3446,10 @@ Return the packet counters for all the ports of a switch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return SwitchApiGetDeviceSwitchPortsStatusesPacketsRequest
+ @return SwitchAPIGetDeviceSwitchPortsStatusesPacketsRequest
 */
-func (a *SwitchApiService) GetDeviceSwitchPortsStatusesPackets(ctx context.Context, serial string) SwitchApiGetDeviceSwitchPortsStatusesPacketsRequest {
-	return SwitchApiGetDeviceSwitchPortsStatusesPacketsRequest{
+func (a *SwitchAPIService) GetDeviceSwitchPortsStatusesPackets(ctx context.Context, serial string) SwitchAPIGetDeviceSwitchPortsStatusesPacketsRequest {
+	return SwitchAPIGetDeviceSwitchPortsStatusesPacketsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -3458,7 +3458,7 @@ func (a *SwitchApiService) GetDeviceSwitchPortsStatusesPackets(ctx context.Conte
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *SwitchApiService) GetDeviceSwitchPortsStatusesPacketsExecute(r SwitchApiGetDeviceSwitchPortsStatusesPacketsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) GetDeviceSwitchPortsStatusesPacketsExecute(r SwitchAPIGetDeviceSwitchPortsStatusesPacketsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3466,7 +3466,7 @@ func (a *SwitchApiService) GetDeviceSwitchPortsStatusesPacketsExecute(r SwitchAp
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetDeviceSwitchPortsStatusesPackets")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetDeviceSwitchPortsStatusesPackets")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3552,14 +3552,14 @@ func (a *SwitchApiService) GetDeviceSwitchPortsStatusesPacketsExecute(r SwitchAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetDeviceSwitchRoutingInterfaceRequest struct {
+type SwitchAPIGetDeviceSwitchRoutingInterfaceRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	serial string
 	interfaceId string
 }
 
-func (r SwitchApiGetDeviceSwitchRoutingInterfaceRequest) Execute() (*GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
+func (r SwitchAPIGetDeviceSwitchRoutingInterfaceRequest) Execute() (*GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetDeviceSwitchRoutingInterfaceExecute(r)
 }
 
@@ -3571,10 +3571,10 @@ Return a layer 3 interface for a switch
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param interfaceId Interface ID
- @return SwitchApiGetDeviceSwitchRoutingInterfaceRequest
+ @return SwitchAPIGetDeviceSwitchRoutingInterfaceRequest
 */
-func (a *SwitchApiService) GetDeviceSwitchRoutingInterface(ctx context.Context, serial string, interfaceId string) SwitchApiGetDeviceSwitchRoutingInterfaceRequest {
-	return SwitchApiGetDeviceSwitchRoutingInterfaceRequest{
+func (a *SwitchAPIService) GetDeviceSwitchRoutingInterface(ctx context.Context, serial string, interfaceId string) SwitchAPIGetDeviceSwitchRoutingInterfaceRequest {
+	return SwitchAPIGetDeviceSwitchRoutingInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -3584,7 +3584,7 @@ func (a *SwitchApiService) GetDeviceSwitchRoutingInterface(ctx context.Context, 
 
 // Execute executes the request
 //  @return GetDeviceSwitchRoutingInterfaces200ResponseInner
-func (a *SwitchApiService) GetDeviceSwitchRoutingInterfaceExecute(r SwitchApiGetDeviceSwitchRoutingInterfaceRequest) (*GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
+func (a *SwitchAPIService) GetDeviceSwitchRoutingInterfaceExecute(r SwitchAPIGetDeviceSwitchRoutingInterfaceRequest) (*GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3592,7 +3592,7 @@ func (a *SwitchApiService) GetDeviceSwitchRoutingInterfaceExecute(r SwitchApiGet
 		localVarReturnValue  *GetDeviceSwitchRoutingInterfaces200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetDeviceSwitchRoutingInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetDeviceSwitchRoutingInterface")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3673,14 +3673,14 @@ func (a *SwitchApiService) GetDeviceSwitchRoutingInterfaceExecute(r SwitchApiGet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetDeviceSwitchRoutingInterfaceDhcpRequest struct {
+type SwitchAPIGetDeviceSwitchRoutingInterfaceDhcpRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	serial string
 	interfaceId string
 }
 
-func (r SwitchApiGetDeviceSwitchRoutingInterfaceDhcpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIGetDeviceSwitchRoutingInterfaceDhcpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceSwitchRoutingInterfaceDhcpExecute(r)
 }
 
@@ -3692,10 +3692,10 @@ Return a layer 3 interface DHCP configuration for a switch
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param interfaceId Interface ID
- @return SwitchApiGetDeviceSwitchRoutingInterfaceDhcpRequest
+ @return SwitchAPIGetDeviceSwitchRoutingInterfaceDhcpRequest
 */
-func (a *SwitchApiService) GetDeviceSwitchRoutingInterfaceDhcp(ctx context.Context, serial string, interfaceId string) SwitchApiGetDeviceSwitchRoutingInterfaceDhcpRequest {
-	return SwitchApiGetDeviceSwitchRoutingInterfaceDhcpRequest{
+func (a *SwitchAPIService) GetDeviceSwitchRoutingInterfaceDhcp(ctx context.Context, serial string, interfaceId string) SwitchAPIGetDeviceSwitchRoutingInterfaceDhcpRequest {
+	return SwitchAPIGetDeviceSwitchRoutingInterfaceDhcpRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -3705,7 +3705,7 @@ func (a *SwitchApiService) GetDeviceSwitchRoutingInterfaceDhcp(ctx context.Conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) GetDeviceSwitchRoutingInterfaceDhcpExecute(r SwitchApiGetDeviceSwitchRoutingInterfaceDhcpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) GetDeviceSwitchRoutingInterfaceDhcpExecute(r SwitchAPIGetDeviceSwitchRoutingInterfaceDhcpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3713,7 +3713,7 @@ func (a *SwitchApiService) GetDeviceSwitchRoutingInterfaceDhcpExecute(r SwitchAp
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetDeviceSwitchRoutingInterfaceDhcp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetDeviceSwitchRoutingInterfaceDhcp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3794,13 +3794,13 @@ func (a *SwitchApiService) GetDeviceSwitchRoutingInterfaceDhcpExecute(r SwitchAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetDeviceSwitchRoutingInterfacesRequest struct {
+type SwitchAPIGetDeviceSwitchRoutingInterfacesRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	serial string
 }
 
-func (r SwitchApiGetDeviceSwitchRoutingInterfacesRequest) Execute() ([]GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
+func (r SwitchAPIGetDeviceSwitchRoutingInterfacesRequest) Execute() ([]GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetDeviceSwitchRoutingInterfacesExecute(r)
 }
 
@@ -3811,10 +3811,10 @@ List layer 3 interfaces for a switch. Those for a stack may be found under switc
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return SwitchApiGetDeviceSwitchRoutingInterfacesRequest
+ @return SwitchAPIGetDeviceSwitchRoutingInterfacesRequest
 */
-func (a *SwitchApiService) GetDeviceSwitchRoutingInterfaces(ctx context.Context, serial string) SwitchApiGetDeviceSwitchRoutingInterfacesRequest {
-	return SwitchApiGetDeviceSwitchRoutingInterfacesRequest{
+func (a *SwitchAPIService) GetDeviceSwitchRoutingInterfaces(ctx context.Context, serial string) SwitchAPIGetDeviceSwitchRoutingInterfacesRequest {
+	return SwitchAPIGetDeviceSwitchRoutingInterfacesRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -3823,7 +3823,7 @@ func (a *SwitchApiService) GetDeviceSwitchRoutingInterfaces(ctx context.Context,
 
 // Execute executes the request
 //  @return []GetDeviceSwitchRoutingInterfaces200ResponseInner
-func (a *SwitchApiService) GetDeviceSwitchRoutingInterfacesExecute(r SwitchApiGetDeviceSwitchRoutingInterfacesRequest) ([]GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
+func (a *SwitchAPIService) GetDeviceSwitchRoutingInterfacesExecute(r SwitchAPIGetDeviceSwitchRoutingInterfacesRequest) ([]GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3831,7 +3831,7 @@ func (a *SwitchApiService) GetDeviceSwitchRoutingInterfacesExecute(r SwitchApiGe
 		localVarReturnValue  []GetDeviceSwitchRoutingInterfaces200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetDeviceSwitchRoutingInterfaces")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetDeviceSwitchRoutingInterfaces")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3911,14 +3911,14 @@ func (a *SwitchApiService) GetDeviceSwitchRoutingInterfacesExecute(r SwitchApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetDeviceSwitchRoutingStaticRouteRequest struct {
+type SwitchAPIGetDeviceSwitchRoutingStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	serial string
 	staticRouteId string
 }
 
-func (r SwitchApiGetDeviceSwitchRoutingStaticRouteRequest) Execute() (*GetDeviceSwitchRoutingStaticRoute200Response, *http.Response, error) {
+func (r SwitchAPIGetDeviceSwitchRoutingStaticRouteRequest) Execute() (*GetDeviceSwitchRoutingStaticRoute200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceSwitchRoutingStaticRouteExecute(r)
 }
 
@@ -3930,10 +3930,10 @@ Return a layer 3 static route for a switch
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param staticRouteId Static route ID
- @return SwitchApiGetDeviceSwitchRoutingStaticRouteRequest
+ @return SwitchAPIGetDeviceSwitchRoutingStaticRouteRequest
 */
-func (a *SwitchApiService) GetDeviceSwitchRoutingStaticRoute(ctx context.Context, serial string, staticRouteId string) SwitchApiGetDeviceSwitchRoutingStaticRouteRequest {
-	return SwitchApiGetDeviceSwitchRoutingStaticRouteRequest{
+func (a *SwitchAPIService) GetDeviceSwitchRoutingStaticRoute(ctx context.Context, serial string, staticRouteId string) SwitchAPIGetDeviceSwitchRoutingStaticRouteRequest {
+	return SwitchAPIGetDeviceSwitchRoutingStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -3943,7 +3943,7 @@ func (a *SwitchApiService) GetDeviceSwitchRoutingStaticRoute(ctx context.Context
 
 // Execute executes the request
 //  @return GetDeviceSwitchRoutingStaticRoute200Response
-func (a *SwitchApiService) GetDeviceSwitchRoutingStaticRouteExecute(r SwitchApiGetDeviceSwitchRoutingStaticRouteRequest) (*GetDeviceSwitchRoutingStaticRoute200Response, *http.Response, error) {
+func (a *SwitchAPIService) GetDeviceSwitchRoutingStaticRouteExecute(r SwitchAPIGetDeviceSwitchRoutingStaticRouteRequest) (*GetDeviceSwitchRoutingStaticRoute200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3951,7 +3951,7 @@ func (a *SwitchApiService) GetDeviceSwitchRoutingStaticRouteExecute(r SwitchApiG
 		localVarReturnValue  *GetDeviceSwitchRoutingStaticRoute200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetDeviceSwitchRoutingStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetDeviceSwitchRoutingStaticRoute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4032,13 +4032,13 @@ func (a *SwitchApiService) GetDeviceSwitchRoutingStaticRouteExecute(r SwitchApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetDeviceSwitchRoutingStaticRoutesRequest struct {
+type SwitchAPIGetDeviceSwitchRoutingStaticRoutesRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	serial string
 }
 
-func (r SwitchApiGetDeviceSwitchRoutingStaticRoutesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIGetDeviceSwitchRoutingStaticRoutesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceSwitchRoutingStaticRoutesExecute(r)
 }
 
@@ -4049,10 +4049,10 @@ List layer 3 static routes for a switch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return SwitchApiGetDeviceSwitchRoutingStaticRoutesRequest
+ @return SwitchAPIGetDeviceSwitchRoutingStaticRoutesRequest
 */
-func (a *SwitchApiService) GetDeviceSwitchRoutingStaticRoutes(ctx context.Context, serial string) SwitchApiGetDeviceSwitchRoutingStaticRoutesRequest {
-	return SwitchApiGetDeviceSwitchRoutingStaticRoutesRequest{
+func (a *SwitchAPIService) GetDeviceSwitchRoutingStaticRoutes(ctx context.Context, serial string) SwitchAPIGetDeviceSwitchRoutingStaticRoutesRequest {
+	return SwitchAPIGetDeviceSwitchRoutingStaticRoutesRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -4061,7 +4061,7 @@ func (a *SwitchApiService) GetDeviceSwitchRoutingStaticRoutes(ctx context.Contex
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *SwitchApiService) GetDeviceSwitchRoutingStaticRoutesExecute(r SwitchApiGetDeviceSwitchRoutingStaticRoutesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) GetDeviceSwitchRoutingStaticRoutesExecute(r SwitchAPIGetDeviceSwitchRoutingStaticRoutesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4069,7 +4069,7 @@ func (a *SwitchApiService) GetDeviceSwitchRoutingStaticRoutesExecute(r SwitchApi
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetDeviceSwitchRoutingStaticRoutes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetDeviceSwitchRoutingStaticRoutes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4149,13 +4149,13 @@ func (a *SwitchApiService) GetDeviceSwitchRoutingStaticRoutesExecute(r SwitchApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetDeviceSwitchWarmSpareRequest struct {
+type SwitchAPIGetDeviceSwitchWarmSpareRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	serial string
 }
 
-func (r SwitchApiGetDeviceSwitchWarmSpareRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIGetDeviceSwitchWarmSpareRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceSwitchWarmSpareExecute(r)
 }
 
@@ -4166,10 +4166,10 @@ Return warm spare configuration for a switch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return SwitchApiGetDeviceSwitchWarmSpareRequest
+ @return SwitchAPIGetDeviceSwitchWarmSpareRequest
 */
-func (a *SwitchApiService) GetDeviceSwitchWarmSpare(ctx context.Context, serial string) SwitchApiGetDeviceSwitchWarmSpareRequest {
-	return SwitchApiGetDeviceSwitchWarmSpareRequest{
+func (a *SwitchAPIService) GetDeviceSwitchWarmSpare(ctx context.Context, serial string) SwitchAPIGetDeviceSwitchWarmSpareRequest {
+	return SwitchAPIGetDeviceSwitchWarmSpareRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -4178,7 +4178,7 @@ func (a *SwitchApiService) GetDeviceSwitchWarmSpare(ctx context.Context, serial 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) GetDeviceSwitchWarmSpareExecute(r SwitchApiGetDeviceSwitchWarmSpareRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) GetDeviceSwitchWarmSpareExecute(r SwitchAPIGetDeviceSwitchWarmSpareRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4186,7 +4186,7 @@ func (a *SwitchApiService) GetDeviceSwitchWarmSpareExecute(r SwitchApiGetDeviceS
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetDeviceSwitchWarmSpare")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetDeviceSwitchWarmSpare")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4266,13 +4266,13 @@ func (a *SwitchApiService) GetDeviceSwitchWarmSpareExecute(r SwitchApiGetDeviceS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchAccessControlListsRequest struct {
+type SwitchAPIGetNetworkSwitchAccessControlListsRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 }
 
-func (r SwitchApiGetNetworkSwitchAccessControlListsRequest) Execute() (*GetNetworkSwitchAccessControlLists200Response, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchAccessControlListsRequest) Execute() (*GetNetworkSwitchAccessControlLists200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchAccessControlListsExecute(r)
 }
 
@@ -4283,10 +4283,10 @@ Return the access control lists for a MS network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiGetNetworkSwitchAccessControlListsRequest
+ @return SwitchAPIGetNetworkSwitchAccessControlListsRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchAccessControlLists(ctx context.Context, networkId string) SwitchApiGetNetworkSwitchAccessControlListsRequest {
-	return SwitchApiGetNetworkSwitchAccessControlListsRequest{
+func (a *SwitchAPIService) GetNetworkSwitchAccessControlLists(ctx context.Context, networkId string) SwitchAPIGetNetworkSwitchAccessControlListsRequest {
+	return SwitchAPIGetNetworkSwitchAccessControlListsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4295,7 +4295,7 @@ func (a *SwitchApiService) GetNetworkSwitchAccessControlLists(ctx context.Contex
 
 // Execute executes the request
 //  @return GetNetworkSwitchAccessControlLists200Response
-func (a *SwitchApiService) GetNetworkSwitchAccessControlListsExecute(r SwitchApiGetNetworkSwitchAccessControlListsRequest) (*GetNetworkSwitchAccessControlLists200Response, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchAccessControlListsExecute(r SwitchAPIGetNetworkSwitchAccessControlListsRequest) (*GetNetworkSwitchAccessControlLists200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4303,7 +4303,7 @@ func (a *SwitchApiService) GetNetworkSwitchAccessControlListsExecute(r SwitchApi
 		localVarReturnValue  *GetNetworkSwitchAccessControlLists200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchAccessControlLists")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchAccessControlLists")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4383,13 +4383,13 @@ func (a *SwitchApiService) GetNetworkSwitchAccessControlListsExecute(r SwitchApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchAccessPoliciesRequest struct {
+type SwitchAPIGetNetworkSwitchAccessPoliciesRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 }
 
-func (r SwitchApiGetNetworkSwitchAccessPoliciesRequest) Execute() ([]GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchAccessPoliciesRequest) Execute() ([]GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchAccessPoliciesExecute(r)
 }
 
@@ -4400,10 +4400,10 @@ List the access policies for a switch network. Only returns access policies with
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiGetNetworkSwitchAccessPoliciesRequest
+ @return SwitchAPIGetNetworkSwitchAccessPoliciesRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchAccessPolicies(ctx context.Context, networkId string) SwitchApiGetNetworkSwitchAccessPoliciesRequest {
-	return SwitchApiGetNetworkSwitchAccessPoliciesRequest{
+func (a *SwitchAPIService) GetNetworkSwitchAccessPolicies(ctx context.Context, networkId string) SwitchAPIGetNetworkSwitchAccessPoliciesRequest {
+	return SwitchAPIGetNetworkSwitchAccessPoliciesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4412,7 +4412,7 @@ func (a *SwitchApiService) GetNetworkSwitchAccessPolicies(ctx context.Context, n
 
 // Execute executes the request
 //  @return []GetNetworkSwitchAccessPolicies200ResponseInner
-func (a *SwitchApiService) GetNetworkSwitchAccessPoliciesExecute(r SwitchApiGetNetworkSwitchAccessPoliciesRequest) ([]GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchAccessPoliciesExecute(r SwitchAPIGetNetworkSwitchAccessPoliciesRequest) ([]GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4420,7 +4420,7 @@ func (a *SwitchApiService) GetNetworkSwitchAccessPoliciesExecute(r SwitchApiGetN
 		localVarReturnValue  []GetNetworkSwitchAccessPolicies200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchAccessPolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchAccessPolicies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4500,14 +4500,14 @@ func (a *SwitchApiService) GetNetworkSwitchAccessPoliciesExecute(r SwitchApiGetN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchAccessPolicyRequest struct {
+type SwitchAPIGetNetworkSwitchAccessPolicyRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	accessPolicyNumber string
 }
 
-func (r SwitchApiGetNetworkSwitchAccessPolicyRequest) Execute() (*GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchAccessPolicyRequest) Execute() (*GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchAccessPolicyExecute(r)
 }
 
@@ -4519,10 +4519,10 @@ Return a specific access policy for a switch network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param accessPolicyNumber Access policy number
- @return SwitchApiGetNetworkSwitchAccessPolicyRequest
+ @return SwitchAPIGetNetworkSwitchAccessPolicyRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchAccessPolicy(ctx context.Context, networkId string, accessPolicyNumber string) SwitchApiGetNetworkSwitchAccessPolicyRequest {
-	return SwitchApiGetNetworkSwitchAccessPolicyRequest{
+func (a *SwitchAPIService) GetNetworkSwitchAccessPolicy(ctx context.Context, networkId string, accessPolicyNumber string) SwitchAPIGetNetworkSwitchAccessPolicyRequest {
+	return SwitchAPIGetNetworkSwitchAccessPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4532,7 +4532,7 @@ func (a *SwitchApiService) GetNetworkSwitchAccessPolicy(ctx context.Context, net
 
 // Execute executes the request
 //  @return GetNetworkSwitchAccessPolicies200ResponseInner
-func (a *SwitchApiService) GetNetworkSwitchAccessPolicyExecute(r SwitchApiGetNetworkSwitchAccessPolicyRequest) (*GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchAccessPolicyExecute(r SwitchAPIGetNetworkSwitchAccessPolicyRequest) (*GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4540,7 +4540,7 @@ func (a *SwitchApiService) GetNetworkSwitchAccessPolicyExecute(r SwitchApiGetNet
 		localVarReturnValue  *GetNetworkSwitchAccessPolicies200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchAccessPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchAccessPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4621,13 +4621,13 @@ func (a *SwitchApiService) GetNetworkSwitchAccessPolicyExecute(r SwitchApiGetNet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchAlternateManagementInterfaceRequest struct {
+type SwitchAPIGetNetworkSwitchAlternateManagementInterfaceRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 }
 
-func (r SwitchApiGetNetworkSwitchAlternateManagementInterfaceRequest) Execute() (*GetNetworkSwitchAlternateManagementInterface200Response, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchAlternateManagementInterfaceRequest) Execute() (*GetNetworkSwitchAlternateManagementInterface200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchAlternateManagementInterfaceExecute(r)
 }
 
@@ -4638,10 +4638,10 @@ Return the switch alternate management interface for the network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiGetNetworkSwitchAlternateManagementInterfaceRequest
+ @return SwitchAPIGetNetworkSwitchAlternateManagementInterfaceRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchAlternateManagementInterface(ctx context.Context, networkId string) SwitchApiGetNetworkSwitchAlternateManagementInterfaceRequest {
-	return SwitchApiGetNetworkSwitchAlternateManagementInterfaceRequest{
+func (a *SwitchAPIService) GetNetworkSwitchAlternateManagementInterface(ctx context.Context, networkId string) SwitchAPIGetNetworkSwitchAlternateManagementInterfaceRequest {
+	return SwitchAPIGetNetworkSwitchAlternateManagementInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4650,7 +4650,7 @@ func (a *SwitchApiService) GetNetworkSwitchAlternateManagementInterface(ctx cont
 
 // Execute executes the request
 //  @return GetNetworkSwitchAlternateManagementInterface200Response
-func (a *SwitchApiService) GetNetworkSwitchAlternateManagementInterfaceExecute(r SwitchApiGetNetworkSwitchAlternateManagementInterfaceRequest) (*GetNetworkSwitchAlternateManagementInterface200Response, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchAlternateManagementInterfaceExecute(r SwitchAPIGetNetworkSwitchAlternateManagementInterfaceRequest) (*GetNetworkSwitchAlternateManagementInterface200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4658,7 +4658,7 @@ func (a *SwitchApiService) GetNetworkSwitchAlternateManagementInterfaceExecute(r
 		localVarReturnValue  *GetNetworkSwitchAlternateManagementInterface200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchAlternateManagementInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchAlternateManagementInterface")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4738,13 +4738,13 @@ func (a *SwitchApiService) GetNetworkSwitchAlternateManagementInterfaceExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchDhcpServerPolicyRequest struct {
+type SwitchAPIGetNetworkSwitchDhcpServerPolicyRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 }
 
-func (r SwitchApiGetNetworkSwitchDhcpServerPolicyRequest) Execute() (*GetNetworkSwitchDhcpServerPolicy200Response, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchDhcpServerPolicyRequest) Execute() (*GetNetworkSwitchDhcpServerPolicy200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchDhcpServerPolicyExecute(r)
 }
 
@@ -4755,10 +4755,10 @@ Return the DHCP server settings. Blocked/allowed servers are only applied when d
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiGetNetworkSwitchDhcpServerPolicyRequest
+ @return SwitchAPIGetNetworkSwitchDhcpServerPolicyRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchDhcpServerPolicy(ctx context.Context, networkId string) SwitchApiGetNetworkSwitchDhcpServerPolicyRequest {
-	return SwitchApiGetNetworkSwitchDhcpServerPolicyRequest{
+func (a *SwitchAPIService) GetNetworkSwitchDhcpServerPolicy(ctx context.Context, networkId string) SwitchAPIGetNetworkSwitchDhcpServerPolicyRequest {
+	return SwitchAPIGetNetworkSwitchDhcpServerPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4767,7 +4767,7 @@ func (a *SwitchApiService) GetNetworkSwitchDhcpServerPolicy(ctx context.Context,
 
 // Execute executes the request
 //  @return GetNetworkSwitchDhcpServerPolicy200Response
-func (a *SwitchApiService) GetNetworkSwitchDhcpServerPolicyExecute(r SwitchApiGetNetworkSwitchDhcpServerPolicyRequest) (*GetNetworkSwitchDhcpServerPolicy200Response, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchDhcpServerPolicyExecute(r SwitchAPIGetNetworkSwitchDhcpServerPolicyRequest) (*GetNetworkSwitchDhcpServerPolicy200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4775,7 +4775,7 @@ func (a *SwitchApiService) GetNetworkSwitchDhcpServerPolicyExecute(r SwitchApiGe
 		localVarReturnValue  *GetNetworkSwitchDhcpServerPolicy200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchDhcpServerPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchDhcpServerPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4855,9 +4855,9 @@ func (a *SwitchApiService) GetNetworkSwitchDhcpServerPolicyExecute(r SwitchApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest struct {
+type SwitchAPIGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	perPage *int32
 	startingAfter *string
@@ -4865,24 +4865,24 @@ type SwitchApiGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r SwitchApiGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest) PerPage(perPage int32) SwitchApiGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest {
+func (r SwitchAPIGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest) PerPage(perPage int32) SwitchAPIGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SwitchApiGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest) StartingAfter(startingAfter string) SwitchApiGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest {
+func (r SwitchAPIGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest) StartingAfter(startingAfter string) SwitchAPIGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SwitchApiGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest) EndingBefore(endingBefore string) SwitchApiGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest {
+func (r SwitchAPIGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest) EndingBefore(endingBefore string) SwitchAPIGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r SwitchApiGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest) Execute() ([]GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest) Execute() ([]GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersExecute(r)
 }
 
@@ -4893,10 +4893,10 @@ Return the list of servers trusted by Dynamic ARP Inspection on this network. Th
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest
+ @return SwitchAPIGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers(ctx context.Context, networkId string) SwitchApiGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest {
-	return SwitchApiGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest{
+func (a *SwitchAPIService) GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers(ctx context.Context, networkId string) SwitchAPIGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest {
+	return SwitchAPIGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4905,7 +4905,7 @@ func (a *SwitchApiService) GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedS
 
 // Execute executes the request
 //  @return []GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner
-func (a *SwitchApiService) GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersExecute(r SwitchApiGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest) ([]GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersExecute(r SwitchAPIGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest) ([]GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4913,7 +4913,7 @@ func (a *SwitchApiService) GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedS
 		localVarReturnValue  []GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5002,9 +5002,9 @@ func (a *SwitchApiService) GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest struct {
+type SwitchAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	perPage *int32
 	startingAfter *string
@@ -5012,24 +5012,24 @@ type SwitchApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceReque
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r SwitchApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) PerPage(perPage int32) SwitchApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest {
+func (r SwitchAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) PerPage(perPage int32) SwitchAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SwitchApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) StartingAfter(startingAfter string) SwitchApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest {
+func (r SwitchAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) StartingAfter(startingAfter string) SwitchAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SwitchApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) EndingBefore(endingBefore string) SwitchApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest {
+func (r SwitchAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) EndingBefore(endingBefore string) SwitchAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r SwitchApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) Execute() ([]GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice200ResponseInner, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) Execute() ([]GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceExecute(r)
 }
 
@@ -5040,10 +5040,10 @@ Return the devices that have a Dynamic ARP Inspection warning and their warnings
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest
+ @return SwitchAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice(ctx context.Context, networkId string) SwitchApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest {
-	return SwitchApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest{
+func (a *SwitchAPIService) GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice(ctx context.Context, networkId string) SwitchAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest {
+	return SwitchAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5052,7 +5052,7 @@ func (a *SwitchApiService) GetNetworkSwitchDhcpServerPolicyArpInspectionWarnings
 
 // Execute executes the request
 //  @return []GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice200ResponseInner
-func (a *SwitchApiService) GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceExecute(r SwitchApiGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) ([]GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice200ResponseInner, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceExecute(r SwitchAPIGetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDeviceRequest) ([]GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5060,7 +5060,7 @@ func (a *SwitchApiService) GetNetworkSwitchDhcpServerPolicyArpInspectionWarnings
 		localVarReturnValue  []GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5149,9 +5149,9 @@ func (a *SwitchApiService) GetNetworkSwitchDhcpServerPolicyArpInspectionWarnings
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchDhcpV4ServersSeenRequest struct {
+type SwitchAPIGetNetworkSwitchDhcpV4ServersSeenRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	t0 *string
 	timespan *float32
@@ -5161,36 +5161,36 @@ type SwitchApiGetNetworkSwitchDhcpV4ServersSeenRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r SwitchApiGetNetworkSwitchDhcpV4ServersSeenRequest) T0(t0 string) SwitchApiGetNetworkSwitchDhcpV4ServersSeenRequest {
+func (r SwitchAPIGetNetworkSwitchDhcpV4ServersSeenRequest) T0(t0 string) SwitchAPIGetNetworkSwitchDhcpV4ServersSeenRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r SwitchApiGetNetworkSwitchDhcpV4ServersSeenRequest) Timespan(timespan float32) SwitchApiGetNetworkSwitchDhcpV4ServersSeenRequest {
+func (r SwitchAPIGetNetworkSwitchDhcpV4ServersSeenRequest) Timespan(timespan float32) SwitchAPIGetNetworkSwitchDhcpV4ServersSeenRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r SwitchApiGetNetworkSwitchDhcpV4ServersSeenRequest) PerPage(perPage int32) SwitchApiGetNetworkSwitchDhcpV4ServersSeenRequest {
+func (r SwitchAPIGetNetworkSwitchDhcpV4ServersSeenRequest) PerPage(perPage int32) SwitchAPIGetNetworkSwitchDhcpV4ServersSeenRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SwitchApiGetNetworkSwitchDhcpV4ServersSeenRequest) StartingAfter(startingAfter string) SwitchApiGetNetworkSwitchDhcpV4ServersSeenRequest {
+func (r SwitchAPIGetNetworkSwitchDhcpV4ServersSeenRequest) StartingAfter(startingAfter string) SwitchAPIGetNetworkSwitchDhcpV4ServersSeenRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SwitchApiGetNetworkSwitchDhcpV4ServersSeenRequest) EndingBefore(endingBefore string) SwitchApiGetNetworkSwitchDhcpV4ServersSeenRequest {
+func (r SwitchAPIGetNetworkSwitchDhcpV4ServersSeenRequest) EndingBefore(endingBefore string) SwitchAPIGetNetworkSwitchDhcpV4ServersSeenRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r SwitchApiGetNetworkSwitchDhcpV4ServersSeenRequest) Execute() ([]GetNetworkSwitchDhcpV4ServersSeen200ResponseInner, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchDhcpV4ServersSeenRequest) Execute() ([]GetNetworkSwitchDhcpV4ServersSeen200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchDhcpV4ServersSeenExecute(r)
 }
 
@@ -5201,10 +5201,10 @@ Return the network's DHCPv4 servers seen within the selected timeframe (default 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiGetNetworkSwitchDhcpV4ServersSeenRequest
+ @return SwitchAPIGetNetworkSwitchDhcpV4ServersSeenRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchDhcpV4ServersSeen(ctx context.Context, networkId string) SwitchApiGetNetworkSwitchDhcpV4ServersSeenRequest {
-	return SwitchApiGetNetworkSwitchDhcpV4ServersSeenRequest{
+func (a *SwitchAPIService) GetNetworkSwitchDhcpV4ServersSeen(ctx context.Context, networkId string) SwitchAPIGetNetworkSwitchDhcpV4ServersSeenRequest {
+	return SwitchAPIGetNetworkSwitchDhcpV4ServersSeenRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5213,7 +5213,7 @@ func (a *SwitchApiService) GetNetworkSwitchDhcpV4ServersSeen(ctx context.Context
 
 // Execute executes the request
 //  @return []GetNetworkSwitchDhcpV4ServersSeen200ResponseInner
-func (a *SwitchApiService) GetNetworkSwitchDhcpV4ServersSeenExecute(r SwitchApiGetNetworkSwitchDhcpV4ServersSeenRequest) ([]GetNetworkSwitchDhcpV4ServersSeen200ResponseInner, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchDhcpV4ServersSeenExecute(r SwitchAPIGetNetworkSwitchDhcpV4ServersSeenRequest) ([]GetNetworkSwitchDhcpV4ServersSeen200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5221,7 +5221,7 @@ func (a *SwitchApiService) GetNetworkSwitchDhcpV4ServersSeenExecute(r SwitchApiG
 		localVarReturnValue  []GetNetworkSwitchDhcpV4ServersSeen200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchDhcpV4ServersSeen")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchDhcpV4ServersSeen")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5316,13 +5316,13 @@ func (a *SwitchApiService) GetNetworkSwitchDhcpV4ServersSeenExecute(r SwitchApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchDscpToCosMappingsRequest struct {
+type SwitchAPIGetNetworkSwitchDscpToCosMappingsRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 }
 
-func (r SwitchApiGetNetworkSwitchDscpToCosMappingsRequest) Execute() (*GetNetworkSwitchDscpToCosMappings200Response, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchDscpToCosMappingsRequest) Execute() (*GetNetworkSwitchDscpToCosMappings200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchDscpToCosMappingsExecute(r)
 }
 
@@ -5333,10 +5333,10 @@ Return the DSCP to CoS mappings
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiGetNetworkSwitchDscpToCosMappingsRequest
+ @return SwitchAPIGetNetworkSwitchDscpToCosMappingsRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchDscpToCosMappings(ctx context.Context, networkId string) SwitchApiGetNetworkSwitchDscpToCosMappingsRequest {
-	return SwitchApiGetNetworkSwitchDscpToCosMappingsRequest{
+func (a *SwitchAPIService) GetNetworkSwitchDscpToCosMappings(ctx context.Context, networkId string) SwitchAPIGetNetworkSwitchDscpToCosMappingsRequest {
+	return SwitchAPIGetNetworkSwitchDscpToCosMappingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5345,7 +5345,7 @@ func (a *SwitchApiService) GetNetworkSwitchDscpToCosMappings(ctx context.Context
 
 // Execute executes the request
 //  @return GetNetworkSwitchDscpToCosMappings200Response
-func (a *SwitchApiService) GetNetworkSwitchDscpToCosMappingsExecute(r SwitchApiGetNetworkSwitchDscpToCosMappingsRequest) (*GetNetworkSwitchDscpToCosMappings200Response, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchDscpToCosMappingsExecute(r SwitchAPIGetNetworkSwitchDscpToCosMappingsRequest) (*GetNetworkSwitchDscpToCosMappings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5353,7 +5353,7 @@ func (a *SwitchApiService) GetNetworkSwitchDscpToCosMappingsExecute(r SwitchApiG
 		localVarReturnValue  *GetNetworkSwitchDscpToCosMappings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchDscpToCosMappings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchDscpToCosMappings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5433,13 +5433,13 @@ func (a *SwitchApiService) GetNetworkSwitchDscpToCosMappingsExecute(r SwitchApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchLinkAggregationsRequest struct {
+type SwitchAPIGetNetworkSwitchLinkAggregationsRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 }
 
-func (r SwitchApiGetNetworkSwitchLinkAggregationsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchLinkAggregationsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchLinkAggregationsExecute(r)
 }
 
@@ -5450,10 +5450,10 @@ List link aggregation groups
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiGetNetworkSwitchLinkAggregationsRequest
+ @return SwitchAPIGetNetworkSwitchLinkAggregationsRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchLinkAggregations(ctx context.Context, networkId string) SwitchApiGetNetworkSwitchLinkAggregationsRequest {
-	return SwitchApiGetNetworkSwitchLinkAggregationsRequest{
+func (a *SwitchAPIService) GetNetworkSwitchLinkAggregations(ctx context.Context, networkId string) SwitchAPIGetNetworkSwitchLinkAggregationsRequest {
+	return SwitchAPIGetNetworkSwitchLinkAggregationsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5462,7 +5462,7 @@ func (a *SwitchApiService) GetNetworkSwitchLinkAggregations(ctx context.Context,
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *SwitchApiService) GetNetworkSwitchLinkAggregationsExecute(r SwitchApiGetNetworkSwitchLinkAggregationsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchLinkAggregationsExecute(r SwitchAPIGetNetworkSwitchLinkAggregationsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5470,7 +5470,7 @@ func (a *SwitchApiService) GetNetworkSwitchLinkAggregationsExecute(r SwitchApiGe
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchLinkAggregations")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchLinkAggregations")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5550,13 +5550,13 @@ func (a *SwitchApiService) GetNetworkSwitchLinkAggregationsExecute(r SwitchApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchMtuRequest struct {
+type SwitchAPIGetNetworkSwitchMtuRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 }
 
-func (r SwitchApiGetNetworkSwitchMtuRequest) Execute() (*GetNetworkSwitchMtu200Response, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchMtuRequest) Execute() (*GetNetworkSwitchMtu200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchMtuExecute(r)
 }
 
@@ -5567,10 +5567,10 @@ Return the MTU configuration
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiGetNetworkSwitchMtuRequest
+ @return SwitchAPIGetNetworkSwitchMtuRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchMtu(ctx context.Context, networkId string) SwitchApiGetNetworkSwitchMtuRequest {
-	return SwitchApiGetNetworkSwitchMtuRequest{
+func (a *SwitchAPIService) GetNetworkSwitchMtu(ctx context.Context, networkId string) SwitchAPIGetNetworkSwitchMtuRequest {
+	return SwitchAPIGetNetworkSwitchMtuRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5579,7 +5579,7 @@ func (a *SwitchApiService) GetNetworkSwitchMtu(ctx context.Context, networkId st
 
 // Execute executes the request
 //  @return GetNetworkSwitchMtu200Response
-func (a *SwitchApiService) GetNetworkSwitchMtuExecute(r SwitchApiGetNetworkSwitchMtuRequest) (*GetNetworkSwitchMtu200Response, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchMtuExecute(r SwitchAPIGetNetworkSwitchMtuRequest) (*GetNetworkSwitchMtu200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5587,7 +5587,7 @@ func (a *SwitchApiService) GetNetworkSwitchMtuExecute(r SwitchApiGetNetworkSwitc
 		localVarReturnValue  *GetNetworkSwitchMtu200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchMtu")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchMtu")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5667,13 +5667,13 @@ func (a *SwitchApiService) GetNetworkSwitchMtuExecute(r SwitchApiGetNetworkSwitc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchPortSchedulesRequest struct {
+type SwitchAPIGetNetworkSwitchPortSchedulesRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 }
 
-func (r SwitchApiGetNetworkSwitchPortSchedulesRequest) Execute() ([]GetNetworkSwitchPortSchedules200ResponseInner, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchPortSchedulesRequest) Execute() ([]GetNetworkSwitchPortSchedules200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchPortSchedulesExecute(r)
 }
 
@@ -5684,10 +5684,10 @@ List switch port schedules
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiGetNetworkSwitchPortSchedulesRequest
+ @return SwitchAPIGetNetworkSwitchPortSchedulesRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchPortSchedules(ctx context.Context, networkId string) SwitchApiGetNetworkSwitchPortSchedulesRequest {
-	return SwitchApiGetNetworkSwitchPortSchedulesRequest{
+func (a *SwitchAPIService) GetNetworkSwitchPortSchedules(ctx context.Context, networkId string) SwitchAPIGetNetworkSwitchPortSchedulesRequest {
+	return SwitchAPIGetNetworkSwitchPortSchedulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5696,7 +5696,7 @@ func (a *SwitchApiService) GetNetworkSwitchPortSchedules(ctx context.Context, ne
 
 // Execute executes the request
 //  @return []GetNetworkSwitchPortSchedules200ResponseInner
-func (a *SwitchApiService) GetNetworkSwitchPortSchedulesExecute(r SwitchApiGetNetworkSwitchPortSchedulesRequest) ([]GetNetworkSwitchPortSchedules200ResponseInner, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchPortSchedulesExecute(r SwitchAPIGetNetworkSwitchPortSchedulesRequest) ([]GetNetworkSwitchPortSchedules200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5704,7 +5704,7 @@ func (a *SwitchApiService) GetNetworkSwitchPortSchedulesExecute(r SwitchApiGetNe
 		localVarReturnValue  []GetNetworkSwitchPortSchedules200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchPortSchedules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchPortSchedules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5784,14 +5784,14 @@ func (a *SwitchApiService) GetNetworkSwitchPortSchedulesExecute(r SwitchApiGetNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchQosRuleRequest struct {
+type SwitchAPIGetNetworkSwitchQosRuleRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	qosRuleId string
 }
 
-func (r SwitchApiGetNetworkSwitchQosRuleRequest) Execute() (*GetNetworkSwitchQosRule200Response, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchQosRuleRequest) Execute() (*GetNetworkSwitchQosRule200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchQosRuleExecute(r)
 }
 
@@ -5803,10 +5803,10 @@ Return a quality of service rule
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param qosRuleId Qos rule ID
- @return SwitchApiGetNetworkSwitchQosRuleRequest
+ @return SwitchAPIGetNetworkSwitchQosRuleRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchQosRule(ctx context.Context, networkId string, qosRuleId string) SwitchApiGetNetworkSwitchQosRuleRequest {
-	return SwitchApiGetNetworkSwitchQosRuleRequest{
+func (a *SwitchAPIService) GetNetworkSwitchQosRule(ctx context.Context, networkId string, qosRuleId string) SwitchAPIGetNetworkSwitchQosRuleRequest {
+	return SwitchAPIGetNetworkSwitchQosRuleRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5816,7 +5816,7 @@ func (a *SwitchApiService) GetNetworkSwitchQosRule(ctx context.Context, networkI
 
 // Execute executes the request
 //  @return GetNetworkSwitchQosRule200Response
-func (a *SwitchApiService) GetNetworkSwitchQosRuleExecute(r SwitchApiGetNetworkSwitchQosRuleRequest) (*GetNetworkSwitchQosRule200Response, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchQosRuleExecute(r SwitchAPIGetNetworkSwitchQosRuleRequest) (*GetNetworkSwitchQosRule200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5824,7 +5824,7 @@ func (a *SwitchApiService) GetNetworkSwitchQosRuleExecute(r SwitchApiGetNetworkS
 		localVarReturnValue  *GetNetworkSwitchQosRule200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchQosRule")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchQosRule")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5905,13 +5905,13 @@ func (a *SwitchApiService) GetNetworkSwitchQosRuleExecute(r SwitchApiGetNetworkS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchQosRulesRequest struct {
+type SwitchAPIGetNetworkSwitchQosRulesRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 }
 
-func (r SwitchApiGetNetworkSwitchQosRulesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchQosRulesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchQosRulesExecute(r)
 }
 
@@ -5922,10 +5922,10 @@ List quality of service rules
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiGetNetworkSwitchQosRulesRequest
+ @return SwitchAPIGetNetworkSwitchQosRulesRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchQosRules(ctx context.Context, networkId string) SwitchApiGetNetworkSwitchQosRulesRequest {
-	return SwitchApiGetNetworkSwitchQosRulesRequest{
+func (a *SwitchAPIService) GetNetworkSwitchQosRules(ctx context.Context, networkId string) SwitchAPIGetNetworkSwitchQosRulesRequest {
+	return SwitchAPIGetNetworkSwitchQosRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5934,7 +5934,7 @@ func (a *SwitchApiService) GetNetworkSwitchQosRules(ctx context.Context, network
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *SwitchApiService) GetNetworkSwitchQosRulesExecute(r SwitchApiGetNetworkSwitchQosRulesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchQosRulesExecute(r SwitchAPIGetNetworkSwitchQosRulesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5942,7 +5942,7 @@ func (a *SwitchApiService) GetNetworkSwitchQosRulesExecute(r SwitchApiGetNetwork
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchQosRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchQosRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6022,13 +6022,13 @@ func (a *SwitchApiService) GetNetworkSwitchQosRulesExecute(r SwitchApiGetNetwork
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchQosRulesOrderRequest struct {
+type SwitchAPIGetNetworkSwitchQosRulesOrderRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 }
 
-func (r SwitchApiGetNetworkSwitchQosRulesOrderRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchQosRulesOrderRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchQosRulesOrderExecute(r)
 }
 
@@ -6039,10 +6039,10 @@ Return the quality of service rule IDs by order in which they will be processed 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiGetNetworkSwitchQosRulesOrderRequest
+ @return SwitchAPIGetNetworkSwitchQosRulesOrderRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchQosRulesOrder(ctx context.Context, networkId string) SwitchApiGetNetworkSwitchQosRulesOrderRequest {
-	return SwitchApiGetNetworkSwitchQosRulesOrderRequest{
+func (a *SwitchAPIService) GetNetworkSwitchQosRulesOrder(ctx context.Context, networkId string) SwitchAPIGetNetworkSwitchQosRulesOrderRequest {
+	return SwitchAPIGetNetworkSwitchQosRulesOrderRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6051,7 +6051,7 @@ func (a *SwitchApiService) GetNetworkSwitchQosRulesOrder(ctx context.Context, ne
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) GetNetworkSwitchQosRulesOrderExecute(r SwitchApiGetNetworkSwitchQosRulesOrderRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchQosRulesOrderExecute(r SwitchAPIGetNetworkSwitchQosRulesOrderRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6059,7 +6059,7 @@ func (a *SwitchApiService) GetNetworkSwitchQosRulesOrderExecute(r SwitchApiGetNe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchQosRulesOrder")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchQosRulesOrder")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6139,13 +6139,13 @@ func (a *SwitchApiService) GetNetworkSwitchQosRulesOrderExecute(r SwitchApiGetNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchRoutingMulticastRequest struct {
+type SwitchAPIGetNetworkSwitchRoutingMulticastRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 }
 
-func (r SwitchApiGetNetworkSwitchRoutingMulticastRequest) Execute() (*GetNetworkSwitchRoutingMulticast200Response, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchRoutingMulticastRequest) Execute() (*GetNetworkSwitchRoutingMulticast200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchRoutingMulticastExecute(r)
 }
 
@@ -6156,10 +6156,10 @@ Return multicast settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiGetNetworkSwitchRoutingMulticastRequest
+ @return SwitchAPIGetNetworkSwitchRoutingMulticastRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchRoutingMulticast(ctx context.Context, networkId string) SwitchApiGetNetworkSwitchRoutingMulticastRequest {
-	return SwitchApiGetNetworkSwitchRoutingMulticastRequest{
+func (a *SwitchAPIService) GetNetworkSwitchRoutingMulticast(ctx context.Context, networkId string) SwitchAPIGetNetworkSwitchRoutingMulticastRequest {
+	return SwitchAPIGetNetworkSwitchRoutingMulticastRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6168,7 +6168,7 @@ func (a *SwitchApiService) GetNetworkSwitchRoutingMulticast(ctx context.Context,
 
 // Execute executes the request
 //  @return GetNetworkSwitchRoutingMulticast200Response
-func (a *SwitchApiService) GetNetworkSwitchRoutingMulticastExecute(r SwitchApiGetNetworkSwitchRoutingMulticastRequest) (*GetNetworkSwitchRoutingMulticast200Response, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchRoutingMulticastExecute(r SwitchAPIGetNetworkSwitchRoutingMulticastRequest) (*GetNetworkSwitchRoutingMulticast200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6176,7 +6176,7 @@ func (a *SwitchApiService) GetNetworkSwitchRoutingMulticastExecute(r SwitchApiGe
 		localVarReturnValue  *GetNetworkSwitchRoutingMulticast200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchRoutingMulticast")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchRoutingMulticast")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6256,14 +6256,14 @@ func (a *SwitchApiService) GetNetworkSwitchRoutingMulticastExecute(r SwitchApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchRoutingMulticastRendezvousPointRequest struct {
+type SwitchAPIGetNetworkSwitchRoutingMulticastRendezvousPointRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	rendezvousPointId string
 }
 
-func (r SwitchApiGetNetworkSwitchRoutingMulticastRendezvousPointRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchRoutingMulticastRendezvousPointRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchRoutingMulticastRendezvousPointExecute(r)
 }
 
@@ -6275,10 +6275,10 @@ Return a multicast rendezvous point
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param rendezvousPointId Rendezvous point ID
- @return SwitchApiGetNetworkSwitchRoutingMulticastRendezvousPointRequest
+ @return SwitchAPIGetNetworkSwitchRoutingMulticastRendezvousPointRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchRoutingMulticastRendezvousPoint(ctx context.Context, networkId string, rendezvousPointId string) SwitchApiGetNetworkSwitchRoutingMulticastRendezvousPointRequest {
-	return SwitchApiGetNetworkSwitchRoutingMulticastRendezvousPointRequest{
+func (a *SwitchAPIService) GetNetworkSwitchRoutingMulticastRendezvousPoint(ctx context.Context, networkId string, rendezvousPointId string) SwitchAPIGetNetworkSwitchRoutingMulticastRendezvousPointRequest {
+	return SwitchAPIGetNetworkSwitchRoutingMulticastRendezvousPointRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6288,7 +6288,7 @@ func (a *SwitchApiService) GetNetworkSwitchRoutingMulticastRendezvousPoint(ctx c
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) GetNetworkSwitchRoutingMulticastRendezvousPointExecute(r SwitchApiGetNetworkSwitchRoutingMulticastRendezvousPointRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchRoutingMulticastRendezvousPointExecute(r SwitchAPIGetNetworkSwitchRoutingMulticastRendezvousPointRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6296,7 +6296,7 @@ func (a *SwitchApiService) GetNetworkSwitchRoutingMulticastRendezvousPointExecut
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchRoutingMulticastRendezvousPoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchRoutingMulticastRendezvousPoint")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6377,13 +6377,13 @@ func (a *SwitchApiService) GetNetworkSwitchRoutingMulticastRendezvousPointExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchRoutingMulticastRendezvousPointsRequest struct {
+type SwitchAPIGetNetworkSwitchRoutingMulticastRendezvousPointsRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 }
 
-func (r SwitchApiGetNetworkSwitchRoutingMulticastRendezvousPointsRequest) Execute() ([][]map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchRoutingMulticastRendezvousPointsRequest) Execute() ([][]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchRoutingMulticastRendezvousPointsExecute(r)
 }
 
@@ -6394,10 +6394,10 @@ List multicast rendezvous points
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiGetNetworkSwitchRoutingMulticastRendezvousPointsRequest
+ @return SwitchAPIGetNetworkSwitchRoutingMulticastRendezvousPointsRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchRoutingMulticastRendezvousPoints(ctx context.Context, networkId string) SwitchApiGetNetworkSwitchRoutingMulticastRendezvousPointsRequest {
-	return SwitchApiGetNetworkSwitchRoutingMulticastRendezvousPointsRequest{
+func (a *SwitchAPIService) GetNetworkSwitchRoutingMulticastRendezvousPoints(ctx context.Context, networkId string) SwitchAPIGetNetworkSwitchRoutingMulticastRendezvousPointsRequest {
+	return SwitchAPIGetNetworkSwitchRoutingMulticastRendezvousPointsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6406,7 +6406,7 @@ func (a *SwitchApiService) GetNetworkSwitchRoutingMulticastRendezvousPoints(ctx 
 
 // Execute executes the request
 //  @return [][]map[string]interface{}
-func (a *SwitchApiService) GetNetworkSwitchRoutingMulticastRendezvousPointsExecute(r SwitchApiGetNetworkSwitchRoutingMulticastRendezvousPointsRequest) ([][]map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchRoutingMulticastRendezvousPointsExecute(r SwitchAPIGetNetworkSwitchRoutingMulticastRendezvousPointsRequest) ([][]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6414,7 +6414,7 @@ func (a *SwitchApiService) GetNetworkSwitchRoutingMulticastRendezvousPointsExecu
 		localVarReturnValue  [][]map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchRoutingMulticastRendezvousPoints")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchRoutingMulticastRendezvousPoints")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6494,13 +6494,13 @@ func (a *SwitchApiService) GetNetworkSwitchRoutingMulticastRendezvousPointsExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchRoutingOspfRequest struct {
+type SwitchAPIGetNetworkSwitchRoutingOspfRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 }
 
-func (r SwitchApiGetNetworkSwitchRoutingOspfRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchRoutingOspfRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchRoutingOspfExecute(r)
 }
 
@@ -6511,10 +6511,10 @@ Return layer 3 OSPF routing configuration
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiGetNetworkSwitchRoutingOspfRequest
+ @return SwitchAPIGetNetworkSwitchRoutingOspfRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchRoutingOspf(ctx context.Context, networkId string) SwitchApiGetNetworkSwitchRoutingOspfRequest {
-	return SwitchApiGetNetworkSwitchRoutingOspfRequest{
+func (a *SwitchAPIService) GetNetworkSwitchRoutingOspf(ctx context.Context, networkId string) SwitchAPIGetNetworkSwitchRoutingOspfRequest {
+	return SwitchAPIGetNetworkSwitchRoutingOspfRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6523,7 +6523,7 @@ func (a *SwitchApiService) GetNetworkSwitchRoutingOspf(ctx context.Context, netw
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) GetNetworkSwitchRoutingOspfExecute(r SwitchApiGetNetworkSwitchRoutingOspfRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchRoutingOspfExecute(r SwitchAPIGetNetworkSwitchRoutingOspfRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6531,7 +6531,7 @@ func (a *SwitchApiService) GetNetworkSwitchRoutingOspfExecute(r SwitchApiGetNetw
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchRoutingOspf")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchRoutingOspf")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6611,13 +6611,13 @@ func (a *SwitchApiService) GetNetworkSwitchRoutingOspfExecute(r SwitchApiGetNetw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchSettingsRequest struct {
+type SwitchAPIGetNetworkSwitchSettingsRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 }
 
-func (r SwitchApiGetNetworkSwitchSettingsRequest) Execute() (*GetNetworkSwitchSettings200Response, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchSettingsRequest) Execute() (*GetNetworkSwitchSettings200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchSettingsExecute(r)
 }
 
@@ -6628,10 +6628,10 @@ Returns the switch network settings
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiGetNetworkSwitchSettingsRequest
+ @return SwitchAPIGetNetworkSwitchSettingsRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchSettings(ctx context.Context, networkId string) SwitchApiGetNetworkSwitchSettingsRequest {
-	return SwitchApiGetNetworkSwitchSettingsRequest{
+func (a *SwitchAPIService) GetNetworkSwitchSettings(ctx context.Context, networkId string) SwitchAPIGetNetworkSwitchSettingsRequest {
+	return SwitchAPIGetNetworkSwitchSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6640,7 +6640,7 @@ func (a *SwitchApiService) GetNetworkSwitchSettings(ctx context.Context, network
 
 // Execute executes the request
 //  @return GetNetworkSwitchSettings200Response
-func (a *SwitchApiService) GetNetworkSwitchSettingsExecute(r SwitchApiGetNetworkSwitchSettingsRequest) (*GetNetworkSwitchSettings200Response, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchSettingsExecute(r SwitchAPIGetNetworkSwitchSettingsRequest) (*GetNetworkSwitchSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6648,7 +6648,7 @@ func (a *SwitchApiService) GetNetworkSwitchSettingsExecute(r SwitchApiGetNetwork
 		localVarReturnValue  *GetNetworkSwitchSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6728,14 +6728,14 @@ func (a *SwitchApiService) GetNetworkSwitchSettingsExecute(r SwitchApiGetNetwork
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchStackRequest struct {
+type SwitchAPIGetNetworkSwitchStackRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	switchStackId string
 }
 
-func (r SwitchApiGetNetworkSwitchStackRequest) Execute() (*GetNetworkSwitchStack200Response, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchStackRequest) Execute() (*GetNetworkSwitchStack200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchStackExecute(r)
 }
 
@@ -6747,10 +6747,10 @@ Show a switch stack
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param switchStackId Switch stack ID
- @return SwitchApiGetNetworkSwitchStackRequest
+ @return SwitchAPIGetNetworkSwitchStackRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchStack(ctx context.Context, networkId string, switchStackId string) SwitchApiGetNetworkSwitchStackRequest {
-	return SwitchApiGetNetworkSwitchStackRequest{
+func (a *SwitchAPIService) GetNetworkSwitchStack(ctx context.Context, networkId string, switchStackId string) SwitchAPIGetNetworkSwitchStackRequest {
+	return SwitchAPIGetNetworkSwitchStackRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6760,7 +6760,7 @@ func (a *SwitchApiService) GetNetworkSwitchStack(ctx context.Context, networkId 
 
 // Execute executes the request
 //  @return GetNetworkSwitchStack200Response
-func (a *SwitchApiService) GetNetworkSwitchStackExecute(r SwitchApiGetNetworkSwitchStackRequest) (*GetNetworkSwitchStack200Response, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchStackExecute(r SwitchAPIGetNetworkSwitchStackRequest) (*GetNetworkSwitchStack200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6768,7 +6768,7 @@ func (a *SwitchApiService) GetNetworkSwitchStackExecute(r SwitchApiGetNetworkSwi
 		localVarReturnValue  *GetNetworkSwitchStack200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchStack")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchStack")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6849,15 +6849,15 @@ func (a *SwitchApiService) GetNetworkSwitchStackExecute(r SwitchApiGetNetworkSwi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchStackRoutingInterfaceRequest struct {
+type SwitchAPIGetNetworkSwitchStackRoutingInterfaceRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	switchStackId string
 	interfaceId string
 }
 
-func (r SwitchApiGetNetworkSwitchStackRoutingInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchStackRoutingInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchStackRoutingInterfaceExecute(r)
 }
 
@@ -6870,10 +6870,10 @@ Return a layer 3 interface from a switch stack
  @param networkId Network ID
  @param switchStackId Switch stack ID
  @param interfaceId Interface ID
- @return SwitchApiGetNetworkSwitchStackRoutingInterfaceRequest
+ @return SwitchAPIGetNetworkSwitchStackRoutingInterfaceRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchStackRoutingInterface(ctx context.Context, networkId string, switchStackId string, interfaceId string) SwitchApiGetNetworkSwitchStackRoutingInterfaceRequest {
-	return SwitchApiGetNetworkSwitchStackRoutingInterfaceRequest{
+func (a *SwitchAPIService) GetNetworkSwitchStackRoutingInterface(ctx context.Context, networkId string, switchStackId string, interfaceId string) SwitchAPIGetNetworkSwitchStackRoutingInterfaceRequest {
+	return SwitchAPIGetNetworkSwitchStackRoutingInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6884,7 +6884,7 @@ func (a *SwitchApiService) GetNetworkSwitchStackRoutingInterface(ctx context.Con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) GetNetworkSwitchStackRoutingInterfaceExecute(r SwitchApiGetNetworkSwitchStackRoutingInterfaceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchStackRoutingInterfaceExecute(r SwitchAPIGetNetworkSwitchStackRoutingInterfaceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6892,7 +6892,7 @@ func (a *SwitchApiService) GetNetworkSwitchStackRoutingInterfaceExecute(r Switch
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchStackRoutingInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchStackRoutingInterface")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6974,15 +6974,15 @@ func (a *SwitchApiService) GetNetworkSwitchStackRoutingInterfaceExecute(r Switch
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchStackRoutingInterfaceDhcpRequest struct {
+type SwitchAPIGetNetworkSwitchStackRoutingInterfaceDhcpRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	switchStackId string
 	interfaceId string
 }
 
-func (r SwitchApiGetNetworkSwitchStackRoutingInterfaceDhcpRequest) Execute() (*GetNetworkSwitchStackRoutingInterfaceDhcp200Response, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchStackRoutingInterfaceDhcpRequest) Execute() (*GetNetworkSwitchStackRoutingInterfaceDhcp200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchStackRoutingInterfaceDhcpExecute(r)
 }
 
@@ -6995,10 +6995,10 @@ Return a layer 3 interface DHCP configuration for a switch stack
  @param networkId Network ID
  @param switchStackId Switch stack ID
  @param interfaceId Interface ID
- @return SwitchApiGetNetworkSwitchStackRoutingInterfaceDhcpRequest
+ @return SwitchAPIGetNetworkSwitchStackRoutingInterfaceDhcpRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchStackRoutingInterfaceDhcp(ctx context.Context, networkId string, switchStackId string, interfaceId string) SwitchApiGetNetworkSwitchStackRoutingInterfaceDhcpRequest {
-	return SwitchApiGetNetworkSwitchStackRoutingInterfaceDhcpRequest{
+func (a *SwitchAPIService) GetNetworkSwitchStackRoutingInterfaceDhcp(ctx context.Context, networkId string, switchStackId string, interfaceId string) SwitchAPIGetNetworkSwitchStackRoutingInterfaceDhcpRequest {
+	return SwitchAPIGetNetworkSwitchStackRoutingInterfaceDhcpRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -7009,7 +7009,7 @@ func (a *SwitchApiService) GetNetworkSwitchStackRoutingInterfaceDhcp(ctx context
 
 // Execute executes the request
 //  @return GetNetworkSwitchStackRoutingInterfaceDhcp200Response
-func (a *SwitchApiService) GetNetworkSwitchStackRoutingInterfaceDhcpExecute(r SwitchApiGetNetworkSwitchStackRoutingInterfaceDhcpRequest) (*GetNetworkSwitchStackRoutingInterfaceDhcp200Response, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchStackRoutingInterfaceDhcpExecute(r SwitchAPIGetNetworkSwitchStackRoutingInterfaceDhcpRequest) (*GetNetworkSwitchStackRoutingInterfaceDhcp200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7017,7 +7017,7 @@ func (a *SwitchApiService) GetNetworkSwitchStackRoutingInterfaceDhcpExecute(r Sw
 		localVarReturnValue  *GetNetworkSwitchStackRoutingInterfaceDhcp200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchStackRoutingInterfaceDhcp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchStackRoutingInterfaceDhcp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7099,14 +7099,14 @@ func (a *SwitchApiService) GetNetworkSwitchStackRoutingInterfaceDhcpExecute(r Sw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchStackRoutingInterfacesRequest struct {
+type SwitchAPIGetNetworkSwitchStackRoutingInterfacesRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	switchStackId string
 }
 
-func (r SwitchApiGetNetworkSwitchStackRoutingInterfacesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchStackRoutingInterfacesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchStackRoutingInterfacesExecute(r)
 }
 
@@ -7118,10 +7118,10 @@ List layer 3 interfaces for a switch stack
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param switchStackId Switch stack ID
- @return SwitchApiGetNetworkSwitchStackRoutingInterfacesRequest
+ @return SwitchAPIGetNetworkSwitchStackRoutingInterfacesRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchStackRoutingInterfaces(ctx context.Context, networkId string, switchStackId string) SwitchApiGetNetworkSwitchStackRoutingInterfacesRequest {
-	return SwitchApiGetNetworkSwitchStackRoutingInterfacesRequest{
+func (a *SwitchAPIService) GetNetworkSwitchStackRoutingInterfaces(ctx context.Context, networkId string, switchStackId string) SwitchAPIGetNetworkSwitchStackRoutingInterfacesRequest {
+	return SwitchAPIGetNetworkSwitchStackRoutingInterfacesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -7131,7 +7131,7 @@ func (a *SwitchApiService) GetNetworkSwitchStackRoutingInterfaces(ctx context.Co
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *SwitchApiService) GetNetworkSwitchStackRoutingInterfacesExecute(r SwitchApiGetNetworkSwitchStackRoutingInterfacesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchStackRoutingInterfacesExecute(r SwitchAPIGetNetworkSwitchStackRoutingInterfacesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7139,7 +7139,7 @@ func (a *SwitchApiService) GetNetworkSwitchStackRoutingInterfacesExecute(r Switc
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchStackRoutingInterfaces")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchStackRoutingInterfaces")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7220,15 +7220,15 @@ func (a *SwitchApiService) GetNetworkSwitchStackRoutingInterfacesExecute(r Switc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchStackRoutingStaticRouteRequest struct {
+type SwitchAPIGetNetworkSwitchStackRoutingStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	switchStackId string
 	staticRouteId string
 }
 
-func (r SwitchApiGetNetworkSwitchStackRoutingStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchStackRoutingStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchStackRoutingStaticRouteExecute(r)
 }
 
@@ -7241,10 +7241,10 @@ Return a layer 3 static route for a switch stack
  @param networkId Network ID
  @param switchStackId Switch stack ID
  @param staticRouteId Static route ID
- @return SwitchApiGetNetworkSwitchStackRoutingStaticRouteRequest
+ @return SwitchAPIGetNetworkSwitchStackRoutingStaticRouteRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchStackRoutingStaticRoute(ctx context.Context, networkId string, switchStackId string, staticRouteId string) SwitchApiGetNetworkSwitchStackRoutingStaticRouteRequest {
-	return SwitchApiGetNetworkSwitchStackRoutingStaticRouteRequest{
+func (a *SwitchAPIService) GetNetworkSwitchStackRoutingStaticRoute(ctx context.Context, networkId string, switchStackId string, staticRouteId string) SwitchAPIGetNetworkSwitchStackRoutingStaticRouteRequest {
+	return SwitchAPIGetNetworkSwitchStackRoutingStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -7255,7 +7255,7 @@ func (a *SwitchApiService) GetNetworkSwitchStackRoutingStaticRoute(ctx context.C
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) GetNetworkSwitchStackRoutingStaticRouteExecute(r SwitchApiGetNetworkSwitchStackRoutingStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchStackRoutingStaticRouteExecute(r SwitchAPIGetNetworkSwitchStackRoutingStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7263,7 +7263,7 @@ func (a *SwitchApiService) GetNetworkSwitchStackRoutingStaticRouteExecute(r Swit
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchStackRoutingStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchStackRoutingStaticRoute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7345,14 +7345,14 @@ func (a *SwitchApiService) GetNetworkSwitchStackRoutingStaticRouteExecute(r Swit
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchStackRoutingStaticRoutesRequest struct {
+type SwitchAPIGetNetworkSwitchStackRoutingStaticRoutesRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	switchStackId string
 }
 
-func (r SwitchApiGetNetworkSwitchStackRoutingStaticRoutesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchStackRoutingStaticRoutesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchStackRoutingStaticRoutesExecute(r)
 }
 
@@ -7364,10 +7364,10 @@ List layer 3 static routes for a switch stack
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param switchStackId Switch stack ID
- @return SwitchApiGetNetworkSwitchStackRoutingStaticRoutesRequest
+ @return SwitchAPIGetNetworkSwitchStackRoutingStaticRoutesRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchStackRoutingStaticRoutes(ctx context.Context, networkId string, switchStackId string) SwitchApiGetNetworkSwitchStackRoutingStaticRoutesRequest {
-	return SwitchApiGetNetworkSwitchStackRoutingStaticRoutesRequest{
+func (a *SwitchAPIService) GetNetworkSwitchStackRoutingStaticRoutes(ctx context.Context, networkId string, switchStackId string) SwitchAPIGetNetworkSwitchStackRoutingStaticRoutesRequest {
+	return SwitchAPIGetNetworkSwitchStackRoutingStaticRoutesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -7377,7 +7377,7 @@ func (a *SwitchApiService) GetNetworkSwitchStackRoutingStaticRoutes(ctx context.
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *SwitchApiService) GetNetworkSwitchStackRoutingStaticRoutesExecute(r SwitchApiGetNetworkSwitchStackRoutingStaticRoutesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchStackRoutingStaticRoutesExecute(r SwitchAPIGetNetworkSwitchStackRoutingStaticRoutesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7385,7 +7385,7 @@ func (a *SwitchApiService) GetNetworkSwitchStackRoutingStaticRoutesExecute(r Swi
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchStackRoutingStaticRoutes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchStackRoutingStaticRoutes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7466,13 +7466,13 @@ func (a *SwitchApiService) GetNetworkSwitchStackRoutingStaticRoutesExecute(r Swi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchStacksRequest struct {
+type SwitchAPIGetNetworkSwitchStacksRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 }
 
-func (r SwitchApiGetNetworkSwitchStacksRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchStacksRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchStacksExecute(r)
 }
 
@@ -7483,10 +7483,10 @@ List the switch stacks in a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiGetNetworkSwitchStacksRequest
+ @return SwitchAPIGetNetworkSwitchStacksRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchStacks(ctx context.Context, networkId string) SwitchApiGetNetworkSwitchStacksRequest {
-	return SwitchApiGetNetworkSwitchStacksRequest{
+func (a *SwitchAPIService) GetNetworkSwitchStacks(ctx context.Context, networkId string) SwitchAPIGetNetworkSwitchStacksRequest {
+	return SwitchAPIGetNetworkSwitchStacksRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -7495,7 +7495,7 @@ func (a *SwitchApiService) GetNetworkSwitchStacks(ctx context.Context, networkId
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *SwitchApiService) GetNetworkSwitchStacksExecute(r SwitchApiGetNetworkSwitchStacksRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchStacksExecute(r SwitchAPIGetNetworkSwitchStacksRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7503,7 +7503,7 @@ func (a *SwitchApiService) GetNetworkSwitchStacksExecute(r SwitchApiGetNetworkSw
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchStacks")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchStacks")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7583,13 +7583,13 @@ func (a *SwitchApiService) GetNetworkSwitchStacksExecute(r SwitchApiGetNetworkSw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchStormControlRequest struct {
+type SwitchAPIGetNetworkSwitchStormControlRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 }
 
-func (r SwitchApiGetNetworkSwitchStormControlRequest) Execute() (*GetNetworkSwitchStormControl200Response, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchStormControlRequest) Execute() (*GetNetworkSwitchStormControl200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchStormControlExecute(r)
 }
 
@@ -7600,10 +7600,10 @@ Return the storm control configuration for a switch network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiGetNetworkSwitchStormControlRequest
+ @return SwitchAPIGetNetworkSwitchStormControlRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchStormControl(ctx context.Context, networkId string) SwitchApiGetNetworkSwitchStormControlRequest {
-	return SwitchApiGetNetworkSwitchStormControlRequest{
+func (a *SwitchAPIService) GetNetworkSwitchStormControl(ctx context.Context, networkId string) SwitchAPIGetNetworkSwitchStormControlRequest {
+	return SwitchAPIGetNetworkSwitchStormControlRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -7612,7 +7612,7 @@ func (a *SwitchApiService) GetNetworkSwitchStormControl(ctx context.Context, net
 
 // Execute executes the request
 //  @return GetNetworkSwitchStormControl200Response
-func (a *SwitchApiService) GetNetworkSwitchStormControlExecute(r SwitchApiGetNetworkSwitchStormControlRequest) (*GetNetworkSwitchStormControl200Response, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchStormControlExecute(r SwitchAPIGetNetworkSwitchStormControlRequest) (*GetNetworkSwitchStormControl200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7620,7 +7620,7 @@ func (a *SwitchApiService) GetNetworkSwitchStormControlExecute(r SwitchApiGetNet
 		localVarReturnValue  *GetNetworkSwitchStormControl200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchStormControl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchStormControl")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7700,13 +7700,13 @@ func (a *SwitchApiService) GetNetworkSwitchStormControlExecute(r SwitchApiGetNet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetNetworkSwitchStpRequest struct {
+type SwitchAPIGetNetworkSwitchStpRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 }
 
-func (r SwitchApiGetNetworkSwitchStpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIGetNetworkSwitchStpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchStpExecute(r)
 }
 
@@ -7717,10 +7717,10 @@ Returns STP settings
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiGetNetworkSwitchStpRequest
+ @return SwitchAPIGetNetworkSwitchStpRequest
 */
-func (a *SwitchApiService) GetNetworkSwitchStp(ctx context.Context, networkId string) SwitchApiGetNetworkSwitchStpRequest {
-	return SwitchApiGetNetworkSwitchStpRequest{
+func (a *SwitchAPIService) GetNetworkSwitchStp(ctx context.Context, networkId string) SwitchAPIGetNetworkSwitchStpRequest {
+	return SwitchAPIGetNetworkSwitchStpRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -7729,7 +7729,7 @@ func (a *SwitchApiService) GetNetworkSwitchStp(ctx context.Context, networkId st
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) GetNetworkSwitchStpExecute(r SwitchApiGetNetworkSwitchStpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) GetNetworkSwitchStpExecute(r SwitchAPIGetNetworkSwitchStpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7737,7 +7737,7 @@ func (a *SwitchApiService) GetNetworkSwitchStpExecute(r SwitchApiGetNetworkSwitc
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetNetworkSwitchStp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetNetworkSwitchStp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7817,16 +7817,16 @@ func (a *SwitchApiService) GetNetworkSwitchStpExecute(r SwitchApiGetNetworkSwitc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetOrganizationConfigTemplateSwitchProfilePortRequest struct {
+type SwitchAPIGetOrganizationConfigTemplateSwitchProfilePortRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	organizationId string
 	configTemplateId string
 	profileId string
 	portId string
 }
 
-func (r SwitchApiGetOrganizationConfigTemplateSwitchProfilePortRequest) Execute() (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
+func (r SwitchAPIGetOrganizationConfigTemplateSwitchProfilePortRequest) Execute() (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationConfigTemplateSwitchProfilePortExecute(r)
 }
 
@@ -7840,10 +7840,10 @@ Return a switch template port
  @param configTemplateId Config template ID
  @param profileId Profile ID
  @param portId Port ID
- @return SwitchApiGetOrganizationConfigTemplateSwitchProfilePortRequest
+ @return SwitchAPIGetOrganizationConfigTemplateSwitchProfilePortRequest
 */
-func (a *SwitchApiService) GetOrganizationConfigTemplateSwitchProfilePort(ctx context.Context, organizationId string, configTemplateId string, profileId string, portId string) SwitchApiGetOrganizationConfigTemplateSwitchProfilePortRequest {
-	return SwitchApiGetOrganizationConfigTemplateSwitchProfilePortRequest{
+func (a *SwitchAPIService) GetOrganizationConfigTemplateSwitchProfilePort(ctx context.Context, organizationId string, configTemplateId string, profileId string, portId string) SwitchAPIGetOrganizationConfigTemplateSwitchProfilePortRequest {
+	return SwitchAPIGetOrganizationConfigTemplateSwitchProfilePortRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -7855,7 +7855,7 @@ func (a *SwitchApiService) GetOrganizationConfigTemplateSwitchProfilePort(ctx co
 
 // Execute executes the request
 //  @return GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner
-func (a *SwitchApiService) GetOrganizationConfigTemplateSwitchProfilePortExecute(r SwitchApiGetOrganizationConfigTemplateSwitchProfilePortRequest) (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
+func (a *SwitchAPIService) GetOrganizationConfigTemplateSwitchProfilePortExecute(r SwitchAPIGetOrganizationConfigTemplateSwitchProfilePortRequest) (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7863,7 +7863,7 @@ func (a *SwitchApiService) GetOrganizationConfigTemplateSwitchProfilePortExecute
 		localVarReturnValue  *GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetOrganizationConfigTemplateSwitchProfilePort")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetOrganizationConfigTemplateSwitchProfilePort")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7946,15 +7946,15 @@ func (a *SwitchApiService) GetOrganizationConfigTemplateSwitchProfilePortExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetOrganizationConfigTemplateSwitchProfilePortsRequest struct {
+type SwitchAPIGetOrganizationConfigTemplateSwitchProfilePortsRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	organizationId string
 	configTemplateId string
 	profileId string
 }
 
-func (r SwitchApiGetOrganizationConfigTemplateSwitchProfilePortsRequest) Execute() ([]GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
+func (r SwitchAPIGetOrganizationConfigTemplateSwitchProfilePortsRequest) Execute() ([]GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationConfigTemplateSwitchProfilePortsExecute(r)
 }
 
@@ -7967,10 +7967,10 @@ Return all the ports of a switch template
  @param organizationId Organization ID
  @param configTemplateId Config template ID
  @param profileId Profile ID
- @return SwitchApiGetOrganizationConfigTemplateSwitchProfilePortsRequest
+ @return SwitchAPIGetOrganizationConfigTemplateSwitchProfilePortsRequest
 */
-func (a *SwitchApiService) GetOrganizationConfigTemplateSwitchProfilePorts(ctx context.Context, organizationId string, configTemplateId string, profileId string) SwitchApiGetOrganizationConfigTemplateSwitchProfilePortsRequest {
-	return SwitchApiGetOrganizationConfigTemplateSwitchProfilePortsRequest{
+func (a *SwitchAPIService) GetOrganizationConfigTemplateSwitchProfilePorts(ctx context.Context, organizationId string, configTemplateId string, profileId string) SwitchAPIGetOrganizationConfigTemplateSwitchProfilePortsRequest {
+	return SwitchAPIGetOrganizationConfigTemplateSwitchProfilePortsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -7981,7 +7981,7 @@ func (a *SwitchApiService) GetOrganizationConfigTemplateSwitchProfilePorts(ctx c
 
 // Execute executes the request
 //  @return []GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner
-func (a *SwitchApiService) GetOrganizationConfigTemplateSwitchProfilePortsExecute(r SwitchApiGetOrganizationConfigTemplateSwitchProfilePortsRequest) ([]GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
+func (a *SwitchAPIService) GetOrganizationConfigTemplateSwitchProfilePortsExecute(r SwitchAPIGetOrganizationConfigTemplateSwitchProfilePortsRequest) ([]GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7989,7 +7989,7 @@ func (a *SwitchApiService) GetOrganizationConfigTemplateSwitchProfilePortsExecut
 		localVarReturnValue  []GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetOrganizationConfigTemplateSwitchProfilePorts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetOrganizationConfigTemplateSwitchProfilePorts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8071,14 +8071,14 @@ func (a *SwitchApiService) GetOrganizationConfigTemplateSwitchProfilePortsExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetOrganizationConfigTemplateSwitchProfilesRequest struct {
+type SwitchAPIGetOrganizationConfigTemplateSwitchProfilesRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	organizationId string
 	configTemplateId string
 }
 
-func (r SwitchApiGetOrganizationConfigTemplateSwitchProfilesRequest) Execute() ([]GetOrganizationConfigTemplateSwitchProfiles200ResponseInner, *http.Response, error) {
+func (r SwitchAPIGetOrganizationConfigTemplateSwitchProfilesRequest) Execute() ([]GetOrganizationConfigTemplateSwitchProfiles200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationConfigTemplateSwitchProfilesExecute(r)
 }
 
@@ -8090,10 +8090,10 @@ List the switch templates for your switch template configuration
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param configTemplateId Config template ID
- @return SwitchApiGetOrganizationConfigTemplateSwitchProfilesRequest
+ @return SwitchAPIGetOrganizationConfigTemplateSwitchProfilesRequest
 */
-func (a *SwitchApiService) GetOrganizationConfigTemplateSwitchProfiles(ctx context.Context, organizationId string, configTemplateId string) SwitchApiGetOrganizationConfigTemplateSwitchProfilesRequest {
-	return SwitchApiGetOrganizationConfigTemplateSwitchProfilesRequest{
+func (a *SwitchAPIService) GetOrganizationConfigTemplateSwitchProfiles(ctx context.Context, organizationId string, configTemplateId string) SwitchAPIGetOrganizationConfigTemplateSwitchProfilesRequest {
+	return SwitchAPIGetOrganizationConfigTemplateSwitchProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -8103,7 +8103,7 @@ func (a *SwitchApiService) GetOrganizationConfigTemplateSwitchProfiles(ctx conte
 
 // Execute executes the request
 //  @return []GetOrganizationConfigTemplateSwitchProfiles200ResponseInner
-func (a *SwitchApiService) GetOrganizationConfigTemplateSwitchProfilesExecute(r SwitchApiGetOrganizationConfigTemplateSwitchProfilesRequest) ([]GetOrganizationConfigTemplateSwitchProfiles200ResponseInner, *http.Response, error) {
+func (a *SwitchAPIService) GetOrganizationConfigTemplateSwitchProfilesExecute(r SwitchAPIGetOrganizationConfigTemplateSwitchProfilesRequest) ([]GetOrganizationConfigTemplateSwitchProfiles200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -8111,7 +8111,7 @@ func (a *SwitchApiService) GetOrganizationConfigTemplateSwitchProfilesExecute(r 
 		localVarReturnValue  []GetOrganizationConfigTemplateSwitchProfiles200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetOrganizationConfigTemplateSwitchProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetOrganizationConfigTemplateSwitchProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8192,9 +8192,9 @@ func (a *SwitchApiService) GetOrganizationConfigTemplateSwitchProfilesExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiGetOrganizationSwitchPortsBySwitchRequest struct {
+type SwitchAPIGetOrganizationSwitchPortsBySwitchRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -8210,72 +8210,72 @@ type SwitchApiGetOrganizationSwitchPortsBySwitchRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 50. Default is 50.
-func (r SwitchApiGetOrganizationSwitchPortsBySwitchRequest) PerPage(perPage int32) SwitchApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r SwitchAPIGetOrganizationSwitchPortsBySwitchRequest) PerPage(perPage int32) SwitchAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SwitchApiGetOrganizationSwitchPortsBySwitchRequest) StartingAfter(startingAfter string) SwitchApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r SwitchAPIGetOrganizationSwitchPortsBySwitchRequest) StartingAfter(startingAfter string) SwitchAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SwitchApiGetOrganizationSwitchPortsBySwitchRequest) EndingBefore(endingBefore string) SwitchApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r SwitchAPIGetOrganizationSwitchPortsBySwitchRequest) EndingBefore(endingBefore string) SwitchAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter switchports by network.
-func (r SwitchApiGetOrganizationSwitchPortsBySwitchRequest) NetworkIds(networkIds []string) SwitchApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r SwitchAPIGetOrganizationSwitchPortsBySwitchRequest) NetworkIds(networkIds []string) SwitchAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter switchports belonging to the specified port profiles.
-func (r SwitchApiGetOrganizationSwitchPortsBySwitchRequest) PortProfileIds(portProfileIds []string) SwitchApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r SwitchAPIGetOrganizationSwitchPortsBySwitchRequest) PortProfileIds(portProfileIds []string) SwitchAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.portProfileIds = &portProfileIds
 	return r
 }
 
 // Optional parameter to filter switchports belonging to switches by name. All returned switches will have a name that contains the search term or is an exact match.
-func (r SwitchApiGetOrganizationSwitchPortsBySwitchRequest) Name(name string) SwitchApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r SwitchAPIGetOrganizationSwitchPortsBySwitchRequest) Name(name string) SwitchAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.name = &name
 	return r
 }
 
 // Optional parameter to filter switchports belonging to switches by MAC address. All returned switches will have a MAC address that contains the search term or is an exact match.
-func (r SwitchApiGetOrganizationSwitchPortsBySwitchRequest) Mac(mac string) SwitchApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r SwitchAPIGetOrganizationSwitchPortsBySwitchRequest) Mac(mac string) SwitchAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.mac = &mac
 	return r
 }
 
 // Optional parameter to filter switchports by one or more MAC addresses belonging to devices. All switchports returned belong to MAC addresses of switches that are an exact match.
-func (r SwitchApiGetOrganizationSwitchPortsBySwitchRequest) Macs(macs []string) SwitchApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r SwitchAPIGetOrganizationSwitchPortsBySwitchRequest) Macs(macs []string) SwitchAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.macs = &macs
 	return r
 }
 
 // Optional parameter to filter switchports belonging to switches by serial number. All returned switches will have a serial number that contains the search term or is an exact match.
-func (r SwitchApiGetOrganizationSwitchPortsBySwitchRequest) Serial(serial string) SwitchApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r SwitchAPIGetOrganizationSwitchPortsBySwitchRequest) Serial(serial string) SwitchAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.serial = &serial
 	return r
 }
 
 // Optional parameter to filter switchports belonging to switches with one or more serial numbers. All switchports returned belong to serial numbers of switches that are an exact match.
-func (r SwitchApiGetOrganizationSwitchPortsBySwitchRequest) Serials(serials []string) SwitchApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r SwitchAPIGetOrganizationSwitchPortsBySwitchRequest) Serials(serials []string) SwitchAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.serials = &serials
 	return r
 }
 
 // Optional parameter to filter results by switches where the configuration has been updated after the given timestamp.
-func (r SwitchApiGetOrganizationSwitchPortsBySwitchRequest) ConfigurationUpdatedAfter(configurationUpdatedAfter string) SwitchApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r SwitchAPIGetOrganizationSwitchPortsBySwitchRequest) ConfigurationUpdatedAfter(configurationUpdatedAfter string) SwitchAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.configurationUpdatedAfter = &configurationUpdatedAfter
 	return r
 }
 
-func (r SwitchApiGetOrganizationSwitchPortsBySwitchRequest) Execute() ([]GetOrganizationSwitchPortsBySwitch200ResponseInner, *http.Response, error) {
+func (r SwitchAPIGetOrganizationSwitchPortsBySwitchRequest) Execute() ([]GetOrganizationSwitchPortsBySwitch200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSwitchPortsBySwitchExecute(r)
 }
 
@@ -8286,10 +8286,10 @@ List the switchports in an organization by switch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return SwitchApiGetOrganizationSwitchPortsBySwitchRequest
+ @return SwitchAPIGetOrganizationSwitchPortsBySwitchRequest
 */
-func (a *SwitchApiService) GetOrganizationSwitchPortsBySwitch(ctx context.Context, organizationId string) SwitchApiGetOrganizationSwitchPortsBySwitchRequest {
-	return SwitchApiGetOrganizationSwitchPortsBySwitchRequest{
+func (a *SwitchAPIService) GetOrganizationSwitchPortsBySwitch(ctx context.Context, organizationId string) SwitchAPIGetOrganizationSwitchPortsBySwitchRequest {
+	return SwitchAPIGetOrganizationSwitchPortsBySwitchRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -8298,7 +8298,7 @@ func (a *SwitchApiService) GetOrganizationSwitchPortsBySwitch(ctx context.Contex
 
 // Execute executes the request
 //  @return []GetOrganizationSwitchPortsBySwitch200ResponseInner
-func (a *SwitchApiService) GetOrganizationSwitchPortsBySwitchExecute(r SwitchApiGetOrganizationSwitchPortsBySwitchRequest) ([]GetOrganizationSwitchPortsBySwitch200ResponseInner, *http.Response, error) {
+func (a *SwitchAPIService) GetOrganizationSwitchPortsBySwitchExecute(r SwitchAPIGetOrganizationSwitchPortsBySwitchRequest) ([]GetOrganizationSwitchPortsBySwitch200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -8306,7 +8306,7 @@ func (a *SwitchApiService) GetOrganizationSwitchPortsBySwitchExecute(r SwitchApi
 		localVarReturnValue  []GetOrganizationSwitchPortsBySwitch200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.GetOrganizationSwitchPortsBySwitch")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.GetOrganizationSwitchPortsBySwitch")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8451,20 +8451,20 @@ func (a *SwitchApiService) GetOrganizationSwitchPortsBySwitchExecute(r SwitchApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiRemoveNetworkSwitchStackRequest struct {
+type SwitchAPIRemoveNetworkSwitchStackRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	switchStackId string
 	removeNetworkSwitchStackRequest *RemoveNetworkSwitchStackRequest
 }
 
-func (r SwitchApiRemoveNetworkSwitchStackRequest) RemoveNetworkSwitchStackRequest(removeNetworkSwitchStackRequest RemoveNetworkSwitchStackRequest) SwitchApiRemoveNetworkSwitchStackRequest {
+func (r SwitchAPIRemoveNetworkSwitchStackRequest) RemoveNetworkSwitchStackRequest(removeNetworkSwitchStackRequest RemoveNetworkSwitchStackRequest) SwitchAPIRemoveNetworkSwitchStackRequest {
 	r.removeNetworkSwitchStackRequest = &removeNetworkSwitchStackRequest
 	return r
 }
 
-func (r SwitchApiRemoveNetworkSwitchStackRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIRemoveNetworkSwitchStackRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.RemoveNetworkSwitchStackExecute(r)
 }
 
@@ -8476,10 +8476,10 @@ Remove a switch from a stack
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param switchStackId Switch stack ID
- @return SwitchApiRemoveNetworkSwitchStackRequest
+ @return SwitchAPIRemoveNetworkSwitchStackRequest
 */
-func (a *SwitchApiService) RemoveNetworkSwitchStack(ctx context.Context, networkId string, switchStackId string) SwitchApiRemoveNetworkSwitchStackRequest {
-	return SwitchApiRemoveNetworkSwitchStackRequest{
+func (a *SwitchAPIService) RemoveNetworkSwitchStack(ctx context.Context, networkId string, switchStackId string) SwitchAPIRemoveNetworkSwitchStackRequest {
+	return SwitchAPIRemoveNetworkSwitchStackRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -8489,7 +8489,7 @@ func (a *SwitchApiService) RemoveNetworkSwitchStack(ctx context.Context, network
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) RemoveNetworkSwitchStackExecute(r SwitchApiRemoveNetworkSwitchStackRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) RemoveNetworkSwitchStackExecute(r SwitchAPIRemoveNetworkSwitchStackRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -8497,7 +8497,7 @@ func (a *SwitchApiService) RemoveNetworkSwitchStackExecute(r SwitchApiRemoveNetw
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.RemoveNetworkSwitchStack")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.RemoveNetworkSwitchStack")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8583,20 +8583,20 @@ func (a *SwitchApiService) RemoveNetworkSwitchStackExecute(r SwitchApiRemoveNetw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiUpdateDeviceSwitchPortRequest struct {
+type SwitchAPIUpdateDeviceSwitchPortRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	serial string
 	portId string
 	updateDeviceSwitchPortRequest *UpdateDeviceSwitchPortRequest
 }
 
-func (r SwitchApiUpdateDeviceSwitchPortRequest) UpdateDeviceSwitchPortRequest(updateDeviceSwitchPortRequest UpdateDeviceSwitchPortRequest) SwitchApiUpdateDeviceSwitchPortRequest {
+func (r SwitchAPIUpdateDeviceSwitchPortRequest) UpdateDeviceSwitchPortRequest(updateDeviceSwitchPortRequest UpdateDeviceSwitchPortRequest) SwitchAPIUpdateDeviceSwitchPortRequest {
 	r.updateDeviceSwitchPortRequest = &updateDeviceSwitchPortRequest
 	return r
 }
 
-func (r SwitchApiUpdateDeviceSwitchPortRequest) Execute() (*GetDeviceSwitchPorts200ResponseInner, *http.Response, error) {
+func (r SwitchAPIUpdateDeviceSwitchPortRequest) Execute() (*GetDeviceSwitchPorts200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateDeviceSwitchPortExecute(r)
 }
 
@@ -8608,10 +8608,10 @@ Update a switch port
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param portId Port ID
- @return SwitchApiUpdateDeviceSwitchPortRequest
+ @return SwitchAPIUpdateDeviceSwitchPortRequest
 */
-func (a *SwitchApiService) UpdateDeviceSwitchPort(ctx context.Context, serial string, portId string) SwitchApiUpdateDeviceSwitchPortRequest {
-	return SwitchApiUpdateDeviceSwitchPortRequest{
+func (a *SwitchAPIService) UpdateDeviceSwitchPort(ctx context.Context, serial string, portId string) SwitchAPIUpdateDeviceSwitchPortRequest {
+	return SwitchAPIUpdateDeviceSwitchPortRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -8621,7 +8621,7 @@ func (a *SwitchApiService) UpdateDeviceSwitchPort(ctx context.Context, serial st
 
 // Execute executes the request
 //  @return GetDeviceSwitchPorts200ResponseInner
-func (a *SwitchApiService) UpdateDeviceSwitchPortExecute(r SwitchApiUpdateDeviceSwitchPortRequest) (*GetDeviceSwitchPorts200ResponseInner, *http.Response, error) {
+func (a *SwitchAPIService) UpdateDeviceSwitchPortExecute(r SwitchAPIUpdateDeviceSwitchPortRequest) (*GetDeviceSwitchPorts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -8629,7 +8629,7 @@ func (a *SwitchApiService) UpdateDeviceSwitchPortExecute(r SwitchApiUpdateDevice
 		localVarReturnValue  *GetDeviceSwitchPorts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.UpdateDeviceSwitchPort")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.UpdateDeviceSwitchPort")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8712,20 +8712,20 @@ func (a *SwitchApiService) UpdateDeviceSwitchPortExecute(r SwitchApiUpdateDevice
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiUpdateDeviceSwitchRoutingInterfaceRequest struct {
+type SwitchAPIUpdateDeviceSwitchRoutingInterfaceRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	serial string
 	interfaceId string
 	createDeviceSwitchRoutingInterfaceRequest *CreateDeviceSwitchRoutingInterfaceRequest
 }
 
-func (r SwitchApiUpdateDeviceSwitchRoutingInterfaceRequest) CreateDeviceSwitchRoutingInterfaceRequest(createDeviceSwitchRoutingInterfaceRequest CreateDeviceSwitchRoutingInterfaceRequest) SwitchApiUpdateDeviceSwitchRoutingInterfaceRequest {
+func (r SwitchAPIUpdateDeviceSwitchRoutingInterfaceRequest) CreateDeviceSwitchRoutingInterfaceRequest(createDeviceSwitchRoutingInterfaceRequest CreateDeviceSwitchRoutingInterfaceRequest) SwitchAPIUpdateDeviceSwitchRoutingInterfaceRequest {
 	r.createDeviceSwitchRoutingInterfaceRequest = &createDeviceSwitchRoutingInterfaceRequest
 	return r
 }
 
-func (r SwitchApiUpdateDeviceSwitchRoutingInterfaceRequest) Execute() (*GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
+func (r SwitchAPIUpdateDeviceSwitchRoutingInterfaceRequest) Execute() (*GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateDeviceSwitchRoutingInterfaceExecute(r)
 }
 
@@ -8737,10 +8737,10 @@ Update a layer 3 interface for a switch
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param interfaceId Interface ID
- @return SwitchApiUpdateDeviceSwitchRoutingInterfaceRequest
+ @return SwitchAPIUpdateDeviceSwitchRoutingInterfaceRequest
 */
-func (a *SwitchApiService) UpdateDeviceSwitchRoutingInterface(ctx context.Context, serial string, interfaceId string) SwitchApiUpdateDeviceSwitchRoutingInterfaceRequest {
-	return SwitchApiUpdateDeviceSwitchRoutingInterfaceRequest{
+func (a *SwitchAPIService) UpdateDeviceSwitchRoutingInterface(ctx context.Context, serial string, interfaceId string) SwitchAPIUpdateDeviceSwitchRoutingInterfaceRequest {
+	return SwitchAPIUpdateDeviceSwitchRoutingInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -8750,7 +8750,7 @@ func (a *SwitchApiService) UpdateDeviceSwitchRoutingInterface(ctx context.Contex
 
 // Execute executes the request
 //  @return GetDeviceSwitchRoutingInterfaces200ResponseInner
-func (a *SwitchApiService) UpdateDeviceSwitchRoutingInterfaceExecute(r SwitchApiUpdateDeviceSwitchRoutingInterfaceRequest) (*GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
+func (a *SwitchAPIService) UpdateDeviceSwitchRoutingInterfaceExecute(r SwitchAPIUpdateDeviceSwitchRoutingInterfaceRequest) (*GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -8758,7 +8758,7 @@ func (a *SwitchApiService) UpdateDeviceSwitchRoutingInterfaceExecute(r SwitchApi
 		localVarReturnValue  *GetDeviceSwitchRoutingInterfaces200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.UpdateDeviceSwitchRoutingInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.UpdateDeviceSwitchRoutingInterface")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8841,20 +8841,20 @@ func (a *SwitchApiService) UpdateDeviceSwitchRoutingInterfaceExecute(r SwitchApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiUpdateDeviceSwitchRoutingInterfaceDhcpRequest struct {
+type SwitchAPIUpdateDeviceSwitchRoutingInterfaceDhcpRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	serial string
 	interfaceId string
 	updateDeviceSwitchRoutingInterfaceDhcpRequest *UpdateDeviceSwitchRoutingInterfaceDhcpRequest
 }
 
-func (r SwitchApiUpdateDeviceSwitchRoutingInterfaceDhcpRequest) UpdateDeviceSwitchRoutingInterfaceDhcpRequest(updateDeviceSwitchRoutingInterfaceDhcpRequest UpdateDeviceSwitchRoutingInterfaceDhcpRequest) SwitchApiUpdateDeviceSwitchRoutingInterfaceDhcpRequest {
+func (r SwitchAPIUpdateDeviceSwitchRoutingInterfaceDhcpRequest) UpdateDeviceSwitchRoutingInterfaceDhcpRequest(updateDeviceSwitchRoutingInterfaceDhcpRequest UpdateDeviceSwitchRoutingInterfaceDhcpRequest) SwitchAPIUpdateDeviceSwitchRoutingInterfaceDhcpRequest {
 	r.updateDeviceSwitchRoutingInterfaceDhcpRequest = &updateDeviceSwitchRoutingInterfaceDhcpRequest
 	return r
 }
 
-func (r SwitchApiUpdateDeviceSwitchRoutingInterfaceDhcpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIUpdateDeviceSwitchRoutingInterfaceDhcpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceSwitchRoutingInterfaceDhcpExecute(r)
 }
 
@@ -8866,10 +8866,10 @@ Update a layer 3 interface DHCP configuration for a switch
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param interfaceId Interface ID
- @return SwitchApiUpdateDeviceSwitchRoutingInterfaceDhcpRequest
+ @return SwitchAPIUpdateDeviceSwitchRoutingInterfaceDhcpRequest
 */
-func (a *SwitchApiService) UpdateDeviceSwitchRoutingInterfaceDhcp(ctx context.Context, serial string, interfaceId string) SwitchApiUpdateDeviceSwitchRoutingInterfaceDhcpRequest {
-	return SwitchApiUpdateDeviceSwitchRoutingInterfaceDhcpRequest{
+func (a *SwitchAPIService) UpdateDeviceSwitchRoutingInterfaceDhcp(ctx context.Context, serial string, interfaceId string) SwitchAPIUpdateDeviceSwitchRoutingInterfaceDhcpRequest {
+	return SwitchAPIUpdateDeviceSwitchRoutingInterfaceDhcpRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -8879,7 +8879,7 @@ func (a *SwitchApiService) UpdateDeviceSwitchRoutingInterfaceDhcp(ctx context.Co
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) UpdateDeviceSwitchRoutingInterfaceDhcpExecute(r SwitchApiUpdateDeviceSwitchRoutingInterfaceDhcpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) UpdateDeviceSwitchRoutingInterfaceDhcpExecute(r SwitchAPIUpdateDeviceSwitchRoutingInterfaceDhcpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -8887,7 +8887,7 @@ func (a *SwitchApiService) UpdateDeviceSwitchRoutingInterfaceDhcpExecute(r Switc
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.UpdateDeviceSwitchRoutingInterfaceDhcp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.UpdateDeviceSwitchRoutingInterfaceDhcp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8970,20 +8970,20 @@ func (a *SwitchApiService) UpdateDeviceSwitchRoutingInterfaceDhcpExecute(r Switc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiUpdateDeviceSwitchRoutingStaticRouteRequest struct {
+type SwitchAPIUpdateDeviceSwitchRoutingStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	serial string
 	staticRouteId string
 	updateDeviceSwitchRoutingStaticRouteRequest *UpdateDeviceSwitchRoutingStaticRouteRequest
 }
 
-func (r SwitchApiUpdateDeviceSwitchRoutingStaticRouteRequest) UpdateDeviceSwitchRoutingStaticRouteRequest(updateDeviceSwitchRoutingStaticRouteRequest UpdateDeviceSwitchRoutingStaticRouteRequest) SwitchApiUpdateDeviceSwitchRoutingStaticRouteRequest {
+func (r SwitchAPIUpdateDeviceSwitchRoutingStaticRouteRequest) UpdateDeviceSwitchRoutingStaticRouteRequest(updateDeviceSwitchRoutingStaticRouteRequest UpdateDeviceSwitchRoutingStaticRouteRequest) SwitchAPIUpdateDeviceSwitchRoutingStaticRouteRequest {
 	r.updateDeviceSwitchRoutingStaticRouteRequest = &updateDeviceSwitchRoutingStaticRouteRequest
 	return r
 }
 
-func (r SwitchApiUpdateDeviceSwitchRoutingStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIUpdateDeviceSwitchRoutingStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceSwitchRoutingStaticRouteExecute(r)
 }
 
@@ -8995,10 +8995,10 @@ Update a layer 3 static route for a switch
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param staticRouteId Static route ID
- @return SwitchApiUpdateDeviceSwitchRoutingStaticRouteRequest
+ @return SwitchAPIUpdateDeviceSwitchRoutingStaticRouteRequest
 */
-func (a *SwitchApiService) UpdateDeviceSwitchRoutingStaticRoute(ctx context.Context, serial string, staticRouteId string) SwitchApiUpdateDeviceSwitchRoutingStaticRouteRequest {
-	return SwitchApiUpdateDeviceSwitchRoutingStaticRouteRequest{
+func (a *SwitchAPIService) UpdateDeviceSwitchRoutingStaticRoute(ctx context.Context, serial string, staticRouteId string) SwitchAPIUpdateDeviceSwitchRoutingStaticRouteRequest {
+	return SwitchAPIUpdateDeviceSwitchRoutingStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -9008,7 +9008,7 @@ func (a *SwitchApiService) UpdateDeviceSwitchRoutingStaticRoute(ctx context.Cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) UpdateDeviceSwitchRoutingStaticRouteExecute(r SwitchApiUpdateDeviceSwitchRoutingStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) UpdateDeviceSwitchRoutingStaticRouteExecute(r SwitchAPIUpdateDeviceSwitchRoutingStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9016,7 +9016,7 @@ func (a *SwitchApiService) UpdateDeviceSwitchRoutingStaticRouteExecute(r SwitchA
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.UpdateDeviceSwitchRoutingStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.UpdateDeviceSwitchRoutingStaticRoute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9099,19 +9099,19 @@ func (a *SwitchApiService) UpdateDeviceSwitchRoutingStaticRouteExecute(r SwitchA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiUpdateDeviceSwitchWarmSpareRequest struct {
+type SwitchAPIUpdateDeviceSwitchWarmSpareRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	serial string
 	updateDeviceSwitchWarmSpareRequest *UpdateDeviceSwitchWarmSpareRequest
 }
 
-func (r SwitchApiUpdateDeviceSwitchWarmSpareRequest) UpdateDeviceSwitchWarmSpareRequest(updateDeviceSwitchWarmSpareRequest UpdateDeviceSwitchWarmSpareRequest) SwitchApiUpdateDeviceSwitchWarmSpareRequest {
+func (r SwitchAPIUpdateDeviceSwitchWarmSpareRequest) UpdateDeviceSwitchWarmSpareRequest(updateDeviceSwitchWarmSpareRequest UpdateDeviceSwitchWarmSpareRequest) SwitchAPIUpdateDeviceSwitchWarmSpareRequest {
 	r.updateDeviceSwitchWarmSpareRequest = &updateDeviceSwitchWarmSpareRequest
 	return r
 }
 
-func (r SwitchApiUpdateDeviceSwitchWarmSpareRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIUpdateDeviceSwitchWarmSpareRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceSwitchWarmSpareExecute(r)
 }
 
@@ -9122,10 +9122,10 @@ Update warm spare configuration for a switch. The spare will use the same L3 con
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return SwitchApiUpdateDeviceSwitchWarmSpareRequest
+ @return SwitchAPIUpdateDeviceSwitchWarmSpareRequest
 */
-func (a *SwitchApiService) UpdateDeviceSwitchWarmSpare(ctx context.Context, serial string) SwitchApiUpdateDeviceSwitchWarmSpareRequest {
-	return SwitchApiUpdateDeviceSwitchWarmSpareRequest{
+func (a *SwitchAPIService) UpdateDeviceSwitchWarmSpare(ctx context.Context, serial string) SwitchAPIUpdateDeviceSwitchWarmSpareRequest {
+	return SwitchAPIUpdateDeviceSwitchWarmSpareRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -9134,7 +9134,7 @@ func (a *SwitchApiService) UpdateDeviceSwitchWarmSpare(ctx context.Context, seri
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) UpdateDeviceSwitchWarmSpareExecute(r SwitchApiUpdateDeviceSwitchWarmSpareRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) UpdateDeviceSwitchWarmSpareExecute(r SwitchAPIUpdateDeviceSwitchWarmSpareRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9142,7 +9142,7 @@ func (a *SwitchApiService) UpdateDeviceSwitchWarmSpareExecute(r SwitchApiUpdateD
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.UpdateDeviceSwitchWarmSpare")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.UpdateDeviceSwitchWarmSpare")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9227,19 +9227,19 @@ func (a *SwitchApiService) UpdateDeviceSwitchWarmSpareExecute(r SwitchApiUpdateD
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiUpdateNetworkSwitchAccessControlListsRequest struct {
+type SwitchAPIUpdateNetworkSwitchAccessControlListsRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	updateNetworkSwitchAccessControlListsRequest *UpdateNetworkSwitchAccessControlListsRequest
 }
 
-func (r SwitchApiUpdateNetworkSwitchAccessControlListsRequest) UpdateNetworkSwitchAccessControlListsRequest(updateNetworkSwitchAccessControlListsRequest UpdateNetworkSwitchAccessControlListsRequest) SwitchApiUpdateNetworkSwitchAccessControlListsRequest {
+func (r SwitchAPIUpdateNetworkSwitchAccessControlListsRequest) UpdateNetworkSwitchAccessControlListsRequest(updateNetworkSwitchAccessControlListsRequest UpdateNetworkSwitchAccessControlListsRequest) SwitchAPIUpdateNetworkSwitchAccessControlListsRequest {
 	r.updateNetworkSwitchAccessControlListsRequest = &updateNetworkSwitchAccessControlListsRequest
 	return r
 }
 
-func (r SwitchApiUpdateNetworkSwitchAccessControlListsRequest) Execute() (*GetNetworkSwitchAccessControlLists200Response, *http.Response, error) {
+func (r SwitchAPIUpdateNetworkSwitchAccessControlListsRequest) Execute() (*GetNetworkSwitchAccessControlLists200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchAccessControlListsExecute(r)
 }
 
@@ -9250,10 +9250,10 @@ Update the access control lists for a MS network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiUpdateNetworkSwitchAccessControlListsRequest
+ @return SwitchAPIUpdateNetworkSwitchAccessControlListsRequest
 */
-func (a *SwitchApiService) UpdateNetworkSwitchAccessControlLists(ctx context.Context, networkId string) SwitchApiUpdateNetworkSwitchAccessControlListsRequest {
-	return SwitchApiUpdateNetworkSwitchAccessControlListsRequest{
+func (a *SwitchAPIService) UpdateNetworkSwitchAccessControlLists(ctx context.Context, networkId string) SwitchAPIUpdateNetworkSwitchAccessControlListsRequest {
+	return SwitchAPIUpdateNetworkSwitchAccessControlListsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9262,7 +9262,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchAccessControlLists(ctx context.Con
 
 // Execute executes the request
 //  @return GetNetworkSwitchAccessControlLists200Response
-func (a *SwitchApiService) UpdateNetworkSwitchAccessControlListsExecute(r SwitchApiUpdateNetworkSwitchAccessControlListsRequest) (*GetNetworkSwitchAccessControlLists200Response, *http.Response, error) {
+func (a *SwitchAPIService) UpdateNetworkSwitchAccessControlListsExecute(r SwitchAPIUpdateNetworkSwitchAccessControlListsRequest) (*GetNetworkSwitchAccessControlLists200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9270,7 +9270,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchAccessControlListsExecute(r Switch
 		localVarReturnValue  *GetNetworkSwitchAccessControlLists200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.UpdateNetworkSwitchAccessControlLists")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.UpdateNetworkSwitchAccessControlLists")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9355,20 +9355,20 @@ func (a *SwitchApiService) UpdateNetworkSwitchAccessControlListsExecute(r Switch
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiUpdateNetworkSwitchAccessPolicyRequest struct {
+type SwitchAPIUpdateNetworkSwitchAccessPolicyRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	accessPolicyNumber string
 	updateNetworkSwitchAccessPolicyRequest *UpdateNetworkSwitchAccessPolicyRequest
 }
 
-func (r SwitchApiUpdateNetworkSwitchAccessPolicyRequest) UpdateNetworkSwitchAccessPolicyRequest(updateNetworkSwitchAccessPolicyRequest UpdateNetworkSwitchAccessPolicyRequest) SwitchApiUpdateNetworkSwitchAccessPolicyRequest {
+func (r SwitchAPIUpdateNetworkSwitchAccessPolicyRequest) UpdateNetworkSwitchAccessPolicyRequest(updateNetworkSwitchAccessPolicyRequest UpdateNetworkSwitchAccessPolicyRequest) SwitchAPIUpdateNetworkSwitchAccessPolicyRequest {
 	r.updateNetworkSwitchAccessPolicyRequest = &updateNetworkSwitchAccessPolicyRequest
 	return r
 }
 
-func (r SwitchApiUpdateNetworkSwitchAccessPolicyRequest) Execute() (*GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
+func (r SwitchAPIUpdateNetworkSwitchAccessPolicyRequest) Execute() (*GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchAccessPolicyExecute(r)
 }
 
@@ -9380,10 +9380,10 @@ Update an access policy for a switch network. If you would like to enable Meraki
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param accessPolicyNumber Access policy number
- @return SwitchApiUpdateNetworkSwitchAccessPolicyRequest
+ @return SwitchAPIUpdateNetworkSwitchAccessPolicyRequest
 */
-func (a *SwitchApiService) UpdateNetworkSwitchAccessPolicy(ctx context.Context, networkId string, accessPolicyNumber string) SwitchApiUpdateNetworkSwitchAccessPolicyRequest {
-	return SwitchApiUpdateNetworkSwitchAccessPolicyRequest{
+func (a *SwitchAPIService) UpdateNetworkSwitchAccessPolicy(ctx context.Context, networkId string, accessPolicyNumber string) SwitchAPIUpdateNetworkSwitchAccessPolicyRequest {
+	return SwitchAPIUpdateNetworkSwitchAccessPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9393,7 +9393,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchAccessPolicy(ctx context.Context, 
 
 // Execute executes the request
 //  @return GetNetworkSwitchAccessPolicies200ResponseInner
-func (a *SwitchApiService) UpdateNetworkSwitchAccessPolicyExecute(r SwitchApiUpdateNetworkSwitchAccessPolicyRequest) (*GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
+func (a *SwitchAPIService) UpdateNetworkSwitchAccessPolicyExecute(r SwitchAPIUpdateNetworkSwitchAccessPolicyRequest) (*GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9401,7 +9401,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchAccessPolicyExecute(r SwitchApiUpd
 		localVarReturnValue  *GetNetworkSwitchAccessPolicies200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.UpdateNetworkSwitchAccessPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.UpdateNetworkSwitchAccessPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9484,19 +9484,19 @@ func (a *SwitchApiService) UpdateNetworkSwitchAccessPolicyExecute(r SwitchApiUpd
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiUpdateNetworkSwitchAlternateManagementInterfaceRequest struct {
+type SwitchAPIUpdateNetworkSwitchAlternateManagementInterfaceRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	updateNetworkSwitchAlternateManagementInterfaceRequest *UpdateNetworkSwitchAlternateManagementInterfaceRequest
 }
 
-func (r SwitchApiUpdateNetworkSwitchAlternateManagementInterfaceRequest) UpdateNetworkSwitchAlternateManagementInterfaceRequest(updateNetworkSwitchAlternateManagementInterfaceRequest UpdateNetworkSwitchAlternateManagementInterfaceRequest) SwitchApiUpdateNetworkSwitchAlternateManagementInterfaceRequest {
+func (r SwitchAPIUpdateNetworkSwitchAlternateManagementInterfaceRequest) UpdateNetworkSwitchAlternateManagementInterfaceRequest(updateNetworkSwitchAlternateManagementInterfaceRequest UpdateNetworkSwitchAlternateManagementInterfaceRequest) SwitchAPIUpdateNetworkSwitchAlternateManagementInterfaceRequest {
 	r.updateNetworkSwitchAlternateManagementInterfaceRequest = &updateNetworkSwitchAlternateManagementInterfaceRequest
 	return r
 }
 
-func (r SwitchApiUpdateNetworkSwitchAlternateManagementInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIUpdateNetworkSwitchAlternateManagementInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchAlternateManagementInterfaceExecute(r)
 }
 
@@ -9507,10 +9507,10 @@ Update the switch alternate management interface for the network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiUpdateNetworkSwitchAlternateManagementInterfaceRequest
+ @return SwitchAPIUpdateNetworkSwitchAlternateManagementInterfaceRequest
 */
-func (a *SwitchApiService) UpdateNetworkSwitchAlternateManagementInterface(ctx context.Context, networkId string) SwitchApiUpdateNetworkSwitchAlternateManagementInterfaceRequest {
-	return SwitchApiUpdateNetworkSwitchAlternateManagementInterfaceRequest{
+func (a *SwitchAPIService) UpdateNetworkSwitchAlternateManagementInterface(ctx context.Context, networkId string) SwitchAPIUpdateNetworkSwitchAlternateManagementInterfaceRequest {
+	return SwitchAPIUpdateNetworkSwitchAlternateManagementInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9519,7 +9519,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchAlternateManagementInterface(ctx c
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) UpdateNetworkSwitchAlternateManagementInterfaceExecute(r SwitchApiUpdateNetworkSwitchAlternateManagementInterfaceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) UpdateNetworkSwitchAlternateManagementInterfaceExecute(r SwitchAPIUpdateNetworkSwitchAlternateManagementInterfaceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9527,7 +9527,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchAlternateManagementInterfaceExecut
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.UpdateNetworkSwitchAlternateManagementInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.UpdateNetworkSwitchAlternateManagementInterface")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9609,19 +9609,19 @@ func (a *SwitchApiService) UpdateNetworkSwitchAlternateManagementInterfaceExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiUpdateNetworkSwitchDhcpServerPolicyRequest struct {
+type SwitchAPIUpdateNetworkSwitchDhcpServerPolicyRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	updateNetworkSwitchDhcpServerPolicyRequest *UpdateNetworkSwitchDhcpServerPolicyRequest
 }
 
-func (r SwitchApiUpdateNetworkSwitchDhcpServerPolicyRequest) UpdateNetworkSwitchDhcpServerPolicyRequest(updateNetworkSwitchDhcpServerPolicyRequest UpdateNetworkSwitchDhcpServerPolicyRequest) SwitchApiUpdateNetworkSwitchDhcpServerPolicyRequest {
+func (r SwitchAPIUpdateNetworkSwitchDhcpServerPolicyRequest) UpdateNetworkSwitchDhcpServerPolicyRequest(updateNetworkSwitchDhcpServerPolicyRequest UpdateNetworkSwitchDhcpServerPolicyRequest) SwitchAPIUpdateNetworkSwitchDhcpServerPolicyRequest {
 	r.updateNetworkSwitchDhcpServerPolicyRequest = &updateNetworkSwitchDhcpServerPolicyRequest
 	return r
 }
 
-func (r SwitchApiUpdateNetworkSwitchDhcpServerPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIUpdateNetworkSwitchDhcpServerPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchDhcpServerPolicyExecute(r)
 }
 
@@ -9632,10 +9632,10 @@ Update the DHCP server settings. Blocked/allowed servers are only applied when d
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiUpdateNetworkSwitchDhcpServerPolicyRequest
+ @return SwitchAPIUpdateNetworkSwitchDhcpServerPolicyRequest
 */
-func (a *SwitchApiService) UpdateNetworkSwitchDhcpServerPolicy(ctx context.Context, networkId string) SwitchApiUpdateNetworkSwitchDhcpServerPolicyRequest {
-	return SwitchApiUpdateNetworkSwitchDhcpServerPolicyRequest{
+func (a *SwitchAPIService) UpdateNetworkSwitchDhcpServerPolicy(ctx context.Context, networkId string) SwitchAPIUpdateNetworkSwitchDhcpServerPolicyRequest {
+	return SwitchAPIUpdateNetworkSwitchDhcpServerPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9644,7 +9644,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchDhcpServerPolicy(ctx context.Conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) UpdateNetworkSwitchDhcpServerPolicyExecute(r SwitchApiUpdateNetworkSwitchDhcpServerPolicyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) UpdateNetworkSwitchDhcpServerPolicyExecute(r SwitchAPIUpdateNetworkSwitchDhcpServerPolicyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9652,7 +9652,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchDhcpServerPolicyExecute(r SwitchAp
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.UpdateNetworkSwitchDhcpServerPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.UpdateNetworkSwitchDhcpServerPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9734,20 +9734,20 @@ func (a *SwitchApiService) UpdateNetworkSwitchDhcpServerPolicyExecute(r SwitchAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest struct {
+type SwitchAPIUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	trustedServerId string
 	updateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest *UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest
 }
 
-func (r SwitchApiUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest(updateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) SwitchApiUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest {
+func (r SwitchAPIUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest(updateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) SwitchAPIUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest {
 	r.updateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest = &updateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest
 	return r
 }
 
-func (r SwitchApiUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) Execute() (*GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner, *http.Response, error) {
+func (r SwitchAPIUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) Execute() (*GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerExecute(r)
 }
 
@@ -9759,10 +9759,10 @@ Update a server that is trusted by Dynamic ARP Inspection on this network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param trustedServerId Trusted server ID
- @return SwitchApiUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest
+ @return SwitchAPIUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest
 */
-func (a *SwitchApiService) UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer(ctx context.Context, networkId string, trustedServerId string) SwitchApiUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest {
-	return SwitchApiUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest{
+func (a *SwitchAPIService) UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer(ctx context.Context, networkId string, trustedServerId string) SwitchAPIUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest {
+	return SwitchAPIUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9772,7 +9772,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrust
 
 // Execute executes the request
 //  @return GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner
-func (a *SwitchApiService) UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerExecute(r SwitchApiUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) (*GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner, *http.Response, error) {
+func (a *SwitchAPIService) UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerExecute(r SwitchAPIUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) (*GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9780,7 +9780,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrust
 		localVarReturnValue  *GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9863,19 +9863,19 @@ func (a *SwitchApiService) UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrust
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiUpdateNetworkSwitchDscpToCosMappingsRequest struct {
+type SwitchAPIUpdateNetworkSwitchDscpToCosMappingsRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	updateNetworkSwitchDscpToCosMappingsRequest *UpdateNetworkSwitchDscpToCosMappingsRequest
 }
 
-func (r SwitchApiUpdateNetworkSwitchDscpToCosMappingsRequest) UpdateNetworkSwitchDscpToCosMappingsRequest(updateNetworkSwitchDscpToCosMappingsRequest UpdateNetworkSwitchDscpToCosMappingsRequest) SwitchApiUpdateNetworkSwitchDscpToCosMappingsRequest {
+func (r SwitchAPIUpdateNetworkSwitchDscpToCosMappingsRequest) UpdateNetworkSwitchDscpToCosMappingsRequest(updateNetworkSwitchDscpToCosMappingsRequest UpdateNetworkSwitchDscpToCosMappingsRequest) SwitchAPIUpdateNetworkSwitchDscpToCosMappingsRequest {
 	r.updateNetworkSwitchDscpToCosMappingsRequest = &updateNetworkSwitchDscpToCosMappingsRequest
 	return r
 }
 
-func (r SwitchApiUpdateNetworkSwitchDscpToCosMappingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIUpdateNetworkSwitchDscpToCosMappingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchDscpToCosMappingsExecute(r)
 }
 
@@ -9886,10 +9886,10 @@ Update the DSCP to CoS mappings
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiUpdateNetworkSwitchDscpToCosMappingsRequest
+ @return SwitchAPIUpdateNetworkSwitchDscpToCosMappingsRequest
 */
-func (a *SwitchApiService) UpdateNetworkSwitchDscpToCosMappings(ctx context.Context, networkId string) SwitchApiUpdateNetworkSwitchDscpToCosMappingsRequest {
-	return SwitchApiUpdateNetworkSwitchDscpToCosMappingsRequest{
+func (a *SwitchAPIService) UpdateNetworkSwitchDscpToCosMappings(ctx context.Context, networkId string) SwitchAPIUpdateNetworkSwitchDscpToCosMappingsRequest {
+	return SwitchAPIUpdateNetworkSwitchDscpToCosMappingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9898,7 +9898,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchDscpToCosMappings(ctx context.Cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) UpdateNetworkSwitchDscpToCosMappingsExecute(r SwitchApiUpdateNetworkSwitchDscpToCosMappingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) UpdateNetworkSwitchDscpToCosMappingsExecute(r SwitchAPIUpdateNetworkSwitchDscpToCosMappingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9906,7 +9906,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchDscpToCosMappingsExecute(r SwitchA
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.UpdateNetworkSwitchDscpToCosMappings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.UpdateNetworkSwitchDscpToCosMappings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9991,20 +9991,20 @@ func (a *SwitchApiService) UpdateNetworkSwitchDscpToCosMappingsExecute(r SwitchA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiUpdateNetworkSwitchLinkAggregationRequest struct {
+type SwitchAPIUpdateNetworkSwitchLinkAggregationRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	linkAggregationId string
 	updateNetworkSwitchLinkAggregationRequest *UpdateNetworkSwitchLinkAggregationRequest
 }
 
-func (r SwitchApiUpdateNetworkSwitchLinkAggregationRequest) UpdateNetworkSwitchLinkAggregationRequest(updateNetworkSwitchLinkAggregationRequest UpdateNetworkSwitchLinkAggregationRequest) SwitchApiUpdateNetworkSwitchLinkAggregationRequest {
+func (r SwitchAPIUpdateNetworkSwitchLinkAggregationRequest) UpdateNetworkSwitchLinkAggregationRequest(updateNetworkSwitchLinkAggregationRequest UpdateNetworkSwitchLinkAggregationRequest) SwitchAPIUpdateNetworkSwitchLinkAggregationRequest {
 	r.updateNetworkSwitchLinkAggregationRequest = &updateNetworkSwitchLinkAggregationRequest
 	return r
 }
 
-func (r SwitchApiUpdateNetworkSwitchLinkAggregationRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIUpdateNetworkSwitchLinkAggregationRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchLinkAggregationExecute(r)
 }
 
@@ -10016,10 +10016,10 @@ Update a link aggregation group
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param linkAggregationId Link aggregation ID
- @return SwitchApiUpdateNetworkSwitchLinkAggregationRequest
+ @return SwitchAPIUpdateNetworkSwitchLinkAggregationRequest
 */
-func (a *SwitchApiService) UpdateNetworkSwitchLinkAggregation(ctx context.Context, networkId string, linkAggregationId string) SwitchApiUpdateNetworkSwitchLinkAggregationRequest {
-	return SwitchApiUpdateNetworkSwitchLinkAggregationRequest{
+func (a *SwitchAPIService) UpdateNetworkSwitchLinkAggregation(ctx context.Context, networkId string, linkAggregationId string) SwitchAPIUpdateNetworkSwitchLinkAggregationRequest {
+	return SwitchAPIUpdateNetworkSwitchLinkAggregationRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10029,7 +10029,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchLinkAggregation(ctx context.Contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) UpdateNetworkSwitchLinkAggregationExecute(r SwitchApiUpdateNetworkSwitchLinkAggregationRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) UpdateNetworkSwitchLinkAggregationExecute(r SwitchAPIUpdateNetworkSwitchLinkAggregationRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -10037,7 +10037,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchLinkAggregationExecute(r SwitchApi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.UpdateNetworkSwitchLinkAggregation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.UpdateNetworkSwitchLinkAggregation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10120,19 +10120,19 @@ func (a *SwitchApiService) UpdateNetworkSwitchLinkAggregationExecute(r SwitchApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiUpdateNetworkSwitchMtuRequest struct {
+type SwitchAPIUpdateNetworkSwitchMtuRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	updateNetworkSwitchMtuRequest *UpdateNetworkSwitchMtuRequest
 }
 
-func (r SwitchApiUpdateNetworkSwitchMtuRequest) UpdateNetworkSwitchMtuRequest(updateNetworkSwitchMtuRequest UpdateNetworkSwitchMtuRequest) SwitchApiUpdateNetworkSwitchMtuRequest {
+func (r SwitchAPIUpdateNetworkSwitchMtuRequest) UpdateNetworkSwitchMtuRequest(updateNetworkSwitchMtuRequest UpdateNetworkSwitchMtuRequest) SwitchAPIUpdateNetworkSwitchMtuRequest {
 	r.updateNetworkSwitchMtuRequest = &updateNetworkSwitchMtuRequest
 	return r
 }
 
-func (r SwitchApiUpdateNetworkSwitchMtuRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIUpdateNetworkSwitchMtuRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchMtuExecute(r)
 }
 
@@ -10143,10 +10143,10 @@ Update the MTU configuration
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiUpdateNetworkSwitchMtuRequest
+ @return SwitchAPIUpdateNetworkSwitchMtuRequest
 */
-func (a *SwitchApiService) UpdateNetworkSwitchMtu(ctx context.Context, networkId string) SwitchApiUpdateNetworkSwitchMtuRequest {
-	return SwitchApiUpdateNetworkSwitchMtuRequest{
+func (a *SwitchAPIService) UpdateNetworkSwitchMtu(ctx context.Context, networkId string) SwitchAPIUpdateNetworkSwitchMtuRequest {
+	return SwitchAPIUpdateNetworkSwitchMtuRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10155,7 +10155,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchMtu(ctx context.Context, networkId
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) UpdateNetworkSwitchMtuExecute(r SwitchApiUpdateNetworkSwitchMtuRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) UpdateNetworkSwitchMtuExecute(r SwitchAPIUpdateNetworkSwitchMtuRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -10163,7 +10163,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchMtuExecute(r SwitchApiUpdateNetwor
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.UpdateNetworkSwitchMtu")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.UpdateNetworkSwitchMtu")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10245,20 +10245,20 @@ func (a *SwitchApiService) UpdateNetworkSwitchMtuExecute(r SwitchApiUpdateNetwor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiUpdateNetworkSwitchPortScheduleRequest struct {
+type SwitchAPIUpdateNetworkSwitchPortScheduleRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	portScheduleId string
 	updateNetworkSwitchPortScheduleRequest *UpdateNetworkSwitchPortScheduleRequest
 }
 
-func (r SwitchApiUpdateNetworkSwitchPortScheduleRequest) UpdateNetworkSwitchPortScheduleRequest(updateNetworkSwitchPortScheduleRequest UpdateNetworkSwitchPortScheduleRequest) SwitchApiUpdateNetworkSwitchPortScheduleRequest {
+func (r SwitchAPIUpdateNetworkSwitchPortScheduleRequest) UpdateNetworkSwitchPortScheduleRequest(updateNetworkSwitchPortScheduleRequest UpdateNetworkSwitchPortScheduleRequest) SwitchAPIUpdateNetworkSwitchPortScheduleRequest {
 	r.updateNetworkSwitchPortScheduleRequest = &updateNetworkSwitchPortScheduleRequest
 	return r
 }
 
-func (r SwitchApiUpdateNetworkSwitchPortScheduleRequest) Execute() (*GetNetworkSwitchPortSchedules200ResponseInner, *http.Response, error) {
+func (r SwitchAPIUpdateNetworkSwitchPortScheduleRequest) Execute() (*GetNetworkSwitchPortSchedules200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchPortScheduleExecute(r)
 }
 
@@ -10270,10 +10270,10 @@ Update a switch port schedule
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param portScheduleId Port schedule ID
- @return SwitchApiUpdateNetworkSwitchPortScheduleRequest
+ @return SwitchAPIUpdateNetworkSwitchPortScheduleRequest
 */
-func (a *SwitchApiService) UpdateNetworkSwitchPortSchedule(ctx context.Context, networkId string, portScheduleId string) SwitchApiUpdateNetworkSwitchPortScheduleRequest {
-	return SwitchApiUpdateNetworkSwitchPortScheduleRequest{
+func (a *SwitchAPIService) UpdateNetworkSwitchPortSchedule(ctx context.Context, networkId string, portScheduleId string) SwitchAPIUpdateNetworkSwitchPortScheduleRequest {
+	return SwitchAPIUpdateNetworkSwitchPortScheduleRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10283,7 +10283,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchPortSchedule(ctx context.Context, 
 
 // Execute executes the request
 //  @return GetNetworkSwitchPortSchedules200ResponseInner
-func (a *SwitchApiService) UpdateNetworkSwitchPortScheduleExecute(r SwitchApiUpdateNetworkSwitchPortScheduleRequest) (*GetNetworkSwitchPortSchedules200ResponseInner, *http.Response, error) {
+func (a *SwitchAPIService) UpdateNetworkSwitchPortScheduleExecute(r SwitchAPIUpdateNetworkSwitchPortScheduleRequest) (*GetNetworkSwitchPortSchedules200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -10291,7 +10291,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchPortScheduleExecute(r SwitchApiUpd
 		localVarReturnValue  *GetNetworkSwitchPortSchedules200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.UpdateNetworkSwitchPortSchedule")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.UpdateNetworkSwitchPortSchedule")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10374,20 +10374,20 @@ func (a *SwitchApiService) UpdateNetworkSwitchPortScheduleExecute(r SwitchApiUpd
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiUpdateNetworkSwitchQosRuleRequest struct {
+type SwitchAPIUpdateNetworkSwitchQosRuleRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	qosRuleId string
 	updateNetworkSwitchQosRuleRequest *UpdateNetworkSwitchQosRuleRequest
 }
 
-func (r SwitchApiUpdateNetworkSwitchQosRuleRequest) UpdateNetworkSwitchQosRuleRequest(updateNetworkSwitchQosRuleRequest UpdateNetworkSwitchQosRuleRequest) SwitchApiUpdateNetworkSwitchQosRuleRequest {
+func (r SwitchAPIUpdateNetworkSwitchQosRuleRequest) UpdateNetworkSwitchQosRuleRequest(updateNetworkSwitchQosRuleRequest UpdateNetworkSwitchQosRuleRequest) SwitchAPIUpdateNetworkSwitchQosRuleRequest {
 	r.updateNetworkSwitchQosRuleRequest = &updateNetworkSwitchQosRuleRequest
 	return r
 }
 
-func (r SwitchApiUpdateNetworkSwitchQosRuleRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIUpdateNetworkSwitchQosRuleRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchQosRuleExecute(r)
 }
 
@@ -10399,10 +10399,10 @@ Update a quality of service rule
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param qosRuleId Qos rule ID
- @return SwitchApiUpdateNetworkSwitchQosRuleRequest
+ @return SwitchAPIUpdateNetworkSwitchQosRuleRequest
 */
-func (a *SwitchApiService) UpdateNetworkSwitchQosRule(ctx context.Context, networkId string, qosRuleId string) SwitchApiUpdateNetworkSwitchQosRuleRequest {
-	return SwitchApiUpdateNetworkSwitchQosRuleRequest{
+func (a *SwitchAPIService) UpdateNetworkSwitchQosRule(ctx context.Context, networkId string, qosRuleId string) SwitchAPIUpdateNetworkSwitchQosRuleRequest {
+	return SwitchAPIUpdateNetworkSwitchQosRuleRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10412,7 +10412,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchQosRule(ctx context.Context, netwo
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) UpdateNetworkSwitchQosRuleExecute(r SwitchApiUpdateNetworkSwitchQosRuleRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) UpdateNetworkSwitchQosRuleExecute(r SwitchAPIUpdateNetworkSwitchQosRuleRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -10420,7 +10420,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchQosRuleExecute(r SwitchApiUpdateNe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.UpdateNetworkSwitchQosRule")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.UpdateNetworkSwitchQosRule")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10503,19 +10503,19 @@ func (a *SwitchApiService) UpdateNetworkSwitchQosRuleExecute(r SwitchApiUpdateNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiUpdateNetworkSwitchQosRulesOrderRequest struct {
+type SwitchAPIUpdateNetworkSwitchQosRulesOrderRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	updateNetworkSwitchQosRulesOrderRequest *UpdateNetworkSwitchQosRulesOrderRequest
 }
 
-func (r SwitchApiUpdateNetworkSwitchQosRulesOrderRequest) UpdateNetworkSwitchQosRulesOrderRequest(updateNetworkSwitchQosRulesOrderRequest UpdateNetworkSwitchQosRulesOrderRequest) SwitchApiUpdateNetworkSwitchQosRulesOrderRequest {
+func (r SwitchAPIUpdateNetworkSwitchQosRulesOrderRequest) UpdateNetworkSwitchQosRulesOrderRequest(updateNetworkSwitchQosRulesOrderRequest UpdateNetworkSwitchQosRulesOrderRequest) SwitchAPIUpdateNetworkSwitchQosRulesOrderRequest {
 	r.updateNetworkSwitchQosRulesOrderRequest = &updateNetworkSwitchQosRulesOrderRequest
 	return r
 }
 
-func (r SwitchApiUpdateNetworkSwitchQosRulesOrderRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIUpdateNetworkSwitchQosRulesOrderRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchQosRulesOrderExecute(r)
 }
 
@@ -10526,10 +10526,10 @@ Update the order in which the rules should be processed by the switch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiUpdateNetworkSwitchQosRulesOrderRequest
+ @return SwitchAPIUpdateNetworkSwitchQosRulesOrderRequest
 */
-func (a *SwitchApiService) UpdateNetworkSwitchQosRulesOrder(ctx context.Context, networkId string) SwitchApiUpdateNetworkSwitchQosRulesOrderRequest {
-	return SwitchApiUpdateNetworkSwitchQosRulesOrderRequest{
+func (a *SwitchAPIService) UpdateNetworkSwitchQosRulesOrder(ctx context.Context, networkId string) SwitchAPIUpdateNetworkSwitchQosRulesOrderRequest {
+	return SwitchAPIUpdateNetworkSwitchQosRulesOrderRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10538,7 +10538,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchQosRulesOrder(ctx context.Context,
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) UpdateNetworkSwitchQosRulesOrderExecute(r SwitchApiUpdateNetworkSwitchQosRulesOrderRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) UpdateNetworkSwitchQosRulesOrderExecute(r SwitchAPIUpdateNetworkSwitchQosRulesOrderRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -10546,7 +10546,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchQosRulesOrderExecute(r SwitchApiUp
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.UpdateNetworkSwitchQosRulesOrder")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.UpdateNetworkSwitchQosRulesOrder")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10631,19 +10631,19 @@ func (a *SwitchApiService) UpdateNetworkSwitchQosRulesOrderExecute(r SwitchApiUp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiUpdateNetworkSwitchRoutingMulticastRequest struct {
+type SwitchAPIUpdateNetworkSwitchRoutingMulticastRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	updateNetworkSwitchRoutingMulticastRequest *UpdateNetworkSwitchRoutingMulticastRequest
 }
 
-func (r SwitchApiUpdateNetworkSwitchRoutingMulticastRequest) UpdateNetworkSwitchRoutingMulticastRequest(updateNetworkSwitchRoutingMulticastRequest UpdateNetworkSwitchRoutingMulticastRequest) SwitchApiUpdateNetworkSwitchRoutingMulticastRequest {
+func (r SwitchAPIUpdateNetworkSwitchRoutingMulticastRequest) UpdateNetworkSwitchRoutingMulticastRequest(updateNetworkSwitchRoutingMulticastRequest UpdateNetworkSwitchRoutingMulticastRequest) SwitchAPIUpdateNetworkSwitchRoutingMulticastRequest {
 	r.updateNetworkSwitchRoutingMulticastRequest = &updateNetworkSwitchRoutingMulticastRequest
 	return r
 }
 
-func (r SwitchApiUpdateNetworkSwitchRoutingMulticastRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIUpdateNetworkSwitchRoutingMulticastRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchRoutingMulticastExecute(r)
 }
 
@@ -10654,10 +10654,10 @@ Update multicast settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiUpdateNetworkSwitchRoutingMulticastRequest
+ @return SwitchAPIUpdateNetworkSwitchRoutingMulticastRequest
 */
-func (a *SwitchApiService) UpdateNetworkSwitchRoutingMulticast(ctx context.Context, networkId string) SwitchApiUpdateNetworkSwitchRoutingMulticastRequest {
-	return SwitchApiUpdateNetworkSwitchRoutingMulticastRequest{
+func (a *SwitchAPIService) UpdateNetworkSwitchRoutingMulticast(ctx context.Context, networkId string) SwitchAPIUpdateNetworkSwitchRoutingMulticastRequest {
+	return SwitchAPIUpdateNetworkSwitchRoutingMulticastRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10666,7 +10666,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchRoutingMulticast(ctx context.Conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) UpdateNetworkSwitchRoutingMulticastExecute(r SwitchApiUpdateNetworkSwitchRoutingMulticastRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) UpdateNetworkSwitchRoutingMulticastExecute(r SwitchAPIUpdateNetworkSwitchRoutingMulticastRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -10674,7 +10674,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchRoutingMulticastExecute(r SwitchAp
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.UpdateNetworkSwitchRoutingMulticast")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.UpdateNetworkSwitchRoutingMulticast")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10756,20 +10756,20 @@ func (a *SwitchApiService) UpdateNetworkSwitchRoutingMulticastExecute(r SwitchAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest struct {
+type SwitchAPIUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	rendezvousPointId string
 	updateNetworkSwitchRoutingMulticastRendezvousPointRequest *UpdateNetworkSwitchRoutingMulticastRendezvousPointRequest
 }
 
-func (r SwitchApiUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest) UpdateNetworkSwitchRoutingMulticastRendezvousPointRequest(updateNetworkSwitchRoutingMulticastRendezvousPointRequest UpdateNetworkSwitchRoutingMulticastRendezvousPointRequest) SwitchApiUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest {
+func (r SwitchAPIUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest) UpdateNetworkSwitchRoutingMulticastRendezvousPointRequest(updateNetworkSwitchRoutingMulticastRendezvousPointRequest UpdateNetworkSwitchRoutingMulticastRendezvousPointRequest) SwitchAPIUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest {
 	r.updateNetworkSwitchRoutingMulticastRendezvousPointRequest = &updateNetworkSwitchRoutingMulticastRendezvousPointRequest
 	return r
 }
 
-func (r SwitchApiUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchRoutingMulticastRendezvousPointExecute(r)
 }
 
@@ -10781,10 +10781,10 @@ Update a multicast rendezvous point
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param rendezvousPointId Rendezvous point ID
- @return SwitchApiUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest
+ @return SwitchAPIUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest
 */
-func (a *SwitchApiService) UpdateNetworkSwitchRoutingMulticastRendezvousPoint(ctx context.Context, networkId string, rendezvousPointId string) SwitchApiUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest {
-	return SwitchApiUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest{
+func (a *SwitchAPIService) UpdateNetworkSwitchRoutingMulticastRendezvousPoint(ctx context.Context, networkId string, rendezvousPointId string) SwitchAPIUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest {
+	return SwitchAPIUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10794,7 +10794,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchRoutingMulticastRendezvousPoint(ct
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) UpdateNetworkSwitchRoutingMulticastRendezvousPointExecute(r SwitchApiUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) UpdateNetworkSwitchRoutingMulticastRendezvousPointExecute(r SwitchAPIUpdateNetworkSwitchRoutingMulticastRendezvousPointRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -10802,7 +10802,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchRoutingMulticastRendezvousPointExe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.UpdateNetworkSwitchRoutingMulticastRendezvousPoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.UpdateNetworkSwitchRoutingMulticastRendezvousPoint")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10888,19 +10888,19 @@ func (a *SwitchApiService) UpdateNetworkSwitchRoutingMulticastRendezvousPointExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiUpdateNetworkSwitchRoutingOspfRequest struct {
+type SwitchAPIUpdateNetworkSwitchRoutingOspfRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	updateNetworkSwitchRoutingOspfRequest *UpdateNetworkSwitchRoutingOspfRequest
 }
 
-func (r SwitchApiUpdateNetworkSwitchRoutingOspfRequest) UpdateNetworkSwitchRoutingOspfRequest(updateNetworkSwitchRoutingOspfRequest UpdateNetworkSwitchRoutingOspfRequest) SwitchApiUpdateNetworkSwitchRoutingOspfRequest {
+func (r SwitchAPIUpdateNetworkSwitchRoutingOspfRequest) UpdateNetworkSwitchRoutingOspfRequest(updateNetworkSwitchRoutingOspfRequest UpdateNetworkSwitchRoutingOspfRequest) SwitchAPIUpdateNetworkSwitchRoutingOspfRequest {
 	r.updateNetworkSwitchRoutingOspfRequest = &updateNetworkSwitchRoutingOspfRequest
 	return r
 }
 
-func (r SwitchApiUpdateNetworkSwitchRoutingOspfRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIUpdateNetworkSwitchRoutingOspfRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchRoutingOspfExecute(r)
 }
 
@@ -10911,10 +10911,10 @@ Update layer 3 OSPF routing configuration
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiUpdateNetworkSwitchRoutingOspfRequest
+ @return SwitchAPIUpdateNetworkSwitchRoutingOspfRequest
 */
-func (a *SwitchApiService) UpdateNetworkSwitchRoutingOspf(ctx context.Context, networkId string) SwitchApiUpdateNetworkSwitchRoutingOspfRequest {
-	return SwitchApiUpdateNetworkSwitchRoutingOspfRequest{
+func (a *SwitchAPIService) UpdateNetworkSwitchRoutingOspf(ctx context.Context, networkId string) SwitchAPIUpdateNetworkSwitchRoutingOspfRequest {
+	return SwitchAPIUpdateNetworkSwitchRoutingOspfRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10923,7 +10923,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchRoutingOspf(ctx context.Context, n
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) UpdateNetworkSwitchRoutingOspfExecute(r SwitchApiUpdateNetworkSwitchRoutingOspfRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) UpdateNetworkSwitchRoutingOspfExecute(r SwitchAPIUpdateNetworkSwitchRoutingOspfRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -10931,7 +10931,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchRoutingOspfExecute(r SwitchApiUpda
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.UpdateNetworkSwitchRoutingOspf")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.UpdateNetworkSwitchRoutingOspf")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11013,19 +11013,19 @@ func (a *SwitchApiService) UpdateNetworkSwitchRoutingOspfExecute(r SwitchApiUpda
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiUpdateNetworkSwitchSettingsRequest struct {
+type SwitchAPIUpdateNetworkSwitchSettingsRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	updateNetworkSwitchSettingsRequest *UpdateNetworkSwitchSettingsRequest
 }
 
-func (r SwitchApiUpdateNetworkSwitchSettingsRequest) UpdateNetworkSwitchSettingsRequest(updateNetworkSwitchSettingsRequest UpdateNetworkSwitchSettingsRequest) SwitchApiUpdateNetworkSwitchSettingsRequest {
+func (r SwitchAPIUpdateNetworkSwitchSettingsRequest) UpdateNetworkSwitchSettingsRequest(updateNetworkSwitchSettingsRequest UpdateNetworkSwitchSettingsRequest) SwitchAPIUpdateNetworkSwitchSettingsRequest {
 	r.updateNetworkSwitchSettingsRequest = &updateNetworkSwitchSettingsRequest
 	return r
 }
 
-func (r SwitchApiUpdateNetworkSwitchSettingsRequest) Execute() (*GetNetworkSwitchSettings200Response, *http.Response, error) {
+func (r SwitchAPIUpdateNetworkSwitchSettingsRequest) Execute() (*GetNetworkSwitchSettings200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchSettingsExecute(r)
 }
 
@@ -11036,10 +11036,10 @@ Update switch network settings
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiUpdateNetworkSwitchSettingsRequest
+ @return SwitchAPIUpdateNetworkSwitchSettingsRequest
 */
-func (a *SwitchApiService) UpdateNetworkSwitchSettings(ctx context.Context, networkId string) SwitchApiUpdateNetworkSwitchSettingsRequest {
-	return SwitchApiUpdateNetworkSwitchSettingsRequest{
+func (a *SwitchAPIService) UpdateNetworkSwitchSettings(ctx context.Context, networkId string) SwitchAPIUpdateNetworkSwitchSettingsRequest {
+	return SwitchAPIUpdateNetworkSwitchSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -11048,7 +11048,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchSettings(ctx context.Context, netw
 
 // Execute executes the request
 //  @return GetNetworkSwitchSettings200Response
-func (a *SwitchApiService) UpdateNetworkSwitchSettingsExecute(r SwitchApiUpdateNetworkSwitchSettingsRequest) (*GetNetworkSwitchSettings200Response, *http.Response, error) {
+func (a *SwitchAPIService) UpdateNetworkSwitchSettingsExecute(r SwitchAPIUpdateNetworkSwitchSettingsRequest) (*GetNetworkSwitchSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -11056,7 +11056,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchSettingsExecute(r SwitchApiUpdateN
 		localVarReturnValue  *GetNetworkSwitchSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.UpdateNetworkSwitchSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.UpdateNetworkSwitchSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11138,21 +11138,21 @@ func (a *SwitchApiService) UpdateNetworkSwitchSettingsExecute(r SwitchApiUpdateN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiUpdateNetworkSwitchStackRoutingInterfaceRequest struct {
+type SwitchAPIUpdateNetworkSwitchStackRoutingInterfaceRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	switchStackId string
 	interfaceId string
 	updateNetworkSwitchStackRoutingInterfaceRequest *UpdateNetworkSwitchStackRoutingInterfaceRequest
 }
 
-func (r SwitchApiUpdateNetworkSwitchStackRoutingInterfaceRequest) UpdateNetworkSwitchStackRoutingInterfaceRequest(updateNetworkSwitchStackRoutingInterfaceRequest UpdateNetworkSwitchStackRoutingInterfaceRequest) SwitchApiUpdateNetworkSwitchStackRoutingInterfaceRequest {
+func (r SwitchAPIUpdateNetworkSwitchStackRoutingInterfaceRequest) UpdateNetworkSwitchStackRoutingInterfaceRequest(updateNetworkSwitchStackRoutingInterfaceRequest UpdateNetworkSwitchStackRoutingInterfaceRequest) SwitchAPIUpdateNetworkSwitchStackRoutingInterfaceRequest {
 	r.updateNetworkSwitchStackRoutingInterfaceRequest = &updateNetworkSwitchStackRoutingInterfaceRequest
 	return r
 }
 
-func (r SwitchApiUpdateNetworkSwitchStackRoutingInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIUpdateNetworkSwitchStackRoutingInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchStackRoutingInterfaceExecute(r)
 }
 
@@ -11165,10 +11165,10 @@ Update a layer 3 interface for a switch stack
  @param networkId Network ID
  @param switchStackId Switch stack ID
  @param interfaceId Interface ID
- @return SwitchApiUpdateNetworkSwitchStackRoutingInterfaceRequest
+ @return SwitchAPIUpdateNetworkSwitchStackRoutingInterfaceRequest
 */
-func (a *SwitchApiService) UpdateNetworkSwitchStackRoutingInterface(ctx context.Context, networkId string, switchStackId string, interfaceId string) SwitchApiUpdateNetworkSwitchStackRoutingInterfaceRequest {
-	return SwitchApiUpdateNetworkSwitchStackRoutingInterfaceRequest{
+func (a *SwitchAPIService) UpdateNetworkSwitchStackRoutingInterface(ctx context.Context, networkId string, switchStackId string, interfaceId string) SwitchAPIUpdateNetworkSwitchStackRoutingInterfaceRequest {
+	return SwitchAPIUpdateNetworkSwitchStackRoutingInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -11179,7 +11179,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchStackRoutingInterface(ctx context.
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) UpdateNetworkSwitchStackRoutingInterfaceExecute(r SwitchApiUpdateNetworkSwitchStackRoutingInterfaceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) UpdateNetworkSwitchStackRoutingInterfaceExecute(r SwitchAPIUpdateNetworkSwitchStackRoutingInterfaceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -11187,7 +11187,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchStackRoutingInterfaceExecute(r Swi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.UpdateNetworkSwitchStackRoutingInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.UpdateNetworkSwitchStackRoutingInterface")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11271,21 +11271,21 @@ func (a *SwitchApiService) UpdateNetworkSwitchStackRoutingInterfaceExecute(r Swi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest struct {
+type SwitchAPIUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	switchStackId string
 	interfaceId string
 	updateNetworkSwitchStackRoutingInterfaceDhcpRequest *UpdateNetworkSwitchStackRoutingInterfaceDhcpRequest
 }
 
-func (r SwitchApiUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest) UpdateNetworkSwitchStackRoutingInterfaceDhcpRequest(updateNetworkSwitchStackRoutingInterfaceDhcpRequest UpdateNetworkSwitchStackRoutingInterfaceDhcpRequest) SwitchApiUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest {
+func (r SwitchAPIUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest) UpdateNetworkSwitchStackRoutingInterfaceDhcpRequest(updateNetworkSwitchStackRoutingInterfaceDhcpRequest UpdateNetworkSwitchStackRoutingInterfaceDhcpRequest) SwitchAPIUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest {
 	r.updateNetworkSwitchStackRoutingInterfaceDhcpRequest = &updateNetworkSwitchStackRoutingInterfaceDhcpRequest
 	return r
 }
 
-func (r SwitchApiUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchStackRoutingInterfaceDhcpExecute(r)
 }
 
@@ -11298,10 +11298,10 @@ Update a layer 3 interface DHCP configuration for a switch stack
  @param networkId Network ID
  @param switchStackId Switch stack ID
  @param interfaceId Interface ID
- @return SwitchApiUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest
+ @return SwitchAPIUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest
 */
-func (a *SwitchApiService) UpdateNetworkSwitchStackRoutingInterfaceDhcp(ctx context.Context, networkId string, switchStackId string, interfaceId string) SwitchApiUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest {
-	return SwitchApiUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest{
+func (a *SwitchAPIService) UpdateNetworkSwitchStackRoutingInterfaceDhcp(ctx context.Context, networkId string, switchStackId string, interfaceId string) SwitchAPIUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest {
+	return SwitchAPIUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -11312,7 +11312,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchStackRoutingInterfaceDhcp(ctx cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) UpdateNetworkSwitchStackRoutingInterfaceDhcpExecute(r SwitchApiUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) UpdateNetworkSwitchStackRoutingInterfaceDhcpExecute(r SwitchAPIUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -11320,7 +11320,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchStackRoutingInterfaceDhcpExecute(r
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.UpdateNetworkSwitchStackRoutingInterfaceDhcp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.UpdateNetworkSwitchStackRoutingInterfaceDhcp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11404,21 +11404,21 @@ func (a *SwitchApiService) UpdateNetworkSwitchStackRoutingInterfaceDhcpExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiUpdateNetworkSwitchStackRoutingStaticRouteRequest struct {
+type SwitchAPIUpdateNetworkSwitchStackRoutingStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	switchStackId string
 	staticRouteId string
 	updateDeviceSwitchRoutingStaticRouteRequest *UpdateDeviceSwitchRoutingStaticRouteRequest
 }
 
-func (r SwitchApiUpdateNetworkSwitchStackRoutingStaticRouteRequest) UpdateDeviceSwitchRoutingStaticRouteRequest(updateDeviceSwitchRoutingStaticRouteRequest UpdateDeviceSwitchRoutingStaticRouteRequest) SwitchApiUpdateNetworkSwitchStackRoutingStaticRouteRequest {
+func (r SwitchAPIUpdateNetworkSwitchStackRoutingStaticRouteRequest) UpdateDeviceSwitchRoutingStaticRouteRequest(updateDeviceSwitchRoutingStaticRouteRequest UpdateDeviceSwitchRoutingStaticRouteRequest) SwitchAPIUpdateNetworkSwitchStackRoutingStaticRouteRequest {
 	r.updateDeviceSwitchRoutingStaticRouteRequest = &updateDeviceSwitchRoutingStaticRouteRequest
 	return r
 }
 
-func (r SwitchApiUpdateNetworkSwitchStackRoutingStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIUpdateNetworkSwitchStackRoutingStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchStackRoutingStaticRouteExecute(r)
 }
 
@@ -11431,10 +11431,10 @@ Update a layer 3 static route for a switch stack
  @param networkId Network ID
  @param switchStackId Switch stack ID
  @param staticRouteId Static route ID
- @return SwitchApiUpdateNetworkSwitchStackRoutingStaticRouteRequest
+ @return SwitchAPIUpdateNetworkSwitchStackRoutingStaticRouteRequest
 */
-func (a *SwitchApiService) UpdateNetworkSwitchStackRoutingStaticRoute(ctx context.Context, networkId string, switchStackId string, staticRouteId string) SwitchApiUpdateNetworkSwitchStackRoutingStaticRouteRequest {
-	return SwitchApiUpdateNetworkSwitchStackRoutingStaticRouteRequest{
+func (a *SwitchAPIService) UpdateNetworkSwitchStackRoutingStaticRoute(ctx context.Context, networkId string, switchStackId string, staticRouteId string) SwitchAPIUpdateNetworkSwitchStackRoutingStaticRouteRequest {
+	return SwitchAPIUpdateNetworkSwitchStackRoutingStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -11445,7 +11445,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchStackRoutingStaticRoute(ctx contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) UpdateNetworkSwitchStackRoutingStaticRouteExecute(r SwitchApiUpdateNetworkSwitchStackRoutingStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) UpdateNetworkSwitchStackRoutingStaticRouteExecute(r SwitchAPIUpdateNetworkSwitchStackRoutingStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -11453,7 +11453,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchStackRoutingStaticRouteExecute(r S
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.UpdateNetworkSwitchStackRoutingStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.UpdateNetworkSwitchStackRoutingStaticRoute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11537,19 +11537,19 @@ func (a *SwitchApiService) UpdateNetworkSwitchStackRoutingStaticRouteExecute(r S
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiUpdateNetworkSwitchStormControlRequest struct {
+type SwitchAPIUpdateNetworkSwitchStormControlRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	updateNetworkSwitchStormControlRequest *UpdateNetworkSwitchStormControlRequest
 }
 
-func (r SwitchApiUpdateNetworkSwitchStormControlRequest) UpdateNetworkSwitchStormControlRequest(updateNetworkSwitchStormControlRequest UpdateNetworkSwitchStormControlRequest) SwitchApiUpdateNetworkSwitchStormControlRequest {
+func (r SwitchAPIUpdateNetworkSwitchStormControlRequest) UpdateNetworkSwitchStormControlRequest(updateNetworkSwitchStormControlRequest UpdateNetworkSwitchStormControlRequest) SwitchAPIUpdateNetworkSwitchStormControlRequest {
 	r.updateNetworkSwitchStormControlRequest = &updateNetworkSwitchStormControlRequest
 	return r
 }
 
-func (r SwitchApiUpdateNetworkSwitchStormControlRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIUpdateNetworkSwitchStormControlRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchStormControlExecute(r)
 }
 
@@ -11560,10 +11560,10 @@ Update the storm control configuration for a switch network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiUpdateNetworkSwitchStormControlRequest
+ @return SwitchAPIUpdateNetworkSwitchStormControlRequest
 */
-func (a *SwitchApiService) UpdateNetworkSwitchStormControl(ctx context.Context, networkId string) SwitchApiUpdateNetworkSwitchStormControlRequest {
-	return SwitchApiUpdateNetworkSwitchStormControlRequest{
+func (a *SwitchAPIService) UpdateNetworkSwitchStormControl(ctx context.Context, networkId string) SwitchAPIUpdateNetworkSwitchStormControlRequest {
+	return SwitchAPIUpdateNetworkSwitchStormControlRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -11572,7 +11572,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchStormControl(ctx context.Context, 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) UpdateNetworkSwitchStormControlExecute(r SwitchApiUpdateNetworkSwitchStormControlRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) UpdateNetworkSwitchStormControlExecute(r SwitchAPIUpdateNetworkSwitchStormControlRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -11580,7 +11580,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchStormControlExecute(r SwitchApiUpd
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.UpdateNetworkSwitchStormControl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.UpdateNetworkSwitchStormControl")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11662,19 +11662,19 @@ func (a *SwitchApiService) UpdateNetworkSwitchStormControlExecute(r SwitchApiUpd
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiUpdateNetworkSwitchStpRequest struct {
+type SwitchAPIUpdateNetworkSwitchStpRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	networkId string
 	updateNetworkSwitchStpRequest *UpdateNetworkSwitchStpRequest
 }
 
-func (r SwitchApiUpdateNetworkSwitchStpRequest) UpdateNetworkSwitchStpRequest(updateNetworkSwitchStpRequest UpdateNetworkSwitchStpRequest) SwitchApiUpdateNetworkSwitchStpRequest {
+func (r SwitchAPIUpdateNetworkSwitchStpRequest) UpdateNetworkSwitchStpRequest(updateNetworkSwitchStpRequest UpdateNetworkSwitchStpRequest) SwitchAPIUpdateNetworkSwitchStpRequest {
 	r.updateNetworkSwitchStpRequest = &updateNetworkSwitchStpRequest
 	return r
 }
 
-func (r SwitchApiUpdateNetworkSwitchStpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SwitchAPIUpdateNetworkSwitchStpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchStpExecute(r)
 }
 
@@ -11685,10 +11685,10 @@ Updates STP settings
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SwitchApiUpdateNetworkSwitchStpRequest
+ @return SwitchAPIUpdateNetworkSwitchStpRequest
 */
-func (a *SwitchApiService) UpdateNetworkSwitchStp(ctx context.Context, networkId string) SwitchApiUpdateNetworkSwitchStpRequest {
-	return SwitchApiUpdateNetworkSwitchStpRequest{
+func (a *SwitchAPIService) UpdateNetworkSwitchStp(ctx context.Context, networkId string) SwitchAPIUpdateNetworkSwitchStpRequest {
+	return SwitchAPIUpdateNetworkSwitchStpRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -11697,7 +11697,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchStp(ctx context.Context, networkId
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SwitchApiService) UpdateNetworkSwitchStpExecute(r SwitchApiUpdateNetworkSwitchStpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SwitchAPIService) UpdateNetworkSwitchStpExecute(r SwitchAPIUpdateNetworkSwitchStpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -11705,7 +11705,7 @@ func (a *SwitchApiService) UpdateNetworkSwitchStpExecute(r SwitchApiUpdateNetwor
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.UpdateNetworkSwitchStp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.UpdateNetworkSwitchStp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11787,9 +11787,9 @@ func (a *SwitchApiService) UpdateNetworkSwitchStpExecute(r SwitchApiUpdateNetwor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SwitchApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest struct {
+type SwitchAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest struct {
 	ctx context.Context
-	ApiService *SwitchApiService
+	ApiService *SwitchAPIService
 	organizationId string
 	configTemplateId string
 	profileId string
@@ -11797,12 +11797,12 @@ type SwitchApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest struct {
 	updateOrganizationConfigTemplateSwitchProfilePortRequest *UpdateOrganizationConfigTemplateSwitchProfilePortRequest
 }
 
-func (r SwitchApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest) UpdateOrganizationConfigTemplateSwitchProfilePortRequest(updateOrganizationConfigTemplateSwitchProfilePortRequest UpdateOrganizationConfigTemplateSwitchProfilePortRequest) SwitchApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest {
+func (r SwitchAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest) UpdateOrganizationConfigTemplateSwitchProfilePortRequest(updateOrganizationConfigTemplateSwitchProfilePortRequest UpdateOrganizationConfigTemplateSwitchProfilePortRequest) SwitchAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest {
 	r.updateOrganizationConfigTemplateSwitchProfilePortRequest = &updateOrganizationConfigTemplateSwitchProfilePortRequest
 	return r
 }
 
-func (r SwitchApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest) Execute() (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
+func (r SwitchAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest) Execute() (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationConfigTemplateSwitchProfilePortExecute(r)
 }
 
@@ -11816,10 +11816,10 @@ Update a switch template port
  @param configTemplateId Config template ID
  @param profileId Profile ID
  @param portId Port ID
- @return SwitchApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest
+ @return SwitchAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest
 */
-func (a *SwitchApiService) UpdateOrganizationConfigTemplateSwitchProfilePort(ctx context.Context, organizationId string, configTemplateId string, profileId string, portId string) SwitchApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest {
-	return SwitchApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest{
+func (a *SwitchAPIService) UpdateOrganizationConfigTemplateSwitchProfilePort(ctx context.Context, organizationId string, configTemplateId string, profileId string, portId string) SwitchAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest {
+	return SwitchAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -11831,7 +11831,7 @@ func (a *SwitchApiService) UpdateOrganizationConfigTemplateSwitchProfilePort(ctx
 
 // Execute executes the request
 //  @return GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner
-func (a *SwitchApiService) UpdateOrganizationConfigTemplateSwitchProfilePortExecute(r SwitchApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest) (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
+func (a *SwitchAPIService) UpdateOrganizationConfigTemplateSwitchProfilePortExecute(r SwitchAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest) (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -11839,7 +11839,7 @@ func (a *SwitchApiService) UpdateOrganizationConfigTemplateSwitchProfilePortExec
 		localVarReturnValue  *GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchApiService.UpdateOrganizationConfigTemplateSwitchProfilePort")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchAPIService.UpdateOrganizationConfigTemplateSwitchProfilePort")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

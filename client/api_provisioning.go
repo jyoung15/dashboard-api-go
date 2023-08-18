@@ -21,12 +21,12 @@ import (
 )
 
 
-// ProvisioningApiService ProvisioningApi service
-type ProvisioningApiService service
+// ProvisioningAPIService ProvisioningAPI service
+type ProvisioningAPIService service
 
-type ProvisioningApiGetOrganizationDevicesProvisioningStatusesRequest struct {
+type ProvisioningAPIGetOrganizationDevicesProvisioningStatusesRequest struct {
 	ctx context.Context
-	ApiService *ProvisioningApiService
+	ApiService *ProvisioningAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -40,60 +40,60 @@ type ProvisioningApiGetOrganizationDevicesProvisioningStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r ProvisioningApiGetOrganizationDevicesProvisioningStatusesRequest) PerPage(perPage int32) ProvisioningApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r ProvisioningAPIGetOrganizationDevicesProvisioningStatusesRequest) PerPage(perPage int32) ProvisioningAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ProvisioningApiGetOrganizationDevicesProvisioningStatusesRequest) StartingAfter(startingAfter string) ProvisioningApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r ProvisioningAPIGetOrganizationDevicesProvisioningStatusesRequest) StartingAfter(startingAfter string) ProvisioningAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ProvisioningApiGetOrganizationDevicesProvisioningStatusesRequest) EndingBefore(endingBefore string) ProvisioningApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r ProvisioningAPIGetOrganizationDevicesProvisioningStatusesRequest) EndingBefore(endingBefore string) ProvisioningAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter device by network ID. This filter uses multiple exact matches.
-func (r ProvisioningApiGetOrganizationDevicesProvisioningStatusesRequest) NetworkIds(networkIds []string) ProvisioningApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r ProvisioningAPIGetOrganizationDevicesProvisioningStatusesRequest) NetworkIds(networkIds []string) ProvisioningAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter device by device product types. This filter uses multiple exact matches.
-func (r ProvisioningApiGetOrganizationDevicesProvisioningStatusesRequest) ProductTypes(productTypes []string) ProvisioningApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r ProvisioningAPIGetOrganizationDevicesProvisioningStatusesRequest) ProductTypes(productTypes []string) ProvisioningAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter device by device serial numbers. This filter uses multiple exact matches.
-func (r ProvisioningApiGetOrganizationDevicesProvisioningStatusesRequest) Serials(serials []string) ProvisioningApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r ProvisioningAPIGetOrganizationDevicesProvisioningStatusesRequest) Serials(serials []string) ProvisioningAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.serials = &serials
 	return r
 }
 
 // An optional parameter to filter devices by the provisioning status. Accepted statuses: unprovisioned, incomplete, complete.
-func (r ProvisioningApiGetOrganizationDevicesProvisioningStatusesRequest) Status(status string) ProvisioningApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r ProvisioningAPIGetOrganizationDevicesProvisioningStatusesRequest) Status(status string) ProvisioningAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.status = &status
 	return r
 }
 
 // An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below). This filter uses multiple exact matches.
-func (r ProvisioningApiGetOrganizationDevicesProvisioningStatusesRequest) Tags(tags []string) ProvisioningApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r ProvisioningAPIGetOrganizationDevicesProvisioningStatusesRequest) Tags(tags []string) ProvisioningAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.tags = &tags
 	return r
 }
 
 // An optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return devices which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r ProvisioningApiGetOrganizationDevicesProvisioningStatusesRequest) TagsFilterType(tagsFilterType string) ProvisioningApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r ProvisioningAPIGetOrganizationDevicesProvisioningStatusesRequest) TagsFilterType(tagsFilterType string) ProvisioningAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
-func (r ProvisioningApiGetOrganizationDevicesProvisioningStatusesRequest) Execute() ([]GetOrganizationDevicesProvisioningStatuses200ResponseInner, *http.Response, error) {
+func (r ProvisioningAPIGetOrganizationDevicesProvisioningStatusesRequest) Execute() ([]GetOrganizationDevicesProvisioningStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesProvisioningStatusesExecute(r)
 }
 
@@ -104,10 +104,10 @@ List the provisioning statuses information for devices in an organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ProvisioningApiGetOrganizationDevicesProvisioningStatusesRequest
+ @return ProvisioningAPIGetOrganizationDevicesProvisioningStatusesRequest
 */
-func (a *ProvisioningApiService) GetOrganizationDevicesProvisioningStatuses(ctx context.Context, organizationId string) ProvisioningApiGetOrganizationDevicesProvisioningStatusesRequest {
-	return ProvisioningApiGetOrganizationDevicesProvisioningStatusesRequest{
+func (a *ProvisioningAPIService) GetOrganizationDevicesProvisioningStatuses(ctx context.Context, organizationId string) ProvisioningAPIGetOrganizationDevicesProvisioningStatusesRequest {
+	return ProvisioningAPIGetOrganizationDevicesProvisioningStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -116,7 +116,7 @@ func (a *ProvisioningApiService) GetOrganizationDevicesProvisioningStatuses(ctx 
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesProvisioningStatuses200ResponseInner
-func (a *ProvisioningApiService) GetOrganizationDevicesProvisioningStatusesExecute(r ProvisioningApiGetOrganizationDevicesProvisioningStatusesRequest) ([]GetOrganizationDevicesProvisioningStatuses200ResponseInner, *http.Response, error) {
+func (a *ProvisioningAPIService) GetOrganizationDevicesProvisioningStatusesExecute(r ProvisioningAPIGetOrganizationDevicesProvisioningStatusesRequest) ([]GetOrganizationDevicesProvisioningStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -124,7 +124,7 @@ func (a *ProvisioningApiService) GetOrganizationDevicesProvisioningStatusesExecu
 		localVarReturnValue  []GetOrganizationDevicesProvisioningStatuses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProvisioningApiService.GetOrganizationDevicesProvisioningStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProvisioningAPIService.GetOrganizationDevicesProvisioningStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -20,12 +20,12 @@ import (
 )
 
 
-// ZonesApiService ZonesApi service
-type ZonesApiService service
+// ZonesAPIService ZonesAPI service
+type ZonesAPIService service
 
-type ZonesApiGetDeviceCameraAnalyticsZoneHistoryRequest struct {
+type ZonesAPIGetDeviceCameraAnalyticsZoneHistoryRequest struct {
 	ctx context.Context
-	ApiService *ZonesApiService
+	ApiService *ZonesAPIService
 	serial string
 	zoneId string
 	t0 *string
@@ -36,36 +36,36 @@ type ZonesApiGetDeviceCameraAnalyticsZoneHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
-func (r ZonesApiGetDeviceCameraAnalyticsZoneHistoryRequest) T0(t0 string) ZonesApiGetDeviceCameraAnalyticsZoneHistoryRequest {
+func (r ZonesAPIGetDeviceCameraAnalyticsZoneHistoryRequest) T0(t0 string) ZonesAPIGetDeviceCameraAnalyticsZoneHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 14 hours after t0.
-func (r ZonesApiGetDeviceCameraAnalyticsZoneHistoryRequest) T1(t1 string) ZonesApiGetDeviceCameraAnalyticsZoneHistoryRequest {
+func (r ZonesAPIGetDeviceCameraAnalyticsZoneHistoryRequest) T1(t1 string) ZonesAPIGetDeviceCameraAnalyticsZoneHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 14 hours. The default is 1 hour.
-func (r ZonesApiGetDeviceCameraAnalyticsZoneHistoryRequest) Timespan(timespan float32) ZonesApiGetDeviceCameraAnalyticsZoneHistoryRequest {
+func (r ZonesAPIGetDeviceCameraAnalyticsZoneHistoryRequest) Timespan(timespan float32) ZonesAPIGetDeviceCameraAnalyticsZoneHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 60. The default is 60.
-func (r ZonesApiGetDeviceCameraAnalyticsZoneHistoryRequest) Resolution(resolution int32) ZonesApiGetDeviceCameraAnalyticsZoneHistoryRequest {
+func (r ZonesAPIGetDeviceCameraAnalyticsZoneHistoryRequest) Resolution(resolution int32) ZonesAPIGetDeviceCameraAnalyticsZoneHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // [optional] The object type for which analytics will be retrieved. The default object type is person. The available types are [person, vehicle].
-func (r ZonesApiGetDeviceCameraAnalyticsZoneHistoryRequest) ObjectType(objectType string) ZonesApiGetDeviceCameraAnalyticsZoneHistoryRequest {
+func (r ZonesAPIGetDeviceCameraAnalyticsZoneHistoryRequest) ObjectType(objectType string) ZonesAPIGetDeviceCameraAnalyticsZoneHistoryRequest {
 	r.objectType = &objectType
 	return r
 }
 
-func (r ZonesApiGetDeviceCameraAnalyticsZoneHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ZonesAPIGetDeviceCameraAnalyticsZoneHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraAnalyticsZoneHistoryExecute(r)
 }
 
@@ -77,10 +77,10 @@ Return historical records for analytic zones
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param zoneId Zone ID
- @return ZonesApiGetDeviceCameraAnalyticsZoneHistoryRequest
+ @return ZonesAPIGetDeviceCameraAnalyticsZoneHistoryRequest
 */
-func (a *ZonesApiService) GetDeviceCameraAnalyticsZoneHistory(ctx context.Context, serial string, zoneId string) ZonesApiGetDeviceCameraAnalyticsZoneHistoryRequest {
-	return ZonesApiGetDeviceCameraAnalyticsZoneHistoryRequest{
+func (a *ZonesAPIService) GetDeviceCameraAnalyticsZoneHistory(ctx context.Context, serial string, zoneId string) ZonesAPIGetDeviceCameraAnalyticsZoneHistoryRequest {
+	return ZonesAPIGetDeviceCameraAnalyticsZoneHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -90,7 +90,7 @@ func (a *ZonesApiService) GetDeviceCameraAnalyticsZoneHistory(ctx context.Contex
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ZonesApiService) GetDeviceCameraAnalyticsZoneHistoryExecute(r ZonesApiGetDeviceCameraAnalyticsZoneHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ZonesAPIService) GetDeviceCameraAnalyticsZoneHistoryExecute(r ZonesAPIGetDeviceCameraAnalyticsZoneHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -98,7 +98,7 @@ func (a *ZonesApiService) GetDeviceCameraAnalyticsZoneHistoryExecute(r ZonesApiG
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ZonesApiService.GetDeviceCameraAnalyticsZoneHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ZonesAPIService.GetDeviceCameraAnalyticsZoneHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -194,13 +194,13 @@ func (a *ZonesApiService) GetDeviceCameraAnalyticsZoneHistoryExecute(r ZonesApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ZonesApiGetDeviceCameraAnalyticsZonesRequest struct {
+type ZonesAPIGetDeviceCameraAnalyticsZonesRequest struct {
 	ctx context.Context
-	ApiService *ZonesApiService
+	ApiService *ZonesAPIService
 	serial string
 }
 
-func (r ZonesApiGetDeviceCameraAnalyticsZonesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ZonesAPIGetDeviceCameraAnalyticsZonesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraAnalyticsZonesExecute(r)
 }
 
@@ -211,10 +211,10 @@ Returns all configured analytic zones for this camera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return ZonesApiGetDeviceCameraAnalyticsZonesRequest
+ @return ZonesAPIGetDeviceCameraAnalyticsZonesRequest
 */
-func (a *ZonesApiService) GetDeviceCameraAnalyticsZones(ctx context.Context, serial string) ZonesApiGetDeviceCameraAnalyticsZonesRequest {
-	return ZonesApiGetDeviceCameraAnalyticsZonesRequest{
+func (a *ZonesAPIService) GetDeviceCameraAnalyticsZones(ctx context.Context, serial string) ZonesAPIGetDeviceCameraAnalyticsZonesRequest {
+	return ZonesAPIGetDeviceCameraAnalyticsZonesRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -223,7 +223,7 @@ func (a *ZonesApiService) GetDeviceCameraAnalyticsZones(ctx context.Context, ser
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ZonesApiService) GetDeviceCameraAnalyticsZonesExecute(r ZonesApiGetDeviceCameraAnalyticsZonesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ZonesAPIService) GetDeviceCameraAnalyticsZonesExecute(r ZonesAPIGetDeviceCameraAnalyticsZonesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -231,7 +231,7 @@ func (a *ZonesApiService) GetDeviceCameraAnalyticsZonesExecute(r ZonesApiGetDevi
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ZonesApiService.GetDeviceCameraAnalyticsZones")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ZonesAPIService.GetDeviceCameraAnalyticsZones")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

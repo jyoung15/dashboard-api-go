@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing StatusApiService
+Testing StatusAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_StatusApiService(t *testing.T) {
+func Test_client_StatusAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test StatusApiService GetDeviceWirelessStatus", func(t *testing.T) {
+	t.Run("Test StatusAPIService GetDeviceWirelessStatus", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.StatusApi.GetDeviceWirelessStatus(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.StatusAPI.GetDeviceWirelessStatus(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -20,16 +20,16 @@ import (
 )
 
 
-// AnalyticsApiService AnalyticsApi service
-type AnalyticsApiService service
+// AnalyticsAPIService AnalyticsAPI service
+type AnalyticsAPIService service
 
-type AnalyticsApiGetDeviceCameraAnalyticsLiveRequest struct {
+type AnalyticsAPIGetDeviceCameraAnalyticsLiveRequest struct {
 	ctx context.Context
-	ApiService *AnalyticsApiService
+	ApiService *AnalyticsAPIService
 	serial string
 }
 
-func (r AnalyticsApiGetDeviceCameraAnalyticsLiveRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r AnalyticsAPIGetDeviceCameraAnalyticsLiveRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraAnalyticsLiveExecute(r)
 }
 
@@ -40,10 +40,10 @@ Returns live state from camera of analytics zones
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return AnalyticsApiGetDeviceCameraAnalyticsLiveRequest
+ @return AnalyticsAPIGetDeviceCameraAnalyticsLiveRequest
 */
-func (a *AnalyticsApiService) GetDeviceCameraAnalyticsLive(ctx context.Context, serial string) AnalyticsApiGetDeviceCameraAnalyticsLiveRequest {
-	return AnalyticsApiGetDeviceCameraAnalyticsLiveRequest{
+func (a *AnalyticsAPIService) GetDeviceCameraAnalyticsLive(ctx context.Context, serial string) AnalyticsAPIGetDeviceCameraAnalyticsLiveRequest {
+	return AnalyticsAPIGetDeviceCameraAnalyticsLiveRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -52,7 +52,7 @@ func (a *AnalyticsApiService) GetDeviceCameraAnalyticsLive(ctx context.Context, 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *AnalyticsApiService) GetDeviceCameraAnalyticsLiveExecute(r AnalyticsApiGetDeviceCameraAnalyticsLiveRequest) (map[string]interface{}, *http.Response, error) {
+func (a *AnalyticsAPIService) GetDeviceCameraAnalyticsLiveExecute(r AnalyticsAPIGetDeviceCameraAnalyticsLiveRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *AnalyticsApiService) GetDeviceCameraAnalyticsLiveExecute(r AnalyticsApi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AnalyticsApiService.GetDeviceCameraAnalyticsLive")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AnalyticsAPIService.GetDeviceCameraAnalyticsLive")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,9 +140,9 @@ func (a *AnalyticsApiService) GetDeviceCameraAnalyticsLiveExecute(r AnalyticsApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AnalyticsApiGetDeviceCameraAnalyticsOverviewRequest struct {
+type AnalyticsAPIGetDeviceCameraAnalyticsOverviewRequest struct {
 	ctx context.Context
-	ApiService *AnalyticsApiService
+	ApiService *AnalyticsAPIService
 	serial string
 	t0 *string
 	t1 *string
@@ -151,30 +151,30 @@ type AnalyticsApiGetDeviceCameraAnalyticsOverviewRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
-func (r AnalyticsApiGetDeviceCameraAnalyticsOverviewRequest) T0(t0 string) AnalyticsApiGetDeviceCameraAnalyticsOverviewRequest {
+func (r AnalyticsAPIGetDeviceCameraAnalyticsOverviewRequest) T0(t0 string) AnalyticsAPIGetDeviceCameraAnalyticsOverviewRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r AnalyticsApiGetDeviceCameraAnalyticsOverviewRequest) T1(t1 string) AnalyticsApiGetDeviceCameraAnalyticsOverviewRequest {
+func (r AnalyticsAPIGetDeviceCameraAnalyticsOverviewRequest) T1(t1 string) AnalyticsAPIGetDeviceCameraAnalyticsOverviewRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. The default is 1 hour.
-func (r AnalyticsApiGetDeviceCameraAnalyticsOverviewRequest) Timespan(timespan float32) AnalyticsApiGetDeviceCameraAnalyticsOverviewRequest {
+func (r AnalyticsAPIGetDeviceCameraAnalyticsOverviewRequest) Timespan(timespan float32) AnalyticsAPIGetDeviceCameraAnalyticsOverviewRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // [optional] The object type for which analytics will be retrieved. The default object type is person. The available types are [person, vehicle].
-func (r AnalyticsApiGetDeviceCameraAnalyticsOverviewRequest) ObjectType(objectType string) AnalyticsApiGetDeviceCameraAnalyticsOverviewRequest {
+func (r AnalyticsAPIGetDeviceCameraAnalyticsOverviewRequest) ObjectType(objectType string) AnalyticsAPIGetDeviceCameraAnalyticsOverviewRequest {
 	r.objectType = &objectType
 	return r
 }
 
-func (r AnalyticsApiGetDeviceCameraAnalyticsOverviewRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r AnalyticsAPIGetDeviceCameraAnalyticsOverviewRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraAnalyticsOverviewExecute(r)
 }
 
@@ -185,10 +185,10 @@ Returns an overview of aggregate analytics data for a timespan
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return AnalyticsApiGetDeviceCameraAnalyticsOverviewRequest
+ @return AnalyticsAPIGetDeviceCameraAnalyticsOverviewRequest
 */
-func (a *AnalyticsApiService) GetDeviceCameraAnalyticsOverview(ctx context.Context, serial string) AnalyticsApiGetDeviceCameraAnalyticsOverviewRequest {
-	return AnalyticsApiGetDeviceCameraAnalyticsOverviewRequest{
+func (a *AnalyticsAPIService) GetDeviceCameraAnalyticsOverview(ctx context.Context, serial string) AnalyticsAPIGetDeviceCameraAnalyticsOverviewRequest {
+	return AnalyticsAPIGetDeviceCameraAnalyticsOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -197,7 +197,7 @@ func (a *AnalyticsApiService) GetDeviceCameraAnalyticsOverview(ctx context.Conte
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *AnalyticsApiService) GetDeviceCameraAnalyticsOverviewExecute(r AnalyticsApiGetDeviceCameraAnalyticsOverviewRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *AnalyticsAPIService) GetDeviceCameraAnalyticsOverviewExecute(r AnalyticsAPIGetDeviceCameraAnalyticsOverviewRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -205,7 +205,7 @@ func (a *AnalyticsApiService) GetDeviceCameraAnalyticsOverviewExecute(r Analytic
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AnalyticsApiService.GetDeviceCameraAnalyticsOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AnalyticsAPIService.GetDeviceCameraAnalyticsOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -297,20 +297,20 @@ func (a *AnalyticsApiService) GetDeviceCameraAnalyticsOverviewExecute(r Analytic
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AnalyticsApiGetDeviceCameraAnalyticsRecentRequest struct {
+type AnalyticsAPIGetDeviceCameraAnalyticsRecentRequest struct {
 	ctx context.Context
-	ApiService *AnalyticsApiService
+	ApiService *AnalyticsAPIService
 	serial string
 	objectType *string
 }
 
 // [optional] The object type for which analytics will be retrieved. The default object type is person. The available types are [person, vehicle].
-func (r AnalyticsApiGetDeviceCameraAnalyticsRecentRequest) ObjectType(objectType string) AnalyticsApiGetDeviceCameraAnalyticsRecentRequest {
+func (r AnalyticsAPIGetDeviceCameraAnalyticsRecentRequest) ObjectType(objectType string) AnalyticsAPIGetDeviceCameraAnalyticsRecentRequest {
 	r.objectType = &objectType
 	return r
 }
 
-func (r AnalyticsApiGetDeviceCameraAnalyticsRecentRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r AnalyticsAPIGetDeviceCameraAnalyticsRecentRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraAnalyticsRecentExecute(r)
 }
 
@@ -321,10 +321,10 @@ Returns most recent record for analytics zones
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return AnalyticsApiGetDeviceCameraAnalyticsRecentRequest
+ @return AnalyticsAPIGetDeviceCameraAnalyticsRecentRequest
 */
-func (a *AnalyticsApiService) GetDeviceCameraAnalyticsRecent(ctx context.Context, serial string) AnalyticsApiGetDeviceCameraAnalyticsRecentRequest {
-	return AnalyticsApiGetDeviceCameraAnalyticsRecentRequest{
+func (a *AnalyticsAPIService) GetDeviceCameraAnalyticsRecent(ctx context.Context, serial string) AnalyticsAPIGetDeviceCameraAnalyticsRecentRequest {
+	return AnalyticsAPIGetDeviceCameraAnalyticsRecentRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -333,7 +333,7 @@ func (a *AnalyticsApiService) GetDeviceCameraAnalyticsRecent(ctx context.Context
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *AnalyticsApiService) GetDeviceCameraAnalyticsRecentExecute(r AnalyticsApiGetDeviceCameraAnalyticsRecentRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *AnalyticsAPIService) GetDeviceCameraAnalyticsRecentExecute(r AnalyticsAPIGetDeviceCameraAnalyticsRecentRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -341,7 +341,7 @@ func (a *AnalyticsApiService) GetDeviceCameraAnalyticsRecentExecute(r AnalyticsA
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AnalyticsApiService.GetDeviceCameraAnalyticsRecent")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AnalyticsAPIService.GetDeviceCameraAnalyticsRecent")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -424,9 +424,9 @@ func (a *AnalyticsApiService) GetDeviceCameraAnalyticsRecentExecute(r AnalyticsA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AnalyticsApiGetDeviceCameraAnalyticsZoneHistoryRequest struct {
+type AnalyticsAPIGetDeviceCameraAnalyticsZoneHistoryRequest struct {
 	ctx context.Context
-	ApiService *AnalyticsApiService
+	ApiService *AnalyticsAPIService
 	serial string
 	zoneId string
 	t0 *string
@@ -437,36 +437,36 @@ type AnalyticsApiGetDeviceCameraAnalyticsZoneHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
-func (r AnalyticsApiGetDeviceCameraAnalyticsZoneHistoryRequest) T0(t0 string) AnalyticsApiGetDeviceCameraAnalyticsZoneHistoryRequest {
+func (r AnalyticsAPIGetDeviceCameraAnalyticsZoneHistoryRequest) T0(t0 string) AnalyticsAPIGetDeviceCameraAnalyticsZoneHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 14 hours after t0.
-func (r AnalyticsApiGetDeviceCameraAnalyticsZoneHistoryRequest) T1(t1 string) AnalyticsApiGetDeviceCameraAnalyticsZoneHistoryRequest {
+func (r AnalyticsAPIGetDeviceCameraAnalyticsZoneHistoryRequest) T1(t1 string) AnalyticsAPIGetDeviceCameraAnalyticsZoneHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 14 hours. The default is 1 hour.
-func (r AnalyticsApiGetDeviceCameraAnalyticsZoneHistoryRequest) Timespan(timespan float32) AnalyticsApiGetDeviceCameraAnalyticsZoneHistoryRequest {
+func (r AnalyticsAPIGetDeviceCameraAnalyticsZoneHistoryRequest) Timespan(timespan float32) AnalyticsAPIGetDeviceCameraAnalyticsZoneHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 60. The default is 60.
-func (r AnalyticsApiGetDeviceCameraAnalyticsZoneHistoryRequest) Resolution(resolution int32) AnalyticsApiGetDeviceCameraAnalyticsZoneHistoryRequest {
+func (r AnalyticsAPIGetDeviceCameraAnalyticsZoneHistoryRequest) Resolution(resolution int32) AnalyticsAPIGetDeviceCameraAnalyticsZoneHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // [optional] The object type for which analytics will be retrieved. The default object type is person. The available types are [person, vehicle].
-func (r AnalyticsApiGetDeviceCameraAnalyticsZoneHistoryRequest) ObjectType(objectType string) AnalyticsApiGetDeviceCameraAnalyticsZoneHistoryRequest {
+func (r AnalyticsAPIGetDeviceCameraAnalyticsZoneHistoryRequest) ObjectType(objectType string) AnalyticsAPIGetDeviceCameraAnalyticsZoneHistoryRequest {
 	r.objectType = &objectType
 	return r
 }
 
-func (r AnalyticsApiGetDeviceCameraAnalyticsZoneHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r AnalyticsAPIGetDeviceCameraAnalyticsZoneHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraAnalyticsZoneHistoryExecute(r)
 }
 
@@ -478,10 +478,10 @@ Return historical records for analytic zones
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param zoneId Zone ID
- @return AnalyticsApiGetDeviceCameraAnalyticsZoneHistoryRequest
+ @return AnalyticsAPIGetDeviceCameraAnalyticsZoneHistoryRequest
 */
-func (a *AnalyticsApiService) GetDeviceCameraAnalyticsZoneHistory(ctx context.Context, serial string, zoneId string) AnalyticsApiGetDeviceCameraAnalyticsZoneHistoryRequest {
-	return AnalyticsApiGetDeviceCameraAnalyticsZoneHistoryRequest{
+func (a *AnalyticsAPIService) GetDeviceCameraAnalyticsZoneHistory(ctx context.Context, serial string, zoneId string) AnalyticsAPIGetDeviceCameraAnalyticsZoneHistoryRequest {
+	return AnalyticsAPIGetDeviceCameraAnalyticsZoneHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -491,7 +491,7 @@ func (a *AnalyticsApiService) GetDeviceCameraAnalyticsZoneHistory(ctx context.Co
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *AnalyticsApiService) GetDeviceCameraAnalyticsZoneHistoryExecute(r AnalyticsApiGetDeviceCameraAnalyticsZoneHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *AnalyticsAPIService) GetDeviceCameraAnalyticsZoneHistoryExecute(r AnalyticsAPIGetDeviceCameraAnalyticsZoneHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -499,7 +499,7 @@ func (a *AnalyticsApiService) GetDeviceCameraAnalyticsZoneHistoryExecute(r Analy
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AnalyticsApiService.GetDeviceCameraAnalyticsZoneHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AnalyticsAPIService.GetDeviceCameraAnalyticsZoneHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -595,13 +595,13 @@ func (a *AnalyticsApiService) GetDeviceCameraAnalyticsZoneHistoryExecute(r Analy
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AnalyticsApiGetDeviceCameraAnalyticsZonesRequest struct {
+type AnalyticsAPIGetDeviceCameraAnalyticsZonesRequest struct {
 	ctx context.Context
-	ApiService *AnalyticsApiService
+	ApiService *AnalyticsAPIService
 	serial string
 }
 
-func (r AnalyticsApiGetDeviceCameraAnalyticsZonesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r AnalyticsAPIGetDeviceCameraAnalyticsZonesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraAnalyticsZonesExecute(r)
 }
 
@@ -612,10 +612,10 @@ Returns all configured analytic zones for this camera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return AnalyticsApiGetDeviceCameraAnalyticsZonesRequest
+ @return AnalyticsAPIGetDeviceCameraAnalyticsZonesRequest
 */
-func (a *AnalyticsApiService) GetDeviceCameraAnalyticsZones(ctx context.Context, serial string) AnalyticsApiGetDeviceCameraAnalyticsZonesRequest {
-	return AnalyticsApiGetDeviceCameraAnalyticsZonesRequest{
+func (a *AnalyticsAPIService) GetDeviceCameraAnalyticsZones(ctx context.Context, serial string) AnalyticsAPIGetDeviceCameraAnalyticsZonesRequest {
+	return AnalyticsAPIGetDeviceCameraAnalyticsZonesRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -624,7 +624,7 @@ func (a *AnalyticsApiService) GetDeviceCameraAnalyticsZones(ctx context.Context,
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *AnalyticsApiService) GetDeviceCameraAnalyticsZonesExecute(r AnalyticsApiGetDeviceCameraAnalyticsZonesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *AnalyticsAPIService) GetDeviceCameraAnalyticsZonesExecute(r AnalyticsAPIGetDeviceCameraAnalyticsZonesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -632,7 +632,7 @@ func (a *AnalyticsApiService) GetDeviceCameraAnalyticsZonesExecute(r AnalyticsAp
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AnalyticsApiService.GetDeviceCameraAnalyticsZones")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AnalyticsAPIService.GetDeviceCameraAnalyticsZones")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

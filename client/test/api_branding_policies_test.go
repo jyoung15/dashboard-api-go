@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing BrandingPoliciesApiService
+Testing BrandingPoliciesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_BrandingPoliciesApiService(t *testing.T) {
+func Test_client_BrandingPoliciesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test BrandingPoliciesApiService CreateOrganizationBrandingPolicy", func(t *testing.T) {
+	t.Run("Test BrandingPoliciesAPIService CreateOrganizationBrandingPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.BrandingPoliciesApi.CreateOrganizationBrandingPolicy(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.BrandingPoliciesAPI.CreateOrganizationBrandingPolicy(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,27 +36,27 @@ func Test_client_BrandingPoliciesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test BrandingPoliciesApiService DeleteOrganizationBrandingPolicy", func(t *testing.T) {
+	t.Run("Test BrandingPoliciesAPIService DeleteOrganizationBrandingPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var brandingPolicyId string
 
-		httpRes, err := apiClient.BrandingPoliciesApi.DeleteOrganizationBrandingPolicy(context.Background(), organizationId, brandingPolicyId).Execute()
+		httpRes, err := apiClient.BrandingPoliciesAPI.DeleteOrganizationBrandingPolicy(context.Background(), organizationId, brandingPolicyId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test BrandingPoliciesApiService GetOrganizationBrandingPolicies", func(t *testing.T) {
+	t.Run("Test BrandingPoliciesAPIService GetOrganizationBrandingPolicies", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.BrandingPoliciesApi.GetOrganizationBrandingPolicies(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.BrandingPoliciesAPI.GetOrganizationBrandingPolicies(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,13 +64,13 @@ func Test_client_BrandingPoliciesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test BrandingPoliciesApiService GetOrganizationBrandingPoliciesPriorities", func(t *testing.T) {
+	t.Run("Test BrandingPoliciesAPIService GetOrganizationBrandingPoliciesPriorities", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.BrandingPoliciesApi.GetOrganizationBrandingPoliciesPriorities(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.BrandingPoliciesAPI.GetOrganizationBrandingPoliciesPriorities(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -78,14 +78,14 @@ func Test_client_BrandingPoliciesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test BrandingPoliciesApiService GetOrganizationBrandingPolicy", func(t *testing.T) {
+	t.Run("Test BrandingPoliciesAPIService GetOrganizationBrandingPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var brandingPolicyId string
 
-		resp, httpRes, err := apiClient.BrandingPoliciesApi.GetOrganizationBrandingPolicy(context.Background(), organizationId, brandingPolicyId).Execute()
+		resp, httpRes, err := apiClient.BrandingPoliciesAPI.GetOrganizationBrandingPolicy(context.Background(), organizationId, brandingPolicyId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -93,13 +93,13 @@ func Test_client_BrandingPoliciesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test BrandingPoliciesApiService UpdateOrganizationBrandingPoliciesPriorities", func(t *testing.T) {
+	t.Run("Test BrandingPoliciesAPIService UpdateOrganizationBrandingPoliciesPriorities", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.BrandingPoliciesApi.UpdateOrganizationBrandingPoliciesPriorities(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.BrandingPoliciesAPI.UpdateOrganizationBrandingPoliciesPriorities(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -107,14 +107,14 @@ func Test_client_BrandingPoliciesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test BrandingPoliciesApiService UpdateOrganizationBrandingPolicy", func(t *testing.T) {
+	t.Run("Test BrandingPoliciesAPIService UpdateOrganizationBrandingPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var brandingPolicyId string
 
-		resp, httpRes, err := apiClient.BrandingPoliciesApi.UpdateOrganizationBrandingPolicy(context.Background(), organizationId, brandingPolicyId).Execute()
+		resp, httpRes, err := apiClient.BrandingPoliciesAPI.UpdateOrganizationBrandingPolicy(context.Background(), organizationId, brandingPolicyId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

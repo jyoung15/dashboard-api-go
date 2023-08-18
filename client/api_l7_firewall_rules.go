@@ -20,16 +20,16 @@ import (
 )
 
 
-// L7FirewallRulesApiService L7FirewallRulesApi service
-type L7FirewallRulesApiService service
+// L7FirewallRulesAPIService L7FirewallRulesAPI service
+type L7FirewallRulesAPIService service
 
-type L7FirewallRulesApiGetNetworkApplianceFirewallL7FirewallRulesRequest struct {
+type L7FirewallRulesAPIGetNetworkApplianceFirewallL7FirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *L7FirewallRulesApiService
+	ApiService *L7FirewallRulesAPIService
 	networkId string
 }
 
-func (r L7FirewallRulesApiGetNetworkApplianceFirewallL7FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r L7FirewallRulesAPIGetNetworkApplianceFirewallL7FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceFirewallL7FirewallRulesExecute(r)
 }
 
@@ -40,10 +40,10 @@ List the MX L7 firewall rules for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return L7FirewallRulesApiGetNetworkApplianceFirewallL7FirewallRulesRequest
+ @return L7FirewallRulesAPIGetNetworkApplianceFirewallL7FirewallRulesRequest
 */
-func (a *L7FirewallRulesApiService) GetNetworkApplianceFirewallL7FirewallRules(ctx context.Context, networkId string) L7FirewallRulesApiGetNetworkApplianceFirewallL7FirewallRulesRequest {
-	return L7FirewallRulesApiGetNetworkApplianceFirewallL7FirewallRulesRequest{
+func (a *L7FirewallRulesAPIService) GetNetworkApplianceFirewallL7FirewallRules(ctx context.Context, networkId string) L7FirewallRulesAPIGetNetworkApplianceFirewallL7FirewallRulesRequest {
+	return L7FirewallRulesAPIGetNetworkApplianceFirewallL7FirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *L7FirewallRulesApiService) GetNetworkApplianceFirewallL7FirewallRules(c
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *L7FirewallRulesApiService) GetNetworkApplianceFirewallL7FirewallRulesExecute(r L7FirewallRulesApiGetNetworkApplianceFirewallL7FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *L7FirewallRulesAPIService) GetNetworkApplianceFirewallL7FirewallRulesExecute(r L7FirewallRulesAPIGetNetworkApplianceFirewallL7FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *L7FirewallRulesApiService) GetNetworkApplianceFirewallL7FirewallRulesEx
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "L7FirewallRulesApiService.GetNetworkApplianceFirewallL7FirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "L7FirewallRulesAPIService.GetNetworkApplianceFirewallL7FirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,13 +140,13 @@ func (a *L7FirewallRulesApiService) GetNetworkApplianceFirewallL7FirewallRulesEx
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type L7FirewallRulesApiGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest struct {
+type L7FirewallRulesAPIGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest struct {
 	ctx context.Context
-	ApiService *L7FirewallRulesApiService
+	ApiService *L7FirewallRulesAPIService
 	networkId string
 }
 
-func (r L7FirewallRulesApiGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest) Execute() (*GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories200Response, *http.Response, error) {
+func (r L7FirewallRulesAPIGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest) Execute() (*GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesExecute(r)
 }
 
@@ -157,10 +157,10 @@ Return the L7 firewall application categories and their associated applications 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return L7FirewallRulesApiGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest
+ @return L7FirewallRulesAPIGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest
 */
-func (a *L7FirewallRulesApiService) GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories(ctx context.Context, networkId string) L7FirewallRulesApiGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest {
-	return L7FirewallRulesApiGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest{
+func (a *L7FirewallRulesAPIService) GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories(ctx context.Context, networkId string) L7FirewallRulesAPIGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest {
+	return L7FirewallRulesAPIGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -169,7 +169,7 @@ func (a *L7FirewallRulesApiService) GetNetworkApplianceFirewallL7FirewallRulesAp
 
 // Execute executes the request
 //  @return GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories200Response
-func (a *L7FirewallRulesApiService) GetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesExecute(r L7FirewallRulesApiGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest) (*GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories200Response, *http.Response, error) {
+func (a *L7FirewallRulesAPIService) GetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesExecute(r L7FirewallRulesAPIGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest) (*GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -177,7 +177,7 @@ func (a *L7FirewallRulesApiService) GetNetworkApplianceFirewallL7FirewallRulesAp
 		localVarReturnValue  *GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "L7FirewallRulesApiService.GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "L7FirewallRulesAPIService.GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -257,14 +257,14 @@ func (a *L7FirewallRulesApiService) GetNetworkApplianceFirewallL7FirewallRulesAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type L7FirewallRulesApiGetNetworkWirelessSsidFirewallL7FirewallRulesRequest struct {
+type L7FirewallRulesAPIGetNetworkWirelessSsidFirewallL7FirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *L7FirewallRulesApiService
+	ApiService *L7FirewallRulesAPIService
 	networkId string
 	number string
 }
 
-func (r L7FirewallRulesApiGetNetworkWirelessSsidFirewallL7FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r L7FirewallRulesAPIGetNetworkWirelessSsidFirewallL7FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidFirewallL7FirewallRulesExecute(r)
 }
 
@@ -276,10 +276,10 @@ Return the L7 firewall rules for an SSID on an MR network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return L7FirewallRulesApiGetNetworkWirelessSsidFirewallL7FirewallRulesRequest
+ @return L7FirewallRulesAPIGetNetworkWirelessSsidFirewallL7FirewallRulesRequest
 */
-func (a *L7FirewallRulesApiService) GetNetworkWirelessSsidFirewallL7FirewallRules(ctx context.Context, networkId string, number string) L7FirewallRulesApiGetNetworkWirelessSsidFirewallL7FirewallRulesRequest {
-	return L7FirewallRulesApiGetNetworkWirelessSsidFirewallL7FirewallRulesRequest{
+func (a *L7FirewallRulesAPIService) GetNetworkWirelessSsidFirewallL7FirewallRules(ctx context.Context, networkId string, number string) L7FirewallRulesAPIGetNetworkWirelessSsidFirewallL7FirewallRulesRequest {
+	return L7FirewallRulesAPIGetNetworkWirelessSsidFirewallL7FirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -289,7 +289,7 @@ func (a *L7FirewallRulesApiService) GetNetworkWirelessSsidFirewallL7FirewallRule
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *L7FirewallRulesApiService) GetNetworkWirelessSsidFirewallL7FirewallRulesExecute(r L7FirewallRulesApiGetNetworkWirelessSsidFirewallL7FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *L7FirewallRulesAPIService) GetNetworkWirelessSsidFirewallL7FirewallRulesExecute(r L7FirewallRulesAPIGetNetworkWirelessSsidFirewallL7FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -297,7 +297,7 @@ func (a *L7FirewallRulesApiService) GetNetworkWirelessSsidFirewallL7FirewallRule
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "L7FirewallRulesApiService.GetNetworkWirelessSsidFirewallL7FirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "L7FirewallRulesAPIService.GetNetworkWirelessSsidFirewallL7FirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -378,19 +378,19 @@ func (a *L7FirewallRulesApiService) GetNetworkWirelessSsidFirewallL7FirewallRule
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type L7FirewallRulesApiUpdateNetworkApplianceFirewallL7FirewallRulesRequest struct {
+type L7FirewallRulesAPIUpdateNetworkApplianceFirewallL7FirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *L7FirewallRulesApiService
+	ApiService *L7FirewallRulesAPIService
 	networkId string
 	updateNetworkApplianceFirewallL7FirewallRulesRequest *UpdateNetworkApplianceFirewallL7FirewallRulesRequest
 }
 
-func (r L7FirewallRulesApiUpdateNetworkApplianceFirewallL7FirewallRulesRequest) UpdateNetworkApplianceFirewallL7FirewallRulesRequest(updateNetworkApplianceFirewallL7FirewallRulesRequest UpdateNetworkApplianceFirewallL7FirewallRulesRequest) L7FirewallRulesApiUpdateNetworkApplianceFirewallL7FirewallRulesRequest {
+func (r L7FirewallRulesAPIUpdateNetworkApplianceFirewallL7FirewallRulesRequest) UpdateNetworkApplianceFirewallL7FirewallRulesRequest(updateNetworkApplianceFirewallL7FirewallRulesRequest UpdateNetworkApplianceFirewallL7FirewallRulesRequest) L7FirewallRulesAPIUpdateNetworkApplianceFirewallL7FirewallRulesRequest {
 	r.updateNetworkApplianceFirewallL7FirewallRulesRequest = &updateNetworkApplianceFirewallL7FirewallRulesRequest
 	return r
 }
 
-func (r L7FirewallRulesApiUpdateNetworkApplianceFirewallL7FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r L7FirewallRulesAPIUpdateNetworkApplianceFirewallL7FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceFirewallL7FirewallRulesExecute(r)
 }
 
@@ -401,10 +401,10 @@ Update the MX L7 firewall rules for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return L7FirewallRulesApiUpdateNetworkApplianceFirewallL7FirewallRulesRequest
+ @return L7FirewallRulesAPIUpdateNetworkApplianceFirewallL7FirewallRulesRequest
 */
-func (a *L7FirewallRulesApiService) UpdateNetworkApplianceFirewallL7FirewallRules(ctx context.Context, networkId string) L7FirewallRulesApiUpdateNetworkApplianceFirewallL7FirewallRulesRequest {
-	return L7FirewallRulesApiUpdateNetworkApplianceFirewallL7FirewallRulesRequest{
+func (a *L7FirewallRulesAPIService) UpdateNetworkApplianceFirewallL7FirewallRules(ctx context.Context, networkId string) L7FirewallRulesAPIUpdateNetworkApplianceFirewallL7FirewallRulesRequest {
+	return L7FirewallRulesAPIUpdateNetworkApplianceFirewallL7FirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -413,7 +413,7 @@ func (a *L7FirewallRulesApiService) UpdateNetworkApplianceFirewallL7FirewallRule
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *L7FirewallRulesApiService) UpdateNetworkApplianceFirewallL7FirewallRulesExecute(r L7FirewallRulesApiUpdateNetworkApplianceFirewallL7FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *L7FirewallRulesAPIService) UpdateNetworkApplianceFirewallL7FirewallRulesExecute(r L7FirewallRulesAPIUpdateNetworkApplianceFirewallL7FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -421,7 +421,7 @@ func (a *L7FirewallRulesApiService) UpdateNetworkApplianceFirewallL7FirewallRule
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "L7FirewallRulesApiService.UpdateNetworkApplianceFirewallL7FirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "L7FirewallRulesAPIService.UpdateNetworkApplianceFirewallL7FirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -503,20 +503,20 @@ func (a *L7FirewallRulesApiService) UpdateNetworkApplianceFirewallL7FirewallRule
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type L7FirewallRulesApiUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest struct {
+type L7FirewallRulesAPIUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *L7FirewallRulesApiService
+	ApiService *L7FirewallRulesAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidFirewallL7FirewallRulesRequest *UpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest
 }
 
-func (r L7FirewallRulesApiUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) UpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest(updateNetworkWirelessSsidFirewallL7FirewallRulesRequest UpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) L7FirewallRulesApiUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest {
+func (r L7FirewallRulesAPIUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) UpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest(updateNetworkWirelessSsidFirewallL7FirewallRulesRequest UpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) L7FirewallRulesAPIUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest {
 	r.updateNetworkWirelessSsidFirewallL7FirewallRulesRequest = &updateNetworkWirelessSsidFirewallL7FirewallRulesRequest
 	return r
 }
 
-func (r L7FirewallRulesApiUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r L7FirewallRulesAPIUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidFirewallL7FirewallRulesExecute(r)
 }
 
@@ -528,10 +528,10 @@ Update the L7 firewall rules of an SSID on an MR network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return L7FirewallRulesApiUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest
+ @return L7FirewallRulesAPIUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest
 */
-func (a *L7FirewallRulesApiService) UpdateNetworkWirelessSsidFirewallL7FirewallRules(ctx context.Context, networkId string, number string) L7FirewallRulesApiUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest {
-	return L7FirewallRulesApiUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest{
+func (a *L7FirewallRulesAPIService) UpdateNetworkWirelessSsidFirewallL7FirewallRules(ctx context.Context, networkId string, number string) L7FirewallRulesAPIUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest {
+	return L7FirewallRulesAPIUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -541,7 +541,7 @@ func (a *L7FirewallRulesApiService) UpdateNetworkWirelessSsidFirewallL7FirewallR
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *L7FirewallRulesApiService) UpdateNetworkWirelessSsidFirewallL7FirewallRulesExecute(r L7FirewallRulesApiUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *L7FirewallRulesAPIService) UpdateNetworkWirelessSsidFirewallL7FirewallRulesExecute(r L7FirewallRulesAPIUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -549,7 +549,7 @@ func (a *L7FirewallRulesApiService) UpdateNetworkWirelessSsidFirewallL7FirewallR
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "L7FirewallRulesApiService.UpdateNetworkWirelessSsidFirewallL7FirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "L7FirewallRulesAPIService.UpdateNetworkWirelessSsidFirewallL7FirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

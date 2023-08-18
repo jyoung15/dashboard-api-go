@@ -20,22 +20,22 @@ import (
 )
 
 
-// InterfacesApiService InterfacesApi service
-type InterfacesApiService service
+// InterfacesAPIService InterfacesAPI service
+type InterfacesAPIService service
 
-type InterfacesApiCreateDeviceSwitchRoutingInterfaceRequest struct {
+type InterfacesAPICreateDeviceSwitchRoutingInterfaceRequest struct {
 	ctx context.Context
-	ApiService *InterfacesApiService
+	ApiService *InterfacesAPIService
 	serial string
 	createDeviceSwitchRoutingInterfaceRequest *CreateDeviceSwitchRoutingInterfaceRequest
 }
 
-func (r InterfacesApiCreateDeviceSwitchRoutingInterfaceRequest) CreateDeviceSwitchRoutingInterfaceRequest(createDeviceSwitchRoutingInterfaceRequest CreateDeviceSwitchRoutingInterfaceRequest) InterfacesApiCreateDeviceSwitchRoutingInterfaceRequest {
+func (r InterfacesAPICreateDeviceSwitchRoutingInterfaceRequest) CreateDeviceSwitchRoutingInterfaceRequest(createDeviceSwitchRoutingInterfaceRequest CreateDeviceSwitchRoutingInterfaceRequest) InterfacesAPICreateDeviceSwitchRoutingInterfaceRequest {
 	r.createDeviceSwitchRoutingInterfaceRequest = &createDeviceSwitchRoutingInterfaceRequest
 	return r
 }
 
-func (r InterfacesApiCreateDeviceSwitchRoutingInterfaceRequest) Execute() (*GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
+func (r InterfacesAPICreateDeviceSwitchRoutingInterfaceRequest) Execute() (*GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateDeviceSwitchRoutingInterfaceExecute(r)
 }
 
@@ -46,10 +46,10 @@ Create a layer 3 interface for a switch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return InterfacesApiCreateDeviceSwitchRoutingInterfaceRequest
+ @return InterfacesAPICreateDeviceSwitchRoutingInterfaceRequest
 */
-func (a *InterfacesApiService) CreateDeviceSwitchRoutingInterface(ctx context.Context, serial string) InterfacesApiCreateDeviceSwitchRoutingInterfaceRequest {
-	return InterfacesApiCreateDeviceSwitchRoutingInterfaceRequest{
+func (a *InterfacesAPIService) CreateDeviceSwitchRoutingInterface(ctx context.Context, serial string) InterfacesAPICreateDeviceSwitchRoutingInterfaceRequest {
+	return InterfacesAPICreateDeviceSwitchRoutingInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -58,7 +58,7 @@ func (a *InterfacesApiService) CreateDeviceSwitchRoutingInterface(ctx context.Co
 
 // Execute executes the request
 //  @return GetDeviceSwitchRoutingInterfaces200ResponseInner
-func (a *InterfacesApiService) CreateDeviceSwitchRoutingInterfaceExecute(r InterfacesApiCreateDeviceSwitchRoutingInterfaceRequest) (*GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
+func (a *InterfacesAPIService) CreateDeviceSwitchRoutingInterfaceExecute(r InterfacesAPICreateDeviceSwitchRoutingInterfaceRequest) (*GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *InterfacesApiService) CreateDeviceSwitchRoutingInterfaceExecute(r Inter
 		localVarReturnValue  *GetDeviceSwitchRoutingInterfaces200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesApiService.CreateDeviceSwitchRoutingInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesAPIService.CreateDeviceSwitchRoutingInterface")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -148,20 +148,20 @@ func (a *InterfacesApiService) CreateDeviceSwitchRoutingInterfaceExecute(r Inter
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type InterfacesApiCreateNetworkSwitchStackRoutingInterfaceRequest struct {
+type InterfacesAPICreateNetworkSwitchStackRoutingInterfaceRequest struct {
 	ctx context.Context
-	ApiService *InterfacesApiService
+	ApiService *InterfacesAPIService
 	networkId string
 	switchStackId string
 	createNetworkSwitchStackRoutingInterfaceRequest *CreateNetworkSwitchStackRoutingInterfaceRequest
 }
 
-func (r InterfacesApiCreateNetworkSwitchStackRoutingInterfaceRequest) CreateNetworkSwitchStackRoutingInterfaceRequest(createNetworkSwitchStackRoutingInterfaceRequest CreateNetworkSwitchStackRoutingInterfaceRequest) InterfacesApiCreateNetworkSwitchStackRoutingInterfaceRequest {
+func (r InterfacesAPICreateNetworkSwitchStackRoutingInterfaceRequest) CreateNetworkSwitchStackRoutingInterfaceRequest(createNetworkSwitchStackRoutingInterfaceRequest CreateNetworkSwitchStackRoutingInterfaceRequest) InterfacesAPICreateNetworkSwitchStackRoutingInterfaceRequest {
 	r.createNetworkSwitchStackRoutingInterfaceRequest = &createNetworkSwitchStackRoutingInterfaceRequest
 	return r
 }
 
-func (r InterfacesApiCreateNetworkSwitchStackRoutingInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r InterfacesAPICreateNetworkSwitchStackRoutingInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkSwitchStackRoutingInterfaceExecute(r)
 }
 
@@ -173,10 +173,10 @@ Create a layer 3 interface for a switch stack
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param switchStackId Switch stack ID
- @return InterfacesApiCreateNetworkSwitchStackRoutingInterfaceRequest
+ @return InterfacesAPICreateNetworkSwitchStackRoutingInterfaceRequest
 */
-func (a *InterfacesApiService) CreateNetworkSwitchStackRoutingInterface(ctx context.Context, networkId string, switchStackId string) InterfacesApiCreateNetworkSwitchStackRoutingInterfaceRequest {
-	return InterfacesApiCreateNetworkSwitchStackRoutingInterfaceRequest{
+func (a *InterfacesAPIService) CreateNetworkSwitchStackRoutingInterface(ctx context.Context, networkId string, switchStackId string) InterfacesAPICreateNetworkSwitchStackRoutingInterfaceRequest {
+	return InterfacesAPICreateNetworkSwitchStackRoutingInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -186,7 +186,7 @@ func (a *InterfacesApiService) CreateNetworkSwitchStackRoutingInterface(ctx cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *InterfacesApiService) CreateNetworkSwitchStackRoutingInterfaceExecute(r InterfacesApiCreateNetworkSwitchStackRoutingInterfaceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *InterfacesAPIService) CreateNetworkSwitchStackRoutingInterfaceExecute(r InterfacesAPICreateNetworkSwitchStackRoutingInterfaceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -194,7 +194,7 @@ func (a *InterfacesApiService) CreateNetworkSwitchStackRoutingInterfaceExecute(r
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesApiService.CreateNetworkSwitchStackRoutingInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesAPIService.CreateNetworkSwitchStackRoutingInterface")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -280,14 +280,14 @@ func (a *InterfacesApiService) CreateNetworkSwitchStackRoutingInterfaceExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type InterfacesApiDeleteDeviceSwitchRoutingInterfaceRequest struct {
+type InterfacesAPIDeleteDeviceSwitchRoutingInterfaceRequest struct {
 	ctx context.Context
-	ApiService *InterfacesApiService
+	ApiService *InterfacesAPIService
 	serial string
 	interfaceId string
 }
 
-func (r InterfacesApiDeleteDeviceSwitchRoutingInterfaceRequest) Execute() (*http.Response, error) {
+func (r InterfacesAPIDeleteDeviceSwitchRoutingInterfaceRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteDeviceSwitchRoutingInterfaceExecute(r)
 }
 
@@ -299,10 +299,10 @@ Delete a layer 3 interface from the switch
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param interfaceId Interface ID
- @return InterfacesApiDeleteDeviceSwitchRoutingInterfaceRequest
+ @return InterfacesAPIDeleteDeviceSwitchRoutingInterfaceRequest
 */
-func (a *InterfacesApiService) DeleteDeviceSwitchRoutingInterface(ctx context.Context, serial string, interfaceId string) InterfacesApiDeleteDeviceSwitchRoutingInterfaceRequest {
-	return InterfacesApiDeleteDeviceSwitchRoutingInterfaceRequest{
+func (a *InterfacesAPIService) DeleteDeviceSwitchRoutingInterface(ctx context.Context, serial string, interfaceId string) InterfacesAPIDeleteDeviceSwitchRoutingInterfaceRequest {
+	return InterfacesAPIDeleteDeviceSwitchRoutingInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -311,14 +311,14 @@ func (a *InterfacesApiService) DeleteDeviceSwitchRoutingInterface(ctx context.Co
 }
 
 // Execute executes the request
-func (a *InterfacesApiService) DeleteDeviceSwitchRoutingInterfaceExecute(r InterfacesApiDeleteDeviceSwitchRoutingInterfaceRequest) (*http.Response, error) {
+func (a *InterfacesAPIService) DeleteDeviceSwitchRoutingInterfaceExecute(r InterfacesAPIDeleteDeviceSwitchRoutingInterfaceRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesApiService.DeleteDeviceSwitchRoutingInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesAPIService.DeleteDeviceSwitchRoutingInterface")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -390,15 +390,15 @@ func (a *InterfacesApiService) DeleteDeviceSwitchRoutingInterfaceExecute(r Inter
 	return localVarHTTPResponse, nil
 }
 
-type InterfacesApiDeleteNetworkSwitchStackRoutingInterfaceRequest struct {
+type InterfacesAPIDeleteNetworkSwitchStackRoutingInterfaceRequest struct {
 	ctx context.Context
-	ApiService *InterfacesApiService
+	ApiService *InterfacesAPIService
 	networkId string
 	switchStackId string
 	interfaceId string
 }
 
-func (r InterfacesApiDeleteNetworkSwitchStackRoutingInterfaceRequest) Execute() (*http.Response, error) {
+func (r InterfacesAPIDeleteNetworkSwitchStackRoutingInterfaceRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkSwitchStackRoutingInterfaceExecute(r)
 }
 
@@ -411,10 +411,10 @@ Delete a layer 3 interface from a switch stack
  @param networkId Network ID
  @param switchStackId Switch stack ID
  @param interfaceId Interface ID
- @return InterfacesApiDeleteNetworkSwitchStackRoutingInterfaceRequest
+ @return InterfacesAPIDeleteNetworkSwitchStackRoutingInterfaceRequest
 */
-func (a *InterfacesApiService) DeleteNetworkSwitchStackRoutingInterface(ctx context.Context, networkId string, switchStackId string, interfaceId string) InterfacesApiDeleteNetworkSwitchStackRoutingInterfaceRequest {
-	return InterfacesApiDeleteNetworkSwitchStackRoutingInterfaceRequest{
+func (a *InterfacesAPIService) DeleteNetworkSwitchStackRoutingInterface(ctx context.Context, networkId string, switchStackId string, interfaceId string) InterfacesAPIDeleteNetworkSwitchStackRoutingInterfaceRequest {
+	return InterfacesAPIDeleteNetworkSwitchStackRoutingInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -424,14 +424,14 @@ func (a *InterfacesApiService) DeleteNetworkSwitchStackRoutingInterface(ctx cont
 }
 
 // Execute executes the request
-func (a *InterfacesApiService) DeleteNetworkSwitchStackRoutingInterfaceExecute(r InterfacesApiDeleteNetworkSwitchStackRoutingInterfaceRequest) (*http.Response, error) {
+func (a *InterfacesAPIService) DeleteNetworkSwitchStackRoutingInterfaceExecute(r InterfacesAPIDeleteNetworkSwitchStackRoutingInterfaceRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesApiService.DeleteNetworkSwitchStackRoutingInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesAPIService.DeleteNetworkSwitchStackRoutingInterface")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -504,14 +504,14 @@ func (a *InterfacesApiService) DeleteNetworkSwitchStackRoutingInterfaceExecute(r
 	return localVarHTTPResponse, nil
 }
 
-type InterfacesApiGetDeviceSwitchRoutingInterfaceRequest struct {
+type InterfacesAPIGetDeviceSwitchRoutingInterfaceRequest struct {
 	ctx context.Context
-	ApiService *InterfacesApiService
+	ApiService *InterfacesAPIService
 	serial string
 	interfaceId string
 }
 
-func (r InterfacesApiGetDeviceSwitchRoutingInterfaceRequest) Execute() (*GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
+func (r InterfacesAPIGetDeviceSwitchRoutingInterfaceRequest) Execute() (*GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetDeviceSwitchRoutingInterfaceExecute(r)
 }
 
@@ -523,10 +523,10 @@ Return a layer 3 interface for a switch
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param interfaceId Interface ID
- @return InterfacesApiGetDeviceSwitchRoutingInterfaceRequest
+ @return InterfacesAPIGetDeviceSwitchRoutingInterfaceRequest
 */
-func (a *InterfacesApiService) GetDeviceSwitchRoutingInterface(ctx context.Context, serial string, interfaceId string) InterfacesApiGetDeviceSwitchRoutingInterfaceRequest {
-	return InterfacesApiGetDeviceSwitchRoutingInterfaceRequest{
+func (a *InterfacesAPIService) GetDeviceSwitchRoutingInterface(ctx context.Context, serial string, interfaceId string) InterfacesAPIGetDeviceSwitchRoutingInterfaceRequest {
+	return InterfacesAPIGetDeviceSwitchRoutingInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -536,7 +536,7 @@ func (a *InterfacesApiService) GetDeviceSwitchRoutingInterface(ctx context.Conte
 
 // Execute executes the request
 //  @return GetDeviceSwitchRoutingInterfaces200ResponseInner
-func (a *InterfacesApiService) GetDeviceSwitchRoutingInterfaceExecute(r InterfacesApiGetDeviceSwitchRoutingInterfaceRequest) (*GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
+func (a *InterfacesAPIService) GetDeviceSwitchRoutingInterfaceExecute(r InterfacesAPIGetDeviceSwitchRoutingInterfaceRequest) (*GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -544,7 +544,7 @@ func (a *InterfacesApiService) GetDeviceSwitchRoutingInterfaceExecute(r Interfac
 		localVarReturnValue  *GetDeviceSwitchRoutingInterfaces200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesApiService.GetDeviceSwitchRoutingInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesAPIService.GetDeviceSwitchRoutingInterface")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -625,14 +625,14 @@ func (a *InterfacesApiService) GetDeviceSwitchRoutingInterfaceExecute(r Interfac
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type InterfacesApiGetDeviceSwitchRoutingInterfaceDhcpRequest struct {
+type InterfacesAPIGetDeviceSwitchRoutingInterfaceDhcpRequest struct {
 	ctx context.Context
-	ApiService *InterfacesApiService
+	ApiService *InterfacesAPIService
 	serial string
 	interfaceId string
 }
 
-func (r InterfacesApiGetDeviceSwitchRoutingInterfaceDhcpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r InterfacesAPIGetDeviceSwitchRoutingInterfaceDhcpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceSwitchRoutingInterfaceDhcpExecute(r)
 }
 
@@ -644,10 +644,10 @@ Return a layer 3 interface DHCP configuration for a switch
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param interfaceId Interface ID
- @return InterfacesApiGetDeviceSwitchRoutingInterfaceDhcpRequest
+ @return InterfacesAPIGetDeviceSwitchRoutingInterfaceDhcpRequest
 */
-func (a *InterfacesApiService) GetDeviceSwitchRoutingInterfaceDhcp(ctx context.Context, serial string, interfaceId string) InterfacesApiGetDeviceSwitchRoutingInterfaceDhcpRequest {
-	return InterfacesApiGetDeviceSwitchRoutingInterfaceDhcpRequest{
+func (a *InterfacesAPIService) GetDeviceSwitchRoutingInterfaceDhcp(ctx context.Context, serial string, interfaceId string) InterfacesAPIGetDeviceSwitchRoutingInterfaceDhcpRequest {
+	return InterfacesAPIGetDeviceSwitchRoutingInterfaceDhcpRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -657,7 +657,7 @@ func (a *InterfacesApiService) GetDeviceSwitchRoutingInterfaceDhcp(ctx context.C
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *InterfacesApiService) GetDeviceSwitchRoutingInterfaceDhcpExecute(r InterfacesApiGetDeviceSwitchRoutingInterfaceDhcpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *InterfacesAPIService) GetDeviceSwitchRoutingInterfaceDhcpExecute(r InterfacesAPIGetDeviceSwitchRoutingInterfaceDhcpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -665,7 +665,7 @@ func (a *InterfacesApiService) GetDeviceSwitchRoutingInterfaceDhcpExecute(r Inte
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesApiService.GetDeviceSwitchRoutingInterfaceDhcp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesAPIService.GetDeviceSwitchRoutingInterfaceDhcp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -746,13 +746,13 @@ func (a *InterfacesApiService) GetDeviceSwitchRoutingInterfaceDhcpExecute(r Inte
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type InterfacesApiGetDeviceSwitchRoutingInterfacesRequest struct {
+type InterfacesAPIGetDeviceSwitchRoutingInterfacesRequest struct {
 	ctx context.Context
-	ApiService *InterfacesApiService
+	ApiService *InterfacesAPIService
 	serial string
 }
 
-func (r InterfacesApiGetDeviceSwitchRoutingInterfacesRequest) Execute() ([]GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
+func (r InterfacesAPIGetDeviceSwitchRoutingInterfacesRequest) Execute() ([]GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetDeviceSwitchRoutingInterfacesExecute(r)
 }
 
@@ -763,10 +763,10 @@ List layer 3 interfaces for a switch. Those for a stack may be found under switc
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return InterfacesApiGetDeviceSwitchRoutingInterfacesRequest
+ @return InterfacesAPIGetDeviceSwitchRoutingInterfacesRequest
 */
-func (a *InterfacesApiService) GetDeviceSwitchRoutingInterfaces(ctx context.Context, serial string) InterfacesApiGetDeviceSwitchRoutingInterfacesRequest {
-	return InterfacesApiGetDeviceSwitchRoutingInterfacesRequest{
+func (a *InterfacesAPIService) GetDeviceSwitchRoutingInterfaces(ctx context.Context, serial string) InterfacesAPIGetDeviceSwitchRoutingInterfacesRequest {
+	return InterfacesAPIGetDeviceSwitchRoutingInterfacesRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -775,7 +775,7 @@ func (a *InterfacesApiService) GetDeviceSwitchRoutingInterfaces(ctx context.Cont
 
 // Execute executes the request
 //  @return []GetDeviceSwitchRoutingInterfaces200ResponseInner
-func (a *InterfacesApiService) GetDeviceSwitchRoutingInterfacesExecute(r InterfacesApiGetDeviceSwitchRoutingInterfacesRequest) ([]GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
+func (a *InterfacesAPIService) GetDeviceSwitchRoutingInterfacesExecute(r InterfacesAPIGetDeviceSwitchRoutingInterfacesRequest) ([]GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -783,7 +783,7 @@ func (a *InterfacesApiService) GetDeviceSwitchRoutingInterfacesExecute(r Interfa
 		localVarReturnValue  []GetDeviceSwitchRoutingInterfaces200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesApiService.GetDeviceSwitchRoutingInterfaces")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesAPIService.GetDeviceSwitchRoutingInterfaces")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -863,15 +863,15 @@ func (a *InterfacesApiService) GetDeviceSwitchRoutingInterfacesExecute(r Interfa
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type InterfacesApiGetNetworkSwitchStackRoutingInterfaceRequest struct {
+type InterfacesAPIGetNetworkSwitchStackRoutingInterfaceRequest struct {
 	ctx context.Context
-	ApiService *InterfacesApiService
+	ApiService *InterfacesAPIService
 	networkId string
 	switchStackId string
 	interfaceId string
 }
 
-func (r InterfacesApiGetNetworkSwitchStackRoutingInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r InterfacesAPIGetNetworkSwitchStackRoutingInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchStackRoutingInterfaceExecute(r)
 }
 
@@ -884,10 +884,10 @@ Return a layer 3 interface from a switch stack
  @param networkId Network ID
  @param switchStackId Switch stack ID
  @param interfaceId Interface ID
- @return InterfacesApiGetNetworkSwitchStackRoutingInterfaceRequest
+ @return InterfacesAPIGetNetworkSwitchStackRoutingInterfaceRequest
 */
-func (a *InterfacesApiService) GetNetworkSwitchStackRoutingInterface(ctx context.Context, networkId string, switchStackId string, interfaceId string) InterfacesApiGetNetworkSwitchStackRoutingInterfaceRequest {
-	return InterfacesApiGetNetworkSwitchStackRoutingInterfaceRequest{
+func (a *InterfacesAPIService) GetNetworkSwitchStackRoutingInterface(ctx context.Context, networkId string, switchStackId string, interfaceId string) InterfacesAPIGetNetworkSwitchStackRoutingInterfaceRequest {
+	return InterfacesAPIGetNetworkSwitchStackRoutingInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -898,7 +898,7 @@ func (a *InterfacesApiService) GetNetworkSwitchStackRoutingInterface(ctx context
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *InterfacesApiService) GetNetworkSwitchStackRoutingInterfaceExecute(r InterfacesApiGetNetworkSwitchStackRoutingInterfaceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *InterfacesAPIService) GetNetworkSwitchStackRoutingInterfaceExecute(r InterfacesAPIGetNetworkSwitchStackRoutingInterfaceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -906,7 +906,7 @@ func (a *InterfacesApiService) GetNetworkSwitchStackRoutingInterfaceExecute(r In
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesApiService.GetNetworkSwitchStackRoutingInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesAPIService.GetNetworkSwitchStackRoutingInterface")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -988,15 +988,15 @@ func (a *InterfacesApiService) GetNetworkSwitchStackRoutingInterfaceExecute(r In
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type InterfacesApiGetNetworkSwitchStackRoutingInterfaceDhcpRequest struct {
+type InterfacesAPIGetNetworkSwitchStackRoutingInterfaceDhcpRequest struct {
 	ctx context.Context
-	ApiService *InterfacesApiService
+	ApiService *InterfacesAPIService
 	networkId string
 	switchStackId string
 	interfaceId string
 }
 
-func (r InterfacesApiGetNetworkSwitchStackRoutingInterfaceDhcpRequest) Execute() (*GetNetworkSwitchStackRoutingInterfaceDhcp200Response, *http.Response, error) {
+func (r InterfacesAPIGetNetworkSwitchStackRoutingInterfaceDhcpRequest) Execute() (*GetNetworkSwitchStackRoutingInterfaceDhcp200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchStackRoutingInterfaceDhcpExecute(r)
 }
 
@@ -1009,10 +1009,10 @@ Return a layer 3 interface DHCP configuration for a switch stack
  @param networkId Network ID
  @param switchStackId Switch stack ID
  @param interfaceId Interface ID
- @return InterfacesApiGetNetworkSwitchStackRoutingInterfaceDhcpRequest
+ @return InterfacesAPIGetNetworkSwitchStackRoutingInterfaceDhcpRequest
 */
-func (a *InterfacesApiService) GetNetworkSwitchStackRoutingInterfaceDhcp(ctx context.Context, networkId string, switchStackId string, interfaceId string) InterfacesApiGetNetworkSwitchStackRoutingInterfaceDhcpRequest {
-	return InterfacesApiGetNetworkSwitchStackRoutingInterfaceDhcpRequest{
+func (a *InterfacesAPIService) GetNetworkSwitchStackRoutingInterfaceDhcp(ctx context.Context, networkId string, switchStackId string, interfaceId string) InterfacesAPIGetNetworkSwitchStackRoutingInterfaceDhcpRequest {
+	return InterfacesAPIGetNetworkSwitchStackRoutingInterfaceDhcpRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1023,7 +1023,7 @@ func (a *InterfacesApiService) GetNetworkSwitchStackRoutingInterfaceDhcp(ctx con
 
 // Execute executes the request
 //  @return GetNetworkSwitchStackRoutingInterfaceDhcp200Response
-func (a *InterfacesApiService) GetNetworkSwitchStackRoutingInterfaceDhcpExecute(r InterfacesApiGetNetworkSwitchStackRoutingInterfaceDhcpRequest) (*GetNetworkSwitchStackRoutingInterfaceDhcp200Response, *http.Response, error) {
+func (a *InterfacesAPIService) GetNetworkSwitchStackRoutingInterfaceDhcpExecute(r InterfacesAPIGetNetworkSwitchStackRoutingInterfaceDhcpRequest) (*GetNetworkSwitchStackRoutingInterfaceDhcp200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1031,7 +1031,7 @@ func (a *InterfacesApiService) GetNetworkSwitchStackRoutingInterfaceDhcpExecute(
 		localVarReturnValue  *GetNetworkSwitchStackRoutingInterfaceDhcp200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesApiService.GetNetworkSwitchStackRoutingInterfaceDhcp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesAPIService.GetNetworkSwitchStackRoutingInterfaceDhcp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1113,14 +1113,14 @@ func (a *InterfacesApiService) GetNetworkSwitchStackRoutingInterfaceDhcpExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type InterfacesApiGetNetworkSwitchStackRoutingInterfacesRequest struct {
+type InterfacesAPIGetNetworkSwitchStackRoutingInterfacesRequest struct {
 	ctx context.Context
-	ApiService *InterfacesApiService
+	ApiService *InterfacesAPIService
 	networkId string
 	switchStackId string
 }
 
-func (r InterfacesApiGetNetworkSwitchStackRoutingInterfacesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r InterfacesAPIGetNetworkSwitchStackRoutingInterfacesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchStackRoutingInterfacesExecute(r)
 }
 
@@ -1132,10 +1132,10 @@ List layer 3 interfaces for a switch stack
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param switchStackId Switch stack ID
- @return InterfacesApiGetNetworkSwitchStackRoutingInterfacesRequest
+ @return InterfacesAPIGetNetworkSwitchStackRoutingInterfacesRequest
 */
-func (a *InterfacesApiService) GetNetworkSwitchStackRoutingInterfaces(ctx context.Context, networkId string, switchStackId string) InterfacesApiGetNetworkSwitchStackRoutingInterfacesRequest {
-	return InterfacesApiGetNetworkSwitchStackRoutingInterfacesRequest{
+func (a *InterfacesAPIService) GetNetworkSwitchStackRoutingInterfaces(ctx context.Context, networkId string, switchStackId string) InterfacesAPIGetNetworkSwitchStackRoutingInterfacesRequest {
+	return InterfacesAPIGetNetworkSwitchStackRoutingInterfacesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1145,7 +1145,7 @@ func (a *InterfacesApiService) GetNetworkSwitchStackRoutingInterfaces(ctx contex
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *InterfacesApiService) GetNetworkSwitchStackRoutingInterfacesExecute(r InterfacesApiGetNetworkSwitchStackRoutingInterfacesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *InterfacesAPIService) GetNetworkSwitchStackRoutingInterfacesExecute(r InterfacesAPIGetNetworkSwitchStackRoutingInterfacesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1153,7 +1153,7 @@ func (a *InterfacesApiService) GetNetworkSwitchStackRoutingInterfacesExecute(r I
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesApiService.GetNetworkSwitchStackRoutingInterfaces")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesAPIService.GetNetworkSwitchStackRoutingInterfaces")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1234,20 +1234,20 @@ func (a *InterfacesApiService) GetNetworkSwitchStackRoutingInterfacesExecute(r I
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type InterfacesApiUpdateDeviceSwitchRoutingInterfaceRequest struct {
+type InterfacesAPIUpdateDeviceSwitchRoutingInterfaceRequest struct {
 	ctx context.Context
-	ApiService *InterfacesApiService
+	ApiService *InterfacesAPIService
 	serial string
 	interfaceId string
 	createDeviceSwitchRoutingInterfaceRequest *CreateDeviceSwitchRoutingInterfaceRequest
 }
 
-func (r InterfacesApiUpdateDeviceSwitchRoutingInterfaceRequest) CreateDeviceSwitchRoutingInterfaceRequest(createDeviceSwitchRoutingInterfaceRequest CreateDeviceSwitchRoutingInterfaceRequest) InterfacesApiUpdateDeviceSwitchRoutingInterfaceRequest {
+func (r InterfacesAPIUpdateDeviceSwitchRoutingInterfaceRequest) CreateDeviceSwitchRoutingInterfaceRequest(createDeviceSwitchRoutingInterfaceRequest CreateDeviceSwitchRoutingInterfaceRequest) InterfacesAPIUpdateDeviceSwitchRoutingInterfaceRequest {
 	r.createDeviceSwitchRoutingInterfaceRequest = &createDeviceSwitchRoutingInterfaceRequest
 	return r
 }
 
-func (r InterfacesApiUpdateDeviceSwitchRoutingInterfaceRequest) Execute() (*GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
+func (r InterfacesAPIUpdateDeviceSwitchRoutingInterfaceRequest) Execute() (*GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateDeviceSwitchRoutingInterfaceExecute(r)
 }
 
@@ -1259,10 +1259,10 @@ Update a layer 3 interface for a switch
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param interfaceId Interface ID
- @return InterfacesApiUpdateDeviceSwitchRoutingInterfaceRequest
+ @return InterfacesAPIUpdateDeviceSwitchRoutingInterfaceRequest
 */
-func (a *InterfacesApiService) UpdateDeviceSwitchRoutingInterface(ctx context.Context, serial string, interfaceId string) InterfacesApiUpdateDeviceSwitchRoutingInterfaceRequest {
-	return InterfacesApiUpdateDeviceSwitchRoutingInterfaceRequest{
+func (a *InterfacesAPIService) UpdateDeviceSwitchRoutingInterface(ctx context.Context, serial string, interfaceId string) InterfacesAPIUpdateDeviceSwitchRoutingInterfaceRequest {
+	return InterfacesAPIUpdateDeviceSwitchRoutingInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1272,7 +1272,7 @@ func (a *InterfacesApiService) UpdateDeviceSwitchRoutingInterface(ctx context.Co
 
 // Execute executes the request
 //  @return GetDeviceSwitchRoutingInterfaces200ResponseInner
-func (a *InterfacesApiService) UpdateDeviceSwitchRoutingInterfaceExecute(r InterfacesApiUpdateDeviceSwitchRoutingInterfaceRequest) (*GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
+func (a *InterfacesAPIService) UpdateDeviceSwitchRoutingInterfaceExecute(r InterfacesAPIUpdateDeviceSwitchRoutingInterfaceRequest) (*GetDeviceSwitchRoutingInterfaces200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1280,7 +1280,7 @@ func (a *InterfacesApiService) UpdateDeviceSwitchRoutingInterfaceExecute(r Inter
 		localVarReturnValue  *GetDeviceSwitchRoutingInterfaces200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesApiService.UpdateDeviceSwitchRoutingInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesAPIService.UpdateDeviceSwitchRoutingInterface")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1363,20 +1363,20 @@ func (a *InterfacesApiService) UpdateDeviceSwitchRoutingInterfaceExecute(r Inter
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type InterfacesApiUpdateDeviceSwitchRoutingInterfaceDhcpRequest struct {
+type InterfacesAPIUpdateDeviceSwitchRoutingInterfaceDhcpRequest struct {
 	ctx context.Context
-	ApiService *InterfacesApiService
+	ApiService *InterfacesAPIService
 	serial string
 	interfaceId string
 	updateDeviceSwitchRoutingInterfaceDhcpRequest *UpdateDeviceSwitchRoutingInterfaceDhcpRequest
 }
 
-func (r InterfacesApiUpdateDeviceSwitchRoutingInterfaceDhcpRequest) UpdateDeviceSwitchRoutingInterfaceDhcpRequest(updateDeviceSwitchRoutingInterfaceDhcpRequest UpdateDeviceSwitchRoutingInterfaceDhcpRequest) InterfacesApiUpdateDeviceSwitchRoutingInterfaceDhcpRequest {
+func (r InterfacesAPIUpdateDeviceSwitchRoutingInterfaceDhcpRequest) UpdateDeviceSwitchRoutingInterfaceDhcpRequest(updateDeviceSwitchRoutingInterfaceDhcpRequest UpdateDeviceSwitchRoutingInterfaceDhcpRequest) InterfacesAPIUpdateDeviceSwitchRoutingInterfaceDhcpRequest {
 	r.updateDeviceSwitchRoutingInterfaceDhcpRequest = &updateDeviceSwitchRoutingInterfaceDhcpRequest
 	return r
 }
 
-func (r InterfacesApiUpdateDeviceSwitchRoutingInterfaceDhcpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r InterfacesAPIUpdateDeviceSwitchRoutingInterfaceDhcpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceSwitchRoutingInterfaceDhcpExecute(r)
 }
 
@@ -1388,10 +1388,10 @@ Update a layer 3 interface DHCP configuration for a switch
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param interfaceId Interface ID
- @return InterfacesApiUpdateDeviceSwitchRoutingInterfaceDhcpRequest
+ @return InterfacesAPIUpdateDeviceSwitchRoutingInterfaceDhcpRequest
 */
-func (a *InterfacesApiService) UpdateDeviceSwitchRoutingInterfaceDhcp(ctx context.Context, serial string, interfaceId string) InterfacesApiUpdateDeviceSwitchRoutingInterfaceDhcpRequest {
-	return InterfacesApiUpdateDeviceSwitchRoutingInterfaceDhcpRequest{
+func (a *InterfacesAPIService) UpdateDeviceSwitchRoutingInterfaceDhcp(ctx context.Context, serial string, interfaceId string) InterfacesAPIUpdateDeviceSwitchRoutingInterfaceDhcpRequest {
+	return InterfacesAPIUpdateDeviceSwitchRoutingInterfaceDhcpRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1401,7 +1401,7 @@ func (a *InterfacesApiService) UpdateDeviceSwitchRoutingInterfaceDhcp(ctx contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *InterfacesApiService) UpdateDeviceSwitchRoutingInterfaceDhcpExecute(r InterfacesApiUpdateDeviceSwitchRoutingInterfaceDhcpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *InterfacesAPIService) UpdateDeviceSwitchRoutingInterfaceDhcpExecute(r InterfacesAPIUpdateDeviceSwitchRoutingInterfaceDhcpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1409,7 +1409,7 @@ func (a *InterfacesApiService) UpdateDeviceSwitchRoutingInterfaceDhcpExecute(r I
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesApiService.UpdateDeviceSwitchRoutingInterfaceDhcp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesAPIService.UpdateDeviceSwitchRoutingInterfaceDhcp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1492,21 +1492,21 @@ func (a *InterfacesApiService) UpdateDeviceSwitchRoutingInterfaceDhcpExecute(r I
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type InterfacesApiUpdateNetworkSwitchStackRoutingInterfaceRequest struct {
+type InterfacesAPIUpdateNetworkSwitchStackRoutingInterfaceRequest struct {
 	ctx context.Context
-	ApiService *InterfacesApiService
+	ApiService *InterfacesAPIService
 	networkId string
 	switchStackId string
 	interfaceId string
 	updateNetworkSwitchStackRoutingInterfaceRequest *UpdateNetworkSwitchStackRoutingInterfaceRequest
 }
 
-func (r InterfacesApiUpdateNetworkSwitchStackRoutingInterfaceRequest) UpdateNetworkSwitchStackRoutingInterfaceRequest(updateNetworkSwitchStackRoutingInterfaceRequest UpdateNetworkSwitchStackRoutingInterfaceRequest) InterfacesApiUpdateNetworkSwitchStackRoutingInterfaceRequest {
+func (r InterfacesAPIUpdateNetworkSwitchStackRoutingInterfaceRequest) UpdateNetworkSwitchStackRoutingInterfaceRequest(updateNetworkSwitchStackRoutingInterfaceRequest UpdateNetworkSwitchStackRoutingInterfaceRequest) InterfacesAPIUpdateNetworkSwitchStackRoutingInterfaceRequest {
 	r.updateNetworkSwitchStackRoutingInterfaceRequest = &updateNetworkSwitchStackRoutingInterfaceRequest
 	return r
 }
 
-func (r InterfacesApiUpdateNetworkSwitchStackRoutingInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r InterfacesAPIUpdateNetworkSwitchStackRoutingInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchStackRoutingInterfaceExecute(r)
 }
 
@@ -1519,10 +1519,10 @@ Update a layer 3 interface for a switch stack
  @param networkId Network ID
  @param switchStackId Switch stack ID
  @param interfaceId Interface ID
- @return InterfacesApiUpdateNetworkSwitchStackRoutingInterfaceRequest
+ @return InterfacesAPIUpdateNetworkSwitchStackRoutingInterfaceRequest
 */
-func (a *InterfacesApiService) UpdateNetworkSwitchStackRoutingInterface(ctx context.Context, networkId string, switchStackId string, interfaceId string) InterfacesApiUpdateNetworkSwitchStackRoutingInterfaceRequest {
-	return InterfacesApiUpdateNetworkSwitchStackRoutingInterfaceRequest{
+func (a *InterfacesAPIService) UpdateNetworkSwitchStackRoutingInterface(ctx context.Context, networkId string, switchStackId string, interfaceId string) InterfacesAPIUpdateNetworkSwitchStackRoutingInterfaceRequest {
+	return InterfacesAPIUpdateNetworkSwitchStackRoutingInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1533,7 +1533,7 @@ func (a *InterfacesApiService) UpdateNetworkSwitchStackRoutingInterface(ctx cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *InterfacesApiService) UpdateNetworkSwitchStackRoutingInterfaceExecute(r InterfacesApiUpdateNetworkSwitchStackRoutingInterfaceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *InterfacesAPIService) UpdateNetworkSwitchStackRoutingInterfaceExecute(r InterfacesAPIUpdateNetworkSwitchStackRoutingInterfaceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1541,7 +1541,7 @@ func (a *InterfacesApiService) UpdateNetworkSwitchStackRoutingInterfaceExecute(r
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesApiService.UpdateNetworkSwitchStackRoutingInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesAPIService.UpdateNetworkSwitchStackRoutingInterface")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1625,21 +1625,21 @@ func (a *InterfacesApiService) UpdateNetworkSwitchStackRoutingInterfaceExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type InterfacesApiUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest struct {
+type InterfacesAPIUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest struct {
 	ctx context.Context
-	ApiService *InterfacesApiService
+	ApiService *InterfacesAPIService
 	networkId string
 	switchStackId string
 	interfaceId string
 	updateNetworkSwitchStackRoutingInterfaceDhcpRequest *UpdateNetworkSwitchStackRoutingInterfaceDhcpRequest
 }
 
-func (r InterfacesApiUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest) UpdateNetworkSwitchStackRoutingInterfaceDhcpRequest(updateNetworkSwitchStackRoutingInterfaceDhcpRequest UpdateNetworkSwitchStackRoutingInterfaceDhcpRequest) InterfacesApiUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest {
+func (r InterfacesAPIUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest) UpdateNetworkSwitchStackRoutingInterfaceDhcpRequest(updateNetworkSwitchStackRoutingInterfaceDhcpRequest UpdateNetworkSwitchStackRoutingInterfaceDhcpRequest) InterfacesAPIUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest {
 	r.updateNetworkSwitchStackRoutingInterfaceDhcpRequest = &updateNetworkSwitchStackRoutingInterfaceDhcpRequest
 	return r
 }
 
-func (r InterfacesApiUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r InterfacesAPIUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchStackRoutingInterfaceDhcpExecute(r)
 }
 
@@ -1652,10 +1652,10 @@ Update a layer 3 interface DHCP configuration for a switch stack
  @param networkId Network ID
  @param switchStackId Switch stack ID
  @param interfaceId Interface ID
- @return InterfacesApiUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest
+ @return InterfacesAPIUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest
 */
-func (a *InterfacesApiService) UpdateNetworkSwitchStackRoutingInterfaceDhcp(ctx context.Context, networkId string, switchStackId string, interfaceId string) InterfacesApiUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest {
-	return InterfacesApiUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest{
+func (a *InterfacesAPIService) UpdateNetworkSwitchStackRoutingInterfaceDhcp(ctx context.Context, networkId string, switchStackId string, interfaceId string) InterfacesAPIUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest {
+	return InterfacesAPIUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1666,7 +1666,7 @@ func (a *InterfacesApiService) UpdateNetworkSwitchStackRoutingInterfaceDhcp(ctx 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *InterfacesApiService) UpdateNetworkSwitchStackRoutingInterfaceDhcpExecute(r InterfacesApiUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *InterfacesAPIService) UpdateNetworkSwitchStackRoutingInterfaceDhcpExecute(r InterfacesAPIUpdateNetworkSwitchStackRoutingInterfaceDhcpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1674,7 +1674,7 @@ func (a *InterfacesApiService) UpdateNetworkSwitchStackRoutingInterfaceDhcpExecu
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesApiService.UpdateNetworkSwitchStackRoutingInterfaceDhcp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterfacesAPIService.UpdateNetworkSwitchStackRoutingInterfaceDhcp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

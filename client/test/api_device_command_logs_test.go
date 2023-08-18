@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing DeviceCommandLogsApiService
+Testing DeviceCommandLogsAPIService
 
 */
 
@@ -17,19 +17,19 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_DeviceCommandLogsApiService(t *testing.T) {
+func Test_client_DeviceCommandLogsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test DeviceCommandLogsApiService GetNetworkSmDeviceDeviceCommandLogs", func(t *testing.T) {
+	t.Run("Test DeviceCommandLogsAPIService GetNetworkSmDeviceDeviceCommandLogs", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var deviceId string
 
-		resp, httpRes, err := apiClient.DeviceCommandLogsApi.GetNetworkSmDeviceDeviceCommandLogs(context.Background(), networkId, deviceId).Execute()
+		resp, httpRes, err := apiClient.DeviceCommandLogsAPI.GetNetworkSmDeviceDeviceCommandLogs(context.Background(), networkId, deviceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

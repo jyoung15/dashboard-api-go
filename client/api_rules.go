@@ -20,16 +20,16 @@ import (
 )
 
 
-// RulesApiService RulesApi service
-type RulesApiService service
+// RulesAPIService RulesAPI service
+type RulesAPIService service
 
-type RulesApiGetNetworkApplianceTrafficShapingRulesRequest struct {
+type RulesAPIGetNetworkApplianceTrafficShapingRulesRequest struct {
 	ctx context.Context
-	ApiService *RulesApiService
+	ApiService *RulesAPIService
 	networkId string
 }
 
-func (r RulesApiGetNetworkApplianceTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r RulesAPIGetNetworkApplianceTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceTrafficShapingRulesExecute(r)
 }
 
@@ -40,10 +40,10 @@ Display the traffic shaping settings rules for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return RulesApiGetNetworkApplianceTrafficShapingRulesRequest
+ @return RulesAPIGetNetworkApplianceTrafficShapingRulesRequest
 */
-func (a *RulesApiService) GetNetworkApplianceTrafficShapingRules(ctx context.Context, networkId string) RulesApiGetNetworkApplianceTrafficShapingRulesRequest {
-	return RulesApiGetNetworkApplianceTrafficShapingRulesRequest{
+func (a *RulesAPIService) GetNetworkApplianceTrafficShapingRules(ctx context.Context, networkId string) RulesAPIGetNetworkApplianceTrafficShapingRulesRequest {
+	return RulesAPIGetNetworkApplianceTrafficShapingRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *RulesApiService) GetNetworkApplianceTrafficShapingRules(ctx context.Con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *RulesApiService) GetNetworkApplianceTrafficShapingRulesExecute(r RulesApiGetNetworkApplianceTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *RulesAPIService) GetNetworkApplianceTrafficShapingRulesExecute(r RulesAPIGetNetworkApplianceTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *RulesApiService) GetNetworkApplianceTrafficShapingRulesExecute(r RulesA
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RulesApiService.GetNetworkApplianceTrafficShapingRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RulesAPIService.GetNetworkApplianceTrafficShapingRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,14 +140,14 @@ func (a *RulesApiService) GetNetworkApplianceTrafficShapingRulesExecute(r RulesA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type RulesApiGetNetworkWirelessSsidTrafficShapingRulesRequest struct {
+type RulesAPIGetNetworkWirelessSsidTrafficShapingRulesRequest struct {
 	ctx context.Context
-	ApiService *RulesApiService
+	ApiService *RulesAPIService
 	networkId string
 	number string
 }
 
-func (r RulesApiGetNetworkWirelessSsidTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r RulesAPIGetNetworkWirelessSsidTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidTrafficShapingRulesExecute(r)
 }
 
@@ -159,10 +159,10 @@ Display the traffic shaping settings for a SSID on an MR network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return RulesApiGetNetworkWirelessSsidTrafficShapingRulesRequest
+ @return RulesAPIGetNetworkWirelessSsidTrafficShapingRulesRequest
 */
-func (a *RulesApiService) GetNetworkWirelessSsidTrafficShapingRules(ctx context.Context, networkId string, number string) RulesApiGetNetworkWirelessSsidTrafficShapingRulesRequest {
-	return RulesApiGetNetworkWirelessSsidTrafficShapingRulesRequest{
+func (a *RulesAPIService) GetNetworkWirelessSsidTrafficShapingRules(ctx context.Context, networkId string, number string) RulesAPIGetNetworkWirelessSsidTrafficShapingRulesRequest {
+	return RulesAPIGetNetworkWirelessSsidTrafficShapingRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -172,7 +172,7 @@ func (a *RulesApiService) GetNetworkWirelessSsidTrafficShapingRules(ctx context.
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *RulesApiService) GetNetworkWirelessSsidTrafficShapingRulesExecute(r RulesApiGetNetworkWirelessSsidTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *RulesAPIService) GetNetworkWirelessSsidTrafficShapingRulesExecute(r RulesAPIGetNetworkWirelessSsidTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -180,7 +180,7 @@ func (a *RulesApiService) GetNetworkWirelessSsidTrafficShapingRulesExecute(r Rul
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RulesApiService.GetNetworkWirelessSsidTrafficShapingRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RulesAPIService.GetNetworkWirelessSsidTrafficShapingRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -261,19 +261,19 @@ func (a *RulesApiService) GetNetworkWirelessSsidTrafficShapingRulesExecute(r Rul
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type RulesApiUpdateNetworkApplianceTrafficShapingRulesRequest struct {
+type RulesAPIUpdateNetworkApplianceTrafficShapingRulesRequest struct {
 	ctx context.Context
-	ApiService *RulesApiService
+	ApiService *RulesAPIService
 	networkId string
 	updateNetworkApplianceTrafficShapingRulesRequest *UpdateNetworkApplianceTrafficShapingRulesRequest
 }
 
-func (r RulesApiUpdateNetworkApplianceTrafficShapingRulesRequest) UpdateNetworkApplianceTrafficShapingRulesRequest(updateNetworkApplianceTrafficShapingRulesRequest UpdateNetworkApplianceTrafficShapingRulesRequest) RulesApiUpdateNetworkApplianceTrafficShapingRulesRequest {
+func (r RulesAPIUpdateNetworkApplianceTrafficShapingRulesRequest) UpdateNetworkApplianceTrafficShapingRulesRequest(updateNetworkApplianceTrafficShapingRulesRequest UpdateNetworkApplianceTrafficShapingRulesRequest) RulesAPIUpdateNetworkApplianceTrafficShapingRulesRequest {
 	r.updateNetworkApplianceTrafficShapingRulesRequest = &updateNetworkApplianceTrafficShapingRulesRequest
 	return r
 }
 
-func (r RulesApiUpdateNetworkApplianceTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r RulesAPIUpdateNetworkApplianceTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceTrafficShapingRulesExecute(r)
 }
 
@@ -284,10 +284,10 @@ Update the traffic shaping settings rules for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return RulesApiUpdateNetworkApplianceTrafficShapingRulesRequest
+ @return RulesAPIUpdateNetworkApplianceTrafficShapingRulesRequest
 */
-func (a *RulesApiService) UpdateNetworkApplianceTrafficShapingRules(ctx context.Context, networkId string) RulesApiUpdateNetworkApplianceTrafficShapingRulesRequest {
-	return RulesApiUpdateNetworkApplianceTrafficShapingRulesRequest{
+func (a *RulesAPIService) UpdateNetworkApplianceTrafficShapingRules(ctx context.Context, networkId string) RulesAPIUpdateNetworkApplianceTrafficShapingRulesRequest {
+	return RulesAPIUpdateNetworkApplianceTrafficShapingRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -296,7 +296,7 @@ func (a *RulesApiService) UpdateNetworkApplianceTrafficShapingRules(ctx context.
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *RulesApiService) UpdateNetworkApplianceTrafficShapingRulesExecute(r RulesApiUpdateNetworkApplianceTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *RulesAPIService) UpdateNetworkApplianceTrafficShapingRulesExecute(r RulesAPIUpdateNetworkApplianceTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -304,7 +304,7 @@ func (a *RulesApiService) UpdateNetworkApplianceTrafficShapingRulesExecute(r Rul
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RulesApiService.UpdateNetworkApplianceTrafficShapingRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RulesAPIService.UpdateNetworkApplianceTrafficShapingRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -386,20 +386,20 @@ func (a *RulesApiService) UpdateNetworkApplianceTrafficShapingRulesExecute(r Rul
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type RulesApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest struct {
+type RulesAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest struct {
 	ctx context.Context
-	ApiService *RulesApiService
+	ApiService *RulesAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidTrafficShapingRulesRequest *UpdateNetworkWirelessSsidTrafficShapingRulesRequest
 }
 
-func (r RulesApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest) UpdateNetworkWirelessSsidTrafficShapingRulesRequest(updateNetworkWirelessSsidTrafficShapingRulesRequest UpdateNetworkWirelessSsidTrafficShapingRulesRequest) RulesApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest {
+func (r RulesAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest) UpdateNetworkWirelessSsidTrafficShapingRulesRequest(updateNetworkWirelessSsidTrafficShapingRulesRequest UpdateNetworkWirelessSsidTrafficShapingRulesRequest) RulesAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest {
 	r.updateNetworkWirelessSsidTrafficShapingRulesRequest = &updateNetworkWirelessSsidTrafficShapingRulesRequest
 	return r
 }
 
-func (r RulesApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r RulesAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidTrafficShapingRulesExecute(r)
 }
 
@@ -411,10 +411,10 @@ Update the traffic shaping settings for an SSID on an MR network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return RulesApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest
+ @return RulesAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest
 */
-func (a *RulesApiService) UpdateNetworkWirelessSsidTrafficShapingRules(ctx context.Context, networkId string, number string) RulesApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest {
-	return RulesApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest{
+func (a *RulesAPIService) UpdateNetworkWirelessSsidTrafficShapingRules(ctx context.Context, networkId string, number string) RulesAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest {
+	return RulesAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -424,7 +424,7 @@ func (a *RulesApiService) UpdateNetworkWirelessSsidTrafficShapingRules(ctx conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *RulesApiService) UpdateNetworkWirelessSsidTrafficShapingRulesExecute(r RulesApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *RulesAPIService) UpdateNetworkWirelessSsidTrafficShapingRulesExecute(r RulesAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -432,7 +432,7 @@ func (a *RulesApiService) UpdateNetworkWirelessSsidTrafficShapingRulesExecute(r 
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RulesApiService.UpdateNetworkWirelessSsidTrafficShapingRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RulesAPIService.UpdateNetworkWirelessSsidTrafficShapingRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

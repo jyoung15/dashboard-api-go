@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing GroupPoliciesApiService
+Testing GroupPoliciesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_GroupPoliciesApiService(t *testing.T) {
+func Test_client_GroupPoliciesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test GroupPoliciesApiService CreateNetworkGroupPolicy", func(t *testing.T) {
+	t.Run("Test GroupPoliciesAPIService CreateNetworkGroupPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.GroupPoliciesApi.CreateNetworkGroupPolicy(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.GroupPoliciesAPI.CreateNetworkGroupPolicy(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,42 +36,27 @@ func Test_client_GroupPoliciesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test GroupPoliciesApiService DeleteNetworkGroupPolicy", func(t *testing.T) {
+	t.Run("Test GroupPoliciesAPIService DeleteNetworkGroupPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var groupPolicyId string
 
-		httpRes, err := apiClient.GroupPoliciesApi.DeleteNetworkGroupPolicy(context.Background(), networkId, groupPolicyId).Execute()
+		httpRes, err := apiClient.GroupPoliciesAPI.DeleteNetworkGroupPolicy(context.Background(), networkId, groupPolicyId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test GroupPoliciesApiService GetNetworkGroupPolicies", func(t *testing.T) {
+	t.Run("Test GroupPoliciesAPIService GetNetworkGroupPolicies", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.GroupPoliciesApi.GetNetworkGroupPolicies(context.Background(), networkId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test GroupPoliciesApiService GetNetworkGroupPolicy", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-		var groupPolicyId string
-
-		resp, httpRes, err := apiClient.GroupPoliciesApi.GetNetworkGroupPolicy(context.Background(), networkId, groupPolicyId).Execute()
+		resp, httpRes, err := apiClient.GroupPoliciesAPI.GetNetworkGroupPolicies(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,14 +64,29 @@ func Test_client_GroupPoliciesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test GroupPoliciesApiService UpdateNetworkGroupPolicy", func(t *testing.T) {
+	t.Run("Test GroupPoliciesAPIService GetNetworkGroupPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var groupPolicyId string
 
-		resp, httpRes, err := apiClient.GroupPoliciesApi.UpdateNetworkGroupPolicy(context.Background(), networkId, groupPolicyId).Execute()
+		resp, httpRes, err := apiClient.GroupPoliciesAPI.GetNetworkGroupPolicy(context.Background(), networkId, groupPolicyId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test GroupPoliciesAPIService UpdateNetworkGroupPolicy", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+		var groupPolicyId string
+
+		resp, httpRes, err := apiClient.GroupPoliciesAPI.UpdateNetworkGroupPolicy(context.Background(), networkId, groupPolicyId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

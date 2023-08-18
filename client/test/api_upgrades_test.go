@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing UpgradesApiService
+Testing UpgradesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_UpgradesApiService(t *testing.T) {
+func Test_client_UpgradesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test UpgradesApiService GetOrganizationFirmwareUpgrades", func(t *testing.T) {
+	t.Run("Test UpgradesAPIService GetOrganizationFirmwareUpgrades", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.UpgradesApi.GetOrganizationFirmwareUpgrades(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.UpgradesAPI.GetOrganizationFirmwareUpgrades(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_UpgradesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UpgradesApiService GetOrganizationFirmwareUpgradesByDevice", func(t *testing.T) {
+	t.Run("Test UpgradesAPIService GetOrganizationFirmwareUpgradesByDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.UpgradesApi.GetOrganizationFirmwareUpgradesByDevice(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.UpgradesAPI.GetOrganizationFirmwareUpgradesByDevice(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing BonjourForwardingApiService
+Testing BonjourForwardingAPIService
 
 */
 
@@ -17,19 +17,19 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_BonjourForwardingApiService(t *testing.T) {
+func Test_client_BonjourForwardingAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test BonjourForwardingApiService GetNetworkWirelessSsidBonjourForwarding", func(t *testing.T) {
+	t.Run("Test BonjourForwardingAPIService GetNetworkWirelessSsidBonjourForwarding", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.BonjourForwardingApi.GetNetworkWirelessSsidBonjourForwarding(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.BonjourForwardingAPI.GetNetworkWirelessSsidBonjourForwarding(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -37,14 +37,14 @@ func Test_client_BonjourForwardingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test BonjourForwardingApiService UpdateNetworkWirelessSsidBonjourForwarding", func(t *testing.T) {
+	t.Run("Test BonjourForwardingAPIService UpdateNetworkWirelessSsidBonjourForwarding", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.BonjourForwardingApi.UpdateNetworkWirelessSsidBonjourForwarding(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.BonjourForwardingAPI.UpdateNetworkWirelessSsidBonjourForwarding(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

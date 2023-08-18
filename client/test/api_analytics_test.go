@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing AnalyticsApiService
+Testing AnalyticsAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_AnalyticsApiService(t *testing.T) {
+func Test_client_AnalyticsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test AnalyticsApiService GetDeviceCameraAnalyticsLive", func(t *testing.T) {
+	t.Run("Test AnalyticsAPIService GetDeviceCameraAnalyticsLive", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.AnalyticsApi.GetDeviceCameraAnalyticsLive(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.AnalyticsAPI.GetDeviceCameraAnalyticsLive(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_AnalyticsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AnalyticsApiService GetDeviceCameraAnalyticsOverview", func(t *testing.T) {
+	t.Run("Test AnalyticsAPIService GetDeviceCameraAnalyticsOverview", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.AnalyticsApi.GetDeviceCameraAnalyticsOverview(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.AnalyticsAPI.GetDeviceCameraAnalyticsOverview(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,13 +50,13 @@ func Test_client_AnalyticsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AnalyticsApiService GetDeviceCameraAnalyticsRecent", func(t *testing.T) {
+	t.Run("Test AnalyticsAPIService GetDeviceCameraAnalyticsRecent", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.AnalyticsApi.GetDeviceCameraAnalyticsRecent(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.AnalyticsAPI.GetDeviceCameraAnalyticsRecent(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,14 +64,14 @@ func Test_client_AnalyticsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AnalyticsApiService GetDeviceCameraAnalyticsZoneHistory", func(t *testing.T) {
+	t.Run("Test AnalyticsAPIService GetDeviceCameraAnalyticsZoneHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var zoneId string
 
-		resp, httpRes, err := apiClient.AnalyticsApi.GetDeviceCameraAnalyticsZoneHistory(context.Background(), serial, zoneId).Execute()
+		resp, httpRes, err := apiClient.AnalyticsAPI.GetDeviceCameraAnalyticsZoneHistory(context.Background(), serial, zoneId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,13 +79,13 @@ func Test_client_AnalyticsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AnalyticsApiService GetDeviceCameraAnalyticsZones", func(t *testing.T) {
+	t.Run("Test AnalyticsAPIService GetDeviceCameraAnalyticsZones", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.AnalyticsApi.GetDeviceCameraAnalyticsZones(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.AnalyticsAPI.GetDeviceCameraAnalyticsZones(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

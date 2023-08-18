@@ -20,16 +20,16 @@ import (
 )
 
 
-// SingleLanApiService SingleLanApi service
-type SingleLanApiService service
+// SingleLanAPIService SingleLanAPI service
+type SingleLanAPIService service
 
-type SingleLanApiGetNetworkApplianceSingleLanRequest struct {
+type SingleLanAPIGetNetworkApplianceSingleLanRequest struct {
 	ctx context.Context
-	ApiService *SingleLanApiService
+	ApiService *SingleLanAPIService
 	networkId string
 }
 
-func (r SingleLanApiGetNetworkApplianceSingleLanRequest) Execute() (*GetNetworkApplianceSingleLan200Response, *http.Response, error) {
+func (r SingleLanAPIGetNetworkApplianceSingleLanRequest) Execute() (*GetNetworkApplianceSingleLan200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceSingleLanExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return single LAN configuration
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SingleLanApiGetNetworkApplianceSingleLanRequest
+ @return SingleLanAPIGetNetworkApplianceSingleLanRequest
 */
-func (a *SingleLanApiService) GetNetworkApplianceSingleLan(ctx context.Context, networkId string) SingleLanApiGetNetworkApplianceSingleLanRequest {
-	return SingleLanApiGetNetworkApplianceSingleLanRequest{
+func (a *SingleLanAPIService) GetNetworkApplianceSingleLan(ctx context.Context, networkId string) SingleLanAPIGetNetworkApplianceSingleLanRequest {
+	return SingleLanAPIGetNetworkApplianceSingleLanRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *SingleLanApiService) GetNetworkApplianceSingleLan(ctx context.Context, 
 
 // Execute executes the request
 //  @return GetNetworkApplianceSingleLan200Response
-func (a *SingleLanApiService) GetNetworkApplianceSingleLanExecute(r SingleLanApiGetNetworkApplianceSingleLanRequest) (*GetNetworkApplianceSingleLan200Response, *http.Response, error) {
+func (a *SingleLanAPIService) GetNetworkApplianceSingleLanExecute(r SingleLanAPIGetNetworkApplianceSingleLanRequest) (*GetNetworkApplianceSingleLan200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *SingleLanApiService) GetNetworkApplianceSingleLanExecute(r SingleLanApi
 		localVarReturnValue  *GetNetworkApplianceSingleLan200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SingleLanApiService.GetNetworkApplianceSingleLan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SingleLanAPIService.GetNetworkApplianceSingleLan")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *SingleLanApiService) GetNetworkApplianceSingleLanExecute(r SingleLanApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SingleLanApiUpdateNetworkApplianceSingleLanRequest struct {
+type SingleLanAPIUpdateNetworkApplianceSingleLanRequest struct {
 	ctx context.Context
-	ApiService *SingleLanApiService
+	ApiService *SingleLanAPIService
 	networkId string
 	updateNetworkApplianceSingleLanRequest *UpdateNetworkApplianceSingleLanRequest
 }
 
-func (r SingleLanApiUpdateNetworkApplianceSingleLanRequest) UpdateNetworkApplianceSingleLanRequest(updateNetworkApplianceSingleLanRequest UpdateNetworkApplianceSingleLanRequest) SingleLanApiUpdateNetworkApplianceSingleLanRequest {
+func (r SingleLanAPIUpdateNetworkApplianceSingleLanRequest) UpdateNetworkApplianceSingleLanRequest(updateNetworkApplianceSingleLanRequest UpdateNetworkApplianceSingleLanRequest) SingleLanAPIUpdateNetworkApplianceSingleLanRequest {
 	r.updateNetworkApplianceSingleLanRequest = &updateNetworkApplianceSingleLanRequest
 	return r
 }
 
-func (r SingleLanApiUpdateNetworkApplianceSingleLanRequest) Execute() (*GetNetworkApplianceSingleLan200Response, *http.Response, error) {
+func (r SingleLanAPIUpdateNetworkApplianceSingleLanRequest) Execute() (*GetNetworkApplianceSingleLan200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceSingleLanExecute(r)
 }
 
@@ -163,10 +163,10 @@ Update single LAN configuration
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SingleLanApiUpdateNetworkApplianceSingleLanRequest
+ @return SingleLanAPIUpdateNetworkApplianceSingleLanRequest
 */
-func (a *SingleLanApiService) UpdateNetworkApplianceSingleLan(ctx context.Context, networkId string) SingleLanApiUpdateNetworkApplianceSingleLanRequest {
-	return SingleLanApiUpdateNetworkApplianceSingleLanRequest{
+func (a *SingleLanAPIService) UpdateNetworkApplianceSingleLan(ctx context.Context, networkId string) SingleLanAPIUpdateNetworkApplianceSingleLanRequest {
+	return SingleLanAPIUpdateNetworkApplianceSingleLanRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -175,7 +175,7 @@ func (a *SingleLanApiService) UpdateNetworkApplianceSingleLan(ctx context.Contex
 
 // Execute executes the request
 //  @return GetNetworkApplianceSingleLan200Response
-func (a *SingleLanApiService) UpdateNetworkApplianceSingleLanExecute(r SingleLanApiUpdateNetworkApplianceSingleLanRequest) (*GetNetworkApplianceSingleLan200Response, *http.Response, error) {
+func (a *SingleLanAPIService) UpdateNetworkApplianceSingleLanExecute(r SingleLanAPIUpdateNetworkApplianceSingleLanRequest) (*GetNetworkApplianceSingleLan200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *SingleLanApiService) UpdateNetworkApplianceSingleLanExecute(r SingleLan
 		localVarReturnValue  *GetNetworkApplianceSingleLan200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SingleLanApiService.UpdateNetworkApplianceSingleLan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SingleLanAPIService.UpdateNetworkApplianceSingleLan")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

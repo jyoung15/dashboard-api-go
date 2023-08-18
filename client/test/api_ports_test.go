@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing PortsApiService
+Testing PortsAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_PortsApiService(t *testing.T) {
+func Test_client_PortsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test PortsApiService CycleDeviceSwitchPorts", func(t *testing.T) {
+	t.Run("Test PortsAPIService CycleDeviceSwitchPorts", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.PortsApi.CycleDeviceSwitchPorts(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.PortsAPI.CycleDeviceSwitchPorts(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,14 +36,14 @@ func Test_client_PortsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PortsApiService GetDeviceSwitchPort", func(t *testing.T) {
+	t.Run("Test PortsAPIService GetDeviceSwitchPort", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var portId string
 
-		resp, httpRes, err := apiClient.PortsApi.GetDeviceSwitchPort(context.Background(), serial, portId).Execute()
+		resp, httpRes, err := apiClient.PortsAPI.GetDeviceSwitchPort(context.Background(), serial, portId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -51,13 +51,13 @@ func Test_client_PortsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PortsApiService GetDeviceSwitchPorts", func(t *testing.T) {
+	t.Run("Test PortsAPIService GetDeviceSwitchPorts", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.PortsApi.GetDeviceSwitchPorts(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.PortsAPI.GetDeviceSwitchPorts(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -65,13 +65,13 @@ func Test_client_PortsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PortsApiService GetDeviceSwitchPortsStatuses", func(t *testing.T) {
+	t.Run("Test PortsAPIService GetDeviceSwitchPortsStatuses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.PortsApi.GetDeviceSwitchPortsStatuses(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.PortsAPI.GetDeviceSwitchPortsStatuses(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,13 +79,13 @@ func Test_client_PortsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PortsApiService GetDeviceSwitchPortsStatusesPackets", func(t *testing.T) {
+	t.Run("Test PortsAPIService GetDeviceSwitchPortsStatusesPackets", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.PortsApi.GetDeviceSwitchPortsStatusesPackets(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.PortsAPI.GetDeviceSwitchPortsStatusesPackets(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -93,14 +93,14 @@ func Test_client_PortsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PortsApiService GetNetworkAppliancePort", func(t *testing.T) {
+	t.Run("Test PortsAPIService GetNetworkAppliancePort", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var portId string
 
-		resp, httpRes, err := apiClient.PortsApi.GetNetworkAppliancePort(context.Background(), networkId, portId).Execute()
+		resp, httpRes, err := apiClient.PortsAPI.GetNetworkAppliancePort(context.Background(), networkId, portId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -108,13 +108,13 @@ func Test_client_PortsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PortsApiService GetNetworkAppliancePorts", func(t *testing.T) {
+	t.Run("Test PortsAPIService GetNetworkAppliancePorts", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.PortsApi.GetNetworkAppliancePorts(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.PortsAPI.GetNetworkAppliancePorts(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -122,7 +122,7 @@ func Test_client_PortsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PortsApiService GetOrganizationConfigTemplateSwitchProfilePort", func(t *testing.T) {
+	t.Run("Test PortsAPIService GetOrganizationConfigTemplateSwitchProfilePort", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -131,7 +131,7 @@ func Test_client_PortsApiService(t *testing.T) {
 		var profileId string
 		var portId string
 
-		resp, httpRes, err := apiClient.PortsApi.GetOrganizationConfigTemplateSwitchProfilePort(context.Background(), organizationId, configTemplateId, profileId, portId).Execute()
+		resp, httpRes, err := apiClient.PortsAPI.GetOrganizationConfigTemplateSwitchProfilePort(context.Background(), organizationId, configTemplateId, profileId, portId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -139,7 +139,7 @@ func Test_client_PortsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PortsApiService GetOrganizationConfigTemplateSwitchProfilePorts", func(t *testing.T) {
+	t.Run("Test PortsAPIService GetOrganizationConfigTemplateSwitchProfilePorts", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -147,7 +147,7 @@ func Test_client_PortsApiService(t *testing.T) {
 		var configTemplateId string
 		var profileId string
 
-		resp, httpRes, err := apiClient.PortsApi.GetOrganizationConfigTemplateSwitchProfilePorts(context.Background(), organizationId, configTemplateId, profileId).Execute()
+		resp, httpRes, err := apiClient.PortsAPI.GetOrganizationConfigTemplateSwitchProfilePorts(context.Background(), organizationId, configTemplateId, profileId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -155,13 +155,13 @@ func Test_client_PortsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PortsApiService GetOrganizationSwitchPortsBySwitch", func(t *testing.T) {
+	t.Run("Test PortsAPIService GetOrganizationSwitchPortsBySwitch", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.PortsApi.GetOrganizationSwitchPortsBySwitch(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.PortsAPI.GetOrganizationSwitchPortsBySwitch(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -169,14 +169,14 @@ func Test_client_PortsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PortsApiService UpdateDeviceSwitchPort", func(t *testing.T) {
+	t.Run("Test PortsAPIService UpdateDeviceSwitchPort", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var portId string
 
-		resp, httpRes, err := apiClient.PortsApi.UpdateDeviceSwitchPort(context.Background(), serial, portId).Execute()
+		resp, httpRes, err := apiClient.PortsAPI.UpdateDeviceSwitchPort(context.Background(), serial, portId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -184,14 +184,14 @@ func Test_client_PortsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PortsApiService UpdateNetworkAppliancePort", func(t *testing.T) {
+	t.Run("Test PortsAPIService UpdateNetworkAppliancePort", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var portId string
 
-		resp, httpRes, err := apiClient.PortsApi.UpdateNetworkAppliancePort(context.Background(), networkId, portId).Execute()
+		resp, httpRes, err := apiClient.PortsAPI.UpdateNetworkAppliancePort(context.Background(), networkId, portId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -199,7 +199,7 @@ func Test_client_PortsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PortsApiService UpdateOrganizationConfigTemplateSwitchProfilePort", func(t *testing.T) {
+	t.Run("Test PortsAPIService UpdateOrganizationConfigTemplateSwitchProfilePort", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -208,7 +208,7 @@ func Test_client_PortsApiService(t *testing.T) {
 		var profileId string
 		var portId string
 
-		resp, httpRes, err := apiClient.PortsApi.UpdateOrganizationConfigTemplateSwitchProfilePort(context.Background(), organizationId, configTemplateId, profileId, portId).Execute()
+		resp, httpRes, err := apiClient.PortsAPI.UpdateOrganizationConfigTemplateSwitchProfilePort(context.Background(), organizationId, configTemplateId, profileId, portId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

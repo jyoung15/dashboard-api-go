@@ -20,22 +20,22 @@ import (
 )
 
 
-// TrafficShapingApiService TrafficShapingApi service
-type TrafficShapingApiService service
+// TrafficShapingAPIService TrafficShapingAPI service
+type TrafficShapingAPIService service
 
-type TrafficShapingApiCreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest struct {
+type TrafficShapingAPICreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest struct {
 	ctx context.Context
-	ApiService *TrafficShapingApiService
+	ApiService *TrafficShapingAPIService
 	networkId string
 	createNetworkApplianceTrafficShapingCustomPerformanceClassRequest *CreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest
 }
 
-func (r TrafficShapingApiCreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) CreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest(createNetworkApplianceTrafficShapingCustomPerformanceClassRequest CreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) TrafficShapingApiCreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest {
+func (r TrafficShapingAPICreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) CreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest(createNetworkApplianceTrafficShapingCustomPerformanceClassRequest CreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) TrafficShapingAPICreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest {
 	r.createNetworkApplianceTrafficShapingCustomPerformanceClassRequest = &createNetworkApplianceTrafficShapingCustomPerformanceClassRequest
 	return r
 }
 
-func (r TrafficShapingApiCreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r TrafficShapingAPICreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkApplianceTrafficShapingCustomPerformanceClassExecute(r)
 }
 
@@ -46,10 +46,10 @@ Add a custom performance class for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return TrafficShapingApiCreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest
+ @return TrafficShapingAPICreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest
 */
-func (a *TrafficShapingApiService) CreateNetworkApplianceTrafficShapingCustomPerformanceClass(ctx context.Context, networkId string) TrafficShapingApiCreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest {
-	return TrafficShapingApiCreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest{
+func (a *TrafficShapingAPIService) CreateNetworkApplianceTrafficShapingCustomPerformanceClass(ctx context.Context, networkId string) TrafficShapingAPICreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest {
+	return TrafficShapingAPICreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -58,7 +58,7 @@ func (a *TrafficShapingApiService) CreateNetworkApplianceTrafficShapingCustomPer
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *TrafficShapingApiService) CreateNetworkApplianceTrafficShapingCustomPerformanceClassExecute(r TrafficShapingApiCreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) (map[string]interface{}, *http.Response, error) {
+func (a *TrafficShapingAPIService) CreateNetworkApplianceTrafficShapingCustomPerformanceClassExecute(r TrafficShapingAPICreateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *TrafficShapingApiService) CreateNetworkApplianceTrafficShapingCustomPer
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingApiService.CreateNetworkApplianceTrafficShapingCustomPerformanceClass")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingAPIService.CreateNetworkApplianceTrafficShapingCustomPerformanceClass")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,14 +151,14 @@ func (a *TrafficShapingApiService) CreateNetworkApplianceTrafficShapingCustomPer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type TrafficShapingApiDeleteNetworkApplianceTrafficShapingCustomPerformanceClassRequest struct {
+type TrafficShapingAPIDeleteNetworkApplianceTrafficShapingCustomPerformanceClassRequest struct {
 	ctx context.Context
-	ApiService *TrafficShapingApiService
+	ApiService *TrafficShapingAPIService
 	networkId string
 	customPerformanceClassId string
 }
 
-func (r TrafficShapingApiDeleteNetworkApplianceTrafficShapingCustomPerformanceClassRequest) Execute() (*http.Response, error) {
+func (r TrafficShapingAPIDeleteNetworkApplianceTrafficShapingCustomPerformanceClassRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkApplianceTrafficShapingCustomPerformanceClassExecute(r)
 }
 
@@ -170,10 +170,10 @@ Delete a custom performance class from an MX network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param customPerformanceClassId Custom performance class ID
- @return TrafficShapingApiDeleteNetworkApplianceTrafficShapingCustomPerformanceClassRequest
+ @return TrafficShapingAPIDeleteNetworkApplianceTrafficShapingCustomPerformanceClassRequest
 */
-func (a *TrafficShapingApiService) DeleteNetworkApplianceTrafficShapingCustomPerformanceClass(ctx context.Context, networkId string, customPerformanceClassId string) TrafficShapingApiDeleteNetworkApplianceTrafficShapingCustomPerformanceClassRequest {
-	return TrafficShapingApiDeleteNetworkApplianceTrafficShapingCustomPerformanceClassRequest{
+func (a *TrafficShapingAPIService) DeleteNetworkApplianceTrafficShapingCustomPerformanceClass(ctx context.Context, networkId string, customPerformanceClassId string) TrafficShapingAPIDeleteNetworkApplianceTrafficShapingCustomPerformanceClassRequest {
+	return TrafficShapingAPIDeleteNetworkApplianceTrafficShapingCustomPerformanceClassRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -182,14 +182,14 @@ func (a *TrafficShapingApiService) DeleteNetworkApplianceTrafficShapingCustomPer
 }
 
 // Execute executes the request
-func (a *TrafficShapingApiService) DeleteNetworkApplianceTrafficShapingCustomPerformanceClassExecute(r TrafficShapingApiDeleteNetworkApplianceTrafficShapingCustomPerformanceClassRequest) (*http.Response, error) {
+func (a *TrafficShapingAPIService) DeleteNetworkApplianceTrafficShapingCustomPerformanceClassExecute(r TrafficShapingAPIDeleteNetworkApplianceTrafficShapingCustomPerformanceClassRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingApiService.DeleteNetworkApplianceTrafficShapingCustomPerformanceClass")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingAPIService.DeleteNetworkApplianceTrafficShapingCustomPerformanceClass")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -261,13 +261,13 @@ func (a *TrafficShapingApiService) DeleteNetworkApplianceTrafficShapingCustomPer
 	return localVarHTTPResponse, nil
 }
 
-type TrafficShapingApiGetNetworkApplianceTrafficShapingRequest struct {
+type TrafficShapingAPIGetNetworkApplianceTrafficShapingRequest struct {
 	ctx context.Context
-	ApiService *TrafficShapingApiService
+	ApiService *TrafficShapingAPIService
 	networkId string
 }
 
-func (r TrafficShapingApiGetNetworkApplianceTrafficShapingRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r TrafficShapingAPIGetNetworkApplianceTrafficShapingRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceTrafficShapingExecute(r)
 }
 
@@ -278,10 +278,10 @@ Display the traffic shaping settings for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return TrafficShapingApiGetNetworkApplianceTrafficShapingRequest
+ @return TrafficShapingAPIGetNetworkApplianceTrafficShapingRequest
 */
-func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShaping(ctx context.Context, networkId string) TrafficShapingApiGetNetworkApplianceTrafficShapingRequest {
-	return TrafficShapingApiGetNetworkApplianceTrafficShapingRequest{
+func (a *TrafficShapingAPIService) GetNetworkApplianceTrafficShaping(ctx context.Context, networkId string) TrafficShapingAPIGetNetworkApplianceTrafficShapingRequest {
+	return TrafficShapingAPIGetNetworkApplianceTrafficShapingRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -290,7 +290,7 @@ func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShaping(ctx context
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingExecute(r TrafficShapingApiGetNetworkApplianceTrafficShapingRequest) (map[string]interface{}, *http.Response, error) {
+func (a *TrafficShapingAPIService) GetNetworkApplianceTrafficShapingExecute(r TrafficShapingAPIGetNetworkApplianceTrafficShapingRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -298,7 +298,7 @@ func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingExecute(r Tr
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingApiService.GetNetworkApplianceTrafficShaping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingAPIService.GetNetworkApplianceTrafficShaping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -378,14 +378,14 @@ func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingExecute(r Tr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type TrafficShapingApiGetNetworkApplianceTrafficShapingCustomPerformanceClassRequest struct {
+type TrafficShapingAPIGetNetworkApplianceTrafficShapingCustomPerformanceClassRequest struct {
 	ctx context.Context
-	ApiService *TrafficShapingApiService
+	ApiService *TrafficShapingAPIService
 	networkId string
 	customPerformanceClassId string
 }
 
-func (r TrafficShapingApiGetNetworkApplianceTrafficShapingCustomPerformanceClassRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r TrafficShapingAPIGetNetworkApplianceTrafficShapingCustomPerformanceClassRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceTrafficShapingCustomPerformanceClassExecute(r)
 }
 
@@ -397,10 +397,10 @@ Return a custom performance class for an MX network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param customPerformanceClassId Custom performance class ID
- @return TrafficShapingApiGetNetworkApplianceTrafficShapingCustomPerformanceClassRequest
+ @return TrafficShapingAPIGetNetworkApplianceTrafficShapingCustomPerformanceClassRequest
 */
-func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingCustomPerformanceClass(ctx context.Context, networkId string, customPerformanceClassId string) TrafficShapingApiGetNetworkApplianceTrafficShapingCustomPerformanceClassRequest {
-	return TrafficShapingApiGetNetworkApplianceTrafficShapingCustomPerformanceClassRequest{
+func (a *TrafficShapingAPIService) GetNetworkApplianceTrafficShapingCustomPerformanceClass(ctx context.Context, networkId string, customPerformanceClassId string) TrafficShapingAPIGetNetworkApplianceTrafficShapingCustomPerformanceClassRequest {
+	return TrafficShapingAPIGetNetworkApplianceTrafficShapingCustomPerformanceClassRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -410,7 +410,7 @@ func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingCustomPerfor
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingCustomPerformanceClassExecute(r TrafficShapingApiGetNetworkApplianceTrafficShapingCustomPerformanceClassRequest) (map[string]interface{}, *http.Response, error) {
+func (a *TrafficShapingAPIService) GetNetworkApplianceTrafficShapingCustomPerformanceClassExecute(r TrafficShapingAPIGetNetworkApplianceTrafficShapingCustomPerformanceClassRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -418,7 +418,7 @@ func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingCustomPerfor
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingApiService.GetNetworkApplianceTrafficShapingCustomPerformanceClass")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingAPIService.GetNetworkApplianceTrafficShapingCustomPerformanceClass")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -499,13 +499,13 @@ func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingCustomPerfor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type TrafficShapingApiGetNetworkApplianceTrafficShapingCustomPerformanceClassesRequest struct {
+type TrafficShapingAPIGetNetworkApplianceTrafficShapingCustomPerformanceClassesRequest struct {
 	ctx context.Context
-	ApiService *TrafficShapingApiService
+	ApiService *TrafficShapingAPIService
 	networkId string
 }
 
-func (r TrafficShapingApiGetNetworkApplianceTrafficShapingCustomPerformanceClassesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r TrafficShapingAPIGetNetworkApplianceTrafficShapingCustomPerformanceClassesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceTrafficShapingCustomPerformanceClassesExecute(r)
 }
 
@@ -516,10 +516,10 @@ List all custom performance classes for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return TrafficShapingApiGetNetworkApplianceTrafficShapingCustomPerformanceClassesRequest
+ @return TrafficShapingAPIGetNetworkApplianceTrafficShapingCustomPerformanceClassesRequest
 */
-func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingCustomPerformanceClasses(ctx context.Context, networkId string) TrafficShapingApiGetNetworkApplianceTrafficShapingCustomPerformanceClassesRequest {
-	return TrafficShapingApiGetNetworkApplianceTrafficShapingCustomPerformanceClassesRequest{
+func (a *TrafficShapingAPIService) GetNetworkApplianceTrafficShapingCustomPerformanceClasses(ctx context.Context, networkId string) TrafficShapingAPIGetNetworkApplianceTrafficShapingCustomPerformanceClassesRequest {
+	return TrafficShapingAPIGetNetworkApplianceTrafficShapingCustomPerformanceClassesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -528,7 +528,7 @@ func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingCustomPerfor
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingCustomPerformanceClassesExecute(r TrafficShapingApiGetNetworkApplianceTrafficShapingCustomPerformanceClassesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *TrafficShapingAPIService) GetNetworkApplianceTrafficShapingCustomPerformanceClassesExecute(r TrafficShapingAPIGetNetworkApplianceTrafficShapingCustomPerformanceClassesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -536,7 +536,7 @@ func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingCustomPerfor
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingApiService.GetNetworkApplianceTrafficShapingCustomPerformanceClasses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingAPIService.GetNetworkApplianceTrafficShapingCustomPerformanceClasses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -616,13 +616,13 @@ func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingCustomPerfor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type TrafficShapingApiGetNetworkApplianceTrafficShapingRulesRequest struct {
+type TrafficShapingAPIGetNetworkApplianceTrafficShapingRulesRequest struct {
 	ctx context.Context
-	ApiService *TrafficShapingApiService
+	ApiService *TrafficShapingAPIService
 	networkId string
 }
 
-func (r TrafficShapingApiGetNetworkApplianceTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r TrafficShapingAPIGetNetworkApplianceTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceTrafficShapingRulesExecute(r)
 }
 
@@ -633,10 +633,10 @@ Display the traffic shaping settings rules for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return TrafficShapingApiGetNetworkApplianceTrafficShapingRulesRequest
+ @return TrafficShapingAPIGetNetworkApplianceTrafficShapingRulesRequest
 */
-func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingRules(ctx context.Context, networkId string) TrafficShapingApiGetNetworkApplianceTrafficShapingRulesRequest {
-	return TrafficShapingApiGetNetworkApplianceTrafficShapingRulesRequest{
+func (a *TrafficShapingAPIService) GetNetworkApplianceTrafficShapingRules(ctx context.Context, networkId string) TrafficShapingAPIGetNetworkApplianceTrafficShapingRulesRequest {
+	return TrafficShapingAPIGetNetworkApplianceTrafficShapingRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -645,7 +645,7 @@ func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingRules(ctx co
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingRulesExecute(r TrafficShapingApiGetNetworkApplianceTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *TrafficShapingAPIService) GetNetworkApplianceTrafficShapingRulesExecute(r TrafficShapingAPIGetNetworkApplianceTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -653,7 +653,7 @@ func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingRulesExecute
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingApiService.GetNetworkApplianceTrafficShapingRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingAPIService.GetNetworkApplianceTrafficShapingRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -733,13 +733,13 @@ func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingRulesExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type TrafficShapingApiGetNetworkApplianceTrafficShapingUplinkBandwidthRequest struct {
+type TrafficShapingAPIGetNetworkApplianceTrafficShapingUplinkBandwidthRequest struct {
 	ctx context.Context
-	ApiService *TrafficShapingApiService
+	ApiService *TrafficShapingAPIService
 	networkId string
 }
 
-func (r TrafficShapingApiGetNetworkApplianceTrafficShapingUplinkBandwidthRequest) Execute() (*GetNetworkApplianceTrafficShapingUplinkBandwidth200Response, *http.Response, error) {
+func (r TrafficShapingAPIGetNetworkApplianceTrafficShapingUplinkBandwidthRequest) Execute() (*GetNetworkApplianceTrafficShapingUplinkBandwidth200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceTrafficShapingUplinkBandwidthExecute(r)
 }
 
@@ -750,10 +750,10 @@ Returns the uplink bandwidth limits for your MX network. This may not reflect th
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return TrafficShapingApiGetNetworkApplianceTrafficShapingUplinkBandwidthRequest
+ @return TrafficShapingAPIGetNetworkApplianceTrafficShapingUplinkBandwidthRequest
 */
-func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingUplinkBandwidth(ctx context.Context, networkId string) TrafficShapingApiGetNetworkApplianceTrafficShapingUplinkBandwidthRequest {
-	return TrafficShapingApiGetNetworkApplianceTrafficShapingUplinkBandwidthRequest{
+func (a *TrafficShapingAPIService) GetNetworkApplianceTrafficShapingUplinkBandwidth(ctx context.Context, networkId string) TrafficShapingAPIGetNetworkApplianceTrafficShapingUplinkBandwidthRequest {
+	return TrafficShapingAPIGetNetworkApplianceTrafficShapingUplinkBandwidthRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -762,7 +762,7 @@ func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingUplinkBandwi
 
 // Execute executes the request
 //  @return GetNetworkApplianceTrafficShapingUplinkBandwidth200Response
-func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingUplinkBandwidthExecute(r TrafficShapingApiGetNetworkApplianceTrafficShapingUplinkBandwidthRequest) (*GetNetworkApplianceTrafficShapingUplinkBandwidth200Response, *http.Response, error) {
+func (a *TrafficShapingAPIService) GetNetworkApplianceTrafficShapingUplinkBandwidthExecute(r TrafficShapingAPIGetNetworkApplianceTrafficShapingUplinkBandwidthRequest) (*GetNetworkApplianceTrafficShapingUplinkBandwidth200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -770,7 +770,7 @@ func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingUplinkBandwi
 		localVarReturnValue  *GetNetworkApplianceTrafficShapingUplinkBandwidth200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingApiService.GetNetworkApplianceTrafficShapingUplinkBandwidth")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingAPIService.GetNetworkApplianceTrafficShapingUplinkBandwidth")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -850,13 +850,13 @@ func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingUplinkBandwi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type TrafficShapingApiGetNetworkApplianceTrafficShapingUplinkSelectionRequest struct {
+type TrafficShapingAPIGetNetworkApplianceTrafficShapingUplinkSelectionRequest struct {
 	ctx context.Context
-	ApiService *TrafficShapingApiService
+	ApiService *TrafficShapingAPIService
 	networkId string
 }
 
-func (r TrafficShapingApiGetNetworkApplianceTrafficShapingUplinkSelectionRequest) Execute() (*GetNetworkApplianceTrafficShapingUplinkSelection200Response, *http.Response, error) {
+func (r TrafficShapingAPIGetNetworkApplianceTrafficShapingUplinkSelectionRequest) Execute() (*GetNetworkApplianceTrafficShapingUplinkSelection200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceTrafficShapingUplinkSelectionExecute(r)
 }
 
@@ -867,10 +867,10 @@ Show uplink selection settings for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return TrafficShapingApiGetNetworkApplianceTrafficShapingUplinkSelectionRequest
+ @return TrafficShapingAPIGetNetworkApplianceTrafficShapingUplinkSelectionRequest
 */
-func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingUplinkSelection(ctx context.Context, networkId string) TrafficShapingApiGetNetworkApplianceTrafficShapingUplinkSelectionRequest {
-	return TrafficShapingApiGetNetworkApplianceTrafficShapingUplinkSelectionRequest{
+func (a *TrafficShapingAPIService) GetNetworkApplianceTrafficShapingUplinkSelection(ctx context.Context, networkId string) TrafficShapingAPIGetNetworkApplianceTrafficShapingUplinkSelectionRequest {
+	return TrafficShapingAPIGetNetworkApplianceTrafficShapingUplinkSelectionRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -879,7 +879,7 @@ func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingUplinkSelect
 
 // Execute executes the request
 //  @return GetNetworkApplianceTrafficShapingUplinkSelection200Response
-func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingUplinkSelectionExecute(r TrafficShapingApiGetNetworkApplianceTrafficShapingUplinkSelectionRequest) (*GetNetworkApplianceTrafficShapingUplinkSelection200Response, *http.Response, error) {
+func (a *TrafficShapingAPIService) GetNetworkApplianceTrafficShapingUplinkSelectionExecute(r TrafficShapingAPIGetNetworkApplianceTrafficShapingUplinkSelectionRequest) (*GetNetworkApplianceTrafficShapingUplinkSelection200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -887,7 +887,7 @@ func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingUplinkSelect
 		localVarReturnValue  *GetNetworkApplianceTrafficShapingUplinkSelection200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingApiService.GetNetworkApplianceTrafficShapingUplinkSelection")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingAPIService.GetNetworkApplianceTrafficShapingUplinkSelection")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -967,13 +967,13 @@ func (a *TrafficShapingApiService) GetNetworkApplianceTrafficShapingUplinkSelect
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type TrafficShapingApiGetNetworkTrafficShapingApplicationCategoriesRequest struct {
+type TrafficShapingAPIGetNetworkTrafficShapingApplicationCategoriesRequest struct {
 	ctx context.Context
-	ApiService *TrafficShapingApiService
+	ApiService *TrafficShapingAPIService
 	networkId string
 }
 
-func (r TrafficShapingApiGetNetworkTrafficShapingApplicationCategoriesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r TrafficShapingAPIGetNetworkTrafficShapingApplicationCategoriesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkTrafficShapingApplicationCategoriesExecute(r)
 }
 
@@ -984,10 +984,10 @@ Returns the application categories for traffic shaping rules.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return TrafficShapingApiGetNetworkTrafficShapingApplicationCategoriesRequest
+ @return TrafficShapingAPIGetNetworkTrafficShapingApplicationCategoriesRequest
 */
-func (a *TrafficShapingApiService) GetNetworkTrafficShapingApplicationCategories(ctx context.Context, networkId string) TrafficShapingApiGetNetworkTrafficShapingApplicationCategoriesRequest {
-	return TrafficShapingApiGetNetworkTrafficShapingApplicationCategoriesRequest{
+func (a *TrafficShapingAPIService) GetNetworkTrafficShapingApplicationCategories(ctx context.Context, networkId string) TrafficShapingAPIGetNetworkTrafficShapingApplicationCategoriesRequest {
+	return TrafficShapingAPIGetNetworkTrafficShapingApplicationCategoriesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -996,7 +996,7 @@ func (a *TrafficShapingApiService) GetNetworkTrafficShapingApplicationCategories
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *TrafficShapingApiService) GetNetworkTrafficShapingApplicationCategoriesExecute(r TrafficShapingApiGetNetworkTrafficShapingApplicationCategoriesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *TrafficShapingAPIService) GetNetworkTrafficShapingApplicationCategoriesExecute(r TrafficShapingAPIGetNetworkTrafficShapingApplicationCategoriesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1004,7 +1004,7 @@ func (a *TrafficShapingApiService) GetNetworkTrafficShapingApplicationCategories
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingApiService.GetNetworkTrafficShapingApplicationCategories")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingAPIService.GetNetworkTrafficShapingApplicationCategories")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1084,13 +1084,13 @@ func (a *TrafficShapingApiService) GetNetworkTrafficShapingApplicationCategories
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type TrafficShapingApiGetNetworkTrafficShapingDscpTaggingOptionsRequest struct {
+type TrafficShapingAPIGetNetworkTrafficShapingDscpTaggingOptionsRequest struct {
 	ctx context.Context
-	ApiService *TrafficShapingApiService
+	ApiService *TrafficShapingAPIService
 	networkId string
 }
 
-func (r TrafficShapingApiGetNetworkTrafficShapingDscpTaggingOptionsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r TrafficShapingAPIGetNetworkTrafficShapingDscpTaggingOptionsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkTrafficShapingDscpTaggingOptionsExecute(r)
 }
 
@@ -1101,10 +1101,10 @@ Returns the available DSCP tagging options for your traffic shaping rules.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return TrafficShapingApiGetNetworkTrafficShapingDscpTaggingOptionsRequest
+ @return TrafficShapingAPIGetNetworkTrafficShapingDscpTaggingOptionsRequest
 */
-func (a *TrafficShapingApiService) GetNetworkTrafficShapingDscpTaggingOptions(ctx context.Context, networkId string) TrafficShapingApiGetNetworkTrafficShapingDscpTaggingOptionsRequest {
-	return TrafficShapingApiGetNetworkTrafficShapingDscpTaggingOptionsRequest{
+func (a *TrafficShapingAPIService) GetNetworkTrafficShapingDscpTaggingOptions(ctx context.Context, networkId string) TrafficShapingAPIGetNetworkTrafficShapingDscpTaggingOptionsRequest {
+	return TrafficShapingAPIGetNetworkTrafficShapingDscpTaggingOptionsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1113,7 +1113,7 @@ func (a *TrafficShapingApiService) GetNetworkTrafficShapingDscpTaggingOptions(ct
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *TrafficShapingApiService) GetNetworkTrafficShapingDscpTaggingOptionsExecute(r TrafficShapingApiGetNetworkTrafficShapingDscpTaggingOptionsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *TrafficShapingAPIService) GetNetworkTrafficShapingDscpTaggingOptionsExecute(r TrafficShapingAPIGetNetworkTrafficShapingDscpTaggingOptionsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1121,7 +1121,7 @@ func (a *TrafficShapingApiService) GetNetworkTrafficShapingDscpTaggingOptionsExe
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingApiService.GetNetworkTrafficShapingDscpTaggingOptions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingAPIService.GetNetworkTrafficShapingDscpTaggingOptions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1201,14 +1201,14 @@ func (a *TrafficShapingApiService) GetNetworkTrafficShapingDscpTaggingOptionsExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type TrafficShapingApiGetNetworkWirelessSsidTrafficShapingRulesRequest struct {
+type TrafficShapingAPIGetNetworkWirelessSsidTrafficShapingRulesRequest struct {
 	ctx context.Context
-	ApiService *TrafficShapingApiService
+	ApiService *TrafficShapingAPIService
 	networkId string
 	number string
 }
 
-func (r TrafficShapingApiGetNetworkWirelessSsidTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r TrafficShapingAPIGetNetworkWirelessSsidTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidTrafficShapingRulesExecute(r)
 }
 
@@ -1220,10 +1220,10 @@ Display the traffic shaping settings for a SSID on an MR network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return TrafficShapingApiGetNetworkWirelessSsidTrafficShapingRulesRequest
+ @return TrafficShapingAPIGetNetworkWirelessSsidTrafficShapingRulesRequest
 */
-func (a *TrafficShapingApiService) GetNetworkWirelessSsidTrafficShapingRules(ctx context.Context, networkId string, number string) TrafficShapingApiGetNetworkWirelessSsidTrafficShapingRulesRequest {
-	return TrafficShapingApiGetNetworkWirelessSsidTrafficShapingRulesRequest{
+func (a *TrafficShapingAPIService) GetNetworkWirelessSsidTrafficShapingRules(ctx context.Context, networkId string, number string) TrafficShapingAPIGetNetworkWirelessSsidTrafficShapingRulesRequest {
+	return TrafficShapingAPIGetNetworkWirelessSsidTrafficShapingRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1233,7 +1233,7 @@ func (a *TrafficShapingApiService) GetNetworkWirelessSsidTrafficShapingRules(ctx
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *TrafficShapingApiService) GetNetworkWirelessSsidTrafficShapingRulesExecute(r TrafficShapingApiGetNetworkWirelessSsidTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *TrafficShapingAPIService) GetNetworkWirelessSsidTrafficShapingRulesExecute(r TrafficShapingAPIGetNetworkWirelessSsidTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1241,7 +1241,7 @@ func (a *TrafficShapingApiService) GetNetworkWirelessSsidTrafficShapingRulesExec
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingApiService.GetNetworkWirelessSsidTrafficShapingRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingAPIService.GetNetworkWirelessSsidTrafficShapingRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1322,19 +1322,19 @@ func (a *TrafficShapingApiService) GetNetworkWirelessSsidTrafficShapingRulesExec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type TrafficShapingApiUpdateNetworkApplianceTrafficShapingRequest struct {
+type TrafficShapingAPIUpdateNetworkApplianceTrafficShapingRequest struct {
 	ctx context.Context
-	ApiService *TrafficShapingApiService
+	ApiService *TrafficShapingAPIService
 	networkId string
 	updateNetworkApplianceTrafficShapingRequest *UpdateNetworkApplianceTrafficShapingRequest
 }
 
-func (r TrafficShapingApiUpdateNetworkApplianceTrafficShapingRequest) UpdateNetworkApplianceTrafficShapingRequest(updateNetworkApplianceTrafficShapingRequest UpdateNetworkApplianceTrafficShapingRequest) TrafficShapingApiUpdateNetworkApplianceTrafficShapingRequest {
+func (r TrafficShapingAPIUpdateNetworkApplianceTrafficShapingRequest) UpdateNetworkApplianceTrafficShapingRequest(updateNetworkApplianceTrafficShapingRequest UpdateNetworkApplianceTrafficShapingRequest) TrafficShapingAPIUpdateNetworkApplianceTrafficShapingRequest {
 	r.updateNetworkApplianceTrafficShapingRequest = &updateNetworkApplianceTrafficShapingRequest
 	return r
 }
 
-func (r TrafficShapingApiUpdateNetworkApplianceTrafficShapingRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r TrafficShapingAPIUpdateNetworkApplianceTrafficShapingRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceTrafficShapingExecute(r)
 }
 
@@ -1345,10 +1345,10 @@ Update the traffic shaping settings for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return TrafficShapingApiUpdateNetworkApplianceTrafficShapingRequest
+ @return TrafficShapingAPIUpdateNetworkApplianceTrafficShapingRequest
 */
-func (a *TrafficShapingApiService) UpdateNetworkApplianceTrafficShaping(ctx context.Context, networkId string) TrafficShapingApiUpdateNetworkApplianceTrafficShapingRequest {
-	return TrafficShapingApiUpdateNetworkApplianceTrafficShapingRequest{
+func (a *TrafficShapingAPIService) UpdateNetworkApplianceTrafficShaping(ctx context.Context, networkId string) TrafficShapingAPIUpdateNetworkApplianceTrafficShapingRequest {
+	return TrafficShapingAPIUpdateNetworkApplianceTrafficShapingRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1357,7 +1357,7 @@ func (a *TrafficShapingApiService) UpdateNetworkApplianceTrafficShaping(ctx cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *TrafficShapingApiService) UpdateNetworkApplianceTrafficShapingExecute(r TrafficShapingApiUpdateNetworkApplianceTrafficShapingRequest) (map[string]interface{}, *http.Response, error) {
+func (a *TrafficShapingAPIService) UpdateNetworkApplianceTrafficShapingExecute(r TrafficShapingAPIUpdateNetworkApplianceTrafficShapingRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1365,7 +1365,7 @@ func (a *TrafficShapingApiService) UpdateNetworkApplianceTrafficShapingExecute(r
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingApiService.UpdateNetworkApplianceTrafficShaping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingAPIService.UpdateNetworkApplianceTrafficShaping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1447,20 +1447,20 @@ func (a *TrafficShapingApiService) UpdateNetworkApplianceTrafficShapingExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type TrafficShapingApiUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest struct {
+type TrafficShapingAPIUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest struct {
 	ctx context.Context
-	ApiService *TrafficShapingApiService
+	ApiService *TrafficShapingAPIService
 	networkId string
 	customPerformanceClassId string
 	updateNetworkApplianceTrafficShapingCustomPerformanceClassRequest *UpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest
 }
 
-func (r TrafficShapingApiUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) UpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest(updateNetworkApplianceTrafficShapingCustomPerformanceClassRequest UpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) TrafficShapingApiUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest {
+func (r TrafficShapingAPIUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) UpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest(updateNetworkApplianceTrafficShapingCustomPerformanceClassRequest UpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) TrafficShapingAPIUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest {
 	r.updateNetworkApplianceTrafficShapingCustomPerformanceClassRequest = &updateNetworkApplianceTrafficShapingCustomPerformanceClassRequest
 	return r
 }
 
-func (r TrafficShapingApiUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r TrafficShapingAPIUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceTrafficShapingCustomPerformanceClassExecute(r)
 }
 
@@ -1472,10 +1472,10 @@ Update a custom performance class for an MX network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param customPerformanceClassId Custom performance class ID
- @return TrafficShapingApiUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest
+ @return TrafficShapingAPIUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest
 */
-func (a *TrafficShapingApiService) UpdateNetworkApplianceTrafficShapingCustomPerformanceClass(ctx context.Context, networkId string, customPerformanceClassId string) TrafficShapingApiUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest {
-	return TrafficShapingApiUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest{
+func (a *TrafficShapingAPIService) UpdateNetworkApplianceTrafficShapingCustomPerformanceClass(ctx context.Context, networkId string, customPerformanceClassId string) TrafficShapingAPIUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest {
+	return TrafficShapingAPIUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1485,7 +1485,7 @@ func (a *TrafficShapingApiService) UpdateNetworkApplianceTrafficShapingCustomPer
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *TrafficShapingApiService) UpdateNetworkApplianceTrafficShapingCustomPerformanceClassExecute(r TrafficShapingApiUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) (map[string]interface{}, *http.Response, error) {
+func (a *TrafficShapingAPIService) UpdateNetworkApplianceTrafficShapingCustomPerformanceClassExecute(r TrafficShapingAPIUpdateNetworkApplianceTrafficShapingCustomPerformanceClassRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1493,7 +1493,7 @@ func (a *TrafficShapingApiService) UpdateNetworkApplianceTrafficShapingCustomPer
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingApiService.UpdateNetworkApplianceTrafficShapingCustomPerformanceClass")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingAPIService.UpdateNetworkApplianceTrafficShapingCustomPerformanceClass")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1576,19 +1576,19 @@ func (a *TrafficShapingApiService) UpdateNetworkApplianceTrafficShapingCustomPer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type TrafficShapingApiUpdateNetworkApplianceTrafficShapingRulesRequest struct {
+type TrafficShapingAPIUpdateNetworkApplianceTrafficShapingRulesRequest struct {
 	ctx context.Context
-	ApiService *TrafficShapingApiService
+	ApiService *TrafficShapingAPIService
 	networkId string
 	updateNetworkApplianceTrafficShapingRulesRequest *UpdateNetworkApplianceTrafficShapingRulesRequest
 }
 
-func (r TrafficShapingApiUpdateNetworkApplianceTrafficShapingRulesRequest) UpdateNetworkApplianceTrafficShapingRulesRequest(updateNetworkApplianceTrafficShapingRulesRequest UpdateNetworkApplianceTrafficShapingRulesRequest) TrafficShapingApiUpdateNetworkApplianceTrafficShapingRulesRequest {
+func (r TrafficShapingAPIUpdateNetworkApplianceTrafficShapingRulesRequest) UpdateNetworkApplianceTrafficShapingRulesRequest(updateNetworkApplianceTrafficShapingRulesRequest UpdateNetworkApplianceTrafficShapingRulesRequest) TrafficShapingAPIUpdateNetworkApplianceTrafficShapingRulesRequest {
 	r.updateNetworkApplianceTrafficShapingRulesRequest = &updateNetworkApplianceTrafficShapingRulesRequest
 	return r
 }
 
-func (r TrafficShapingApiUpdateNetworkApplianceTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r TrafficShapingAPIUpdateNetworkApplianceTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceTrafficShapingRulesExecute(r)
 }
 
@@ -1599,10 +1599,10 @@ Update the traffic shaping settings rules for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return TrafficShapingApiUpdateNetworkApplianceTrafficShapingRulesRequest
+ @return TrafficShapingAPIUpdateNetworkApplianceTrafficShapingRulesRequest
 */
-func (a *TrafficShapingApiService) UpdateNetworkApplianceTrafficShapingRules(ctx context.Context, networkId string) TrafficShapingApiUpdateNetworkApplianceTrafficShapingRulesRequest {
-	return TrafficShapingApiUpdateNetworkApplianceTrafficShapingRulesRequest{
+func (a *TrafficShapingAPIService) UpdateNetworkApplianceTrafficShapingRules(ctx context.Context, networkId string) TrafficShapingAPIUpdateNetworkApplianceTrafficShapingRulesRequest {
+	return TrafficShapingAPIUpdateNetworkApplianceTrafficShapingRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1611,7 +1611,7 @@ func (a *TrafficShapingApiService) UpdateNetworkApplianceTrafficShapingRules(ctx
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *TrafficShapingApiService) UpdateNetworkApplianceTrafficShapingRulesExecute(r TrafficShapingApiUpdateNetworkApplianceTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *TrafficShapingAPIService) UpdateNetworkApplianceTrafficShapingRulesExecute(r TrafficShapingAPIUpdateNetworkApplianceTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1619,7 +1619,7 @@ func (a *TrafficShapingApiService) UpdateNetworkApplianceTrafficShapingRulesExec
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingApiService.UpdateNetworkApplianceTrafficShapingRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingAPIService.UpdateNetworkApplianceTrafficShapingRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1701,19 +1701,19 @@ func (a *TrafficShapingApiService) UpdateNetworkApplianceTrafficShapingRulesExec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type TrafficShapingApiUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest struct {
+type TrafficShapingAPIUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest struct {
 	ctx context.Context
-	ApiService *TrafficShapingApiService
+	ApiService *TrafficShapingAPIService
 	networkId string
 	updateNetworkApplianceTrafficShapingUplinkBandwidthRequest *UpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest
 }
 
-func (r TrafficShapingApiUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest) UpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest(updateNetworkApplianceTrafficShapingUplinkBandwidthRequest UpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest) TrafficShapingApiUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest {
+func (r TrafficShapingAPIUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest) UpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest(updateNetworkApplianceTrafficShapingUplinkBandwidthRequest UpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest) TrafficShapingAPIUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest {
 	r.updateNetworkApplianceTrafficShapingUplinkBandwidthRequest = &updateNetworkApplianceTrafficShapingUplinkBandwidthRequest
 	return r
 }
 
-func (r TrafficShapingApiUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r TrafficShapingAPIUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceTrafficShapingUplinkBandwidthExecute(r)
 }
 
@@ -1724,10 +1724,10 @@ Updates the uplink bandwidth settings for your MX network.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return TrafficShapingApiUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest
+ @return TrafficShapingAPIUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest
 */
-func (a *TrafficShapingApiService) UpdateNetworkApplianceTrafficShapingUplinkBandwidth(ctx context.Context, networkId string) TrafficShapingApiUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest {
-	return TrafficShapingApiUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest{
+func (a *TrafficShapingAPIService) UpdateNetworkApplianceTrafficShapingUplinkBandwidth(ctx context.Context, networkId string) TrafficShapingAPIUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest {
+	return TrafficShapingAPIUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1736,7 +1736,7 @@ func (a *TrafficShapingApiService) UpdateNetworkApplianceTrafficShapingUplinkBan
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *TrafficShapingApiService) UpdateNetworkApplianceTrafficShapingUplinkBandwidthExecute(r TrafficShapingApiUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest) (map[string]interface{}, *http.Response, error) {
+func (a *TrafficShapingAPIService) UpdateNetworkApplianceTrafficShapingUplinkBandwidthExecute(r TrafficShapingAPIUpdateNetworkApplianceTrafficShapingUplinkBandwidthRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1744,7 +1744,7 @@ func (a *TrafficShapingApiService) UpdateNetworkApplianceTrafficShapingUplinkBan
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingApiService.UpdateNetworkApplianceTrafficShapingUplinkBandwidth")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingAPIService.UpdateNetworkApplianceTrafficShapingUplinkBandwidth")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1826,19 +1826,19 @@ func (a *TrafficShapingApiService) UpdateNetworkApplianceTrafficShapingUplinkBan
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type TrafficShapingApiUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest struct {
+type TrafficShapingAPIUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest struct {
 	ctx context.Context
-	ApiService *TrafficShapingApiService
+	ApiService *TrafficShapingAPIService
 	networkId string
 	updateNetworkApplianceTrafficShapingUplinkSelectionRequest *UpdateNetworkApplianceTrafficShapingUplinkSelectionRequest
 }
 
-func (r TrafficShapingApiUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest) UpdateNetworkApplianceTrafficShapingUplinkSelectionRequest(updateNetworkApplianceTrafficShapingUplinkSelectionRequest UpdateNetworkApplianceTrafficShapingUplinkSelectionRequest) TrafficShapingApiUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest {
+func (r TrafficShapingAPIUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest) UpdateNetworkApplianceTrafficShapingUplinkSelectionRequest(updateNetworkApplianceTrafficShapingUplinkSelectionRequest UpdateNetworkApplianceTrafficShapingUplinkSelectionRequest) TrafficShapingAPIUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest {
 	r.updateNetworkApplianceTrafficShapingUplinkSelectionRequest = &updateNetworkApplianceTrafficShapingUplinkSelectionRequest
 	return r
 }
 
-func (r TrafficShapingApiUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest) Execute() (*GetNetworkApplianceTrafficShapingUplinkSelection200Response, *http.Response, error) {
+func (r TrafficShapingAPIUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest) Execute() (*GetNetworkApplianceTrafficShapingUplinkSelection200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceTrafficShapingUplinkSelectionExecute(r)
 }
 
@@ -1849,10 +1849,10 @@ Update uplink selection settings for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return TrafficShapingApiUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest
+ @return TrafficShapingAPIUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest
 */
-func (a *TrafficShapingApiService) UpdateNetworkApplianceTrafficShapingUplinkSelection(ctx context.Context, networkId string) TrafficShapingApiUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest {
-	return TrafficShapingApiUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest{
+func (a *TrafficShapingAPIService) UpdateNetworkApplianceTrafficShapingUplinkSelection(ctx context.Context, networkId string) TrafficShapingAPIUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest {
+	return TrafficShapingAPIUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1861,7 +1861,7 @@ func (a *TrafficShapingApiService) UpdateNetworkApplianceTrafficShapingUplinkSel
 
 // Execute executes the request
 //  @return GetNetworkApplianceTrafficShapingUplinkSelection200Response
-func (a *TrafficShapingApiService) UpdateNetworkApplianceTrafficShapingUplinkSelectionExecute(r TrafficShapingApiUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest) (*GetNetworkApplianceTrafficShapingUplinkSelection200Response, *http.Response, error) {
+func (a *TrafficShapingAPIService) UpdateNetworkApplianceTrafficShapingUplinkSelectionExecute(r TrafficShapingAPIUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest) (*GetNetworkApplianceTrafficShapingUplinkSelection200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1869,7 +1869,7 @@ func (a *TrafficShapingApiService) UpdateNetworkApplianceTrafficShapingUplinkSel
 		localVarReturnValue  *GetNetworkApplianceTrafficShapingUplinkSelection200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingApiService.UpdateNetworkApplianceTrafficShapingUplinkSelection")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingAPIService.UpdateNetworkApplianceTrafficShapingUplinkSelection")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1951,20 +1951,20 @@ func (a *TrafficShapingApiService) UpdateNetworkApplianceTrafficShapingUplinkSel
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type TrafficShapingApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest struct {
+type TrafficShapingAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest struct {
 	ctx context.Context
-	ApiService *TrafficShapingApiService
+	ApiService *TrafficShapingAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidTrafficShapingRulesRequest *UpdateNetworkWirelessSsidTrafficShapingRulesRequest
 }
 
-func (r TrafficShapingApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest) UpdateNetworkWirelessSsidTrafficShapingRulesRequest(updateNetworkWirelessSsidTrafficShapingRulesRequest UpdateNetworkWirelessSsidTrafficShapingRulesRequest) TrafficShapingApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest {
+func (r TrafficShapingAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest) UpdateNetworkWirelessSsidTrafficShapingRulesRequest(updateNetworkWirelessSsidTrafficShapingRulesRequest UpdateNetworkWirelessSsidTrafficShapingRulesRequest) TrafficShapingAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest {
 	r.updateNetworkWirelessSsidTrafficShapingRulesRequest = &updateNetworkWirelessSsidTrafficShapingRulesRequest
 	return r
 }
 
-func (r TrafficShapingApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r TrafficShapingAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidTrafficShapingRulesExecute(r)
 }
 
@@ -1976,10 +1976,10 @@ Update the traffic shaping settings for an SSID on an MR network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return TrafficShapingApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest
+ @return TrafficShapingAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest
 */
-func (a *TrafficShapingApiService) UpdateNetworkWirelessSsidTrafficShapingRules(ctx context.Context, networkId string, number string) TrafficShapingApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest {
-	return TrafficShapingApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest{
+func (a *TrafficShapingAPIService) UpdateNetworkWirelessSsidTrafficShapingRules(ctx context.Context, networkId string, number string) TrafficShapingAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest {
+	return TrafficShapingAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1989,7 +1989,7 @@ func (a *TrafficShapingApiService) UpdateNetworkWirelessSsidTrafficShapingRules(
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *TrafficShapingApiService) UpdateNetworkWirelessSsidTrafficShapingRulesExecute(r TrafficShapingApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *TrafficShapingAPIService) UpdateNetworkWirelessSsidTrafficShapingRulesExecute(r TrafficShapingAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1997,7 +1997,7 @@ func (a *TrafficShapingApiService) UpdateNetworkWirelessSsidTrafficShapingRulesE
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingApiService.UpdateNetworkWirelessSsidTrafficShapingRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficShapingAPIService.UpdateNetworkWirelessSsidTrafficShapingRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

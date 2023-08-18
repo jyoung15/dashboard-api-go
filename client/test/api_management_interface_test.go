@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing ManagementInterfaceApiService
+Testing ManagementInterfaceAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_ManagementInterfaceApiService(t *testing.T) {
+func Test_client_ManagementInterfaceAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test ManagementInterfaceApiService GetDeviceManagementInterface", func(t *testing.T) {
+	t.Run("Test ManagementInterfaceAPIService GetDeviceManagementInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ManagementInterfaceApi.GetDeviceManagementInterface(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ManagementInterfaceAPI.GetDeviceManagementInterface(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_ManagementInterfaceApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ManagementInterfaceApiService UpdateDeviceManagementInterface", func(t *testing.T) {
+	t.Run("Test ManagementInterfaceAPIService UpdateDeviceManagementInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ManagementInterfaceApi.UpdateDeviceManagementInterface(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ManagementInterfaceAPI.UpdateDeviceManagementInterface(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

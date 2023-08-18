@@ -20,22 +20,22 @@ import (
 )
 
 
-// MonitoredMediaServersApiService MonitoredMediaServersApi service
-type MonitoredMediaServersApiService service
+// MonitoredMediaServersAPIService MonitoredMediaServersAPI service
+type MonitoredMediaServersAPIService service
 
-type MonitoredMediaServersApiCreateOrganizationInsightMonitoredMediaServerRequest struct {
+type MonitoredMediaServersAPICreateOrganizationInsightMonitoredMediaServerRequest struct {
 	ctx context.Context
-	ApiService *MonitoredMediaServersApiService
+	ApiService *MonitoredMediaServersAPIService
 	organizationId string
 	createOrganizationInsightMonitoredMediaServerRequest *CreateOrganizationInsightMonitoredMediaServerRequest
 }
 
-func (r MonitoredMediaServersApiCreateOrganizationInsightMonitoredMediaServerRequest) CreateOrganizationInsightMonitoredMediaServerRequest(createOrganizationInsightMonitoredMediaServerRequest CreateOrganizationInsightMonitoredMediaServerRequest) MonitoredMediaServersApiCreateOrganizationInsightMonitoredMediaServerRequest {
+func (r MonitoredMediaServersAPICreateOrganizationInsightMonitoredMediaServerRequest) CreateOrganizationInsightMonitoredMediaServerRequest(createOrganizationInsightMonitoredMediaServerRequest CreateOrganizationInsightMonitoredMediaServerRequest) MonitoredMediaServersAPICreateOrganizationInsightMonitoredMediaServerRequest {
 	r.createOrganizationInsightMonitoredMediaServerRequest = &createOrganizationInsightMonitoredMediaServerRequest
 	return r
 }
 
-func (r MonitoredMediaServersApiCreateOrganizationInsightMonitoredMediaServerRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r MonitoredMediaServersAPICreateOrganizationInsightMonitoredMediaServerRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateOrganizationInsightMonitoredMediaServerExecute(r)
 }
 
@@ -46,10 +46,10 @@ Add a media server to be monitored for this organization. Only valid for organiz
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitoredMediaServersApiCreateOrganizationInsightMonitoredMediaServerRequest
+ @return MonitoredMediaServersAPICreateOrganizationInsightMonitoredMediaServerRequest
 */
-func (a *MonitoredMediaServersApiService) CreateOrganizationInsightMonitoredMediaServer(ctx context.Context, organizationId string) MonitoredMediaServersApiCreateOrganizationInsightMonitoredMediaServerRequest {
-	return MonitoredMediaServersApiCreateOrganizationInsightMonitoredMediaServerRequest{
+func (a *MonitoredMediaServersAPIService) CreateOrganizationInsightMonitoredMediaServer(ctx context.Context, organizationId string) MonitoredMediaServersAPICreateOrganizationInsightMonitoredMediaServerRequest {
+	return MonitoredMediaServersAPICreateOrganizationInsightMonitoredMediaServerRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -58,7 +58,7 @@ func (a *MonitoredMediaServersApiService) CreateOrganizationInsightMonitoredMedi
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *MonitoredMediaServersApiService) CreateOrganizationInsightMonitoredMediaServerExecute(r MonitoredMediaServersApiCreateOrganizationInsightMonitoredMediaServerRequest) (map[string]interface{}, *http.Response, error) {
+func (a *MonitoredMediaServersAPIService) CreateOrganizationInsightMonitoredMediaServerExecute(r MonitoredMediaServersAPICreateOrganizationInsightMonitoredMediaServerRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *MonitoredMediaServersApiService) CreateOrganizationInsightMonitoredMedi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitoredMediaServersApiService.CreateOrganizationInsightMonitoredMediaServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitoredMediaServersAPIService.CreateOrganizationInsightMonitoredMediaServer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,14 +151,14 @@ func (a *MonitoredMediaServersApiService) CreateOrganizationInsightMonitoredMedi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitoredMediaServersApiDeleteOrganizationInsightMonitoredMediaServerRequest struct {
+type MonitoredMediaServersAPIDeleteOrganizationInsightMonitoredMediaServerRequest struct {
 	ctx context.Context
-	ApiService *MonitoredMediaServersApiService
+	ApiService *MonitoredMediaServersAPIService
 	organizationId string
 	monitoredMediaServerId string
 }
 
-func (r MonitoredMediaServersApiDeleteOrganizationInsightMonitoredMediaServerRequest) Execute() (*http.Response, error) {
+func (r MonitoredMediaServersAPIDeleteOrganizationInsightMonitoredMediaServerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationInsightMonitoredMediaServerExecute(r)
 }
 
@@ -170,10 +170,10 @@ Delete a monitored media server from this organization. Only valid for organizat
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param monitoredMediaServerId Monitored media server ID
- @return MonitoredMediaServersApiDeleteOrganizationInsightMonitoredMediaServerRequest
+ @return MonitoredMediaServersAPIDeleteOrganizationInsightMonitoredMediaServerRequest
 */
-func (a *MonitoredMediaServersApiService) DeleteOrganizationInsightMonitoredMediaServer(ctx context.Context, organizationId string, monitoredMediaServerId string) MonitoredMediaServersApiDeleteOrganizationInsightMonitoredMediaServerRequest {
-	return MonitoredMediaServersApiDeleteOrganizationInsightMonitoredMediaServerRequest{
+func (a *MonitoredMediaServersAPIService) DeleteOrganizationInsightMonitoredMediaServer(ctx context.Context, organizationId string, monitoredMediaServerId string) MonitoredMediaServersAPIDeleteOrganizationInsightMonitoredMediaServerRequest {
+	return MonitoredMediaServersAPIDeleteOrganizationInsightMonitoredMediaServerRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -182,14 +182,14 @@ func (a *MonitoredMediaServersApiService) DeleteOrganizationInsightMonitoredMedi
 }
 
 // Execute executes the request
-func (a *MonitoredMediaServersApiService) DeleteOrganizationInsightMonitoredMediaServerExecute(r MonitoredMediaServersApiDeleteOrganizationInsightMonitoredMediaServerRequest) (*http.Response, error) {
+func (a *MonitoredMediaServersAPIService) DeleteOrganizationInsightMonitoredMediaServerExecute(r MonitoredMediaServersAPIDeleteOrganizationInsightMonitoredMediaServerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitoredMediaServersApiService.DeleteOrganizationInsightMonitoredMediaServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitoredMediaServersAPIService.DeleteOrganizationInsightMonitoredMediaServer")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -261,14 +261,14 @@ func (a *MonitoredMediaServersApiService) DeleteOrganizationInsightMonitoredMedi
 	return localVarHTTPResponse, nil
 }
 
-type MonitoredMediaServersApiGetOrganizationInsightMonitoredMediaServerRequest struct {
+type MonitoredMediaServersAPIGetOrganizationInsightMonitoredMediaServerRequest struct {
 	ctx context.Context
-	ApiService *MonitoredMediaServersApiService
+	ApiService *MonitoredMediaServersAPIService
 	organizationId string
 	monitoredMediaServerId string
 }
 
-func (r MonitoredMediaServersApiGetOrganizationInsightMonitoredMediaServerRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r MonitoredMediaServersAPIGetOrganizationInsightMonitoredMediaServerRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationInsightMonitoredMediaServerExecute(r)
 }
 
@@ -280,10 +280,10 @@ Return a monitored media server for this organization. Only valid for organizati
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param monitoredMediaServerId Monitored media server ID
- @return MonitoredMediaServersApiGetOrganizationInsightMonitoredMediaServerRequest
+ @return MonitoredMediaServersAPIGetOrganizationInsightMonitoredMediaServerRequest
 */
-func (a *MonitoredMediaServersApiService) GetOrganizationInsightMonitoredMediaServer(ctx context.Context, organizationId string, monitoredMediaServerId string) MonitoredMediaServersApiGetOrganizationInsightMonitoredMediaServerRequest {
-	return MonitoredMediaServersApiGetOrganizationInsightMonitoredMediaServerRequest{
+func (a *MonitoredMediaServersAPIService) GetOrganizationInsightMonitoredMediaServer(ctx context.Context, organizationId string, monitoredMediaServerId string) MonitoredMediaServersAPIGetOrganizationInsightMonitoredMediaServerRequest {
+	return MonitoredMediaServersAPIGetOrganizationInsightMonitoredMediaServerRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -293,7 +293,7 @@ func (a *MonitoredMediaServersApiService) GetOrganizationInsightMonitoredMediaSe
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *MonitoredMediaServersApiService) GetOrganizationInsightMonitoredMediaServerExecute(r MonitoredMediaServersApiGetOrganizationInsightMonitoredMediaServerRequest) (map[string]interface{}, *http.Response, error) {
+func (a *MonitoredMediaServersAPIService) GetOrganizationInsightMonitoredMediaServerExecute(r MonitoredMediaServersAPIGetOrganizationInsightMonitoredMediaServerRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -301,7 +301,7 @@ func (a *MonitoredMediaServersApiService) GetOrganizationInsightMonitoredMediaSe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitoredMediaServersApiService.GetOrganizationInsightMonitoredMediaServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitoredMediaServersAPIService.GetOrganizationInsightMonitoredMediaServer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -382,13 +382,13 @@ func (a *MonitoredMediaServersApiService) GetOrganizationInsightMonitoredMediaSe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitoredMediaServersApiGetOrganizationInsightMonitoredMediaServersRequest struct {
+type MonitoredMediaServersAPIGetOrganizationInsightMonitoredMediaServersRequest struct {
 	ctx context.Context
-	ApiService *MonitoredMediaServersApiService
+	ApiService *MonitoredMediaServersAPIService
 	organizationId string
 }
 
-func (r MonitoredMediaServersApiGetOrganizationInsightMonitoredMediaServersRequest) Execute() ([]GetOrganizationInsightMonitoredMediaServers200ResponseInner, *http.Response, error) {
+func (r MonitoredMediaServersAPIGetOrganizationInsightMonitoredMediaServersRequest) Execute() ([]GetOrganizationInsightMonitoredMediaServers200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationInsightMonitoredMediaServersExecute(r)
 }
 
@@ -399,10 +399,10 @@ List the monitored media servers for this organization. Only valid for organizat
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitoredMediaServersApiGetOrganizationInsightMonitoredMediaServersRequest
+ @return MonitoredMediaServersAPIGetOrganizationInsightMonitoredMediaServersRequest
 */
-func (a *MonitoredMediaServersApiService) GetOrganizationInsightMonitoredMediaServers(ctx context.Context, organizationId string) MonitoredMediaServersApiGetOrganizationInsightMonitoredMediaServersRequest {
-	return MonitoredMediaServersApiGetOrganizationInsightMonitoredMediaServersRequest{
+func (a *MonitoredMediaServersAPIService) GetOrganizationInsightMonitoredMediaServers(ctx context.Context, organizationId string) MonitoredMediaServersAPIGetOrganizationInsightMonitoredMediaServersRequest {
+	return MonitoredMediaServersAPIGetOrganizationInsightMonitoredMediaServersRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -411,7 +411,7 @@ func (a *MonitoredMediaServersApiService) GetOrganizationInsightMonitoredMediaSe
 
 // Execute executes the request
 //  @return []GetOrganizationInsightMonitoredMediaServers200ResponseInner
-func (a *MonitoredMediaServersApiService) GetOrganizationInsightMonitoredMediaServersExecute(r MonitoredMediaServersApiGetOrganizationInsightMonitoredMediaServersRequest) ([]GetOrganizationInsightMonitoredMediaServers200ResponseInner, *http.Response, error) {
+func (a *MonitoredMediaServersAPIService) GetOrganizationInsightMonitoredMediaServersExecute(r MonitoredMediaServersAPIGetOrganizationInsightMonitoredMediaServersRequest) ([]GetOrganizationInsightMonitoredMediaServers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -419,7 +419,7 @@ func (a *MonitoredMediaServersApiService) GetOrganizationInsightMonitoredMediaSe
 		localVarReturnValue  []GetOrganizationInsightMonitoredMediaServers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitoredMediaServersApiService.GetOrganizationInsightMonitoredMediaServers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitoredMediaServersAPIService.GetOrganizationInsightMonitoredMediaServers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -499,20 +499,20 @@ func (a *MonitoredMediaServersApiService) GetOrganizationInsightMonitoredMediaSe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitoredMediaServersApiUpdateOrganizationInsightMonitoredMediaServerRequest struct {
+type MonitoredMediaServersAPIUpdateOrganizationInsightMonitoredMediaServerRequest struct {
 	ctx context.Context
-	ApiService *MonitoredMediaServersApiService
+	ApiService *MonitoredMediaServersAPIService
 	organizationId string
 	monitoredMediaServerId string
 	updateOrganizationInsightMonitoredMediaServerRequest *UpdateOrganizationInsightMonitoredMediaServerRequest
 }
 
-func (r MonitoredMediaServersApiUpdateOrganizationInsightMonitoredMediaServerRequest) UpdateOrganizationInsightMonitoredMediaServerRequest(updateOrganizationInsightMonitoredMediaServerRequest UpdateOrganizationInsightMonitoredMediaServerRequest) MonitoredMediaServersApiUpdateOrganizationInsightMonitoredMediaServerRequest {
+func (r MonitoredMediaServersAPIUpdateOrganizationInsightMonitoredMediaServerRequest) UpdateOrganizationInsightMonitoredMediaServerRequest(updateOrganizationInsightMonitoredMediaServerRequest UpdateOrganizationInsightMonitoredMediaServerRequest) MonitoredMediaServersAPIUpdateOrganizationInsightMonitoredMediaServerRequest {
 	r.updateOrganizationInsightMonitoredMediaServerRequest = &updateOrganizationInsightMonitoredMediaServerRequest
 	return r
 }
 
-func (r MonitoredMediaServersApiUpdateOrganizationInsightMonitoredMediaServerRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r MonitoredMediaServersAPIUpdateOrganizationInsightMonitoredMediaServerRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationInsightMonitoredMediaServerExecute(r)
 }
 
@@ -524,10 +524,10 @@ Update a monitored media server for this organization. Only valid for organizati
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param monitoredMediaServerId Monitored media server ID
- @return MonitoredMediaServersApiUpdateOrganizationInsightMonitoredMediaServerRequest
+ @return MonitoredMediaServersAPIUpdateOrganizationInsightMonitoredMediaServerRequest
 */
-func (a *MonitoredMediaServersApiService) UpdateOrganizationInsightMonitoredMediaServer(ctx context.Context, organizationId string, monitoredMediaServerId string) MonitoredMediaServersApiUpdateOrganizationInsightMonitoredMediaServerRequest {
-	return MonitoredMediaServersApiUpdateOrganizationInsightMonitoredMediaServerRequest{
+func (a *MonitoredMediaServersAPIService) UpdateOrganizationInsightMonitoredMediaServer(ctx context.Context, organizationId string, monitoredMediaServerId string) MonitoredMediaServersAPIUpdateOrganizationInsightMonitoredMediaServerRequest {
+	return MonitoredMediaServersAPIUpdateOrganizationInsightMonitoredMediaServerRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -537,7 +537,7 @@ func (a *MonitoredMediaServersApiService) UpdateOrganizationInsightMonitoredMedi
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *MonitoredMediaServersApiService) UpdateOrganizationInsightMonitoredMediaServerExecute(r MonitoredMediaServersApiUpdateOrganizationInsightMonitoredMediaServerRequest) (map[string]interface{}, *http.Response, error) {
+func (a *MonitoredMediaServersAPIService) UpdateOrganizationInsightMonitoredMediaServerExecute(r MonitoredMediaServersAPIUpdateOrganizationInsightMonitoredMediaServerRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -545,7 +545,7 @@ func (a *MonitoredMediaServersApiService) UpdateOrganizationInsightMonitoredMedi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitoredMediaServersApiService.UpdateOrganizationInsightMonitoredMediaServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitoredMediaServersAPIService.UpdateOrganizationInsightMonitoredMediaServer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

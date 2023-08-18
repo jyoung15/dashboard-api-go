@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing AclsApiService
+Testing AclsAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_AclsApiService(t *testing.T) {
+func Test_client_AclsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test AclsApiService CreateOrganizationAdaptivePolicyAcl", func(t *testing.T) {
+	t.Run("Test AclsAPIService CreateOrganizationAdaptivePolicyAcl", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.AclsApi.CreateOrganizationAdaptivePolicyAcl(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.AclsAPI.CreateOrganizationAdaptivePolicyAcl(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,42 +36,28 @@ func Test_client_AclsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AclsApiService DeleteOrganizationAdaptivePolicyAcl", func(t *testing.T) {
+	t.Run("Test AclsAPIService DeleteOrganizationAdaptivePolicyAcl", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var aclId string
 
-		httpRes, err := apiClient.AclsApi.DeleteOrganizationAdaptivePolicyAcl(context.Background(), organizationId, aclId).Execute()
+		httpRes, err := apiClient.AclsAPI.DeleteOrganizationAdaptivePolicyAcl(context.Background(), organizationId, aclId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test AclsApiService GetOrganizationAdaptivePolicyAcl", func(t *testing.T) {
+	t.Run("Test AclsAPIService GetOrganizationAdaptivePolicyAcl", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var aclId string
 
-		resp, httpRes, err := apiClient.AclsApi.GetOrganizationAdaptivePolicyAcl(context.Background(), organizationId, aclId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test AclsApiService GetOrganizationAdaptivePolicyAcls", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var organizationId string
-
-		resp, httpRes, err := apiClient.AclsApi.GetOrganizationAdaptivePolicyAcls(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.AclsAPI.GetOrganizationAdaptivePolicyAcl(context.Background(), organizationId, aclId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,14 +65,28 @@ func Test_client_AclsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AclsApiService UpdateOrganizationAdaptivePolicyAcl", func(t *testing.T) {
+	t.Run("Test AclsAPIService GetOrganizationAdaptivePolicyAcls", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var organizationId string
+
+		resp, httpRes, err := apiClient.AclsAPI.GetOrganizationAdaptivePolicyAcls(context.Background(), organizationId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AclsAPIService UpdateOrganizationAdaptivePolicyAcl", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var aclId string
 
-		resp, httpRes, err := apiClient.AclsApi.UpdateOrganizationAdaptivePolicyAcl(context.Background(), organizationId, aclId).Execute()
+		resp, httpRes, err := apiClient.AclsAPI.UpdateOrganizationAdaptivePolicyAcl(context.Background(), organizationId, aclId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

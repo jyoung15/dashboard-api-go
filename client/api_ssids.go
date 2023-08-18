@@ -20,23 +20,23 @@ import (
 )
 
 
-// SsidsApiService SsidsApi service
-type SsidsApiService service
+// SsidsAPIService SsidsAPI service
+type SsidsAPIService service
 
-type SsidsApiCreateNetworkWirelessSsidIdentityPskRequest struct {
+type SsidsAPICreateNetworkWirelessSsidIdentityPskRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 	createNetworkWirelessSsidIdentityPskRequest *CreateNetworkWirelessSsidIdentityPskRequest
 }
 
-func (r SsidsApiCreateNetworkWirelessSsidIdentityPskRequest) CreateNetworkWirelessSsidIdentityPskRequest(createNetworkWirelessSsidIdentityPskRequest CreateNetworkWirelessSsidIdentityPskRequest) SsidsApiCreateNetworkWirelessSsidIdentityPskRequest {
+func (r SsidsAPICreateNetworkWirelessSsidIdentityPskRequest) CreateNetworkWirelessSsidIdentityPskRequest(createNetworkWirelessSsidIdentityPskRequest CreateNetworkWirelessSsidIdentityPskRequest) SsidsAPICreateNetworkWirelessSsidIdentityPskRequest {
 	r.createNetworkWirelessSsidIdentityPskRequest = &createNetworkWirelessSsidIdentityPskRequest
 	return r
 }
 
-func (r SsidsApiCreateNetworkWirelessSsidIdentityPskRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SsidsAPICreateNetworkWirelessSsidIdentityPskRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkWirelessSsidIdentityPskExecute(r)
 }
 
@@ -48,10 +48,10 @@ Create an Identity PSK
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SsidsApiCreateNetworkWirelessSsidIdentityPskRequest
+ @return SsidsAPICreateNetworkWirelessSsidIdentityPskRequest
 */
-func (a *SsidsApiService) CreateNetworkWirelessSsidIdentityPsk(ctx context.Context, networkId string, number string) SsidsApiCreateNetworkWirelessSsidIdentityPskRequest {
-	return SsidsApiCreateNetworkWirelessSsidIdentityPskRequest{
+func (a *SsidsAPIService) CreateNetworkWirelessSsidIdentityPsk(ctx context.Context, networkId string, number string) SsidsAPICreateNetworkWirelessSsidIdentityPskRequest {
+	return SsidsAPICreateNetworkWirelessSsidIdentityPskRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -61,7 +61,7 @@ func (a *SsidsApiService) CreateNetworkWirelessSsidIdentityPsk(ctx context.Conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SsidsApiService) CreateNetworkWirelessSsidIdentityPskExecute(r SsidsApiCreateNetworkWirelessSsidIdentityPskRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SsidsAPIService) CreateNetworkWirelessSsidIdentityPskExecute(r SsidsAPICreateNetworkWirelessSsidIdentityPskRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -69,7 +69,7 @@ func (a *SsidsApiService) CreateNetworkWirelessSsidIdentityPskExecute(r SsidsApi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.CreateNetworkWirelessSsidIdentityPsk")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.CreateNetworkWirelessSsidIdentityPsk")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -155,15 +155,15 @@ func (a *SsidsApiService) CreateNetworkWirelessSsidIdentityPskExecute(r SsidsApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiDeleteNetworkWirelessSsidIdentityPskRequest struct {
+type SsidsAPIDeleteNetworkWirelessSsidIdentityPskRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 	identityPskId string
 }
 
-func (r SsidsApiDeleteNetworkWirelessSsidIdentityPskRequest) Execute() (*http.Response, error) {
+func (r SsidsAPIDeleteNetworkWirelessSsidIdentityPskRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkWirelessSsidIdentityPskExecute(r)
 }
 
@@ -176,10 +176,10 @@ Delete an Identity PSK
  @param networkId Network ID
  @param number Number
  @param identityPskId Identity psk ID
- @return SsidsApiDeleteNetworkWirelessSsidIdentityPskRequest
+ @return SsidsAPIDeleteNetworkWirelessSsidIdentityPskRequest
 */
-func (a *SsidsApiService) DeleteNetworkWirelessSsidIdentityPsk(ctx context.Context, networkId string, number string, identityPskId string) SsidsApiDeleteNetworkWirelessSsidIdentityPskRequest {
-	return SsidsApiDeleteNetworkWirelessSsidIdentityPskRequest{
+func (a *SsidsAPIService) DeleteNetworkWirelessSsidIdentityPsk(ctx context.Context, networkId string, number string, identityPskId string) SsidsAPIDeleteNetworkWirelessSsidIdentityPskRequest {
+	return SsidsAPIDeleteNetworkWirelessSsidIdentityPskRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -189,14 +189,14 @@ func (a *SsidsApiService) DeleteNetworkWirelessSsidIdentityPsk(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *SsidsApiService) DeleteNetworkWirelessSsidIdentityPskExecute(r SsidsApiDeleteNetworkWirelessSsidIdentityPskRequest) (*http.Response, error) {
+func (a *SsidsAPIService) DeleteNetworkWirelessSsidIdentityPskExecute(r SsidsAPIDeleteNetworkWirelessSsidIdentityPskRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.DeleteNetworkWirelessSsidIdentityPsk")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.DeleteNetworkWirelessSsidIdentityPsk")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -269,14 +269,14 @@ func (a *SsidsApiService) DeleteNetworkWirelessSsidIdentityPskExecute(r SsidsApi
 	return localVarHTTPResponse, nil
 }
 
-type SsidsApiGetNetworkApplianceSsidRequest struct {
+type SsidsAPIGetNetworkApplianceSsidRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 }
 
-func (r SsidsApiGetNetworkApplianceSsidRequest) Execute() (*GetNetworkApplianceSsids200ResponseInner, *http.Response, error) {
+func (r SsidsAPIGetNetworkApplianceSsidRequest) Execute() (*GetNetworkApplianceSsids200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceSsidExecute(r)
 }
 
@@ -288,10 +288,10 @@ Return a single MX SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SsidsApiGetNetworkApplianceSsidRequest
+ @return SsidsAPIGetNetworkApplianceSsidRequest
 */
-func (a *SsidsApiService) GetNetworkApplianceSsid(ctx context.Context, networkId string, number string) SsidsApiGetNetworkApplianceSsidRequest {
-	return SsidsApiGetNetworkApplianceSsidRequest{
+func (a *SsidsAPIService) GetNetworkApplianceSsid(ctx context.Context, networkId string, number string) SsidsAPIGetNetworkApplianceSsidRequest {
+	return SsidsAPIGetNetworkApplianceSsidRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -301,7 +301,7 @@ func (a *SsidsApiService) GetNetworkApplianceSsid(ctx context.Context, networkId
 
 // Execute executes the request
 //  @return GetNetworkApplianceSsids200ResponseInner
-func (a *SsidsApiService) GetNetworkApplianceSsidExecute(r SsidsApiGetNetworkApplianceSsidRequest) (*GetNetworkApplianceSsids200ResponseInner, *http.Response, error) {
+func (a *SsidsAPIService) GetNetworkApplianceSsidExecute(r SsidsAPIGetNetworkApplianceSsidRequest) (*GetNetworkApplianceSsids200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -309,7 +309,7 @@ func (a *SsidsApiService) GetNetworkApplianceSsidExecute(r SsidsApiGetNetworkApp
 		localVarReturnValue  *GetNetworkApplianceSsids200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.GetNetworkApplianceSsid")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.GetNetworkApplianceSsid")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -390,13 +390,13 @@ func (a *SsidsApiService) GetNetworkApplianceSsidExecute(r SsidsApiGetNetworkApp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiGetNetworkApplianceSsidsRequest struct {
+type SsidsAPIGetNetworkApplianceSsidsRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 }
 
-func (r SsidsApiGetNetworkApplianceSsidsRequest) Execute() ([]GetNetworkApplianceSsids200ResponseInner, *http.Response, error) {
+func (r SsidsAPIGetNetworkApplianceSsidsRequest) Execute() ([]GetNetworkApplianceSsids200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceSsidsExecute(r)
 }
 
@@ -407,10 +407,10 @@ List the MX SSIDs in a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SsidsApiGetNetworkApplianceSsidsRequest
+ @return SsidsAPIGetNetworkApplianceSsidsRequest
 */
-func (a *SsidsApiService) GetNetworkApplianceSsids(ctx context.Context, networkId string) SsidsApiGetNetworkApplianceSsidsRequest {
-	return SsidsApiGetNetworkApplianceSsidsRequest{
+func (a *SsidsAPIService) GetNetworkApplianceSsids(ctx context.Context, networkId string) SsidsAPIGetNetworkApplianceSsidsRequest {
+	return SsidsAPIGetNetworkApplianceSsidsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -419,7 +419,7 @@ func (a *SsidsApiService) GetNetworkApplianceSsids(ctx context.Context, networkI
 
 // Execute executes the request
 //  @return []GetNetworkApplianceSsids200ResponseInner
-func (a *SsidsApiService) GetNetworkApplianceSsidsExecute(r SsidsApiGetNetworkApplianceSsidsRequest) ([]GetNetworkApplianceSsids200ResponseInner, *http.Response, error) {
+func (a *SsidsAPIService) GetNetworkApplianceSsidsExecute(r SsidsAPIGetNetworkApplianceSsidsRequest) ([]GetNetworkApplianceSsids200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -427,7 +427,7 @@ func (a *SsidsApiService) GetNetworkApplianceSsidsExecute(r SsidsApiGetNetworkAp
 		localVarReturnValue  []GetNetworkApplianceSsids200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.GetNetworkApplianceSsids")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.GetNetworkApplianceSsids")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -507,14 +507,14 @@ func (a *SsidsApiService) GetNetworkApplianceSsidsExecute(r SsidsApiGetNetworkAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiGetNetworkWirelessSsidRequest struct {
+type SsidsAPIGetNetworkWirelessSsidRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 }
 
-func (r SsidsApiGetNetworkWirelessSsidRequest) Execute() (*GetNetworkWirelessSsids200ResponseInner, *http.Response, error) {
+func (r SsidsAPIGetNetworkWirelessSsidRequest) Execute() (*GetNetworkWirelessSsids200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidExecute(r)
 }
 
@@ -526,10 +526,10 @@ Return a single MR SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SsidsApiGetNetworkWirelessSsidRequest
+ @return SsidsAPIGetNetworkWirelessSsidRequest
 */
-func (a *SsidsApiService) GetNetworkWirelessSsid(ctx context.Context, networkId string, number string) SsidsApiGetNetworkWirelessSsidRequest {
-	return SsidsApiGetNetworkWirelessSsidRequest{
+func (a *SsidsAPIService) GetNetworkWirelessSsid(ctx context.Context, networkId string, number string) SsidsAPIGetNetworkWirelessSsidRequest {
+	return SsidsAPIGetNetworkWirelessSsidRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -539,7 +539,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsid(ctx context.Context, networkId 
 
 // Execute executes the request
 //  @return GetNetworkWirelessSsids200ResponseInner
-func (a *SsidsApiService) GetNetworkWirelessSsidExecute(r SsidsApiGetNetworkWirelessSsidRequest) (*GetNetworkWirelessSsids200ResponseInner, *http.Response, error) {
+func (a *SsidsAPIService) GetNetworkWirelessSsidExecute(r SsidsAPIGetNetworkWirelessSsidRequest) (*GetNetworkWirelessSsids200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -547,7 +547,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsidExecute(r SsidsApiGetNetworkWire
 		localVarReturnValue  *GetNetworkWirelessSsids200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.GetNetworkWirelessSsid")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.GetNetworkWirelessSsid")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -628,14 +628,14 @@ func (a *SsidsApiService) GetNetworkWirelessSsidExecute(r SsidsApiGetNetworkWire
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiGetNetworkWirelessSsidBonjourForwardingRequest struct {
+type SsidsAPIGetNetworkWirelessSsidBonjourForwardingRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 }
 
-func (r SsidsApiGetNetworkWirelessSsidBonjourForwardingRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SsidsAPIGetNetworkWirelessSsidBonjourForwardingRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidBonjourForwardingExecute(r)
 }
 
@@ -647,10 +647,10 @@ List the Bonjour forwarding setting and rules for the SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SsidsApiGetNetworkWirelessSsidBonjourForwardingRequest
+ @return SsidsAPIGetNetworkWirelessSsidBonjourForwardingRequest
 */
-func (a *SsidsApiService) GetNetworkWirelessSsidBonjourForwarding(ctx context.Context, networkId string, number string) SsidsApiGetNetworkWirelessSsidBonjourForwardingRequest {
-	return SsidsApiGetNetworkWirelessSsidBonjourForwardingRequest{
+func (a *SsidsAPIService) GetNetworkWirelessSsidBonjourForwarding(ctx context.Context, networkId string, number string) SsidsAPIGetNetworkWirelessSsidBonjourForwardingRequest {
+	return SsidsAPIGetNetworkWirelessSsidBonjourForwardingRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -660,7 +660,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsidBonjourForwarding(ctx context.Co
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SsidsApiService) GetNetworkWirelessSsidBonjourForwardingExecute(r SsidsApiGetNetworkWirelessSsidBonjourForwardingRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SsidsAPIService) GetNetworkWirelessSsidBonjourForwardingExecute(r SsidsAPIGetNetworkWirelessSsidBonjourForwardingRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -668,7 +668,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsidBonjourForwardingExecute(r Ssids
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.GetNetworkWirelessSsidBonjourForwarding")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.GetNetworkWirelessSsidBonjourForwarding")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -749,14 +749,14 @@ func (a *SsidsApiService) GetNetworkWirelessSsidBonjourForwardingExecute(r Ssids
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest struct {
+type SsidsAPIGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 }
 
-func (r SsidsApiGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SsidsAPIGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidDeviceTypeGroupPoliciesExecute(r)
 }
 
@@ -768,10 +768,10 @@ List the device type group policies for the SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SsidsApiGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest
+ @return SsidsAPIGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest
 */
-func (a *SsidsApiService) GetNetworkWirelessSsidDeviceTypeGroupPolicies(ctx context.Context, networkId string, number string) SsidsApiGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest {
-	return SsidsApiGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest{
+func (a *SsidsAPIService) GetNetworkWirelessSsidDeviceTypeGroupPolicies(ctx context.Context, networkId string, number string) SsidsAPIGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest {
+	return SsidsAPIGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -781,7 +781,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsidDeviceTypeGroupPolicies(ctx cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SsidsApiService) GetNetworkWirelessSsidDeviceTypeGroupPoliciesExecute(r SsidsApiGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SsidsAPIService) GetNetworkWirelessSsidDeviceTypeGroupPoliciesExecute(r SsidsAPIGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -789,7 +789,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsidDeviceTypeGroupPoliciesExecute(r
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.GetNetworkWirelessSsidDeviceTypeGroupPolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.GetNetworkWirelessSsidDeviceTypeGroupPolicies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -870,14 +870,14 @@ func (a *SsidsApiService) GetNetworkWirelessSsidDeviceTypeGroupPoliciesExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiGetNetworkWirelessSsidEapOverrideRequest struct {
+type SsidsAPIGetNetworkWirelessSsidEapOverrideRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 }
 
-func (r SsidsApiGetNetworkWirelessSsidEapOverrideRequest) Execute() (*GetNetworkWirelessSsidEapOverride200Response, *http.Response, error) {
+func (r SsidsAPIGetNetworkWirelessSsidEapOverrideRequest) Execute() (*GetNetworkWirelessSsidEapOverride200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidEapOverrideExecute(r)
 }
 
@@ -889,10 +889,10 @@ Return the EAP overridden parameters for an SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SsidsApiGetNetworkWirelessSsidEapOverrideRequest
+ @return SsidsAPIGetNetworkWirelessSsidEapOverrideRequest
 */
-func (a *SsidsApiService) GetNetworkWirelessSsidEapOverride(ctx context.Context, networkId string, number string) SsidsApiGetNetworkWirelessSsidEapOverrideRequest {
-	return SsidsApiGetNetworkWirelessSsidEapOverrideRequest{
+func (a *SsidsAPIService) GetNetworkWirelessSsidEapOverride(ctx context.Context, networkId string, number string) SsidsAPIGetNetworkWirelessSsidEapOverrideRequest {
+	return SsidsAPIGetNetworkWirelessSsidEapOverrideRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -902,7 +902,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsidEapOverride(ctx context.Context,
 
 // Execute executes the request
 //  @return GetNetworkWirelessSsidEapOverride200Response
-func (a *SsidsApiService) GetNetworkWirelessSsidEapOverrideExecute(r SsidsApiGetNetworkWirelessSsidEapOverrideRequest) (*GetNetworkWirelessSsidEapOverride200Response, *http.Response, error) {
+func (a *SsidsAPIService) GetNetworkWirelessSsidEapOverrideExecute(r SsidsAPIGetNetworkWirelessSsidEapOverrideRequest) (*GetNetworkWirelessSsidEapOverride200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -910,7 +910,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsidEapOverrideExecute(r SsidsApiGet
 		localVarReturnValue  *GetNetworkWirelessSsidEapOverride200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.GetNetworkWirelessSsidEapOverride")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.GetNetworkWirelessSsidEapOverride")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -991,14 +991,14 @@ func (a *SsidsApiService) GetNetworkWirelessSsidEapOverrideExecute(r SsidsApiGet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiGetNetworkWirelessSsidFirewallL3FirewallRulesRequest struct {
+type SsidsAPIGetNetworkWirelessSsidFirewallL3FirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 }
 
-func (r SsidsApiGetNetworkWirelessSsidFirewallL3FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SsidsAPIGetNetworkWirelessSsidFirewallL3FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidFirewallL3FirewallRulesExecute(r)
 }
 
@@ -1010,10 +1010,10 @@ Return the L3 firewall rules for an SSID on an MR network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SsidsApiGetNetworkWirelessSsidFirewallL3FirewallRulesRequest
+ @return SsidsAPIGetNetworkWirelessSsidFirewallL3FirewallRulesRequest
 */
-func (a *SsidsApiService) GetNetworkWirelessSsidFirewallL3FirewallRules(ctx context.Context, networkId string, number string) SsidsApiGetNetworkWirelessSsidFirewallL3FirewallRulesRequest {
-	return SsidsApiGetNetworkWirelessSsidFirewallL3FirewallRulesRequest{
+func (a *SsidsAPIService) GetNetworkWirelessSsidFirewallL3FirewallRules(ctx context.Context, networkId string, number string) SsidsAPIGetNetworkWirelessSsidFirewallL3FirewallRulesRequest {
+	return SsidsAPIGetNetworkWirelessSsidFirewallL3FirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1023,7 +1023,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsidFirewallL3FirewallRules(ctx cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SsidsApiService) GetNetworkWirelessSsidFirewallL3FirewallRulesExecute(r SsidsApiGetNetworkWirelessSsidFirewallL3FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SsidsAPIService) GetNetworkWirelessSsidFirewallL3FirewallRulesExecute(r SsidsAPIGetNetworkWirelessSsidFirewallL3FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1031,7 +1031,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsidFirewallL3FirewallRulesExecute(r
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.GetNetworkWirelessSsidFirewallL3FirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.GetNetworkWirelessSsidFirewallL3FirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1112,14 +1112,14 @@ func (a *SsidsApiService) GetNetworkWirelessSsidFirewallL3FirewallRulesExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiGetNetworkWirelessSsidFirewallL7FirewallRulesRequest struct {
+type SsidsAPIGetNetworkWirelessSsidFirewallL7FirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 }
 
-func (r SsidsApiGetNetworkWirelessSsidFirewallL7FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SsidsAPIGetNetworkWirelessSsidFirewallL7FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidFirewallL7FirewallRulesExecute(r)
 }
 
@@ -1131,10 +1131,10 @@ Return the L7 firewall rules for an SSID on an MR network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SsidsApiGetNetworkWirelessSsidFirewallL7FirewallRulesRequest
+ @return SsidsAPIGetNetworkWirelessSsidFirewallL7FirewallRulesRequest
 */
-func (a *SsidsApiService) GetNetworkWirelessSsidFirewallL7FirewallRules(ctx context.Context, networkId string, number string) SsidsApiGetNetworkWirelessSsidFirewallL7FirewallRulesRequest {
-	return SsidsApiGetNetworkWirelessSsidFirewallL7FirewallRulesRequest{
+func (a *SsidsAPIService) GetNetworkWirelessSsidFirewallL7FirewallRules(ctx context.Context, networkId string, number string) SsidsAPIGetNetworkWirelessSsidFirewallL7FirewallRulesRequest {
+	return SsidsAPIGetNetworkWirelessSsidFirewallL7FirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1144,7 +1144,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsidFirewallL7FirewallRules(ctx cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SsidsApiService) GetNetworkWirelessSsidFirewallL7FirewallRulesExecute(r SsidsApiGetNetworkWirelessSsidFirewallL7FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SsidsAPIService) GetNetworkWirelessSsidFirewallL7FirewallRulesExecute(r SsidsAPIGetNetworkWirelessSsidFirewallL7FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1152,7 +1152,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsidFirewallL7FirewallRulesExecute(r
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.GetNetworkWirelessSsidFirewallL7FirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.GetNetworkWirelessSsidFirewallL7FirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1233,14 +1233,14 @@ func (a *SsidsApiService) GetNetworkWirelessSsidFirewallL7FirewallRulesExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiGetNetworkWirelessSsidHotspot20Request struct {
+type SsidsAPIGetNetworkWirelessSsidHotspot20Request struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 }
 
-func (r SsidsApiGetNetworkWirelessSsidHotspot20Request) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SsidsAPIGetNetworkWirelessSsidHotspot20Request) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidHotspot20Execute(r)
 }
 
@@ -1252,10 +1252,10 @@ Return the Hotspot 2.0 settings for an SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SsidsApiGetNetworkWirelessSsidHotspot20Request
+ @return SsidsAPIGetNetworkWirelessSsidHotspot20Request
 */
-func (a *SsidsApiService) GetNetworkWirelessSsidHotspot20(ctx context.Context, networkId string, number string) SsidsApiGetNetworkWirelessSsidHotspot20Request {
-	return SsidsApiGetNetworkWirelessSsidHotspot20Request{
+func (a *SsidsAPIService) GetNetworkWirelessSsidHotspot20(ctx context.Context, networkId string, number string) SsidsAPIGetNetworkWirelessSsidHotspot20Request {
+	return SsidsAPIGetNetworkWirelessSsidHotspot20Request{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1265,7 +1265,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsidHotspot20(ctx context.Context, n
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SsidsApiService) GetNetworkWirelessSsidHotspot20Execute(r SsidsApiGetNetworkWirelessSsidHotspot20Request) (map[string]interface{}, *http.Response, error) {
+func (a *SsidsAPIService) GetNetworkWirelessSsidHotspot20Execute(r SsidsAPIGetNetworkWirelessSsidHotspot20Request) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1273,7 +1273,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsidHotspot20Execute(r SsidsApiGetNe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.GetNetworkWirelessSsidHotspot20")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.GetNetworkWirelessSsidHotspot20")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1354,15 +1354,15 @@ func (a *SsidsApiService) GetNetworkWirelessSsidHotspot20Execute(r SsidsApiGetNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiGetNetworkWirelessSsidIdentityPskRequest struct {
+type SsidsAPIGetNetworkWirelessSsidIdentityPskRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 	identityPskId string
 }
 
-func (r SsidsApiGetNetworkWirelessSsidIdentityPskRequest) Execute() (*GetNetworkWirelessSsidIdentityPsks200ResponseInner, *http.Response, error) {
+func (r SsidsAPIGetNetworkWirelessSsidIdentityPskRequest) Execute() (*GetNetworkWirelessSsidIdentityPsks200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidIdentityPskExecute(r)
 }
 
@@ -1375,10 +1375,10 @@ Return an Identity PSK
  @param networkId Network ID
  @param number Number
  @param identityPskId Identity psk ID
- @return SsidsApiGetNetworkWirelessSsidIdentityPskRequest
+ @return SsidsAPIGetNetworkWirelessSsidIdentityPskRequest
 */
-func (a *SsidsApiService) GetNetworkWirelessSsidIdentityPsk(ctx context.Context, networkId string, number string, identityPskId string) SsidsApiGetNetworkWirelessSsidIdentityPskRequest {
-	return SsidsApiGetNetworkWirelessSsidIdentityPskRequest{
+func (a *SsidsAPIService) GetNetworkWirelessSsidIdentityPsk(ctx context.Context, networkId string, number string, identityPskId string) SsidsAPIGetNetworkWirelessSsidIdentityPskRequest {
+	return SsidsAPIGetNetworkWirelessSsidIdentityPskRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1389,7 +1389,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsidIdentityPsk(ctx context.Context,
 
 // Execute executes the request
 //  @return GetNetworkWirelessSsidIdentityPsks200ResponseInner
-func (a *SsidsApiService) GetNetworkWirelessSsidIdentityPskExecute(r SsidsApiGetNetworkWirelessSsidIdentityPskRequest) (*GetNetworkWirelessSsidIdentityPsks200ResponseInner, *http.Response, error) {
+func (a *SsidsAPIService) GetNetworkWirelessSsidIdentityPskExecute(r SsidsAPIGetNetworkWirelessSsidIdentityPskRequest) (*GetNetworkWirelessSsidIdentityPsks200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1397,7 +1397,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsidIdentityPskExecute(r SsidsApiGet
 		localVarReturnValue  *GetNetworkWirelessSsidIdentityPsks200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.GetNetworkWirelessSsidIdentityPsk")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.GetNetworkWirelessSsidIdentityPsk")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1479,14 +1479,14 @@ func (a *SsidsApiService) GetNetworkWirelessSsidIdentityPskExecute(r SsidsApiGet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiGetNetworkWirelessSsidIdentityPsksRequest struct {
+type SsidsAPIGetNetworkWirelessSsidIdentityPsksRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 }
 
-func (r SsidsApiGetNetworkWirelessSsidIdentityPsksRequest) Execute() ([]GetNetworkWirelessSsidIdentityPsks200ResponseInner, *http.Response, error) {
+func (r SsidsAPIGetNetworkWirelessSsidIdentityPsksRequest) Execute() ([]GetNetworkWirelessSsidIdentityPsks200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidIdentityPsksExecute(r)
 }
 
@@ -1498,10 +1498,10 @@ List all Identity PSKs in a wireless network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SsidsApiGetNetworkWirelessSsidIdentityPsksRequest
+ @return SsidsAPIGetNetworkWirelessSsidIdentityPsksRequest
 */
-func (a *SsidsApiService) GetNetworkWirelessSsidIdentityPsks(ctx context.Context, networkId string, number string) SsidsApiGetNetworkWirelessSsidIdentityPsksRequest {
-	return SsidsApiGetNetworkWirelessSsidIdentityPsksRequest{
+func (a *SsidsAPIService) GetNetworkWirelessSsidIdentityPsks(ctx context.Context, networkId string, number string) SsidsAPIGetNetworkWirelessSsidIdentityPsksRequest {
+	return SsidsAPIGetNetworkWirelessSsidIdentityPsksRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1511,7 +1511,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsidIdentityPsks(ctx context.Context
 
 // Execute executes the request
 //  @return []GetNetworkWirelessSsidIdentityPsks200ResponseInner
-func (a *SsidsApiService) GetNetworkWirelessSsidIdentityPsksExecute(r SsidsApiGetNetworkWirelessSsidIdentityPsksRequest) ([]GetNetworkWirelessSsidIdentityPsks200ResponseInner, *http.Response, error) {
+func (a *SsidsAPIService) GetNetworkWirelessSsidIdentityPsksExecute(r SsidsAPIGetNetworkWirelessSsidIdentityPsksRequest) ([]GetNetworkWirelessSsidIdentityPsks200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1519,7 +1519,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsidIdentityPsksExecute(r SsidsApiGe
 		localVarReturnValue  []GetNetworkWirelessSsidIdentityPsks200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.GetNetworkWirelessSsidIdentityPsks")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.GetNetworkWirelessSsidIdentityPsks")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1600,14 +1600,14 @@ func (a *SsidsApiService) GetNetworkWirelessSsidIdentityPsksExecute(r SsidsApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiGetNetworkWirelessSsidSchedulesRequest struct {
+type SsidsAPIGetNetworkWirelessSsidSchedulesRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 }
 
-func (r SsidsApiGetNetworkWirelessSsidSchedulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SsidsAPIGetNetworkWirelessSsidSchedulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidSchedulesExecute(r)
 }
 
@@ -1619,10 +1619,10 @@ List the outage schedule for the SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SsidsApiGetNetworkWirelessSsidSchedulesRequest
+ @return SsidsAPIGetNetworkWirelessSsidSchedulesRequest
 */
-func (a *SsidsApiService) GetNetworkWirelessSsidSchedules(ctx context.Context, networkId string, number string) SsidsApiGetNetworkWirelessSsidSchedulesRequest {
-	return SsidsApiGetNetworkWirelessSsidSchedulesRequest{
+func (a *SsidsAPIService) GetNetworkWirelessSsidSchedules(ctx context.Context, networkId string, number string) SsidsAPIGetNetworkWirelessSsidSchedulesRequest {
+	return SsidsAPIGetNetworkWirelessSsidSchedulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1632,7 +1632,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsidSchedules(ctx context.Context, n
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SsidsApiService) GetNetworkWirelessSsidSchedulesExecute(r SsidsApiGetNetworkWirelessSsidSchedulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SsidsAPIService) GetNetworkWirelessSsidSchedulesExecute(r SsidsAPIGetNetworkWirelessSsidSchedulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1640,7 +1640,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsidSchedulesExecute(r SsidsApiGetNe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.GetNetworkWirelessSsidSchedules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.GetNetworkWirelessSsidSchedules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1721,14 +1721,14 @@ func (a *SsidsApiService) GetNetworkWirelessSsidSchedulesExecute(r SsidsApiGetNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiGetNetworkWirelessSsidSplashSettingsRequest struct {
+type SsidsAPIGetNetworkWirelessSsidSplashSettingsRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 }
 
-func (r SsidsApiGetNetworkWirelessSsidSplashSettingsRequest) Execute() (*GetNetworkWirelessSsidSplashSettings200Response, *http.Response, error) {
+func (r SsidsAPIGetNetworkWirelessSsidSplashSettingsRequest) Execute() (*GetNetworkWirelessSsidSplashSettings200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidSplashSettingsExecute(r)
 }
 
@@ -1740,10 +1740,10 @@ Display the splash page settings for the given SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SsidsApiGetNetworkWirelessSsidSplashSettingsRequest
+ @return SsidsAPIGetNetworkWirelessSsidSplashSettingsRequest
 */
-func (a *SsidsApiService) GetNetworkWirelessSsidSplashSettings(ctx context.Context, networkId string, number string) SsidsApiGetNetworkWirelessSsidSplashSettingsRequest {
-	return SsidsApiGetNetworkWirelessSsidSplashSettingsRequest{
+func (a *SsidsAPIService) GetNetworkWirelessSsidSplashSettings(ctx context.Context, networkId string, number string) SsidsAPIGetNetworkWirelessSsidSplashSettingsRequest {
+	return SsidsAPIGetNetworkWirelessSsidSplashSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1753,7 +1753,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsidSplashSettings(ctx context.Conte
 
 // Execute executes the request
 //  @return GetNetworkWirelessSsidSplashSettings200Response
-func (a *SsidsApiService) GetNetworkWirelessSsidSplashSettingsExecute(r SsidsApiGetNetworkWirelessSsidSplashSettingsRequest) (*GetNetworkWirelessSsidSplashSettings200Response, *http.Response, error) {
+func (a *SsidsAPIService) GetNetworkWirelessSsidSplashSettingsExecute(r SsidsAPIGetNetworkWirelessSsidSplashSettingsRequest) (*GetNetworkWirelessSsidSplashSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1761,7 +1761,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsidSplashSettingsExecute(r SsidsApi
 		localVarReturnValue  *GetNetworkWirelessSsidSplashSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.GetNetworkWirelessSsidSplashSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.GetNetworkWirelessSsidSplashSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1842,14 +1842,14 @@ func (a *SsidsApiService) GetNetworkWirelessSsidSplashSettingsExecute(r SsidsApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiGetNetworkWirelessSsidTrafficShapingRulesRequest struct {
+type SsidsAPIGetNetworkWirelessSsidTrafficShapingRulesRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 }
 
-func (r SsidsApiGetNetworkWirelessSsidTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SsidsAPIGetNetworkWirelessSsidTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidTrafficShapingRulesExecute(r)
 }
 
@@ -1861,10 +1861,10 @@ Display the traffic shaping settings for a SSID on an MR network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SsidsApiGetNetworkWirelessSsidTrafficShapingRulesRequest
+ @return SsidsAPIGetNetworkWirelessSsidTrafficShapingRulesRequest
 */
-func (a *SsidsApiService) GetNetworkWirelessSsidTrafficShapingRules(ctx context.Context, networkId string, number string) SsidsApiGetNetworkWirelessSsidTrafficShapingRulesRequest {
-	return SsidsApiGetNetworkWirelessSsidTrafficShapingRulesRequest{
+func (a *SsidsAPIService) GetNetworkWirelessSsidTrafficShapingRules(ctx context.Context, networkId string, number string) SsidsAPIGetNetworkWirelessSsidTrafficShapingRulesRequest {
+	return SsidsAPIGetNetworkWirelessSsidTrafficShapingRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1874,7 +1874,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsidTrafficShapingRules(ctx context.
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SsidsApiService) GetNetworkWirelessSsidTrafficShapingRulesExecute(r SsidsApiGetNetworkWirelessSsidTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SsidsAPIService) GetNetworkWirelessSsidTrafficShapingRulesExecute(r SsidsAPIGetNetworkWirelessSsidTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1882,7 +1882,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsidTrafficShapingRulesExecute(r Ssi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.GetNetworkWirelessSsidTrafficShapingRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.GetNetworkWirelessSsidTrafficShapingRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1963,14 +1963,14 @@ func (a *SsidsApiService) GetNetworkWirelessSsidTrafficShapingRulesExecute(r Ssi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiGetNetworkWirelessSsidVpnRequest struct {
+type SsidsAPIGetNetworkWirelessSsidVpnRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 }
 
-func (r SsidsApiGetNetworkWirelessSsidVpnRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SsidsAPIGetNetworkWirelessSsidVpnRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidVpnExecute(r)
 }
 
@@ -1982,10 +1982,10 @@ List the VPN settings for the SSID.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SsidsApiGetNetworkWirelessSsidVpnRequest
+ @return SsidsAPIGetNetworkWirelessSsidVpnRequest
 */
-func (a *SsidsApiService) GetNetworkWirelessSsidVpn(ctx context.Context, networkId string, number string) SsidsApiGetNetworkWirelessSsidVpnRequest {
-	return SsidsApiGetNetworkWirelessSsidVpnRequest{
+func (a *SsidsAPIService) GetNetworkWirelessSsidVpn(ctx context.Context, networkId string, number string) SsidsAPIGetNetworkWirelessSsidVpnRequest {
+	return SsidsAPIGetNetworkWirelessSsidVpnRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1995,7 +1995,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsidVpn(ctx context.Context, network
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SsidsApiService) GetNetworkWirelessSsidVpnExecute(r SsidsApiGetNetworkWirelessSsidVpnRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SsidsAPIService) GetNetworkWirelessSsidVpnExecute(r SsidsAPIGetNetworkWirelessSsidVpnRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2003,7 +2003,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsidVpnExecute(r SsidsApiGetNetworkW
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.GetNetworkWirelessSsidVpn")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.GetNetworkWirelessSsidVpn")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2084,13 +2084,13 @@ func (a *SsidsApiService) GetNetworkWirelessSsidVpnExecute(r SsidsApiGetNetworkW
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiGetNetworkWirelessSsidsRequest struct {
+type SsidsAPIGetNetworkWirelessSsidsRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 }
 
-func (r SsidsApiGetNetworkWirelessSsidsRequest) Execute() ([]GetNetworkWirelessSsids200ResponseInner, *http.Response, error) {
+func (r SsidsAPIGetNetworkWirelessSsidsRequest) Execute() ([]GetNetworkWirelessSsids200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidsExecute(r)
 }
 
@@ -2101,10 +2101,10 @@ List the MR SSIDs in a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SsidsApiGetNetworkWirelessSsidsRequest
+ @return SsidsAPIGetNetworkWirelessSsidsRequest
 */
-func (a *SsidsApiService) GetNetworkWirelessSsids(ctx context.Context, networkId string) SsidsApiGetNetworkWirelessSsidsRequest {
-	return SsidsApiGetNetworkWirelessSsidsRequest{
+func (a *SsidsAPIService) GetNetworkWirelessSsids(ctx context.Context, networkId string) SsidsAPIGetNetworkWirelessSsidsRequest {
+	return SsidsAPIGetNetworkWirelessSsidsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2113,7 +2113,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsids(ctx context.Context, networkId
 
 // Execute executes the request
 //  @return []GetNetworkWirelessSsids200ResponseInner
-func (a *SsidsApiService) GetNetworkWirelessSsidsExecute(r SsidsApiGetNetworkWirelessSsidsRequest) ([]GetNetworkWirelessSsids200ResponseInner, *http.Response, error) {
+func (a *SsidsAPIService) GetNetworkWirelessSsidsExecute(r SsidsAPIGetNetworkWirelessSsidsRequest) ([]GetNetworkWirelessSsids200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2121,7 +2121,7 @@ func (a *SsidsApiService) GetNetworkWirelessSsidsExecute(r SsidsApiGetNetworkWir
 		localVarReturnValue  []GetNetworkWirelessSsids200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.GetNetworkWirelessSsids")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.GetNetworkWirelessSsids")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2201,9 +2201,9 @@ func (a *SsidsApiService) GetNetworkWirelessSsidsExecute(r SsidsApiGetNetworkWir
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiGetOrganizationSummaryTopSsidsByUsageRequest struct {
+type SsidsAPIGetOrganizationSummaryTopSsidsByUsageRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -2211,24 +2211,24 @@ type SsidsApiGetOrganizationSummaryTopSsidsByUsageRequest struct {
 }
 
 // The beginning of the timespan for the data.
-func (r SsidsApiGetOrganizationSummaryTopSsidsByUsageRequest) T0(t0 string) SsidsApiGetOrganizationSummaryTopSsidsByUsageRequest {
+func (r SsidsAPIGetOrganizationSummaryTopSsidsByUsageRequest) T0(t0 string) SsidsAPIGetOrganizationSummaryTopSsidsByUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r SsidsApiGetOrganizationSummaryTopSsidsByUsageRequest) T1(t1 string) SsidsApiGetOrganizationSummaryTopSsidsByUsageRequest {
+func (r SsidsAPIGetOrganizationSummaryTopSsidsByUsageRequest) T1(t1 string) SsidsAPIGetOrganizationSummaryTopSsidsByUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r SsidsApiGetOrganizationSummaryTopSsidsByUsageRequest) Timespan(timespan float32) SsidsApiGetOrganizationSummaryTopSsidsByUsageRequest {
+func (r SsidsAPIGetOrganizationSummaryTopSsidsByUsageRequest) Timespan(timespan float32) SsidsAPIGetOrganizationSummaryTopSsidsByUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r SsidsApiGetOrganizationSummaryTopSsidsByUsageRequest) Execute() ([]GetOrganizationSummaryTopSsidsByUsage200ResponseInner, *http.Response, error) {
+func (r SsidsAPIGetOrganizationSummaryTopSsidsByUsageRequest) Execute() ([]GetOrganizationSummaryTopSsidsByUsage200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSummaryTopSsidsByUsageExecute(r)
 }
 
@@ -2239,10 +2239,10 @@ Return metrics for organization's top 10 ssids by data usage over given time ran
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return SsidsApiGetOrganizationSummaryTopSsidsByUsageRequest
+ @return SsidsAPIGetOrganizationSummaryTopSsidsByUsageRequest
 */
-func (a *SsidsApiService) GetOrganizationSummaryTopSsidsByUsage(ctx context.Context, organizationId string) SsidsApiGetOrganizationSummaryTopSsidsByUsageRequest {
-	return SsidsApiGetOrganizationSummaryTopSsidsByUsageRequest{
+func (a *SsidsAPIService) GetOrganizationSummaryTopSsidsByUsage(ctx context.Context, organizationId string) SsidsAPIGetOrganizationSummaryTopSsidsByUsageRequest {
+	return SsidsAPIGetOrganizationSummaryTopSsidsByUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -2251,7 +2251,7 @@ func (a *SsidsApiService) GetOrganizationSummaryTopSsidsByUsage(ctx context.Cont
 
 // Execute executes the request
 //  @return []GetOrganizationSummaryTopSsidsByUsage200ResponseInner
-func (a *SsidsApiService) GetOrganizationSummaryTopSsidsByUsageExecute(r SsidsApiGetOrganizationSummaryTopSsidsByUsageRequest) ([]GetOrganizationSummaryTopSsidsByUsage200ResponseInner, *http.Response, error) {
+func (a *SsidsAPIService) GetOrganizationSummaryTopSsidsByUsageExecute(r SsidsAPIGetOrganizationSummaryTopSsidsByUsageRequest) ([]GetOrganizationSummaryTopSsidsByUsage200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2259,7 +2259,7 @@ func (a *SsidsApiService) GetOrganizationSummaryTopSsidsByUsageExecute(r SsidsAp
 		localVarReturnValue  []GetOrganizationSummaryTopSsidsByUsage200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.GetOrganizationSummaryTopSsidsByUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.GetOrganizationSummaryTopSsidsByUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2348,20 +2348,20 @@ func (a *SsidsApiService) GetOrganizationSummaryTopSsidsByUsageExecute(r SsidsAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiUpdateNetworkApplianceSsidRequest struct {
+type SsidsAPIUpdateNetworkApplianceSsidRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 	updateNetworkApplianceSsidRequest *UpdateNetworkApplianceSsidRequest
 }
 
-func (r SsidsApiUpdateNetworkApplianceSsidRequest) UpdateNetworkApplianceSsidRequest(updateNetworkApplianceSsidRequest UpdateNetworkApplianceSsidRequest) SsidsApiUpdateNetworkApplianceSsidRequest {
+func (r SsidsAPIUpdateNetworkApplianceSsidRequest) UpdateNetworkApplianceSsidRequest(updateNetworkApplianceSsidRequest UpdateNetworkApplianceSsidRequest) SsidsAPIUpdateNetworkApplianceSsidRequest {
 	r.updateNetworkApplianceSsidRequest = &updateNetworkApplianceSsidRequest
 	return r
 }
 
-func (r SsidsApiUpdateNetworkApplianceSsidRequest) Execute() (*GetNetworkApplianceSsids200ResponseInner, *http.Response, error) {
+func (r SsidsAPIUpdateNetworkApplianceSsidRequest) Execute() (*GetNetworkApplianceSsids200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceSsidExecute(r)
 }
 
@@ -2373,10 +2373,10 @@ Update the attributes of an MX SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SsidsApiUpdateNetworkApplianceSsidRequest
+ @return SsidsAPIUpdateNetworkApplianceSsidRequest
 */
-func (a *SsidsApiService) UpdateNetworkApplianceSsid(ctx context.Context, networkId string, number string) SsidsApiUpdateNetworkApplianceSsidRequest {
-	return SsidsApiUpdateNetworkApplianceSsidRequest{
+func (a *SsidsAPIService) UpdateNetworkApplianceSsid(ctx context.Context, networkId string, number string) SsidsAPIUpdateNetworkApplianceSsidRequest {
+	return SsidsAPIUpdateNetworkApplianceSsidRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2386,7 +2386,7 @@ func (a *SsidsApiService) UpdateNetworkApplianceSsid(ctx context.Context, networ
 
 // Execute executes the request
 //  @return GetNetworkApplianceSsids200ResponseInner
-func (a *SsidsApiService) UpdateNetworkApplianceSsidExecute(r SsidsApiUpdateNetworkApplianceSsidRequest) (*GetNetworkApplianceSsids200ResponseInner, *http.Response, error) {
+func (a *SsidsAPIService) UpdateNetworkApplianceSsidExecute(r SsidsAPIUpdateNetworkApplianceSsidRequest) (*GetNetworkApplianceSsids200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -2394,7 +2394,7 @@ func (a *SsidsApiService) UpdateNetworkApplianceSsidExecute(r SsidsApiUpdateNetw
 		localVarReturnValue  *GetNetworkApplianceSsids200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.UpdateNetworkApplianceSsid")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.UpdateNetworkApplianceSsid")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2477,20 +2477,20 @@ func (a *SsidsApiService) UpdateNetworkApplianceSsidExecute(r SsidsApiUpdateNetw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiUpdateNetworkWirelessSsidRequest struct {
+type SsidsAPIUpdateNetworkWirelessSsidRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidRequest *UpdateNetworkWirelessSsidRequest
 }
 
-func (r SsidsApiUpdateNetworkWirelessSsidRequest) UpdateNetworkWirelessSsidRequest(updateNetworkWirelessSsidRequest UpdateNetworkWirelessSsidRequest) SsidsApiUpdateNetworkWirelessSsidRequest {
+func (r SsidsAPIUpdateNetworkWirelessSsidRequest) UpdateNetworkWirelessSsidRequest(updateNetworkWirelessSsidRequest UpdateNetworkWirelessSsidRequest) SsidsAPIUpdateNetworkWirelessSsidRequest {
 	r.updateNetworkWirelessSsidRequest = &updateNetworkWirelessSsidRequest
 	return r
 }
 
-func (r SsidsApiUpdateNetworkWirelessSsidRequest) Execute() (*GetNetworkWirelessSsids200ResponseInner, *http.Response, error) {
+func (r SsidsAPIUpdateNetworkWirelessSsidRequest) Execute() (*GetNetworkWirelessSsids200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidExecute(r)
 }
 
@@ -2502,10 +2502,10 @@ Update the attributes of an MR SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SsidsApiUpdateNetworkWirelessSsidRequest
+ @return SsidsAPIUpdateNetworkWirelessSsidRequest
 */
-func (a *SsidsApiService) UpdateNetworkWirelessSsid(ctx context.Context, networkId string, number string) SsidsApiUpdateNetworkWirelessSsidRequest {
-	return SsidsApiUpdateNetworkWirelessSsidRequest{
+func (a *SsidsAPIService) UpdateNetworkWirelessSsid(ctx context.Context, networkId string, number string) SsidsAPIUpdateNetworkWirelessSsidRequest {
+	return SsidsAPIUpdateNetworkWirelessSsidRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2515,7 +2515,7 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsid(ctx context.Context, network
 
 // Execute executes the request
 //  @return GetNetworkWirelessSsids200ResponseInner
-func (a *SsidsApiService) UpdateNetworkWirelessSsidExecute(r SsidsApiUpdateNetworkWirelessSsidRequest) (*GetNetworkWirelessSsids200ResponseInner, *http.Response, error) {
+func (a *SsidsAPIService) UpdateNetworkWirelessSsidExecute(r SsidsAPIUpdateNetworkWirelessSsidRequest) (*GetNetworkWirelessSsids200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -2523,7 +2523,7 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidExecute(r SsidsApiUpdateNetwo
 		localVarReturnValue  *GetNetworkWirelessSsids200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.UpdateNetworkWirelessSsid")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.UpdateNetworkWirelessSsid")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2606,20 +2606,20 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidExecute(r SsidsApiUpdateNetwo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiUpdateNetworkWirelessSsidBonjourForwardingRequest struct {
+type SsidsAPIUpdateNetworkWirelessSsidBonjourForwardingRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidBonjourForwardingRequest *UpdateNetworkWirelessSsidBonjourForwardingRequest
 }
 
-func (r SsidsApiUpdateNetworkWirelessSsidBonjourForwardingRequest) UpdateNetworkWirelessSsidBonjourForwardingRequest(updateNetworkWirelessSsidBonjourForwardingRequest UpdateNetworkWirelessSsidBonjourForwardingRequest) SsidsApiUpdateNetworkWirelessSsidBonjourForwardingRequest {
+func (r SsidsAPIUpdateNetworkWirelessSsidBonjourForwardingRequest) UpdateNetworkWirelessSsidBonjourForwardingRequest(updateNetworkWirelessSsidBonjourForwardingRequest UpdateNetworkWirelessSsidBonjourForwardingRequest) SsidsAPIUpdateNetworkWirelessSsidBonjourForwardingRequest {
 	r.updateNetworkWirelessSsidBonjourForwardingRequest = &updateNetworkWirelessSsidBonjourForwardingRequest
 	return r
 }
 
-func (r SsidsApiUpdateNetworkWirelessSsidBonjourForwardingRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SsidsAPIUpdateNetworkWirelessSsidBonjourForwardingRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidBonjourForwardingExecute(r)
 }
 
@@ -2631,10 +2631,10 @@ Update the bonjour forwarding setting and rules for the SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SsidsApiUpdateNetworkWirelessSsidBonjourForwardingRequest
+ @return SsidsAPIUpdateNetworkWirelessSsidBonjourForwardingRequest
 */
-func (a *SsidsApiService) UpdateNetworkWirelessSsidBonjourForwarding(ctx context.Context, networkId string, number string) SsidsApiUpdateNetworkWirelessSsidBonjourForwardingRequest {
-	return SsidsApiUpdateNetworkWirelessSsidBonjourForwardingRequest{
+func (a *SsidsAPIService) UpdateNetworkWirelessSsidBonjourForwarding(ctx context.Context, networkId string, number string) SsidsAPIUpdateNetworkWirelessSsidBonjourForwardingRequest {
+	return SsidsAPIUpdateNetworkWirelessSsidBonjourForwardingRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2644,7 +2644,7 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidBonjourForwarding(ctx context
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SsidsApiService) UpdateNetworkWirelessSsidBonjourForwardingExecute(r SsidsApiUpdateNetworkWirelessSsidBonjourForwardingRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SsidsAPIService) UpdateNetworkWirelessSsidBonjourForwardingExecute(r SsidsAPIUpdateNetworkWirelessSsidBonjourForwardingRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -2652,7 +2652,7 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidBonjourForwardingExecute(r Ss
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.UpdateNetworkWirelessSsidBonjourForwarding")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.UpdateNetworkWirelessSsidBonjourForwarding")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2735,20 +2735,20 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidBonjourForwardingExecute(r Ss
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest struct {
+type SsidsAPIUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest *UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest
 }
 
-func (r SsidsApiUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest(updateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) SsidsApiUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest {
+func (r SsidsAPIUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest(updateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) SsidsAPIUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest {
 	r.updateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest = &updateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest
 	return r
 }
 
-func (r SsidsApiUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SsidsAPIUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesExecute(r)
 }
 
@@ -2760,10 +2760,10 @@ Update the device type group policies for the SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SsidsApiUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest
+ @return SsidsAPIUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest
 */
-func (a *SsidsApiService) UpdateNetworkWirelessSsidDeviceTypeGroupPolicies(ctx context.Context, networkId string, number string) SsidsApiUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest {
-	return SsidsApiUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest{
+func (a *SsidsAPIService) UpdateNetworkWirelessSsidDeviceTypeGroupPolicies(ctx context.Context, networkId string, number string) SsidsAPIUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest {
+	return SsidsAPIUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2773,7 +2773,7 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidDeviceTypeGroupPolicies(ctx c
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SsidsApiService) UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesExecute(r SsidsApiUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SsidsAPIService) UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesExecute(r SsidsAPIUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -2781,7 +2781,7 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesExecut
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.UpdateNetworkWirelessSsidDeviceTypeGroupPolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.UpdateNetworkWirelessSsidDeviceTypeGroupPolicies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2864,20 +2864,20 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiUpdateNetworkWirelessSsidEapOverrideRequest struct {
+type SsidsAPIUpdateNetworkWirelessSsidEapOverrideRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidEapOverrideRequest *UpdateNetworkWirelessSsidEapOverrideRequest
 }
 
-func (r SsidsApiUpdateNetworkWirelessSsidEapOverrideRequest) UpdateNetworkWirelessSsidEapOverrideRequest(updateNetworkWirelessSsidEapOverrideRequest UpdateNetworkWirelessSsidEapOverrideRequest) SsidsApiUpdateNetworkWirelessSsidEapOverrideRequest {
+func (r SsidsAPIUpdateNetworkWirelessSsidEapOverrideRequest) UpdateNetworkWirelessSsidEapOverrideRequest(updateNetworkWirelessSsidEapOverrideRequest UpdateNetworkWirelessSsidEapOverrideRequest) SsidsAPIUpdateNetworkWirelessSsidEapOverrideRequest {
 	r.updateNetworkWirelessSsidEapOverrideRequest = &updateNetworkWirelessSsidEapOverrideRequest
 	return r
 }
 
-func (r SsidsApiUpdateNetworkWirelessSsidEapOverrideRequest) Execute() (*GetNetworkWirelessSsidEapOverride200Response, *http.Response, error) {
+func (r SsidsAPIUpdateNetworkWirelessSsidEapOverrideRequest) Execute() (*GetNetworkWirelessSsidEapOverride200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidEapOverrideExecute(r)
 }
 
@@ -2889,10 +2889,10 @@ Update the EAP overridden parameters for an SSID.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SsidsApiUpdateNetworkWirelessSsidEapOverrideRequest
+ @return SsidsAPIUpdateNetworkWirelessSsidEapOverrideRequest
 */
-func (a *SsidsApiService) UpdateNetworkWirelessSsidEapOverride(ctx context.Context, networkId string, number string) SsidsApiUpdateNetworkWirelessSsidEapOverrideRequest {
-	return SsidsApiUpdateNetworkWirelessSsidEapOverrideRequest{
+func (a *SsidsAPIService) UpdateNetworkWirelessSsidEapOverride(ctx context.Context, networkId string, number string) SsidsAPIUpdateNetworkWirelessSsidEapOverrideRequest {
+	return SsidsAPIUpdateNetworkWirelessSsidEapOverrideRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2902,7 +2902,7 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidEapOverride(ctx context.Conte
 
 // Execute executes the request
 //  @return GetNetworkWirelessSsidEapOverride200Response
-func (a *SsidsApiService) UpdateNetworkWirelessSsidEapOverrideExecute(r SsidsApiUpdateNetworkWirelessSsidEapOverrideRequest) (*GetNetworkWirelessSsidEapOverride200Response, *http.Response, error) {
+func (a *SsidsAPIService) UpdateNetworkWirelessSsidEapOverrideExecute(r SsidsAPIUpdateNetworkWirelessSsidEapOverrideRequest) (*GetNetworkWirelessSsidEapOverride200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -2910,7 +2910,7 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidEapOverrideExecute(r SsidsApi
 		localVarReturnValue  *GetNetworkWirelessSsidEapOverride200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.UpdateNetworkWirelessSsidEapOverride")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.UpdateNetworkWirelessSsidEapOverride")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2993,20 +2993,20 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidEapOverrideExecute(r SsidsApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest struct {
+type SsidsAPIUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidFirewallL3FirewallRulesRequest *UpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest
 }
 
-func (r SsidsApiUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest) UpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest(updateNetworkWirelessSsidFirewallL3FirewallRulesRequest UpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest) SsidsApiUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest {
+func (r SsidsAPIUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest) UpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest(updateNetworkWirelessSsidFirewallL3FirewallRulesRequest UpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest) SsidsAPIUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest {
 	r.updateNetworkWirelessSsidFirewallL3FirewallRulesRequest = &updateNetworkWirelessSsidFirewallL3FirewallRulesRequest
 	return r
 }
 
-func (r SsidsApiUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SsidsAPIUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidFirewallL3FirewallRulesExecute(r)
 }
 
@@ -3018,10 +3018,10 @@ Update the L3 firewall rules of an SSID on an MR network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SsidsApiUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest
+ @return SsidsAPIUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest
 */
-func (a *SsidsApiService) UpdateNetworkWirelessSsidFirewallL3FirewallRules(ctx context.Context, networkId string, number string) SsidsApiUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest {
-	return SsidsApiUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest{
+func (a *SsidsAPIService) UpdateNetworkWirelessSsidFirewallL3FirewallRules(ctx context.Context, networkId string, number string) SsidsAPIUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest {
+	return SsidsAPIUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3031,7 +3031,7 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidFirewallL3FirewallRules(ctx c
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SsidsApiService) UpdateNetworkWirelessSsidFirewallL3FirewallRulesExecute(r SsidsApiUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SsidsAPIService) UpdateNetworkWirelessSsidFirewallL3FirewallRulesExecute(r SsidsAPIUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -3039,7 +3039,7 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidFirewallL3FirewallRulesExecut
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.UpdateNetworkWirelessSsidFirewallL3FirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.UpdateNetworkWirelessSsidFirewallL3FirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3122,20 +3122,20 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidFirewallL3FirewallRulesExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest struct {
+type SsidsAPIUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidFirewallL7FirewallRulesRequest *UpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest
 }
 
-func (r SsidsApiUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) UpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest(updateNetworkWirelessSsidFirewallL7FirewallRulesRequest UpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) SsidsApiUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest {
+func (r SsidsAPIUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) UpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest(updateNetworkWirelessSsidFirewallL7FirewallRulesRequest UpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) SsidsAPIUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest {
 	r.updateNetworkWirelessSsidFirewallL7FirewallRulesRequest = &updateNetworkWirelessSsidFirewallL7FirewallRulesRequest
 	return r
 }
 
-func (r SsidsApiUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SsidsAPIUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidFirewallL7FirewallRulesExecute(r)
 }
 
@@ -3147,10 +3147,10 @@ Update the L7 firewall rules of an SSID on an MR network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SsidsApiUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest
+ @return SsidsAPIUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest
 */
-func (a *SsidsApiService) UpdateNetworkWirelessSsidFirewallL7FirewallRules(ctx context.Context, networkId string, number string) SsidsApiUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest {
-	return SsidsApiUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest{
+func (a *SsidsAPIService) UpdateNetworkWirelessSsidFirewallL7FirewallRules(ctx context.Context, networkId string, number string) SsidsAPIUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest {
+	return SsidsAPIUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3160,7 +3160,7 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidFirewallL7FirewallRules(ctx c
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SsidsApiService) UpdateNetworkWirelessSsidFirewallL7FirewallRulesExecute(r SsidsApiUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SsidsAPIService) UpdateNetworkWirelessSsidFirewallL7FirewallRulesExecute(r SsidsAPIUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -3168,7 +3168,7 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidFirewallL7FirewallRulesExecut
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.UpdateNetworkWirelessSsidFirewallL7FirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.UpdateNetworkWirelessSsidFirewallL7FirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3251,20 +3251,20 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidFirewallL7FirewallRulesExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiUpdateNetworkWirelessSsidHotspot20Request struct {
+type SsidsAPIUpdateNetworkWirelessSsidHotspot20Request struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidHotspot20Request *UpdateNetworkWirelessSsidHotspot20Request
 }
 
-func (r SsidsApiUpdateNetworkWirelessSsidHotspot20Request) UpdateNetworkWirelessSsidHotspot20Request(updateNetworkWirelessSsidHotspot20Request UpdateNetworkWirelessSsidHotspot20Request) SsidsApiUpdateNetworkWirelessSsidHotspot20Request {
+func (r SsidsAPIUpdateNetworkWirelessSsidHotspot20Request) UpdateNetworkWirelessSsidHotspot20Request(updateNetworkWirelessSsidHotspot20Request UpdateNetworkWirelessSsidHotspot20Request) SsidsAPIUpdateNetworkWirelessSsidHotspot20Request {
 	r.updateNetworkWirelessSsidHotspot20Request = &updateNetworkWirelessSsidHotspot20Request
 	return r
 }
 
-func (r SsidsApiUpdateNetworkWirelessSsidHotspot20Request) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SsidsAPIUpdateNetworkWirelessSsidHotspot20Request) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidHotspot20Execute(r)
 }
 
@@ -3276,10 +3276,10 @@ Update the Hotspot 2.0 settings of an SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SsidsApiUpdateNetworkWirelessSsidHotspot20Request
+ @return SsidsAPIUpdateNetworkWirelessSsidHotspot20Request
 */
-func (a *SsidsApiService) UpdateNetworkWirelessSsidHotspot20(ctx context.Context, networkId string, number string) SsidsApiUpdateNetworkWirelessSsidHotspot20Request {
-	return SsidsApiUpdateNetworkWirelessSsidHotspot20Request{
+func (a *SsidsAPIService) UpdateNetworkWirelessSsidHotspot20(ctx context.Context, networkId string, number string) SsidsAPIUpdateNetworkWirelessSsidHotspot20Request {
+	return SsidsAPIUpdateNetworkWirelessSsidHotspot20Request{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3289,7 +3289,7 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidHotspot20(ctx context.Context
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SsidsApiService) UpdateNetworkWirelessSsidHotspot20Execute(r SsidsApiUpdateNetworkWirelessSsidHotspot20Request) (map[string]interface{}, *http.Response, error) {
+func (a *SsidsAPIService) UpdateNetworkWirelessSsidHotspot20Execute(r SsidsAPIUpdateNetworkWirelessSsidHotspot20Request) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -3297,7 +3297,7 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidHotspot20Execute(r SsidsApiUp
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.UpdateNetworkWirelessSsidHotspot20")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.UpdateNetworkWirelessSsidHotspot20")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3380,21 +3380,21 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidHotspot20Execute(r SsidsApiUp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiUpdateNetworkWirelessSsidIdentityPskRequest struct {
+type SsidsAPIUpdateNetworkWirelessSsidIdentityPskRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 	identityPskId string
 	updateNetworkWirelessSsidIdentityPskRequest *UpdateNetworkWirelessSsidIdentityPskRequest
 }
 
-func (r SsidsApiUpdateNetworkWirelessSsidIdentityPskRequest) UpdateNetworkWirelessSsidIdentityPskRequest(updateNetworkWirelessSsidIdentityPskRequest UpdateNetworkWirelessSsidIdentityPskRequest) SsidsApiUpdateNetworkWirelessSsidIdentityPskRequest {
+func (r SsidsAPIUpdateNetworkWirelessSsidIdentityPskRequest) UpdateNetworkWirelessSsidIdentityPskRequest(updateNetworkWirelessSsidIdentityPskRequest UpdateNetworkWirelessSsidIdentityPskRequest) SsidsAPIUpdateNetworkWirelessSsidIdentityPskRequest {
 	r.updateNetworkWirelessSsidIdentityPskRequest = &updateNetworkWirelessSsidIdentityPskRequest
 	return r
 }
 
-func (r SsidsApiUpdateNetworkWirelessSsidIdentityPskRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SsidsAPIUpdateNetworkWirelessSsidIdentityPskRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidIdentityPskExecute(r)
 }
 
@@ -3407,10 +3407,10 @@ Update an Identity PSK
  @param networkId Network ID
  @param number Number
  @param identityPskId Identity psk ID
- @return SsidsApiUpdateNetworkWirelessSsidIdentityPskRequest
+ @return SsidsAPIUpdateNetworkWirelessSsidIdentityPskRequest
 */
-func (a *SsidsApiService) UpdateNetworkWirelessSsidIdentityPsk(ctx context.Context, networkId string, number string, identityPskId string) SsidsApiUpdateNetworkWirelessSsidIdentityPskRequest {
-	return SsidsApiUpdateNetworkWirelessSsidIdentityPskRequest{
+func (a *SsidsAPIService) UpdateNetworkWirelessSsidIdentityPsk(ctx context.Context, networkId string, number string, identityPskId string) SsidsAPIUpdateNetworkWirelessSsidIdentityPskRequest {
+	return SsidsAPIUpdateNetworkWirelessSsidIdentityPskRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3421,7 +3421,7 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidIdentityPsk(ctx context.Conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SsidsApiService) UpdateNetworkWirelessSsidIdentityPskExecute(r SsidsApiUpdateNetworkWirelessSsidIdentityPskRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SsidsAPIService) UpdateNetworkWirelessSsidIdentityPskExecute(r SsidsAPIUpdateNetworkWirelessSsidIdentityPskRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -3429,7 +3429,7 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidIdentityPskExecute(r SsidsApi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.UpdateNetworkWirelessSsidIdentityPsk")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.UpdateNetworkWirelessSsidIdentityPsk")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3513,20 +3513,20 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidIdentityPskExecute(r SsidsApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiUpdateNetworkWirelessSsidSchedulesRequest struct {
+type SsidsAPIUpdateNetworkWirelessSsidSchedulesRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidSchedulesRequest *UpdateNetworkWirelessSsidSchedulesRequest
 }
 
-func (r SsidsApiUpdateNetworkWirelessSsidSchedulesRequest) UpdateNetworkWirelessSsidSchedulesRequest(updateNetworkWirelessSsidSchedulesRequest UpdateNetworkWirelessSsidSchedulesRequest) SsidsApiUpdateNetworkWirelessSsidSchedulesRequest {
+func (r SsidsAPIUpdateNetworkWirelessSsidSchedulesRequest) UpdateNetworkWirelessSsidSchedulesRequest(updateNetworkWirelessSsidSchedulesRequest UpdateNetworkWirelessSsidSchedulesRequest) SsidsAPIUpdateNetworkWirelessSsidSchedulesRequest {
 	r.updateNetworkWirelessSsidSchedulesRequest = &updateNetworkWirelessSsidSchedulesRequest
 	return r
 }
 
-func (r SsidsApiUpdateNetworkWirelessSsidSchedulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SsidsAPIUpdateNetworkWirelessSsidSchedulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidSchedulesExecute(r)
 }
 
@@ -3538,10 +3538,10 @@ Update the outage schedule for the SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SsidsApiUpdateNetworkWirelessSsidSchedulesRequest
+ @return SsidsAPIUpdateNetworkWirelessSsidSchedulesRequest
 */
-func (a *SsidsApiService) UpdateNetworkWirelessSsidSchedules(ctx context.Context, networkId string, number string) SsidsApiUpdateNetworkWirelessSsidSchedulesRequest {
-	return SsidsApiUpdateNetworkWirelessSsidSchedulesRequest{
+func (a *SsidsAPIService) UpdateNetworkWirelessSsidSchedules(ctx context.Context, networkId string, number string) SsidsAPIUpdateNetworkWirelessSsidSchedulesRequest {
+	return SsidsAPIUpdateNetworkWirelessSsidSchedulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3551,7 +3551,7 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidSchedules(ctx context.Context
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SsidsApiService) UpdateNetworkWirelessSsidSchedulesExecute(r SsidsApiUpdateNetworkWirelessSsidSchedulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SsidsAPIService) UpdateNetworkWirelessSsidSchedulesExecute(r SsidsAPIUpdateNetworkWirelessSsidSchedulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -3559,7 +3559,7 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidSchedulesExecute(r SsidsApiUp
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.UpdateNetworkWirelessSsidSchedules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.UpdateNetworkWirelessSsidSchedules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3642,20 +3642,20 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidSchedulesExecute(r SsidsApiUp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiUpdateNetworkWirelessSsidSplashSettingsRequest struct {
+type SsidsAPIUpdateNetworkWirelessSsidSplashSettingsRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidSplashSettingsRequest *UpdateNetworkWirelessSsidSplashSettingsRequest
 }
 
-func (r SsidsApiUpdateNetworkWirelessSsidSplashSettingsRequest) UpdateNetworkWirelessSsidSplashSettingsRequest(updateNetworkWirelessSsidSplashSettingsRequest UpdateNetworkWirelessSsidSplashSettingsRequest) SsidsApiUpdateNetworkWirelessSsidSplashSettingsRequest {
+func (r SsidsAPIUpdateNetworkWirelessSsidSplashSettingsRequest) UpdateNetworkWirelessSsidSplashSettingsRequest(updateNetworkWirelessSsidSplashSettingsRequest UpdateNetworkWirelessSsidSplashSettingsRequest) SsidsAPIUpdateNetworkWirelessSsidSplashSettingsRequest {
 	r.updateNetworkWirelessSsidSplashSettingsRequest = &updateNetworkWirelessSsidSplashSettingsRequest
 	return r
 }
 
-func (r SsidsApiUpdateNetworkWirelessSsidSplashSettingsRequest) Execute() (*GetNetworkWirelessSsidSplashSettings200Response, *http.Response, error) {
+func (r SsidsAPIUpdateNetworkWirelessSsidSplashSettingsRequest) Execute() (*GetNetworkWirelessSsidSplashSettings200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidSplashSettingsExecute(r)
 }
 
@@ -3667,10 +3667,10 @@ Modify the splash page settings for the given SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SsidsApiUpdateNetworkWirelessSsidSplashSettingsRequest
+ @return SsidsAPIUpdateNetworkWirelessSsidSplashSettingsRequest
 */
-func (a *SsidsApiService) UpdateNetworkWirelessSsidSplashSettings(ctx context.Context, networkId string, number string) SsidsApiUpdateNetworkWirelessSsidSplashSettingsRequest {
-	return SsidsApiUpdateNetworkWirelessSsidSplashSettingsRequest{
+func (a *SsidsAPIService) UpdateNetworkWirelessSsidSplashSettings(ctx context.Context, networkId string, number string) SsidsAPIUpdateNetworkWirelessSsidSplashSettingsRequest {
+	return SsidsAPIUpdateNetworkWirelessSsidSplashSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3680,7 +3680,7 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidSplashSettings(ctx context.Co
 
 // Execute executes the request
 //  @return GetNetworkWirelessSsidSplashSettings200Response
-func (a *SsidsApiService) UpdateNetworkWirelessSsidSplashSettingsExecute(r SsidsApiUpdateNetworkWirelessSsidSplashSettingsRequest) (*GetNetworkWirelessSsidSplashSettings200Response, *http.Response, error) {
+func (a *SsidsAPIService) UpdateNetworkWirelessSsidSplashSettingsExecute(r SsidsAPIUpdateNetworkWirelessSsidSplashSettingsRequest) (*GetNetworkWirelessSsidSplashSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -3688,7 +3688,7 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidSplashSettingsExecute(r Ssids
 		localVarReturnValue  *GetNetworkWirelessSsidSplashSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.UpdateNetworkWirelessSsidSplashSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.UpdateNetworkWirelessSsidSplashSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3771,20 +3771,20 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidSplashSettingsExecute(r Ssids
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest struct {
+type SsidsAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidTrafficShapingRulesRequest *UpdateNetworkWirelessSsidTrafficShapingRulesRequest
 }
 
-func (r SsidsApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest) UpdateNetworkWirelessSsidTrafficShapingRulesRequest(updateNetworkWirelessSsidTrafficShapingRulesRequest UpdateNetworkWirelessSsidTrafficShapingRulesRequest) SsidsApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest {
+func (r SsidsAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest) UpdateNetworkWirelessSsidTrafficShapingRulesRequest(updateNetworkWirelessSsidTrafficShapingRulesRequest UpdateNetworkWirelessSsidTrafficShapingRulesRequest) SsidsAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest {
 	r.updateNetworkWirelessSsidTrafficShapingRulesRequest = &updateNetworkWirelessSsidTrafficShapingRulesRequest
 	return r
 }
 
-func (r SsidsApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SsidsAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidTrafficShapingRulesExecute(r)
 }
 
@@ -3796,10 +3796,10 @@ Update the traffic shaping settings for an SSID on an MR network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SsidsApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest
+ @return SsidsAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest
 */
-func (a *SsidsApiService) UpdateNetworkWirelessSsidTrafficShapingRules(ctx context.Context, networkId string, number string) SsidsApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest {
-	return SsidsApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest{
+func (a *SsidsAPIService) UpdateNetworkWirelessSsidTrafficShapingRules(ctx context.Context, networkId string, number string) SsidsAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest {
+	return SsidsAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3809,7 +3809,7 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidTrafficShapingRules(ctx conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SsidsApiService) UpdateNetworkWirelessSsidTrafficShapingRulesExecute(r SsidsApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SsidsAPIService) UpdateNetworkWirelessSsidTrafficShapingRulesExecute(r SsidsAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -3817,7 +3817,7 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidTrafficShapingRulesExecute(r 
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.UpdateNetworkWirelessSsidTrafficShapingRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.UpdateNetworkWirelessSsidTrafficShapingRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3900,20 +3900,20 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidTrafficShapingRulesExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SsidsApiUpdateNetworkWirelessSsidVpnRequest struct {
+type SsidsAPIUpdateNetworkWirelessSsidVpnRequest struct {
 	ctx context.Context
-	ApiService *SsidsApiService
+	ApiService *SsidsAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidVpnRequest *UpdateNetworkWirelessSsidVpnRequest
 }
 
-func (r SsidsApiUpdateNetworkWirelessSsidVpnRequest) UpdateNetworkWirelessSsidVpnRequest(updateNetworkWirelessSsidVpnRequest UpdateNetworkWirelessSsidVpnRequest) SsidsApiUpdateNetworkWirelessSsidVpnRequest {
+func (r SsidsAPIUpdateNetworkWirelessSsidVpnRequest) UpdateNetworkWirelessSsidVpnRequest(updateNetworkWirelessSsidVpnRequest UpdateNetworkWirelessSsidVpnRequest) SsidsAPIUpdateNetworkWirelessSsidVpnRequest {
 	r.updateNetworkWirelessSsidVpnRequest = &updateNetworkWirelessSsidVpnRequest
 	return r
 }
 
-func (r SsidsApiUpdateNetworkWirelessSsidVpnRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SsidsAPIUpdateNetworkWirelessSsidVpnRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidVpnExecute(r)
 }
 
@@ -3925,10 +3925,10 @@ Update the VPN settings for the SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SsidsApiUpdateNetworkWirelessSsidVpnRequest
+ @return SsidsAPIUpdateNetworkWirelessSsidVpnRequest
 */
-func (a *SsidsApiService) UpdateNetworkWirelessSsidVpn(ctx context.Context, networkId string, number string) SsidsApiUpdateNetworkWirelessSsidVpnRequest {
-	return SsidsApiUpdateNetworkWirelessSsidVpnRequest{
+func (a *SsidsAPIService) UpdateNetworkWirelessSsidVpn(ctx context.Context, networkId string, number string) SsidsAPIUpdateNetworkWirelessSsidVpnRequest {
+	return SsidsAPIUpdateNetworkWirelessSsidVpnRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3938,7 +3938,7 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidVpn(ctx context.Context, netw
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SsidsApiService) UpdateNetworkWirelessSsidVpnExecute(r SsidsApiUpdateNetworkWirelessSsidVpnRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SsidsAPIService) UpdateNetworkWirelessSsidVpnExecute(r SsidsAPIUpdateNetworkWirelessSsidVpnRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -3946,7 +3946,7 @@ func (a *SsidsApiService) UpdateNetworkWirelessSsidVpnExecute(r SsidsApiUpdateNe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsApiService.UpdateNetworkWirelessSsidVpn")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SsidsAPIService.UpdateNetworkWirelessSsidVpn")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

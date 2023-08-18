@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing LossAndLatencyHistoryApiService
+Testing LossAndLatencyHistoryAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_LossAndLatencyHistoryApiService(t *testing.T) {
+func Test_client_LossAndLatencyHistoryAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test LossAndLatencyHistoryApiService GetDeviceLossAndLatencyHistory", func(t *testing.T) {
+	t.Run("Test LossAndLatencyHistoryAPIService GetDeviceLossAndLatencyHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.LossAndLatencyHistoryApi.GetDeviceLossAndLatencyHistory(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.LossAndLatencyHistoryAPI.GetDeviceLossAndLatencyHistory(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

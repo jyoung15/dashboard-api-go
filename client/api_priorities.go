@@ -20,16 +20,16 @@ import (
 )
 
 
-// PrioritiesApiService PrioritiesApi service
-type PrioritiesApiService service
+// PrioritiesAPIService PrioritiesAPI service
+type PrioritiesAPIService service
 
-type PrioritiesApiGetOrganizationBrandingPoliciesPrioritiesRequest struct {
+type PrioritiesAPIGetOrganizationBrandingPoliciesPrioritiesRequest struct {
 	ctx context.Context
-	ApiService *PrioritiesApiService
+	ApiService *PrioritiesAPIService
 	organizationId string
 }
 
-func (r PrioritiesApiGetOrganizationBrandingPoliciesPrioritiesRequest) Execute() (*GetOrganizationBrandingPoliciesPriorities200Response, *http.Response, error) {
+func (r PrioritiesAPIGetOrganizationBrandingPoliciesPrioritiesRequest) Execute() (*GetOrganizationBrandingPoliciesPriorities200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationBrandingPoliciesPrioritiesExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the branding policy IDs of an organization in priority order. IDs are ord
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return PrioritiesApiGetOrganizationBrandingPoliciesPrioritiesRequest
+ @return PrioritiesAPIGetOrganizationBrandingPoliciesPrioritiesRequest
 */
-func (a *PrioritiesApiService) GetOrganizationBrandingPoliciesPriorities(ctx context.Context, organizationId string) PrioritiesApiGetOrganizationBrandingPoliciesPrioritiesRequest {
-	return PrioritiesApiGetOrganizationBrandingPoliciesPrioritiesRequest{
+func (a *PrioritiesAPIService) GetOrganizationBrandingPoliciesPriorities(ctx context.Context, organizationId string) PrioritiesAPIGetOrganizationBrandingPoliciesPrioritiesRequest {
+	return PrioritiesAPIGetOrganizationBrandingPoliciesPrioritiesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -52,7 +52,7 @@ func (a *PrioritiesApiService) GetOrganizationBrandingPoliciesPriorities(ctx con
 
 // Execute executes the request
 //  @return GetOrganizationBrandingPoliciesPriorities200Response
-func (a *PrioritiesApiService) GetOrganizationBrandingPoliciesPrioritiesExecute(r PrioritiesApiGetOrganizationBrandingPoliciesPrioritiesRequest) (*GetOrganizationBrandingPoliciesPriorities200Response, *http.Response, error) {
+func (a *PrioritiesAPIService) GetOrganizationBrandingPoliciesPrioritiesExecute(r PrioritiesAPIGetOrganizationBrandingPoliciesPrioritiesRequest) (*GetOrganizationBrandingPoliciesPriorities200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *PrioritiesApiService) GetOrganizationBrandingPoliciesPrioritiesExecute(
 		localVarReturnValue  *GetOrganizationBrandingPoliciesPriorities200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrioritiesApiService.GetOrganizationBrandingPoliciesPriorities")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrioritiesAPIService.GetOrganizationBrandingPoliciesPriorities")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *PrioritiesApiService) GetOrganizationBrandingPoliciesPrioritiesExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PrioritiesApiUpdateOrganizationBrandingPoliciesPrioritiesRequest struct {
+type PrioritiesAPIUpdateOrganizationBrandingPoliciesPrioritiesRequest struct {
 	ctx context.Context
-	ApiService *PrioritiesApiService
+	ApiService *PrioritiesAPIService
 	organizationId string
 	updateOrganizationBrandingPoliciesPrioritiesRequest *UpdateOrganizationBrandingPoliciesPrioritiesRequest
 }
 
-func (r PrioritiesApiUpdateOrganizationBrandingPoliciesPrioritiesRequest) UpdateOrganizationBrandingPoliciesPrioritiesRequest(updateOrganizationBrandingPoliciesPrioritiesRequest UpdateOrganizationBrandingPoliciesPrioritiesRequest) PrioritiesApiUpdateOrganizationBrandingPoliciesPrioritiesRequest {
+func (r PrioritiesAPIUpdateOrganizationBrandingPoliciesPrioritiesRequest) UpdateOrganizationBrandingPoliciesPrioritiesRequest(updateOrganizationBrandingPoliciesPrioritiesRequest UpdateOrganizationBrandingPoliciesPrioritiesRequest) PrioritiesAPIUpdateOrganizationBrandingPoliciesPrioritiesRequest {
 	r.updateOrganizationBrandingPoliciesPrioritiesRequest = &updateOrganizationBrandingPoliciesPrioritiesRequest
 	return r
 }
 
-func (r PrioritiesApiUpdateOrganizationBrandingPoliciesPrioritiesRequest) Execute() (*GetOrganizationBrandingPoliciesPriorities200Response, *http.Response, error) {
+func (r PrioritiesAPIUpdateOrganizationBrandingPoliciesPrioritiesRequest) Execute() (*GetOrganizationBrandingPoliciesPriorities200Response, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationBrandingPoliciesPrioritiesExecute(r)
 }
 
@@ -163,10 +163,10 @@ Update the priority ordering of an organization's branding policies.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return PrioritiesApiUpdateOrganizationBrandingPoliciesPrioritiesRequest
+ @return PrioritiesAPIUpdateOrganizationBrandingPoliciesPrioritiesRequest
 */
-func (a *PrioritiesApiService) UpdateOrganizationBrandingPoliciesPriorities(ctx context.Context, organizationId string) PrioritiesApiUpdateOrganizationBrandingPoliciesPrioritiesRequest {
-	return PrioritiesApiUpdateOrganizationBrandingPoliciesPrioritiesRequest{
+func (a *PrioritiesAPIService) UpdateOrganizationBrandingPoliciesPriorities(ctx context.Context, organizationId string) PrioritiesAPIUpdateOrganizationBrandingPoliciesPrioritiesRequest {
+	return PrioritiesAPIUpdateOrganizationBrandingPoliciesPrioritiesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -175,7 +175,7 @@ func (a *PrioritiesApiService) UpdateOrganizationBrandingPoliciesPriorities(ctx 
 
 // Execute executes the request
 //  @return GetOrganizationBrandingPoliciesPriorities200Response
-func (a *PrioritiesApiService) UpdateOrganizationBrandingPoliciesPrioritiesExecute(r PrioritiesApiUpdateOrganizationBrandingPoliciesPrioritiesRequest) (*GetOrganizationBrandingPoliciesPriorities200Response, *http.Response, error) {
+func (a *PrioritiesAPIService) UpdateOrganizationBrandingPoliciesPrioritiesExecute(r PrioritiesAPIUpdateOrganizationBrandingPoliciesPrioritiesRequest) (*GetOrganizationBrandingPoliciesPriorities200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *PrioritiesApiService) UpdateOrganizationBrandingPoliciesPrioritiesExecu
 		localVarReturnValue  *GetOrganizationBrandingPoliciesPriorities200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrioritiesApiService.UpdateOrganizationBrandingPoliciesPriorities")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrioritiesAPIService.UpdateOrganizationBrandingPoliciesPriorities")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -20,17 +20,17 @@ import (
 )
 
 
-// SplashAuthorizationStatusApiService SplashAuthorizationStatusApi service
-type SplashAuthorizationStatusApiService service
+// SplashAuthorizationStatusAPIService SplashAuthorizationStatusAPI service
+type SplashAuthorizationStatusAPIService service
 
-type SplashAuthorizationStatusApiGetNetworkClientSplashAuthorizationStatusRequest struct {
+type SplashAuthorizationStatusAPIGetNetworkClientSplashAuthorizationStatusRequest struct {
 	ctx context.Context
-	ApiService *SplashAuthorizationStatusApiService
+	ApiService *SplashAuthorizationStatusAPIService
 	networkId string
 	clientId string
 }
 
-func (r SplashAuthorizationStatusApiGetNetworkClientSplashAuthorizationStatusRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SplashAuthorizationStatusAPIGetNetworkClientSplashAuthorizationStatusRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientSplashAuthorizationStatusExecute(r)
 }
 
@@ -42,10 +42,10 @@ Return the splash authorization for a client, for each SSID they've associated w
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return SplashAuthorizationStatusApiGetNetworkClientSplashAuthorizationStatusRequest
+ @return SplashAuthorizationStatusAPIGetNetworkClientSplashAuthorizationStatusRequest
 */
-func (a *SplashAuthorizationStatusApiService) GetNetworkClientSplashAuthorizationStatus(ctx context.Context, networkId string, clientId string) SplashAuthorizationStatusApiGetNetworkClientSplashAuthorizationStatusRequest {
-	return SplashAuthorizationStatusApiGetNetworkClientSplashAuthorizationStatusRequest{
+func (a *SplashAuthorizationStatusAPIService) GetNetworkClientSplashAuthorizationStatus(ctx context.Context, networkId string, clientId string) SplashAuthorizationStatusAPIGetNetworkClientSplashAuthorizationStatusRequest {
+	return SplashAuthorizationStatusAPIGetNetworkClientSplashAuthorizationStatusRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -55,7 +55,7 @@ func (a *SplashAuthorizationStatusApiService) GetNetworkClientSplashAuthorizatio
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SplashAuthorizationStatusApiService) GetNetworkClientSplashAuthorizationStatusExecute(r SplashAuthorizationStatusApiGetNetworkClientSplashAuthorizationStatusRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SplashAuthorizationStatusAPIService) GetNetworkClientSplashAuthorizationStatusExecute(r SplashAuthorizationStatusAPIGetNetworkClientSplashAuthorizationStatusRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -63,7 +63,7 @@ func (a *SplashAuthorizationStatusApiService) GetNetworkClientSplashAuthorizatio
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SplashAuthorizationStatusApiService.GetNetworkClientSplashAuthorizationStatus")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SplashAuthorizationStatusAPIService.GetNetworkClientSplashAuthorizationStatus")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -144,20 +144,20 @@ func (a *SplashAuthorizationStatusApiService) GetNetworkClientSplashAuthorizatio
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SplashAuthorizationStatusApiUpdateNetworkClientSplashAuthorizationStatusRequest struct {
+type SplashAuthorizationStatusAPIUpdateNetworkClientSplashAuthorizationStatusRequest struct {
 	ctx context.Context
-	ApiService *SplashAuthorizationStatusApiService
+	ApiService *SplashAuthorizationStatusAPIService
 	networkId string
 	clientId string
 	updateNetworkClientSplashAuthorizationStatusRequest *UpdateNetworkClientSplashAuthorizationStatusRequest
 }
 
-func (r SplashAuthorizationStatusApiUpdateNetworkClientSplashAuthorizationStatusRequest) UpdateNetworkClientSplashAuthorizationStatusRequest(updateNetworkClientSplashAuthorizationStatusRequest UpdateNetworkClientSplashAuthorizationStatusRequest) SplashAuthorizationStatusApiUpdateNetworkClientSplashAuthorizationStatusRequest {
+func (r SplashAuthorizationStatusAPIUpdateNetworkClientSplashAuthorizationStatusRequest) UpdateNetworkClientSplashAuthorizationStatusRequest(updateNetworkClientSplashAuthorizationStatusRequest UpdateNetworkClientSplashAuthorizationStatusRequest) SplashAuthorizationStatusAPIUpdateNetworkClientSplashAuthorizationStatusRequest {
 	r.updateNetworkClientSplashAuthorizationStatusRequest = &updateNetworkClientSplashAuthorizationStatusRequest
 	return r
 }
 
-func (r SplashAuthorizationStatusApiUpdateNetworkClientSplashAuthorizationStatusRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SplashAuthorizationStatusAPIUpdateNetworkClientSplashAuthorizationStatusRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkClientSplashAuthorizationStatusExecute(r)
 }
 
@@ -169,10 +169,10 @@ Update a client's splash authorization. Clients can be identified by a client ke
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return SplashAuthorizationStatusApiUpdateNetworkClientSplashAuthorizationStatusRequest
+ @return SplashAuthorizationStatusAPIUpdateNetworkClientSplashAuthorizationStatusRequest
 */
-func (a *SplashAuthorizationStatusApiService) UpdateNetworkClientSplashAuthorizationStatus(ctx context.Context, networkId string, clientId string) SplashAuthorizationStatusApiUpdateNetworkClientSplashAuthorizationStatusRequest {
-	return SplashAuthorizationStatusApiUpdateNetworkClientSplashAuthorizationStatusRequest{
+func (a *SplashAuthorizationStatusAPIService) UpdateNetworkClientSplashAuthorizationStatus(ctx context.Context, networkId string, clientId string) SplashAuthorizationStatusAPIUpdateNetworkClientSplashAuthorizationStatusRequest {
+	return SplashAuthorizationStatusAPIUpdateNetworkClientSplashAuthorizationStatusRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -182,7 +182,7 @@ func (a *SplashAuthorizationStatusApiService) UpdateNetworkClientSplashAuthoriza
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SplashAuthorizationStatusApiService) UpdateNetworkClientSplashAuthorizationStatusExecute(r SplashAuthorizationStatusApiUpdateNetworkClientSplashAuthorizationStatusRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SplashAuthorizationStatusAPIService) UpdateNetworkClientSplashAuthorizationStatusExecute(r SplashAuthorizationStatusAPIUpdateNetworkClientSplashAuthorizationStatusRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -190,7 +190,7 @@ func (a *SplashAuthorizationStatusApiService) UpdateNetworkClientSplashAuthoriza
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SplashAuthorizationStatusApiService.UpdateNetworkClientSplashAuthorizationStatus")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SplashAuthorizationStatusAPIService.UpdateNetworkClientSplashAuthorizationStatus")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

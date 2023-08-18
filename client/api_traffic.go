@@ -20,12 +20,12 @@ import (
 )
 
 
-// TrafficApiService TrafficApi service
-type TrafficApiService service
+// TrafficAPIService TrafficAPI service
+type TrafficAPIService service
 
-type TrafficApiGetNetworkTrafficRequest struct {
+type TrafficAPIGetNetworkTrafficRequest struct {
 	ctx context.Context
-	ApiService *TrafficApiService
+	ApiService *TrafficAPIService
 	networkId string
 	t0 *string
 	timespan *float32
@@ -33,24 +33,24 @@ type TrafficApiGetNetworkTrafficRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 30 days from today.
-func (r TrafficApiGetNetworkTrafficRequest) T0(t0 string) TrafficApiGetNetworkTrafficRequest {
+func (r TrafficAPIGetNetworkTrafficRequest) T0(t0 string) TrafficAPIGetNetworkTrafficRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 30 days.
-func (r TrafficApiGetNetworkTrafficRequest) Timespan(timespan float32) TrafficApiGetNetworkTrafficRequest {
+func (r TrafficAPIGetNetworkTrafficRequest) Timespan(timespan float32) TrafficAPIGetNetworkTrafficRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter the data by device type: &#39;combined&#39;, &#39;wireless&#39;, &#39;switch&#39; or &#39;appliance&#39;. Defaults to &#39;combined&#39;. When using &#39;combined&#39;, for each rule the data will come from the device type with the most usage.
-func (r TrafficApiGetNetworkTrafficRequest) DeviceType(deviceType string) TrafficApiGetNetworkTrafficRequest {
+func (r TrafficAPIGetNetworkTrafficRequest) DeviceType(deviceType string) TrafficAPIGetNetworkTrafficRequest {
 	r.deviceType = &deviceType
 	return r
 }
 
-func (r TrafficApiGetNetworkTrafficRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r TrafficAPIGetNetworkTrafficRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkTrafficExecute(r)
 }
 
@@ -61,10 +61,10 @@ Return the traffic analysis data for this network. Traffic analysis with hostnam
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return TrafficApiGetNetworkTrafficRequest
+ @return TrafficAPIGetNetworkTrafficRequest
 */
-func (a *TrafficApiService) GetNetworkTraffic(ctx context.Context, networkId string) TrafficApiGetNetworkTrafficRequest {
-	return TrafficApiGetNetworkTrafficRequest{
+func (a *TrafficAPIService) GetNetworkTraffic(ctx context.Context, networkId string) TrafficAPIGetNetworkTrafficRequest {
+	return TrafficAPIGetNetworkTrafficRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -73,7 +73,7 @@ func (a *TrafficApiService) GetNetworkTraffic(ctx context.Context, networkId str
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *TrafficApiService) GetNetworkTrafficExecute(r TrafficApiGetNetworkTrafficRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *TrafficAPIService) GetNetworkTrafficExecute(r TrafficAPIGetNetworkTrafficRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -81,7 +81,7 @@ func (a *TrafficApiService) GetNetworkTrafficExecute(r TrafficApiGetNetworkTraff
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficApiService.GetNetworkTraffic")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficAPIService.GetNetworkTraffic")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

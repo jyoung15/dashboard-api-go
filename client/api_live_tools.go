@@ -20,22 +20,22 @@ import (
 )
 
 
-// LiveToolsApiService LiveToolsApi service
-type LiveToolsApiService service
+// LiveToolsAPIService LiveToolsAPI service
+type LiveToolsAPIService service
 
-type LiveToolsApiBlinkDeviceLedsRequest struct {
+type LiveToolsAPIBlinkDeviceLedsRequest struct {
 	ctx context.Context
-	ApiService *LiveToolsApiService
+	ApiService *LiveToolsAPIService
 	serial string
 	blinkDeviceLedsRequest *BlinkDeviceLedsRequest
 }
 
-func (r LiveToolsApiBlinkDeviceLedsRequest) BlinkDeviceLedsRequest(blinkDeviceLedsRequest BlinkDeviceLedsRequest) LiveToolsApiBlinkDeviceLedsRequest {
+func (r LiveToolsAPIBlinkDeviceLedsRequest) BlinkDeviceLedsRequest(blinkDeviceLedsRequest BlinkDeviceLedsRequest) LiveToolsAPIBlinkDeviceLedsRequest {
 	r.blinkDeviceLedsRequest = &blinkDeviceLedsRequest
 	return r
 }
 
-func (r LiveToolsApiBlinkDeviceLedsRequest) Execute() (*BlinkDeviceLeds202Response, *http.Response, error) {
+func (r LiveToolsAPIBlinkDeviceLedsRequest) Execute() (*BlinkDeviceLeds202Response, *http.Response, error) {
 	return r.ApiService.BlinkDeviceLedsExecute(r)
 }
 
@@ -46,10 +46,10 @@ Blink the LEDs on a device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return LiveToolsApiBlinkDeviceLedsRequest
+ @return LiveToolsAPIBlinkDeviceLedsRequest
 */
-func (a *LiveToolsApiService) BlinkDeviceLeds(ctx context.Context, serial string) LiveToolsApiBlinkDeviceLedsRequest {
-	return LiveToolsApiBlinkDeviceLedsRequest{
+func (a *LiveToolsAPIService) BlinkDeviceLeds(ctx context.Context, serial string) LiveToolsAPIBlinkDeviceLedsRequest {
+	return LiveToolsAPIBlinkDeviceLedsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -58,7 +58,7 @@ func (a *LiveToolsApiService) BlinkDeviceLeds(ctx context.Context, serial string
 
 // Execute executes the request
 //  @return BlinkDeviceLeds202Response
-func (a *LiveToolsApiService) BlinkDeviceLedsExecute(r LiveToolsApiBlinkDeviceLedsRequest) (*BlinkDeviceLeds202Response, *http.Response, error) {
+func (a *LiveToolsAPIService) BlinkDeviceLedsExecute(r LiveToolsAPIBlinkDeviceLedsRequest) (*BlinkDeviceLeds202Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *LiveToolsApiService) BlinkDeviceLedsExecute(r LiveToolsApiBlinkDeviceLe
 		localVarReturnValue  *BlinkDeviceLeds202Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveToolsApiService.BlinkDeviceLeds")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveToolsAPIService.BlinkDeviceLeds")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -148,19 +148,19 @@ func (a *LiveToolsApiService) BlinkDeviceLedsExecute(r LiveToolsApiBlinkDeviceLe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type LiveToolsApiCreateDeviceLiveToolsPingRequest struct {
+type LiveToolsAPICreateDeviceLiveToolsPingRequest struct {
 	ctx context.Context
-	ApiService *LiveToolsApiService
+	ApiService *LiveToolsAPIService
 	serial string
 	createDeviceLiveToolsPingRequest *CreateDeviceLiveToolsPingRequest
 }
 
-func (r LiveToolsApiCreateDeviceLiveToolsPingRequest) CreateDeviceLiveToolsPingRequest(createDeviceLiveToolsPingRequest CreateDeviceLiveToolsPingRequest) LiveToolsApiCreateDeviceLiveToolsPingRequest {
+func (r LiveToolsAPICreateDeviceLiveToolsPingRequest) CreateDeviceLiveToolsPingRequest(createDeviceLiveToolsPingRequest CreateDeviceLiveToolsPingRequest) LiveToolsAPICreateDeviceLiveToolsPingRequest {
 	r.createDeviceLiveToolsPingRequest = &createDeviceLiveToolsPingRequest
 	return r
 }
 
-func (r LiveToolsApiCreateDeviceLiveToolsPingRequest) Execute() (*CreateDeviceLiveToolsPing201Response, *http.Response, error) {
+func (r LiveToolsAPICreateDeviceLiveToolsPingRequest) Execute() (*CreateDeviceLiveToolsPing201Response, *http.Response, error) {
 	return r.ApiService.CreateDeviceLiveToolsPingExecute(r)
 }
 
@@ -171,10 +171,10 @@ Enqueue a job to ping a target host from the device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return LiveToolsApiCreateDeviceLiveToolsPingRequest
+ @return LiveToolsAPICreateDeviceLiveToolsPingRequest
 */
-func (a *LiveToolsApiService) CreateDeviceLiveToolsPing(ctx context.Context, serial string) LiveToolsApiCreateDeviceLiveToolsPingRequest {
-	return LiveToolsApiCreateDeviceLiveToolsPingRequest{
+func (a *LiveToolsAPIService) CreateDeviceLiveToolsPing(ctx context.Context, serial string) LiveToolsAPICreateDeviceLiveToolsPingRequest {
+	return LiveToolsAPICreateDeviceLiveToolsPingRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -183,7 +183,7 @@ func (a *LiveToolsApiService) CreateDeviceLiveToolsPing(ctx context.Context, ser
 
 // Execute executes the request
 //  @return CreateDeviceLiveToolsPing201Response
-func (a *LiveToolsApiService) CreateDeviceLiveToolsPingExecute(r LiveToolsApiCreateDeviceLiveToolsPingRequest) (*CreateDeviceLiveToolsPing201Response, *http.Response, error) {
+func (a *LiveToolsAPIService) CreateDeviceLiveToolsPingExecute(r LiveToolsAPICreateDeviceLiveToolsPingRequest) (*CreateDeviceLiveToolsPing201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -191,7 +191,7 @@ func (a *LiveToolsApiService) CreateDeviceLiveToolsPingExecute(r LiveToolsApiCre
 		localVarReturnValue  *CreateDeviceLiveToolsPing201Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveToolsApiService.CreateDeviceLiveToolsPing")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveToolsAPIService.CreateDeviceLiveToolsPing")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -276,19 +276,19 @@ func (a *LiveToolsApiService) CreateDeviceLiveToolsPingExecute(r LiveToolsApiCre
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type LiveToolsApiCreateDeviceLiveToolsPingDeviceRequest struct {
+type LiveToolsAPICreateDeviceLiveToolsPingDeviceRequest struct {
 	ctx context.Context
-	ApiService *LiveToolsApiService
+	ApiService *LiveToolsAPIService
 	serial string
 	createDeviceLiveToolsPingDeviceRequest *CreateDeviceLiveToolsPingDeviceRequest
 }
 
-func (r LiveToolsApiCreateDeviceLiveToolsPingDeviceRequest) CreateDeviceLiveToolsPingDeviceRequest(createDeviceLiveToolsPingDeviceRequest CreateDeviceLiveToolsPingDeviceRequest) LiveToolsApiCreateDeviceLiveToolsPingDeviceRequest {
+func (r LiveToolsAPICreateDeviceLiveToolsPingDeviceRequest) CreateDeviceLiveToolsPingDeviceRequest(createDeviceLiveToolsPingDeviceRequest CreateDeviceLiveToolsPingDeviceRequest) LiveToolsAPICreateDeviceLiveToolsPingDeviceRequest {
 	r.createDeviceLiveToolsPingDeviceRequest = &createDeviceLiveToolsPingDeviceRequest
 	return r
 }
 
-func (r LiveToolsApiCreateDeviceLiveToolsPingDeviceRequest) Execute() (*CreateDeviceLiveToolsPing201Response, *http.Response, error) {
+func (r LiveToolsAPICreateDeviceLiveToolsPingDeviceRequest) Execute() (*CreateDeviceLiveToolsPing201Response, *http.Response, error) {
 	return r.ApiService.CreateDeviceLiveToolsPingDeviceExecute(r)
 }
 
@@ -299,10 +299,10 @@ Enqueue a job to check connectivity status to the device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return LiveToolsApiCreateDeviceLiveToolsPingDeviceRequest
+ @return LiveToolsAPICreateDeviceLiveToolsPingDeviceRequest
 */
-func (a *LiveToolsApiService) CreateDeviceLiveToolsPingDevice(ctx context.Context, serial string) LiveToolsApiCreateDeviceLiveToolsPingDeviceRequest {
-	return LiveToolsApiCreateDeviceLiveToolsPingDeviceRequest{
+func (a *LiveToolsAPIService) CreateDeviceLiveToolsPingDevice(ctx context.Context, serial string) LiveToolsAPICreateDeviceLiveToolsPingDeviceRequest {
+	return LiveToolsAPICreateDeviceLiveToolsPingDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -311,7 +311,7 @@ func (a *LiveToolsApiService) CreateDeviceLiveToolsPingDevice(ctx context.Contex
 
 // Execute executes the request
 //  @return CreateDeviceLiveToolsPing201Response
-func (a *LiveToolsApiService) CreateDeviceLiveToolsPingDeviceExecute(r LiveToolsApiCreateDeviceLiveToolsPingDeviceRequest) (*CreateDeviceLiveToolsPing201Response, *http.Response, error) {
+func (a *LiveToolsAPIService) CreateDeviceLiveToolsPingDeviceExecute(r LiveToolsAPICreateDeviceLiveToolsPingDeviceRequest) (*CreateDeviceLiveToolsPing201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -319,7 +319,7 @@ func (a *LiveToolsApiService) CreateDeviceLiveToolsPingDeviceExecute(r LiveTools
 		localVarReturnValue  *CreateDeviceLiveToolsPing201Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveToolsApiService.CreateDeviceLiveToolsPingDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveToolsAPIService.CreateDeviceLiveToolsPingDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -401,19 +401,19 @@ func (a *LiveToolsApiService) CreateDeviceLiveToolsPingDeviceExecute(r LiveTools
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type LiveToolsApiCycleDeviceSwitchPortsRequest struct {
+type LiveToolsAPICycleDeviceSwitchPortsRequest struct {
 	ctx context.Context
-	ApiService *LiveToolsApiService
+	ApiService *LiveToolsAPIService
 	serial string
 	cycleDeviceSwitchPortsRequest *CycleDeviceSwitchPortsRequest
 }
 
-func (r LiveToolsApiCycleDeviceSwitchPortsRequest) CycleDeviceSwitchPortsRequest(cycleDeviceSwitchPortsRequest CycleDeviceSwitchPortsRequest) LiveToolsApiCycleDeviceSwitchPortsRequest {
+func (r LiveToolsAPICycleDeviceSwitchPortsRequest) CycleDeviceSwitchPortsRequest(cycleDeviceSwitchPortsRequest CycleDeviceSwitchPortsRequest) LiveToolsAPICycleDeviceSwitchPortsRequest {
 	r.cycleDeviceSwitchPortsRequest = &cycleDeviceSwitchPortsRequest
 	return r
 }
 
-func (r LiveToolsApiCycleDeviceSwitchPortsRequest) Execute() (*CycleDeviceSwitchPorts200Response, *http.Response, error) {
+func (r LiveToolsAPICycleDeviceSwitchPortsRequest) Execute() (*CycleDeviceSwitchPorts200Response, *http.Response, error) {
 	return r.ApiService.CycleDeviceSwitchPortsExecute(r)
 }
 
@@ -424,10 +424,10 @@ Cycle a set of switch ports
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return LiveToolsApiCycleDeviceSwitchPortsRequest
+ @return LiveToolsAPICycleDeviceSwitchPortsRequest
 */
-func (a *LiveToolsApiService) CycleDeviceSwitchPorts(ctx context.Context, serial string) LiveToolsApiCycleDeviceSwitchPortsRequest {
-	return LiveToolsApiCycleDeviceSwitchPortsRequest{
+func (a *LiveToolsAPIService) CycleDeviceSwitchPorts(ctx context.Context, serial string) LiveToolsAPICycleDeviceSwitchPortsRequest {
+	return LiveToolsAPICycleDeviceSwitchPortsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -436,7 +436,7 @@ func (a *LiveToolsApiService) CycleDeviceSwitchPorts(ctx context.Context, serial
 
 // Execute executes the request
 //  @return CycleDeviceSwitchPorts200Response
-func (a *LiveToolsApiService) CycleDeviceSwitchPortsExecute(r LiveToolsApiCycleDeviceSwitchPortsRequest) (*CycleDeviceSwitchPorts200Response, *http.Response, error) {
+func (a *LiveToolsAPIService) CycleDeviceSwitchPortsExecute(r LiveToolsAPICycleDeviceSwitchPortsRequest) (*CycleDeviceSwitchPorts200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -444,7 +444,7 @@ func (a *LiveToolsApiService) CycleDeviceSwitchPortsExecute(r LiveToolsApiCycleD
 		localVarReturnValue  *CycleDeviceSwitchPorts200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveToolsApiService.CycleDeviceSwitchPorts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveToolsAPIService.CycleDeviceSwitchPorts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -529,14 +529,14 @@ func (a *LiveToolsApiService) CycleDeviceSwitchPortsExecute(r LiveToolsApiCycleD
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type LiveToolsApiGetDeviceLiveToolsPingRequest struct {
+type LiveToolsAPIGetDeviceLiveToolsPingRequest struct {
 	ctx context.Context
-	ApiService *LiveToolsApiService
+	ApiService *LiveToolsAPIService
 	serial string
 	id string
 }
 
-func (r LiveToolsApiGetDeviceLiveToolsPingRequest) Execute() (*GetDeviceLiveToolsPing200Response, *http.Response, error) {
+func (r LiveToolsAPIGetDeviceLiveToolsPingRequest) Execute() (*GetDeviceLiveToolsPing200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceLiveToolsPingExecute(r)
 }
 
@@ -548,10 +548,10 @@ Return a ping job. Latency unit in response is in milliseconds. Size is in bytes
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param id ID
- @return LiveToolsApiGetDeviceLiveToolsPingRequest
+ @return LiveToolsAPIGetDeviceLiveToolsPingRequest
 */
-func (a *LiveToolsApiService) GetDeviceLiveToolsPing(ctx context.Context, serial string, id string) LiveToolsApiGetDeviceLiveToolsPingRequest {
-	return LiveToolsApiGetDeviceLiveToolsPingRequest{
+func (a *LiveToolsAPIService) GetDeviceLiveToolsPing(ctx context.Context, serial string, id string) LiveToolsAPIGetDeviceLiveToolsPingRequest {
+	return LiveToolsAPIGetDeviceLiveToolsPingRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -561,7 +561,7 @@ func (a *LiveToolsApiService) GetDeviceLiveToolsPing(ctx context.Context, serial
 
 // Execute executes the request
 //  @return GetDeviceLiveToolsPing200Response
-func (a *LiveToolsApiService) GetDeviceLiveToolsPingExecute(r LiveToolsApiGetDeviceLiveToolsPingRequest) (*GetDeviceLiveToolsPing200Response, *http.Response, error) {
+func (a *LiveToolsAPIService) GetDeviceLiveToolsPingExecute(r LiveToolsAPIGetDeviceLiveToolsPingRequest) (*GetDeviceLiveToolsPing200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -569,7 +569,7 @@ func (a *LiveToolsApiService) GetDeviceLiveToolsPingExecute(r LiveToolsApiGetDev
 		localVarReturnValue  *GetDeviceLiveToolsPing200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveToolsApiService.GetDeviceLiveToolsPing")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveToolsAPIService.GetDeviceLiveToolsPing")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -650,14 +650,14 @@ func (a *LiveToolsApiService) GetDeviceLiveToolsPingExecute(r LiveToolsApiGetDev
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type LiveToolsApiGetDeviceLiveToolsPingDeviceRequest struct {
+type LiveToolsAPIGetDeviceLiveToolsPingDeviceRequest struct {
 	ctx context.Context
-	ApiService *LiveToolsApiService
+	ApiService *LiveToolsAPIService
 	serial string
 	id string
 }
 
-func (r LiveToolsApiGetDeviceLiveToolsPingDeviceRequest) Execute() (*GetDeviceLiveToolsPing200Response, *http.Response, error) {
+func (r LiveToolsAPIGetDeviceLiveToolsPingDeviceRequest) Execute() (*GetDeviceLiveToolsPing200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceLiveToolsPingDeviceExecute(r)
 }
 
@@ -669,10 +669,10 @@ Return a ping device job. Latency unit in response is in milliseconds. Size is i
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param id ID
- @return LiveToolsApiGetDeviceLiveToolsPingDeviceRequest
+ @return LiveToolsAPIGetDeviceLiveToolsPingDeviceRequest
 */
-func (a *LiveToolsApiService) GetDeviceLiveToolsPingDevice(ctx context.Context, serial string, id string) LiveToolsApiGetDeviceLiveToolsPingDeviceRequest {
-	return LiveToolsApiGetDeviceLiveToolsPingDeviceRequest{
+func (a *LiveToolsAPIService) GetDeviceLiveToolsPingDevice(ctx context.Context, serial string, id string) LiveToolsAPIGetDeviceLiveToolsPingDeviceRequest {
+	return LiveToolsAPIGetDeviceLiveToolsPingDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -682,7 +682,7 @@ func (a *LiveToolsApiService) GetDeviceLiveToolsPingDevice(ctx context.Context, 
 
 // Execute executes the request
 //  @return GetDeviceLiveToolsPing200Response
-func (a *LiveToolsApiService) GetDeviceLiveToolsPingDeviceExecute(r LiveToolsApiGetDeviceLiveToolsPingDeviceRequest) (*GetDeviceLiveToolsPing200Response, *http.Response, error) {
+func (a *LiveToolsAPIService) GetDeviceLiveToolsPingDeviceExecute(r LiveToolsAPIGetDeviceLiveToolsPingDeviceRequest) (*GetDeviceLiveToolsPing200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -690,7 +690,7 @@ func (a *LiveToolsApiService) GetDeviceLiveToolsPingDeviceExecute(r LiveToolsApi
 		localVarReturnValue  *GetDeviceLiveToolsPing200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveToolsApiService.GetDeviceLiveToolsPingDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveToolsAPIService.GetDeviceLiveToolsPingDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -771,13 +771,13 @@ func (a *LiveToolsApiService) GetDeviceLiveToolsPingDeviceExecute(r LiveToolsApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type LiveToolsApiRebootDeviceRequest struct {
+type LiveToolsAPIRebootDeviceRequest struct {
 	ctx context.Context
-	ApiService *LiveToolsApiService
+	ApiService *LiveToolsAPIService
 	serial string
 }
 
-func (r LiveToolsApiRebootDeviceRequest) Execute() (*RebootDevice202Response, *http.Response, error) {
+func (r LiveToolsAPIRebootDeviceRequest) Execute() (*RebootDevice202Response, *http.Response, error) {
 	return r.ApiService.RebootDeviceExecute(r)
 }
 
@@ -788,10 +788,10 @@ Reboot a device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return LiveToolsApiRebootDeviceRequest
+ @return LiveToolsAPIRebootDeviceRequest
 */
-func (a *LiveToolsApiService) RebootDevice(ctx context.Context, serial string) LiveToolsApiRebootDeviceRequest {
-	return LiveToolsApiRebootDeviceRequest{
+func (a *LiveToolsAPIService) RebootDevice(ctx context.Context, serial string) LiveToolsAPIRebootDeviceRequest {
+	return LiveToolsAPIRebootDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -800,7 +800,7 @@ func (a *LiveToolsApiService) RebootDevice(ctx context.Context, serial string) L
 
 // Execute executes the request
 //  @return RebootDevice202Response
-func (a *LiveToolsApiService) RebootDeviceExecute(r LiveToolsApiRebootDeviceRequest) (*RebootDevice202Response, *http.Response, error) {
+func (a *LiveToolsAPIService) RebootDeviceExecute(r LiveToolsAPIRebootDeviceRequest) (*RebootDevice202Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -808,7 +808,7 @@ func (a *LiveToolsApiService) RebootDeviceExecute(r LiveToolsApiRebootDeviceRequ
 		localVarReturnValue  *RebootDevice202Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveToolsApiService.RebootDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveToolsAPIService.RebootDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

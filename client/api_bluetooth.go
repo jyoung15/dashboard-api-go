@@ -20,16 +20,16 @@ import (
 )
 
 
-// BluetoothApiService BluetoothApi service
-type BluetoothApiService service
+// BluetoothAPIService BluetoothAPI service
+type BluetoothAPIService service
 
-type BluetoothApiGetDeviceWirelessBluetoothSettingsRequest struct {
+type BluetoothAPIGetDeviceWirelessBluetoothSettingsRequest struct {
 	ctx context.Context
-	ApiService *BluetoothApiService
+	ApiService *BluetoothAPIService
 	serial string
 }
 
-func (r BluetoothApiGetDeviceWirelessBluetoothSettingsRequest) Execute() (*GetDeviceWirelessBluetoothSettings200Response, *http.Response, error) {
+func (r BluetoothAPIGetDeviceWirelessBluetoothSettingsRequest) Execute() (*GetDeviceWirelessBluetoothSettings200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceWirelessBluetoothSettingsExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the bluetooth settings for a wireless device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return BluetoothApiGetDeviceWirelessBluetoothSettingsRequest
+ @return BluetoothAPIGetDeviceWirelessBluetoothSettingsRequest
 */
-func (a *BluetoothApiService) GetDeviceWirelessBluetoothSettings(ctx context.Context, serial string) BluetoothApiGetDeviceWirelessBluetoothSettingsRequest {
-	return BluetoothApiGetDeviceWirelessBluetoothSettingsRequest{
+func (a *BluetoothAPIService) GetDeviceWirelessBluetoothSettings(ctx context.Context, serial string) BluetoothAPIGetDeviceWirelessBluetoothSettingsRequest {
+	return BluetoothAPIGetDeviceWirelessBluetoothSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -52,7 +52,7 @@ func (a *BluetoothApiService) GetDeviceWirelessBluetoothSettings(ctx context.Con
 
 // Execute executes the request
 //  @return GetDeviceWirelessBluetoothSettings200Response
-func (a *BluetoothApiService) GetDeviceWirelessBluetoothSettingsExecute(r BluetoothApiGetDeviceWirelessBluetoothSettingsRequest) (*GetDeviceWirelessBluetoothSettings200Response, *http.Response, error) {
+func (a *BluetoothAPIService) GetDeviceWirelessBluetoothSettingsExecute(r BluetoothAPIGetDeviceWirelessBluetoothSettingsRequest) (*GetDeviceWirelessBluetoothSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *BluetoothApiService) GetDeviceWirelessBluetoothSettingsExecute(r Blueto
 		localVarReturnValue  *GetDeviceWirelessBluetoothSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BluetoothApiService.GetDeviceWirelessBluetoothSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BluetoothAPIService.GetDeviceWirelessBluetoothSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,13 +140,13 @@ func (a *BluetoothApiService) GetDeviceWirelessBluetoothSettingsExecute(r Blueto
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BluetoothApiGetNetworkWirelessBluetoothSettingsRequest struct {
+type BluetoothAPIGetNetworkWirelessBluetoothSettingsRequest struct {
 	ctx context.Context
-	ApiService *BluetoothApiService
+	ApiService *BluetoothAPIService
 	networkId string
 }
 
-func (r BluetoothApiGetNetworkWirelessBluetoothSettingsRequest) Execute() (*GetNetworkWirelessBluetoothSettings200Response, *http.Response, error) {
+func (r BluetoothAPIGetNetworkWirelessBluetoothSettingsRequest) Execute() (*GetNetworkWirelessBluetoothSettings200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessBluetoothSettingsExecute(r)
 }
 
@@ -157,10 +157,10 @@ Return the Bluetooth settings for a network. <a href="https://documentation.mera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return BluetoothApiGetNetworkWirelessBluetoothSettingsRequest
+ @return BluetoothAPIGetNetworkWirelessBluetoothSettingsRequest
 */
-func (a *BluetoothApiService) GetNetworkWirelessBluetoothSettings(ctx context.Context, networkId string) BluetoothApiGetNetworkWirelessBluetoothSettingsRequest {
-	return BluetoothApiGetNetworkWirelessBluetoothSettingsRequest{
+func (a *BluetoothAPIService) GetNetworkWirelessBluetoothSettings(ctx context.Context, networkId string) BluetoothAPIGetNetworkWirelessBluetoothSettingsRequest {
+	return BluetoothAPIGetNetworkWirelessBluetoothSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -169,7 +169,7 @@ func (a *BluetoothApiService) GetNetworkWirelessBluetoothSettings(ctx context.Co
 
 // Execute executes the request
 //  @return GetNetworkWirelessBluetoothSettings200Response
-func (a *BluetoothApiService) GetNetworkWirelessBluetoothSettingsExecute(r BluetoothApiGetNetworkWirelessBluetoothSettingsRequest) (*GetNetworkWirelessBluetoothSettings200Response, *http.Response, error) {
+func (a *BluetoothAPIService) GetNetworkWirelessBluetoothSettingsExecute(r BluetoothAPIGetNetworkWirelessBluetoothSettingsRequest) (*GetNetworkWirelessBluetoothSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -177,7 +177,7 @@ func (a *BluetoothApiService) GetNetworkWirelessBluetoothSettingsExecute(r Bluet
 		localVarReturnValue  *GetNetworkWirelessBluetoothSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BluetoothApiService.GetNetworkWirelessBluetoothSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BluetoothAPIService.GetNetworkWirelessBluetoothSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -257,19 +257,19 @@ func (a *BluetoothApiService) GetNetworkWirelessBluetoothSettingsExecute(r Bluet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BluetoothApiUpdateDeviceWirelessBluetoothSettingsRequest struct {
+type BluetoothAPIUpdateDeviceWirelessBluetoothSettingsRequest struct {
 	ctx context.Context
-	ApiService *BluetoothApiService
+	ApiService *BluetoothAPIService
 	serial string
 	updateDeviceWirelessBluetoothSettingsRequest *UpdateDeviceWirelessBluetoothSettingsRequest
 }
 
-func (r BluetoothApiUpdateDeviceWirelessBluetoothSettingsRequest) UpdateDeviceWirelessBluetoothSettingsRequest(updateDeviceWirelessBluetoothSettingsRequest UpdateDeviceWirelessBluetoothSettingsRequest) BluetoothApiUpdateDeviceWirelessBluetoothSettingsRequest {
+func (r BluetoothAPIUpdateDeviceWirelessBluetoothSettingsRequest) UpdateDeviceWirelessBluetoothSettingsRequest(updateDeviceWirelessBluetoothSettingsRequest UpdateDeviceWirelessBluetoothSettingsRequest) BluetoothAPIUpdateDeviceWirelessBluetoothSettingsRequest {
 	r.updateDeviceWirelessBluetoothSettingsRequest = &updateDeviceWirelessBluetoothSettingsRequest
 	return r
 }
 
-func (r BluetoothApiUpdateDeviceWirelessBluetoothSettingsRequest) Execute() (*GetDeviceWirelessBluetoothSettings200Response, *http.Response, error) {
+func (r BluetoothAPIUpdateDeviceWirelessBluetoothSettingsRequest) Execute() (*GetDeviceWirelessBluetoothSettings200Response, *http.Response, error) {
 	return r.ApiService.UpdateDeviceWirelessBluetoothSettingsExecute(r)
 }
 
@@ -280,10 +280,10 @@ Update the bluetooth settings for a wireless device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return BluetoothApiUpdateDeviceWirelessBluetoothSettingsRequest
+ @return BluetoothAPIUpdateDeviceWirelessBluetoothSettingsRequest
 */
-func (a *BluetoothApiService) UpdateDeviceWirelessBluetoothSettings(ctx context.Context, serial string) BluetoothApiUpdateDeviceWirelessBluetoothSettingsRequest {
-	return BluetoothApiUpdateDeviceWirelessBluetoothSettingsRequest{
+func (a *BluetoothAPIService) UpdateDeviceWirelessBluetoothSettings(ctx context.Context, serial string) BluetoothAPIUpdateDeviceWirelessBluetoothSettingsRequest {
+	return BluetoothAPIUpdateDeviceWirelessBluetoothSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -292,7 +292,7 @@ func (a *BluetoothApiService) UpdateDeviceWirelessBluetoothSettings(ctx context.
 
 // Execute executes the request
 //  @return GetDeviceWirelessBluetoothSettings200Response
-func (a *BluetoothApiService) UpdateDeviceWirelessBluetoothSettingsExecute(r BluetoothApiUpdateDeviceWirelessBluetoothSettingsRequest) (*GetDeviceWirelessBluetoothSettings200Response, *http.Response, error) {
+func (a *BluetoothAPIService) UpdateDeviceWirelessBluetoothSettingsExecute(r BluetoothAPIUpdateDeviceWirelessBluetoothSettingsRequest) (*GetDeviceWirelessBluetoothSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -300,7 +300,7 @@ func (a *BluetoothApiService) UpdateDeviceWirelessBluetoothSettingsExecute(r Blu
 		localVarReturnValue  *GetDeviceWirelessBluetoothSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BluetoothApiService.UpdateDeviceWirelessBluetoothSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BluetoothAPIService.UpdateDeviceWirelessBluetoothSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -382,19 +382,19 @@ func (a *BluetoothApiService) UpdateDeviceWirelessBluetoothSettingsExecute(r Blu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BluetoothApiUpdateNetworkWirelessBluetoothSettingsRequest struct {
+type BluetoothAPIUpdateNetworkWirelessBluetoothSettingsRequest struct {
 	ctx context.Context
-	ApiService *BluetoothApiService
+	ApiService *BluetoothAPIService
 	networkId string
 	updateNetworkWirelessBluetoothSettingsRequest *UpdateNetworkWirelessBluetoothSettingsRequest
 }
 
-func (r BluetoothApiUpdateNetworkWirelessBluetoothSettingsRequest) UpdateNetworkWirelessBluetoothSettingsRequest(updateNetworkWirelessBluetoothSettingsRequest UpdateNetworkWirelessBluetoothSettingsRequest) BluetoothApiUpdateNetworkWirelessBluetoothSettingsRequest {
+func (r BluetoothAPIUpdateNetworkWirelessBluetoothSettingsRequest) UpdateNetworkWirelessBluetoothSettingsRequest(updateNetworkWirelessBluetoothSettingsRequest UpdateNetworkWirelessBluetoothSettingsRequest) BluetoothAPIUpdateNetworkWirelessBluetoothSettingsRequest {
 	r.updateNetworkWirelessBluetoothSettingsRequest = &updateNetworkWirelessBluetoothSettingsRequest
 	return r
 }
 
-func (r BluetoothApiUpdateNetworkWirelessBluetoothSettingsRequest) Execute() (*GetNetworkWirelessBluetoothSettings200Response, *http.Response, error) {
+func (r BluetoothAPIUpdateNetworkWirelessBluetoothSettingsRequest) Execute() (*GetNetworkWirelessBluetoothSettings200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessBluetoothSettingsExecute(r)
 }
 
@@ -405,10 +405,10 @@ Update the Bluetooth settings for a network. See the docs page for <a href="http
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return BluetoothApiUpdateNetworkWirelessBluetoothSettingsRequest
+ @return BluetoothAPIUpdateNetworkWirelessBluetoothSettingsRequest
 */
-func (a *BluetoothApiService) UpdateNetworkWirelessBluetoothSettings(ctx context.Context, networkId string) BluetoothApiUpdateNetworkWirelessBluetoothSettingsRequest {
-	return BluetoothApiUpdateNetworkWirelessBluetoothSettingsRequest{
+func (a *BluetoothAPIService) UpdateNetworkWirelessBluetoothSettings(ctx context.Context, networkId string) BluetoothAPIUpdateNetworkWirelessBluetoothSettingsRequest {
+	return BluetoothAPIUpdateNetworkWirelessBluetoothSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -417,7 +417,7 @@ func (a *BluetoothApiService) UpdateNetworkWirelessBluetoothSettings(ctx context
 
 // Execute executes the request
 //  @return GetNetworkWirelessBluetoothSettings200Response
-func (a *BluetoothApiService) UpdateNetworkWirelessBluetoothSettingsExecute(r BluetoothApiUpdateNetworkWirelessBluetoothSettingsRequest) (*GetNetworkWirelessBluetoothSettings200Response, *http.Response, error) {
+func (a *BluetoothAPIService) UpdateNetworkWirelessBluetoothSettingsExecute(r BluetoothAPIUpdateNetworkWirelessBluetoothSettingsRequest) (*GetNetworkWirelessBluetoothSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -425,7 +425,7 @@ func (a *BluetoothApiService) UpdateNetworkWirelessBluetoothSettingsExecute(r Bl
 		localVarReturnValue  *GetNetworkWirelessBluetoothSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BluetoothApiService.UpdateNetworkWirelessBluetoothSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BluetoothAPIService.UpdateNetworkWirelessBluetoothSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

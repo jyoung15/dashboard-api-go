@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing MqttBrokersApiService
+Testing MqttBrokersAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_MqttBrokersApiService(t *testing.T) {
+func Test_client_MqttBrokersAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test MqttBrokersApiService CreateNetworkMqttBroker", func(t *testing.T) {
+	t.Run("Test MqttBrokersAPIService CreateNetworkMqttBroker", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.MqttBrokersApi.CreateNetworkMqttBroker(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.MqttBrokersAPI.CreateNetworkMqttBroker(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,28 +36,28 @@ func Test_client_MqttBrokersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test MqttBrokersApiService DeleteNetworkMqttBroker", func(t *testing.T) {
+	t.Run("Test MqttBrokersAPIService DeleteNetworkMqttBroker", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var mqttBrokerId string
 
-		httpRes, err := apiClient.MqttBrokersApi.DeleteNetworkMqttBroker(context.Background(), networkId, mqttBrokerId).Execute()
+		httpRes, err := apiClient.MqttBrokersAPI.DeleteNetworkMqttBroker(context.Background(), networkId, mqttBrokerId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test MqttBrokersApiService GetNetworkMqttBroker", func(t *testing.T) {
+	t.Run("Test MqttBrokersAPIService GetNetworkMqttBroker", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var mqttBrokerId string
 
-		resp, httpRes, err := apiClient.MqttBrokersApi.GetNetworkMqttBroker(context.Background(), networkId, mqttBrokerId).Execute()
+		resp, httpRes, err := apiClient.MqttBrokersAPI.GetNetworkMqttBroker(context.Background(), networkId, mqttBrokerId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -65,13 +65,13 @@ func Test_client_MqttBrokersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test MqttBrokersApiService GetNetworkMqttBrokers", func(t *testing.T) {
+	t.Run("Test MqttBrokersAPIService GetNetworkMqttBrokers", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.MqttBrokersApi.GetNetworkMqttBrokers(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.MqttBrokersAPI.GetNetworkMqttBrokers(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,43 +79,14 @@ func Test_client_MqttBrokersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test MqttBrokersApiService GetNetworkSensorMqttBroker", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-		var mqttBrokerId string
-
-		resp, httpRes, err := apiClient.MqttBrokersApi.GetNetworkSensorMqttBroker(context.Background(), networkId, mqttBrokerId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test MqttBrokersApiService GetNetworkSensorMqttBrokers", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-
-		resp, httpRes, err := apiClient.MqttBrokersApi.GetNetworkSensorMqttBrokers(context.Background(), networkId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test MqttBrokersApiService UpdateNetworkMqttBroker", func(t *testing.T) {
+	t.Run("Test MqttBrokersAPIService GetNetworkSensorMqttBroker", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var mqttBrokerId string
 
-		resp, httpRes, err := apiClient.MqttBrokersApi.UpdateNetworkMqttBroker(context.Background(), networkId, mqttBrokerId).Execute()
+		resp, httpRes, err := apiClient.MqttBrokersAPI.GetNetworkSensorMqttBroker(context.Background(), networkId, mqttBrokerId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -123,14 +94,43 @@ func Test_client_MqttBrokersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test MqttBrokersApiService UpdateNetworkSensorMqttBroker", func(t *testing.T) {
+	t.Run("Test MqttBrokersAPIService GetNetworkSensorMqttBrokers", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+
+		resp, httpRes, err := apiClient.MqttBrokersAPI.GetNetworkSensorMqttBrokers(context.Background(), networkId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test MqttBrokersAPIService UpdateNetworkMqttBroker", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var mqttBrokerId string
 
-		resp, httpRes, err := apiClient.MqttBrokersApi.UpdateNetworkSensorMqttBroker(context.Background(), networkId, mqttBrokerId).Execute()
+		resp, httpRes, err := apiClient.MqttBrokersAPI.UpdateNetworkMqttBroker(context.Background(), networkId, mqttBrokerId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test MqttBrokersAPIService UpdateNetworkSensorMqttBroker", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+		var mqttBrokerId string
+
+		resp, httpRes, err := apiClient.MqttBrokersAPI.UpdateNetworkSensorMqttBroker(context.Background(), networkId, mqttBrokerId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

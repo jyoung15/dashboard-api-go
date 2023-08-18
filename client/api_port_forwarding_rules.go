@@ -20,16 +20,16 @@ import (
 )
 
 
-// PortForwardingRulesApiService PortForwardingRulesApi service
-type PortForwardingRulesApiService service
+// PortForwardingRulesAPIService PortForwardingRulesAPI service
+type PortForwardingRulesAPIService service
 
-type PortForwardingRulesApiGetDeviceCellularGatewayPortForwardingRulesRequest struct {
+type PortForwardingRulesAPIGetDeviceCellularGatewayPortForwardingRulesRequest struct {
 	ctx context.Context
-	ApiService *PortForwardingRulesApiService
+	ApiService *PortForwardingRulesAPIService
 	serial string
 }
 
-func (r PortForwardingRulesApiGetDeviceCellularGatewayPortForwardingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r PortForwardingRulesAPIGetDeviceCellularGatewayPortForwardingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCellularGatewayPortForwardingRulesExecute(r)
 }
 
@@ -40,10 +40,10 @@ Returns the port forwarding rules for a single MG.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return PortForwardingRulesApiGetDeviceCellularGatewayPortForwardingRulesRequest
+ @return PortForwardingRulesAPIGetDeviceCellularGatewayPortForwardingRulesRequest
 */
-func (a *PortForwardingRulesApiService) GetDeviceCellularGatewayPortForwardingRules(ctx context.Context, serial string) PortForwardingRulesApiGetDeviceCellularGatewayPortForwardingRulesRequest {
-	return PortForwardingRulesApiGetDeviceCellularGatewayPortForwardingRulesRequest{
+func (a *PortForwardingRulesAPIService) GetDeviceCellularGatewayPortForwardingRules(ctx context.Context, serial string) PortForwardingRulesAPIGetDeviceCellularGatewayPortForwardingRulesRequest {
+	return PortForwardingRulesAPIGetDeviceCellularGatewayPortForwardingRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -52,7 +52,7 @@ func (a *PortForwardingRulesApiService) GetDeviceCellularGatewayPortForwardingRu
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PortForwardingRulesApiService) GetDeviceCellularGatewayPortForwardingRulesExecute(r PortForwardingRulesApiGetDeviceCellularGatewayPortForwardingRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PortForwardingRulesAPIService) GetDeviceCellularGatewayPortForwardingRulesExecute(r PortForwardingRulesAPIGetDeviceCellularGatewayPortForwardingRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *PortForwardingRulesApiService) GetDeviceCellularGatewayPortForwardingRu
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortForwardingRulesApiService.GetDeviceCellularGatewayPortForwardingRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortForwardingRulesAPIService.GetDeviceCellularGatewayPortForwardingRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,13 +140,13 @@ func (a *PortForwardingRulesApiService) GetDeviceCellularGatewayPortForwardingRu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PortForwardingRulesApiGetNetworkApplianceFirewallPortForwardingRulesRequest struct {
+type PortForwardingRulesAPIGetNetworkApplianceFirewallPortForwardingRulesRequest struct {
 	ctx context.Context
-	ApiService *PortForwardingRulesApiService
+	ApiService *PortForwardingRulesAPIService
 	networkId string
 }
 
-func (r PortForwardingRulesApiGetNetworkApplianceFirewallPortForwardingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r PortForwardingRulesAPIGetNetworkApplianceFirewallPortForwardingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceFirewallPortForwardingRulesExecute(r)
 }
 
@@ -157,10 +157,10 @@ Return the port forwarding rules for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return PortForwardingRulesApiGetNetworkApplianceFirewallPortForwardingRulesRequest
+ @return PortForwardingRulesAPIGetNetworkApplianceFirewallPortForwardingRulesRequest
 */
-func (a *PortForwardingRulesApiService) GetNetworkApplianceFirewallPortForwardingRules(ctx context.Context, networkId string) PortForwardingRulesApiGetNetworkApplianceFirewallPortForwardingRulesRequest {
-	return PortForwardingRulesApiGetNetworkApplianceFirewallPortForwardingRulesRequest{
+func (a *PortForwardingRulesAPIService) GetNetworkApplianceFirewallPortForwardingRules(ctx context.Context, networkId string) PortForwardingRulesAPIGetNetworkApplianceFirewallPortForwardingRulesRequest {
+	return PortForwardingRulesAPIGetNetworkApplianceFirewallPortForwardingRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -169,7 +169,7 @@ func (a *PortForwardingRulesApiService) GetNetworkApplianceFirewallPortForwardin
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PortForwardingRulesApiService) GetNetworkApplianceFirewallPortForwardingRulesExecute(r PortForwardingRulesApiGetNetworkApplianceFirewallPortForwardingRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PortForwardingRulesAPIService) GetNetworkApplianceFirewallPortForwardingRulesExecute(r PortForwardingRulesAPIGetNetworkApplianceFirewallPortForwardingRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -177,7 +177,7 @@ func (a *PortForwardingRulesApiService) GetNetworkApplianceFirewallPortForwardin
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortForwardingRulesApiService.GetNetworkApplianceFirewallPortForwardingRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortForwardingRulesAPIService.GetNetworkApplianceFirewallPortForwardingRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -257,19 +257,19 @@ func (a *PortForwardingRulesApiService) GetNetworkApplianceFirewallPortForwardin
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PortForwardingRulesApiUpdateDeviceCellularGatewayPortForwardingRulesRequest struct {
+type PortForwardingRulesAPIUpdateDeviceCellularGatewayPortForwardingRulesRequest struct {
 	ctx context.Context
-	ApiService *PortForwardingRulesApiService
+	ApiService *PortForwardingRulesAPIService
 	serial string
 	updateDeviceCellularGatewayPortForwardingRulesRequest *UpdateDeviceCellularGatewayPortForwardingRulesRequest
 }
 
-func (r PortForwardingRulesApiUpdateDeviceCellularGatewayPortForwardingRulesRequest) UpdateDeviceCellularGatewayPortForwardingRulesRequest(updateDeviceCellularGatewayPortForwardingRulesRequest UpdateDeviceCellularGatewayPortForwardingRulesRequest) PortForwardingRulesApiUpdateDeviceCellularGatewayPortForwardingRulesRequest {
+func (r PortForwardingRulesAPIUpdateDeviceCellularGatewayPortForwardingRulesRequest) UpdateDeviceCellularGatewayPortForwardingRulesRequest(updateDeviceCellularGatewayPortForwardingRulesRequest UpdateDeviceCellularGatewayPortForwardingRulesRequest) PortForwardingRulesAPIUpdateDeviceCellularGatewayPortForwardingRulesRequest {
 	r.updateDeviceCellularGatewayPortForwardingRulesRequest = &updateDeviceCellularGatewayPortForwardingRulesRequest
 	return r
 }
 
-func (r PortForwardingRulesApiUpdateDeviceCellularGatewayPortForwardingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r PortForwardingRulesAPIUpdateDeviceCellularGatewayPortForwardingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceCellularGatewayPortForwardingRulesExecute(r)
 }
 
@@ -280,10 +280,10 @@ Updates the port forwarding rules for a single MG.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return PortForwardingRulesApiUpdateDeviceCellularGatewayPortForwardingRulesRequest
+ @return PortForwardingRulesAPIUpdateDeviceCellularGatewayPortForwardingRulesRequest
 */
-func (a *PortForwardingRulesApiService) UpdateDeviceCellularGatewayPortForwardingRules(ctx context.Context, serial string) PortForwardingRulesApiUpdateDeviceCellularGatewayPortForwardingRulesRequest {
-	return PortForwardingRulesApiUpdateDeviceCellularGatewayPortForwardingRulesRequest{
+func (a *PortForwardingRulesAPIService) UpdateDeviceCellularGatewayPortForwardingRules(ctx context.Context, serial string) PortForwardingRulesAPIUpdateDeviceCellularGatewayPortForwardingRulesRequest {
+	return PortForwardingRulesAPIUpdateDeviceCellularGatewayPortForwardingRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -292,7 +292,7 @@ func (a *PortForwardingRulesApiService) UpdateDeviceCellularGatewayPortForwardin
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PortForwardingRulesApiService) UpdateDeviceCellularGatewayPortForwardingRulesExecute(r PortForwardingRulesApiUpdateDeviceCellularGatewayPortForwardingRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PortForwardingRulesAPIService) UpdateDeviceCellularGatewayPortForwardingRulesExecute(r PortForwardingRulesAPIUpdateDeviceCellularGatewayPortForwardingRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -300,7 +300,7 @@ func (a *PortForwardingRulesApiService) UpdateDeviceCellularGatewayPortForwardin
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortForwardingRulesApiService.UpdateDeviceCellularGatewayPortForwardingRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortForwardingRulesAPIService.UpdateDeviceCellularGatewayPortForwardingRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -382,19 +382,19 @@ func (a *PortForwardingRulesApiService) UpdateDeviceCellularGatewayPortForwardin
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PortForwardingRulesApiUpdateNetworkApplianceFirewallPortForwardingRulesRequest struct {
+type PortForwardingRulesAPIUpdateNetworkApplianceFirewallPortForwardingRulesRequest struct {
 	ctx context.Context
-	ApiService *PortForwardingRulesApiService
+	ApiService *PortForwardingRulesAPIService
 	networkId string
 	updateNetworkApplianceFirewallPortForwardingRulesRequest *UpdateNetworkApplianceFirewallPortForwardingRulesRequest
 }
 
-func (r PortForwardingRulesApiUpdateNetworkApplianceFirewallPortForwardingRulesRequest) UpdateNetworkApplianceFirewallPortForwardingRulesRequest(updateNetworkApplianceFirewallPortForwardingRulesRequest UpdateNetworkApplianceFirewallPortForwardingRulesRequest) PortForwardingRulesApiUpdateNetworkApplianceFirewallPortForwardingRulesRequest {
+func (r PortForwardingRulesAPIUpdateNetworkApplianceFirewallPortForwardingRulesRequest) UpdateNetworkApplianceFirewallPortForwardingRulesRequest(updateNetworkApplianceFirewallPortForwardingRulesRequest UpdateNetworkApplianceFirewallPortForwardingRulesRequest) PortForwardingRulesAPIUpdateNetworkApplianceFirewallPortForwardingRulesRequest {
 	r.updateNetworkApplianceFirewallPortForwardingRulesRequest = &updateNetworkApplianceFirewallPortForwardingRulesRequest
 	return r
 }
 
-func (r PortForwardingRulesApiUpdateNetworkApplianceFirewallPortForwardingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r PortForwardingRulesAPIUpdateNetworkApplianceFirewallPortForwardingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceFirewallPortForwardingRulesExecute(r)
 }
 
@@ -405,10 +405,10 @@ Update the port forwarding rules for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return PortForwardingRulesApiUpdateNetworkApplianceFirewallPortForwardingRulesRequest
+ @return PortForwardingRulesAPIUpdateNetworkApplianceFirewallPortForwardingRulesRequest
 */
-func (a *PortForwardingRulesApiService) UpdateNetworkApplianceFirewallPortForwardingRules(ctx context.Context, networkId string) PortForwardingRulesApiUpdateNetworkApplianceFirewallPortForwardingRulesRequest {
-	return PortForwardingRulesApiUpdateNetworkApplianceFirewallPortForwardingRulesRequest{
+func (a *PortForwardingRulesAPIService) UpdateNetworkApplianceFirewallPortForwardingRules(ctx context.Context, networkId string) PortForwardingRulesAPIUpdateNetworkApplianceFirewallPortForwardingRulesRequest {
+	return PortForwardingRulesAPIUpdateNetworkApplianceFirewallPortForwardingRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -417,7 +417,7 @@ func (a *PortForwardingRulesApiService) UpdateNetworkApplianceFirewallPortForwar
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PortForwardingRulesApiService) UpdateNetworkApplianceFirewallPortForwardingRulesExecute(r PortForwardingRulesApiUpdateNetworkApplianceFirewallPortForwardingRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PortForwardingRulesAPIService) UpdateNetworkApplianceFirewallPortForwardingRulesExecute(r PortForwardingRulesAPIUpdateNetworkApplianceFirewallPortForwardingRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -425,7 +425,7 @@ func (a *PortForwardingRulesApiService) UpdateNetworkApplianceFirewallPortForwar
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortForwardingRulesApiService.UpdateNetworkApplianceFirewallPortForwardingRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortForwardingRulesAPIService.UpdateNetworkApplianceFirewallPortForwardingRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

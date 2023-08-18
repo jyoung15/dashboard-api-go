@@ -20,16 +20,16 @@ import (
 )
 
 
-// WarmSpareApiService WarmSpareApi service
-type WarmSpareApiService service
+// WarmSpareAPIService WarmSpareAPI service
+type WarmSpareAPIService service
 
-type WarmSpareApiGetDeviceSwitchWarmSpareRequest struct {
+type WarmSpareAPIGetDeviceSwitchWarmSpareRequest struct {
 	ctx context.Context
-	ApiService *WarmSpareApiService
+	ApiService *WarmSpareAPIService
 	serial string
 }
 
-func (r WarmSpareApiGetDeviceSwitchWarmSpareRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WarmSpareAPIGetDeviceSwitchWarmSpareRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceSwitchWarmSpareExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return warm spare configuration for a switch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return WarmSpareApiGetDeviceSwitchWarmSpareRequest
+ @return WarmSpareAPIGetDeviceSwitchWarmSpareRequest
 */
-func (a *WarmSpareApiService) GetDeviceSwitchWarmSpare(ctx context.Context, serial string) WarmSpareApiGetDeviceSwitchWarmSpareRequest {
-	return WarmSpareApiGetDeviceSwitchWarmSpareRequest{
+func (a *WarmSpareAPIService) GetDeviceSwitchWarmSpare(ctx context.Context, serial string) WarmSpareAPIGetDeviceSwitchWarmSpareRequest {
+	return WarmSpareAPIGetDeviceSwitchWarmSpareRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -52,7 +52,7 @@ func (a *WarmSpareApiService) GetDeviceSwitchWarmSpare(ctx context.Context, seri
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WarmSpareApiService) GetDeviceSwitchWarmSpareExecute(r WarmSpareApiGetDeviceSwitchWarmSpareRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WarmSpareAPIService) GetDeviceSwitchWarmSpareExecute(r WarmSpareAPIGetDeviceSwitchWarmSpareRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *WarmSpareApiService) GetDeviceSwitchWarmSpareExecute(r WarmSpareApiGetD
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WarmSpareApiService.GetDeviceSwitchWarmSpare")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WarmSpareAPIService.GetDeviceSwitchWarmSpare")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,13 +140,13 @@ func (a *WarmSpareApiService) GetDeviceSwitchWarmSpareExecute(r WarmSpareApiGetD
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WarmSpareApiGetNetworkApplianceWarmSpareRequest struct {
+type WarmSpareAPIGetNetworkApplianceWarmSpareRequest struct {
 	ctx context.Context
-	ApiService *WarmSpareApiService
+	ApiService *WarmSpareAPIService
 	networkId string
 }
 
-func (r WarmSpareApiGetNetworkApplianceWarmSpareRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WarmSpareAPIGetNetworkApplianceWarmSpareRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceWarmSpareExecute(r)
 }
 
@@ -157,10 +157,10 @@ Return MX warm spare settings
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WarmSpareApiGetNetworkApplianceWarmSpareRequest
+ @return WarmSpareAPIGetNetworkApplianceWarmSpareRequest
 */
-func (a *WarmSpareApiService) GetNetworkApplianceWarmSpare(ctx context.Context, networkId string) WarmSpareApiGetNetworkApplianceWarmSpareRequest {
-	return WarmSpareApiGetNetworkApplianceWarmSpareRequest{
+func (a *WarmSpareAPIService) GetNetworkApplianceWarmSpare(ctx context.Context, networkId string) WarmSpareAPIGetNetworkApplianceWarmSpareRequest {
+	return WarmSpareAPIGetNetworkApplianceWarmSpareRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -169,7 +169,7 @@ func (a *WarmSpareApiService) GetNetworkApplianceWarmSpare(ctx context.Context, 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WarmSpareApiService) GetNetworkApplianceWarmSpareExecute(r WarmSpareApiGetNetworkApplianceWarmSpareRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WarmSpareAPIService) GetNetworkApplianceWarmSpareExecute(r WarmSpareAPIGetNetworkApplianceWarmSpareRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -177,7 +177,7 @@ func (a *WarmSpareApiService) GetNetworkApplianceWarmSpareExecute(r WarmSpareApi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WarmSpareApiService.GetNetworkApplianceWarmSpare")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WarmSpareAPIService.GetNetworkApplianceWarmSpare")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -257,13 +257,13 @@ func (a *WarmSpareApiService) GetNetworkApplianceWarmSpareExecute(r WarmSpareApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WarmSpareApiSwapNetworkApplianceWarmSpareRequest struct {
+type WarmSpareAPISwapNetworkApplianceWarmSpareRequest struct {
 	ctx context.Context
-	ApiService *WarmSpareApiService
+	ApiService *WarmSpareAPIService
 	networkId string
 }
 
-func (r WarmSpareApiSwapNetworkApplianceWarmSpareRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WarmSpareAPISwapNetworkApplianceWarmSpareRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.SwapNetworkApplianceWarmSpareExecute(r)
 }
 
@@ -274,10 +274,10 @@ Swap MX primary and warm spare appliances
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WarmSpareApiSwapNetworkApplianceWarmSpareRequest
+ @return WarmSpareAPISwapNetworkApplianceWarmSpareRequest
 */
-func (a *WarmSpareApiService) SwapNetworkApplianceWarmSpare(ctx context.Context, networkId string) WarmSpareApiSwapNetworkApplianceWarmSpareRequest {
-	return WarmSpareApiSwapNetworkApplianceWarmSpareRequest{
+func (a *WarmSpareAPIService) SwapNetworkApplianceWarmSpare(ctx context.Context, networkId string) WarmSpareAPISwapNetworkApplianceWarmSpareRequest {
+	return WarmSpareAPISwapNetworkApplianceWarmSpareRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -286,7 +286,7 @@ func (a *WarmSpareApiService) SwapNetworkApplianceWarmSpare(ctx context.Context,
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WarmSpareApiService) SwapNetworkApplianceWarmSpareExecute(r WarmSpareApiSwapNetworkApplianceWarmSpareRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WarmSpareAPIService) SwapNetworkApplianceWarmSpareExecute(r WarmSpareAPISwapNetworkApplianceWarmSpareRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -294,7 +294,7 @@ func (a *WarmSpareApiService) SwapNetworkApplianceWarmSpareExecute(r WarmSpareAp
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WarmSpareApiService.SwapNetworkApplianceWarmSpare")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WarmSpareAPIService.SwapNetworkApplianceWarmSpare")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -374,19 +374,19 @@ func (a *WarmSpareApiService) SwapNetworkApplianceWarmSpareExecute(r WarmSpareAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WarmSpareApiUpdateDeviceSwitchWarmSpareRequest struct {
+type WarmSpareAPIUpdateDeviceSwitchWarmSpareRequest struct {
 	ctx context.Context
-	ApiService *WarmSpareApiService
+	ApiService *WarmSpareAPIService
 	serial string
 	updateDeviceSwitchWarmSpareRequest *UpdateDeviceSwitchWarmSpareRequest
 }
 
-func (r WarmSpareApiUpdateDeviceSwitchWarmSpareRequest) UpdateDeviceSwitchWarmSpareRequest(updateDeviceSwitchWarmSpareRequest UpdateDeviceSwitchWarmSpareRequest) WarmSpareApiUpdateDeviceSwitchWarmSpareRequest {
+func (r WarmSpareAPIUpdateDeviceSwitchWarmSpareRequest) UpdateDeviceSwitchWarmSpareRequest(updateDeviceSwitchWarmSpareRequest UpdateDeviceSwitchWarmSpareRequest) WarmSpareAPIUpdateDeviceSwitchWarmSpareRequest {
 	r.updateDeviceSwitchWarmSpareRequest = &updateDeviceSwitchWarmSpareRequest
 	return r
 }
 
-func (r WarmSpareApiUpdateDeviceSwitchWarmSpareRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WarmSpareAPIUpdateDeviceSwitchWarmSpareRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceSwitchWarmSpareExecute(r)
 }
 
@@ -397,10 +397,10 @@ Update warm spare configuration for a switch. The spare will use the same L3 con
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return WarmSpareApiUpdateDeviceSwitchWarmSpareRequest
+ @return WarmSpareAPIUpdateDeviceSwitchWarmSpareRequest
 */
-func (a *WarmSpareApiService) UpdateDeviceSwitchWarmSpare(ctx context.Context, serial string) WarmSpareApiUpdateDeviceSwitchWarmSpareRequest {
-	return WarmSpareApiUpdateDeviceSwitchWarmSpareRequest{
+func (a *WarmSpareAPIService) UpdateDeviceSwitchWarmSpare(ctx context.Context, serial string) WarmSpareAPIUpdateDeviceSwitchWarmSpareRequest {
+	return WarmSpareAPIUpdateDeviceSwitchWarmSpareRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -409,7 +409,7 @@ func (a *WarmSpareApiService) UpdateDeviceSwitchWarmSpare(ctx context.Context, s
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WarmSpareApiService) UpdateDeviceSwitchWarmSpareExecute(r WarmSpareApiUpdateDeviceSwitchWarmSpareRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WarmSpareAPIService) UpdateDeviceSwitchWarmSpareExecute(r WarmSpareAPIUpdateDeviceSwitchWarmSpareRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -417,7 +417,7 @@ func (a *WarmSpareApiService) UpdateDeviceSwitchWarmSpareExecute(r WarmSpareApiU
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WarmSpareApiService.UpdateDeviceSwitchWarmSpare")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WarmSpareAPIService.UpdateDeviceSwitchWarmSpare")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -502,19 +502,19 @@ func (a *WarmSpareApiService) UpdateDeviceSwitchWarmSpareExecute(r WarmSpareApiU
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WarmSpareApiUpdateNetworkApplianceWarmSpareRequest struct {
+type WarmSpareAPIUpdateNetworkApplianceWarmSpareRequest struct {
 	ctx context.Context
-	ApiService *WarmSpareApiService
+	ApiService *WarmSpareAPIService
 	networkId string
 	updateNetworkApplianceWarmSpareRequest *UpdateNetworkApplianceWarmSpareRequest
 }
 
-func (r WarmSpareApiUpdateNetworkApplianceWarmSpareRequest) UpdateNetworkApplianceWarmSpareRequest(updateNetworkApplianceWarmSpareRequest UpdateNetworkApplianceWarmSpareRequest) WarmSpareApiUpdateNetworkApplianceWarmSpareRequest {
+func (r WarmSpareAPIUpdateNetworkApplianceWarmSpareRequest) UpdateNetworkApplianceWarmSpareRequest(updateNetworkApplianceWarmSpareRequest UpdateNetworkApplianceWarmSpareRequest) WarmSpareAPIUpdateNetworkApplianceWarmSpareRequest {
 	r.updateNetworkApplianceWarmSpareRequest = &updateNetworkApplianceWarmSpareRequest
 	return r
 }
 
-func (r WarmSpareApiUpdateNetworkApplianceWarmSpareRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WarmSpareAPIUpdateNetworkApplianceWarmSpareRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceWarmSpareExecute(r)
 }
 
@@ -525,10 +525,10 @@ Update MX warm spare settings
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WarmSpareApiUpdateNetworkApplianceWarmSpareRequest
+ @return WarmSpareAPIUpdateNetworkApplianceWarmSpareRequest
 */
-func (a *WarmSpareApiService) UpdateNetworkApplianceWarmSpare(ctx context.Context, networkId string) WarmSpareApiUpdateNetworkApplianceWarmSpareRequest {
-	return WarmSpareApiUpdateNetworkApplianceWarmSpareRequest{
+func (a *WarmSpareAPIService) UpdateNetworkApplianceWarmSpare(ctx context.Context, networkId string) WarmSpareAPIUpdateNetworkApplianceWarmSpareRequest {
+	return WarmSpareAPIUpdateNetworkApplianceWarmSpareRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -537,7 +537,7 @@ func (a *WarmSpareApiService) UpdateNetworkApplianceWarmSpare(ctx context.Contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WarmSpareApiService) UpdateNetworkApplianceWarmSpareExecute(r WarmSpareApiUpdateNetworkApplianceWarmSpareRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WarmSpareAPIService) UpdateNetworkApplianceWarmSpareExecute(r WarmSpareAPIUpdateNetworkApplianceWarmSpareRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -545,7 +545,7 @@ func (a *WarmSpareApiService) UpdateNetworkApplianceWarmSpareExecute(r WarmSpare
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WarmSpareApiService.UpdateNetworkApplianceWarmSpare")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WarmSpareAPIService.UpdateNetworkApplianceWarmSpare")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

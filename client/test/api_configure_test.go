@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing ConfigureApiService
+Testing ConfigureAPIService
 
 */
 
@@ -17,19 +17,19 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_ConfigureApiService(t *testing.T) {
+func Test_client_ConfigureAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test ConfigureApiService AddNetworkSwitchStack", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService AddNetworkSwitchStack", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var switchStackId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.AddNetworkSwitchStack(context.Background(), networkId, switchStackId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.AddNetworkSwitchStack(context.Background(), networkId, switchStackId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -37,13 +37,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService AssignOrganizationLicensesSeats", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService AssignOrganizationLicensesSeats", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.AssignOrganizationLicensesSeats(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.AssignOrganizationLicensesSeats(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -51,13 +51,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService BindNetwork", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService BindNetwork", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.BindNetwork(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.BindNetwork(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -65,13 +65,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CheckinNetworkSmDevices", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CheckinNetworkSmDevices", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CheckinNetworkSmDevices(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CheckinNetworkSmDevices(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,13 +79,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService ClaimIntoOrganization", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService ClaimIntoOrganization", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.ClaimIntoOrganization(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.ClaimIntoOrganization(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -93,13 +93,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService ClaimIntoOrganizationInventory", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService ClaimIntoOrganizationInventory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.ClaimIntoOrganizationInventory(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.ClaimIntoOrganizationInventory(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -107,26 +107,26 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService ClaimNetworkDevices", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService ClaimNetworkDevices", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		httpRes, err := apiClient.ConfigureApi.ClaimNetworkDevices(context.Background(), networkId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.ClaimNetworkDevices(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService CloneOrganization", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CloneOrganization", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CloneOrganization(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CloneOrganization(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -134,13 +134,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CloneOrganizationSwitchDevices", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CloneOrganizationSwitchDevices", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CloneOrganizationSwitchDevices(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CloneOrganizationSwitchDevices(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -148,13 +148,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CombineOrganizationNetworks", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CombineOrganizationNetworks", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CombineOrganizationNetworks(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CombineOrganizationNetworks(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -162,13 +162,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateDeviceApplianceVmxAuthenticationToken", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateDeviceApplianceVmxAuthenticationToken", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateDeviceApplianceVmxAuthenticationToken(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateDeviceApplianceVmxAuthenticationToken(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -176,13 +176,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateDeviceSwitchRoutingInterface", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateDeviceSwitchRoutingInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateDeviceSwitchRoutingInterface(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateDeviceSwitchRoutingInterface(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -190,13 +190,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateDeviceSwitchRoutingStaticRoute", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateDeviceSwitchRoutingStaticRoute", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateDeviceSwitchRoutingStaticRoute(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateDeviceSwitchRoutingStaticRoute(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -204,13 +204,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkAppliancePrefixesDelegatedStatic", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkAppliancePrefixesDelegatedStatic", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkAppliancePrefixesDelegatedStatic(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkAppliancePrefixesDelegatedStatic(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -218,13 +218,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkApplianceRfProfile", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkApplianceRfProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkApplianceRfProfile(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkApplianceRfProfile(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -232,13 +232,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkApplianceStaticRoute", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkApplianceStaticRoute", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkApplianceStaticRoute(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkApplianceStaticRoute(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -246,13 +246,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkApplianceTrafficShapingCustomPerformanceClass", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkApplianceTrafficShapingCustomPerformanceClass", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkApplianceTrafficShapingCustomPerformanceClass(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkApplianceTrafficShapingCustomPerformanceClass(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -260,13 +260,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkApplianceVlan", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkApplianceVlan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkApplianceVlan(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkApplianceVlan(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -274,13 +274,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkCameraQualityRetentionProfile", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkCameraQualityRetentionProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkCameraQualityRetentionProfile(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkCameraQualityRetentionProfile(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -288,13 +288,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkCameraWirelessProfile", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkCameraWirelessProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkCameraWirelessProfile(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkCameraWirelessProfile(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -302,13 +302,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkFirmwareUpgradesRollback", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkFirmwareUpgradesRollback", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkFirmwareUpgradesRollback(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkFirmwareUpgradesRollback(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -316,13 +316,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkFirmwareUpgradesStagedEvent", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkFirmwareUpgradesStagedEvent", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkFirmwareUpgradesStagedEvent(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkFirmwareUpgradesStagedEvent(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -330,13 +330,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkFirmwareUpgradesStagedGroup", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkFirmwareUpgradesStagedGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkFirmwareUpgradesStagedGroup(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkFirmwareUpgradesStagedGroup(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -344,13 +344,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkFloorPlan", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkFloorPlan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkFloorPlan(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkFloorPlan(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -358,13 +358,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkGroupPolicy", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkGroupPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkGroupPolicy(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkGroupPolicy(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -372,13 +372,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkMerakiAuthUser", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkMerakiAuthUser", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkMerakiAuthUser(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkMerakiAuthUser(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -386,13 +386,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkMqttBroker", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkMqttBroker", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkMqttBroker(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkMqttBroker(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -400,13 +400,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkPiiRequest", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkPiiRequest", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkPiiRequest(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkPiiRequest(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -414,13 +414,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkSensorAlertsProfile", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkSensorAlertsProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkSensorAlertsProfile(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkSensorAlertsProfile(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -428,13 +428,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkSmBypassActivationLockAttempt", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkSmBypassActivationLockAttempt", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkSmBypassActivationLockAttempt(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkSmBypassActivationLockAttempt(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -442,13 +442,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkSmTargetGroup", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkSmTargetGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkSmTargetGroup(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkSmTargetGroup(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -456,13 +456,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkSwitchAccessPolicy", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkSwitchAccessPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkSwitchAccessPolicy(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkSwitchAccessPolicy(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -470,13 +470,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -484,13 +484,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkSwitchLinkAggregation", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkSwitchLinkAggregation", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkSwitchLinkAggregation(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkSwitchLinkAggregation(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -498,13 +498,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkSwitchPortSchedule", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkSwitchPortSchedule", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkSwitchPortSchedule(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkSwitchPortSchedule(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -512,13 +512,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkSwitchQosRule", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkSwitchQosRule", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkSwitchQosRule(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkSwitchQosRule(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -526,13 +526,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkSwitchRoutingMulticastRendezvousPoint", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkSwitchRoutingMulticastRendezvousPoint", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkSwitchRoutingMulticastRendezvousPoint(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkSwitchRoutingMulticastRendezvousPoint(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -540,13 +540,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkSwitchStack", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkSwitchStack", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkSwitchStack(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkSwitchStack(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -554,14 +554,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkSwitchStackRoutingInterface", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkSwitchStackRoutingInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var switchStackId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkSwitchStackRoutingInterface(context.Background(), networkId, switchStackId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkSwitchStackRoutingInterface(context.Background(), networkId, switchStackId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -569,14 +569,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkSwitchStackRoutingStaticRoute", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkSwitchStackRoutingStaticRoute", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var switchStackId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkSwitchStackRoutingStaticRoute(context.Background(), networkId, switchStackId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkSwitchStackRoutingStaticRoute(context.Background(), networkId, switchStackId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -584,13 +584,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkWebhooksHttpServer", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkWebhooksHttpServer", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkWebhooksHttpServer(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkWebhooksHttpServer(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -598,13 +598,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkWebhooksPayloadTemplate", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkWebhooksPayloadTemplate", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkWebhooksPayloadTemplate(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkWebhooksPayloadTemplate(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -612,13 +612,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkWebhooksWebhookTest", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkWebhooksWebhookTest", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkWebhooksWebhookTest(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkWebhooksWebhookTest(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -626,13 +626,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkWirelessRfProfile", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkWirelessRfProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkWirelessRfProfile(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkWirelessRfProfile(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -640,14 +640,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateNetworkWirelessSsidIdentityPsk", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateNetworkWirelessSsidIdentityPsk", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateNetworkWirelessSsidIdentityPsk(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateNetworkWirelessSsidIdentityPsk(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -655,11 +655,11 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateOrganization", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateOrganization", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateOrganization(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateOrganization(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -667,27 +667,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateOrganizationActionBatch", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var organizationId string
-
-		resp, httpRes, err := apiClient.ConfigureApi.CreateOrganizationActionBatch(context.Background(), organizationId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ConfigureApiService CreateOrganizationAdaptivePolicyAcl", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateOrganizationActionBatch", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateOrganizationAdaptivePolicyAcl(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateOrganizationActionBatch(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -695,13 +681,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateOrganizationAdaptivePolicyGroup", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateOrganizationAdaptivePolicyAcl", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateOrganizationAdaptivePolicyGroup(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateOrganizationAdaptivePolicyAcl(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -709,13 +695,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateOrganizationAdaptivePolicyPolicy", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateOrganizationAdaptivePolicyGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateOrganizationAdaptivePolicyPolicy(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateOrganizationAdaptivePolicyGroup(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -723,13 +709,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateOrganizationAdmin", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateOrganizationAdaptivePolicyPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateOrganizationAdmin(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateOrganizationAdaptivePolicyPolicy(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -737,13 +723,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateOrganizationAlertsProfile", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateOrganizationAdmin", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateOrganizationAlertsProfile(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateOrganizationAdmin(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -751,13 +737,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateOrganizationBrandingPolicy", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateOrganizationAlertsProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateOrganizationBrandingPolicy(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateOrganizationAlertsProfile(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -765,13 +751,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateOrganizationCameraCustomAnalyticsArtifact", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateOrganizationBrandingPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateOrganizationCameraCustomAnalyticsArtifact(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateOrganizationBrandingPolicy(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -779,13 +765,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateOrganizationConfigTemplate", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateOrganizationCameraCustomAnalyticsArtifact", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateOrganizationConfigTemplate(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateOrganizationCameraCustomAnalyticsArtifact(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -793,13 +779,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateOrganizationEarlyAccessFeaturesOptIn", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateOrganizationConfigTemplate", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateOrganizationEarlyAccessFeaturesOptIn(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateOrganizationConfigTemplate(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -807,13 +793,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateOrganizationInsightMonitoredMediaServer", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateOrganizationEarlyAccessFeaturesOptIn", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateOrganizationInsightMonitoredMediaServer(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateOrganizationEarlyAccessFeaturesOptIn(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -821,13 +807,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateOrganizationInventoryOnboardingCloudMonitoringExportEvent", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateOrganizationInsightMonitoredMediaServer", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateOrganizationInventoryOnboardingCloudMonitoringExportEvent(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateOrganizationInsightMonitoredMediaServer(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -835,13 +821,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateOrganizationInventoryOnboardingCloudMonitoringImport", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateOrganizationInventoryOnboardingCloudMonitoringExportEvent", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateOrganizationInventoryOnboardingCloudMonitoringImport(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateOrganizationInventoryOnboardingCloudMonitoringExportEvent(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -849,13 +835,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateOrganizationInventoryOnboardingCloudMonitoringPrepare", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateOrganizationInventoryOnboardingCloudMonitoringImport", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateOrganizationInventoryOnboardingCloudMonitoringPrepare(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateOrganizationInventoryOnboardingCloudMonitoringImport(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -863,13 +849,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateOrganizationNetwork", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateOrganizationInventoryOnboardingCloudMonitoringPrepare", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateOrganizationNetwork(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateOrganizationInventoryOnboardingCloudMonitoringPrepare(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -877,13 +863,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateOrganizationPolicyObject", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateOrganizationNetwork", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateOrganizationPolicyObject(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateOrganizationNetwork(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -891,13 +877,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateOrganizationPolicyObjectsGroup", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateOrganizationPolicyObject", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateOrganizationPolicyObjectsGroup(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateOrganizationPolicyObject(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -905,13 +891,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateOrganizationSamlIdp", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateOrganizationPolicyObjectsGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateOrganizationSamlIdp(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateOrganizationPolicyObjectsGroup(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -919,13 +905,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService CreateOrganizationSamlRole", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateOrganizationSamlIdp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.CreateOrganizationSamlRole(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateOrganizationSamlIdp(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -933,13 +919,27 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService DeferNetworkFirmwareUpgradesStagedEvents", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService CreateOrganizationSamlRole", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var organizationId string
+
+		resp, httpRes, err := apiClient.ConfigureAPI.CreateOrganizationSamlRole(context.Background(), organizationId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ConfigureAPIService DeferNetworkFirmwareUpgradesStagedEvents", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.DeferNetworkFirmwareUpgradesStagedEvents(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.DeferNetworkFirmwareUpgradesStagedEvents(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -947,167 +947,167 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteDeviceSwitchRoutingInterface", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteDeviceSwitchRoutingInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var interfaceId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteDeviceSwitchRoutingInterface(context.Background(), serial, interfaceId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteDeviceSwitchRoutingInterface(context.Background(), serial, interfaceId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteDeviceSwitchRoutingStaticRoute", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteDeviceSwitchRoutingStaticRoute", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var staticRouteId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteDeviceSwitchRoutingStaticRoute(context.Background(), serial, staticRouteId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteDeviceSwitchRoutingStaticRoute(context.Background(), serial, staticRouteId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetwork", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetwork", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetwork(context.Background(), networkId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetwork(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkAppliancePrefixesDelegatedStatic", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkAppliancePrefixesDelegatedStatic", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var staticDelegatedPrefixId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkAppliancePrefixesDelegatedStatic(context.Background(), networkId, staticDelegatedPrefixId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkAppliancePrefixesDelegatedStatic(context.Background(), networkId, staticDelegatedPrefixId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkApplianceRfProfile", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkApplianceRfProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var rfProfileId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkApplianceRfProfile(context.Background(), networkId, rfProfileId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkApplianceRfProfile(context.Background(), networkId, rfProfileId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkApplianceStaticRoute", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkApplianceStaticRoute", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var staticRouteId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkApplianceStaticRoute(context.Background(), networkId, staticRouteId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkApplianceStaticRoute(context.Background(), networkId, staticRouteId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkApplianceTrafficShapingCustomPerformanceClass", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkApplianceTrafficShapingCustomPerformanceClass", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var customPerformanceClassId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkApplianceTrafficShapingCustomPerformanceClass(context.Background(), networkId, customPerformanceClassId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkApplianceTrafficShapingCustomPerformanceClass(context.Background(), networkId, customPerformanceClassId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkApplianceVlan", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkApplianceVlan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var vlanId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkApplianceVlan(context.Background(), networkId, vlanId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkApplianceVlan(context.Background(), networkId, vlanId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkCameraQualityRetentionProfile", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkCameraQualityRetentionProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var qualityRetentionProfileId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkCameraQualityRetentionProfile(context.Background(), networkId, qualityRetentionProfileId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkCameraQualityRetentionProfile(context.Background(), networkId, qualityRetentionProfileId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkCameraWirelessProfile", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkCameraWirelessProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var wirelessProfileId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkCameraWirelessProfile(context.Background(), networkId, wirelessProfileId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkCameraWirelessProfile(context.Background(), networkId, wirelessProfileId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkFirmwareUpgradesStagedGroup", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkFirmwareUpgradesStagedGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var groupId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkFirmwareUpgradesStagedGroup(context.Background(), networkId, groupId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkFirmwareUpgradesStagedGroup(context.Background(), networkId, groupId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkFloorPlan", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkFloorPlan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var floorPlanId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.DeleteNetworkFloorPlan(context.Background(), networkId, floorPlanId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.DeleteNetworkFloorPlan(context.Background(), networkId, floorPlanId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1115,203 +1115,203 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkGroupPolicy", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkGroupPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var groupPolicyId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkGroupPolicy(context.Background(), networkId, groupPolicyId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkGroupPolicy(context.Background(), networkId, groupPolicyId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkMerakiAuthUser", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkMerakiAuthUser", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var merakiAuthUserId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkMerakiAuthUser(context.Background(), networkId, merakiAuthUserId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkMerakiAuthUser(context.Background(), networkId, merakiAuthUserId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkMqttBroker", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkMqttBroker", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var mqttBrokerId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkMqttBroker(context.Background(), networkId, mqttBrokerId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkMqttBroker(context.Background(), networkId, mqttBrokerId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkPiiRequest", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkPiiRequest", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var requestId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkPiiRequest(context.Background(), networkId, requestId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkPiiRequest(context.Background(), networkId, requestId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkSensorAlertsProfile", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkSensorAlertsProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var id string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkSensorAlertsProfile(context.Background(), networkId, id).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkSensorAlertsProfile(context.Background(), networkId, id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkSmTargetGroup", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkSmTargetGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var targetGroupId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkSmTargetGroup(context.Background(), networkId, targetGroupId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkSmTargetGroup(context.Background(), networkId, targetGroupId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkSmUserAccessDevice", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkSmUserAccessDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var userAccessDeviceId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkSmUserAccessDevice(context.Background(), networkId, userAccessDeviceId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkSmUserAccessDevice(context.Background(), networkId, userAccessDeviceId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkSwitchAccessPolicy", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkSwitchAccessPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var accessPolicyNumber string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkSwitchAccessPolicy(context.Background(), networkId, accessPolicyNumber).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkSwitchAccessPolicy(context.Background(), networkId, accessPolicyNumber).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var trustedServerId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer(context.Background(), networkId, trustedServerId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer(context.Background(), networkId, trustedServerId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkSwitchLinkAggregation", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkSwitchLinkAggregation", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var linkAggregationId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkSwitchLinkAggregation(context.Background(), networkId, linkAggregationId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkSwitchLinkAggregation(context.Background(), networkId, linkAggregationId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkSwitchPortSchedule", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkSwitchPortSchedule", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var portScheduleId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkSwitchPortSchedule(context.Background(), networkId, portScheduleId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkSwitchPortSchedule(context.Background(), networkId, portScheduleId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkSwitchQosRule", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkSwitchQosRule", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var qosRuleId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkSwitchQosRule(context.Background(), networkId, qosRuleId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkSwitchQosRule(context.Background(), networkId, qosRuleId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkSwitchRoutingMulticastRendezvousPoint", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkSwitchRoutingMulticastRendezvousPoint", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var rendezvousPointId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkSwitchRoutingMulticastRendezvousPoint(context.Background(), networkId, rendezvousPointId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkSwitchRoutingMulticastRendezvousPoint(context.Background(), networkId, rendezvousPointId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkSwitchStack", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkSwitchStack", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var switchStackId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkSwitchStack(context.Background(), networkId, switchStackId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkSwitchStack(context.Background(), networkId, switchStackId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkSwitchStackRoutingInterface", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkSwitchStackRoutingInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -1319,14 +1319,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 		var switchStackId string
 		var interfaceId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkSwitchStackRoutingInterface(context.Background(), networkId, switchStackId, interfaceId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkSwitchStackRoutingInterface(context.Background(), networkId, switchStackId, interfaceId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkSwitchStackRoutingStaticRoute", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkSwitchStackRoutingStaticRoute", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -1334,56 +1334,56 @@ func Test_client_ConfigureApiService(t *testing.T) {
 		var switchStackId string
 		var staticRouteId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkSwitchStackRoutingStaticRoute(context.Background(), networkId, switchStackId, staticRouteId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkSwitchStackRoutingStaticRoute(context.Background(), networkId, switchStackId, staticRouteId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkWebhooksHttpServer", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkWebhooksHttpServer", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var httpServerId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkWebhooksHttpServer(context.Background(), networkId, httpServerId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkWebhooksHttpServer(context.Background(), networkId, httpServerId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkWebhooksPayloadTemplate", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkWebhooksPayloadTemplate", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var payloadTemplateId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkWebhooksPayloadTemplate(context.Background(), networkId, payloadTemplateId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkWebhooksPayloadTemplate(context.Background(), networkId, payloadTemplateId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkWirelessRfProfile", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkWirelessRfProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var rfProfileId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkWirelessRfProfile(context.Background(), networkId, rfProfileId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkWirelessRfProfile(context.Background(), networkId, rfProfileId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteNetworkWirelessSsidIdentityPsk", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteNetworkWirelessSsidIdentityPsk", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -1391,243 +1391,243 @@ func Test_client_ConfigureApiService(t *testing.T) {
 		var number string
 		var identityPskId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteNetworkWirelessSsidIdentityPsk(context.Background(), networkId, number, identityPskId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteNetworkWirelessSsidIdentityPsk(context.Background(), networkId, number, identityPskId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteOrganization", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteOrganization", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteOrganization(context.Background(), organizationId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteOrganization(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteOrganizationActionBatch", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteOrganizationActionBatch", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var actionBatchId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteOrganizationActionBatch(context.Background(), organizationId, actionBatchId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteOrganizationActionBatch(context.Background(), organizationId, actionBatchId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteOrganizationAdaptivePolicyAcl", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteOrganizationAdaptivePolicyAcl", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var aclId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteOrganizationAdaptivePolicyAcl(context.Background(), organizationId, aclId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteOrganizationAdaptivePolicyAcl(context.Background(), organizationId, aclId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteOrganizationAdaptivePolicyGroup", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteOrganizationAdaptivePolicyGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var id string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteOrganizationAdaptivePolicyGroup(context.Background(), organizationId, id).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteOrganizationAdaptivePolicyGroup(context.Background(), organizationId, id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteOrganizationAdaptivePolicyPolicy", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteOrganizationAdaptivePolicyPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var id string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteOrganizationAdaptivePolicyPolicy(context.Background(), organizationId, id).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteOrganizationAdaptivePolicyPolicy(context.Background(), organizationId, id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteOrganizationAdmin", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteOrganizationAdmin", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var adminId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteOrganizationAdmin(context.Background(), organizationId, adminId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteOrganizationAdmin(context.Background(), organizationId, adminId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteOrganizationAlertsProfile", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteOrganizationAlertsProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var alertConfigId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteOrganizationAlertsProfile(context.Background(), organizationId, alertConfigId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteOrganizationAlertsProfile(context.Background(), organizationId, alertConfigId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteOrganizationBrandingPolicy", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteOrganizationBrandingPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var brandingPolicyId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteOrganizationBrandingPolicy(context.Background(), organizationId, brandingPolicyId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteOrganizationBrandingPolicy(context.Background(), organizationId, brandingPolicyId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteOrganizationCameraCustomAnalyticsArtifact", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteOrganizationCameraCustomAnalyticsArtifact", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var artifactId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteOrganizationCameraCustomAnalyticsArtifact(context.Background(), organizationId, artifactId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteOrganizationCameraCustomAnalyticsArtifact(context.Background(), organizationId, artifactId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteOrganizationConfigTemplate", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteOrganizationConfigTemplate", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var configTemplateId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteOrganizationConfigTemplate(context.Background(), organizationId, configTemplateId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteOrganizationConfigTemplate(context.Background(), organizationId, configTemplateId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteOrganizationEarlyAccessFeaturesOptIn", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteOrganizationEarlyAccessFeaturesOptIn", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var optInId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteOrganizationEarlyAccessFeaturesOptIn(context.Background(), organizationId, optInId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteOrganizationEarlyAccessFeaturesOptIn(context.Background(), organizationId, optInId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteOrganizationInsightMonitoredMediaServer", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteOrganizationInsightMonitoredMediaServer", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var monitoredMediaServerId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteOrganizationInsightMonitoredMediaServer(context.Background(), organizationId, monitoredMediaServerId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteOrganizationInsightMonitoredMediaServer(context.Background(), organizationId, monitoredMediaServerId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteOrganizationPolicyObject", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteOrganizationPolicyObject", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var policyObjectId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteOrganizationPolicyObject(context.Background(), organizationId, policyObjectId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteOrganizationPolicyObject(context.Background(), organizationId, policyObjectId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteOrganizationPolicyObjectsGroup", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteOrganizationPolicyObjectsGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var policyObjectGroupId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteOrganizationPolicyObjectsGroup(context.Background(), organizationId, policyObjectGroupId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteOrganizationPolicyObjectsGroup(context.Background(), organizationId, policyObjectGroupId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteOrganizationSamlIdp", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteOrganizationSamlIdp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var idpId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteOrganizationSamlIdp(context.Background(), organizationId, idpId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteOrganizationSamlIdp(context.Background(), organizationId, idpId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService DeleteOrganizationSamlRole", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService DeleteOrganizationSamlRole", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var samlRoleId string
 
-		httpRes, err := apiClient.ConfigureApi.DeleteOrganizationSamlRole(context.Background(), organizationId, samlRoleId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.DeleteOrganizationSamlRole(context.Background(), organizationId, samlRoleId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService GetDevice", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetDevice(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetDevice(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1635,13 +1635,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetDeviceApplianceRadioSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetDeviceApplianceRadioSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetDeviceApplianceRadioSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetDeviceApplianceRadioSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1649,13 +1649,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetDeviceApplianceUplinksSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetDeviceApplianceUplinksSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetDeviceApplianceUplinksSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetDeviceApplianceUplinksSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1663,13 +1663,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetDeviceCameraCustomAnalytics", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetDeviceCameraCustomAnalytics", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetDeviceCameraCustomAnalytics(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetDeviceCameraCustomAnalytics(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1677,13 +1677,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetDeviceCameraQualityAndRetention", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetDeviceCameraQualityAndRetention", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetDeviceCameraQualityAndRetention(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetDeviceCameraQualityAndRetention(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1691,13 +1691,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetDeviceCameraSense", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetDeviceCameraSense", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetDeviceCameraSense(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetDeviceCameraSense(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1705,13 +1705,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetDeviceCameraSenseObjectDetectionModels", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetDeviceCameraSenseObjectDetectionModels", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetDeviceCameraSenseObjectDetectionModels(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetDeviceCameraSenseObjectDetectionModels(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1719,13 +1719,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetDeviceCameraVideoLink", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetDeviceCameraVideoLink", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetDeviceCameraVideoLink(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetDeviceCameraVideoLink(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1733,13 +1733,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetDeviceCameraVideoSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetDeviceCameraVideoSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetDeviceCameraVideoSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetDeviceCameraVideoSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1747,13 +1747,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetDeviceCameraWirelessProfiles", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetDeviceCameraWirelessProfiles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetDeviceCameraWirelessProfiles(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetDeviceCameraWirelessProfiles(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1761,13 +1761,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetDeviceCellularGatewayLan", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetDeviceCellularGatewayLan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetDeviceCellularGatewayLan(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetDeviceCellularGatewayLan(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1775,13 +1775,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetDeviceCellularGatewayPortForwardingRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetDeviceCellularGatewayPortForwardingRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetDeviceCellularGatewayPortForwardingRules(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetDeviceCellularGatewayPortForwardingRules(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1789,13 +1789,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetDeviceCellularSims", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetDeviceCellularSims", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetDeviceCellularSims(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetDeviceCellularSims(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1803,13 +1803,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetDeviceManagementInterface", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetDeviceManagementInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetDeviceManagementInterface(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetDeviceManagementInterface(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1817,13 +1817,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetDeviceSensorRelationships", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetDeviceSensorRelationships", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetDeviceSensorRelationships(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetDeviceSensorRelationships(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1831,14 +1831,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetDeviceSwitchPort", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetDeviceSwitchPort", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var portId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetDeviceSwitchPort(context.Background(), serial, portId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetDeviceSwitchPort(context.Background(), serial, portId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1846,13 +1846,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetDeviceSwitchPorts", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetDeviceSwitchPorts", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetDeviceSwitchPorts(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetDeviceSwitchPorts(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1860,29 +1860,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetDeviceSwitchRoutingInterface", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var serial string
-		var interfaceId string
-
-		resp, httpRes, err := apiClient.ConfigureApi.GetDeviceSwitchRoutingInterface(context.Background(), serial, interfaceId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ConfigureApiService GetDeviceSwitchRoutingInterfaceDhcp", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetDeviceSwitchRoutingInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var interfaceId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetDeviceSwitchRoutingInterfaceDhcp(context.Background(), serial, interfaceId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetDeviceSwitchRoutingInterface(context.Background(), serial, interfaceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1890,13 +1875,28 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetDeviceSwitchRoutingInterfaces", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetDeviceSwitchRoutingInterfaceDhcp", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var serial string
+		var interfaceId string
+
+		resp, httpRes, err := apiClient.ConfigureAPI.GetDeviceSwitchRoutingInterfaceDhcp(context.Background(), serial, interfaceId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ConfigureAPIService GetDeviceSwitchRoutingInterfaces", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetDeviceSwitchRoutingInterfaces(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetDeviceSwitchRoutingInterfaces(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1904,14 +1904,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetDeviceSwitchRoutingStaticRoute", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetDeviceSwitchRoutingStaticRoute", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var staticRouteId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetDeviceSwitchRoutingStaticRoute(context.Background(), serial, staticRouteId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetDeviceSwitchRoutingStaticRoute(context.Background(), serial, staticRouteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1919,13 +1919,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetDeviceSwitchRoutingStaticRoutes", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetDeviceSwitchRoutingStaticRoutes", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetDeviceSwitchRoutingStaticRoutes(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetDeviceSwitchRoutingStaticRoutes(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1933,13 +1933,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetDeviceSwitchWarmSpare", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetDeviceSwitchWarmSpare", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetDeviceSwitchWarmSpare(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetDeviceSwitchWarmSpare(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1947,13 +1947,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetDeviceWirelessBluetoothSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetDeviceWirelessBluetoothSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetDeviceWirelessBluetoothSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetDeviceWirelessBluetoothSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1961,13 +1961,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetDeviceWirelessRadioSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetDeviceWirelessRadioSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetDeviceWirelessRadioSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetDeviceWirelessRadioSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1975,13 +1975,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetwork", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetwork", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetwork(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetwork(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1989,13 +1989,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkAlertsSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkAlertsSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkAlertsSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkAlertsSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2003,13 +2003,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceConnectivityMonitoringDestinations", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceConnectivityMonitoringDestinations", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceConnectivityMonitoringDestinations(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceConnectivityMonitoringDestinations(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2017,13 +2017,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceContentFiltering", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceContentFiltering", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceContentFiltering(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceContentFiltering(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2031,13 +2031,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceContentFilteringCategories", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceContentFilteringCategories", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceContentFilteringCategories(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceContentFilteringCategories(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2045,13 +2045,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceFirewallCellularFirewallRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceFirewallCellularFirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceFirewallCellularFirewallRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceFirewallCellularFirewallRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2059,14 +2059,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceFirewallFirewalledService", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceFirewallFirewalledService", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var service string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceFirewallFirewalledService(context.Background(), networkId, service).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceFirewallFirewalledService(context.Background(), networkId, service).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2074,13 +2074,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceFirewallFirewalledServices", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceFirewallFirewalledServices", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceFirewallFirewalledServices(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceFirewallFirewalledServices(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2088,13 +2088,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceFirewallInboundCellularFirewallRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceFirewallInboundCellularFirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceFirewallInboundCellularFirewallRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceFirewallInboundCellularFirewallRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2102,13 +2102,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceFirewallInboundFirewallRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceFirewallInboundFirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceFirewallInboundFirewallRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceFirewallInboundFirewallRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2116,13 +2116,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceFirewallL3FirewallRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceFirewallL3FirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceFirewallL3FirewallRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceFirewallL3FirewallRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2130,13 +2130,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceFirewallL7FirewallRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceFirewallL7FirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceFirewallL7FirewallRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceFirewallL7FirewallRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2144,13 +2144,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2158,13 +2158,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceFirewallOneToManyNatRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceFirewallOneToManyNatRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceFirewallOneToManyNatRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceFirewallOneToManyNatRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2172,13 +2172,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceFirewallOneToOneNatRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceFirewallOneToOneNatRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceFirewallOneToOneNatRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceFirewallOneToOneNatRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2186,13 +2186,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceFirewallPortForwardingRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceFirewallPortForwardingRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceFirewallPortForwardingRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceFirewallPortForwardingRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2200,13 +2200,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceFirewallSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceFirewallSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceFirewallSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceFirewallSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2214,14 +2214,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkAppliancePort", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkAppliancePort", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var portId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkAppliancePort(context.Background(), networkId, portId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkAppliancePort(context.Background(), networkId, portId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2229,13 +2229,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkAppliancePorts", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkAppliancePorts", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkAppliancePorts(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkAppliancePorts(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2243,14 +2243,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkAppliancePrefixesDelegatedStatic", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkAppliancePrefixesDelegatedStatic", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var staticDelegatedPrefixId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkAppliancePrefixesDelegatedStatic(context.Background(), networkId, staticDelegatedPrefixId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkAppliancePrefixesDelegatedStatic(context.Background(), networkId, staticDelegatedPrefixId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2258,13 +2258,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkAppliancePrefixesDelegatedStatics", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkAppliancePrefixesDelegatedStatics", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkAppliancePrefixesDelegatedStatics(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkAppliancePrefixesDelegatedStatics(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2272,14 +2272,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceRfProfile", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceRfProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var rfProfileId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceRfProfile(context.Background(), networkId, rfProfileId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceRfProfile(context.Background(), networkId, rfProfileId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2287,13 +2287,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceRfProfiles", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceRfProfiles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceRfProfiles(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceRfProfiles(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2301,13 +2301,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceSecurityIntrusion", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceSecurityIntrusion", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceSecurityIntrusion(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceSecurityIntrusion(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2315,13 +2315,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceSecurityMalware", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceSecurityMalware", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceSecurityMalware(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceSecurityMalware(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2329,13 +2329,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2343,13 +2343,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceSingleLan", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceSingleLan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceSingleLan(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceSingleLan(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2357,14 +2357,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceSsid", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceSsid", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceSsid(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceSsid(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2372,13 +2372,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceSsids", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceSsids", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceSsids(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceSsids(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2386,14 +2386,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceStaticRoute", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceStaticRoute", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var staticRouteId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceStaticRoute(context.Background(), networkId, staticRouteId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceStaticRoute(context.Background(), networkId, staticRouteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2401,13 +2401,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceStaticRoutes", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceStaticRoutes", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceStaticRoutes(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceStaticRoutes(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2415,13 +2415,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceTrafficShaping", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceTrafficShaping", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceTrafficShaping(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceTrafficShaping(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2429,14 +2429,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceTrafficShapingCustomPerformanceClass", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceTrafficShapingCustomPerformanceClass", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var customPerformanceClassId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceTrafficShapingCustomPerformanceClass(context.Background(), networkId, customPerformanceClassId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceTrafficShapingCustomPerformanceClass(context.Background(), networkId, customPerformanceClassId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2444,13 +2444,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceTrafficShapingCustomPerformanceClasses", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceTrafficShapingCustomPerformanceClasses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceTrafficShapingCustomPerformanceClasses(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceTrafficShapingCustomPerformanceClasses(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2458,13 +2458,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceTrafficShapingRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceTrafficShapingRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceTrafficShapingRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceTrafficShapingRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2472,13 +2472,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceTrafficShapingUplinkBandwidth", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceTrafficShapingUplinkBandwidth", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceTrafficShapingUplinkBandwidth(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceTrafficShapingUplinkBandwidth(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2486,13 +2486,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceTrafficShapingUplinkSelection", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceTrafficShapingUplinkSelection", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceTrafficShapingUplinkSelection(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceTrafficShapingUplinkSelection(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2500,14 +2500,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceVlan", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceVlan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var vlanId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceVlan(context.Background(), networkId, vlanId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceVlan(context.Background(), networkId, vlanId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2515,13 +2515,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceVlans", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceVlans", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceVlans(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceVlans(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2529,13 +2529,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceVlansSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceVlansSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceVlansSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceVlansSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2543,13 +2543,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceVpnBgp", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceVpnBgp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceVpnBgp(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceVpnBgp(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2557,13 +2557,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceVpnSiteToSiteVpn", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceVpnSiteToSiteVpn", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceVpnSiteToSiteVpn(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceVpnSiteToSiteVpn(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2571,13 +2571,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkApplianceWarmSpare", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkApplianceWarmSpare", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkApplianceWarmSpare(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkApplianceWarmSpare(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2585,14 +2585,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkCameraQualityRetentionProfile", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkCameraQualityRetentionProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var qualityRetentionProfileId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkCameraQualityRetentionProfile(context.Background(), networkId, qualityRetentionProfileId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkCameraQualityRetentionProfile(context.Background(), networkId, qualityRetentionProfileId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2600,13 +2600,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkCameraQualityRetentionProfiles", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkCameraQualityRetentionProfiles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkCameraQualityRetentionProfiles(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkCameraQualityRetentionProfiles(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2614,13 +2614,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkCameraSchedules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkCameraSchedules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkCameraSchedules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkCameraSchedules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2628,14 +2628,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkCameraWirelessProfile", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkCameraWirelessProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var wirelessProfileId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkCameraWirelessProfile(context.Background(), networkId, wirelessProfileId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkCameraWirelessProfile(context.Background(), networkId, wirelessProfileId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2643,13 +2643,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkCameraWirelessProfiles", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkCameraWirelessProfiles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkCameraWirelessProfiles(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkCameraWirelessProfiles(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2657,13 +2657,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkCellularGatewayConnectivityMonitoringDestinations", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkCellularGatewayConnectivityMonitoringDestinations", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkCellularGatewayConnectivityMonitoringDestinations(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkCellularGatewayConnectivityMonitoringDestinations(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2671,13 +2671,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkCellularGatewayDhcp", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkCellularGatewayDhcp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkCellularGatewayDhcp(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkCellularGatewayDhcp(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2685,13 +2685,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkCellularGatewaySubnetPool", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkCellularGatewaySubnetPool", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkCellularGatewaySubnetPool(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkCellularGatewaySubnetPool(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2699,13 +2699,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkCellularGatewayUplink", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkCellularGatewayUplink", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkCellularGatewayUplink(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkCellularGatewayUplink(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2713,29 +2713,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkClientPolicy", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-		var clientId string
-
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkClientPolicy(context.Background(), networkId, clientId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ConfigureApiService GetNetworkClientSplashAuthorizationStatus", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkClientPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var clientId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkClientSplashAuthorizationStatus(context.Background(), networkId, clientId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkClientPolicy(context.Background(), networkId, clientId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2743,13 +2728,28 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkDevices", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkClientSplashAuthorizationStatus", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+		var clientId string
+
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkClientSplashAuthorizationStatus(context.Background(), networkId, clientId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ConfigureAPIService GetNetworkDevices", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkDevices(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkDevices(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2757,13 +2757,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkFirmwareUpgrades", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkFirmwareUpgrades", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkFirmwareUpgrades(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkFirmwareUpgrades(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2771,13 +2771,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkFirmwareUpgradesStagedEvents", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkFirmwareUpgradesStagedEvents", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkFirmwareUpgradesStagedEvents(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkFirmwareUpgradesStagedEvents(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2785,14 +2785,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkFirmwareUpgradesStagedGroup", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkFirmwareUpgradesStagedGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var groupId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkFirmwareUpgradesStagedGroup(context.Background(), networkId, groupId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkFirmwareUpgradesStagedGroup(context.Background(), networkId, groupId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2800,13 +2800,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkFirmwareUpgradesStagedGroups", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkFirmwareUpgradesStagedGroups", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkFirmwareUpgradesStagedGroups(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkFirmwareUpgradesStagedGroups(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2814,13 +2814,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkFirmwareUpgradesStagedStages", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkFirmwareUpgradesStagedStages", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkFirmwareUpgradesStagedStages(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkFirmwareUpgradesStagedStages(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2828,14 +2828,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkFloorPlan", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkFloorPlan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var floorPlanId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkFloorPlan(context.Background(), networkId, floorPlanId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkFloorPlan(context.Background(), networkId, floorPlanId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2843,13 +2843,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkFloorPlans", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkFloorPlans", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkFloorPlans(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkFloorPlans(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2857,13 +2857,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkGroupPolicies", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkGroupPolicies", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkGroupPolicies(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkGroupPolicies(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2871,14 +2871,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkGroupPolicy", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkGroupPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var groupPolicyId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkGroupPolicy(context.Background(), networkId, groupPolicyId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkGroupPolicy(context.Background(), networkId, groupPolicyId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2886,13 +2886,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkHealthAlerts", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkHealthAlerts", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkHealthAlerts(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkHealthAlerts(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2900,14 +2900,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkMerakiAuthUser", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkMerakiAuthUser", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var merakiAuthUserId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkMerakiAuthUser(context.Background(), networkId, merakiAuthUserId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkMerakiAuthUser(context.Background(), networkId, merakiAuthUserId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2915,13 +2915,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkMerakiAuthUsers", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkMerakiAuthUsers", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkMerakiAuthUsers(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkMerakiAuthUsers(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2929,14 +2929,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkMqttBroker", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkMqttBroker", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var mqttBrokerId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkMqttBroker(context.Background(), networkId, mqttBrokerId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkMqttBroker(context.Background(), networkId, mqttBrokerId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2944,13 +2944,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkMqttBrokers", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkMqttBrokers", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkMqttBrokers(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkMqttBrokers(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2958,13 +2958,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkNetflow", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkNetflow", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkNetflow(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkNetflow(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2972,13 +2972,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkPiiPiiKeys", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkPiiPiiKeys", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkPiiPiiKeys(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkPiiPiiKeys(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2986,14 +2986,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkPiiRequest", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkPiiRequest", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var requestId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkPiiRequest(context.Background(), networkId, requestId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkPiiRequest(context.Background(), networkId, requestId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3001,13 +3001,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkPiiRequests", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkPiiRequests", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkPiiRequests(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkPiiRequests(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3015,13 +3015,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkPiiSmDevicesForKey", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkPiiSmDevicesForKey", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkPiiSmDevicesForKey(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkPiiSmDevicesForKey(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3029,13 +3029,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkPiiSmOwnersForKey", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkPiiSmOwnersForKey", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkPiiSmOwnersForKey(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkPiiSmOwnersForKey(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3043,13 +3043,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkPoliciesByClient", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkPoliciesByClient", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkPoliciesByClient(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkPoliciesByClient(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3057,14 +3057,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSensorAlertsProfile", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSensorAlertsProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var id string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSensorAlertsProfile(context.Background(), networkId, id).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSensorAlertsProfile(context.Background(), networkId, id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3072,13 +3072,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSensorAlertsProfiles", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSensorAlertsProfiles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSensorAlertsProfiles(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSensorAlertsProfiles(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3086,14 +3086,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSensorMqttBroker", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSensorMqttBroker", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var mqttBrokerId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSensorMqttBroker(context.Background(), networkId, mqttBrokerId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSensorMqttBroker(context.Background(), networkId, mqttBrokerId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3101,13 +3101,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSensorMqttBrokers", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSensorMqttBrokers", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSensorMqttBrokers(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSensorMqttBrokers(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3115,13 +3115,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSensorRelationships", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSensorRelationships", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSensorRelationships(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSensorRelationships(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3129,13 +3129,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3143,14 +3143,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSmBypassActivationLockAttempt", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSmBypassActivationLockAttempt", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var attemptId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSmBypassActivationLockAttempt(context.Background(), networkId, attemptId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSmBypassActivationLockAttempt(context.Background(), networkId, attemptId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3158,14 +3158,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSmDeviceCerts", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSmDeviceCerts", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var deviceId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSmDeviceCerts(context.Background(), networkId, deviceId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSmDeviceCerts(context.Background(), networkId, deviceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3173,14 +3173,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSmDeviceDeviceProfiles", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSmDeviceDeviceProfiles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var deviceId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSmDeviceDeviceProfiles(context.Background(), networkId, deviceId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSmDeviceDeviceProfiles(context.Background(), networkId, deviceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3188,14 +3188,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSmDeviceNetworkAdapters", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSmDeviceNetworkAdapters", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var deviceId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSmDeviceNetworkAdapters(context.Background(), networkId, deviceId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSmDeviceNetworkAdapters(context.Background(), networkId, deviceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3203,14 +3203,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSmDeviceRestrictions", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSmDeviceRestrictions", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var deviceId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSmDeviceRestrictions(context.Background(), networkId, deviceId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSmDeviceRestrictions(context.Background(), networkId, deviceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3218,14 +3218,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSmDeviceSecurityCenters", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSmDeviceSecurityCenters", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var deviceId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSmDeviceSecurityCenters(context.Background(), networkId, deviceId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSmDeviceSecurityCenters(context.Background(), networkId, deviceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3233,14 +3233,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSmDeviceSoftwares", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSmDeviceSoftwares", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var deviceId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSmDeviceSoftwares(context.Background(), networkId, deviceId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSmDeviceSoftwares(context.Background(), networkId, deviceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3248,14 +3248,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSmDeviceWlanLists", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSmDeviceWlanLists", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var deviceId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSmDeviceWlanLists(context.Background(), networkId, deviceId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSmDeviceWlanLists(context.Background(), networkId, deviceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3263,13 +3263,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSmDevices", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSmDevices", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSmDevices(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSmDevices(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3277,13 +3277,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSmProfiles", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSmProfiles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSmProfiles(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSmProfiles(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3291,14 +3291,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSmTargetGroup", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSmTargetGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var targetGroupId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSmTargetGroup(context.Background(), networkId, targetGroupId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSmTargetGroup(context.Background(), networkId, targetGroupId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3306,13 +3306,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSmTargetGroups", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSmTargetGroups", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSmTargetGroups(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSmTargetGroups(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3320,13 +3320,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSmTrustedAccessConfigs", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSmTrustedAccessConfigs", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSmTrustedAccessConfigs(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSmTrustedAccessConfigs(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3334,13 +3334,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSmUserAccessDevices", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSmUserAccessDevices", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSmUserAccessDevices(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSmUserAccessDevices(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3348,29 +3348,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSmUserDeviceProfiles", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-		var userId string
-
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSmUserDeviceProfiles(context.Background(), networkId, userId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ConfigureApiService GetNetworkSmUserSoftwares", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSmUserDeviceProfiles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var userId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSmUserSoftwares(context.Background(), networkId, userId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSmUserDeviceProfiles(context.Background(), networkId, userId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3378,13 +3363,28 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSmUsers", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSmUserSoftwares", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+		var userId string
+
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSmUserSoftwares(context.Background(), networkId, userId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ConfigureAPIService GetNetworkSmUsers", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSmUsers(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSmUsers(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3392,13 +3392,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSnmp", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSnmp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSnmp(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSnmp(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3406,13 +3406,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchAccessControlLists", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchAccessControlLists", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchAccessControlLists(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchAccessControlLists(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3420,13 +3420,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchAccessPolicies", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchAccessPolicies", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchAccessPolicies(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchAccessPolicies(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3434,14 +3434,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchAccessPolicy", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchAccessPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var accessPolicyNumber string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchAccessPolicy(context.Background(), networkId, accessPolicyNumber).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchAccessPolicy(context.Background(), networkId, accessPolicyNumber).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3449,13 +3449,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchAlternateManagementInterface", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchAlternateManagementInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchAlternateManagementInterface(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchAlternateManagementInterface(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3463,13 +3463,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchDhcpServerPolicy", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchDhcpServerPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchDhcpServerPolicy(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchDhcpServerPolicy(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3477,13 +3477,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3491,13 +3491,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchDhcpServerPolicyArpInspectionWarningsByDevice(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3505,13 +3505,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchDhcpV4ServersSeen", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchDhcpV4ServersSeen", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchDhcpV4ServersSeen(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchDhcpV4ServersSeen(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3519,13 +3519,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchDscpToCosMappings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchDscpToCosMappings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchDscpToCosMappings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchDscpToCosMappings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3533,13 +3533,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchLinkAggregations", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchLinkAggregations", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchLinkAggregations(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchLinkAggregations(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3547,13 +3547,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchMtu", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchMtu", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchMtu(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchMtu(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3561,13 +3561,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchPortSchedules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchPortSchedules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchPortSchedules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchPortSchedules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3575,14 +3575,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchQosRule", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchQosRule", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var qosRuleId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchQosRule(context.Background(), networkId, qosRuleId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchQosRule(context.Background(), networkId, qosRuleId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3590,13 +3590,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchQosRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchQosRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchQosRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchQosRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3604,13 +3604,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchQosRulesOrder", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchQosRulesOrder", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchQosRulesOrder(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchQosRulesOrder(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3618,13 +3618,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchRoutingMulticast", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchRoutingMulticast", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchRoutingMulticast(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchRoutingMulticast(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3632,14 +3632,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchRoutingMulticastRendezvousPoint", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchRoutingMulticastRendezvousPoint", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var rendezvousPointId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchRoutingMulticastRendezvousPoint(context.Background(), networkId, rendezvousPointId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchRoutingMulticastRendezvousPoint(context.Background(), networkId, rendezvousPointId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3647,13 +3647,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchRoutingMulticastRendezvousPoints", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchRoutingMulticastRendezvousPoints", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchRoutingMulticastRendezvousPoints(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchRoutingMulticastRendezvousPoints(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3661,13 +3661,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchRoutingOspf", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchRoutingOspf", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchRoutingOspf(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchRoutingOspf(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3675,13 +3675,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3689,30 +3689,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchStack", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-		var switchStackId string
-
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchStack(context.Background(), networkId, switchStackId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ConfigureApiService GetNetworkSwitchStackRoutingInterface", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchStack", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var switchStackId string
-		var interfaceId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchStackRoutingInterface(context.Background(), networkId, switchStackId, interfaceId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchStack(context.Background(), networkId, switchStackId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3720,7 +3704,7 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchStackRoutingInterfaceDhcp", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchStackRoutingInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -3728,7 +3712,7 @@ func Test_client_ConfigureApiService(t *testing.T) {
 		var switchStackId string
 		var interfaceId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchStackRoutingInterfaceDhcp(context.Background(), networkId, switchStackId, interfaceId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchStackRoutingInterface(context.Background(), networkId, switchStackId, interfaceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3736,14 +3720,30 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchStackRoutingInterfaces", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchStackRoutingInterfaceDhcp", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+		var switchStackId string
+		var interfaceId string
+
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchStackRoutingInterfaceDhcp(context.Background(), networkId, switchStackId, interfaceId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ConfigureAPIService GetNetworkSwitchStackRoutingInterfaces", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var switchStackId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchStackRoutingInterfaces(context.Background(), networkId, switchStackId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchStackRoutingInterfaces(context.Background(), networkId, switchStackId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3751,7 +3751,7 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchStackRoutingStaticRoute", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchStackRoutingStaticRoute", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -3759,7 +3759,7 @@ func Test_client_ConfigureApiService(t *testing.T) {
 		var switchStackId string
 		var staticRouteId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchStackRoutingStaticRoute(context.Background(), networkId, switchStackId, staticRouteId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchStackRoutingStaticRoute(context.Background(), networkId, switchStackId, staticRouteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3767,14 +3767,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchStackRoutingStaticRoutes", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchStackRoutingStaticRoutes", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var switchStackId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchStackRoutingStaticRoutes(context.Background(), networkId, switchStackId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchStackRoutingStaticRoutes(context.Background(), networkId, switchStackId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3782,13 +3782,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchStacks", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchStacks", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchStacks(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchStacks(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3796,13 +3796,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchStormControl", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchStormControl", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchStormControl(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchStormControl(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3810,13 +3810,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSwitchStp", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSwitchStp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSwitchStp(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSwitchStp(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3824,13 +3824,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkSyslogServers", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkSyslogServers", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkSyslogServers(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkSyslogServers(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3838,13 +3838,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkTrafficAnalysis", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkTrafficAnalysis", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkTrafficAnalysis(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkTrafficAnalysis(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3852,13 +3852,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkTrafficShapingApplicationCategories", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkTrafficShapingApplicationCategories", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkTrafficShapingApplicationCategories(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkTrafficShapingApplicationCategories(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3866,13 +3866,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkTrafficShapingDscpTaggingOptions", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkTrafficShapingDscpTaggingOptions", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkTrafficShapingDscpTaggingOptions(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkTrafficShapingDscpTaggingOptions(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3880,14 +3880,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkWebhooksHttpServer", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkWebhooksHttpServer", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var httpServerId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkWebhooksHttpServer(context.Background(), networkId, httpServerId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkWebhooksHttpServer(context.Background(), networkId, httpServerId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3895,13 +3895,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkWebhooksHttpServers", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkWebhooksHttpServers", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkWebhooksHttpServers(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkWebhooksHttpServers(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3909,14 +3909,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkWebhooksPayloadTemplate", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkWebhooksPayloadTemplate", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var payloadTemplateId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkWebhooksPayloadTemplate(context.Background(), networkId, payloadTemplateId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkWebhooksPayloadTemplate(context.Background(), networkId, payloadTemplateId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3924,13 +3924,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkWebhooksPayloadTemplates", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkWebhooksPayloadTemplates", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkWebhooksPayloadTemplates(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkWebhooksPayloadTemplates(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3938,14 +3938,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkWebhooksWebhookTest", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkWebhooksWebhookTest", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var webhookTestId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkWebhooksWebhookTest(context.Background(), networkId, webhookTestId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkWebhooksWebhookTest(context.Background(), networkId, webhookTestId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3953,13 +3953,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkWirelessAlternateManagementInterface", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkWirelessAlternateManagementInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkWirelessAlternateManagementInterface(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkWirelessAlternateManagementInterface(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3967,13 +3967,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkWirelessBilling", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkWirelessBilling", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkWirelessBilling(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkWirelessBilling(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3981,13 +3981,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkWirelessBluetoothSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkWirelessBluetoothSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkWirelessBluetoothSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkWirelessBluetoothSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3995,14 +3995,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkWirelessRfProfile", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkWirelessRfProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var rfProfileId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkWirelessRfProfile(context.Background(), networkId, rfProfileId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkWirelessRfProfile(context.Background(), networkId, rfProfileId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4010,13 +4010,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkWirelessRfProfiles", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkWirelessRfProfiles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkWirelessRfProfiles(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkWirelessRfProfiles(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4024,13 +4024,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkWirelessSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkWirelessSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkWirelessSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkWirelessSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4038,29 +4038,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkWirelessSsid", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-		var number string
-
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkWirelessSsid(context.Background(), networkId, number).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ConfigureApiService GetNetworkWirelessSsidBonjourForwarding", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkWirelessSsid", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkWirelessSsidBonjourForwarding(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkWirelessSsid(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4068,14 +4053,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkWirelessSsidDeviceTypeGroupPolicies", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkWirelessSsidBonjourForwarding", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkWirelessSsidDeviceTypeGroupPolicies(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkWirelessSsidBonjourForwarding(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4083,14 +4068,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkWirelessSsidEapOverride", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkWirelessSsidDeviceTypeGroupPolicies", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkWirelessSsidEapOverride(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkWirelessSsidDeviceTypeGroupPolicies(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4098,14 +4083,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkWirelessSsidFirewallL3FirewallRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkWirelessSsidEapOverride", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkWirelessSsidFirewallL3FirewallRules(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkWirelessSsidEapOverride(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4113,14 +4098,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkWirelessSsidFirewallL7FirewallRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkWirelessSsidFirewallL3FirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkWirelessSsidFirewallL7FirewallRules(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkWirelessSsidFirewallL3FirewallRules(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4128,14 +4113,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkWirelessSsidHotspot20", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkWirelessSsidFirewallL7FirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkWirelessSsidHotspot20(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkWirelessSsidFirewallL7FirewallRules(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4143,7 +4128,22 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkWirelessSsidIdentityPsk", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkWirelessSsidHotspot20", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+		var number string
+
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkWirelessSsidHotspot20(context.Background(), networkId, number).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ConfigureAPIService GetNetworkWirelessSsidIdentityPsk", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -4151,7 +4151,7 @@ func Test_client_ConfigureApiService(t *testing.T) {
 		var number string
 		var identityPskId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkWirelessSsidIdentityPsk(context.Background(), networkId, number, identityPskId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkWirelessSsidIdentityPsk(context.Background(), networkId, number, identityPskId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4159,14 +4159,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkWirelessSsidIdentityPsks", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkWirelessSsidIdentityPsks", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkWirelessSsidIdentityPsks(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkWirelessSsidIdentityPsks(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4174,14 +4174,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkWirelessSsidSchedules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkWirelessSsidSchedules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkWirelessSsidSchedules(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkWirelessSsidSchedules(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4189,14 +4189,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkWirelessSsidSplashSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkWirelessSsidSplashSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkWirelessSsidSplashSettings(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkWirelessSsidSplashSettings(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4204,14 +4204,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkWirelessSsidTrafficShapingRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkWirelessSsidTrafficShapingRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkWirelessSsidTrafficShapingRules(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkWirelessSsidTrafficShapingRules(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4219,14 +4219,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkWirelessSsidVpn", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkWirelessSsidVpn", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkWirelessSsidVpn(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkWirelessSsidVpn(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4234,13 +4234,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetNetworkWirelessSsids", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetNetworkWirelessSsids", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetNetworkWirelessSsids(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetNetworkWirelessSsids(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4248,13 +4248,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganization", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganization", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganization(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganization(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4262,14 +4262,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationActionBatch", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationActionBatch", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var actionBatchId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationActionBatch(context.Background(), organizationId, actionBatchId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationActionBatch(context.Background(), organizationId, actionBatchId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4277,13 +4277,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationActionBatches", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationActionBatches", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationActionBatches(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationActionBatches(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4291,14 +4291,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationAdaptivePolicyAcl", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationAdaptivePolicyAcl", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var aclId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationAdaptivePolicyAcl(context.Background(), organizationId, aclId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationAdaptivePolicyAcl(context.Background(), organizationId, aclId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4306,13 +4306,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationAdaptivePolicyAcls", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationAdaptivePolicyAcls", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationAdaptivePolicyAcls(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationAdaptivePolicyAcls(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4320,57 +4320,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationAdaptivePolicyGroup", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var organizationId string
-		var id string
-
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationAdaptivePolicyGroup(context.Background(), organizationId, id).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ConfigureApiService GetOrganizationAdaptivePolicyGroups", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var organizationId string
-
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationAdaptivePolicyGroups(context.Background(), organizationId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ConfigureApiService GetOrganizationAdaptivePolicyPolicies", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var organizationId string
-
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationAdaptivePolicyPolicies(context.Background(), organizationId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ConfigureApiService GetOrganizationAdaptivePolicyPolicy", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationAdaptivePolicyGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var id string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationAdaptivePolicyPolicy(context.Background(), organizationId, id).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationAdaptivePolicyGroup(context.Background(), organizationId, id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4378,13 +4335,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationAdaptivePolicySettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationAdaptivePolicyGroups", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationAdaptivePolicySettings(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationAdaptivePolicyGroups(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4392,13 +4349,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationAdmins", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationAdaptivePolicyPolicies", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationAdmins(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationAdaptivePolicyPolicies(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4406,13 +4363,28 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationAlertsProfiles", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationAdaptivePolicyPolicy", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var organizationId string
+		var id string
+
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationAdaptivePolicyPolicy(context.Background(), organizationId, id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ConfigureAPIService GetOrganizationAdaptivePolicySettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationAlertsProfiles(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationAdaptivePolicySettings(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4420,13 +4392,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationApplianceSecurityIntrusion", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationAdmins", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationApplianceSecurityIntrusion(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationAdmins(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4434,13 +4406,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationApplianceVpnThirdPartyVPNPeers", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationAlertsProfiles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationApplianceVpnThirdPartyVPNPeers(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationAlertsProfiles(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4448,13 +4420,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationApplianceVpnVpnFirewallRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationApplianceSecurityIntrusion", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationApplianceVpnVpnFirewallRules(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationApplianceSecurityIntrusion(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4462,13 +4434,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationBrandingPolicies", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationApplianceVpnThirdPartyVPNPeers", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationBrandingPolicies(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationApplianceVpnThirdPartyVPNPeers(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4476,13 +4448,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationBrandingPoliciesPriorities", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationApplianceVpnVpnFirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationBrandingPoliciesPriorities(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationApplianceVpnVpnFirewallRules(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4490,14 +4462,42 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationBrandingPolicy", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationBrandingPolicies", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var organizationId string
+
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationBrandingPolicies(context.Background(), organizationId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ConfigureAPIService GetOrganizationBrandingPoliciesPriorities", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var organizationId string
+
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationBrandingPoliciesPriorities(context.Background(), organizationId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ConfigureAPIService GetOrganizationBrandingPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var brandingPolicyId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationBrandingPolicy(context.Background(), organizationId, brandingPolicyId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationBrandingPolicy(context.Background(), organizationId, brandingPolicyId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4505,14 +4505,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationCameraCustomAnalyticsArtifact", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationCameraCustomAnalyticsArtifact", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var artifactId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationCameraCustomAnalyticsArtifact(context.Background(), organizationId, artifactId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationCameraCustomAnalyticsArtifact(context.Background(), organizationId, artifactId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4520,13 +4520,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationCameraCustomAnalyticsArtifacts", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationCameraCustomAnalyticsArtifacts", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationCameraCustomAnalyticsArtifacts(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationCameraCustomAnalyticsArtifacts(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4534,13 +4534,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationCameraOnboardingStatuses", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationCameraOnboardingStatuses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationCameraOnboardingStatuses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationCameraOnboardingStatuses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4548,13 +4548,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationClientsSearch", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationClientsSearch", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationClientsSearch(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationClientsSearch(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4562,14 +4562,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationConfigTemplate", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationConfigTemplate", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var configTemplateId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationConfigTemplate(context.Background(), organizationId, configTemplateId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationConfigTemplate(context.Background(), organizationId, configTemplateId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4577,7 +4577,7 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationConfigTemplateSwitchProfilePort", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationConfigTemplateSwitchProfilePort", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -4586,7 +4586,7 @@ func Test_client_ConfigureApiService(t *testing.T) {
 		var profileId string
 		var portId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationConfigTemplateSwitchProfilePort(context.Background(), organizationId, configTemplateId, profileId, portId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationConfigTemplateSwitchProfilePort(context.Background(), organizationId, configTemplateId, profileId, portId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4594,7 +4594,7 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationConfigTemplateSwitchProfilePorts", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationConfigTemplateSwitchProfilePorts", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -4602,7 +4602,7 @@ func Test_client_ConfigureApiService(t *testing.T) {
 		var configTemplateId string
 		var profileId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationConfigTemplateSwitchProfilePorts(context.Background(), organizationId, configTemplateId, profileId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationConfigTemplateSwitchProfilePorts(context.Background(), organizationId, configTemplateId, profileId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4610,14 +4610,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationConfigTemplateSwitchProfiles", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationConfigTemplateSwitchProfiles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var configTemplateId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationConfigTemplateSwitchProfiles(context.Background(), organizationId, configTemplateId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationConfigTemplateSwitchProfiles(context.Background(), organizationId, configTemplateId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4625,13 +4625,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationConfigTemplates", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationConfigTemplates", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationConfigTemplates(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationConfigTemplates(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4639,13 +4639,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationDevices", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationDevices", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationDevices(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationDevices(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4653,13 +4653,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationEarlyAccessFeatures", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationEarlyAccessFeatures", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationEarlyAccessFeatures(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationEarlyAccessFeatures(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4667,14 +4667,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationEarlyAccessFeaturesOptIn", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationEarlyAccessFeaturesOptIn", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var optInId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationEarlyAccessFeaturesOptIn(context.Background(), organizationId, optInId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationEarlyAccessFeaturesOptIn(context.Background(), organizationId, optInId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4682,13 +4682,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationEarlyAccessFeaturesOptIns", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationEarlyAccessFeaturesOptIns", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationEarlyAccessFeaturesOptIns(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationEarlyAccessFeaturesOptIns(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4696,13 +4696,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationFirmwareUpgrades", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationFirmwareUpgrades", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationFirmwareUpgrades(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationFirmwareUpgrades(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4710,13 +4710,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationFirmwareUpgradesByDevice", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationFirmwareUpgradesByDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationFirmwareUpgradesByDevice(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationFirmwareUpgradesByDevice(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4724,13 +4724,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationInsightApplications", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationInsightApplications", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationInsightApplications(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationInsightApplications(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4738,14 +4738,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationInsightMonitoredMediaServer", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationInsightMonitoredMediaServer", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var monitoredMediaServerId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationInsightMonitoredMediaServer(context.Background(), organizationId, monitoredMediaServerId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationInsightMonitoredMediaServer(context.Background(), organizationId, monitoredMediaServerId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4753,13 +4753,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationInsightMonitoredMediaServers", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationInsightMonitoredMediaServers", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationInsightMonitoredMediaServers(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationInsightMonitoredMediaServers(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4767,14 +4767,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationInventoryDevice", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationInventoryDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationInventoryDevice(context.Background(), organizationId, serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationInventoryDevice(context.Background(), organizationId, serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4782,13 +4782,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationInventoryDevices", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationInventoryDevices", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationInventoryDevices(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationInventoryDevices(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4796,13 +4796,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationInventoryOnboardingCloudMonitoringImports", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationInventoryOnboardingCloudMonitoringImports", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationInventoryOnboardingCloudMonitoringImports(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationInventoryOnboardingCloudMonitoringImports(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4810,13 +4810,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationInventoryOnboardingCloudMonitoringNetworks", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationInventoryOnboardingCloudMonitoringNetworks", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationInventoryOnboardingCloudMonitoringNetworks(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationInventoryOnboardingCloudMonitoringNetworks(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4824,14 +4824,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationLicense", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationLicense", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var licenseId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationLicense(context.Background(), organizationId, licenseId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationLicense(context.Background(), organizationId, licenseId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4839,13 +4839,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationLicenses", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationLicenses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationLicenses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationLicenses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4853,13 +4853,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationLicensingCotermLicenses", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationLicensingCotermLicenses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationLicensingCotermLicenses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationLicensingCotermLicenses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4867,13 +4867,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationLoginSecurity", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationLoginSecurity", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationLoginSecurity(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationLoginSecurity(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4881,13 +4881,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationNetworks", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationNetworks", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationNetworks(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationNetworks(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4895,14 +4895,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationPolicyObject", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationPolicyObject", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var policyObjectId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationPolicyObject(context.Background(), organizationId, policyObjectId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationPolicyObject(context.Background(), organizationId, policyObjectId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4910,13 +4910,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationPolicyObjects", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationPolicyObjects", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationPolicyObjects(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationPolicyObjects(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4924,14 +4924,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationPolicyObjectsGroup", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationPolicyObjectsGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var policyObjectGroupId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationPolicyObjectsGroup(context.Background(), organizationId, policyObjectGroupId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationPolicyObjectsGroup(context.Background(), organizationId, policyObjectGroupId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4939,13 +4939,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationPolicyObjectsGroups", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationPolicyObjectsGroups", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationPolicyObjectsGroups(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationPolicyObjectsGroups(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4953,13 +4953,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationSaml", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationSaml", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationSaml(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationSaml(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4967,14 +4967,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationSamlIdp", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationSamlIdp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var idpId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationSamlIdp(context.Background(), organizationId, idpId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationSamlIdp(context.Background(), organizationId, idpId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4982,13 +4982,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationSamlIdps", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationSamlIdps", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationSamlIdps(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationSamlIdps(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -4996,14 +4996,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationSamlRole", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationSamlRole", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var samlRoleId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationSamlRole(context.Background(), organizationId, samlRoleId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationSamlRole(context.Background(), organizationId, samlRoleId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5011,13 +5011,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationSamlRoles", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationSamlRoles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationSamlRoles(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationSamlRoles(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5025,13 +5025,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationSmApnsCert", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationSmApnsCert", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationSmApnsCert(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationSmApnsCert(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5039,14 +5039,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationSmVppAccount", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationSmVppAccount", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var vppAccountId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationSmVppAccount(context.Background(), organizationId, vppAccountId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationSmVppAccount(context.Background(), organizationId, vppAccountId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5054,13 +5054,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationSmVppAccounts", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationSmVppAccounts", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationSmVppAccounts(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationSmVppAccounts(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5068,13 +5068,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationSnmp", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationSnmp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationSnmp(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationSnmp(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5082,13 +5082,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizationSwitchPortsBySwitch", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizationSwitchPortsBySwitch", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizationSwitchPortsBySwitch(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizationSwitchPortsBySwitch(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5096,11 +5096,11 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService GetOrganizations", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService GetOrganizations", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.ConfigureApi.GetOrganizations(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.GetOrganizations(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5108,13 +5108,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService LockNetworkSmDevices", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService LockNetworkSmDevices", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.LockNetworkSmDevices(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.LockNetworkSmDevices(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5122,13 +5122,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService ModifyNetworkSmDevicesTags", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService ModifyNetworkSmDevicesTags", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.ModifyNetworkSmDevicesTags(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.ModifyNetworkSmDevicesTags(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5136,13 +5136,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService MoveNetworkSmDevices", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService MoveNetworkSmDevices", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.MoveNetworkSmDevices(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.MoveNetworkSmDevices(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5150,13 +5150,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService MoveOrganizationLicenses", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService MoveOrganizationLicenses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.MoveOrganizationLicenses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.MoveOrganizationLicenses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5164,13 +5164,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService MoveOrganizationLicensesSeats", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService MoveOrganizationLicensesSeats", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.MoveOrganizationLicensesSeats(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.MoveOrganizationLicensesSeats(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5178,13 +5178,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService MoveOrganizationLicensingCotermLicenses", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService MoveOrganizationLicensingCotermLicenses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.MoveOrganizationLicensingCotermLicenses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.MoveOrganizationLicensingCotermLicenses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5192,13 +5192,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService ProvisionNetworkClients", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService ProvisionNetworkClients", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.ProvisionNetworkClients(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.ProvisionNetworkClients(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5206,27 +5206,27 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService RefreshNetworkSmDeviceDetails", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService RefreshNetworkSmDeviceDetails", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var deviceId string
 
-		httpRes, err := apiClient.ConfigureApi.RefreshNetworkSmDeviceDetails(context.Background(), networkId, deviceId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.RefreshNetworkSmDeviceDetails(context.Background(), networkId, deviceId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService ReleaseFromOrganizationInventory", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService ReleaseFromOrganizationInventory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.ReleaseFromOrganizationInventory(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.ReleaseFromOrganizationInventory(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5234,27 +5234,27 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService RemoveNetworkDevices", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService RemoveNetworkDevices", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		httpRes, err := apiClient.ConfigureApi.RemoveNetworkDevices(context.Background(), networkId).Execute()
+		httpRes, err := apiClient.ConfigureAPI.RemoveNetworkDevices(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigureApiService RemoveNetworkSwitchStack", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService RemoveNetworkSwitchStack", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var switchStackId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.RemoveNetworkSwitchStack(context.Background(), networkId, switchStackId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.RemoveNetworkSwitchStack(context.Background(), networkId, switchStackId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5262,13 +5262,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService RenewOrganizationLicensesSeats", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService RenewOrganizationLicensesSeats", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.RenewOrganizationLicensesSeats(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.RenewOrganizationLicensesSeats(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5276,13 +5276,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService RollbacksNetworkFirmwareUpgradesStagedEvents", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService RollbacksNetworkFirmwareUpgradesStagedEvents", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.RollbacksNetworkFirmwareUpgradesStagedEvents(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.RollbacksNetworkFirmwareUpgradesStagedEvents(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5290,13 +5290,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService SplitNetwork", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService SplitNetwork", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.SplitNetwork(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.SplitNetwork(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5304,13 +5304,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService SwapNetworkApplianceWarmSpare", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService SwapNetworkApplianceWarmSpare", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.SwapNetworkApplianceWarmSpare(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.SwapNetworkApplianceWarmSpare(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5318,13 +5318,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UnbindNetwork", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UnbindNetwork", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UnbindNetwork(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UnbindNetwork(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5332,14 +5332,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UnenrollNetworkSmDevice", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UnenrollNetworkSmDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var deviceId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UnenrollNetworkSmDevice(context.Background(), networkId, deviceId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UnenrollNetworkSmDevice(context.Background(), networkId, deviceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5347,13 +5347,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateDevice", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateDevice(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateDevice(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5361,13 +5361,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateDeviceApplianceRadioSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateDeviceApplianceRadioSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateDeviceApplianceRadioSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateDeviceApplianceRadioSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5375,13 +5375,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateDeviceApplianceUplinksSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateDeviceApplianceUplinksSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateDeviceApplianceUplinksSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateDeviceApplianceUplinksSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5389,13 +5389,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateDeviceCameraCustomAnalytics", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateDeviceCameraCustomAnalytics", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateDeviceCameraCustomAnalytics(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateDeviceCameraCustomAnalytics(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5403,13 +5403,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateDeviceCameraQualityAndRetention", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateDeviceCameraQualityAndRetention", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateDeviceCameraQualityAndRetention(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateDeviceCameraQualityAndRetention(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5417,13 +5417,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateDeviceCameraSense", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateDeviceCameraSense", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateDeviceCameraSense(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateDeviceCameraSense(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5431,13 +5431,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateDeviceCameraVideoSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateDeviceCameraVideoSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateDeviceCameraVideoSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateDeviceCameraVideoSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5445,13 +5445,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateDeviceCameraWirelessProfiles", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateDeviceCameraWirelessProfiles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateDeviceCameraWirelessProfiles(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateDeviceCameraWirelessProfiles(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5459,13 +5459,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateDeviceCellularGatewayLan", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateDeviceCellularGatewayLan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateDeviceCellularGatewayLan(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateDeviceCellularGatewayLan(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5473,13 +5473,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateDeviceCellularGatewayPortForwardingRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateDeviceCellularGatewayPortForwardingRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateDeviceCellularGatewayPortForwardingRules(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateDeviceCellularGatewayPortForwardingRules(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5487,13 +5487,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateDeviceCellularSims", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateDeviceCellularSims", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateDeviceCellularSims(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateDeviceCellularSims(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5501,13 +5501,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateDeviceManagementInterface", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateDeviceManagementInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateDeviceManagementInterface(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateDeviceManagementInterface(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5515,13 +5515,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateDeviceSensorRelationships", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateDeviceSensorRelationships", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateDeviceSensorRelationships(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateDeviceSensorRelationships(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5529,14 +5529,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateDeviceSwitchPort", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateDeviceSwitchPort", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var portId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateDeviceSwitchPort(context.Background(), serial, portId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateDeviceSwitchPort(context.Background(), serial, portId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5544,14 +5544,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateDeviceSwitchRoutingInterface", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateDeviceSwitchRoutingInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var interfaceId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateDeviceSwitchRoutingInterface(context.Background(), serial, interfaceId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateDeviceSwitchRoutingInterface(context.Background(), serial, interfaceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5559,14 +5559,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateDeviceSwitchRoutingInterfaceDhcp", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateDeviceSwitchRoutingInterfaceDhcp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var interfaceId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateDeviceSwitchRoutingInterfaceDhcp(context.Background(), serial, interfaceId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateDeviceSwitchRoutingInterfaceDhcp(context.Background(), serial, interfaceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5574,14 +5574,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateDeviceSwitchRoutingStaticRoute", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateDeviceSwitchRoutingStaticRoute", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var staticRouteId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateDeviceSwitchRoutingStaticRoute(context.Background(), serial, staticRouteId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateDeviceSwitchRoutingStaticRoute(context.Background(), serial, staticRouteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5589,13 +5589,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateDeviceSwitchWarmSpare", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateDeviceSwitchWarmSpare", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateDeviceSwitchWarmSpare(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateDeviceSwitchWarmSpare(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5603,13 +5603,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateDeviceWirelessBluetoothSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateDeviceWirelessBluetoothSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateDeviceWirelessBluetoothSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateDeviceWirelessBluetoothSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5617,13 +5617,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateDeviceWirelessRadioSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateDeviceWirelessRadioSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateDeviceWirelessRadioSettings(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateDeviceWirelessRadioSettings(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5631,13 +5631,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetwork", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetwork", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetwork(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetwork(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5645,13 +5645,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkAlertsSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkAlertsSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkAlertsSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkAlertsSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5659,13 +5659,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceConnectivityMonitoringDestinations", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceConnectivityMonitoringDestinations", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceConnectivityMonitoringDestinations(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceConnectivityMonitoringDestinations(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5673,13 +5673,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceContentFiltering", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceContentFiltering", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceContentFiltering(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceContentFiltering(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5687,13 +5687,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceFirewallCellularFirewallRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceFirewallCellularFirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceFirewallCellularFirewallRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceFirewallCellularFirewallRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5701,14 +5701,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceFirewallFirewalledService", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceFirewallFirewalledService", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var service string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceFirewallFirewalledService(context.Background(), networkId, service).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceFirewallFirewalledService(context.Background(), networkId, service).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5716,13 +5716,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceFirewallInboundCellularFirewallRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceFirewallInboundCellularFirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceFirewallInboundCellularFirewallRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceFirewallInboundCellularFirewallRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5730,13 +5730,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceFirewallInboundFirewallRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceFirewallInboundFirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceFirewallInboundFirewallRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceFirewallInboundFirewallRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5744,13 +5744,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceFirewallL3FirewallRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceFirewallL3FirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceFirewallL3FirewallRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceFirewallL3FirewallRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5758,13 +5758,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceFirewallL7FirewallRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceFirewallL7FirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceFirewallL7FirewallRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceFirewallL7FirewallRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5772,13 +5772,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceFirewallOneToManyNatRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceFirewallOneToManyNatRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceFirewallOneToManyNatRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceFirewallOneToManyNatRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5786,13 +5786,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceFirewallOneToOneNatRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceFirewallOneToOneNatRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceFirewallOneToOneNatRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceFirewallOneToOneNatRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5800,13 +5800,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceFirewallPortForwardingRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceFirewallPortForwardingRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceFirewallPortForwardingRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceFirewallPortForwardingRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5814,13 +5814,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceFirewallSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceFirewallSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceFirewallSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceFirewallSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5828,14 +5828,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkAppliancePort", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkAppliancePort", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var portId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkAppliancePort(context.Background(), networkId, portId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkAppliancePort(context.Background(), networkId, portId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5843,14 +5843,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkAppliancePrefixesDelegatedStatic", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkAppliancePrefixesDelegatedStatic", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var staticDelegatedPrefixId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkAppliancePrefixesDelegatedStatic(context.Background(), networkId, staticDelegatedPrefixId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkAppliancePrefixesDelegatedStatic(context.Background(), networkId, staticDelegatedPrefixId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5858,14 +5858,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceRfProfile", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceRfProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var rfProfileId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceRfProfile(context.Background(), networkId, rfProfileId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceRfProfile(context.Background(), networkId, rfProfileId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5873,13 +5873,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceSecurityIntrusion", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceSecurityIntrusion", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceSecurityIntrusion(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceSecurityIntrusion(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5887,13 +5887,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceSecurityMalware", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceSecurityMalware", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceSecurityMalware(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceSecurityMalware(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5901,13 +5901,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5915,13 +5915,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceSingleLan", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceSingleLan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceSingleLan(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceSingleLan(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5929,14 +5929,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceSsid", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceSsid", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceSsid(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceSsid(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5944,14 +5944,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceStaticRoute", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceStaticRoute", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var staticRouteId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceStaticRoute(context.Background(), networkId, staticRouteId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceStaticRoute(context.Background(), networkId, staticRouteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5959,13 +5959,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceTrafficShaping", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceTrafficShaping", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceTrafficShaping(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceTrafficShaping(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5973,14 +5973,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceTrafficShapingCustomPerformanceClass", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceTrafficShapingCustomPerformanceClass", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var customPerformanceClassId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceTrafficShapingCustomPerformanceClass(context.Background(), networkId, customPerformanceClassId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceTrafficShapingCustomPerformanceClass(context.Background(), networkId, customPerformanceClassId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -5988,13 +5988,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceTrafficShapingRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceTrafficShapingRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceTrafficShapingRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceTrafficShapingRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6002,13 +6002,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceTrafficShapingUplinkBandwidth", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceTrafficShapingUplinkBandwidth", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceTrafficShapingUplinkBandwidth(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceTrafficShapingUplinkBandwidth(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6016,13 +6016,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceTrafficShapingUplinkSelection", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceTrafficShapingUplinkSelection", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceTrafficShapingUplinkSelection(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceTrafficShapingUplinkSelection(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6030,14 +6030,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceVlan", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceVlan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var vlanId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceVlan(context.Background(), networkId, vlanId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceVlan(context.Background(), networkId, vlanId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6045,13 +6045,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceVlansSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceVlansSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceVlansSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceVlansSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6059,13 +6059,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceVpnBgp", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceVpnBgp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceVpnBgp(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceVpnBgp(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6073,13 +6073,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceVpnSiteToSiteVpn", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceVpnSiteToSiteVpn", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceVpnSiteToSiteVpn(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceVpnSiteToSiteVpn(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6087,13 +6087,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkApplianceWarmSpare", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkApplianceWarmSpare", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkApplianceWarmSpare(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkApplianceWarmSpare(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6101,14 +6101,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkCameraQualityRetentionProfile", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkCameraQualityRetentionProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var qualityRetentionProfileId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkCameraQualityRetentionProfile(context.Background(), networkId, qualityRetentionProfileId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkCameraQualityRetentionProfile(context.Background(), networkId, qualityRetentionProfileId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6116,14 +6116,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkCameraWirelessProfile", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkCameraWirelessProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var wirelessProfileId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkCameraWirelessProfile(context.Background(), networkId, wirelessProfileId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkCameraWirelessProfile(context.Background(), networkId, wirelessProfileId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6131,13 +6131,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkCellularGatewayConnectivityMonitoringDestinations", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkCellularGatewayConnectivityMonitoringDestinations", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkCellularGatewayConnectivityMonitoringDestinations(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkCellularGatewayConnectivityMonitoringDestinations(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6145,13 +6145,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkCellularGatewayDhcp", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkCellularGatewayDhcp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkCellularGatewayDhcp(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkCellularGatewayDhcp(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6159,13 +6159,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkCellularGatewaySubnetPool", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkCellularGatewaySubnetPool", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkCellularGatewaySubnetPool(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkCellularGatewaySubnetPool(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6173,13 +6173,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkCellularGatewayUplink", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkCellularGatewayUplink", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkCellularGatewayUplink(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkCellularGatewayUplink(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6187,29 +6187,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkClientPolicy", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-		var clientId string
-
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkClientPolicy(context.Background(), networkId, clientId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ConfigureApiService UpdateNetworkClientSplashAuthorizationStatus", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkClientPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var clientId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkClientSplashAuthorizationStatus(context.Background(), networkId, clientId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkClientPolicy(context.Background(), networkId, clientId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6217,13 +6202,28 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkFirmwareUpgrades", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkClientSplashAuthorizationStatus", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+		var clientId string
+
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkClientSplashAuthorizationStatus(context.Background(), networkId, clientId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ConfigureAPIService UpdateNetworkFirmwareUpgrades", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkFirmwareUpgrades(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkFirmwareUpgrades(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6231,13 +6231,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkFirmwareUpgradesStagedEvents", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkFirmwareUpgradesStagedEvents", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkFirmwareUpgradesStagedEvents(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkFirmwareUpgradesStagedEvents(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6245,14 +6245,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkFirmwareUpgradesStagedGroup", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkFirmwareUpgradesStagedGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var groupId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkFirmwareUpgradesStagedGroup(context.Background(), networkId, groupId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkFirmwareUpgradesStagedGroup(context.Background(), networkId, groupId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6260,13 +6260,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkFirmwareUpgradesStagedStages", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkFirmwareUpgradesStagedStages", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkFirmwareUpgradesStagedStages(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkFirmwareUpgradesStagedStages(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6274,14 +6274,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkFloorPlan", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkFloorPlan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var floorPlanId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkFloorPlan(context.Background(), networkId, floorPlanId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkFloorPlan(context.Background(), networkId, floorPlanId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6289,14 +6289,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkGroupPolicy", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkGroupPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var groupPolicyId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkGroupPolicy(context.Background(), networkId, groupPolicyId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkGroupPolicy(context.Background(), networkId, groupPolicyId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6304,14 +6304,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkMerakiAuthUser", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkMerakiAuthUser", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var merakiAuthUserId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkMerakiAuthUser(context.Background(), networkId, merakiAuthUserId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkMerakiAuthUser(context.Background(), networkId, merakiAuthUserId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6319,14 +6319,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkMqttBroker", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkMqttBroker", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var mqttBrokerId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkMqttBroker(context.Background(), networkId, mqttBrokerId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkMqttBroker(context.Background(), networkId, mqttBrokerId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6334,13 +6334,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkNetflow", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkNetflow", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkNetflow(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkNetflow(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6348,14 +6348,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkSensorAlertsProfile", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkSensorAlertsProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var id string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkSensorAlertsProfile(context.Background(), networkId, id).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkSensorAlertsProfile(context.Background(), networkId, id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6363,14 +6363,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkSensorMqttBroker", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkSensorMqttBroker", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var mqttBrokerId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkSensorMqttBroker(context.Background(), networkId, mqttBrokerId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkSensorMqttBroker(context.Background(), networkId, mqttBrokerId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6378,13 +6378,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6392,13 +6392,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkSmDevicesFields", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkSmDevicesFields", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkSmDevicesFields(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkSmDevicesFields(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6406,14 +6406,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkSmTargetGroup", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkSmTargetGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var targetGroupId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkSmTargetGroup(context.Background(), networkId, targetGroupId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkSmTargetGroup(context.Background(), networkId, targetGroupId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6421,13 +6421,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkSnmp", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkSnmp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkSnmp(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkSnmp(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6435,13 +6435,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkSwitchAccessControlLists", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkSwitchAccessControlLists", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkSwitchAccessControlLists(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkSwitchAccessControlLists(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6449,14 +6449,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkSwitchAccessPolicy", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkSwitchAccessPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var accessPolicyNumber string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkSwitchAccessPolicy(context.Background(), networkId, accessPolicyNumber).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkSwitchAccessPolicy(context.Background(), networkId, accessPolicyNumber).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6464,13 +6464,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkSwitchAlternateManagementInterface", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkSwitchAlternateManagementInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkSwitchAlternateManagementInterface(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkSwitchAlternateManagementInterface(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6478,13 +6478,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkSwitchDhcpServerPolicy", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkSwitchDhcpServerPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkSwitchDhcpServerPolicy(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkSwitchDhcpServerPolicy(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6492,14 +6492,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var trustedServerId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer(context.Background(), networkId, trustedServerId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer(context.Background(), networkId, trustedServerId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6507,13 +6507,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkSwitchDscpToCosMappings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkSwitchDscpToCosMappings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkSwitchDscpToCosMappings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkSwitchDscpToCosMappings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6521,14 +6521,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkSwitchLinkAggregation", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkSwitchLinkAggregation", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var linkAggregationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkSwitchLinkAggregation(context.Background(), networkId, linkAggregationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkSwitchLinkAggregation(context.Background(), networkId, linkAggregationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6536,13 +6536,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkSwitchMtu", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkSwitchMtu", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkSwitchMtu(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkSwitchMtu(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6550,14 +6550,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkSwitchPortSchedule", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkSwitchPortSchedule", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var portScheduleId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkSwitchPortSchedule(context.Background(), networkId, portScheduleId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkSwitchPortSchedule(context.Background(), networkId, portScheduleId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6565,14 +6565,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkSwitchQosRule", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkSwitchQosRule", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var qosRuleId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkSwitchQosRule(context.Background(), networkId, qosRuleId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkSwitchQosRule(context.Background(), networkId, qosRuleId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6580,13 +6580,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkSwitchQosRulesOrder", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkSwitchQosRulesOrder", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkSwitchQosRulesOrder(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkSwitchQosRulesOrder(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6594,13 +6594,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkSwitchRoutingMulticast", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkSwitchRoutingMulticast", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkSwitchRoutingMulticast(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkSwitchRoutingMulticast(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6608,14 +6608,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkSwitchRoutingMulticastRendezvousPoint", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkSwitchRoutingMulticastRendezvousPoint", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var rendezvousPointId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkSwitchRoutingMulticastRendezvousPoint(context.Background(), networkId, rendezvousPointId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkSwitchRoutingMulticastRendezvousPoint(context.Background(), networkId, rendezvousPointId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6623,13 +6623,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkSwitchRoutingOspf", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkSwitchRoutingOspf", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkSwitchRoutingOspf(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkSwitchRoutingOspf(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6637,13 +6637,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkSwitchSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkSwitchSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkSwitchSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkSwitchSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6651,23 +6651,7 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkSwitchStackRoutingInterface", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-		var switchStackId string
-		var interfaceId string
-
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkSwitchStackRoutingInterface(context.Background(), networkId, switchStackId, interfaceId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ConfigureApiService UpdateNetworkSwitchStackRoutingInterfaceDhcp", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkSwitchStackRoutingInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -6675,7 +6659,7 @@ func Test_client_ConfigureApiService(t *testing.T) {
 		var switchStackId string
 		var interfaceId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkSwitchStackRoutingInterfaceDhcp(context.Background(), networkId, switchStackId, interfaceId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkSwitchStackRoutingInterface(context.Background(), networkId, switchStackId, interfaceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6683,7 +6667,23 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkSwitchStackRoutingStaticRoute", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkSwitchStackRoutingInterfaceDhcp", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+		var switchStackId string
+		var interfaceId string
+
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkSwitchStackRoutingInterfaceDhcp(context.Background(), networkId, switchStackId, interfaceId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ConfigureAPIService UpdateNetworkSwitchStackRoutingStaticRoute", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -6691,7 +6691,7 @@ func Test_client_ConfigureApiService(t *testing.T) {
 		var switchStackId string
 		var staticRouteId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkSwitchStackRoutingStaticRoute(context.Background(), networkId, switchStackId, staticRouteId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkSwitchStackRoutingStaticRoute(context.Background(), networkId, switchStackId, staticRouteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6699,13 +6699,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkSwitchStormControl", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkSwitchStormControl", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkSwitchStormControl(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkSwitchStormControl(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6713,13 +6713,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkSwitchStp", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkSwitchStp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkSwitchStp(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkSwitchStp(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6727,13 +6727,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkSyslogServers", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkSyslogServers", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkSyslogServers(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkSyslogServers(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6741,13 +6741,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkTrafficAnalysis", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkTrafficAnalysis", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkTrafficAnalysis(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkTrafficAnalysis(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6755,14 +6755,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkWebhooksHttpServer", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkWebhooksHttpServer", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var httpServerId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkWebhooksHttpServer(context.Background(), networkId, httpServerId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkWebhooksHttpServer(context.Background(), networkId, httpServerId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6770,14 +6770,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkWebhooksPayloadTemplate", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkWebhooksPayloadTemplate", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var payloadTemplateId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkWebhooksPayloadTemplate(context.Background(), networkId, payloadTemplateId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkWebhooksPayloadTemplate(context.Background(), networkId, payloadTemplateId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6785,13 +6785,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkWirelessAlternateManagementInterface", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkWirelessAlternateManagementInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkWirelessAlternateManagementInterface(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkWirelessAlternateManagementInterface(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6799,13 +6799,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkWirelessBilling", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkWirelessBilling", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkWirelessBilling(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkWirelessBilling(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6813,13 +6813,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkWirelessBluetoothSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkWirelessBluetoothSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkWirelessBluetoothSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkWirelessBluetoothSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6827,14 +6827,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkWirelessRfProfile", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkWirelessRfProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var rfProfileId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkWirelessRfProfile(context.Background(), networkId, rfProfileId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkWirelessRfProfile(context.Background(), networkId, rfProfileId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6842,13 +6842,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkWirelessSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkWirelessSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkWirelessSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkWirelessSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6856,29 +6856,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkWirelessSsid", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-		var number string
-
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkWirelessSsid(context.Background(), networkId, number).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ConfigureApiService UpdateNetworkWirelessSsidBonjourForwarding", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkWirelessSsid", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkWirelessSsidBonjourForwarding(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkWirelessSsid(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6886,14 +6871,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkWirelessSsidDeviceTypeGroupPolicies", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkWirelessSsidBonjourForwarding", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkWirelessSsidDeviceTypeGroupPolicies(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkWirelessSsidBonjourForwarding(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6901,14 +6886,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkWirelessSsidEapOverride", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkWirelessSsidDeviceTypeGroupPolicies", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkWirelessSsidEapOverride(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkWirelessSsidDeviceTypeGroupPolicies(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6916,14 +6901,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkWirelessSsidFirewallL3FirewallRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkWirelessSsidEapOverride", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkWirelessSsidFirewallL3FirewallRules(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkWirelessSsidEapOverride(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6931,14 +6916,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkWirelessSsidFirewallL7FirewallRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkWirelessSsidFirewallL3FirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkWirelessSsidFirewallL7FirewallRules(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkWirelessSsidFirewallL3FirewallRules(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6946,14 +6931,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkWirelessSsidHotspot20", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkWirelessSsidFirewallL7FirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkWirelessSsidHotspot20(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkWirelessSsidFirewallL7FirewallRules(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6961,7 +6946,22 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkWirelessSsidIdentityPsk", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkWirelessSsidHotspot20", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+		var number string
+
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkWirelessSsidHotspot20(context.Background(), networkId, number).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ConfigureAPIService UpdateNetworkWirelessSsidIdentityPsk", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -6969,7 +6969,7 @@ func Test_client_ConfigureApiService(t *testing.T) {
 		var number string
 		var identityPskId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkWirelessSsidIdentityPsk(context.Background(), networkId, number, identityPskId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkWirelessSsidIdentityPsk(context.Background(), networkId, number, identityPskId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6977,14 +6977,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkWirelessSsidSchedules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkWirelessSsidSchedules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkWirelessSsidSchedules(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkWirelessSsidSchedules(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -6992,14 +6992,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkWirelessSsidSplashSettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkWirelessSsidSplashSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkWirelessSsidSplashSettings(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkWirelessSsidSplashSettings(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7007,14 +7007,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkWirelessSsidTrafficShapingRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkWirelessSsidTrafficShapingRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkWirelessSsidTrafficShapingRules(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkWirelessSsidTrafficShapingRules(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7022,14 +7022,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateNetworkWirelessSsidVpn", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateNetworkWirelessSsidVpn", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateNetworkWirelessSsidVpn(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateNetworkWirelessSsidVpn(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7037,13 +7037,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateOrganization", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateOrganization", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateOrganization(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateOrganization(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7051,14 +7051,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateOrganizationActionBatch", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateOrganizationActionBatch", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var actionBatchId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateOrganizationActionBatch(context.Background(), organizationId, actionBatchId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateOrganizationActionBatch(context.Background(), organizationId, actionBatchId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7066,14 +7066,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateOrganizationAdaptivePolicyAcl", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateOrganizationAdaptivePolicyAcl", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var aclId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateOrganizationAdaptivePolicyAcl(context.Background(), organizationId, aclId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateOrganizationAdaptivePolicyAcl(context.Background(), organizationId, aclId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7081,14 +7081,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateOrganizationAdaptivePolicyGroup", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateOrganizationAdaptivePolicyGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var id string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateOrganizationAdaptivePolicyGroup(context.Background(), organizationId, id).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateOrganizationAdaptivePolicyGroup(context.Background(), organizationId, id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7096,14 +7096,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateOrganizationAdaptivePolicyPolicy", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateOrganizationAdaptivePolicyPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var id string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateOrganizationAdaptivePolicyPolicy(context.Background(), organizationId, id).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateOrganizationAdaptivePolicyPolicy(context.Background(), organizationId, id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7111,13 +7111,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateOrganizationAdaptivePolicySettings", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateOrganizationAdaptivePolicySettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateOrganizationAdaptivePolicySettings(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateOrganizationAdaptivePolicySettings(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7125,14 +7125,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateOrganizationAdmin", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateOrganizationAdmin", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var adminId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateOrganizationAdmin(context.Background(), organizationId, adminId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateOrganizationAdmin(context.Background(), organizationId, adminId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7140,14 +7140,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateOrganizationAlertsProfile", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateOrganizationAlertsProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var alertConfigId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateOrganizationAlertsProfile(context.Background(), organizationId, alertConfigId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateOrganizationAlertsProfile(context.Background(), organizationId, alertConfigId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7155,13 +7155,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateOrganizationApplianceSecurityIntrusion", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateOrganizationApplianceSecurityIntrusion", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateOrganizationApplianceSecurityIntrusion(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateOrganizationApplianceSecurityIntrusion(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7169,13 +7169,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateOrganizationApplianceVpnThirdPartyVPNPeers", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateOrganizationApplianceVpnThirdPartyVPNPeers", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateOrganizationApplianceVpnThirdPartyVPNPeers(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateOrganizationApplianceVpnThirdPartyVPNPeers(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7183,13 +7183,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateOrganizationApplianceVpnVpnFirewallRules", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateOrganizationApplianceVpnVpnFirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateOrganizationApplianceVpnVpnFirewallRules(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateOrganizationApplianceVpnVpnFirewallRules(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7197,13 +7197,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateOrganizationBrandingPoliciesPriorities", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateOrganizationBrandingPoliciesPriorities", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateOrganizationBrandingPoliciesPriorities(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateOrganizationBrandingPoliciesPriorities(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7211,14 +7211,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateOrganizationBrandingPolicy", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateOrganizationBrandingPolicy", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var brandingPolicyId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateOrganizationBrandingPolicy(context.Background(), organizationId, brandingPolicyId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateOrganizationBrandingPolicy(context.Background(), organizationId, brandingPolicyId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7226,13 +7226,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateOrganizationCameraOnboardingStatuses", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateOrganizationCameraOnboardingStatuses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateOrganizationCameraOnboardingStatuses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateOrganizationCameraOnboardingStatuses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7240,14 +7240,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateOrganizationConfigTemplate", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateOrganizationConfigTemplate", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var configTemplateId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateOrganizationConfigTemplate(context.Background(), organizationId, configTemplateId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateOrganizationConfigTemplate(context.Background(), organizationId, configTemplateId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7255,7 +7255,7 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateOrganizationConfigTemplateSwitchProfilePort", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateOrganizationConfigTemplateSwitchProfilePort", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -7264,7 +7264,7 @@ func Test_client_ConfigureApiService(t *testing.T) {
 		var profileId string
 		var portId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateOrganizationConfigTemplateSwitchProfilePort(context.Background(), organizationId, configTemplateId, profileId, portId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateOrganizationConfigTemplateSwitchProfilePort(context.Background(), organizationId, configTemplateId, profileId, portId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7272,14 +7272,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateOrganizationEarlyAccessFeaturesOptIn", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateOrganizationEarlyAccessFeaturesOptIn", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var optInId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateOrganizationEarlyAccessFeaturesOptIn(context.Background(), organizationId, optInId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateOrganizationEarlyAccessFeaturesOptIn(context.Background(), organizationId, optInId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7287,14 +7287,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateOrganizationInsightMonitoredMediaServer", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateOrganizationInsightMonitoredMediaServer", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var monitoredMediaServerId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateOrganizationInsightMonitoredMediaServer(context.Background(), organizationId, monitoredMediaServerId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateOrganizationInsightMonitoredMediaServer(context.Background(), organizationId, monitoredMediaServerId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7302,14 +7302,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateOrganizationLicense", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateOrganizationLicense", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var licenseId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateOrganizationLicense(context.Background(), organizationId, licenseId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateOrganizationLicense(context.Background(), organizationId, licenseId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7317,13 +7317,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateOrganizationLoginSecurity", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateOrganizationLoginSecurity", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateOrganizationLoginSecurity(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateOrganizationLoginSecurity(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7331,14 +7331,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateOrganizationPolicyObject", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateOrganizationPolicyObject", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var policyObjectId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateOrganizationPolicyObject(context.Background(), organizationId, policyObjectId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateOrganizationPolicyObject(context.Background(), organizationId, policyObjectId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7346,14 +7346,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateOrganizationPolicyObjectsGroup", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateOrganizationPolicyObjectsGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var policyObjectGroupId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateOrganizationPolicyObjectsGroup(context.Background(), organizationId, policyObjectGroupId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateOrganizationPolicyObjectsGroup(context.Background(), organizationId, policyObjectGroupId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7361,13 +7361,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateOrganizationSaml", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateOrganizationSaml", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateOrganizationSaml(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateOrganizationSaml(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7375,14 +7375,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateOrganizationSamlIdp", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateOrganizationSamlIdp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var idpId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateOrganizationSamlIdp(context.Background(), organizationId, idpId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateOrganizationSamlIdp(context.Background(), organizationId, idpId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7390,14 +7390,14 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateOrganizationSamlRole", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateOrganizationSamlRole", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var samlRoleId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateOrganizationSamlRole(context.Background(), organizationId, samlRoleId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateOrganizationSamlRole(context.Background(), organizationId, samlRoleId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7405,13 +7405,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService UpdateOrganizationSnmp", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService UpdateOrganizationSnmp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.UpdateOrganizationSnmp(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.UpdateOrganizationSnmp(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7419,13 +7419,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService VmxNetworkDevicesClaim", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService VmxNetworkDevicesClaim", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.VmxNetworkDevicesClaim(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.VmxNetworkDevicesClaim(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -7433,13 +7433,13 @@ func Test_client_ConfigureApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigureApiService WipeNetworkSmDevices", func(t *testing.T) {
+	t.Run("Test ConfigureAPIService WipeNetworkSmDevices", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConfigureApi.WipeNetworkSmDevices(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConfigureAPI.WipeNetworkSmDevices(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

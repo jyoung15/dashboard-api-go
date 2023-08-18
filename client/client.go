@@ -49,533 +49,533 @@ type APIClient struct {
 
 	// API Services
 
-	AccessControlListsApi *AccessControlListsApiService
+	AccessControlListsAPI *AccessControlListsAPIService
 
-	AccessPoliciesApi *AccessPoliciesApiService
+	AccessPoliciesAPI *AccessPoliciesAPIService
 
-	AclsApi *AclsApiService
+	AclsAPI *AclsAPIService
 
-	ActionBatchesApi *ActionBatchesApiService
+	ActionBatchesAPI *ActionBatchesAPIService
 
-	AdaptivePolicyApi *AdaptivePolicyApiService
+	AdaptivePolicyAPI *AdaptivePolicyAPIService
 
-	AddressesApi *AddressesApiService
+	AddressesAPI *AddressesAPIService
 
-	AdministeredApi *AdministeredApiService
+	AdministeredAPI *AdministeredAPIService
 
-	AdminsApi *AdminsApiService
+	AdminsAPI *AdminsAPIService
 
-	AirMarshalApi *AirMarshalApiService
+	AirMarshalAPI *AirMarshalAPIService
 
-	AlertTypesApi *AlertTypesApiService
+	AlertTypesAPI *AlertTypesAPIService
 
-	AlertsApi *AlertsApiService
+	AlertsAPI *AlertsAPIService
 
-	AlternateManagementInterfaceApi *AlternateManagementInterfaceApiService
+	AlternateManagementInterfaceAPI *AlternateManagementInterfaceAPIService
 
-	AnalyticsApi *AnalyticsApiService
+	AnalyticsAPI *AnalyticsAPIService
 
-	ApiRequestsApi *ApiRequestsApiService
+	ApiRequestsAPI *ApiRequestsAPIService
 
-	ApnsCertApi *ApnsCertApiService
+	ApnsCertAPI *ApnsCertAPIService
 
-	ApplianceApi *ApplianceApiService
+	ApplianceAPI *ApplianceAPIService
 
-	AppliancesApi *AppliancesApiService
+	AppliancesAPI *AppliancesAPIService
 
-	ApplicationCategoriesApi *ApplicationCategoriesApiService
+	ApplicationCategoriesAPI *ApplicationCategoriesAPIService
 
-	ApplicationUsageApi *ApplicationUsageApiService
+	ApplicationUsageAPI *ApplicationUsageAPIService
 
-	ApplicationsApi *ApplicationsApiService
+	ApplicationsAPI *ApplicationsAPIService
 
-	ArpInspectionApi *ArpInspectionApiService
+	ArpInspectionAPI *ArpInspectionAPIService
 
-	ArtifactsApi *ArtifactsApiService
+	ArtifactsAPI *ArtifactsAPIService
 
-	AuthenticationTokenApi *AuthenticationTokenApiService
+	AuthenticationTokenAPI *AuthenticationTokenAPIService
 
-	AvailabilitiesApi *AvailabilitiesApiService
+	AvailabilitiesAPI *AvailabilitiesAPIService
 
-	BandwidthUsageHistoryApi *BandwidthUsageHistoryApiService
+	BandwidthUsageHistoryAPI *BandwidthUsageHistoryAPIService
 
-	BgpApi *BgpApiService
+	BgpAPI *BgpAPIService
 
-	BillingApi *BillingApiService
+	BillingAPI *BillingAPIService
 
-	BluetoothApi *BluetoothApiService
+	BluetoothAPI *BluetoothAPIService
 
-	BluetoothClientsApi *BluetoothClientsApiService
+	BluetoothClientsAPI *BluetoothClientsAPIService
 
-	BonjourForwardingApi *BonjourForwardingApiService
+	BonjourForwardingAPI *BonjourForwardingAPIService
 
-	BrandingPoliciesApi *BrandingPoliciesApiService
+	BrandingPoliciesAPI *BrandingPoliciesAPIService
 
-	ByClientApi *ByClientApiService
+	ByClientAPI *ByClientAPIService
 
-	ByDeviceApi *ByDeviceApiService
+	ByDeviceAPI *ByDeviceAPIService
 
-	ByEnergyUsageApi *ByEnergyUsageApiService
+	ByEnergyUsageAPI *ByEnergyUsageAPIService
 
-	ByIntervalApi *ByIntervalApiService
+	ByIntervalAPI *ByIntervalAPIService
 
-	ByMetricApi *ByMetricApiService
+	ByMetricAPI *ByMetricAPIService
 
-	ByNetworkApi *ByNetworkApiService
+	ByNetworkAPI *ByNetworkAPIService
 
-	BySwitchApi *BySwitchApiService
+	BySwitchAPI *BySwitchAPIService
 
-	ByUsageApi *ByUsageApiService
+	ByUsageAPI *ByUsageAPIService
 
-	ByUtilizationApi *ByUtilizationApiService
+	ByUtilizationAPI *ByUtilizationAPIService
 
-	BypassActivationLockAttemptsApi *BypassActivationLockAttemptsApiService
+	BypassActivationLockAttemptsAPI *BypassActivationLockAttemptsAPIService
 
-	CameraApi *CameraApiService
+	CameraAPI *CameraAPIService
 
-	CategoriesApi *CategoriesApiService
+	CategoriesAPI *CategoriesAPIService
 
-	CellularApi *CellularApiService
+	CellularAPI *CellularAPIService
 
-	CellularFirewallRulesApi *CellularFirewallRulesApiService
+	CellularFirewallRulesAPI *CellularFirewallRulesAPIService
 
-	CellularGatewayApi *CellularGatewayApiService
+	CellularGatewayAPI *CellularGatewayAPIService
 
-	CellularUsageHistoryApi *CellularUsageHistoryApiService
+	CellularUsageHistoryAPI *CellularUsageHistoryAPIService
 
-	CertsApi *CertsApiService
+	CertsAPI *CertsAPIService
 
-	ChangeHistoryApi *ChangeHistoryApiService
+	ChangeHistoryAPI *ChangeHistoryAPIService
 
-	ChannelUtilizationApi *ChannelUtilizationApiService
+	ChannelUtilizationAPI *ChannelUtilizationAPIService
 
-	ChannelUtilizationHistoryApi *ChannelUtilizationHistoryApiService
+	ChannelUtilizationHistoryAPI *ChannelUtilizationHistoryAPIService
 
-	ClaimApi *ClaimApiService
+	ClaimAPI *ClaimAPIService
 
-	ClientCountHistoryApi *ClientCountHistoryApiService
+	ClientCountHistoryAPI *ClientCountHistoryAPIService
 
-	ClientsApi *ClientsApiService
+	ClientsAPI *ClientsAPIService
 
-	CloudMonitoringApi *CloudMonitoringApiService
+	CloudMonitoringAPI *CloudMonitoringAPIService
 
-	ConfigTemplatesApi *ConfigTemplatesApiService
+	ConfigTemplatesAPI *ConfigTemplatesAPIService
 
-	ConfigurationChangesApi *ConfigurationChangesApiService
+	ConfigurationChangesAPI *ConfigurationChangesAPIService
 
-	ConfigureApi *ConfigureApiService
+	ConfigureAPI *ConfigureAPIService
 
-	ConnectionStatsApi *ConnectionStatsApiService
+	ConnectionStatsAPI *ConnectionStatsAPIService
 
-	ConnectivityApi *ConnectivityApiService
+	ConnectivityAPI *ConnectivityAPIService
 
-	ConnectivityEventsApi *ConnectivityEventsApiService
+	ConnectivityEventsAPI *ConnectivityEventsAPIService
 
-	ConnectivityMonitoringDestinationsApi *ConnectivityMonitoringDestinationsApiService
+	ConnectivityMonitoringDestinationsAPI *ConnectivityMonitoringDestinationsAPIService
 
-	ContentFilteringApi *ContentFilteringApiService
+	ContentFilteringAPI *ContentFilteringAPIService
 
-	CotermApi *CotermApiService
+	CotermAPI *CotermAPIService
 
-	CurrentApi *CurrentApiService
+	CurrentAPI *CurrentAPIService
 
-	CustomAnalyticsApi *CustomAnalyticsApiService
+	CustomAnalyticsAPI *CustomAnalyticsAPIService
 
-	CustomPerformanceClassesApi *CustomPerformanceClassesApiService
+	CustomPerformanceClassesAPI *CustomPerformanceClassesAPIService
 
-	DataRateHistoryApi *DataRateHistoryApiService
+	DataRateHistoryAPI *DataRateHistoryAPIService
 
-	DelegatedApi *DelegatedApiService
+	DelegatedAPI *DelegatedAPIService
 
-	DesktopLogsApi *DesktopLogsApiService
+	DesktopLogsAPI *DesktopLogsAPIService
 
-	DeviceCommandLogsApi *DeviceCommandLogsApiService
+	DeviceCommandLogsAPI *DeviceCommandLogsAPIService
 
-	DeviceProfilesApi *DeviceProfilesApiService
+	DeviceProfilesAPI *DeviceProfilesAPIService
 
-	DeviceTypeGroupPoliciesApi *DeviceTypeGroupPoliciesApiService
+	DeviceTypeGroupPoliciesAPI *DeviceTypeGroupPoliciesAPIService
 
-	DevicesApi *DevicesApiService
+	DevicesAPI *DevicesAPIService
 
-	DhcpApi *DhcpApiService
+	DhcpAPI *DhcpAPIService
 
-	DhcpServerPolicyApi *DhcpServerPolicyApiService
+	DhcpServerPolicyAPI *DhcpServerPolicyAPIService
 
-	DscpTaggingOptionsApi *DscpTaggingOptionsApiService
+	DscpTaggingOptionsAPI *DscpTaggingOptionsAPIService
 
-	DscpToCosMappingsApi *DscpToCosMappingsApiService
+	DscpToCosMappingsAPI *DscpToCosMappingsAPIService
 
-	EapOverrideApi *EapOverrideApiService
+	EapOverrideAPI *EapOverrideAPIService
 
-	EarlyAccessApi *EarlyAccessApiService
+	EarlyAccessAPI *EarlyAccessAPIService
 
-	EthernetApi *EthernetApiService
+	EthernetAPI *EthernetAPIService
 
-	EventTypesApi *EventTypesApiService
+	EventTypesAPI *EventTypesAPIService
 
-	EventsApi *EventsApiService
+	EventsAPI *EventsAPIService
 
-	ExportEventsApi *ExportEventsApiService
+	ExportEventsAPI *ExportEventsAPIService
 
-	FailedConnectionsApi *FailedConnectionsApiService
+	FailedConnectionsAPI *FailedConnectionsAPIService
 
-	FeaturesApi *FeaturesApiService
+	FeaturesAPI *FeaturesAPIService
 
-	FieldsApi *FieldsApiService
+	FieldsAPI *FieldsAPIService
 
-	FirewallApi *FirewallApiService
+	FirewallAPI *FirewallAPIService
 
-	FirewalledServicesApi *FirewalledServicesApiService
+	FirewalledServicesAPI *FirewalledServicesAPIService
 
-	FirmwareApi *FirmwareApiService
+	FirmwareAPI *FirmwareAPIService
 
-	FirmwareUpgradesApi *FirmwareUpgradesApiService
+	FirmwareUpgradesAPI *FirmwareUpgradesAPIService
 
-	FloorPlansApi *FloorPlansApiService
+	FloorPlansAPI *FloorPlansAPIService
 
-	GroupPoliciesApi *GroupPoliciesApiService
+	GroupPoliciesAPI *GroupPoliciesAPIService
 
-	GroupsApi *GroupsApiService
+	GroupsAPI *GroupsAPIService
 
-	HealthApi *HealthApiService
+	HealthAPI *HealthAPIService
 
-	HealthByTimeApi *HealthByTimeApiService
+	HealthByTimeAPI *HealthByTimeAPIService
 
-	HistoryApi *HistoryApiService
+	HistoryAPI *HistoryAPIService
 
-	Hotspot20Api *Hotspot20ApiService
+	Hotspot20API *Hotspot20APIService
 
-	HttpServersApi *HttpServersApiService
+	HttpServersAPI *HttpServersAPIService
 
-	IdentitiesApi *IdentitiesApiService
+	IdentitiesAPI *IdentitiesAPIService
 
-	IdentityPsksApi *IdentityPsksApiService
+	IdentityPsksAPI *IdentityPsksAPIService
 
-	IdpsApi *IdpsApiService
+	IdpsAPI *IdpsAPIService
 
-	ImportsApi *ImportsApiService
+	ImportsAPI *ImportsAPIService
 
-	InboundCellularFirewallRulesApi *InboundCellularFirewallRulesApiService
+	InboundCellularFirewallRulesAPI *InboundCellularFirewallRulesAPIService
 
-	InboundFirewallRulesApi *InboundFirewallRulesApiService
+	InboundFirewallRulesAPI *InboundFirewallRulesAPIService
 
-	InsightApi *InsightApiService
+	InsightAPI *InsightAPIService
 
-	InterfacesApi *InterfacesApiService
+	InterfacesAPI *InterfacesAPIService
 
-	IntrusionApi *IntrusionApiService
+	IntrusionAPI *IntrusionAPIService
 
-	InventoryApi *InventoryApiService
+	InventoryAPI *InventoryAPIService
 
-	L3FirewallRulesApi *L3FirewallRulesApiService
+	L3FirewallRulesAPI *L3FirewallRulesAPIService
 
-	L7FirewallRulesApi *L7FirewallRulesApiService
+	L7FirewallRulesAPI *L7FirewallRulesAPIService
 
-	LanApi *LanApiService
+	LanAPI *LanAPIService
 
-	LatencyHistoryApi *LatencyHistoryApiService
+	LatencyHistoryAPI *LatencyHistoryAPIService
 
-	LatencyStatsApi *LatencyStatsApiService
+	LatencyStatsAPI *LatencyStatsAPIService
 
-	LatestApi *LatestApiService
+	LatestAPI *LatestAPIService
 
-	LicensesApi *LicensesApiService
+	LicensesAPI *LicensesAPIService
 
-	LicensingApi *LicensingApiService
+	LicensingAPI *LicensingAPIService
 
-	LinkAggregationsApi *LinkAggregationsApiService
+	LinkAggregationsAPI *LinkAggregationsAPIService
 
-	LinkLayerApi *LinkLayerApiService
+	LinkLayerAPI *LinkLayerAPIService
 
-	LiveApi *LiveApiService
+	LiveAPI *LiveAPIService
 
-	LiveToolsApi *LiveToolsApiService
+	LiveToolsAPI *LiveToolsAPIService
 
-	LldpCdpApi *LldpCdpApiService
+	LldpCdpAPI *LldpCdpAPIService
 
-	LoginSecurityApi *LoginSecurityApiService
+	LoginSecurityAPI *LoginSecurityAPIService
 
-	LogsApi *LogsApiService
+	LogsAPI *LogsAPIService
 
-	LossAndLatencyHistoryApi *LossAndLatencyHistoryApiService
+	LossAndLatencyHistoryAPI *LossAndLatencyHistoryAPIService
 
-	MalwareApi *MalwareApiService
+	MalwareAPI *MalwareAPIService
 
-	ManagementInterfaceApi *ManagementInterfaceApiService
+	ManagementInterfaceAPI *ManagementInterfaceAPIService
 
-	ManufacturersApi *ManufacturersApiService
+	ManufacturersAPI *ManufacturersAPIService
 
-	MeApi *MeApiService
+	MeAPI *MeAPIService
 
-	MerakiAuthUsersApi *MerakiAuthUsersApiService
+	MerakiAuthUsersAPI *MerakiAuthUsersAPIService
 
-	MeshStatusesApi *MeshStatusesApiService
+	MeshStatusesAPI *MeshStatusesAPIService
 
-	ModelsApi *ModelsApiService
+	ModelsAPI *ModelsAPIService
 
-	MonitorApi *MonitorApiService
+	MonitorAPI *MonitorAPIService
 
-	MonitoredMediaServersApi *MonitoredMediaServersApiService
+	MonitoredMediaServersAPI *MonitoredMediaServersAPIService
 
-	MqttBrokersApi *MqttBrokersApiService
+	MqttBrokersAPI *MqttBrokersAPIService
 
-	MtuApi *MtuApiService
+	MtuAPI *MtuAPIService
 
-	MulticastApi *MulticastApiService
+	MulticastAPI *MulticastAPIService
 
-	NetflowApi *NetflowApiService
+	NetflowAPI *NetflowAPIService
 
-	NetworkAdaptersApi *NetworkAdaptersApiService
+	NetworkAdaptersAPI *NetworkAdaptersAPIService
 
-	NetworkHealthApi *NetworkHealthApiService
+	NetworkHealthAPI *NetworkHealthAPIService
 
-	NetworksApi *NetworksApiService
+	NetworksAPI *NetworksAPIService
 
-	ObjectDetectionModelsApi *ObjectDetectionModelsApiService
+	ObjectDetectionModelsAPI *ObjectDetectionModelsAPIService
 
-	OnboardingApi *OnboardingApiService
+	OnboardingAPI *OnboardingAPIService
 
-	OneToManyNatRulesApi *OneToManyNatRulesApiService
+	OneToManyNatRulesAPI *OneToManyNatRulesAPIService
 
-	OneToOneNatRulesApi *OneToOneNatRulesApiService
+	OneToOneNatRulesAPI *OneToOneNatRulesAPIService
 
-	OpenapiSpecApi *OpenapiSpecApiService
+	OpenapiSpecAPI *OpenapiSpecAPIService
 
-	OptInsApi *OptInsApiService
+	OptInsAPI *OptInsAPIService
 
-	OrderApi *OrderApiService
+	OrderAPI *OrderAPIService
 
-	OrganizationsApi *OrganizationsApiService
+	OrganizationsAPI *OrganizationsAPIService
 
-	OspfApi *OspfApiService
+	OspfAPI *OspfAPIService
 
-	OverviewApi *OverviewApiService
+	OverviewAPI *OverviewAPIService
 
-	PacketsApi *PacketsApiService
+	PacketsAPI *PacketsAPIService
 
-	PayloadTemplatesApi *PayloadTemplatesApiService
+	PayloadTemplatesAPI *PayloadTemplatesAPIService
 
-	PerformanceApi *PerformanceApiService
+	PerformanceAPI *PerformanceAPIService
 
-	PerformanceHistoryApi *PerformanceHistoryApiService
+	PerformanceHistoryAPI *PerformanceHistoryAPIService
 
-	PiiApi *PiiApiService
+	PiiAPI *PiiAPIService
 
-	PiiKeysApi *PiiKeysApiService
+	PiiKeysAPI *PiiKeysAPIService
 
-	PingApi *PingApiService
+	PingAPI *PingAPIService
 
-	PingDeviceApi *PingDeviceApiService
+	PingDeviceAPI *PingDeviceAPIService
 
-	PoliciesApi *PoliciesApiService
+	PoliciesAPI *PoliciesAPIService
 
-	PolicyApi *PolicyApiService
+	PolicyAPI *PolicyAPIService
 
-	PolicyObjectsApi *PolicyObjectsApiService
+	PolicyObjectsAPI *PolicyObjectsAPIService
 
-	PortForwardingRulesApi *PortForwardingRulesApiService
+	PortForwardingRulesAPI *PortForwardingRulesAPIService
 
-	PortSchedulesApi *PortSchedulesApiService
+	PortSchedulesAPI *PortSchedulesAPIService
 
-	PortsApi *PortsApiService
+	PortsAPI *PortsAPIService
 
-	PowerModulesApi *PowerModulesApiService
+	PowerModulesAPI *PowerModulesAPIService
 
-	PrefixesApi *PrefixesApiService
+	PrefixesAPI *PrefixesAPIService
 
-	PrepareApi *PrepareApiService
+	PrepareAPI *PrepareAPIService
 
-	PrioritiesApi *PrioritiesApiService
+	PrioritiesAPI *PrioritiesAPIService
 
-	ProfilesApi *ProfilesApiService
+	ProfilesAPI *ProfilesAPIService
 
-	ProvisioningApi *ProvisioningApiService
+	ProvisioningAPI *ProvisioningAPIService
 
-	QosRulesApi *QosRulesApiService
+	QosRulesAPI *QosRulesAPIService
 
-	QualityAndRetentionApi *QualityAndRetentionApiService
+	QualityAndRetentionAPI *QualityAndRetentionAPIService
 
-	QualityRetentionProfilesApi *QualityRetentionProfilesApiService
+	QualityRetentionProfilesAPI *QualityRetentionProfilesAPIService
 
-	RadioApi *RadioApiService
+	RadioAPI *RadioAPIService
 
-	ReadingsApi *ReadingsApiService
+	ReadingsAPI *ReadingsAPIService
 
-	RecentApi *RecentApiService
+	RecentAPI *RecentAPIService
 
-	RelationshipsApi *RelationshipsApiService
+	RelationshipsAPI *RelationshipsAPIService
 
-	RendezvousPointsApi *RendezvousPointsApiService
+	RendezvousPointsAPI *RendezvousPointsAPIService
 
-	RequestsApi *RequestsApiService
+	RequestsAPI *RequestsAPIService
 
-	ResponseCodesApi *ResponseCodesApiService
+	ResponseCodesAPI *ResponseCodesAPIService
 
-	RestrictionsApi *RestrictionsApiService
+	RestrictionsAPI *RestrictionsAPIService
 
-	RfProfilesApi *RfProfilesApiService
+	RfProfilesAPI *RfProfilesAPIService
 
-	RollbacksApi *RollbacksApiService
+	RollbacksAPI *RollbacksAPIService
 
-	RoutingApi *RoutingApiService
+	RoutingAPI *RoutingAPIService
 
-	RulesApi *RulesApiService
+	RulesAPI *RulesAPIService
 
-	SamlApi *SamlApiService
+	SamlAPI *SamlAPIService
 
-	SamlRolesApi *SamlRolesApiService
+	SamlRolesAPI *SamlRolesAPIService
 
-	SchedulesApi *SchedulesApiService
+	SchedulesAPI *SchedulesAPIService
 
-	SearchApi *SearchApiService
+	SearchAPI *SearchAPIService
 
-	SecurityApi *SecurityApiService
+	SecurityAPI *SecurityAPIService
 
-	SecurityCentersApi *SecurityCentersApiService
+	SecurityCentersAPI *SecurityCentersAPIService
 
-	SeenApi *SeenApiService
+	SeenAPI *SeenAPIService
 
-	SenseApi *SenseApiService
+	SenseAPI *SenseAPIService
 
-	SensorApi *SensorApiService
+	SensorAPI *SensorAPIService
 
-	ServersApi *ServersApiService
+	ServersAPI *ServersAPIService
 
-	SettingsApi *SettingsApiService
+	SettingsAPI *SettingsAPIService
 
-	SignalQualityHistoryApi *SignalQualityHistoryApiService
+	SignalQualityHistoryAPI *SignalQualityHistoryAPIService
 
-	SimsApi *SimsApiService
+	SimsAPI *SimsAPIService
 
-	SingleLanApi *SingleLanApiService
+	SingleLanAPI *SingleLanAPIService
 
-	SiteToSiteVpnApi *SiteToSiteVpnApiService
+	SiteToSiteVpnAPI *SiteToSiteVpnAPIService
 
-	SmApi *SmApiService
+	SmAPI *SmAPIService
 
-	SmDevicesForKeyApi *SmDevicesForKeyApiService
+	SmDevicesForKeyAPI *SmDevicesForKeyAPIService
 
-	SmOwnersForKeyApi *SmOwnersForKeyApiService
+	SmOwnersForKeyAPI *SmOwnersForKeyAPIService
 
-	SnmpApi *SnmpApiService
+	SnmpAPI *SnmpAPIService
 
-	SoftwaresApi *SoftwaresApiService
+	SoftwaresAPI *SoftwaresAPIService
 
-	SplashApi *SplashApiService
+	SplashAPI *SplashAPIService
 
-	SplashAuthorizationStatusApi *SplashAuthorizationStatusApiService
+	SplashAuthorizationStatusAPI *SplashAuthorizationStatusAPIService
 
-	SplashLoginAttemptsApi *SplashLoginAttemptsApiService
+	SplashLoginAttemptsAPI *SplashLoginAttemptsAPIService
 
-	SsidsApi *SsidsApiService
+	SsidsAPI *SsidsAPIService
 
-	StacksApi *StacksApiService
+	StacksAPI *StacksAPIService
 
-	StagedApi *StagedApiService
+	StagedAPI *StagedAPIService
 
-	StagesApi *StagesApiService
+	StagesAPI *StagesAPIService
 
-	StaticRoutesApi *StaticRoutesApiService
+	StaticRoutesAPI *StaticRoutesAPIService
 
-	StaticsApi *StaticsApiService
+	StaticsAPI *StaticsAPIService
 
-	StatsApi *StatsApiService
+	StatsAPI *StatsAPIService
 
-	StatusApi *StatusApiService
+	StatusAPI *StatusAPIService
 
-	StatusesApi *StatusesApiService
+	StatusesAPI *StatusesAPIService
 
-	StormControlApi *StormControlApiService
+	StormControlAPI *StormControlAPIService
 
-	StpApi *StpApiService
+	StpAPI *StpAPIService
 
-	SubnetPoolApi *SubnetPoolApiService
+	SubnetPoolAPI *SubnetPoolAPIService
 
-	SubnetsApi *SubnetsApiService
+	SubnetsAPI *SubnetsAPIService
 
-	SummaryApi *SummaryApiService
+	SummaryAPI *SummaryAPIService
 
-	SwitchApi *SwitchApiService
+	SwitchAPI *SwitchAPIService
 
-	SwitchesApi *SwitchesApiService
+	SwitchesAPI *SwitchesAPIService
 
-	SyslogServersApi *SyslogServersApiService
+	SyslogServersAPI *SyslogServersAPIService
 
-	TargetGroupsApi *TargetGroupsApiService
+	TargetGroupsAPI *TargetGroupsAPIService
 
-	ThirdPartyVPNPeersApi *ThirdPartyVPNPeersApiService
+	ThirdPartyVPNPeersAPI *ThirdPartyVPNPeersAPIService
 
-	TopApi *TopApiService
+	TopAPI *TopAPIService
 
-	TopologyApi *TopologyApiService
+	TopologyAPI *TopologyAPIService
 
-	TrafficApi *TrafficApiService
+	TrafficAPI *TrafficAPIService
 
-	TrafficAnalysisApi *TrafficAnalysisApiService
+	TrafficAnalysisAPI *TrafficAnalysisAPIService
 
-	TrafficHistoryApi *TrafficHistoryApiService
+	TrafficHistoryAPI *TrafficHistoryAPIService
 
-	TrafficShapingApi *TrafficShapingApiService
+	TrafficShapingAPI *TrafficShapingAPIService
 
-	TrustedAccessConfigsApi *TrustedAccessConfigsApiService
+	TrustedAccessConfigsAPI *TrustedAccessConfigsAPIService
 
-	TrustedServersApi *TrustedServersApiService
+	TrustedServersAPI *TrustedServersAPIService
 
-	UpgradesApi *UpgradesApiService
+	UpgradesAPI *UpgradesAPIService
 
-	UplinkApi *UplinkApiService
+	UplinkAPI *UplinkAPIService
 
-	UplinkBandwidthApi *UplinkBandwidthApiService
+	UplinkBandwidthAPI *UplinkBandwidthAPIService
 
-	UplinkSelectionApi *UplinkSelectionApiService
+	UplinkSelectionAPI *UplinkSelectionAPIService
 
-	UplinksApi *UplinksApiService
+	UplinksAPI *UplinksAPIService
 
-	UplinksLossAndLatencyApi *UplinksLossAndLatencyApiService
+	UplinksLossAndLatencyAPI *UplinksLossAndLatencyAPIService
 
-	UsageApi *UsageApiService
+	UsageAPI *UsageAPIService
 
-	UsageHistoriesApi *UsageHistoriesApiService
+	UsageHistoriesAPI *UsageHistoriesAPIService
 
-	UsageHistoryApi *UsageHistoryApiService
+	UsageHistoryAPI *UsageHistoryAPIService
 
-	UserAccessDevicesApi *UserAccessDevicesApiService
+	UserAccessDevicesAPI *UserAccessDevicesAPIService
 
-	UsersApi *UsersApiService
+	UsersAPI *UsersAPIService
 
-	V4Api *V4ApiService
+	V4API *V4APIService
 
-	VideoApi *VideoApiService
+	VideoAPI *VideoAPIService
 
-	VideoLinkApi *VideoLinkApiService
+	VideoLinkAPI *VideoLinkAPIService
 
-	VlanAssignmentsApi *VlanAssignmentsApiService
+	VlanAssignmentsAPI *VlanAssignmentsAPIService
 
-	VlansApi *VlansApiService
+	VlansAPI *VlansAPIService
 
-	VmxApi *VmxApiService
+	VmxAPI *VmxAPIService
 
-	VpnApi *VpnApiService
+	VpnAPI *VpnAPIService
 
-	VpnFirewallRulesApi *VpnFirewallRulesApiService
+	VpnFirewallRulesAPI *VpnFirewallRulesAPIService
 
-	VppAccountsApi *VppAccountsApiService
+	VppAccountsAPI *VppAccountsAPIService
 
-	WarmSpareApi *WarmSpareApiService
+	WarmSpareAPI *WarmSpareAPIService
 
-	WarningsApi *WarningsApiService
+	WarningsAPI *WarningsAPIService
 
-	WebhookTestsApi *WebhookTestsApiService
+	WebhookTestsAPI *WebhookTestsAPIService
 
-	WebhooksApi *WebhooksApiService
+	WebhooksAPI *WebhooksAPIService
 
-	WirelessApi *WirelessApiService
+	WirelessAPI *WirelessAPIService
 
-	WirelessProfilesApi *WirelessProfilesApiService
+	WirelessProfilesAPI *WirelessProfilesAPIService
 
-	WlanListsApi *WlanListsApiService
+	WlanListsAPI *WlanListsAPIService
 
-	ZonesApi *ZonesApiService
+	ZonesAPI *ZonesAPIService
 }
 
 type service struct {
@@ -616,270 +616,270 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
-	c.AccessControlListsApi = (*AccessControlListsApiService)(&c.common)
-	c.AccessPoliciesApi = (*AccessPoliciesApiService)(&c.common)
-	c.AclsApi = (*AclsApiService)(&c.common)
-	c.ActionBatchesApi = (*ActionBatchesApiService)(&c.common)
-	c.AdaptivePolicyApi = (*AdaptivePolicyApiService)(&c.common)
-	c.AddressesApi = (*AddressesApiService)(&c.common)
-	c.AdministeredApi = (*AdministeredApiService)(&c.common)
-	c.AdminsApi = (*AdminsApiService)(&c.common)
-	c.AirMarshalApi = (*AirMarshalApiService)(&c.common)
-	c.AlertTypesApi = (*AlertTypesApiService)(&c.common)
-	c.AlertsApi = (*AlertsApiService)(&c.common)
-	c.AlternateManagementInterfaceApi = (*AlternateManagementInterfaceApiService)(&c.common)
-	c.AnalyticsApi = (*AnalyticsApiService)(&c.common)
-	c.ApiRequestsApi = (*ApiRequestsApiService)(&c.common)
-	c.ApnsCertApi = (*ApnsCertApiService)(&c.common)
-	c.ApplianceApi = (*ApplianceApiService)(&c.common)
-	c.AppliancesApi = (*AppliancesApiService)(&c.common)
-	c.ApplicationCategoriesApi = (*ApplicationCategoriesApiService)(&c.common)
-	c.ApplicationUsageApi = (*ApplicationUsageApiService)(&c.common)
-	c.ApplicationsApi = (*ApplicationsApiService)(&c.common)
-	c.ArpInspectionApi = (*ArpInspectionApiService)(&c.common)
-	c.ArtifactsApi = (*ArtifactsApiService)(&c.common)
-	c.AuthenticationTokenApi = (*AuthenticationTokenApiService)(&c.common)
-	c.AvailabilitiesApi = (*AvailabilitiesApiService)(&c.common)
-	c.BandwidthUsageHistoryApi = (*BandwidthUsageHistoryApiService)(&c.common)
-	c.BgpApi = (*BgpApiService)(&c.common)
-	c.BillingApi = (*BillingApiService)(&c.common)
-	c.BluetoothApi = (*BluetoothApiService)(&c.common)
-	c.BluetoothClientsApi = (*BluetoothClientsApiService)(&c.common)
-	c.BonjourForwardingApi = (*BonjourForwardingApiService)(&c.common)
-	c.BrandingPoliciesApi = (*BrandingPoliciesApiService)(&c.common)
-	c.ByClientApi = (*ByClientApiService)(&c.common)
-	c.ByDeviceApi = (*ByDeviceApiService)(&c.common)
-	c.ByEnergyUsageApi = (*ByEnergyUsageApiService)(&c.common)
-	c.ByIntervalApi = (*ByIntervalApiService)(&c.common)
-	c.ByMetricApi = (*ByMetricApiService)(&c.common)
-	c.ByNetworkApi = (*ByNetworkApiService)(&c.common)
-	c.BySwitchApi = (*BySwitchApiService)(&c.common)
-	c.ByUsageApi = (*ByUsageApiService)(&c.common)
-	c.ByUtilizationApi = (*ByUtilizationApiService)(&c.common)
-	c.BypassActivationLockAttemptsApi = (*BypassActivationLockAttemptsApiService)(&c.common)
-	c.CameraApi = (*CameraApiService)(&c.common)
-	c.CategoriesApi = (*CategoriesApiService)(&c.common)
-	c.CellularApi = (*CellularApiService)(&c.common)
-	c.CellularFirewallRulesApi = (*CellularFirewallRulesApiService)(&c.common)
-	c.CellularGatewayApi = (*CellularGatewayApiService)(&c.common)
-	c.CellularUsageHistoryApi = (*CellularUsageHistoryApiService)(&c.common)
-	c.CertsApi = (*CertsApiService)(&c.common)
-	c.ChangeHistoryApi = (*ChangeHistoryApiService)(&c.common)
-	c.ChannelUtilizationApi = (*ChannelUtilizationApiService)(&c.common)
-	c.ChannelUtilizationHistoryApi = (*ChannelUtilizationHistoryApiService)(&c.common)
-	c.ClaimApi = (*ClaimApiService)(&c.common)
-	c.ClientCountHistoryApi = (*ClientCountHistoryApiService)(&c.common)
-	c.ClientsApi = (*ClientsApiService)(&c.common)
-	c.CloudMonitoringApi = (*CloudMonitoringApiService)(&c.common)
-	c.ConfigTemplatesApi = (*ConfigTemplatesApiService)(&c.common)
-	c.ConfigurationChangesApi = (*ConfigurationChangesApiService)(&c.common)
-	c.ConfigureApi = (*ConfigureApiService)(&c.common)
-	c.ConnectionStatsApi = (*ConnectionStatsApiService)(&c.common)
-	c.ConnectivityApi = (*ConnectivityApiService)(&c.common)
-	c.ConnectivityEventsApi = (*ConnectivityEventsApiService)(&c.common)
-	c.ConnectivityMonitoringDestinationsApi = (*ConnectivityMonitoringDestinationsApiService)(&c.common)
-	c.ContentFilteringApi = (*ContentFilteringApiService)(&c.common)
-	c.CotermApi = (*CotermApiService)(&c.common)
-	c.CurrentApi = (*CurrentApiService)(&c.common)
-	c.CustomAnalyticsApi = (*CustomAnalyticsApiService)(&c.common)
-	c.CustomPerformanceClassesApi = (*CustomPerformanceClassesApiService)(&c.common)
-	c.DataRateHistoryApi = (*DataRateHistoryApiService)(&c.common)
-	c.DelegatedApi = (*DelegatedApiService)(&c.common)
-	c.DesktopLogsApi = (*DesktopLogsApiService)(&c.common)
-	c.DeviceCommandLogsApi = (*DeviceCommandLogsApiService)(&c.common)
-	c.DeviceProfilesApi = (*DeviceProfilesApiService)(&c.common)
-	c.DeviceTypeGroupPoliciesApi = (*DeviceTypeGroupPoliciesApiService)(&c.common)
-	c.DevicesApi = (*DevicesApiService)(&c.common)
-	c.DhcpApi = (*DhcpApiService)(&c.common)
-	c.DhcpServerPolicyApi = (*DhcpServerPolicyApiService)(&c.common)
-	c.DscpTaggingOptionsApi = (*DscpTaggingOptionsApiService)(&c.common)
-	c.DscpToCosMappingsApi = (*DscpToCosMappingsApiService)(&c.common)
-	c.EapOverrideApi = (*EapOverrideApiService)(&c.common)
-	c.EarlyAccessApi = (*EarlyAccessApiService)(&c.common)
-	c.EthernetApi = (*EthernetApiService)(&c.common)
-	c.EventTypesApi = (*EventTypesApiService)(&c.common)
-	c.EventsApi = (*EventsApiService)(&c.common)
-	c.ExportEventsApi = (*ExportEventsApiService)(&c.common)
-	c.FailedConnectionsApi = (*FailedConnectionsApiService)(&c.common)
-	c.FeaturesApi = (*FeaturesApiService)(&c.common)
-	c.FieldsApi = (*FieldsApiService)(&c.common)
-	c.FirewallApi = (*FirewallApiService)(&c.common)
-	c.FirewalledServicesApi = (*FirewalledServicesApiService)(&c.common)
-	c.FirmwareApi = (*FirmwareApiService)(&c.common)
-	c.FirmwareUpgradesApi = (*FirmwareUpgradesApiService)(&c.common)
-	c.FloorPlansApi = (*FloorPlansApiService)(&c.common)
-	c.GroupPoliciesApi = (*GroupPoliciesApiService)(&c.common)
-	c.GroupsApi = (*GroupsApiService)(&c.common)
-	c.HealthApi = (*HealthApiService)(&c.common)
-	c.HealthByTimeApi = (*HealthByTimeApiService)(&c.common)
-	c.HistoryApi = (*HistoryApiService)(&c.common)
-	c.Hotspot20Api = (*Hotspot20ApiService)(&c.common)
-	c.HttpServersApi = (*HttpServersApiService)(&c.common)
-	c.IdentitiesApi = (*IdentitiesApiService)(&c.common)
-	c.IdentityPsksApi = (*IdentityPsksApiService)(&c.common)
-	c.IdpsApi = (*IdpsApiService)(&c.common)
-	c.ImportsApi = (*ImportsApiService)(&c.common)
-	c.InboundCellularFirewallRulesApi = (*InboundCellularFirewallRulesApiService)(&c.common)
-	c.InboundFirewallRulesApi = (*InboundFirewallRulesApiService)(&c.common)
-	c.InsightApi = (*InsightApiService)(&c.common)
-	c.InterfacesApi = (*InterfacesApiService)(&c.common)
-	c.IntrusionApi = (*IntrusionApiService)(&c.common)
-	c.InventoryApi = (*InventoryApiService)(&c.common)
-	c.L3FirewallRulesApi = (*L3FirewallRulesApiService)(&c.common)
-	c.L7FirewallRulesApi = (*L7FirewallRulesApiService)(&c.common)
-	c.LanApi = (*LanApiService)(&c.common)
-	c.LatencyHistoryApi = (*LatencyHistoryApiService)(&c.common)
-	c.LatencyStatsApi = (*LatencyStatsApiService)(&c.common)
-	c.LatestApi = (*LatestApiService)(&c.common)
-	c.LicensesApi = (*LicensesApiService)(&c.common)
-	c.LicensingApi = (*LicensingApiService)(&c.common)
-	c.LinkAggregationsApi = (*LinkAggregationsApiService)(&c.common)
-	c.LinkLayerApi = (*LinkLayerApiService)(&c.common)
-	c.LiveApi = (*LiveApiService)(&c.common)
-	c.LiveToolsApi = (*LiveToolsApiService)(&c.common)
-	c.LldpCdpApi = (*LldpCdpApiService)(&c.common)
-	c.LoginSecurityApi = (*LoginSecurityApiService)(&c.common)
-	c.LogsApi = (*LogsApiService)(&c.common)
-	c.LossAndLatencyHistoryApi = (*LossAndLatencyHistoryApiService)(&c.common)
-	c.MalwareApi = (*MalwareApiService)(&c.common)
-	c.ManagementInterfaceApi = (*ManagementInterfaceApiService)(&c.common)
-	c.ManufacturersApi = (*ManufacturersApiService)(&c.common)
-	c.MeApi = (*MeApiService)(&c.common)
-	c.MerakiAuthUsersApi = (*MerakiAuthUsersApiService)(&c.common)
-	c.MeshStatusesApi = (*MeshStatusesApiService)(&c.common)
-	c.ModelsApi = (*ModelsApiService)(&c.common)
-	c.MonitorApi = (*MonitorApiService)(&c.common)
-	c.MonitoredMediaServersApi = (*MonitoredMediaServersApiService)(&c.common)
-	c.MqttBrokersApi = (*MqttBrokersApiService)(&c.common)
-	c.MtuApi = (*MtuApiService)(&c.common)
-	c.MulticastApi = (*MulticastApiService)(&c.common)
-	c.NetflowApi = (*NetflowApiService)(&c.common)
-	c.NetworkAdaptersApi = (*NetworkAdaptersApiService)(&c.common)
-	c.NetworkHealthApi = (*NetworkHealthApiService)(&c.common)
-	c.NetworksApi = (*NetworksApiService)(&c.common)
-	c.ObjectDetectionModelsApi = (*ObjectDetectionModelsApiService)(&c.common)
-	c.OnboardingApi = (*OnboardingApiService)(&c.common)
-	c.OneToManyNatRulesApi = (*OneToManyNatRulesApiService)(&c.common)
-	c.OneToOneNatRulesApi = (*OneToOneNatRulesApiService)(&c.common)
-	c.OpenapiSpecApi = (*OpenapiSpecApiService)(&c.common)
-	c.OptInsApi = (*OptInsApiService)(&c.common)
-	c.OrderApi = (*OrderApiService)(&c.common)
-	c.OrganizationsApi = (*OrganizationsApiService)(&c.common)
-	c.OspfApi = (*OspfApiService)(&c.common)
-	c.OverviewApi = (*OverviewApiService)(&c.common)
-	c.PacketsApi = (*PacketsApiService)(&c.common)
-	c.PayloadTemplatesApi = (*PayloadTemplatesApiService)(&c.common)
-	c.PerformanceApi = (*PerformanceApiService)(&c.common)
-	c.PerformanceHistoryApi = (*PerformanceHistoryApiService)(&c.common)
-	c.PiiApi = (*PiiApiService)(&c.common)
-	c.PiiKeysApi = (*PiiKeysApiService)(&c.common)
-	c.PingApi = (*PingApiService)(&c.common)
-	c.PingDeviceApi = (*PingDeviceApiService)(&c.common)
-	c.PoliciesApi = (*PoliciesApiService)(&c.common)
-	c.PolicyApi = (*PolicyApiService)(&c.common)
-	c.PolicyObjectsApi = (*PolicyObjectsApiService)(&c.common)
-	c.PortForwardingRulesApi = (*PortForwardingRulesApiService)(&c.common)
-	c.PortSchedulesApi = (*PortSchedulesApiService)(&c.common)
-	c.PortsApi = (*PortsApiService)(&c.common)
-	c.PowerModulesApi = (*PowerModulesApiService)(&c.common)
-	c.PrefixesApi = (*PrefixesApiService)(&c.common)
-	c.PrepareApi = (*PrepareApiService)(&c.common)
-	c.PrioritiesApi = (*PrioritiesApiService)(&c.common)
-	c.ProfilesApi = (*ProfilesApiService)(&c.common)
-	c.ProvisioningApi = (*ProvisioningApiService)(&c.common)
-	c.QosRulesApi = (*QosRulesApiService)(&c.common)
-	c.QualityAndRetentionApi = (*QualityAndRetentionApiService)(&c.common)
-	c.QualityRetentionProfilesApi = (*QualityRetentionProfilesApiService)(&c.common)
-	c.RadioApi = (*RadioApiService)(&c.common)
-	c.ReadingsApi = (*ReadingsApiService)(&c.common)
-	c.RecentApi = (*RecentApiService)(&c.common)
-	c.RelationshipsApi = (*RelationshipsApiService)(&c.common)
-	c.RendezvousPointsApi = (*RendezvousPointsApiService)(&c.common)
-	c.RequestsApi = (*RequestsApiService)(&c.common)
-	c.ResponseCodesApi = (*ResponseCodesApiService)(&c.common)
-	c.RestrictionsApi = (*RestrictionsApiService)(&c.common)
-	c.RfProfilesApi = (*RfProfilesApiService)(&c.common)
-	c.RollbacksApi = (*RollbacksApiService)(&c.common)
-	c.RoutingApi = (*RoutingApiService)(&c.common)
-	c.RulesApi = (*RulesApiService)(&c.common)
-	c.SamlApi = (*SamlApiService)(&c.common)
-	c.SamlRolesApi = (*SamlRolesApiService)(&c.common)
-	c.SchedulesApi = (*SchedulesApiService)(&c.common)
-	c.SearchApi = (*SearchApiService)(&c.common)
-	c.SecurityApi = (*SecurityApiService)(&c.common)
-	c.SecurityCentersApi = (*SecurityCentersApiService)(&c.common)
-	c.SeenApi = (*SeenApiService)(&c.common)
-	c.SenseApi = (*SenseApiService)(&c.common)
-	c.SensorApi = (*SensorApiService)(&c.common)
-	c.ServersApi = (*ServersApiService)(&c.common)
-	c.SettingsApi = (*SettingsApiService)(&c.common)
-	c.SignalQualityHistoryApi = (*SignalQualityHistoryApiService)(&c.common)
-	c.SimsApi = (*SimsApiService)(&c.common)
-	c.SingleLanApi = (*SingleLanApiService)(&c.common)
-	c.SiteToSiteVpnApi = (*SiteToSiteVpnApiService)(&c.common)
-	c.SmApi = (*SmApiService)(&c.common)
-	c.SmDevicesForKeyApi = (*SmDevicesForKeyApiService)(&c.common)
-	c.SmOwnersForKeyApi = (*SmOwnersForKeyApiService)(&c.common)
-	c.SnmpApi = (*SnmpApiService)(&c.common)
-	c.SoftwaresApi = (*SoftwaresApiService)(&c.common)
-	c.SplashApi = (*SplashApiService)(&c.common)
-	c.SplashAuthorizationStatusApi = (*SplashAuthorizationStatusApiService)(&c.common)
-	c.SplashLoginAttemptsApi = (*SplashLoginAttemptsApiService)(&c.common)
-	c.SsidsApi = (*SsidsApiService)(&c.common)
-	c.StacksApi = (*StacksApiService)(&c.common)
-	c.StagedApi = (*StagedApiService)(&c.common)
-	c.StagesApi = (*StagesApiService)(&c.common)
-	c.StaticRoutesApi = (*StaticRoutesApiService)(&c.common)
-	c.StaticsApi = (*StaticsApiService)(&c.common)
-	c.StatsApi = (*StatsApiService)(&c.common)
-	c.StatusApi = (*StatusApiService)(&c.common)
-	c.StatusesApi = (*StatusesApiService)(&c.common)
-	c.StormControlApi = (*StormControlApiService)(&c.common)
-	c.StpApi = (*StpApiService)(&c.common)
-	c.SubnetPoolApi = (*SubnetPoolApiService)(&c.common)
-	c.SubnetsApi = (*SubnetsApiService)(&c.common)
-	c.SummaryApi = (*SummaryApiService)(&c.common)
-	c.SwitchApi = (*SwitchApiService)(&c.common)
-	c.SwitchesApi = (*SwitchesApiService)(&c.common)
-	c.SyslogServersApi = (*SyslogServersApiService)(&c.common)
-	c.TargetGroupsApi = (*TargetGroupsApiService)(&c.common)
-	c.ThirdPartyVPNPeersApi = (*ThirdPartyVPNPeersApiService)(&c.common)
-	c.TopApi = (*TopApiService)(&c.common)
-	c.TopologyApi = (*TopologyApiService)(&c.common)
-	c.TrafficApi = (*TrafficApiService)(&c.common)
-	c.TrafficAnalysisApi = (*TrafficAnalysisApiService)(&c.common)
-	c.TrafficHistoryApi = (*TrafficHistoryApiService)(&c.common)
-	c.TrafficShapingApi = (*TrafficShapingApiService)(&c.common)
-	c.TrustedAccessConfigsApi = (*TrustedAccessConfigsApiService)(&c.common)
-	c.TrustedServersApi = (*TrustedServersApiService)(&c.common)
-	c.UpgradesApi = (*UpgradesApiService)(&c.common)
-	c.UplinkApi = (*UplinkApiService)(&c.common)
-	c.UplinkBandwidthApi = (*UplinkBandwidthApiService)(&c.common)
-	c.UplinkSelectionApi = (*UplinkSelectionApiService)(&c.common)
-	c.UplinksApi = (*UplinksApiService)(&c.common)
-	c.UplinksLossAndLatencyApi = (*UplinksLossAndLatencyApiService)(&c.common)
-	c.UsageApi = (*UsageApiService)(&c.common)
-	c.UsageHistoriesApi = (*UsageHistoriesApiService)(&c.common)
-	c.UsageHistoryApi = (*UsageHistoryApiService)(&c.common)
-	c.UserAccessDevicesApi = (*UserAccessDevicesApiService)(&c.common)
-	c.UsersApi = (*UsersApiService)(&c.common)
-	c.V4Api = (*V4ApiService)(&c.common)
-	c.VideoApi = (*VideoApiService)(&c.common)
-	c.VideoLinkApi = (*VideoLinkApiService)(&c.common)
-	c.VlanAssignmentsApi = (*VlanAssignmentsApiService)(&c.common)
-	c.VlansApi = (*VlansApiService)(&c.common)
-	c.VmxApi = (*VmxApiService)(&c.common)
-	c.VpnApi = (*VpnApiService)(&c.common)
-	c.VpnFirewallRulesApi = (*VpnFirewallRulesApiService)(&c.common)
-	c.VppAccountsApi = (*VppAccountsApiService)(&c.common)
-	c.WarmSpareApi = (*WarmSpareApiService)(&c.common)
-	c.WarningsApi = (*WarningsApiService)(&c.common)
-	c.WebhookTestsApi = (*WebhookTestsApiService)(&c.common)
-	c.WebhooksApi = (*WebhooksApiService)(&c.common)
-	c.WirelessApi = (*WirelessApiService)(&c.common)
-	c.WirelessProfilesApi = (*WirelessProfilesApiService)(&c.common)
-	c.WlanListsApi = (*WlanListsApiService)(&c.common)
-	c.ZonesApi = (*ZonesApiService)(&c.common)
+	c.AccessControlListsAPI = (*AccessControlListsAPIService)(&c.common)
+	c.AccessPoliciesAPI = (*AccessPoliciesAPIService)(&c.common)
+	c.AclsAPI = (*AclsAPIService)(&c.common)
+	c.ActionBatchesAPI = (*ActionBatchesAPIService)(&c.common)
+	c.AdaptivePolicyAPI = (*AdaptivePolicyAPIService)(&c.common)
+	c.AddressesAPI = (*AddressesAPIService)(&c.common)
+	c.AdministeredAPI = (*AdministeredAPIService)(&c.common)
+	c.AdminsAPI = (*AdminsAPIService)(&c.common)
+	c.AirMarshalAPI = (*AirMarshalAPIService)(&c.common)
+	c.AlertTypesAPI = (*AlertTypesAPIService)(&c.common)
+	c.AlertsAPI = (*AlertsAPIService)(&c.common)
+	c.AlternateManagementInterfaceAPI = (*AlternateManagementInterfaceAPIService)(&c.common)
+	c.AnalyticsAPI = (*AnalyticsAPIService)(&c.common)
+	c.ApiRequestsAPI = (*ApiRequestsAPIService)(&c.common)
+	c.ApnsCertAPI = (*ApnsCertAPIService)(&c.common)
+	c.ApplianceAPI = (*ApplianceAPIService)(&c.common)
+	c.AppliancesAPI = (*AppliancesAPIService)(&c.common)
+	c.ApplicationCategoriesAPI = (*ApplicationCategoriesAPIService)(&c.common)
+	c.ApplicationUsageAPI = (*ApplicationUsageAPIService)(&c.common)
+	c.ApplicationsAPI = (*ApplicationsAPIService)(&c.common)
+	c.ArpInspectionAPI = (*ArpInspectionAPIService)(&c.common)
+	c.ArtifactsAPI = (*ArtifactsAPIService)(&c.common)
+	c.AuthenticationTokenAPI = (*AuthenticationTokenAPIService)(&c.common)
+	c.AvailabilitiesAPI = (*AvailabilitiesAPIService)(&c.common)
+	c.BandwidthUsageHistoryAPI = (*BandwidthUsageHistoryAPIService)(&c.common)
+	c.BgpAPI = (*BgpAPIService)(&c.common)
+	c.BillingAPI = (*BillingAPIService)(&c.common)
+	c.BluetoothAPI = (*BluetoothAPIService)(&c.common)
+	c.BluetoothClientsAPI = (*BluetoothClientsAPIService)(&c.common)
+	c.BonjourForwardingAPI = (*BonjourForwardingAPIService)(&c.common)
+	c.BrandingPoliciesAPI = (*BrandingPoliciesAPIService)(&c.common)
+	c.ByClientAPI = (*ByClientAPIService)(&c.common)
+	c.ByDeviceAPI = (*ByDeviceAPIService)(&c.common)
+	c.ByEnergyUsageAPI = (*ByEnergyUsageAPIService)(&c.common)
+	c.ByIntervalAPI = (*ByIntervalAPIService)(&c.common)
+	c.ByMetricAPI = (*ByMetricAPIService)(&c.common)
+	c.ByNetworkAPI = (*ByNetworkAPIService)(&c.common)
+	c.BySwitchAPI = (*BySwitchAPIService)(&c.common)
+	c.ByUsageAPI = (*ByUsageAPIService)(&c.common)
+	c.ByUtilizationAPI = (*ByUtilizationAPIService)(&c.common)
+	c.BypassActivationLockAttemptsAPI = (*BypassActivationLockAttemptsAPIService)(&c.common)
+	c.CameraAPI = (*CameraAPIService)(&c.common)
+	c.CategoriesAPI = (*CategoriesAPIService)(&c.common)
+	c.CellularAPI = (*CellularAPIService)(&c.common)
+	c.CellularFirewallRulesAPI = (*CellularFirewallRulesAPIService)(&c.common)
+	c.CellularGatewayAPI = (*CellularGatewayAPIService)(&c.common)
+	c.CellularUsageHistoryAPI = (*CellularUsageHistoryAPIService)(&c.common)
+	c.CertsAPI = (*CertsAPIService)(&c.common)
+	c.ChangeHistoryAPI = (*ChangeHistoryAPIService)(&c.common)
+	c.ChannelUtilizationAPI = (*ChannelUtilizationAPIService)(&c.common)
+	c.ChannelUtilizationHistoryAPI = (*ChannelUtilizationHistoryAPIService)(&c.common)
+	c.ClaimAPI = (*ClaimAPIService)(&c.common)
+	c.ClientCountHistoryAPI = (*ClientCountHistoryAPIService)(&c.common)
+	c.ClientsAPI = (*ClientsAPIService)(&c.common)
+	c.CloudMonitoringAPI = (*CloudMonitoringAPIService)(&c.common)
+	c.ConfigTemplatesAPI = (*ConfigTemplatesAPIService)(&c.common)
+	c.ConfigurationChangesAPI = (*ConfigurationChangesAPIService)(&c.common)
+	c.ConfigureAPI = (*ConfigureAPIService)(&c.common)
+	c.ConnectionStatsAPI = (*ConnectionStatsAPIService)(&c.common)
+	c.ConnectivityAPI = (*ConnectivityAPIService)(&c.common)
+	c.ConnectivityEventsAPI = (*ConnectivityEventsAPIService)(&c.common)
+	c.ConnectivityMonitoringDestinationsAPI = (*ConnectivityMonitoringDestinationsAPIService)(&c.common)
+	c.ContentFilteringAPI = (*ContentFilteringAPIService)(&c.common)
+	c.CotermAPI = (*CotermAPIService)(&c.common)
+	c.CurrentAPI = (*CurrentAPIService)(&c.common)
+	c.CustomAnalyticsAPI = (*CustomAnalyticsAPIService)(&c.common)
+	c.CustomPerformanceClassesAPI = (*CustomPerformanceClassesAPIService)(&c.common)
+	c.DataRateHistoryAPI = (*DataRateHistoryAPIService)(&c.common)
+	c.DelegatedAPI = (*DelegatedAPIService)(&c.common)
+	c.DesktopLogsAPI = (*DesktopLogsAPIService)(&c.common)
+	c.DeviceCommandLogsAPI = (*DeviceCommandLogsAPIService)(&c.common)
+	c.DeviceProfilesAPI = (*DeviceProfilesAPIService)(&c.common)
+	c.DeviceTypeGroupPoliciesAPI = (*DeviceTypeGroupPoliciesAPIService)(&c.common)
+	c.DevicesAPI = (*DevicesAPIService)(&c.common)
+	c.DhcpAPI = (*DhcpAPIService)(&c.common)
+	c.DhcpServerPolicyAPI = (*DhcpServerPolicyAPIService)(&c.common)
+	c.DscpTaggingOptionsAPI = (*DscpTaggingOptionsAPIService)(&c.common)
+	c.DscpToCosMappingsAPI = (*DscpToCosMappingsAPIService)(&c.common)
+	c.EapOverrideAPI = (*EapOverrideAPIService)(&c.common)
+	c.EarlyAccessAPI = (*EarlyAccessAPIService)(&c.common)
+	c.EthernetAPI = (*EthernetAPIService)(&c.common)
+	c.EventTypesAPI = (*EventTypesAPIService)(&c.common)
+	c.EventsAPI = (*EventsAPIService)(&c.common)
+	c.ExportEventsAPI = (*ExportEventsAPIService)(&c.common)
+	c.FailedConnectionsAPI = (*FailedConnectionsAPIService)(&c.common)
+	c.FeaturesAPI = (*FeaturesAPIService)(&c.common)
+	c.FieldsAPI = (*FieldsAPIService)(&c.common)
+	c.FirewallAPI = (*FirewallAPIService)(&c.common)
+	c.FirewalledServicesAPI = (*FirewalledServicesAPIService)(&c.common)
+	c.FirmwareAPI = (*FirmwareAPIService)(&c.common)
+	c.FirmwareUpgradesAPI = (*FirmwareUpgradesAPIService)(&c.common)
+	c.FloorPlansAPI = (*FloorPlansAPIService)(&c.common)
+	c.GroupPoliciesAPI = (*GroupPoliciesAPIService)(&c.common)
+	c.GroupsAPI = (*GroupsAPIService)(&c.common)
+	c.HealthAPI = (*HealthAPIService)(&c.common)
+	c.HealthByTimeAPI = (*HealthByTimeAPIService)(&c.common)
+	c.HistoryAPI = (*HistoryAPIService)(&c.common)
+	c.Hotspot20API = (*Hotspot20APIService)(&c.common)
+	c.HttpServersAPI = (*HttpServersAPIService)(&c.common)
+	c.IdentitiesAPI = (*IdentitiesAPIService)(&c.common)
+	c.IdentityPsksAPI = (*IdentityPsksAPIService)(&c.common)
+	c.IdpsAPI = (*IdpsAPIService)(&c.common)
+	c.ImportsAPI = (*ImportsAPIService)(&c.common)
+	c.InboundCellularFirewallRulesAPI = (*InboundCellularFirewallRulesAPIService)(&c.common)
+	c.InboundFirewallRulesAPI = (*InboundFirewallRulesAPIService)(&c.common)
+	c.InsightAPI = (*InsightAPIService)(&c.common)
+	c.InterfacesAPI = (*InterfacesAPIService)(&c.common)
+	c.IntrusionAPI = (*IntrusionAPIService)(&c.common)
+	c.InventoryAPI = (*InventoryAPIService)(&c.common)
+	c.L3FirewallRulesAPI = (*L3FirewallRulesAPIService)(&c.common)
+	c.L7FirewallRulesAPI = (*L7FirewallRulesAPIService)(&c.common)
+	c.LanAPI = (*LanAPIService)(&c.common)
+	c.LatencyHistoryAPI = (*LatencyHistoryAPIService)(&c.common)
+	c.LatencyStatsAPI = (*LatencyStatsAPIService)(&c.common)
+	c.LatestAPI = (*LatestAPIService)(&c.common)
+	c.LicensesAPI = (*LicensesAPIService)(&c.common)
+	c.LicensingAPI = (*LicensingAPIService)(&c.common)
+	c.LinkAggregationsAPI = (*LinkAggregationsAPIService)(&c.common)
+	c.LinkLayerAPI = (*LinkLayerAPIService)(&c.common)
+	c.LiveAPI = (*LiveAPIService)(&c.common)
+	c.LiveToolsAPI = (*LiveToolsAPIService)(&c.common)
+	c.LldpCdpAPI = (*LldpCdpAPIService)(&c.common)
+	c.LoginSecurityAPI = (*LoginSecurityAPIService)(&c.common)
+	c.LogsAPI = (*LogsAPIService)(&c.common)
+	c.LossAndLatencyHistoryAPI = (*LossAndLatencyHistoryAPIService)(&c.common)
+	c.MalwareAPI = (*MalwareAPIService)(&c.common)
+	c.ManagementInterfaceAPI = (*ManagementInterfaceAPIService)(&c.common)
+	c.ManufacturersAPI = (*ManufacturersAPIService)(&c.common)
+	c.MeAPI = (*MeAPIService)(&c.common)
+	c.MerakiAuthUsersAPI = (*MerakiAuthUsersAPIService)(&c.common)
+	c.MeshStatusesAPI = (*MeshStatusesAPIService)(&c.common)
+	c.ModelsAPI = (*ModelsAPIService)(&c.common)
+	c.MonitorAPI = (*MonitorAPIService)(&c.common)
+	c.MonitoredMediaServersAPI = (*MonitoredMediaServersAPIService)(&c.common)
+	c.MqttBrokersAPI = (*MqttBrokersAPIService)(&c.common)
+	c.MtuAPI = (*MtuAPIService)(&c.common)
+	c.MulticastAPI = (*MulticastAPIService)(&c.common)
+	c.NetflowAPI = (*NetflowAPIService)(&c.common)
+	c.NetworkAdaptersAPI = (*NetworkAdaptersAPIService)(&c.common)
+	c.NetworkHealthAPI = (*NetworkHealthAPIService)(&c.common)
+	c.NetworksAPI = (*NetworksAPIService)(&c.common)
+	c.ObjectDetectionModelsAPI = (*ObjectDetectionModelsAPIService)(&c.common)
+	c.OnboardingAPI = (*OnboardingAPIService)(&c.common)
+	c.OneToManyNatRulesAPI = (*OneToManyNatRulesAPIService)(&c.common)
+	c.OneToOneNatRulesAPI = (*OneToOneNatRulesAPIService)(&c.common)
+	c.OpenapiSpecAPI = (*OpenapiSpecAPIService)(&c.common)
+	c.OptInsAPI = (*OptInsAPIService)(&c.common)
+	c.OrderAPI = (*OrderAPIService)(&c.common)
+	c.OrganizationsAPI = (*OrganizationsAPIService)(&c.common)
+	c.OspfAPI = (*OspfAPIService)(&c.common)
+	c.OverviewAPI = (*OverviewAPIService)(&c.common)
+	c.PacketsAPI = (*PacketsAPIService)(&c.common)
+	c.PayloadTemplatesAPI = (*PayloadTemplatesAPIService)(&c.common)
+	c.PerformanceAPI = (*PerformanceAPIService)(&c.common)
+	c.PerformanceHistoryAPI = (*PerformanceHistoryAPIService)(&c.common)
+	c.PiiAPI = (*PiiAPIService)(&c.common)
+	c.PiiKeysAPI = (*PiiKeysAPIService)(&c.common)
+	c.PingAPI = (*PingAPIService)(&c.common)
+	c.PingDeviceAPI = (*PingDeviceAPIService)(&c.common)
+	c.PoliciesAPI = (*PoliciesAPIService)(&c.common)
+	c.PolicyAPI = (*PolicyAPIService)(&c.common)
+	c.PolicyObjectsAPI = (*PolicyObjectsAPIService)(&c.common)
+	c.PortForwardingRulesAPI = (*PortForwardingRulesAPIService)(&c.common)
+	c.PortSchedulesAPI = (*PortSchedulesAPIService)(&c.common)
+	c.PortsAPI = (*PortsAPIService)(&c.common)
+	c.PowerModulesAPI = (*PowerModulesAPIService)(&c.common)
+	c.PrefixesAPI = (*PrefixesAPIService)(&c.common)
+	c.PrepareAPI = (*PrepareAPIService)(&c.common)
+	c.PrioritiesAPI = (*PrioritiesAPIService)(&c.common)
+	c.ProfilesAPI = (*ProfilesAPIService)(&c.common)
+	c.ProvisioningAPI = (*ProvisioningAPIService)(&c.common)
+	c.QosRulesAPI = (*QosRulesAPIService)(&c.common)
+	c.QualityAndRetentionAPI = (*QualityAndRetentionAPIService)(&c.common)
+	c.QualityRetentionProfilesAPI = (*QualityRetentionProfilesAPIService)(&c.common)
+	c.RadioAPI = (*RadioAPIService)(&c.common)
+	c.ReadingsAPI = (*ReadingsAPIService)(&c.common)
+	c.RecentAPI = (*RecentAPIService)(&c.common)
+	c.RelationshipsAPI = (*RelationshipsAPIService)(&c.common)
+	c.RendezvousPointsAPI = (*RendezvousPointsAPIService)(&c.common)
+	c.RequestsAPI = (*RequestsAPIService)(&c.common)
+	c.ResponseCodesAPI = (*ResponseCodesAPIService)(&c.common)
+	c.RestrictionsAPI = (*RestrictionsAPIService)(&c.common)
+	c.RfProfilesAPI = (*RfProfilesAPIService)(&c.common)
+	c.RollbacksAPI = (*RollbacksAPIService)(&c.common)
+	c.RoutingAPI = (*RoutingAPIService)(&c.common)
+	c.RulesAPI = (*RulesAPIService)(&c.common)
+	c.SamlAPI = (*SamlAPIService)(&c.common)
+	c.SamlRolesAPI = (*SamlRolesAPIService)(&c.common)
+	c.SchedulesAPI = (*SchedulesAPIService)(&c.common)
+	c.SearchAPI = (*SearchAPIService)(&c.common)
+	c.SecurityAPI = (*SecurityAPIService)(&c.common)
+	c.SecurityCentersAPI = (*SecurityCentersAPIService)(&c.common)
+	c.SeenAPI = (*SeenAPIService)(&c.common)
+	c.SenseAPI = (*SenseAPIService)(&c.common)
+	c.SensorAPI = (*SensorAPIService)(&c.common)
+	c.ServersAPI = (*ServersAPIService)(&c.common)
+	c.SettingsAPI = (*SettingsAPIService)(&c.common)
+	c.SignalQualityHistoryAPI = (*SignalQualityHistoryAPIService)(&c.common)
+	c.SimsAPI = (*SimsAPIService)(&c.common)
+	c.SingleLanAPI = (*SingleLanAPIService)(&c.common)
+	c.SiteToSiteVpnAPI = (*SiteToSiteVpnAPIService)(&c.common)
+	c.SmAPI = (*SmAPIService)(&c.common)
+	c.SmDevicesForKeyAPI = (*SmDevicesForKeyAPIService)(&c.common)
+	c.SmOwnersForKeyAPI = (*SmOwnersForKeyAPIService)(&c.common)
+	c.SnmpAPI = (*SnmpAPIService)(&c.common)
+	c.SoftwaresAPI = (*SoftwaresAPIService)(&c.common)
+	c.SplashAPI = (*SplashAPIService)(&c.common)
+	c.SplashAuthorizationStatusAPI = (*SplashAuthorizationStatusAPIService)(&c.common)
+	c.SplashLoginAttemptsAPI = (*SplashLoginAttemptsAPIService)(&c.common)
+	c.SsidsAPI = (*SsidsAPIService)(&c.common)
+	c.StacksAPI = (*StacksAPIService)(&c.common)
+	c.StagedAPI = (*StagedAPIService)(&c.common)
+	c.StagesAPI = (*StagesAPIService)(&c.common)
+	c.StaticRoutesAPI = (*StaticRoutesAPIService)(&c.common)
+	c.StaticsAPI = (*StaticsAPIService)(&c.common)
+	c.StatsAPI = (*StatsAPIService)(&c.common)
+	c.StatusAPI = (*StatusAPIService)(&c.common)
+	c.StatusesAPI = (*StatusesAPIService)(&c.common)
+	c.StormControlAPI = (*StormControlAPIService)(&c.common)
+	c.StpAPI = (*StpAPIService)(&c.common)
+	c.SubnetPoolAPI = (*SubnetPoolAPIService)(&c.common)
+	c.SubnetsAPI = (*SubnetsAPIService)(&c.common)
+	c.SummaryAPI = (*SummaryAPIService)(&c.common)
+	c.SwitchAPI = (*SwitchAPIService)(&c.common)
+	c.SwitchesAPI = (*SwitchesAPIService)(&c.common)
+	c.SyslogServersAPI = (*SyslogServersAPIService)(&c.common)
+	c.TargetGroupsAPI = (*TargetGroupsAPIService)(&c.common)
+	c.ThirdPartyVPNPeersAPI = (*ThirdPartyVPNPeersAPIService)(&c.common)
+	c.TopAPI = (*TopAPIService)(&c.common)
+	c.TopologyAPI = (*TopologyAPIService)(&c.common)
+	c.TrafficAPI = (*TrafficAPIService)(&c.common)
+	c.TrafficAnalysisAPI = (*TrafficAnalysisAPIService)(&c.common)
+	c.TrafficHistoryAPI = (*TrafficHistoryAPIService)(&c.common)
+	c.TrafficShapingAPI = (*TrafficShapingAPIService)(&c.common)
+	c.TrustedAccessConfigsAPI = (*TrustedAccessConfigsAPIService)(&c.common)
+	c.TrustedServersAPI = (*TrustedServersAPIService)(&c.common)
+	c.UpgradesAPI = (*UpgradesAPIService)(&c.common)
+	c.UplinkAPI = (*UplinkAPIService)(&c.common)
+	c.UplinkBandwidthAPI = (*UplinkBandwidthAPIService)(&c.common)
+	c.UplinkSelectionAPI = (*UplinkSelectionAPIService)(&c.common)
+	c.UplinksAPI = (*UplinksAPIService)(&c.common)
+	c.UplinksLossAndLatencyAPI = (*UplinksLossAndLatencyAPIService)(&c.common)
+	c.UsageAPI = (*UsageAPIService)(&c.common)
+	c.UsageHistoriesAPI = (*UsageHistoriesAPIService)(&c.common)
+	c.UsageHistoryAPI = (*UsageHistoryAPIService)(&c.common)
+	c.UserAccessDevicesAPI = (*UserAccessDevicesAPIService)(&c.common)
+	c.UsersAPI = (*UsersAPIService)(&c.common)
+	c.V4API = (*V4APIService)(&c.common)
+	c.VideoAPI = (*VideoAPIService)(&c.common)
+	c.VideoLinkAPI = (*VideoLinkAPIService)(&c.common)
+	c.VlanAssignmentsAPI = (*VlanAssignmentsAPIService)(&c.common)
+	c.VlansAPI = (*VlansAPIService)(&c.common)
+	c.VmxAPI = (*VmxAPIService)(&c.common)
+	c.VpnAPI = (*VpnAPIService)(&c.common)
+	c.VpnFirewallRulesAPI = (*VpnFirewallRulesAPIService)(&c.common)
+	c.VppAccountsAPI = (*VppAccountsAPIService)(&c.common)
+	c.WarmSpareAPI = (*WarmSpareAPIService)(&c.common)
+	c.WarningsAPI = (*WarningsAPIService)(&c.common)
+	c.WebhookTestsAPI = (*WebhookTestsAPIService)(&c.common)
+	c.WebhooksAPI = (*WebhooksAPIService)(&c.common)
+	c.WirelessAPI = (*WirelessAPIService)(&c.common)
+	c.WirelessProfilesAPI = (*WirelessProfilesAPIService)(&c.common)
+	c.WlanListsAPI = (*WlanListsAPIService)(&c.common)
+	c.ZonesAPI = (*ZonesAPIService)(&c.common)
 
 	return c
 }

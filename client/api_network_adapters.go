@@ -20,17 +20,17 @@ import (
 )
 
 
-// NetworkAdaptersApiService NetworkAdaptersApi service
-type NetworkAdaptersApiService service
+// NetworkAdaptersAPIService NetworkAdaptersAPI service
+type NetworkAdaptersAPIService service
 
-type NetworkAdaptersApiGetNetworkSmDeviceNetworkAdaptersRequest struct {
+type NetworkAdaptersAPIGetNetworkSmDeviceNetworkAdaptersRequest struct {
 	ctx context.Context
-	ApiService *NetworkAdaptersApiService
+	ApiService *NetworkAdaptersAPIService
 	networkId string
 	deviceId string
 }
 
-func (r NetworkAdaptersApiGetNetworkSmDeviceNetworkAdaptersRequest) Execute() ([]GetNetworkSmDeviceNetworkAdapters200ResponseInner, *http.Response, error) {
+func (r NetworkAdaptersAPIGetNetworkSmDeviceNetworkAdaptersRequest) Execute() ([]GetNetworkSmDeviceNetworkAdapters200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceNetworkAdaptersExecute(r)
 }
 
@@ -42,10 +42,10 @@ List the network adapters of a device
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return NetworkAdaptersApiGetNetworkSmDeviceNetworkAdaptersRequest
+ @return NetworkAdaptersAPIGetNetworkSmDeviceNetworkAdaptersRequest
 */
-func (a *NetworkAdaptersApiService) GetNetworkSmDeviceNetworkAdapters(ctx context.Context, networkId string, deviceId string) NetworkAdaptersApiGetNetworkSmDeviceNetworkAdaptersRequest {
-	return NetworkAdaptersApiGetNetworkSmDeviceNetworkAdaptersRequest{
+func (a *NetworkAdaptersAPIService) GetNetworkSmDeviceNetworkAdapters(ctx context.Context, networkId string, deviceId string) NetworkAdaptersAPIGetNetworkSmDeviceNetworkAdaptersRequest {
+	return NetworkAdaptersAPIGetNetworkSmDeviceNetworkAdaptersRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -55,7 +55,7 @@ func (a *NetworkAdaptersApiService) GetNetworkSmDeviceNetworkAdapters(ctx contex
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceNetworkAdapters200ResponseInner
-func (a *NetworkAdaptersApiService) GetNetworkSmDeviceNetworkAdaptersExecute(r NetworkAdaptersApiGetNetworkSmDeviceNetworkAdaptersRequest) ([]GetNetworkSmDeviceNetworkAdapters200ResponseInner, *http.Response, error) {
+func (a *NetworkAdaptersAPIService) GetNetworkSmDeviceNetworkAdaptersExecute(r NetworkAdaptersAPIGetNetworkSmDeviceNetworkAdaptersRequest) ([]GetNetworkSmDeviceNetworkAdapters200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -63,7 +63,7 @@ func (a *NetworkAdaptersApiService) GetNetworkSmDeviceNetworkAdaptersExecute(r N
 		localVarReturnValue  []GetNetworkSmDeviceNetworkAdapters200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworkAdaptersApiService.GetNetworkSmDeviceNetworkAdapters")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworkAdaptersAPIService.GetNetworkSmDeviceNetworkAdapters")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

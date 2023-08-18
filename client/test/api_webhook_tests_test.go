@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing WebhookTestsApiService
+Testing WebhookTestsAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_WebhookTestsApiService(t *testing.T) {
+func Test_client_WebhookTestsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test WebhookTestsApiService CreateNetworkWebhooksWebhookTest", func(t *testing.T) {
+	t.Run("Test WebhookTestsAPIService CreateNetworkWebhooksWebhookTest", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WebhookTestsApi.CreateNetworkWebhooksWebhookTest(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WebhookTestsAPI.CreateNetworkWebhooksWebhookTest(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,14 +36,14 @@ func Test_client_WebhookTestsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WebhookTestsApiService GetNetworkWebhooksWebhookTest", func(t *testing.T) {
+	t.Run("Test WebhookTestsAPIService GetNetworkWebhooksWebhookTest", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var webhookTestId string
 
-		resp, httpRes, err := apiClient.WebhookTestsApi.GetNetworkWebhooksWebhookTest(context.Background(), networkId, webhookTestId).Execute()
+		resp, httpRes, err := apiClient.WebhookTestsAPI.GetNetworkWebhooksWebhookTest(context.Background(), networkId, webhookTestId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

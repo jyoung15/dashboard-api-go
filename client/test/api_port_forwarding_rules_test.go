@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing PortForwardingRulesApiService
+Testing PortForwardingRulesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_PortForwardingRulesApiService(t *testing.T) {
+func Test_client_PortForwardingRulesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test PortForwardingRulesApiService GetDeviceCellularGatewayPortForwardingRules", func(t *testing.T) {
+	t.Run("Test PortForwardingRulesAPIService GetDeviceCellularGatewayPortForwardingRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.PortForwardingRulesApi.GetDeviceCellularGatewayPortForwardingRules(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.PortForwardingRulesAPI.GetDeviceCellularGatewayPortForwardingRules(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_PortForwardingRulesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PortForwardingRulesApiService GetNetworkApplianceFirewallPortForwardingRules", func(t *testing.T) {
+	t.Run("Test PortForwardingRulesAPIService GetNetworkApplianceFirewallPortForwardingRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.PortForwardingRulesApi.GetNetworkApplianceFirewallPortForwardingRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.PortForwardingRulesAPI.GetNetworkApplianceFirewallPortForwardingRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,13 +50,13 @@ func Test_client_PortForwardingRulesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PortForwardingRulesApiService UpdateDeviceCellularGatewayPortForwardingRules", func(t *testing.T) {
+	t.Run("Test PortForwardingRulesAPIService UpdateDeviceCellularGatewayPortForwardingRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.PortForwardingRulesApi.UpdateDeviceCellularGatewayPortForwardingRules(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.PortForwardingRulesAPI.UpdateDeviceCellularGatewayPortForwardingRules(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,13 +64,13 @@ func Test_client_PortForwardingRulesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PortForwardingRulesApiService UpdateNetworkApplianceFirewallPortForwardingRules", func(t *testing.T) {
+	t.Run("Test PortForwardingRulesAPIService UpdateNetworkApplianceFirewallPortForwardingRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.PortForwardingRulesApi.UpdateNetworkApplianceFirewallPortForwardingRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.PortForwardingRulesAPI.UpdateNetworkApplianceFirewallPortForwardingRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

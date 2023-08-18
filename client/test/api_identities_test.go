@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing IdentitiesApiService
+Testing IdentitiesAPIService
 
 */
 
@@ -17,16 +17,16 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_IdentitiesApiService(t *testing.T) {
+func Test_client_IdentitiesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test IdentitiesApiService GetAdministeredIdentitiesMe", func(t *testing.T) {
+	t.Run("Test IdentitiesAPIService GetAdministeredIdentitiesMe", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.IdentitiesApi.GetAdministeredIdentitiesMe(context.Background()).Execute()
+		resp, httpRes, err := apiClient.IdentitiesAPI.GetAdministeredIdentitiesMe(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

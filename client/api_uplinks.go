@@ -21,16 +21,16 @@ import (
 )
 
 
-// UplinksApiService UplinksApi service
-type UplinksApiService service
+// UplinksAPIService UplinksAPI service
+type UplinksAPIService service
 
-type UplinksApiGetDeviceApplianceUplinksSettingsRequest struct {
+type UplinksAPIGetDeviceApplianceUplinksSettingsRequest struct {
 	ctx context.Context
-	ApiService *UplinksApiService
+	ApiService *UplinksAPIService
 	serial string
 }
 
-func (r UplinksApiGetDeviceApplianceUplinksSettingsRequest) Execute() (*GetDeviceApplianceUplinksSettings200Response, *http.Response, error) {
+func (r UplinksAPIGetDeviceApplianceUplinksSettingsRequest) Execute() (*GetDeviceApplianceUplinksSettings200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceApplianceUplinksSettingsExecute(r)
 }
 
@@ -41,10 +41,10 @@ Return the uplink settings for an MX appliance
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return UplinksApiGetDeviceApplianceUplinksSettingsRequest
+ @return UplinksAPIGetDeviceApplianceUplinksSettingsRequest
 */
-func (a *UplinksApiService) GetDeviceApplianceUplinksSettings(ctx context.Context, serial string) UplinksApiGetDeviceApplianceUplinksSettingsRequest {
-	return UplinksApiGetDeviceApplianceUplinksSettingsRequest{
+func (a *UplinksAPIService) GetDeviceApplianceUplinksSettings(ctx context.Context, serial string) UplinksAPIGetDeviceApplianceUplinksSettingsRequest {
+	return UplinksAPIGetDeviceApplianceUplinksSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -53,7 +53,7 @@ func (a *UplinksApiService) GetDeviceApplianceUplinksSettings(ctx context.Contex
 
 // Execute executes the request
 //  @return GetDeviceApplianceUplinksSettings200Response
-func (a *UplinksApiService) GetDeviceApplianceUplinksSettingsExecute(r UplinksApiGetDeviceApplianceUplinksSettingsRequest) (*GetDeviceApplianceUplinksSettings200Response, *http.Response, error) {
+func (a *UplinksAPIService) GetDeviceApplianceUplinksSettingsExecute(r UplinksAPIGetDeviceApplianceUplinksSettingsRequest) (*GetDeviceApplianceUplinksSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -61,7 +61,7 @@ func (a *UplinksApiService) GetDeviceApplianceUplinksSettingsExecute(r UplinksAp
 		localVarReturnValue  *GetDeviceApplianceUplinksSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinksApiService.GetDeviceApplianceUplinksSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinksAPIService.GetDeviceApplianceUplinksSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -141,9 +141,9 @@ func (a *UplinksApiService) GetDeviceApplianceUplinksSettingsExecute(r UplinksAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type UplinksApiGetDeviceLossAndLatencyHistoryRequest struct {
+type UplinksAPIGetDeviceLossAndLatencyHistoryRequest struct {
 	ctx context.Context
-	ApiService *UplinksApiService
+	ApiService *UplinksAPIService
 	serial string
 	ip *string
 	t0 *string
@@ -154,42 +154,42 @@ type UplinksApiGetDeviceLossAndLatencyHistoryRequest struct {
 }
 
 // The destination IP used to obtain the requested stats. This is required.
-func (r UplinksApiGetDeviceLossAndLatencyHistoryRequest) Ip(ip string) UplinksApiGetDeviceLossAndLatencyHistoryRequest {
+func (r UplinksAPIGetDeviceLossAndLatencyHistoryRequest) Ip(ip string) UplinksAPIGetDeviceLossAndLatencyHistoryRequest {
 	r.ip = &ip
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 60 days from today.
-func (r UplinksApiGetDeviceLossAndLatencyHistoryRequest) T0(t0 string) UplinksApiGetDeviceLossAndLatencyHistoryRequest {
+func (r UplinksAPIGetDeviceLossAndLatencyHistoryRequest) T0(t0 string) UplinksAPIGetDeviceLossAndLatencyHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r UplinksApiGetDeviceLossAndLatencyHistoryRequest) T1(t1 string) UplinksApiGetDeviceLossAndLatencyHistoryRequest {
+func (r UplinksAPIGetDeviceLossAndLatencyHistoryRequest) T1(t1 string) UplinksAPIGetDeviceLossAndLatencyHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r UplinksApiGetDeviceLossAndLatencyHistoryRequest) Timespan(timespan float32) UplinksApiGetDeviceLossAndLatencyHistoryRequest {
+func (r UplinksAPIGetDeviceLossAndLatencyHistoryRequest) Timespan(timespan float32) UplinksAPIGetDeviceLossAndLatencyHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 60, 600, 3600, 86400. The default is 60.
-func (r UplinksApiGetDeviceLossAndLatencyHistoryRequest) Resolution(resolution int32) UplinksApiGetDeviceLossAndLatencyHistoryRequest {
+func (r UplinksAPIGetDeviceLossAndLatencyHistoryRequest) Resolution(resolution int32) UplinksAPIGetDeviceLossAndLatencyHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // The WAN uplink used to obtain the requested stats. Valid uplinks are wan1, wan2, wan3, cellular. The default is wan1.
-func (r UplinksApiGetDeviceLossAndLatencyHistoryRequest) Uplink(uplink string) UplinksApiGetDeviceLossAndLatencyHistoryRequest {
+func (r UplinksAPIGetDeviceLossAndLatencyHistoryRequest) Uplink(uplink string) UplinksAPIGetDeviceLossAndLatencyHistoryRequest {
 	r.uplink = &uplink
 	return r
 }
 
-func (r UplinksApiGetDeviceLossAndLatencyHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r UplinksAPIGetDeviceLossAndLatencyHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceLossAndLatencyHistoryExecute(r)
 }
 
@@ -200,10 +200,10 @@ Get the uplink loss percentage and latency in milliseconds, and goodput in kilob
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return UplinksApiGetDeviceLossAndLatencyHistoryRequest
+ @return UplinksAPIGetDeviceLossAndLatencyHistoryRequest
 */
-func (a *UplinksApiService) GetDeviceLossAndLatencyHistory(ctx context.Context, serial string) UplinksApiGetDeviceLossAndLatencyHistoryRequest {
-	return UplinksApiGetDeviceLossAndLatencyHistoryRequest{
+func (a *UplinksAPIService) GetDeviceLossAndLatencyHistory(ctx context.Context, serial string) UplinksAPIGetDeviceLossAndLatencyHistoryRequest {
+	return UplinksAPIGetDeviceLossAndLatencyHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -212,7 +212,7 @@ func (a *UplinksApiService) GetDeviceLossAndLatencyHistory(ctx context.Context, 
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *UplinksApiService) GetDeviceLossAndLatencyHistoryExecute(r UplinksApiGetDeviceLossAndLatencyHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *UplinksAPIService) GetDeviceLossAndLatencyHistoryExecute(r UplinksAPIGetDeviceLossAndLatencyHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -220,7 +220,7 @@ func (a *UplinksApiService) GetDeviceLossAndLatencyHistoryExecute(r UplinksApiGe
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinksApiService.GetDeviceLossAndLatencyHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinksAPIService.GetDeviceLossAndLatencyHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -319,9 +319,9 @@ func (a *UplinksApiService) GetDeviceLossAndLatencyHistoryExecute(r UplinksApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type UplinksApiGetNetworkApplianceUplinksUsageHistoryRequest struct {
+type UplinksAPIGetNetworkApplianceUplinksUsageHistoryRequest struct {
 	ctx context.Context
-	ApiService *UplinksApiService
+	ApiService *UplinksAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -330,30 +330,30 @@ type UplinksApiGetNetworkApplianceUplinksUsageHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
-func (r UplinksApiGetNetworkApplianceUplinksUsageHistoryRequest) T0(t0 string) UplinksApiGetNetworkApplianceUplinksUsageHistoryRequest {
+func (r UplinksAPIGetNetworkApplianceUplinksUsageHistoryRequest) T0(t0 string) UplinksAPIGetNetworkApplianceUplinksUsageHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r UplinksApiGetNetworkApplianceUplinksUsageHistoryRequest) T1(t1 string) UplinksApiGetNetworkApplianceUplinksUsageHistoryRequest {
+func (r UplinksAPIGetNetworkApplianceUplinksUsageHistoryRequest) T1(t1 string) UplinksAPIGetNetworkApplianceUplinksUsageHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 10 minutes.
-func (r UplinksApiGetNetworkApplianceUplinksUsageHistoryRequest) Timespan(timespan float32) UplinksApiGetNetworkApplianceUplinksUsageHistoryRequest {
+func (r UplinksAPIGetNetworkApplianceUplinksUsageHistoryRequest) Timespan(timespan float32) UplinksAPIGetNetworkApplianceUplinksUsageHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 60, 300, 600, 1800, 3600, 86400. The default is 60.
-func (r UplinksApiGetNetworkApplianceUplinksUsageHistoryRequest) Resolution(resolution int32) UplinksApiGetNetworkApplianceUplinksUsageHistoryRequest {
+func (r UplinksAPIGetNetworkApplianceUplinksUsageHistoryRequest) Resolution(resolution int32) UplinksAPIGetNetworkApplianceUplinksUsageHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
-func (r UplinksApiGetNetworkApplianceUplinksUsageHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r UplinksAPIGetNetworkApplianceUplinksUsageHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceUplinksUsageHistoryExecute(r)
 }
 
@@ -364,10 +364,10 @@ Get the sent and received bytes for each uplink of a network.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return UplinksApiGetNetworkApplianceUplinksUsageHistoryRequest
+ @return UplinksAPIGetNetworkApplianceUplinksUsageHistoryRequest
 */
-func (a *UplinksApiService) GetNetworkApplianceUplinksUsageHistory(ctx context.Context, networkId string) UplinksApiGetNetworkApplianceUplinksUsageHistoryRequest {
-	return UplinksApiGetNetworkApplianceUplinksUsageHistoryRequest{
+func (a *UplinksAPIService) GetNetworkApplianceUplinksUsageHistory(ctx context.Context, networkId string) UplinksAPIGetNetworkApplianceUplinksUsageHistoryRequest {
+	return UplinksAPIGetNetworkApplianceUplinksUsageHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -376,7 +376,7 @@ func (a *UplinksApiService) GetNetworkApplianceUplinksUsageHistory(ctx context.C
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *UplinksApiService) GetNetworkApplianceUplinksUsageHistoryExecute(r UplinksApiGetNetworkApplianceUplinksUsageHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *UplinksAPIService) GetNetworkApplianceUplinksUsageHistoryExecute(r UplinksAPIGetNetworkApplianceUplinksUsageHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -384,7 +384,7 @@ func (a *UplinksApiService) GetNetworkApplianceUplinksUsageHistoryExecute(r Upli
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinksApiService.GetNetworkApplianceUplinksUsageHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinksAPIService.GetNetworkApplianceUplinksUsageHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -476,9 +476,9 @@ func (a *UplinksApiService) GetNetworkApplianceUplinksUsageHistoryExecute(r Upli
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type UplinksApiGetOrganizationApplianceUplinkStatusesRequest struct {
+type UplinksAPIGetOrganizationApplianceUplinkStatusesRequest struct {
 	ctx context.Context
-	ApiService *UplinksApiService
+	ApiService *UplinksAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -489,42 +489,42 @@ type UplinksApiGetOrganizationApplianceUplinkStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r UplinksApiGetOrganizationApplianceUplinkStatusesRequest) PerPage(perPage int32) UplinksApiGetOrganizationApplianceUplinkStatusesRequest {
+func (r UplinksAPIGetOrganizationApplianceUplinkStatusesRequest) PerPage(perPage int32) UplinksAPIGetOrganizationApplianceUplinkStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r UplinksApiGetOrganizationApplianceUplinkStatusesRequest) StartingAfter(startingAfter string) UplinksApiGetOrganizationApplianceUplinkStatusesRequest {
+func (r UplinksAPIGetOrganizationApplianceUplinkStatusesRequest) StartingAfter(startingAfter string) UplinksAPIGetOrganizationApplianceUplinkStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r UplinksApiGetOrganizationApplianceUplinkStatusesRequest) EndingBefore(endingBefore string) UplinksApiGetOrganizationApplianceUplinkStatusesRequest {
+func (r UplinksAPIGetOrganizationApplianceUplinkStatusesRequest) EndingBefore(endingBefore string) UplinksAPIGetOrganizationApplianceUplinkStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // A list of network IDs. The returned devices will be filtered to only include these networks.
-func (r UplinksApiGetOrganizationApplianceUplinkStatusesRequest) NetworkIds(networkIds []string) UplinksApiGetOrganizationApplianceUplinkStatusesRequest {
+func (r UplinksAPIGetOrganizationApplianceUplinkStatusesRequest) NetworkIds(networkIds []string) UplinksAPIGetOrganizationApplianceUplinkStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // A list of serial numbers. The returned devices will be filtered to only include these serials.
-func (r UplinksApiGetOrganizationApplianceUplinkStatusesRequest) Serials(serials []string) UplinksApiGetOrganizationApplianceUplinkStatusesRequest {
+func (r UplinksAPIGetOrganizationApplianceUplinkStatusesRequest) Serials(serials []string) UplinksAPIGetOrganizationApplianceUplinkStatusesRequest {
 	r.serials = &serials
 	return r
 }
 
 // A list of ICCIDs. The returned devices will be filtered to only include these ICCIDs.
-func (r UplinksApiGetOrganizationApplianceUplinkStatusesRequest) Iccids(iccids []string) UplinksApiGetOrganizationApplianceUplinkStatusesRequest {
+func (r UplinksAPIGetOrganizationApplianceUplinkStatusesRequest) Iccids(iccids []string) UplinksAPIGetOrganizationApplianceUplinkStatusesRequest {
 	r.iccids = &iccids
 	return r
 }
 
-func (r UplinksApiGetOrganizationApplianceUplinkStatusesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r UplinksAPIGetOrganizationApplianceUplinkStatusesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceUplinkStatusesExecute(r)
 }
 
@@ -535,10 +535,10 @@ List the uplink status of every Meraki MX and Z series appliances in the organiz
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return UplinksApiGetOrganizationApplianceUplinkStatusesRequest
+ @return UplinksAPIGetOrganizationApplianceUplinkStatusesRequest
 */
-func (a *UplinksApiService) GetOrganizationApplianceUplinkStatuses(ctx context.Context, organizationId string) UplinksApiGetOrganizationApplianceUplinkStatusesRequest {
-	return UplinksApiGetOrganizationApplianceUplinkStatusesRequest{
+func (a *UplinksAPIService) GetOrganizationApplianceUplinkStatuses(ctx context.Context, organizationId string) UplinksAPIGetOrganizationApplianceUplinkStatusesRequest {
+	return UplinksAPIGetOrganizationApplianceUplinkStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -547,7 +547,7 @@ func (a *UplinksApiService) GetOrganizationApplianceUplinkStatuses(ctx context.C
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *UplinksApiService) GetOrganizationApplianceUplinkStatusesExecute(r UplinksApiGetOrganizationApplianceUplinkStatusesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *UplinksAPIService) GetOrganizationApplianceUplinkStatusesExecute(r UplinksAPIGetOrganizationApplianceUplinkStatusesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -555,7 +555,7 @@ func (a *UplinksApiService) GetOrganizationApplianceUplinkStatusesExecute(r Upli
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinksApiService.GetOrganizationApplianceUplinkStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinksAPIService.GetOrganizationApplianceUplinkStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -677,9 +677,9 @@ func (a *UplinksApiService) GetOrganizationApplianceUplinkStatusesExecute(r Upli
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type UplinksApiGetOrganizationApplianceUplinksUsageByNetworkRequest struct {
+type UplinksAPIGetOrganizationApplianceUplinksUsageByNetworkRequest struct {
 	ctx context.Context
-	ApiService *UplinksApiService
+	ApiService *UplinksAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -687,24 +687,24 @@ type UplinksApiGetOrganizationApplianceUplinksUsageByNetworkRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
-func (r UplinksApiGetOrganizationApplianceUplinksUsageByNetworkRequest) T0(t0 string) UplinksApiGetOrganizationApplianceUplinksUsageByNetworkRequest {
+func (r UplinksAPIGetOrganizationApplianceUplinksUsageByNetworkRequest) T0(t0 string) UplinksAPIGetOrganizationApplianceUplinksUsageByNetworkRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 14 days after t0.
-func (r UplinksApiGetOrganizationApplianceUplinksUsageByNetworkRequest) T1(t1 string) UplinksApiGetOrganizationApplianceUplinksUsageByNetworkRequest {
+func (r UplinksAPIGetOrganizationApplianceUplinksUsageByNetworkRequest) T1(t1 string) UplinksAPIGetOrganizationApplianceUplinksUsageByNetworkRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 14 days. The default is 1 day.
-func (r UplinksApiGetOrganizationApplianceUplinksUsageByNetworkRequest) Timespan(timespan float32) UplinksApiGetOrganizationApplianceUplinksUsageByNetworkRequest {
+func (r UplinksAPIGetOrganizationApplianceUplinksUsageByNetworkRequest) Timespan(timespan float32) UplinksAPIGetOrganizationApplianceUplinksUsageByNetworkRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r UplinksApiGetOrganizationApplianceUplinksUsageByNetworkRequest) Execute() ([]GetOrganizationApplianceUplinksUsageByNetwork200ResponseInner, *http.Response, error) {
+func (r UplinksAPIGetOrganizationApplianceUplinksUsageByNetworkRequest) Execute() ([]GetOrganizationApplianceUplinksUsageByNetwork200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceUplinksUsageByNetworkExecute(r)
 }
 
@@ -715,10 +715,10 @@ Get the sent and received bytes for each uplink of all MX and Z networks within 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return UplinksApiGetOrganizationApplianceUplinksUsageByNetworkRequest
+ @return UplinksAPIGetOrganizationApplianceUplinksUsageByNetworkRequest
 */
-func (a *UplinksApiService) GetOrganizationApplianceUplinksUsageByNetwork(ctx context.Context, organizationId string) UplinksApiGetOrganizationApplianceUplinksUsageByNetworkRequest {
-	return UplinksApiGetOrganizationApplianceUplinksUsageByNetworkRequest{
+func (a *UplinksAPIService) GetOrganizationApplianceUplinksUsageByNetwork(ctx context.Context, organizationId string) UplinksAPIGetOrganizationApplianceUplinksUsageByNetworkRequest {
+	return UplinksAPIGetOrganizationApplianceUplinksUsageByNetworkRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -727,7 +727,7 @@ func (a *UplinksApiService) GetOrganizationApplianceUplinksUsageByNetwork(ctx co
 
 // Execute executes the request
 //  @return []GetOrganizationApplianceUplinksUsageByNetwork200ResponseInner
-func (a *UplinksApiService) GetOrganizationApplianceUplinksUsageByNetworkExecute(r UplinksApiGetOrganizationApplianceUplinksUsageByNetworkRequest) ([]GetOrganizationApplianceUplinksUsageByNetwork200ResponseInner, *http.Response, error) {
+func (a *UplinksAPIService) GetOrganizationApplianceUplinksUsageByNetworkExecute(r UplinksAPIGetOrganizationApplianceUplinksUsageByNetworkRequest) ([]GetOrganizationApplianceUplinksUsageByNetwork200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -735,7 +735,7 @@ func (a *UplinksApiService) GetOrganizationApplianceUplinksUsageByNetworkExecute
 		localVarReturnValue  []GetOrganizationApplianceUplinksUsageByNetwork200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinksApiService.GetOrganizationApplianceUplinksUsageByNetwork")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinksAPIService.GetOrganizationApplianceUplinksUsageByNetwork")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -824,9 +824,9 @@ func (a *UplinksApiService) GetOrganizationApplianceUplinksUsageByNetworkExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type UplinksApiGetOrganizationDevicesUplinksAddressesByDeviceRequest struct {
+type UplinksAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest struct {
 	ctx context.Context
-	ApiService *UplinksApiService
+	ApiService *UplinksAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -839,54 +839,54 @@ type UplinksApiGetOrganizationDevicesUplinksAddressesByDeviceRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r UplinksApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) PerPage(perPage int32) UplinksApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r UplinksAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) PerPage(perPage int32) UplinksAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r UplinksApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) StartingAfter(startingAfter string) UplinksApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r UplinksAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) StartingAfter(startingAfter string) UplinksAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r UplinksApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) EndingBefore(endingBefore string) UplinksApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r UplinksAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) EndingBefore(endingBefore string) UplinksAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter device uplinks by network ID. This filter uses multiple exact matches.
-func (r UplinksApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) NetworkIds(networkIds []string) UplinksApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r UplinksAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) NetworkIds(networkIds []string) UplinksAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter device uplinks by device product types. This filter uses multiple exact matches.
-func (r UplinksApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) ProductTypes(productTypes []string) UplinksApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r UplinksAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) ProductTypes(productTypes []string) UplinksAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter device availabilities by device serial numbers. This filter uses multiple exact matches.
-func (r UplinksApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) Serials(serials []string) UplinksApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r UplinksAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) Serials(serials []string) UplinksAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.serials = &serials
 	return r
 }
 
 // An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below). This filter uses multiple exact matches.
-func (r UplinksApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) Tags(tags []string) UplinksApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r UplinksAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) Tags(tags []string) UplinksAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.tags = &tags
 	return r
 }
 
 // An optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return devices which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r UplinksApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) TagsFilterType(tagsFilterType string) UplinksApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r UplinksAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) TagsFilterType(tagsFilterType string) UplinksAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
-func (r UplinksApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) Execute() ([]GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner, *http.Response, error) {
+func (r UplinksAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) Execute() ([]GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesUplinksAddressesByDeviceExecute(r)
 }
 
@@ -897,10 +897,10 @@ List the current uplink addresses for devices in an organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return UplinksApiGetOrganizationDevicesUplinksAddressesByDeviceRequest
+ @return UplinksAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest
 */
-func (a *UplinksApiService) GetOrganizationDevicesUplinksAddressesByDevice(ctx context.Context, organizationId string) UplinksApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
-	return UplinksApiGetOrganizationDevicesUplinksAddressesByDeviceRequest{
+func (a *UplinksAPIService) GetOrganizationDevicesUplinksAddressesByDevice(ctx context.Context, organizationId string) UplinksAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+	return UplinksAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -909,7 +909,7 @@ func (a *UplinksApiService) GetOrganizationDevicesUplinksAddressesByDevice(ctx c
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner
-func (a *UplinksApiService) GetOrganizationDevicesUplinksAddressesByDeviceExecute(r UplinksApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) ([]GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner, *http.Response, error) {
+func (a *UplinksAPIService) GetOrganizationDevicesUplinksAddressesByDeviceExecute(r UplinksAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) ([]GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -917,7 +917,7 @@ func (a *UplinksApiService) GetOrganizationDevicesUplinksAddressesByDeviceExecut
 		localVarReturnValue  []GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinksApiService.GetOrganizationDevicesUplinksAddressesByDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinksAPIService.GetOrganizationDevicesUplinksAddressesByDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1053,9 +1053,9 @@ func (a *UplinksApiService) GetOrganizationDevicesUplinksAddressesByDeviceExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type UplinksApiGetOrganizationDevicesUplinksLossAndLatencyRequest struct {
+type UplinksAPIGetOrganizationDevicesUplinksLossAndLatencyRequest struct {
 	ctx context.Context
-	ApiService *UplinksApiService
+	ApiService *UplinksAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -1065,36 +1065,36 @@ type UplinksApiGetOrganizationDevicesUplinksLossAndLatencyRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 60 days from today.
-func (r UplinksApiGetOrganizationDevicesUplinksLossAndLatencyRequest) T0(t0 string) UplinksApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
+func (r UplinksAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) T0(t0 string) UplinksAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 5 minutes after t0. The latest possible time that t1 can be is 2 minutes into the past.
-func (r UplinksApiGetOrganizationDevicesUplinksLossAndLatencyRequest) T1(t1 string) UplinksApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
+func (r UplinksAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) T1(t1 string) UplinksAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 5 minutes. The default is 5 minutes.
-func (r UplinksApiGetOrganizationDevicesUplinksLossAndLatencyRequest) Timespan(timespan float32) UplinksApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
+func (r UplinksAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) Timespan(timespan float32) UplinksAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Optional filter for a specific WAN uplink. Valid uplinks are wan1, wan2, wan3, cellular. Default will return all uplinks.
-func (r UplinksApiGetOrganizationDevicesUplinksLossAndLatencyRequest) Uplink(uplink string) UplinksApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
+func (r UplinksAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) Uplink(uplink string) UplinksAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
 	r.uplink = &uplink
 	return r
 }
 
 // Optional filter for a specific destination IP. Default will return all destination IPs.
-func (r UplinksApiGetOrganizationDevicesUplinksLossAndLatencyRequest) Ip(ip string) UplinksApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
+func (r UplinksAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) Ip(ip string) UplinksAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
 	r.ip = &ip
 	return r
 }
 
-func (r UplinksApiGetOrganizationDevicesUplinksLossAndLatencyRequest) Execute() ([]GetOrganizationDevicesUplinksLossAndLatency200ResponseInner, *http.Response, error) {
+func (r UplinksAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) Execute() ([]GetOrganizationDevicesUplinksLossAndLatency200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesUplinksLossAndLatencyExecute(r)
 }
 
@@ -1105,10 +1105,10 @@ Return the uplink loss and latency for every MX in the organization from at late
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return UplinksApiGetOrganizationDevicesUplinksLossAndLatencyRequest
+ @return UplinksAPIGetOrganizationDevicesUplinksLossAndLatencyRequest
 */
-func (a *UplinksApiService) GetOrganizationDevicesUplinksLossAndLatency(ctx context.Context, organizationId string) UplinksApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
-	return UplinksApiGetOrganizationDevicesUplinksLossAndLatencyRequest{
+func (a *UplinksAPIService) GetOrganizationDevicesUplinksLossAndLatency(ctx context.Context, organizationId string) UplinksAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
+	return UplinksAPIGetOrganizationDevicesUplinksLossAndLatencyRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1117,7 +1117,7 @@ func (a *UplinksApiService) GetOrganizationDevicesUplinksLossAndLatency(ctx cont
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesUplinksLossAndLatency200ResponseInner
-func (a *UplinksApiService) GetOrganizationDevicesUplinksLossAndLatencyExecute(r UplinksApiGetOrganizationDevicesUplinksLossAndLatencyRequest) ([]GetOrganizationDevicesUplinksLossAndLatency200ResponseInner, *http.Response, error) {
+func (a *UplinksAPIService) GetOrganizationDevicesUplinksLossAndLatencyExecute(r UplinksAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) ([]GetOrganizationDevicesUplinksLossAndLatency200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1125,7 +1125,7 @@ func (a *UplinksApiService) GetOrganizationDevicesUplinksLossAndLatencyExecute(r
 		localVarReturnValue  []GetOrganizationDevicesUplinksLossAndLatency200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinksApiService.GetOrganizationDevicesUplinksLossAndLatency")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinksAPIService.GetOrganizationDevicesUplinksLossAndLatency")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1220,9 +1220,9 @@ func (a *UplinksApiService) GetOrganizationDevicesUplinksLossAndLatencyExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type UplinksApiGetOrganizationUplinksStatusesRequest struct {
+type UplinksAPIGetOrganizationUplinksStatusesRequest struct {
 	ctx context.Context
-	ApiService *UplinksApiService
+	ApiService *UplinksAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -1233,42 +1233,42 @@ type UplinksApiGetOrganizationUplinksStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r UplinksApiGetOrganizationUplinksStatusesRequest) PerPage(perPage int32) UplinksApiGetOrganizationUplinksStatusesRequest {
+func (r UplinksAPIGetOrganizationUplinksStatusesRequest) PerPage(perPage int32) UplinksAPIGetOrganizationUplinksStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r UplinksApiGetOrganizationUplinksStatusesRequest) StartingAfter(startingAfter string) UplinksApiGetOrganizationUplinksStatusesRequest {
+func (r UplinksAPIGetOrganizationUplinksStatusesRequest) StartingAfter(startingAfter string) UplinksAPIGetOrganizationUplinksStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r UplinksApiGetOrganizationUplinksStatusesRequest) EndingBefore(endingBefore string) UplinksApiGetOrganizationUplinksStatusesRequest {
+func (r UplinksAPIGetOrganizationUplinksStatusesRequest) EndingBefore(endingBefore string) UplinksAPIGetOrganizationUplinksStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // A list of network IDs. The returned devices will be filtered to only include these networks.
-func (r UplinksApiGetOrganizationUplinksStatusesRequest) NetworkIds(networkIds []string) UplinksApiGetOrganizationUplinksStatusesRequest {
+func (r UplinksAPIGetOrganizationUplinksStatusesRequest) NetworkIds(networkIds []string) UplinksAPIGetOrganizationUplinksStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // A list of serial numbers. The returned devices will be filtered to only include these serials.
-func (r UplinksApiGetOrganizationUplinksStatusesRequest) Serials(serials []string) UplinksApiGetOrganizationUplinksStatusesRequest {
+func (r UplinksAPIGetOrganizationUplinksStatusesRequest) Serials(serials []string) UplinksAPIGetOrganizationUplinksStatusesRequest {
 	r.serials = &serials
 	return r
 }
 
 // A list of ICCIDs. The returned devices will be filtered to only include these ICCIDs.
-func (r UplinksApiGetOrganizationUplinksStatusesRequest) Iccids(iccids []string) UplinksApiGetOrganizationUplinksStatusesRequest {
+func (r UplinksAPIGetOrganizationUplinksStatusesRequest) Iccids(iccids []string) UplinksAPIGetOrganizationUplinksStatusesRequest {
 	r.iccids = &iccids
 	return r
 }
 
-func (r UplinksApiGetOrganizationUplinksStatusesRequest) Execute() ([]GetOrganizationUplinksStatuses200ResponseInner, *http.Response, error) {
+func (r UplinksAPIGetOrganizationUplinksStatusesRequest) Execute() ([]GetOrganizationUplinksStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationUplinksStatusesExecute(r)
 }
 
@@ -1279,10 +1279,10 @@ List the uplink status of every Meraki MX, MG and Z series devices in the organi
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return UplinksApiGetOrganizationUplinksStatusesRequest
+ @return UplinksAPIGetOrganizationUplinksStatusesRequest
 */
-func (a *UplinksApiService) GetOrganizationUplinksStatuses(ctx context.Context, organizationId string) UplinksApiGetOrganizationUplinksStatusesRequest {
-	return UplinksApiGetOrganizationUplinksStatusesRequest{
+func (a *UplinksAPIService) GetOrganizationUplinksStatuses(ctx context.Context, organizationId string) UplinksAPIGetOrganizationUplinksStatusesRequest {
+	return UplinksAPIGetOrganizationUplinksStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1291,7 +1291,7 @@ func (a *UplinksApiService) GetOrganizationUplinksStatuses(ctx context.Context, 
 
 // Execute executes the request
 //  @return []GetOrganizationUplinksStatuses200ResponseInner
-func (a *UplinksApiService) GetOrganizationUplinksStatusesExecute(r UplinksApiGetOrganizationUplinksStatusesRequest) ([]GetOrganizationUplinksStatuses200ResponseInner, *http.Response, error) {
+func (a *UplinksAPIService) GetOrganizationUplinksStatusesExecute(r UplinksAPIGetOrganizationUplinksStatusesRequest) ([]GetOrganizationUplinksStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1299,7 +1299,7 @@ func (a *UplinksApiService) GetOrganizationUplinksStatusesExecute(r UplinksApiGe
 		localVarReturnValue  []GetOrganizationUplinksStatuses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinksApiService.GetOrganizationUplinksStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinksAPIService.GetOrganizationUplinksStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1421,19 +1421,19 @@ func (a *UplinksApiService) GetOrganizationUplinksStatusesExecute(r UplinksApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type UplinksApiUpdateDeviceApplianceUplinksSettingsRequest struct {
+type UplinksAPIUpdateDeviceApplianceUplinksSettingsRequest struct {
 	ctx context.Context
-	ApiService *UplinksApiService
+	ApiService *UplinksAPIService
 	serial string
 	updateDeviceApplianceUplinksSettingsRequest *UpdateDeviceApplianceUplinksSettingsRequest
 }
 
-func (r UplinksApiUpdateDeviceApplianceUplinksSettingsRequest) UpdateDeviceApplianceUplinksSettingsRequest(updateDeviceApplianceUplinksSettingsRequest UpdateDeviceApplianceUplinksSettingsRequest) UplinksApiUpdateDeviceApplianceUplinksSettingsRequest {
+func (r UplinksAPIUpdateDeviceApplianceUplinksSettingsRequest) UpdateDeviceApplianceUplinksSettingsRequest(updateDeviceApplianceUplinksSettingsRequest UpdateDeviceApplianceUplinksSettingsRequest) UplinksAPIUpdateDeviceApplianceUplinksSettingsRequest {
 	r.updateDeviceApplianceUplinksSettingsRequest = &updateDeviceApplianceUplinksSettingsRequest
 	return r
 }
 
-func (r UplinksApiUpdateDeviceApplianceUplinksSettingsRequest) Execute() (*GetDeviceApplianceUplinksSettings200Response, *http.Response, error) {
+func (r UplinksAPIUpdateDeviceApplianceUplinksSettingsRequest) Execute() (*GetDeviceApplianceUplinksSettings200Response, *http.Response, error) {
 	return r.ApiService.UpdateDeviceApplianceUplinksSettingsExecute(r)
 }
 
@@ -1444,10 +1444,10 @@ Update the uplink settings for an MX appliance
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return UplinksApiUpdateDeviceApplianceUplinksSettingsRequest
+ @return UplinksAPIUpdateDeviceApplianceUplinksSettingsRequest
 */
-func (a *UplinksApiService) UpdateDeviceApplianceUplinksSettings(ctx context.Context, serial string) UplinksApiUpdateDeviceApplianceUplinksSettingsRequest {
-	return UplinksApiUpdateDeviceApplianceUplinksSettingsRequest{
+func (a *UplinksAPIService) UpdateDeviceApplianceUplinksSettings(ctx context.Context, serial string) UplinksAPIUpdateDeviceApplianceUplinksSettingsRequest {
+	return UplinksAPIUpdateDeviceApplianceUplinksSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1456,7 +1456,7 @@ func (a *UplinksApiService) UpdateDeviceApplianceUplinksSettings(ctx context.Con
 
 // Execute executes the request
 //  @return GetDeviceApplianceUplinksSettings200Response
-func (a *UplinksApiService) UpdateDeviceApplianceUplinksSettingsExecute(r UplinksApiUpdateDeviceApplianceUplinksSettingsRequest) (*GetDeviceApplianceUplinksSettings200Response, *http.Response, error) {
+func (a *UplinksAPIService) UpdateDeviceApplianceUplinksSettingsExecute(r UplinksAPIUpdateDeviceApplianceUplinksSettingsRequest) (*GetDeviceApplianceUplinksSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1464,7 +1464,7 @@ func (a *UplinksApiService) UpdateDeviceApplianceUplinksSettingsExecute(r Uplink
 		localVarReturnValue  *GetDeviceApplianceUplinksSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinksApiService.UpdateDeviceApplianceUplinksSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinksAPIService.UpdateDeviceApplianceUplinksSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

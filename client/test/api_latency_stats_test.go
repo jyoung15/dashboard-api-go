@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing LatencyStatsApiService
+Testing LatencyStatsAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_LatencyStatsApiService(t *testing.T) {
+func Test_client_LatencyStatsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test LatencyStatsApiService GetDeviceWirelessLatencyStats", func(t *testing.T) {
+	t.Run("Test LatencyStatsAPIService GetDeviceWirelessLatencyStats", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.LatencyStatsApi.GetDeviceWirelessLatencyStats(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.LatencyStatsAPI.GetDeviceWirelessLatencyStats(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,14 +36,14 @@ func Test_client_LatencyStatsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test LatencyStatsApiService GetNetworkWirelessClientLatencyStats", func(t *testing.T) {
+	t.Run("Test LatencyStatsAPIService GetNetworkWirelessClientLatencyStats", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var clientId string
 
-		resp, httpRes, err := apiClient.LatencyStatsApi.GetNetworkWirelessClientLatencyStats(context.Background(), networkId, clientId).Execute()
+		resp, httpRes, err := apiClient.LatencyStatsAPI.GetNetworkWirelessClientLatencyStats(context.Background(), networkId, clientId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -51,13 +51,13 @@ func Test_client_LatencyStatsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test LatencyStatsApiService GetNetworkWirelessClientsLatencyStats", func(t *testing.T) {
+	t.Run("Test LatencyStatsAPIService GetNetworkWirelessClientsLatencyStats", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.LatencyStatsApi.GetNetworkWirelessClientsLatencyStats(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.LatencyStatsAPI.GetNetworkWirelessClientsLatencyStats(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -65,13 +65,13 @@ func Test_client_LatencyStatsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test LatencyStatsApiService GetNetworkWirelessDevicesLatencyStats", func(t *testing.T) {
+	t.Run("Test LatencyStatsAPIService GetNetworkWirelessDevicesLatencyStats", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.LatencyStatsApi.GetNetworkWirelessDevicesLatencyStats(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.LatencyStatsAPI.GetNetworkWirelessDevicesLatencyStats(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,13 +79,13 @@ func Test_client_LatencyStatsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test LatencyStatsApiService GetNetworkWirelessLatencyStats", func(t *testing.T) {
+	t.Run("Test LatencyStatsAPIService GetNetworkWirelessLatencyStats", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.LatencyStatsApi.GetNetworkWirelessLatencyStats(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.LatencyStatsAPI.GetNetworkWirelessLatencyStats(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -20,16 +20,16 @@ import (
 )
 
 
-// EventTypesApiService EventTypesApi service
-type EventTypesApiService service
+// EventTypesAPIService EventTypesAPI service
+type EventTypesAPIService service
 
-type EventTypesApiGetNetworkEventsEventTypesRequest struct {
+type EventTypesAPIGetNetworkEventsEventTypesRequest struct {
 	ctx context.Context
-	ApiService *EventTypesApiService
+	ApiService *EventTypesAPIService
 	networkId string
 }
 
-func (r EventTypesApiGetNetworkEventsEventTypesRequest) Execute() ([]GetNetworkEventsEventTypes200ResponseInner, *http.Response, error) {
+func (r EventTypesAPIGetNetworkEventsEventTypesRequest) Execute() ([]GetNetworkEventsEventTypes200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkEventsEventTypesExecute(r)
 }
 
@@ -40,10 +40,10 @@ List the event type to human-readable description
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return EventTypesApiGetNetworkEventsEventTypesRequest
+ @return EventTypesAPIGetNetworkEventsEventTypesRequest
 */
-func (a *EventTypesApiService) GetNetworkEventsEventTypes(ctx context.Context, networkId string) EventTypesApiGetNetworkEventsEventTypesRequest {
-	return EventTypesApiGetNetworkEventsEventTypesRequest{
+func (a *EventTypesAPIService) GetNetworkEventsEventTypes(ctx context.Context, networkId string) EventTypesAPIGetNetworkEventsEventTypesRequest {
+	return EventTypesAPIGetNetworkEventsEventTypesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *EventTypesApiService) GetNetworkEventsEventTypes(ctx context.Context, n
 
 // Execute executes the request
 //  @return []GetNetworkEventsEventTypes200ResponseInner
-func (a *EventTypesApiService) GetNetworkEventsEventTypesExecute(r EventTypesApiGetNetworkEventsEventTypesRequest) ([]GetNetworkEventsEventTypes200ResponseInner, *http.Response, error) {
+func (a *EventTypesAPIService) GetNetworkEventsEventTypesExecute(r EventTypesAPIGetNetworkEventsEventTypesRequest) ([]GetNetworkEventsEventTypes200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *EventTypesApiService) GetNetworkEventsEventTypesExecute(r EventTypesApi
 		localVarReturnValue  []GetNetworkEventsEventTypes200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventTypesApiService.GetNetworkEventsEventTypes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventTypesAPIService.GetNetworkEventsEventTypes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

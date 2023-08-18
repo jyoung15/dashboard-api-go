@@ -20,12 +20,12 @@ import (
 )
 
 
-// TrustedAccessConfigsApiService TrustedAccessConfigsApi service
-type TrustedAccessConfigsApiService service
+// TrustedAccessConfigsAPIService TrustedAccessConfigsAPI service
+type TrustedAccessConfigsAPIService service
 
-type TrustedAccessConfigsApiGetNetworkSmTrustedAccessConfigsRequest struct {
+type TrustedAccessConfigsAPIGetNetworkSmTrustedAccessConfigsRequest struct {
 	ctx context.Context
-	ApiService *TrustedAccessConfigsApiService
+	ApiService *TrustedAccessConfigsAPIService
 	networkId string
 	perPage *int32
 	startingAfter *string
@@ -33,24 +33,24 @@ type TrustedAccessConfigsApiGetNetworkSmTrustedAccessConfigsRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
-func (r TrustedAccessConfigsApiGetNetworkSmTrustedAccessConfigsRequest) PerPage(perPage int32) TrustedAccessConfigsApiGetNetworkSmTrustedAccessConfigsRequest {
+func (r TrustedAccessConfigsAPIGetNetworkSmTrustedAccessConfigsRequest) PerPage(perPage int32) TrustedAccessConfigsAPIGetNetworkSmTrustedAccessConfigsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r TrustedAccessConfigsApiGetNetworkSmTrustedAccessConfigsRequest) StartingAfter(startingAfter string) TrustedAccessConfigsApiGetNetworkSmTrustedAccessConfigsRequest {
+func (r TrustedAccessConfigsAPIGetNetworkSmTrustedAccessConfigsRequest) StartingAfter(startingAfter string) TrustedAccessConfigsAPIGetNetworkSmTrustedAccessConfigsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r TrustedAccessConfigsApiGetNetworkSmTrustedAccessConfigsRequest) EndingBefore(endingBefore string) TrustedAccessConfigsApiGetNetworkSmTrustedAccessConfigsRequest {
+func (r TrustedAccessConfigsAPIGetNetworkSmTrustedAccessConfigsRequest) EndingBefore(endingBefore string) TrustedAccessConfigsAPIGetNetworkSmTrustedAccessConfigsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r TrustedAccessConfigsApiGetNetworkSmTrustedAccessConfigsRequest) Execute() ([]GetNetworkSmTrustedAccessConfigs200ResponseInner, *http.Response, error) {
+func (r TrustedAccessConfigsAPIGetNetworkSmTrustedAccessConfigsRequest) Execute() ([]GetNetworkSmTrustedAccessConfigs200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmTrustedAccessConfigsExecute(r)
 }
 
@@ -61,10 +61,10 @@ List Trusted Access Configs
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return TrustedAccessConfigsApiGetNetworkSmTrustedAccessConfigsRequest
+ @return TrustedAccessConfigsAPIGetNetworkSmTrustedAccessConfigsRequest
 */
-func (a *TrustedAccessConfigsApiService) GetNetworkSmTrustedAccessConfigs(ctx context.Context, networkId string) TrustedAccessConfigsApiGetNetworkSmTrustedAccessConfigsRequest {
-	return TrustedAccessConfigsApiGetNetworkSmTrustedAccessConfigsRequest{
+func (a *TrustedAccessConfigsAPIService) GetNetworkSmTrustedAccessConfigs(ctx context.Context, networkId string) TrustedAccessConfigsAPIGetNetworkSmTrustedAccessConfigsRequest {
+	return TrustedAccessConfigsAPIGetNetworkSmTrustedAccessConfigsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -73,7 +73,7 @@ func (a *TrustedAccessConfigsApiService) GetNetworkSmTrustedAccessConfigs(ctx co
 
 // Execute executes the request
 //  @return []GetNetworkSmTrustedAccessConfigs200ResponseInner
-func (a *TrustedAccessConfigsApiService) GetNetworkSmTrustedAccessConfigsExecute(r TrustedAccessConfigsApiGetNetworkSmTrustedAccessConfigsRequest) ([]GetNetworkSmTrustedAccessConfigs200ResponseInner, *http.Response, error) {
+func (a *TrustedAccessConfigsAPIService) GetNetworkSmTrustedAccessConfigsExecute(r TrustedAccessConfigsAPIGetNetworkSmTrustedAccessConfigsRequest) ([]GetNetworkSmTrustedAccessConfigs200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -81,7 +81,7 @@ func (a *TrustedAccessConfigsApiService) GetNetworkSmTrustedAccessConfigsExecute
 		localVarReturnValue  []GetNetworkSmTrustedAccessConfigs200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrustedAccessConfigsApiService.GetNetworkSmTrustedAccessConfigs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrustedAccessConfigsAPIService.GetNetworkSmTrustedAccessConfigs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

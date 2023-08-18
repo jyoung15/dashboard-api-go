@@ -20,17 +20,17 @@ import (
 )
 
 
-// SecurityCentersApiService SecurityCentersApi service
-type SecurityCentersApiService service
+// SecurityCentersAPIService SecurityCentersAPI service
+type SecurityCentersAPIService service
 
-type SecurityCentersApiGetNetworkSmDeviceSecurityCentersRequest struct {
+type SecurityCentersAPIGetNetworkSmDeviceSecurityCentersRequest struct {
 	ctx context.Context
-	ApiService *SecurityCentersApiService
+	ApiService *SecurityCentersAPIService
 	networkId string
 	deviceId string
 }
 
-func (r SecurityCentersApiGetNetworkSmDeviceSecurityCentersRequest) Execute() ([]GetNetworkSmDeviceSecurityCenters200ResponseInner, *http.Response, error) {
+func (r SecurityCentersAPIGetNetworkSmDeviceSecurityCentersRequest) Execute() ([]GetNetworkSmDeviceSecurityCenters200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceSecurityCentersExecute(r)
 }
 
@@ -42,10 +42,10 @@ List the security centers on a device
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return SecurityCentersApiGetNetworkSmDeviceSecurityCentersRequest
+ @return SecurityCentersAPIGetNetworkSmDeviceSecurityCentersRequest
 */
-func (a *SecurityCentersApiService) GetNetworkSmDeviceSecurityCenters(ctx context.Context, networkId string, deviceId string) SecurityCentersApiGetNetworkSmDeviceSecurityCentersRequest {
-	return SecurityCentersApiGetNetworkSmDeviceSecurityCentersRequest{
+func (a *SecurityCentersAPIService) GetNetworkSmDeviceSecurityCenters(ctx context.Context, networkId string, deviceId string) SecurityCentersAPIGetNetworkSmDeviceSecurityCentersRequest {
+	return SecurityCentersAPIGetNetworkSmDeviceSecurityCentersRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -55,7 +55,7 @@ func (a *SecurityCentersApiService) GetNetworkSmDeviceSecurityCenters(ctx contex
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceSecurityCenters200ResponseInner
-func (a *SecurityCentersApiService) GetNetworkSmDeviceSecurityCentersExecute(r SecurityCentersApiGetNetworkSmDeviceSecurityCentersRequest) ([]GetNetworkSmDeviceSecurityCenters200ResponseInner, *http.Response, error) {
+func (a *SecurityCentersAPIService) GetNetworkSmDeviceSecurityCentersExecute(r SecurityCentersAPIGetNetworkSmDeviceSecurityCentersRequest) ([]GetNetworkSmDeviceSecurityCenters200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -63,7 +63,7 @@ func (a *SecurityCentersApiService) GetNetworkSmDeviceSecurityCentersExecute(r S
 		localVarReturnValue  []GetNetworkSmDeviceSecurityCenters200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityCentersApiService.GetNetworkSmDeviceSecurityCenters")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityCentersAPIService.GetNetworkSmDeviceSecurityCenters")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

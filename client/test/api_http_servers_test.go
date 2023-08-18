@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing HttpServersApiService
+Testing HttpServersAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_HttpServersApiService(t *testing.T) {
+func Test_client_HttpServersAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test HttpServersApiService CreateNetworkWebhooksHttpServer", func(t *testing.T) {
+	t.Run("Test HttpServersAPIService CreateNetworkWebhooksHttpServer", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.HttpServersApi.CreateNetworkWebhooksHttpServer(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.HttpServersAPI.CreateNetworkWebhooksHttpServer(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,42 +36,28 @@ func Test_client_HttpServersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test HttpServersApiService DeleteNetworkWebhooksHttpServer", func(t *testing.T) {
+	t.Run("Test HttpServersAPIService DeleteNetworkWebhooksHttpServer", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var httpServerId string
 
-		httpRes, err := apiClient.HttpServersApi.DeleteNetworkWebhooksHttpServer(context.Background(), networkId, httpServerId).Execute()
+		httpRes, err := apiClient.HttpServersAPI.DeleteNetworkWebhooksHttpServer(context.Background(), networkId, httpServerId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test HttpServersApiService GetNetworkWebhooksHttpServer", func(t *testing.T) {
+	t.Run("Test HttpServersAPIService GetNetworkWebhooksHttpServer", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var httpServerId string
 
-		resp, httpRes, err := apiClient.HttpServersApi.GetNetworkWebhooksHttpServer(context.Background(), networkId, httpServerId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test HttpServersApiService GetNetworkWebhooksHttpServers", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-
-		resp, httpRes, err := apiClient.HttpServersApi.GetNetworkWebhooksHttpServers(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.HttpServersAPI.GetNetworkWebhooksHttpServer(context.Background(), networkId, httpServerId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,14 +65,28 @@ func Test_client_HttpServersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test HttpServersApiService UpdateNetworkWebhooksHttpServer", func(t *testing.T) {
+	t.Run("Test HttpServersAPIService GetNetworkWebhooksHttpServers", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+
+		resp, httpRes, err := apiClient.HttpServersAPI.GetNetworkWebhooksHttpServers(context.Background(), networkId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test HttpServersAPIService UpdateNetworkWebhooksHttpServer", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var httpServerId string
 
-		resp, httpRes, err := apiClient.HttpServersApi.UpdateNetworkWebhooksHttpServer(context.Background(), networkId, httpServerId).Execute()
+		resp, httpRes, err := apiClient.HttpServersAPI.UpdateNetworkWebhooksHttpServer(context.Background(), networkId, httpServerId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

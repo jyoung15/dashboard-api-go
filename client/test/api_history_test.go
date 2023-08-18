@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing HistoryApiService
+Testing HistoryAPIService
 
 */
 
@@ -17,19 +17,19 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_HistoryApiService(t *testing.T) {
+func Test_client_HistoryAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test HistoryApiService GetDeviceCameraAnalyticsZoneHistory", func(t *testing.T) {
+	t.Run("Test HistoryAPIService GetDeviceCameraAnalyticsZoneHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var zoneId string
 
-		resp, httpRes, err := apiClient.HistoryApi.GetDeviceCameraAnalyticsZoneHistory(context.Background(), serial, zoneId).Execute()
+		resp, httpRes, err := apiClient.HistoryAPI.GetDeviceCameraAnalyticsZoneHistory(context.Background(), serial, zoneId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -37,13 +37,13 @@ func Test_client_HistoryApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test HistoryApiService GetNetworkAlertsHistory", func(t *testing.T) {
+	t.Run("Test HistoryAPIService GetNetworkAlertsHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.HistoryApi.GetNetworkAlertsHistory(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.HistoryAPI.GetNetworkAlertsHistory(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -51,13 +51,13 @@ func Test_client_HistoryApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test HistoryApiService GetOrganizationSensorReadingsHistory", func(t *testing.T) {
+	t.Run("Test HistoryAPIService GetOrganizationSensorReadingsHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.HistoryApi.GetOrganizationSensorReadingsHistory(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.HistoryAPI.GetOrganizationSensorReadingsHistory(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -65,13 +65,13 @@ func Test_client_HistoryApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test HistoryApiService GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval", func(t *testing.T) {
+	t.Run("Test HistoryAPIService GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.HistoryApi.GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.HistoryAPI.GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,13 +79,13 @@ func Test_client_HistoryApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test HistoryApiService GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval", func(t *testing.T) {
+	t.Run("Test HistoryAPIService GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.HistoryApi.GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.HistoryAPI.GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

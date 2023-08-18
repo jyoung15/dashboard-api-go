@@ -21,22 +21,22 @@ import (
 )
 
 
-// WirelessApiService WirelessApi service
-type WirelessApiService service
+// WirelessAPIService WirelessAPI service
+type WirelessAPIService service
 
-type WirelessApiCreateNetworkWirelessRfProfileRequest struct {
+type WirelessAPICreateNetworkWirelessRfProfileRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	createNetworkWirelessRfProfileRequest *CreateNetworkWirelessRfProfileRequest
 }
 
-func (r WirelessApiCreateNetworkWirelessRfProfileRequest) CreateNetworkWirelessRfProfileRequest(createNetworkWirelessRfProfileRequest CreateNetworkWirelessRfProfileRequest) WirelessApiCreateNetworkWirelessRfProfileRequest {
+func (r WirelessAPICreateNetworkWirelessRfProfileRequest) CreateNetworkWirelessRfProfileRequest(createNetworkWirelessRfProfileRequest CreateNetworkWirelessRfProfileRequest) WirelessAPICreateNetworkWirelessRfProfileRequest {
 	r.createNetworkWirelessRfProfileRequest = &createNetworkWirelessRfProfileRequest
 	return r
 }
 
-func (r WirelessApiCreateNetworkWirelessRfProfileRequest) Execute() (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
+func (r WirelessAPICreateNetworkWirelessRfProfileRequest) Execute() (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
 	return r.ApiService.CreateNetworkWirelessRfProfileExecute(r)
 }
 
@@ -47,10 +47,10 @@ Creates new RF profile for this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessApiCreateNetworkWirelessRfProfileRequest
+ @return WirelessAPICreateNetworkWirelessRfProfileRequest
 */
-func (a *WirelessApiService) CreateNetworkWirelessRfProfile(ctx context.Context, networkId string) WirelessApiCreateNetworkWirelessRfProfileRequest {
-	return WirelessApiCreateNetworkWirelessRfProfileRequest{
+func (a *WirelessAPIService) CreateNetworkWirelessRfProfile(ctx context.Context, networkId string) WirelessAPICreateNetworkWirelessRfProfileRequest {
+	return WirelessAPICreateNetworkWirelessRfProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -59,7 +59,7 @@ func (a *WirelessApiService) CreateNetworkWirelessRfProfile(ctx context.Context,
 
 // Execute executes the request
 //  @return GetNetworkWirelessRfProfiles200Response
-func (a *WirelessApiService) CreateNetworkWirelessRfProfileExecute(r WirelessApiCreateNetworkWirelessRfProfileRequest) (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
+func (a *WirelessAPIService) CreateNetworkWirelessRfProfileExecute(r WirelessAPICreateNetworkWirelessRfProfileRequest) (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -67,7 +67,7 @@ func (a *WirelessApiService) CreateNetworkWirelessRfProfileExecute(r WirelessApi
 		localVarReturnValue  *GetNetworkWirelessRfProfiles200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.CreateNetworkWirelessRfProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.CreateNetworkWirelessRfProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -152,20 +152,20 @@ func (a *WirelessApiService) CreateNetworkWirelessRfProfileExecute(r WirelessApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiCreateNetworkWirelessSsidIdentityPskRequest struct {
+type WirelessAPICreateNetworkWirelessSsidIdentityPskRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	number string
 	createNetworkWirelessSsidIdentityPskRequest *CreateNetworkWirelessSsidIdentityPskRequest
 }
 
-func (r WirelessApiCreateNetworkWirelessSsidIdentityPskRequest) CreateNetworkWirelessSsidIdentityPskRequest(createNetworkWirelessSsidIdentityPskRequest CreateNetworkWirelessSsidIdentityPskRequest) WirelessApiCreateNetworkWirelessSsidIdentityPskRequest {
+func (r WirelessAPICreateNetworkWirelessSsidIdentityPskRequest) CreateNetworkWirelessSsidIdentityPskRequest(createNetworkWirelessSsidIdentityPskRequest CreateNetworkWirelessSsidIdentityPskRequest) WirelessAPICreateNetworkWirelessSsidIdentityPskRequest {
 	r.createNetworkWirelessSsidIdentityPskRequest = &createNetworkWirelessSsidIdentityPskRequest
 	return r
 }
 
-func (r WirelessApiCreateNetworkWirelessSsidIdentityPskRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessAPICreateNetworkWirelessSsidIdentityPskRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkWirelessSsidIdentityPskExecute(r)
 }
 
@@ -177,10 +177,10 @@ Create an Identity PSK
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return WirelessApiCreateNetworkWirelessSsidIdentityPskRequest
+ @return WirelessAPICreateNetworkWirelessSsidIdentityPskRequest
 */
-func (a *WirelessApiService) CreateNetworkWirelessSsidIdentityPsk(ctx context.Context, networkId string, number string) WirelessApiCreateNetworkWirelessSsidIdentityPskRequest {
-	return WirelessApiCreateNetworkWirelessSsidIdentityPskRequest{
+func (a *WirelessAPIService) CreateNetworkWirelessSsidIdentityPsk(ctx context.Context, networkId string, number string) WirelessAPICreateNetworkWirelessSsidIdentityPskRequest {
+	return WirelessAPICreateNetworkWirelessSsidIdentityPskRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -190,7 +190,7 @@ func (a *WirelessApiService) CreateNetworkWirelessSsidIdentityPsk(ctx context.Co
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessApiService) CreateNetworkWirelessSsidIdentityPskExecute(r WirelessApiCreateNetworkWirelessSsidIdentityPskRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) CreateNetworkWirelessSsidIdentityPskExecute(r WirelessAPICreateNetworkWirelessSsidIdentityPskRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -198,7 +198,7 @@ func (a *WirelessApiService) CreateNetworkWirelessSsidIdentityPskExecute(r Wirel
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.CreateNetworkWirelessSsidIdentityPsk")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.CreateNetworkWirelessSsidIdentityPsk")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -284,14 +284,14 @@ func (a *WirelessApiService) CreateNetworkWirelessSsidIdentityPskExecute(r Wirel
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiDeleteNetworkWirelessRfProfileRequest struct {
+type WirelessAPIDeleteNetworkWirelessRfProfileRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	rfProfileId string
 }
 
-func (r WirelessApiDeleteNetworkWirelessRfProfileRequest) Execute() (*http.Response, error) {
+func (r WirelessAPIDeleteNetworkWirelessRfProfileRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkWirelessRfProfileExecute(r)
 }
 
@@ -303,10 +303,10 @@ Delete a RF Profile
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param rfProfileId Rf profile ID
- @return WirelessApiDeleteNetworkWirelessRfProfileRequest
+ @return WirelessAPIDeleteNetworkWirelessRfProfileRequest
 */
-func (a *WirelessApiService) DeleteNetworkWirelessRfProfile(ctx context.Context, networkId string, rfProfileId string) WirelessApiDeleteNetworkWirelessRfProfileRequest {
-	return WirelessApiDeleteNetworkWirelessRfProfileRequest{
+func (a *WirelessAPIService) DeleteNetworkWirelessRfProfile(ctx context.Context, networkId string, rfProfileId string) WirelessAPIDeleteNetworkWirelessRfProfileRequest {
+	return WirelessAPIDeleteNetworkWirelessRfProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -315,14 +315,14 @@ func (a *WirelessApiService) DeleteNetworkWirelessRfProfile(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *WirelessApiService) DeleteNetworkWirelessRfProfileExecute(r WirelessApiDeleteNetworkWirelessRfProfileRequest) (*http.Response, error) {
+func (a *WirelessAPIService) DeleteNetworkWirelessRfProfileExecute(r WirelessAPIDeleteNetworkWirelessRfProfileRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.DeleteNetworkWirelessRfProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.DeleteNetworkWirelessRfProfile")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -394,15 +394,15 @@ func (a *WirelessApiService) DeleteNetworkWirelessRfProfileExecute(r WirelessApi
 	return localVarHTTPResponse, nil
 }
 
-type WirelessApiDeleteNetworkWirelessSsidIdentityPskRequest struct {
+type WirelessAPIDeleteNetworkWirelessSsidIdentityPskRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	number string
 	identityPskId string
 }
 
-func (r WirelessApiDeleteNetworkWirelessSsidIdentityPskRequest) Execute() (*http.Response, error) {
+func (r WirelessAPIDeleteNetworkWirelessSsidIdentityPskRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkWirelessSsidIdentityPskExecute(r)
 }
 
@@ -415,10 +415,10 @@ Delete an Identity PSK
  @param networkId Network ID
  @param number Number
  @param identityPskId Identity psk ID
- @return WirelessApiDeleteNetworkWirelessSsidIdentityPskRequest
+ @return WirelessAPIDeleteNetworkWirelessSsidIdentityPskRequest
 */
-func (a *WirelessApiService) DeleteNetworkWirelessSsidIdentityPsk(ctx context.Context, networkId string, number string, identityPskId string) WirelessApiDeleteNetworkWirelessSsidIdentityPskRequest {
-	return WirelessApiDeleteNetworkWirelessSsidIdentityPskRequest{
+func (a *WirelessAPIService) DeleteNetworkWirelessSsidIdentityPsk(ctx context.Context, networkId string, number string, identityPskId string) WirelessAPIDeleteNetworkWirelessSsidIdentityPskRequest {
+	return WirelessAPIDeleteNetworkWirelessSsidIdentityPskRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -428,14 +428,14 @@ func (a *WirelessApiService) DeleteNetworkWirelessSsidIdentityPsk(ctx context.Co
 }
 
 // Execute executes the request
-func (a *WirelessApiService) DeleteNetworkWirelessSsidIdentityPskExecute(r WirelessApiDeleteNetworkWirelessSsidIdentityPskRequest) (*http.Response, error) {
+func (a *WirelessAPIService) DeleteNetworkWirelessSsidIdentityPskExecute(r WirelessAPIDeleteNetworkWirelessSsidIdentityPskRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.DeleteNetworkWirelessSsidIdentityPsk")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.DeleteNetworkWirelessSsidIdentityPsk")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -508,13 +508,13 @@ func (a *WirelessApiService) DeleteNetworkWirelessSsidIdentityPskExecute(r Wirel
 	return localVarHTTPResponse, nil
 }
 
-type WirelessApiGetDeviceWirelessBluetoothSettingsRequest struct {
+type WirelessAPIGetDeviceWirelessBluetoothSettingsRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	serial string
 }
 
-func (r WirelessApiGetDeviceWirelessBluetoothSettingsRequest) Execute() (*GetDeviceWirelessBluetoothSettings200Response, *http.Response, error) {
+func (r WirelessAPIGetDeviceWirelessBluetoothSettingsRequest) Execute() (*GetDeviceWirelessBluetoothSettings200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceWirelessBluetoothSettingsExecute(r)
 }
 
@@ -525,10 +525,10 @@ Return the bluetooth settings for a wireless device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return WirelessApiGetDeviceWirelessBluetoothSettingsRequest
+ @return WirelessAPIGetDeviceWirelessBluetoothSettingsRequest
 */
-func (a *WirelessApiService) GetDeviceWirelessBluetoothSettings(ctx context.Context, serial string) WirelessApiGetDeviceWirelessBluetoothSettingsRequest {
-	return WirelessApiGetDeviceWirelessBluetoothSettingsRequest{
+func (a *WirelessAPIService) GetDeviceWirelessBluetoothSettings(ctx context.Context, serial string) WirelessAPIGetDeviceWirelessBluetoothSettingsRequest {
+	return WirelessAPIGetDeviceWirelessBluetoothSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -537,7 +537,7 @@ func (a *WirelessApiService) GetDeviceWirelessBluetoothSettings(ctx context.Cont
 
 // Execute executes the request
 //  @return GetDeviceWirelessBluetoothSettings200Response
-func (a *WirelessApiService) GetDeviceWirelessBluetoothSettingsExecute(r WirelessApiGetDeviceWirelessBluetoothSettingsRequest) (*GetDeviceWirelessBluetoothSettings200Response, *http.Response, error) {
+func (a *WirelessAPIService) GetDeviceWirelessBluetoothSettingsExecute(r WirelessAPIGetDeviceWirelessBluetoothSettingsRequest) (*GetDeviceWirelessBluetoothSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -545,7 +545,7 @@ func (a *WirelessApiService) GetDeviceWirelessBluetoothSettingsExecute(r Wireles
 		localVarReturnValue  *GetDeviceWirelessBluetoothSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetDeviceWirelessBluetoothSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetDeviceWirelessBluetoothSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -625,9 +625,9 @@ func (a *WirelessApiService) GetDeviceWirelessBluetoothSettingsExecute(r Wireles
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetDeviceWirelessConnectionStatsRequest struct {
+type WirelessAPIGetDeviceWirelessConnectionStatsRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	serial string
 	t0 *string
 	t1 *string
@@ -639,48 +639,48 @@ type WirelessApiGetDeviceWirelessConnectionStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r WirelessApiGetDeviceWirelessConnectionStatsRequest) T0(t0 string) WirelessApiGetDeviceWirelessConnectionStatsRequest {
+func (r WirelessAPIGetDeviceWirelessConnectionStatsRequest) T0(t0 string) WirelessAPIGetDeviceWirelessConnectionStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r WirelessApiGetDeviceWirelessConnectionStatsRequest) T1(t1 string) WirelessApiGetDeviceWirelessConnectionStatsRequest {
+func (r WirelessAPIGetDeviceWirelessConnectionStatsRequest) T1(t1 string) WirelessAPIGetDeviceWirelessConnectionStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r WirelessApiGetDeviceWirelessConnectionStatsRequest) Timespan(timespan float32) WirelessApiGetDeviceWirelessConnectionStatsRequest {
+func (r WirelessAPIGetDeviceWirelessConnectionStatsRequest) Timespan(timespan float32) WirelessAPIGetDeviceWirelessConnectionStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r WirelessApiGetDeviceWirelessConnectionStatsRequest) Band(band string) WirelessApiGetDeviceWirelessConnectionStatsRequest {
+func (r WirelessAPIGetDeviceWirelessConnectionStatsRequest) Band(band string) WirelessAPIGetDeviceWirelessConnectionStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r WirelessApiGetDeviceWirelessConnectionStatsRequest) Ssid(ssid int32) WirelessApiGetDeviceWirelessConnectionStatsRequest {
+func (r WirelessAPIGetDeviceWirelessConnectionStatsRequest) Ssid(ssid int32) WirelessAPIGetDeviceWirelessConnectionStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r WirelessApiGetDeviceWirelessConnectionStatsRequest) Vlan(vlan int32) WirelessApiGetDeviceWirelessConnectionStatsRequest {
+func (r WirelessAPIGetDeviceWirelessConnectionStatsRequest) Vlan(vlan int32) WirelessAPIGetDeviceWirelessConnectionStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r WirelessApiGetDeviceWirelessConnectionStatsRequest) ApTag(apTag string) WirelessApiGetDeviceWirelessConnectionStatsRequest {
+func (r WirelessAPIGetDeviceWirelessConnectionStatsRequest) ApTag(apTag string) WirelessAPIGetDeviceWirelessConnectionStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
-func (r WirelessApiGetDeviceWirelessConnectionStatsRequest) Execute() (*GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
+func (r WirelessAPIGetDeviceWirelessConnectionStatsRequest) Execute() (*GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceWirelessConnectionStatsExecute(r)
 }
 
@@ -691,10 +691,10 @@ Aggregated connectivity info for a given AP on this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return WirelessApiGetDeviceWirelessConnectionStatsRequest
+ @return WirelessAPIGetDeviceWirelessConnectionStatsRequest
 */
-func (a *WirelessApiService) GetDeviceWirelessConnectionStats(ctx context.Context, serial string) WirelessApiGetDeviceWirelessConnectionStatsRequest {
-	return WirelessApiGetDeviceWirelessConnectionStatsRequest{
+func (a *WirelessAPIService) GetDeviceWirelessConnectionStats(ctx context.Context, serial string) WirelessAPIGetDeviceWirelessConnectionStatsRequest {
+	return WirelessAPIGetDeviceWirelessConnectionStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -703,7 +703,7 @@ func (a *WirelessApiService) GetDeviceWirelessConnectionStats(ctx context.Contex
 
 // Execute executes the request
 //  @return GetDeviceWirelessConnectionStats200Response
-func (a *WirelessApiService) GetDeviceWirelessConnectionStatsExecute(r WirelessApiGetDeviceWirelessConnectionStatsRequest) (*GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
+func (a *WirelessAPIService) GetDeviceWirelessConnectionStatsExecute(r WirelessAPIGetDeviceWirelessConnectionStatsRequest) (*GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -711,7 +711,7 @@ func (a *WirelessApiService) GetDeviceWirelessConnectionStatsExecute(r WirelessA
 		localVarReturnValue  *GetDeviceWirelessConnectionStats200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetDeviceWirelessConnectionStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetDeviceWirelessConnectionStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -812,9 +812,9 @@ func (a *WirelessApiService) GetDeviceWirelessConnectionStatsExecute(r WirelessA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetDeviceWirelessLatencyStatsRequest struct {
+type WirelessAPIGetDeviceWirelessLatencyStatsRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	serial string
 	t0 *string
 	t1 *string
@@ -827,54 +827,54 @@ type WirelessApiGetDeviceWirelessLatencyStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r WirelessApiGetDeviceWirelessLatencyStatsRequest) T0(t0 string) WirelessApiGetDeviceWirelessLatencyStatsRequest {
+func (r WirelessAPIGetDeviceWirelessLatencyStatsRequest) T0(t0 string) WirelessAPIGetDeviceWirelessLatencyStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r WirelessApiGetDeviceWirelessLatencyStatsRequest) T1(t1 string) WirelessApiGetDeviceWirelessLatencyStatsRequest {
+func (r WirelessAPIGetDeviceWirelessLatencyStatsRequest) T1(t1 string) WirelessAPIGetDeviceWirelessLatencyStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r WirelessApiGetDeviceWirelessLatencyStatsRequest) Timespan(timespan float32) WirelessApiGetDeviceWirelessLatencyStatsRequest {
+func (r WirelessAPIGetDeviceWirelessLatencyStatsRequest) Timespan(timespan float32) WirelessAPIGetDeviceWirelessLatencyStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r WirelessApiGetDeviceWirelessLatencyStatsRequest) Band(band string) WirelessApiGetDeviceWirelessLatencyStatsRequest {
+func (r WirelessAPIGetDeviceWirelessLatencyStatsRequest) Band(band string) WirelessAPIGetDeviceWirelessLatencyStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r WirelessApiGetDeviceWirelessLatencyStatsRequest) Ssid(ssid int32) WirelessApiGetDeviceWirelessLatencyStatsRequest {
+func (r WirelessAPIGetDeviceWirelessLatencyStatsRequest) Ssid(ssid int32) WirelessAPIGetDeviceWirelessLatencyStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r WirelessApiGetDeviceWirelessLatencyStatsRequest) Vlan(vlan int32) WirelessApiGetDeviceWirelessLatencyStatsRequest {
+func (r WirelessAPIGetDeviceWirelessLatencyStatsRequest) Vlan(vlan int32) WirelessAPIGetDeviceWirelessLatencyStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r WirelessApiGetDeviceWirelessLatencyStatsRequest) ApTag(apTag string) WirelessApiGetDeviceWirelessLatencyStatsRequest {
+func (r WirelessAPIGetDeviceWirelessLatencyStatsRequest) ApTag(apTag string) WirelessAPIGetDeviceWirelessLatencyStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Partial selection: If present, this call will return only the selected fields of [\&quot;rawDistribution\&quot;, \&quot;avg\&quot;]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
-func (r WirelessApiGetDeviceWirelessLatencyStatsRequest) Fields(fields string) WirelessApiGetDeviceWirelessLatencyStatsRequest {
+func (r WirelessAPIGetDeviceWirelessLatencyStatsRequest) Fields(fields string) WirelessAPIGetDeviceWirelessLatencyStatsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r WirelessApiGetDeviceWirelessLatencyStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIGetDeviceWirelessLatencyStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceWirelessLatencyStatsExecute(r)
 }
 
@@ -885,10 +885,10 @@ Aggregated latency info for a given AP on this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return WirelessApiGetDeviceWirelessLatencyStatsRequest
+ @return WirelessAPIGetDeviceWirelessLatencyStatsRequest
 */
-func (a *WirelessApiService) GetDeviceWirelessLatencyStats(ctx context.Context, serial string) WirelessApiGetDeviceWirelessLatencyStatsRequest {
-	return WirelessApiGetDeviceWirelessLatencyStatsRequest{
+func (a *WirelessAPIService) GetDeviceWirelessLatencyStats(ctx context.Context, serial string) WirelessAPIGetDeviceWirelessLatencyStatsRequest {
+	return WirelessAPIGetDeviceWirelessLatencyStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -897,7 +897,7 @@ func (a *WirelessApiService) GetDeviceWirelessLatencyStats(ctx context.Context, 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessApiService) GetDeviceWirelessLatencyStatsExecute(r WirelessApiGetDeviceWirelessLatencyStatsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) GetDeviceWirelessLatencyStatsExecute(r WirelessAPIGetDeviceWirelessLatencyStatsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -905,7 +905,7 @@ func (a *WirelessApiService) GetDeviceWirelessLatencyStatsExecute(r WirelessApiG
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetDeviceWirelessLatencyStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetDeviceWirelessLatencyStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1009,13 +1009,13 @@ func (a *WirelessApiService) GetDeviceWirelessLatencyStatsExecute(r WirelessApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetDeviceWirelessRadioSettingsRequest struct {
+type WirelessAPIGetDeviceWirelessRadioSettingsRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	serial string
 }
 
-func (r WirelessApiGetDeviceWirelessRadioSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIGetDeviceWirelessRadioSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceWirelessRadioSettingsExecute(r)
 }
 
@@ -1026,10 +1026,10 @@ Return the radio settings of a device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return WirelessApiGetDeviceWirelessRadioSettingsRequest
+ @return WirelessAPIGetDeviceWirelessRadioSettingsRequest
 */
-func (a *WirelessApiService) GetDeviceWirelessRadioSettings(ctx context.Context, serial string) WirelessApiGetDeviceWirelessRadioSettingsRequest {
-	return WirelessApiGetDeviceWirelessRadioSettingsRequest{
+func (a *WirelessAPIService) GetDeviceWirelessRadioSettings(ctx context.Context, serial string) WirelessAPIGetDeviceWirelessRadioSettingsRequest {
+	return WirelessAPIGetDeviceWirelessRadioSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1038,7 +1038,7 @@ func (a *WirelessApiService) GetDeviceWirelessRadioSettings(ctx context.Context,
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessApiService) GetDeviceWirelessRadioSettingsExecute(r WirelessApiGetDeviceWirelessRadioSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) GetDeviceWirelessRadioSettingsExecute(r WirelessAPIGetDeviceWirelessRadioSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1046,7 +1046,7 @@ func (a *WirelessApiService) GetDeviceWirelessRadioSettingsExecute(r WirelessApi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetDeviceWirelessRadioSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetDeviceWirelessRadioSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1126,13 +1126,13 @@ func (a *WirelessApiService) GetDeviceWirelessRadioSettingsExecute(r WirelessApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetDeviceWirelessStatusRequest struct {
+type WirelessAPIGetDeviceWirelessStatusRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	serial string
 }
 
-func (r WirelessApiGetDeviceWirelessStatusRequest) Execute() (*GetDeviceWirelessStatus200Response, *http.Response, error) {
+func (r WirelessAPIGetDeviceWirelessStatusRequest) Execute() (*GetDeviceWirelessStatus200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceWirelessStatusExecute(r)
 }
 
@@ -1143,10 +1143,10 @@ Return the SSID statuses of an access point
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return WirelessApiGetDeviceWirelessStatusRequest
+ @return WirelessAPIGetDeviceWirelessStatusRequest
 */
-func (a *WirelessApiService) GetDeviceWirelessStatus(ctx context.Context, serial string) WirelessApiGetDeviceWirelessStatusRequest {
-	return WirelessApiGetDeviceWirelessStatusRequest{
+func (a *WirelessAPIService) GetDeviceWirelessStatus(ctx context.Context, serial string) WirelessAPIGetDeviceWirelessStatusRequest {
+	return WirelessAPIGetDeviceWirelessStatusRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1155,7 +1155,7 @@ func (a *WirelessApiService) GetDeviceWirelessStatus(ctx context.Context, serial
 
 // Execute executes the request
 //  @return GetDeviceWirelessStatus200Response
-func (a *WirelessApiService) GetDeviceWirelessStatusExecute(r WirelessApiGetDeviceWirelessStatusRequest) (*GetDeviceWirelessStatus200Response, *http.Response, error) {
+func (a *WirelessAPIService) GetDeviceWirelessStatusExecute(r WirelessAPIGetDeviceWirelessStatusRequest) (*GetDeviceWirelessStatus200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1163,7 +1163,7 @@ func (a *WirelessApiService) GetDeviceWirelessStatusExecute(r WirelessApiGetDevi
 		localVarReturnValue  *GetDeviceWirelessStatus200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetDeviceWirelessStatus")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetDeviceWirelessStatus")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1243,27 +1243,27 @@ func (a *WirelessApiService) GetDeviceWirelessStatusExecute(r WirelessApiGetDevi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessAirMarshalRequest struct {
+type WirelessAPIGetNetworkWirelessAirMarshalRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	t0 *string
 	timespan *float32
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r WirelessApiGetNetworkWirelessAirMarshalRequest) T0(t0 string) WirelessApiGetNetworkWirelessAirMarshalRequest {
+func (r WirelessAPIGetNetworkWirelessAirMarshalRequest) T0(t0 string) WirelessAPIGetNetworkWirelessAirMarshalRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r WirelessApiGetNetworkWirelessAirMarshalRequest) Timespan(timespan float32) WirelessApiGetNetworkWirelessAirMarshalRequest {
+func (r WirelessAPIGetNetworkWirelessAirMarshalRequest) Timespan(timespan float32) WirelessAPIGetNetworkWirelessAirMarshalRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r WirelessApiGetNetworkWirelessAirMarshalRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessAirMarshalRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessAirMarshalExecute(r)
 }
 
@@ -1274,10 +1274,10 @@ List Air Marshal scan results from a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessApiGetNetworkWirelessAirMarshalRequest
+ @return WirelessAPIGetNetworkWirelessAirMarshalRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessAirMarshal(ctx context.Context, networkId string) WirelessApiGetNetworkWirelessAirMarshalRequest {
-	return WirelessApiGetNetworkWirelessAirMarshalRequest{
+func (a *WirelessAPIService) GetNetworkWirelessAirMarshal(ctx context.Context, networkId string) WirelessAPIGetNetworkWirelessAirMarshalRequest {
+	return WirelessAPIGetNetworkWirelessAirMarshalRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1286,7 +1286,7 @@ func (a *WirelessApiService) GetNetworkWirelessAirMarshal(ctx context.Context, n
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *WirelessApiService) GetNetworkWirelessAirMarshalExecute(r WirelessApiGetNetworkWirelessAirMarshalRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessAirMarshalExecute(r WirelessAPIGetNetworkWirelessAirMarshalRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1294,7 +1294,7 @@ func (a *WirelessApiService) GetNetworkWirelessAirMarshalExecute(r WirelessApiGe
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessAirMarshal")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessAirMarshal")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1380,13 +1380,13 @@ func (a *WirelessApiService) GetNetworkWirelessAirMarshalExecute(r WirelessApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessAlternateManagementInterfaceRequest struct {
+type WirelessAPIGetNetworkWirelessAlternateManagementInterfaceRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 }
 
-func (r WirelessApiGetNetworkWirelessAlternateManagementInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessAlternateManagementInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessAlternateManagementInterfaceExecute(r)
 }
 
@@ -1397,10 +1397,10 @@ Return alternate management interface and devices with IP assigned
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessApiGetNetworkWirelessAlternateManagementInterfaceRequest
+ @return WirelessAPIGetNetworkWirelessAlternateManagementInterfaceRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessAlternateManagementInterface(ctx context.Context, networkId string) WirelessApiGetNetworkWirelessAlternateManagementInterfaceRequest {
-	return WirelessApiGetNetworkWirelessAlternateManagementInterfaceRequest{
+func (a *WirelessAPIService) GetNetworkWirelessAlternateManagementInterface(ctx context.Context, networkId string) WirelessAPIGetNetworkWirelessAlternateManagementInterfaceRequest {
+	return WirelessAPIGetNetworkWirelessAlternateManagementInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1409,7 +1409,7 @@ func (a *WirelessApiService) GetNetworkWirelessAlternateManagementInterface(ctx 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessApiService) GetNetworkWirelessAlternateManagementInterfaceExecute(r WirelessApiGetNetworkWirelessAlternateManagementInterfaceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessAlternateManagementInterfaceExecute(r WirelessAPIGetNetworkWirelessAlternateManagementInterfaceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1417,7 +1417,7 @@ func (a *WirelessApiService) GetNetworkWirelessAlternateManagementInterfaceExecu
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessAlternateManagementInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessAlternateManagementInterface")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1497,13 +1497,13 @@ func (a *WirelessApiService) GetNetworkWirelessAlternateManagementInterfaceExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessBillingRequest struct {
+type WirelessAPIGetNetworkWirelessBillingRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 }
 
-func (r WirelessApiGetNetworkWirelessBillingRequest) Execute() (*GetNetworkWirelessBilling200Response, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessBillingRequest) Execute() (*GetNetworkWirelessBilling200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessBillingExecute(r)
 }
 
@@ -1514,10 +1514,10 @@ Return the billing settings of this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessApiGetNetworkWirelessBillingRequest
+ @return WirelessAPIGetNetworkWirelessBillingRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessBilling(ctx context.Context, networkId string) WirelessApiGetNetworkWirelessBillingRequest {
-	return WirelessApiGetNetworkWirelessBillingRequest{
+func (a *WirelessAPIService) GetNetworkWirelessBilling(ctx context.Context, networkId string) WirelessAPIGetNetworkWirelessBillingRequest {
+	return WirelessAPIGetNetworkWirelessBillingRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1526,7 +1526,7 @@ func (a *WirelessApiService) GetNetworkWirelessBilling(ctx context.Context, netw
 
 // Execute executes the request
 //  @return GetNetworkWirelessBilling200Response
-func (a *WirelessApiService) GetNetworkWirelessBillingExecute(r WirelessApiGetNetworkWirelessBillingRequest) (*GetNetworkWirelessBilling200Response, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessBillingExecute(r WirelessAPIGetNetworkWirelessBillingRequest) (*GetNetworkWirelessBilling200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1534,7 +1534,7 @@ func (a *WirelessApiService) GetNetworkWirelessBillingExecute(r WirelessApiGetNe
 		localVarReturnValue  *GetNetworkWirelessBilling200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessBilling")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessBilling")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1614,13 +1614,13 @@ func (a *WirelessApiService) GetNetworkWirelessBillingExecute(r WirelessApiGetNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessBluetoothSettingsRequest struct {
+type WirelessAPIGetNetworkWirelessBluetoothSettingsRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 }
 
-func (r WirelessApiGetNetworkWirelessBluetoothSettingsRequest) Execute() (*GetNetworkWirelessBluetoothSettings200Response, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessBluetoothSettingsRequest) Execute() (*GetNetworkWirelessBluetoothSettings200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessBluetoothSettingsExecute(r)
 }
 
@@ -1631,10 +1631,10 @@ Return the Bluetooth settings for a network. <a href="https://documentation.mera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessApiGetNetworkWirelessBluetoothSettingsRequest
+ @return WirelessAPIGetNetworkWirelessBluetoothSettingsRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessBluetoothSettings(ctx context.Context, networkId string) WirelessApiGetNetworkWirelessBluetoothSettingsRequest {
-	return WirelessApiGetNetworkWirelessBluetoothSettingsRequest{
+func (a *WirelessAPIService) GetNetworkWirelessBluetoothSettings(ctx context.Context, networkId string) WirelessAPIGetNetworkWirelessBluetoothSettingsRequest {
+	return WirelessAPIGetNetworkWirelessBluetoothSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1643,7 +1643,7 @@ func (a *WirelessApiService) GetNetworkWirelessBluetoothSettings(ctx context.Con
 
 // Execute executes the request
 //  @return GetNetworkWirelessBluetoothSettings200Response
-func (a *WirelessApiService) GetNetworkWirelessBluetoothSettingsExecute(r WirelessApiGetNetworkWirelessBluetoothSettingsRequest) (*GetNetworkWirelessBluetoothSettings200Response, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessBluetoothSettingsExecute(r WirelessAPIGetNetworkWirelessBluetoothSettingsRequest) (*GetNetworkWirelessBluetoothSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1651,7 +1651,7 @@ func (a *WirelessApiService) GetNetworkWirelessBluetoothSettingsExecute(r Wirele
 		localVarReturnValue  *GetNetworkWirelessBluetoothSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessBluetoothSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessBluetoothSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1731,9 +1731,9 @@ func (a *WirelessApiService) GetNetworkWirelessBluetoothSettingsExecute(r Wirele
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessChannelUtilizationHistoryRequest struct {
+type WirelessAPIGetNetworkWirelessChannelUtilizationHistoryRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -1747,60 +1747,60 @@ type WirelessApiGetNetworkWirelessChannelUtilizationHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r WirelessApiGetNetworkWirelessChannelUtilizationHistoryRequest) T0(t0 string) WirelessApiGetNetworkWirelessChannelUtilizationHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessChannelUtilizationHistoryRequest) T0(t0 string) WirelessAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r WirelessApiGetNetworkWirelessChannelUtilizationHistoryRequest) T1(t1 string) WirelessApiGetNetworkWirelessChannelUtilizationHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessChannelUtilizationHistoryRequest) T1(t1 string) WirelessAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r WirelessApiGetNetworkWirelessChannelUtilizationHistoryRequest) Timespan(timespan float32) WirelessApiGetNetworkWirelessChannelUtilizationHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessChannelUtilizationHistoryRequest) Timespan(timespan float32) WirelessAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 600, 1200, 3600, 14400, 86400. The default is 86400.
-func (r WirelessApiGetNetworkWirelessChannelUtilizationHistoryRequest) Resolution(resolution int32) WirelessApiGetNetworkWirelessChannelUtilizationHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessChannelUtilizationHistoryRequest) Resolution(resolution int32) WirelessAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // Automatically select a data resolution based on the given timespan; this overrides the value specified by the &#39;resolution&#39; parameter. The default setting is false.
-func (r WirelessApiGetNetworkWirelessChannelUtilizationHistoryRequest) AutoResolution(autoResolution bool) WirelessApiGetNetworkWirelessChannelUtilizationHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessChannelUtilizationHistoryRequest) AutoResolution(autoResolution bool) WirelessAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
 	r.autoResolution = &autoResolution
 	return r
 }
 
 // Filter results by network client to return per-device, per-band AP channel utilization metrics inner joined by the queried client&#39;s connection history.
-func (r WirelessApiGetNetworkWirelessChannelUtilizationHistoryRequest) ClientId(clientId string) WirelessApiGetNetworkWirelessChannelUtilizationHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessChannelUtilizationHistoryRequest) ClientId(clientId string) WirelessAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
 	r.clientId = &clientId
 	return r
 }
 
 // Filter results by device to return AP channel utilization metrics for the queried device; either :band or :clientId must be jointly specified.
-func (r WirelessApiGetNetworkWirelessChannelUtilizationHistoryRequest) DeviceSerial(deviceSerial string) WirelessApiGetNetworkWirelessChannelUtilizationHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessChannelUtilizationHistoryRequest) DeviceSerial(deviceSerial string) WirelessAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
 	r.deviceSerial = &deviceSerial
 	return r
 }
 
 // Filter results by AP tag to return AP channel utilization metrics for devices labeled with the given tag; either :clientId or :deviceSerial must be jointly specified.
-func (r WirelessApiGetNetworkWirelessChannelUtilizationHistoryRequest) ApTag(apTag string) WirelessApiGetNetworkWirelessChannelUtilizationHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessChannelUtilizationHistoryRequest) ApTag(apTag string) WirelessAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;).
-func (r WirelessApiGetNetworkWirelessChannelUtilizationHistoryRequest) Band(band string) WirelessApiGetNetworkWirelessChannelUtilizationHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessChannelUtilizationHistoryRequest) Band(band string) WirelessAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
 	r.band = &band
 	return r
 }
 
-func (r WirelessApiGetNetworkWirelessChannelUtilizationHistoryRequest) Execute() ([]GetNetworkWirelessChannelUtilizationHistory200ResponseInner, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessChannelUtilizationHistoryRequest) Execute() ([]GetNetworkWirelessChannelUtilizationHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessChannelUtilizationHistoryExecute(r)
 }
 
@@ -1811,10 +1811,10 @@ Return AP channel utilization over time for a device or network client
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessApiGetNetworkWirelessChannelUtilizationHistoryRequest
+ @return WirelessAPIGetNetworkWirelessChannelUtilizationHistoryRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessChannelUtilizationHistory(ctx context.Context, networkId string) WirelessApiGetNetworkWirelessChannelUtilizationHistoryRequest {
-	return WirelessApiGetNetworkWirelessChannelUtilizationHistoryRequest{
+func (a *WirelessAPIService) GetNetworkWirelessChannelUtilizationHistory(ctx context.Context, networkId string) WirelessAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
+	return WirelessAPIGetNetworkWirelessChannelUtilizationHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1823,7 +1823,7 @@ func (a *WirelessApiService) GetNetworkWirelessChannelUtilizationHistory(ctx con
 
 // Execute executes the request
 //  @return []GetNetworkWirelessChannelUtilizationHistory200ResponseInner
-func (a *WirelessApiService) GetNetworkWirelessChannelUtilizationHistoryExecute(r WirelessApiGetNetworkWirelessChannelUtilizationHistoryRequest) ([]GetNetworkWirelessChannelUtilizationHistory200ResponseInner, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessChannelUtilizationHistoryExecute(r WirelessAPIGetNetworkWirelessChannelUtilizationHistoryRequest) ([]GetNetworkWirelessChannelUtilizationHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1831,7 +1831,7 @@ func (a *WirelessApiService) GetNetworkWirelessChannelUtilizationHistoryExecute(
 		localVarReturnValue  []GetNetworkWirelessChannelUtilizationHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessChannelUtilizationHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessChannelUtilizationHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1938,9 +1938,9 @@ func (a *WirelessApiService) GetNetworkWirelessChannelUtilizationHistoryExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessClientConnectionStatsRequest struct {
+type WirelessAPIGetNetworkWirelessClientConnectionStatsRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	clientId string
 	t0 *string
@@ -1953,48 +1953,48 @@ type WirelessApiGetNetworkWirelessClientConnectionStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r WirelessApiGetNetworkWirelessClientConnectionStatsRequest) T0(t0 string) WirelessApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientConnectionStatsRequest) T0(t0 string) WirelessAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r WirelessApiGetNetworkWirelessClientConnectionStatsRequest) T1(t1 string) WirelessApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientConnectionStatsRequest) T1(t1 string) WirelessAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r WirelessApiGetNetworkWirelessClientConnectionStatsRequest) Timespan(timespan float32) WirelessApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientConnectionStatsRequest) Timespan(timespan float32) WirelessAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r WirelessApiGetNetworkWirelessClientConnectionStatsRequest) Band(band string) WirelessApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientConnectionStatsRequest) Band(band string) WirelessAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r WirelessApiGetNetworkWirelessClientConnectionStatsRequest) Ssid(ssid int32) WirelessApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientConnectionStatsRequest) Ssid(ssid int32) WirelessAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r WirelessApiGetNetworkWirelessClientConnectionStatsRequest) Vlan(vlan int32) WirelessApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientConnectionStatsRequest) Vlan(vlan int32) WirelessAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r WirelessApiGetNetworkWirelessClientConnectionStatsRequest) ApTag(apTag string) WirelessApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientConnectionStatsRequest) ApTag(apTag string) WirelessAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
-func (r WirelessApiGetNetworkWirelessClientConnectionStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessClientConnectionStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessClientConnectionStatsExecute(r)
 }
 
@@ -2006,10 +2006,10 @@ Aggregated connectivity info for a given client on this network. Clients are ide
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return WirelessApiGetNetworkWirelessClientConnectionStatsRequest
+ @return WirelessAPIGetNetworkWirelessClientConnectionStatsRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessClientConnectionStats(ctx context.Context, networkId string, clientId string) WirelessApiGetNetworkWirelessClientConnectionStatsRequest {
-	return WirelessApiGetNetworkWirelessClientConnectionStatsRequest{
+func (a *WirelessAPIService) GetNetworkWirelessClientConnectionStats(ctx context.Context, networkId string, clientId string) WirelessAPIGetNetworkWirelessClientConnectionStatsRequest {
+	return WirelessAPIGetNetworkWirelessClientConnectionStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2019,7 +2019,7 @@ func (a *WirelessApiService) GetNetworkWirelessClientConnectionStats(ctx context
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessApiService) GetNetworkWirelessClientConnectionStatsExecute(r WirelessApiGetNetworkWirelessClientConnectionStatsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessClientConnectionStatsExecute(r WirelessAPIGetNetworkWirelessClientConnectionStatsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2027,7 +2027,7 @@ func (a *WirelessApiService) GetNetworkWirelessClientConnectionStatsExecute(r Wi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessClientConnectionStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessClientConnectionStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2129,9 +2129,9 @@ func (a *WirelessApiService) GetNetworkWirelessClientConnectionStatsExecute(r Wi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessClientConnectivityEventsRequest struct {
+type WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	clientId string
 	perPage *int32
@@ -2148,72 +2148,72 @@ type WirelessApiGetNetworkWirelessClientConnectivityEventsRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000.
-func (r WirelessApiGetNetworkWirelessClientConnectivityEventsRequest) PerPage(perPage int32) WirelessApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest) PerPage(perPage int32) WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r WirelessApiGetNetworkWirelessClientConnectivityEventsRequest) StartingAfter(startingAfter string) WirelessApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest) StartingAfter(startingAfter string) WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r WirelessApiGetNetworkWirelessClientConnectivityEventsRequest) EndingBefore(endingBefore string) WirelessApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest) EndingBefore(endingBefore string) WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r WirelessApiGetNetworkWirelessClientConnectivityEventsRequest) T0(t0 string) WirelessApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest) T0(t0 string) WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r WirelessApiGetNetworkWirelessClientConnectivityEventsRequest) T1(t1 string) WirelessApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest) T1(t1 string) WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r WirelessApiGetNetworkWirelessClientConnectivityEventsRequest) Timespan(timespan float32) WirelessApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest) Timespan(timespan float32) WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // A list of event types to include. If not specified, events of all types will be returned. Valid types are &#39;assoc&#39;, &#39;disassoc&#39;, &#39;auth&#39;, &#39;deauth&#39;, &#39;dns&#39;, &#39;dhcp&#39;, &#39;roam&#39;, &#39;connection&#39; and/or &#39;sticky&#39;.
-func (r WirelessApiGetNetworkWirelessClientConnectivityEventsRequest) Types(types []string) WirelessApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest) Types(types []string) WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.types = &types
 	return r
 }
 
 // A list of severities to include. If not specified, events of all severities will be returned. Valid severities are &#39;good&#39;, &#39;info&#39;, &#39;warn&#39; and/or &#39;bad&#39;.
-func (r WirelessApiGetNetworkWirelessClientConnectivityEventsRequest) IncludedSeverities(includedSeverities []string) WirelessApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest) IncludedSeverities(includedSeverities []string) WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.includedSeverities = &includedSeverities
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39;, &#39;6&#39;).
-func (r WirelessApiGetNetworkWirelessClientConnectivityEventsRequest) Band(band string) WirelessApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest) Band(band string) WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.band = &band
 	return r
 }
 
 // An SSID number to include. If not specified, events for all SSIDs will be returned.
-func (r WirelessApiGetNetworkWirelessClientConnectivityEventsRequest) SsidNumber(ssidNumber int32) WirelessApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest) SsidNumber(ssidNumber int32) WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.ssidNumber = &ssidNumber
 	return r
 }
 
 // Filter results by an AP&#39;s serial number.
-func (r WirelessApiGetNetworkWirelessClientConnectivityEventsRequest) DeviceSerial(deviceSerial string) WirelessApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest) DeviceSerial(deviceSerial string) WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.deviceSerial = &deviceSerial
 	return r
 }
 
-func (r WirelessApiGetNetworkWirelessClientConnectivityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessClientConnectivityEventsExecute(r)
 }
 
@@ -2225,10 +2225,10 @@ List the wireless connectivity events for a client within a network in the times
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return WirelessApiGetNetworkWirelessClientConnectivityEventsRequest
+ @return WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessClientConnectivityEvents(ctx context.Context, networkId string, clientId string) WirelessApiGetNetworkWirelessClientConnectivityEventsRequest {
-	return WirelessApiGetNetworkWirelessClientConnectivityEventsRequest{
+func (a *WirelessAPIService) GetNetworkWirelessClientConnectivityEvents(ctx context.Context, networkId string, clientId string) WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest {
+	return WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2238,7 +2238,7 @@ func (a *WirelessApiService) GetNetworkWirelessClientConnectivityEvents(ctx cont
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *WirelessApiService) GetNetworkWirelessClientConnectivityEventsExecute(r WirelessApiGetNetworkWirelessClientConnectivityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessClientConnectivityEventsExecute(r WirelessAPIGetNetworkWirelessClientConnectivityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2246,7 +2246,7 @@ func (a *WirelessApiService) GetNetworkWirelessClientConnectivityEventsExecute(r
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessClientConnectivityEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessClientConnectivityEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2376,9 +2376,9 @@ func (a *WirelessApiService) GetNetworkWirelessClientConnectivityEventsExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessClientCountHistoryRequest struct {
+type WirelessAPIGetNetworkWirelessClientCountHistoryRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -2393,66 +2393,66 @@ type WirelessApiGetNetworkWirelessClientCountHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r WirelessApiGetNetworkWirelessClientCountHistoryRequest) T0(t0 string) WirelessApiGetNetworkWirelessClientCountHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessClientCountHistoryRequest) T0(t0 string) WirelessAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r WirelessApiGetNetworkWirelessClientCountHistoryRequest) T1(t1 string) WirelessApiGetNetworkWirelessClientCountHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessClientCountHistoryRequest) T1(t1 string) WirelessAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r WirelessApiGetNetworkWirelessClientCountHistoryRequest) Timespan(timespan float32) WirelessApiGetNetworkWirelessClientCountHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessClientCountHistoryRequest) Timespan(timespan float32) WirelessAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 300, 600, 1200, 3600, 14400, 86400. The default is 86400.
-func (r WirelessApiGetNetworkWirelessClientCountHistoryRequest) Resolution(resolution int32) WirelessApiGetNetworkWirelessClientCountHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessClientCountHistoryRequest) Resolution(resolution int32) WirelessAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // Automatically select a data resolution based on the given timespan; this overrides the value specified by the &#39;resolution&#39; parameter. The default setting is false.
-func (r WirelessApiGetNetworkWirelessClientCountHistoryRequest) AutoResolution(autoResolution bool) WirelessApiGetNetworkWirelessClientCountHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessClientCountHistoryRequest) AutoResolution(autoResolution bool) WirelessAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.autoResolution = &autoResolution
 	return r
 }
 
 // Filter results by network client to return per-device client counts over time inner joined by the queried client&#39;s connection history.
-func (r WirelessApiGetNetworkWirelessClientCountHistoryRequest) ClientId(clientId string) WirelessApiGetNetworkWirelessClientCountHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessClientCountHistoryRequest) ClientId(clientId string) WirelessAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.clientId = &clientId
 	return r
 }
 
 // Filter results by device.
-func (r WirelessApiGetNetworkWirelessClientCountHistoryRequest) DeviceSerial(deviceSerial string) WirelessApiGetNetworkWirelessClientCountHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessClientCountHistoryRequest) DeviceSerial(deviceSerial string) WirelessAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.deviceSerial = &deviceSerial
 	return r
 }
 
 // Filter results by AP tag.
-func (r WirelessApiGetNetworkWirelessClientCountHistoryRequest) ApTag(apTag string) WirelessApiGetNetworkWirelessClientCountHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessClientCountHistoryRequest) ApTag(apTag string) WirelessAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;).
-func (r WirelessApiGetNetworkWirelessClientCountHistoryRequest) Band(band string) WirelessApiGetNetworkWirelessClientCountHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessClientCountHistoryRequest) Band(band string) WirelessAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID number.
-func (r WirelessApiGetNetworkWirelessClientCountHistoryRequest) Ssid(ssid int32) WirelessApiGetNetworkWirelessClientCountHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessClientCountHistoryRequest) Ssid(ssid int32) WirelessAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.ssid = &ssid
 	return r
 }
 
-func (r WirelessApiGetNetworkWirelessClientCountHistoryRequest) Execute() ([]GetNetworkWirelessClientCountHistory200ResponseInner, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessClientCountHistoryRequest) Execute() ([]GetNetworkWirelessClientCountHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessClientCountHistoryExecute(r)
 }
 
@@ -2463,10 +2463,10 @@ Return wireless client counts over time for a network, device, or network client
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessApiGetNetworkWirelessClientCountHistoryRequest
+ @return WirelessAPIGetNetworkWirelessClientCountHistoryRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessClientCountHistory(ctx context.Context, networkId string) WirelessApiGetNetworkWirelessClientCountHistoryRequest {
-	return WirelessApiGetNetworkWirelessClientCountHistoryRequest{
+func (a *WirelessAPIService) GetNetworkWirelessClientCountHistory(ctx context.Context, networkId string) WirelessAPIGetNetworkWirelessClientCountHistoryRequest {
+	return WirelessAPIGetNetworkWirelessClientCountHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2475,7 +2475,7 @@ func (a *WirelessApiService) GetNetworkWirelessClientCountHistory(ctx context.Co
 
 // Execute executes the request
 //  @return []GetNetworkWirelessClientCountHistory200ResponseInner
-func (a *WirelessApiService) GetNetworkWirelessClientCountHistoryExecute(r WirelessApiGetNetworkWirelessClientCountHistoryRequest) ([]GetNetworkWirelessClientCountHistory200ResponseInner, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessClientCountHistoryExecute(r WirelessAPIGetNetworkWirelessClientCountHistoryRequest) ([]GetNetworkWirelessClientCountHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2483,7 +2483,7 @@ func (a *WirelessApiService) GetNetworkWirelessClientCountHistoryExecute(r Wirel
 		localVarReturnValue  []GetNetworkWirelessClientCountHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessClientCountHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessClientCountHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2593,9 +2593,9 @@ func (a *WirelessApiService) GetNetworkWirelessClientCountHistoryExecute(r Wirel
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessClientLatencyHistoryRequest struct {
+type WirelessAPIGetNetworkWirelessClientLatencyHistoryRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	clientId string
 	t0 *string
@@ -2605,30 +2605,30 @@ type WirelessApiGetNetworkWirelessClientLatencyHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 791 days from today.
-func (r WirelessApiGetNetworkWirelessClientLatencyHistoryRequest) T0(t0 string) WirelessApiGetNetworkWirelessClientLatencyHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessClientLatencyHistoryRequest) T0(t0 string) WirelessAPIGetNetworkWirelessClientLatencyHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 791 days after t0.
-func (r WirelessApiGetNetworkWirelessClientLatencyHistoryRequest) T1(t1 string) WirelessApiGetNetworkWirelessClientLatencyHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessClientLatencyHistoryRequest) T1(t1 string) WirelessAPIGetNetworkWirelessClientLatencyHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 791 days. The default is 1 day.
-func (r WirelessApiGetNetworkWirelessClientLatencyHistoryRequest) Timespan(timespan float32) WirelessApiGetNetworkWirelessClientLatencyHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessClientLatencyHistoryRequest) Timespan(timespan float32) WirelessAPIGetNetworkWirelessClientLatencyHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 86400. The default is 86400.
-func (r WirelessApiGetNetworkWirelessClientLatencyHistoryRequest) Resolution(resolution int32) WirelessApiGetNetworkWirelessClientLatencyHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessClientLatencyHistoryRequest) Resolution(resolution int32) WirelessAPIGetNetworkWirelessClientLatencyHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
-func (r WirelessApiGetNetworkWirelessClientLatencyHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessClientLatencyHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessClientLatencyHistoryExecute(r)
 }
 
@@ -2640,10 +2640,10 @@ Return the latency history for a client. Clients can be identified by a client k
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return WirelessApiGetNetworkWirelessClientLatencyHistoryRequest
+ @return WirelessAPIGetNetworkWirelessClientLatencyHistoryRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessClientLatencyHistory(ctx context.Context, networkId string, clientId string) WirelessApiGetNetworkWirelessClientLatencyHistoryRequest {
-	return WirelessApiGetNetworkWirelessClientLatencyHistoryRequest{
+func (a *WirelessAPIService) GetNetworkWirelessClientLatencyHistory(ctx context.Context, networkId string, clientId string) WirelessAPIGetNetworkWirelessClientLatencyHistoryRequest {
+	return WirelessAPIGetNetworkWirelessClientLatencyHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2653,7 +2653,7 @@ func (a *WirelessApiService) GetNetworkWirelessClientLatencyHistory(ctx context.
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *WirelessApiService) GetNetworkWirelessClientLatencyHistoryExecute(r WirelessApiGetNetworkWirelessClientLatencyHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessClientLatencyHistoryExecute(r WirelessAPIGetNetworkWirelessClientLatencyHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2661,7 +2661,7 @@ func (a *WirelessApiService) GetNetworkWirelessClientLatencyHistoryExecute(r Wir
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessClientLatencyHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessClientLatencyHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2754,9 +2754,9 @@ func (a *WirelessApiService) GetNetworkWirelessClientLatencyHistoryExecute(r Wir
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessClientLatencyStatsRequest struct {
+type WirelessAPIGetNetworkWirelessClientLatencyStatsRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	clientId string
 	t0 *string
@@ -2770,54 +2770,54 @@ type WirelessApiGetNetworkWirelessClientLatencyStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r WirelessApiGetNetworkWirelessClientLatencyStatsRequest) T0(t0 string) WirelessApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientLatencyStatsRequest) T0(t0 string) WirelessAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r WirelessApiGetNetworkWirelessClientLatencyStatsRequest) T1(t1 string) WirelessApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientLatencyStatsRequest) T1(t1 string) WirelessAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r WirelessApiGetNetworkWirelessClientLatencyStatsRequest) Timespan(timespan float32) WirelessApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientLatencyStatsRequest) Timespan(timespan float32) WirelessAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r WirelessApiGetNetworkWirelessClientLatencyStatsRequest) Band(band string) WirelessApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientLatencyStatsRequest) Band(band string) WirelessAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r WirelessApiGetNetworkWirelessClientLatencyStatsRequest) Ssid(ssid int32) WirelessApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientLatencyStatsRequest) Ssid(ssid int32) WirelessAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r WirelessApiGetNetworkWirelessClientLatencyStatsRequest) Vlan(vlan int32) WirelessApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientLatencyStatsRequest) Vlan(vlan int32) WirelessAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r WirelessApiGetNetworkWirelessClientLatencyStatsRequest) ApTag(apTag string) WirelessApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientLatencyStatsRequest) ApTag(apTag string) WirelessAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Partial selection: If present, this call will return only the selected fields of [\&quot;rawDistribution\&quot;, \&quot;avg\&quot;]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
-func (r WirelessApiGetNetworkWirelessClientLatencyStatsRequest) Fields(fields string) WirelessApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientLatencyStatsRequest) Fields(fields string) WirelessAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r WirelessApiGetNetworkWirelessClientLatencyStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessClientLatencyStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessClientLatencyStatsExecute(r)
 }
 
@@ -2829,10 +2829,10 @@ Aggregated latency info for a given client on this network. Clients are identifi
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return WirelessApiGetNetworkWirelessClientLatencyStatsRequest
+ @return WirelessAPIGetNetworkWirelessClientLatencyStatsRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessClientLatencyStats(ctx context.Context, networkId string, clientId string) WirelessApiGetNetworkWirelessClientLatencyStatsRequest {
-	return WirelessApiGetNetworkWirelessClientLatencyStatsRequest{
+func (a *WirelessAPIService) GetNetworkWirelessClientLatencyStats(ctx context.Context, networkId string, clientId string) WirelessAPIGetNetworkWirelessClientLatencyStatsRequest {
+	return WirelessAPIGetNetworkWirelessClientLatencyStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2842,7 +2842,7 @@ func (a *WirelessApiService) GetNetworkWirelessClientLatencyStats(ctx context.Co
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessApiService) GetNetworkWirelessClientLatencyStatsExecute(r WirelessApiGetNetworkWirelessClientLatencyStatsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessClientLatencyStatsExecute(r WirelessAPIGetNetworkWirelessClientLatencyStatsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2850,7 +2850,7 @@ func (a *WirelessApiService) GetNetworkWirelessClientLatencyStatsExecute(r Wirel
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessClientLatencyStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessClientLatencyStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2955,9 +2955,9 @@ func (a *WirelessApiService) GetNetworkWirelessClientLatencyStatsExecute(r Wirel
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessClientsConnectionStatsRequest struct {
+type WirelessAPIGetNetworkWirelessClientsConnectionStatsRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -2969,48 +2969,48 @@ type WirelessApiGetNetworkWirelessClientsConnectionStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r WirelessApiGetNetworkWirelessClientsConnectionStatsRequest) T0(t0 string) WirelessApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientsConnectionStatsRequest) T0(t0 string) WirelessAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r WirelessApiGetNetworkWirelessClientsConnectionStatsRequest) T1(t1 string) WirelessApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientsConnectionStatsRequest) T1(t1 string) WirelessAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r WirelessApiGetNetworkWirelessClientsConnectionStatsRequest) Timespan(timespan float32) WirelessApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientsConnectionStatsRequest) Timespan(timespan float32) WirelessAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r WirelessApiGetNetworkWirelessClientsConnectionStatsRequest) Band(band string) WirelessApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientsConnectionStatsRequest) Band(band string) WirelessAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r WirelessApiGetNetworkWirelessClientsConnectionStatsRequest) Ssid(ssid int32) WirelessApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientsConnectionStatsRequest) Ssid(ssid int32) WirelessAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r WirelessApiGetNetworkWirelessClientsConnectionStatsRequest) Vlan(vlan int32) WirelessApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientsConnectionStatsRequest) Vlan(vlan int32) WirelessAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r WirelessApiGetNetworkWirelessClientsConnectionStatsRequest) ApTag(apTag string) WirelessApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientsConnectionStatsRequest) ApTag(apTag string) WirelessAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
-func (r WirelessApiGetNetworkWirelessClientsConnectionStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessClientsConnectionStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessClientsConnectionStatsExecute(r)
 }
 
@@ -3021,10 +3021,10 @@ Aggregated connectivity info for this network, grouped by clients
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessApiGetNetworkWirelessClientsConnectionStatsRequest
+ @return WirelessAPIGetNetworkWirelessClientsConnectionStatsRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessClientsConnectionStats(ctx context.Context, networkId string) WirelessApiGetNetworkWirelessClientsConnectionStatsRequest {
-	return WirelessApiGetNetworkWirelessClientsConnectionStatsRequest{
+func (a *WirelessAPIService) GetNetworkWirelessClientsConnectionStats(ctx context.Context, networkId string) WirelessAPIGetNetworkWirelessClientsConnectionStatsRequest {
+	return WirelessAPIGetNetworkWirelessClientsConnectionStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3033,7 +3033,7 @@ func (a *WirelessApiService) GetNetworkWirelessClientsConnectionStats(ctx contex
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *WirelessApiService) GetNetworkWirelessClientsConnectionStatsExecute(r WirelessApiGetNetworkWirelessClientsConnectionStatsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessClientsConnectionStatsExecute(r WirelessAPIGetNetworkWirelessClientsConnectionStatsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3041,7 +3041,7 @@ func (a *WirelessApiService) GetNetworkWirelessClientsConnectionStatsExecute(r W
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessClientsConnectionStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessClientsConnectionStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3142,9 +3142,9 @@ func (a *WirelessApiService) GetNetworkWirelessClientsConnectionStatsExecute(r W
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessClientsLatencyStatsRequest struct {
+type WirelessAPIGetNetworkWirelessClientsLatencyStatsRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -3157,54 +3157,54 @@ type WirelessApiGetNetworkWirelessClientsLatencyStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r WirelessApiGetNetworkWirelessClientsLatencyStatsRequest) T0(t0 string) WirelessApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientsLatencyStatsRequest) T0(t0 string) WirelessAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r WirelessApiGetNetworkWirelessClientsLatencyStatsRequest) T1(t1 string) WirelessApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientsLatencyStatsRequest) T1(t1 string) WirelessAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r WirelessApiGetNetworkWirelessClientsLatencyStatsRequest) Timespan(timespan float32) WirelessApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientsLatencyStatsRequest) Timespan(timespan float32) WirelessAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r WirelessApiGetNetworkWirelessClientsLatencyStatsRequest) Band(band string) WirelessApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientsLatencyStatsRequest) Band(band string) WirelessAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r WirelessApiGetNetworkWirelessClientsLatencyStatsRequest) Ssid(ssid int32) WirelessApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientsLatencyStatsRequest) Ssid(ssid int32) WirelessAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r WirelessApiGetNetworkWirelessClientsLatencyStatsRequest) Vlan(vlan int32) WirelessApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientsLatencyStatsRequest) Vlan(vlan int32) WirelessAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r WirelessApiGetNetworkWirelessClientsLatencyStatsRequest) ApTag(apTag string) WirelessApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientsLatencyStatsRequest) ApTag(apTag string) WirelessAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Partial selection: If present, this call will return only the selected fields of [\&quot;rawDistribution\&quot;, \&quot;avg\&quot;]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
-func (r WirelessApiGetNetworkWirelessClientsLatencyStatsRequest) Fields(fields string) WirelessApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessClientsLatencyStatsRequest) Fields(fields string) WirelessAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r WirelessApiGetNetworkWirelessClientsLatencyStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessClientsLatencyStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessClientsLatencyStatsExecute(r)
 }
 
@@ -3215,10 +3215,10 @@ Aggregated latency info for this network, grouped by clients
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessApiGetNetworkWirelessClientsLatencyStatsRequest
+ @return WirelessAPIGetNetworkWirelessClientsLatencyStatsRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessClientsLatencyStats(ctx context.Context, networkId string) WirelessApiGetNetworkWirelessClientsLatencyStatsRequest {
-	return WirelessApiGetNetworkWirelessClientsLatencyStatsRequest{
+func (a *WirelessAPIService) GetNetworkWirelessClientsLatencyStats(ctx context.Context, networkId string) WirelessAPIGetNetworkWirelessClientsLatencyStatsRequest {
+	return WirelessAPIGetNetworkWirelessClientsLatencyStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3227,7 +3227,7 @@ func (a *WirelessApiService) GetNetworkWirelessClientsLatencyStats(ctx context.C
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *WirelessApiService) GetNetworkWirelessClientsLatencyStatsExecute(r WirelessApiGetNetworkWirelessClientsLatencyStatsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessClientsLatencyStatsExecute(r WirelessAPIGetNetworkWirelessClientsLatencyStatsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3235,7 +3235,7 @@ func (a *WirelessApiService) GetNetworkWirelessClientsLatencyStatsExecute(r Wire
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessClientsLatencyStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessClientsLatencyStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3339,9 +3339,9 @@ func (a *WirelessApiService) GetNetworkWirelessClientsLatencyStatsExecute(r Wire
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessConnectionStatsRequest struct {
+type WirelessAPIGetNetworkWirelessConnectionStatsRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -3353,48 +3353,48 @@ type WirelessApiGetNetworkWirelessConnectionStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r WirelessApiGetNetworkWirelessConnectionStatsRequest) T0(t0 string) WirelessApiGetNetworkWirelessConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessConnectionStatsRequest) T0(t0 string) WirelessAPIGetNetworkWirelessConnectionStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r WirelessApiGetNetworkWirelessConnectionStatsRequest) T1(t1 string) WirelessApiGetNetworkWirelessConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessConnectionStatsRequest) T1(t1 string) WirelessAPIGetNetworkWirelessConnectionStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r WirelessApiGetNetworkWirelessConnectionStatsRequest) Timespan(timespan float32) WirelessApiGetNetworkWirelessConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessConnectionStatsRequest) Timespan(timespan float32) WirelessAPIGetNetworkWirelessConnectionStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r WirelessApiGetNetworkWirelessConnectionStatsRequest) Band(band string) WirelessApiGetNetworkWirelessConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessConnectionStatsRequest) Band(band string) WirelessAPIGetNetworkWirelessConnectionStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r WirelessApiGetNetworkWirelessConnectionStatsRequest) Ssid(ssid int32) WirelessApiGetNetworkWirelessConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessConnectionStatsRequest) Ssid(ssid int32) WirelessAPIGetNetworkWirelessConnectionStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r WirelessApiGetNetworkWirelessConnectionStatsRequest) Vlan(vlan int32) WirelessApiGetNetworkWirelessConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessConnectionStatsRequest) Vlan(vlan int32) WirelessAPIGetNetworkWirelessConnectionStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r WirelessApiGetNetworkWirelessConnectionStatsRequest) ApTag(apTag string) WirelessApiGetNetworkWirelessConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessConnectionStatsRequest) ApTag(apTag string) WirelessAPIGetNetworkWirelessConnectionStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
-func (r WirelessApiGetNetworkWirelessConnectionStatsRequest) Execute() (*GetNetworkWirelessConnectionStats200Response, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessConnectionStatsRequest) Execute() (*GetNetworkWirelessConnectionStats200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessConnectionStatsExecute(r)
 }
 
@@ -3405,10 +3405,10 @@ Aggregated connectivity info for this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessApiGetNetworkWirelessConnectionStatsRequest
+ @return WirelessAPIGetNetworkWirelessConnectionStatsRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessConnectionStats(ctx context.Context, networkId string) WirelessApiGetNetworkWirelessConnectionStatsRequest {
-	return WirelessApiGetNetworkWirelessConnectionStatsRequest{
+func (a *WirelessAPIService) GetNetworkWirelessConnectionStats(ctx context.Context, networkId string) WirelessAPIGetNetworkWirelessConnectionStatsRequest {
+	return WirelessAPIGetNetworkWirelessConnectionStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3417,7 +3417,7 @@ func (a *WirelessApiService) GetNetworkWirelessConnectionStats(ctx context.Conte
 
 // Execute executes the request
 //  @return GetNetworkWirelessConnectionStats200Response
-func (a *WirelessApiService) GetNetworkWirelessConnectionStatsExecute(r WirelessApiGetNetworkWirelessConnectionStatsRequest) (*GetNetworkWirelessConnectionStats200Response, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessConnectionStatsExecute(r WirelessAPIGetNetworkWirelessConnectionStatsRequest) (*GetNetworkWirelessConnectionStats200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3425,7 +3425,7 @@ func (a *WirelessApiService) GetNetworkWirelessConnectionStatsExecute(r Wireless
 		localVarReturnValue  *GetNetworkWirelessConnectionStats200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessConnectionStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessConnectionStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3526,9 +3526,9 @@ func (a *WirelessApiService) GetNetworkWirelessConnectionStatsExecute(r Wireless
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessDataRateHistoryRequest struct {
+type WirelessAPIGetNetworkWirelessDataRateHistoryRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -3543,66 +3543,66 @@ type WirelessApiGetNetworkWirelessDataRateHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r WirelessApiGetNetworkWirelessDataRateHistoryRequest) T0(t0 string) WirelessApiGetNetworkWirelessDataRateHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessDataRateHistoryRequest) T0(t0 string) WirelessAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r WirelessApiGetNetworkWirelessDataRateHistoryRequest) T1(t1 string) WirelessApiGetNetworkWirelessDataRateHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessDataRateHistoryRequest) T1(t1 string) WirelessAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r WirelessApiGetNetworkWirelessDataRateHistoryRequest) Timespan(timespan float32) WirelessApiGetNetworkWirelessDataRateHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessDataRateHistoryRequest) Timespan(timespan float32) WirelessAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 300, 600, 1200, 3600, 14400, 86400. The default is 86400.
-func (r WirelessApiGetNetworkWirelessDataRateHistoryRequest) Resolution(resolution int32) WirelessApiGetNetworkWirelessDataRateHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessDataRateHistoryRequest) Resolution(resolution int32) WirelessAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // Automatically select a data resolution based on the given timespan; this overrides the value specified by the &#39;resolution&#39; parameter. The default setting is false.
-func (r WirelessApiGetNetworkWirelessDataRateHistoryRequest) AutoResolution(autoResolution bool) WirelessApiGetNetworkWirelessDataRateHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessDataRateHistoryRequest) AutoResolution(autoResolution bool) WirelessAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.autoResolution = &autoResolution
 	return r
 }
 
 // Filter results by network client.
-func (r WirelessApiGetNetworkWirelessDataRateHistoryRequest) ClientId(clientId string) WirelessApiGetNetworkWirelessDataRateHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessDataRateHistoryRequest) ClientId(clientId string) WirelessAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.clientId = &clientId
 	return r
 }
 
 // Filter results by device.
-func (r WirelessApiGetNetworkWirelessDataRateHistoryRequest) DeviceSerial(deviceSerial string) WirelessApiGetNetworkWirelessDataRateHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessDataRateHistoryRequest) DeviceSerial(deviceSerial string) WirelessAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.deviceSerial = &deviceSerial
 	return r
 }
 
 // Filter results by AP tag.
-func (r WirelessApiGetNetworkWirelessDataRateHistoryRequest) ApTag(apTag string) WirelessApiGetNetworkWirelessDataRateHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessDataRateHistoryRequest) ApTag(apTag string) WirelessAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;).
-func (r WirelessApiGetNetworkWirelessDataRateHistoryRequest) Band(band string) WirelessApiGetNetworkWirelessDataRateHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessDataRateHistoryRequest) Band(band string) WirelessAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID number.
-func (r WirelessApiGetNetworkWirelessDataRateHistoryRequest) Ssid(ssid int32) WirelessApiGetNetworkWirelessDataRateHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessDataRateHistoryRequest) Ssid(ssid int32) WirelessAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.ssid = &ssid
 	return r
 }
 
-func (r WirelessApiGetNetworkWirelessDataRateHistoryRequest) Execute() ([]GetNetworkWirelessDataRateHistory200ResponseInner, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessDataRateHistoryRequest) Execute() ([]GetNetworkWirelessDataRateHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessDataRateHistoryExecute(r)
 }
 
@@ -3613,10 +3613,10 @@ Return PHY data rates over time for a network, device, or network client
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessApiGetNetworkWirelessDataRateHistoryRequest
+ @return WirelessAPIGetNetworkWirelessDataRateHistoryRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessDataRateHistory(ctx context.Context, networkId string) WirelessApiGetNetworkWirelessDataRateHistoryRequest {
-	return WirelessApiGetNetworkWirelessDataRateHistoryRequest{
+func (a *WirelessAPIService) GetNetworkWirelessDataRateHistory(ctx context.Context, networkId string) WirelessAPIGetNetworkWirelessDataRateHistoryRequest {
+	return WirelessAPIGetNetworkWirelessDataRateHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3625,7 +3625,7 @@ func (a *WirelessApiService) GetNetworkWirelessDataRateHistory(ctx context.Conte
 
 // Execute executes the request
 //  @return []GetNetworkWirelessDataRateHistory200ResponseInner
-func (a *WirelessApiService) GetNetworkWirelessDataRateHistoryExecute(r WirelessApiGetNetworkWirelessDataRateHistoryRequest) ([]GetNetworkWirelessDataRateHistory200ResponseInner, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessDataRateHistoryExecute(r WirelessAPIGetNetworkWirelessDataRateHistoryRequest) ([]GetNetworkWirelessDataRateHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3633,7 +3633,7 @@ func (a *WirelessApiService) GetNetworkWirelessDataRateHistoryExecute(r Wireless
 		localVarReturnValue  []GetNetworkWirelessDataRateHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessDataRateHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessDataRateHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3743,9 +3743,9 @@ func (a *WirelessApiService) GetNetworkWirelessDataRateHistoryExecute(r Wireless
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessDevicesConnectionStatsRequest struct {
+type WirelessAPIGetNetworkWirelessDevicesConnectionStatsRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -3757,48 +3757,48 @@ type WirelessApiGetNetworkWirelessDevicesConnectionStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r WirelessApiGetNetworkWirelessDevicesConnectionStatsRequest) T0(t0 string) WirelessApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessDevicesConnectionStatsRequest) T0(t0 string) WirelessAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r WirelessApiGetNetworkWirelessDevicesConnectionStatsRequest) T1(t1 string) WirelessApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessDevicesConnectionStatsRequest) T1(t1 string) WirelessAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r WirelessApiGetNetworkWirelessDevicesConnectionStatsRequest) Timespan(timespan float32) WirelessApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessDevicesConnectionStatsRequest) Timespan(timespan float32) WirelessAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r WirelessApiGetNetworkWirelessDevicesConnectionStatsRequest) Band(band string) WirelessApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessDevicesConnectionStatsRequest) Band(band string) WirelessAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r WirelessApiGetNetworkWirelessDevicesConnectionStatsRequest) Ssid(ssid int32) WirelessApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessDevicesConnectionStatsRequest) Ssid(ssid int32) WirelessAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r WirelessApiGetNetworkWirelessDevicesConnectionStatsRequest) Vlan(vlan int32) WirelessApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessDevicesConnectionStatsRequest) Vlan(vlan int32) WirelessAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r WirelessApiGetNetworkWirelessDevicesConnectionStatsRequest) ApTag(apTag string) WirelessApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r WirelessAPIGetNetworkWirelessDevicesConnectionStatsRequest) ApTag(apTag string) WirelessAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
-func (r WirelessApiGetNetworkWirelessDevicesConnectionStatsRequest) Execute() ([]GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessDevicesConnectionStatsRequest) Execute() ([]GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessDevicesConnectionStatsExecute(r)
 }
 
@@ -3809,10 +3809,10 @@ Aggregated connectivity info for this network, grouped by node
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessApiGetNetworkWirelessDevicesConnectionStatsRequest
+ @return WirelessAPIGetNetworkWirelessDevicesConnectionStatsRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessDevicesConnectionStats(ctx context.Context, networkId string) WirelessApiGetNetworkWirelessDevicesConnectionStatsRequest {
-	return WirelessApiGetNetworkWirelessDevicesConnectionStatsRequest{
+func (a *WirelessAPIService) GetNetworkWirelessDevicesConnectionStats(ctx context.Context, networkId string) WirelessAPIGetNetworkWirelessDevicesConnectionStatsRequest {
+	return WirelessAPIGetNetworkWirelessDevicesConnectionStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3821,7 +3821,7 @@ func (a *WirelessApiService) GetNetworkWirelessDevicesConnectionStats(ctx contex
 
 // Execute executes the request
 //  @return []GetDeviceWirelessConnectionStats200Response
-func (a *WirelessApiService) GetNetworkWirelessDevicesConnectionStatsExecute(r WirelessApiGetNetworkWirelessDevicesConnectionStatsRequest) ([]GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessDevicesConnectionStatsExecute(r WirelessAPIGetNetworkWirelessDevicesConnectionStatsRequest) ([]GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3829,7 +3829,7 @@ func (a *WirelessApiService) GetNetworkWirelessDevicesConnectionStatsExecute(r W
 		localVarReturnValue  []GetDeviceWirelessConnectionStats200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessDevicesConnectionStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessDevicesConnectionStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3930,9 +3930,9 @@ func (a *WirelessApiService) GetNetworkWirelessDevicesConnectionStatsExecute(r W
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessDevicesLatencyStatsRequest struct {
+type WirelessAPIGetNetworkWirelessDevicesLatencyStatsRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -3945,54 +3945,54 @@ type WirelessApiGetNetworkWirelessDevicesLatencyStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r WirelessApiGetNetworkWirelessDevicesLatencyStatsRequest) T0(t0 string) WirelessApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessDevicesLatencyStatsRequest) T0(t0 string) WirelessAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r WirelessApiGetNetworkWirelessDevicesLatencyStatsRequest) T1(t1 string) WirelessApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessDevicesLatencyStatsRequest) T1(t1 string) WirelessAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r WirelessApiGetNetworkWirelessDevicesLatencyStatsRequest) Timespan(timespan float32) WirelessApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessDevicesLatencyStatsRequest) Timespan(timespan float32) WirelessAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r WirelessApiGetNetworkWirelessDevicesLatencyStatsRequest) Band(band string) WirelessApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessDevicesLatencyStatsRequest) Band(band string) WirelessAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r WirelessApiGetNetworkWirelessDevicesLatencyStatsRequest) Ssid(ssid int32) WirelessApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessDevicesLatencyStatsRequest) Ssid(ssid int32) WirelessAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r WirelessApiGetNetworkWirelessDevicesLatencyStatsRequest) Vlan(vlan int32) WirelessApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessDevicesLatencyStatsRequest) Vlan(vlan int32) WirelessAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r WirelessApiGetNetworkWirelessDevicesLatencyStatsRequest) ApTag(apTag string) WirelessApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessDevicesLatencyStatsRequest) ApTag(apTag string) WirelessAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Partial selection: If present, this call will return only the selected fields of [\&quot;rawDistribution\&quot;, \&quot;avg\&quot;]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
-func (r WirelessApiGetNetworkWirelessDevicesLatencyStatsRequest) Fields(fields string) WirelessApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessDevicesLatencyStatsRequest) Fields(fields string) WirelessAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r WirelessApiGetNetworkWirelessDevicesLatencyStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessDevicesLatencyStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessDevicesLatencyStatsExecute(r)
 }
 
@@ -4003,10 +4003,10 @@ Aggregated latency info for this network, grouped by node
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessApiGetNetworkWirelessDevicesLatencyStatsRequest
+ @return WirelessAPIGetNetworkWirelessDevicesLatencyStatsRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessDevicesLatencyStats(ctx context.Context, networkId string) WirelessApiGetNetworkWirelessDevicesLatencyStatsRequest {
-	return WirelessApiGetNetworkWirelessDevicesLatencyStatsRequest{
+func (a *WirelessAPIService) GetNetworkWirelessDevicesLatencyStats(ctx context.Context, networkId string) WirelessAPIGetNetworkWirelessDevicesLatencyStatsRequest {
+	return WirelessAPIGetNetworkWirelessDevicesLatencyStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4015,7 +4015,7 @@ func (a *WirelessApiService) GetNetworkWirelessDevicesLatencyStats(ctx context.C
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *WirelessApiService) GetNetworkWirelessDevicesLatencyStatsExecute(r WirelessApiGetNetworkWirelessDevicesLatencyStatsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessDevicesLatencyStatsExecute(r WirelessAPIGetNetworkWirelessDevicesLatencyStatsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4023,7 +4023,7 @@ func (a *WirelessApiService) GetNetworkWirelessDevicesLatencyStatsExecute(r Wire
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessDevicesLatencyStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessDevicesLatencyStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4127,9 +4127,9 @@ func (a *WirelessApiService) GetNetworkWirelessDevicesLatencyStatsExecute(r Wire
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessFailedConnectionsRequest struct {
+type WirelessAPIGetNetworkWirelessFailedConnectionsRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -4143,60 +4143,60 @@ type WirelessApiGetNetworkWirelessFailedConnectionsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r WirelessApiGetNetworkWirelessFailedConnectionsRequest) T0(t0 string) WirelessApiGetNetworkWirelessFailedConnectionsRequest {
+func (r WirelessAPIGetNetworkWirelessFailedConnectionsRequest) T0(t0 string) WirelessAPIGetNetworkWirelessFailedConnectionsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r WirelessApiGetNetworkWirelessFailedConnectionsRequest) T1(t1 string) WirelessApiGetNetworkWirelessFailedConnectionsRequest {
+func (r WirelessAPIGetNetworkWirelessFailedConnectionsRequest) T1(t1 string) WirelessAPIGetNetworkWirelessFailedConnectionsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r WirelessApiGetNetworkWirelessFailedConnectionsRequest) Timespan(timespan float32) WirelessApiGetNetworkWirelessFailedConnectionsRequest {
+func (r WirelessAPIGetNetworkWirelessFailedConnectionsRequest) Timespan(timespan float32) WirelessAPIGetNetworkWirelessFailedConnectionsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r WirelessApiGetNetworkWirelessFailedConnectionsRequest) Band(band string) WirelessApiGetNetworkWirelessFailedConnectionsRequest {
+func (r WirelessAPIGetNetworkWirelessFailedConnectionsRequest) Band(band string) WirelessAPIGetNetworkWirelessFailedConnectionsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r WirelessApiGetNetworkWirelessFailedConnectionsRequest) Ssid(ssid int32) WirelessApiGetNetworkWirelessFailedConnectionsRequest {
+func (r WirelessAPIGetNetworkWirelessFailedConnectionsRequest) Ssid(ssid int32) WirelessAPIGetNetworkWirelessFailedConnectionsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r WirelessApiGetNetworkWirelessFailedConnectionsRequest) Vlan(vlan int32) WirelessApiGetNetworkWirelessFailedConnectionsRequest {
+func (r WirelessAPIGetNetworkWirelessFailedConnectionsRequest) Vlan(vlan int32) WirelessAPIGetNetworkWirelessFailedConnectionsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r WirelessApiGetNetworkWirelessFailedConnectionsRequest) ApTag(apTag string) WirelessApiGetNetworkWirelessFailedConnectionsRequest {
+func (r WirelessAPIGetNetworkWirelessFailedConnectionsRequest) ApTag(apTag string) WirelessAPIGetNetworkWirelessFailedConnectionsRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Filter by AP
-func (r WirelessApiGetNetworkWirelessFailedConnectionsRequest) Serial(serial string) WirelessApiGetNetworkWirelessFailedConnectionsRequest {
+func (r WirelessAPIGetNetworkWirelessFailedConnectionsRequest) Serial(serial string) WirelessAPIGetNetworkWirelessFailedConnectionsRequest {
 	r.serial = &serial
 	return r
 }
 
 // Filter by client MAC
-func (r WirelessApiGetNetworkWirelessFailedConnectionsRequest) ClientId(clientId string) WirelessApiGetNetworkWirelessFailedConnectionsRequest {
+func (r WirelessAPIGetNetworkWirelessFailedConnectionsRequest) ClientId(clientId string) WirelessAPIGetNetworkWirelessFailedConnectionsRequest {
 	r.clientId = &clientId
 	return r
 }
 
-func (r WirelessApiGetNetworkWirelessFailedConnectionsRequest) Execute() ([]GetNetworkWirelessFailedConnections200ResponseInner, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessFailedConnectionsRequest) Execute() ([]GetNetworkWirelessFailedConnections200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessFailedConnectionsExecute(r)
 }
 
@@ -4207,10 +4207,10 @@ List of all failed client connection events on this network in a given time rang
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessApiGetNetworkWirelessFailedConnectionsRequest
+ @return WirelessAPIGetNetworkWirelessFailedConnectionsRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessFailedConnections(ctx context.Context, networkId string) WirelessApiGetNetworkWirelessFailedConnectionsRequest {
-	return WirelessApiGetNetworkWirelessFailedConnectionsRequest{
+func (a *WirelessAPIService) GetNetworkWirelessFailedConnections(ctx context.Context, networkId string) WirelessAPIGetNetworkWirelessFailedConnectionsRequest {
+	return WirelessAPIGetNetworkWirelessFailedConnectionsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4219,7 +4219,7 @@ func (a *WirelessApiService) GetNetworkWirelessFailedConnections(ctx context.Con
 
 // Execute executes the request
 //  @return []GetNetworkWirelessFailedConnections200ResponseInner
-func (a *WirelessApiService) GetNetworkWirelessFailedConnectionsExecute(r WirelessApiGetNetworkWirelessFailedConnectionsRequest) ([]GetNetworkWirelessFailedConnections200ResponseInner, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessFailedConnectionsExecute(r WirelessAPIGetNetworkWirelessFailedConnectionsRequest) ([]GetNetworkWirelessFailedConnections200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4227,7 +4227,7 @@ func (a *WirelessApiService) GetNetworkWirelessFailedConnectionsExecute(r Wirele
 		localVarReturnValue  []GetNetworkWirelessFailedConnections200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessFailedConnections")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessFailedConnections")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4334,9 +4334,9 @@ func (a *WirelessApiService) GetNetworkWirelessFailedConnectionsExecute(r Wirele
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessLatencyHistoryRequest struct {
+type WirelessAPIGetNetworkWirelessLatencyHistoryRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -4352,72 +4352,72 @@ type WirelessApiGetNetworkWirelessLatencyHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r WirelessApiGetNetworkWirelessLatencyHistoryRequest) T0(t0 string) WirelessApiGetNetworkWirelessLatencyHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessLatencyHistoryRequest) T0(t0 string) WirelessAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r WirelessApiGetNetworkWirelessLatencyHistoryRequest) T1(t1 string) WirelessApiGetNetworkWirelessLatencyHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessLatencyHistoryRequest) T1(t1 string) WirelessAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r WirelessApiGetNetworkWirelessLatencyHistoryRequest) Timespan(timespan float32) WirelessApiGetNetworkWirelessLatencyHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessLatencyHistoryRequest) Timespan(timespan float32) WirelessAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 300, 600, 1200, 3600, 14400, 86400. The default is 86400.
-func (r WirelessApiGetNetworkWirelessLatencyHistoryRequest) Resolution(resolution int32) WirelessApiGetNetworkWirelessLatencyHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessLatencyHistoryRequest) Resolution(resolution int32) WirelessAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // Automatically select a data resolution based on the given timespan; this overrides the value specified by the &#39;resolution&#39; parameter. The default setting is false.
-func (r WirelessApiGetNetworkWirelessLatencyHistoryRequest) AutoResolution(autoResolution bool) WirelessApiGetNetworkWirelessLatencyHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessLatencyHistoryRequest) AutoResolution(autoResolution bool) WirelessAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.autoResolution = &autoResolution
 	return r
 }
 
 // Filter results by network client.
-func (r WirelessApiGetNetworkWirelessLatencyHistoryRequest) ClientId(clientId string) WirelessApiGetNetworkWirelessLatencyHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessLatencyHistoryRequest) ClientId(clientId string) WirelessAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.clientId = &clientId
 	return r
 }
 
 // Filter results by device.
-func (r WirelessApiGetNetworkWirelessLatencyHistoryRequest) DeviceSerial(deviceSerial string) WirelessApiGetNetworkWirelessLatencyHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessLatencyHistoryRequest) DeviceSerial(deviceSerial string) WirelessAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.deviceSerial = &deviceSerial
 	return r
 }
 
 // Filter results by AP tag.
-func (r WirelessApiGetNetworkWirelessLatencyHistoryRequest) ApTag(apTag string) WirelessApiGetNetworkWirelessLatencyHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessLatencyHistoryRequest) ApTag(apTag string) WirelessAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;).
-func (r WirelessApiGetNetworkWirelessLatencyHistoryRequest) Band(band string) WirelessApiGetNetworkWirelessLatencyHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessLatencyHistoryRequest) Band(band string) WirelessAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID number.
-func (r WirelessApiGetNetworkWirelessLatencyHistoryRequest) Ssid(ssid int32) WirelessApiGetNetworkWirelessLatencyHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessLatencyHistoryRequest) Ssid(ssid int32) WirelessAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter by access category.
-func (r WirelessApiGetNetworkWirelessLatencyHistoryRequest) AccessCategory(accessCategory string) WirelessApiGetNetworkWirelessLatencyHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessLatencyHistoryRequest) AccessCategory(accessCategory string) WirelessAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.accessCategory = &accessCategory
 	return r
 }
 
-func (r WirelessApiGetNetworkWirelessLatencyHistoryRequest) Execute() ([]GetNetworkWirelessLatencyHistory200ResponseInner, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessLatencyHistoryRequest) Execute() ([]GetNetworkWirelessLatencyHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessLatencyHistoryExecute(r)
 }
 
@@ -4428,10 +4428,10 @@ Return average wireless latency over time for a network, device, or network clie
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessApiGetNetworkWirelessLatencyHistoryRequest
+ @return WirelessAPIGetNetworkWirelessLatencyHistoryRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessLatencyHistory(ctx context.Context, networkId string) WirelessApiGetNetworkWirelessLatencyHistoryRequest {
-	return WirelessApiGetNetworkWirelessLatencyHistoryRequest{
+func (a *WirelessAPIService) GetNetworkWirelessLatencyHistory(ctx context.Context, networkId string) WirelessAPIGetNetworkWirelessLatencyHistoryRequest {
+	return WirelessAPIGetNetworkWirelessLatencyHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4440,7 +4440,7 @@ func (a *WirelessApiService) GetNetworkWirelessLatencyHistory(ctx context.Contex
 
 // Execute executes the request
 //  @return []GetNetworkWirelessLatencyHistory200ResponseInner
-func (a *WirelessApiService) GetNetworkWirelessLatencyHistoryExecute(r WirelessApiGetNetworkWirelessLatencyHistoryRequest) ([]GetNetworkWirelessLatencyHistory200ResponseInner, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessLatencyHistoryExecute(r WirelessAPIGetNetworkWirelessLatencyHistoryRequest) ([]GetNetworkWirelessLatencyHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4448,7 +4448,7 @@ func (a *WirelessApiService) GetNetworkWirelessLatencyHistoryExecute(r WirelessA
 		localVarReturnValue  []GetNetworkWirelessLatencyHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessLatencyHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessLatencyHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4561,9 +4561,9 @@ func (a *WirelessApiService) GetNetworkWirelessLatencyHistoryExecute(r WirelessA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessLatencyStatsRequest struct {
+type WirelessAPIGetNetworkWirelessLatencyStatsRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -4576,54 +4576,54 @@ type WirelessApiGetNetworkWirelessLatencyStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r WirelessApiGetNetworkWirelessLatencyStatsRequest) T0(t0 string) WirelessApiGetNetworkWirelessLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessLatencyStatsRequest) T0(t0 string) WirelessAPIGetNetworkWirelessLatencyStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r WirelessApiGetNetworkWirelessLatencyStatsRequest) T1(t1 string) WirelessApiGetNetworkWirelessLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessLatencyStatsRequest) T1(t1 string) WirelessAPIGetNetworkWirelessLatencyStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r WirelessApiGetNetworkWirelessLatencyStatsRequest) Timespan(timespan float32) WirelessApiGetNetworkWirelessLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessLatencyStatsRequest) Timespan(timespan float32) WirelessAPIGetNetworkWirelessLatencyStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r WirelessApiGetNetworkWirelessLatencyStatsRequest) Band(band string) WirelessApiGetNetworkWirelessLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessLatencyStatsRequest) Band(band string) WirelessAPIGetNetworkWirelessLatencyStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r WirelessApiGetNetworkWirelessLatencyStatsRequest) Ssid(ssid int32) WirelessApiGetNetworkWirelessLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessLatencyStatsRequest) Ssid(ssid int32) WirelessAPIGetNetworkWirelessLatencyStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r WirelessApiGetNetworkWirelessLatencyStatsRequest) Vlan(vlan int32) WirelessApiGetNetworkWirelessLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessLatencyStatsRequest) Vlan(vlan int32) WirelessAPIGetNetworkWirelessLatencyStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r WirelessApiGetNetworkWirelessLatencyStatsRequest) ApTag(apTag string) WirelessApiGetNetworkWirelessLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessLatencyStatsRequest) ApTag(apTag string) WirelessAPIGetNetworkWirelessLatencyStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Partial selection: If present, this call will return only the selected fields of [\&quot;rawDistribution\&quot;, \&quot;avg\&quot;]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
-func (r WirelessApiGetNetworkWirelessLatencyStatsRequest) Fields(fields string) WirelessApiGetNetworkWirelessLatencyStatsRequest {
+func (r WirelessAPIGetNetworkWirelessLatencyStatsRequest) Fields(fields string) WirelessAPIGetNetworkWirelessLatencyStatsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r WirelessApiGetNetworkWirelessLatencyStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessLatencyStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessLatencyStatsExecute(r)
 }
 
@@ -4634,10 +4634,10 @@ Aggregated latency info for this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessApiGetNetworkWirelessLatencyStatsRequest
+ @return WirelessAPIGetNetworkWirelessLatencyStatsRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessLatencyStats(ctx context.Context, networkId string) WirelessApiGetNetworkWirelessLatencyStatsRequest {
-	return WirelessApiGetNetworkWirelessLatencyStatsRequest{
+func (a *WirelessAPIService) GetNetworkWirelessLatencyStats(ctx context.Context, networkId string) WirelessAPIGetNetworkWirelessLatencyStatsRequest {
+	return WirelessAPIGetNetworkWirelessLatencyStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4646,7 +4646,7 @@ func (a *WirelessApiService) GetNetworkWirelessLatencyStats(ctx context.Context,
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessApiService) GetNetworkWirelessLatencyStatsExecute(r WirelessApiGetNetworkWirelessLatencyStatsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessLatencyStatsExecute(r WirelessAPIGetNetworkWirelessLatencyStatsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4654,7 +4654,7 @@ func (a *WirelessApiService) GetNetworkWirelessLatencyStatsExecute(r WirelessApi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessLatencyStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessLatencyStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4758,9 +4758,9 @@ func (a *WirelessApiService) GetNetworkWirelessLatencyStatsExecute(r WirelessApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessMeshStatusesRequest struct {
+type WirelessAPIGetNetworkWirelessMeshStatusesRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	perPage *int32
 	startingAfter *string
@@ -4768,24 +4768,24 @@ type WirelessApiGetNetworkWirelessMeshStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 500. Default is 50.
-func (r WirelessApiGetNetworkWirelessMeshStatusesRequest) PerPage(perPage int32) WirelessApiGetNetworkWirelessMeshStatusesRequest {
+func (r WirelessAPIGetNetworkWirelessMeshStatusesRequest) PerPage(perPage int32) WirelessAPIGetNetworkWirelessMeshStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r WirelessApiGetNetworkWirelessMeshStatusesRequest) StartingAfter(startingAfter string) WirelessApiGetNetworkWirelessMeshStatusesRequest {
+func (r WirelessAPIGetNetworkWirelessMeshStatusesRequest) StartingAfter(startingAfter string) WirelessAPIGetNetworkWirelessMeshStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r WirelessApiGetNetworkWirelessMeshStatusesRequest) EndingBefore(endingBefore string) WirelessApiGetNetworkWirelessMeshStatusesRequest {
+func (r WirelessAPIGetNetworkWirelessMeshStatusesRequest) EndingBefore(endingBefore string) WirelessAPIGetNetworkWirelessMeshStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r WirelessApiGetNetworkWirelessMeshStatusesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessMeshStatusesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessMeshStatusesExecute(r)
 }
 
@@ -4796,10 +4796,10 @@ List wireless mesh statuses for repeaters
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessApiGetNetworkWirelessMeshStatusesRequest
+ @return WirelessAPIGetNetworkWirelessMeshStatusesRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessMeshStatuses(ctx context.Context, networkId string) WirelessApiGetNetworkWirelessMeshStatusesRequest {
-	return WirelessApiGetNetworkWirelessMeshStatusesRequest{
+func (a *WirelessAPIService) GetNetworkWirelessMeshStatuses(ctx context.Context, networkId string) WirelessAPIGetNetworkWirelessMeshStatusesRequest {
+	return WirelessAPIGetNetworkWirelessMeshStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4808,7 +4808,7 @@ func (a *WirelessApiService) GetNetworkWirelessMeshStatuses(ctx context.Context,
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessApiService) GetNetworkWirelessMeshStatusesExecute(r WirelessApiGetNetworkWirelessMeshStatusesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessMeshStatusesExecute(r WirelessAPIGetNetworkWirelessMeshStatusesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4816,7 +4816,7 @@ func (a *WirelessApiService) GetNetworkWirelessMeshStatusesExecute(r WirelessApi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessMeshStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessMeshStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4905,14 +4905,14 @@ func (a *WirelessApiService) GetNetworkWirelessMeshStatusesExecute(r WirelessApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessRfProfileRequest struct {
+type WirelessAPIGetNetworkWirelessRfProfileRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	rfProfileId string
 }
 
-func (r WirelessApiGetNetworkWirelessRfProfileRequest) Execute() (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessRfProfileRequest) Execute() (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessRfProfileExecute(r)
 }
 
@@ -4924,10 +4924,10 @@ Return a RF profile
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param rfProfileId Rf profile ID
- @return WirelessApiGetNetworkWirelessRfProfileRequest
+ @return WirelessAPIGetNetworkWirelessRfProfileRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessRfProfile(ctx context.Context, networkId string, rfProfileId string) WirelessApiGetNetworkWirelessRfProfileRequest {
-	return WirelessApiGetNetworkWirelessRfProfileRequest{
+func (a *WirelessAPIService) GetNetworkWirelessRfProfile(ctx context.Context, networkId string, rfProfileId string) WirelessAPIGetNetworkWirelessRfProfileRequest {
+	return WirelessAPIGetNetworkWirelessRfProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4937,7 +4937,7 @@ func (a *WirelessApiService) GetNetworkWirelessRfProfile(ctx context.Context, ne
 
 // Execute executes the request
 //  @return GetNetworkWirelessRfProfiles200Response
-func (a *WirelessApiService) GetNetworkWirelessRfProfileExecute(r WirelessApiGetNetworkWirelessRfProfileRequest) (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessRfProfileExecute(r WirelessAPIGetNetworkWirelessRfProfileRequest) (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4945,7 +4945,7 @@ func (a *WirelessApiService) GetNetworkWirelessRfProfileExecute(r WirelessApiGet
 		localVarReturnValue  *GetNetworkWirelessRfProfiles200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessRfProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessRfProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5026,20 +5026,20 @@ func (a *WirelessApiService) GetNetworkWirelessRfProfileExecute(r WirelessApiGet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessRfProfilesRequest struct {
+type WirelessAPIGetNetworkWirelessRfProfilesRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	includeTemplateProfiles *bool
 }
 
 // If the network is bound to a template, this parameter controls whether or not the non-basic RF profiles defined on the template should be included in the response alongside the non-basic profiles defined on the bound network. Defaults to false.
-func (r WirelessApiGetNetworkWirelessRfProfilesRequest) IncludeTemplateProfiles(includeTemplateProfiles bool) WirelessApiGetNetworkWirelessRfProfilesRequest {
+func (r WirelessAPIGetNetworkWirelessRfProfilesRequest) IncludeTemplateProfiles(includeTemplateProfiles bool) WirelessAPIGetNetworkWirelessRfProfilesRequest {
 	r.includeTemplateProfiles = &includeTemplateProfiles
 	return r
 }
 
-func (r WirelessApiGetNetworkWirelessRfProfilesRequest) Execute() (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessRfProfilesRequest) Execute() (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessRfProfilesExecute(r)
 }
 
@@ -5050,10 +5050,10 @@ List RF profiles for this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessApiGetNetworkWirelessRfProfilesRequest
+ @return WirelessAPIGetNetworkWirelessRfProfilesRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessRfProfiles(ctx context.Context, networkId string) WirelessApiGetNetworkWirelessRfProfilesRequest {
-	return WirelessApiGetNetworkWirelessRfProfilesRequest{
+func (a *WirelessAPIService) GetNetworkWirelessRfProfiles(ctx context.Context, networkId string) WirelessAPIGetNetworkWirelessRfProfilesRequest {
+	return WirelessAPIGetNetworkWirelessRfProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5062,7 +5062,7 @@ func (a *WirelessApiService) GetNetworkWirelessRfProfiles(ctx context.Context, n
 
 // Execute executes the request
 //  @return GetNetworkWirelessRfProfiles200Response
-func (a *WirelessApiService) GetNetworkWirelessRfProfilesExecute(r WirelessApiGetNetworkWirelessRfProfilesRequest) (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessRfProfilesExecute(r WirelessAPIGetNetworkWirelessRfProfilesRequest) (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5070,7 +5070,7 @@ func (a *WirelessApiService) GetNetworkWirelessRfProfilesExecute(r WirelessApiGe
 		localVarReturnValue  *GetNetworkWirelessRfProfiles200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessRfProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessRfProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5153,13 +5153,13 @@ func (a *WirelessApiService) GetNetworkWirelessRfProfilesExecute(r WirelessApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessSettingsRequest struct {
+type WirelessAPIGetNetworkWirelessSettingsRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 }
 
-func (r WirelessApiGetNetworkWirelessSettingsRequest) Execute() (*GetNetworkWirelessSettings200Response, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessSettingsRequest) Execute() (*GetNetworkWirelessSettings200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSettingsExecute(r)
 }
 
@@ -5170,10 +5170,10 @@ Return the wireless settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessApiGetNetworkWirelessSettingsRequest
+ @return WirelessAPIGetNetworkWirelessSettingsRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessSettings(ctx context.Context, networkId string) WirelessApiGetNetworkWirelessSettingsRequest {
-	return WirelessApiGetNetworkWirelessSettingsRequest{
+func (a *WirelessAPIService) GetNetworkWirelessSettings(ctx context.Context, networkId string) WirelessAPIGetNetworkWirelessSettingsRequest {
+	return WirelessAPIGetNetworkWirelessSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5182,7 +5182,7 @@ func (a *WirelessApiService) GetNetworkWirelessSettings(ctx context.Context, net
 
 // Execute executes the request
 //  @return GetNetworkWirelessSettings200Response
-func (a *WirelessApiService) GetNetworkWirelessSettingsExecute(r WirelessApiGetNetworkWirelessSettingsRequest) (*GetNetworkWirelessSettings200Response, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessSettingsExecute(r WirelessAPIGetNetworkWirelessSettingsRequest) (*GetNetworkWirelessSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5190,7 +5190,7 @@ func (a *WirelessApiService) GetNetworkWirelessSettingsExecute(r WirelessApiGetN
 		localVarReturnValue  *GetNetworkWirelessSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5270,9 +5270,9 @@ func (a *WirelessApiService) GetNetworkWirelessSettingsExecute(r WirelessApiGetN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessSignalQualityHistoryRequest struct {
+type WirelessAPIGetNetworkWirelessSignalQualityHistoryRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -5287,66 +5287,66 @@ type WirelessApiGetNetworkWirelessSignalQualityHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r WirelessApiGetNetworkWirelessSignalQualityHistoryRequest) T0(t0 string) WirelessApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessSignalQualityHistoryRequest) T0(t0 string) WirelessAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r WirelessApiGetNetworkWirelessSignalQualityHistoryRequest) T1(t1 string) WirelessApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessSignalQualityHistoryRequest) T1(t1 string) WirelessAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r WirelessApiGetNetworkWirelessSignalQualityHistoryRequest) Timespan(timespan float32) WirelessApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessSignalQualityHistoryRequest) Timespan(timespan float32) WirelessAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 300, 600, 1200, 3600, 14400, 86400. The default is 86400.
-func (r WirelessApiGetNetworkWirelessSignalQualityHistoryRequest) Resolution(resolution int32) WirelessApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessSignalQualityHistoryRequest) Resolution(resolution int32) WirelessAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // Automatically select a data resolution based on the given timespan; this overrides the value specified by the &#39;resolution&#39; parameter. The default setting is false.
-func (r WirelessApiGetNetworkWirelessSignalQualityHistoryRequest) AutoResolution(autoResolution bool) WirelessApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessSignalQualityHistoryRequest) AutoResolution(autoResolution bool) WirelessAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.autoResolution = &autoResolution
 	return r
 }
 
 // Filter results by network client.
-func (r WirelessApiGetNetworkWirelessSignalQualityHistoryRequest) ClientId(clientId string) WirelessApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessSignalQualityHistoryRequest) ClientId(clientId string) WirelessAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.clientId = &clientId
 	return r
 }
 
 // Filter results by device.
-func (r WirelessApiGetNetworkWirelessSignalQualityHistoryRequest) DeviceSerial(deviceSerial string) WirelessApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessSignalQualityHistoryRequest) DeviceSerial(deviceSerial string) WirelessAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.deviceSerial = &deviceSerial
 	return r
 }
 
 // Filter results by AP tag; either :clientId or :deviceSerial must be jointly specified.
-func (r WirelessApiGetNetworkWirelessSignalQualityHistoryRequest) ApTag(apTag string) WirelessApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessSignalQualityHistoryRequest) ApTag(apTag string) WirelessAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;).
-func (r WirelessApiGetNetworkWirelessSignalQualityHistoryRequest) Band(band string) WirelessApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessSignalQualityHistoryRequest) Band(band string) WirelessAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID number.
-func (r WirelessApiGetNetworkWirelessSignalQualityHistoryRequest) Ssid(ssid int32) WirelessApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessSignalQualityHistoryRequest) Ssid(ssid int32) WirelessAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.ssid = &ssid
 	return r
 }
 
-func (r WirelessApiGetNetworkWirelessSignalQualityHistoryRequest) Execute() ([]GetNetworkWirelessSignalQualityHistory200ResponseInner, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessSignalQualityHistoryRequest) Execute() ([]GetNetworkWirelessSignalQualityHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSignalQualityHistoryExecute(r)
 }
 
@@ -5357,10 +5357,10 @@ Return signal quality (SNR/RSSI) over time for a device or network client
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessApiGetNetworkWirelessSignalQualityHistoryRequest
+ @return WirelessAPIGetNetworkWirelessSignalQualityHistoryRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessSignalQualityHistory(ctx context.Context, networkId string) WirelessApiGetNetworkWirelessSignalQualityHistoryRequest {
-	return WirelessApiGetNetworkWirelessSignalQualityHistoryRequest{
+func (a *WirelessAPIService) GetNetworkWirelessSignalQualityHistory(ctx context.Context, networkId string) WirelessAPIGetNetworkWirelessSignalQualityHistoryRequest {
+	return WirelessAPIGetNetworkWirelessSignalQualityHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5369,7 +5369,7 @@ func (a *WirelessApiService) GetNetworkWirelessSignalQualityHistory(ctx context.
 
 // Execute executes the request
 //  @return []GetNetworkWirelessSignalQualityHistory200ResponseInner
-func (a *WirelessApiService) GetNetworkWirelessSignalQualityHistoryExecute(r WirelessApiGetNetworkWirelessSignalQualityHistoryRequest) ([]GetNetworkWirelessSignalQualityHistory200ResponseInner, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessSignalQualityHistoryExecute(r WirelessAPIGetNetworkWirelessSignalQualityHistoryRequest) ([]GetNetworkWirelessSignalQualityHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5377,7 +5377,7 @@ func (a *WirelessApiService) GetNetworkWirelessSignalQualityHistoryExecute(r Wir
 		localVarReturnValue  []GetNetworkWirelessSignalQualityHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessSignalQualityHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessSignalQualityHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5487,14 +5487,14 @@ func (a *WirelessApiService) GetNetworkWirelessSignalQualityHistoryExecute(r Wir
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessSsidRequest struct {
+type WirelessAPIGetNetworkWirelessSsidRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	number string
 }
 
-func (r WirelessApiGetNetworkWirelessSsidRequest) Execute() (*GetNetworkWirelessSsids200ResponseInner, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessSsidRequest) Execute() (*GetNetworkWirelessSsids200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidExecute(r)
 }
 
@@ -5506,10 +5506,10 @@ Return a single MR SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return WirelessApiGetNetworkWirelessSsidRequest
+ @return WirelessAPIGetNetworkWirelessSsidRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessSsid(ctx context.Context, networkId string, number string) WirelessApiGetNetworkWirelessSsidRequest {
-	return WirelessApiGetNetworkWirelessSsidRequest{
+func (a *WirelessAPIService) GetNetworkWirelessSsid(ctx context.Context, networkId string, number string) WirelessAPIGetNetworkWirelessSsidRequest {
+	return WirelessAPIGetNetworkWirelessSsidRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5519,7 +5519,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsid(ctx context.Context, network
 
 // Execute executes the request
 //  @return GetNetworkWirelessSsids200ResponseInner
-func (a *WirelessApiService) GetNetworkWirelessSsidExecute(r WirelessApiGetNetworkWirelessSsidRequest) (*GetNetworkWirelessSsids200ResponseInner, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessSsidExecute(r WirelessAPIGetNetworkWirelessSsidRequest) (*GetNetworkWirelessSsids200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5527,7 +5527,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsidExecute(r WirelessApiGetNetwo
 		localVarReturnValue  *GetNetworkWirelessSsids200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessSsid")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessSsid")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5608,14 +5608,14 @@ func (a *WirelessApiService) GetNetworkWirelessSsidExecute(r WirelessApiGetNetwo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessSsidBonjourForwardingRequest struct {
+type WirelessAPIGetNetworkWirelessSsidBonjourForwardingRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	number string
 }
 
-func (r WirelessApiGetNetworkWirelessSsidBonjourForwardingRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessSsidBonjourForwardingRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidBonjourForwardingExecute(r)
 }
 
@@ -5627,10 +5627,10 @@ List the Bonjour forwarding setting and rules for the SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return WirelessApiGetNetworkWirelessSsidBonjourForwardingRequest
+ @return WirelessAPIGetNetworkWirelessSsidBonjourForwardingRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessSsidBonjourForwarding(ctx context.Context, networkId string, number string) WirelessApiGetNetworkWirelessSsidBonjourForwardingRequest {
-	return WirelessApiGetNetworkWirelessSsidBonjourForwardingRequest{
+func (a *WirelessAPIService) GetNetworkWirelessSsidBonjourForwarding(ctx context.Context, networkId string, number string) WirelessAPIGetNetworkWirelessSsidBonjourForwardingRequest {
+	return WirelessAPIGetNetworkWirelessSsidBonjourForwardingRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5640,7 +5640,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsidBonjourForwarding(ctx context
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessApiService) GetNetworkWirelessSsidBonjourForwardingExecute(r WirelessApiGetNetworkWirelessSsidBonjourForwardingRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessSsidBonjourForwardingExecute(r WirelessAPIGetNetworkWirelessSsidBonjourForwardingRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5648,7 +5648,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsidBonjourForwardingExecute(r Wi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessSsidBonjourForwarding")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessSsidBonjourForwarding")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5729,14 +5729,14 @@ func (a *WirelessApiService) GetNetworkWirelessSsidBonjourForwardingExecute(r Wi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest struct {
+type WirelessAPIGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	number string
 }
 
-func (r WirelessApiGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidDeviceTypeGroupPoliciesExecute(r)
 }
 
@@ -5748,10 +5748,10 @@ List the device type group policies for the SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return WirelessApiGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest
+ @return WirelessAPIGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessSsidDeviceTypeGroupPolicies(ctx context.Context, networkId string, number string) WirelessApiGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest {
-	return WirelessApiGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest{
+func (a *WirelessAPIService) GetNetworkWirelessSsidDeviceTypeGroupPolicies(ctx context.Context, networkId string, number string) WirelessAPIGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest {
+	return WirelessAPIGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5761,7 +5761,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsidDeviceTypeGroupPolicies(ctx c
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessApiService) GetNetworkWirelessSsidDeviceTypeGroupPoliciesExecute(r WirelessApiGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessSsidDeviceTypeGroupPoliciesExecute(r WirelessAPIGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5769,7 +5769,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsidDeviceTypeGroupPoliciesExecut
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessSsidDeviceTypeGroupPolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessSsidDeviceTypeGroupPolicies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5850,14 +5850,14 @@ func (a *WirelessApiService) GetNetworkWirelessSsidDeviceTypeGroupPoliciesExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessSsidEapOverrideRequest struct {
+type WirelessAPIGetNetworkWirelessSsidEapOverrideRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	number string
 }
 
-func (r WirelessApiGetNetworkWirelessSsidEapOverrideRequest) Execute() (*GetNetworkWirelessSsidEapOverride200Response, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessSsidEapOverrideRequest) Execute() (*GetNetworkWirelessSsidEapOverride200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidEapOverrideExecute(r)
 }
 
@@ -5869,10 +5869,10 @@ Return the EAP overridden parameters for an SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return WirelessApiGetNetworkWirelessSsidEapOverrideRequest
+ @return WirelessAPIGetNetworkWirelessSsidEapOverrideRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessSsidEapOverride(ctx context.Context, networkId string, number string) WirelessApiGetNetworkWirelessSsidEapOverrideRequest {
-	return WirelessApiGetNetworkWirelessSsidEapOverrideRequest{
+func (a *WirelessAPIService) GetNetworkWirelessSsidEapOverride(ctx context.Context, networkId string, number string) WirelessAPIGetNetworkWirelessSsidEapOverrideRequest {
+	return WirelessAPIGetNetworkWirelessSsidEapOverrideRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5882,7 +5882,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsidEapOverride(ctx context.Conte
 
 // Execute executes the request
 //  @return GetNetworkWirelessSsidEapOverride200Response
-func (a *WirelessApiService) GetNetworkWirelessSsidEapOverrideExecute(r WirelessApiGetNetworkWirelessSsidEapOverrideRequest) (*GetNetworkWirelessSsidEapOverride200Response, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessSsidEapOverrideExecute(r WirelessAPIGetNetworkWirelessSsidEapOverrideRequest) (*GetNetworkWirelessSsidEapOverride200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5890,7 +5890,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsidEapOverrideExecute(r Wireless
 		localVarReturnValue  *GetNetworkWirelessSsidEapOverride200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessSsidEapOverride")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessSsidEapOverride")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5971,14 +5971,14 @@ func (a *WirelessApiService) GetNetworkWirelessSsidEapOverrideExecute(r Wireless
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessSsidFirewallL3FirewallRulesRequest struct {
+type WirelessAPIGetNetworkWirelessSsidFirewallL3FirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	number string
 }
 
-func (r WirelessApiGetNetworkWirelessSsidFirewallL3FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessSsidFirewallL3FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidFirewallL3FirewallRulesExecute(r)
 }
 
@@ -5990,10 +5990,10 @@ Return the L3 firewall rules for an SSID on an MR network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return WirelessApiGetNetworkWirelessSsidFirewallL3FirewallRulesRequest
+ @return WirelessAPIGetNetworkWirelessSsidFirewallL3FirewallRulesRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessSsidFirewallL3FirewallRules(ctx context.Context, networkId string, number string) WirelessApiGetNetworkWirelessSsidFirewallL3FirewallRulesRequest {
-	return WirelessApiGetNetworkWirelessSsidFirewallL3FirewallRulesRequest{
+func (a *WirelessAPIService) GetNetworkWirelessSsidFirewallL3FirewallRules(ctx context.Context, networkId string, number string) WirelessAPIGetNetworkWirelessSsidFirewallL3FirewallRulesRequest {
+	return WirelessAPIGetNetworkWirelessSsidFirewallL3FirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6003,7 +6003,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsidFirewallL3FirewallRules(ctx c
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessApiService) GetNetworkWirelessSsidFirewallL3FirewallRulesExecute(r WirelessApiGetNetworkWirelessSsidFirewallL3FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessSsidFirewallL3FirewallRulesExecute(r WirelessAPIGetNetworkWirelessSsidFirewallL3FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6011,7 +6011,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsidFirewallL3FirewallRulesExecut
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessSsidFirewallL3FirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessSsidFirewallL3FirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6092,14 +6092,14 @@ func (a *WirelessApiService) GetNetworkWirelessSsidFirewallL3FirewallRulesExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessSsidFirewallL7FirewallRulesRequest struct {
+type WirelessAPIGetNetworkWirelessSsidFirewallL7FirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	number string
 }
 
-func (r WirelessApiGetNetworkWirelessSsidFirewallL7FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessSsidFirewallL7FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidFirewallL7FirewallRulesExecute(r)
 }
 
@@ -6111,10 +6111,10 @@ Return the L7 firewall rules for an SSID on an MR network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return WirelessApiGetNetworkWirelessSsidFirewallL7FirewallRulesRequest
+ @return WirelessAPIGetNetworkWirelessSsidFirewallL7FirewallRulesRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessSsidFirewallL7FirewallRules(ctx context.Context, networkId string, number string) WirelessApiGetNetworkWirelessSsidFirewallL7FirewallRulesRequest {
-	return WirelessApiGetNetworkWirelessSsidFirewallL7FirewallRulesRequest{
+func (a *WirelessAPIService) GetNetworkWirelessSsidFirewallL7FirewallRules(ctx context.Context, networkId string, number string) WirelessAPIGetNetworkWirelessSsidFirewallL7FirewallRulesRequest {
+	return WirelessAPIGetNetworkWirelessSsidFirewallL7FirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6124,7 +6124,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsidFirewallL7FirewallRules(ctx c
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessApiService) GetNetworkWirelessSsidFirewallL7FirewallRulesExecute(r WirelessApiGetNetworkWirelessSsidFirewallL7FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessSsidFirewallL7FirewallRulesExecute(r WirelessAPIGetNetworkWirelessSsidFirewallL7FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6132,7 +6132,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsidFirewallL7FirewallRulesExecut
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessSsidFirewallL7FirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessSsidFirewallL7FirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6213,14 +6213,14 @@ func (a *WirelessApiService) GetNetworkWirelessSsidFirewallL7FirewallRulesExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessSsidHotspot20Request struct {
+type WirelessAPIGetNetworkWirelessSsidHotspot20Request struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	number string
 }
 
-func (r WirelessApiGetNetworkWirelessSsidHotspot20Request) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessSsidHotspot20Request) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidHotspot20Execute(r)
 }
 
@@ -6232,10 +6232,10 @@ Return the Hotspot 2.0 settings for an SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return WirelessApiGetNetworkWirelessSsidHotspot20Request
+ @return WirelessAPIGetNetworkWirelessSsidHotspot20Request
 */
-func (a *WirelessApiService) GetNetworkWirelessSsidHotspot20(ctx context.Context, networkId string, number string) WirelessApiGetNetworkWirelessSsidHotspot20Request {
-	return WirelessApiGetNetworkWirelessSsidHotspot20Request{
+func (a *WirelessAPIService) GetNetworkWirelessSsidHotspot20(ctx context.Context, networkId string, number string) WirelessAPIGetNetworkWirelessSsidHotspot20Request {
+	return WirelessAPIGetNetworkWirelessSsidHotspot20Request{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6245,7 +6245,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsidHotspot20(ctx context.Context
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessApiService) GetNetworkWirelessSsidHotspot20Execute(r WirelessApiGetNetworkWirelessSsidHotspot20Request) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessSsidHotspot20Execute(r WirelessAPIGetNetworkWirelessSsidHotspot20Request) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6253,7 +6253,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsidHotspot20Execute(r WirelessAp
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessSsidHotspot20")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessSsidHotspot20")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6334,15 +6334,15 @@ func (a *WirelessApiService) GetNetworkWirelessSsidHotspot20Execute(r WirelessAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessSsidIdentityPskRequest struct {
+type WirelessAPIGetNetworkWirelessSsidIdentityPskRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	number string
 	identityPskId string
 }
 
-func (r WirelessApiGetNetworkWirelessSsidIdentityPskRequest) Execute() (*GetNetworkWirelessSsidIdentityPsks200ResponseInner, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessSsidIdentityPskRequest) Execute() (*GetNetworkWirelessSsidIdentityPsks200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidIdentityPskExecute(r)
 }
 
@@ -6355,10 +6355,10 @@ Return an Identity PSK
  @param networkId Network ID
  @param number Number
  @param identityPskId Identity psk ID
- @return WirelessApiGetNetworkWirelessSsidIdentityPskRequest
+ @return WirelessAPIGetNetworkWirelessSsidIdentityPskRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessSsidIdentityPsk(ctx context.Context, networkId string, number string, identityPskId string) WirelessApiGetNetworkWirelessSsidIdentityPskRequest {
-	return WirelessApiGetNetworkWirelessSsidIdentityPskRequest{
+func (a *WirelessAPIService) GetNetworkWirelessSsidIdentityPsk(ctx context.Context, networkId string, number string, identityPskId string) WirelessAPIGetNetworkWirelessSsidIdentityPskRequest {
+	return WirelessAPIGetNetworkWirelessSsidIdentityPskRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6369,7 +6369,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsidIdentityPsk(ctx context.Conte
 
 // Execute executes the request
 //  @return GetNetworkWirelessSsidIdentityPsks200ResponseInner
-func (a *WirelessApiService) GetNetworkWirelessSsidIdentityPskExecute(r WirelessApiGetNetworkWirelessSsidIdentityPskRequest) (*GetNetworkWirelessSsidIdentityPsks200ResponseInner, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessSsidIdentityPskExecute(r WirelessAPIGetNetworkWirelessSsidIdentityPskRequest) (*GetNetworkWirelessSsidIdentityPsks200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6377,7 +6377,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsidIdentityPskExecute(r Wireless
 		localVarReturnValue  *GetNetworkWirelessSsidIdentityPsks200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessSsidIdentityPsk")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessSsidIdentityPsk")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6459,14 +6459,14 @@ func (a *WirelessApiService) GetNetworkWirelessSsidIdentityPskExecute(r Wireless
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessSsidIdentityPsksRequest struct {
+type WirelessAPIGetNetworkWirelessSsidIdentityPsksRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	number string
 }
 
-func (r WirelessApiGetNetworkWirelessSsidIdentityPsksRequest) Execute() ([]GetNetworkWirelessSsidIdentityPsks200ResponseInner, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessSsidIdentityPsksRequest) Execute() ([]GetNetworkWirelessSsidIdentityPsks200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidIdentityPsksExecute(r)
 }
 
@@ -6478,10 +6478,10 @@ List all Identity PSKs in a wireless network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return WirelessApiGetNetworkWirelessSsidIdentityPsksRequest
+ @return WirelessAPIGetNetworkWirelessSsidIdentityPsksRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessSsidIdentityPsks(ctx context.Context, networkId string, number string) WirelessApiGetNetworkWirelessSsidIdentityPsksRequest {
-	return WirelessApiGetNetworkWirelessSsidIdentityPsksRequest{
+func (a *WirelessAPIService) GetNetworkWirelessSsidIdentityPsks(ctx context.Context, networkId string, number string) WirelessAPIGetNetworkWirelessSsidIdentityPsksRequest {
+	return WirelessAPIGetNetworkWirelessSsidIdentityPsksRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6491,7 +6491,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsidIdentityPsks(ctx context.Cont
 
 // Execute executes the request
 //  @return []GetNetworkWirelessSsidIdentityPsks200ResponseInner
-func (a *WirelessApiService) GetNetworkWirelessSsidIdentityPsksExecute(r WirelessApiGetNetworkWirelessSsidIdentityPsksRequest) ([]GetNetworkWirelessSsidIdentityPsks200ResponseInner, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessSsidIdentityPsksExecute(r WirelessAPIGetNetworkWirelessSsidIdentityPsksRequest) ([]GetNetworkWirelessSsidIdentityPsks200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6499,7 +6499,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsidIdentityPsksExecute(r Wireles
 		localVarReturnValue  []GetNetworkWirelessSsidIdentityPsks200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessSsidIdentityPsks")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessSsidIdentityPsks")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6580,14 +6580,14 @@ func (a *WirelessApiService) GetNetworkWirelessSsidIdentityPsksExecute(r Wireles
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessSsidSchedulesRequest struct {
+type WirelessAPIGetNetworkWirelessSsidSchedulesRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	number string
 }
 
-func (r WirelessApiGetNetworkWirelessSsidSchedulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessSsidSchedulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidSchedulesExecute(r)
 }
 
@@ -6599,10 +6599,10 @@ List the outage schedule for the SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return WirelessApiGetNetworkWirelessSsidSchedulesRequest
+ @return WirelessAPIGetNetworkWirelessSsidSchedulesRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessSsidSchedules(ctx context.Context, networkId string, number string) WirelessApiGetNetworkWirelessSsidSchedulesRequest {
-	return WirelessApiGetNetworkWirelessSsidSchedulesRequest{
+func (a *WirelessAPIService) GetNetworkWirelessSsidSchedules(ctx context.Context, networkId string, number string) WirelessAPIGetNetworkWirelessSsidSchedulesRequest {
+	return WirelessAPIGetNetworkWirelessSsidSchedulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6612,7 +6612,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsidSchedules(ctx context.Context
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessApiService) GetNetworkWirelessSsidSchedulesExecute(r WirelessApiGetNetworkWirelessSsidSchedulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessSsidSchedulesExecute(r WirelessAPIGetNetworkWirelessSsidSchedulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6620,7 +6620,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsidSchedulesExecute(r WirelessAp
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessSsidSchedules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessSsidSchedules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6701,14 +6701,14 @@ func (a *WirelessApiService) GetNetworkWirelessSsidSchedulesExecute(r WirelessAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessSsidSplashSettingsRequest struct {
+type WirelessAPIGetNetworkWirelessSsidSplashSettingsRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	number string
 }
 
-func (r WirelessApiGetNetworkWirelessSsidSplashSettingsRequest) Execute() (*GetNetworkWirelessSsidSplashSettings200Response, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessSsidSplashSettingsRequest) Execute() (*GetNetworkWirelessSsidSplashSettings200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidSplashSettingsExecute(r)
 }
 
@@ -6720,10 +6720,10 @@ Display the splash page settings for the given SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return WirelessApiGetNetworkWirelessSsidSplashSettingsRequest
+ @return WirelessAPIGetNetworkWirelessSsidSplashSettingsRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessSsidSplashSettings(ctx context.Context, networkId string, number string) WirelessApiGetNetworkWirelessSsidSplashSettingsRequest {
-	return WirelessApiGetNetworkWirelessSsidSplashSettingsRequest{
+func (a *WirelessAPIService) GetNetworkWirelessSsidSplashSettings(ctx context.Context, networkId string, number string) WirelessAPIGetNetworkWirelessSsidSplashSettingsRequest {
+	return WirelessAPIGetNetworkWirelessSsidSplashSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6733,7 +6733,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsidSplashSettings(ctx context.Co
 
 // Execute executes the request
 //  @return GetNetworkWirelessSsidSplashSettings200Response
-func (a *WirelessApiService) GetNetworkWirelessSsidSplashSettingsExecute(r WirelessApiGetNetworkWirelessSsidSplashSettingsRequest) (*GetNetworkWirelessSsidSplashSettings200Response, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessSsidSplashSettingsExecute(r WirelessAPIGetNetworkWirelessSsidSplashSettingsRequest) (*GetNetworkWirelessSsidSplashSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6741,7 +6741,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsidSplashSettingsExecute(r Wirel
 		localVarReturnValue  *GetNetworkWirelessSsidSplashSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessSsidSplashSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessSsidSplashSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6822,14 +6822,14 @@ func (a *WirelessApiService) GetNetworkWirelessSsidSplashSettingsExecute(r Wirel
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessSsidTrafficShapingRulesRequest struct {
+type WirelessAPIGetNetworkWirelessSsidTrafficShapingRulesRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	number string
 }
 
-func (r WirelessApiGetNetworkWirelessSsidTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessSsidTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidTrafficShapingRulesExecute(r)
 }
 
@@ -6841,10 +6841,10 @@ Display the traffic shaping settings for a SSID on an MR network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return WirelessApiGetNetworkWirelessSsidTrafficShapingRulesRequest
+ @return WirelessAPIGetNetworkWirelessSsidTrafficShapingRulesRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessSsidTrafficShapingRules(ctx context.Context, networkId string, number string) WirelessApiGetNetworkWirelessSsidTrafficShapingRulesRequest {
-	return WirelessApiGetNetworkWirelessSsidTrafficShapingRulesRequest{
+func (a *WirelessAPIService) GetNetworkWirelessSsidTrafficShapingRules(ctx context.Context, networkId string, number string) WirelessAPIGetNetworkWirelessSsidTrafficShapingRulesRequest {
+	return WirelessAPIGetNetworkWirelessSsidTrafficShapingRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6854,7 +6854,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsidTrafficShapingRules(ctx conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessApiService) GetNetworkWirelessSsidTrafficShapingRulesExecute(r WirelessApiGetNetworkWirelessSsidTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessSsidTrafficShapingRulesExecute(r WirelessAPIGetNetworkWirelessSsidTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6862,7 +6862,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsidTrafficShapingRulesExecute(r 
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessSsidTrafficShapingRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessSsidTrafficShapingRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6943,14 +6943,14 @@ func (a *WirelessApiService) GetNetworkWirelessSsidTrafficShapingRulesExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessSsidVpnRequest struct {
+type WirelessAPIGetNetworkWirelessSsidVpnRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	number string
 }
 
-func (r WirelessApiGetNetworkWirelessSsidVpnRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessSsidVpnRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidVpnExecute(r)
 }
 
@@ -6962,10 +6962,10 @@ List the VPN settings for the SSID.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return WirelessApiGetNetworkWirelessSsidVpnRequest
+ @return WirelessAPIGetNetworkWirelessSsidVpnRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessSsidVpn(ctx context.Context, networkId string, number string) WirelessApiGetNetworkWirelessSsidVpnRequest {
-	return WirelessApiGetNetworkWirelessSsidVpnRequest{
+func (a *WirelessAPIService) GetNetworkWirelessSsidVpn(ctx context.Context, networkId string, number string) WirelessAPIGetNetworkWirelessSsidVpnRequest {
+	return WirelessAPIGetNetworkWirelessSsidVpnRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6975,7 +6975,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsidVpn(ctx context.Context, netw
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessApiService) GetNetworkWirelessSsidVpnExecute(r WirelessApiGetNetworkWirelessSsidVpnRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessSsidVpnExecute(r WirelessAPIGetNetworkWirelessSsidVpnRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6983,7 +6983,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsidVpnExecute(r WirelessApiGetNe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessSsidVpn")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessSsidVpn")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7064,13 +7064,13 @@ func (a *WirelessApiService) GetNetworkWirelessSsidVpnExecute(r WirelessApiGetNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessSsidsRequest struct {
+type WirelessAPIGetNetworkWirelessSsidsRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 }
 
-func (r WirelessApiGetNetworkWirelessSsidsRequest) Execute() ([]GetNetworkWirelessSsids200ResponseInner, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessSsidsRequest) Execute() ([]GetNetworkWirelessSsids200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidsExecute(r)
 }
 
@@ -7081,10 +7081,10 @@ List the MR SSIDs in a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessApiGetNetworkWirelessSsidsRequest
+ @return WirelessAPIGetNetworkWirelessSsidsRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessSsids(ctx context.Context, networkId string) WirelessApiGetNetworkWirelessSsidsRequest {
-	return WirelessApiGetNetworkWirelessSsidsRequest{
+func (a *WirelessAPIService) GetNetworkWirelessSsids(ctx context.Context, networkId string) WirelessAPIGetNetworkWirelessSsidsRequest {
+	return WirelessAPIGetNetworkWirelessSsidsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -7093,7 +7093,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsids(ctx context.Context, networ
 
 // Execute executes the request
 //  @return []GetNetworkWirelessSsids200ResponseInner
-func (a *WirelessApiService) GetNetworkWirelessSsidsExecute(r WirelessApiGetNetworkWirelessSsidsRequest) ([]GetNetworkWirelessSsids200ResponseInner, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessSsidsExecute(r WirelessAPIGetNetworkWirelessSsidsRequest) ([]GetNetworkWirelessSsids200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7101,7 +7101,7 @@ func (a *WirelessApiService) GetNetworkWirelessSsidsExecute(r WirelessApiGetNetw
 		localVarReturnValue  []GetNetworkWirelessSsids200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessSsids")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessSsids")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7181,9 +7181,9 @@ func (a *WirelessApiService) GetNetworkWirelessSsidsExecute(r WirelessApiGetNetw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetNetworkWirelessUsageHistoryRequest struct {
+type WirelessAPIGetNetworkWirelessUsageHistoryRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -7198,66 +7198,66 @@ type WirelessApiGetNetworkWirelessUsageHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r WirelessApiGetNetworkWirelessUsageHistoryRequest) T0(t0 string) WirelessApiGetNetworkWirelessUsageHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessUsageHistoryRequest) T0(t0 string) WirelessAPIGetNetworkWirelessUsageHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r WirelessApiGetNetworkWirelessUsageHistoryRequest) T1(t1 string) WirelessApiGetNetworkWirelessUsageHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessUsageHistoryRequest) T1(t1 string) WirelessAPIGetNetworkWirelessUsageHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r WirelessApiGetNetworkWirelessUsageHistoryRequest) Timespan(timespan float32) WirelessApiGetNetworkWirelessUsageHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessUsageHistoryRequest) Timespan(timespan float32) WirelessAPIGetNetworkWirelessUsageHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 300, 600, 1200, 3600, 14400, 86400. The default is 86400.
-func (r WirelessApiGetNetworkWirelessUsageHistoryRequest) Resolution(resolution int32) WirelessApiGetNetworkWirelessUsageHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessUsageHistoryRequest) Resolution(resolution int32) WirelessAPIGetNetworkWirelessUsageHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // Automatically select a data resolution based on the given timespan; this overrides the value specified by the &#39;resolution&#39; parameter. The default setting is false.
-func (r WirelessApiGetNetworkWirelessUsageHistoryRequest) AutoResolution(autoResolution bool) WirelessApiGetNetworkWirelessUsageHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessUsageHistoryRequest) AutoResolution(autoResolution bool) WirelessAPIGetNetworkWirelessUsageHistoryRequest {
 	r.autoResolution = &autoResolution
 	return r
 }
 
 // Filter results by network client to return per-device AP usage over time inner joined by the queried client&#39;s connection history.
-func (r WirelessApiGetNetworkWirelessUsageHistoryRequest) ClientId(clientId string) WirelessApiGetNetworkWirelessUsageHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessUsageHistoryRequest) ClientId(clientId string) WirelessAPIGetNetworkWirelessUsageHistoryRequest {
 	r.clientId = &clientId
 	return r
 }
 
 // Filter results by device. Requires :band.
-func (r WirelessApiGetNetworkWirelessUsageHistoryRequest) DeviceSerial(deviceSerial string) WirelessApiGetNetworkWirelessUsageHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessUsageHistoryRequest) DeviceSerial(deviceSerial string) WirelessAPIGetNetworkWirelessUsageHistoryRequest {
 	r.deviceSerial = &deviceSerial
 	return r
 }
 
 // Filter results by AP tag; either :clientId or :deviceSerial must be jointly specified.
-func (r WirelessApiGetNetworkWirelessUsageHistoryRequest) ApTag(apTag string) WirelessApiGetNetworkWirelessUsageHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessUsageHistoryRequest) ApTag(apTag string) WirelessAPIGetNetworkWirelessUsageHistoryRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;).
-func (r WirelessApiGetNetworkWirelessUsageHistoryRequest) Band(band string) WirelessApiGetNetworkWirelessUsageHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessUsageHistoryRequest) Band(band string) WirelessAPIGetNetworkWirelessUsageHistoryRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID number.
-func (r WirelessApiGetNetworkWirelessUsageHistoryRequest) Ssid(ssid int32) WirelessApiGetNetworkWirelessUsageHistoryRequest {
+func (r WirelessAPIGetNetworkWirelessUsageHistoryRequest) Ssid(ssid int32) WirelessAPIGetNetworkWirelessUsageHistoryRequest {
 	r.ssid = &ssid
 	return r
 }
 
-func (r WirelessApiGetNetworkWirelessUsageHistoryRequest) Execute() ([]GetNetworkWirelessUsageHistory200ResponseInner, *http.Response, error) {
+func (r WirelessAPIGetNetworkWirelessUsageHistoryRequest) Execute() ([]GetNetworkWirelessUsageHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessUsageHistoryExecute(r)
 }
 
@@ -7268,10 +7268,10 @@ Return AP usage over time for a device or network client
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessApiGetNetworkWirelessUsageHistoryRequest
+ @return WirelessAPIGetNetworkWirelessUsageHistoryRequest
 */
-func (a *WirelessApiService) GetNetworkWirelessUsageHistory(ctx context.Context, networkId string) WirelessApiGetNetworkWirelessUsageHistoryRequest {
-	return WirelessApiGetNetworkWirelessUsageHistoryRequest{
+func (a *WirelessAPIService) GetNetworkWirelessUsageHistory(ctx context.Context, networkId string) WirelessAPIGetNetworkWirelessUsageHistoryRequest {
+	return WirelessAPIGetNetworkWirelessUsageHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -7280,7 +7280,7 @@ func (a *WirelessApiService) GetNetworkWirelessUsageHistory(ctx context.Context,
 
 // Execute executes the request
 //  @return []GetNetworkWirelessUsageHistory200ResponseInner
-func (a *WirelessApiService) GetNetworkWirelessUsageHistoryExecute(r WirelessApiGetNetworkWirelessUsageHistoryRequest) ([]GetNetworkWirelessUsageHistory200ResponseInner, *http.Response, error) {
+func (a *WirelessAPIService) GetNetworkWirelessUsageHistoryExecute(r WirelessAPIGetNetworkWirelessUsageHistoryRequest) ([]GetNetworkWirelessUsageHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7288,7 +7288,7 @@ func (a *WirelessApiService) GetNetworkWirelessUsageHistoryExecute(r WirelessApi
 		localVarReturnValue  []GetNetworkWirelessUsageHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetNetworkWirelessUsageHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetNetworkWirelessUsageHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7398,9 +7398,9 @@ func (a *WirelessApiService) GetNetworkWirelessUsageHistoryExecute(r WirelessApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest struct {
+type WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	organizationId string
 	networkIds *[]string
 	serials *[]string
@@ -7414,60 +7414,60 @@ type WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest 
 }
 
 // Filter results by network.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) NetworkIds(networkIds []string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) NetworkIds(networkIds []string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Filter results by device.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Serials(serials []string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Serials(serials []string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.serials = &serials
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) PerPage(perPage int32) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) PerPage(perPage int32) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) StartingAfter(startingAfter string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) StartingAfter(startingAfter string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) EndingBefore(endingBefore string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) EndingBefore(endingBefore string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 90 days from today.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) T0(t0 string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) T0(t0 string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 90 days after t0.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) T1(t1 string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) T1(t1 string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 90 days. The default is 7 days.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Timespan(timespan float32) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Timespan(timespan float32) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time interval in seconds for returned data. The valid intervals are: 300, 600, 3600, 7200, 14400, 21600. The default is 3600.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Interval(interval int32) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Interval(interval int32) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.interval = &interval
 	return r
 }
 
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationByDevice200ResponseInner, *http.Response, error) {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationByDevice200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationWirelessDevicesChannelUtilizationByDeviceExecute(r)
 }
 
@@ -7478,10 +7478,10 @@ Get average channel utilization for all bands in a network, split by AP
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest
+ @return WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest
 */
-func (a *WirelessApiService) GetOrganizationWirelessDevicesChannelUtilizationByDevice(ctx context.Context, organizationId string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
-	return WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest{
+func (a *WirelessAPIService) GetOrganizationWirelessDevicesChannelUtilizationByDevice(ctx context.Context, organizationId string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+	return WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -7490,7 +7490,7 @@ func (a *WirelessApiService) GetOrganizationWirelessDevicesChannelUtilizationByD
 
 // Execute executes the request
 //  @return []GetOrganizationWirelessDevicesChannelUtilizationByDevice200ResponseInner
-func (a *WirelessApiService) GetOrganizationWirelessDevicesChannelUtilizationByDeviceExecute(r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationByDevice200ResponseInner, *http.Response, error) {
+func (a *WirelessAPIService) GetOrganizationWirelessDevicesChannelUtilizationByDeviceExecute(r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationByDevice200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7498,7 +7498,7 @@ func (a *WirelessApiService) GetOrganizationWirelessDevicesChannelUtilizationByD
 		localVarReturnValue  []GetOrganizationWirelessDevicesChannelUtilizationByDevice200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetOrganizationWirelessDevicesChannelUtilizationByDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetOrganizationWirelessDevicesChannelUtilizationByDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7621,9 +7621,9 @@ func (a *WirelessApiService) GetOrganizationWirelessDevicesChannelUtilizationByD
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest struct {
+type WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	organizationId string
 	networkIds *[]string
 	serials *[]string
@@ -7637,60 +7637,60 @@ type WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest
 }
 
 // Filter results by network.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) NetworkIds(networkIds []string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) NetworkIds(networkIds []string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Filter results by device.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) Serials(serials []string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) Serials(serials []string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
 	r.serials = &serials
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) PerPage(perPage int32) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) PerPage(perPage int32) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) StartingAfter(startingAfter string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) StartingAfter(startingAfter string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) EndingBefore(endingBefore string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) EndingBefore(endingBefore string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 90 days from today.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) T0(t0 string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) T0(t0 string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 90 days after t0.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) T1(t1 string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) T1(t1 string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 90 days. The default is 7 days.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) Timespan(timespan float32) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) Timespan(timespan float32) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time interval in seconds for returned data. The valid intervals are: 300, 600, 3600, 7200, 14400, 21600. The default is 3600.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) Interval(interval int32) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) Interval(interval int32) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
 	r.interval = &interval
 	return r
 }
 
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationByNetwork200ResponseInner, *http.Response, error) {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationByNetwork200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationWirelessDevicesChannelUtilizationByNetworkExecute(r)
 }
 
@@ -7701,10 +7701,10 @@ Get average channel utilization across all bands for all networks in the organiz
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest
+ @return WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest
 */
-func (a *WirelessApiService) GetOrganizationWirelessDevicesChannelUtilizationByNetwork(ctx context.Context, organizationId string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
-	return WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest{
+func (a *WirelessAPIService) GetOrganizationWirelessDevicesChannelUtilizationByNetwork(ctx context.Context, organizationId string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+	return WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -7713,7 +7713,7 @@ func (a *WirelessApiService) GetOrganizationWirelessDevicesChannelUtilizationByN
 
 // Execute executes the request
 //  @return []GetOrganizationWirelessDevicesChannelUtilizationByNetwork200ResponseInner
-func (a *WirelessApiService) GetOrganizationWirelessDevicesChannelUtilizationByNetworkExecute(r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationByNetwork200ResponseInner, *http.Response, error) {
+func (a *WirelessAPIService) GetOrganizationWirelessDevicesChannelUtilizationByNetworkExecute(r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationByNetwork200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7721,7 +7721,7 @@ func (a *WirelessApiService) GetOrganizationWirelessDevicesChannelUtilizationByN
 		localVarReturnValue  []GetOrganizationWirelessDevicesChannelUtilizationByNetwork200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetOrganizationWirelessDevicesChannelUtilizationByNetwork")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetOrganizationWirelessDevicesChannelUtilizationByNetwork")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7844,9 +7844,9 @@ func (a *WirelessApiService) GetOrganizationWirelessDevicesChannelUtilizationByN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest struct {
+type WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	organizationId string
 	networkIds *[]string
 	serials *[]string
@@ -7860,60 +7860,60 @@ type WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceB
 }
 
 // Filter results by network.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) NetworkIds(networkIds []string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) NetworkIds(networkIds []string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Filter results by device.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Serials(serials []string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Serials(serials []string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.serials = &serials
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) PerPage(perPage int32) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) PerPage(perPage int32) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) StartingAfter(startingAfter string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) StartingAfter(startingAfter string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) EndingBefore(endingBefore string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) EndingBefore(endingBefore string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) T0(t0 string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) T0(t0 string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) T1(t1 string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) T1(t1 string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Timespan(timespan float32) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Timespan(timespan float32) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time interval in seconds for returned data. The valid intervals are: 300, 600, 3600, 7200, 14400, 21600. The default is 3600.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Interval(interval int32) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Interval(interval int32) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.interval = &interval
 	return r
 }
 
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner, *http.Response, error) {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalExecute(r)
 }
 
@@ -7924,10 +7924,10 @@ Get a time-series of average channel utilization for all bands, segmented by dev
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest
+ @return WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest
 */
-func (a *WirelessApiService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval(ctx context.Context, organizationId string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
-	return WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest{
+func (a *WirelessAPIService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval(ctx context.Context, organizationId string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+	return WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -7936,7 +7936,7 @@ func (a *WirelessApiService) GetOrganizationWirelessDevicesChannelUtilizationHis
 
 // Execute executes the request
 //  @return []GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner
-func (a *WirelessApiService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalExecute(r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner, *http.Response, error) {
+func (a *WirelessAPIService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalExecute(r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7944,7 +7944,7 @@ func (a *WirelessApiService) GetOrganizationWirelessDevicesChannelUtilizationHis
 		localVarReturnValue  []GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8067,9 +8067,9 @@ func (a *WirelessApiService) GetOrganizationWirelessDevicesChannelUtilizationHis
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest struct {
+type WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	organizationId string
 	networkIds *[]string
 	serials *[]string
@@ -8083,60 +8083,60 @@ type WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetwork
 }
 
 // Filter results by network.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) NetworkIds(networkIds []string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) NetworkIds(networkIds []string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Filter results by device.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Serials(serials []string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Serials(serials []string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.serials = &serials
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) PerPage(perPage int32) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) PerPage(perPage int32) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) StartingAfter(startingAfter string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) StartingAfter(startingAfter string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) EndingBefore(endingBefore string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) EndingBefore(endingBefore string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) T0(t0 string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) T0(t0 string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) T1(t1 string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) T1(t1 string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Timespan(timespan float32) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Timespan(timespan float32) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time interval in seconds for returned data. The valid intervals are: 300, 600, 3600, 7200, 14400, 21600. The default is 3600.
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Interval(interval int32) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Interval(interval int32) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.interval = &interval
 	return r
 }
 
-func (r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval200ResponseInner, *http.Response, error) {
+func (r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalExecute(r)
 }
 
@@ -8147,10 +8147,10 @@ Get a time-series of average channel utilization for all bands
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest
+ @return WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest
 */
-func (a *WirelessApiService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval(ctx context.Context, organizationId string) WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
-	return WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest{
+func (a *WirelessAPIService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval(ctx context.Context, organizationId string) WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+	return WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -8159,7 +8159,7 @@ func (a *WirelessApiService) GetOrganizationWirelessDevicesChannelUtilizationHis
 
 // Execute executes the request
 //  @return []GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval200ResponseInner
-func (a *WirelessApiService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalExecute(r WirelessApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval200ResponseInner, *http.Response, error) {
+func (a *WirelessAPIService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalExecute(r WirelessAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -8167,7 +8167,7 @@ func (a *WirelessApiService) GetOrganizationWirelessDevicesChannelUtilizationHis
 		localVarReturnValue  []GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8290,9 +8290,9 @@ func (a *WirelessApiService) GetOrganizationWirelessDevicesChannelUtilizationHis
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiGetOrganizationWirelessDevicesEthernetStatusesRequest struct {
+type WirelessAPIGetOrganizationWirelessDevicesEthernetStatusesRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -8301,30 +8301,30 @@ type WirelessApiGetOrganizationWirelessDevicesEthernetStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
-func (r WirelessApiGetOrganizationWirelessDevicesEthernetStatusesRequest) PerPage(perPage int32) WirelessApiGetOrganizationWirelessDevicesEthernetStatusesRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) PerPage(perPage int32) WirelessAPIGetOrganizationWirelessDevicesEthernetStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r WirelessApiGetOrganizationWirelessDevicesEthernetStatusesRequest) StartingAfter(startingAfter string) WirelessApiGetOrganizationWirelessDevicesEthernetStatusesRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) StartingAfter(startingAfter string) WirelessAPIGetOrganizationWirelessDevicesEthernetStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r WirelessApiGetOrganizationWirelessDevicesEthernetStatusesRequest) EndingBefore(endingBefore string) WirelessApiGetOrganizationWirelessDevicesEthernetStatusesRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) EndingBefore(endingBefore string) WirelessAPIGetOrganizationWirelessDevicesEthernetStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // A list of Meraki network IDs to filter results to contain only specified networks. E.g.: networkIds[]&#x3D;N_12345678&amp;networkIds[]&#x3D;L_3456
-func (r WirelessApiGetOrganizationWirelessDevicesEthernetStatusesRequest) NetworkIds(networkIds []string) WirelessApiGetOrganizationWirelessDevicesEthernetStatusesRequest {
+func (r WirelessAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) NetworkIds(networkIds []string) WirelessAPIGetOrganizationWirelessDevicesEthernetStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
-func (r WirelessApiGetOrganizationWirelessDevicesEthernetStatusesRequest) Execute() ([]GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner, *http.Response, error) {
+func (r WirelessAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) Execute() ([]GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationWirelessDevicesEthernetStatusesExecute(r)
 }
 
@@ -8335,10 +8335,10 @@ List the most recent Ethernet link speed, duplex, aggregation and power mode and
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return WirelessApiGetOrganizationWirelessDevicesEthernetStatusesRequest
+ @return WirelessAPIGetOrganizationWirelessDevicesEthernetStatusesRequest
 */
-func (a *WirelessApiService) GetOrganizationWirelessDevicesEthernetStatuses(ctx context.Context, organizationId string) WirelessApiGetOrganizationWirelessDevicesEthernetStatusesRequest {
-	return WirelessApiGetOrganizationWirelessDevicesEthernetStatusesRequest{
+func (a *WirelessAPIService) GetOrganizationWirelessDevicesEthernetStatuses(ctx context.Context, organizationId string) WirelessAPIGetOrganizationWirelessDevicesEthernetStatusesRequest {
+	return WirelessAPIGetOrganizationWirelessDevicesEthernetStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -8347,7 +8347,7 @@ func (a *WirelessApiService) GetOrganizationWirelessDevicesEthernetStatuses(ctx 
 
 // Execute executes the request
 //  @return []GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner
-func (a *WirelessApiService) GetOrganizationWirelessDevicesEthernetStatusesExecute(r WirelessApiGetOrganizationWirelessDevicesEthernetStatusesRequest) ([]GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner, *http.Response, error) {
+func (a *WirelessAPIService) GetOrganizationWirelessDevicesEthernetStatusesExecute(r WirelessAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) ([]GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -8355,7 +8355,7 @@ func (a *WirelessApiService) GetOrganizationWirelessDevicesEthernetStatusesExecu
 		localVarReturnValue  []GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.GetOrganizationWirelessDevicesEthernetStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.GetOrganizationWirelessDevicesEthernetStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8455,19 +8455,19 @@ func (a *WirelessApiService) GetOrganizationWirelessDevicesEthernetStatusesExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiUpdateDeviceWirelessBluetoothSettingsRequest struct {
+type WirelessAPIUpdateDeviceWirelessBluetoothSettingsRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	serial string
 	updateDeviceWirelessBluetoothSettingsRequest *UpdateDeviceWirelessBluetoothSettingsRequest
 }
 
-func (r WirelessApiUpdateDeviceWirelessBluetoothSettingsRequest) UpdateDeviceWirelessBluetoothSettingsRequest(updateDeviceWirelessBluetoothSettingsRequest UpdateDeviceWirelessBluetoothSettingsRequest) WirelessApiUpdateDeviceWirelessBluetoothSettingsRequest {
+func (r WirelessAPIUpdateDeviceWirelessBluetoothSettingsRequest) UpdateDeviceWirelessBluetoothSettingsRequest(updateDeviceWirelessBluetoothSettingsRequest UpdateDeviceWirelessBluetoothSettingsRequest) WirelessAPIUpdateDeviceWirelessBluetoothSettingsRequest {
 	r.updateDeviceWirelessBluetoothSettingsRequest = &updateDeviceWirelessBluetoothSettingsRequest
 	return r
 }
 
-func (r WirelessApiUpdateDeviceWirelessBluetoothSettingsRequest) Execute() (*GetDeviceWirelessBluetoothSettings200Response, *http.Response, error) {
+func (r WirelessAPIUpdateDeviceWirelessBluetoothSettingsRequest) Execute() (*GetDeviceWirelessBluetoothSettings200Response, *http.Response, error) {
 	return r.ApiService.UpdateDeviceWirelessBluetoothSettingsExecute(r)
 }
 
@@ -8478,10 +8478,10 @@ Update the bluetooth settings for a wireless device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return WirelessApiUpdateDeviceWirelessBluetoothSettingsRequest
+ @return WirelessAPIUpdateDeviceWirelessBluetoothSettingsRequest
 */
-func (a *WirelessApiService) UpdateDeviceWirelessBluetoothSettings(ctx context.Context, serial string) WirelessApiUpdateDeviceWirelessBluetoothSettingsRequest {
-	return WirelessApiUpdateDeviceWirelessBluetoothSettingsRequest{
+func (a *WirelessAPIService) UpdateDeviceWirelessBluetoothSettings(ctx context.Context, serial string) WirelessAPIUpdateDeviceWirelessBluetoothSettingsRequest {
+	return WirelessAPIUpdateDeviceWirelessBluetoothSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -8490,7 +8490,7 @@ func (a *WirelessApiService) UpdateDeviceWirelessBluetoothSettings(ctx context.C
 
 // Execute executes the request
 //  @return GetDeviceWirelessBluetoothSettings200Response
-func (a *WirelessApiService) UpdateDeviceWirelessBluetoothSettingsExecute(r WirelessApiUpdateDeviceWirelessBluetoothSettingsRequest) (*GetDeviceWirelessBluetoothSettings200Response, *http.Response, error) {
+func (a *WirelessAPIService) UpdateDeviceWirelessBluetoothSettingsExecute(r WirelessAPIUpdateDeviceWirelessBluetoothSettingsRequest) (*GetDeviceWirelessBluetoothSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -8498,7 +8498,7 @@ func (a *WirelessApiService) UpdateDeviceWirelessBluetoothSettingsExecute(r Wire
 		localVarReturnValue  *GetDeviceWirelessBluetoothSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.UpdateDeviceWirelessBluetoothSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.UpdateDeviceWirelessBluetoothSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8580,19 +8580,19 @@ func (a *WirelessApiService) UpdateDeviceWirelessBluetoothSettingsExecute(r Wire
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiUpdateDeviceWirelessRadioSettingsRequest struct {
+type WirelessAPIUpdateDeviceWirelessRadioSettingsRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	serial string
 	updateDeviceWirelessRadioSettingsRequest *UpdateDeviceWirelessRadioSettingsRequest
 }
 
-func (r WirelessApiUpdateDeviceWirelessRadioSettingsRequest) UpdateDeviceWirelessRadioSettingsRequest(updateDeviceWirelessRadioSettingsRequest UpdateDeviceWirelessRadioSettingsRequest) WirelessApiUpdateDeviceWirelessRadioSettingsRequest {
+func (r WirelessAPIUpdateDeviceWirelessRadioSettingsRequest) UpdateDeviceWirelessRadioSettingsRequest(updateDeviceWirelessRadioSettingsRequest UpdateDeviceWirelessRadioSettingsRequest) WirelessAPIUpdateDeviceWirelessRadioSettingsRequest {
 	r.updateDeviceWirelessRadioSettingsRequest = &updateDeviceWirelessRadioSettingsRequest
 	return r
 }
 
-func (r WirelessApiUpdateDeviceWirelessRadioSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIUpdateDeviceWirelessRadioSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceWirelessRadioSettingsExecute(r)
 }
 
@@ -8603,10 +8603,10 @@ Update the radio settings of a device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return WirelessApiUpdateDeviceWirelessRadioSettingsRequest
+ @return WirelessAPIUpdateDeviceWirelessRadioSettingsRequest
 */
-func (a *WirelessApiService) UpdateDeviceWirelessRadioSettings(ctx context.Context, serial string) WirelessApiUpdateDeviceWirelessRadioSettingsRequest {
-	return WirelessApiUpdateDeviceWirelessRadioSettingsRequest{
+func (a *WirelessAPIService) UpdateDeviceWirelessRadioSettings(ctx context.Context, serial string) WirelessAPIUpdateDeviceWirelessRadioSettingsRequest {
+	return WirelessAPIUpdateDeviceWirelessRadioSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -8615,7 +8615,7 @@ func (a *WirelessApiService) UpdateDeviceWirelessRadioSettings(ctx context.Conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessApiService) UpdateDeviceWirelessRadioSettingsExecute(r WirelessApiUpdateDeviceWirelessRadioSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) UpdateDeviceWirelessRadioSettingsExecute(r WirelessAPIUpdateDeviceWirelessRadioSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -8623,7 +8623,7 @@ func (a *WirelessApiService) UpdateDeviceWirelessRadioSettingsExecute(r Wireless
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.UpdateDeviceWirelessRadioSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.UpdateDeviceWirelessRadioSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8705,19 +8705,19 @@ func (a *WirelessApiService) UpdateDeviceWirelessRadioSettingsExecute(r Wireless
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiUpdateNetworkWirelessAlternateManagementInterfaceRequest struct {
+type WirelessAPIUpdateNetworkWirelessAlternateManagementInterfaceRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	updateNetworkWirelessAlternateManagementInterfaceRequest *UpdateNetworkWirelessAlternateManagementInterfaceRequest
 }
 
-func (r WirelessApiUpdateNetworkWirelessAlternateManagementInterfaceRequest) UpdateNetworkWirelessAlternateManagementInterfaceRequest(updateNetworkWirelessAlternateManagementInterfaceRequest UpdateNetworkWirelessAlternateManagementInterfaceRequest) WirelessApiUpdateNetworkWirelessAlternateManagementInterfaceRequest {
+func (r WirelessAPIUpdateNetworkWirelessAlternateManagementInterfaceRequest) UpdateNetworkWirelessAlternateManagementInterfaceRequest(updateNetworkWirelessAlternateManagementInterfaceRequest UpdateNetworkWirelessAlternateManagementInterfaceRequest) WirelessAPIUpdateNetworkWirelessAlternateManagementInterfaceRequest {
 	r.updateNetworkWirelessAlternateManagementInterfaceRequest = &updateNetworkWirelessAlternateManagementInterfaceRequest
 	return r
 }
 
-func (r WirelessApiUpdateNetworkWirelessAlternateManagementInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIUpdateNetworkWirelessAlternateManagementInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessAlternateManagementInterfaceExecute(r)
 }
 
@@ -8728,10 +8728,10 @@ Update alternate management interface and device static IP
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessApiUpdateNetworkWirelessAlternateManagementInterfaceRequest
+ @return WirelessAPIUpdateNetworkWirelessAlternateManagementInterfaceRequest
 */
-func (a *WirelessApiService) UpdateNetworkWirelessAlternateManagementInterface(ctx context.Context, networkId string) WirelessApiUpdateNetworkWirelessAlternateManagementInterfaceRequest {
-	return WirelessApiUpdateNetworkWirelessAlternateManagementInterfaceRequest{
+func (a *WirelessAPIService) UpdateNetworkWirelessAlternateManagementInterface(ctx context.Context, networkId string) WirelessAPIUpdateNetworkWirelessAlternateManagementInterfaceRequest {
+	return WirelessAPIUpdateNetworkWirelessAlternateManagementInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -8740,7 +8740,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessAlternateManagementInterface(c
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessApiService) UpdateNetworkWirelessAlternateManagementInterfaceExecute(r WirelessApiUpdateNetworkWirelessAlternateManagementInterfaceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) UpdateNetworkWirelessAlternateManagementInterfaceExecute(r WirelessAPIUpdateNetworkWirelessAlternateManagementInterfaceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -8748,7 +8748,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessAlternateManagementInterfaceEx
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.UpdateNetworkWirelessAlternateManagementInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.UpdateNetworkWirelessAlternateManagementInterface")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8830,19 +8830,19 @@ func (a *WirelessApiService) UpdateNetworkWirelessAlternateManagementInterfaceEx
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiUpdateNetworkWirelessBillingRequest struct {
+type WirelessAPIUpdateNetworkWirelessBillingRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	updateNetworkWirelessBillingRequest *UpdateNetworkWirelessBillingRequest
 }
 
-func (r WirelessApiUpdateNetworkWirelessBillingRequest) UpdateNetworkWirelessBillingRequest(updateNetworkWirelessBillingRequest UpdateNetworkWirelessBillingRequest) WirelessApiUpdateNetworkWirelessBillingRequest {
+func (r WirelessAPIUpdateNetworkWirelessBillingRequest) UpdateNetworkWirelessBillingRequest(updateNetworkWirelessBillingRequest UpdateNetworkWirelessBillingRequest) WirelessAPIUpdateNetworkWirelessBillingRequest {
 	r.updateNetworkWirelessBillingRequest = &updateNetworkWirelessBillingRequest
 	return r
 }
 
-func (r WirelessApiUpdateNetworkWirelessBillingRequest) Execute() (*GetNetworkWirelessBilling200Response, *http.Response, error) {
+func (r WirelessAPIUpdateNetworkWirelessBillingRequest) Execute() (*GetNetworkWirelessBilling200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessBillingExecute(r)
 }
 
@@ -8853,10 +8853,10 @@ Update the billing settings
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessApiUpdateNetworkWirelessBillingRequest
+ @return WirelessAPIUpdateNetworkWirelessBillingRequest
 */
-func (a *WirelessApiService) UpdateNetworkWirelessBilling(ctx context.Context, networkId string) WirelessApiUpdateNetworkWirelessBillingRequest {
-	return WirelessApiUpdateNetworkWirelessBillingRequest{
+func (a *WirelessAPIService) UpdateNetworkWirelessBilling(ctx context.Context, networkId string) WirelessAPIUpdateNetworkWirelessBillingRequest {
+	return WirelessAPIUpdateNetworkWirelessBillingRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -8865,7 +8865,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessBilling(ctx context.Context, n
 
 // Execute executes the request
 //  @return GetNetworkWirelessBilling200Response
-func (a *WirelessApiService) UpdateNetworkWirelessBillingExecute(r WirelessApiUpdateNetworkWirelessBillingRequest) (*GetNetworkWirelessBilling200Response, *http.Response, error) {
+func (a *WirelessAPIService) UpdateNetworkWirelessBillingExecute(r WirelessAPIUpdateNetworkWirelessBillingRequest) (*GetNetworkWirelessBilling200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -8873,7 +8873,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessBillingExecute(r WirelessApiUp
 		localVarReturnValue  *GetNetworkWirelessBilling200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.UpdateNetworkWirelessBilling")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.UpdateNetworkWirelessBilling")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8955,19 +8955,19 @@ func (a *WirelessApiService) UpdateNetworkWirelessBillingExecute(r WirelessApiUp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiUpdateNetworkWirelessBluetoothSettingsRequest struct {
+type WirelessAPIUpdateNetworkWirelessBluetoothSettingsRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	updateNetworkWirelessBluetoothSettingsRequest *UpdateNetworkWirelessBluetoothSettingsRequest
 }
 
-func (r WirelessApiUpdateNetworkWirelessBluetoothSettingsRequest) UpdateNetworkWirelessBluetoothSettingsRequest(updateNetworkWirelessBluetoothSettingsRequest UpdateNetworkWirelessBluetoothSettingsRequest) WirelessApiUpdateNetworkWirelessBluetoothSettingsRequest {
+func (r WirelessAPIUpdateNetworkWirelessBluetoothSettingsRequest) UpdateNetworkWirelessBluetoothSettingsRequest(updateNetworkWirelessBluetoothSettingsRequest UpdateNetworkWirelessBluetoothSettingsRequest) WirelessAPIUpdateNetworkWirelessBluetoothSettingsRequest {
 	r.updateNetworkWirelessBluetoothSettingsRequest = &updateNetworkWirelessBluetoothSettingsRequest
 	return r
 }
 
-func (r WirelessApiUpdateNetworkWirelessBluetoothSettingsRequest) Execute() (*GetNetworkWirelessBluetoothSettings200Response, *http.Response, error) {
+func (r WirelessAPIUpdateNetworkWirelessBluetoothSettingsRequest) Execute() (*GetNetworkWirelessBluetoothSettings200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessBluetoothSettingsExecute(r)
 }
 
@@ -8978,10 +8978,10 @@ Update the Bluetooth settings for a network. See the docs page for <a href="http
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessApiUpdateNetworkWirelessBluetoothSettingsRequest
+ @return WirelessAPIUpdateNetworkWirelessBluetoothSettingsRequest
 */
-func (a *WirelessApiService) UpdateNetworkWirelessBluetoothSettings(ctx context.Context, networkId string) WirelessApiUpdateNetworkWirelessBluetoothSettingsRequest {
-	return WirelessApiUpdateNetworkWirelessBluetoothSettingsRequest{
+func (a *WirelessAPIService) UpdateNetworkWirelessBluetoothSettings(ctx context.Context, networkId string) WirelessAPIUpdateNetworkWirelessBluetoothSettingsRequest {
+	return WirelessAPIUpdateNetworkWirelessBluetoothSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -8990,7 +8990,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessBluetoothSettings(ctx context.
 
 // Execute executes the request
 //  @return GetNetworkWirelessBluetoothSettings200Response
-func (a *WirelessApiService) UpdateNetworkWirelessBluetoothSettingsExecute(r WirelessApiUpdateNetworkWirelessBluetoothSettingsRequest) (*GetNetworkWirelessBluetoothSettings200Response, *http.Response, error) {
+func (a *WirelessAPIService) UpdateNetworkWirelessBluetoothSettingsExecute(r WirelessAPIUpdateNetworkWirelessBluetoothSettingsRequest) (*GetNetworkWirelessBluetoothSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -8998,7 +8998,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessBluetoothSettingsExecute(r Wir
 		localVarReturnValue  *GetNetworkWirelessBluetoothSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.UpdateNetworkWirelessBluetoothSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.UpdateNetworkWirelessBluetoothSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9080,20 +9080,20 @@ func (a *WirelessApiService) UpdateNetworkWirelessBluetoothSettingsExecute(r Wir
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiUpdateNetworkWirelessRfProfileRequest struct {
+type WirelessAPIUpdateNetworkWirelessRfProfileRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	rfProfileId string
 	updateNetworkWirelessRfProfileRequest *UpdateNetworkWirelessRfProfileRequest
 }
 
-func (r WirelessApiUpdateNetworkWirelessRfProfileRequest) UpdateNetworkWirelessRfProfileRequest(updateNetworkWirelessRfProfileRequest UpdateNetworkWirelessRfProfileRequest) WirelessApiUpdateNetworkWirelessRfProfileRequest {
+func (r WirelessAPIUpdateNetworkWirelessRfProfileRequest) UpdateNetworkWirelessRfProfileRequest(updateNetworkWirelessRfProfileRequest UpdateNetworkWirelessRfProfileRequest) WirelessAPIUpdateNetworkWirelessRfProfileRequest {
 	r.updateNetworkWirelessRfProfileRequest = &updateNetworkWirelessRfProfileRequest
 	return r
 }
 
-func (r WirelessApiUpdateNetworkWirelessRfProfileRequest) Execute() (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
+func (r WirelessAPIUpdateNetworkWirelessRfProfileRequest) Execute() (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessRfProfileExecute(r)
 }
 
@@ -9105,10 +9105,10 @@ Updates specified RF profile for this network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param rfProfileId Rf profile ID
- @return WirelessApiUpdateNetworkWirelessRfProfileRequest
+ @return WirelessAPIUpdateNetworkWirelessRfProfileRequest
 */
-func (a *WirelessApiService) UpdateNetworkWirelessRfProfile(ctx context.Context, networkId string, rfProfileId string) WirelessApiUpdateNetworkWirelessRfProfileRequest {
-	return WirelessApiUpdateNetworkWirelessRfProfileRequest{
+func (a *WirelessAPIService) UpdateNetworkWirelessRfProfile(ctx context.Context, networkId string, rfProfileId string) WirelessAPIUpdateNetworkWirelessRfProfileRequest {
+	return WirelessAPIUpdateNetworkWirelessRfProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9118,7 +9118,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessRfProfile(ctx context.Context,
 
 // Execute executes the request
 //  @return GetNetworkWirelessRfProfiles200Response
-func (a *WirelessApiService) UpdateNetworkWirelessRfProfileExecute(r WirelessApiUpdateNetworkWirelessRfProfileRequest) (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
+func (a *WirelessAPIService) UpdateNetworkWirelessRfProfileExecute(r WirelessAPIUpdateNetworkWirelessRfProfileRequest) (*GetNetworkWirelessRfProfiles200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9126,7 +9126,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessRfProfileExecute(r WirelessApi
 		localVarReturnValue  *GetNetworkWirelessRfProfiles200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.UpdateNetworkWirelessRfProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.UpdateNetworkWirelessRfProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9209,19 +9209,19 @@ func (a *WirelessApiService) UpdateNetworkWirelessRfProfileExecute(r WirelessApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiUpdateNetworkWirelessSettingsRequest struct {
+type WirelessAPIUpdateNetworkWirelessSettingsRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	updateNetworkWirelessSettingsRequest *UpdateNetworkWirelessSettingsRequest
 }
 
-func (r WirelessApiUpdateNetworkWirelessSettingsRequest) UpdateNetworkWirelessSettingsRequest(updateNetworkWirelessSettingsRequest UpdateNetworkWirelessSettingsRequest) WirelessApiUpdateNetworkWirelessSettingsRequest {
+func (r WirelessAPIUpdateNetworkWirelessSettingsRequest) UpdateNetworkWirelessSettingsRequest(updateNetworkWirelessSettingsRequest UpdateNetworkWirelessSettingsRequest) WirelessAPIUpdateNetworkWirelessSettingsRequest {
 	r.updateNetworkWirelessSettingsRequest = &updateNetworkWirelessSettingsRequest
 	return r
 }
 
-func (r WirelessApiUpdateNetworkWirelessSettingsRequest) Execute() (*GetNetworkWirelessSettings200Response, *http.Response, error) {
+func (r WirelessAPIUpdateNetworkWirelessSettingsRequest) Execute() (*GetNetworkWirelessSettings200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSettingsExecute(r)
 }
 
@@ -9232,10 +9232,10 @@ Update the wireless settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessApiUpdateNetworkWirelessSettingsRequest
+ @return WirelessAPIUpdateNetworkWirelessSettingsRequest
 */
-func (a *WirelessApiService) UpdateNetworkWirelessSettings(ctx context.Context, networkId string) WirelessApiUpdateNetworkWirelessSettingsRequest {
-	return WirelessApiUpdateNetworkWirelessSettingsRequest{
+func (a *WirelessAPIService) UpdateNetworkWirelessSettings(ctx context.Context, networkId string) WirelessAPIUpdateNetworkWirelessSettingsRequest {
+	return WirelessAPIUpdateNetworkWirelessSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9244,7 +9244,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessSettings(ctx context.Context, 
 
 // Execute executes the request
 //  @return GetNetworkWirelessSettings200Response
-func (a *WirelessApiService) UpdateNetworkWirelessSettingsExecute(r WirelessApiUpdateNetworkWirelessSettingsRequest) (*GetNetworkWirelessSettings200Response, *http.Response, error) {
+func (a *WirelessAPIService) UpdateNetworkWirelessSettingsExecute(r WirelessAPIUpdateNetworkWirelessSettingsRequest) (*GetNetworkWirelessSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9252,7 +9252,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessSettingsExecute(r WirelessApiU
 		localVarReturnValue  *GetNetworkWirelessSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.UpdateNetworkWirelessSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.UpdateNetworkWirelessSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9334,20 +9334,20 @@ func (a *WirelessApiService) UpdateNetworkWirelessSettingsExecute(r WirelessApiU
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiUpdateNetworkWirelessSsidRequest struct {
+type WirelessAPIUpdateNetworkWirelessSsidRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidRequest *UpdateNetworkWirelessSsidRequest
 }
 
-func (r WirelessApiUpdateNetworkWirelessSsidRequest) UpdateNetworkWirelessSsidRequest(updateNetworkWirelessSsidRequest UpdateNetworkWirelessSsidRequest) WirelessApiUpdateNetworkWirelessSsidRequest {
+func (r WirelessAPIUpdateNetworkWirelessSsidRequest) UpdateNetworkWirelessSsidRequest(updateNetworkWirelessSsidRequest UpdateNetworkWirelessSsidRequest) WirelessAPIUpdateNetworkWirelessSsidRequest {
 	r.updateNetworkWirelessSsidRequest = &updateNetworkWirelessSsidRequest
 	return r
 }
 
-func (r WirelessApiUpdateNetworkWirelessSsidRequest) Execute() (*GetNetworkWirelessSsids200ResponseInner, *http.Response, error) {
+func (r WirelessAPIUpdateNetworkWirelessSsidRequest) Execute() (*GetNetworkWirelessSsids200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidExecute(r)
 }
 
@@ -9359,10 +9359,10 @@ Update the attributes of an MR SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return WirelessApiUpdateNetworkWirelessSsidRequest
+ @return WirelessAPIUpdateNetworkWirelessSsidRequest
 */
-func (a *WirelessApiService) UpdateNetworkWirelessSsid(ctx context.Context, networkId string, number string) WirelessApiUpdateNetworkWirelessSsidRequest {
-	return WirelessApiUpdateNetworkWirelessSsidRequest{
+func (a *WirelessAPIService) UpdateNetworkWirelessSsid(ctx context.Context, networkId string, number string) WirelessAPIUpdateNetworkWirelessSsidRequest {
+	return WirelessAPIUpdateNetworkWirelessSsidRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9372,7 +9372,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsid(ctx context.Context, netw
 
 // Execute executes the request
 //  @return GetNetworkWirelessSsids200ResponseInner
-func (a *WirelessApiService) UpdateNetworkWirelessSsidExecute(r WirelessApiUpdateNetworkWirelessSsidRequest) (*GetNetworkWirelessSsids200ResponseInner, *http.Response, error) {
+func (a *WirelessAPIService) UpdateNetworkWirelessSsidExecute(r WirelessAPIUpdateNetworkWirelessSsidRequest) (*GetNetworkWirelessSsids200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9380,7 +9380,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidExecute(r WirelessApiUpdat
 		localVarReturnValue  *GetNetworkWirelessSsids200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.UpdateNetworkWirelessSsid")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.UpdateNetworkWirelessSsid")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9463,20 +9463,20 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidExecute(r WirelessApiUpdat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiUpdateNetworkWirelessSsidBonjourForwardingRequest struct {
+type WirelessAPIUpdateNetworkWirelessSsidBonjourForwardingRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidBonjourForwardingRequest *UpdateNetworkWirelessSsidBonjourForwardingRequest
 }
 
-func (r WirelessApiUpdateNetworkWirelessSsidBonjourForwardingRequest) UpdateNetworkWirelessSsidBonjourForwardingRequest(updateNetworkWirelessSsidBonjourForwardingRequest UpdateNetworkWirelessSsidBonjourForwardingRequest) WirelessApiUpdateNetworkWirelessSsidBonjourForwardingRequest {
+func (r WirelessAPIUpdateNetworkWirelessSsidBonjourForwardingRequest) UpdateNetworkWirelessSsidBonjourForwardingRequest(updateNetworkWirelessSsidBonjourForwardingRequest UpdateNetworkWirelessSsidBonjourForwardingRequest) WirelessAPIUpdateNetworkWirelessSsidBonjourForwardingRequest {
 	r.updateNetworkWirelessSsidBonjourForwardingRequest = &updateNetworkWirelessSsidBonjourForwardingRequest
 	return r
 }
 
-func (r WirelessApiUpdateNetworkWirelessSsidBonjourForwardingRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIUpdateNetworkWirelessSsidBonjourForwardingRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidBonjourForwardingExecute(r)
 }
 
@@ -9488,10 +9488,10 @@ Update the bonjour forwarding setting and rules for the SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return WirelessApiUpdateNetworkWirelessSsidBonjourForwardingRequest
+ @return WirelessAPIUpdateNetworkWirelessSsidBonjourForwardingRequest
 */
-func (a *WirelessApiService) UpdateNetworkWirelessSsidBonjourForwarding(ctx context.Context, networkId string, number string) WirelessApiUpdateNetworkWirelessSsidBonjourForwardingRequest {
-	return WirelessApiUpdateNetworkWirelessSsidBonjourForwardingRequest{
+func (a *WirelessAPIService) UpdateNetworkWirelessSsidBonjourForwarding(ctx context.Context, networkId string, number string) WirelessAPIUpdateNetworkWirelessSsidBonjourForwardingRequest {
+	return WirelessAPIUpdateNetworkWirelessSsidBonjourForwardingRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9501,7 +9501,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidBonjourForwarding(ctx cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessApiService) UpdateNetworkWirelessSsidBonjourForwardingExecute(r WirelessApiUpdateNetworkWirelessSsidBonjourForwardingRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) UpdateNetworkWirelessSsidBonjourForwardingExecute(r WirelessAPIUpdateNetworkWirelessSsidBonjourForwardingRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9509,7 +9509,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidBonjourForwardingExecute(r
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.UpdateNetworkWirelessSsidBonjourForwarding")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.UpdateNetworkWirelessSsidBonjourForwarding")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9592,20 +9592,20 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidBonjourForwardingExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest struct {
+type WirelessAPIUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest *UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest
 }
 
-func (r WirelessApiUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest(updateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) WirelessApiUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest {
+func (r WirelessAPIUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest(updateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) WirelessAPIUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest {
 	r.updateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest = &updateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest
 	return r
 }
 
-func (r WirelessApiUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesExecute(r)
 }
 
@@ -9617,10 +9617,10 @@ Update the device type group policies for the SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return WirelessApiUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest
+ @return WirelessAPIUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest
 */
-func (a *WirelessApiService) UpdateNetworkWirelessSsidDeviceTypeGroupPolicies(ctx context.Context, networkId string, number string) WirelessApiUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest {
-	return WirelessApiUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest{
+func (a *WirelessAPIService) UpdateNetworkWirelessSsidDeviceTypeGroupPolicies(ctx context.Context, networkId string, number string) WirelessAPIUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest {
+	return WirelessAPIUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9630,7 +9630,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidDeviceTypeGroupPolicies(ct
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessApiService) UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesExecute(r WirelessApiUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesExecute(r WirelessAPIUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9638,7 +9638,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesExe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.UpdateNetworkWirelessSsidDeviceTypeGroupPolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.UpdateNetworkWirelessSsidDeviceTypeGroupPolicies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9721,20 +9721,20 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiUpdateNetworkWirelessSsidEapOverrideRequest struct {
+type WirelessAPIUpdateNetworkWirelessSsidEapOverrideRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidEapOverrideRequest *UpdateNetworkWirelessSsidEapOverrideRequest
 }
 
-func (r WirelessApiUpdateNetworkWirelessSsidEapOverrideRequest) UpdateNetworkWirelessSsidEapOverrideRequest(updateNetworkWirelessSsidEapOverrideRequest UpdateNetworkWirelessSsidEapOverrideRequest) WirelessApiUpdateNetworkWirelessSsidEapOverrideRequest {
+func (r WirelessAPIUpdateNetworkWirelessSsidEapOverrideRequest) UpdateNetworkWirelessSsidEapOverrideRequest(updateNetworkWirelessSsidEapOverrideRequest UpdateNetworkWirelessSsidEapOverrideRequest) WirelessAPIUpdateNetworkWirelessSsidEapOverrideRequest {
 	r.updateNetworkWirelessSsidEapOverrideRequest = &updateNetworkWirelessSsidEapOverrideRequest
 	return r
 }
 
-func (r WirelessApiUpdateNetworkWirelessSsidEapOverrideRequest) Execute() (*GetNetworkWirelessSsidEapOverride200Response, *http.Response, error) {
+func (r WirelessAPIUpdateNetworkWirelessSsidEapOverrideRequest) Execute() (*GetNetworkWirelessSsidEapOverride200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidEapOverrideExecute(r)
 }
 
@@ -9746,10 +9746,10 @@ Update the EAP overridden parameters for an SSID.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return WirelessApiUpdateNetworkWirelessSsidEapOverrideRequest
+ @return WirelessAPIUpdateNetworkWirelessSsidEapOverrideRequest
 */
-func (a *WirelessApiService) UpdateNetworkWirelessSsidEapOverride(ctx context.Context, networkId string, number string) WirelessApiUpdateNetworkWirelessSsidEapOverrideRequest {
-	return WirelessApiUpdateNetworkWirelessSsidEapOverrideRequest{
+func (a *WirelessAPIService) UpdateNetworkWirelessSsidEapOverride(ctx context.Context, networkId string, number string) WirelessAPIUpdateNetworkWirelessSsidEapOverrideRequest {
+	return WirelessAPIUpdateNetworkWirelessSsidEapOverrideRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9759,7 +9759,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidEapOverride(ctx context.Co
 
 // Execute executes the request
 //  @return GetNetworkWirelessSsidEapOverride200Response
-func (a *WirelessApiService) UpdateNetworkWirelessSsidEapOverrideExecute(r WirelessApiUpdateNetworkWirelessSsidEapOverrideRequest) (*GetNetworkWirelessSsidEapOverride200Response, *http.Response, error) {
+func (a *WirelessAPIService) UpdateNetworkWirelessSsidEapOverrideExecute(r WirelessAPIUpdateNetworkWirelessSsidEapOverrideRequest) (*GetNetworkWirelessSsidEapOverride200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9767,7 +9767,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidEapOverrideExecute(r Wirel
 		localVarReturnValue  *GetNetworkWirelessSsidEapOverride200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.UpdateNetworkWirelessSsidEapOverride")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.UpdateNetworkWirelessSsidEapOverride")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9850,20 +9850,20 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidEapOverrideExecute(r Wirel
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest struct {
+type WirelessAPIUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidFirewallL3FirewallRulesRequest *UpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest
 }
 
-func (r WirelessApiUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest) UpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest(updateNetworkWirelessSsidFirewallL3FirewallRulesRequest UpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest) WirelessApiUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest {
+func (r WirelessAPIUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest) UpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest(updateNetworkWirelessSsidFirewallL3FirewallRulesRequest UpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest) WirelessAPIUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest {
 	r.updateNetworkWirelessSsidFirewallL3FirewallRulesRequest = &updateNetworkWirelessSsidFirewallL3FirewallRulesRequest
 	return r
 }
 
-func (r WirelessApiUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidFirewallL3FirewallRulesExecute(r)
 }
 
@@ -9875,10 +9875,10 @@ Update the L3 firewall rules of an SSID on an MR network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return WirelessApiUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest
+ @return WirelessAPIUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest
 */
-func (a *WirelessApiService) UpdateNetworkWirelessSsidFirewallL3FirewallRules(ctx context.Context, networkId string, number string) WirelessApiUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest {
-	return WirelessApiUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest{
+func (a *WirelessAPIService) UpdateNetworkWirelessSsidFirewallL3FirewallRules(ctx context.Context, networkId string, number string) WirelessAPIUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest {
+	return WirelessAPIUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9888,7 +9888,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidFirewallL3FirewallRules(ct
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessApiService) UpdateNetworkWirelessSsidFirewallL3FirewallRulesExecute(r WirelessApiUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) UpdateNetworkWirelessSsidFirewallL3FirewallRulesExecute(r WirelessAPIUpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9896,7 +9896,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidFirewallL3FirewallRulesExe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.UpdateNetworkWirelessSsidFirewallL3FirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.UpdateNetworkWirelessSsidFirewallL3FirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9979,20 +9979,20 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidFirewallL3FirewallRulesExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest struct {
+type WirelessAPIUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidFirewallL7FirewallRulesRequest *UpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest
 }
 
-func (r WirelessApiUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) UpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest(updateNetworkWirelessSsidFirewallL7FirewallRulesRequest UpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) WirelessApiUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest {
+func (r WirelessAPIUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) UpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest(updateNetworkWirelessSsidFirewallL7FirewallRulesRequest UpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) WirelessAPIUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest {
 	r.updateNetworkWirelessSsidFirewallL7FirewallRulesRequest = &updateNetworkWirelessSsidFirewallL7FirewallRulesRequest
 	return r
 }
 
-func (r WirelessApiUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidFirewallL7FirewallRulesExecute(r)
 }
 
@@ -10004,10 +10004,10 @@ Update the L7 firewall rules of an SSID on an MR network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return WirelessApiUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest
+ @return WirelessAPIUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest
 */
-func (a *WirelessApiService) UpdateNetworkWirelessSsidFirewallL7FirewallRules(ctx context.Context, networkId string, number string) WirelessApiUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest {
-	return WirelessApiUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest{
+func (a *WirelessAPIService) UpdateNetworkWirelessSsidFirewallL7FirewallRules(ctx context.Context, networkId string, number string) WirelessAPIUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest {
+	return WirelessAPIUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10017,7 +10017,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidFirewallL7FirewallRules(ct
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessApiService) UpdateNetworkWirelessSsidFirewallL7FirewallRulesExecute(r WirelessApiUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) UpdateNetworkWirelessSsidFirewallL7FirewallRulesExecute(r WirelessAPIUpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -10025,7 +10025,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidFirewallL7FirewallRulesExe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.UpdateNetworkWirelessSsidFirewallL7FirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.UpdateNetworkWirelessSsidFirewallL7FirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10108,20 +10108,20 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidFirewallL7FirewallRulesExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiUpdateNetworkWirelessSsidHotspot20Request struct {
+type WirelessAPIUpdateNetworkWirelessSsidHotspot20Request struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidHotspot20Request *UpdateNetworkWirelessSsidHotspot20Request
 }
 
-func (r WirelessApiUpdateNetworkWirelessSsidHotspot20Request) UpdateNetworkWirelessSsidHotspot20Request(updateNetworkWirelessSsidHotspot20Request UpdateNetworkWirelessSsidHotspot20Request) WirelessApiUpdateNetworkWirelessSsidHotspot20Request {
+func (r WirelessAPIUpdateNetworkWirelessSsidHotspot20Request) UpdateNetworkWirelessSsidHotspot20Request(updateNetworkWirelessSsidHotspot20Request UpdateNetworkWirelessSsidHotspot20Request) WirelessAPIUpdateNetworkWirelessSsidHotspot20Request {
 	r.updateNetworkWirelessSsidHotspot20Request = &updateNetworkWirelessSsidHotspot20Request
 	return r
 }
 
-func (r WirelessApiUpdateNetworkWirelessSsidHotspot20Request) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIUpdateNetworkWirelessSsidHotspot20Request) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidHotspot20Execute(r)
 }
 
@@ -10133,10 +10133,10 @@ Update the Hotspot 2.0 settings of an SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return WirelessApiUpdateNetworkWirelessSsidHotspot20Request
+ @return WirelessAPIUpdateNetworkWirelessSsidHotspot20Request
 */
-func (a *WirelessApiService) UpdateNetworkWirelessSsidHotspot20(ctx context.Context, networkId string, number string) WirelessApiUpdateNetworkWirelessSsidHotspot20Request {
-	return WirelessApiUpdateNetworkWirelessSsidHotspot20Request{
+func (a *WirelessAPIService) UpdateNetworkWirelessSsidHotspot20(ctx context.Context, networkId string, number string) WirelessAPIUpdateNetworkWirelessSsidHotspot20Request {
+	return WirelessAPIUpdateNetworkWirelessSsidHotspot20Request{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10146,7 +10146,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidHotspot20(ctx context.Cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessApiService) UpdateNetworkWirelessSsidHotspot20Execute(r WirelessApiUpdateNetworkWirelessSsidHotspot20Request) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) UpdateNetworkWirelessSsidHotspot20Execute(r WirelessAPIUpdateNetworkWirelessSsidHotspot20Request) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -10154,7 +10154,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidHotspot20Execute(r Wireles
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.UpdateNetworkWirelessSsidHotspot20")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.UpdateNetworkWirelessSsidHotspot20")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10237,21 +10237,21 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidHotspot20Execute(r Wireles
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiUpdateNetworkWirelessSsidIdentityPskRequest struct {
+type WirelessAPIUpdateNetworkWirelessSsidIdentityPskRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	number string
 	identityPskId string
 	updateNetworkWirelessSsidIdentityPskRequest *UpdateNetworkWirelessSsidIdentityPskRequest
 }
 
-func (r WirelessApiUpdateNetworkWirelessSsidIdentityPskRequest) UpdateNetworkWirelessSsidIdentityPskRequest(updateNetworkWirelessSsidIdentityPskRequest UpdateNetworkWirelessSsidIdentityPskRequest) WirelessApiUpdateNetworkWirelessSsidIdentityPskRequest {
+func (r WirelessAPIUpdateNetworkWirelessSsidIdentityPskRequest) UpdateNetworkWirelessSsidIdentityPskRequest(updateNetworkWirelessSsidIdentityPskRequest UpdateNetworkWirelessSsidIdentityPskRequest) WirelessAPIUpdateNetworkWirelessSsidIdentityPskRequest {
 	r.updateNetworkWirelessSsidIdentityPskRequest = &updateNetworkWirelessSsidIdentityPskRequest
 	return r
 }
 
-func (r WirelessApiUpdateNetworkWirelessSsidIdentityPskRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIUpdateNetworkWirelessSsidIdentityPskRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidIdentityPskExecute(r)
 }
 
@@ -10264,10 +10264,10 @@ Update an Identity PSK
  @param networkId Network ID
  @param number Number
  @param identityPskId Identity psk ID
- @return WirelessApiUpdateNetworkWirelessSsidIdentityPskRequest
+ @return WirelessAPIUpdateNetworkWirelessSsidIdentityPskRequest
 */
-func (a *WirelessApiService) UpdateNetworkWirelessSsidIdentityPsk(ctx context.Context, networkId string, number string, identityPskId string) WirelessApiUpdateNetworkWirelessSsidIdentityPskRequest {
-	return WirelessApiUpdateNetworkWirelessSsidIdentityPskRequest{
+func (a *WirelessAPIService) UpdateNetworkWirelessSsidIdentityPsk(ctx context.Context, networkId string, number string, identityPskId string) WirelessAPIUpdateNetworkWirelessSsidIdentityPskRequest {
+	return WirelessAPIUpdateNetworkWirelessSsidIdentityPskRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10278,7 +10278,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidIdentityPsk(ctx context.Co
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessApiService) UpdateNetworkWirelessSsidIdentityPskExecute(r WirelessApiUpdateNetworkWirelessSsidIdentityPskRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) UpdateNetworkWirelessSsidIdentityPskExecute(r WirelessAPIUpdateNetworkWirelessSsidIdentityPskRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -10286,7 +10286,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidIdentityPskExecute(r Wirel
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.UpdateNetworkWirelessSsidIdentityPsk")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.UpdateNetworkWirelessSsidIdentityPsk")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10370,20 +10370,20 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidIdentityPskExecute(r Wirel
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiUpdateNetworkWirelessSsidSchedulesRequest struct {
+type WirelessAPIUpdateNetworkWirelessSsidSchedulesRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidSchedulesRequest *UpdateNetworkWirelessSsidSchedulesRequest
 }
 
-func (r WirelessApiUpdateNetworkWirelessSsidSchedulesRequest) UpdateNetworkWirelessSsidSchedulesRequest(updateNetworkWirelessSsidSchedulesRequest UpdateNetworkWirelessSsidSchedulesRequest) WirelessApiUpdateNetworkWirelessSsidSchedulesRequest {
+func (r WirelessAPIUpdateNetworkWirelessSsidSchedulesRequest) UpdateNetworkWirelessSsidSchedulesRequest(updateNetworkWirelessSsidSchedulesRequest UpdateNetworkWirelessSsidSchedulesRequest) WirelessAPIUpdateNetworkWirelessSsidSchedulesRequest {
 	r.updateNetworkWirelessSsidSchedulesRequest = &updateNetworkWirelessSsidSchedulesRequest
 	return r
 }
 
-func (r WirelessApiUpdateNetworkWirelessSsidSchedulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIUpdateNetworkWirelessSsidSchedulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidSchedulesExecute(r)
 }
 
@@ -10395,10 +10395,10 @@ Update the outage schedule for the SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return WirelessApiUpdateNetworkWirelessSsidSchedulesRequest
+ @return WirelessAPIUpdateNetworkWirelessSsidSchedulesRequest
 */
-func (a *WirelessApiService) UpdateNetworkWirelessSsidSchedules(ctx context.Context, networkId string, number string) WirelessApiUpdateNetworkWirelessSsidSchedulesRequest {
-	return WirelessApiUpdateNetworkWirelessSsidSchedulesRequest{
+func (a *WirelessAPIService) UpdateNetworkWirelessSsidSchedules(ctx context.Context, networkId string, number string) WirelessAPIUpdateNetworkWirelessSsidSchedulesRequest {
+	return WirelessAPIUpdateNetworkWirelessSsidSchedulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10408,7 +10408,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidSchedules(ctx context.Cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessApiService) UpdateNetworkWirelessSsidSchedulesExecute(r WirelessApiUpdateNetworkWirelessSsidSchedulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) UpdateNetworkWirelessSsidSchedulesExecute(r WirelessAPIUpdateNetworkWirelessSsidSchedulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -10416,7 +10416,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidSchedulesExecute(r Wireles
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.UpdateNetworkWirelessSsidSchedules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.UpdateNetworkWirelessSsidSchedules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10499,20 +10499,20 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidSchedulesExecute(r Wireles
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiUpdateNetworkWirelessSsidSplashSettingsRequest struct {
+type WirelessAPIUpdateNetworkWirelessSsidSplashSettingsRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidSplashSettingsRequest *UpdateNetworkWirelessSsidSplashSettingsRequest
 }
 
-func (r WirelessApiUpdateNetworkWirelessSsidSplashSettingsRequest) UpdateNetworkWirelessSsidSplashSettingsRequest(updateNetworkWirelessSsidSplashSettingsRequest UpdateNetworkWirelessSsidSplashSettingsRequest) WirelessApiUpdateNetworkWirelessSsidSplashSettingsRequest {
+func (r WirelessAPIUpdateNetworkWirelessSsidSplashSettingsRequest) UpdateNetworkWirelessSsidSplashSettingsRequest(updateNetworkWirelessSsidSplashSettingsRequest UpdateNetworkWirelessSsidSplashSettingsRequest) WirelessAPIUpdateNetworkWirelessSsidSplashSettingsRequest {
 	r.updateNetworkWirelessSsidSplashSettingsRequest = &updateNetworkWirelessSsidSplashSettingsRequest
 	return r
 }
 
-func (r WirelessApiUpdateNetworkWirelessSsidSplashSettingsRequest) Execute() (*GetNetworkWirelessSsidSplashSettings200Response, *http.Response, error) {
+func (r WirelessAPIUpdateNetworkWirelessSsidSplashSettingsRequest) Execute() (*GetNetworkWirelessSsidSplashSettings200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidSplashSettingsExecute(r)
 }
 
@@ -10524,10 +10524,10 @@ Modify the splash page settings for the given SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return WirelessApiUpdateNetworkWirelessSsidSplashSettingsRequest
+ @return WirelessAPIUpdateNetworkWirelessSsidSplashSettingsRequest
 */
-func (a *WirelessApiService) UpdateNetworkWirelessSsidSplashSettings(ctx context.Context, networkId string, number string) WirelessApiUpdateNetworkWirelessSsidSplashSettingsRequest {
-	return WirelessApiUpdateNetworkWirelessSsidSplashSettingsRequest{
+func (a *WirelessAPIService) UpdateNetworkWirelessSsidSplashSettings(ctx context.Context, networkId string, number string) WirelessAPIUpdateNetworkWirelessSsidSplashSettingsRequest {
+	return WirelessAPIUpdateNetworkWirelessSsidSplashSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10537,7 +10537,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidSplashSettings(ctx context
 
 // Execute executes the request
 //  @return GetNetworkWirelessSsidSplashSettings200Response
-func (a *WirelessApiService) UpdateNetworkWirelessSsidSplashSettingsExecute(r WirelessApiUpdateNetworkWirelessSsidSplashSettingsRequest) (*GetNetworkWirelessSsidSplashSettings200Response, *http.Response, error) {
+func (a *WirelessAPIService) UpdateNetworkWirelessSsidSplashSettingsExecute(r WirelessAPIUpdateNetworkWirelessSsidSplashSettingsRequest) (*GetNetworkWirelessSsidSplashSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -10545,7 +10545,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidSplashSettingsExecute(r Wi
 		localVarReturnValue  *GetNetworkWirelessSsidSplashSettings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.UpdateNetworkWirelessSsidSplashSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.UpdateNetworkWirelessSsidSplashSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10628,20 +10628,20 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidSplashSettingsExecute(r Wi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest struct {
+type WirelessAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidTrafficShapingRulesRequest *UpdateNetworkWirelessSsidTrafficShapingRulesRequest
 }
 
-func (r WirelessApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest) UpdateNetworkWirelessSsidTrafficShapingRulesRequest(updateNetworkWirelessSsidTrafficShapingRulesRequest UpdateNetworkWirelessSsidTrafficShapingRulesRequest) WirelessApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest {
+func (r WirelessAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest) UpdateNetworkWirelessSsidTrafficShapingRulesRequest(updateNetworkWirelessSsidTrafficShapingRulesRequest UpdateNetworkWirelessSsidTrafficShapingRulesRequest) WirelessAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest {
 	r.updateNetworkWirelessSsidTrafficShapingRulesRequest = &updateNetworkWirelessSsidTrafficShapingRulesRequest
 	return r
 }
 
-func (r WirelessApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidTrafficShapingRulesExecute(r)
 }
 
@@ -10653,10 +10653,10 @@ Update the traffic shaping settings for an SSID on an MR network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return WirelessApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest
+ @return WirelessAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest
 */
-func (a *WirelessApiService) UpdateNetworkWirelessSsidTrafficShapingRules(ctx context.Context, networkId string, number string) WirelessApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest {
-	return WirelessApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest{
+func (a *WirelessAPIService) UpdateNetworkWirelessSsidTrafficShapingRules(ctx context.Context, networkId string, number string) WirelessAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest {
+	return WirelessAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10666,7 +10666,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidTrafficShapingRules(ctx co
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessApiService) UpdateNetworkWirelessSsidTrafficShapingRulesExecute(r WirelessApiUpdateNetworkWirelessSsidTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) UpdateNetworkWirelessSsidTrafficShapingRulesExecute(r WirelessAPIUpdateNetworkWirelessSsidTrafficShapingRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -10674,7 +10674,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidTrafficShapingRulesExecute
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.UpdateNetworkWirelessSsidTrafficShapingRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.UpdateNetworkWirelessSsidTrafficShapingRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10757,20 +10757,20 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidTrafficShapingRulesExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessApiUpdateNetworkWirelessSsidVpnRequest struct {
+type WirelessAPIUpdateNetworkWirelessSsidVpnRequest struct {
 	ctx context.Context
-	ApiService *WirelessApiService
+	ApiService *WirelessAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidVpnRequest *UpdateNetworkWirelessSsidVpnRequest
 }
 
-func (r WirelessApiUpdateNetworkWirelessSsidVpnRequest) UpdateNetworkWirelessSsidVpnRequest(updateNetworkWirelessSsidVpnRequest UpdateNetworkWirelessSsidVpnRequest) WirelessApiUpdateNetworkWirelessSsidVpnRequest {
+func (r WirelessAPIUpdateNetworkWirelessSsidVpnRequest) UpdateNetworkWirelessSsidVpnRequest(updateNetworkWirelessSsidVpnRequest UpdateNetworkWirelessSsidVpnRequest) WirelessAPIUpdateNetworkWirelessSsidVpnRequest {
 	r.updateNetworkWirelessSsidVpnRequest = &updateNetworkWirelessSsidVpnRequest
 	return r
 }
 
-func (r WirelessApiUpdateNetworkWirelessSsidVpnRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessAPIUpdateNetworkWirelessSsidVpnRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidVpnExecute(r)
 }
 
@@ -10782,10 +10782,10 @@ Update the VPN settings for the SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return WirelessApiUpdateNetworkWirelessSsidVpnRequest
+ @return WirelessAPIUpdateNetworkWirelessSsidVpnRequest
 */
-func (a *WirelessApiService) UpdateNetworkWirelessSsidVpn(ctx context.Context, networkId string, number string) WirelessApiUpdateNetworkWirelessSsidVpnRequest {
-	return WirelessApiUpdateNetworkWirelessSsidVpnRequest{
+func (a *WirelessAPIService) UpdateNetworkWirelessSsidVpn(ctx context.Context, networkId string, number string) WirelessAPIUpdateNetworkWirelessSsidVpnRequest {
+	return WirelessAPIUpdateNetworkWirelessSsidVpnRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10795,7 +10795,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidVpn(ctx context.Context, n
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessApiService) UpdateNetworkWirelessSsidVpnExecute(r WirelessApiUpdateNetworkWirelessSsidVpnRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessAPIService) UpdateNetworkWirelessSsidVpnExecute(r WirelessAPIUpdateNetworkWirelessSsidVpnRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -10803,7 +10803,7 @@ func (a *WirelessApiService) UpdateNetworkWirelessSsidVpnExecute(r WirelessApiUp
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessApiService.UpdateNetworkWirelessSsidVpn")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.UpdateNetworkWirelessSsidVpn")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

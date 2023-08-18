@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing LicensingApiService
+Testing LicensingAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_LicensingApiService(t *testing.T) {
+func Test_client_LicensingAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test LicensingApiService GetOrganizationLicensingCotermLicenses", func(t *testing.T) {
+	t.Run("Test LicensingAPIService GetOrganizationLicensingCotermLicenses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.LicensingApi.GetOrganizationLicensingCotermLicenses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.LicensingAPI.GetOrganizationLicensingCotermLicenses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_LicensingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test LicensingApiService MoveOrganizationLicensingCotermLicenses", func(t *testing.T) {
+	t.Run("Test LicensingAPIService MoveOrganizationLicensingCotermLicenses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.LicensingApi.MoveOrganizationLicensingCotermLicenses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.LicensingAPI.MoveOrganizationLicensingCotermLicenses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

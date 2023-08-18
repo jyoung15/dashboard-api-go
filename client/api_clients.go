@@ -21,30 +21,30 @@ import (
 )
 
 
-// ClientsApiService ClientsApi service
-type ClientsApiService service
+// ClientsAPIService ClientsAPI service
+type ClientsAPIService service
 
-type ClientsApiGetDeviceClientsRequest struct {
+type ClientsAPIGetDeviceClientsRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	serial string
 	t0 *string
 	timespan *float32
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r ClientsApiGetDeviceClientsRequest) T0(t0 string) ClientsApiGetDeviceClientsRequest {
+func (r ClientsAPIGetDeviceClientsRequest) T0(t0 string) ClientsAPIGetDeviceClientsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r ClientsApiGetDeviceClientsRequest) Timespan(timespan float32) ClientsApiGetDeviceClientsRequest {
+func (r ClientsAPIGetDeviceClientsRequest) Timespan(timespan float32) ClientsAPIGetDeviceClientsRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r ClientsApiGetDeviceClientsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ClientsAPIGetDeviceClientsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceClientsExecute(r)
 }
 
@@ -55,10 +55,10 @@ List the clients of a device, up to a maximum of a month ago. The usage of each 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return ClientsApiGetDeviceClientsRequest
+ @return ClientsAPIGetDeviceClientsRequest
 */
-func (a *ClientsApiService) GetDeviceClients(ctx context.Context, serial string) ClientsApiGetDeviceClientsRequest {
-	return ClientsApiGetDeviceClientsRequest{
+func (a *ClientsAPIService) GetDeviceClients(ctx context.Context, serial string) ClientsAPIGetDeviceClientsRequest {
+	return ClientsAPIGetDeviceClientsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -67,7 +67,7 @@ func (a *ClientsApiService) GetDeviceClients(ctx context.Context, serial string)
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ClientsApiService) GetDeviceClientsExecute(r ClientsApiGetDeviceClientsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ClientsAPIService) GetDeviceClientsExecute(r ClientsAPIGetDeviceClientsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -75,7 +75,7 @@ func (a *ClientsApiService) GetDeviceClientsExecute(r ClientsApiGetDeviceClients
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.GetDeviceClients")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.GetDeviceClients")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -161,9 +161,9 @@ func (a *ClientsApiService) GetDeviceClientsExecute(r ClientsApiGetDeviceClients
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ClientsApiGetNetworkApplianceClientSecurityEventsRequest struct {
+type ClientsAPIGetNetworkApplianceClientSecurityEventsRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	networkId string
 	clientId string
 	t0 *string
@@ -176,48 +176,48 @@ type ClientsApiGetNetworkApplianceClientSecurityEventsRequest struct {
 }
 
 // The beginning of the timespan for the data. Data is gathered after the specified t0 value. The maximum lookback period is 791 days from today.
-func (r ClientsApiGetNetworkApplianceClientSecurityEventsRequest) T0(t0 string) ClientsApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r ClientsAPIGetNetworkApplianceClientSecurityEventsRequest) T0(t0 string) ClientsAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 791 days after t0.
-func (r ClientsApiGetNetworkApplianceClientSecurityEventsRequest) T1(t1 string) ClientsApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r ClientsAPIGetNetworkApplianceClientSecurityEventsRequest) T1(t1 string) ClientsAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 791 days. The default is 31 days.
-func (r ClientsApiGetNetworkApplianceClientSecurityEventsRequest) Timespan(timespan float32) ClientsApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r ClientsAPIGetNetworkApplianceClientSecurityEventsRequest) Timespan(timespan float32) ClientsAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
-func (r ClientsApiGetNetworkApplianceClientSecurityEventsRequest) PerPage(perPage int32) ClientsApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r ClientsAPIGetNetworkApplianceClientSecurityEventsRequest) PerPage(perPage int32) ClientsAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ClientsApiGetNetworkApplianceClientSecurityEventsRequest) StartingAfter(startingAfter string) ClientsApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r ClientsAPIGetNetworkApplianceClientSecurityEventsRequest) StartingAfter(startingAfter string) ClientsAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ClientsApiGetNetworkApplianceClientSecurityEventsRequest) EndingBefore(endingBefore string) ClientsApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r ClientsAPIGetNetworkApplianceClientSecurityEventsRequest) EndingBefore(endingBefore string) ClientsAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Sorted order of security events based on event detection time. Order options are &#39;ascending&#39; or &#39;descending&#39;. Default is ascending order.
-func (r ClientsApiGetNetworkApplianceClientSecurityEventsRequest) SortOrder(sortOrder string) ClientsApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r ClientsAPIGetNetworkApplianceClientSecurityEventsRequest) SortOrder(sortOrder string) ClientsAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
-func (r ClientsApiGetNetworkApplianceClientSecurityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ClientsAPIGetNetworkApplianceClientSecurityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceClientSecurityEventsExecute(r)
 }
 
@@ -229,10 +229,10 @@ List the security events for a client. Clients can be identified by a client key
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return ClientsApiGetNetworkApplianceClientSecurityEventsRequest
+ @return ClientsAPIGetNetworkApplianceClientSecurityEventsRequest
 */
-func (a *ClientsApiService) GetNetworkApplianceClientSecurityEvents(ctx context.Context, networkId string, clientId string) ClientsApiGetNetworkApplianceClientSecurityEventsRequest {
-	return ClientsApiGetNetworkApplianceClientSecurityEventsRequest{
+func (a *ClientsAPIService) GetNetworkApplianceClientSecurityEvents(ctx context.Context, networkId string, clientId string) ClientsAPIGetNetworkApplianceClientSecurityEventsRequest {
+	return ClientsAPIGetNetworkApplianceClientSecurityEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -242,7 +242,7 @@ func (a *ClientsApiService) GetNetworkApplianceClientSecurityEvents(ctx context.
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ClientsApiService) GetNetworkApplianceClientSecurityEventsExecute(r ClientsApiGetNetworkApplianceClientSecurityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ClientsAPIService) GetNetworkApplianceClientSecurityEventsExecute(r ClientsAPIGetNetworkApplianceClientSecurityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -250,7 +250,7 @@ func (a *ClientsApiService) GetNetworkApplianceClientSecurityEventsExecute(r Cli
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.GetNetworkApplianceClientSecurityEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.GetNetworkApplianceClientSecurityEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -352,14 +352,14 @@ func (a *ClientsApiService) GetNetworkApplianceClientSecurityEventsExecute(r Cli
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ClientsApiGetNetworkClientRequest struct {
+type ClientsAPIGetNetworkClientRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	networkId string
 	clientId string
 }
 
-func (r ClientsApiGetNetworkClientRequest) Execute() (*GetNetworkClient200Response, *http.Response, error) {
+func (r ClientsAPIGetNetworkClientRequest) Execute() (*GetNetworkClient200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkClientExecute(r)
 }
 
@@ -371,10 +371,10 @@ Return the client associated with the given identifier. Clients can be identifie
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return ClientsApiGetNetworkClientRequest
+ @return ClientsAPIGetNetworkClientRequest
 */
-func (a *ClientsApiService) GetNetworkClient(ctx context.Context, networkId string, clientId string) ClientsApiGetNetworkClientRequest {
-	return ClientsApiGetNetworkClientRequest{
+func (a *ClientsAPIService) GetNetworkClient(ctx context.Context, networkId string, clientId string) ClientsAPIGetNetworkClientRequest {
+	return ClientsAPIGetNetworkClientRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -384,7 +384,7 @@ func (a *ClientsApiService) GetNetworkClient(ctx context.Context, networkId stri
 
 // Execute executes the request
 //  @return GetNetworkClient200Response
-func (a *ClientsApiService) GetNetworkClientExecute(r ClientsApiGetNetworkClientRequest) (*GetNetworkClient200Response, *http.Response, error) {
+func (a *ClientsAPIService) GetNetworkClientExecute(r ClientsAPIGetNetworkClientRequest) (*GetNetworkClient200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -392,7 +392,7 @@ func (a *ClientsApiService) GetNetworkClientExecute(r ClientsApiGetNetworkClient
 		localVarReturnValue  *GetNetworkClient200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.GetNetworkClient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.GetNetworkClient")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -473,14 +473,14 @@ func (a *ClientsApiService) GetNetworkClientExecute(r ClientsApiGetNetworkClient
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ClientsApiGetNetworkClientPolicyRequest struct {
+type ClientsAPIGetNetworkClientPolicyRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	networkId string
 	clientId string
 }
 
-func (r ClientsApiGetNetworkClientPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ClientsAPIGetNetworkClientPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientPolicyExecute(r)
 }
 
@@ -492,10 +492,10 @@ Return the policy assigned to a client on the network. Clients can be identified
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return ClientsApiGetNetworkClientPolicyRequest
+ @return ClientsAPIGetNetworkClientPolicyRequest
 */
-func (a *ClientsApiService) GetNetworkClientPolicy(ctx context.Context, networkId string, clientId string) ClientsApiGetNetworkClientPolicyRequest {
-	return ClientsApiGetNetworkClientPolicyRequest{
+func (a *ClientsAPIService) GetNetworkClientPolicy(ctx context.Context, networkId string, clientId string) ClientsAPIGetNetworkClientPolicyRequest {
+	return ClientsAPIGetNetworkClientPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -505,7 +505,7 @@ func (a *ClientsApiService) GetNetworkClientPolicy(ctx context.Context, networkI
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ClientsApiService) GetNetworkClientPolicyExecute(r ClientsApiGetNetworkClientPolicyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ClientsAPIService) GetNetworkClientPolicyExecute(r ClientsAPIGetNetworkClientPolicyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -513,7 +513,7 @@ func (a *ClientsApiService) GetNetworkClientPolicyExecute(r ClientsApiGetNetwork
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.GetNetworkClientPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.GetNetworkClientPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -594,14 +594,14 @@ func (a *ClientsApiService) GetNetworkClientPolicyExecute(r ClientsApiGetNetwork
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ClientsApiGetNetworkClientSplashAuthorizationStatusRequest struct {
+type ClientsAPIGetNetworkClientSplashAuthorizationStatusRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	networkId string
 	clientId string
 }
 
-func (r ClientsApiGetNetworkClientSplashAuthorizationStatusRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ClientsAPIGetNetworkClientSplashAuthorizationStatusRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientSplashAuthorizationStatusExecute(r)
 }
 
@@ -613,10 +613,10 @@ Return the splash authorization for a client, for each SSID they've associated w
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return ClientsApiGetNetworkClientSplashAuthorizationStatusRequest
+ @return ClientsAPIGetNetworkClientSplashAuthorizationStatusRequest
 */
-func (a *ClientsApiService) GetNetworkClientSplashAuthorizationStatus(ctx context.Context, networkId string, clientId string) ClientsApiGetNetworkClientSplashAuthorizationStatusRequest {
-	return ClientsApiGetNetworkClientSplashAuthorizationStatusRequest{
+func (a *ClientsAPIService) GetNetworkClientSplashAuthorizationStatus(ctx context.Context, networkId string, clientId string) ClientsAPIGetNetworkClientSplashAuthorizationStatusRequest {
+	return ClientsAPIGetNetworkClientSplashAuthorizationStatusRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -626,7 +626,7 @@ func (a *ClientsApiService) GetNetworkClientSplashAuthorizationStatus(ctx contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ClientsApiService) GetNetworkClientSplashAuthorizationStatusExecute(r ClientsApiGetNetworkClientSplashAuthorizationStatusRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ClientsAPIService) GetNetworkClientSplashAuthorizationStatusExecute(r ClientsAPIGetNetworkClientSplashAuthorizationStatusRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -634,7 +634,7 @@ func (a *ClientsApiService) GetNetworkClientSplashAuthorizationStatusExecute(r C
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.GetNetworkClientSplashAuthorizationStatus")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.GetNetworkClientSplashAuthorizationStatus")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -715,9 +715,9 @@ func (a *ClientsApiService) GetNetworkClientSplashAuthorizationStatusExecute(r C
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ClientsApiGetNetworkClientTrafficHistoryRequest struct {
+type ClientsAPIGetNetworkClientTrafficHistoryRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	networkId string
 	clientId string
 	perPage *int32
@@ -726,24 +726,24 @@ type ClientsApiGetNetworkClientTrafficHistoryRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000.
-func (r ClientsApiGetNetworkClientTrafficHistoryRequest) PerPage(perPage int32) ClientsApiGetNetworkClientTrafficHistoryRequest {
+func (r ClientsAPIGetNetworkClientTrafficHistoryRequest) PerPage(perPage int32) ClientsAPIGetNetworkClientTrafficHistoryRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ClientsApiGetNetworkClientTrafficHistoryRequest) StartingAfter(startingAfter string) ClientsApiGetNetworkClientTrafficHistoryRequest {
+func (r ClientsAPIGetNetworkClientTrafficHistoryRequest) StartingAfter(startingAfter string) ClientsAPIGetNetworkClientTrafficHistoryRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ClientsApiGetNetworkClientTrafficHistoryRequest) EndingBefore(endingBefore string) ClientsApiGetNetworkClientTrafficHistoryRequest {
+func (r ClientsAPIGetNetworkClientTrafficHistoryRequest) EndingBefore(endingBefore string) ClientsAPIGetNetworkClientTrafficHistoryRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r ClientsApiGetNetworkClientTrafficHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ClientsAPIGetNetworkClientTrafficHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientTrafficHistoryExecute(r)
 }
 
@@ -755,10 +755,10 @@ Return the client's network traffic data over time. Usage data is in kilobytes. 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return ClientsApiGetNetworkClientTrafficHistoryRequest
+ @return ClientsAPIGetNetworkClientTrafficHistoryRequest
 */
-func (a *ClientsApiService) GetNetworkClientTrafficHistory(ctx context.Context, networkId string, clientId string) ClientsApiGetNetworkClientTrafficHistoryRequest {
-	return ClientsApiGetNetworkClientTrafficHistoryRequest{
+func (a *ClientsAPIService) GetNetworkClientTrafficHistory(ctx context.Context, networkId string, clientId string) ClientsAPIGetNetworkClientTrafficHistoryRequest {
+	return ClientsAPIGetNetworkClientTrafficHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -768,7 +768,7 @@ func (a *ClientsApiService) GetNetworkClientTrafficHistory(ctx context.Context, 
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ClientsApiService) GetNetworkClientTrafficHistoryExecute(r ClientsApiGetNetworkClientTrafficHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ClientsAPIService) GetNetworkClientTrafficHistoryExecute(r ClientsAPIGetNetworkClientTrafficHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -776,7 +776,7 @@ func (a *ClientsApiService) GetNetworkClientTrafficHistoryExecute(r ClientsApiGe
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.GetNetworkClientTrafficHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.GetNetworkClientTrafficHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -866,14 +866,14 @@ func (a *ClientsApiService) GetNetworkClientTrafficHistoryExecute(r ClientsApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ClientsApiGetNetworkClientUsageHistoryRequest struct {
+type ClientsAPIGetNetworkClientUsageHistoryRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	networkId string
 	clientId string
 }
 
-func (r ClientsApiGetNetworkClientUsageHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ClientsAPIGetNetworkClientUsageHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientUsageHistoryExecute(r)
 }
 
@@ -885,10 +885,10 @@ Return the client's daily usage history. Usage data is in kilobytes. Clients can
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return ClientsApiGetNetworkClientUsageHistoryRequest
+ @return ClientsAPIGetNetworkClientUsageHistoryRequest
 */
-func (a *ClientsApiService) GetNetworkClientUsageHistory(ctx context.Context, networkId string, clientId string) ClientsApiGetNetworkClientUsageHistoryRequest {
-	return ClientsApiGetNetworkClientUsageHistoryRequest{
+func (a *ClientsAPIService) GetNetworkClientUsageHistory(ctx context.Context, networkId string, clientId string) ClientsAPIGetNetworkClientUsageHistoryRequest {
+	return ClientsAPIGetNetworkClientUsageHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -898,7 +898,7 @@ func (a *ClientsApiService) GetNetworkClientUsageHistory(ctx context.Context, ne
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ClientsApiService) GetNetworkClientUsageHistoryExecute(r ClientsApiGetNetworkClientUsageHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ClientsAPIService) GetNetworkClientUsageHistoryExecute(r ClientsAPIGetNetworkClientUsageHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -906,7 +906,7 @@ func (a *ClientsApiService) GetNetworkClientUsageHistoryExecute(r ClientsApiGetN
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.GetNetworkClientUsageHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.GetNetworkClientUsageHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -987,9 +987,9 @@ func (a *ClientsApiService) GetNetworkClientUsageHistoryExecute(r ClientsApiGetN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ClientsApiGetNetworkClientsRequest struct {
+type ClientsAPIGetNetworkClientsRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	networkId string
 	t0 *string
 	timespan *float32
@@ -1009,96 +1009,96 @@ type ClientsApiGetNetworkClientsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r ClientsApiGetNetworkClientsRequest) T0(t0 string) ClientsApiGetNetworkClientsRequest {
+func (r ClientsAPIGetNetworkClientsRequest) T0(t0 string) ClientsAPIGetNetworkClientsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r ClientsApiGetNetworkClientsRequest) Timespan(timespan float32) ClientsApiGetNetworkClientsRequest {
+func (r ClientsAPIGetNetworkClientsRequest) Timespan(timespan float32) ClientsAPIGetNetworkClientsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 10.
-func (r ClientsApiGetNetworkClientsRequest) PerPage(perPage int32) ClientsApiGetNetworkClientsRequest {
+func (r ClientsAPIGetNetworkClientsRequest) PerPage(perPage int32) ClientsAPIGetNetworkClientsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ClientsApiGetNetworkClientsRequest) StartingAfter(startingAfter string) ClientsApiGetNetworkClientsRequest {
+func (r ClientsAPIGetNetworkClientsRequest) StartingAfter(startingAfter string) ClientsAPIGetNetworkClientsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ClientsApiGetNetworkClientsRequest) EndingBefore(endingBefore string) ClientsApiGetNetworkClientsRequest {
+func (r ClientsAPIGetNetworkClientsRequest) EndingBefore(endingBefore string) ClientsAPIGetNetworkClientsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Filters clients based on status. Can be one of &#39;Online&#39; or &#39;Offline&#39;.
-func (r ClientsApiGetNetworkClientsRequest) Statuses(statuses []string) ClientsApiGetNetworkClientsRequest {
+func (r ClientsAPIGetNetworkClientsRequest) Statuses(statuses []string) ClientsAPIGetNetworkClientsRequest {
 	r.statuses = &statuses
 	return r
 }
 
 // Filters clients based on a partial or full match for the ip address field.
-func (r ClientsApiGetNetworkClientsRequest) Ip(ip string) ClientsApiGetNetworkClientsRequest {
+func (r ClientsAPIGetNetworkClientsRequest) Ip(ip string) ClientsAPIGetNetworkClientsRequest {
 	r.ip = &ip
 	return r
 }
 
 // Filters clients based on a partial or full match for the ip6 address field.
-func (r ClientsApiGetNetworkClientsRequest) Ip6(ip6 string) ClientsApiGetNetworkClientsRequest {
+func (r ClientsAPIGetNetworkClientsRequest) Ip6(ip6 string) ClientsAPIGetNetworkClientsRequest {
 	r.ip6 = &ip6
 	return r
 }
 
 // Filters clients based on a partial or full match for the ip6Local address field.
-func (r ClientsApiGetNetworkClientsRequest) Ip6Local(ip6Local string) ClientsApiGetNetworkClientsRequest {
+func (r ClientsAPIGetNetworkClientsRequest) Ip6Local(ip6Local string) ClientsAPIGetNetworkClientsRequest {
 	r.ip6Local = &ip6Local
 	return r
 }
 
 // Filters clients based on a partial or full match for the mac address field.
-func (r ClientsApiGetNetworkClientsRequest) Mac(mac string) ClientsApiGetNetworkClientsRequest {
+func (r ClientsAPIGetNetworkClientsRequest) Mac(mac string) ClientsAPIGetNetworkClientsRequest {
 	r.mac = &mac
 	return r
 }
 
 // Filters clients based on a partial or full match for the os (operating system) field.
-func (r ClientsApiGetNetworkClientsRequest) Os(os string) ClientsApiGetNetworkClientsRequest {
+func (r ClientsAPIGetNetworkClientsRequest) Os(os string) ClientsAPIGetNetworkClientsRequest {
 	r.os = &os
 	return r
 }
 
 // Filters clients based on partial or full match for the iPSK name field.
-func (r ClientsApiGetNetworkClientsRequest) PskGroup(pskGroup string) ClientsApiGetNetworkClientsRequest {
+func (r ClientsAPIGetNetworkClientsRequest) PskGroup(pskGroup string) ClientsAPIGetNetworkClientsRequest {
 	r.pskGroup = &pskGroup
 	return r
 }
 
 // Filters clients based on a partial or full match for the description field.
-func (r ClientsApiGetNetworkClientsRequest) Description(description string) ClientsApiGetNetworkClientsRequest {
+func (r ClientsAPIGetNetworkClientsRequest) Description(description string) ClientsAPIGetNetworkClientsRequest {
 	r.description = &description
 	return r
 }
 
 // Filters clients based on the full match for the VLAN field.
-func (r ClientsApiGetNetworkClientsRequest) Vlan(vlan string) ClientsApiGetNetworkClientsRequest {
+func (r ClientsAPIGetNetworkClientsRequest) Vlan(vlan string) ClientsAPIGetNetworkClientsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filters clients based on recent connection type. Can be one of &#39;Wired&#39; or &#39;Wireless&#39;.
-func (r ClientsApiGetNetworkClientsRequest) RecentDeviceConnections(recentDeviceConnections []string) ClientsApiGetNetworkClientsRequest {
+func (r ClientsAPIGetNetworkClientsRequest) RecentDeviceConnections(recentDeviceConnections []string) ClientsAPIGetNetworkClientsRequest {
 	r.recentDeviceConnections = &recentDeviceConnections
 	return r
 }
 
-func (r ClientsApiGetNetworkClientsRequest) Execute() (*GetNetworkClients200Response, *http.Response, error) {
+func (r ClientsAPIGetNetworkClientsRequest) Execute() ([]GetNetworkClients200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkClientsExecute(r)
 }
 
@@ -1109,10 +1109,10 @@ List the clients that have used this network in the timespan
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ClientsApiGetNetworkClientsRequest
+ @return ClientsAPIGetNetworkClientsRequest
 */
-func (a *ClientsApiService) GetNetworkClients(ctx context.Context, networkId string) ClientsApiGetNetworkClientsRequest {
-	return ClientsApiGetNetworkClientsRequest{
+func (a *ClientsAPIService) GetNetworkClients(ctx context.Context, networkId string) ClientsAPIGetNetworkClientsRequest {
+	return ClientsAPIGetNetworkClientsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1120,16 +1120,16 @@ func (a *ClientsApiService) GetNetworkClients(ctx context.Context, networkId str
 }
 
 // Execute executes the request
-//  @return GetNetworkClients200Response
-func (a *ClientsApiService) GetNetworkClientsExecute(r ClientsApiGetNetworkClientsRequest) (*GetNetworkClients200Response, *http.Response, error) {
+//  @return []GetNetworkClients200ResponseInner
+func (a *ClientsAPIService) GetNetworkClientsExecute(r ClientsAPIGetNetworkClientsRequest) ([]GetNetworkClients200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetNetworkClients200Response
+		localVarReturnValue  []GetNetworkClients200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.GetNetworkClients")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.GetNetworkClients")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1270,9 +1270,9 @@ func (a *ClientsApiService) GetNetworkClientsExecute(r ClientsApiGetNetworkClien
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ClientsApiGetNetworkClientsApplicationUsageRequest struct {
+type ClientsAPIGetNetworkClientsApplicationUsageRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	networkId string
 	clients *string
 	ssidNumber *int32
@@ -1285,54 +1285,54 @@ type ClientsApiGetNetworkClientsApplicationUsageRequest struct {
 }
 
 // A list of client keys, MACs or IPs separated by comma.
-func (r ClientsApiGetNetworkClientsApplicationUsageRequest) Clients(clients string) ClientsApiGetNetworkClientsApplicationUsageRequest {
+func (r ClientsAPIGetNetworkClientsApplicationUsageRequest) Clients(clients string) ClientsAPIGetNetworkClientsApplicationUsageRequest {
 	r.clients = &clients
 	return r
 }
 
 // An SSID number to include. If not specified, eveusage histories application usagents for all SSIDs will be returned.
-func (r ClientsApiGetNetworkClientsApplicationUsageRequest) SsidNumber(ssidNumber int32) ClientsApiGetNetworkClientsApplicationUsageRequest {
+func (r ClientsAPIGetNetworkClientsApplicationUsageRequest) SsidNumber(ssidNumber int32) ClientsAPIGetNetworkClientsApplicationUsageRequest {
 	r.ssidNumber = &ssidNumber
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000.
-func (r ClientsApiGetNetworkClientsApplicationUsageRequest) PerPage(perPage int32) ClientsApiGetNetworkClientsApplicationUsageRequest {
+func (r ClientsAPIGetNetworkClientsApplicationUsageRequest) PerPage(perPage int32) ClientsAPIGetNetworkClientsApplicationUsageRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ClientsApiGetNetworkClientsApplicationUsageRequest) StartingAfter(startingAfter string) ClientsApiGetNetworkClientsApplicationUsageRequest {
+func (r ClientsAPIGetNetworkClientsApplicationUsageRequest) StartingAfter(startingAfter string) ClientsAPIGetNetworkClientsApplicationUsageRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ClientsApiGetNetworkClientsApplicationUsageRequest) EndingBefore(endingBefore string) ClientsApiGetNetworkClientsApplicationUsageRequest {
+func (r ClientsAPIGetNetworkClientsApplicationUsageRequest) EndingBefore(endingBefore string) ClientsAPIGetNetworkClientsApplicationUsageRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r ClientsApiGetNetworkClientsApplicationUsageRequest) T0(t0 string) ClientsApiGetNetworkClientsApplicationUsageRequest {
+func (r ClientsAPIGetNetworkClientsApplicationUsageRequest) T0(t0 string) ClientsAPIGetNetworkClientsApplicationUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ClientsApiGetNetworkClientsApplicationUsageRequest) T1(t1 string) ClientsApiGetNetworkClientsApplicationUsageRequest {
+func (r ClientsAPIGetNetworkClientsApplicationUsageRequest) T1(t1 string) ClientsAPIGetNetworkClientsApplicationUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r ClientsApiGetNetworkClientsApplicationUsageRequest) Timespan(timespan float32) ClientsApiGetNetworkClientsApplicationUsageRequest {
+func (r ClientsAPIGetNetworkClientsApplicationUsageRequest) Timespan(timespan float32) ClientsAPIGetNetworkClientsApplicationUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r ClientsApiGetNetworkClientsApplicationUsageRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ClientsAPIGetNetworkClientsApplicationUsageRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientsApplicationUsageExecute(r)
 }
 
@@ -1343,10 +1343,10 @@ Return the application usage data for clients. Usage data is in kilobytes. Clien
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ClientsApiGetNetworkClientsApplicationUsageRequest
+ @return ClientsAPIGetNetworkClientsApplicationUsageRequest
 */
-func (a *ClientsApiService) GetNetworkClientsApplicationUsage(ctx context.Context, networkId string) ClientsApiGetNetworkClientsApplicationUsageRequest {
-	return ClientsApiGetNetworkClientsApplicationUsageRequest{
+func (a *ClientsAPIService) GetNetworkClientsApplicationUsage(ctx context.Context, networkId string) ClientsAPIGetNetworkClientsApplicationUsageRequest {
+	return ClientsAPIGetNetworkClientsApplicationUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1355,7 +1355,7 @@ func (a *ClientsApiService) GetNetworkClientsApplicationUsage(ctx context.Contex
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ClientsApiService) GetNetworkClientsApplicationUsageExecute(r ClientsApiGetNetworkClientsApplicationUsageRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ClientsAPIService) GetNetworkClientsApplicationUsageExecute(r ClientsAPIGetNetworkClientsApplicationUsageRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1363,7 +1363,7 @@ func (a *ClientsApiService) GetNetworkClientsApplicationUsageExecute(r ClientsAp
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.GetNetworkClientsApplicationUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.GetNetworkClientsApplicationUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1468,9 +1468,9 @@ func (a *ClientsApiService) GetNetworkClientsApplicationUsageExecute(r ClientsAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ClientsApiGetNetworkClientsBandwidthUsageHistoryRequest struct {
+type ClientsAPIGetNetworkClientsBandwidthUsageHistoryRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -1481,42 +1481,42 @@ type ClientsApiGetNetworkClientsBandwidthUsageHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 30 days from today.
-func (r ClientsApiGetNetworkClientsBandwidthUsageHistoryRequest) T0(t0 string) ClientsApiGetNetworkClientsBandwidthUsageHistoryRequest {
+func (r ClientsAPIGetNetworkClientsBandwidthUsageHistoryRequest) T0(t0 string) ClientsAPIGetNetworkClientsBandwidthUsageHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ClientsApiGetNetworkClientsBandwidthUsageHistoryRequest) T1(t1 string) ClientsApiGetNetworkClientsBandwidthUsageHistoryRequest {
+func (r ClientsAPIGetNetworkClientsBandwidthUsageHistoryRequest) T1(t1 string) ClientsAPIGetNetworkClientsBandwidthUsageHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r ClientsApiGetNetworkClientsBandwidthUsageHistoryRequest) Timespan(timespan float32) ClientsApiGetNetworkClientsBandwidthUsageHistoryRequest {
+func (r ClientsAPIGetNetworkClientsBandwidthUsageHistoryRequest) Timespan(timespan float32) ClientsAPIGetNetworkClientsBandwidthUsageHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r ClientsApiGetNetworkClientsBandwidthUsageHistoryRequest) PerPage(perPage int32) ClientsApiGetNetworkClientsBandwidthUsageHistoryRequest {
+func (r ClientsAPIGetNetworkClientsBandwidthUsageHistoryRequest) PerPage(perPage int32) ClientsAPIGetNetworkClientsBandwidthUsageHistoryRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ClientsApiGetNetworkClientsBandwidthUsageHistoryRequest) StartingAfter(startingAfter string) ClientsApiGetNetworkClientsBandwidthUsageHistoryRequest {
+func (r ClientsAPIGetNetworkClientsBandwidthUsageHistoryRequest) StartingAfter(startingAfter string) ClientsAPIGetNetworkClientsBandwidthUsageHistoryRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ClientsApiGetNetworkClientsBandwidthUsageHistoryRequest) EndingBefore(endingBefore string) ClientsApiGetNetworkClientsBandwidthUsageHistoryRequest {
+func (r ClientsAPIGetNetworkClientsBandwidthUsageHistoryRequest) EndingBefore(endingBefore string) ClientsAPIGetNetworkClientsBandwidthUsageHistoryRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r ClientsApiGetNetworkClientsBandwidthUsageHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ClientsAPIGetNetworkClientsBandwidthUsageHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientsBandwidthUsageHistoryExecute(r)
 }
 
@@ -1527,10 +1527,10 @@ Returns a timeseries of total traffic consumption rates for all clients on a net
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ClientsApiGetNetworkClientsBandwidthUsageHistoryRequest
+ @return ClientsAPIGetNetworkClientsBandwidthUsageHistoryRequest
 */
-func (a *ClientsApiService) GetNetworkClientsBandwidthUsageHistory(ctx context.Context, networkId string) ClientsApiGetNetworkClientsBandwidthUsageHistoryRequest {
-	return ClientsApiGetNetworkClientsBandwidthUsageHistoryRequest{
+func (a *ClientsAPIService) GetNetworkClientsBandwidthUsageHistory(ctx context.Context, networkId string) ClientsAPIGetNetworkClientsBandwidthUsageHistoryRequest {
+	return ClientsAPIGetNetworkClientsBandwidthUsageHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1539,7 +1539,7 @@ func (a *ClientsApiService) GetNetworkClientsBandwidthUsageHistory(ctx context.C
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ClientsApiService) GetNetworkClientsBandwidthUsageHistoryExecute(r ClientsApiGetNetworkClientsBandwidthUsageHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ClientsAPIService) GetNetworkClientsBandwidthUsageHistoryExecute(r ClientsAPIGetNetworkClientsBandwidthUsageHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1547,7 +1547,7 @@ func (a *ClientsApiService) GetNetworkClientsBandwidthUsageHistoryExecute(r Clie
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.GetNetworkClientsBandwidthUsageHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.GetNetworkClientsBandwidthUsageHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1645,9 +1645,9 @@ func (a *ClientsApiService) GetNetworkClientsBandwidthUsageHistoryExecute(r Clie
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ClientsApiGetNetworkClientsOverviewRequest struct {
+type ClientsAPIGetNetworkClientsOverviewRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -1656,30 +1656,30 @@ type ClientsApiGetNetworkClientsOverviewRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r ClientsApiGetNetworkClientsOverviewRequest) T0(t0 string) ClientsApiGetNetworkClientsOverviewRequest {
+func (r ClientsAPIGetNetworkClientsOverviewRequest) T0(t0 string) ClientsAPIGetNetworkClientsOverviewRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ClientsApiGetNetworkClientsOverviewRequest) T1(t1 string) ClientsApiGetNetworkClientsOverviewRequest {
+func (r ClientsAPIGetNetworkClientsOverviewRequest) T1(t1 string) ClientsAPIGetNetworkClientsOverviewRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r ClientsApiGetNetworkClientsOverviewRequest) Timespan(timespan float32) ClientsApiGetNetworkClientsOverviewRequest {
+func (r ClientsAPIGetNetworkClientsOverviewRequest) Timespan(timespan float32) ClientsAPIGetNetworkClientsOverviewRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 7200, 86400, 604800, 2592000. The default is 604800.
-func (r ClientsApiGetNetworkClientsOverviewRequest) Resolution(resolution int32) ClientsApiGetNetworkClientsOverviewRequest {
+func (r ClientsAPIGetNetworkClientsOverviewRequest) Resolution(resolution int32) ClientsAPIGetNetworkClientsOverviewRequest {
 	r.resolution = &resolution
 	return r
 }
 
-func (r ClientsApiGetNetworkClientsOverviewRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ClientsAPIGetNetworkClientsOverviewRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientsOverviewExecute(r)
 }
 
@@ -1690,10 +1690,10 @@ Return overview statistics for network clients
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ClientsApiGetNetworkClientsOverviewRequest
+ @return ClientsAPIGetNetworkClientsOverviewRequest
 */
-func (a *ClientsApiService) GetNetworkClientsOverview(ctx context.Context, networkId string) ClientsApiGetNetworkClientsOverviewRequest {
-	return ClientsApiGetNetworkClientsOverviewRequest{
+func (a *ClientsAPIService) GetNetworkClientsOverview(ctx context.Context, networkId string) ClientsAPIGetNetworkClientsOverviewRequest {
+	return ClientsAPIGetNetworkClientsOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1702,7 +1702,7 @@ func (a *ClientsApiService) GetNetworkClientsOverview(ctx context.Context, netwo
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ClientsApiService) GetNetworkClientsOverviewExecute(r ClientsApiGetNetworkClientsOverviewRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ClientsAPIService) GetNetworkClientsOverviewExecute(r ClientsAPIGetNetworkClientsOverviewRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1710,7 +1710,7 @@ func (a *ClientsApiService) GetNetworkClientsOverviewExecute(r ClientsApiGetNetw
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.GetNetworkClientsOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.GetNetworkClientsOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1802,9 +1802,9 @@ func (a *ClientsApiService) GetNetworkClientsOverviewExecute(r ClientsApiGetNetw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ClientsApiGetNetworkClientsUsageHistoriesRequest struct {
+type ClientsAPIGetNetworkClientsUsageHistoriesRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	networkId string
 	clients *string
 	ssidNumber *int32
@@ -1817,54 +1817,54 @@ type ClientsApiGetNetworkClientsUsageHistoriesRequest struct {
 }
 
 // A list of client keys, MACs or IPs separated by comma.
-func (r ClientsApiGetNetworkClientsUsageHistoriesRequest) Clients(clients string) ClientsApiGetNetworkClientsUsageHistoriesRequest {
+func (r ClientsAPIGetNetworkClientsUsageHistoriesRequest) Clients(clients string) ClientsAPIGetNetworkClientsUsageHistoriesRequest {
 	r.clients = &clients
 	return r
 }
 
 // An SSID number to include. If not specified, events for all SSIDs will be returned.
-func (r ClientsApiGetNetworkClientsUsageHistoriesRequest) SsidNumber(ssidNumber int32) ClientsApiGetNetworkClientsUsageHistoriesRequest {
+func (r ClientsAPIGetNetworkClientsUsageHistoriesRequest) SsidNumber(ssidNumber int32) ClientsAPIGetNetworkClientsUsageHistoriesRequest {
 	r.ssidNumber = &ssidNumber
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000.
-func (r ClientsApiGetNetworkClientsUsageHistoriesRequest) PerPage(perPage int32) ClientsApiGetNetworkClientsUsageHistoriesRequest {
+func (r ClientsAPIGetNetworkClientsUsageHistoriesRequest) PerPage(perPage int32) ClientsAPIGetNetworkClientsUsageHistoriesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ClientsApiGetNetworkClientsUsageHistoriesRequest) StartingAfter(startingAfter string) ClientsApiGetNetworkClientsUsageHistoriesRequest {
+func (r ClientsAPIGetNetworkClientsUsageHistoriesRequest) StartingAfter(startingAfter string) ClientsAPIGetNetworkClientsUsageHistoriesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ClientsApiGetNetworkClientsUsageHistoriesRequest) EndingBefore(endingBefore string) ClientsApiGetNetworkClientsUsageHistoriesRequest {
+func (r ClientsAPIGetNetworkClientsUsageHistoriesRequest) EndingBefore(endingBefore string) ClientsAPIGetNetworkClientsUsageHistoriesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r ClientsApiGetNetworkClientsUsageHistoriesRequest) T0(t0 string) ClientsApiGetNetworkClientsUsageHistoriesRequest {
+func (r ClientsAPIGetNetworkClientsUsageHistoriesRequest) T0(t0 string) ClientsAPIGetNetworkClientsUsageHistoriesRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ClientsApiGetNetworkClientsUsageHistoriesRequest) T1(t1 string) ClientsApiGetNetworkClientsUsageHistoriesRequest {
+func (r ClientsAPIGetNetworkClientsUsageHistoriesRequest) T1(t1 string) ClientsAPIGetNetworkClientsUsageHistoriesRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r ClientsApiGetNetworkClientsUsageHistoriesRequest) Timespan(timespan float32) ClientsApiGetNetworkClientsUsageHistoriesRequest {
+func (r ClientsAPIGetNetworkClientsUsageHistoriesRequest) Timespan(timespan float32) ClientsAPIGetNetworkClientsUsageHistoriesRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r ClientsApiGetNetworkClientsUsageHistoriesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ClientsAPIGetNetworkClientsUsageHistoriesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientsUsageHistoriesExecute(r)
 }
 
@@ -1875,10 +1875,10 @@ Return the usage histories for clients. Usage data is in kilobytes. Clients can 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ClientsApiGetNetworkClientsUsageHistoriesRequest
+ @return ClientsAPIGetNetworkClientsUsageHistoriesRequest
 */
-func (a *ClientsApiService) GetNetworkClientsUsageHistories(ctx context.Context, networkId string) ClientsApiGetNetworkClientsUsageHistoriesRequest {
-	return ClientsApiGetNetworkClientsUsageHistoriesRequest{
+func (a *ClientsAPIService) GetNetworkClientsUsageHistories(ctx context.Context, networkId string) ClientsAPIGetNetworkClientsUsageHistoriesRequest {
+	return ClientsAPIGetNetworkClientsUsageHistoriesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1887,7 +1887,7 @@ func (a *ClientsApiService) GetNetworkClientsUsageHistories(ctx context.Context,
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ClientsApiService) GetNetworkClientsUsageHistoriesExecute(r ClientsApiGetNetworkClientsUsageHistoriesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ClientsAPIService) GetNetworkClientsUsageHistoriesExecute(r ClientsAPIGetNetworkClientsUsageHistoriesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1895,7 +1895,7 @@ func (a *ClientsApiService) GetNetworkClientsUsageHistoriesExecute(r ClientsApiG
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.GetNetworkClientsUsageHistories")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.GetNetworkClientsUsageHistories")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2000,9 +2000,9 @@ func (a *ClientsApiService) GetNetworkClientsUsageHistoriesExecute(r ClientsApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ClientsApiGetNetworkWirelessClientConnectionStatsRequest struct {
+type ClientsAPIGetNetworkWirelessClientConnectionStatsRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	networkId string
 	clientId string
 	t0 *string
@@ -2015,48 +2015,48 @@ type ClientsApiGetNetworkWirelessClientConnectionStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r ClientsApiGetNetworkWirelessClientConnectionStatsRequest) T0(t0 string) ClientsApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientConnectionStatsRequest) T0(t0 string) ClientsAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r ClientsApiGetNetworkWirelessClientConnectionStatsRequest) T1(t1 string) ClientsApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientConnectionStatsRequest) T1(t1 string) ClientsAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r ClientsApiGetNetworkWirelessClientConnectionStatsRequest) Timespan(timespan float32) ClientsApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientConnectionStatsRequest) Timespan(timespan float32) ClientsAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r ClientsApiGetNetworkWirelessClientConnectionStatsRequest) Band(band string) ClientsApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientConnectionStatsRequest) Band(band string) ClientsAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r ClientsApiGetNetworkWirelessClientConnectionStatsRequest) Ssid(ssid int32) ClientsApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientConnectionStatsRequest) Ssid(ssid int32) ClientsAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r ClientsApiGetNetworkWirelessClientConnectionStatsRequest) Vlan(vlan int32) ClientsApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientConnectionStatsRequest) Vlan(vlan int32) ClientsAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r ClientsApiGetNetworkWirelessClientConnectionStatsRequest) ApTag(apTag string) ClientsApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientConnectionStatsRequest) ApTag(apTag string) ClientsAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
-func (r ClientsApiGetNetworkWirelessClientConnectionStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ClientsAPIGetNetworkWirelessClientConnectionStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessClientConnectionStatsExecute(r)
 }
 
@@ -2068,10 +2068,10 @@ Aggregated connectivity info for a given client on this network. Clients are ide
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return ClientsApiGetNetworkWirelessClientConnectionStatsRequest
+ @return ClientsAPIGetNetworkWirelessClientConnectionStatsRequest
 */
-func (a *ClientsApiService) GetNetworkWirelessClientConnectionStats(ctx context.Context, networkId string, clientId string) ClientsApiGetNetworkWirelessClientConnectionStatsRequest {
-	return ClientsApiGetNetworkWirelessClientConnectionStatsRequest{
+func (a *ClientsAPIService) GetNetworkWirelessClientConnectionStats(ctx context.Context, networkId string, clientId string) ClientsAPIGetNetworkWirelessClientConnectionStatsRequest {
+	return ClientsAPIGetNetworkWirelessClientConnectionStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2081,7 +2081,7 @@ func (a *ClientsApiService) GetNetworkWirelessClientConnectionStats(ctx context.
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ClientsApiService) GetNetworkWirelessClientConnectionStatsExecute(r ClientsApiGetNetworkWirelessClientConnectionStatsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ClientsAPIService) GetNetworkWirelessClientConnectionStatsExecute(r ClientsAPIGetNetworkWirelessClientConnectionStatsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2089,7 +2089,7 @@ func (a *ClientsApiService) GetNetworkWirelessClientConnectionStatsExecute(r Cli
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.GetNetworkWirelessClientConnectionStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.GetNetworkWirelessClientConnectionStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2191,9 +2191,9 @@ func (a *ClientsApiService) GetNetworkWirelessClientConnectionStatsExecute(r Cli
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ClientsApiGetNetworkWirelessClientConnectivityEventsRequest struct {
+type ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	networkId string
 	clientId string
 	perPage *int32
@@ -2210,72 +2210,72 @@ type ClientsApiGetNetworkWirelessClientConnectivityEventsRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000.
-func (r ClientsApiGetNetworkWirelessClientConnectivityEventsRequest) PerPage(perPage int32) ClientsApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest) PerPage(perPage int32) ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ClientsApiGetNetworkWirelessClientConnectivityEventsRequest) StartingAfter(startingAfter string) ClientsApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest) StartingAfter(startingAfter string) ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ClientsApiGetNetworkWirelessClientConnectivityEventsRequest) EndingBefore(endingBefore string) ClientsApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest) EndingBefore(endingBefore string) ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r ClientsApiGetNetworkWirelessClientConnectivityEventsRequest) T0(t0 string) ClientsApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest) T0(t0 string) ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ClientsApiGetNetworkWirelessClientConnectivityEventsRequest) T1(t1 string) ClientsApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest) T1(t1 string) ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r ClientsApiGetNetworkWirelessClientConnectivityEventsRequest) Timespan(timespan float32) ClientsApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest) Timespan(timespan float32) ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // A list of event types to include. If not specified, events of all types will be returned. Valid types are &#39;assoc&#39;, &#39;disassoc&#39;, &#39;auth&#39;, &#39;deauth&#39;, &#39;dns&#39;, &#39;dhcp&#39;, &#39;roam&#39;, &#39;connection&#39; and/or &#39;sticky&#39;.
-func (r ClientsApiGetNetworkWirelessClientConnectivityEventsRequest) Types(types []string) ClientsApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest) Types(types []string) ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.types = &types
 	return r
 }
 
 // A list of severities to include. If not specified, events of all severities will be returned. Valid severities are &#39;good&#39;, &#39;info&#39;, &#39;warn&#39; and/or &#39;bad&#39;.
-func (r ClientsApiGetNetworkWirelessClientConnectivityEventsRequest) IncludedSeverities(includedSeverities []string) ClientsApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest) IncludedSeverities(includedSeverities []string) ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.includedSeverities = &includedSeverities
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39;, &#39;6&#39;).
-func (r ClientsApiGetNetworkWirelessClientConnectivityEventsRequest) Band(band string) ClientsApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest) Band(band string) ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.band = &band
 	return r
 }
 
 // An SSID number to include. If not specified, events for all SSIDs will be returned.
-func (r ClientsApiGetNetworkWirelessClientConnectivityEventsRequest) SsidNumber(ssidNumber int32) ClientsApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest) SsidNumber(ssidNumber int32) ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.ssidNumber = &ssidNumber
 	return r
 }
 
 // Filter results by an AP&#39;s serial number.
-func (r ClientsApiGetNetworkWirelessClientConnectivityEventsRequest) DeviceSerial(deviceSerial string) ClientsApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest) DeviceSerial(deviceSerial string) ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.deviceSerial = &deviceSerial
 	return r
 }
 
-func (r ClientsApiGetNetworkWirelessClientConnectivityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessClientConnectivityEventsExecute(r)
 }
 
@@ -2287,10 +2287,10 @@ List the wireless connectivity events for a client within a network in the times
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return ClientsApiGetNetworkWirelessClientConnectivityEventsRequest
+ @return ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest
 */
-func (a *ClientsApiService) GetNetworkWirelessClientConnectivityEvents(ctx context.Context, networkId string, clientId string) ClientsApiGetNetworkWirelessClientConnectivityEventsRequest {
-	return ClientsApiGetNetworkWirelessClientConnectivityEventsRequest{
+func (a *ClientsAPIService) GetNetworkWirelessClientConnectivityEvents(ctx context.Context, networkId string, clientId string) ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest {
+	return ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2300,7 +2300,7 @@ func (a *ClientsApiService) GetNetworkWirelessClientConnectivityEvents(ctx conte
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ClientsApiService) GetNetworkWirelessClientConnectivityEventsExecute(r ClientsApiGetNetworkWirelessClientConnectivityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ClientsAPIService) GetNetworkWirelessClientConnectivityEventsExecute(r ClientsAPIGetNetworkWirelessClientConnectivityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2308,7 +2308,7 @@ func (a *ClientsApiService) GetNetworkWirelessClientConnectivityEventsExecute(r 
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.GetNetworkWirelessClientConnectivityEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.GetNetworkWirelessClientConnectivityEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2438,9 +2438,9 @@ func (a *ClientsApiService) GetNetworkWirelessClientConnectivityEventsExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ClientsApiGetNetworkWirelessClientLatencyHistoryRequest struct {
+type ClientsAPIGetNetworkWirelessClientLatencyHistoryRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	networkId string
 	clientId string
 	t0 *string
@@ -2450,30 +2450,30 @@ type ClientsApiGetNetworkWirelessClientLatencyHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 791 days from today.
-func (r ClientsApiGetNetworkWirelessClientLatencyHistoryRequest) T0(t0 string) ClientsApiGetNetworkWirelessClientLatencyHistoryRequest {
+func (r ClientsAPIGetNetworkWirelessClientLatencyHistoryRequest) T0(t0 string) ClientsAPIGetNetworkWirelessClientLatencyHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 791 days after t0.
-func (r ClientsApiGetNetworkWirelessClientLatencyHistoryRequest) T1(t1 string) ClientsApiGetNetworkWirelessClientLatencyHistoryRequest {
+func (r ClientsAPIGetNetworkWirelessClientLatencyHistoryRequest) T1(t1 string) ClientsAPIGetNetworkWirelessClientLatencyHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 791 days. The default is 1 day.
-func (r ClientsApiGetNetworkWirelessClientLatencyHistoryRequest) Timespan(timespan float32) ClientsApiGetNetworkWirelessClientLatencyHistoryRequest {
+func (r ClientsAPIGetNetworkWirelessClientLatencyHistoryRequest) Timespan(timespan float32) ClientsAPIGetNetworkWirelessClientLatencyHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 86400. The default is 86400.
-func (r ClientsApiGetNetworkWirelessClientLatencyHistoryRequest) Resolution(resolution int32) ClientsApiGetNetworkWirelessClientLatencyHistoryRequest {
+func (r ClientsAPIGetNetworkWirelessClientLatencyHistoryRequest) Resolution(resolution int32) ClientsAPIGetNetworkWirelessClientLatencyHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
-func (r ClientsApiGetNetworkWirelessClientLatencyHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ClientsAPIGetNetworkWirelessClientLatencyHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessClientLatencyHistoryExecute(r)
 }
 
@@ -2485,10 +2485,10 @@ Return the latency history for a client. Clients can be identified by a client k
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return ClientsApiGetNetworkWirelessClientLatencyHistoryRequest
+ @return ClientsAPIGetNetworkWirelessClientLatencyHistoryRequest
 */
-func (a *ClientsApiService) GetNetworkWirelessClientLatencyHistory(ctx context.Context, networkId string, clientId string) ClientsApiGetNetworkWirelessClientLatencyHistoryRequest {
-	return ClientsApiGetNetworkWirelessClientLatencyHistoryRequest{
+func (a *ClientsAPIService) GetNetworkWirelessClientLatencyHistory(ctx context.Context, networkId string, clientId string) ClientsAPIGetNetworkWirelessClientLatencyHistoryRequest {
+	return ClientsAPIGetNetworkWirelessClientLatencyHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2498,7 +2498,7 @@ func (a *ClientsApiService) GetNetworkWirelessClientLatencyHistory(ctx context.C
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ClientsApiService) GetNetworkWirelessClientLatencyHistoryExecute(r ClientsApiGetNetworkWirelessClientLatencyHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ClientsAPIService) GetNetworkWirelessClientLatencyHistoryExecute(r ClientsAPIGetNetworkWirelessClientLatencyHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2506,7 +2506,7 @@ func (a *ClientsApiService) GetNetworkWirelessClientLatencyHistoryExecute(r Clie
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.GetNetworkWirelessClientLatencyHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.GetNetworkWirelessClientLatencyHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2599,9 +2599,9 @@ func (a *ClientsApiService) GetNetworkWirelessClientLatencyHistoryExecute(r Clie
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ClientsApiGetNetworkWirelessClientLatencyStatsRequest struct {
+type ClientsAPIGetNetworkWirelessClientLatencyStatsRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	networkId string
 	clientId string
 	t0 *string
@@ -2615,54 +2615,54 @@ type ClientsApiGetNetworkWirelessClientLatencyStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r ClientsApiGetNetworkWirelessClientLatencyStatsRequest) T0(t0 string) ClientsApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientLatencyStatsRequest) T0(t0 string) ClientsAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r ClientsApiGetNetworkWirelessClientLatencyStatsRequest) T1(t1 string) ClientsApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientLatencyStatsRequest) T1(t1 string) ClientsAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r ClientsApiGetNetworkWirelessClientLatencyStatsRequest) Timespan(timespan float32) ClientsApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientLatencyStatsRequest) Timespan(timespan float32) ClientsAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r ClientsApiGetNetworkWirelessClientLatencyStatsRequest) Band(band string) ClientsApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientLatencyStatsRequest) Band(band string) ClientsAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r ClientsApiGetNetworkWirelessClientLatencyStatsRequest) Ssid(ssid int32) ClientsApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientLatencyStatsRequest) Ssid(ssid int32) ClientsAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r ClientsApiGetNetworkWirelessClientLatencyStatsRequest) Vlan(vlan int32) ClientsApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientLatencyStatsRequest) Vlan(vlan int32) ClientsAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r ClientsApiGetNetworkWirelessClientLatencyStatsRequest) ApTag(apTag string) ClientsApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientLatencyStatsRequest) ApTag(apTag string) ClientsAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Partial selection: If present, this call will return only the selected fields of [\&quot;rawDistribution\&quot;, \&quot;avg\&quot;]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
-func (r ClientsApiGetNetworkWirelessClientLatencyStatsRequest) Fields(fields string) ClientsApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientLatencyStatsRequest) Fields(fields string) ClientsAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r ClientsApiGetNetworkWirelessClientLatencyStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ClientsAPIGetNetworkWirelessClientLatencyStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessClientLatencyStatsExecute(r)
 }
 
@@ -2674,10 +2674,10 @@ Aggregated latency info for a given client on this network. Clients are identifi
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return ClientsApiGetNetworkWirelessClientLatencyStatsRequest
+ @return ClientsAPIGetNetworkWirelessClientLatencyStatsRequest
 */
-func (a *ClientsApiService) GetNetworkWirelessClientLatencyStats(ctx context.Context, networkId string, clientId string) ClientsApiGetNetworkWirelessClientLatencyStatsRequest {
-	return ClientsApiGetNetworkWirelessClientLatencyStatsRequest{
+func (a *ClientsAPIService) GetNetworkWirelessClientLatencyStats(ctx context.Context, networkId string, clientId string) ClientsAPIGetNetworkWirelessClientLatencyStatsRequest {
+	return ClientsAPIGetNetworkWirelessClientLatencyStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2687,7 +2687,7 @@ func (a *ClientsApiService) GetNetworkWirelessClientLatencyStats(ctx context.Con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ClientsApiService) GetNetworkWirelessClientLatencyStatsExecute(r ClientsApiGetNetworkWirelessClientLatencyStatsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ClientsAPIService) GetNetworkWirelessClientLatencyStatsExecute(r ClientsAPIGetNetworkWirelessClientLatencyStatsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2695,7 +2695,7 @@ func (a *ClientsApiService) GetNetworkWirelessClientLatencyStatsExecute(r Client
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.GetNetworkWirelessClientLatencyStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.GetNetworkWirelessClientLatencyStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2800,9 +2800,9 @@ func (a *ClientsApiService) GetNetworkWirelessClientLatencyStatsExecute(r Client
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ClientsApiGetNetworkWirelessClientsConnectionStatsRequest struct {
+type ClientsAPIGetNetworkWirelessClientsConnectionStatsRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -2814,48 +2814,48 @@ type ClientsApiGetNetworkWirelessClientsConnectionStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r ClientsApiGetNetworkWirelessClientsConnectionStatsRequest) T0(t0 string) ClientsApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientsConnectionStatsRequest) T0(t0 string) ClientsAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r ClientsApiGetNetworkWirelessClientsConnectionStatsRequest) T1(t1 string) ClientsApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientsConnectionStatsRequest) T1(t1 string) ClientsAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r ClientsApiGetNetworkWirelessClientsConnectionStatsRequest) Timespan(timespan float32) ClientsApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientsConnectionStatsRequest) Timespan(timespan float32) ClientsAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r ClientsApiGetNetworkWirelessClientsConnectionStatsRequest) Band(band string) ClientsApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientsConnectionStatsRequest) Band(band string) ClientsAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r ClientsApiGetNetworkWirelessClientsConnectionStatsRequest) Ssid(ssid int32) ClientsApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientsConnectionStatsRequest) Ssid(ssid int32) ClientsAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r ClientsApiGetNetworkWirelessClientsConnectionStatsRequest) Vlan(vlan int32) ClientsApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientsConnectionStatsRequest) Vlan(vlan int32) ClientsAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r ClientsApiGetNetworkWirelessClientsConnectionStatsRequest) ApTag(apTag string) ClientsApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientsConnectionStatsRequest) ApTag(apTag string) ClientsAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
-func (r ClientsApiGetNetworkWirelessClientsConnectionStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ClientsAPIGetNetworkWirelessClientsConnectionStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessClientsConnectionStatsExecute(r)
 }
 
@@ -2866,10 +2866,10 @@ Aggregated connectivity info for this network, grouped by clients
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ClientsApiGetNetworkWirelessClientsConnectionStatsRequest
+ @return ClientsAPIGetNetworkWirelessClientsConnectionStatsRequest
 */
-func (a *ClientsApiService) GetNetworkWirelessClientsConnectionStats(ctx context.Context, networkId string) ClientsApiGetNetworkWirelessClientsConnectionStatsRequest {
-	return ClientsApiGetNetworkWirelessClientsConnectionStatsRequest{
+func (a *ClientsAPIService) GetNetworkWirelessClientsConnectionStats(ctx context.Context, networkId string) ClientsAPIGetNetworkWirelessClientsConnectionStatsRequest {
+	return ClientsAPIGetNetworkWirelessClientsConnectionStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2878,7 +2878,7 @@ func (a *ClientsApiService) GetNetworkWirelessClientsConnectionStats(ctx context
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ClientsApiService) GetNetworkWirelessClientsConnectionStatsExecute(r ClientsApiGetNetworkWirelessClientsConnectionStatsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ClientsAPIService) GetNetworkWirelessClientsConnectionStatsExecute(r ClientsAPIGetNetworkWirelessClientsConnectionStatsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2886,7 +2886,7 @@ func (a *ClientsApiService) GetNetworkWirelessClientsConnectionStatsExecute(r Cl
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.GetNetworkWirelessClientsConnectionStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.GetNetworkWirelessClientsConnectionStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2987,9 +2987,9 @@ func (a *ClientsApiService) GetNetworkWirelessClientsConnectionStatsExecute(r Cl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ClientsApiGetNetworkWirelessClientsLatencyStatsRequest struct {
+type ClientsAPIGetNetworkWirelessClientsLatencyStatsRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -3002,54 +3002,54 @@ type ClientsApiGetNetworkWirelessClientsLatencyStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r ClientsApiGetNetworkWirelessClientsLatencyStatsRequest) T0(t0 string) ClientsApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientsLatencyStatsRequest) T0(t0 string) ClientsAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r ClientsApiGetNetworkWirelessClientsLatencyStatsRequest) T1(t1 string) ClientsApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientsLatencyStatsRequest) T1(t1 string) ClientsAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r ClientsApiGetNetworkWirelessClientsLatencyStatsRequest) Timespan(timespan float32) ClientsApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientsLatencyStatsRequest) Timespan(timespan float32) ClientsAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r ClientsApiGetNetworkWirelessClientsLatencyStatsRequest) Band(band string) ClientsApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientsLatencyStatsRequest) Band(band string) ClientsAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r ClientsApiGetNetworkWirelessClientsLatencyStatsRequest) Ssid(ssid int32) ClientsApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientsLatencyStatsRequest) Ssid(ssid int32) ClientsAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r ClientsApiGetNetworkWirelessClientsLatencyStatsRequest) Vlan(vlan int32) ClientsApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientsLatencyStatsRequest) Vlan(vlan int32) ClientsAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r ClientsApiGetNetworkWirelessClientsLatencyStatsRequest) ApTag(apTag string) ClientsApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientsLatencyStatsRequest) ApTag(apTag string) ClientsAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Partial selection: If present, this call will return only the selected fields of [\&quot;rawDistribution\&quot;, \&quot;avg\&quot;]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
-func (r ClientsApiGetNetworkWirelessClientsLatencyStatsRequest) Fields(fields string) ClientsApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r ClientsAPIGetNetworkWirelessClientsLatencyStatsRequest) Fields(fields string) ClientsAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r ClientsApiGetNetworkWirelessClientsLatencyStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ClientsAPIGetNetworkWirelessClientsLatencyStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessClientsLatencyStatsExecute(r)
 }
 
@@ -3060,10 +3060,10 @@ Aggregated latency info for this network, grouped by clients
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ClientsApiGetNetworkWirelessClientsLatencyStatsRequest
+ @return ClientsAPIGetNetworkWirelessClientsLatencyStatsRequest
 */
-func (a *ClientsApiService) GetNetworkWirelessClientsLatencyStats(ctx context.Context, networkId string) ClientsApiGetNetworkWirelessClientsLatencyStatsRequest {
-	return ClientsApiGetNetworkWirelessClientsLatencyStatsRequest{
+func (a *ClientsAPIService) GetNetworkWirelessClientsLatencyStats(ctx context.Context, networkId string) ClientsAPIGetNetworkWirelessClientsLatencyStatsRequest {
+	return ClientsAPIGetNetworkWirelessClientsLatencyStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3072,7 +3072,7 @@ func (a *ClientsApiService) GetNetworkWirelessClientsLatencyStats(ctx context.Co
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ClientsApiService) GetNetworkWirelessClientsLatencyStatsExecute(r ClientsApiGetNetworkWirelessClientsLatencyStatsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ClientsAPIService) GetNetworkWirelessClientsLatencyStatsExecute(r ClientsAPIGetNetworkWirelessClientsLatencyStatsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3080,7 +3080,7 @@ func (a *ClientsApiService) GetNetworkWirelessClientsLatencyStatsExecute(r Clien
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.GetNetworkWirelessClientsLatencyStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.GetNetworkWirelessClientsLatencyStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3184,9 +3184,9 @@ func (a *ClientsApiService) GetNetworkWirelessClientsLatencyStatsExecute(r Clien
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ClientsApiGetOrganizationClientsBandwidthUsageHistoryRequest struct {
+type ClientsAPIGetOrganizationClientsBandwidthUsageHistoryRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -3194,24 +3194,24 @@ type ClientsApiGetOrganizationClientsBandwidthUsageHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data.
-func (r ClientsApiGetOrganizationClientsBandwidthUsageHistoryRequest) T0(t0 string) ClientsApiGetOrganizationClientsBandwidthUsageHistoryRequest {
+func (r ClientsAPIGetOrganizationClientsBandwidthUsageHistoryRequest) T0(t0 string) ClientsAPIGetOrganizationClientsBandwidthUsageHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ClientsApiGetOrganizationClientsBandwidthUsageHistoryRequest) T1(t1 string) ClientsApiGetOrganizationClientsBandwidthUsageHistoryRequest {
+func (r ClientsAPIGetOrganizationClientsBandwidthUsageHistoryRequest) T1(t1 string) ClientsAPIGetOrganizationClientsBandwidthUsageHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r ClientsApiGetOrganizationClientsBandwidthUsageHistoryRequest) Timespan(timespan float32) ClientsApiGetOrganizationClientsBandwidthUsageHistoryRequest {
+func (r ClientsAPIGetOrganizationClientsBandwidthUsageHistoryRequest) Timespan(timespan float32) ClientsAPIGetOrganizationClientsBandwidthUsageHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r ClientsApiGetOrganizationClientsBandwidthUsageHistoryRequest) Execute() ([]GetOrganizationClientsBandwidthUsageHistory200ResponseInner, *http.Response, error) {
+func (r ClientsAPIGetOrganizationClientsBandwidthUsageHistoryRequest) Execute() ([]GetOrganizationClientsBandwidthUsageHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationClientsBandwidthUsageHistoryExecute(r)
 }
 
@@ -3222,10 +3222,10 @@ Return data usage (in megabits per second) over time for all clients in the give
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ClientsApiGetOrganizationClientsBandwidthUsageHistoryRequest
+ @return ClientsAPIGetOrganizationClientsBandwidthUsageHistoryRequest
 */
-func (a *ClientsApiService) GetOrganizationClientsBandwidthUsageHistory(ctx context.Context, organizationId string) ClientsApiGetOrganizationClientsBandwidthUsageHistoryRequest {
-	return ClientsApiGetOrganizationClientsBandwidthUsageHistoryRequest{
+func (a *ClientsAPIService) GetOrganizationClientsBandwidthUsageHistory(ctx context.Context, organizationId string) ClientsAPIGetOrganizationClientsBandwidthUsageHistoryRequest {
+	return ClientsAPIGetOrganizationClientsBandwidthUsageHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -3234,7 +3234,7 @@ func (a *ClientsApiService) GetOrganizationClientsBandwidthUsageHistory(ctx cont
 
 // Execute executes the request
 //  @return []GetOrganizationClientsBandwidthUsageHistory200ResponseInner
-func (a *ClientsApiService) GetOrganizationClientsBandwidthUsageHistoryExecute(r ClientsApiGetOrganizationClientsBandwidthUsageHistoryRequest) ([]GetOrganizationClientsBandwidthUsageHistory200ResponseInner, *http.Response, error) {
+func (a *ClientsAPIService) GetOrganizationClientsBandwidthUsageHistoryExecute(r ClientsAPIGetOrganizationClientsBandwidthUsageHistoryRequest) ([]GetOrganizationClientsBandwidthUsageHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3242,7 +3242,7 @@ func (a *ClientsApiService) GetOrganizationClientsBandwidthUsageHistoryExecute(r
 		localVarReturnValue  []GetOrganizationClientsBandwidthUsageHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.GetOrganizationClientsBandwidthUsageHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.GetOrganizationClientsBandwidthUsageHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3331,9 +3331,9 @@ func (a *ClientsApiService) GetOrganizationClientsBandwidthUsageHistoryExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ClientsApiGetOrganizationClientsOverviewRequest struct {
+type ClientsAPIGetOrganizationClientsOverviewRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -3341,24 +3341,24 @@ type ClientsApiGetOrganizationClientsOverviewRequest struct {
 }
 
 // The beginning of the timespan for the data.
-func (r ClientsApiGetOrganizationClientsOverviewRequest) T0(t0 string) ClientsApiGetOrganizationClientsOverviewRequest {
+func (r ClientsAPIGetOrganizationClientsOverviewRequest) T0(t0 string) ClientsAPIGetOrganizationClientsOverviewRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ClientsApiGetOrganizationClientsOverviewRequest) T1(t1 string) ClientsApiGetOrganizationClientsOverviewRequest {
+func (r ClientsAPIGetOrganizationClientsOverviewRequest) T1(t1 string) ClientsAPIGetOrganizationClientsOverviewRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r ClientsApiGetOrganizationClientsOverviewRequest) Timespan(timespan float32) ClientsApiGetOrganizationClientsOverviewRequest {
+func (r ClientsAPIGetOrganizationClientsOverviewRequest) Timespan(timespan float32) ClientsAPIGetOrganizationClientsOverviewRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r ClientsApiGetOrganizationClientsOverviewRequest) Execute() (*GetOrganizationClientsOverview200Response, *http.Response, error) {
+func (r ClientsAPIGetOrganizationClientsOverviewRequest) Execute() (*GetOrganizationClientsOverview200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationClientsOverviewExecute(r)
 }
 
@@ -3369,10 +3369,10 @@ Return summary information around client data usage (in mb) across the given org
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ClientsApiGetOrganizationClientsOverviewRequest
+ @return ClientsAPIGetOrganizationClientsOverviewRequest
 */
-func (a *ClientsApiService) GetOrganizationClientsOverview(ctx context.Context, organizationId string) ClientsApiGetOrganizationClientsOverviewRequest {
-	return ClientsApiGetOrganizationClientsOverviewRequest{
+func (a *ClientsAPIService) GetOrganizationClientsOverview(ctx context.Context, organizationId string) ClientsAPIGetOrganizationClientsOverviewRequest {
+	return ClientsAPIGetOrganizationClientsOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -3381,7 +3381,7 @@ func (a *ClientsApiService) GetOrganizationClientsOverview(ctx context.Context, 
 
 // Execute executes the request
 //  @return GetOrganizationClientsOverview200Response
-func (a *ClientsApiService) GetOrganizationClientsOverviewExecute(r ClientsApiGetOrganizationClientsOverviewRequest) (*GetOrganizationClientsOverview200Response, *http.Response, error) {
+func (a *ClientsAPIService) GetOrganizationClientsOverviewExecute(r ClientsAPIGetOrganizationClientsOverviewRequest) (*GetOrganizationClientsOverview200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3389,7 +3389,7 @@ func (a *ClientsApiService) GetOrganizationClientsOverviewExecute(r ClientsApiGe
 		localVarReturnValue  *GetOrganizationClientsOverview200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.GetOrganizationClientsOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.GetOrganizationClientsOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3478,9 +3478,9 @@ func (a *ClientsApiService) GetOrganizationClientsOverviewExecute(r ClientsApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ClientsApiGetOrganizationClientsSearchRequest struct {
+type ClientsAPIGetOrganizationClientsSearchRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	organizationId string
 	mac *string
 	perPage *int32
@@ -3489,30 +3489,30 @@ type ClientsApiGetOrganizationClientsSearchRequest struct {
 }
 
 // The MAC address of the client. Required.
-func (r ClientsApiGetOrganizationClientsSearchRequest) Mac(mac string) ClientsApiGetOrganizationClientsSearchRequest {
+func (r ClientsAPIGetOrganizationClientsSearchRequest) Mac(mac string) ClientsAPIGetOrganizationClientsSearchRequest {
 	r.mac = &mac
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 5. Default is 5.
-func (r ClientsApiGetOrganizationClientsSearchRequest) PerPage(perPage int32) ClientsApiGetOrganizationClientsSearchRequest {
+func (r ClientsAPIGetOrganizationClientsSearchRequest) PerPage(perPage int32) ClientsAPIGetOrganizationClientsSearchRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ClientsApiGetOrganizationClientsSearchRequest) StartingAfter(startingAfter string) ClientsApiGetOrganizationClientsSearchRequest {
+func (r ClientsAPIGetOrganizationClientsSearchRequest) StartingAfter(startingAfter string) ClientsAPIGetOrganizationClientsSearchRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ClientsApiGetOrganizationClientsSearchRequest) EndingBefore(endingBefore string) ClientsApiGetOrganizationClientsSearchRequest {
+func (r ClientsAPIGetOrganizationClientsSearchRequest) EndingBefore(endingBefore string) ClientsAPIGetOrganizationClientsSearchRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r ClientsApiGetOrganizationClientsSearchRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ClientsAPIGetOrganizationClientsSearchRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationClientsSearchExecute(r)
 }
 
@@ -3523,10 +3523,10 @@ Return the client details in an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ClientsApiGetOrganizationClientsSearchRequest
+ @return ClientsAPIGetOrganizationClientsSearchRequest
 */
-func (a *ClientsApiService) GetOrganizationClientsSearch(ctx context.Context, organizationId string) ClientsApiGetOrganizationClientsSearchRequest {
-	return ClientsApiGetOrganizationClientsSearchRequest{
+func (a *ClientsAPIService) GetOrganizationClientsSearch(ctx context.Context, organizationId string) ClientsAPIGetOrganizationClientsSearchRequest {
+	return ClientsAPIGetOrganizationClientsSearchRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -3535,7 +3535,7 @@ func (a *ClientsApiService) GetOrganizationClientsSearch(ctx context.Context, or
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ClientsApiService) GetOrganizationClientsSearchExecute(r ClientsApiGetOrganizationClientsSearchRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ClientsAPIService) GetOrganizationClientsSearchExecute(r ClientsAPIGetOrganizationClientsSearchRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3543,7 +3543,7 @@ func (a *ClientsApiService) GetOrganizationClientsSearchExecute(r ClientsApiGetO
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.GetOrganizationClientsSearch")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.GetOrganizationClientsSearch")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3636,9 +3636,9 @@ func (a *ClientsApiService) GetOrganizationClientsSearchExecute(r ClientsApiGetO
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ClientsApiGetOrganizationSummaryTopClientsByUsageRequest struct {
+type ClientsAPIGetOrganizationSummaryTopClientsByUsageRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -3646,24 +3646,24 @@ type ClientsApiGetOrganizationSummaryTopClientsByUsageRequest struct {
 }
 
 // The beginning of the timespan for the data.
-func (r ClientsApiGetOrganizationSummaryTopClientsByUsageRequest) T0(t0 string) ClientsApiGetOrganizationSummaryTopClientsByUsageRequest {
+func (r ClientsAPIGetOrganizationSummaryTopClientsByUsageRequest) T0(t0 string) ClientsAPIGetOrganizationSummaryTopClientsByUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ClientsApiGetOrganizationSummaryTopClientsByUsageRequest) T1(t1 string) ClientsApiGetOrganizationSummaryTopClientsByUsageRequest {
+func (r ClientsAPIGetOrganizationSummaryTopClientsByUsageRequest) T1(t1 string) ClientsAPIGetOrganizationSummaryTopClientsByUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r ClientsApiGetOrganizationSummaryTopClientsByUsageRequest) Timespan(timespan float32) ClientsApiGetOrganizationSummaryTopClientsByUsageRequest {
+func (r ClientsAPIGetOrganizationSummaryTopClientsByUsageRequest) Timespan(timespan float32) ClientsAPIGetOrganizationSummaryTopClientsByUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r ClientsApiGetOrganizationSummaryTopClientsByUsageRequest) Execute() ([]GetOrganizationSummaryTopClientsByUsage200ResponseInner, *http.Response, error) {
+func (r ClientsAPIGetOrganizationSummaryTopClientsByUsageRequest) Execute() ([]GetOrganizationSummaryTopClientsByUsage200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSummaryTopClientsByUsageExecute(r)
 }
 
@@ -3674,10 +3674,10 @@ Return metrics for organization's top 10 clients by data usage (in mb) over give
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ClientsApiGetOrganizationSummaryTopClientsByUsageRequest
+ @return ClientsAPIGetOrganizationSummaryTopClientsByUsageRequest
 */
-func (a *ClientsApiService) GetOrganizationSummaryTopClientsByUsage(ctx context.Context, organizationId string) ClientsApiGetOrganizationSummaryTopClientsByUsageRequest {
-	return ClientsApiGetOrganizationSummaryTopClientsByUsageRequest{
+func (a *ClientsAPIService) GetOrganizationSummaryTopClientsByUsage(ctx context.Context, organizationId string) ClientsAPIGetOrganizationSummaryTopClientsByUsageRequest {
+	return ClientsAPIGetOrganizationSummaryTopClientsByUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -3686,7 +3686,7 @@ func (a *ClientsApiService) GetOrganizationSummaryTopClientsByUsage(ctx context.
 
 // Execute executes the request
 //  @return []GetOrganizationSummaryTopClientsByUsage200ResponseInner
-func (a *ClientsApiService) GetOrganizationSummaryTopClientsByUsageExecute(r ClientsApiGetOrganizationSummaryTopClientsByUsageRequest) ([]GetOrganizationSummaryTopClientsByUsage200ResponseInner, *http.Response, error) {
+func (a *ClientsAPIService) GetOrganizationSummaryTopClientsByUsageExecute(r ClientsAPIGetOrganizationSummaryTopClientsByUsageRequest) ([]GetOrganizationSummaryTopClientsByUsage200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3694,7 +3694,7 @@ func (a *ClientsApiService) GetOrganizationSummaryTopClientsByUsageExecute(r Cli
 		localVarReturnValue  []GetOrganizationSummaryTopClientsByUsage200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.GetOrganizationSummaryTopClientsByUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.GetOrganizationSummaryTopClientsByUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3783,9 +3783,9 @@ func (a *ClientsApiService) GetOrganizationSummaryTopClientsByUsageExecute(r Cli
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ClientsApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest struct {
+type ClientsAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -3793,24 +3793,24 @@ type ClientsApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest struc
 }
 
 // The beginning of the timespan for the data.
-func (r ClientsApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest) T0(t0 string) ClientsApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
+func (r ClientsAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest) T0(t0 string) ClientsAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ClientsApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest) T1(t1 string) ClientsApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
+func (r ClientsAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest) T1(t1 string) ClientsAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r ClientsApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest) Timespan(timespan float32) ClientsApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
+func (r ClientsAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest) Timespan(timespan float32) ClientsAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r ClientsApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest) Execute() ([]GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner, *http.Response, error) {
+func (r ClientsAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest) Execute() ([]GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSummaryTopClientsManufacturersByUsageExecute(r)
 }
 
@@ -3821,10 +3821,10 @@ Return metrics for organization's top clients by data usage (in mb) over given t
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ClientsApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest
+ @return ClientsAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest
 */
-func (a *ClientsApiService) GetOrganizationSummaryTopClientsManufacturersByUsage(ctx context.Context, organizationId string) ClientsApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
-	return ClientsApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest{
+func (a *ClientsAPIService) GetOrganizationSummaryTopClientsManufacturersByUsage(ctx context.Context, organizationId string) ClientsAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
+	return ClientsAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -3833,7 +3833,7 @@ func (a *ClientsApiService) GetOrganizationSummaryTopClientsManufacturersByUsage
 
 // Execute executes the request
 //  @return []GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner
-func (a *ClientsApiService) GetOrganizationSummaryTopClientsManufacturersByUsageExecute(r ClientsApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest) ([]GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner, *http.Response, error) {
+func (a *ClientsAPIService) GetOrganizationSummaryTopClientsManufacturersByUsageExecute(r ClientsAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest) ([]GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3841,7 +3841,7 @@ func (a *ClientsApiService) GetOrganizationSummaryTopClientsManufacturersByUsage
 		localVarReturnValue  []GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.GetOrganizationSummaryTopClientsManufacturersByUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.GetOrganizationSummaryTopClientsManufacturersByUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3930,19 +3930,19 @@ func (a *ClientsApiService) GetOrganizationSummaryTopClientsManufacturersByUsage
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ClientsApiProvisionNetworkClientsRequest struct {
+type ClientsAPIProvisionNetworkClientsRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	networkId string
 	provisionNetworkClientsRequest *ProvisionNetworkClientsRequest
 }
 
-func (r ClientsApiProvisionNetworkClientsRequest) ProvisionNetworkClientsRequest(provisionNetworkClientsRequest ProvisionNetworkClientsRequest) ClientsApiProvisionNetworkClientsRequest {
+func (r ClientsAPIProvisionNetworkClientsRequest) ProvisionNetworkClientsRequest(provisionNetworkClientsRequest ProvisionNetworkClientsRequest) ClientsAPIProvisionNetworkClientsRequest {
 	r.provisionNetworkClientsRequest = &provisionNetworkClientsRequest
 	return r
 }
 
-func (r ClientsApiProvisionNetworkClientsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ClientsAPIProvisionNetworkClientsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.ProvisionNetworkClientsExecute(r)
 }
 
@@ -3953,10 +3953,10 @@ Provisions a client with a name and policy. Clients can be provisioned before th
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ClientsApiProvisionNetworkClientsRequest
+ @return ClientsAPIProvisionNetworkClientsRequest
 */
-func (a *ClientsApiService) ProvisionNetworkClients(ctx context.Context, networkId string) ClientsApiProvisionNetworkClientsRequest {
-	return ClientsApiProvisionNetworkClientsRequest{
+func (a *ClientsAPIService) ProvisionNetworkClients(ctx context.Context, networkId string) ClientsAPIProvisionNetworkClientsRequest {
+	return ClientsAPIProvisionNetworkClientsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3965,7 +3965,7 @@ func (a *ClientsApiService) ProvisionNetworkClients(ctx context.Context, network
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ClientsApiService) ProvisionNetworkClientsExecute(r ClientsApiProvisionNetworkClientsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ClientsAPIService) ProvisionNetworkClientsExecute(r ClientsAPIProvisionNetworkClientsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -3973,7 +3973,7 @@ func (a *ClientsApiService) ProvisionNetworkClientsExecute(r ClientsApiProvision
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.ProvisionNetworkClients")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.ProvisionNetworkClients")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4058,20 +4058,20 @@ func (a *ClientsApiService) ProvisionNetworkClientsExecute(r ClientsApiProvision
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ClientsApiUpdateNetworkClientPolicyRequest struct {
+type ClientsAPIUpdateNetworkClientPolicyRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	networkId string
 	clientId string
 	updateNetworkClientPolicyRequest *UpdateNetworkClientPolicyRequest
 }
 
-func (r ClientsApiUpdateNetworkClientPolicyRequest) UpdateNetworkClientPolicyRequest(updateNetworkClientPolicyRequest UpdateNetworkClientPolicyRequest) ClientsApiUpdateNetworkClientPolicyRequest {
+func (r ClientsAPIUpdateNetworkClientPolicyRequest) UpdateNetworkClientPolicyRequest(updateNetworkClientPolicyRequest UpdateNetworkClientPolicyRequest) ClientsAPIUpdateNetworkClientPolicyRequest {
 	r.updateNetworkClientPolicyRequest = &updateNetworkClientPolicyRequest
 	return r
 }
 
-func (r ClientsApiUpdateNetworkClientPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ClientsAPIUpdateNetworkClientPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkClientPolicyExecute(r)
 }
 
@@ -4083,10 +4083,10 @@ Update the policy assigned to a client on the network. Clients can be identified
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return ClientsApiUpdateNetworkClientPolicyRequest
+ @return ClientsAPIUpdateNetworkClientPolicyRequest
 */
-func (a *ClientsApiService) UpdateNetworkClientPolicy(ctx context.Context, networkId string, clientId string) ClientsApiUpdateNetworkClientPolicyRequest {
-	return ClientsApiUpdateNetworkClientPolicyRequest{
+func (a *ClientsAPIService) UpdateNetworkClientPolicy(ctx context.Context, networkId string, clientId string) ClientsAPIUpdateNetworkClientPolicyRequest {
+	return ClientsAPIUpdateNetworkClientPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4096,7 +4096,7 @@ func (a *ClientsApiService) UpdateNetworkClientPolicy(ctx context.Context, netwo
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ClientsApiService) UpdateNetworkClientPolicyExecute(r ClientsApiUpdateNetworkClientPolicyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ClientsAPIService) UpdateNetworkClientPolicyExecute(r ClientsAPIUpdateNetworkClientPolicyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -4104,7 +4104,7 @@ func (a *ClientsApiService) UpdateNetworkClientPolicyExecute(r ClientsApiUpdateN
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.UpdateNetworkClientPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.UpdateNetworkClientPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4190,20 +4190,20 @@ func (a *ClientsApiService) UpdateNetworkClientPolicyExecute(r ClientsApiUpdateN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ClientsApiUpdateNetworkClientSplashAuthorizationStatusRequest struct {
+type ClientsAPIUpdateNetworkClientSplashAuthorizationStatusRequest struct {
 	ctx context.Context
-	ApiService *ClientsApiService
+	ApiService *ClientsAPIService
 	networkId string
 	clientId string
 	updateNetworkClientSplashAuthorizationStatusRequest *UpdateNetworkClientSplashAuthorizationStatusRequest
 }
 
-func (r ClientsApiUpdateNetworkClientSplashAuthorizationStatusRequest) UpdateNetworkClientSplashAuthorizationStatusRequest(updateNetworkClientSplashAuthorizationStatusRequest UpdateNetworkClientSplashAuthorizationStatusRequest) ClientsApiUpdateNetworkClientSplashAuthorizationStatusRequest {
+func (r ClientsAPIUpdateNetworkClientSplashAuthorizationStatusRequest) UpdateNetworkClientSplashAuthorizationStatusRequest(updateNetworkClientSplashAuthorizationStatusRequest UpdateNetworkClientSplashAuthorizationStatusRequest) ClientsAPIUpdateNetworkClientSplashAuthorizationStatusRequest {
 	r.updateNetworkClientSplashAuthorizationStatusRequest = &updateNetworkClientSplashAuthorizationStatusRequest
 	return r
 }
 
-func (r ClientsApiUpdateNetworkClientSplashAuthorizationStatusRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ClientsAPIUpdateNetworkClientSplashAuthorizationStatusRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkClientSplashAuthorizationStatusExecute(r)
 }
 
@@ -4215,10 +4215,10 @@ Update a client's splash authorization. Clients can be identified by a client ke
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return ClientsApiUpdateNetworkClientSplashAuthorizationStatusRequest
+ @return ClientsAPIUpdateNetworkClientSplashAuthorizationStatusRequest
 */
-func (a *ClientsApiService) UpdateNetworkClientSplashAuthorizationStatus(ctx context.Context, networkId string, clientId string) ClientsApiUpdateNetworkClientSplashAuthorizationStatusRequest {
-	return ClientsApiUpdateNetworkClientSplashAuthorizationStatusRequest{
+func (a *ClientsAPIService) UpdateNetworkClientSplashAuthorizationStatus(ctx context.Context, networkId string, clientId string) ClientsAPIUpdateNetworkClientSplashAuthorizationStatusRequest {
+	return ClientsAPIUpdateNetworkClientSplashAuthorizationStatusRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4228,7 +4228,7 @@ func (a *ClientsApiService) UpdateNetworkClientSplashAuthorizationStatus(ctx con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ClientsApiService) UpdateNetworkClientSplashAuthorizationStatusExecute(r ClientsApiUpdateNetworkClientSplashAuthorizationStatusRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ClientsAPIService) UpdateNetworkClientSplashAuthorizationStatusExecute(r ClientsAPIUpdateNetworkClientSplashAuthorizationStatusRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -4236,7 +4236,7 @@ func (a *ClientsApiService) UpdateNetworkClientSplashAuthorizationStatusExecute(
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsApiService.UpdateNetworkClientSplashAuthorizationStatus")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientsAPIService.UpdateNetworkClientSplashAuthorizationStatus")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

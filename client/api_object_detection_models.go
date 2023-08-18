@@ -20,16 +20,16 @@ import (
 )
 
 
-// ObjectDetectionModelsApiService ObjectDetectionModelsApi service
-type ObjectDetectionModelsApiService service
+// ObjectDetectionModelsAPIService ObjectDetectionModelsAPI service
+type ObjectDetectionModelsAPIService service
 
-type ObjectDetectionModelsApiGetDeviceCameraSenseObjectDetectionModelsRequest struct {
+type ObjectDetectionModelsAPIGetDeviceCameraSenseObjectDetectionModelsRequest struct {
 	ctx context.Context
-	ApiService *ObjectDetectionModelsApiService
+	ApiService *ObjectDetectionModelsAPIService
 	serial string
 }
 
-func (r ObjectDetectionModelsApiGetDeviceCameraSenseObjectDetectionModelsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ObjectDetectionModelsAPIGetDeviceCameraSenseObjectDetectionModelsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraSenseObjectDetectionModelsExecute(r)
 }
 
@@ -40,10 +40,10 @@ Returns the MV Sense object detection model list for the given camera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return ObjectDetectionModelsApiGetDeviceCameraSenseObjectDetectionModelsRequest
+ @return ObjectDetectionModelsAPIGetDeviceCameraSenseObjectDetectionModelsRequest
 */
-func (a *ObjectDetectionModelsApiService) GetDeviceCameraSenseObjectDetectionModels(ctx context.Context, serial string) ObjectDetectionModelsApiGetDeviceCameraSenseObjectDetectionModelsRequest {
-	return ObjectDetectionModelsApiGetDeviceCameraSenseObjectDetectionModelsRequest{
+func (a *ObjectDetectionModelsAPIService) GetDeviceCameraSenseObjectDetectionModels(ctx context.Context, serial string) ObjectDetectionModelsAPIGetDeviceCameraSenseObjectDetectionModelsRequest {
+	return ObjectDetectionModelsAPIGetDeviceCameraSenseObjectDetectionModelsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -52,7 +52,7 @@ func (a *ObjectDetectionModelsApiService) GetDeviceCameraSenseObjectDetectionMod
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ObjectDetectionModelsApiService) GetDeviceCameraSenseObjectDetectionModelsExecute(r ObjectDetectionModelsApiGetDeviceCameraSenseObjectDetectionModelsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ObjectDetectionModelsAPIService) GetDeviceCameraSenseObjectDetectionModelsExecute(r ObjectDetectionModelsAPIGetDeviceCameraSenseObjectDetectionModelsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *ObjectDetectionModelsApiService) GetDeviceCameraSenseObjectDetectionMod
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ObjectDetectionModelsApiService.GetDeviceCameraSenseObjectDetectionModels")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ObjectDetectionModelsAPIService.GetDeviceCameraSenseObjectDetectionModels")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

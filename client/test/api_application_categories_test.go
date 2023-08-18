@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing ApplicationCategoriesApiService
+Testing ApplicationCategoriesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_ApplicationCategoriesApiService(t *testing.T) {
+func Test_client_ApplicationCategoriesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test ApplicationCategoriesApiService GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories", func(t *testing.T) {
+	t.Run("Test ApplicationCategoriesAPIService GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ApplicationCategoriesApi.GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ApplicationCategoriesAPI.GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_ApplicationCategoriesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ApplicationCategoriesApiService GetNetworkTrafficShapingApplicationCategories", func(t *testing.T) {
+	t.Run("Test ApplicationCategoriesAPIService GetNetworkTrafficShapingApplicationCategories", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ApplicationCategoriesApi.GetNetworkTrafficShapingApplicationCategories(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ApplicationCategoriesAPI.GetNetworkTrafficShapingApplicationCategories(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

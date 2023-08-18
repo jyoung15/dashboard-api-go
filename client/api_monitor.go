@@ -21,22 +21,22 @@ import (
 )
 
 
-// MonitorApiService MonitorApi service
-type MonitorApiService service
+// MonitorAPIService MonitorAPI service
+type MonitorAPIService service
 
-type MonitorApiGenerateDeviceCameraSnapshotRequest struct {
+type MonitorAPIGenerateDeviceCameraSnapshotRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	serial string
 	generateDeviceCameraSnapshotRequest *GenerateDeviceCameraSnapshotRequest
 }
 
-func (r MonitorApiGenerateDeviceCameraSnapshotRequest) GenerateDeviceCameraSnapshotRequest(generateDeviceCameraSnapshotRequest GenerateDeviceCameraSnapshotRequest) MonitorApiGenerateDeviceCameraSnapshotRequest {
+func (r MonitorAPIGenerateDeviceCameraSnapshotRequest) GenerateDeviceCameraSnapshotRequest(generateDeviceCameraSnapshotRequest GenerateDeviceCameraSnapshotRequest) MonitorAPIGenerateDeviceCameraSnapshotRequest {
 	r.generateDeviceCameraSnapshotRequest = &generateDeviceCameraSnapshotRequest
 	return r
 }
 
-func (r MonitorApiGenerateDeviceCameraSnapshotRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGenerateDeviceCameraSnapshotRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GenerateDeviceCameraSnapshotExecute(r)
 }
 
@@ -47,10 +47,10 @@ Generate a snapshot of what the camera sees at the specified time and return a l
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return MonitorApiGenerateDeviceCameraSnapshotRequest
+ @return MonitorAPIGenerateDeviceCameraSnapshotRequest
 */
-func (a *MonitorApiService) GenerateDeviceCameraSnapshot(ctx context.Context, serial string) MonitorApiGenerateDeviceCameraSnapshotRequest {
-	return MonitorApiGenerateDeviceCameraSnapshotRequest{
+func (a *MonitorAPIService) GenerateDeviceCameraSnapshot(ctx context.Context, serial string) MonitorAPIGenerateDeviceCameraSnapshotRequest {
+	return MonitorAPIGenerateDeviceCameraSnapshotRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -59,7 +59,7 @@ func (a *MonitorApiService) GenerateDeviceCameraSnapshot(ctx context.Context, se
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *MonitorApiService) GenerateDeviceCameraSnapshotExecute(r MonitorApiGenerateDeviceCameraSnapshotRequest) (map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GenerateDeviceCameraSnapshotExecute(r MonitorAPIGenerateDeviceCameraSnapshotRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -67,7 +67,7 @@ func (a *MonitorApiService) GenerateDeviceCameraSnapshotExecute(r MonitorApiGene
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GenerateDeviceCameraSnapshot")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GenerateDeviceCameraSnapshot")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -149,12 +149,12 @@ func (a *MonitorApiService) GenerateDeviceCameraSnapshotExecute(r MonitorApiGene
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetAdministeredIdentitiesMeRequest struct {
+type MonitorAPIGetAdministeredIdentitiesMeRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 }
 
-func (r MonitorApiGetAdministeredIdentitiesMeRequest) Execute() (*GetAdministeredIdentitiesMe200Response, *http.Response, error) {
+func (r MonitorAPIGetAdministeredIdentitiesMeRequest) Execute() (*GetAdministeredIdentitiesMe200Response, *http.Response, error) {
 	return r.ApiService.GetAdministeredIdentitiesMeExecute(r)
 }
 
@@ -164,10 +164,10 @@ GetAdministeredIdentitiesMe Returns the identity of the current user.
 Returns the identity of the current user.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MonitorApiGetAdministeredIdentitiesMeRequest
+ @return MonitorAPIGetAdministeredIdentitiesMeRequest
 */
-func (a *MonitorApiService) GetAdministeredIdentitiesMe(ctx context.Context) MonitorApiGetAdministeredIdentitiesMeRequest {
-	return MonitorApiGetAdministeredIdentitiesMeRequest{
+func (a *MonitorAPIService) GetAdministeredIdentitiesMe(ctx context.Context) MonitorAPIGetAdministeredIdentitiesMeRequest {
+	return MonitorAPIGetAdministeredIdentitiesMeRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -175,7 +175,7 @@ func (a *MonitorApiService) GetAdministeredIdentitiesMe(ctx context.Context) Mon
 
 // Execute executes the request
 //  @return GetAdministeredIdentitiesMe200Response
-func (a *MonitorApiService) GetAdministeredIdentitiesMeExecute(r MonitorApiGetAdministeredIdentitiesMeRequest) (*GetAdministeredIdentitiesMe200Response, *http.Response, error) {
+func (a *MonitorAPIService) GetAdministeredIdentitiesMeExecute(r MonitorAPIGetAdministeredIdentitiesMeRequest) (*GetAdministeredIdentitiesMe200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *MonitorApiService) GetAdministeredIdentitiesMeExecute(r MonitorApiGetAd
 		localVarReturnValue  *GetAdministeredIdentitiesMe200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetAdministeredIdentitiesMe")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetAdministeredIdentitiesMe")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -262,13 +262,13 @@ func (a *MonitorApiService) GetAdministeredIdentitiesMeExecute(r MonitorApiGetAd
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetDeviceApplianceDhcpSubnetsRequest struct {
+type MonitorAPIGetDeviceApplianceDhcpSubnetsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	serial string
 }
 
-func (r MonitorApiGetDeviceApplianceDhcpSubnetsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetDeviceApplianceDhcpSubnetsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceApplianceDhcpSubnetsExecute(r)
 }
 
@@ -279,10 +279,10 @@ Return the DHCP subnet information for an appliance
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return MonitorApiGetDeviceApplianceDhcpSubnetsRequest
+ @return MonitorAPIGetDeviceApplianceDhcpSubnetsRequest
 */
-func (a *MonitorApiService) GetDeviceApplianceDhcpSubnets(ctx context.Context, serial string) MonitorApiGetDeviceApplianceDhcpSubnetsRequest {
-	return MonitorApiGetDeviceApplianceDhcpSubnetsRequest{
+func (a *MonitorAPIService) GetDeviceApplianceDhcpSubnets(ctx context.Context, serial string) MonitorAPIGetDeviceApplianceDhcpSubnetsRequest {
+	return MonitorAPIGetDeviceApplianceDhcpSubnetsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -291,7 +291,7 @@ func (a *MonitorApiService) GetDeviceApplianceDhcpSubnets(ctx context.Context, s
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetDeviceApplianceDhcpSubnetsExecute(r MonitorApiGetDeviceApplianceDhcpSubnetsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetDeviceApplianceDhcpSubnetsExecute(r MonitorAPIGetDeviceApplianceDhcpSubnetsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -299,7 +299,7 @@ func (a *MonitorApiService) GetDeviceApplianceDhcpSubnetsExecute(r MonitorApiGet
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetDeviceApplianceDhcpSubnets")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetDeviceApplianceDhcpSubnets")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -379,13 +379,13 @@ func (a *MonitorApiService) GetDeviceApplianceDhcpSubnetsExecute(r MonitorApiGet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetDeviceAppliancePerformanceRequest struct {
+type MonitorAPIGetDeviceAppliancePerformanceRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	serial string
 }
 
-func (r MonitorApiGetDeviceAppliancePerformanceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetDeviceAppliancePerformanceRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceAppliancePerformanceExecute(r)
 }
 
@@ -396,10 +396,10 @@ Return the performance score for a single MX. Only primary MX devices supported.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return MonitorApiGetDeviceAppliancePerformanceRequest
+ @return MonitorAPIGetDeviceAppliancePerformanceRequest
 */
-func (a *MonitorApiService) GetDeviceAppliancePerformance(ctx context.Context, serial string) MonitorApiGetDeviceAppliancePerformanceRequest {
-	return MonitorApiGetDeviceAppliancePerformanceRequest{
+func (a *MonitorAPIService) GetDeviceAppliancePerformance(ctx context.Context, serial string) MonitorAPIGetDeviceAppliancePerformanceRequest {
+	return MonitorAPIGetDeviceAppliancePerformanceRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -408,7 +408,7 @@ func (a *MonitorApiService) GetDeviceAppliancePerformance(ctx context.Context, s
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *MonitorApiService) GetDeviceAppliancePerformanceExecute(r MonitorApiGetDeviceAppliancePerformanceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetDeviceAppliancePerformanceExecute(r MonitorAPIGetDeviceAppliancePerformanceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -416,7 +416,7 @@ func (a *MonitorApiService) GetDeviceAppliancePerformanceExecute(r MonitorApiGet
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetDeviceAppliancePerformance")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetDeviceAppliancePerformance")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -496,13 +496,13 @@ func (a *MonitorApiService) GetDeviceAppliancePerformanceExecute(r MonitorApiGet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetDeviceAppliancePrefixesDelegatedRequest struct {
+type MonitorAPIGetDeviceAppliancePrefixesDelegatedRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	serial string
 }
 
-func (r MonitorApiGetDeviceAppliancePrefixesDelegatedRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetDeviceAppliancePrefixesDelegatedRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceAppliancePrefixesDelegatedExecute(r)
 }
 
@@ -513,10 +513,10 @@ Return current delegated IPv6 prefixes on an appliance.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return MonitorApiGetDeviceAppliancePrefixesDelegatedRequest
+ @return MonitorAPIGetDeviceAppliancePrefixesDelegatedRequest
 */
-func (a *MonitorApiService) GetDeviceAppliancePrefixesDelegated(ctx context.Context, serial string) MonitorApiGetDeviceAppliancePrefixesDelegatedRequest {
-	return MonitorApiGetDeviceAppliancePrefixesDelegatedRequest{
+func (a *MonitorAPIService) GetDeviceAppliancePrefixesDelegated(ctx context.Context, serial string) MonitorAPIGetDeviceAppliancePrefixesDelegatedRequest {
+	return MonitorAPIGetDeviceAppliancePrefixesDelegatedRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -525,7 +525,7 @@ func (a *MonitorApiService) GetDeviceAppliancePrefixesDelegated(ctx context.Cont
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetDeviceAppliancePrefixesDelegatedExecute(r MonitorApiGetDeviceAppliancePrefixesDelegatedRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetDeviceAppliancePrefixesDelegatedExecute(r MonitorAPIGetDeviceAppliancePrefixesDelegatedRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -533,7 +533,7 @@ func (a *MonitorApiService) GetDeviceAppliancePrefixesDelegatedExecute(r Monitor
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetDeviceAppliancePrefixesDelegated")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetDeviceAppliancePrefixesDelegated")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -613,13 +613,13 @@ func (a *MonitorApiService) GetDeviceAppliancePrefixesDelegatedExecute(r Monitor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest struct {
+type MonitorAPIGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	serial string
 }
 
-func (r MonitorApiGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceAppliancePrefixesDelegatedVlanAssignmentsExecute(r)
 }
 
@@ -630,10 +630,10 @@ Return prefixes assigned to all IPv6 enabled VLANs on an appliance.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return MonitorApiGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest
+ @return MonitorAPIGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest
 */
-func (a *MonitorApiService) GetDeviceAppliancePrefixesDelegatedVlanAssignments(ctx context.Context, serial string) MonitorApiGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest {
-	return MonitorApiGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest{
+func (a *MonitorAPIService) GetDeviceAppliancePrefixesDelegatedVlanAssignments(ctx context.Context, serial string) MonitorAPIGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest {
+	return MonitorAPIGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -642,7 +642,7 @@ func (a *MonitorApiService) GetDeviceAppliancePrefixesDelegatedVlanAssignments(c
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetDeviceAppliancePrefixesDelegatedVlanAssignmentsExecute(r MonitorApiGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetDeviceAppliancePrefixesDelegatedVlanAssignmentsExecute(r MonitorAPIGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -650,7 +650,7 @@ func (a *MonitorApiService) GetDeviceAppliancePrefixesDelegatedVlanAssignmentsEx
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetDeviceAppliancePrefixesDelegatedVlanAssignments")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetDeviceAppliancePrefixesDelegatedVlanAssignments")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -730,13 +730,13 @@ func (a *MonitorApiService) GetDeviceAppliancePrefixesDelegatedVlanAssignmentsEx
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetDeviceCameraAnalyticsLiveRequest struct {
+type MonitorAPIGetDeviceCameraAnalyticsLiveRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	serial string
 }
 
-func (r MonitorApiGetDeviceCameraAnalyticsLiveRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetDeviceCameraAnalyticsLiveRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraAnalyticsLiveExecute(r)
 }
 
@@ -747,10 +747,10 @@ Returns live state from camera of analytics zones
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return MonitorApiGetDeviceCameraAnalyticsLiveRequest
+ @return MonitorAPIGetDeviceCameraAnalyticsLiveRequest
 */
-func (a *MonitorApiService) GetDeviceCameraAnalyticsLive(ctx context.Context, serial string) MonitorApiGetDeviceCameraAnalyticsLiveRequest {
-	return MonitorApiGetDeviceCameraAnalyticsLiveRequest{
+func (a *MonitorAPIService) GetDeviceCameraAnalyticsLive(ctx context.Context, serial string) MonitorAPIGetDeviceCameraAnalyticsLiveRequest {
+	return MonitorAPIGetDeviceCameraAnalyticsLiveRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -759,7 +759,7 @@ func (a *MonitorApiService) GetDeviceCameraAnalyticsLive(ctx context.Context, se
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *MonitorApiService) GetDeviceCameraAnalyticsLiveExecute(r MonitorApiGetDeviceCameraAnalyticsLiveRequest) (map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetDeviceCameraAnalyticsLiveExecute(r MonitorAPIGetDeviceCameraAnalyticsLiveRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -767,7 +767,7 @@ func (a *MonitorApiService) GetDeviceCameraAnalyticsLiveExecute(r MonitorApiGetD
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetDeviceCameraAnalyticsLive")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetDeviceCameraAnalyticsLive")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -847,9 +847,9 @@ func (a *MonitorApiService) GetDeviceCameraAnalyticsLiveExecute(r MonitorApiGetD
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetDeviceCameraAnalyticsOverviewRequest struct {
+type MonitorAPIGetDeviceCameraAnalyticsOverviewRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	serial string
 	t0 *string
 	t1 *string
@@ -858,30 +858,30 @@ type MonitorApiGetDeviceCameraAnalyticsOverviewRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
-func (r MonitorApiGetDeviceCameraAnalyticsOverviewRequest) T0(t0 string) MonitorApiGetDeviceCameraAnalyticsOverviewRequest {
+func (r MonitorAPIGetDeviceCameraAnalyticsOverviewRequest) T0(t0 string) MonitorAPIGetDeviceCameraAnalyticsOverviewRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r MonitorApiGetDeviceCameraAnalyticsOverviewRequest) T1(t1 string) MonitorApiGetDeviceCameraAnalyticsOverviewRequest {
+func (r MonitorAPIGetDeviceCameraAnalyticsOverviewRequest) T1(t1 string) MonitorAPIGetDeviceCameraAnalyticsOverviewRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. The default is 1 hour.
-func (r MonitorApiGetDeviceCameraAnalyticsOverviewRequest) Timespan(timespan float32) MonitorApiGetDeviceCameraAnalyticsOverviewRequest {
+func (r MonitorAPIGetDeviceCameraAnalyticsOverviewRequest) Timespan(timespan float32) MonitorAPIGetDeviceCameraAnalyticsOverviewRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // [optional] The object type for which analytics will be retrieved. The default object type is person. The available types are [person, vehicle].
-func (r MonitorApiGetDeviceCameraAnalyticsOverviewRequest) ObjectType(objectType string) MonitorApiGetDeviceCameraAnalyticsOverviewRequest {
+func (r MonitorAPIGetDeviceCameraAnalyticsOverviewRequest) ObjectType(objectType string) MonitorAPIGetDeviceCameraAnalyticsOverviewRequest {
 	r.objectType = &objectType
 	return r
 }
 
-func (r MonitorApiGetDeviceCameraAnalyticsOverviewRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetDeviceCameraAnalyticsOverviewRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraAnalyticsOverviewExecute(r)
 }
 
@@ -892,10 +892,10 @@ Returns an overview of aggregate analytics data for a timespan
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return MonitorApiGetDeviceCameraAnalyticsOverviewRequest
+ @return MonitorAPIGetDeviceCameraAnalyticsOverviewRequest
 */
-func (a *MonitorApiService) GetDeviceCameraAnalyticsOverview(ctx context.Context, serial string) MonitorApiGetDeviceCameraAnalyticsOverviewRequest {
-	return MonitorApiGetDeviceCameraAnalyticsOverviewRequest{
+func (a *MonitorAPIService) GetDeviceCameraAnalyticsOverview(ctx context.Context, serial string) MonitorAPIGetDeviceCameraAnalyticsOverviewRequest {
+	return MonitorAPIGetDeviceCameraAnalyticsOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -904,7 +904,7 @@ func (a *MonitorApiService) GetDeviceCameraAnalyticsOverview(ctx context.Context
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetDeviceCameraAnalyticsOverviewExecute(r MonitorApiGetDeviceCameraAnalyticsOverviewRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetDeviceCameraAnalyticsOverviewExecute(r MonitorAPIGetDeviceCameraAnalyticsOverviewRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -912,7 +912,7 @@ func (a *MonitorApiService) GetDeviceCameraAnalyticsOverviewExecute(r MonitorApi
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetDeviceCameraAnalyticsOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetDeviceCameraAnalyticsOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1004,20 +1004,20 @@ func (a *MonitorApiService) GetDeviceCameraAnalyticsOverviewExecute(r MonitorApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetDeviceCameraAnalyticsRecentRequest struct {
+type MonitorAPIGetDeviceCameraAnalyticsRecentRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	serial string
 	objectType *string
 }
 
 // [optional] The object type for which analytics will be retrieved. The default object type is person. The available types are [person, vehicle].
-func (r MonitorApiGetDeviceCameraAnalyticsRecentRequest) ObjectType(objectType string) MonitorApiGetDeviceCameraAnalyticsRecentRequest {
+func (r MonitorAPIGetDeviceCameraAnalyticsRecentRequest) ObjectType(objectType string) MonitorAPIGetDeviceCameraAnalyticsRecentRequest {
 	r.objectType = &objectType
 	return r
 }
 
-func (r MonitorApiGetDeviceCameraAnalyticsRecentRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetDeviceCameraAnalyticsRecentRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraAnalyticsRecentExecute(r)
 }
 
@@ -1028,10 +1028,10 @@ Returns most recent record for analytics zones
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return MonitorApiGetDeviceCameraAnalyticsRecentRequest
+ @return MonitorAPIGetDeviceCameraAnalyticsRecentRequest
 */
-func (a *MonitorApiService) GetDeviceCameraAnalyticsRecent(ctx context.Context, serial string) MonitorApiGetDeviceCameraAnalyticsRecentRequest {
-	return MonitorApiGetDeviceCameraAnalyticsRecentRequest{
+func (a *MonitorAPIService) GetDeviceCameraAnalyticsRecent(ctx context.Context, serial string) MonitorAPIGetDeviceCameraAnalyticsRecentRequest {
+	return MonitorAPIGetDeviceCameraAnalyticsRecentRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1040,7 +1040,7 @@ func (a *MonitorApiService) GetDeviceCameraAnalyticsRecent(ctx context.Context, 
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetDeviceCameraAnalyticsRecentExecute(r MonitorApiGetDeviceCameraAnalyticsRecentRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetDeviceCameraAnalyticsRecentExecute(r MonitorAPIGetDeviceCameraAnalyticsRecentRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1048,7 +1048,7 @@ func (a *MonitorApiService) GetDeviceCameraAnalyticsRecentExecute(r MonitorApiGe
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetDeviceCameraAnalyticsRecent")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetDeviceCameraAnalyticsRecent")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1131,9 +1131,9 @@ func (a *MonitorApiService) GetDeviceCameraAnalyticsRecentExecute(r MonitorApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetDeviceCameraAnalyticsZoneHistoryRequest struct {
+type MonitorAPIGetDeviceCameraAnalyticsZoneHistoryRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	serial string
 	zoneId string
 	t0 *string
@@ -1144,36 +1144,36 @@ type MonitorApiGetDeviceCameraAnalyticsZoneHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
-func (r MonitorApiGetDeviceCameraAnalyticsZoneHistoryRequest) T0(t0 string) MonitorApiGetDeviceCameraAnalyticsZoneHistoryRequest {
+func (r MonitorAPIGetDeviceCameraAnalyticsZoneHistoryRequest) T0(t0 string) MonitorAPIGetDeviceCameraAnalyticsZoneHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 14 hours after t0.
-func (r MonitorApiGetDeviceCameraAnalyticsZoneHistoryRequest) T1(t1 string) MonitorApiGetDeviceCameraAnalyticsZoneHistoryRequest {
+func (r MonitorAPIGetDeviceCameraAnalyticsZoneHistoryRequest) T1(t1 string) MonitorAPIGetDeviceCameraAnalyticsZoneHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 14 hours. The default is 1 hour.
-func (r MonitorApiGetDeviceCameraAnalyticsZoneHistoryRequest) Timespan(timespan float32) MonitorApiGetDeviceCameraAnalyticsZoneHistoryRequest {
+func (r MonitorAPIGetDeviceCameraAnalyticsZoneHistoryRequest) Timespan(timespan float32) MonitorAPIGetDeviceCameraAnalyticsZoneHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 60. The default is 60.
-func (r MonitorApiGetDeviceCameraAnalyticsZoneHistoryRequest) Resolution(resolution int32) MonitorApiGetDeviceCameraAnalyticsZoneHistoryRequest {
+func (r MonitorAPIGetDeviceCameraAnalyticsZoneHistoryRequest) Resolution(resolution int32) MonitorAPIGetDeviceCameraAnalyticsZoneHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // [optional] The object type for which analytics will be retrieved. The default object type is person. The available types are [person, vehicle].
-func (r MonitorApiGetDeviceCameraAnalyticsZoneHistoryRequest) ObjectType(objectType string) MonitorApiGetDeviceCameraAnalyticsZoneHistoryRequest {
+func (r MonitorAPIGetDeviceCameraAnalyticsZoneHistoryRequest) ObjectType(objectType string) MonitorAPIGetDeviceCameraAnalyticsZoneHistoryRequest {
 	r.objectType = &objectType
 	return r
 }
 
-func (r MonitorApiGetDeviceCameraAnalyticsZoneHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetDeviceCameraAnalyticsZoneHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraAnalyticsZoneHistoryExecute(r)
 }
 
@@ -1185,10 +1185,10 @@ Return historical records for analytic zones
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param zoneId Zone ID
- @return MonitorApiGetDeviceCameraAnalyticsZoneHistoryRequest
+ @return MonitorAPIGetDeviceCameraAnalyticsZoneHistoryRequest
 */
-func (a *MonitorApiService) GetDeviceCameraAnalyticsZoneHistory(ctx context.Context, serial string, zoneId string) MonitorApiGetDeviceCameraAnalyticsZoneHistoryRequest {
-	return MonitorApiGetDeviceCameraAnalyticsZoneHistoryRequest{
+func (a *MonitorAPIService) GetDeviceCameraAnalyticsZoneHistory(ctx context.Context, serial string, zoneId string) MonitorAPIGetDeviceCameraAnalyticsZoneHistoryRequest {
+	return MonitorAPIGetDeviceCameraAnalyticsZoneHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1198,7 +1198,7 @@ func (a *MonitorApiService) GetDeviceCameraAnalyticsZoneHistory(ctx context.Cont
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetDeviceCameraAnalyticsZoneHistoryExecute(r MonitorApiGetDeviceCameraAnalyticsZoneHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetDeviceCameraAnalyticsZoneHistoryExecute(r MonitorAPIGetDeviceCameraAnalyticsZoneHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1206,7 +1206,7 @@ func (a *MonitorApiService) GetDeviceCameraAnalyticsZoneHistoryExecute(r Monitor
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetDeviceCameraAnalyticsZoneHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetDeviceCameraAnalyticsZoneHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1302,13 +1302,13 @@ func (a *MonitorApiService) GetDeviceCameraAnalyticsZoneHistoryExecute(r Monitor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetDeviceCameraAnalyticsZonesRequest struct {
+type MonitorAPIGetDeviceCameraAnalyticsZonesRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	serial string
 }
 
-func (r MonitorApiGetDeviceCameraAnalyticsZonesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetDeviceCameraAnalyticsZonesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraAnalyticsZonesExecute(r)
 }
 
@@ -1319,10 +1319,10 @@ Returns all configured analytic zones for this camera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return MonitorApiGetDeviceCameraAnalyticsZonesRequest
+ @return MonitorAPIGetDeviceCameraAnalyticsZonesRequest
 */
-func (a *MonitorApiService) GetDeviceCameraAnalyticsZones(ctx context.Context, serial string) MonitorApiGetDeviceCameraAnalyticsZonesRequest {
-	return MonitorApiGetDeviceCameraAnalyticsZonesRequest{
+func (a *MonitorAPIService) GetDeviceCameraAnalyticsZones(ctx context.Context, serial string) MonitorAPIGetDeviceCameraAnalyticsZonesRequest {
+	return MonitorAPIGetDeviceCameraAnalyticsZonesRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1331,7 +1331,7 @@ func (a *MonitorApiService) GetDeviceCameraAnalyticsZones(ctx context.Context, s
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetDeviceCameraAnalyticsZonesExecute(r MonitorApiGetDeviceCameraAnalyticsZonesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetDeviceCameraAnalyticsZonesExecute(r MonitorAPIGetDeviceCameraAnalyticsZonesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1339,7 +1339,7 @@ func (a *MonitorApiService) GetDeviceCameraAnalyticsZonesExecute(r MonitorApiGet
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetDeviceCameraAnalyticsZones")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetDeviceCameraAnalyticsZones")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1419,27 +1419,27 @@ func (a *MonitorApiService) GetDeviceCameraAnalyticsZonesExecute(r MonitorApiGet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetDeviceClientsRequest struct {
+type MonitorAPIGetDeviceClientsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	serial string
 	t0 *string
 	timespan *float32
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r MonitorApiGetDeviceClientsRequest) T0(t0 string) MonitorApiGetDeviceClientsRequest {
+func (r MonitorAPIGetDeviceClientsRequest) T0(t0 string) MonitorAPIGetDeviceClientsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r MonitorApiGetDeviceClientsRequest) Timespan(timespan float32) MonitorApiGetDeviceClientsRequest {
+func (r MonitorAPIGetDeviceClientsRequest) Timespan(timespan float32) MonitorAPIGetDeviceClientsRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r MonitorApiGetDeviceClientsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetDeviceClientsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceClientsExecute(r)
 }
 
@@ -1450,10 +1450,10 @@ List the clients of a device, up to a maximum of a month ago. The usage of each 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return MonitorApiGetDeviceClientsRequest
+ @return MonitorAPIGetDeviceClientsRequest
 */
-func (a *MonitorApiService) GetDeviceClients(ctx context.Context, serial string) MonitorApiGetDeviceClientsRequest {
-	return MonitorApiGetDeviceClientsRequest{
+func (a *MonitorAPIService) GetDeviceClients(ctx context.Context, serial string) MonitorAPIGetDeviceClientsRequest {
+	return MonitorAPIGetDeviceClientsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1462,7 +1462,7 @@ func (a *MonitorApiService) GetDeviceClients(ctx context.Context, serial string)
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetDeviceClientsExecute(r MonitorApiGetDeviceClientsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetDeviceClientsExecute(r MonitorAPIGetDeviceClientsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1470,7 +1470,7 @@ func (a *MonitorApiService) GetDeviceClientsExecute(r MonitorApiGetDeviceClients
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetDeviceClients")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetDeviceClients")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1556,13 +1556,13 @@ func (a *MonitorApiService) GetDeviceClientsExecute(r MonitorApiGetDeviceClients
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetDeviceLldpCdpRequest struct {
+type MonitorAPIGetDeviceLldpCdpRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	serial string
 }
 
-func (r MonitorApiGetDeviceLldpCdpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetDeviceLldpCdpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceLldpCdpExecute(r)
 }
 
@@ -1573,10 +1573,10 @@ List LLDP and CDP information for a device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return MonitorApiGetDeviceLldpCdpRequest
+ @return MonitorAPIGetDeviceLldpCdpRequest
 */
-func (a *MonitorApiService) GetDeviceLldpCdp(ctx context.Context, serial string) MonitorApiGetDeviceLldpCdpRequest {
-	return MonitorApiGetDeviceLldpCdpRequest{
+func (a *MonitorAPIService) GetDeviceLldpCdp(ctx context.Context, serial string) MonitorAPIGetDeviceLldpCdpRequest {
+	return MonitorAPIGetDeviceLldpCdpRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1585,7 +1585,7 @@ func (a *MonitorApiService) GetDeviceLldpCdp(ctx context.Context, serial string)
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *MonitorApiService) GetDeviceLldpCdpExecute(r MonitorApiGetDeviceLldpCdpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetDeviceLldpCdpExecute(r MonitorAPIGetDeviceLldpCdpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1593,7 +1593,7 @@ func (a *MonitorApiService) GetDeviceLldpCdpExecute(r MonitorApiGetDeviceLldpCdp
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetDeviceLldpCdp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetDeviceLldpCdp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1673,9 +1673,9 @@ func (a *MonitorApiService) GetDeviceLldpCdpExecute(r MonitorApiGetDeviceLldpCdp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetDeviceLossAndLatencyHistoryRequest struct {
+type MonitorAPIGetDeviceLossAndLatencyHistoryRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	serial string
 	ip *string
 	t0 *string
@@ -1686,42 +1686,42 @@ type MonitorApiGetDeviceLossAndLatencyHistoryRequest struct {
 }
 
 // The destination IP used to obtain the requested stats. This is required.
-func (r MonitorApiGetDeviceLossAndLatencyHistoryRequest) Ip(ip string) MonitorApiGetDeviceLossAndLatencyHistoryRequest {
+func (r MonitorAPIGetDeviceLossAndLatencyHistoryRequest) Ip(ip string) MonitorAPIGetDeviceLossAndLatencyHistoryRequest {
 	r.ip = &ip
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 60 days from today.
-func (r MonitorApiGetDeviceLossAndLatencyHistoryRequest) T0(t0 string) MonitorApiGetDeviceLossAndLatencyHistoryRequest {
+func (r MonitorAPIGetDeviceLossAndLatencyHistoryRequest) T0(t0 string) MonitorAPIGetDeviceLossAndLatencyHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetDeviceLossAndLatencyHistoryRequest) T1(t1 string) MonitorApiGetDeviceLossAndLatencyHistoryRequest {
+func (r MonitorAPIGetDeviceLossAndLatencyHistoryRequest) T1(t1 string) MonitorAPIGetDeviceLossAndLatencyHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r MonitorApiGetDeviceLossAndLatencyHistoryRequest) Timespan(timespan float32) MonitorApiGetDeviceLossAndLatencyHistoryRequest {
+func (r MonitorAPIGetDeviceLossAndLatencyHistoryRequest) Timespan(timespan float32) MonitorAPIGetDeviceLossAndLatencyHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 60, 600, 3600, 86400. The default is 60.
-func (r MonitorApiGetDeviceLossAndLatencyHistoryRequest) Resolution(resolution int32) MonitorApiGetDeviceLossAndLatencyHistoryRequest {
+func (r MonitorAPIGetDeviceLossAndLatencyHistoryRequest) Resolution(resolution int32) MonitorAPIGetDeviceLossAndLatencyHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // The WAN uplink used to obtain the requested stats. Valid uplinks are wan1, wan2, wan3, cellular. The default is wan1.
-func (r MonitorApiGetDeviceLossAndLatencyHistoryRequest) Uplink(uplink string) MonitorApiGetDeviceLossAndLatencyHistoryRequest {
+func (r MonitorAPIGetDeviceLossAndLatencyHistoryRequest) Uplink(uplink string) MonitorAPIGetDeviceLossAndLatencyHistoryRequest {
 	r.uplink = &uplink
 	return r
 }
 
-func (r MonitorApiGetDeviceLossAndLatencyHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetDeviceLossAndLatencyHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceLossAndLatencyHistoryExecute(r)
 }
 
@@ -1732,10 +1732,10 @@ Get the uplink loss percentage and latency in milliseconds, and goodput in kilob
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return MonitorApiGetDeviceLossAndLatencyHistoryRequest
+ @return MonitorAPIGetDeviceLossAndLatencyHistoryRequest
 */
-func (a *MonitorApiService) GetDeviceLossAndLatencyHistory(ctx context.Context, serial string) MonitorApiGetDeviceLossAndLatencyHistoryRequest {
-	return MonitorApiGetDeviceLossAndLatencyHistoryRequest{
+func (a *MonitorAPIService) GetDeviceLossAndLatencyHistory(ctx context.Context, serial string) MonitorAPIGetDeviceLossAndLatencyHistoryRequest {
+	return MonitorAPIGetDeviceLossAndLatencyHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1744,7 +1744,7 @@ func (a *MonitorApiService) GetDeviceLossAndLatencyHistory(ctx context.Context, 
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetDeviceLossAndLatencyHistoryExecute(r MonitorApiGetDeviceLossAndLatencyHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetDeviceLossAndLatencyHistoryExecute(r MonitorAPIGetDeviceLossAndLatencyHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1752,7 +1752,7 @@ func (a *MonitorApiService) GetDeviceLossAndLatencyHistoryExecute(r MonitorApiGe
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetDeviceLossAndLatencyHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetDeviceLossAndLatencyHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1851,27 +1851,27 @@ func (a *MonitorApiService) GetDeviceLossAndLatencyHistoryExecute(r MonitorApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetDeviceSwitchPortsStatusesRequest struct {
+type MonitorAPIGetDeviceSwitchPortsStatusesRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	serial string
 	t0 *string
 	timespan *float32
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r MonitorApiGetDeviceSwitchPortsStatusesRequest) T0(t0 string) MonitorApiGetDeviceSwitchPortsStatusesRequest {
+func (r MonitorAPIGetDeviceSwitchPortsStatusesRequest) T0(t0 string) MonitorAPIGetDeviceSwitchPortsStatusesRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r MonitorApiGetDeviceSwitchPortsStatusesRequest) Timespan(timespan float32) MonitorApiGetDeviceSwitchPortsStatusesRequest {
+func (r MonitorAPIGetDeviceSwitchPortsStatusesRequest) Timespan(timespan float32) MonitorAPIGetDeviceSwitchPortsStatusesRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r MonitorApiGetDeviceSwitchPortsStatusesRequest) Execute() ([]GetDeviceSwitchPortsStatuses200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetDeviceSwitchPortsStatusesRequest) Execute() ([]GetDeviceSwitchPortsStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetDeviceSwitchPortsStatusesExecute(r)
 }
 
@@ -1882,10 +1882,10 @@ Return the status for all the ports of a switch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return MonitorApiGetDeviceSwitchPortsStatusesRequest
+ @return MonitorAPIGetDeviceSwitchPortsStatusesRequest
 */
-func (a *MonitorApiService) GetDeviceSwitchPortsStatuses(ctx context.Context, serial string) MonitorApiGetDeviceSwitchPortsStatusesRequest {
-	return MonitorApiGetDeviceSwitchPortsStatusesRequest{
+func (a *MonitorAPIService) GetDeviceSwitchPortsStatuses(ctx context.Context, serial string) MonitorAPIGetDeviceSwitchPortsStatusesRequest {
+	return MonitorAPIGetDeviceSwitchPortsStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1894,7 +1894,7 @@ func (a *MonitorApiService) GetDeviceSwitchPortsStatuses(ctx context.Context, se
 
 // Execute executes the request
 //  @return []GetDeviceSwitchPortsStatuses200ResponseInner
-func (a *MonitorApiService) GetDeviceSwitchPortsStatusesExecute(r MonitorApiGetDeviceSwitchPortsStatusesRequest) ([]GetDeviceSwitchPortsStatuses200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetDeviceSwitchPortsStatusesExecute(r MonitorAPIGetDeviceSwitchPortsStatusesRequest) ([]GetDeviceSwitchPortsStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1902,7 +1902,7 @@ func (a *MonitorApiService) GetDeviceSwitchPortsStatusesExecute(r MonitorApiGetD
 		localVarReturnValue  []GetDeviceSwitchPortsStatuses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetDeviceSwitchPortsStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetDeviceSwitchPortsStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1988,27 +1988,27 @@ func (a *MonitorApiService) GetDeviceSwitchPortsStatusesExecute(r MonitorApiGetD
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetDeviceSwitchPortsStatusesPacketsRequest struct {
+type MonitorAPIGetDeviceSwitchPortsStatusesPacketsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	serial string
 	t0 *string
 	timespan *float32
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 1 day from today.
-func (r MonitorApiGetDeviceSwitchPortsStatusesPacketsRequest) T0(t0 string) MonitorApiGetDeviceSwitchPortsStatusesPacketsRequest {
+func (r MonitorAPIGetDeviceSwitchPortsStatusesPacketsRequest) T0(t0 string) MonitorAPIGetDeviceSwitchPortsStatusesPacketsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 1 day. The default is 1 day.
-func (r MonitorApiGetDeviceSwitchPortsStatusesPacketsRequest) Timespan(timespan float32) MonitorApiGetDeviceSwitchPortsStatusesPacketsRequest {
+func (r MonitorAPIGetDeviceSwitchPortsStatusesPacketsRequest) Timespan(timespan float32) MonitorAPIGetDeviceSwitchPortsStatusesPacketsRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r MonitorApiGetDeviceSwitchPortsStatusesPacketsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetDeviceSwitchPortsStatusesPacketsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceSwitchPortsStatusesPacketsExecute(r)
 }
 
@@ -2019,10 +2019,10 @@ Return the packet counters for all the ports of a switch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return MonitorApiGetDeviceSwitchPortsStatusesPacketsRequest
+ @return MonitorAPIGetDeviceSwitchPortsStatusesPacketsRequest
 */
-func (a *MonitorApiService) GetDeviceSwitchPortsStatusesPackets(ctx context.Context, serial string) MonitorApiGetDeviceSwitchPortsStatusesPacketsRequest {
-	return MonitorApiGetDeviceSwitchPortsStatusesPacketsRequest{
+func (a *MonitorAPIService) GetDeviceSwitchPortsStatusesPackets(ctx context.Context, serial string) MonitorAPIGetDeviceSwitchPortsStatusesPacketsRequest {
+	return MonitorAPIGetDeviceSwitchPortsStatusesPacketsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -2031,7 +2031,7 @@ func (a *MonitorApiService) GetDeviceSwitchPortsStatusesPackets(ctx context.Cont
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetDeviceSwitchPortsStatusesPacketsExecute(r MonitorApiGetDeviceSwitchPortsStatusesPacketsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetDeviceSwitchPortsStatusesPacketsExecute(r MonitorAPIGetDeviceSwitchPortsStatusesPacketsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2039,7 +2039,7 @@ func (a *MonitorApiService) GetDeviceSwitchPortsStatusesPacketsExecute(r Monitor
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetDeviceSwitchPortsStatusesPackets")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetDeviceSwitchPortsStatusesPackets")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2125,9 +2125,9 @@ func (a *MonitorApiService) GetDeviceSwitchPortsStatusesPacketsExecute(r Monitor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetDeviceWirelessConnectionStatsRequest struct {
+type MonitorAPIGetDeviceWirelessConnectionStatsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	serial string
 	t0 *string
 	t1 *string
@@ -2139,48 +2139,48 @@ type MonitorApiGetDeviceWirelessConnectionStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r MonitorApiGetDeviceWirelessConnectionStatsRequest) T0(t0 string) MonitorApiGetDeviceWirelessConnectionStatsRequest {
+func (r MonitorAPIGetDeviceWirelessConnectionStatsRequest) T0(t0 string) MonitorAPIGetDeviceWirelessConnectionStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r MonitorApiGetDeviceWirelessConnectionStatsRequest) T1(t1 string) MonitorApiGetDeviceWirelessConnectionStatsRequest {
+func (r MonitorAPIGetDeviceWirelessConnectionStatsRequest) T1(t1 string) MonitorAPIGetDeviceWirelessConnectionStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r MonitorApiGetDeviceWirelessConnectionStatsRequest) Timespan(timespan float32) MonitorApiGetDeviceWirelessConnectionStatsRequest {
+func (r MonitorAPIGetDeviceWirelessConnectionStatsRequest) Timespan(timespan float32) MonitorAPIGetDeviceWirelessConnectionStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r MonitorApiGetDeviceWirelessConnectionStatsRequest) Band(band string) MonitorApiGetDeviceWirelessConnectionStatsRequest {
+func (r MonitorAPIGetDeviceWirelessConnectionStatsRequest) Band(band string) MonitorAPIGetDeviceWirelessConnectionStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r MonitorApiGetDeviceWirelessConnectionStatsRequest) Ssid(ssid int32) MonitorApiGetDeviceWirelessConnectionStatsRequest {
+func (r MonitorAPIGetDeviceWirelessConnectionStatsRequest) Ssid(ssid int32) MonitorAPIGetDeviceWirelessConnectionStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r MonitorApiGetDeviceWirelessConnectionStatsRequest) Vlan(vlan int32) MonitorApiGetDeviceWirelessConnectionStatsRequest {
+func (r MonitorAPIGetDeviceWirelessConnectionStatsRequest) Vlan(vlan int32) MonitorAPIGetDeviceWirelessConnectionStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r MonitorApiGetDeviceWirelessConnectionStatsRequest) ApTag(apTag string) MonitorApiGetDeviceWirelessConnectionStatsRequest {
+func (r MonitorAPIGetDeviceWirelessConnectionStatsRequest) ApTag(apTag string) MonitorAPIGetDeviceWirelessConnectionStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
-func (r MonitorApiGetDeviceWirelessConnectionStatsRequest) Execute() (*GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
+func (r MonitorAPIGetDeviceWirelessConnectionStatsRequest) Execute() (*GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceWirelessConnectionStatsExecute(r)
 }
 
@@ -2191,10 +2191,10 @@ Aggregated connectivity info for a given AP on this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return MonitorApiGetDeviceWirelessConnectionStatsRequest
+ @return MonitorAPIGetDeviceWirelessConnectionStatsRequest
 */
-func (a *MonitorApiService) GetDeviceWirelessConnectionStats(ctx context.Context, serial string) MonitorApiGetDeviceWirelessConnectionStatsRequest {
-	return MonitorApiGetDeviceWirelessConnectionStatsRequest{
+func (a *MonitorAPIService) GetDeviceWirelessConnectionStats(ctx context.Context, serial string) MonitorAPIGetDeviceWirelessConnectionStatsRequest {
+	return MonitorAPIGetDeviceWirelessConnectionStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -2203,7 +2203,7 @@ func (a *MonitorApiService) GetDeviceWirelessConnectionStats(ctx context.Context
 
 // Execute executes the request
 //  @return GetDeviceWirelessConnectionStats200Response
-func (a *MonitorApiService) GetDeviceWirelessConnectionStatsExecute(r MonitorApiGetDeviceWirelessConnectionStatsRequest) (*GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
+func (a *MonitorAPIService) GetDeviceWirelessConnectionStatsExecute(r MonitorAPIGetDeviceWirelessConnectionStatsRequest) (*GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2211,7 +2211,7 @@ func (a *MonitorApiService) GetDeviceWirelessConnectionStatsExecute(r MonitorApi
 		localVarReturnValue  *GetDeviceWirelessConnectionStats200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetDeviceWirelessConnectionStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetDeviceWirelessConnectionStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2312,9 +2312,9 @@ func (a *MonitorApiService) GetDeviceWirelessConnectionStatsExecute(r MonitorApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetDeviceWirelessLatencyStatsRequest struct {
+type MonitorAPIGetDeviceWirelessLatencyStatsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	serial string
 	t0 *string
 	t1 *string
@@ -2327,54 +2327,54 @@ type MonitorApiGetDeviceWirelessLatencyStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r MonitorApiGetDeviceWirelessLatencyStatsRequest) T0(t0 string) MonitorApiGetDeviceWirelessLatencyStatsRequest {
+func (r MonitorAPIGetDeviceWirelessLatencyStatsRequest) T0(t0 string) MonitorAPIGetDeviceWirelessLatencyStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r MonitorApiGetDeviceWirelessLatencyStatsRequest) T1(t1 string) MonitorApiGetDeviceWirelessLatencyStatsRequest {
+func (r MonitorAPIGetDeviceWirelessLatencyStatsRequest) T1(t1 string) MonitorAPIGetDeviceWirelessLatencyStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r MonitorApiGetDeviceWirelessLatencyStatsRequest) Timespan(timespan float32) MonitorApiGetDeviceWirelessLatencyStatsRequest {
+func (r MonitorAPIGetDeviceWirelessLatencyStatsRequest) Timespan(timespan float32) MonitorAPIGetDeviceWirelessLatencyStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r MonitorApiGetDeviceWirelessLatencyStatsRequest) Band(band string) MonitorApiGetDeviceWirelessLatencyStatsRequest {
+func (r MonitorAPIGetDeviceWirelessLatencyStatsRequest) Band(band string) MonitorAPIGetDeviceWirelessLatencyStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r MonitorApiGetDeviceWirelessLatencyStatsRequest) Ssid(ssid int32) MonitorApiGetDeviceWirelessLatencyStatsRequest {
+func (r MonitorAPIGetDeviceWirelessLatencyStatsRequest) Ssid(ssid int32) MonitorAPIGetDeviceWirelessLatencyStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r MonitorApiGetDeviceWirelessLatencyStatsRequest) Vlan(vlan int32) MonitorApiGetDeviceWirelessLatencyStatsRequest {
+func (r MonitorAPIGetDeviceWirelessLatencyStatsRequest) Vlan(vlan int32) MonitorAPIGetDeviceWirelessLatencyStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r MonitorApiGetDeviceWirelessLatencyStatsRequest) ApTag(apTag string) MonitorApiGetDeviceWirelessLatencyStatsRequest {
+func (r MonitorAPIGetDeviceWirelessLatencyStatsRequest) ApTag(apTag string) MonitorAPIGetDeviceWirelessLatencyStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Partial selection: If present, this call will return only the selected fields of [\&quot;rawDistribution\&quot;, \&quot;avg\&quot;]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
-func (r MonitorApiGetDeviceWirelessLatencyStatsRequest) Fields(fields string) MonitorApiGetDeviceWirelessLatencyStatsRequest {
+func (r MonitorAPIGetDeviceWirelessLatencyStatsRequest) Fields(fields string) MonitorAPIGetDeviceWirelessLatencyStatsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r MonitorApiGetDeviceWirelessLatencyStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetDeviceWirelessLatencyStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceWirelessLatencyStatsExecute(r)
 }
 
@@ -2385,10 +2385,10 @@ Aggregated latency info for a given AP on this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return MonitorApiGetDeviceWirelessLatencyStatsRequest
+ @return MonitorAPIGetDeviceWirelessLatencyStatsRequest
 */
-func (a *MonitorApiService) GetDeviceWirelessLatencyStats(ctx context.Context, serial string) MonitorApiGetDeviceWirelessLatencyStatsRequest {
-	return MonitorApiGetDeviceWirelessLatencyStatsRequest{
+func (a *MonitorAPIService) GetDeviceWirelessLatencyStats(ctx context.Context, serial string) MonitorAPIGetDeviceWirelessLatencyStatsRequest {
+	return MonitorAPIGetDeviceWirelessLatencyStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -2397,7 +2397,7 @@ func (a *MonitorApiService) GetDeviceWirelessLatencyStats(ctx context.Context, s
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *MonitorApiService) GetDeviceWirelessLatencyStatsExecute(r MonitorApiGetDeviceWirelessLatencyStatsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetDeviceWirelessLatencyStatsExecute(r MonitorAPIGetDeviceWirelessLatencyStatsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2405,7 +2405,7 @@ func (a *MonitorApiService) GetDeviceWirelessLatencyStatsExecute(r MonitorApiGet
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetDeviceWirelessLatencyStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetDeviceWirelessLatencyStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2509,13 +2509,13 @@ func (a *MonitorApiService) GetDeviceWirelessLatencyStatsExecute(r MonitorApiGet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetDeviceWirelessStatusRequest struct {
+type MonitorAPIGetDeviceWirelessStatusRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	serial string
 }
 
-func (r MonitorApiGetDeviceWirelessStatusRequest) Execute() (*GetDeviceWirelessStatus200Response, *http.Response, error) {
+func (r MonitorAPIGetDeviceWirelessStatusRequest) Execute() (*GetDeviceWirelessStatus200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceWirelessStatusExecute(r)
 }
 
@@ -2526,10 +2526,10 @@ Return the SSID statuses of an access point
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return MonitorApiGetDeviceWirelessStatusRequest
+ @return MonitorAPIGetDeviceWirelessStatusRequest
 */
-func (a *MonitorApiService) GetDeviceWirelessStatus(ctx context.Context, serial string) MonitorApiGetDeviceWirelessStatusRequest {
-	return MonitorApiGetDeviceWirelessStatusRequest{
+func (a *MonitorAPIService) GetDeviceWirelessStatus(ctx context.Context, serial string) MonitorAPIGetDeviceWirelessStatusRequest {
+	return MonitorAPIGetDeviceWirelessStatusRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -2538,7 +2538,7 @@ func (a *MonitorApiService) GetDeviceWirelessStatus(ctx context.Context, serial 
 
 // Execute executes the request
 //  @return GetDeviceWirelessStatus200Response
-func (a *MonitorApiService) GetDeviceWirelessStatusExecute(r MonitorApiGetDeviceWirelessStatusRequest) (*GetDeviceWirelessStatus200Response, *http.Response, error) {
+func (a *MonitorAPIService) GetDeviceWirelessStatusExecute(r MonitorAPIGetDeviceWirelessStatusRequest) (*GetDeviceWirelessStatus200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2546,7 +2546,7 @@ func (a *MonitorApiService) GetDeviceWirelessStatusExecute(r MonitorApiGetDevice
 		localVarReturnValue  *GetDeviceWirelessStatus200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetDeviceWirelessStatus")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetDeviceWirelessStatus")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2626,9 +2626,9 @@ func (a *MonitorApiService) GetDeviceWirelessStatusExecute(r MonitorApiGetDevice
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkAlertsHistoryRequest struct {
+type MonitorAPIGetNetworkAlertsHistoryRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	perPage *int32
 	startingAfter *string
@@ -2636,24 +2636,24 @@ type MonitorApiGetNetworkAlertsHistoryRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
-func (r MonitorApiGetNetworkAlertsHistoryRequest) PerPage(perPage int32) MonitorApiGetNetworkAlertsHistoryRequest {
+func (r MonitorAPIGetNetworkAlertsHistoryRequest) PerPage(perPage int32) MonitorAPIGetNetworkAlertsHistoryRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkAlertsHistoryRequest) StartingAfter(startingAfter string) MonitorApiGetNetworkAlertsHistoryRequest {
+func (r MonitorAPIGetNetworkAlertsHistoryRequest) StartingAfter(startingAfter string) MonitorAPIGetNetworkAlertsHistoryRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkAlertsHistoryRequest) EndingBefore(endingBefore string) MonitorApiGetNetworkAlertsHistoryRequest {
+func (r MonitorAPIGetNetworkAlertsHistoryRequest) EndingBefore(endingBefore string) MonitorAPIGetNetworkAlertsHistoryRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r MonitorApiGetNetworkAlertsHistoryRequest) Execute() ([]GetNetworkAlertsHistory200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetNetworkAlertsHistoryRequest) Execute() ([]GetNetworkAlertsHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkAlertsHistoryExecute(r)
 }
 
@@ -2664,10 +2664,10 @@ Return the alert history for this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkAlertsHistoryRequest
+ @return MonitorAPIGetNetworkAlertsHistoryRequest
 */
-func (a *MonitorApiService) GetNetworkAlertsHistory(ctx context.Context, networkId string) MonitorApiGetNetworkAlertsHistoryRequest {
-	return MonitorApiGetNetworkAlertsHistoryRequest{
+func (a *MonitorAPIService) GetNetworkAlertsHistory(ctx context.Context, networkId string) MonitorAPIGetNetworkAlertsHistoryRequest {
+	return MonitorAPIGetNetworkAlertsHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2676,7 +2676,7 @@ func (a *MonitorApiService) GetNetworkAlertsHistory(ctx context.Context, network
 
 // Execute executes the request
 //  @return []GetNetworkAlertsHistory200ResponseInner
-func (a *MonitorApiService) GetNetworkAlertsHistoryExecute(r MonitorApiGetNetworkAlertsHistoryRequest) ([]GetNetworkAlertsHistory200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkAlertsHistoryExecute(r MonitorAPIGetNetworkAlertsHistoryRequest) ([]GetNetworkAlertsHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2684,7 +2684,7 @@ func (a *MonitorApiService) GetNetworkAlertsHistoryExecute(r MonitorApiGetNetwor
 		localVarReturnValue  []GetNetworkAlertsHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkAlertsHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkAlertsHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2773,9 +2773,9 @@ func (a *MonitorApiService) GetNetworkAlertsHistoryExecute(r MonitorApiGetNetwor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkApplianceClientSecurityEventsRequest struct {
+type MonitorAPIGetNetworkApplianceClientSecurityEventsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	clientId string
 	t0 *string
@@ -2788,48 +2788,48 @@ type MonitorApiGetNetworkApplianceClientSecurityEventsRequest struct {
 }
 
 // The beginning of the timespan for the data. Data is gathered after the specified t0 value. The maximum lookback period is 791 days from today.
-func (r MonitorApiGetNetworkApplianceClientSecurityEventsRequest) T0(t0 string) MonitorApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r MonitorAPIGetNetworkApplianceClientSecurityEventsRequest) T0(t0 string) MonitorAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 791 days after t0.
-func (r MonitorApiGetNetworkApplianceClientSecurityEventsRequest) T1(t1 string) MonitorApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r MonitorAPIGetNetworkApplianceClientSecurityEventsRequest) T1(t1 string) MonitorAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 791 days. The default is 31 days.
-func (r MonitorApiGetNetworkApplianceClientSecurityEventsRequest) Timespan(timespan float32) MonitorApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r MonitorAPIGetNetworkApplianceClientSecurityEventsRequest) Timespan(timespan float32) MonitorAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
-func (r MonitorApiGetNetworkApplianceClientSecurityEventsRequest) PerPage(perPage int32) MonitorApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r MonitorAPIGetNetworkApplianceClientSecurityEventsRequest) PerPage(perPage int32) MonitorAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkApplianceClientSecurityEventsRequest) StartingAfter(startingAfter string) MonitorApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r MonitorAPIGetNetworkApplianceClientSecurityEventsRequest) StartingAfter(startingAfter string) MonitorAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkApplianceClientSecurityEventsRequest) EndingBefore(endingBefore string) MonitorApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r MonitorAPIGetNetworkApplianceClientSecurityEventsRequest) EndingBefore(endingBefore string) MonitorAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Sorted order of security events based on event detection time. Order options are &#39;ascending&#39; or &#39;descending&#39;. Default is ascending order.
-func (r MonitorApiGetNetworkApplianceClientSecurityEventsRequest) SortOrder(sortOrder string) MonitorApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r MonitorAPIGetNetworkApplianceClientSecurityEventsRequest) SortOrder(sortOrder string) MonitorAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
-func (r MonitorApiGetNetworkApplianceClientSecurityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetNetworkApplianceClientSecurityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceClientSecurityEventsExecute(r)
 }
 
@@ -2841,10 +2841,10 @@ List the security events for a client. Clients can be identified by a client key
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return MonitorApiGetNetworkApplianceClientSecurityEventsRequest
+ @return MonitorAPIGetNetworkApplianceClientSecurityEventsRequest
 */
-func (a *MonitorApiService) GetNetworkApplianceClientSecurityEvents(ctx context.Context, networkId string, clientId string) MonitorApiGetNetworkApplianceClientSecurityEventsRequest {
-	return MonitorApiGetNetworkApplianceClientSecurityEventsRequest{
+func (a *MonitorAPIService) GetNetworkApplianceClientSecurityEvents(ctx context.Context, networkId string, clientId string) MonitorAPIGetNetworkApplianceClientSecurityEventsRequest {
+	return MonitorAPIGetNetworkApplianceClientSecurityEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2854,7 +2854,7 @@ func (a *MonitorApiService) GetNetworkApplianceClientSecurityEvents(ctx context.
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetNetworkApplianceClientSecurityEventsExecute(r MonitorApiGetNetworkApplianceClientSecurityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkApplianceClientSecurityEventsExecute(r MonitorAPIGetNetworkApplianceClientSecurityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2862,7 +2862,7 @@ func (a *MonitorApiService) GetNetworkApplianceClientSecurityEventsExecute(r Mon
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkApplianceClientSecurityEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkApplianceClientSecurityEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2964,9 +2964,9 @@ func (a *MonitorApiService) GetNetworkApplianceClientSecurityEventsExecute(r Mon
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkApplianceSecurityEventsRequest struct {
+type MonitorAPIGetNetworkApplianceSecurityEventsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -2978,48 +2978,48 @@ type MonitorApiGetNetworkApplianceSecurityEventsRequest struct {
 }
 
 // The beginning of the timespan for the data. Data is gathered after the specified t0 value. The maximum lookback period is 365 days from today.
-func (r MonitorApiGetNetworkApplianceSecurityEventsRequest) T0(t0 string) MonitorApiGetNetworkApplianceSecurityEventsRequest {
+func (r MonitorAPIGetNetworkApplianceSecurityEventsRequest) T0(t0 string) MonitorAPIGetNetworkApplianceSecurityEventsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 365 days after t0.
-func (r MonitorApiGetNetworkApplianceSecurityEventsRequest) T1(t1 string) MonitorApiGetNetworkApplianceSecurityEventsRequest {
+func (r MonitorAPIGetNetworkApplianceSecurityEventsRequest) T1(t1 string) MonitorAPIGetNetworkApplianceSecurityEventsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 365 days. The default is 31 days.
-func (r MonitorApiGetNetworkApplianceSecurityEventsRequest) Timespan(timespan float32) MonitorApiGetNetworkApplianceSecurityEventsRequest {
+func (r MonitorAPIGetNetworkApplianceSecurityEventsRequest) Timespan(timespan float32) MonitorAPIGetNetworkApplianceSecurityEventsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
-func (r MonitorApiGetNetworkApplianceSecurityEventsRequest) PerPage(perPage int32) MonitorApiGetNetworkApplianceSecurityEventsRequest {
+func (r MonitorAPIGetNetworkApplianceSecurityEventsRequest) PerPage(perPage int32) MonitorAPIGetNetworkApplianceSecurityEventsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkApplianceSecurityEventsRequest) StartingAfter(startingAfter string) MonitorApiGetNetworkApplianceSecurityEventsRequest {
+func (r MonitorAPIGetNetworkApplianceSecurityEventsRequest) StartingAfter(startingAfter string) MonitorAPIGetNetworkApplianceSecurityEventsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkApplianceSecurityEventsRequest) EndingBefore(endingBefore string) MonitorApiGetNetworkApplianceSecurityEventsRequest {
+func (r MonitorAPIGetNetworkApplianceSecurityEventsRequest) EndingBefore(endingBefore string) MonitorAPIGetNetworkApplianceSecurityEventsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Sorted order of security events based on event detection time. Order options are &#39;ascending&#39; or &#39;descending&#39;. Default is ascending order.
-func (r MonitorApiGetNetworkApplianceSecurityEventsRequest) SortOrder(sortOrder string) MonitorApiGetNetworkApplianceSecurityEventsRequest {
+func (r MonitorAPIGetNetworkApplianceSecurityEventsRequest) SortOrder(sortOrder string) MonitorAPIGetNetworkApplianceSecurityEventsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
-func (r MonitorApiGetNetworkApplianceSecurityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetNetworkApplianceSecurityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceSecurityEventsExecute(r)
 }
 
@@ -3030,10 +3030,10 @@ List the security events for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkApplianceSecurityEventsRequest
+ @return MonitorAPIGetNetworkApplianceSecurityEventsRequest
 */
-func (a *MonitorApiService) GetNetworkApplianceSecurityEvents(ctx context.Context, networkId string) MonitorApiGetNetworkApplianceSecurityEventsRequest {
-	return MonitorApiGetNetworkApplianceSecurityEventsRequest{
+func (a *MonitorAPIService) GetNetworkApplianceSecurityEvents(ctx context.Context, networkId string) MonitorAPIGetNetworkApplianceSecurityEventsRequest {
+	return MonitorAPIGetNetworkApplianceSecurityEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3042,7 +3042,7 @@ func (a *MonitorApiService) GetNetworkApplianceSecurityEvents(ctx context.Contex
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetNetworkApplianceSecurityEventsExecute(r MonitorApiGetNetworkApplianceSecurityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkApplianceSecurityEventsExecute(r MonitorAPIGetNetworkApplianceSecurityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3050,7 +3050,7 @@ func (a *MonitorApiService) GetNetworkApplianceSecurityEventsExecute(r MonitorAp
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkApplianceSecurityEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkApplianceSecurityEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3151,9 +3151,9 @@ func (a *MonitorApiService) GetNetworkApplianceSecurityEventsExecute(r MonitorAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkApplianceUplinksUsageHistoryRequest struct {
+type MonitorAPIGetNetworkApplianceUplinksUsageHistoryRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -3162,30 +3162,30 @@ type MonitorApiGetNetworkApplianceUplinksUsageHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
-func (r MonitorApiGetNetworkApplianceUplinksUsageHistoryRequest) T0(t0 string) MonitorApiGetNetworkApplianceUplinksUsageHistoryRequest {
+func (r MonitorAPIGetNetworkApplianceUplinksUsageHistoryRequest) T0(t0 string) MonitorAPIGetNetworkApplianceUplinksUsageHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetNetworkApplianceUplinksUsageHistoryRequest) T1(t1 string) MonitorApiGetNetworkApplianceUplinksUsageHistoryRequest {
+func (r MonitorAPIGetNetworkApplianceUplinksUsageHistoryRequest) T1(t1 string) MonitorAPIGetNetworkApplianceUplinksUsageHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 10 minutes.
-func (r MonitorApiGetNetworkApplianceUplinksUsageHistoryRequest) Timespan(timespan float32) MonitorApiGetNetworkApplianceUplinksUsageHistoryRequest {
+func (r MonitorAPIGetNetworkApplianceUplinksUsageHistoryRequest) Timespan(timespan float32) MonitorAPIGetNetworkApplianceUplinksUsageHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 60, 300, 600, 1800, 3600, 86400. The default is 60.
-func (r MonitorApiGetNetworkApplianceUplinksUsageHistoryRequest) Resolution(resolution int32) MonitorApiGetNetworkApplianceUplinksUsageHistoryRequest {
+func (r MonitorAPIGetNetworkApplianceUplinksUsageHistoryRequest) Resolution(resolution int32) MonitorAPIGetNetworkApplianceUplinksUsageHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
-func (r MonitorApiGetNetworkApplianceUplinksUsageHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetNetworkApplianceUplinksUsageHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceUplinksUsageHistoryExecute(r)
 }
 
@@ -3196,10 +3196,10 @@ Get the sent and received bytes for each uplink of a network.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkApplianceUplinksUsageHistoryRequest
+ @return MonitorAPIGetNetworkApplianceUplinksUsageHistoryRequest
 */
-func (a *MonitorApiService) GetNetworkApplianceUplinksUsageHistory(ctx context.Context, networkId string) MonitorApiGetNetworkApplianceUplinksUsageHistoryRequest {
-	return MonitorApiGetNetworkApplianceUplinksUsageHistoryRequest{
+func (a *MonitorAPIService) GetNetworkApplianceUplinksUsageHistory(ctx context.Context, networkId string) MonitorAPIGetNetworkApplianceUplinksUsageHistoryRequest {
+	return MonitorAPIGetNetworkApplianceUplinksUsageHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3208,7 +3208,7 @@ func (a *MonitorApiService) GetNetworkApplianceUplinksUsageHistory(ctx context.C
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetNetworkApplianceUplinksUsageHistoryExecute(r MonitorApiGetNetworkApplianceUplinksUsageHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkApplianceUplinksUsageHistoryExecute(r MonitorAPIGetNetworkApplianceUplinksUsageHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3216,7 +3216,7 @@ func (a *MonitorApiService) GetNetworkApplianceUplinksUsageHistoryExecute(r Moni
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkApplianceUplinksUsageHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkApplianceUplinksUsageHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3308,9 +3308,9 @@ func (a *MonitorApiService) GetNetworkApplianceUplinksUsageHistoryExecute(r Moni
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkBluetoothClientRequest struct {
+type MonitorAPIGetNetworkBluetoothClientRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	bluetoothClientId string
 	includeConnectivityHistory *bool
@@ -3318,18 +3318,18 @@ type MonitorApiGetNetworkBluetoothClientRequest struct {
 }
 
 // Include the connectivity history for this client
-func (r MonitorApiGetNetworkBluetoothClientRequest) IncludeConnectivityHistory(includeConnectivityHistory bool) MonitorApiGetNetworkBluetoothClientRequest {
+func (r MonitorAPIGetNetworkBluetoothClientRequest) IncludeConnectivityHistory(includeConnectivityHistory bool) MonitorAPIGetNetworkBluetoothClientRequest {
 	r.includeConnectivityHistory = &includeConnectivityHistory
 	return r
 }
 
 // The timespan, in seconds, for the connectivityHistory data. By default 1 day, 86400, will be used.
-func (r MonitorApiGetNetworkBluetoothClientRequest) ConnectivityHistoryTimespan(connectivityHistoryTimespan int32) MonitorApiGetNetworkBluetoothClientRequest {
+func (r MonitorAPIGetNetworkBluetoothClientRequest) ConnectivityHistoryTimespan(connectivityHistoryTimespan int32) MonitorAPIGetNetworkBluetoothClientRequest {
 	r.connectivityHistoryTimespan = &connectivityHistoryTimespan
 	return r
 }
 
-func (r MonitorApiGetNetworkBluetoothClientRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetNetworkBluetoothClientRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkBluetoothClientExecute(r)
 }
 
@@ -3341,10 +3341,10 @@ Return a Bluetooth client. Bluetooth clients can be identified by their ID or th
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param bluetoothClientId Bluetooth client ID
- @return MonitorApiGetNetworkBluetoothClientRequest
+ @return MonitorAPIGetNetworkBluetoothClientRequest
 */
-func (a *MonitorApiService) GetNetworkBluetoothClient(ctx context.Context, networkId string, bluetoothClientId string) MonitorApiGetNetworkBluetoothClientRequest {
-	return MonitorApiGetNetworkBluetoothClientRequest{
+func (a *MonitorAPIService) GetNetworkBluetoothClient(ctx context.Context, networkId string, bluetoothClientId string) MonitorAPIGetNetworkBluetoothClientRequest {
+	return MonitorAPIGetNetworkBluetoothClientRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3354,7 +3354,7 @@ func (a *MonitorApiService) GetNetworkBluetoothClient(ctx context.Context, netwo
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *MonitorApiService) GetNetworkBluetoothClientExecute(r MonitorApiGetNetworkBluetoothClientRequest) (map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkBluetoothClientExecute(r MonitorAPIGetNetworkBluetoothClientRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3362,7 +3362,7 @@ func (a *MonitorApiService) GetNetworkBluetoothClientExecute(r MonitorApiGetNetw
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkBluetoothClient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkBluetoothClient")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3449,9 +3449,9 @@ func (a *MonitorApiService) GetNetworkBluetoothClientExecute(r MonitorApiGetNetw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkBluetoothClientsRequest struct {
+type MonitorAPIGetNetworkBluetoothClientsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	t0 *string
 	timespan *float32
@@ -3462,42 +3462,42 @@ type MonitorApiGetNetworkBluetoothClientsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 7 days from today.
-func (r MonitorApiGetNetworkBluetoothClientsRequest) T0(t0 string) MonitorApiGetNetworkBluetoothClientsRequest {
+func (r MonitorAPIGetNetworkBluetoothClientsRequest) T0(t0 string) MonitorAPIGetNetworkBluetoothClientsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 7 days. The default is 1 day.
-func (r MonitorApiGetNetworkBluetoothClientsRequest) Timespan(timespan float32) MonitorApiGetNetworkBluetoothClientsRequest {
+func (r MonitorAPIGetNetworkBluetoothClientsRequest) Timespan(timespan float32) MonitorAPIGetNetworkBluetoothClientsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 5 - 1000. Default is 10.
-func (r MonitorApiGetNetworkBluetoothClientsRequest) PerPage(perPage int32) MonitorApiGetNetworkBluetoothClientsRequest {
+func (r MonitorAPIGetNetworkBluetoothClientsRequest) PerPage(perPage int32) MonitorAPIGetNetworkBluetoothClientsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkBluetoothClientsRequest) StartingAfter(startingAfter string) MonitorApiGetNetworkBluetoothClientsRequest {
+func (r MonitorAPIGetNetworkBluetoothClientsRequest) StartingAfter(startingAfter string) MonitorAPIGetNetworkBluetoothClientsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkBluetoothClientsRequest) EndingBefore(endingBefore string) MonitorApiGetNetworkBluetoothClientsRequest {
+func (r MonitorAPIGetNetworkBluetoothClientsRequest) EndingBefore(endingBefore string) MonitorAPIGetNetworkBluetoothClientsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Include the connectivity history for this client
-func (r MonitorApiGetNetworkBluetoothClientsRequest) IncludeConnectivityHistory(includeConnectivityHistory bool) MonitorApiGetNetworkBluetoothClientsRequest {
+func (r MonitorAPIGetNetworkBluetoothClientsRequest) IncludeConnectivityHistory(includeConnectivityHistory bool) MonitorAPIGetNetworkBluetoothClientsRequest {
 	r.includeConnectivityHistory = &includeConnectivityHistory
 	return r
 }
 
-func (r MonitorApiGetNetworkBluetoothClientsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetNetworkBluetoothClientsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkBluetoothClientsExecute(r)
 }
 
@@ -3508,10 +3508,10 @@ List the Bluetooth clients seen by APs in this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkBluetoothClientsRequest
+ @return MonitorAPIGetNetworkBluetoothClientsRequest
 */
-func (a *MonitorApiService) GetNetworkBluetoothClients(ctx context.Context, networkId string) MonitorApiGetNetworkBluetoothClientsRequest {
-	return MonitorApiGetNetworkBluetoothClientsRequest{
+func (a *MonitorAPIService) GetNetworkBluetoothClients(ctx context.Context, networkId string) MonitorAPIGetNetworkBluetoothClientsRequest {
+	return MonitorAPIGetNetworkBluetoothClientsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3520,7 +3520,7 @@ func (a *MonitorApiService) GetNetworkBluetoothClients(ctx context.Context, netw
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetNetworkBluetoothClientsExecute(r MonitorApiGetNetworkBluetoothClientsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkBluetoothClientsExecute(r MonitorAPIGetNetworkBluetoothClientsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3528,7 +3528,7 @@ func (a *MonitorApiService) GetNetworkBluetoothClientsExecute(r MonitorApiGetNet
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkBluetoothClients")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkBluetoothClients")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3626,14 +3626,14 @@ func (a *MonitorApiService) GetNetworkBluetoothClientsExecute(r MonitorApiGetNet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkClientRequest struct {
+type MonitorAPIGetNetworkClientRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	clientId string
 }
 
-func (r MonitorApiGetNetworkClientRequest) Execute() (*GetNetworkClient200Response, *http.Response, error) {
+func (r MonitorAPIGetNetworkClientRequest) Execute() (*GetNetworkClient200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkClientExecute(r)
 }
 
@@ -3645,10 +3645,10 @@ Return the client associated with the given identifier. Clients can be identifie
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return MonitorApiGetNetworkClientRequest
+ @return MonitorAPIGetNetworkClientRequest
 */
-func (a *MonitorApiService) GetNetworkClient(ctx context.Context, networkId string, clientId string) MonitorApiGetNetworkClientRequest {
-	return MonitorApiGetNetworkClientRequest{
+func (a *MonitorAPIService) GetNetworkClient(ctx context.Context, networkId string, clientId string) MonitorAPIGetNetworkClientRequest {
+	return MonitorAPIGetNetworkClientRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3658,7 +3658,7 @@ func (a *MonitorApiService) GetNetworkClient(ctx context.Context, networkId stri
 
 // Execute executes the request
 //  @return GetNetworkClient200Response
-func (a *MonitorApiService) GetNetworkClientExecute(r MonitorApiGetNetworkClientRequest) (*GetNetworkClient200Response, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkClientExecute(r MonitorAPIGetNetworkClientRequest) (*GetNetworkClient200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3666,7 +3666,7 @@ func (a *MonitorApiService) GetNetworkClientExecute(r MonitorApiGetNetworkClient
 		localVarReturnValue  *GetNetworkClient200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkClient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkClient")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3747,9 +3747,9 @@ func (a *MonitorApiService) GetNetworkClientExecute(r MonitorApiGetNetworkClient
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkClientTrafficHistoryRequest struct {
+type MonitorAPIGetNetworkClientTrafficHistoryRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	clientId string
 	perPage *int32
@@ -3758,24 +3758,24 @@ type MonitorApiGetNetworkClientTrafficHistoryRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000.
-func (r MonitorApiGetNetworkClientTrafficHistoryRequest) PerPage(perPage int32) MonitorApiGetNetworkClientTrafficHistoryRequest {
+func (r MonitorAPIGetNetworkClientTrafficHistoryRequest) PerPage(perPage int32) MonitorAPIGetNetworkClientTrafficHistoryRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkClientTrafficHistoryRequest) StartingAfter(startingAfter string) MonitorApiGetNetworkClientTrafficHistoryRequest {
+func (r MonitorAPIGetNetworkClientTrafficHistoryRequest) StartingAfter(startingAfter string) MonitorAPIGetNetworkClientTrafficHistoryRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkClientTrafficHistoryRequest) EndingBefore(endingBefore string) MonitorApiGetNetworkClientTrafficHistoryRequest {
+func (r MonitorAPIGetNetworkClientTrafficHistoryRequest) EndingBefore(endingBefore string) MonitorAPIGetNetworkClientTrafficHistoryRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r MonitorApiGetNetworkClientTrafficHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetNetworkClientTrafficHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientTrafficHistoryExecute(r)
 }
 
@@ -3787,10 +3787,10 @@ Return the client's network traffic data over time. Usage data is in kilobytes. 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return MonitorApiGetNetworkClientTrafficHistoryRequest
+ @return MonitorAPIGetNetworkClientTrafficHistoryRequest
 */
-func (a *MonitorApiService) GetNetworkClientTrafficHistory(ctx context.Context, networkId string, clientId string) MonitorApiGetNetworkClientTrafficHistoryRequest {
-	return MonitorApiGetNetworkClientTrafficHistoryRequest{
+func (a *MonitorAPIService) GetNetworkClientTrafficHistory(ctx context.Context, networkId string, clientId string) MonitorAPIGetNetworkClientTrafficHistoryRequest {
+	return MonitorAPIGetNetworkClientTrafficHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3800,7 +3800,7 @@ func (a *MonitorApiService) GetNetworkClientTrafficHistory(ctx context.Context, 
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetNetworkClientTrafficHistoryExecute(r MonitorApiGetNetworkClientTrafficHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkClientTrafficHistoryExecute(r MonitorAPIGetNetworkClientTrafficHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3808,7 +3808,7 @@ func (a *MonitorApiService) GetNetworkClientTrafficHistoryExecute(r MonitorApiGe
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkClientTrafficHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkClientTrafficHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3898,14 +3898,14 @@ func (a *MonitorApiService) GetNetworkClientTrafficHistoryExecute(r MonitorApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkClientUsageHistoryRequest struct {
+type MonitorAPIGetNetworkClientUsageHistoryRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	clientId string
 }
 
-func (r MonitorApiGetNetworkClientUsageHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetNetworkClientUsageHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientUsageHistoryExecute(r)
 }
 
@@ -3917,10 +3917,10 @@ Return the client's daily usage history. Usage data is in kilobytes. Clients can
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return MonitorApiGetNetworkClientUsageHistoryRequest
+ @return MonitorAPIGetNetworkClientUsageHistoryRequest
 */
-func (a *MonitorApiService) GetNetworkClientUsageHistory(ctx context.Context, networkId string, clientId string) MonitorApiGetNetworkClientUsageHistoryRequest {
-	return MonitorApiGetNetworkClientUsageHistoryRequest{
+func (a *MonitorAPIService) GetNetworkClientUsageHistory(ctx context.Context, networkId string, clientId string) MonitorAPIGetNetworkClientUsageHistoryRequest {
+	return MonitorAPIGetNetworkClientUsageHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3930,7 +3930,7 @@ func (a *MonitorApiService) GetNetworkClientUsageHistory(ctx context.Context, ne
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetNetworkClientUsageHistoryExecute(r MonitorApiGetNetworkClientUsageHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkClientUsageHistoryExecute(r MonitorAPIGetNetworkClientUsageHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3938,7 +3938,7 @@ func (a *MonitorApiService) GetNetworkClientUsageHistoryExecute(r MonitorApiGetN
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkClientUsageHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkClientUsageHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4019,9 +4019,9 @@ func (a *MonitorApiService) GetNetworkClientUsageHistoryExecute(r MonitorApiGetN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkClientsRequest struct {
+type MonitorAPIGetNetworkClientsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	t0 *string
 	timespan *float32
@@ -4041,96 +4041,96 @@ type MonitorApiGetNetworkClientsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r MonitorApiGetNetworkClientsRequest) T0(t0 string) MonitorApiGetNetworkClientsRequest {
+func (r MonitorAPIGetNetworkClientsRequest) T0(t0 string) MonitorAPIGetNetworkClientsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r MonitorApiGetNetworkClientsRequest) Timespan(timespan float32) MonitorApiGetNetworkClientsRequest {
+func (r MonitorAPIGetNetworkClientsRequest) Timespan(timespan float32) MonitorAPIGetNetworkClientsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 10.
-func (r MonitorApiGetNetworkClientsRequest) PerPage(perPage int32) MonitorApiGetNetworkClientsRequest {
+func (r MonitorAPIGetNetworkClientsRequest) PerPage(perPage int32) MonitorAPIGetNetworkClientsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkClientsRequest) StartingAfter(startingAfter string) MonitorApiGetNetworkClientsRequest {
+func (r MonitorAPIGetNetworkClientsRequest) StartingAfter(startingAfter string) MonitorAPIGetNetworkClientsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkClientsRequest) EndingBefore(endingBefore string) MonitorApiGetNetworkClientsRequest {
+func (r MonitorAPIGetNetworkClientsRequest) EndingBefore(endingBefore string) MonitorAPIGetNetworkClientsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Filters clients based on status. Can be one of &#39;Online&#39; or &#39;Offline&#39;.
-func (r MonitorApiGetNetworkClientsRequest) Statuses(statuses []string) MonitorApiGetNetworkClientsRequest {
+func (r MonitorAPIGetNetworkClientsRequest) Statuses(statuses []string) MonitorAPIGetNetworkClientsRequest {
 	r.statuses = &statuses
 	return r
 }
 
 // Filters clients based on a partial or full match for the ip address field.
-func (r MonitorApiGetNetworkClientsRequest) Ip(ip string) MonitorApiGetNetworkClientsRequest {
+func (r MonitorAPIGetNetworkClientsRequest) Ip(ip string) MonitorAPIGetNetworkClientsRequest {
 	r.ip = &ip
 	return r
 }
 
 // Filters clients based on a partial or full match for the ip6 address field.
-func (r MonitorApiGetNetworkClientsRequest) Ip6(ip6 string) MonitorApiGetNetworkClientsRequest {
+func (r MonitorAPIGetNetworkClientsRequest) Ip6(ip6 string) MonitorAPIGetNetworkClientsRequest {
 	r.ip6 = &ip6
 	return r
 }
 
 // Filters clients based on a partial or full match for the ip6Local address field.
-func (r MonitorApiGetNetworkClientsRequest) Ip6Local(ip6Local string) MonitorApiGetNetworkClientsRequest {
+func (r MonitorAPIGetNetworkClientsRequest) Ip6Local(ip6Local string) MonitorAPIGetNetworkClientsRequest {
 	r.ip6Local = &ip6Local
 	return r
 }
 
 // Filters clients based on a partial or full match for the mac address field.
-func (r MonitorApiGetNetworkClientsRequest) Mac(mac string) MonitorApiGetNetworkClientsRequest {
+func (r MonitorAPIGetNetworkClientsRequest) Mac(mac string) MonitorAPIGetNetworkClientsRequest {
 	r.mac = &mac
 	return r
 }
 
 // Filters clients based on a partial or full match for the os (operating system) field.
-func (r MonitorApiGetNetworkClientsRequest) Os(os string) MonitorApiGetNetworkClientsRequest {
+func (r MonitorAPIGetNetworkClientsRequest) Os(os string) MonitorAPIGetNetworkClientsRequest {
 	r.os = &os
 	return r
 }
 
 // Filters clients based on partial or full match for the iPSK name field.
-func (r MonitorApiGetNetworkClientsRequest) PskGroup(pskGroup string) MonitorApiGetNetworkClientsRequest {
+func (r MonitorAPIGetNetworkClientsRequest) PskGroup(pskGroup string) MonitorAPIGetNetworkClientsRequest {
 	r.pskGroup = &pskGroup
 	return r
 }
 
 // Filters clients based on a partial or full match for the description field.
-func (r MonitorApiGetNetworkClientsRequest) Description(description string) MonitorApiGetNetworkClientsRequest {
+func (r MonitorAPIGetNetworkClientsRequest) Description(description string) MonitorAPIGetNetworkClientsRequest {
 	r.description = &description
 	return r
 }
 
 // Filters clients based on the full match for the VLAN field.
-func (r MonitorApiGetNetworkClientsRequest) Vlan(vlan string) MonitorApiGetNetworkClientsRequest {
+func (r MonitorAPIGetNetworkClientsRequest) Vlan(vlan string) MonitorAPIGetNetworkClientsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filters clients based on recent connection type. Can be one of &#39;Wired&#39; or &#39;Wireless&#39;.
-func (r MonitorApiGetNetworkClientsRequest) RecentDeviceConnections(recentDeviceConnections []string) MonitorApiGetNetworkClientsRequest {
+func (r MonitorAPIGetNetworkClientsRequest) RecentDeviceConnections(recentDeviceConnections []string) MonitorAPIGetNetworkClientsRequest {
 	r.recentDeviceConnections = &recentDeviceConnections
 	return r
 }
 
-func (r MonitorApiGetNetworkClientsRequest) Execute() (*GetNetworkClients200Response, *http.Response, error) {
+func (r MonitorAPIGetNetworkClientsRequest) Execute() ([]GetNetworkClients200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkClientsExecute(r)
 }
 
@@ -4141,10 +4141,10 @@ List the clients that have used this network in the timespan
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkClientsRequest
+ @return MonitorAPIGetNetworkClientsRequest
 */
-func (a *MonitorApiService) GetNetworkClients(ctx context.Context, networkId string) MonitorApiGetNetworkClientsRequest {
-	return MonitorApiGetNetworkClientsRequest{
+func (a *MonitorAPIService) GetNetworkClients(ctx context.Context, networkId string) MonitorAPIGetNetworkClientsRequest {
+	return MonitorAPIGetNetworkClientsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4152,16 +4152,16 @@ func (a *MonitorApiService) GetNetworkClients(ctx context.Context, networkId str
 }
 
 // Execute executes the request
-//  @return GetNetworkClients200Response
-func (a *MonitorApiService) GetNetworkClientsExecute(r MonitorApiGetNetworkClientsRequest) (*GetNetworkClients200Response, *http.Response, error) {
+//  @return []GetNetworkClients200ResponseInner
+func (a *MonitorAPIService) GetNetworkClientsExecute(r MonitorAPIGetNetworkClientsRequest) ([]GetNetworkClients200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetNetworkClients200Response
+		localVarReturnValue  []GetNetworkClients200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkClients")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkClients")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4302,9 +4302,9 @@ func (a *MonitorApiService) GetNetworkClientsExecute(r MonitorApiGetNetworkClien
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkClientsApplicationUsageRequest struct {
+type MonitorAPIGetNetworkClientsApplicationUsageRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	clients *string
 	ssidNumber *int32
@@ -4317,54 +4317,54 @@ type MonitorApiGetNetworkClientsApplicationUsageRequest struct {
 }
 
 // A list of client keys, MACs or IPs separated by comma.
-func (r MonitorApiGetNetworkClientsApplicationUsageRequest) Clients(clients string) MonitorApiGetNetworkClientsApplicationUsageRequest {
+func (r MonitorAPIGetNetworkClientsApplicationUsageRequest) Clients(clients string) MonitorAPIGetNetworkClientsApplicationUsageRequest {
 	r.clients = &clients
 	return r
 }
 
 // An SSID number to include. If not specified, eveusage histories application usagents for all SSIDs will be returned.
-func (r MonitorApiGetNetworkClientsApplicationUsageRequest) SsidNumber(ssidNumber int32) MonitorApiGetNetworkClientsApplicationUsageRequest {
+func (r MonitorAPIGetNetworkClientsApplicationUsageRequest) SsidNumber(ssidNumber int32) MonitorAPIGetNetworkClientsApplicationUsageRequest {
 	r.ssidNumber = &ssidNumber
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000.
-func (r MonitorApiGetNetworkClientsApplicationUsageRequest) PerPage(perPage int32) MonitorApiGetNetworkClientsApplicationUsageRequest {
+func (r MonitorAPIGetNetworkClientsApplicationUsageRequest) PerPage(perPage int32) MonitorAPIGetNetworkClientsApplicationUsageRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkClientsApplicationUsageRequest) StartingAfter(startingAfter string) MonitorApiGetNetworkClientsApplicationUsageRequest {
+func (r MonitorAPIGetNetworkClientsApplicationUsageRequest) StartingAfter(startingAfter string) MonitorAPIGetNetworkClientsApplicationUsageRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkClientsApplicationUsageRequest) EndingBefore(endingBefore string) MonitorApiGetNetworkClientsApplicationUsageRequest {
+func (r MonitorAPIGetNetworkClientsApplicationUsageRequest) EndingBefore(endingBefore string) MonitorAPIGetNetworkClientsApplicationUsageRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r MonitorApiGetNetworkClientsApplicationUsageRequest) T0(t0 string) MonitorApiGetNetworkClientsApplicationUsageRequest {
+func (r MonitorAPIGetNetworkClientsApplicationUsageRequest) T0(t0 string) MonitorAPIGetNetworkClientsApplicationUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetNetworkClientsApplicationUsageRequest) T1(t1 string) MonitorApiGetNetworkClientsApplicationUsageRequest {
+func (r MonitorAPIGetNetworkClientsApplicationUsageRequest) T1(t1 string) MonitorAPIGetNetworkClientsApplicationUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r MonitorApiGetNetworkClientsApplicationUsageRequest) Timespan(timespan float32) MonitorApiGetNetworkClientsApplicationUsageRequest {
+func (r MonitorAPIGetNetworkClientsApplicationUsageRequest) Timespan(timespan float32) MonitorAPIGetNetworkClientsApplicationUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r MonitorApiGetNetworkClientsApplicationUsageRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetNetworkClientsApplicationUsageRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientsApplicationUsageExecute(r)
 }
 
@@ -4375,10 +4375,10 @@ Return the application usage data for clients. Usage data is in kilobytes. Clien
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkClientsApplicationUsageRequest
+ @return MonitorAPIGetNetworkClientsApplicationUsageRequest
 */
-func (a *MonitorApiService) GetNetworkClientsApplicationUsage(ctx context.Context, networkId string) MonitorApiGetNetworkClientsApplicationUsageRequest {
-	return MonitorApiGetNetworkClientsApplicationUsageRequest{
+func (a *MonitorAPIService) GetNetworkClientsApplicationUsage(ctx context.Context, networkId string) MonitorAPIGetNetworkClientsApplicationUsageRequest {
+	return MonitorAPIGetNetworkClientsApplicationUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4387,7 +4387,7 @@ func (a *MonitorApiService) GetNetworkClientsApplicationUsage(ctx context.Contex
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetNetworkClientsApplicationUsageExecute(r MonitorApiGetNetworkClientsApplicationUsageRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkClientsApplicationUsageExecute(r MonitorAPIGetNetworkClientsApplicationUsageRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4395,7 +4395,7 @@ func (a *MonitorApiService) GetNetworkClientsApplicationUsageExecute(r MonitorAp
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkClientsApplicationUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkClientsApplicationUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4500,9 +4500,9 @@ func (a *MonitorApiService) GetNetworkClientsApplicationUsageExecute(r MonitorAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkClientsBandwidthUsageHistoryRequest struct {
+type MonitorAPIGetNetworkClientsBandwidthUsageHistoryRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -4513,42 +4513,42 @@ type MonitorApiGetNetworkClientsBandwidthUsageHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 30 days from today.
-func (r MonitorApiGetNetworkClientsBandwidthUsageHistoryRequest) T0(t0 string) MonitorApiGetNetworkClientsBandwidthUsageHistoryRequest {
+func (r MonitorAPIGetNetworkClientsBandwidthUsageHistoryRequest) T0(t0 string) MonitorAPIGetNetworkClientsBandwidthUsageHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetNetworkClientsBandwidthUsageHistoryRequest) T1(t1 string) MonitorApiGetNetworkClientsBandwidthUsageHistoryRequest {
+func (r MonitorAPIGetNetworkClientsBandwidthUsageHistoryRequest) T1(t1 string) MonitorAPIGetNetworkClientsBandwidthUsageHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r MonitorApiGetNetworkClientsBandwidthUsageHistoryRequest) Timespan(timespan float32) MonitorApiGetNetworkClientsBandwidthUsageHistoryRequest {
+func (r MonitorAPIGetNetworkClientsBandwidthUsageHistoryRequest) Timespan(timespan float32) MonitorAPIGetNetworkClientsBandwidthUsageHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r MonitorApiGetNetworkClientsBandwidthUsageHistoryRequest) PerPage(perPage int32) MonitorApiGetNetworkClientsBandwidthUsageHistoryRequest {
+func (r MonitorAPIGetNetworkClientsBandwidthUsageHistoryRequest) PerPage(perPage int32) MonitorAPIGetNetworkClientsBandwidthUsageHistoryRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkClientsBandwidthUsageHistoryRequest) StartingAfter(startingAfter string) MonitorApiGetNetworkClientsBandwidthUsageHistoryRequest {
+func (r MonitorAPIGetNetworkClientsBandwidthUsageHistoryRequest) StartingAfter(startingAfter string) MonitorAPIGetNetworkClientsBandwidthUsageHistoryRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkClientsBandwidthUsageHistoryRequest) EndingBefore(endingBefore string) MonitorApiGetNetworkClientsBandwidthUsageHistoryRequest {
+func (r MonitorAPIGetNetworkClientsBandwidthUsageHistoryRequest) EndingBefore(endingBefore string) MonitorAPIGetNetworkClientsBandwidthUsageHistoryRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r MonitorApiGetNetworkClientsBandwidthUsageHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetNetworkClientsBandwidthUsageHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientsBandwidthUsageHistoryExecute(r)
 }
 
@@ -4559,10 +4559,10 @@ Returns a timeseries of total traffic consumption rates for all clients on a net
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkClientsBandwidthUsageHistoryRequest
+ @return MonitorAPIGetNetworkClientsBandwidthUsageHistoryRequest
 */
-func (a *MonitorApiService) GetNetworkClientsBandwidthUsageHistory(ctx context.Context, networkId string) MonitorApiGetNetworkClientsBandwidthUsageHistoryRequest {
-	return MonitorApiGetNetworkClientsBandwidthUsageHistoryRequest{
+func (a *MonitorAPIService) GetNetworkClientsBandwidthUsageHistory(ctx context.Context, networkId string) MonitorAPIGetNetworkClientsBandwidthUsageHistoryRequest {
+	return MonitorAPIGetNetworkClientsBandwidthUsageHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4571,7 +4571,7 @@ func (a *MonitorApiService) GetNetworkClientsBandwidthUsageHistory(ctx context.C
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetNetworkClientsBandwidthUsageHistoryExecute(r MonitorApiGetNetworkClientsBandwidthUsageHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkClientsBandwidthUsageHistoryExecute(r MonitorAPIGetNetworkClientsBandwidthUsageHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4579,7 +4579,7 @@ func (a *MonitorApiService) GetNetworkClientsBandwidthUsageHistoryExecute(r Moni
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkClientsBandwidthUsageHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkClientsBandwidthUsageHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4677,9 +4677,9 @@ func (a *MonitorApiService) GetNetworkClientsBandwidthUsageHistoryExecute(r Moni
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkClientsOverviewRequest struct {
+type MonitorAPIGetNetworkClientsOverviewRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -4688,30 +4688,30 @@ type MonitorApiGetNetworkClientsOverviewRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r MonitorApiGetNetworkClientsOverviewRequest) T0(t0 string) MonitorApiGetNetworkClientsOverviewRequest {
+func (r MonitorAPIGetNetworkClientsOverviewRequest) T0(t0 string) MonitorAPIGetNetworkClientsOverviewRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetNetworkClientsOverviewRequest) T1(t1 string) MonitorApiGetNetworkClientsOverviewRequest {
+func (r MonitorAPIGetNetworkClientsOverviewRequest) T1(t1 string) MonitorAPIGetNetworkClientsOverviewRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r MonitorApiGetNetworkClientsOverviewRequest) Timespan(timespan float32) MonitorApiGetNetworkClientsOverviewRequest {
+func (r MonitorAPIGetNetworkClientsOverviewRequest) Timespan(timespan float32) MonitorAPIGetNetworkClientsOverviewRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 7200, 86400, 604800, 2592000. The default is 604800.
-func (r MonitorApiGetNetworkClientsOverviewRequest) Resolution(resolution int32) MonitorApiGetNetworkClientsOverviewRequest {
+func (r MonitorAPIGetNetworkClientsOverviewRequest) Resolution(resolution int32) MonitorAPIGetNetworkClientsOverviewRequest {
 	r.resolution = &resolution
 	return r
 }
 
-func (r MonitorApiGetNetworkClientsOverviewRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetNetworkClientsOverviewRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientsOverviewExecute(r)
 }
 
@@ -4722,10 +4722,10 @@ Return overview statistics for network clients
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkClientsOverviewRequest
+ @return MonitorAPIGetNetworkClientsOverviewRequest
 */
-func (a *MonitorApiService) GetNetworkClientsOverview(ctx context.Context, networkId string) MonitorApiGetNetworkClientsOverviewRequest {
-	return MonitorApiGetNetworkClientsOverviewRequest{
+func (a *MonitorAPIService) GetNetworkClientsOverview(ctx context.Context, networkId string) MonitorAPIGetNetworkClientsOverviewRequest {
+	return MonitorAPIGetNetworkClientsOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4734,7 +4734,7 @@ func (a *MonitorApiService) GetNetworkClientsOverview(ctx context.Context, netwo
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *MonitorApiService) GetNetworkClientsOverviewExecute(r MonitorApiGetNetworkClientsOverviewRequest) (map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkClientsOverviewExecute(r MonitorAPIGetNetworkClientsOverviewRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4742,7 +4742,7 @@ func (a *MonitorApiService) GetNetworkClientsOverviewExecute(r MonitorApiGetNetw
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkClientsOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkClientsOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4834,9 +4834,9 @@ func (a *MonitorApiService) GetNetworkClientsOverviewExecute(r MonitorApiGetNetw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkClientsUsageHistoriesRequest struct {
+type MonitorAPIGetNetworkClientsUsageHistoriesRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	clients *string
 	ssidNumber *int32
@@ -4849,54 +4849,54 @@ type MonitorApiGetNetworkClientsUsageHistoriesRequest struct {
 }
 
 // A list of client keys, MACs or IPs separated by comma.
-func (r MonitorApiGetNetworkClientsUsageHistoriesRequest) Clients(clients string) MonitorApiGetNetworkClientsUsageHistoriesRequest {
+func (r MonitorAPIGetNetworkClientsUsageHistoriesRequest) Clients(clients string) MonitorAPIGetNetworkClientsUsageHistoriesRequest {
 	r.clients = &clients
 	return r
 }
 
 // An SSID number to include. If not specified, events for all SSIDs will be returned.
-func (r MonitorApiGetNetworkClientsUsageHistoriesRequest) SsidNumber(ssidNumber int32) MonitorApiGetNetworkClientsUsageHistoriesRequest {
+func (r MonitorAPIGetNetworkClientsUsageHistoriesRequest) SsidNumber(ssidNumber int32) MonitorAPIGetNetworkClientsUsageHistoriesRequest {
 	r.ssidNumber = &ssidNumber
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000.
-func (r MonitorApiGetNetworkClientsUsageHistoriesRequest) PerPage(perPage int32) MonitorApiGetNetworkClientsUsageHistoriesRequest {
+func (r MonitorAPIGetNetworkClientsUsageHistoriesRequest) PerPage(perPage int32) MonitorAPIGetNetworkClientsUsageHistoriesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkClientsUsageHistoriesRequest) StartingAfter(startingAfter string) MonitorApiGetNetworkClientsUsageHistoriesRequest {
+func (r MonitorAPIGetNetworkClientsUsageHistoriesRequest) StartingAfter(startingAfter string) MonitorAPIGetNetworkClientsUsageHistoriesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkClientsUsageHistoriesRequest) EndingBefore(endingBefore string) MonitorApiGetNetworkClientsUsageHistoriesRequest {
+func (r MonitorAPIGetNetworkClientsUsageHistoriesRequest) EndingBefore(endingBefore string) MonitorAPIGetNetworkClientsUsageHistoriesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r MonitorApiGetNetworkClientsUsageHistoriesRequest) T0(t0 string) MonitorApiGetNetworkClientsUsageHistoriesRequest {
+func (r MonitorAPIGetNetworkClientsUsageHistoriesRequest) T0(t0 string) MonitorAPIGetNetworkClientsUsageHistoriesRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetNetworkClientsUsageHistoriesRequest) T1(t1 string) MonitorApiGetNetworkClientsUsageHistoriesRequest {
+func (r MonitorAPIGetNetworkClientsUsageHistoriesRequest) T1(t1 string) MonitorAPIGetNetworkClientsUsageHistoriesRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r MonitorApiGetNetworkClientsUsageHistoriesRequest) Timespan(timespan float32) MonitorApiGetNetworkClientsUsageHistoriesRequest {
+func (r MonitorAPIGetNetworkClientsUsageHistoriesRequest) Timespan(timespan float32) MonitorAPIGetNetworkClientsUsageHistoriesRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r MonitorApiGetNetworkClientsUsageHistoriesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetNetworkClientsUsageHistoriesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientsUsageHistoriesExecute(r)
 }
 
@@ -4907,10 +4907,10 @@ Return the usage histories for clients. Usage data is in kilobytes. Clients can 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkClientsUsageHistoriesRequest
+ @return MonitorAPIGetNetworkClientsUsageHistoriesRequest
 */
-func (a *MonitorApiService) GetNetworkClientsUsageHistories(ctx context.Context, networkId string) MonitorApiGetNetworkClientsUsageHistoriesRequest {
-	return MonitorApiGetNetworkClientsUsageHistoriesRequest{
+func (a *MonitorAPIService) GetNetworkClientsUsageHistories(ctx context.Context, networkId string) MonitorAPIGetNetworkClientsUsageHistoriesRequest {
+	return MonitorAPIGetNetworkClientsUsageHistoriesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4919,7 +4919,7 @@ func (a *MonitorApiService) GetNetworkClientsUsageHistories(ctx context.Context,
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetNetworkClientsUsageHistoriesExecute(r MonitorApiGetNetworkClientsUsageHistoriesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkClientsUsageHistoriesExecute(r MonitorAPIGetNetworkClientsUsageHistoriesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4927,7 +4927,7 @@ func (a *MonitorApiService) GetNetworkClientsUsageHistoriesExecute(r MonitorApiG
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkClientsUsageHistories")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkClientsUsageHistories")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5032,9 +5032,9 @@ func (a *MonitorApiService) GetNetworkClientsUsageHistoriesExecute(r MonitorApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkEventsRequest struct {
+type MonitorAPIGetNetworkEventsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	productType *string
 	includedEventTypes *[]string
@@ -5053,90 +5053,90 @@ type MonitorApiGetNetworkEventsRequest struct {
 }
 
 // The product type to fetch events for. This parameter is required for networks with multiple device types. Valid types are wireless, appliance, switch, systemsManager, camera, cellularGateway, and cloudGateway
-func (r MonitorApiGetNetworkEventsRequest) ProductType(productType string) MonitorApiGetNetworkEventsRequest {
+func (r MonitorAPIGetNetworkEventsRequest) ProductType(productType string) MonitorAPIGetNetworkEventsRequest {
 	r.productType = &productType
 	return r
 }
 
 // A list of event types. The returned events will be filtered to only include events with these types.
-func (r MonitorApiGetNetworkEventsRequest) IncludedEventTypes(includedEventTypes []string) MonitorApiGetNetworkEventsRequest {
+func (r MonitorAPIGetNetworkEventsRequest) IncludedEventTypes(includedEventTypes []string) MonitorAPIGetNetworkEventsRequest {
 	r.includedEventTypes = &includedEventTypes
 	return r
 }
 
 // A list of event types. The returned events will be filtered to exclude events with these types.
-func (r MonitorApiGetNetworkEventsRequest) ExcludedEventTypes(excludedEventTypes []string) MonitorApiGetNetworkEventsRequest {
+func (r MonitorAPIGetNetworkEventsRequest) ExcludedEventTypes(excludedEventTypes []string) MonitorAPIGetNetworkEventsRequest {
 	r.excludedEventTypes = &excludedEventTypes
 	return r
 }
 
 // The MAC address of the Meraki device which the list of events will be filtered with
-func (r MonitorApiGetNetworkEventsRequest) DeviceMac(deviceMac string) MonitorApiGetNetworkEventsRequest {
+func (r MonitorAPIGetNetworkEventsRequest) DeviceMac(deviceMac string) MonitorAPIGetNetworkEventsRequest {
 	r.deviceMac = &deviceMac
 	return r
 }
 
 // The serial of the Meraki device which the list of events will be filtered with
-func (r MonitorApiGetNetworkEventsRequest) DeviceSerial(deviceSerial string) MonitorApiGetNetworkEventsRequest {
+func (r MonitorAPIGetNetworkEventsRequest) DeviceSerial(deviceSerial string) MonitorAPIGetNetworkEventsRequest {
 	r.deviceSerial = &deviceSerial
 	return r
 }
 
 // The name of the Meraki device which the list of events will be filtered with
-func (r MonitorApiGetNetworkEventsRequest) DeviceName(deviceName string) MonitorApiGetNetworkEventsRequest {
+func (r MonitorAPIGetNetworkEventsRequest) DeviceName(deviceName string) MonitorAPIGetNetworkEventsRequest {
 	r.deviceName = &deviceName
 	return r
 }
 
 // The IP of the client which the list of events will be filtered with. Only supported for track-by-IP networks.
-func (r MonitorApiGetNetworkEventsRequest) ClientIp(clientIp string) MonitorApiGetNetworkEventsRequest {
+func (r MonitorAPIGetNetworkEventsRequest) ClientIp(clientIp string) MonitorAPIGetNetworkEventsRequest {
 	r.clientIp = &clientIp
 	return r
 }
 
 // The MAC address of the client which the list of events will be filtered with. Only supported for track-by-MAC networks.
-func (r MonitorApiGetNetworkEventsRequest) ClientMac(clientMac string) MonitorApiGetNetworkEventsRequest {
+func (r MonitorAPIGetNetworkEventsRequest) ClientMac(clientMac string) MonitorAPIGetNetworkEventsRequest {
 	r.clientMac = &clientMac
 	return r
 }
 
 // The name, or partial name, of the client which the list of events will be filtered with
-func (r MonitorApiGetNetworkEventsRequest) ClientName(clientName string) MonitorApiGetNetworkEventsRequest {
+func (r MonitorAPIGetNetworkEventsRequest) ClientName(clientName string) MonitorAPIGetNetworkEventsRequest {
 	r.clientName = &clientName
 	return r
 }
 
 // The MAC address of the Systems Manager device which the list of events will be filtered with
-func (r MonitorApiGetNetworkEventsRequest) SmDeviceMac(smDeviceMac string) MonitorApiGetNetworkEventsRequest {
+func (r MonitorAPIGetNetworkEventsRequest) SmDeviceMac(smDeviceMac string) MonitorAPIGetNetworkEventsRequest {
 	r.smDeviceMac = &smDeviceMac
 	return r
 }
 
 // The name of the Systems Manager device which the list of events will be filtered with
-func (r MonitorApiGetNetworkEventsRequest) SmDeviceName(smDeviceName string) MonitorApiGetNetworkEventsRequest {
+func (r MonitorAPIGetNetworkEventsRequest) SmDeviceName(smDeviceName string) MonitorAPIGetNetworkEventsRequest {
 	r.smDeviceName = &smDeviceName
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 10.
-func (r MonitorApiGetNetworkEventsRequest) PerPage(perPage int32) MonitorApiGetNetworkEventsRequest {
+func (r MonitorAPIGetNetworkEventsRequest) PerPage(perPage int32) MonitorAPIGetNetworkEventsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkEventsRequest) StartingAfter(startingAfter string) MonitorApiGetNetworkEventsRequest {
+func (r MonitorAPIGetNetworkEventsRequest) StartingAfter(startingAfter string) MonitorAPIGetNetworkEventsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkEventsRequest) EndingBefore(endingBefore string) MonitorApiGetNetworkEventsRequest {
+func (r MonitorAPIGetNetworkEventsRequest) EndingBefore(endingBefore string) MonitorAPIGetNetworkEventsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r MonitorApiGetNetworkEventsRequest) Execute() (*GetNetworkEvents200Response, *http.Response, error) {
+func (r MonitorAPIGetNetworkEventsRequest) Execute() (*GetNetworkEvents200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkEventsExecute(r)
 }
 
@@ -5147,10 +5147,10 @@ List the events for the network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkEventsRequest
+ @return MonitorAPIGetNetworkEventsRequest
 */
-func (a *MonitorApiService) GetNetworkEvents(ctx context.Context, networkId string) MonitorApiGetNetworkEventsRequest {
-	return MonitorApiGetNetworkEventsRequest{
+func (a *MonitorAPIService) GetNetworkEvents(ctx context.Context, networkId string) MonitorAPIGetNetworkEventsRequest {
+	return MonitorAPIGetNetworkEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5159,7 +5159,7 @@ func (a *MonitorApiService) GetNetworkEvents(ctx context.Context, networkId stri
 
 // Execute executes the request
 //  @return GetNetworkEvents200Response
-func (a *MonitorApiService) GetNetworkEventsExecute(r MonitorApiGetNetworkEventsRequest) (*GetNetworkEvents200Response, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkEventsExecute(r MonitorAPIGetNetworkEventsRequest) (*GetNetworkEvents200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5167,7 +5167,7 @@ func (a *MonitorApiService) GetNetworkEventsExecute(r MonitorApiGetNetworkEvents
 		localVarReturnValue  *GetNetworkEvents200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5305,13 +5305,13 @@ func (a *MonitorApiService) GetNetworkEventsExecute(r MonitorApiGetNetworkEvents
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkEventsEventTypesRequest struct {
+type MonitorAPIGetNetworkEventsEventTypesRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 }
 
-func (r MonitorApiGetNetworkEventsEventTypesRequest) Execute() ([]GetNetworkEventsEventTypes200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetNetworkEventsEventTypesRequest) Execute() ([]GetNetworkEventsEventTypes200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkEventsEventTypesExecute(r)
 }
 
@@ -5322,10 +5322,10 @@ List the event type to human-readable description
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkEventsEventTypesRequest
+ @return MonitorAPIGetNetworkEventsEventTypesRequest
 */
-func (a *MonitorApiService) GetNetworkEventsEventTypes(ctx context.Context, networkId string) MonitorApiGetNetworkEventsEventTypesRequest {
-	return MonitorApiGetNetworkEventsEventTypesRequest{
+func (a *MonitorAPIService) GetNetworkEventsEventTypes(ctx context.Context, networkId string) MonitorAPIGetNetworkEventsEventTypesRequest {
+	return MonitorAPIGetNetworkEventsEventTypesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5334,7 +5334,7 @@ func (a *MonitorApiService) GetNetworkEventsEventTypes(ctx context.Context, netw
 
 // Execute executes the request
 //  @return []GetNetworkEventsEventTypes200ResponseInner
-func (a *MonitorApiService) GetNetworkEventsEventTypesExecute(r MonitorApiGetNetworkEventsEventTypesRequest) ([]GetNetworkEventsEventTypes200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkEventsEventTypesExecute(r MonitorAPIGetNetworkEventsEventTypesRequest) ([]GetNetworkEventsEventTypes200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5342,7 +5342,7 @@ func (a *MonitorApiService) GetNetworkEventsEventTypesExecute(r MonitorApiGetNet
 		localVarReturnValue  []GetNetworkEventsEventTypes200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkEventsEventTypes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkEventsEventTypes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5422,9 +5422,9 @@ func (a *MonitorApiService) GetNetworkEventsEventTypesExecute(r MonitorApiGetNet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkInsightApplicationHealthByTimeRequest struct {
+type MonitorAPIGetNetworkInsightApplicationHealthByTimeRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	applicationId string
 	t0 *string
@@ -5434,30 +5434,30 @@ type MonitorApiGetNetworkInsightApplicationHealthByTimeRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 7 days from today.
-func (r MonitorApiGetNetworkInsightApplicationHealthByTimeRequest) T0(t0 string) MonitorApiGetNetworkInsightApplicationHealthByTimeRequest {
+func (r MonitorAPIGetNetworkInsightApplicationHealthByTimeRequest) T0(t0 string) MonitorAPIGetNetworkInsightApplicationHealthByTimeRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r MonitorApiGetNetworkInsightApplicationHealthByTimeRequest) T1(t1 string) MonitorApiGetNetworkInsightApplicationHealthByTimeRequest {
+func (r MonitorAPIGetNetworkInsightApplicationHealthByTimeRequest) T1(t1 string) MonitorAPIGetNetworkInsightApplicationHealthByTimeRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. The default is 2 hours.
-func (r MonitorApiGetNetworkInsightApplicationHealthByTimeRequest) Timespan(timespan float32) MonitorApiGetNetworkInsightApplicationHealthByTimeRequest {
+func (r MonitorAPIGetNetworkInsightApplicationHealthByTimeRequest) Timespan(timespan float32) MonitorAPIGetNetworkInsightApplicationHealthByTimeRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 60, 300, 3600, 86400. The default is 300.
-func (r MonitorApiGetNetworkInsightApplicationHealthByTimeRequest) Resolution(resolution int32) MonitorApiGetNetworkInsightApplicationHealthByTimeRequest {
+func (r MonitorAPIGetNetworkInsightApplicationHealthByTimeRequest) Resolution(resolution int32) MonitorAPIGetNetworkInsightApplicationHealthByTimeRequest {
 	r.resolution = &resolution
 	return r
 }
 
-func (r MonitorApiGetNetworkInsightApplicationHealthByTimeRequest) Execute() ([]GetNetworkInsightApplicationHealthByTime200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetNetworkInsightApplicationHealthByTimeRequest) Execute() ([]GetNetworkInsightApplicationHealthByTime200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkInsightApplicationHealthByTimeExecute(r)
 }
 
@@ -5469,10 +5469,10 @@ Get application health by time
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param applicationId Application ID
- @return MonitorApiGetNetworkInsightApplicationHealthByTimeRequest
+ @return MonitorAPIGetNetworkInsightApplicationHealthByTimeRequest
 */
-func (a *MonitorApiService) GetNetworkInsightApplicationHealthByTime(ctx context.Context, networkId string, applicationId string) MonitorApiGetNetworkInsightApplicationHealthByTimeRequest {
-	return MonitorApiGetNetworkInsightApplicationHealthByTimeRequest{
+func (a *MonitorAPIService) GetNetworkInsightApplicationHealthByTime(ctx context.Context, networkId string, applicationId string) MonitorAPIGetNetworkInsightApplicationHealthByTimeRequest {
+	return MonitorAPIGetNetworkInsightApplicationHealthByTimeRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5482,7 +5482,7 @@ func (a *MonitorApiService) GetNetworkInsightApplicationHealthByTime(ctx context
 
 // Execute executes the request
 //  @return []GetNetworkInsightApplicationHealthByTime200ResponseInner
-func (a *MonitorApiService) GetNetworkInsightApplicationHealthByTimeExecute(r MonitorApiGetNetworkInsightApplicationHealthByTimeRequest) ([]GetNetworkInsightApplicationHealthByTime200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkInsightApplicationHealthByTimeExecute(r MonitorAPIGetNetworkInsightApplicationHealthByTimeRequest) ([]GetNetworkInsightApplicationHealthByTime200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5490,7 +5490,7 @@ func (a *MonitorApiService) GetNetworkInsightApplicationHealthByTimeExecute(r Mo
 		localVarReturnValue  []GetNetworkInsightApplicationHealthByTime200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkInsightApplicationHealthByTime")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkInsightApplicationHealthByTime")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5583,9 +5583,9 @@ func (a *MonitorApiService) GetNetworkInsightApplicationHealthByTimeExecute(r Mo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkNetworkHealthChannelUtilizationRequest struct {
+type MonitorAPIGetNetworkNetworkHealthChannelUtilizationRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -5597,48 +5597,48 @@ type MonitorApiGetNetworkNetworkHealthChannelUtilizationRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r MonitorApiGetNetworkNetworkHealthChannelUtilizationRequest) T0(t0 string) MonitorApiGetNetworkNetworkHealthChannelUtilizationRequest {
+func (r MonitorAPIGetNetworkNetworkHealthChannelUtilizationRequest) T0(t0 string) MonitorAPIGetNetworkNetworkHealthChannelUtilizationRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetNetworkNetworkHealthChannelUtilizationRequest) T1(t1 string) MonitorApiGetNetworkNetworkHealthChannelUtilizationRequest {
+func (r MonitorAPIGetNetworkNetworkHealthChannelUtilizationRequest) T1(t1 string) MonitorAPIGetNetworkNetworkHealthChannelUtilizationRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r MonitorApiGetNetworkNetworkHealthChannelUtilizationRequest) Timespan(timespan float32) MonitorApiGetNetworkNetworkHealthChannelUtilizationRequest {
+func (r MonitorAPIGetNetworkNetworkHealthChannelUtilizationRequest) Timespan(timespan float32) MonitorAPIGetNetworkNetworkHealthChannelUtilizationRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 600. The default is 600.
-func (r MonitorApiGetNetworkNetworkHealthChannelUtilizationRequest) Resolution(resolution int32) MonitorApiGetNetworkNetworkHealthChannelUtilizationRequest {
+func (r MonitorAPIGetNetworkNetworkHealthChannelUtilizationRequest) Resolution(resolution int32) MonitorAPIGetNetworkNetworkHealthChannelUtilizationRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 100. Default is 10.
-func (r MonitorApiGetNetworkNetworkHealthChannelUtilizationRequest) PerPage(perPage int32) MonitorApiGetNetworkNetworkHealthChannelUtilizationRequest {
+func (r MonitorAPIGetNetworkNetworkHealthChannelUtilizationRequest) PerPage(perPage int32) MonitorAPIGetNetworkNetworkHealthChannelUtilizationRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkNetworkHealthChannelUtilizationRequest) StartingAfter(startingAfter string) MonitorApiGetNetworkNetworkHealthChannelUtilizationRequest {
+func (r MonitorAPIGetNetworkNetworkHealthChannelUtilizationRequest) StartingAfter(startingAfter string) MonitorAPIGetNetworkNetworkHealthChannelUtilizationRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkNetworkHealthChannelUtilizationRequest) EndingBefore(endingBefore string) MonitorApiGetNetworkNetworkHealthChannelUtilizationRequest {
+func (r MonitorAPIGetNetworkNetworkHealthChannelUtilizationRequest) EndingBefore(endingBefore string) MonitorAPIGetNetworkNetworkHealthChannelUtilizationRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r MonitorApiGetNetworkNetworkHealthChannelUtilizationRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetNetworkNetworkHealthChannelUtilizationRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkNetworkHealthChannelUtilizationExecute(r)
 }
 
@@ -5649,10 +5649,10 @@ Get the channel utilization over each radio for all APs in a network.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkNetworkHealthChannelUtilizationRequest
+ @return MonitorAPIGetNetworkNetworkHealthChannelUtilizationRequest
 */
-func (a *MonitorApiService) GetNetworkNetworkHealthChannelUtilization(ctx context.Context, networkId string) MonitorApiGetNetworkNetworkHealthChannelUtilizationRequest {
-	return MonitorApiGetNetworkNetworkHealthChannelUtilizationRequest{
+func (a *MonitorAPIService) GetNetworkNetworkHealthChannelUtilization(ctx context.Context, networkId string) MonitorAPIGetNetworkNetworkHealthChannelUtilizationRequest {
+	return MonitorAPIGetNetworkNetworkHealthChannelUtilizationRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5661,7 +5661,7 @@ func (a *MonitorApiService) GetNetworkNetworkHealthChannelUtilization(ctx contex
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetNetworkNetworkHealthChannelUtilizationExecute(r MonitorApiGetNetworkNetworkHealthChannelUtilizationRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkNetworkHealthChannelUtilizationExecute(r MonitorAPIGetNetworkNetworkHealthChannelUtilizationRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5669,7 +5669,7 @@ func (a *MonitorApiService) GetNetworkNetworkHealthChannelUtilizationExecute(r M
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkNetworkHealthChannelUtilization")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkNetworkHealthChannelUtilization")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5770,13 +5770,13 @@ func (a *MonitorApiService) GetNetworkNetworkHealthChannelUtilizationExecute(r M
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkSensorAlertsCurrentOverviewByMetricRequest struct {
+type MonitorAPIGetNetworkSensorAlertsCurrentOverviewByMetricRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 }
 
-func (r MonitorApiGetNetworkSensorAlertsCurrentOverviewByMetricRequest) Execute() (*GetNetworkSensorAlertsCurrentOverviewByMetric200Response, *http.Response, error) {
+func (r MonitorAPIGetNetworkSensorAlertsCurrentOverviewByMetricRequest) Execute() (*GetNetworkSensorAlertsCurrentOverviewByMetric200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSensorAlertsCurrentOverviewByMetricExecute(r)
 }
 
@@ -5787,10 +5787,10 @@ Return an overview of currently alerting sensors by metric
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkSensorAlertsCurrentOverviewByMetricRequest
+ @return MonitorAPIGetNetworkSensorAlertsCurrentOverviewByMetricRequest
 */
-func (a *MonitorApiService) GetNetworkSensorAlertsCurrentOverviewByMetric(ctx context.Context, networkId string) MonitorApiGetNetworkSensorAlertsCurrentOverviewByMetricRequest {
-	return MonitorApiGetNetworkSensorAlertsCurrentOverviewByMetricRequest{
+func (a *MonitorAPIService) GetNetworkSensorAlertsCurrentOverviewByMetric(ctx context.Context, networkId string) MonitorAPIGetNetworkSensorAlertsCurrentOverviewByMetricRequest {
+	return MonitorAPIGetNetworkSensorAlertsCurrentOverviewByMetricRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5799,7 +5799,7 @@ func (a *MonitorApiService) GetNetworkSensorAlertsCurrentOverviewByMetric(ctx co
 
 // Execute executes the request
 //  @return GetNetworkSensorAlertsCurrentOverviewByMetric200Response
-func (a *MonitorApiService) GetNetworkSensorAlertsCurrentOverviewByMetricExecute(r MonitorApiGetNetworkSensorAlertsCurrentOverviewByMetricRequest) (*GetNetworkSensorAlertsCurrentOverviewByMetric200Response, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkSensorAlertsCurrentOverviewByMetricExecute(r MonitorAPIGetNetworkSensorAlertsCurrentOverviewByMetricRequest) (*GetNetworkSensorAlertsCurrentOverviewByMetric200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5807,7 +5807,7 @@ func (a *MonitorApiService) GetNetworkSensorAlertsCurrentOverviewByMetricExecute
 		localVarReturnValue  *GetNetworkSensorAlertsCurrentOverviewByMetric200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkSensorAlertsCurrentOverviewByMetric")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkSensorAlertsCurrentOverviewByMetric")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5887,9 +5887,9 @@ func (a *MonitorApiService) GetNetworkSensorAlertsCurrentOverviewByMetricExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkSensorAlertsOverviewByMetricRequest struct {
+type MonitorAPIGetNetworkSensorAlertsOverviewByMetricRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -5898,30 +5898,30 @@ type MonitorApiGetNetworkSensorAlertsOverviewByMetricRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
-func (r MonitorApiGetNetworkSensorAlertsOverviewByMetricRequest) T0(t0 string) MonitorApiGetNetworkSensorAlertsOverviewByMetricRequest {
+func (r MonitorAPIGetNetworkSensorAlertsOverviewByMetricRequest) T0(t0 string) MonitorAPIGetNetworkSensorAlertsOverviewByMetricRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetNetworkSensorAlertsOverviewByMetricRequest) T1(t1 string) MonitorApiGetNetworkSensorAlertsOverviewByMetricRequest {
+func (r MonitorAPIGetNetworkSensorAlertsOverviewByMetricRequest) T1(t1 string) MonitorAPIGetNetworkSensorAlertsOverviewByMetricRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r MonitorApiGetNetworkSensorAlertsOverviewByMetricRequest) Timespan(timespan float32) MonitorApiGetNetworkSensorAlertsOverviewByMetricRequest {
+func (r MonitorAPIGetNetworkSensorAlertsOverviewByMetricRequest) Timespan(timespan float32) MonitorAPIGetNetworkSensorAlertsOverviewByMetricRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time interval in seconds for returned data. The valid intervals are: 86400, 604800. The default is 604800.
-func (r MonitorApiGetNetworkSensorAlertsOverviewByMetricRequest) Interval(interval int32) MonitorApiGetNetworkSensorAlertsOverviewByMetricRequest {
+func (r MonitorAPIGetNetworkSensorAlertsOverviewByMetricRequest) Interval(interval int32) MonitorAPIGetNetworkSensorAlertsOverviewByMetricRequest {
 	r.interval = &interval
 	return r
 }
 
-func (r MonitorApiGetNetworkSensorAlertsOverviewByMetricRequest) Execute() ([]GetNetworkSensorAlertsOverviewByMetric200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetNetworkSensorAlertsOverviewByMetricRequest) Execute() ([]GetNetworkSensorAlertsOverviewByMetric200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSensorAlertsOverviewByMetricExecute(r)
 }
 
@@ -5932,10 +5932,10 @@ Return an overview of alert occurrences over a timespan, by metric
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkSensorAlertsOverviewByMetricRequest
+ @return MonitorAPIGetNetworkSensorAlertsOverviewByMetricRequest
 */
-func (a *MonitorApiService) GetNetworkSensorAlertsOverviewByMetric(ctx context.Context, networkId string) MonitorApiGetNetworkSensorAlertsOverviewByMetricRequest {
-	return MonitorApiGetNetworkSensorAlertsOverviewByMetricRequest{
+func (a *MonitorAPIService) GetNetworkSensorAlertsOverviewByMetric(ctx context.Context, networkId string) MonitorAPIGetNetworkSensorAlertsOverviewByMetricRequest {
+	return MonitorAPIGetNetworkSensorAlertsOverviewByMetricRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -5944,7 +5944,7 @@ func (a *MonitorApiService) GetNetworkSensorAlertsOverviewByMetric(ctx context.C
 
 // Execute executes the request
 //  @return []GetNetworkSensorAlertsOverviewByMetric200ResponseInner
-func (a *MonitorApiService) GetNetworkSensorAlertsOverviewByMetricExecute(r MonitorApiGetNetworkSensorAlertsOverviewByMetricRequest) ([]GetNetworkSensorAlertsOverviewByMetric200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkSensorAlertsOverviewByMetricExecute(r MonitorAPIGetNetworkSensorAlertsOverviewByMetricRequest) ([]GetNetworkSensorAlertsOverviewByMetric200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5952,7 +5952,7 @@ func (a *MonitorApiService) GetNetworkSensorAlertsOverviewByMetricExecute(r Moni
 		localVarReturnValue  []GetNetworkSensorAlertsOverviewByMetric200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkSensorAlertsOverviewByMetric")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkSensorAlertsOverviewByMetric")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6044,14 +6044,14 @@ func (a *MonitorApiService) GetNetworkSensorAlertsOverviewByMetricExecute(r Moni
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkSmDeviceCellularUsageHistoryRequest struct {
+type MonitorAPIGetNetworkSmDeviceCellularUsageHistoryRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	deviceId string
 }
 
-func (r MonitorApiGetNetworkSmDeviceCellularUsageHistoryRequest) Execute() ([]GetNetworkSmDeviceCellularUsageHistory200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetNetworkSmDeviceCellularUsageHistoryRequest) Execute() ([]GetNetworkSmDeviceCellularUsageHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceCellularUsageHistoryExecute(r)
 }
 
@@ -6063,10 +6063,10 @@ Return the client's daily cellular data usage history. Usage data is in kilobyte
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return MonitorApiGetNetworkSmDeviceCellularUsageHistoryRequest
+ @return MonitorAPIGetNetworkSmDeviceCellularUsageHistoryRequest
 */
-func (a *MonitorApiService) GetNetworkSmDeviceCellularUsageHistory(ctx context.Context, networkId string, deviceId string) MonitorApiGetNetworkSmDeviceCellularUsageHistoryRequest {
-	return MonitorApiGetNetworkSmDeviceCellularUsageHistoryRequest{
+func (a *MonitorAPIService) GetNetworkSmDeviceCellularUsageHistory(ctx context.Context, networkId string, deviceId string) MonitorAPIGetNetworkSmDeviceCellularUsageHistoryRequest {
+	return MonitorAPIGetNetworkSmDeviceCellularUsageHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6076,7 +6076,7 @@ func (a *MonitorApiService) GetNetworkSmDeviceCellularUsageHistory(ctx context.C
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceCellularUsageHistory200ResponseInner
-func (a *MonitorApiService) GetNetworkSmDeviceCellularUsageHistoryExecute(r MonitorApiGetNetworkSmDeviceCellularUsageHistoryRequest) ([]GetNetworkSmDeviceCellularUsageHistory200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkSmDeviceCellularUsageHistoryExecute(r MonitorAPIGetNetworkSmDeviceCellularUsageHistoryRequest) ([]GetNetworkSmDeviceCellularUsageHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6084,7 +6084,7 @@ func (a *MonitorApiService) GetNetworkSmDeviceCellularUsageHistoryExecute(r Moni
 		localVarReturnValue  []GetNetworkSmDeviceCellularUsageHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkSmDeviceCellularUsageHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkSmDeviceCellularUsageHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6165,9 +6165,9 @@ func (a *MonitorApiService) GetNetworkSmDeviceCellularUsageHistoryExecute(r Moni
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkSmDeviceConnectivityRequest struct {
+type MonitorAPIGetNetworkSmDeviceConnectivityRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	deviceId string
 	perPage *int32
@@ -6176,24 +6176,24 @@ type MonitorApiGetNetworkSmDeviceConnectivityRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r MonitorApiGetNetworkSmDeviceConnectivityRequest) PerPage(perPage int32) MonitorApiGetNetworkSmDeviceConnectivityRequest {
+func (r MonitorAPIGetNetworkSmDeviceConnectivityRequest) PerPage(perPage int32) MonitorAPIGetNetworkSmDeviceConnectivityRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkSmDeviceConnectivityRequest) StartingAfter(startingAfter string) MonitorApiGetNetworkSmDeviceConnectivityRequest {
+func (r MonitorAPIGetNetworkSmDeviceConnectivityRequest) StartingAfter(startingAfter string) MonitorAPIGetNetworkSmDeviceConnectivityRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkSmDeviceConnectivityRequest) EndingBefore(endingBefore string) MonitorApiGetNetworkSmDeviceConnectivityRequest {
+func (r MonitorAPIGetNetworkSmDeviceConnectivityRequest) EndingBefore(endingBefore string) MonitorAPIGetNetworkSmDeviceConnectivityRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r MonitorApiGetNetworkSmDeviceConnectivityRequest) Execute() ([]GetNetworkSmDeviceConnectivity200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetNetworkSmDeviceConnectivityRequest) Execute() ([]GetNetworkSmDeviceConnectivity200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceConnectivityExecute(r)
 }
 
@@ -6205,10 +6205,10 @@ Returns historical connectivity data (whether a device is regularly checking in 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return MonitorApiGetNetworkSmDeviceConnectivityRequest
+ @return MonitorAPIGetNetworkSmDeviceConnectivityRequest
 */
-func (a *MonitorApiService) GetNetworkSmDeviceConnectivity(ctx context.Context, networkId string, deviceId string) MonitorApiGetNetworkSmDeviceConnectivityRequest {
-	return MonitorApiGetNetworkSmDeviceConnectivityRequest{
+func (a *MonitorAPIService) GetNetworkSmDeviceConnectivity(ctx context.Context, networkId string, deviceId string) MonitorAPIGetNetworkSmDeviceConnectivityRequest {
+	return MonitorAPIGetNetworkSmDeviceConnectivityRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6218,7 +6218,7 @@ func (a *MonitorApiService) GetNetworkSmDeviceConnectivity(ctx context.Context, 
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceConnectivity200ResponseInner
-func (a *MonitorApiService) GetNetworkSmDeviceConnectivityExecute(r MonitorApiGetNetworkSmDeviceConnectivityRequest) ([]GetNetworkSmDeviceConnectivity200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkSmDeviceConnectivityExecute(r MonitorAPIGetNetworkSmDeviceConnectivityRequest) ([]GetNetworkSmDeviceConnectivity200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6226,7 +6226,7 @@ func (a *MonitorApiService) GetNetworkSmDeviceConnectivityExecute(r MonitorApiGe
 		localVarReturnValue  []GetNetworkSmDeviceConnectivity200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkSmDeviceConnectivity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkSmDeviceConnectivity")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6316,9 +6316,9 @@ func (a *MonitorApiService) GetNetworkSmDeviceConnectivityExecute(r MonitorApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkSmDeviceDesktopLogsRequest struct {
+type MonitorAPIGetNetworkSmDeviceDesktopLogsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	deviceId string
 	perPage *int32
@@ -6327,24 +6327,24 @@ type MonitorApiGetNetworkSmDeviceDesktopLogsRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r MonitorApiGetNetworkSmDeviceDesktopLogsRequest) PerPage(perPage int32) MonitorApiGetNetworkSmDeviceDesktopLogsRequest {
+func (r MonitorAPIGetNetworkSmDeviceDesktopLogsRequest) PerPage(perPage int32) MonitorAPIGetNetworkSmDeviceDesktopLogsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkSmDeviceDesktopLogsRequest) StartingAfter(startingAfter string) MonitorApiGetNetworkSmDeviceDesktopLogsRequest {
+func (r MonitorAPIGetNetworkSmDeviceDesktopLogsRequest) StartingAfter(startingAfter string) MonitorAPIGetNetworkSmDeviceDesktopLogsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkSmDeviceDesktopLogsRequest) EndingBefore(endingBefore string) MonitorApiGetNetworkSmDeviceDesktopLogsRequest {
+func (r MonitorAPIGetNetworkSmDeviceDesktopLogsRequest) EndingBefore(endingBefore string) MonitorAPIGetNetworkSmDeviceDesktopLogsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r MonitorApiGetNetworkSmDeviceDesktopLogsRequest) Execute() ([]GetNetworkSmDeviceDesktopLogs200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetNetworkSmDeviceDesktopLogsRequest) Execute() ([]GetNetworkSmDeviceDesktopLogs200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceDesktopLogsExecute(r)
 }
 
@@ -6356,10 +6356,10 @@ Return historical records of various Systems Manager network connection details 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return MonitorApiGetNetworkSmDeviceDesktopLogsRequest
+ @return MonitorAPIGetNetworkSmDeviceDesktopLogsRequest
 */
-func (a *MonitorApiService) GetNetworkSmDeviceDesktopLogs(ctx context.Context, networkId string, deviceId string) MonitorApiGetNetworkSmDeviceDesktopLogsRequest {
-	return MonitorApiGetNetworkSmDeviceDesktopLogsRequest{
+func (a *MonitorAPIService) GetNetworkSmDeviceDesktopLogs(ctx context.Context, networkId string, deviceId string) MonitorAPIGetNetworkSmDeviceDesktopLogsRequest {
+	return MonitorAPIGetNetworkSmDeviceDesktopLogsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6369,7 +6369,7 @@ func (a *MonitorApiService) GetNetworkSmDeviceDesktopLogs(ctx context.Context, n
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceDesktopLogs200ResponseInner
-func (a *MonitorApiService) GetNetworkSmDeviceDesktopLogsExecute(r MonitorApiGetNetworkSmDeviceDesktopLogsRequest) ([]GetNetworkSmDeviceDesktopLogs200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkSmDeviceDesktopLogsExecute(r MonitorAPIGetNetworkSmDeviceDesktopLogsRequest) ([]GetNetworkSmDeviceDesktopLogs200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6377,7 +6377,7 @@ func (a *MonitorApiService) GetNetworkSmDeviceDesktopLogsExecute(r MonitorApiGet
 		localVarReturnValue  []GetNetworkSmDeviceDesktopLogs200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkSmDeviceDesktopLogs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkSmDeviceDesktopLogs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6467,9 +6467,9 @@ func (a *MonitorApiService) GetNetworkSmDeviceDesktopLogsExecute(r MonitorApiGet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkSmDeviceDeviceCommandLogsRequest struct {
+type MonitorAPIGetNetworkSmDeviceDeviceCommandLogsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	deviceId string
 	perPage *int32
@@ -6478,24 +6478,24 @@ type MonitorApiGetNetworkSmDeviceDeviceCommandLogsRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r MonitorApiGetNetworkSmDeviceDeviceCommandLogsRequest) PerPage(perPage int32) MonitorApiGetNetworkSmDeviceDeviceCommandLogsRequest {
+func (r MonitorAPIGetNetworkSmDeviceDeviceCommandLogsRequest) PerPage(perPage int32) MonitorAPIGetNetworkSmDeviceDeviceCommandLogsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkSmDeviceDeviceCommandLogsRequest) StartingAfter(startingAfter string) MonitorApiGetNetworkSmDeviceDeviceCommandLogsRequest {
+func (r MonitorAPIGetNetworkSmDeviceDeviceCommandLogsRequest) StartingAfter(startingAfter string) MonitorAPIGetNetworkSmDeviceDeviceCommandLogsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkSmDeviceDeviceCommandLogsRequest) EndingBefore(endingBefore string) MonitorApiGetNetworkSmDeviceDeviceCommandLogsRequest {
+func (r MonitorAPIGetNetworkSmDeviceDeviceCommandLogsRequest) EndingBefore(endingBefore string) MonitorAPIGetNetworkSmDeviceDeviceCommandLogsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r MonitorApiGetNetworkSmDeviceDeviceCommandLogsRequest) Execute() ([]GetNetworkSmDeviceDeviceCommandLogs200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetNetworkSmDeviceDeviceCommandLogsRequest) Execute() ([]GetNetworkSmDeviceDeviceCommandLogs200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceDeviceCommandLogsExecute(r)
 }
 
@@ -6507,10 +6507,10 @@ Return historical records of commands sent to Systems Manager devices. Note that
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return MonitorApiGetNetworkSmDeviceDeviceCommandLogsRequest
+ @return MonitorAPIGetNetworkSmDeviceDeviceCommandLogsRequest
 */
-func (a *MonitorApiService) GetNetworkSmDeviceDeviceCommandLogs(ctx context.Context, networkId string, deviceId string) MonitorApiGetNetworkSmDeviceDeviceCommandLogsRequest {
-	return MonitorApiGetNetworkSmDeviceDeviceCommandLogsRequest{
+func (a *MonitorAPIService) GetNetworkSmDeviceDeviceCommandLogs(ctx context.Context, networkId string, deviceId string) MonitorAPIGetNetworkSmDeviceDeviceCommandLogsRequest {
+	return MonitorAPIGetNetworkSmDeviceDeviceCommandLogsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6520,7 +6520,7 @@ func (a *MonitorApiService) GetNetworkSmDeviceDeviceCommandLogs(ctx context.Cont
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceDeviceCommandLogs200ResponseInner
-func (a *MonitorApiService) GetNetworkSmDeviceDeviceCommandLogsExecute(r MonitorApiGetNetworkSmDeviceDeviceCommandLogsRequest) ([]GetNetworkSmDeviceDeviceCommandLogs200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkSmDeviceDeviceCommandLogsExecute(r MonitorAPIGetNetworkSmDeviceDeviceCommandLogsRequest) ([]GetNetworkSmDeviceDeviceCommandLogs200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6528,7 +6528,7 @@ func (a *MonitorApiService) GetNetworkSmDeviceDeviceCommandLogsExecute(r Monitor
 		localVarReturnValue  []GetNetworkSmDeviceDeviceCommandLogs200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkSmDeviceDeviceCommandLogs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkSmDeviceDeviceCommandLogs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6618,9 +6618,9 @@ func (a *MonitorApiService) GetNetworkSmDeviceDeviceCommandLogsExecute(r Monitor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkSmDevicePerformanceHistoryRequest struct {
+type MonitorAPIGetNetworkSmDevicePerformanceHistoryRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	deviceId string
 	perPage *int32
@@ -6629,24 +6629,24 @@ type MonitorApiGetNetworkSmDevicePerformanceHistoryRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r MonitorApiGetNetworkSmDevicePerformanceHistoryRequest) PerPage(perPage int32) MonitorApiGetNetworkSmDevicePerformanceHistoryRequest {
+func (r MonitorAPIGetNetworkSmDevicePerformanceHistoryRequest) PerPage(perPage int32) MonitorAPIGetNetworkSmDevicePerformanceHistoryRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkSmDevicePerformanceHistoryRequest) StartingAfter(startingAfter string) MonitorApiGetNetworkSmDevicePerformanceHistoryRequest {
+func (r MonitorAPIGetNetworkSmDevicePerformanceHistoryRequest) StartingAfter(startingAfter string) MonitorAPIGetNetworkSmDevicePerformanceHistoryRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkSmDevicePerformanceHistoryRequest) EndingBefore(endingBefore string) MonitorApiGetNetworkSmDevicePerformanceHistoryRequest {
+func (r MonitorAPIGetNetworkSmDevicePerformanceHistoryRequest) EndingBefore(endingBefore string) MonitorAPIGetNetworkSmDevicePerformanceHistoryRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r MonitorApiGetNetworkSmDevicePerformanceHistoryRequest) Execute() ([]GetNetworkSmDevicePerformanceHistory200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetNetworkSmDevicePerformanceHistoryRequest) Execute() ([]GetNetworkSmDevicePerformanceHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDevicePerformanceHistoryExecute(r)
 }
 
@@ -6658,10 +6658,10 @@ Return historical records of various Systems Manager client metrics for desktop 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return MonitorApiGetNetworkSmDevicePerformanceHistoryRequest
+ @return MonitorAPIGetNetworkSmDevicePerformanceHistoryRequest
 */
-func (a *MonitorApiService) GetNetworkSmDevicePerformanceHistory(ctx context.Context, networkId string, deviceId string) MonitorApiGetNetworkSmDevicePerformanceHistoryRequest {
-	return MonitorApiGetNetworkSmDevicePerformanceHistoryRequest{
+func (a *MonitorAPIService) GetNetworkSmDevicePerformanceHistory(ctx context.Context, networkId string, deviceId string) MonitorAPIGetNetworkSmDevicePerformanceHistoryRequest {
+	return MonitorAPIGetNetworkSmDevicePerformanceHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6671,7 +6671,7 @@ func (a *MonitorApiService) GetNetworkSmDevicePerformanceHistory(ctx context.Con
 
 // Execute executes the request
 //  @return []GetNetworkSmDevicePerformanceHistory200ResponseInner
-func (a *MonitorApiService) GetNetworkSmDevicePerformanceHistoryExecute(r MonitorApiGetNetworkSmDevicePerformanceHistoryRequest) ([]GetNetworkSmDevicePerformanceHistory200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkSmDevicePerformanceHistoryExecute(r MonitorAPIGetNetworkSmDevicePerformanceHistoryRequest) ([]GetNetworkSmDevicePerformanceHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6679,7 +6679,7 @@ func (a *MonitorApiService) GetNetworkSmDevicePerformanceHistoryExecute(r Monito
 		localVarReturnValue  []GetNetworkSmDevicePerformanceHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkSmDevicePerformanceHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkSmDevicePerformanceHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6769,9 +6769,9 @@ func (a *MonitorApiService) GetNetworkSmDevicePerformanceHistoryExecute(r Monito
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkSplashLoginAttemptsRequest struct {
+type MonitorAPIGetNetworkSplashLoginAttemptsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	ssidNumber *int32
 	loginIdentifier *string
@@ -6779,24 +6779,24 @@ type MonitorApiGetNetworkSplashLoginAttemptsRequest struct {
 }
 
 // Only return the login attempts for the specified SSID
-func (r MonitorApiGetNetworkSplashLoginAttemptsRequest) SsidNumber(ssidNumber int32) MonitorApiGetNetworkSplashLoginAttemptsRequest {
+func (r MonitorAPIGetNetworkSplashLoginAttemptsRequest) SsidNumber(ssidNumber int32) MonitorAPIGetNetworkSplashLoginAttemptsRequest {
 	r.ssidNumber = &ssidNumber
 	return r
 }
 
 // The username, email, or phone number used during login
-func (r MonitorApiGetNetworkSplashLoginAttemptsRequest) LoginIdentifier(loginIdentifier string) MonitorApiGetNetworkSplashLoginAttemptsRequest {
+func (r MonitorAPIGetNetworkSplashLoginAttemptsRequest) LoginIdentifier(loginIdentifier string) MonitorAPIGetNetworkSplashLoginAttemptsRequest {
 	r.loginIdentifier = &loginIdentifier
 	return r
 }
 
 // The timespan, in seconds, for the login attempts. The period will be from [timespan] seconds ago until now. The maximum timespan is 3 months
-func (r MonitorApiGetNetworkSplashLoginAttemptsRequest) Timespan(timespan int32) MonitorApiGetNetworkSplashLoginAttemptsRequest {
+func (r MonitorAPIGetNetworkSplashLoginAttemptsRequest) Timespan(timespan int32) MonitorAPIGetNetworkSplashLoginAttemptsRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r MonitorApiGetNetworkSplashLoginAttemptsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetNetworkSplashLoginAttemptsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSplashLoginAttemptsExecute(r)
 }
 
@@ -6807,10 +6807,10 @@ List the splash login attempts for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkSplashLoginAttemptsRequest
+ @return MonitorAPIGetNetworkSplashLoginAttemptsRequest
 */
-func (a *MonitorApiService) GetNetworkSplashLoginAttempts(ctx context.Context, networkId string) MonitorApiGetNetworkSplashLoginAttemptsRequest {
-	return MonitorApiGetNetworkSplashLoginAttemptsRequest{
+func (a *MonitorAPIService) GetNetworkSplashLoginAttempts(ctx context.Context, networkId string) MonitorAPIGetNetworkSplashLoginAttemptsRequest {
+	return MonitorAPIGetNetworkSplashLoginAttemptsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6819,7 +6819,7 @@ func (a *MonitorApiService) GetNetworkSplashLoginAttempts(ctx context.Context, n
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetNetworkSplashLoginAttemptsExecute(r MonitorApiGetNetworkSplashLoginAttemptsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkSplashLoginAttemptsExecute(r MonitorAPIGetNetworkSplashLoginAttemptsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6827,7 +6827,7 @@ func (a *MonitorApiService) GetNetworkSplashLoginAttemptsExecute(r MonitorApiGet
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkSplashLoginAttempts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkSplashLoginAttempts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6916,13 +6916,13 @@ func (a *MonitorApiService) GetNetworkSplashLoginAttemptsExecute(r MonitorApiGet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkTopologyLinkLayerRequest struct {
+type MonitorAPIGetNetworkTopologyLinkLayerRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 }
 
-func (r MonitorApiGetNetworkTopologyLinkLayerRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetNetworkTopologyLinkLayerRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkTopologyLinkLayerExecute(r)
 }
 
@@ -6933,10 +6933,10 @@ List the LLDP and CDP information for all discovered devices and connections in 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkTopologyLinkLayerRequest
+ @return MonitorAPIGetNetworkTopologyLinkLayerRequest
 */
-func (a *MonitorApiService) GetNetworkTopologyLinkLayer(ctx context.Context, networkId string) MonitorApiGetNetworkTopologyLinkLayerRequest {
-	return MonitorApiGetNetworkTopologyLinkLayerRequest{
+func (a *MonitorAPIService) GetNetworkTopologyLinkLayer(ctx context.Context, networkId string) MonitorAPIGetNetworkTopologyLinkLayerRequest {
+	return MonitorAPIGetNetworkTopologyLinkLayerRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -6945,7 +6945,7 @@ func (a *MonitorApiService) GetNetworkTopologyLinkLayer(ctx context.Context, net
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *MonitorApiService) GetNetworkTopologyLinkLayerExecute(r MonitorApiGetNetworkTopologyLinkLayerRequest) (map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkTopologyLinkLayerExecute(r MonitorAPIGetNetworkTopologyLinkLayerRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6953,7 +6953,7 @@ func (a *MonitorApiService) GetNetworkTopologyLinkLayerExecute(r MonitorApiGetNe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkTopologyLinkLayer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkTopologyLinkLayer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7033,9 +7033,9 @@ func (a *MonitorApiService) GetNetworkTopologyLinkLayerExecute(r MonitorApiGetNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkTrafficRequest struct {
+type MonitorAPIGetNetworkTrafficRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	t0 *string
 	timespan *float32
@@ -7043,24 +7043,24 @@ type MonitorApiGetNetworkTrafficRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 30 days from today.
-func (r MonitorApiGetNetworkTrafficRequest) T0(t0 string) MonitorApiGetNetworkTrafficRequest {
+func (r MonitorAPIGetNetworkTrafficRequest) T0(t0 string) MonitorAPIGetNetworkTrafficRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 30 days.
-func (r MonitorApiGetNetworkTrafficRequest) Timespan(timespan float32) MonitorApiGetNetworkTrafficRequest {
+func (r MonitorAPIGetNetworkTrafficRequest) Timespan(timespan float32) MonitorAPIGetNetworkTrafficRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter the data by device type: &#39;combined&#39;, &#39;wireless&#39;, &#39;switch&#39; or &#39;appliance&#39;. Defaults to &#39;combined&#39;. When using &#39;combined&#39;, for each rule the data will come from the device type with the most usage.
-func (r MonitorApiGetNetworkTrafficRequest) DeviceType(deviceType string) MonitorApiGetNetworkTrafficRequest {
+func (r MonitorAPIGetNetworkTrafficRequest) DeviceType(deviceType string) MonitorAPIGetNetworkTrafficRequest {
 	r.deviceType = &deviceType
 	return r
 }
 
-func (r MonitorApiGetNetworkTrafficRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetNetworkTrafficRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkTrafficExecute(r)
 }
 
@@ -7071,10 +7071,10 @@ Return the traffic analysis data for this network. Traffic analysis with hostnam
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkTrafficRequest
+ @return MonitorAPIGetNetworkTrafficRequest
 */
-func (a *MonitorApiService) GetNetworkTraffic(ctx context.Context, networkId string) MonitorApiGetNetworkTrafficRequest {
-	return MonitorApiGetNetworkTrafficRequest{
+func (a *MonitorAPIService) GetNetworkTraffic(ctx context.Context, networkId string) MonitorAPIGetNetworkTrafficRequest {
+	return MonitorAPIGetNetworkTrafficRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -7083,7 +7083,7 @@ func (a *MonitorApiService) GetNetworkTraffic(ctx context.Context, networkId str
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetNetworkTrafficExecute(r MonitorApiGetNetworkTrafficRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkTrafficExecute(r MonitorAPIGetNetworkTrafficRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7091,7 +7091,7 @@ func (a *MonitorApiService) GetNetworkTrafficExecute(r MonitorApiGetNetworkTraff
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkTraffic")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkTraffic")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7180,27 +7180,27 @@ func (a *MonitorApiService) GetNetworkTrafficExecute(r MonitorApiGetNetworkTraff
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkWirelessAirMarshalRequest struct {
+type MonitorAPIGetNetworkWirelessAirMarshalRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	t0 *string
 	timespan *float32
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r MonitorApiGetNetworkWirelessAirMarshalRequest) T0(t0 string) MonitorApiGetNetworkWirelessAirMarshalRequest {
+func (r MonitorAPIGetNetworkWirelessAirMarshalRequest) T0(t0 string) MonitorAPIGetNetworkWirelessAirMarshalRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r MonitorApiGetNetworkWirelessAirMarshalRequest) Timespan(timespan float32) MonitorApiGetNetworkWirelessAirMarshalRequest {
+func (r MonitorAPIGetNetworkWirelessAirMarshalRequest) Timespan(timespan float32) MonitorAPIGetNetworkWirelessAirMarshalRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r MonitorApiGetNetworkWirelessAirMarshalRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetNetworkWirelessAirMarshalRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessAirMarshalExecute(r)
 }
 
@@ -7211,10 +7211,10 @@ List Air Marshal scan results from a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkWirelessAirMarshalRequest
+ @return MonitorAPIGetNetworkWirelessAirMarshalRequest
 */
-func (a *MonitorApiService) GetNetworkWirelessAirMarshal(ctx context.Context, networkId string) MonitorApiGetNetworkWirelessAirMarshalRequest {
-	return MonitorApiGetNetworkWirelessAirMarshalRequest{
+func (a *MonitorAPIService) GetNetworkWirelessAirMarshal(ctx context.Context, networkId string) MonitorAPIGetNetworkWirelessAirMarshalRequest {
+	return MonitorAPIGetNetworkWirelessAirMarshalRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -7223,7 +7223,7 @@ func (a *MonitorApiService) GetNetworkWirelessAirMarshal(ctx context.Context, ne
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetNetworkWirelessAirMarshalExecute(r MonitorApiGetNetworkWirelessAirMarshalRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkWirelessAirMarshalExecute(r MonitorAPIGetNetworkWirelessAirMarshalRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7231,7 +7231,7 @@ func (a *MonitorApiService) GetNetworkWirelessAirMarshalExecute(r MonitorApiGetN
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkWirelessAirMarshal")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkWirelessAirMarshal")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7317,9 +7317,9 @@ func (a *MonitorApiService) GetNetworkWirelessAirMarshalExecute(r MonitorApiGetN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkWirelessChannelUtilizationHistoryRequest struct {
+type MonitorAPIGetNetworkWirelessChannelUtilizationHistoryRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -7333,60 +7333,60 @@ type MonitorApiGetNetworkWirelessChannelUtilizationHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r MonitorApiGetNetworkWirelessChannelUtilizationHistoryRequest) T0(t0 string) MonitorApiGetNetworkWirelessChannelUtilizationHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessChannelUtilizationHistoryRequest) T0(t0 string) MonitorAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetNetworkWirelessChannelUtilizationHistoryRequest) T1(t1 string) MonitorApiGetNetworkWirelessChannelUtilizationHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessChannelUtilizationHistoryRequest) T1(t1 string) MonitorAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r MonitorApiGetNetworkWirelessChannelUtilizationHistoryRequest) Timespan(timespan float32) MonitorApiGetNetworkWirelessChannelUtilizationHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessChannelUtilizationHistoryRequest) Timespan(timespan float32) MonitorAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 600, 1200, 3600, 14400, 86400. The default is 86400.
-func (r MonitorApiGetNetworkWirelessChannelUtilizationHistoryRequest) Resolution(resolution int32) MonitorApiGetNetworkWirelessChannelUtilizationHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessChannelUtilizationHistoryRequest) Resolution(resolution int32) MonitorAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // Automatically select a data resolution based on the given timespan; this overrides the value specified by the &#39;resolution&#39; parameter. The default setting is false.
-func (r MonitorApiGetNetworkWirelessChannelUtilizationHistoryRequest) AutoResolution(autoResolution bool) MonitorApiGetNetworkWirelessChannelUtilizationHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessChannelUtilizationHistoryRequest) AutoResolution(autoResolution bool) MonitorAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
 	r.autoResolution = &autoResolution
 	return r
 }
 
 // Filter results by network client to return per-device, per-band AP channel utilization metrics inner joined by the queried client&#39;s connection history.
-func (r MonitorApiGetNetworkWirelessChannelUtilizationHistoryRequest) ClientId(clientId string) MonitorApiGetNetworkWirelessChannelUtilizationHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessChannelUtilizationHistoryRequest) ClientId(clientId string) MonitorAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
 	r.clientId = &clientId
 	return r
 }
 
 // Filter results by device to return AP channel utilization metrics for the queried device; either :band or :clientId must be jointly specified.
-func (r MonitorApiGetNetworkWirelessChannelUtilizationHistoryRequest) DeviceSerial(deviceSerial string) MonitorApiGetNetworkWirelessChannelUtilizationHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessChannelUtilizationHistoryRequest) DeviceSerial(deviceSerial string) MonitorAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
 	r.deviceSerial = &deviceSerial
 	return r
 }
 
 // Filter results by AP tag to return AP channel utilization metrics for devices labeled with the given tag; either :clientId or :deviceSerial must be jointly specified.
-func (r MonitorApiGetNetworkWirelessChannelUtilizationHistoryRequest) ApTag(apTag string) MonitorApiGetNetworkWirelessChannelUtilizationHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessChannelUtilizationHistoryRequest) ApTag(apTag string) MonitorAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;).
-func (r MonitorApiGetNetworkWirelessChannelUtilizationHistoryRequest) Band(band string) MonitorApiGetNetworkWirelessChannelUtilizationHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessChannelUtilizationHistoryRequest) Band(band string) MonitorAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
 	r.band = &band
 	return r
 }
 
-func (r MonitorApiGetNetworkWirelessChannelUtilizationHistoryRequest) Execute() ([]GetNetworkWirelessChannelUtilizationHistory200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetNetworkWirelessChannelUtilizationHistoryRequest) Execute() ([]GetNetworkWirelessChannelUtilizationHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessChannelUtilizationHistoryExecute(r)
 }
 
@@ -7397,10 +7397,10 @@ Return AP channel utilization over time for a device or network client
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkWirelessChannelUtilizationHistoryRequest
+ @return MonitorAPIGetNetworkWirelessChannelUtilizationHistoryRequest
 */
-func (a *MonitorApiService) GetNetworkWirelessChannelUtilizationHistory(ctx context.Context, networkId string) MonitorApiGetNetworkWirelessChannelUtilizationHistoryRequest {
-	return MonitorApiGetNetworkWirelessChannelUtilizationHistoryRequest{
+func (a *MonitorAPIService) GetNetworkWirelessChannelUtilizationHistory(ctx context.Context, networkId string) MonitorAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
+	return MonitorAPIGetNetworkWirelessChannelUtilizationHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -7409,7 +7409,7 @@ func (a *MonitorApiService) GetNetworkWirelessChannelUtilizationHistory(ctx cont
 
 // Execute executes the request
 //  @return []GetNetworkWirelessChannelUtilizationHistory200ResponseInner
-func (a *MonitorApiService) GetNetworkWirelessChannelUtilizationHistoryExecute(r MonitorApiGetNetworkWirelessChannelUtilizationHistoryRequest) ([]GetNetworkWirelessChannelUtilizationHistory200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkWirelessChannelUtilizationHistoryExecute(r MonitorAPIGetNetworkWirelessChannelUtilizationHistoryRequest) ([]GetNetworkWirelessChannelUtilizationHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7417,7 +7417,7 @@ func (a *MonitorApiService) GetNetworkWirelessChannelUtilizationHistoryExecute(r
 		localVarReturnValue  []GetNetworkWirelessChannelUtilizationHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkWirelessChannelUtilizationHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkWirelessChannelUtilizationHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7524,9 +7524,9 @@ func (a *MonitorApiService) GetNetworkWirelessChannelUtilizationHistoryExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkWirelessClientConnectionStatsRequest struct {
+type MonitorAPIGetNetworkWirelessClientConnectionStatsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	clientId string
 	t0 *string
@@ -7539,48 +7539,48 @@ type MonitorApiGetNetworkWirelessClientConnectionStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r MonitorApiGetNetworkWirelessClientConnectionStatsRequest) T0(t0 string) MonitorApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientConnectionStatsRequest) T0(t0 string) MonitorAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r MonitorApiGetNetworkWirelessClientConnectionStatsRequest) T1(t1 string) MonitorApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientConnectionStatsRequest) T1(t1 string) MonitorAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r MonitorApiGetNetworkWirelessClientConnectionStatsRequest) Timespan(timespan float32) MonitorApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientConnectionStatsRequest) Timespan(timespan float32) MonitorAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r MonitorApiGetNetworkWirelessClientConnectionStatsRequest) Band(band string) MonitorApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientConnectionStatsRequest) Band(band string) MonitorAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r MonitorApiGetNetworkWirelessClientConnectionStatsRequest) Ssid(ssid int32) MonitorApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientConnectionStatsRequest) Ssid(ssid int32) MonitorAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r MonitorApiGetNetworkWirelessClientConnectionStatsRequest) Vlan(vlan int32) MonitorApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientConnectionStatsRequest) Vlan(vlan int32) MonitorAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r MonitorApiGetNetworkWirelessClientConnectionStatsRequest) ApTag(apTag string) MonitorApiGetNetworkWirelessClientConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientConnectionStatsRequest) ApTag(apTag string) MonitorAPIGetNetworkWirelessClientConnectionStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
-func (r MonitorApiGetNetworkWirelessClientConnectionStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetNetworkWirelessClientConnectionStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessClientConnectionStatsExecute(r)
 }
 
@@ -7592,10 +7592,10 @@ Aggregated connectivity info for a given client on this network. Clients are ide
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return MonitorApiGetNetworkWirelessClientConnectionStatsRequest
+ @return MonitorAPIGetNetworkWirelessClientConnectionStatsRequest
 */
-func (a *MonitorApiService) GetNetworkWirelessClientConnectionStats(ctx context.Context, networkId string, clientId string) MonitorApiGetNetworkWirelessClientConnectionStatsRequest {
-	return MonitorApiGetNetworkWirelessClientConnectionStatsRequest{
+func (a *MonitorAPIService) GetNetworkWirelessClientConnectionStats(ctx context.Context, networkId string, clientId string) MonitorAPIGetNetworkWirelessClientConnectionStatsRequest {
+	return MonitorAPIGetNetworkWirelessClientConnectionStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -7605,7 +7605,7 @@ func (a *MonitorApiService) GetNetworkWirelessClientConnectionStats(ctx context.
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *MonitorApiService) GetNetworkWirelessClientConnectionStatsExecute(r MonitorApiGetNetworkWirelessClientConnectionStatsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkWirelessClientConnectionStatsExecute(r MonitorAPIGetNetworkWirelessClientConnectionStatsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7613,7 +7613,7 @@ func (a *MonitorApiService) GetNetworkWirelessClientConnectionStatsExecute(r Mon
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkWirelessClientConnectionStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkWirelessClientConnectionStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7715,9 +7715,9 @@ func (a *MonitorApiService) GetNetworkWirelessClientConnectionStatsExecute(r Mon
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkWirelessClientConnectivityEventsRequest struct {
+type MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	clientId string
 	perPage *int32
@@ -7734,72 +7734,72 @@ type MonitorApiGetNetworkWirelessClientConnectivityEventsRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000.
-func (r MonitorApiGetNetworkWirelessClientConnectivityEventsRequest) PerPage(perPage int32) MonitorApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest) PerPage(perPage int32) MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkWirelessClientConnectivityEventsRequest) StartingAfter(startingAfter string) MonitorApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest) StartingAfter(startingAfter string) MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkWirelessClientConnectivityEventsRequest) EndingBefore(endingBefore string) MonitorApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest) EndingBefore(endingBefore string) MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r MonitorApiGetNetworkWirelessClientConnectivityEventsRequest) T0(t0 string) MonitorApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest) T0(t0 string) MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetNetworkWirelessClientConnectivityEventsRequest) T1(t1 string) MonitorApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest) T1(t1 string) MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r MonitorApiGetNetworkWirelessClientConnectivityEventsRequest) Timespan(timespan float32) MonitorApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest) Timespan(timespan float32) MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // A list of event types to include. If not specified, events of all types will be returned. Valid types are &#39;assoc&#39;, &#39;disassoc&#39;, &#39;auth&#39;, &#39;deauth&#39;, &#39;dns&#39;, &#39;dhcp&#39;, &#39;roam&#39;, &#39;connection&#39; and/or &#39;sticky&#39;.
-func (r MonitorApiGetNetworkWirelessClientConnectivityEventsRequest) Types(types []string) MonitorApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest) Types(types []string) MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.types = &types
 	return r
 }
 
 // A list of severities to include. If not specified, events of all severities will be returned. Valid severities are &#39;good&#39;, &#39;info&#39;, &#39;warn&#39; and/or &#39;bad&#39;.
-func (r MonitorApiGetNetworkWirelessClientConnectivityEventsRequest) IncludedSeverities(includedSeverities []string) MonitorApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest) IncludedSeverities(includedSeverities []string) MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.includedSeverities = &includedSeverities
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39;, &#39;6&#39;).
-func (r MonitorApiGetNetworkWirelessClientConnectivityEventsRequest) Band(band string) MonitorApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest) Band(band string) MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.band = &band
 	return r
 }
 
 // An SSID number to include. If not specified, events for all SSIDs will be returned.
-func (r MonitorApiGetNetworkWirelessClientConnectivityEventsRequest) SsidNumber(ssidNumber int32) MonitorApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest) SsidNumber(ssidNumber int32) MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.ssidNumber = &ssidNumber
 	return r
 }
 
 // Filter results by an AP&#39;s serial number.
-func (r MonitorApiGetNetworkWirelessClientConnectivityEventsRequest) DeviceSerial(deviceSerial string) MonitorApiGetNetworkWirelessClientConnectivityEventsRequest {
+func (r MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest) DeviceSerial(deviceSerial string) MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest {
 	r.deviceSerial = &deviceSerial
 	return r
 }
 
-func (r MonitorApiGetNetworkWirelessClientConnectivityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessClientConnectivityEventsExecute(r)
 }
 
@@ -7811,10 +7811,10 @@ List the wireless connectivity events for a client within a network in the times
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return MonitorApiGetNetworkWirelessClientConnectivityEventsRequest
+ @return MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest
 */
-func (a *MonitorApiService) GetNetworkWirelessClientConnectivityEvents(ctx context.Context, networkId string, clientId string) MonitorApiGetNetworkWirelessClientConnectivityEventsRequest {
-	return MonitorApiGetNetworkWirelessClientConnectivityEventsRequest{
+func (a *MonitorAPIService) GetNetworkWirelessClientConnectivityEvents(ctx context.Context, networkId string, clientId string) MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest {
+	return MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -7824,7 +7824,7 @@ func (a *MonitorApiService) GetNetworkWirelessClientConnectivityEvents(ctx conte
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetNetworkWirelessClientConnectivityEventsExecute(r MonitorApiGetNetworkWirelessClientConnectivityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkWirelessClientConnectivityEventsExecute(r MonitorAPIGetNetworkWirelessClientConnectivityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7832,7 +7832,7 @@ func (a *MonitorApiService) GetNetworkWirelessClientConnectivityEventsExecute(r 
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkWirelessClientConnectivityEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkWirelessClientConnectivityEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7962,9 +7962,9 @@ func (a *MonitorApiService) GetNetworkWirelessClientConnectivityEventsExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkWirelessClientCountHistoryRequest struct {
+type MonitorAPIGetNetworkWirelessClientCountHistoryRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -7979,66 +7979,66 @@ type MonitorApiGetNetworkWirelessClientCountHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r MonitorApiGetNetworkWirelessClientCountHistoryRequest) T0(t0 string) MonitorApiGetNetworkWirelessClientCountHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessClientCountHistoryRequest) T0(t0 string) MonitorAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetNetworkWirelessClientCountHistoryRequest) T1(t1 string) MonitorApiGetNetworkWirelessClientCountHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessClientCountHistoryRequest) T1(t1 string) MonitorAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r MonitorApiGetNetworkWirelessClientCountHistoryRequest) Timespan(timespan float32) MonitorApiGetNetworkWirelessClientCountHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessClientCountHistoryRequest) Timespan(timespan float32) MonitorAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 300, 600, 1200, 3600, 14400, 86400. The default is 86400.
-func (r MonitorApiGetNetworkWirelessClientCountHistoryRequest) Resolution(resolution int32) MonitorApiGetNetworkWirelessClientCountHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessClientCountHistoryRequest) Resolution(resolution int32) MonitorAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // Automatically select a data resolution based on the given timespan; this overrides the value specified by the &#39;resolution&#39; parameter. The default setting is false.
-func (r MonitorApiGetNetworkWirelessClientCountHistoryRequest) AutoResolution(autoResolution bool) MonitorApiGetNetworkWirelessClientCountHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessClientCountHistoryRequest) AutoResolution(autoResolution bool) MonitorAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.autoResolution = &autoResolution
 	return r
 }
 
 // Filter results by network client to return per-device client counts over time inner joined by the queried client&#39;s connection history.
-func (r MonitorApiGetNetworkWirelessClientCountHistoryRequest) ClientId(clientId string) MonitorApiGetNetworkWirelessClientCountHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessClientCountHistoryRequest) ClientId(clientId string) MonitorAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.clientId = &clientId
 	return r
 }
 
 // Filter results by device.
-func (r MonitorApiGetNetworkWirelessClientCountHistoryRequest) DeviceSerial(deviceSerial string) MonitorApiGetNetworkWirelessClientCountHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessClientCountHistoryRequest) DeviceSerial(deviceSerial string) MonitorAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.deviceSerial = &deviceSerial
 	return r
 }
 
 // Filter results by AP tag.
-func (r MonitorApiGetNetworkWirelessClientCountHistoryRequest) ApTag(apTag string) MonitorApiGetNetworkWirelessClientCountHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessClientCountHistoryRequest) ApTag(apTag string) MonitorAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;).
-func (r MonitorApiGetNetworkWirelessClientCountHistoryRequest) Band(band string) MonitorApiGetNetworkWirelessClientCountHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessClientCountHistoryRequest) Band(band string) MonitorAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID number.
-func (r MonitorApiGetNetworkWirelessClientCountHistoryRequest) Ssid(ssid int32) MonitorApiGetNetworkWirelessClientCountHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessClientCountHistoryRequest) Ssid(ssid int32) MonitorAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.ssid = &ssid
 	return r
 }
 
-func (r MonitorApiGetNetworkWirelessClientCountHistoryRequest) Execute() ([]GetNetworkWirelessClientCountHistory200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetNetworkWirelessClientCountHistoryRequest) Execute() ([]GetNetworkWirelessClientCountHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessClientCountHistoryExecute(r)
 }
 
@@ -8049,10 +8049,10 @@ Return wireless client counts over time for a network, device, or network client
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkWirelessClientCountHistoryRequest
+ @return MonitorAPIGetNetworkWirelessClientCountHistoryRequest
 */
-func (a *MonitorApiService) GetNetworkWirelessClientCountHistory(ctx context.Context, networkId string) MonitorApiGetNetworkWirelessClientCountHistoryRequest {
-	return MonitorApiGetNetworkWirelessClientCountHistoryRequest{
+func (a *MonitorAPIService) GetNetworkWirelessClientCountHistory(ctx context.Context, networkId string) MonitorAPIGetNetworkWirelessClientCountHistoryRequest {
+	return MonitorAPIGetNetworkWirelessClientCountHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -8061,7 +8061,7 @@ func (a *MonitorApiService) GetNetworkWirelessClientCountHistory(ctx context.Con
 
 // Execute executes the request
 //  @return []GetNetworkWirelessClientCountHistory200ResponseInner
-func (a *MonitorApiService) GetNetworkWirelessClientCountHistoryExecute(r MonitorApiGetNetworkWirelessClientCountHistoryRequest) ([]GetNetworkWirelessClientCountHistory200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkWirelessClientCountHistoryExecute(r MonitorAPIGetNetworkWirelessClientCountHistoryRequest) ([]GetNetworkWirelessClientCountHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -8069,7 +8069,7 @@ func (a *MonitorApiService) GetNetworkWirelessClientCountHistoryExecute(r Monito
 		localVarReturnValue  []GetNetworkWirelessClientCountHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkWirelessClientCountHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkWirelessClientCountHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8179,9 +8179,9 @@ func (a *MonitorApiService) GetNetworkWirelessClientCountHistoryExecute(r Monito
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkWirelessClientLatencyHistoryRequest struct {
+type MonitorAPIGetNetworkWirelessClientLatencyHistoryRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	clientId string
 	t0 *string
@@ -8191,30 +8191,30 @@ type MonitorApiGetNetworkWirelessClientLatencyHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 791 days from today.
-func (r MonitorApiGetNetworkWirelessClientLatencyHistoryRequest) T0(t0 string) MonitorApiGetNetworkWirelessClientLatencyHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessClientLatencyHistoryRequest) T0(t0 string) MonitorAPIGetNetworkWirelessClientLatencyHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 791 days after t0.
-func (r MonitorApiGetNetworkWirelessClientLatencyHistoryRequest) T1(t1 string) MonitorApiGetNetworkWirelessClientLatencyHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessClientLatencyHistoryRequest) T1(t1 string) MonitorAPIGetNetworkWirelessClientLatencyHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 791 days. The default is 1 day.
-func (r MonitorApiGetNetworkWirelessClientLatencyHistoryRequest) Timespan(timespan float32) MonitorApiGetNetworkWirelessClientLatencyHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessClientLatencyHistoryRequest) Timespan(timespan float32) MonitorAPIGetNetworkWirelessClientLatencyHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 86400. The default is 86400.
-func (r MonitorApiGetNetworkWirelessClientLatencyHistoryRequest) Resolution(resolution int32) MonitorApiGetNetworkWirelessClientLatencyHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessClientLatencyHistoryRequest) Resolution(resolution int32) MonitorAPIGetNetworkWirelessClientLatencyHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
-func (r MonitorApiGetNetworkWirelessClientLatencyHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetNetworkWirelessClientLatencyHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessClientLatencyHistoryExecute(r)
 }
 
@@ -8226,10 +8226,10 @@ Return the latency history for a client. Clients can be identified by a client k
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return MonitorApiGetNetworkWirelessClientLatencyHistoryRequest
+ @return MonitorAPIGetNetworkWirelessClientLatencyHistoryRequest
 */
-func (a *MonitorApiService) GetNetworkWirelessClientLatencyHistory(ctx context.Context, networkId string, clientId string) MonitorApiGetNetworkWirelessClientLatencyHistoryRequest {
-	return MonitorApiGetNetworkWirelessClientLatencyHistoryRequest{
+func (a *MonitorAPIService) GetNetworkWirelessClientLatencyHistory(ctx context.Context, networkId string, clientId string) MonitorAPIGetNetworkWirelessClientLatencyHistoryRequest {
+	return MonitorAPIGetNetworkWirelessClientLatencyHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -8239,7 +8239,7 @@ func (a *MonitorApiService) GetNetworkWirelessClientLatencyHistory(ctx context.C
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetNetworkWirelessClientLatencyHistoryExecute(r MonitorApiGetNetworkWirelessClientLatencyHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkWirelessClientLatencyHistoryExecute(r MonitorAPIGetNetworkWirelessClientLatencyHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -8247,7 +8247,7 @@ func (a *MonitorApiService) GetNetworkWirelessClientLatencyHistoryExecute(r Moni
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkWirelessClientLatencyHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkWirelessClientLatencyHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8340,9 +8340,9 @@ func (a *MonitorApiService) GetNetworkWirelessClientLatencyHistoryExecute(r Moni
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkWirelessClientLatencyStatsRequest struct {
+type MonitorAPIGetNetworkWirelessClientLatencyStatsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	clientId string
 	t0 *string
@@ -8356,54 +8356,54 @@ type MonitorApiGetNetworkWirelessClientLatencyStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r MonitorApiGetNetworkWirelessClientLatencyStatsRequest) T0(t0 string) MonitorApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientLatencyStatsRequest) T0(t0 string) MonitorAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r MonitorApiGetNetworkWirelessClientLatencyStatsRequest) T1(t1 string) MonitorApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientLatencyStatsRequest) T1(t1 string) MonitorAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r MonitorApiGetNetworkWirelessClientLatencyStatsRequest) Timespan(timespan float32) MonitorApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientLatencyStatsRequest) Timespan(timespan float32) MonitorAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r MonitorApiGetNetworkWirelessClientLatencyStatsRequest) Band(band string) MonitorApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientLatencyStatsRequest) Band(band string) MonitorAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r MonitorApiGetNetworkWirelessClientLatencyStatsRequest) Ssid(ssid int32) MonitorApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientLatencyStatsRequest) Ssid(ssid int32) MonitorAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r MonitorApiGetNetworkWirelessClientLatencyStatsRequest) Vlan(vlan int32) MonitorApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientLatencyStatsRequest) Vlan(vlan int32) MonitorAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r MonitorApiGetNetworkWirelessClientLatencyStatsRequest) ApTag(apTag string) MonitorApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientLatencyStatsRequest) ApTag(apTag string) MonitorAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Partial selection: If present, this call will return only the selected fields of [\&quot;rawDistribution\&quot;, \&quot;avg\&quot;]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
-func (r MonitorApiGetNetworkWirelessClientLatencyStatsRequest) Fields(fields string) MonitorApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientLatencyStatsRequest) Fields(fields string) MonitorAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r MonitorApiGetNetworkWirelessClientLatencyStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetNetworkWirelessClientLatencyStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessClientLatencyStatsExecute(r)
 }
 
@@ -8415,10 +8415,10 @@ Aggregated latency info for a given client on this network. Clients are identifi
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return MonitorApiGetNetworkWirelessClientLatencyStatsRequest
+ @return MonitorAPIGetNetworkWirelessClientLatencyStatsRequest
 */
-func (a *MonitorApiService) GetNetworkWirelessClientLatencyStats(ctx context.Context, networkId string, clientId string) MonitorApiGetNetworkWirelessClientLatencyStatsRequest {
-	return MonitorApiGetNetworkWirelessClientLatencyStatsRequest{
+func (a *MonitorAPIService) GetNetworkWirelessClientLatencyStats(ctx context.Context, networkId string, clientId string) MonitorAPIGetNetworkWirelessClientLatencyStatsRequest {
+	return MonitorAPIGetNetworkWirelessClientLatencyStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -8428,7 +8428,7 @@ func (a *MonitorApiService) GetNetworkWirelessClientLatencyStats(ctx context.Con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *MonitorApiService) GetNetworkWirelessClientLatencyStatsExecute(r MonitorApiGetNetworkWirelessClientLatencyStatsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkWirelessClientLatencyStatsExecute(r MonitorAPIGetNetworkWirelessClientLatencyStatsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -8436,7 +8436,7 @@ func (a *MonitorApiService) GetNetworkWirelessClientLatencyStatsExecute(r Monito
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkWirelessClientLatencyStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkWirelessClientLatencyStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8541,9 +8541,9 @@ func (a *MonitorApiService) GetNetworkWirelessClientLatencyStatsExecute(r Monito
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkWirelessClientsConnectionStatsRequest struct {
+type MonitorAPIGetNetworkWirelessClientsConnectionStatsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -8555,48 +8555,48 @@ type MonitorApiGetNetworkWirelessClientsConnectionStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r MonitorApiGetNetworkWirelessClientsConnectionStatsRequest) T0(t0 string) MonitorApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientsConnectionStatsRequest) T0(t0 string) MonitorAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r MonitorApiGetNetworkWirelessClientsConnectionStatsRequest) T1(t1 string) MonitorApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientsConnectionStatsRequest) T1(t1 string) MonitorAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r MonitorApiGetNetworkWirelessClientsConnectionStatsRequest) Timespan(timespan float32) MonitorApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientsConnectionStatsRequest) Timespan(timespan float32) MonitorAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r MonitorApiGetNetworkWirelessClientsConnectionStatsRequest) Band(band string) MonitorApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientsConnectionStatsRequest) Band(band string) MonitorAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r MonitorApiGetNetworkWirelessClientsConnectionStatsRequest) Ssid(ssid int32) MonitorApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientsConnectionStatsRequest) Ssid(ssid int32) MonitorAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r MonitorApiGetNetworkWirelessClientsConnectionStatsRequest) Vlan(vlan int32) MonitorApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientsConnectionStatsRequest) Vlan(vlan int32) MonitorAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r MonitorApiGetNetworkWirelessClientsConnectionStatsRequest) ApTag(apTag string) MonitorApiGetNetworkWirelessClientsConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientsConnectionStatsRequest) ApTag(apTag string) MonitorAPIGetNetworkWirelessClientsConnectionStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
-func (r MonitorApiGetNetworkWirelessClientsConnectionStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetNetworkWirelessClientsConnectionStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessClientsConnectionStatsExecute(r)
 }
 
@@ -8607,10 +8607,10 @@ Aggregated connectivity info for this network, grouped by clients
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkWirelessClientsConnectionStatsRequest
+ @return MonitorAPIGetNetworkWirelessClientsConnectionStatsRequest
 */
-func (a *MonitorApiService) GetNetworkWirelessClientsConnectionStats(ctx context.Context, networkId string) MonitorApiGetNetworkWirelessClientsConnectionStatsRequest {
-	return MonitorApiGetNetworkWirelessClientsConnectionStatsRequest{
+func (a *MonitorAPIService) GetNetworkWirelessClientsConnectionStats(ctx context.Context, networkId string) MonitorAPIGetNetworkWirelessClientsConnectionStatsRequest {
+	return MonitorAPIGetNetworkWirelessClientsConnectionStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -8619,7 +8619,7 @@ func (a *MonitorApiService) GetNetworkWirelessClientsConnectionStats(ctx context
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetNetworkWirelessClientsConnectionStatsExecute(r MonitorApiGetNetworkWirelessClientsConnectionStatsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkWirelessClientsConnectionStatsExecute(r MonitorAPIGetNetworkWirelessClientsConnectionStatsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -8627,7 +8627,7 @@ func (a *MonitorApiService) GetNetworkWirelessClientsConnectionStatsExecute(r Mo
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkWirelessClientsConnectionStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkWirelessClientsConnectionStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8728,9 +8728,9 @@ func (a *MonitorApiService) GetNetworkWirelessClientsConnectionStatsExecute(r Mo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkWirelessClientsLatencyStatsRequest struct {
+type MonitorAPIGetNetworkWirelessClientsLatencyStatsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -8743,54 +8743,54 @@ type MonitorApiGetNetworkWirelessClientsLatencyStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r MonitorApiGetNetworkWirelessClientsLatencyStatsRequest) T0(t0 string) MonitorApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientsLatencyStatsRequest) T0(t0 string) MonitorAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r MonitorApiGetNetworkWirelessClientsLatencyStatsRequest) T1(t1 string) MonitorApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientsLatencyStatsRequest) T1(t1 string) MonitorAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r MonitorApiGetNetworkWirelessClientsLatencyStatsRequest) Timespan(timespan float32) MonitorApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientsLatencyStatsRequest) Timespan(timespan float32) MonitorAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r MonitorApiGetNetworkWirelessClientsLatencyStatsRequest) Band(band string) MonitorApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientsLatencyStatsRequest) Band(band string) MonitorAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r MonitorApiGetNetworkWirelessClientsLatencyStatsRequest) Ssid(ssid int32) MonitorApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientsLatencyStatsRequest) Ssid(ssid int32) MonitorAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r MonitorApiGetNetworkWirelessClientsLatencyStatsRequest) Vlan(vlan int32) MonitorApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientsLatencyStatsRequest) Vlan(vlan int32) MonitorAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r MonitorApiGetNetworkWirelessClientsLatencyStatsRequest) ApTag(apTag string) MonitorApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientsLatencyStatsRequest) ApTag(apTag string) MonitorAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Partial selection: If present, this call will return only the selected fields of [\&quot;rawDistribution\&quot;, \&quot;avg\&quot;]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
-func (r MonitorApiGetNetworkWirelessClientsLatencyStatsRequest) Fields(fields string) MonitorApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessClientsLatencyStatsRequest) Fields(fields string) MonitorAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r MonitorApiGetNetworkWirelessClientsLatencyStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetNetworkWirelessClientsLatencyStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessClientsLatencyStatsExecute(r)
 }
 
@@ -8801,10 +8801,10 @@ Aggregated latency info for this network, grouped by clients
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkWirelessClientsLatencyStatsRequest
+ @return MonitorAPIGetNetworkWirelessClientsLatencyStatsRequest
 */
-func (a *MonitorApiService) GetNetworkWirelessClientsLatencyStats(ctx context.Context, networkId string) MonitorApiGetNetworkWirelessClientsLatencyStatsRequest {
-	return MonitorApiGetNetworkWirelessClientsLatencyStatsRequest{
+func (a *MonitorAPIService) GetNetworkWirelessClientsLatencyStats(ctx context.Context, networkId string) MonitorAPIGetNetworkWirelessClientsLatencyStatsRequest {
+	return MonitorAPIGetNetworkWirelessClientsLatencyStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -8813,7 +8813,7 @@ func (a *MonitorApiService) GetNetworkWirelessClientsLatencyStats(ctx context.Co
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetNetworkWirelessClientsLatencyStatsExecute(r MonitorApiGetNetworkWirelessClientsLatencyStatsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkWirelessClientsLatencyStatsExecute(r MonitorAPIGetNetworkWirelessClientsLatencyStatsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -8821,7 +8821,7 @@ func (a *MonitorApiService) GetNetworkWirelessClientsLatencyStatsExecute(r Monit
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkWirelessClientsLatencyStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkWirelessClientsLatencyStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8925,9 +8925,9 @@ func (a *MonitorApiService) GetNetworkWirelessClientsLatencyStatsExecute(r Monit
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkWirelessConnectionStatsRequest struct {
+type MonitorAPIGetNetworkWirelessConnectionStatsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -8939,48 +8939,48 @@ type MonitorApiGetNetworkWirelessConnectionStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r MonitorApiGetNetworkWirelessConnectionStatsRequest) T0(t0 string) MonitorApiGetNetworkWirelessConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessConnectionStatsRequest) T0(t0 string) MonitorAPIGetNetworkWirelessConnectionStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r MonitorApiGetNetworkWirelessConnectionStatsRequest) T1(t1 string) MonitorApiGetNetworkWirelessConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessConnectionStatsRequest) T1(t1 string) MonitorAPIGetNetworkWirelessConnectionStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r MonitorApiGetNetworkWirelessConnectionStatsRequest) Timespan(timespan float32) MonitorApiGetNetworkWirelessConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessConnectionStatsRequest) Timespan(timespan float32) MonitorAPIGetNetworkWirelessConnectionStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r MonitorApiGetNetworkWirelessConnectionStatsRequest) Band(band string) MonitorApiGetNetworkWirelessConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessConnectionStatsRequest) Band(band string) MonitorAPIGetNetworkWirelessConnectionStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r MonitorApiGetNetworkWirelessConnectionStatsRequest) Ssid(ssid int32) MonitorApiGetNetworkWirelessConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessConnectionStatsRequest) Ssid(ssid int32) MonitorAPIGetNetworkWirelessConnectionStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r MonitorApiGetNetworkWirelessConnectionStatsRequest) Vlan(vlan int32) MonitorApiGetNetworkWirelessConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessConnectionStatsRequest) Vlan(vlan int32) MonitorAPIGetNetworkWirelessConnectionStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r MonitorApiGetNetworkWirelessConnectionStatsRequest) ApTag(apTag string) MonitorApiGetNetworkWirelessConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessConnectionStatsRequest) ApTag(apTag string) MonitorAPIGetNetworkWirelessConnectionStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
-func (r MonitorApiGetNetworkWirelessConnectionStatsRequest) Execute() (*GetNetworkWirelessConnectionStats200Response, *http.Response, error) {
+func (r MonitorAPIGetNetworkWirelessConnectionStatsRequest) Execute() (*GetNetworkWirelessConnectionStats200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessConnectionStatsExecute(r)
 }
 
@@ -8991,10 +8991,10 @@ Aggregated connectivity info for this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkWirelessConnectionStatsRequest
+ @return MonitorAPIGetNetworkWirelessConnectionStatsRequest
 */
-func (a *MonitorApiService) GetNetworkWirelessConnectionStats(ctx context.Context, networkId string) MonitorApiGetNetworkWirelessConnectionStatsRequest {
-	return MonitorApiGetNetworkWirelessConnectionStatsRequest{
+func (a *MonitorAPIService) GetNetworkWirelessConnectionStats(ctx context.Context, networkId string) MonitorAPIGetNetworkWirelessConnectionStatsRequest {
+	return MonitorAPIGetNetworkWirelessConnectionStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9003,7 +9003,7 @@ func (a *MonitorApiService) GetNetworkWirelessConnectionStats(ctx context.Contex
 
 // Execute executes the request
 //  @return GetNetworkWirelessConnectionStats200Response
-func (a *MonitorApiService) GetNetworkWirelessConnectionStatsExecute(r MonitorApiGetNetworkWirelessConnectionStatsRequest) (*GetNetworkWirelessConnectionStats200Response, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkWirelessConnectionStatsExecute(r MonitorAPIGetNetworkWirelessConnectionStatsRequest) (*GetNetworkWirelessConnectionStats200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -9011,7 +9011,7 @@ func (a *MonitorApiService) GetNetworkWirelessConnectionStatsExecute(r MonitorAp
 		localVarReturnValue  *GetNetworkWirelessConnectionStats200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkWirelessConnectionStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkWirelessConnectionStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9112,9 +9112,9 @@ func (a *MonitorApiService) GetNetworkWirelessConnectionStatsExecute(r MonitorAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkWirelessDataRateHistoryRequest struct {
+type MonitorAPIGetNetworkWirelessDataRateHistoryRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -9129,66 +9129,66 @@ type MonitorApiGetNetworkWirelessDataRateHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r MonitorApiGetNetworkWirelessDataRateHistoryRequest) T0(t0 string) MonitorApiGetNetworkWirelessDataRateHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessDataRateHistoryRequest) T0(t0 string) MonitorAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetNetworkWirelessDataRateHistoryRequest) T1(t1 string) MonitorApiGetNetworkWirelessDataRateHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessDataRateHistoryRequest) T1(t1 string) MonitorAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r MonitorApiGetNetworkWirelessDataRateHistoryRequest) Timespan(timespan float32) MonitorApiGetNetworkWirelessDataRateHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessDataRateHistoryRequest) Timespan(timespan float32) MonitorAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 300, 600, 1200, 3600, 14400, 86400. The default is 86400.
-func (r MonitorApiGetNetworkWirelessDataRateHistoryRequest) Resolution(resolution int32) MonitorApiGetNetworkWirelessDataRateHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessDataRateHistoryRequest) Resolution(resolution int32) MonitorAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // Automatically select a data resolution based on the given timespan; this overrides the value specified by the &#39;resolution&#39; parameter. The default setting is false.
-func (r MonitorApiGetNetworkWirelessDataRateHistoryRequest) AutoResolution(autoResolution bool) MonitorApiGetNetworkWirelessDataRateHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessDataRateHistoryRequest) AutoResolution(autoResolution bool) MonitorAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.autoResolution = &autoResolution
 	return r
 }
 
 // Filter results by network client.
-func (r MonitorApiGetNetworkWirelessDataRateHistoryRequest) ClientId(clientId string) MonitorApiGetNetworkWirelessDataRateHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessDataRateHistoryRequest) ClientId(clientId string) MonitorAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.clientId = &clientId
 	return r
 }
 
 // Filter results by device.
-func (r MonitorApiGetNetworkWirelessDataRateHistoryRequest) DeviceSerial(deviceSerial string) MonitorApiGetNetworkWirelessDataRateHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessDataRateHistoryRequest) DeviceSerial(deviceSerial string) MonitorAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.deviceSerial = &deviceSerial
 	return r
 }
 
 // Filter results by AP tag.
-func (r MonitorApiGetNetworkWirelessDataRateHistoryRequest) ApTag(apTag string) MonitorApiGetNetworkWirelessDataRateHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessDataRateHistoryRequest) ApTag(apTag string) MonitorAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;).
-func (r MonitorApiGetNetworkWirelessDataRateHistoryRequest) Band(band string) MonitorApiGetNetworkWirelessDataRateHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessDataRateHistoryRequest) Band(band string) MonitorAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID number.
-func (r MonitorApiGetNetworkWirelessDataRateHistoryRequest) Ssid(ssid int32) MonitorApiGetNetworkWirelessDataRateHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessDataRateHistoryRequest) Ssid(ssid int32) MonitorAPIGetNetworkWirelessDataRateHistoryRequest {
 	r.ssid = &ssid
 	return r
 }
 
-func (r MonitorApiGetNetworkWirelessDataRateHistoryRequest) Execute() ([]GetNetworkWirelessDataRateHistory200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetNetworkWirelessDataRateHistoryRequest) Execute() ([]GetNetworkWirelessDataRateHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessDataRateHistoryExecute(r)
 }
 
@@ -9199,10 +9199,10 @@ Return PHY data rates over time for a network, device, or network client
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkWirelessDataRateHistoryRequest
+ @return MonitorAPIGetNetworkWirelessDataRateHistoryRequest
 */
-func (a *MonitorApiService) GetNetworkWirelessDataRateHistory(ctx context.Context, networkId string) MonitorApiGetNetworkWirelessDataRateHistoryRequest {
-	return MonitorApiGetNetworkWirelessDataRateHistoryRequest{
+func (a *MonitorAPIService) GetNetworkWirelessDataRateHistory(ctx context.Context, networkId string) MonitorAPIGetNetworkWirelessDataRateHistoryRequest {
+	return MonitorAPIGetNetworkWirelessDataRateHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9211,7 +9211,7 @@ func (a *MonitorApiService) GetNetworkWirelessDataRateHistory(ctx context.Contex
 
 // Execute executes the request
 //  @return []GetNetworkWirelessDataRateHistory200ResponseInner
-func (a *MonitorApiService) GetNetworkWirelessDataRateHistoryExecute(r MonitorApiGetNetworkWirelessDataRateHistoryRequest) ([]GetNetworkWirelessDataRateHistory200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkWirelessDataRateHistoryExecute(r MonitorAPIGetNetworkWirelessDataRateHistoryRequest) ([]GetNetworkWirelessDataRateHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -9219,7 +9219,7 @@ func (a *MonitorApiService) GetNetworkWirelessDataRateHistoryExecute(r MonitorAp
 		localVarReturnValue  []GetNetworkWirelessDataRateHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkWirelessDataRateHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkWirelessDataRateHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9329,9 +9329,9 @@ func (a *MonitorApiService) GetNetworkWirelessDataRateHistoryExecute(r MonitorAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkWirelessDevicesConnectionStatsRequest struct {
+type MonitorAPIGetNetworkWirelessDevicesConnectionStatsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -9343,48 +9343,48 @@ type MonitorApiGetNetworkWirelessDevicesConnectionStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r MonitorApiGetNetworkWirelessDevicesConnectionStatsRequest) T0(t0 string) MonitorApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessDevicesConnectionStatsRequest) T0(t0 string) MonitorAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r MonitorApiGetNetworkWirelessDevicesConnectionStatsRequest) T1(t1 string) MonitorApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessDevicesConnectionStatsRequest) T1(t1 string) MonitorAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r MonitorApiGetNetworkWirelessDevicesConnectionStatsRequest) Timespan(timespan float32) MonitorApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessDevicesConnectionStatsRequest) Timespan(timespan float32) MonitorAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r MonitorApiGetNetworkWirelessDevicesConnectionStatsRequest) Band(band string) MonitorApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessDevicesConnectionStatsRequest) Band(band string) MonitorAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r MonitorApiGetNetworkWirelessDevicesConnectionStatsRequest) Ssid(ssid int32) MonitorApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessDevicesConnectionStatsRequest) Ssid(ssid int32) MonitorAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r MonitorApiGetNetworkWirelessDevicesConnectionStatsRequest) Vlan(vlan int32) MonitorApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessDevicesConnectionStatsRequest) Vlan(vlan int32) MonitorAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r MonitorApiGetNetworkWirelessDevicesConnectionStatsRequest) ApTag(apTag string) MonitorApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r MonitorAPIGetNetworkWirelessDevicesConnectionStatsRequest) ApTag(apTag string) MonitorAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
-func (r MonitorApiGetNetworkWirelessDevicesConnectionStatsRequest) Execute() ([]GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
+func (r MonitorAPIGetNetworkWirelessDevicesConnectionStatsRequest) Execute() ([]GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessDevicesConnectionStatsExecute(r)
 }
 
@@ -9395,10 +9395,10 @@ Aggregated connectivity info for this network, grouped by node
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkWirelessDevicesConnectionStatsRequest
+ @return MonitorAPIGetNetworkWirelessDevicesConnectionStatsRequest
 */
-func (a *MonitorApiService) GetNetworkWirelessDevicesConnectionStats(ctx context.Context, networkId string) MonitorApiGetNetworkWirelessDevicesConnectionStatsRequest {
-	return MonitorApiGetNetworkWirelessDevicesConnectionStatsRequest{
+func (a *MonitorAPIService) GetNetworkWirelessDevicesConnectionStats(ctx context.Context, networkId string) MonitorAPIGetNetworkWirelessDevicesConnectionStatsRequest {
+	return MonitorAPIGetNetworkWirelessDevicesConnectionStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9407,7 +9407,7 @@ func (a *MonitorApiService) GetNetworkWirelessDevicesConnectionStats(ctx context
 
 // Execute executes the request
 //  @return []GetDeviceWirelessConnectionStats200Response
-func (a *MonitorApiService) GetNetworkWirelessDevicesConnectionStatsExecute(r MonitorApiGetNetworkWirelessDevicesConnectionStatsRequest) ([]GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkWirelessDevicesConnectionStatsExecute(r MonitorAPIGetNetworkWirelessDevicesConnectionStatsRequest) ([]GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -9415,7 +9415,7 @@ func (a *MonitorApiService) GetNetworkWirelessDevicesConnectionStatsExecute(r Mo
 		localVarReturnValue  []GetDeviceWirelessConnectionStats200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkWirelessDevicesConnectionStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkWirelessDevicesConnectionStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9516,9 +9516,9 @@ func (a *MonitorApiService) GetNetworkWirelessDevicesConnectionStatsExecute(r Mo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkWirelessDevicesLatencyStatsRequest struct {
+type MonitorAPIGetNetworkWirelessDevicesLatencyStatsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -9531,54 +9531,54 @@ type MonitorApiGetNetworkWirelessDevicesLatencyStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r MonitorApiGetNetworkWirelessDevicesLatencyStatsRequest) T0(t0 string) MonitorApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessDevicesLatencyStatsRequest) T0(t0 string) MonitorAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r MonitorApiGetNetworkWirelessDevicesLatencyStatsRequest) T1(t1 string) MonitorApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessDevicesLatencyStatsRequest) T1(t1 string) MonitorAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r MonitorApiGetNetworkWirelessDevicesLatencyStatsRequest) Timespan(timespan float32) MonitorApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessDevicesLatencyStatsRequest) Timespan(timespan float32) MonitorAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r MonitorApiGetNetworkWirelessDevicesLatencyStatsRequest) Band(band string) MonitorApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessDevicesLatencyStatsRequest) Band(band string) MonitorAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r MonitorApiGetNetworkWirelessDevicesLatencyStatsRequest) Ssid(ssid int32) MonitorApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessDevicesLatencyStatsRequest) Ssid(ssid int32) MonitorAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r MonitorApiGetNetworkWirelessDevicesLatencyStatsRequest) Vlan(vlan int32) MonitorApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessDevicesLatencyStatsRequest) Vlan(vlan int32) MonitorAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r MonitorApiGetNetworkWirelessDevicesLatencyStatsRequest) ApTag(apTag string) MonitorApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessDevicesLatencyStatsRequest) ApTag(apTag string) MonitorAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Partial selection: If present, this call will return only the selected fields of [\&quot;rawDistribution\&quot;, \&quot;avg\&quot;]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
-func (r MonitorApiGetNetworkWirelessDevicesLatencyStatsRequest) Fields(fields string) MonitorApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessDevicesLatencyStatsRequest) Fields(fields string) MonitorAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r MonitorApiGetNetworkWirelessDevicesLatencyStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetNetworkWirelessDevicesLatencyStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessDevicesLatencyStatsExecute(r)
 }
 
@@ -9589,10 +9589,10 @@ Aggregated latency info for this network, grouped by node
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkWirelessDevicesLatencyStatsRequest
+ @return MonitorAPIGetNetworkWirelessDevicesLatencyStatsRequest
 */
-func (a *MonitorApiService) GetNetworkWirelessDevicesLatencyStats(ctx context.Context, networkId string) MonitorApiGetNetworkWirelessDevicesLatencyStatsRequest {
-	return MonitorApiGetNetworkWirelessDevicesLatencyStatsRequest{
+func (a *MonitorAPIService) GetNetworkWirelessDevicesLatencyStats(ctx context.Context, networkId string) MonitorAPIGetNetworkWirelessDevicesLatencyStatsRequest {
+	return MonitorAPIGetNetworkWirelessDevicesLatencyStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9601,7 +9601,7 @@ func (a *MonitorApiService) GetNetworkWirelessDevicesLatencyStats(ctx context.Co
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetNetworkWirelessDevicesLatencyStatsExecute(r MonitorApiGetNetworkWirelessDevicesLatencyStatsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkWirelessDevicesLatencyStatsExecute(r MonitorAPIGetNetworkWirelessDevicesLatencyStatsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -9609,7 +9609,7 @@ func (a *MonitorApiService) GetNetworkWirelessDevicesLatencyStatsExecute(r Monit
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkWirelessDevicesLatencyStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkWirelessDevicesLatencyStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9713,9 +9713,9 @@ func (a *MonitorApiService) GetNetworkWirelessDevicesLatencyStatsExecute(r Monit
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkWirelessFailedConnectionsRequest struct {
+type MonitorAPIGetNetworkWirelessFailedConnectionsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -9729,60 +9729,60 @@ type MonitorApiGetNetworkWirelessFailedConnectionsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r MonitorApiGetNetworkWirelessFailedConnectionsRequest) T0(t0 string) MonitorApiGetNetworkWirelessFailedConnectionsRequest {
+func (r MonitorAPIGetNetworkWirelessFailedConnectionsRequest) T0(t0 string) MonitorAPIGetNetworkWirelessFailedConnectionsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r MonitorApiGetNetworkWirelessFailedConnectionsRequest) T1(t1 string) MonitorApiGetNetworkWirelessFailedConnectionsRequest {
+func (r MonitorAPIGetNetworkWirelessFailedConnectionsRequest) T1(t1 string) MonitorAPIGetNetworkWirelessFailedConnectionsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r MonitorApiGetNetworkWirelessFailedConnectionsRequest) Timespan(timespan float32) MonitorApiGetNetworkWirelessFailedConnectionsRequest {
+func (r MonitorAPIGetNetworkWirelessFailedConnectionsRequest) Timespan(timespan float32) MonitorAPIGetNetworkWirelessFailedConnectionsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r MonitorApiGetNetworkWirelessFailedConnectionsRequest) Band(band string) MonitorApiGetNetworkWirelessFailedConnectionsRequest {
+func (r MonitorAPIGetNetworkWirelessFailedConnectionsRequest) Band(band string) MonitorAPIGetNetworkWirelessFailedConnectionsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r MonitorApiGetNetworkWirelessFailedConnectionsRequest) Ssid(ssid int32) MonitorApiGetNetworkWirelessFailedConnectionsRequest {
+func (r MonitorAPIGetNetworkWirelessFailedConnectionsRequest) Ssid(ssid int32) MonitorAPIGetNetworkWirelessFailedConnectionsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r MonitorApiGetNetworkWirelessFailedConnectionsRequest) Vlan(vlan int32) MonitorApiGetNetworkWirelessFailedConnectionsRequest {
+func (r MonitorAPIGetNetworkWirelessFailedConnectionsRequest) Vlan(vlan int32) MonitorAPIGetNetworkWirelessFailedConnectionsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r MonitorApiGetNetworkWirelessFailedConnectionsRequest) ApTag(apTag string) MonitorApiGetNetworkWirelessFailedConnectionsRequest {
+func (r MonitorAPIGetNetworkWirelessFailedConnectionsRequest) ApTag(apTag string) MonitorAPIGetNetworkWirelessFailedConnectionsRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Filter by AP
-func (r MonitorApiGetNetworkWirelessFailedConnectionsRequest) Serial(serial string) MonitorApiGetNetworkWirelessFailedConnectionsRequest {
+func (r MonitorAPIGetNetworkWirelessFailedConnectionsRequest) Serial(serial string) MonitorAPIGetNetworkWirelessFailedConnectionsRequest {
 	r.serial = &serial
 	return r
 }
 
 // Filter by client MAC
-func (r MonitorApiGetNetworkWirelessFailedConnectionsRequest) ClientId(clientId string) MonitorApiGetNetworkWirelessFailedConnectionsRequest {
+func (r MonitorAPIGetNetworkWirelessFailedConnectionsRequest) ClientId(clientId string) MonitorAPIGetNetworkWirelessFailedConnectionsRequest {
 	r.clientId = &clientId
 	return r
 }
 
-func (r MonitorApiGetNetworkWirelessFailedConnectionsRequest) Execute() ([]GetNetworkWirelessFailedConnections200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetNetworkWirelessFailedConnectionsRequest) Execute() ([]GetNetworkWirelessFailedConnections200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessFailedConnectionsExecute(r)
 }
 
@@ -9793,10 +9793,10 @@ List of all failed client connection events on this network in a given time rang
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkWirelessFailedConnectionsRequest
+ @return MonitorAPIGetNetworkWirelessFailedConnectionsRequest
 */
-func (a *MonitorApiService) GetNetworkWirelessFailedConnections(ctx context.Context, networkId string) MonitorApiGetNetworkWirelessFailedConnectionsRequest {
-	return MonitorApiGetNetworkWirelessFailedConnectionsRequest{
+func (a *MonitorAPIService) GetNetworkWirelessFailedConnections(ctx context.Context, networkId string) MonitorAPIGetNetworkWirelessFailedConnectionsRequest {
+	return MonitorAPIGetNetworkWirelessFailedConnectionsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9805,7 +9805,7 @@ func (a *MonitorApiService) GetNetworkWirelessFailedConnections(ctx context.Cont
 
 // Execute executes the request
 //  @return []GetNetworkWirelessFailedConnections200ResponseInner
-func (a *MonitorApiService) GetNetworkWirelessFailedConnectionsExecute(r MonitorApiGetNetworkWirelessFailedConnectionsRequest) ([]GetNetworkWirelessFailedConnections200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkWirelessFailedConnectionsExecute(r MonitorAPIGetNetworkWirelessFailedConnectionsRequest) ([]GetNetworkWirelessFailedConnections200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -9813,7 +9813,7 @@ func (a *MonitorApiService) GetNetworkWirelessFailedConnectionsExecute(r Monitor
 		localVarReturnValue  []GetNetworkWirelessFailedConnections200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkWirelessFailedConnections")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkWirelessFailedConnections")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9920,9 +9920,9 @@ func (a *MonitorApiService) GetNetworkWirelessFailedConnectionsExecute(r Monitor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkWirelessLatencyHistoryRequest struct {
+type MonitorAPIGetNetworkWirelessLatencyHistoryRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -9938,72 +9938,72 @@ type MonitorApiGetNetworkWirelessLatencyHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r MonitorApiGetNetworkWirelessLatencyHistoryRequest) T0(t0 string) MonitorApiGetNetworkWirelessLatencyHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessLatencyHistoryRequest) T0(t0 string) MonitorAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetNetworkWirelessLatencyHistoryRequest) T1(t1 string) MonitorApiGetNetworkWirelessLatencyHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessLatencyHistoryRequest) T1(t1 string) MonitorAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r MonitorApiGetNetworkWirelessLatencyHistoryRequest) Timespan(timespan float32) MonitorApiGetNetworkWirelessLatencyHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessLatencyHistoryRequest) Timespan(timespan float32) MonitorAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 300, 600, 1200, 3600, 14400, 86400. The default is 86400.
-func (r MonitorApiGetNetworkWirelessLatencyHistoryRequest) Resolution(resolution int32) MonitorApiGetNetworkWirelessLatencyHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessLatencyHistoryRequest) Resolution(resolution int32) MonitorAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // Automatically select a data resolution based on the given timespan; this overrides the value specified by the &#39;resolution&#39; parameter. The default setting is false.
-func (r MonitorApiGetNetworkWirelessLatencyHistoryRequest) AutoResolution(autoResolution bool) MonitorApiGetNetworkWirelessLatencyHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessLatencyHistoryRequest) AutoResolution(autoResolution bool) MonitorAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.autoResolution = &autoResolution
 	return r
 }
 
 // Filter results by network client.
-func (r MonitorApiGetNetworkWirelessLatencyHistoryRequest) ClientId(clientId string) MonitorApiGetNetworkWirelessLatencyHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessLatencyHistoryRequest) ClientId(clientId string) MonitorAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.clientId = &clientId
 	return r
 }
 
 // Filter results by device.
-func (r MonitorApiGetNetworkWirelessLatencyHistoryRequest) DeviceSerial(deviceSerial string) MonitorApiGetNetworkWirelessLatencyHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessLatencyHistoryRequest) DeviceSerial(deviceSerial string) MonitorAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.deviceSerial = &deviceSerial
 	return r
 }
 
 // Filter results by AP tag.
-func (r MonitorApiGetNetworkWirelessLatencyHistoryRequest) ApTag(apTag string) MonitorApiGetNetworkWirelessLatencyHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessLatencyHistoryRequest) ApTag(apTag string) MonitorAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;).
-func (r MonitorApiGetNetworkWirelessLatencyHistoryRequest) Band(band string) MonitorApiGetNetworkWirelessLatencyHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessLatencyHistoryRequest) Band(band string) MonitorAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID number.
-func (r MonitorApiGetNetworkWirelessLatencyHistoryRequest) Ssid(ssid int32) MonitorApiGetNetworkWirelessLatencyHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessLatencyHistoryRequest) Ssid(ssid int32) MonitorAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter by access category.
-func (r MonitorApiGetNetworkWirelessLatencyHistoryRequest) AccessCategory(accessCategory string) MonitorApiGetNetworkWirelessLatencyHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessLatencyHistoryRequest) AccessCategory(accessCategory string) MonitorAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.accessCategory = &accessCategory
 	return r
 }
 
-func (r MonitorApiGetNetworkWirelessLatencyHistoryRequest) Execute() ([]GetNetworkWirelessLatencyHistory200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetNetworkWirelessLatencyHistoryRequest) Execute() ([]GetNetworkWirelessLatencyHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessLatencyHistoryExecute(r)
 }
 
@@ -10014,10 +10014,10 @@ Return average wireless latency over time for a network, device, or network clie
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkWirelessLatencyHistoryRequest
+ @return MonitorAPIGetNetworkWirelessLatencyHistoryRequest
 */
-func (a *MonitorApiService) GetNetworkWirelessLatencyHistory(ctx context.Context, networkId string) MonitorApiGetNetworkWirelessLatencyHistoryRequest {
-	return MonitorApiGetNetworkWirelessLatencyHistoryRequest{
+func (a *MonitorAPIService) GetNetworkWirelessLatencyHistory(ctx context.Context, networkId string) MonitorAPIGetNetworkWirelessLatencyHistoryRequest {
+	return MonitorAPIGetNetworkWirelessLatencyHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10026,7 +10026,7 @@ func (a *MonitorApiService) GetNetworkWirelessLatencyHistory(ctx context.Context
 
 // Execute executes the request
 //  @return []GetNetworkWirelessLatencyHistory200ResponseInner
-func (a *MonitorApiService) GetNetworkWirelessLatencyHistoryExecute(r MonitorApiGetNetworkWirelessLatencyHistoryRequest) ([]GetNetworkWirelessLatencyHistory200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkWirelessLatencyHistoryExecute(r MonitorAPIGetNetworkWirelessLatencyHistoryRequest) ([]GetNetworkWirelessLatencyHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -10034,7 +10034,7 @@ func (a *MonitorApiService) GetNetworkWirelessLatencyHistoryExecute(r MonitorApi
 		localVarReturnValue  []GetNetworkWirelessLatencyHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkWirelessLatencyHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkWirelessLatencyHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10147,9 +10147,9 @@ func (a *MonitorApiService) GetNetworkWirelessLatencyHistoryExecute(r MonitorApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkWirelessLatencyStatsRequest struct {
+type MonitorAPIGetNetworkWirelessLatencyStatsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -10162,54 +10162,54 @@ type MonitorApiGetNetworkWirelessLatencyStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r MonitorApiGetNetworkWirelessLatencyStatsRequest) T0(t0 string) MonitorApiGetNetworkWirelessLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessLatencyStatsRequest) T0(t0 string) MonitorAPIGetNetworkWirelessLatencyStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r MonitorApiGetNetworkWirelessLatencyStatsRequest) T1(t1 string) MonitorApiGetNetworkWirelessLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessLatencyStatsRequest) T1(t1 string) MonitorAPIGetNetworkWirelessLatencyStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r MonitorApiGetNetworkWirelessLatencyStatsRequest) Timespan(timespan float32) MonitorApiGetNetworkWirelessLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessLatencyStatsRequest) Timespan(timespan float32) MonitorAPIGetNetworkWirelessLatencyStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r MonitorApiGetNetworkWirelessLatencyStatsRequest) Band(band string) MonitorApiGetNetworkWirelessLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessLatencyStatsRequest) Band(band string) MonitorAPIGetNetworkWirelessLatencyStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r MonitorApiGetNetworkWirelessLatencyStatsRequest) Ssid(ssid int32) MonitorApiGetNetworkWirelessLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessLatencyStatsRequest) Ssid(ssid int32) MonitorAPIGetNetworkWirelessLatencyStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r MonitorApiGetNetworkWirelessLatencyStatsRequest) Vlan(vlan int32) MonitorApiGetNetworkWirelessLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessLatencyStatsRequest) Vlan(vlan int32) MonitorAPIGetNetworkWirelessLatencyStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r MonitorApiGetNetworkWirelessLatencyStatsRequest) ApTag(apTag string) MonitorApiGetNetworkWirelessLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessLatencyStatsRequest) ApTag(apTag string) MonitorAPIGetNetworkWirelessLatencyStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Partial selection: If present, this call will return only the selected fields of [\&quot;rawDistribution\&quot;, \&quot;avg\&quot;]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
-func (r MonitorApiGetNetworkWirelessLatencyStatsRequest) Fields(fields string) MonitorApiGetNetworkWirelessLatencyStatsRequest {
+func (r MonitorAPIGetNetworkWirelessLatencyStatsRequest) Fields(fields string) MonitorAPIGetNetworkWirelessLatencyStatsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r MonitorApiGetNetworkWirelessLatencyStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetNetworkWirelessLatencyStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessLatencyStatsExecute(r)
 }
 
@@ -10220,10 +10220,10 @@ Aggregated latency info for this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkWirelessLatencyStatsRequest
+ @return MonitorAPIGetNetworkWirelessLatencyStatsRequest
 */
-func (a *MonitorApiService) GetNetworkWirelessLatencyStats(ctx context.Context, networkId string) MonitorApiGetNetworkWirelessLatencyStatsRequest {
-	return MonitorApiGetNetworkWirelessLatencyStatsRequest{
+func (a *MonitorAPIService) GetNetworkWirelessLatencyStats(ctx context.Context, networkId string) MonitorAPIGetNetworkWirelessLatencyStatsRequest {
+	return MonitorAPIGetNetworkWirelessLatencyStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10232,7 +10232,7 @@ func (a *MonitorApiService) GetNetworkWirelessLatencyStats(ctx context.Context, 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *MonitorApiService) GetNetworkWirelessLatencyStatsExecute(r MonitorApiGetNetworkWirelessLatencyStatsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkWirelessLatencyStatsExecute(r MonitorAPIGetNetworkWirelessLatencyStatsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -10240,7 +10240,7 @@ func (a *MonitorApiService) GetNetworkWirelessLatencyStatsExecute(r MonitorApiGe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkWirelessLatencyStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkWirelessLatencyStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10344,9 +10344,9 @@ func (a *MonitorApiService) GetNetworkWirelessLatencyStatsExecute(r MonitorApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkWirelessMeshStatusesRequest struct {
+type MonitorAPIGetNetworkWirelessMeshStatusesRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	perPage *int32
 	startingAfter *string
@@ -10354,24 +10354,24 @@ type MonitorApiGetNetworkWirelessMeshStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 500. Default is 50.
-func (r MonitorApiGetNetworkWirelessMeshStatusesRequest) PerPage(perPage int32) MonitorApiGetNetworkWirelessMeshStatusesRequest {
+func (r MonitorAPIGetNetworkWirelessMeshStatusesRequest) PerPage(perPage int32) MonitorAPIGetNetworkWirelessMeshStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkWirelessMeshStatusesRequest) StartingAfter(startingAfter string) MonitorApiGetNetworkWirelessMeshStatusesRequest {
+func (r MonitorAPIGetNetworkWirelessMeshStatusesRequest) StartingAfter(startingAfter string) MonitorAPIGetNetworkWirelessMeshStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetNetworkWirelessMeshStatusesRequest) EndingBefore(endingBefore string) MonitorApiGetNetworkWirelessMeshStatusesRequest {
+func (r MonitorAPIGetNetworkWirelessMeshStatusesRequest) EndingBefore(endingBefore string) MonitorAPIGetNetworkWirelessMeshStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r MonitorApiGetNetworkWirelessMeshStatusesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetNetworkWirelessMeshStatusesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessMeshStatusesExecute(r)
 }
 
@@ -10382,10 +10382,10 @@ List wireless mesh statuses for repeaters
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkWirelessMeshStatusesRequest
+ @return MonitorAPIGetNetworkWirelessMeshStatusesRequest
 */
-func (a *MonitorApiService) GetNetworkWirelessMeshStatuses(ctx context.Context, networkId string) MonitorApiGetNetworkWirelessMeshStatusesRequest {
-	return MonitorApiGetNetworkWirelessMeshStatusesRequest{
+func (a *MonitorAPIService) GetNetworkWirelessMeshStatuses(ctx context.Context, networkId string) MonitorAPIGetNetworkWirelessMeshStatusesRequest {
+	return MonitorAPIGetNetworkWirelessMeshStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10394,7 +10394,7 @@ func (a *MonitorApiService) GetNetworkWirelessMeshStatuses(ctx context.Context, 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *MonitorApiService) GetNetworkWirelessMeshStatusesExecute(r MonitorApiGetNetworkWirelessMeshStatusesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkWirelessMeshStatusesExecute(r MonitorAPIGetNetworkWirelessMeshStatusesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -10402,7 +10402,7 @@ func (a *MonitorApiService) GetNetworkWirelessMeshStatusesExecute(r MonitorApiGe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkWirelessMeshStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkWirelessMeshStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10491,9 +10491,9 @@ func (a *MonitorApiService) GetNetworkWirelessMeshStatusesExecute(r MonitorApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkWirelessSignalQualityHistoryRequest struct {
+type MonitorAPIGetNetworkWirelessSignalQualityHistoryRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -10508,66 +10508,66 @@ type MonitorApiGetNetworkWirelessSignalQualityHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r MonitorApiGetNetworkWirelessSignalQualityHistoryRequest) T0(t0 string) MonitorApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessSignalQualityHistoryRequest) T0(t0 string) MonitorAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetNetworkWirelessSignalQualityHistoryRequest) T1(t1 string) MonitorApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessSignalQualityHistoryRequest) T1(t1 string) MonitorAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r MonitorApiGetNetworkWirelessSignalQualityHistoryRequest) Timespan(timespan float32) MonitorApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessSignalQualityHistoryRequest) Timespan(timespan float32) MonitorAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 300, 600, 1200, 3600, 14400, 86400. The default is 86400.
-func (r MonitorApiGetNetworkWirelessSignalQualityHistoryRequest) Resolution(resolution int32) MonitorApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessSignalQualityHistoryRequest) Resolution(resolution int32) MonitorAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // Automatically select a data resolution based on the given timespan; this overrides the value specified by the &#39;resolution&#39; parameter. The default setting is false.
-func (r MonitorApiGetNetworkWirelessSignalQualityHistoryRequest) AutoResolution(autoResolution bool) MonitorApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessSignalQualityHistoryRequest) AutoResolution(autoResolution bool) MonitorAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.autoResolution = &autoResolution
 	return r
 }
 
 // Filter results by network client.
-func (r MonitorApiGetNetworkWirelessSignalQualityHistoryRequest) ClientId(clientId string) MonitorApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessSignalQualityHistoryRequest) ClientId(clientId string) MonitorAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.clientId = &clientId
 	return r
 }
 
 // Filter results by device.
-func (r MonitorApiGetNetworkWirelessSignalQualityHistoryRequest) DeviceSerial(deviceSerial string) MonitorApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessSignalQualityHistoryRequest) DeviceSerial(deviceSerial string) MonitorAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.deviceSerial = &deviceSerial
 	return r
 }
 
 // Filter results by AP tag; either :clientId or :deviceSerial must be jointly specified.
-func (r MonitorApiGetNetworkWirelessSignalQualityHistoryRequest) ApTag(apTag string) MonitorApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessSignalQualityHistoryRequest) ApTag(apTag string) MonitorAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;).
-func (r MonitorApiGetNetworkWirelessSignalQualityHistoryRequest) Band(band string) MonitorApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessSignalQualityHistoryRequest) Band(band string) MonitorAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID number.
-func (r MonitorApiGetNetworkWirelessSignalQualityHistoryRequest) Ssid(ssid int32) MonitorApiGetNetworkWirelessSignalQualityHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessSignalQualityHistoryRequest) Ssid(ssid int32) MonitorAPIGetNetworkWirelessSignalQualityHistoryRequest {
 	r.ssid = &ssid
 	return r
 }
 
-func (r MonitorApiGetNetworkWirelessSignalQualityHistoryRequest) Execute() ([]GetNetworkWirelessSignalQualityHistory200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetNetworkWirelessSignalQualityHistoryRequest) Execute() ([]GetNetworkWirelessSignalQualityHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSignalQualityHistoryExecute(r)
 }
 
@@ -10578,10 +10578,10 @@ Return signal quality (SNR/RSSI) over time for a device or network client
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkWirelessSignalQualityHistoryRequest
+ @return MonitorAPIGetNetworkWirelessSignalQualityHistoryRequest
 */
-func (a *MonitorApiService) GetNetworkWirelessSignalQualityHistory(ctx context.Context, networkId string) MonitorApiGetNetworkWirelessSignalQualityHistoryRequest {
-	return MonitorApiGetNetworkWirelessSignalQualityHistoryRequest{
+func (a *MonitorAPIService) GetNetworkWirelessSignalQualityHistory(ctx context.Context, networkId string) MonitorAPIGetNetworkWirelessSignalQualityHistoryRequest {
+	return MonitorAPIGetNetworkWirelessSignalQualityHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10590,7 +10590,7 @@ func (a *MonitorApiService) GetNetworkWirelessSignalQualityHistory(ctx context.C
 
 // Execute executes the request
 //  @return []GetNetworkWirelessSignalQualityHistory200ResponseInner
-func (a *MonitorApiService) GetNetworkWirelessSignalQualityHistoryExecute(r MonitorApiGetNetworkWirelessSignalQualityHistoryRequest) ([]GetNetworkWirelessSignalQualityHistory200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkWirelessSignalQualityHistoryExecute(r MonitorAPIGetNetworkWirelessSignalQualityHistoryRequest) ([]GetNetworkWirelessSignalQualityHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -10598,7 +10598,7 @@ func (a *MonitorApiService) GetNetworkWirelessSignalQualityHistoryExecute(r Moni
 		localVarReturnValue  []GetNetworkWirelessSignalQualityHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkWirelessSignalQualityHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkWirelessSignalQualityHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10708,9 +10708,9 @@ func (a *MonitorApiService) GetNetworkWirelessSignalQualityHistoryExecute(r Moni
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetNetworkWirelessUsageHistoryRequest struct {
+type MonitorAPIGetNetworkWirelessUsageHistoryRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -10725,66 +10725,66 @@ type MonitorApiGetNetworkWirelessUsageHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r MonitorApiGetNetworkWirelessUsageHistoryRequest) T0(t0 string) MonitorApiGetNetworkWirelessUsageHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessUsageHistoryRequest) T0(t0 string) MonitorAPIGetNetworkWirelessUsageHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetNetworkWirelessUsageHistoryRequest) T1(t1 string) MonitorApiGetNetworkWirelessUsageHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessUsageHistoryRequest) T1(t1 string) MonitorAPIGetNetworkWirelessUsageHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r MonitorApiGetNetworkWirelessUsageHistoryRequest) Timespan(timespan float32) MonitorApiGetNetworkWirelessUsageHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessUsageHistoryRequest) Timespan(timespan float32) MonitorAPIGetNetworkWirelessUsageHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 300, 600, 1200, 3600, 14400, 86400. The default is 86400.
-func (r MonitorApiGetNetworkWirelessUsageHistoryRequest) Resolution(resolution int32) MonitorApiGetNetworkWirelessUsageHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessUsageHistoryRequest) Resolution(resolution int32) MonitorAPIGetNetworkWirelessUsageHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // Automatically select a data resolution based on the given timespan; this overrides the value specified by the &#39;resolution&#39; parameter. The default setting is false.
-func (r MonitorApiGetNetworkWirelessUsageHistoryRequest) AutoResolution(autoResolution bool) MonitorApiGetNetworkWirelessUsageHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessUsageHistoryRequest) AutoResolution(autoResolution bool) MonitorAPIGetNetworkWirelessUsageHistoryRequest {
 	r.autoResolution = &autoResolution
 	return r
 }
 
 // Filter results by network client to return per-device AP usage over time inner joined by the queried client&#39;s connection history.
-func (r MonitorApiGetNetworkWirelessUsageHistoryRequest) ClientId(clientId string) MonitorApiGetNetworkWirelessUsageHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessUsageHistoryRequest) ClientId(clientId string) MonitorAPIGetNetworkWirelessUsageHistoryRequest {
 	r.clientId = &clientId
 	return r
 }
 
 // Filter results by device. Requires :band.
-func (r MonitorApiGetNetworkWirelessUsageHistoryRequest) DeviceSerial(deviceSerial string) MonitorApiGetNetworkWirelessUsageHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessUsageHistoryRequest) DeviceSerial(deviceSerial string) MonitorAPIGetNetworkWirelessUsageHistoryRequest {
 	r.deviceSerial = &deviceSerial
 	return r
 }
 
 // Filter results by AP tag; either :clientId or :deviceSerial must be jointly specified.
-func (r MonitorApiGetNetworkWirelessUsageHistoryRequest) ApTag(apTag string) MonitorApiGetNetworkWirelessUsageHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessUsageHistoryRequest) ApTag(apTag string) MonitorAPIGetNetworkWirelessUsageHistoryRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;).
-func (r MonitorApiGetNetworkWirelessUsageHistoryRequest) Band(band string) MonitorApiGetNetworkWirelessUsageHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessUsageHistoryRequest) Band(band string) MonitorAPIGetNetworkWirelessUsageHistoryRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID number.
-func (r MonitorApiGetNetworkWirelessUsageHistoryRequest) Ssid(ssid int32) MonitorApiGetNetworkWirelessUsageHistoryRequest {
+func (r MonitorAPIGetNetworkWirelessUsageHistoryRequest) Ssid(ssid int32) MonitorAPIGetNetworkWirelessUsageHistoryRequest {
 	r.ssid = &ssid
 	return r
 }
 
-func (r MonitorApiGetNetworkWirelessUsageHistoryRequest) Execute() ([]GetNetworkWirelessUsageHistory200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetNetworkWirelessUsageHistoryRequest) Execute() ([]GetNetworkWirelessUsageHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessUsageHistoryExecute(r)
 }
 
@@ -10795,10 +10795,10 @@ Return AP usage over time for a device or network client
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return MonitorApiGetNetworkWirelessUsageHistoryRequest
+ @return MonitorAPIGetNetworkWirelessUsageHistoryRequest
 */
-func (a *MonitorApiService) GetNetworkWirelessUsageHistory(ctx context.Context, networkId string) MonitorApiGetNetworkWirelessUsageHistoryRequest {
-	return MonitorApiGetNetworkWirelessUsageHistoryRequest{
+func (a *MonitorAPIService) GetNetworkWirelessUsageHistory(ctx context.Context, networkId string) MonitorAPIGetNetworkWirelessUsageHistoryRequest {
+	return MonitorAPIGetNetworkWirelessUsageHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -10807,7 +10807,7 @@ func (a *MonitorApiService) GetNetworkWirelessUsageHistory(ctx context.Context, 
 
 // Execute executes the request
 //  @return []GetNetworkWirelessUsageHistory200ResponseInner
-func (a *MonitorApiService) GetNetworkWirelessUsageHistoryExecute(r MonitorApiGetNetworkWirelessUsageHistoryRequest) ([]GetNetworkWirelessUsageHistory200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetNetworkWirelessUsageHistoryExecute(r MonitorAPIGetNetworkWirelessUsageHistoryRequest) ([]GetNetworkWirelessUsageHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -10815,7 +10815,7 @@ func (a *MonitorApiService) GetNetworkWirelessUsageHistoryExecute(r MonitorApiGe
 		localVarReturnValue  []GetNetworkWirelessUsageHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetNetworkWirelessUsageHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkWirelessUsageHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10925,13 +10925,13 @@ func (a *MonitorApiService) GetNetworkWirelessUsageHistoryExecute(r MonitorApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationAdaptivePolicyOverviewRequest struct {
+type MonitorAPIGetOrganizationAdaptivePolicyOverviewRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 }
 
-func (r MonitorApiGetOrganizationAdaptivePolicyOverviewRequest) Execute() (*GetOrganizationAdaptivePolicyOverview200Response, *http.Response, error) {
+func (r MonitorAPIGetOrganizationAdaptivePolicyOverviewRequest) Execute() (*GetOrganizationAdaptivePolicyOverview200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationAdaptivePolicyOverviewExecute(r)
 }
 
@@ -10942,10 +10942,10 @@ Returns adaptive policy aggregate statistics for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationAdaptivePolicyOverviewRequest
+ @return MonitorAPIGetOrganizationAdaptivePolicyOverviewRequest
 */
-func (a *MonitorApiService) GetOrganizationAdaptivePolicyOverview(ctx context.Context, organizationId string) MonitorApiGetOrganizationAdaptivePolicyOverviewRequest {
-	return MonitorApiGetOrganizationAdaptivePolicyOverviewRequest{
+func (a *MonitorAPIService) GetOrganizationAdaptivePolicyOverview(ctx context.Context, organizationId string) MonitorAPIGetOrganizationAdaptivePolicyOverviewRequest {
+	return MonitorAPIGetOrganizationAdaptivePolicyOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -10954,7 +10954,7 @@ func (a *MonitorApiService) GetOrganizationAdaptivePolicyOverview(ctx context.Co
 
 // Execute executes the request
 //  @return GetOrganizationAdaptivePolicyOverview200Response
-func (a *MonitorApiService) GetOrganizationAdaptivePolicyOverviewExecute(r MonitorApiGetOrganizationAdaptivePolicyOverviewRequest) (*GetOrganizationAdaptivePolicyOverview200Response, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationAdaptivePolicyOverviewExecute(r MonitorAPIGetOrganizationAdaptivePolicyOverviewRequest) (*GetOrganizationAdaptivePolicyOverview200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -10962,7 +10962,7 @@ func (a *MonitorApiService) GetOrganizationAdaptivePolicyOverviewExecute(r Monit
 		localVarReturnValue  *GetOrganizationAdaptivePolicyOverview200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationAdaptivePolicyOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationAdaptivePolicyOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11042,9 +11042,9 @@ func (a *MonitorApiService) GetOrganizationAdaptivePolicyOverviewExecute(r Monit
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationApiRequestsRequest struct {
+type MonitorAPIGetOrganizationApiRequestsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -11063,90 +11063,90 @@ type MonitorApiGetOrganizationApiRequestsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r MonitorApiGetOrganizationApiRequestsRequest) T0(t0 string) MonitorApiGetOrganizationApiRequestsRequest {
+func (r MonitorAPIGetOrganizationApiRequestsRequest) T0(t0 string) MonitorAPIGetOrganizationApiRequestsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetOrganizationApiRequestsRequest) T1(t1 string) MonitorApiGetOrganizationApiRequestsRequest {
+func (r MonitorAPIGetOrganizationApiRequestsRequest) T1(t1 string) MonitorAPIGetOrganizationApiRequestsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 31 days.
-func (r MonitorApiGetOrganizationApiRequestsRequest) Timespan(timespan float32) MonitorApiGetOrganizationApiRequestsRequest {
+func (r MonitorAPIGetOrganizationApiRequestsRequest) Timespan(timespan float32) MonitorAPIGetOrganizationApiRequestsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.
-func (r MonitorApiGetOrganizationApiRequestsRequest) PerPage(perPage int32) MonitorApiGetOrganizationApiRequestsRequest {
+func (r MonitorAPIGetOrganizationApiRequestsRequest) PerPage(perPage int32) MonitorAPIGetOrganizationApiRequestsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationApiRequestsRequest) StartingAfter(startingAfter string) MonitorApiGetOrganizationApiRequestsRequest {
+func (r MonitorAPIGetOrganizationApiRequestsRequest) StartingAfter(startingAfter string) MonitorAPIGetOrganizationApiRequestsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationApiRequestsRequest) EndingBefore(endingBefore string) MonitorApiGetOrganizationApiRequestsRequest {
+func (r MonitorAPIGetOrganizationApiRequestsRequest) EndingBefore(endingBefore string) MonitorAPIGetOrganizationApiRequestsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Filter the results by the ID of the admin who made the API requests
-func (r MonitorApiGetOrganizationApiRequestsRequest) AdminId(adminId string) MonitorApiGetOrganizationApiRequestsRequest {
+func (r MonitorAPIGetOrganizationApiRequestsRequest) AdminId(adminId string) MonitorAPIGetOrganizationApiRequestsRequest {
 	r.adminId = &adminId
 	return r
 }
 
 // Filter the results by the path of the API requests
-func (r MonitorApiGetOrganizationApiRequestsRequest) Path(path string) MonitorApiGetOrganizationApiRequestsRequest {
+func (r MonitorAPIGetOrganizationApiRequestsRequest) Path(path string) MonitorAPIGetOrganizationApiRequestsRequest {
 	r.path = &path
 	return r
 }
 
 // Filter the results by the method of the API requests (must be &#39;GET&#39;, &#39;PUT&#39;, &#39;POST&#39; or &#39;DELETE&#39;)
-func (r MonitorApiGetOrganizationApiRequestsRequest) Method(method string) MonitorApiGetOrganizationApiRequestsRequest {
+func (r MonitorAPIGetOrganizationApiRequestsRequest) Method(method string) MonitorAPIGetOrganizationApiRequestsRequest {
 	r.method = &method
 	return r
 }
 
 // Filter the results by the response code of the API requests
-func (r MonitorApiGetOrganizationApiRequestsRequest) ResponseCode(responseCode int32) MonitorApiGetOrganizationApiRequestsRequest {
+func (r MonitorAPIGetOrganizationApiRequestsRequest) ResponseCode(responseCode int32) MonitorAPIGetOrganizationApiRequestsRequest {
 	r.responseCode = &responseCode
 	return r
 }
 
 // Filter the results by the IP address of the originating API request
-func (r MonitorApiGetOrganizationApiRequestsRequest) SourceIp(sourceIp string) MonitorApiGetOrganizationApiRequestsRequest {
+func (r MonitorAPIGetOrganizationApiRequestsRequest) SourceIp(sourceIp string) MonitorAPIGetOrganizationApiRequestsRequest {
 	r.sourceIp = &sourceIp
 	return r
 }
 
 // Filter the results by the user agent string of the API request
-func (r MonitorApiGetOrganizationApiRequestsRequest) UserAgent(userAgent string) MonitorApiGetOrganizationApiRequestsRequest {
+func (r MonitorAPIGetOrganizationApiRequestsRequest) UserAgent(userAgent string) MonitorAPIGetOrganizationApiRequestsRequest {
 	r.userAgent = &userAgent
 	return r
 }
 
 // Filter the results by the API version of the API request
-func (r MonitorApiGetOrganizationApiRequestsRequest) Version(version int32) MonitorApiGetOrganizationApiRequestsRequest {
+func (r MonitorAPIGetOrganizationApiRequestsRequest) Version(version int32) MonitorAPIGetOrganizationApiRequestsRequest {
 	r.version = &version
 	return r
 }
 
 // Filter the results by one or more operation IDs for the API request
-func (r MonitorApiGetOrganizationApiRequestsRequest) OperationIds(operationIds []string) MonitorApiGetOrganizationApiRequestsRequest {
+func (r MonitorAPIGetOrganizationApiRequestsRequest) OperationIds(operationIds []string) MonitorAPIGetOrganizationApiRequestsRequest {
 	r.operationIds = &operationIds
 	return r
 }
 
-func (r MonitorApiGetOrganizationApiRequestsRequest) Execute() ([]GetOrganizationApiRequests200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationApiRequestsRequest) Execute() ([]GetOrganizationApiRequests200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationApiRequestsExecute(r)
 }
 
@@ -11157,10 +11157,10 @@ List the API requests made by an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationApiRequestsRequest
+ @return MonitorAPIGetOrganizationApiRequestsRequest
 */
-func (a *MonitorApiService) GetOrganizationApiRequests(ctx context.Context, organizationId string) MonitorApiGetOrganizationApiRequestsRequest {
-	return MonitorApiGetOrganizationApiRequestsRequest{
+func (a *MonitorAPIService) GetOrganizationApiRequests(ctx context.Context, organizationId string) MonitorAPIGetOrganizationApiRequestsRequest {
+	return MonitorAPIGetOrganizationApiRequestsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -11169,7 +11169,7 @@ func (a *MonitorApiService) GetOrganizationApiRequests(ctx context.Context, orga
 
 // Execute executes the request
 //  @return []GetOrganizationApiRequests200ResponseInner
-func (a *MonitorApiService) GetOrganizationApiRequestsExecute(r MonitorApiGetOrganizationApiRequestsRequest) ([]GetOrganizationApiRequests200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationApiRequestsExecute(r MonitorAPIGetOrganizationApiRequestsRequest) ([]GetOrganizationApiRequests200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -11177,7 +11177,7 @@ func (a *MonitorApiService) GetOrganizationApiRequestsExecute(r MonitorApiGetOrg
 		localVarReturnValue  []GetOrganizationApiRequests200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationApiRequests")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationApiRequests")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11307,9 +11307,9 @@ func (a *MonitorApiService) GetOrganizationApiRequestsExecute(r MonitorApiGetOrg
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationApiRequestsOverviewRequest struct {
+type MonitorAPIGetOrganizationApiRequestsOverviewRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -11317,24 +11317,24 @@ type MonitorApiGetOrganizationApiRequestsOverviewRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r MonitorApiGetOrganizationApiRequestsOverviewRequest) T0(t0 string) MonitorApiGetOrganizationApiRequestsOverviewRequest {
+func (r MonitorAPIGetOrganizationApiRequestsOverviewRequest) T0(t0 string) MonitorAPIGetOrganizationApiRequestsOverviewRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetOrganizationApiRequestsOverviewRequest) T1(t1 string) MonitorApiGetOrganizationApiRequestsOverviewRequest {
+func (r MonitorAPIGetOrganizationApiRequestsOverviewRequest) T1(t1 string) MonitorAPIGetOrganizationApiRequestsOverviewRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 31 days.
-func (r MonitorApiGetOrganizationApiRequestsOverviewRequest) Timespan(timespan float32) MonitorApiGetOrganizationApiRequestsOverviewRequest {
+func (r MonitorAPIGetOrganizationApiRequestsOverviewRequest) Timespan(timespan float32) MonitorAPIGetOrganizationApiRequestsOverviewRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r MonitorApiGetOrganizationApiRequestsOverviewRequest) Execute() (*GetOrganizationApiRequestsOverview200Response, *http.Response, error) {
+func (r MonitorAPIGetOrganizationApiRequestsOverviewRequest) Execute() (*GetOrganizationApiRequestsOverview200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationApiRequestsOverviewExecute(r)
 }
 
@@ -11345,10 +11345,10 @@ Return an aggregated overview of API requests data
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationApiRequestsOverviewRequest
+ @return MonitorAPIGetOrganizationApiRequestsOverviewRequest
 */
-func (a *MonitorApiService) GetOrganizationApiRequestsOverview(ctx context.Context, organizationId string) MonitorApiGetOrganizationApiRequestsOverviewRequest {
-	return MonitorApiGetOrganizationApiRequestsOverviewRequest{
+func (a *MonitorAPIService) GetOrganizationApiRequestsOverview(ctx context.Context, organizationId string) MonitorAPIGetOrganizationApiRequestsOverviewRequest {
+	return MonitorAPIGetOrganizationApiRequestsOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -11357,7 +11357,7 @@ func (a *MonitorApiService) GetOrganizationApiRequestsOverview(ctx context.Conte
 
 // Execute executes the request
 //  @return GetOrganizationApiRequestsOverview200Response
-func (a *MonitorApiService) GetOrganizationApiRequestsOverviewExecute(r MonitorApiGetOrganizationApiRequestsOverviewRequest) (*GetOrganizationApiRequestsOverview200Response, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationApiRequestsOverviewExecute(r MonitorAPIGetOrganizationApiRequestsOverviewRequest) (*GetOrganizationApiRequestsOverview200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -11365,7 +11365,7 @@ func (a *MonitorApiService) GetOrganizationApiRequestsOverviewExecute(r MonitorA
 		localVarReturnValue  *GetOrganizationApiRequestsOverview200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationApiRequestsOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationApiRequestsOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11454,9 +11454,9 @@ func (a *MonitorApiService) GetOrganizationApiRequestsOverviewExecute(r MonitorA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest struct {
+type MonitorAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -11470,60 +11470,60 @@ type MonitorApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest 
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r MonitorApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) T0(t0 string) MonitorApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r MonitorAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) T0(t0 string) MonitorAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) T1(t1 string) MonitorApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r MonitorAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) T1(t1 string) MonitorAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 31 days. If interval is provided, the timespan will be autocalculated.
-func (r MonitorApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Timespan(timespan float32) MonitorApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r MonitorAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Timespan(timespan float32) MonitorAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time interval in seconds for returned data. The valid intervals are: 120, 3600, 14400, 21600. The default is 21600. Interval is calculated if time params are provided.
-func (r MonitorApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Interval(interval int32) MonitorApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r MonitorAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Interval(interval int32) MonitorAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.interval = &interval
 	return r
 }
 
 // Filter by API version of the endpoint. Allowable values are: [0, 1]
-func (r MonitorApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Version(version int32) MonitorApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r MonitorAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Version(version int32) MonitorAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.version = &version
 	return r
 }
 
 // Filter by operation ID of the endpoint
-func (r MonitorApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) OperationIds(operationIds []string) MonitorApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r MonitorAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) OperationIds(operationIds []string) MonitorAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.operationIds = &operationIds
 	return r
 }
 
 // Filter by source IP that made the API request
-func (r MonitorApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) SourceIps(sourceIps []string) MonitorApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r MonitorAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) SourceIps(sourceIps []string) MonitorAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.sourceIps = &sourceIps
 	return r
 }
 
 // Filter by admin ID of user that made the API request
-func (r MonitorApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) AdminIds(adminIds []string) MonitorApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r MonitorAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) AdminIds(adminIds []string) MonitorAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.adminIds = &adminIds
 	return r
 }
 
 // Filter by user agent string for API request. This will filter by a complete or partial match.
-func (r MonitorApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) UserAgent(userAgent string) MonitorApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r MonitorAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) UserAgent(userAgent string) MonitorAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.userAgent = &userAgent
 	return r
 }
 
-func (r MonitorApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Execute() ([]GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Execute() ([]GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationApiRequestsOverviewResponseCodesByIntervalExecute(r)
 }
 
@@ -11534,10 +11534,10 @@ Tracks organizations' API requests by response code across a given time period
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest
+ @return MonitorAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest
 */
-func (a *MonitorApiService) GetOrganizationApiRequestsOverviewResponseCodesByInterval(ctx context.Context, organizationId string) MonitorApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
-	return MonitorApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest{
+func (a *MonitorAPIService) GetOrganizationApiRequestsOverviewResponseCodesByInterval(ctx context.Context, organizationId string) MonitorAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+	return MonitorAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -11546,7 +11546,7 @@ func (a *MonitorApiService) GetOrganizationApiRequestsOverviewResponseCodesByInt
 
 // Execute executes the request
 //  @return []GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner
-func (a *MonitorApiService) GetOrganizationApiRequestsOverviewResponseCodesByIntervalExecute(r MonitorApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) ([]GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationApiRequestsOverviewResponseCodesByIntervalExecute(r MonitorAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) ([]GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -11554,7 +11554,7 @@ func (a *MonitorApiService) GetOrganizationApiRequestsOverviewResponseCodesByInt
 		localVarReturnValue  []GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationApiRequestsOverviewResponseCodesByInterval")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationApiRequestsOverviewResponseCodesByInterval")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11685,9 +11685,9 @@ func (a *MonitorApiService) GetOrganizationApiRequestsOverviewResponseCodesByInt
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationApplianceSecurityEventsRequest struct {
+type MonitorAPIGetOrganizationApplianceSecurityEventsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -11699,48 +11699,48 @@ type MonitorApiGetOrganizationApplianceSecurityEventsRequest struct {
 }
 
 // The beginning of the timespan for the data. Data is gathered after the specified t0 value. The maximum lookback period is 365 days from today.
-func (r MonitorApiGetOrganizationApplianceSecurityEventsRequest) T0(t0 string) MonitorApiGetOrganizationApplianceSecurityEventsRequest {
+func (r MonitorAPIGetOrganizationApplianceSecurityEventsRequest) T0(t0 string) MonitorAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 365 days after t0.
-func (r MonitorApiGetOrganizationApplianceSecurityEventsRequest) T1(t1 string) MonitorApiGetOrganizationApplianceSecurityEventsRequest {
+func (r MonitorAPIGetOrganizationApplianceSecurityEventsRequest) T1(t1 string) MonitorAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 365 days. The default is 31 days.
-func (r MonitorApiGetOrganizationApplianceSecurityEventsRequest) Timespan(timespan float32) MonitorApiGetOrganizationApplianceSecurityEventsRequest {
+func (r MonitorAPIGetOrganizationApplianceSecurityEventsRequest) Timespan(timespan float32) MonitorAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
-func (r MonitorApiGetOrganizationApplianceSecurityEventsRequest) PerPage(perPage int32) MonitorApiGetOrganizationApplianceSecurityEventsRequest {
+func (r MonitorAPIGetOrganizationApplianceSecurityEventsRequest) PerPage(perPage int32) MonitorAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationApplianceSecurityEventsRequest) StartingAfter(startingAfter string) MonitorApiGetOrganizationApplianceSecurityEventsRequest {
+func (r MonitorAPIGetOrganizationApplianceSecurityEventsRequest) StartingAfter(startingAfter string) MonitorAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationApplianceSecurityEventsRequest) EndingBefore(endingBefore string) MonitorApiGetOrganizationApplianceSecurityEventsRequest {
+func (r MonitorAPIGetOrganizationApplianceSecurityEventsRequest) EndingBefore(endingBefore string) MonitorAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Sorted order of security events based on event detection time. Order options are &#39;ascending&#39; or &#39;descending&#39;. Default is ascending order.
-func (r MonitorApiGetOrganizationApplianceSecurityEventsRequest) SortOrder(sortOrder string) MonitorApiGetOrganizationApplianceSecurityEventsRequest {
+func (r MonitorAPIGetOrganizationApplianceSecurityEventsRequest) SortOrder(sortOrder string) MonitorAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
-func (r MonitorApiGetOrganizationApplianceSecurityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetOrganizationApplianceSecurityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceSecurityEventsExecute(r)
 }
 
@@ -11751,10 +11751,10 @@ List the security events for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationApplianceSecurityEventsRequest
+ @return MonitorAPIGetOrganizationApplianceSecurityEventsRequest
 */
-func (a *MonitorApiService) GetOrganizationApplianceSecurityEvents(ctx context.Context, organizationId string) MonitorApiGetOrganizationApplianceSecurityEventsRequest {
-	return MonitorApiGetOrganizationApplianceSecurityEventsRequest{
+func (a *MonitorAPIService) GetOrganizationApplianceSecurityEvents(ctx context.Context, organizationId string) MonitorAPIGetOrganizationApplianceSecurityEventsRequest {
+	return MonitorAPIGetOrganizationApplianceSecurityEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -11763,7 +11763,7 @@ func (a *MonitorApiService) GetOrganizationApplianceSecurityEvents(ctx context.C
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetOrganizationApplianceSecurityEventsExecute(r MonitorApiGetOrganizationApplianceSecurityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationApplianceSecurityEventsExecute(r MonitorAPIGetOrganizationApplianceSecurityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -11771,7 +11771,7 @@ func (a *MonitorApiService) GetOrganizationApplianceSecurityEventsExecute(r Moni
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationApplianceSecurityEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationApplianceSecurityEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11872,9 +11872,9 @@ func (a *MonitorApiService) GetOrganizationApplianceSecurityEventsExecute(r Moni
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationApplianceUplinkStatusesRequest struct {
+type MonitorAPIGetOrganizationApplianceUplinkStatusesRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -11885,42 +11885,42 @@ type MonitorApiGetOrganizationApplianceUplinkStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r MonitorApiGetOrganizationApplianceUplinkStatusesRequest) PerPage(perPage int32) MonitorApiGetOrganizationApplianceUplinkStatusesRequest {
+func (r MonitorAPIGetOrganizationApplianceUplinkStatusesRequest) PerPage(perPage int32) MonitorAPIGetOrganizationApplianceUplinkStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationApplianceUplinkStatusesRequest) StartingAfter(startingAfter string) MonitorApiGetOrganizationApplianceUplinkStatusesRequest {
+func (r MonitorAPIGetOrganizationApplianceUplinkStatusesRequest) StartingAfter(startingAfter string) MonitorAPIGetOrganizationApplianceUplinkStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationApplianceUplinkStatusesRequest) EndingBefore(endingBefore string) MonitorApiGetOrganizationApplianceUplinkStatusesRequest {
+func (r MonitorAPIGetOrganizationApplianceUplinkStatusesRequest) EndingBefore(endingBefore string) MonitorAPIGetOrganizationApplianceUplinkStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // A list of network IDs. The returned devices will be filtered to only include these networks.
-func (r MonitorApiGetOrganizationApplianceUplinkStatusesRequest) NetworkIds(networkIds []string) MonitorApiGetOrganizationApplianceUplinkStatusesRequest {
+func (r MonitorAPIGetOrganizationApplianceUplinkStatusesRequest) NetworkIds(networkIds []string) MonitorAPIGetOrganizationApplianceUplinkStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // A list of serial numbers. The returned devices will be filtered to only include these serials.
-func (r MonitorApiGetOrganizationApplianceUplinkStatusesRequest) Serials(serials []string) MonitorApiGetOrganizationApplianceUplinkStatusesRequest {
+func (r MonitorAPIGetOrganizationApplianceUplinkStatusesRequest) Serials(serials []string) MonitorAPIGetOrganizationApplianceUplinkStatusesRequest {
 	r.serials = &serials
 	return r
 }
 
 // A list of ICCIDs. The returned devices will be filtered to only include these ICCIDs.
-func (r MonitorApiGetOrganizationApplianceUplinkStatusesRequest) Iccids(iccids []string) MonitorApiGetOrganizationApplianceUplinkStatusesRequest {
+func (r MonitorAPIGetOrganizationApplianceUplinkStatusesRequest) Iccids(iccids []string) MonitorAPIGetOrganizationApplianceUplinkStatusesRequest {
 	r.iccids = &iccids
 	return r
 }
 
-func (r MonitorApiGetOrganizationApplianceUplinkStatusesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetOrganizationApplianceUplinkStatusesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceUplinkStatusesExecute(r)
 }
 
@@ -11931,10 +11931,10 @@ List the uplink status of every Meraki MX and Z series appliances in the organiz
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationApplianceUplinkStatusesRequest
+ @return MonitorAPIGetOrganizationApplianceUplinkStatusesRequest
 */
-func (a *MonitorApiService) GetOrganizationApplianceUplinkStatuses(ctx context.Context, organizationId string) MonitorApiGetOrganizationApplianceUplinkStatusesRequest {
-	return MonitorApiGetOrganizationApplianceUplinkStatusesRequest{
+func (a *MonitorAPIService) GetOrganizationApplianceUplinkStatuses(ctx context.Context, organizationId string) MonitorAPIGetOrganizationApplianceUplinkStatusesRequest {
+	return MonitorAPIGetOrganizationApplianceUplinkStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -11943,7 +11943,7 @@ func (a *MonitorApiService) GetOrganizationApplianceUplinkStatuses(ctx context.C
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetOrganizationApplianceUplinkStatusesExecute(r MonitorApiGetOrganizationApplianceUplinkStatusesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationApplianceUplinkStatusesExecute(r MonitorAPIGetOrganizationApplianceUplinkStatusesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -11951,7 +11951,7 @@ func (a *MonitorApiService) GetOrganizationApplianceUplinkStatusesExecute(r Moni
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationApplianceUplinkStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationApplianceUplinkStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12073,9 +12073,9 @@ func (a *MonitorApiService) GetOrganizationApplianceUplinkStatusesExecute(r Moni
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationApplianceUplinksUsageByNetworkRequest struct {
+type MonitorAPIGetOrganizationApplianceUplinksUsageByNetworkRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -12083,24 +12083,24 @@ type MonitorApiGetOrganizationApplianceUplinksUsageByNetworkRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
-func (r MonitorApiGetOrganizationApplianceUplinksUsageByNetworkRequest) T0(t0 string) MonitorApiGetOrganizationApplianceUplinksUsageByNetworkRequest {
+func (r MonitorAPIGetOrganizationApplianceUplinksUsageByNetworkRequest) T0(t0 string) MonitorAPIGetOrganizationApplianceUplinksUsageByNetworkRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 14 days after t0.
-func (r MonitorApiGetOrganizationApplianceUplinksUsageByNetworkRequest) T1(t1 string) MonitorApiGetOrganizationApplianceUplinksUsageByNetworkRequest {
+func (r MonitorAPIGetOrganizationApplianceUplinksUsageByNetworkRequest) T1(t1 string) MonitorAPIGetOrganizationApplianceUplinksUsageByNetworkRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 14 days. The default is 1 day.
-func (r MonitorApiGetOrganizationApplianceUplinksUsageByNetworkRequest) Timespan(timespan float32) MonitorApiGetOrganizationApplianceUplinksUsageByNetworkRequest {
+func (r MonitorAPIGetOrganizationApplianceUplinksUsageByNetworkRequest) Timespan(timespan float32) MonitorAPIGetOrganizationApplianceUplinksUsageByNetworkRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r MonitorApiGetOrganizationApplianceUplinksUsageByNetworkRequest) Execute() ([]GetOrganizationApplianceUplinksUsageByNetwork200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationApplianceUplinksUsageByNetworkRequest) Execute() ([]GetOrganizationApplianceUplinksUsageByNetwork200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceUplinksUsageByNetworkExecute(r)
 }
 
@@ -12111,10 +12111,10 @@ Get the sent and received bytes for each uplink of all MX and Z networks within 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationApplianceUplinksUsageByNetworkRequest
+ @return MonitorAPIGetOrganizationApplianceUplinksUsageByNetworkRequest
 */
-func (a *MonitorApiService) GetOrganizationApplianceUplinksUsageByNetwork(ctx context.Context, organizationId string) MonitorApiGetOrganizationApplianceUplinksUsageByNetworkRequest {
-	return MonitorApiGetOrganizationApplianceUplinksUsageByNetworkRequest{
+func (a *MonitorAPIService) GetOrganizationApplianceUplinksUsageByNetwork(ctx context.Context, organizationId string) MonitorAPIGetOrganizationApplianceUplinksUsageByNetworkRequest {
+	return MonitorAPIGetOrganizationApplianceUplinksUsageByNetworkRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -12123,7 +12123,7 @@ func (a *MonitorApiService) GetOrganizationApplianceUplinksUsageByNetwork(ctx co
 
 // Execute executes the request
 //  @return []GetOrganizationApplianceUplinksUsageByNetwork200ResponseInner
-func (a *MonitorApiService) GetOrganizationApplianceUplinksUsageByNetworkExecute(r MonitorApiGetOrganizationApplianceUplinksUsageByNetworkRequest) ([]GetOrganizationApplianceUplinksUsageByNetwork200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationApplianceUplinksUsageByNetworkExecute(r MonitorAPIGetOrganizationApplianceUplinksUsageByNetworkRequest) ([]GetOrganizationApplianceUplinksUsageByNetwork200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -12131,7 +12131,7 @@ func (a *MonitorApiService) GetOrganizationApplianceUplinksUsageByNetworkExecute
 		localVarReturnValue  []GetOrganizationApplianceUplinksUsageByNetwork200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationApplianceUplinksUsageByNetwork")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationApplianceUplinksUsageByNetwork")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12220,9 +12220,9 @@ func (a *MonitorApiService) GetOrganizationApplianceUplinksUsageByNetworkExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationApplianceVpnStatsRequest struct {
+type MonitorAPIGetOrganizationApplianceVpnStatsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -12234,48 +12234,48 @@ type MonitorApiGetOrganizationApplianceVpnStatsRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 300. Default is 300.
-func (r MonitorApiGetOrganizationApplianceVpnStatsRequest) PerPage(perPage int32) MonitorApiGetOrganizationApplianceVpnStatsRequest {
+func (r MonitorAPIGetOrganizationApplianceVpnStatsRequest) PerPage(perPage int32) MonitorAPIGetOrganizationApplianceVpnStatsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationApplianceVpnStatsRequest) StartingAfter(startingAfter string) MonitorApiGetOrganizationApplianceVpnStatsRequest {
+func (r MonitorAPIGetOrganizationApplianceVpnStatsRequest) StartingAfter(startingAfter string) MonitorAPIGetOrganizationApplianceVpnStatsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationApplianceVpnStatsRequest) EndingBefore(endingBefore string) MonitorApiGetOrganizationApplianceVpnStatsRequest {
+func (r MonitorAPIGetOrganizationApplianceVpnStatsRequest) EndingBefore(endingBefore string) MonitorAPIGetOrganizationApplianceVpnStatsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // A list of Meraki network IDs to filter results to contain only specified networks. E.g.: networkIds[]&#x3D;N_12345678&amp;networkIds[]&#x3D;L_3456
-func (r MonitorApiGetOrganizationApplianceVpnStatsRequest) NetworkIds(networkIds []string) MonitorApiGetOrganizationApplianceVpnStatsRequest {
+func (r MonitorAPIGetOrganizationApplianceVpnStatsRequest) NetworkIds(networkIds []string) MonitorAPIGetOrganizationApplianceVpnStatsRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r MonitorApiGetOrganizationApplianceVpnStatsRequest) T0(t0 string) MonitorApiGetOrganizationApplianceVpnStatsRequest {
+func (r MonitorAPIGetOrganizationApplianceVpnStatsRequest) T0(t0 string) MonitorAPIGetOrganizationApplianceVpnStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetOrganizationApplianceVpnStatsRequest) T1(t1 string) MonitorApiGetOrganizationApplianceVpnStatsRequest {
+func (r MonitorAPIGetOrganizationApplianceVpnStatsRequest) T1(t1 string) MonitorAPIGetOrganizationApplianceVpnStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r MonitorApiGetOrganizationApplianceVpnStatsRequest) Timespan(timespan float32) MonitorApiGetOrganizationApplianceVpnStatsRequest {
+func (r MonitorAPIGetOrganizationApplianceVpnStatsRequest) Timespan(timespan float32) MonitorAPIGetOrganizationApplianceVpnStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r MonitorApiGetOrganizationApplianceVpnStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetOrganizationApplianceVpnStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceVpnStatsExecute(r)
 }
 
@@ -12286,10 +12286,10 @@ Show VPN history stat for networks in an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationApplianceVpnStatsRequest
+ @return MonitorAPIGetOrganizationApplianceVpnStatsRequest
 */
-func (a *MonitorApiService) GetOrganizationApplianceVpnStats(ctx context.Context, organizationId string) MonitorApiGetOrganizationApplianceVpnStatsRequest {
-	return MonitorApiGetOrganizationApplianceVpnStatsRequest{
+func (a *MonitorAPIService) GetOrganizationApplianceVpnStats(ctx context.Context, organizationId string) MonitorAPIGetOrganizationApplianceVpnStatsRequest {
+	return MonitorAPIGetOrganizationApplianceVpnStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -12298,7 +12298,7 @@ func (a *MonitorApiService) GetOrganizationApplianceVpnStats(ctx context.Context
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetOrganizationApplianceVpnStatsExecute(r MonitorApiGetOrganizationApplianceVpnStatsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationApplianceVpnStatsExecute(r MonitorAPIGetOrganizationApplianceVpnStatsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -12306,7 +12306,7 @@ func (a *MonitorApiService) GetOrganizationApplianceVpnStatsExecute(r MonitorApi
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationApplianceVpnStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationApplianceVpnStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12415,9 +12415,9 @@ func (a *MonitorApiService) GetOrganizationApplianceVpnStatsExecute(r MonitorApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationApplianceVpnStatusesRequest struct {
+type MonitorAPIGetOrganizationApplianceVpnStatusesRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -12426,30 +12426,30 @@ type MonitorApiGetOrganizationApplianceVpnStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 300. Default is 300.
-func (r MonitorApiGetOrganizationApplianceVpnStatusesRequest) PerPage(perPage int32) MonitorApiGetOrganizationApplianceVpnStatusesRequest {
+func (r MonitorAPIGetOrganizationApplianceVpnStatusesRequest) PerPage(perPage int32) MonitorAPIGetOrganizationApplianceVpnStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationApplianceVpnStatusesRequest) StartingAfter(startingAfter string) MonitorApiGetOrganizationApplianceVpnStatusesRequest {
+func (r MonitorAPIGetOrganizationApplianceVpnStatusesRequest) StartingAfter(startingAfter string) MonitorAPIGetOrganizationApplianceVpnStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationApplianceVpnStatusesRequest) EndingBefore(endingBefore string) MonitorApiGetOrganizationApplianceVpnStatusesRequest {
+func (r MonitorAPIGetOrganizationApplianceVpnStatusesRequest) EndingBefore(endingBefore string) MonitorAPIGetOrganizationApplianceVpnStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // A list of Meraki network IDs to filter results to contain only specified networks. E.g.: networkIds[]&#x3D;N_12345678&amp;networkIds[]&#x3D;L_3456
-func (r MonitorApiGetOrganizationApplianceVpnStatusesRequest) NetworkIds(networkIds []string) MonitorApiGetOrganizationApplianceVpnStatusesRequest {
+func (r MonitorAPIGetOrganizationApplianceVpnStatusesRequest) NetworkIds(networkIds []string) MonitorAPIGetOrganizationApplianceVpnStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
-func (r MonitorApiGetOrganizationApplianceVpnStatusesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetOrganizationApplianceVpnStatusesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceVpnStatusesExecute(r)
 }
 
@@ -12460,10 +12460,10 @@ Show VPN status for networks in an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationApplianceVpnStatusesRequest
+ @return MonitorAPIGetOrganizationApplianceVpnStatusesRequest
 */
-func (a *MonitorApiService) GetOrganizationApplianceVpnStatuses(ctx context.Context, organizationId string) MonitorApiGetOrganizationApplianceVpnStatusesRequest {
-	return MonitorApiGetOrganizationApplianceVpnStatusesRequest{
+func (a *MonitorAPIService) GetOrganizationApplianceVpnStatuses(ctx context.Context, organizationId string) MonitorAPIGetOrganizationApplianceVpnStatusesRequest {
+	return MonitorAPIGetOrganizationApplianceVpnStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -12472,7 +12472,7 @@ func (a *MonitorApiService) GetOrganizationApplianceVpnStatuses(ctx context.Cont
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetOrganizationApplianceVpnStatusesExecute(r MonitorApiGetOrganizationApplianceVpnStatusesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationApplianceVpnStatusesExecute(r MonitorAPIGetOrganizationApplianceVpnStatusesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -12480,7 +12480,7 @@ func (a *MonitorApiService) GetOrganizationApplianceVpnStatusesExecute(r Monitor
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationApplianceVpnStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationApplianceVpnStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12580,9 +12580,9 @@ func (a *MonitorApiService) GetOrganizationApplianceVpnStatusesExecute(r Monitor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationCellularGatewayUplinkStatusesRequest struct {
+type MonitorAPIGetOrganizationCellularGatewayUplinkStatusesRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -12593,42 +12593,42 @@ type MonitorApiGetOrganizationCellularGatewayUplinkStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r MonitorApiGetOrganizationCellularGatewayUplinkStatusesRequest) PerPage(perPage int32) MonitorApiGetOrganizationCellularGatewayUplinkStatusesRequest {
+func (r MonitorAPIGetOrganizationCellularGatewayUplinkStatusesRequest) PerPage(perPage int32) MonitorAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationCellularGatewayUplinkStatusesRequest) StartingAfter(startingAfter string) MonitorApiGetOrganizationCellularGatewayUplinkStatusesRequest {
+func (r MonitorAPIGetOrganizationCellularGatewayUplinkStatusesRequest) StartingAfter(startingAfter string) MonitorAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationCellularGatewayUplinkStatusesRequest) EndingBefore(endingBefore string) MonitorApiGetOrganizationCellularGatewayUplinkStatusesRequest {
+func (r MonitorAPIGetOrganizationCellularGatewayUplinkStatusesRequest) EndingBefore(endingBefore string) MonitorAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // A list of network IDs. The returned devices will be filtered to only include these networks.
-func (r MonitorApiGetOrganizationCellularGatewayUplinkStatusesRequest) NetworkIds(networkIds []string) MonitorApiGetOrganizationCellularGatewayUplinkStatusesRequest {
+func (r MonitorAPIGetOrganizationCellularGatewayUplinkStatusesRequest) NetworkIds(networkIds []string) MonitorAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // A list of serial numbers. The returned devices will be filtered to only include these serials.
-func (r MonitorApiGetOrganizationCellularGatewayUplinkStatusesRequest) Serials(serials []string) MonitorApiGetOrganizationCellularGatewayUplinkStatusesRequest {
+func (r MonitorAPIGetOrganizationCellularGatewayUplinkStatusesRequest) Serials(serials []string) MonitorAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
 	r.serials = &serials
 	return r
 }
 
 // A list of ICCIDs. The returned devices will be filtered to only include these ICCIDs.
-func (r MonitorApiGetOrganizationCellularGatewayUplinkStatusesRequest) Iccids(iccids []string) MonitorApiGetOrganizationCellularGatewayUplinkStatusesRequest {
+func (r MonitorAPIGetOrganizationCellularGatewayUplinkStatusesRequest) Iccids(iccids []string) MonitorAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
 	r.iccids = &iccids
 	return r
 }
 
-func (r MonitorApiGetOrganizationCellularGatewayUplinkStatusesRequest) Execute() ([]GetOrganizationCellularGatewayUplinkStatuses200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationCellularGatewayUplinkStatusesRequest) Execute() ([]GetOrganizationCellularGatewayUplinkStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationCellularGatewayUplinkStatusesExecute(r)
 }
 
@@ -12639,10 +12639,10 @@ List the uplink status of every Meraki MG cellular gateway in the organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationCellularGatewayUplinkStatusesRequest
+ @return MonitorAPIGetOrganizationCellularGatewayUplinkStatusesRequest
 */
-func (a *MonitorApiService) GetOrganizationCellularGatewayUplinkStatuses(ctx context.Context, organizationId string) MonitorApiGetOrganizationCellularGatewayUplinkStatusesRequest {
-	return MonitorApiGetOrganizationCellularGatewayUplinkStatusesRequest{
+func (a *MonitorAPIService) GetOrganizationCellularGatewayUplinkStatuses(ctx context.Context, organizationId string) MonitorAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
+	return MonitorAPIGetOrganizationCellularGatewayUplinkStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -12651,7 +12651,7 @@ func (a *MonitorApiService) GetOrganizationCellularGatewayUplinkStatuses(ctx con
 
 // Execute executes the request
 //  @return []GetOrganizationCellularGatewayUplinkStatuses200ResponseInner
-func (a *MonitorApiService) GetOrganizationCellularGatewayUplinkStatusesExecute(r MonitorApiGetOrganizationCellularGatewayUplinkStatusesRequest) ([]GetOrganizationCellularGatewayUplinkStatuses200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationCellularGatewayUplinkStatusesExecute(r MonitorAPIGetOrganizationCellularGatewayUplinkStatusesRequest) ([]GetOrganizationCellularGatewayUplinkStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -12659,7 +12659,7 @@ func (a *MonitorApiService) GetOrganizationCellularGatewayUplinkStatusesExecute(
 		localVarReturnValue  []GetOrganizationCellularGatewayUplinkStatuses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationCellularGatewayUplinkStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationCellularGatewayUplinkStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12781,9 +12781,9 @@ func (a *MonitorApiService) GetOrganizationCellularGatewayUplinkStatusesExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationClientsBandwidthUsageHistoryRequest struct {
+type MonitorAPIGetOrganizationClientsBandwidthUsageHistoryRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -12791,24 +12791,24 @@ type MonitorApiGetOrganizationClientsBandwidthUsageHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data.
-func (r MonitorApiGetOrganizationClientsBandwidthUsageHistoryRequest) T0(t0 string) MonitorApiGetOrganizationClientsBandwidthUsageHistoryRequest {
+func (r MonitorAPIGetOrganizationClientsBandwidthUsageHistoryRequest) T0(t0 string) MonitorAPIGetOrganizationClientsBandwidthUsageHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetOrganizationClientsBandwidthUsageHistoryRequest) T1(t1 string) MonitorApiGetOrganizationClientsBandwidthUsageHistoryRequest {
+func (r MonitorAPIGetOrganizationClientsBandwidthUsageHistoryRequest) T1(t1 string) MonitorAPIGetOrganizationClientsBandwidthUsageHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r MonitorApiGetOrganizationClientsBandwidthUsageHistoryRequest) Timespan(timespan float32) MonitorApiGetOrganizationClientsBandwidthUsageHistoryRequest {
+func (r MonitorAPIGetOrganizationClientsBandwidthUsageHistoryRequest) Timespan(timespan float32) MonitorAPIGetOrganizationClientsBandwidthUsageHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r MonitorApiGetOrganizationClientsBandwidthUsageHistoryRequest) Execute() ([]GetOrganizationClientsBandwidthUsageHistory200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationClientsBandwidthUsageHistoryRequest) Execute() ([]GetOrganizationClientsBandwidthUsageHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationClientsBandwidthUsageHistoryExecute(r)
 }
 
@@ -12819,10 +12819,10 @@ Return data usage (in megabits per second) over time for all clients in the give
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationClientsBandwidthUsageHistoryRequest
+ @return MonitorAPIGetOrganizationClientsBandwidthUsageHistoryRequest
 */
-func (a *MonitorApiService) GetOrganizationClientsBandwidthUsageHistory(ctx context.Context, organizationId string) MonitorApiGetOrganizationClientsBandwidthUsageHistoryRequest {
-	return MonitorApiGetOrganizationClientsBandwidthUsageHistoryRequest{
+func (a *MonitorAPIService) GetOrganizationClientsBandwidthUsageHistory(ctx context.Context, organizationId string) MonitorAPIGetOrganizationClientsBandwidthUsageHistoryRequest {
+	return MonitorAPIGetOrganizationClientsBandwidthUsageHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -12831,7 +12831,7 @@ func (a *MonitorApiService) GetOrganizationClientsBandwidthUsageHistory(ctx cont
 
 // Execute executes the request
 //  @return []GetOrganizationClientsBandwidthUsageHistory200ResponseInner
-func (a *MonitorApiService) GetOrganizationClientsBandwidthUsageHistoryExecute(r MonitorApiGetOrganizationClientsBandwidthUsageHistoryRequest) ([]GetOrganizationClientsBandwidthUsageHistory200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationClientsBandwidthUsageHistoryExecute(r MonitorAPIGetOrganizationClientsBandwidthUsageHistoryRequest) ([]GetOrganizationClientsBandwidthUsageHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -12839,7 +12839,7 @@ func (a *MonitorApiService) GetOrganizationClientsBandwidthUsageHistoryExecute(r
 		localVarReturnValue  []GetOrganizationClientsBandwidthUsageHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationClientsBandwidthUsageHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationClientsBandwidthUsageHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12928,9 +12928,9 @@ func (a *MonitorApiService) GetOrganizationClientsBandwidthUsageHistoryExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationClientsOverviewRequest struct {
+type MonitorAPIGetOrganizationClientsOverviewRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -12938,24 +12938,24 @@ type MonitorApiGetOrganizationClientsOverviewRequest struct {
 }
 
 // The beginning of the timespan for the data.
-func (r MonitorApiGetOrganizationClientsOverviewRequest) T0(t0 string) MonitorApiGetOrganizationClientsOverviewRequest {
+func (r MonitorAPIGetOrganizationClientsOverviewRequest) T0(t0 string) MonitorAPIGetOrganizationClientsOverviewRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetOrganizationClientsOverviewRequest) T1(t1 string) MonitorApiGetOrganizationClientsOverviewRequest {
+func (r MonitorAPIGetOrganizationClientsOverviewRequest) T1(t1 string) MonitorAPIGetOrganizationClientsOverviewRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r MonitorApiGetOrganizationClientsOverviewRequest) Timespan(timespan float32) MonitorApiGetOrganizationClientsOverviewRequest {
+func (r MonitorAPIGetOrganizationClientsOverviewRequest) Timespan(timespan float32) MonitorAPIGetOrganizationClientsOverviewRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r MonitorApiGetOrganizationClientsOverviewRequest) Execute() (*GetOrganizationClientsOverview200Response, *http.Response, error) {
+func (r MonitorAPIGetOrganizationClientsOverviewRequest) Execute() (*GetOrganizationClientsOverview200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationClientsOverviewExecute(r)
 }
 
@@ -12966,10 +12966,10 @@ Return summary information around client data usage (in mb) across the given org
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationClientsOverviewRequest
+ @return MonitorAPIGetOrganizationClientsOverviewRequest
 */
-func (a *MonitorApiService) GetOrganizationClientsOverview(ctx context.Context, organizationId string) MonitorApiGetOrganizationClientsOverviewRequest {
-	return MonitorApiGetOrganizationClientsOverviewRequest{
+func (a *MonitorAPIService) GetOrganizationClientsOverview(ctx context.Context, organizationId string) MonitorAPIGetOrganizationClientsOverviewRequest {
+	return MonitorAPIGetOrganizationClientsOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -12978,7 +12978,7 @@ func (a *MonitorApiService) GetOrganizationClientsOverview(ctx context.Context, 
 
 // Execute executes the request
 //  @return GetOrganizationClientsOverview200Response
-func (a *MonitorApiService) GetOrganizationClientsOverviewExecute(r MonitorApiGetOrganizationClientsOverviewRequest) (*GetOrganizationClientsOverview200Response, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationClientsOverviewExecute(r MonitorAPIGetOrganizationClientsOverviewRequest) (*GetOrganizationClientsOverview200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -12986,7 +12986,7 @@ func (a *MonitorApiService) GetOrganizationClientsOverviewExecute(r MonitorApiGe
 		localVarReturnValue  *GetOrganizationClientsOverview200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationClientsOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationClientsOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13075,9 +13075,9 @@ func (a *MonitorApiService) GetOrganizationClientsOverviewExecute(r MonitorApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationConfigurationChangesRequest struct {
+type MonitorAPIGetOrganizationConfigurationChangesRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -13090,54 +13090,54 @@ type MonitorApiGetOrganizationConfigurationChangesRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
-func (r MonitorApiGetOrganizationConfigurationChangesRequest) T0(t0 string) MonitorApiGetOrganizationConfigurationChangesRequest {
+func (r MonitorAPIGetOrganizationConfigurationChangesRequest) T0(t0 string) MonitorAPIGetOrganizationConfigurationChangesRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 365 days after t0.
-func (r MonitorApiGetOrganizationConfigurationChangesRequest) T1(t1 string) MonitorApiGetOrganizationConfigurationChangesRequest {
+func (r MonitorAPIGetOrganizationConfigurationChangesRequest) T1(t1 string) MonitorAPIGetOrganizationConfigurationChangesRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 365 days. The default is 365 days.
-func (r MonitorApiGetOrganizationConfigurationChangesRequest) Timespan(timespan float32) MonitorApiGetOrganizationConfigurationChangesRequest {
+func (r MonitorAPIGetOrganizationConfigurationChangesRequest) Timespan(timespan float32) MonitorAPIGetOrganizationConfigurationChangesRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 5000. Default is 5000.
-func (r MonitorApiGetOrganizationConfigurationChangesRequest) PerPage(perPage int32) MonitorApiGetOrganizationConfigurationChangesRequest {
+func (r MonitorAPIGetOrganizationConfigurationChangesRequest) PerPage(perPage int32) MonitorAPIGetOrganizationConfigurationChangesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationConfigurationChangesRequest) StartingAfter(startingAfter string) MonitorApiGetOrganizationConfigurationChangesRequest {
+func (r MonitorAPIGetOrganizationConfigurationChangesRequest) StartingAfter(startingAfter string) MonitorAPIGetOrganizationConfigurationChangesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationConfigurationChangesRequest) EndingBefore(endingBefore string) MonitorApiGetOrganizationConfigurationChangesRequest {
+func (r MonitorAPIGetOrganizationConfigurationChangesRequest) EndingBefore(endingBefore string) MonitorAPIGetOrganizationConfigurationChangesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Filters on the given network
-func (r MonitorApiGetOrganizationConfigurationChangesRequest) NetworkId(networkId string) MonitorApiGetOrganizationConfigurationChangesRequest {
+func (r MonitorAPIGetOrganizationConfigurationChangesRequest) NetworkId(networkId string) MonitorAPIGetOrganizationConfigurationChangesRequest {
 	r.networkId = &networkId
 	return r
 }
 
 // Filters on the given Admin
-func (r MonitorApiGetOrganizationConfigurationChangesRequest) AdminId(adminId string) MonitorApiGetOrganizationConfigurationChangesRequest {
+func (r MonitorAPIGetOrganizationConfigurationChangesRequest) AdminId(adminId string) MonitorAPIGetOrganizationConfigurationChangesRequest {
 	r.adminId = &adminId
 	return r
 }
 
-func (r MonitorApiGetOrganizationConfigurationChangesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetOrganizationConfigurationChangesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationConfigurationChangesExecute(r)
 }
 
@@ -13148,10 +13148,10 @@ View the Change Log for your organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationConfigurationChangesRequest
+ @return MonitorAPIGetOrganizationConfigurationChangesRequest
 */
-func (a *MonitorApiService) GetOrganizationConfigurationChanges(ctx context.Context, organizationId string) MonitorApiGetOrganizationConfigurationChangesRequest {
-	return MonitorApiGetOrganizationConfigurationChangesRequest{
+func (a *MonitorAPIService) GetOrganizationConfigurationChanges(ctx context.Context, organizationId string) MonitorAPIGetOrganizationConfigurationChangesRequest {
+	return MonitorAPIGetOrganizationConfigurationChangesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -13160,7 +13160,7 @@ func (a *MonitorApiService) GetOrganizationConfigurationChanges(ctx context.Cont
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetOrganizationConfigurationChangesExecute(r MonitorApiGetOrganizationConfigurationChangesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationConfigurationChangesExecute(r MonitorAPIGetOrganizationConfigurationChangesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -13168,7 +13168,7 @@ func (a *MonitorApiService) GetOrganizationConfigurationChangesExecute(r Monitor
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationConfigurationChanges")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationConfigurationChanges")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13272,9 +13272,9 @@ func (a *MonitorApiService) GetOrganizationConfigurationChangesExecute(r Monitor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationDevicesAvailabilitiesRequest struct {
+type MonitorAPIGetOrganizationDevicesAvailabilitiesRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -13287,54 +13287,54 @@ type MonitorApiGetOrganizationDevicesAvailabilitiesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r MonitorApiGetOrganizationDevicesAvailabilitiesRequest) PerPage(perPage int32) MonitorApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r MonitorAPIGetOrganizationDevicesAvailabilitiesRequest) PerPage(perPage int32) MonitorAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationDevicesAvailabilitiesRequest) StartingAfter(startingAfter string) MonitorApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r MonitorAPIGetOrganizationDevicesAvailabilitiesRequest) StartingAfter(startingAfter string) MonitorAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationDevicesAvailabilitiesRequest) EndingBefore(endingBefore string) MonitorApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r MonitorAPIGetOrganizationDevicesAvailabilitiesRequest) EndingBefore(endingBefore string) MonitorAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter device availabilities by network ID. This filter uses multiple exact matches.
-func (r MonitorApiGetOrganizationDevicesAvailabilitiesRequest) NetworkIds(networkIds []string) MonitorApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r MonitorAPIGetOrganizationDevicesAvailabilitiesRequest) NetworkIds(networkIds []string) MonitorAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter device availabilities by device product types. This filter uses multiple exact matches.
-func (r MonitorApiGetOrganizationDevicesAvailabilitiesRequest) ProductTypes(productTypes []string) MonitorApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r MonitorAPIGetOrganizationDevicesAvailabilitiesRequest) ProductTypes(productTypes []string) MonitorAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter device availabilities by device serial numbers. This filter uses multiple exact matches.
-func (r MonitorApiGetOrganizationDevicesAvailabilitiesRequest) Serials(serials []string) MonitorApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r MonitorAPIGetOrganizationDevicesAvailabilitiesRequest) Serials(serials []string) MonitorAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.serials = &serials
 	return r
 }
 
 // An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below). This filter uses multiple exact matches.
-func (r MonitorApiGetOrganizationDevicesAvailabilitiesRequest) Tags(tags []string) MonitorApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r MonitorAPIGetOrganizationDevicesAvailabilitiesRequest) Tags(tags []string) MonitorAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.tags = &tags
 	return r
 }
 
 // An optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return devices which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r MonitorApiGetOrganizationDevicesAvailabilitiesRequest) TagsFilterType(tagsFilterType string) MonitorApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r MonitorAPIGetOrganizationDevicesAvailabilitiesRequest) TagsFilterType(tagsFilterType string) MonitorAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
-func (r MonitorApiGetOrganizationDevicesAvailabilitiesRequest) Execute() ([]GetOrganizationDevicesAvailabilities200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationDevicesAvailabilitiesRequest) Execute() ([]GetOrganizationDevicesAvailabilities200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesAvailabilitiesExecute(r)
 }
 
@@ -13345,10 +13345,10 @@ List the availability information for devices in an organization. The data retur
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationDevicesAvailabilitiesRequest
+ @return MonitorAPIGetOrganizationDevicesAvailabilitiesRequest
 */
-func (a *MonitorApiService) GetOrganizationDevicesAvailabilities(ctx context.Context, organizationId string) MonitorApiGetOrganizationDevicesAvailabilitiesRequest {
-	return MonitorApiGetOrganizationDevicesAvailabilitiesRequest{
+func (a *MonitorAPIService) GetOrganizationDevicesAvailabilities(ctx context.Context, organizationId string) MonitorAPIGetOrganizationDevicesAvailabilitiesRequest {
+	return MonitorAPIGetOrganizationDevicesAvailabilitiesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -13357,7 +13357,7 @@ func (a *MonitorApiService) GetOrganizationDevicesAvailabilities(ctx context.Con
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesAvailabilities200ResponseInner
-func (a *MonitorApiService) GetOrganizationDevicesAvailabilitiesExecute(r MonitorApiGetOrganizationDevicesAvailabilitiesRequest) ([]GetOrganizationDevicesAvailabilities200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationDevicesAvailabilitiesExecute(r MonitorAPIGetOrganizationDevicesAvailabilitiesRequest) ([]GetOrganizationDevicesAvailabilities200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -13365,7 +13365,7 @@ func (a *MonitorApiService) GetOrganizationDevicesAvailabilitiesExecute(r Monito
 		localVarReturnValue  []GetOrganizationDevicesAvailabilities200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationDevicesAvailabilities")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationDevicesAvailabilities")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13501,9 +13501,9 @@ func (a *MonitorApiService) GetOrganizationDevicesAvailabilitiesExecute(r Monito
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest struct {
+type MonitorAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -13518,66 +13518,66 @@ type MonitorApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r MonitorApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) PerPage(perPage int32) MonitorApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r MonitorAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) PerPage(perPage int32) MonitorAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) StartingAfter(startingAfter string) MonitorApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r MonitorAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) StartingAfter(startingAfter string) MonitorAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) EndingBefore(endingBefore string) MonitorApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r MonitorAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) EndingBefore(endingBefore string) MonitorAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 14 days from today.
-func (r MonitorApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) T0(t0 string) MonitorApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r MonitorAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) T0(t0 string) MonitorAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 14 days after t0.
-func (r MonitorApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) T1(t1 string) MonitorApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r MonitorAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) T1(t1 string) MonitorAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 14 days. The default is 1 day.
-func (r MonitorApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Timespan(timespan float32) MonitorApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r MonitorAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Timespan(timespan float32) MonitorAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Optional parameter to filter device availabilities history by device serial numbers
-func (r MonitorApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Serials(serials []string) MonitorApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r MonitorAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Serials(serials []string) MonitorAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.serials = &serials
 	return r
 }
 
 // Optional parameter to filter device availabilities history by device product types
-func (r MonitorApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) ProductTypes(productTypes []string) MonitorApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r MonitorAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) ProductTypes(productTypes []string) MonitorAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter device availabilities history by network IDs
-func (r MonitorApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) NetworkIds(networkIds []string) MonitorApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r MonitorAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) NetworkIds(networkIds []string) MonitorAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter device availabilities history by device statuses
-func (r MonitorApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Statuses(statuses []string) MonitorApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r MonitorAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Statuses(statuses []string) MonitorAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.statuses = &statuses
 	return r
 }
 
-func (r MonitorApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Execute() ([]GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Execute() ([]GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesAvailabilitiesChangeHistoryExecute(r)
 }
 
@@ -13588,10 +13588,10 @@ List the availability history information for devices in an organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest
+ @return MonitorAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest
 */
-func (a *MonitorApiService) GetOrganizationDevicesAvailabilitiesChangeHistory(ctx context.Context, organizationId string) MonitorApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
-	return MonitorApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest{
+func (a *MonitorAPIService) GetOrganizationDevicesAvailabilitiesChangeHistory(ctx context.Context, organizationId string) MonitorAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+	return MonitorAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -13600,7 +13600,7 @@ func (a *MonitorApiService) GetOrganizationDevicesAvailabilitiesChangeHistory(ct
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner
-func (a *MonitorApiService) GetOrganizationDevicesAvailabilitiesChangeHistoryExecute(r MonitorApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) ([]GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationDevicesAvailabilitiesChangeHistoryExecute(r MonitorAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) ([]GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -13608,7 +13608,7 @@ func (a *MonitorApiService) GetOrganizationDevicesAvailabilitiesChangeHistoryExe
 		localVarReturnValue  []GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationDevicesAvailabilitiesChangeHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationDevicesAvailabilitiesChangeHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13750,9 +13750,9 @@ func (a *MonitorApiService) GetOrganizationDevicesAvailabilitiesChangeHistoryExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest struct {
+type MonitorAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -13765,54 +13765,54 @@ type MonitorApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest struct 
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r MonitorApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) PerPage(perPage int32) MonitorApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r MonitorAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) PerPage(perPage int32) MonitorAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) StartingAfter(startingAfter string) MonitorApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r MonitorAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) StartingAfter(startingAfter string) MonitorAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) EndingBefore(endingBefore string) MonitorApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r MonitorAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) EndingBefore(endingBefore string) MonitorAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter device availabilities by network ID. This filter uses multiple exact matches.
-func (r MonitorApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) NetworkIds(networkIds []string) MonitorApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r MonitorAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) NetworkIds(networkIds []string) MonitorAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter device availabilities by device product types. This filter uses multiple exact matches.
-func (r MonitorApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) ProductTypes(productTypes []string) MonitorApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r MonitorAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) ProductTypes(productTypes []string) MonitorAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter device availabilities by device serial numbers. This filter uses multiple exact matches.
-func (r MonitorApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Serials(serials []string) MonitorApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r MonitorAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Serials(serials []string) MonitorAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.serials = &serials
 	return r
 }
 
 // An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below). This filter uses multiple exact matches.
-func (r MonitorApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Tags(tags []string) MonitorApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r MonitorAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Tags(tags []string) MonitorAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.tags = &tags
 	return r
 }
 
 // An optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return devices which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r MonitorApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) TagsFilterType(tagsFilterType string) MonitorApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r MonitorAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) TagsFilterType(tagsFilterType string) MonitorAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
-func (r MonitorApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Execute() ([]GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Execute() ([]GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesPowerModulesStatusesByDeviceExecute(r)
 }
 
@@ -13823,10 +13823,10 @@ List the power status information for devices in an organization. The data retur
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest
+ @return MonitorAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest
 */
-func (a *MonitorApiService) GetOrganizationDevicesPowerModulesStatusesByDevice(ctx context.Context, organizationId string) MonitorApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
-	return MonitorApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest{
+func (a *MonitorAPIService) GetOrganizationDevicesPowerModulesStatusesByDevice(ctx context.Context, organizationId string) MonitorAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+	return MonitorAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -13835,7 +13835,7 @@ func (a *MonitorApiService) GetOrganizationDevicesPowerModulesStatusesByDevice(c
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner
-func (a *MonitorApiService) GetOrganizationDevicesPowerModulesStatusesByDeviceExecute(r MonitorApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) ([]GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationDevicesPowerModulesStatusesByDeviceExecute(r MonitorAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) ([]GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -13843,7 +13843,7 @@ func (a *MonitorApiService) GetOrganizationDevicesPowerModulesStatusesByDeviceEx
 		localVarReturnValue  []GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationDevicesPowerModulesStatusesByDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationDevicesPowerModulesStatusesByDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13979,9 +13979,9 @@ func (a *MonitorApiService) GetOrganizationDevicesPowerModulesStatusesByDeviceEx
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationDevicesProvisioningStatusesRequest struct {
+type MonitorAPIGetOrganizationDevicesProvisioningStatusesRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -13995,60 +13995,60 @@ type MonitorApiGetOrganizationDevicesProvisioningStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r MonitorApiGetOrganizationDevicesProvisioningStatusesRequest) PerPage(perPage int32) MonitorApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r MonitorAPIGetOrganizationDevicesProvisioningStatusesRequest) PerPage(perPage int32) MonitorAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationDevicesProvisioningStatusesRequest) StartingAfter(startingAfter string) MonitorApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r MonitorAPIGetOrganizationDevicesProvisioningStatusesRequest) StartingAfter(startingAfter string) MonitorAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationDevicesProvisioningStatusesRequest) EndingBefore(endingBefore string) MonitorApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r MonitorAPIGetOrganizationDevicesProvisioningStatusesRequest) EndingBefore(endingBefore string) MonitorAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter device by network ID. This filter uses multiple exact matches.
-func (r MonitorApiGetOrganizationDevicesProvisioningStatusesRequest) NetworkIds(networkIds []string) MonitorApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r MonitorAPIGetOrganizationDevicesProvisioningStatusesRequest) NetworkIds(networkIds []string) MonitorAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter device by device product types. This filter uses multiple exact matches.
-func (r MonitorApiGetOrganizationDevicesProvisioningStatusesRequest) ProductTypes(productTypes []string) MonitorApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r MonitorAPIGetOrganizationDevicesProvisioningStatusesRequest) ProductTypes(productTypes []string) MonitorAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter device by device serial numbers. This filter uses multiple exact matches.
-func (r MonitorApiGetOrganizationDevicesProvisioningStatusesRequest) Serials(serials []string) MonitorApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r MonitorAPIGetOrganizationDevicesProvisioningStatusesRequest) Serials(serials []string) MonitorAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.serials = &serials
 	return r
 }
 
 // An optional parameter to filter devices by the provisioning status. Accepted statuses: unprovisioned, incomplete, complete.
-func (r MonitorApiGetOrganizationDevicesProvisioningStatusesRequest) Status(status string) MonitorApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r MonitorAPIGetOrganizationDevicesProvisioningStatusesRequest) Status(status string) MonitorAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.status = &status
 	return r
 }
 
 // An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below). This filter uses multiple exact matches.
-func (r MonitorApiGetOrganizationDevicesProvisioningStatusesRequest) Tags(tags []string) MonitorApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r MonitorAPIGetOrganizationDevicesProvisioningStatusesRequest) Tags(tags []string) MonitorAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.tags = &tags
 	return r
 }
 
 // An optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return devices which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r MonitorApiGetOrganizationDevicesProvisioningStatusesRequest) TagsFilterType(tagsFilterType string) MonitorApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r MonitorAPIGetOrganizationDevicesProvisioningStatusesRequest) TagsFilterType(tagsFilterType string) MonitorAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
-func (r MonitorApiGetOrganizationDevicesProvisioningStatusesRequest) Execute() ([]GetOrganizationDevicesProvisioningStatuses200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationDevicesProvisioningStatusesRequest) Execute() ([]GetOrganizationDevicesProvisioningStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesProvisioningStatusesExecute(r)
 }
 
@@ -14059,10 +14059,10 @@ List the provisioning statuses information for devices in an organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationDevicesProvisioningStatusesRequest
+ @return MonitorAPIGetOrganizationDevicesProvisioningStatusesRequest
 */
-func (a *MonitorApiService) GetOrganizationDevicesProvisioningStatuses(ctx context.Context, organizationId string) MonitorApiGetOrganizationDevicesProvisioningStatusesRequest {
-	return MonitorApiGetOrganizationDevicesProvisioningStatusesRequest{
+func (a *MonitorAPIService) GetOrganizationDevicesProvisioningStatuses(ctx context.Context, organizationId string) MonitorAPIGetOrganizationDevicesProvisioningStatusesRequest {
+	return MonitorAPIGetOrganizationDevicesProvisioningStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -14071,7 +14071,7 @@ func (a *MonitorApiService) GetOrganizationDevicesProvisioningStatuses(ctx conte
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesProvisioningStatuses200ResponseInner
-func (a *MonitorApiService) GetOrganizationDevicesProvisioningStatusesExecute(r MonitorApiGetOrganizationDevicesProvisioningStatusesRequest) ([]GetOrganizationDevicesProvisioningStatuses200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationDevicesProvisioningStatusesExecute(r MonitorAPIGetOrganizationDevicesProvisioningStatusesRequest) ([]GetOrganizationDevicesProvisioningStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -14079,7 +14079,7 @@ func (a *MonitorApiService) GetOrganizationDevicesProvisioningStatusesExecute(r 
 		localVarReturnValue  []GetOrganizationDevicesProvisioningStatuses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationDevicesProvisioningStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationDevicesProvisioningStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14218,9 +14218,9 @@ func (a *MonitorApiService) GetOrganizationDevicesProvisioningStatusesExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationDevicesStatusesRequest struct {
+type MonitorAPIGetOrganizationDevicesStatusesRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -14235,66 +14235,66 @@ type MonitorApiGetOrganizationDevicesStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r MonitorApiGetOrganizationDevicesStatusesRequest) PerPage(perPage int32) MonitorApiGetOrganizationDevicesStatusesRequest {
+func (r MonitorAPIGetOrganizationDevicesStatusesRequest) PerPage(perPage int32) MonitorAPIGetOrganizationDevicesStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationDevicesStatusesRequest) StartingAfter(startingAfter string) MonitorApiGetOrganizationDevicesStatusesRequest {
+func (r MonitorAPIGetOrganizationDevicesStatusesRequest) StartingAfter(startingAfter string) MonitorAPIGetOrganizationDevicesStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationDevicesStatusesRequest) EndingBefore(endingBefore string) MonitorApiGetOrganizationDevicesStatusesRequest {
+func (r MonitorAPIGetOrganizationDevicesStatusesRequest) EndingBefore(endingBefore string) MonitorAPIGetOrganizationDevicesStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter devices by network ids.
-func (r MonitorApiGetOrganizationDevicesStatusesRequest) NetworkIds(networkIds []string) MonitorApiGetOrganizationDevicesStatusesRequest {
+func (r MonitorAPIGetOrganizationDevicesStatusesRequest) NetworkIds(networkIds []string) MonitorAPIGetOrganizationDevicesStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter devices by serials.
-func (r MonitorApiGetOrganizationDevicesStatusesRequest) Serials(serials []string) MonitorApiGetOrganizationDevicesStatusesRequest {
+func (r MonitorAPIGetOrganizationDevicesStatusesRequest) Serials(serials []string) MonitorAPIGetOrganizationDevicesStatusesRequest {
 	r.serials = &serials
 	return r
 }
 
 // Optional parameter to filter devices by statuses. Valid statuses are [\&quot;online\&quot;, \&quot;alerting\&quot;, \&quot;offline\&quot;, \&quot;dormant\&quot;].
-func (r MonitorApiGetOrganizationDevicesStatusesRequest) Statuses(statuses []string) MonitorApiGetOrganizationDevicesStatusesRequest {
+func (r MonitorAPIGetOrganizationDevicesStatusesRequest) Statuses(statuses []string) MonitorAPIGetOrganizationDevicesStatusesRequest {
 	r.statuses = &statuses
 	return r
 }
 
 // An optional parameter to filter device statuses by product type. Valid types are wireless, appliance, switch, systemsManager, camera, cellularGateway, sensor, and cloudGateway.
-func (r MonitorApiGetOrganizationDevicesStatusesRequest) ProductTypes(productTypes []string) MonitorApiGetOrganizationDevicesStatusesRequest {
+func (r MonitorAPIGetOrganizationDevicesStatusesRequest) ProductTypes(productTypes []string) MonitorAPIGetOrganizationDevicesStatusesRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter devices by models.
-func (r MonitorApiGetOrganizationDevicesStatusesRequest) Models(models []string) MonitorApiGetOrganizationDevicesStatusesRequest {
+func (r MonitorAPIGetOrganizationDevicesStatusesRequest) Models(models []string) MonitorAPIGetOrganizationDevicesStatusesRequest {
 	r.models = &models
 	return r
 }
 
 // An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below).
-func (r MonitorApiGetOrganizationDevicesStatusesRequest) Tags(tags []string) MonitorApiGetOrganizationDevicesStatusesRequest {
+func (r MonitorAPIGetOrganizationDevicesStatusesRequest) Tags(tags []string) MonitorAPIGetOrganizationDevicesStatusesRequest {
 	r.tags = &tags
 	return r
 }
 
 // An optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return devices which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r MonitorApiGetOrganizationDevicesStatusesRequest) TagsFilterType(tagsFilterType string) MonitorApiGetOrganizationDevicesStatusesRequest {
+func (r MonitorAPIGetOrganizationDevicesStatusesRequest) TagsFilterType(tagsFilterType string) MonitorAPIGetOrganizationDevicesStatusesRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
-func (r MonitorApiGetOrganizationDevicesStatusesRequest) Execute() ([]GetOrganizationDevicesStatuses200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationDevicesStatusesRequest) Execute() ([]GetOrganizationDevicesStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesStatusesExecute(r)
 }
 
@@ -14305,10 +14305,10 @@ List the status of every Meraki device in the organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationDevicesStatusesRequest
+ @return MonitorAPIGetOrganizationDevicesStatusesRequest
 */
-func (a *MonitorApiService) GetOrganizationDevicesStatuses(ctx context.Context, organizationId string) MonitorApiGetOrganizationDevicesStatusesRequest {
-	return MonitorApiGetOrganizationDevicesStatusesRequest{
+func (a *MonitorAPIService) GetOrganizationDevicesStatuses(ctx context.Context, organizationId string) MonitorAPIGetOrganizationDevicesStatusesRequest {
+	return MonitorAPIGetOrganizationDevicesStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -14317,7 +14317,7 @@ func (a *MonitorApiService) GetOrganizationDevicesStatuses(ctx context.Context, 
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesStatuses200ResponseInner
-func (a *MonitorApiService) GetOrganizationDevicesStatusesExecute(r MonitorApiGetOrganizationDevicesStatusesRequest) ([]GetOrganizationDevicesStatuses200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationDevicesStatusesExecute(r MonitorAPIGetOrganizationDevicesStatusesRequest) ([]GetOrganizationDevicesStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -14325,7 +14325,7 @@ func (a *MonitorApiService) GetOrganizationDevicesStatusesExecute(r MonitorApiGe
 		localVarReturnValue  []GetOrganizationDevicesStatuses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationDevicesStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationDevicesStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14483,27 +14483,27 @@ func (a *MonitorApiService) GetOrganizationDevicesStatusesExecute(r MonitorApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationDevicesStatusesOverviewRequest struct {
+type MonitorAPIGetOrganizationDevicesStatusesOverviewRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	productTypes *[]string
 	networkIds *[]string
 }
 
 // An optional parameter to filter device statuses by product type. Valid types are wireless, appliance, switch, systemsManager, camera, cellularGateway, sensor, and cloudGateway.
-func (r MonitorApiGetOrganizationDevicesStatusesOverviewRequest) ProductTypes(productTypes []string) MonitorApiGetOrganizationDevicesStatusesOverviewRequest {
+func (r MonitorAPIGetOrganizationDevicesStatusesOverviewRequest) ProductTypes(productTypes []string) MonitorAPIGetOrganizationDevicesStatusesOverviewRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // An optional parameter to filter device statuses by network.
-func (r MonitorApiGetOrganizationDevicesStatusesOverviewRequest) NetworkIds(networkIds []string) MonitorApiGetOrganizationDevicesStatusesOverviewRequest {
+func (r MonitorAPIGetOrganizationDevicesStatusesOverviewRequest) NetworkIds(networkIds []string) MonitorAPIGetOrganizationDevicesStatusesOverviewRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
-func (r MonitorApiGetOrganizationDevicesStatusesOverviewRequest) Execute() (*GetOrganizationDevicesStatusesOverview200Response, *http.Response, error) {
+func (r MonitorAPIGetOrganizationDevicesStatusesOverviewRequest) Execute() (*GetOrganizationDevicesStatusesOverview200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesStatusesOverviewExecute(r)
 }
 
@@ -14514,10 +14514,10 @@ Return an overview of current device statuses
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationDevicesStatusesOverviewRequest
+ @return MonitorAPIGetOrganizationDevicesStatusesOverviewRequest
 */
-func (a *MonitorApiService) GetOrganizationDevicesStatusesOverview(ctx context.Context, organizationId string) MonitorApiGetOrganizationDevicesStatusesOverviewRequest {
-	return MonitorApiGetOrganizationDevicesStatusesOverviewRequest{
+func (a *MonitorAPIService) GetOrganizationDevicesStatusesOverview(ctx context.Context, organizationId string) MonitorAPIGetOrganizationDevicesStatusesOverviewRequest {
+	return MonitorAPIGetOrganizationDevicesStatusesOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -14526,7 +14526,7 @@ func (a *MonitorApiService) GetOrganizationDevicesStatusesOverview(ctx context.C
 
 // Execute executes the request
 //  @return GetOrganizationDevicesStatusesOverview200Response
-func (a *MonitorApiService) GetOrganizationDevicesStatusesOverviewExecute(r MonitorApiGetOrganizationDevicesStatusesOverviewRequest) (*GetOrganizationDevicesStatusesOverview200Response, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationDevicesStatusesOverviewExecute(r MonitorAPIGetOrganizationDevicesStatusesOverviewRequest) (*GetOrganizationDevicesStatusesOverview200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -14534,7 +14534,7 @@ func (a *MonitorApiService) GetOrganizationDevicesStatusesOverviewExecute(r Moni
 		localVarReturnValue  *GetOrganizationDevicesStatusesOverview200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationDevicesStatusesOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationDevicesStatusesOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14636,9 +14636,9 @@ func (a *MonitorApiService) GetOrganizationDevicesStatusesOverviewExecute(r Moni
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationDevicesUplinksAddressesByDeviceRequest struct {
+type MonitorAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -14651,54 +14651,54 @@ type MonitorApiGetOrganizationDevicesUplinksAddressesByDeviceRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r MonitorApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) PerPage(perPage int32) MonitorApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r MonitorAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) PerPage(perPage int32) MonitorAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) StartingAfter(startingAfter string) MonitorApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r MonitorAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) StartingAfter(startingAfter string) MonitorAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) EndingBefore(endingBefore string) MonitorApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r MonitorAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) EndingBefore(endingBefore string) MonitorAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter device uplinks by network ID. This filter uses multiple exact matches.
-func (r MonitorApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) NetworkIds(networkIds []string) MonitorApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r MonitorAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) NetworkIds(networkIds []string) MonitorAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter device uplinks by device product types. This filter uses multiple exact matches.
-func (r MonitorApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) ProductTypes(productTypes []string) MonitorApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r MonitorAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) ProductTypes(productTypes []string) MonitorAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter device availabilities by device serial numbers. This filter uses multiple exact matches.
-func (r MonitorApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) Serials(serials []string) MonitorApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r MonitorAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) Serials(serials []string) MonitorAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.serials = &serials
 	return r
 }
 
 // An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below). This filter uses multiple exact matches.
-func (r MonitorApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) Tags(tags []string) MonitorApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r MonitorAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) Tags(tags []string) MonitorAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.tags = &tags
 	return r
 }
 
 // An optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return devices which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r MonitorApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) TagsFilterType(tagsFilterType string) MonitorApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r MonitorAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) TagsFilterType(tagsFilterType string) MonitorAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
-func (r MonitorApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) Execute() ([]GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) Execute() ([]GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesUplinksAddressesByDeviceExecute(r)
 }
 
@@ -14709,10 +14709,10 @@ List the current uplink addresses for devices in an organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationDevicesUplinksAddressesByDeviceRequest
+ @return MonitorAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest
 */
-func (a *MonitorApiService) GetOrganizationDevicesUplinksAddressesByDevice(ctx context.Context, organizationId string) MonitorApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
-	return MonitorApiGetOrganizationDevicesUplinksAddressesByDeviceRequest{
+func (a *MonitorAPIService) GetOrganizationDevicesUplinksAddressesByDevice(ctx context.Context, organizationId string) MonitorAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+	return MonitorAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -14721,7 +14721,7 @@ func (a *MonitorApiService) GetOrganizationDevicesUplinksAddressesByDevice(ctx c
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner
-func (a *MonitorApiService) GetOrganizationDevicesUplinksAddressesByDeviceExecute(r MonitorApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) ([]GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationDevicesUplinksAddressesByDeviceExecute(r MonitorAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) ([]GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -14729,7 +14729,7 @@ func (a *MonitorApiService) GetOrganizationDevicesUplinksAddressesByDeviceExecut
 		localVarReturnValue  []GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationDevicesUplinksAddressesByDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationDevicesUplinksAddressesByDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14865,9 +14865,9 @@ func (a *MonitorApiService) GetOrganizationDevicesUplinksAddressesByDeviceExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationDevicesUplinksLossAndLatencyRequest struct {
+type MonitorAPIGetOrganizationDevicesUplinksLossAndLatencyRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -14877,36 +14877,36 @@ type MonitorApiGetOrganizationDevicesUplinksLossAndLatencyRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 60 days from today.
-func (r MonitorApiGetOrganizationDevicesUplinksLossAndLatencyRequest) T0(t0 string) MonitorApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
+func (r MonitorAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) T0(t0 string) MonitorAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 5 minutes after t0. The latest possible time that t1 can be is 2 minutes into the past.
-func (r MonitorApiGetOrganizationDevicesUplinksLossAndLatencyRequest) T1(t1 string) MonitorApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
+func (r MonitorAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) T1(t1 string) MonitorAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 5 minutes. The default is 5 minutes.
-func (r MonitorApiGetOrganizationDevicesUplinksLossAndLatencyRequest) Timespan(timespan float32) MonitorApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
+func (r MonitorAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) Timespan(timespan float32) MonitorAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Optional filter for a specific WAN uplink. Valid uplinks are wan1, wan2, wan3, cellular. Default will return all uplinks.
-func (r MonitorApiGetOrganizationDevicesUplinksLossAndLatencyRequest) Uplink(uplink string) MonitorApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
+func (r MonitorAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) Uplink(uplink string) MonitorAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
 	r.uplink = &uplink
 	return r
 }
 
 // Optional filter for a specific destination IP. Default will return all destination IPs.
-func (r MonitorApiGetOrganizationDevicesUplinksLossAndLatencyRequest) Ip(ip string) MonitorApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
+func (r MonitorAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) Ip(ip string) MonitorAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
 	r.ip = &ip
 	return r
 }
 
-func (r MonitorApiGetOrganizationDevicesUplinksLossAndLatencyRequest) Execute() ([]GetOrganizationDevicesUplinksLossAndLatency200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) Execute() ([]GetOrganizationDevicesUplinksLossAndLatency200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesUplinksLossAndLatencyExecute(r)
 }
 
@@ -14917,10 +14917,10 @@ Return the uplink loss and latency for every MX in the organization from at late
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationDevicesUplinksLossAndLatencyRequest
+ @return MonitorAPIGetOrganizationDevicesUplinksLossAndLatencyRequest
 */
-func (a *MonitorApiService) GetOrganizationDevicesUplinksLossAndLatency(ctx context.Context, organizationId string) MonitorApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
-	return MonitorApiGetOrganizationDevicesUplinksLossAndLatencyRequest{
+func (a *MonitorAPIService) GetOrganizationDevicesUplinksLossAndLatency(ctx context.Context, organizationId string) MonitorAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
+	return MonitorAPIGetOrganizationDevicesUplinksLossAndLatencyRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -14929,7 +14929,7 @@ func (a *MonitorApiService) GetOrganizationDevicesUplinksLossAndLatency(ctx cont
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesUplinksLossAndLatency200ResponseInner
-func (a *MonitorApiService) GetOrganizationDevicesUplinksLossAndLatencyExecute(r MonitorApiGetOrganizationDevicesUplinksLossAndLatencyRequest) ([]GetOrganizationDevicesUplinksLossAndLatency200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationDevicesUplinksLossAndLatencyExecute(r MonitorAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) ([]GetOrganizationDevicesUplinksLossAndLatency200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -14937,7 +14937,7 @@ func (a *MonitorApiService) GetOrganizationDevicesUplinksLossAndLatencyExecute(r
 		localVarReturnValue  []GetOrganizationDevicesUplinksLossAndLatency200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationDevicesUplinksLossAndLatency")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationDevicesUplinksLossAndLatency")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15032,13 +15032,13 @@ func (a *MonitorApiService) GetOrganizationDevicesUplinksLossAndLatencyExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationLicensesOverviewRequest struct {
+type MonitorAPIGetOrganizationLicensesOverviewRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 }
 
-func (r MonitorApiGetOrganizationLicensesOverviewRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetOrganizationLicensesOverviewRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationLicensesOverviewExecute(r)
 }
 
@@ -15049,10 +15049,10 @@ Return an overview of the license state for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationLicensesOverviewRequest
+ @return MonitorAPIGetOrganizationLicensesOverviewRequest
 */
-func (a *MonitorApiService) GetOrganizationLicensesOverview(ctx context.Context, organizationId string) MonitorApiGetOrganizationLicensesOverviewRequest {
-	return MonitorApiGetOrganizationLicensesOverviewRequest{
+func (a *MonitorAPIService) GetOrganizationLicensesOverview(ctx context.Context, organizationId string) MonitorAPIGetOrganizationLicensesOverviewRequest {
+	return MonitorAPIGetOrganizationLicensesOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -15061,7 +15061,7 @@ func (a *MonitorApiService) GetOrganizationLicensesOverview(ctx context.Context,
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *MonitorApiService) GetOrganizationLicensesOverviewExecute(r MonitorApiGetOrganizationLicensesOverviewRequest) (map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationLicensesOverviewExecute(r MonitorAPIGetOrganizationLicensesOverviewRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -15069,7 +15069,7 @@ func (a *MonitorApiService) GetOrganizationLicensesOverviewExecute(r MonitorApiG
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationLicensesOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationLicensesOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15149,20 +15149,20 @@ func (a *MonitorApiService) GetOrganizationLicensesOverviewExecute(r MonitorApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationOpenapiSpecRequest struct {
+type MonitorAPIGetOrganizationOpenapiSpecRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	version *int32
 }
 
 // OpenAPI Specification version to return. Default is 2
-func (r MonitorApiGetOrganizationOpenapiSpecRequest) Version(version int32) MonitorApiGetOrganizationOpenapiSpecRequest {
+func (r MonitorAPIGetOrganizationOpenapiSpecRequest) Version(version int32) MonitorAPIGetOrganizationOpenapiSpecRequest {
 	r.version = &version
 	return r
 }
 
-func (r MonitorApiGetOrganizationOpenapiSpecRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetOrganizationOpenapiSpecRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationOpenapiSpecExecute(r)
 }
 
@@ -15173,10 +15173,10 @@ Return the OpenAPI Specification of the organization's API documentation in JSON
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationOpenapiSpecRequest
+ @return MonitorAPIGetOrganizationOpenapiSpecRequest
 */
-func (a *MonitorApiService) GetOrganizationOpenapiSpec(ctx context.Context, organizationId string) MonitorApiGetOrganizationOpenapiSpecRequest {
-	return MonitorApiGetOrganizationOpenapiSpecRequest{
+func (a *MonitorAPIService) GetOrganizationOpenapiSpec(ctx context.Context, organizationId string) MonitorAPIGetOrganizationOpenapiSpecRequest {
+	return MonitorAPIGetOrganizationOpenapiSpecRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -15185,7 +15185,7 @@ func (a *MonitorApiService) GetOrganizationOpenapiSpec(ctx context.Context, orga
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *MonitorApiService) GetOrganizationOpenapiSpecExecute(r MonitorApiGetOrganizationOpenapiSpecRequest) (map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationOpenapiSpecExecute(r MonitorAPIGetOrganizationOpenapiSpecRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -15193,7 +15193,7 @@ func (a *MonitorApiService) GetOrganizationOpenapiSpecExecute(r MonitorApiGetOrg
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationOpenapiSpec")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationOpenapiSpec")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15276,9 +15276,9 @@ func (a *MonitorApiService) GetOrganizationOpenapiSpecExecute(r MonitorApiGetOrg
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationSensorReadingsHistoryRequest struct {
+type MonitorAPIGetOrganizationSensorReadingsHistoryRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -15292,60 +15292,60 @@ type MonitorApiGetOrganizationSensorReadingsHistoryRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r MonitorApiGetOrganizationSensorReadingsHistoryRequest) PerPage(perPage int32) MonitorApiGetOrganizationSensorReadingsHistoryRequest {
+func (r MonitorAPIGetOrganizationSensorReadingsHistoryRequest) PerPage(perPage int32) MonitorAPIGetOrganizationSensorReadingsHistoryRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationSensorReadingsHistoryRequest) StartingAfter(startingAfter string) MonitorApiGetOrganizationSensorReadingsHistoryRequest {
+func (r MonitorAPIGetOrganizationSensorReadingsHistoryRequest) StartingAfter(startingAfter string) MonitorAPIGetOrganizationSensorReadingsHistoryRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationSensorReadingsHistoryRequest) EndingBefore(endingBefore string) MonitorApiGetOrganizationSensorReadingsHistoryRequest {
+func (r MonitorAPIGetOrganizationSensorReadingsHistoryRequest) EndingBefore(endingBefore string) MonitorAPIGetOrganizationSensorReadingsHistoryRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 365 days and 6 hours from today.
-func (r MonitorApiGetOrganizationSensorReadingsHistoryRequest) T0(t0 string) MonitorApiGetOrganizationSensorReadingsHistoryRequest {
+func (r MonitorAPIGetOrganizationSensorReadingsHistoryRequest) T0(t0 string) MonitorAPIGetOrganizationSensorReadingsHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r MonitorApiGetOrganizationSensorReadingsHistoryRequest) T1(t1 string) MonitorApiGetOrganizationSensorReadingsHistoryRequest {
+func (r MonitorAPIGetOrganizationSensorReadingsHistoryRequest) T1(t1 string) MonitorAPIGetOrganizationSensorReadingsHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. The default is 2 hours.
-func (r MonitorApiGetOrganizationSensorReadingsHistoryRequest) Timespan(timespan float32) MonitorApiGetOrganizationSensorReadingsHistoryRequest {
+func (r MonitorAPIGetOrganizationSensorReadingsHistoryRequest) Timespan(timespan float32) MonitorAPIGetOrganizationSensorReadingsHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Optional parameter to filter readings by network.
-func (r MonitorApiGetOrganizationSensorReadingsHistoryRequest) NetworkIds(networkIds []string) MonitorApiGetOrganizationSensorReadingsHistoryRequest {
+func (r MonitorAPIGetOrganizationSensorReadingsHistoryRequest) NetworkIds(networkIds []string) MonitorAPIGetOrganizationSensorReadingsHistoryRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter readings by sensor.
-func (r MonitorApiGetOrganizationSensorReadingsHistoryRequest) Serials(serials []string) MonitorApiGetOrganizationSensorReadingsHistoryRequest {
+func (r MonitorAPIGetOrganizationSensorReadingsHistoryRequest) Serials(serials []string) MonitorAPIGetOrganizationSensorReadingsHistoryRequest {
 	r.serials = &serials
 	return r
 }
 
 // Types of sensor readings to retrieve. If no metrics are supplied, all available types of readings will be retrieved. Allowed values are battery, button, door, humidity, indoorAirQuality, noise, pm25, temperature, tvoc, and water.
-func (r MonitorApiGetOrganizationSensorReadingsHistoryRequest) Metrics(metrics []string) MonitorApiGetOrganizationSensorReadingsHistoryRequest {
+func (r MonitorAPIGetOrganizationSensorReadingsHistoryRequest) Metrics(metrics []string) MonitorAPIGetOrganizationSensorReadingsHistoryRequest {
 	r.metrics = &metrics
 	return r
 }
 
-func (r MonitorApiGetOrganizationSensorReadingsHistoryRequest) Execute() ([]GetOrganizationSensorReadingsHistory200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationSensorReadingsHistoryRequest) Execute() ([]GetOrganizationSensorReadingsHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSensorReadingsHistoryExecute(r)
 }
 
@@ -15356,10 +15356,10 @@ Return all reported readings from sensors in a given timespan, sorted by timesta
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationSensorReadingsHistoryRequest
+ @return MonitorAPIGetOrganizationSensorReadingsHistoryRequest
 */
-func (a *MonitorApiService) GetOrganizationSensorReadingsHistory(ctx context.Context, organizationId string) MonitorApiGetOrganizationSensorReadingsHistoryRequest {
-	return MonitorApiGetOrganizationSensorReadingsHistoryRequest{
+func (a *MonitorAPIService) GetOrganizationSensorReadingsHistory(ctx context.Context, organizationId string) MonitorAPIGetOrganizationSensorReadingsHistoryRequest {
+	return MonitorAPIGetOrganizationSensorReadingsHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -15368,7 +15368,7 @@ func (a *MonitorApiService) GetOrganizationSensorReadingsHistory(ctx context.Con
 
 // Execute executes the request
 //  @return []GetOrganizationSensorReadingsHistory200ResponseInner
-func (a *MonitorApiService) GetOrganizationSensorReadingsHistoryExecute(r MonitorApiGetOrganizationSensorReadingsHistoryRequest) ([]GetOrganizationSensorReadingsHistory200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationSensorReadingsHistoryExecute(r MonitorAPIGetOrganizationSensorReadingsHistoryRequest) ([]GetOrganizationSensorReadingsHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -15376,7 +15376,7 @@ func (a *MonitorApiService) GetOrganizationSensorReadingsHistoryExecute(r Monito
 		localVarReturnValue  []GetOrganizationSensorReadingsHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationSensorReadingsHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationSensorReadingsHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15507,9 +15507,9 @@ func (a *MonitorApiService) GetOrganizationSensorReadingsHistoryExecute(r Monito
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationSensorReadingsLatestRequest struct {
+type MonitorAPIGetOrganizationSensorReadingsLatestRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -15520,42 +15520,42 @@ type MonitorApiGetOrganizationSensorReadingsLatestRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 100. Default is 100.
-func (r MonitorApiGetOrganizationSensorReadingsLatestRequest) PerPage(perPage int32) MonitorApiGetOrganizationSensorReadingsLatestRequest {
+func (r MonitorAPIGetOrganizationSensorReadingsLatestRequest) PerPage(perPage int32) MonitorAPIGetOrganizationSensorReadingsLatestRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationSensorReadingsLatestRequest) StartingAfter(startingAfter string) MonitorApiGetOrganizationSensorReadingsLatestRequest {
+func (r MonitorAPIGetOrganizationSensorReadingsLatestRequest) StartingAfter(startingAfter string) MonitorAPIGetOrganizationSensorReadingsLatestRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationSensorReadingsLatestRequest) EndingBefore(endingBefore string) MonitorApiGetOrganizationSensorReadingsLatestRequest {
+func (r MonitorAPIGetOrganizationSensorReadingsLatestRequest) EndingBefore(endingBefore string) MonitorAPIGetOrganizationSensorReadingsLatestRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter readings by network.
-func (r MonitorApiGetOrganizationSensorReadingsLatestRequest) NetworkIds(networkIds []string) MonitorApiGetOrganizationSensorReadingsLatestRequest {
+func (r MonitorAPIGetOrganizationSensorReadingsLatestRequest) NetworkIds(networkIds []string) MonitorAPIGetOrganizationSensorReadingsLatestRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter readings by sensor.
-func (r MonitorApiGetOrganizationSensorReadingsLatestRequest) Serials(serials []string) MonitorApiGetOrganizationSensorReadingsLatestRequest {
+func (r MonitorAPIGetOrganizationSensorReadingsLatestRequest) Serials(serials []string) MonitorAPIGetOrganizationSensorReadingsLatestRequest {
 	r.serials = &serials
 	return r
 }
 
 // Types of sensor readings to retrieve. If no metrics are supplied, all available types of readings will be retrieved. Allowed values are battery, button, door, humidity, indoorAirQuality, noise, pm25, temperature, tvoc, and water.
-func (r MonitorApiGetOrganizationSensorReadingsLatestRequest) Metrics(metrics []string) MonitorApiGetOrganizationSensorReadingsLatestRequest {
+func (r MonitorAPIGetOrganizationSensorReadingsLatestRequest) Metrics(metrics []string) MonitorAPIGetOrganizationSensorReadingsLatestRequest {
 	r.metrics = &metrics
 	return r
 }
 
-func (r MonitorApiGetOrganizationSensorReadingsLatestRequest) Execute() ([]GetOrganizationSensorReadingsLatest200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationSensorReadingsLatestRequest) Execute() ([]GetOrganizationSensorReadingsLatest200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSensorReadingsLatestExecute(r)
 }
 
@@ -15566,10 +15566,10 @@ Return the latest available reading for each metric from each sensor, sorted by 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationSensorReadingsLatestRequest
+ @return MonitorAPIGetOrganizationSensorReadingsLatestRequest
 */
-func (a *MonitorApiService) GetOrganizationSensorReadingsLatest(ctx context.Context, organizationId string) MonitorApiGetOrganizationSensorReadingsLatestRequest {
-	return MonitorApiGetOrganizationSensorReadingsLatestRequest{
+func (a *MonitorAPIService) GetOrganizationSensorReadingsLatest(ctx context.Context, organizationId string) MonitorAPIGetOrganizationSensorReadingsLatestRequest {
+	return MonitorAPIGetOrganizationSensorReadingsLatestRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -15578,7 +15578,7 @@ func (a *MonitorApiService) GetOrganizationSensorReadingsLatest(ctx context.Cont
 
 // Execute executes the request
 //  @return []GetOrganizationSensorReadingsLatest200ResponseInner
-func (a *MonitorApiService) GetOrganizationSensorReadingsLatestExecute(r MonitorApiGetOrganizationSensorReadingsLatestRequest) ([]GetOrganizationSensorReadingsLatest200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationSensorReadingsLatestExecute(r MonitorAPIGetOrganizationSensorReadingsLatestRequest) ([]GetOrganizationSensorReadingsLatest200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -15586,7 +15586,7 @@ func (a *MonitorApiService) GetOrganizationSensorReadingsLatestExecute(r Monitor
 		localVarReturnValue  []GetOrganizationSensorReadingsLatest200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationSensorReadingsLatest")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationSensorReadingsLatest")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15708,9 +15708,9 @@ func (a *MonitorApiService) GetOrganizationSensorReadingsLatestExecute(r Monitor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationSummaryTopAppliancesByUtilizationRequest struct {
+type MonitorAPIGetOrganizationSummaryTopAppliancesByUtilizationRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -15718,24 +15718,24 @@ type MonitorApiGetOrganizationSummaryTopAppliancesByUtilizationRequest struct {
 }
 
 // The beginning of the timespan for the data.
-func (r MonitorApiGetOrganizationSummaryTopAppliancesByUtilizationRequest) T0(t0 string) MonitorApiGetOrganizationSummaryTopAppliancesByUtilizationRequest {
+func (r MonitorAPIGetOrganizationSummaryTopAppliancesByUtilizationRequest) T0(t0 string) MonitorAPIGetOrganizationSummaryTopAppliancesByUtilizationRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetOrganizationSummaryTopAppliancesByUtilizationRequest) T1(t1 string) MonitorApiGetOrganizationSummaryTopAppliancesByUtilizationRequest {
+func (r MonitorAPIGetOrganizationSummaryTopAppliancesByUtilizationRequest) T1(t1 string) MonitorAPIGetOrganizationSummaryTopAppliancesByUtilizationRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r MonitorApiGetOrganizationSummaryTopAppliancesByUtilizationRequest) Timespan(timespan float32) MonitorApiGetOrganizationSummaryTopAppliancesByUtilizationRequest {
+func (r MonitorAPIGetOrganizationSummaryTopAppliancesByUtilizationRequest) Timespan(timespan float32) MonitorAPIGetOrganizationSummaryTopAppliancesByUtilizationRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r MonitorApiGetOrganizationSummaryTopAppliancesByUtilizationRequest) Execute() ([]GetOrganizationSummaryTopAppliancesByUtilization200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationSummaryTopAppliancesByUtilizationRequest) Execute() ([]GetOrganizationSummaryTopAppliancesByUtilization200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSummaryTopAppliancesByUtilizationExecute(r)
 }
 
@@ -15746,10 +15746,10 @@ Return the top 10 appliances sorted by utilization over given time range.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationSummaryTopAppliancesByUtilizationRequest
+ @return MonitorAPIGetOrganizationSummaryTopAppliancesByUtilizationRequest
 */
-func (a *MonitorApiService) GetOrganizationSummaryTopAppliancesByUtilization(ctx context.Context, organizationId string) MonitorApiGetOrganizationSummaryTopAppliancesByUtilizationRequest {
-	return MonitorApiGetOrganizationSummaryTopAppliancesByUtilizationRequest{
+func (a *MonitorAPIService) GetOrganizationSummaryTopAppliancesByUtilization(ctx context.Context, organizationId string) MonitorAPIGetOrganizationSummaryTopAppliancesByUtilizationRequest {
+	return MonitorAPIGetOrganizationSummaryTopAppliancesByUtilizationRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -15758,7 +15758,7 @@ func (a *MonitorApiService) GetOrganizationSummaryTopAppliancesByUtilization(ctx
 
 // Execute executes the request
 //  @return []GetOrganizationSummaryTopAppliancesByUtilization200ResponseInner
-func (a *MonitorApiService) GetOrganizationSummaryTopAppliancesByUtilizationExecute(r MonitorApiGetOrganizationSummaryTopAppliancesByUtilizationRequest) ([]GetOrganizationSummaryTopAppliancesByUtilization200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationSummaryTopAppliancesByUtilizationExecute(r MonitorAPIGetOrganizationSummaryTopAppliancesByUtilizationRequest) ([]GetOrganizationSummaryTopAppliancesByUtilization200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -15766,7 +15766,7 @@ func (a *MonitorApiService) GetOrganizationSummaryTopAppliancesByUtilizationExec
 		localVarReturnValue  []GetOrganizationSummaryTopAppliancesByUtilization200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationSummaryTopAppliancesByUtilization")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationSummaryTopAppliancesByUtilization")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15855,9 +15855,9 @@ func (a *MonitorApiService) GetOrganizationSummaryTopAppliancesByUtilizationExec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationSummaryTopClientsByUsageRequest struct {
+type MonitorAPIGetOrganizationSummaryTopClientsByUsageRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -15865,24 +15865,24 @@ type MonitorApiGetOrganizationSummaryTopClientsByUsageRequest struct {
 }
 
 // The beginning of the timespan for the data.
-func (r MonitorApiGetOrganizationSummaryTopClientsByUsageRequest) T0(t0 string) MonitorApiGetOrganizationSummaryTopClientsByUsageRequest {
+func (r MonitorAPIGetOrganizationSummaryTopClientsByUsageRequest) T0(t0 string) MonitorAPIGetOrganizationSummaryTopClientsByUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetOrganizationSummaryTopClientsByUsageRequest) T1(t1 string) MonitorApiGetOrganizationSummaryTopClientsByUsageRequest {
+func (r MonitorAPIGetOrganizationSummaryTopClientsByUsageRequest) T1(t1 string) MonitorAPIGetOrganizationSummaryTopClientsByUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r MonitorApiGetOrganizationSummaryTopClientsByUsageRequest) Timespan(timespan float32) MonitorApiGetOrganizationSummaryTopClientsByUsageRequest {
+func (r MonitorAPIGetOrganizationSummaryTopClientsByUsageRequest) Timespan(timespan float32) MonitorAPIGetOrganizationSummaryTopClientsByUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r MonitorApiGetOrganizationSummaryTopClientsByUsageRequest) Execute() ([]GetOrganizationSummaryTopClientsByUsage200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationSummaryTopClientsByUsageRequest) Execute() ([]GetOrganizationSummaryTopClientsByUsage200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSummaryTopClientsByUsageExecute(r)
 }
 
@@ -15893,10 +15893,10 @@ Return metrics for organization's top 10 clients by data usage (in mb) over give
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationSummaryTopClientsByUsageRequest
+ @return MonitorAPIGetOrganizationSummaryTopClientsByUsageRequest
 */
-func (a *MonitorApiService) GetOrganizationSummaryTopClientsByUsage(ctx context.Context, organizationId string) MonitorApiGetOrganizationSummaryTopClientsByUsageRequest {
-	return MonitorApiGetOrganizationSummaryTopClientsByUsageRequest{
+func (a *MonitorAPIService) GetOrganizationSummaryTopClientsByUsage(ctx context.Context, organizationId string) MonitorAPIGetOrganizationSummaryTopClientsByUsageRequest {
+	return MonitorAPIGetOrganizationSummaryTopClientsByUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -15905,7 +15905,7 @@ func (a *MonitorApiService) GetOrganizationSummaryTopClientsByUsage(ctx context.
 
 // Execute executes the request
 //  @return []GetOrganizationSummaryTopClientsByUsage200ResponseInner
-func (a *MonitorApiService) GetOrganizationSummaryTopClientsByUsageExecute(r MonitorApiGetOrganizationSummaryTopClientsByUsageRequest) ([]GetOrganizationSummaryTopClientsByUsage200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationSummaryTopClientsByUsageExecute(r MonitorAPIGetOrganizationSummaryTopClientsByUsageRequest) ([]GetOrganizationSummaryTopClientsByUsage200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -15913,7 +15913,7 @@ func (a *MonitorApiService) GetOrganizationSummaryTopClientsByUsageExecute(r Mon
 		localVarReturnValue  []GetOrganizationSummaryTopClientsByUsage200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationSummaryTopClientsByUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationSummaryTopClientsByUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16002,9 +16002,9 @@ func (a *MonitorApiService) GetOrganizationSummaryTopClientsByUsageExecute(r Mon
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest struct {
+type MonitorAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -16012,24 +16012,24 @@ type MonitorApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest struc
 }
 
 // The beginning of the timespan for the data.
-func (r MonitorApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest) T0(t0 string) MonitorApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
+func (r MonitorAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest) T0(t0 string) MonitorAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest) T1(t1 string) MonitorApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
+func (r MonitorAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest) T1(t1 string) MonitorAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r MonitorApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest) Timespan(timespan float32) MonitorApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
+func (r MonitorAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest) Timespan(timespan float32) MonitorAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r MonitorApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest) Execute() ([]GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest) Execute() ([]GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSummaryTopClientsManufacturersByUsageExecute(r)
 }
 
@@ -16040,10 +16040,10 @@ Return metrics for organization's top clients by data usage (in mb) over given t
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest
+ @return MonitorAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest
 */
-func (a *MonitorApiService) GetOrganizationSummaryTopClientsManufacturersByUsage(ctx context.Context, organizationId string) MonitorApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
-	return MonitorApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest{
+func (a *MonitorAPIService) GetOrganizationSummaryTopClientsManufacturersByUsage(ctx context.Context, organizationId string) MonitorAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
+	return MonitorAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -16052,7 +16052,7 @@ func (a *MonitorApiService) GetOrganizationSummaryTopClientsManufacturersByUsage
 
 // Execute executes the request
 //  @return []GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner
-func (a *MonitorApiService) GetOrganizationSummaryTopClientsManufacturersByUsageExecute(r MonitorApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest) ([]GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationSummaryTopClientsManufacturersByUsageExecute(r MonitorAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest) ([]GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -16060,7 +16060,7 @@ func (a *MonitorApiService) GetOrganizationSummaryTopClientsManufacturersByUsage
 		localVarReturnValue  []GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationSummaryTopClientsManufacturersByUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationSummaryTopClientsManufacturersByUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16149,9 +16149,9 @@ func (a *MonitorApiService) GetOrganizationSummaryTopClientsManufacturersByUsage
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationSummaryTopDevicesByUsageRequest struct {
+type MonitorAPIGetOrganizationSummaryTopDevicesByUsageRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -16159,24 +16159,24 @@ type MonitorApiGetOrganizationSummaryTopDevicesByUsageRequest struct {
 }
 
 // The beginning of the timespan for the data.
-func (r MonitorApiGetOrganizationSummaryTopDevicesByUsageRequest) T0(t0 string) MonitorApiGetOrganizationSummaryTopDevicesByUsageRequest {
+func (r MonitorAPIGetOrganizationSummaryTopDevicesByUsageRequest) T0(t0 string) MonitorAPIGetOrganizationSummaryTopDevicesByUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetOrganizationSummaryTopDevicesByUsageRequest) T1(t1 string) MonitorApiGetOrganizationSummaryTopDevicesByUsageRequest {
+func (r MonitorAPIGetOrganizationSummaryTopDevicesByUsageRequest) T1(t1 string) MonitorAPIGetOrganizationSummaryTopDevicesByUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r MonitorApiGetOrganizationSummaryTopDevicesByUsageRequest) Timespan(timespan float32) MonitorApiGetOrganizationSummaryTopDevicesByUsageRequest {
+func (r MonitorAPIGetOrganizationSummaryTopDevicesByUsageRequest) Timespan(timespan float32) MonitorAPIGetOrganizationSummaryTopDevicesByUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r MonitorApiGetOrganizationSummaryTopDevicesByUsageRequest) Execute() ([]GetOrganizationSummaryTopDevicesByUsage200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationSummaryTopDevicesByUsageRequest) Execute() ([]GetOrganizationSummaryTopDevicesByUsage200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSummaryTopDevicesByUsageExecute(r)
 }
 
@@ -16187,10 +16187,10 @@ Return metrics for organization's top 10 devices sorted by data usage over given
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationSummaryTopDevicesByUsageRequest
+ @return MonitorAPIGetOrganizationSummaryTopDevicesByUsageRequest
 */
-func (a *MonitorApiService) GetOrganizationSummaryTopDevicesByUsage(ctx context.Context, organizationId string) MonitorApiGetOrganizationSummaryTopDevicesByUsageRequest {
-	return MonitorApiGetOrganizationSummaryTopDevicesByUsageRequest{
+func (a *MonitorAPIService) GetOrganizationSummaryTopDevicesByUsage(ctx context.Context, organizationId string) MonitorAPIGetOrganizationSummaryTopDevicesByUsageRequest {
+	return MonitorAPIGetOrganizationSummaryTopDevicesByUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -16199,7 +16199,7 @@ func (a *MonitorApiService) GetOrganizationSummaryTopDevicesByUsage(ctx context.
 
 // Execute executes the request
 //  @return []GetOrganizationSummaryTopDevicesByUsage200ResponseInner
-func (a *MonitorApiService) GetOrganizationSummaryTopDevicesByUsageExecute(r MonitorApiGetOrganizationSummaryTopDevicesByUsageRequest) ([]GetOrganizationSummaryTopDevicesByUsage200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationSummaryTopDevicesByUsageExecute(r MonitorAPIGetOrganizationSummaryTopDevicesByUsageRequest) ([]GetOrganizationSummaryTopDevicesByUsage200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -16207,7 +16207,7 @@ func (a *MonitorApiService) GetOrganizationSummaryTopDevicesByUsageExecute(r Mon
 		localVarReturnValue  []GetOrganizationSummaryTopDevicesByUsage200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationSummaryTopDevicesByUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationSummaryTopDevicesByUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16296,9 +16296,9 @@ func (a *MonitorApiService) GetOrganizationSummaryTopDevicesByUsageExecute(r Mon
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationSummaryTopDevicesModelsByUsageRequest struct {
+type MonitorAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -16306,24 +16306,24 @@ type MonitorApiGetOrganizationSummaryTopDevicesModelsByUsageRequest struct {
 }
 
 // The beginning of the timespan for the data.
-func (r MonitorApiGetOrganizationSummaryTopDevicesModelsByUsageRequest) T0(t0 string) MonitorApiGetOrganizationSummaryTopDevicesModelsByUsageRequest {
+func (r MonitorAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest) T0(t0 string) MonitorAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetOrganizationSummaryTopDevicesModelsByUsageRequest) T1(t1 string) MonitorApiGetOrganizationSummaryTopDevicesModelsByUsageRequest {
+func (r MonitorAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest) T1(t1 string) MonitorAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r MonitorApiGetOrganizationSummaryTopDevicesModelsByUsageRequest) Timespan(timespan float32) MonitorApiGetOrganizationSummaryTopDevicesModelsByUsageRequest {
+func (r MonitorAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest) Timespan(timespan float32) MonitorAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r MonitorApiGetOrganizationSummaryTopDevicesModelsByUsageRequest) Execute() ([]GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest) Execute() ([]GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSummaryTopDevicesModelsByUsageExecute(r)
 }
 
@@ -16334,10 +16334,10 @@ Return metrics for organization's top 10 device models sorted by data usage over
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationSummaryTopDevicesModelsByUsageRequest
+ @return MonitorAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest
 */
-func (a *MonitorApiService) GetOrganizationSummaryTopDevicesModelsByUsage(ctx context.Context, organizationId string) MonitorApiGetOrganizationSummaryTopDevicesModelsByUsageRequest {
-	return MonitorApiGetOrganizationSummaryTopDevicesModelsByUsageRequest{
+func (a *MonitorAPIService) GetOrganizationSummaryTopDevicesModelsByUsage(ctx context.Context, organizationId string) MonitorAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest {
+	return MonitorAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -16346,7 +16346,7 @@ func (a *MonitorApiService) GetOrganizationSummaryTopDevicesModelsByUsage(ctx co
 
 // Execute executes the request
 //  @return []GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner
-func (a *MonitorApiService) GetOrganizationSummaryTopDevicesModelsByUsageExecute(r MonitorApiGetOrganizationSummaryTopDevicesModelsByUsageRequest) ([]GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationSummaryTopDevicesModelsByUsageExecute(r MonitorAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest) ([]GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -16354,7 +16354,7 @@ func (a *MonitorApiService) GetOrganizationSummaryTopDevicesModelsByUsageExecute
 		localVarReturnValue  []GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationSummaryTopDevicesModelsByUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationSummaryTopDevicesModelsByUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16443,9 +16443,9 @@ func (a *MonitorApiService) GetOrganizationSummaryTopDevicesModelsByUsageExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationSummaryTopSsidsByUsageRequest struct {
+type MonitorAPIGetOrganizationSummaryTopSsidsByUsageRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -16453,24 +16453,24 @@ type MonitorApiGetOrganizationSummaryTopSsidsByUsageRequest struct {
 }
 
 // The beginning of the timespan for the data.
-func (r MonitorApiGetOrganizationSummaryTopSsidsByUsageRequest) T0(t0 string) MonitorApiGetOrganizationSummaryTopSsidsByUsageRequest {
+func (r MonitorAPIGetOrganizationSummaryTopSsidsByUsageRequest) T0(t0 string) MonitorAPIGetOrganizationSummaryTopSsidsByUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetOrganizationSummaryTopSsidsByUsageRequest) T1(t1 string) MonitorApiGetOrganizationSummaryTopSsidsByUsageRequest {
+func (r MonitorAPIGetOrganizationSummaryTopSsidsByUsageRequest) T1(t1 string) MonitorAPIGetOrganizationSummaryTopSsidsByUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r MonitorApiGetOrganizationSummaryTopSsidsByUsageRequest) Timespan(timespan float32) MonitorApiGetOrganizationSummaryTopSsidsByUsageRequest {
+func (r MonitorAPIGetOrganizationSummaryTopSsidsByUsageRequest) Timespan(timespan float32) MonitorAPIGetOrganizationSummaryTopSsidsByUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r MonitorApiGetOrganizationSummaryTopSsidsByUsageRequest) Execute() ([]GetOrganizationSummaryTopSsidsByUsage200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationSummaryTopSsidsByUsageRequest) Execute() ([]GetOrganizationSummaryTopSsidsByUsage200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSummaryTopSsidsByUsageExecute(r)
 }
 
@@ -16481,10 +16481,10 @@ Return metrics for organization's top 10 ssids by data usage over given time ran
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationSummaryTopSsidsByUsageRequest
+ @return MonitorAPIGetOrganizationSummaryTopSsidsByUsageRequest
 */
-func (a *MonitorApiService) GetOrganizationSummaryTopSsidsByUsage(ctx context.Context, organizationId string) MonitorApiGetOrganizationSummaryTopSsidsByUsageRequest {
-	return MonitorApiGetOrganizationSummaryTopSsidsByUsageRequest{
+func (a *MonitorAPIService) GetOrganizationSummaryTopSsidsByUsage(ctx context.Context, organizationId string) MonitorAPIGetOrganizationSummaryTopSsidsByUsageRequest {
+	return MonitorAPIGetOrganizationSummaryTopSsidsByUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -16493,7 +16493,7 @@ func (a *MonitorApiService) GetOrganizationSummaryTopSsidsByUsage(ctx context.Co
 
 // Execute executes the request
 //  @return []GetOrganizationSummaryTopSsidsByUsage200ResponseInner
-func (a *MonitorApiService) GetOrganizationSummaryTopSsidsByUsageExecute(r MonitorApiGetOrganizationSummaryTopSsidsByUsageRequest) ([]GetOrganizationSummaryTopSsidsByUsage200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationSummaryTopSsidsByUsageExecute(r MonitorAPIGetOrganizationSummaryTopSsidsByUsageRequest) ([]GetOrganizationSummaryTopSsidsByUsage200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -16501,7 +16501,7 @@ func (a *MonitorApiService) GetOrganizationSummaryTopSsidsByUsageExecute(r Monit
 		localVarReturnValue  []GetOrganizationSummaryTopSsidsByUsage200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationSummaryTopSsidsByUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationSummaryTopSsidsByUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16590,9 +16590,9 @@ func (a *MonitorApiService) GetOrganizationSummaryTopSsidsByUsageExecute(r Monit
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest struct {
+type MonitorAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -16600,24 +16600,24 @@ type MonitorApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest struct {
 }
 
 // The beginning of the timespan for the data.
-func (r MonitorApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) T0(t0 string) MonitorApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest {
+func (r MonitorAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) T0(t0 string) MonitorAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) T1(t1 string) MonitorApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest {
+func (r MonitorAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) T1(t1 string) MonitorAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r MonitorApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) Timespan(timespan float32) MonitorApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest {
+func (r MonitorAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) Timespan(timespan float32) MonitorAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r MonitorApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) Execute() ([]GetOrganizationSummaryTopSwitchesByEnergyUsage200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) Execute() ([]GetOrganizationSummaryTopSwitchesByEnergyUsage200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSummaryTopSwitchesByEnergyUsageExecute(r)
 }
 
@@ -16628,10 +16628,10 @@ Return metrics for organization's top 10 switches by energy usage over given tim
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest
+ @return MonitorAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest
 */
-func (a *MonitorApiService) GetOrganizationSummaryTopSwitchesByEnergyUsage(ctx context.Context, organizationId string) MonitorApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest {
-	return MonitorApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest{
+func (a *MonitorAPIService) GetOrganizationSummaryTopSwitchesByEnergyUsage(ctx context.Context, organizationId string) MonitorAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest {
+	return MonitorAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -16640,7 +16640,7 @@ func (a *MonitorApiService) GetOrganizationSummaryTopSwitchesByEnergyUsage(ctx c
 
 // Execute executes the request
 //  @return []GetOrganizationSummaryTopSwitchesByEnergyUsage200ResponseInner
-func (a *MonitorApiService) GetOrganizationSummaryTopSwitchesByEnergyUsageExecute(r MonitorApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) ([]GetOrganizationSummaryTopSwitchesByEnergyUsage200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationSummaryTopSwitchesByEnergyUsageExecute(r MonitorAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) ([]GetOrganizationSummaryTopSwitchesByEnergyUsage200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -16648,7 +16648,7 @@ func (a *MonitorApiService) GetOrganizationSummaryTopSwitchesByEnergyUsageExecut
 		localVarReturnValue  []GetOrganizationSummaryTopSwitchesByEnergyUsage200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationSummaryTopSwitchesByEnergyUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationSummaryTopSwitchesByEnergyUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16737,9 +16737,9 @@ func (a *MonitorApiService) GetOrganizationSummaryTopSwitchesByEnergyUsageExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationUplinksStatusesRequest struct {
+type MonitorAPIGetOrganizationUplinksStatusesRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -16750,42 +16750,42 @@ type MonitorApiGetOrganizationUplinksStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r MonitorApiGetOrganizationUplinksStatusesRequest) PerPage(perPage int32) MonitorApiGetOrganizationUplinksStatusesRequest {
+func (r MonitorAPIGetOrganizationUplinksStatusesRequest) PerPage(perPage int32) MonitorAPIGetOrganizationUplinksStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationUplinksStatusesRequest) StartingAfter(startingAfter string) MonitorApiGetOrganizationUplinksStatusesRequest {
+func (r MonitorAPIGetOrganizationUplinksStatusesRequest) StartingAfter(startingAfter string) MonitorAPIGetOrganizationUplinksStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationUplinksStatusesRequest) EndingBefore(endingBefore string) MonitorApiGetOrganizationUplinksStatusesRequest {
+func (r MonitorAPIGetOrganizationUplinksStatusesRequest) EndingBefore(endingBefore string) MonitorAPIGetOrganizationUplinksStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // A list of network IDs. The returned devices will be filtered to only include these networks.
-func (r MonitorApiGetOrganizationUplinksStatusesRequest) NetworkIds(networkIds []string) MonitorApiGetOrganizationUplinksStatusesRequest {
+func (r MonitorAPIGetOrganizationUplinksStatusesRequest) NetworkIds(networkIds []string) MonitorAPIGetOrganizationUplinksStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // A list of serial numbers. The returned devices will be filtered to only include these serials.
-func (r MonitorApiGetOrganizationUplinksStatusesRequest) Serials(serials []string) MonitorApiGetOrganizationUplinksStatusesRequest {
+func (r MonitorAPIGetOrganizationUplinksStatusesRequest) Serials(serials []string) MonitorAPIGetOrganizationUplinksStatusesRequest {
 	r.serials = &serials
 	return r
 }
 
 // A list of ICCIDs. The returned devices will be filtered to only include these ICCIDs.
-func (r MonitorApiGetOrganizationUplinksStatusesRequest) Iccids(iccids []string) MonitorApiGetOrganizationUplinksStatusesRequest {
+func (r MonitorAPIGetOrganizationUplinksStatusesRequest) Iccids(iccids []string) MonitorAPIGetOrganizationUplinksStatusesRequest {
 	r.iccids = &iccids
 	return r
 }
 
-func (r MonitorApiGetOrganizationUplinksStatusesRequest) Execute() ([]GetOrganizationUplinksStatuses200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationUplinksStatusesRequest) Execute() ([]GetOrganizationUplinksStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationUplinksStatusesExecute(r)
 }
 
@@ -16796,10 +16796,10 @@ List the uplink status of every Meraki MX, MG and Z series devices in the organi
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationUplinksStatusesRequest
+ @return MonitorAPIGetOrganizationUplinksStatusesRequest
 */
-func (a *MonitorApiService) GetOrganizationUplinksStatuses(ctx context.Context, organizationId string) MonitorApiGetOrganizationUplinksStatusesRequest {
-	return MonitorApiGetOrganizationUplinksStatusesRequest{
+func (a *MonitorAPIService) GetOrganizationUplinksStatuses(ctx context.Context, organizationId string) MonitorAPIGetOrganizationUplinksStatusesRequest {
+	return MonitorAPIGetOrganizationUplinksStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -16808,7 +16808,7 @@ func (a *MonitorApiService) GetOrganizationUplinksStatuses(ctx context.Context, 
 
 // Execute executes the request
 //  @return []GetOrganizationUplinksStatuses200ResponseInner
-func (a *MonitorApiService) GetOrganizationUplinksStatusesExecute(r MonitorApiGetOrganizationUplinksStatusesRequest) ([]GetOrganizationUplinksStatuses200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationUplinksStatusesExecute(r MonitorAPIGetOrganizationUplinksStatusesRequest) ([]GetOrganizationUplinksStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -16816,7 +16816,7 @@ func (a *MonitorApiService) GetOrganizationUplinksStatusesExecute(r MonitorApiGe
 		localVarReturnValue  []GetOrganizationUplinksStatuses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationUplinksStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationUplinksStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16938,20 +16938,20 @@ func (a *MonitorApiService) GetOrganizationUplinksStatusesExecute(r MonitorApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationWebhooksAlertTypesRequest struct {
+type MonitorAPIGetOrganizationWebhooksAlertTypesRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	productType *string
 }
 
 // Filter sample alerts to a specific product type
-func (r MonitorApiGetOrganizationWebhooksAlertTypesRequest) ProductType(productType string) MonitorApiGetOrganizationWebhooksAlertTypesRequest {
+func (r MonitorAPIGetOrganizationWebhooksAlertTypesRequest) ProductType(productType string) MonitorAPIGetOrganizationWebhooksAlertTypesRequest {
 	r.productType = &productType
 	return r
 }
 
-func (r MonitorApiGetOrganizationWebhooksAlertTypesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetOrganizationWebhooksAlertTypesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationWebhooksAlertTypesExecute(r)
 }
 
@@ -16962,10 +16962,10 @@ Return a list of alert types to be used with managing webhook alerts
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationWebhooksAlertTypesRequest
+ @return MonitorAPIGetOrganizationWebhooksAlertTypesRequest
 */
-func (a *MonitorApiService) GetOrganizationWebhooksAlertTypes(ctx context.Context, organizationId string) MonitorApiGetOrganizationWebhooksAlertTypesRequest {
-	return MonitorApiGetOrganizationWebhooksAlertTypesRequest{
+func (a *MonitorAPIService) GetOrganizationWebhooksAlertTypes(ctx context.Context, organizationId string) MonitorAPIGetOrganizationWebhooksAlertTypesRequest {
+	return MonitorAPIGetOrganizationWebhooksAlertTypesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -16974,7 +16974,7 @@ func (a *MonitorApiService) GetOrganizationWebhooksAlertTypes(ctx context.Contex
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MonitorApiService) GetOrganizationWebhooksAlertTypesExecute(r MonitorApiGetOrganizationWebhooksAlertTypesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationWebhooksAlertTypesExecute(r MonitorAPIGetOrganizationWebhooksAlertTypesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -16982,7 +16982,7 @@ func (a *MonitorApiService) GetOrganizationWebhooksAlertTypesExecute(r MonitorAp
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationWebhooksAlertTypes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationWebhooksAlertTypes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17065,9 +17065,9 @@ func (a *MonitorApiService) GetOrganizationWebhooksAlertTypesExecute(r MonitorAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationWebhooksLogsRequest struct {
+type MonitorAPIGetOrganizationWebhooksLogsRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -17079,48 +17079,48 @@ type MonitorApiGetOrganizationWebhooksLogsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 90 days from today.
-func (r MonitorApiGetOrganizationWebhooksLogsRequest) T0(t0 string) MonitorApiGetOrganizationWebhooksLogsRequest {
+func (r MonitorAPIGetOrganizationWebhooksLogsRequest) T0(t0 string) MonitorAPIGetOrganizationWebhooksLogsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetOrganizationWebhooksLogsRequest) T1(t1 string) MonitorApiGetOrganizationWebhooksLogsRequest {
+func (r MonitorAPIGetOrganizationWebhooksLogsRequest) T1(t1 string) MonitorAPIGetOrganizationWebhooksLogsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r MonitorApiGetOrganizationWebhooksLogsRequest) Timespan(timespan float32) MonitorApiGetOrganizationWebhooksLogsRequest {
+func (r MonitorAPIGetOrganizationWebhooksLogsRequest) Timespan(timespan float32) MonitorAPIGetOrganizationWebhooksLogsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.
-func (r MonitorApiGetOrganizationWebhooksLogsRequest) PerPage(perPage int32) MonitorApiGetOrganizationWebhooksLogsRequest {
+func (r MonitorAPIGetOrganizationWebhooksLogsRequest) PerPage(perPage int32) MonitorAPIGetOrganizationWebhooksLogsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationWebhooksLogsRequest) StartingAfter(startingAfter string) MonitorApiGetOrganizationWebhooksLogsRequest {
+func (r MonitorAPIGetOrganizationWebhooksLogsRequest) StartingAfter(startingAfter string) MonitorAPIGetOrganizationWebhooksLogsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationWebhooksLogsRequest) EndingBefore(endingBefore string) MonitorApiGetOrganizationWebhooksLogsRequest {
+func (r MonitorAPIGetOrganizationWebhooksLogsRequest) EndingBefore(endingBefore string) MonitorAPIGetOrganizationWebhooksLogsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The URL the webhook was sent to
-func (r MonitorApiGetOrganizationWebhooksLogsRequest) Url(url string) MonitorApiGetOrganizationWebhooksLogsRequest {
+func (r MonitorAPIGetOrganizationWebhooksLogsRequest) Url(url string) MonitorAPIGetOrganizationWebhooksLogsRequest {
 	r.url = &url
 	return r
 }
 
-func (r MonitorApiGetOrganizationWebhooksLogsRequest) Execute() ([]GetOrganizationWebhooksLogs200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationWebhooksLogsRequest) Execute() ([]GetOrganizationWebhooksLogs200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationWebhooksLogsExecute(r)
 }
 
@@ -17131,10 +17131,10 @@ Return the log of webhook POSTs sent
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationWebhooksLogsRequest
+ @return MonitorAPIGetOrganizationWebhooksLogsRequest
 */
-func (a *MonitorApiService) GetOrganizationWebhooksLogs(ctx context.Context, organizationId string) MonitorApiGetOrganizationWebhooksLogsRequest {
-	return MonitorApiGetOrganizationWebhooksLogsRequest{
+func (a *MonitorAPIService) GetOrganizationWebhooksLogs(ctx context.Context, organizationId string) MonitorAPIGetOrganizationWebhooksLogsRequest {
+	return MonitorAPIGetOrganizationWebhooksLogsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -17143,7 +17143,7 @@ func (a *MonitorApiService) GetOrganizationWebhooksLogs(ctx context.Context, org
 
 // Execute executes the request
 //  @return []GetOrganizationWebhooksLogs200ResponseInner
-func (a *MonitorApiService) GetOrganizationWebhooksLogsExecute(r MonitorApiGetOrganizationWebhooksLogsRequest) ([]GetOrganizationWebhooksLogs200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationWebhooksLogsExecute(r MonitorAPIGetOrganizationWebhooksLogsRequest) ([]GetOrganizationWebhooksLogs200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -17151,7 +17151,7 @@ func (a *MonitorApiService) GetOrganizationWebhooksLogsExecute(r MonitorApiGetOr
 		localVarReturnValue  []GetOrganizationWebhooksLogs200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationWebhooksLogs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationWebhooksLogs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17252,9 +17252,9 @@ func (a *MonitorApiService) GetOrganizationWebhooksLogsExecute(r MonitorApiGetOr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest struct {
+type MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	networkIds *[]string
 	serials *[]string
@@ -17268,60 +17268,60 @@ type MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest s
 }
 
 // Filter results by network.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) NetworkIds(networkIds []string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) NetworkIds(networkIds []string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Filter results by device.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Serials(serials []string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Serials(serials []string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.serials = &serials
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) PerPage(perPage int32) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) PerPage(perPage int32) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) StartingAfter(startingAfter string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) StartingAfter(startingAfter string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) EndingBefore(endingBefore string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) EndingBefore(endingBefore string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 90 days from today.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) T0(t0 string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) T0(t0 string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 90 days after t0.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) T1(t1 string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) T1(t1 string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 90 days. The default is 7 days.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Timespan(timespan float32) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Timespan(timespan float32) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time interval in seconds for returned data. The valid intervals are: 300, 600, 3600, 7200, 14400, 21600. The default is 3600.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Interval(interval int32) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Interval(interval int32) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.interval = &interval
 	return r
 }
 
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationByDevice200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationByDevice200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationWirelessDevicesChannelUtilizationByDeviceExecute(r)
 }
 
@@ -17332,10 +17332,10 @@ Get average channel utilization for all bands in a network, split by AP
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest
+ @return MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest
 */
-func (a *MonitorApiService) GetOrganizationWirelessDevicesChannelUtilizationByDevice(ctx context.Context, organizationId string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
-	return MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest{
+func (a *MonitorAPIService) GetOrganizationWirelessDevicesChannelUtilizationByDevice(ctx context.Context, organizationId string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+	return MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -17344,7 +17344,7 @@ func (a *MonitorApiService) GetOrganizationWirelessDevicesChannelUtilizationByDe
 
 // Execute executes the request
 //  @return []GetOrganizationWirelessDevicesChannelUtilizationByDevice200ResponseInner
-func (a *MonitorApiService) GetOrganizationWirelessDevicesChannelUtilizationByDeviceExecute(r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationByDevice200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationWirelessDevicesChannelUtilizationByDeviceExecute(r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationByDevice200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -17352,7 +17352,7 @@ func (a *MonitorApiService) GetOrganizationWirelessDevicesChannelUtilizationByDe
 		localVarReturnValue  []GetOrganizationWirelessDevicesChannelUtilizationByDevice200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationWirelessDevicesChannelUtilizationByDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationWirelessDevicesChannelUtilizationByDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17475,9 +17475,9 @@ func (a *MonitorApiService) GetOrganizationWirelessDevicesChannelUtilizationByDe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest struct {
+type MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	networkIds *[]string
 	serials *[]string
@@ -17491,60 +17491,60 @@ type MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest 
 }
 
 // Filter results by network.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) NetworkIds(networkIds []string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) NetworkIds(networkIds []string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Filter results by device.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) Serials(serials []string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) Serials(serials []string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
 	r.serials = &serials
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) PerPage(perPage int32) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) PerPage(perPage int32) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) StartingAfter(startingAfter string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) StartingAfter(startingAfter string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) EndingBefore(endingBefore string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) EndingBefore(endingBefore string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 90 days from today.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) T0(t0 string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) T0(t0 string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 90 days after t0.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) T1(t1 string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) T1(t1 string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 90 days. The default is 7 days.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) Timespan(timespan float32) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) Timespan(timespan float32) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time interval in seconds for returned data. The valid intervals are: 300, 600, 3600, 7200, 14400, 21600. The default is 3600.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) Interval(interval int32) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) Interval(interval int32) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
 	r.interval = &interval
 	return r
 }
 
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationByNetwork200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationByNetwork200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationWirelessDevicesChannelUtilizationByNetworkExecute(r)
 }
 
@@ -17555,10 +17555,10 @@ Get average channel utilization across all bands for all networks in the organiz
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest
+ @return MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest
 */
-func (a *MonitorApiService) GetOrganizationWirelessDevicesChannelUtilizationByNetwork(ctx context.Context, organizationId string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
-	return MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest{
+func (a *MonitorAPIService) GetOrganizationWirelessDevicesChannelUtilizationByNetwork(ctx context.Context, organizationId string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+	return MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -17567,7 +17567,7 @@ func (a *MonitorApiService) GetOrganizationWirelessDevicesChannelUtilizationByNe
 
 // Execute executes the request
 //  @return []GetOrganizationWirelessDevicesChannelUtilizationByNetwork200ResponseInner
-func (a *MonitorApiService) GetOrganizationWirelessDevicesChannelUtilizationByNetworkExecute(r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationByNetwork200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationWirelessDevicesChannelUtilizationByNetworkExecute(r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationByNetwork200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -17575,7 +17575,7 @@ func (a *MonitorApiService) GetOrganizationWirelessDevicesChannelUtilizationByNe
 		localVarReturnValue  []GetOrganizationWirelessDevicesChannelUtilizationByNetwork200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationWirelessDevicesChannelUtilizationByNetwork")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationWirelessDevicesChannelUtilizationByNetwork")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17698,9 +17698,9 @@ func (a *MonitorApiService) GetOrganizationWirelessDevicesChannelUtilizationByNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest struct {
+type MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	networkIds *[]string
 	serials *[]string
@@ -17714,60 +17714,60 @@ type MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceBy
 }
 
 // Filter results by network.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) NetworkIds(networkIds []string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) NetworkIds(networkIds []string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Filter results by device.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Serials(serials []string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Serials(serials []string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.serials = &serials
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) PerPage(perPage int32) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) PerPage(perPage int32) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) StartingAfter(startingAfter string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) StartingAfter(startingAfter string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) EndingBefore(endingBefore string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) EndingBefore(endingBefore string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) T0(t0 string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) T0(t0 string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) T1(t1 string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) T1(t1 string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Timespan(timespan float32) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Timespan(timespan float32) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time interval in seconds for returned data. The valid intervals are: 300, 600, 3600, 7200, 14400, 21600. The default is 3600.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Interval(interval int32) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Interval(interval int32) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.interval = &interval
 	return r
 }
 
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalExecute(r)
 }
 
@@ -17778,10 +17778,10 @@ Get a time-series of average channel utilization for all bands, segmented by dev
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest
+ @return MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest
 */
-func (a *MonitorApiService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval(ctx context.Context, organizationId string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
-	return MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest{
+func (a *MonitorAPIService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval(ctx context.Context, organizationId string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+	return MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -17790,7 +17790,7 @@ func (a *MonitorApiService) GetOrganizationWirelessDevicesChannelUtilizationHist
 
 // Execute executes the request
 //  @return []GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner
-func (a *MonitorApiService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalExecute(r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalExecute(r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -17798,7 +17798,7 @@ func (a *MonitorApiService) GetOrganizationWirelessDevicesChannelUtilizationHist
 		localVarReturnValue  []GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17921,9 +17921,9 @@ func (a *MonitorApiService) GetOrganizationWirelessDevicesChannelUtilizationHist
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest struct {
+type MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	networkIds *[]string
 	serials *[]string
@@ -17937,60 +17937,60 @@ type MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkB
 }
 
 // Filter results by network.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) NetworkIds(networkIds []string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) NetworkIds(networkIds []string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Filter results by device.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Serials(serials []string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Serials(serials []string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.serials = &serials
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) PerPage(perPage int32) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) PerPage(perPage int32) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) StartingAfter(startingAfter string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) StartingAfter(startingAfter string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) EndingBefore(endingBefore string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) EndingBefore(endingBefore string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) T0(t0 string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) T0(t0 string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) T1(t1 string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) T1(t1 string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Timespan(timespan float32) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Timespan(timespan float32) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time interval in seconds for returned data. The valid intervals are: 300, 600, 3600, 7200, 14400, 21600. The default is 3600.
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Interval(interval int32) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Interval(interval int32) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.interval = &interval
 	return r
 }
 
-func (r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalExecute(r)
 }
 
@@ -18001,10 +18001,10 @@ Get a time-series of average channel utilization for all bands
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest
+ @return MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest
 */
-func (a *MonitorApiService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval(ctx context.Context, organizationId string) MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
-	return MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest{
+func (a *MonitorAPIService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval(ctx context.Context, organizationId string) MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+	return MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -18013,7 +18013,7 @@ func (a *MonitorApiService) GetOrganizationWirelessDevicesChannelUtilizationHist
 
 // Execute executes the request
 //  @return []GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval200ResponseInner
-func (a *MonitorApiService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalExecute(r MonitorApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalExecute(r MonitorAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -18021,7 +18021,7 @@ func (a *MonitorApiService) GetOrganizationWirelessDevicesChannelUtilizationHist
 		localVarReturnValue  []GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -18144,9 +18144,9 @@ func (a *MonitorApiService) GetOrganizationWirelessDevicesChannelUtilizationHist
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MonitorApiGetOrganizationWirelessDevicesEthernetStatusesRequest struct {
+type MonitorAPIGetOrganizationWirelessDevicesEthernetStatusesRequest struct {
 	ctx context.Context
-	ApiService *MonitorApiService
+	ApiService *MonitorAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -18155,30 +18155,30 @@ type MonitorApiGetOrganizationWirelessDevicesEthernetStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
-func (r MonitorApiGetOrganizationWirelessDevicesEthernetStatusesRequest) PerPage(perPage int32) MonitorApiGetOrganizationWirelessDevicesEthernetStatusesRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) PerPage(perPage int32) MonitorAPIGetOrganizationWirelessDevicesEthernetStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationWirelessDevicesEthernetStatusesRequest) StartingAfter(startingAfter string) MonitorApiGetOrganizationWirelessDevicesEthernetStatusesRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) StartingAfter(startingAfter string) MonitorAPIGetOrganizationWirelessDevicesEthernetStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r MonitorApiGetOrganizationWirelessDevicesEthernetStatusesRequest) EndingBefore(endingBefore string) MonitorApiGetOrganizationWirelessDevicesEthernetStatusesRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) EndingBefore(endingBefore string) MonitorAPIGetOrganizationWirelessDevicesEthernetStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // A list of Meraki network IDs to filter results to contain only specified networks. E.g.: networkIds[]&#x3D;N_12345678&amp;networkIds[]&#x3D;L_3456
-func (r MonitorApiGetOrganizationWirelessDevicesEthernetStatusesRequest) NetworkIds(networkIds []string) MonitorApiGetOrganizationWirelessDevicesEthernetStatusesRequest {
+func (r MonitorAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) NetworkIds(networkIds []string) MonitorAPIGetOrganizationWirelessDevicesEthernetStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
-func (r MonitorApiGetOrganizationWirelessDevicesEthernetStatusesRequest) Execute() ([]GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner, *http.Response, error) {
+func (r MonitorAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) Execute() ([]GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationWirelessDevicesEthernetStatusesExecute(r)
 }
 
@@ -18189,10 +18189,10 @@ List the most recent Ethernet link speed, duplex, aggregation and power mode and
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return MonitorApiGetOrganizationWirelessDevicesEthernetStatusesRequest
+ @return MonitorAPIGetOrganizationWirelessDevicesEthernetStatusesRequest
 */
-func (a *MonitorApiService) GetOrganizationWirelessDevicesEthernetStatuses(ctx context.Context, organizationId string) MonitorApiGetOrganizationWirelessDevicesEthernetStatusesRequest {
-	return MonitorApiGetOrganizationWirelessDevicesEthernetStatusesRequest{
+func (a *MonitorAPIService) GetOrganizationWirelessDevicesEthernetStatuses(ctx context.Context, organizationId string) MonitorAPIGetOrganizationWirelessDevicesEthernetStatusesRequest {
+	return MonitorAPIGetOrganizationWirelessDevicesEthernetStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -18201,7 +18201,7 @@ func (a *MonitorApiService) GetOrganizationWirelessDevicesEthernetStatuses(ctx c
 
 // Execute executes the request
 //  @return []GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner
-func (a *MonitorApiService) GetOrganizationWirelessDevicesEthernetStatusesExecute(r MonitorApiGetOrganizationWirelessDevicesEthernetStatusesRequest) ([]GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner, *http.Response, error) {
+func (a *MonitorAPIService) GetOrganizationWirelessDevicesEthernetStatusesExecute(r MonitorAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) ([]GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -18209,7 +18209,7 @@ func (a *MonitorApiService) GetOrganizationWirelessDevicesEthernetStatusesExecut
 		localVarReturnValue  []GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorApiService.GetOrganizationWirelessDevicesEthernetStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetOrganizationWirelessDevicesEthernetStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

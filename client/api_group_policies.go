@@ -20,22 +20,22 @@ import (
 )
 
 
-// GroupPoliciesApiService GroupPoliciesApi service
-type GroupPoliciesApiService service
+// GroupPoliciesAPIService GroupPoliciesAPI service
+type GroupPoliciesAPIService service
 
-type GroupPoliciesApiCreateNetworkGroupPolicyRequest struct {
+type GroupPoliciesAPICreateNetworkGroupPolicyRequest struct {
 	ctx context.Context
-	ApiService *GroupPoliciesApiService
+	ApiService *GroupPoliciesAPIService
 	networkId string
 	createNetworkGroupPolicyRequest *CreateNetworkGroupPolicyRequest
 }
 
-func (r GroupPoliciesApiCreateNetworkGroupPolicyRequest) CreateNetworkGroupPolicyRequest(createNetworkGroupPolicyRequest CreateNetworkGroupPolicyRequest) GroupPoliciesApiCreateNetworkGroupPolicyRequest {
+func (r GroupPoliciesAPICreateNetworkGroupPolicyRequest) CreateNetworkGroupPolicyRequest(createNetworkGroupPolicyRequest CreateNetworkGroupPolicyRequest) GroupPoliciesAPICreateNetworkGroupPolicyRequest {
 	r.createNetworkGroupPolicyRequest = &createNetworkGroupPolicyRequest
 	return r
 }
 
-func (r GroupPoliciesApiCreateNetworkGroupPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r GroupPoliciesAPICreateNetworkGroupPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkGroupPolicyExecute(r)
 }
 
@@ -46,10 +46,10 @@ Create a group policy
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return GroupPoliciesApiCreateNetworkGroupPolicyRequest
+ @return GroupPoliciesAPICreateNetworkGroupPolicyRequest
 */
-func (a *GroupPoliciesApiService) CreateNetworkGroupPolicy(ctx context.Context, networkId string) GroupPoliciesApiCreateNetworkGroupPolicyRequest {
-	return GroupPoliciesApiCreateNetworkGroupPolicyRequest{
+func (a *GroupPoliciesAPIService) CreateNetworkGroupPolicy(ctx context.Context, networkId string) GroupPoliciesAPICreateNetworkGroupPolicyRequest {
+	return GroupPoliciesAPICreateNetworkGroupPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -58,7 +58,7 @@ func (a *GroupPoliciesApiService) CreateNetworkGroupPolicy(ctx context.Context, 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *GroupPoliciesApiService) CreateNetworkGroupPolicyExecute(r GroupPoliciesApiCreateNetworkGroupPolicyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *GroupPoliciesAPIService) CreateNetworkGroupPolicyExecute(r GroupPoliciesAPICreateNetworkGroupPolicyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *GroupPoliciesApiService) CreateNetworkGroupPolicyExecute(r GroupPolicie
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupPoliciesApiService.CreateNetworkGroupPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupPoliciesAPIService.CreateNetworkGroupPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,14 +151,14 @@ func (a *GroupPoliciesApiService) CreateNetworkGroupPolicyExecute(r GroupPolicie
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type GroupPoliciesApiDeleteNetworkGroupPolicyRequest struct {
+type GroupPoliciesAPIDeleteNetworkGroupPolicyRequest struct {
 	ctx context.Context
-	ApiService *GroupPoliciesApiService
+	ApiService *GroupPoliciesAPIService
 	networkId string
 	groupPolicyId string
 }
 
-func (r GroupPoliciesApiDeleteNetworkGroupPolicyRequest) Execute() (*http.Response, error) {
+func (r GroupPoliciesAPIDeleteNetworkGroupPolicyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkGroupPolicyExecute(r)
 }
 
@@ -170,10 +170,10 @@ Delete a group policy
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param groupPolicyId Group policy ID
- @return GroupPoliciesApiDeleteNetworkGroupPolicyRequest
+ @return GroupPoliciesAPIDeleteNetworkGroupPolicyRequest
 */
-func (a *GroupPoliciesApiService) DeleteNetworkGroupPolicy(ctx context.Context, networkId string, groupPolicyId string) GroupPoliciesApiDeleteNetworkGroupPolicyRequest {
-	return GroupPoliciesApiDeleteNetworkGroupPolicyRequest{
+func (a *GroupPoliciesAPIService) DeleteNetworkGroupPolicy(ctx context.Context, networkId string, groupPolicyId string) GroupPoliciesAPIDeleteNetworkGroupPolicyRequest {
+	return GroupPoliciesAPIDeleteNetworkGroupPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -182,14 +182,14 @@ func (a *GroupPoliciesApiService) DeleteNetworkGroupPolicy(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *GroupPoliciesApiService) DeleteNetworkGroupPolicyExecute(r GroupPoliciesApiDeleteNetworkGroupPolicyRequest) (*http.Response, error) {
+func (a *GroupPoliciesAPIService) DeleteNetworkGroupPolicyExecute(r GroupPoliciesAPIDeleteNetworkGroupPolicyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupPoliciesApiService.DeleteNetworkGroupPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupPoliciesAPIService.DeleteNetworkGroupPolicy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -261,13 +261,13 @@ func (a *GroupPoliciesApiService) DeleteNetworkGroupPolicyExecute(r GroupPolicie
 	return localVarHTTPResponse, nil
 }
 
-type GroupPoliciesApiGetNetworkGroupPoliciesRequest struct {
+type GroupPoliciesAPIGetNetworkGroupPoliciesRequest struct {
 	ctx context.Context
-	ApiService *GroupPoliciesApiService
+	ApiService *GroupPoliciesAPIService
 	networkId string
 }
 
-func (r GroupPoliciesApiGetNetworkGroupPoliciesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r GroupPoliciesAPIGetNetworkGroupPoliciesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkGroupPoliciesExecute(r)
 }
 
@@ -278,10 +278,10 @@ List the group policies in a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return GroupPoliciesApiGetNetworkGroupPoliciesRequest
+ @return GroupPoliciesAPIGetNetworkGroupPoliciesRequest
 */
-func (a *GroupPoliciesApiService) GetNetworkGroupPolicies(ctx context.Context, networkId string) GroupPoliciesApiGetNetworkGroupPoliciesRequest {
-	return GroupPoliciesApiGetNetworkGroupPoliciesRequest{
+func (a *GroupPoliciesAPIService) GetNetworkGroupPolicies(ctx context.Context, networkId string) GroupPoliciesAPIGetNetworkGroupPoliciesRequest {
+	return GroupPoliciesAPIGetNetworkGroupPoliciesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -290,7 +290,7 @@ func (a *GroupPoliciesApiService) GetNetworkGroupPolicies(ctx context.Context, n
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *GroupPoliciesApiService) GetNetworkGroupPoliciesExecute(r GroupPoliciesApiGetNetworkGroupPoliciesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *GroupPoliciesAPIService) GetNetworkGroupPoliciesExecute(r GroupPoliciesAPIGetNetworkGroupPoliciesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -298,7 +298,7 @@ func (a *GroupPoliciesApiService) GetNetworkGroupPoliciesExecute(r GroupPolicies
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupPoliciesApiService.GetNetworkGroupPolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupPoliciesAPIService.GetNetworkGroupPolicies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -378,14 +378,14 @@ func (a *GroupPoliciesApiService) GetNetworkGroupPoliciesExecute(r GroupPolicies
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type GroupPoliciesApiGetNetworkGroupPolicyRequest struct {
+type GroupPoliciesAPIGetNetworkGroupPolicyRequest struct {
 	ctx context.Context
-	ApiService *GroupPoliciesApiService
+	ApiService *GroupPoliciesAPIService
 	networkId string
 	groupPolicyId string
 }
 
-func (r GroupPoliciesApiGetNetworkGroupPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r GroupPoliciesAPIGetNetworkGroupPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkGroupPolicyExecute(r)
 }
 
@@ -397,10 +397,10 @@ Display a group policy
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param groupPolicyId Group policy ID
- @return GroupPoliciesApiGetNetworkGroupPolicyRequest
+ @return GroupPoliciesAPIGetNetworkGroupPolicyRequest
 */
-func (a *GroupPoliciesApiService) GetNetworkGroupPolicy(ctx context.Context, networkId string, groupPolicyId string) GroupPoliciesApiGetNetworkGroupPolicyRequest {
-	return GroupPoliciesApiGetNetworkGroupPolicyRequest{
+func (a *GroupPoliciesAPIService) GetNetworkGroupPolicy(ctx context.Context, networkId string, groupPolicyId string) GroupPoliciesAPIGetNetworkGroupPolicyRequest {
+	return GroupPoliciesAPIGetNetworkGroupPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -410,7 +410,7 @@ func (a *GroupPoliciesApiService) GetNetworkGroupPolicy(ctx context.Context, net
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *GroupPoliciesApiService) GetNetworkGroupPolicyExecute(r GroupPoliciesApiGetNetworkGroupPolicyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *GroupPoliciesAPIService) GetNetworkGroupPolicyExecute(r GroupPoliciesAPIGetNetworkGroupPolicyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -418,7 +418,7 @@ func (a *GroupPoliciesApiService) GetNetworkGroupPolicyExecute(r GroupPoliciesAp
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupPoliciesApiService.GetNetworkGroupPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupPoliciesAPIService.GetNetworkGroupPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -499,20 +499,20 @@ func (a *GroupPoliciesApiService) GetNetworkGroupPolicyExecute(r GroupPoliciesAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type GroupPoliciesApiUpdateNetworkGroupPolicyRequest struct {
+type GroupPoliciesAPIUpdateNetworkGroupPolicyRequest struct {
 	ctx context.Context
-	ApiService *GroupPoliciesApiService
+	ApiService *GroupPoliciesAPIService
 	networkId string
 	groupPolicyId string
 	updateNetworkGroupPolicyRequest *UpdateNetworkGroupPolicyRequest
 }
 
-func (r GroupPoliciesApiUpdateNetworkGroupPolicyRequest) UpdateNetworkGroupPolicyRequest(updateNetworkGroupPolicyRequest UpdateNetworkGroupPolicyRequest) GroupPoliciesApiUpdateNetworkGroupPolicyRequest {
+func (r GroupPoliciesAPIUpdateNetworkGroupPolicyRequest) UpdateNetworkGroupPolicyRequest(updateNetworkGroupPolicyRequest UpdateNetworkGroupPolicyRequest) GroupPoliciesAPIUpdateNetworkGroupPolicyRequest {
 	r.updateNetworkGroupPolicyRequest = &updateNetworkGroupPolicyRequest
 	return r
 }
 
-func (r GroupPoliciesApiUpdateNetworkGroupPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r GroupPoliciesAPIUpdateNetworkGroupPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkGroupPolicyExecute(r)
 }
 
@@ -524,10 +524,10 @@ Update a group policy
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param groupPolicyId Group policy ID
- @return GroupPoliciesApiUpdateNetworkGroupPolicyRequest
+ @return GroupPoliciesAPIUpdateNetworkGroupPolicyRequest
 */
-func (a *GroupPoliciesApiService) UpdateNetworkGroupPolicy(ctx context.Context, networkId string, groupPolicyId string) GroupPoliciesApiUpdateNetworkGroupPolicyRequest {
-	return GroupPoliciesApiUpdateNetworkGroupPolicyRequest{
+func (a *GroupPoliciesAPIService) UpdateNetworkGroupPolicy(ctx context.Context, networkId string, groupPolicyId string) GroupPoliciesAPIUpdateNetworkGroupPolicyRequest {
+	return GroupPoliciesAPIUpdateNetworkGroupPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -537,7 +537,7 @@ func (a *GroupPoliciesApiService) UpdateNetworkGroupPolicy(ctx context.Context, 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *GroupPoliciesApiService) UpdateNetworkGroupPolicyExecute(r GroupPoliciesApiUpdateNetworkGroupPolicyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *GroupPoliciesAPIService) UpdateNetworkGroupPolicyExecute(r GroupPoliciesAPIUpdateNetworkGroupPolicyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -545,7 +545,7 @@ func (a *GroupPoliciesApiService) UpdateNetworkGroupPolicyExecute(r GroupPolicie
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupPoliciesApiService.UpdateNetworkGroupPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupPoliciesAPIService.UpdateNetworkGroupPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

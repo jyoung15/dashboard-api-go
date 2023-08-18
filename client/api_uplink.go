@@ -21,16 +21,16 @@ import (
 )
 
 
-// UplinkApiService UplinkApi service
-type UplinkApiService service
+// UplinkAPIService UplinkAPI service
+type UplinkAPIService service
 
-type UplinkApiGetNetworkCellularGatewayUplinkRequest struct {
+type UplinkAPIGetNetworkCellularGatewayUplinkRequest struct {
 	ctx context.Context
-	ApiService *UplinkApiService
+	ApiService *UplinkAPIService
 	networkId string
 }
 
-func (r UplinkApiGetNetworkCellularGatewayUplinkRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r UplinkAPIGetNetworkCellularGatewayUplinkRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkCellularGatewayUplinkExecute(r)
 }
 
@@ -41,10 +41,10 @@ Returns the uplink settings for your MG network.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return UplinkApiGetNetworkCellularGatewayUplinkRequest
+ @return UplinkAPIGetNetworkCellularGatewayUplinkRequest
 */
-func (a *UplinkApiService) GetNetworkCellularGatewayUplink(ctx context.Context, networkId string) UplinkApiGetNetworkCellularGatewayUplinkRequest {
-	return UplinkApiGetNetworkCellularGatewayUplinkRequest{
+func (a *UplinkAPIService) GetNetworkCellularGatewayUplink(ctx context.Context, networkId string) UplinkAPIGetNetworkCellularGatewayUplinkRequest {
+	return UplinkAPIGetNetworkCellularGatewayUplinkRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -53,7 +53,7 @@ func (a *UplinkApiService) GetNetworkCellularGatewayUplink(ctx context.Context, 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *UplinkApiService) GetNetworkCellularGatewayUplinkExecute(r UplinkApiGetNetworkCellularGatewayUplinkRequest) (map[string]interface{}, *http.Response, error) {
+func (a *UplinkAPIService) GetNetworkCellularGatewayUplinkExecute(r UplinkAPIGetNetworkCellularGatewayUplinkRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -61,7 +61,7 @@ func (a *UplinkApiService) GetNetworkCellularGatewayUplinkExecute(r UplinkApiGet
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinkApiService.GetNetworkCellularGatewayUplink")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinkAPIService.GetNetworkCellularGatewayUplink")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -141,9 +141,9 @@ func (a *UplinkApiService) GetNetworkCellularGatewayUplinkExecute(r UplinkApiGet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type UplinkApiGetOrganizationCellularGatewayUplinkStatusesRequest struct {
+type UplinkAPIGetOrganizationCellularGatewayUplinkStatusesRequest struct {
 	ctx context.Context
-	ApiService *UplinkApiService
+	ApiService *UplinkAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -154,42 +154,42 @@ type UplinkApiGetOrganizationCellularGatewayUplinkStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r UplinkApiGetOrganizationCellularGatewayUplinkStatusesRequest) PerPage(perPage int32) UplinkApiGetOrganizationCellularGatewayUplinkStatusesRequest {
+func (r UplinkAPIGetOrganizationCellularGatewayUplinkStatusesRequest) PerPage(perPage int32) UplinkAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r UplinkApiGetOrganizationCellularGatewayUplinkStatusesRequest) StartingAfter(startingAfter string) UplinkApiGetOrganizationCellularGatewayUplinkStatusesRequest {
+func (r UplinkAPIGetOrganizationCellularGatewayUplinkStatusesRequest) StartingAfter(startingAfter string) UplinkAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r UplinkApiGetOrganizationCellularGatewayUplinkStatusesRequest) EndingBefore(endingBefore string) UplinkApiGetOrganizationCellularGatewayUplinkStatusesRequest {
+func (r UplinkAPIGetOrganizationCellularGatewayUplinkStatusesRequest) EndingBefore(endingBefore string) UplinkAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // A list of network IDs. The returned devices will be filtered to only include these networks.
-func (r UplinkApiGetOrganizationCellularGatewayUplinkStatusesRequest) NetworkIds(networkIds []string) UplinkApiGetOrganizationCellularGatewayUplinkStatusesRequest {
+func (r UplinkAPIGetOrganizationCellularGatewayUplinkStatusesRequest) NetworkIds(networkIds []string) UplinkAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // A list of serial numbers. The returned devices will be filtered to only include these serials.
-func (r UplinkApiGetOrganizationCellularGatewayUplinkStatusesRequest) Serials(serials []string) UplinkApiGetOrganizationCellularGatewayUplinkStatusesRequest {
+func (r UplinkAPIGetOrganizationCellularGatewayUplinkStatusesRequest) Serials(serials []string) UplinkAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
 	r.serials = &serials
 	return r
 }
 
 // A list of ICCIDs. The returned devices will be filtered to only include these ICCIDs.
-func (r UplinkApiGetOrganizationCellularGatewayUplinkStatusesRequest) Iccids(iccids []string) UplinkApiGetOrganizationCellularGatewayUplinkStatusesRequest {
+func (r UplinkAPIGetOrganizationCellularGatewayUplinkStatusesRequest) Iccids(iccids []string) UplinkAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
 	r.iccids = &iccids
 	return r
 }
 
-func (r UplinkApiGetOrganizationCellularGatewayUplinkStatusesRequest) Execute() ([]GetOrganizationCellularGatewayUplinkStatuses200ResponseInner, *http.Response, error) {
+func (r UplinkAPIGetOrganizationCellularGatewayUplinkStatusesRequest) Execute() ([]GetOrganizationCellularGatewayUplinkStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationCellularGatewayUplinkStatusesExecute(r)
 }
 
@@ -200,10 +200,10 @@ List the uplink status of every Meraki MG cellular gateway in the organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return UplinkApiGetOrganizationCellularGatewayUplinkStatusesRequest
+ @return UplinkAPIGetOrganizationCellularGatewayUplinkStatusesRequest
 */
-func (a *UplinkApiService) GetOrganizationCellularGatewayUplinkStatuses(ctx context.Context, organizationId string) UplinkApiGetOrganizationCellularGatewayUplinkStatusesRequest {
-	return UplinkApiGetOrganizationCellularGatewayUplinkStatusesRequest{
+func (a *UplinkAPIService) GetOrganizationCellularGatewayUplinkStatuses(ctx context.Context, organizationId string) UplinkAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
+	return UplinkAPIGetOrganizationCellularGatewayUplinkStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -212,7 +212,7 @@ func (a *UplinkApiService) GetOrganizationCellularGatewayUplinkStatuses(ctx cont
 
 // Execute executes the request
 //  @return []GetOrganizationCellularGatewayUplinkStatuses200ResponseInner
-func (a *UplinkApiService) GetOrganizationCellularGatewayUplinkStatusesExecute(r UplinkApiGetOrganizationCellularGatewayUplinkStatusesRequest) ([]GetOrganizationCellularGatewayUplinkStatuses200ResponseInner, *http.Response, error) {
+func (a *UplinkAPIService) GetOrganizationCellularGatewayUplinkStatusesExecute(r UplinkAPIGetOrganizationCellularGatewayUplinkStatusesRequest) ([]GetOrganizationCellularGatewayUplinkStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -220,7 +220,7 @@ func (a *UplinkApiService) GetOrganizationCellularGatewayUplinkStatusesExecute(r
 		localVarReturnValue  []GetOrganizationCellularGatewayUplinkStatuses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinkApiService.GetOrganizationCellularGatewayUplinkStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinkAPIService.GetOrganizationCellularGatewayUplinkStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -342,19 +342,19 @@ func (a *UplinkApiService) GetOrganizationCellularGatewayUplinkStatusesExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type UplinkApiUpdateNetworkCellularGatewayUplinkRequest struct {
+type UplinkAPIUpdateNetworkCellularGatewayUplinkRequest struct {
 	ctx context.Context
-	ApiService *UplinkApiService
+	ApiService *UplinkAPIService
 	networkId string
 	updateNetworkCellularGatewayUplinkRequest *UpdateNetworkCellularGatewayUplinkRequest
 }
 
-func (r UplinkApiUpdateNetworkCellularGatewayUplinkRequest) UpdateNetworkCellularGatewayUplinkRequest(updateNetworkCellularGatewayUplinkRequest UpdateNetworkCellularGatewayUplinkRequest) UplinkApiUpdateNetworkCellularGatewayUplinkRequest {
+func (r UplinkAPIUpdateNetworkCellularGatewayUplinkRequest) UpdateNetworkCellularGatewayUplinkRequest(updateNetworkCellularGatewayUplinkRequest UpdateNetworkCellularGatewayUplinkRequest) UplinkAPIUpdateNetworkCellularGatewayUplinkRequest {
 	r.updateNetworkCellularGatewayUplinkRequest = &updateNetworkCellularGatewayUplinkRequest
 	return r
 }
 
-func (r UplinkApiUpdateNetworkCellularGatewayUplinkRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r UplinkAPIUpdateNetworkCellularGatewayUplinkRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkCellularGatewayUplinkExecute(r)
 }
 
@@ -365,10 +365,10 @@ Updates the uplink settings for your MG network.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return UplinkApiUpdateNetworkCellularGatewayUplinkRequest
+ @return UplinkAPIUpdateNetworkCellularGatewayUplinkRequest
 */
-func (a *UplinkApiService) UpdateNetworkCellularGatewayUplink(ctx context.Context, networkId string) UplinkApiUpdateNetworkCellularGatewayUplinkRequest {
-	return UplinkApiUpdateNetworkCellularGatewayUplinkRequest{
+func (a *UplinkAPIService) UpdateNetworkCellularGatewayUplink(ctx context.Context, networkId string) UplinkAPIUpdateNetworkCellularGatewayUplinkRequest {
+	return UplinkAPIUpdateNetworkCellularGatewayUplinkRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -377,7 +377,7 @@ func (a *UplinkApiService) UpdateNetworkCellularGatewayUplink(ctx context.Contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *UplinkApiService) UpdateNetworkCellularGatewayUplinkExecute(r UplinkApiUpdateNetworkCellularGatewayUplinkRequest) (map[string]interface{}, *http.Response, error) {
+func (a *UplinkAPIService) UpdateNetworkCellularGatewayUplinkExecute(r UplinkAPIUpdateNetworkCellularGatewayUplinkRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -385,7 +385,7 @@ func (a *UplinkApiService) UpdateNetworkCellularGatewayUplinkExecute(r UplinkApi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinkApiService.UpdateNetworkCellularGatewayUplink")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinkAPIService.UpdateNetworkCellularGatewayUplink")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

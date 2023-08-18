@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing StatusesApiService
+Testing StatusesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_StatusesApiService(t *testing.T) {
+func Test_client_StatusesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test StatusesApiService GetDeviceSwitchPortsStatuses", func(t *testing.T) {
+	t.Run("Test StatusesAPIService GetDeviceSwitchPortsStatuses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.StatusesApi.GetDeviceSwitchPortsStatuses(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.StatusesAPI.GetDeviceSwitchPortsStatuses(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_StatusesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test StatusesApiService GetDeviceSwitchPortsStatusesPackets", func(t *testing.T) {
+	t.Run("Test StatusesAPIService GetDeviceSwitchPortsStatusesPackets", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.StatusesApi.GetDeviceSwitchPortsStatusesPackets(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.StatusesAPI.GetDeviceSwitchPortsStatusesPackets(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,13 +50,13 @@ func Test_client_StatusesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test StatusesApiService GetOrganizationApplianceUplinkStatuses", func(t *testing.T) {
+	t.Run("Test StatusesAPIService GetOrganizationApplianceUplinkStatuses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.StatusesApi.GetOrganizationApplianceUplinkStatuses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.StatusesAPI.GetOrganizationApplianceUplinkStatuses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,13 +64,13 @@ func Test_client_StatusesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test StatusesApiService GetOrganizationApplianceVpnStatuses", func(t *testing.T) {
+	t.Run("Test StatusesAPIService GetOrganizationApplianceVpnStatuses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.StatusesApi.GetOrganizationApplianceVpnStatuses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.StatusesAPI.GetOrganizationApplianceVpnStatuses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -78,13 +78,13 @@ func Test_client_StatusesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test StatusesApiService GetOrganizationCameraOnboardingStatuses", func(t *testing.T) {
+	t.Run("Test StatusesAPIService GetOrganizationCameraOnboardingStatuses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.StatusesApi.GetOrganizationCameraOnboardingStatuses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.StatusesAPI.GetOrganizationCameraOnboardingStatuses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -92,13 +92,13 @@ func Test_client_StatusesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test StatusesApiService GetOrganizationCellularGatewayUplinkStatuses", func(t *testing.T) {
+	t.Run("Test StatusesAPIService GetOrganizationCellularGatewayUplinkStatuses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.StatusesApi.GetOrganizationCellularGatewayUplinkStatuses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.StatusesAPI.GetOrganizationCellularGatewayUplinkStatuses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -106,13 +106,13 @@ func Test_client_StatusesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test StatusesApiService GetOrganizationDevicesPowerModulesStatusesByDevice", func(t *testing.T) {
+	t.Run("Test StatusesAPIService GetOrganizationDevicesPowerModulesStatusesByDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.StatusesApi.GetOrganizationDevicesPowerModulesStatusesByDevice(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.StatusesAPI.GetOrganizationDevicesPowerModulesStatusesByDevice(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -120,13 +120,13 @@ func Test_client_StatusesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test StatusesApiService GetOrganizationDevicesProvisioningStatuses", func(t *testing.T) {
+	t.Run("Test StatusesAPIService GetOrganizationDevicesProvisioningStatuses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.StatusesApi.GetOrganizationDevicesProvisioningStatuses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.StatusesAPI.GetOrganizationDevicesProvisioningStatuses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -134,13 +134,13 @@ func Test_client_StatusesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test StatusesApiService GetOrganizationDevicesStatuses", func(t *testing.T) {
+	t.Run("Test StatusesAPIService GetOrganizationDevicesStatuses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.StatusesApi.GetOrganizationDevicesStatuses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.StatusesAPI.GetOrganizationDevicesStatuses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -148,13 +148,13 @@ func Test_client_StatusesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test StatusesApiService GetOrganizationDevicesStatusesOverview", func(t *testing.T) {
+	t.Run("Test StatusesAPIService GetOrganizationDevicesStatusesOverview", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.StatusesApi.GetOrganizationDevicesStatusesOverview(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.StatusesAPI.GetOrganizationDevicesStatusesOverview(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -162,13 +162,13 @@ func Test_client_StatusesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test StatusesApiService GetOrganizationUplinksStatuses", func(t *testing.T) {
+	t.Run("Test StatusesAPIService GetOrganizationUplinksStatuses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.StatusesApi.GetOrganizationUplinksStatuses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.StatusesAPI.GetOrganizationUplinksStatuses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -176,13 +176,13 @@ func Test_client_StatusesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test StatusesApiService GetOrganizationWirelessDevicesEthernetStatuses", func(t *testing.T) {
+	t.Run("Test StatusesAPIService GetOrganizationWirelessDevicesEthernetStatuses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.StatusesApi.GetOrganizationWirelessDevicesEthernetStatuses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.StatusesAPI.GetOrganizationWirelessDevicesEthernetStatuses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -190,13 +190,13 @@ func Test_client_StatusesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test StatusesApiService UpdateOrganizationCameraOnboardingStatuses", func(t *testing.T) {
+	t.Run("Test StatusesAPIService UpdateOrganizationCameraOnboardingStatuses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.StatusesApi.UpdateOrganizationCameraOnboardingStatuses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.StatusesAPI.UpdateOrganizationCameraOnboardingStatuses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

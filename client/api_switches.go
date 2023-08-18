@@ -20,12 +20,12 @@ import (
 )
 
 
-// SwitchesApiService SwitchesApi service
-type SwitchesApiService service
+// SwitchesAPIService SwitchesAPI service
+type SwitchesAPIService service
 
-type SwitchesApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest struct {
+type SwitchesAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest struct {
 	ctx context.Context
-	ApiService *SwitchesApiService
+	ApiService *SwitchesAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -33,24 +33,24 @@ type SwitchesApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest struct {
 }
 
 // The beginning of the timespan for the data.
-func (r SwitchesApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) T0(t0 string) SwitchesApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest {
+func (r SwitchesAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) T0(t0 string) SwitchesAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r SwitchesApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) T1(t1 string) SwitchesApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest {
+func (r SwitchesAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) T1(t1 string) SwitchesAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r SwitchesApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) Timespan(timespan float32) SwitchesApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest {
+func (r SwitchesAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) Timespan(timespan float32) SwitchesAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r SwitchesApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) Execute() ([]GetOrganizationSummaryTopSwitchesByEnergyUsage200ResponseInner, *http.Response, error) {
+func (r SwitchesAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) Execute() ([]GetOrganizationSummaryTopSwitchesByEnergyUsage200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSummaryTopSwitchesByEnergyUsageExecute(r)
 }
 
@@ -61,10 +61,10 @@ Return metrics for organization's top 10 switches by energy usage over given tim
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return SwitchesApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest
+ @return SwitchesAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest
 */
-func (a *SwitchesApiService) GetOrganizationSummaryTopSwitchesByEnergyUsage(ctx context.Context, organizationId string) SwitchesApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest {
-	return SwitchesApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest{
+func (a *SwitchesAPIService) GetOrganizationSummaryTopSwitchesByEnergyUsage(ctx context.Context, organizationId string) SwitchesAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest {
+	return SwitchesAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -73,7 +73,7 @@ func (a *SwitchesApiService) GetOrganizationSummaryTopSwitchesByEnergyUsage(ctx 
 
 // Execute executes the request
 //  @return []GetOrganizationSummaryTopSwitchesByEnergyUsage200ResponseInner
-func (a *SwitchesApiService) GetOrganizationSummaryTopSwitchesByEnergyUsageExecute(r SwitchesApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) ([]GetOrganizationSummaryTopSwitchesByEnergyUsage200ResponseInner, *http.Response, error) {
+func (a *SwitchesAPIService) GetOrganizationSummaryTopSwitchesByEnergyUsageExecute(r SwitchesAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) ([]GetOrganizationSummaryTopSwitchesByEnergyUsage200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -81,7 +81,7 @@ func (a *SwitchesApiService) GetOrganizationSummaryTopSwitchesByEnergyUsageExecu
 		localVarReturnValue  []GetOrganizationSummaryTopSwitchesByEnergyUsage200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchesApiService.GetOrganizationSummaryTopSwitchesByEnergyUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SwitchesAPIService.GetOrganizationSummaryTopSwitchesByEnergyUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

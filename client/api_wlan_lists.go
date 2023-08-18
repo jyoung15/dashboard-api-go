@@ -20,17 +20,17 @@ import (
 )
 
 
-// WlanListsApiService WlanListsApi service
-type WlanListsApiService service
+// WlanListsAPIService WlanListsAPI service
+type WlanListsAPIService service
 
-type WlanListsApiGetNetworkSmDeviceWlanListsRequest struct {
+type WlanListsAPIGetNetworkSmDeviceWlanListsRequest struct {
 	ctx context.Context
-	ApiService *WlanListsApiService
+	ApiService *WlanListsAPIService
 	networkId string
 	deviceId string
 }
 
-func (r WlanListsApiGetNetworkSmDeviceWlanListsRequest) Execute() ([]GetNetworkSmDeviceWlanLists200ResponseInner, *http.Response, error) {
+func (r WlanListsAPIGetNetworkSmDeviceWlanListsRequest) Execute() ([]GetNetworkSmDeviceWlanLists200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceWlanListsExecute(r)
 }
 
@@ -42,10 +42,10 @@ List the saved SSID names on a device
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return WlanListsApiGetNetworkSmDeviceWlanListsRequest
+ @return WlanListsAPIGetNetworkSmDeviceWlanListsRequest
 */
-func (a *WlanListsApiService) GetNetworkSmDeviceWlanLists(ctx context.Context, networkId string, deviceId string) WlanListsApiGetNetworkSmDeviceWlanListsRequest {
-	return WlanListsApiGetNetworkSmDeviceWlanListsRequest{
+func (a *WlanListsAPIService) GetNetworkSmDeviceWlanLists(ctx context.Context, networkId string, deviceId string) WlanListsAPIGetNetworkSmDeviceWlanListsRequest {
+	return WlanListsAPIGetNetworkSmDeviceWlanListsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -55,7 +55,7 @@ func (a *WlanListsApiService) GetNetworkSmDeviceWlanLists(ctx context.Context, n
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceWlanLists200ResponseInner
-func (a *WlanListsApiService) GetNetworkSmDeviceWlanListsExecute(r WlanListsApiGetNetworkSmDeviceWlanListsRequest) ([]GetNetworkSmDeviceWlanLists200ResponseInner, *http.Response, error) {
+func (a *WlanListsAPIService) GetNetworkSmDeviceWlanListsExecute(r WlanListsAPIGetNetworkSmDeviceWlanListsRequest) ([]GetNetworkSmDeviceWlanLists200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -63,7 +63,7 @@ func (a *WlanListsApiService) GetNetworkSmDeviceWlanListsExecute(r WlanListsApiG
 		localVarReturnValue  []GetNetworkSmDeviceWlanLists200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WlanListsApiService.GetNetworkSmDeviceWlanLists")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WlanListsAPIService.GetNetworkSmDeviceWlanLists")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

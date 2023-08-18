@@ -20,22 +20,22 @@ import (
 )
 
 
-// EarlyAccessApiService EarlyAccessApi service
-type EarlyAccessApiService service
+// EarlyAccessAPIService EarlyAccessAPI service
+type EarlyAccessAPIService service
 
-type EarlyAccessApiCreateOrganizationEarlyAccessFeaturesOptInRequest struct {
+type EarlyAccessAPICreateOrganizationEarlyAccessFeaturesOptInRequest struct {
 	ctx context.Context
-	ApiService *EarlyAccessApiService
+	ApiService *EarlyAccessAPIService
 	organizationId string
 	createOrganizationEarlyAccessFeaturesOptInRequest *CreateOrganizationEarlyAccessFeaturesOptInRequest
 }
 
-func (r EarlyAccessApiCreateOrganizationEarlyAccessFeaturesOptInRequest) CreateOrganizationEarlyAccessFeaturesOptInRequest(createOrganizationEarlyAccessFeaturesOptInRequest CreateOrganizationEarlyAccessFeaturesOptInRequest) EarlyAccessApiCreateOrganizationEarlyAccessFeaturesOptInRequest {
+func (r EarlyAccessAPICreateOrganizationEarlyAccessFeaturesOptInRequest) CreateOrganizationEarlyAccessFeaturesOptInRequest(createOrganizationEarlyAccessFeaturesOptInRequest CreateOrganizationEarlyAccessFeaturesOptInRequest) EarlyAccessAPICreateOrganizationEarlyAccessFeaturesOptInRequest {
 	r.createOrganizationEarlyAccessFeaturesOptInRequest = &createOrganizationEarlyAccessFeaturesOptInRequest
 	return r
 }
 
-func (r EarlyAccessApiCreateOrganizationEarlyAccessFeaturesOptInRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r EarlyAccessAPICreateOrganizationEarlyAccessFeaturesOptInRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateOrganizationEarlyAccessFeaturesOptInExecute(r)
 }
 
@@ -46,10 +46,10 @@ Create a new early access feature opt-in for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return EarlyAccessApiCreateOrganizationEarlyAccessFeaturesOptInRequest
+ @return EarlyAccessAPICreateOrganizationEarlyAccessFeaturesOptInRequest
 */
-func (a *EarlyAccessApiService) CreateOrganizationEarlyAccessFeaturesOptIn(ctx context.Context, organizationId string) EarlyAccessApiCreateOrganizationEarlyAccessFeaturesOptInRequest {
-	return EarlyAccessApiCreateOrganizationEarlyAccessFeaturesOptInRequest{
+func (a *EarlyAccessAPIService) CreateOrganizationEarlyAccessFeaturesOptIn(ctx context.Context, organizationId string) EarlyAccessAPICreateOrganizationEarlyAccessFeaturesOptInRequest {
+	return EarlyAccessAPICreateOrganizationEarlyAccessFeaturesOptInRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -58,7 +58,7 @@ func (a *EarlyAccessApiService) CreateOrganizationEarlyAccessFeaturesOptIn(ctx c
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *EarlyAccessApiService) CreateOrganizationEarlyAccessFeaturesOptInExecute(r EarlyAccessApiCreateOrganizationEarlyAccessFeaturesOptInRequest) (map[string]interface{}, *http.Response, error) {
+func (a *EarlyAccessAPIService) CreateOrganizationEarlyAccessFeaturesOptInExecute(r EarlyAccessAPICreateOrganizationEarlyAccessFeaturesOptInRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *EarlyAccessApiService) CreateOrganizationEarlyAccessFeaturesOptInExecut
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EarlyAccessApiService.CreateOrganizationEarlyAccessFeaturesOptIn")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EarlyAccessAPIService.CreateOrganizationEarlyAccessFeaturesOptIn")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,14 +151,14 @@ func (a *EarlyAccessApiService) CreateOrganizationEarlyAccessFeaturesOptInExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type EarlyAccessApiDeleteOrganizationEarlyAccessFeaturesOptInRequest struct {
+type EarlyAccessAPIDeleteOrganizationEarlyAccessFeaturesOptInRequest struct {
 	ctx context.Context
-	ApiService *EarlyAccessApiService
+	ApiService *EarlyAccessAPIService
 	organizationId string
 	optInId string
 }
 
-func (r EarlyAccessApiDeleteOrganizationEarlyAccessFeaturesOptInRequest) Execute() (*http.Response, error) {
+func (r EarlyAccessAPIDeleteOrganizationEarlyAccessFeaturesOptInRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationEarlyAccessFeaturesOptInExecute(r)
 }
 
@@ -170,10 +170,10 @@ Delete an early access feature opt-in
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param optInId Opt in ID
- @return EarlyAccessApiDeleteOrganizationEarlyAccessFeaturesOptInRequest
+ @return EarlyAccessAPIDeleteOrganizationEarlyAccessFeaturesOptInRequest
 */
-func (a *EarlyAccessApiService) DeleteOrganizationEarlyAccessFeaturesOptIn(ctx context.Context, organizationId string, optInId string) EarlyAccessApiDeleteOrganizationEarlyAccessFeaturesOptInRequest {
-	return EarlyAccessApiDeleteOrganizationEarlyAccessFeaturesOptInRequest{
+func (a *EarlyAccessAPIService) DeleteOrganizationEarlyAccessFeaturesOptIn(ctx context.Context, organizationId string, optInId string) EarlyAccessAPIDeleteOrganizationEarlyAccessFeaturesOptInRequest {
+	return EarlyAccessAPIDeleteOrganizationEarlyAccessFeaturesOptInRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -182,14 +182,14 @@ func (a *EarlyAccessApiService) DeleteOrganizationEarlyAccessFeaturesOptIn(ctx c
 }
 
 // Execute executes the request
-func (a *EarlyAccessApiService) DeleteOrganizationEarlyAccessFeaturesOptInExecute(r EarlyAccessApiDeleteOrganizationEarlyAccessFeaturesOptInRequest) (*http.Response, error) {
+func (a *EarlyAccessAPIService) DeleteOrganizationEarlyAccessFeaturesOptInExecute(r EarlyAccessAPIDeleteOrganizationEarlyAccessFeaturesOptInRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EarlyAccessApiService.DeleteOrganizationEarlyAccessFeaturesOptIn")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EarlyAccessAPIService.DeleteOrganizationEarlyAccessFeaturesOptIn")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -261,13 +261,13 @@ func (a *EarlyAccessApiService) DeleteOrganizationEarlyAccessFeaturesOptInExecut
 	return localVarHTTPResponse, nil
 }
 
-type EarlyAccessApiGetOrganizationEarlyAccessFeaturesRequest struct {
+type EarlyAccessAPIGetOrganizationEarlyAccessFeaturesRequest struct {
 	ctx context.Context
-	ApiService *EarlyAccessApiService
+	ApiService *EarlyAccessAPIService
 	organizationId string
 }
 
-func (r EarlyAccessApiGetOrganizationEarlyAccessFeaturesRequest) Execute() ([]GetOrganizationEarlyAccessFeatures200ResponseInner, *http.Response, error) {
+func (r EarlyAccessAPIGetOrganizationEarlyAccessFeaturesRequest) Execute() ([]GetOrganizationEarlyAccessFeatures200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationEarlyAccessFeaturesExecute(r)
 }
 
@@ -278,10 +278,10 @@ List the available early access features for organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return EarlyAccessApiGetOrganizationEarlyAccessFeaturesRequest
+ @return EarlyAccessAPIGetOrganizationEarlyAccessFeaturesRequest
 */
-func (a *EarlyAccessApiService) GetOrganizationEarlyAccessFeatures(ctx context.Context, organizationId string) EarlyAccessApiGetOrganizationEarlyAccessFeaturesRequest {
-	return EarlyAccessApiGetOrganizationEarlyAccessFeaturesRequest{
+func (a *EarlyAccessAPIService) GetOrganizationEarlyAccessFeatures(ctx context.Context, organizationId string) EarlyAccessAPIGetOrganizationEarlyAccessFeaturesRequest {
+	return EarlyAccessAPIGetOrganizationEarlyAccessFeaturesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -290,7 +290,7 @@ func (a *EarlyAccessApiService) GetOrganizationEarlyAccessFeatures(ctx context.C
 
 // Execute executes the request
 //  @return []GetOrganizationEarlyAccessFeatures200ResponseInner
-func (a *EarlyAccessApiService) GetOrganizationEarlyAccessFeaturesExecute(r EarlyAccessApiGetOrganizationEarlyAccessFeaturesRequest) ([]GetOrganizationEarlyAccessFeatures200ResponseInner, *http.Response, error) {
+func (a *EarlyAccessAPIService) GetOrganizationEarlyAccessFeaturesExecute(r EarlyAccessAPIGetOrganizationEarlyAccessFeaturesRequest) ([]GetOrganizationEarlyAccessFeatures200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -298,7 +298,7 @@ func (a *EarlyAccessApiService) GetOrganizationEarlyAccessFeaturesExecute(r Earl
 		localVarReturnValue  []GetOrganizationEarlyAccessFeatures200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EarlyAccessApiService.GetOrganizationEarlyAccessFeatures")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EarlyAccessAPIService.GetOrganizationEarlyAccessFeatures")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -378,14 +378,14 @@ func (a *EarlyAccessApiService) GetOrganizationEarlyAccessFeaturesExecute(r Earl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type EarlyAccessApiGetOrganizationEarlyAccessFeaturesOptInRequest struct {
+type EarlyAccessAPIGetOrganizationEarlyAccessFeaturesOptInRequest struct {
 	ctx context.Context
-	ApiService *EarlyAccessApiService
+	ApiService *EarlyAccessAPIService
 	organizationId string
 	optInId string
 }
 
-func (r EarlyAccessApiGetOrganizationEarlyAccessFeaturesOptInRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r EarlyAccessAPIGetOrganizationEarlyAccessFeaturesOptInRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationEarlyAccessFeaturesOptInExecute(r)
 }
 
@@ -397,10 +397,10 @@ Show an early access feature opt-in for an organization
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param optInId Opt in ID
- @return EarlyAccessApiGetOrganizationEarlyAccessFeaturesOptInRequest
+ @return EarlyAccessAPIGetOrganizationEarlyAccessFeaturesOptInRequest
 */
-func (a *EarlyAccessApiService) GetOrganizationEarlyAccessFeaturesOptIn(ctx context.Context, organizationId string, optInId string) EarlyAccessApiGetOrganizationEarlyAccessFeaturesOptInRequest {
-	return EarlyAccessApiGetOrganizationEarlyAccessFeaturesOptInRequest{
+func (a *EarlyAccessAPIService) GetOrganizationEarlyAccessFeaturesOptIn(ctx context.Context, organizationId string, optInId string) EarlyAccessAPIGetOrganizationEarlyAccessFeaturesOptInRequest {
+	return EarlyAccessAPIGetOrganizationEarlyAccessFeaturesOptInRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -410,7 +410,7 @@ func (a *EarlyAccessApiService) GetOrganizationEarlyAccessFeaturesOptIn(ctx cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *EarlyAccessApiService) GetOrganizationEarlyAccessFeaturesOptInExecute(r EarlyAccessApiGetOrganizationEarlyAccessFeaturesOptInRequest) (map[string]interface{}, *http.Response, error) {
+func (a *EarlyAccessAPIService) GetOrganizationEarlyAccessFeaturesOptInExecute(r EarlyAccessAPIGetOrganizationEarlyAccessFeaturesOptInRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -418,7 +418,7 @@ func (a *EarlyAccessApiService) GetOrganizationEarlyAccessFeaturesOptInExecute(r
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EarlyAccessApiService.GetOrganizationEarlyAccessFeaturesOptIn")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EarlyAccessAPIService.GetOrganizationEarlyAccessFeaturesOptIn")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -499,13 +499,13 @@ func (a *EarlyAccessApiService) GetOrganizationEarlyAccessFeaturesOptInExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type EarlyAccessApiGetOrganizationEarlyAccessFeaturesOptInsRequest struct {
+type EarlyAccessAPIGetOrganizationEarlyAccessFeaturesOptInsRequest struct {
 	ctx context.Context
-	ApiService *EarlyAccessApiService
+	ApiService *EarlyAccessAPIService
 	organizationId string
 }
 
-func (r EarlyAccessApiGetOrganizationEarlyAccessFeaturesOptInsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r EarlyAccessAPIGetOrganizationEarlyAccessFeaturesOptInsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationEarlyAccessFeaturesOptInsExecute(r)
 }
 
@@ -516,10 +516,10 @@ List the early access feature opt-ins for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return EarlyAccessApiGetOrganizationEarlyAccessFeaturesOptInsRequest
+ @return EarlyAccessAPIGetOrganizationEarlyAccessFeaturesOptInsRequest
 */
-func (a *EarlyAccessApiService) GetOrganizationEarlyAccessFeaturesOptIns(ctx context.Context, organizationId string) EarlyAccessApiGetOrganizationEarlyAccessFeaturesOptInsRequest {
-	return EarlyAccessApiGetOrganizationEarlyAccessFeaturesOptInsRequest{
+func (a *EarlyAccessAPIService) GetOrganizationEarlyAccessFeaturesOptIns(ctx context.Context, organizationId string) EarlyAccessAPIGetOrganizationEarlyAccessFeaturesOptInsRequest {
+	return EarlyAccessAPIGetOrganizationEarlyAccessFeaturesOptInsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -528,7 +528,7 @@ func (a *EarlyAccessApiService) GetOrganizationEarlyAccessFeaturesOptIns(ctx con
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *EarlyAccessApiService) GetOrganizationEarlyAccessFeaturesOptInsExecute(r EarlyAccessApiGetOrganizationEarlyAccessFeaturesOptInsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *EarlyAccessAPIService) GetOrganizationEarlyAccessFeaturesOptInsExecute(r EarlyAccessAPIGetOrganizationEarlyAccessFeaturesOptInsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -536,7 +536,7 @@ func (a *EarlyAccessApiService) GetOrganizationEarlyAccessFeaturesOptInsExecute(
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EarlyAccessApiService.GetOrganizationEarlyAccessFeaturesOptIns")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EarlyAccessAPIService.GetOrganizationEarlyAccessFeaturesOptIns")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -616,20 +616,20 @@ func (a *EarlyAccessApiService) GetOrganizationEarlyAccessFeaturesOptInsExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type EarlyAccessApiUpdateOrganizationEarlyAccessFeaturesOptInRequest struct {
+type EarlyAccessAPIUpdateOrganizationEarlyAccessFeaturesOptInRequest struct {
 	ctx context.Context
-	ApiService *EarlyAccessApiService
+	ApiService *EarlyAccessAPIService
 	organizationId string
 	optInId string
 	updateOrganizationEarlyAccessFeaturesOptInRequest *UpdateOrganizationEarlyAccessFeaturesOptInRequest
 }
 
-func (r EarlyAccessApiUpdateOrganizationEarlyAccessFeaturesOptInRequest) UpdateOrganizationEarlyAccessFeaturesOptInRequest(updateOrganizationEarlyAccessFeaturesOptInRequest UpdateOrganizationEarlyAccessFeaturesOptInRequest) EarlyAccessApiUpdateOrganizationEarlyAccessFeaturesOptInRequest {
+func (r EarlyAccessAPIUpdateOrganizationEarlyAccessFeaturesOptInRequest) UpdateOrganizationEarlyAccessFeaturesOptInRequest(updateOrganizationEarlyAccessFeaturesOptInRequest UpdateOrganizationEarlyAccessFeaturesOptInRequest) EarlyAccessAPIUpdateOrganizationEarlyAccessFeaturesOptInRequest {
 	r.updateOrganizationEarlyAccessFeaturesOptInRequest = &updateOrganizationEarlyAccessFeaturesOptInRequest
 	return r
 }
 
-func (r EarlyAccessApiUpdateOrganizationEarlyAccessFeaturesOptInRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r EarlyAccessAPIUpdateOrganizationEarlyAccessFeaturesOptInRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationEarlyAccessFeaturesOptInExecute(r)
 }
 
@@ -641,10 +641,10 @@ Update an early access feature opt-in for an organization
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param optInId Opt in ID
- @return EarlyAccessApiUpdateOrganizationEarlyAccessFeaturesOptInRequest
+ @return EarlyAccessAPIUpdateOrganizationEarlyAccessFeaturesOptInRequest
 */
-func (a *EarlyAccessApiService) UpdateOrganizationEarlyAccessFeaturesOptIn(ctx context.Context, organizationId string, optInId string) EarlyAccessApiUpdateOrganizationEarlyAccessFeaturesOptInRequest {
-	return EarlyAccessApiUpdateOrganizationEarlyAccessFeaturesOptInRequest{
+func (a *EarlyAccessAPIService) UpdateOrganizationEarlyAccessFeaturesOptIn(ctx context.Context, organizationId string, optInId string) EarlyAccessAPIUpdateOrganizationEarlyAccessFeaturesOptInRequest {
+	return EarlyAccessAPIUpdateOrganizationEarlyAccessFeaturesOptInRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -654,7 +654,7 @@ func (a *EarlyAccessApiService) UpdateOrganizationEarlyAccessFeaturesOptIn(ctx c
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *EarlyAccessApiService) UpdateOrganizationEarlyAccessFeaturesOptInExecute(r EarlyAccessApiUpdateOrganizationEarlyAccessFeaturesOptInRequest) (map[string]interface{}, *http.Response, error) {
+func (a *EarlyAccessAPIService) UpdateOrganizationEarlyAccessFeaturesOptInExecute(r EarlyAccessAPIUpdateOrganizationEarlyAccessFeaturesOptInRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -662,7 +662,7 @@ func (a *EarlyAccessApiService) UpdateOrganizationEarlyAccessFeaturesOptInExecut
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EarlyAccessApiService.UpdateOrganizationEarlyAccessFeaturesOptIn")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EarlyAccessAPIService.UpdateOrganizationEarlyAccessFeaturesOptIn")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

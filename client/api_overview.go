@@ -21,12 +21,12 @@ import (
 )
 
 
-// OverviewApiService OverviewApi service
-type OverviewApiService service
+// OverviewAPIService OverviewAPI service
+type OverviewAPIService service
 
-type OverviewApiGetDeviceCameraAnalyticsOverviewRequest struct {
+type OverviewAPIGetDeviceCameraAnalyticsOverviewRequest struct {
 	ctx context.Context
-	ApiService *OverviewApiService
+	ApiService *OverviewAPIService
 	serial string
 	t0 *string
 	t1 *string
@@ -35,30 +35,30 @@ type OverviewApiGetDeviceCameraAnalyticsOverviewRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
-func (r OverviewApiGetDeviceCameraAnalyticsOverviewRequest) T0(t0 string) OverviewApiGetDeviceCameraAnalyticsOverviewRequest {
+func (r OverviewAPIGetDeviceCameraAnalyticsOverviewRequest) T0(t0 string) OverviewAPIGetDeviceCameraAnalyticsOverviewRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r OverviewApiGetDeviceCameraAnalyticsOverviewRequest) T1(t1 string) OverviewApiGetDeviceCameraAnalyticsOverviewRequest {
+func (r OverviewAPIGetDeviceCameraAnalyticsOverviewRequest) T1(t1 string) OverviewAPIGetDeviceCameraAnalyticsOverviewRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. The default is 1 hour.
-func (r OverviewApiGetDeviceCameraAnalyticsOverviewRequest) Timespan(timespan float32) OverviewApiGetDeviceCameraAnalyticsOverviewRequest {
+func (r OverviewAPIGetDeviceCameraAnalyticsOverviewRequest) Timespan(timespan float32) OverviewAPIGetDeviceCameraAnalyticsOverviewRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // [optional] The object type for which analytics will be retrieved. The default object type is person. The available types are [person, vehicle].
-func (r OverviewApiGetDeviceCameraAnalyticsOverviewRequest) ObjectType(objectType string) OverviewApiGetDeviceCameraAnalyticsOverviewRequest {
+func (r OverviewAPIGetDeviceCameraAnalyticsOverviewRequest) ObjectType(objectType string) OverviewAPIGetDeviceCameraAnalyticsOverviewRequest {
 	r.objectType = &objectType
 	return r
 }
 
-func (r OverviewApiGetDeviceCameraAnalyticsOverviewRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r OverviewAPIGetDeviceCameraAnalyticsOverviewRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraAnalyticsOverviewExecute(r)
 }
 
@@ -69,10 +69,10 @@ Returns an overview of aggregate analytics data for a timespan
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return OverviewApiGetDeviceCameraAnalyticsOverviewRequest
+ @return OverviewAPIGetDeviceCameraAnalyticsOverviewRequest
 */
-func (a *OverviewApiService) GetDeviceCameraAnalyticsOverview(ctx context.Context, serial string) OverviewApiGetDeviceCameraAnalyticsOverviewRequest {
-	return OverviewApiGetDeviceCameraAnalyticsOverviewRequest{
+func (a *OverviewAPIService) GetDeviceCameraAnalyticsOverview(ctx context.Context, serial string) OverviewAPIGetDeviceCameraAnalyticsOverviewRequest {
+	return OverviewAPIGetDeviceCameraAnalyticsOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -81,7 +81,7 @@ func (a *OverviewApiService) GetDeviceCameraAnalyticsOverview(ctx context.Contex
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *OverviewApiService) GetDeviceCameraAnalyticsOverviewExecute(r OverviewApiGetDeviceCameraAnalyticsOverviewRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *OverviewAPIService) GetDeviceCameraAnalyticsOverviewExecute(r OverviewAPIGetDeviceCameraAnalyticsOverviewRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -89,7 +89,7 @@ func (a *OverviewApiService) GetDeviceCameraAnalyticsOverviewExecute(r OverviewA
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OverviewApiService.GetDeviceCameraAnalyticsOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OverviewAPIService.GetDeviceCameraAnalyticsOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -181,9 +181,9 @@ func (a *OverviewApiService) GetDeviceCameraAnalyticsOverviewExecute(r OverviewA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OverviewApiGetNetworkClientsOverviewRequest struct {
+type OverviewAPIGetNetworkClientsOverviewRequest struct {
 	ctx context.Context
-	ApiService *OverviewApiService
+	ApiService *OverviewAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -192,30 +192,30 @@ type OverviewApiGetNetworkClientsOverviewRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r OverviewApiGetNetworkClientsOverviewRequest) T0(t0 string) OverviewApiGetNetworkClientsOverviewRequest {
+func (r OverviewAPIGetNetworkClientsOverviewRequest) T0(t0 string) OverviewAPIGetNetworkClientsOverviewRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r OverviewApiGetNetworkClientsOverviewRequest) T1(t1 string) OverviewApiGetNetworkClientsOverviewRequest {
+func (r OverviewAPIGetNetworkClientsOverviewRequest) T1(t1 string) OverviewAPIGetNetworkClientsOverviewRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r OverviewApiGetNetworkClientsOverviewRequest) Timespan(timespan float32) OverviewApiGetNetworkClientsOverviewRequest {
+func (r OverviewAPIGetNetworkClientsOverviewRequest) Timespan(timespan float32) OverviewAPIGetNetworkClientsOverviewRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 7200, 86400, 604800, 2592000. The default is 604800.
-func (r OverviewApiGetNetworkClientsOverviewRequest) Resolution(resolution int32) OverviewApiGetNetworkClientsOverviewRequest {
+func (r OverviewAPIGetNetworkClientsOverviewRequest) Resolution(resolution int32) OverviewAPIGetNetworkClientsOverviewRequest {
 	r.resolution = &resolution
 	return r
 }
 
-func (r OverviewApiGetNetworkClientsOverviewRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OverviewAPIGetNetworkClientsOverviewRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientsOverviewExecute(r)
 }
 
@@ -226,10 +226,10 @@ Return overview statistics for network clients
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return OverviewApiGetNetworkClientsOverviewRequest
+ @return OverviewAPIGetNetworkClientsOverviewRequest
 */
-func (a *OverviewApiService) GetNetworkClientsOverview(ctx context.Context, networkId string) OverviewApiGetNetworkClientsOverviewRequest {
-	return OverviewApiGetNetworkClientsOverviewRequest{
+func (a *OverviewAPIService) GetNetworkClientsOverview(ctx context.Context, networkId string) OverviewAPIGetNetworkClientsOverviewRequest {
+	return OverviewAPIGetNetworkClientsOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -238,7 +238,7 @@ func (a *OverviewApiService) GetNetworkClientsOverview(ctx context.Context, netw
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OverviewApiService) GetNetworkClientsOverviewExecute(r OverviewApiGetNetworkClientsOverviewRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OverviewAPIService) GetNetworkClientsOverviewExecute(r OverviewAPIGetNetworkClientsOverviewRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -246,7 +246,7 @@ func (a *OverviewApiService) GetNetworkClientsOverviewExecute(r OverviewApiGetNe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OverviewApiService.GetNetworkClientsOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OverviewAPIService.GetNetworkClientsOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -338,13 +338,13 @@ func (a *OverviewApiService) GetNetworkClientsOverviewExecute(r OverviewApiGetNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OverviewApiGetNetworkSensorAlertsCurrentOverviewByMetricRequest struct {
+type OverviewAPIGetNetworkSensorAlertsCurrentOverviewByMetricRequest struct {
 	ctx context.Context
-	ApiService *OverviewApiService
+	ApiService *OverviewAPIService
 	networkId string
 }
 
-func (r OverviewApiGetNetworkSensorAlertsCurrentOverviewByMetricRequest) Execute() (*GetNetworkSensorAlertsCurrentOverviewByMetric200Response, *http.Response, error) {
+func (r OverviewAPIGetNetworkSensorAlertsCurrentOverviewByMetricRequest) Execute() (*GetNetworkSensorAlertsCurrentOverviewByMetric200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSensorAlertsCurrentOverviewByMetricExecute(r)
 }
 
@@ -355,10 +355,10 @@ Return an overview of currently alerting sensors by metric
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return OverviewApiGetNetworkSensorAlertsCurrentOverviewByMetricRequest
+ @return OverviewAPIGetNetworkSensorAlertsCurrentOverviewByMetricRequest
 */
-func (a *OverviewApiService) GetNetworkSensorAlertsCurrentOverviewByMetric(ctx context.Context, networkId string) OverviewApiGetNetworkSensorAlertsCurrentOverviewByMetricRequest {
-	return OverviewApiGetNetworkSensorAlertsCurrentOverviewByMetricRequest{
+func (a *OverviewAPIService) GetNetworkSensorAlertsCurrentOverviewByMetric(ctx context.Context, networkId string) OverviewAPIGetNetworkSensorAlertsCurrentOverviewByMetricRequest {
+	return OverviewAPIGetNetworkSensorAlertsCurrentOverviewByMetricRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -367,7 +367,7 @@ func (a *OverviewApiService) GetNetworkSensorAlertsCurrentOverviewByMetric(ctx c
 
 // Execute executes the request
 //  @return GetNetworkSensorAlertsCurrentOverviewByMetric200Response
-func (a *OverviewApiService) GetNetworkSensorAlertsCurrentOverviewByMetricExecute(r OverviewApiGetNetworkSensorAlertsCurrentOverviewByMetricRequest) (*GetNetworkSensorAlertsCurrentOverviewByMetric200Response, *http.Response, error) {
+func (a *OverviewAPIService) GetNetworkSensorAlertsCurrentOverviewByMetricExecute(r OverviewAPIGetNetworkSensorAlertsCurrentOverviewByMetricRequest) (*GetNetworkSensorAlertsCurrentOverviewByMetric200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -375,7 +375,7 @@ func (a *OverviewApiService) GetNetworkSensorAlertsCurrentOverviewByMetricExecut
 		localVarReturnValue  *GetNetworkSensorAlertsCurrentOverviewByMetric200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OverviewApiService.GetNetworkSensorAlertsCurrentOverviewByMetric")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OverviewAPIService.GetNetworkSensorAlertsCurrentOverviewByMetric")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -455,9 +455,9 @@ func (a *OverviewApiService) GetNetworkSensorAlertsCurrentOverviewByMetricExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OverviewApiGetNetworkSensorAlertsOverviewByMetricRequest struct {
+type OverviewAPIGetNetworkSensorAlertsOverviewByMetricRequest struct {
 	ctx context.Context
-	ApiService *OverviewApiService
+	ApiService *OverviewAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -466,30 +466,30 @@ type OverviewApiGetNetworkSensorAlertsOverviewByMetricRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
-func (r OverviewApiGetNetworkSensorAlertsOverviewByMetricRequest) T0(t0 string) OverviewApiGetNetworkSensorAlertsOverviewByMetricRequest {
+func (r OverviewAPIGetNetworkSensorAlertsOverviewByMetricRequest) T0(t0 string) OverviewAPIGetNetworkSensorAlertsOverviewByMetricRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r OverviewApiGetNetworkSensorAlertsOverviewByMetricRequest) T1(t1 string) OverviewApiGetNetworkSensorAlertsOverviewByMetricRequest {
+func (r OverviewAPIGetNetworkSensorAlertsOverviewByMetricRequest) T1(t1 string) OverviewAPIGetNetworkSensorAlertsOverviewByMetricRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r OverviewApiGetNetworkSensorAlertsOverviewByMetricRequest) Timespan(timespan float32) OverviewApiGetNetworkSensorAlertsOverviewByMetricRequest {
+func (r OverviewAPIGetNetworkSensorAlertsOverviewByMetricRequest) Timespan(timespan float32) OverviewAPIGetNetworkSensorAlertsOverviewByMetricRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time interval in seconds for returned data. The valid intervals are: 86400, 604800. The default is 604800.
-func (r OverviewApiGetNetworkSensorAlertsOverviewByMetricRequest) Interval(interval int32) OverviewApiGetNetworkSensorAlertsOverviewByMetricRequest {
+func (r OverviewAPIGetNetworkSensorAlertsOverviewByMetricRequest) Interval(interval int32) OverviewAPIGetNetworkSensorAlertsOverviewByMetricRequest {
 	r.interval = &interval
 	return r
 }
 
-func (r OverviewApiGetNetworkSensorAlertsOverviewByMetricRequest) Execute() ([]GetNetworkSensorAlertsOverviewByMetric200ResponseInner, *http.Response, error) {
+func (r OverviewAPIGetNetworkSensorAlertsOverviewByMetricRequest) Execute() ([]GetNetworkSensorAlertsOverviewByMetric200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSensorAlertsOverviewByMetricExecute(r)
 }
 
@@ -500,10 +500,10 @@ Return an overview of alert occurrences over a timespan, by metric
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return OverviewApiGetNetworkSensorAlertsOverviewByMetricRequest
+ @return OverviewAPIGetNetworkSensorAlertsOverviewByMetricRequest
 */
-func (a *OverviewApiService) GetNetworkSensorAlertsOverviewByMetric(ctx context.Context, networkId string) OverviewApiGetNetworkSensorAlertsOverviewByMetricRequest {
-	return OverviewApiGetNetworkSensorAlertsOverviewByMetricRequest{
+func (a *OverviewAPIService) GetNetworkSensorAlertsOverviewByMetric(ctx context.Context, networkId string) OverviewAPIGetNetworkSensorAlertsOverviewByMetricRequest {
+	return OverviewAPIGetNetworkSensorAlertsOverviewByMetricRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -512,7 +512,7 @@ func (a *OverviewApiService) GetNetworkSensorAlertsOverviewByMetric(ctx context.
 
 // Execute executes the request
 //  @return []GetNetworkSensorAlertsOverviewByMetric200ResponseInner
-func (a *OverviewApiService) GetNetworkSensorAlertsOverviewByMetricExecute(r OverviewApiGetNetworkSensorAlertsOverviewByMetricRequest) ([]GetNetworkSensorAlertsOverviewByMetric200ResponseInner, *http.Response, error) {
+func (a *OverviewAPIService) GetNetworkSensorAlertsOverviewByMetricExecute(r OverviewAPIGetNetworkSensorAlertsOverviewByMetricRequest) ([]GetNetworkSensorAlertsOverviewByMetric200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -520,7 +520,7 @@ func (a *OverviewApiService) GetNetworkSensorAlertsOverviewByMetricExecute(r Ove
 		localVarReturnValue  []GetNetworkSensorAlertsOverviewByMetric200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OverviewApiService.GetNetworkSensorAlertsOverviewByMetric")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OverviewAPIService.GetNetworkSensorAlertsOverviewByMetric")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -612,13 +612,13 @@ func (a *OverviewApiService) GetNetworkSensorAlertsOverviewByMetricExecute(r Ove
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OverviewApiGetOrganizationAdaptivePolicyOverviewRequest struct {
+type OverviewAPIGetOrganizationAdaptivePolicyOverviewRequest struct {
 	ctx context.Context
-	ApiService *OverviewApiService
+	ApiService *OverviewAPIService
 	organizationId string
 }
 
-func (r OverviewApiGetOrganizationAdaptivePolicyOverviewRequest) Execute() (*GetOrganizationAdaptivePolicyOverview200Response, *http.Response, error) {
+func (r OverviewAPIGetOrganizationAdaptivePolicyOverviewRequest) Execute() (*GetOrganizationAdaptivePolicyOverview200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationAdaptivePolicyOverviewExecute(r)
 }
 
@@ -629,10 +629,10 @@ Returns adaptive policy aggregate statistics for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OverviewApiGetOrganizationAdaptivePolicyOverviewRequest
+ @return OverviewAPIGetOrganizationAdaptivePolicyOverviewRequest
 */
-func (a *OverviewApiService) GetOrganizationAdaptivePolicyOverview(ctx context.Context, organizationId string) OverviewApiGetOrganizationAdaptivePolicyOverviewRequest {
-	return OverviewApiGetOrganizationAdaptivePolicyOverviewRequest{
+func (a *OverviewAPIService) GetOrganizationAdaptivePolicyOverview(ctx context.Context, organizationId string) OverviewAPIGetOrganizationAdaptivePolicyOverviewRequest {
+	return OverviewAPIGetOrganizationAdaptivePolicyOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -641,7 +641,7 @@ func (a *OverviewApiService) GetOrganizationAdaptivePolicyOverview(ctx context.C
 
 // Execute executes the request
 //  @return GetOrganizationAdaptivePolicyOverview200Response
-func (a *OverviewApiService) GetOrganizationAdaptivePolicyOverviewExecute(r OverviewApiGetOrganizationAdaptivePolicyOverviewRequest) (*GetOrganizationAdaptivePolicyOverview200Response, *http.Response, error) {
+func (a *OverviewAPIService) GetOrganizationAdaptivePolicyOverviewExecute(r OverviewAPIGetOrganizationAdaptivePolicyOverviewRequest) (*GetOrganizationAdaptivePolicyOverview200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -649,7 +649,7 @@ func (a *OverviewApiService) GetOrganizationAdaptivePolicyOverviewExecute(r Over
 		localVarReturnValue  *GetOrganizationAdaptivePolicyOverview200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OverviewApiService.GetOrganizationAdaptivePolicyOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OverviewAPIService.GetOrganizationAdaptivePolicyOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -729,9 +729,9 @@ func (a *OverviewApiService) GetOrganizationAdaptivePolicyOverviewExecute(r Over
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OverviewApiGetOrganizationApiRequestsOverviewRequest struct {
+type OverviewAPIGetOrganizationApiRequestsOverviewRequest struct {
 	ctx context.Context
-	ApiService *OverviewApiService
+	ApiService *OverviewAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -739,24 +739,24 @@ type OverviewApiGetOrganizationApiRequestsOverviewRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r OverviewApiGetOrganizationApiRequestsOverviewRequest) T0(t0 string) OverviewApiGetOrganizationApiRequestsOverviewRequest {
+func (r OverviewAPIGetOrganizationApiRequestsOverviewRequest) T0(t0 string) OverviewAPIGetOrganizationApiRequestsOverviewRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r OverviewApiGetOrganizationApiRequestsOverviewRequest) T1(t1 string) OverviewApiGetOrganizationApiRequestsOverviewRequest {
+func (r OverviewAPIGetOrganizationApiRequestsOverviewRequest) T1(t1 string) OverviewAPIGetOrganizationApiRequestsOverviewRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 31 days.
-func (r OverviewApiGetOrganizationApiRequestsOverviewRequest) Timespan(timespan float32) OverviewApiGetOrganizationApiRequestsOverviewRequest {
+func (r OverviewAPIGetOrganizationApiRequestsOverviewRequest) Timespan(timespan float32) OverviewAPIGetOrganizationApiRequestsOverviewRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r OverviewApiGetOrganizationApiRequestsOverviewRequest) Execute() (*GetOrganizationApiRequestsOverview200Response, *http.Response, error) {
+func (r OverviewAPIGetOrganizationApiRequestsOverviewRequest) Execute() (*GetOrganizationApiRequestsOverview200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationApiRequestsOverviewExecute(r)
 }
 
@@ -767,10 +767,10 @@ Return an aggregated overview of API requests data
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OverviewApiGetOrganizationApiRequestsOverviewRequest
+ @return OverviewAPIGetOrganizationApiRequestsOverviewRequest
 */
-func (a *OverviewApiService) GetOrganizationApiRequestsOverview(ctx context.Context, organizationId string) OverviewApiGetOrganizationApiRequestsOverviewRequest {
-	return OverviewApiGetOrganizationApiRequestsOverviewRequest{
+func (a *OverviewAPIService) GetOrganizationApiRequestsOverview(ctx context.Context, organizationId string) OverviewAPIGetOrganizationApiRequestsOverviewRequest {
+	return OverviewAPIGetOrganizationApiRequestsOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -779,7 +779,7 @@ func (a *OverviewApiService) GetOrganizationApiRequestsOverview(ctx context.Cont
 
 // Execute executes the request
 //  @return GetOrganizationApiRequestsOverview200Response
-func (a *OverviewApiService) GetOrganizationApiRequestsOverviewExecute(r OverviewApiGetOrganizationApiRequestsOverviewRequest) (*GetOrganizationApiRequestsOverview200Response, *http.Response, error) {
+func (a *OverviewAPIService) GetOrganizationApiRequestsOverviewExecute(r OverviewAPIGetOrganizationApiRequestsOverviewRequest) (*GetOrganizationApiRequestsOverview200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -787,7 +787,7 @@ func (a *OverviewApiService) GetOrganizationApiRequestsOverviewExecute(r Overvie
 		localVarReturnValue  *GetOrganizationApiRequestsOverview200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OverviewApiService.GetOrganizationApiRequestsOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OverviewAPIService.GetOrganizationApiRequestsOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -876,9 +876,9 @@ func (a *OverviewApiService) GetOrganizationApiRequestsOverviewExecute(r Overvie
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OverviewApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest struct {
+type OverviewAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest struct {
 	ctx context.Context
-	ApiService *OverviewApiService
+	ApiService *OverviewAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -892,60 +892,60 @@ type OverviewApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r OverviewApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) T0(t0 string) OverviewApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r OverviewAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) T0(t0 string) OverviewAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r OverviewApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) T1(t1 string) OverviewApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r OverviewAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) T1(t1 string) OverviewAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 31 days. If interval is provided, the timespan will be autocalculated.
-func (r OverviewApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Timespan(timespan float32) OverviewApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r OverviewAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Timespan(timespan float32) OverviewAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time interval in seconds for returned data. The valid intervals are: 120, 3600, 14400, 21600. The default is 21600. Interval is calculated if time params are provided.
-func (r OverviewApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Interval(interval int32) OverviewApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r OverviewAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Interval(interval int32) OverviewAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.interval = &interval
 	return r
 }
 
 // Filter by API version of the endpoint. Allowable values are: [0, 1]
-func (r OverviewApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Version(version int32) OverviewApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r OverviewAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Version(version int32) OverviewAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.version = &version
 	return r
 }
 
 // Filter by operation ID of the endpoint
-func (r OverviewApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) OperationIds(operationIds []string) OverviewApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r OverviewAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) OperationIds(operationIds []string) OverviewAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.operationIds = &operationIds
 	return r
 }
 
 // Filter by source IP that made the API request
-func (r OverviewApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) SourceIps(sourceIps []string) OverviewApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r OverviewAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) SourceIps(sourceIps []string) OverviewAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.sourceIps = &sourceIps
 	return r
 }
 
 // Filter by admin ID of user that made the API request
-func (r OverviewApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) AdminIds(adminIds []string) OverviewApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r OverviewAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) AdminIds(adminIds []string) OverviewAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.adminIds = &adminIds
 	return r
 }
 
 // Filter by user agent string for API request. This will filter by a complete or partial match.
-func (r OverviewApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) UserAgent(userAgent string) OverviewApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r OverviewAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) UserAgent(userAgent string) OverviewAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.userAgent = &userAgent
 	return r
 }
 
-func (r OverviewApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Execute() ([]GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner, *http.Response, error) {
+func (r OverviewAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Execute() ([]GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationApiRequestsOverviewResponseCodesByIntervalExecute(r)
 }
 
@@ -956,10 +956,10 @@ Tracks organizations' API requests by response code across a given time period
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OverviewApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest
+ @return OverviewAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest
 */
-func (a *OverviewApiService) GetOrganizationApiRequestsOverviewResponseCodesByInterval(ctx context.Context, organizationId string) OverviewApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
-	return OverviewApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest{
+func (a *OverviewAPIService) GetOrganizationApiRequestsOverviewResponseCodesByInterval(ctx context.Context, organizationId string) OverviewAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+	return OverviewAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -968,7 +968,7 @@ func (a *OverviewApiService) GetOrganizationApiRequestsOverviewResponseCodesByIn
 
 // Execute executes the request
 //  @return []GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner
-func (a *OverviewApiService) GetOrganizationApiRequestsOverviewResponseCodesByIntervalExecute(r OverviewApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) ([]GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner, *http.Response, error) {
+func (a *OverviewAPIService) GetOrganizationApiRequestsOverviewResponseCodesByIntervalExecute(r OverviewAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) ([]GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -976,7 +976,7 @@ func (a *OverviewApiService) GetOrganizationApiRequestsOverviewResponseCodesByIn
 		localVarReturnValue  []GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OverviewApiService.GetOrganizationApiRequestsOverviewResponseCodesByInterval")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OverviewAPIService.GetOrganizationApiRequestsOverviewResponseCodesByInterval")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1107,9 +1107,9 @@ func (a *OverviewApiService) GetOrganizationApiRequestsOverviewResponseCodesByIn
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OverviewApiGetOrganizationClientsOverviewRequest struct {
+type OverviewAPIGetOrganizationClientsOverviewRequest struct {
 	ctx context.Context
-	ApiService *OverviewApiService
+	ApiService *OverviewAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -1117,24 +1117,24 @@ type OverviewApiGetOrganizationClientsOverviewRequest struct {
 }
 
 // The beginning of the timespan for the data.
-func (r OverviewApiGetOrganizationClientsOverviewRequest) T0(t0 string) OverviewApiGetOrganizationClientsOverviewRequest {
+func (r OverviewAPIGetOrganizationClientsOverviewRequest) T0(t0 string) OverviewAPIGetOrganizationClientsOverviewRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r OverviewApiGetOrganizationClientsOverviewRequest) T1(t1 string) OverviewApiGetOrganizationClientsOverviewRequest {
+func (r OverviewAPIGetOrganizationClientsOverviewRequest) T1(t1 string) OverviewAPIGetOrganizationClientsOverviewRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r OverviewApiGetOrganizationClientsOverviewRequest) Timespan(timespan float32) OverviewApiGetOrganizationClientsOverviewRequest {
+func (r OverviewAPIGetOrganizationClientsOverviewRequest) Timespan(timespan float32) OverviewAPIGetOrganizationClientsOverviewRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r OverviewApiGetOrganizationClientsOverviewRequest) Execute() (*GetOrganizationClientsOverview200Response, *http.Response, error) {
+func (r OverviewAPIGetOrganizationClientsOverviewRequest) Execute() (*GetOrganizationClientsOverview200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationClientsOverviewExecute(r)
 }
 
@@ -1145,10 +1145,10 @@ Return summary information around client data usage (in mb) across the given org
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OverviewApiGetOrganizationClientsOverviewRequest
+ @return OverviewAPIGetOrganizationClientsOverviewRequest
 */
-func (a *OverviewApiService) GetOrganizationClientsOverview(ctx context.Context, organizationId string) OverviewApiGetOrganizationClientsOverviewRequest {
-	return OverviewApiGetOrganizationClientsOverviewRequest{
+func (a *OverviewAPIService) GetOrganizationClientsOverview(ctx context.Context, organizationId string) OverviewAPIGetOrganizationClientsOverviewRequest {
+	return OverviewAPIGetOrganizationClientsOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1157,7 +1157,7 @@ func (a *OverviewApiService) GetOrganizationClientsOverview(ctx context.Context,
 
 // Execute executes the request
 //  @return GetOrganizationClientsOverview200Response
-func (a *OverviewApiService) GetOrganizationClientsOverviewExecute(r OverviewApiGetOrganizationClientsOverviewRequest) (*GetOrganizationClientsOverview200Response, *http.Response, error) {
+func (a *OverviewAPIService) GetOrganizationClientsOverviewExecute(r OverviewAPIGetOrganizationClientsOverviewRequest) (*GetOrganizationClientsOverview200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1165,7 +1165,7 @@ func (a *OverviewApiService) GetOrganizationClientsOverviewExecute(r OverviewApi
 		localVarReturnValue  *GetOrganizationClientsOverview200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OverviewApiService.GetOrganizationClientsOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OverviewAPIService.GetOrganizationClientsOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1254,27 +1254,27 @@ func (a *OverviewApiService) GetOrganizationClientsOverviewExecute(r OverviewApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OverviewApiGetOrganizationDevicesStatusesOverviewRequest struct {
+type OverviewAPIGetOrganizationDevicesStatusesOverviewRequest struct {
 	ctx context.Context
-	ApiService *OverviewApiService
+	ApiService *OverviewAPIService
 	organizationId string
 	productTypes *[]string
 	networkIds *[]string
 }
 
 // An optional parameter to filter device statuses by product type. Valid types are wireless, appliance, switch, systemsManager, camera, cellularGateway, sensor, and cloudGateway.
-func (r OverviewApiGetOrganizationDevicesStatusesOverviewRequest) ProductTypes(productTypes []string) OverviewApiGetOrganizationDevicesStatusesOverviewRequest {
+func (r OverviewAPIGetOrganizationDevicesStatusesOverviewRequest) ProductTypes(productTypes []string) OverviewAPIGetOrganizationDevicesStatusesOverviewRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // An optional parameter to filter device statuses by network.
-func (r OverviewApiGetOrganizationDevicesStatusesOverviewRequest) NetworkIds(networkIds []string) OverviewApiGetOrganizationDevicesStatusesOverviewRequest {
+func (r OverviewAPIGetOrganizationDevicesStatusesOverviewRequest) NetworkIds(networkIds []string) OverviewAPIGetOrganizationDevicesStatusesOverviewRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
-func (r OverviewApiGetOrganizationDevicesStatusesOverviewRequest) Execute() (*GetOrganizationDevicesStatusesOverview200Response, *http.Response, error) {
+func (r OverviewAPIGetOrganizationDevicesStatusesOverviewRequest) Execute() (*GetOrganizationDevicesStatusesOverview200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesStatusesOverviewExecute(r)
 }
 
@@ -1285,10 +1285,10 @@ Return an overview of current device statuses
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OverviewApiGetOrganizationDevicesStatusesOverviewRequest
+ @return OverviewAPIGetOrganizationDevicesStatusesOverviewRequest
 */
-func (a *OverviewApiService) GetOrganizationDevicesStatusesOverview(ctx context.Context, organizationId string) OverviewApiGetOrganizationDevicesStatusesOverviewRequest {
-	return OverviewApiGetOrganizationDevicesStatusesOverviewRequest{
+func (a *OverviewAPIService) GetOrganizationDevicesStatusesOverview(ctx context.Context, organizationId string) OverviewAPIGetOrganizationDevicesStatusesOverviewRequest {
+	return OverviewAPIGetOrganizationDevicesStatusesOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1297,7 +1297,7 @@ func (a *OverviewApiService) GetOrganizationDevicesStatusesOverview(ctx context.
 
 // Execute executes the request
 //  @return GetOrganizationDevicesStatusesOverview200Response
-func (a *OverviewApiService) GetOrganizationDevicesStatusesOverviewExecute(r OverviewApiGetOrganizationDevicesStatusesOverviewRequest) (*GetOrganizationDevicesStatusesOverview200Response, *http.Response, error) {
+func (a *OverviewAPIService) GetOrganizationDevicesStatusesOverviewExecute(r OverviewAPIGetOrganizationDevicesStatusesOverviewRequest) (*GetOrganizationDevicesStatusesOverview200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1305,7 +1305,7 @@ func (a *OverviewApiService) GetOrganizationDevicesStatusesOverviewExecute(r Ove
 		localVarReturnValue  *GetOrganizationDevicesStatusesOverview200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OverviewApiService.GetOrganizationDevicesStatusesOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OverviewAPIService.GetOrganizationDevicesStatusesOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1407,13 +1407,13 @@ func (a *OverviewApiService) GetOrganizationDevicesStatusesOverviewExecute(r Ove
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OverviewApiGetOrganizationLicensesOverviewRequest struct {
+type OverviewAPIGetOrganizationLicensesOverviewRequest struct {
 	ctx context.Context
-	ApiService *OverviewApiService
+	ApiService *OverviewAPIService
 	organizationId string
 }
 
-func (r OverviewApiGetOrganizationLicensesOverviewRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OverviewAPIGetOrganizationLicensesOverviewRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationLicensesOverviewExecute(r)
 }
 
@@ -1424,10 +1424,10 @@ Return an overview of the license state for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OverviewApiGetOrganizationLicensesOverviewRequest
+ @return OverviewAPIGetOrganizationLicensesOverviewRequest
 */
-func (a *OverviewApiService) GetOrganizationLicensesOverview(ctx context.Context, organizationId string) OverviewApiGetOrganizationLicensesOverviewRequest {
-	return OverviewApiGetOrganizationLicensesOverviewRequest{
+func (a *OverviewAPIService) GetOrganizationLicensesOverview(ctx context.Context, organizationId string) OverviewAPIGetOrganizationLicensesOverviewRequest {
+	return OverviewAPIGetOrganizationLicensesOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1436,7 +1436,7 @@ func (a *OverviewApiService) GetOrganizationLicensesOverview(ctx context.Context
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OverviewApiService) GetOrganizationLicensesOverviewExecute(r OverviewApiGetOrganizationLicensesOverviewRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OverviewAPIService) GetOrganizationLicensesOverviewExecute(r OverviewAPIGetOrganizationLicensesOverviewRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1444,7 +1444,7 @@ func (a *OverviewApiService) GetOrganizationLicensesOverviewExecute(r OverviewAp
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OverviewApiService.GetOrganizationLicensesOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OverviewAPIService.GetOrganizationLicensesOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

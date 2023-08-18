@@ -20,22 +20,22 @@ import (
 )
 
 
-// StaticRoutesApiService StaticRoutesApi service
-type StaticRoutesApiService service
+// StaticRoutesAPIService StaticRoutesAPI service
+type StaticRoutesAPIService service
 
-type StaticRoutesApiCreateDeviceSwitchRoutingStaticRouteRequest struct {
+type StaticRoutesAPICreateDeviceSwitchRoutingStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *StaticRoutesApiService
+	ApiService *StaticRoutesAPIService
 	serial string
 	createDeviceSwitchRoutingStaticRouteRequest *CreateDeviceSwitchRoutingStaticRouteRequest
 }
 
-func (r StaticRoutesApiCreateDeviceSwitchRoutingStaticRouteRequest) CreateDeviceSwitchRoutingStaticRouteRequest(createDeviceSwitchRoutingStaticRouteRequest CreateDeviceSwitchRoutingStaticRouteRequest) StaticRoutesApiCreateDeviceSwitchRoutingStaticRouteRequest {
+func (r StaticRoutesAPICreateDeviceSwitchRoutingStaticRouteRequest) CreateDeviceSwitchRoutingStaticRouteRequest(createDeviceSwitchRoutingStaticRouteRequest CreateDeviceSwitchRoutingStaticRouteRequest) StaticRoutesAPICreateDeviceSwitchRoutingStaticRouteRequest {
 	r.createDeviceSwitchRoutingStaticRouteRequest = &createDeviceSwitchRoutingStaticRouteRequest
 	return r
 }
 
-func (r StaticRoutesApiCreateDeviceSwitchRoutingStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r StaticRoutesAPICreateDeviceSwitchRoutingStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateDeviceSwitchRoutingStaticRouteExecute(r)
 }
 
@@ -46,10 +46,10 @@ Create a layer 3 static route for a switch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return StaticRoutesApiCreateDeviceSwitchRoutingStaticRouteRequest
+ @return StaticRoutesAPICreateDeviceSwitchRoutingStaticRouteRequest
 */
-func (a *StaticRoutesApiService) CreateDeviceSwitchRoutingStaticRoute(ctx context.Context, serial string) StaticRoutesApiCreateDeviceSwitchRoutingStaticRouteRequest {
-	return StaticRoutesApiCreateDeviceSwitchRoutingStaticRouteRequest{
+func (a *StaticRoutesAPIService) CreateDeviceSwitchRoutingStaticRoute(ctx context.Context, serial string) StaticRoutesAPICreateDeviceSwitchRoutingStaticRouteRequest {
+	return StaticRoutesAPICreateDeviceSwitchRoutingStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -58,7 +58,7 @@ func (a *StaticRoutesApiService) CreateDeviceSwitchRoutingStaticRoute(ctx contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *StaticRoutesApiService) CreateDeviceSwitchRoutingStaticRouteExecute(r StaticRoutesApiCreateDeviceSwitchRoutingStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
+func (a *StaticRoutesAPIService) CreateDeviceSwitchRoutingStaticRouteExecute(r StaticRoutesAPICreateDeviceSwitchRoutingStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *StaticRoutesApiService) CreateDeviceSwitchRoutingStaticRouteExecute(r S
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesApiService.CreateDeviceSwitchRoutingStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesAPIService.CreateDeviceSwitchRoutingStaticRoute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,19 +151,19 @@ func (a *StaticRoutesApiService) CreateDeviceSwitchRoutingStaticRouteExecute(r S
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StaticRoutesApiCreateNetworkApplianceStaticRouteRequest struct {
+type StaticRoutesAPICreateNetworkApplianceStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *StaticRoutesApiService
+	ApiService *StaticRoutesAPIService
 	networkId string
 	createNetworkApplianceStaticRouteRequest *CreateNetworkApplianceStaticRouteRequest
 }
 
-func (r StaticRoutesApiCreateNetworkApplianceStaticRouteRequest) CreateNetworkApplianceStaticRouteRequest(createNetworkApplianceStaticRouteRequest CreateNetworkApplianceStaticRouteRequest) StaticRoutesApiCreateNetworkApplianceStaticRouteRequest {
+func (r StaticRoutesAPICreateNetworkApplianceStaticRouteRequest) CreateNetworkApplianceStaticRouteRequest(createNetworkApplianceStaticRouteRequest CreateNetworkApplianceStaticRouteRequest) StaticRoutesAPICreateNetworkApplianceStaticRouteRequest {
 	r.createNetworkApplianceStaticRouteRequest = &createNetworkApplianceStaticRouteRequest
 	return r
 }
 
-func (r StaticRoutesApiCreateNetworkApplianceStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r StaticRoutesAPICreateNetworkApplianceStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkApplianceStaticRouteExecute(r)
 }
 
@@ -174,10 +174,10 @@ Add a static route for an MX or teleworker network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return StaticRoutesApiCreateNetworkApplianceStaticRouteRequest
+ @return StaticRoutesAPICreateNetworkApplianceStaticRouteRequest
 */
-func (a *StaticRoutesApiService) CreateNetworkApplianceStaticRoute(ctx context.Context, networkId string) StaticRoutesApiCreateNetworkApplianceStaticRouteRequest {
-	return StaticRoutesApiCreateNetworkApplianceStaticRouteRequest{
+func (a *StaticRoutesAPIService) CreateNetworkApplianceStaticRoute(ctx context.Context, networkId string) StaticRoutesAPICreateNetworkApplianceStaticRouteRequest {
+	return StaticRoutesAPICreateNetworkApplianceStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -186,7 +186,7 @@ func (a *StaticRoutesApiService) CreateNetworkApplianceStaticRoute(ctx context.C
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *StaticRoutesApiService) CreateNetworkApplianceStaticRouteExecute(r StaticRoutesApiCreateNetworkApplianceStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
+func (a *StaticRoutesAPIService) CreateNetworkApplianceStaticRouteExecute(r StaticRoutesAPICreateNetworkApplianceStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -194,7 +194,7 @@ func (a *StaticRoutesApiService) CreateNetworkApplianceStaticRouteExecute(r Stat
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesApiService.CreateNetworkApplianceStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesAPIService.CreateNetworkApplianceStaticRoute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -279,20 +279,20 @@ func (a *StaticRoutesApiService) CreateNetworkApplianceStaticRouteExecute(r Stat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StaticRoutesApiCreateNetworkSwitchStackRoutingStaticRouteRequest struct {
+type StaticRoutesAPICreateNetworkSwitchStackRoutingStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *StaticRoutesApiService
+	ApiService *StaticRoutesAPIService
 	networkId string
 	switchStackId string
 	createDeviceSwitchRoutingStaticRouteRequest *CreateDeviceSwitchRoutingStaticRouteRequest
 }
 
-func (r StaticRoutesApiCreateNetworkSwitchStackRoutingStaticRouteRequest) CreateDeviceSwitchRoutingStaticRouteRequest(createDeviceSwitchRoutingStaticRouteRequest CreateDeviceSwitchRoutingStaticRouteRequest) StaticRoutesApiCreateNetworkSwitchStackRoutingStaticRouteRequest {
+func (r StaticRoutesAPICreateNetworkSwitchStackRoutingStaticRouteRequest) CreateDeviceSwitchRoutingStaticRouteRequest(createDeviceSwitchRoutingStaticRouteRequest CreateDeviceSwitchRoutingStaticRouteRequest) StaticRoutesAPICreateNetworkSwitchStackRoutingStaticRouteRequest {
 	r.createDeviceSwitchRoutingStaticRouteRequest = &createDeviceSwitchRoutingStaticRouteRequest
 	return r
 }
 
-func (r StaticRoutesApiCreateNetworkSwitchStackRoutingStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r StaticRoutesAPICreateNetworkSwitchStackRoutingStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkSwitchStackRoutingStaticRouteExecute(r)
 }
 
@@ -304,10 +304,10 @@ Create a layer 3 static route for a switch stack
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param switchStackId Switch stack ID
- @return StaticRoutesApiCreateNetworkSwitchStackRoutingStaticRouteRequest
+ @return StaticRoutesAPICreateNetworkSwitchStackRoutingStaticRouteRequest
 */
-func (a *StaticRoutesApiService) CreateNetworkSwitchStackRoutingStaticRoute(ctx context.Context, networkId string, switchStackId string) StaticRoutesApiCreateNetworkSwitchStackRoutingStaticRouteRequest {
-	return StaticRoutesApiCreateNetworkSwitchStackRoutingStaticRouteRequest{
+func (a *StaticRoutesAPIService) CreateNetworkSwitchStackRoutingStaticRoute(ctx context.Context, networkId string, switchStackId string) StaticRoutesAPICreateNetworkSwitchStackRoutingStaticRouteRequest {
+	return StaticRoutesAPICreateNetworkSwitchStackRoutingStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -317,7 +317,7 @@ func (a *StaticRoutesApiService) CreateNetworkSwitchStackRoutingStaticRoute(ctx 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *StaticRoutesApiService) CreateNetworkSwitchStackRoutingStaticRouteExecute(r StaticRoutesApiCreateNetworkSwitchStackRoutingStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
+func (a *StaticRoutesAPIService) CreateNetworkSwitchStackRoutingStaticRouteExecute(r StaticRoutesAPICreateNetworkSwitchStackRoutingStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -325,7 +325,7 @@ func (a *StaticRoutesApiService) CreateNetworkSwitchStackRoutingStaticRouteExecu
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesApiService.CreateNetworkSwitchStackRoutingStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesAPIService.CreateNetworkSwitchStackRoutingStaticRoute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -411,14 +411,14 @@ func (a *StaticRoutesApiService) CreateNetworkSwitchStackRoutingStaticRouteExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StaticRoutesApiDeleteDeviceSwitchRoutingStaticRouteRequest struct {
+type StaticRoutesAPIDeleteDeviceSwitchRoutingStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *StaticRoutesApiService
+	ApiService *StaticRoutesAPIService
 	serial string
 	staticRouteId string
 }
 
-func (r StaticRoutesApiDeleteDeviceSwitchRoutingStaticRouteRequest) Execute() (*http.Response, error) {
+func (r StaticRoutesAPIDeleteDeviceSwitchRoutingStaticRouteRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteDeviceSwitchRoutingStaticRouteExecute(r)
 }
 
@@ -430,10 +430,10 @@ Delete a layer 3 static route for a switch
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param staticRouteId Static route ID
- @return StaticRoutesApiDeleteDeviceSwitchRoutingStaticRouteRequest
+ @return StaticRoutesAPIDeleteDeviceSwitchRoutingStaticRouteRequest
 */
-func (a *StaticRoutesApiService) DeleteDeviceSwitchRoutingStaticRoute(ctx context.Context, serial string, staticRouteId string) StaticRoutesApiDeleteDeviceSwitchRoutingStaticRouteRequest {
-	return StaticRoutesApiDeleteDeviceSwitchRoutingStaticRouteRequest{
+func (a *StaticRoutesAPIService) DeleteDeviceSwitchRoutingStaticRoute(ctx context.Context, serial string, staticRouteId string) StaticRoutesAPIDeleteDeviceSwitchRoutingStaticRouteRequest {
+	return StaticRoutesAPIDeleteDeviceSwitchRoutingStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -442,14 +442,14 @@ func (a *StaticRoutesApiService) DeleteDeviceSwitchRoutingStaticRoute(ctx contex
 }
 
 // Execute executes the request
-func (a *StaticRoutesApiService) DeleteDeviceSwitchRoutingStaticRouteExecute(r StaticRoutesApiDeleteDeviceSwitchRoutingStaticRouteRequest) (*http.Response, error) {
+func (a *StaticRoutesAPIService) DeleteDeviceSwitchRoutingStaticRouteExecute(r StaticRoutesAPIDeleteDeviceSwitchRoutingStaticRouteRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesApiService.DeleteDeviceSwitchRoutingStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesAPIService.DeleteDeviceSwitchRoutingStaticRoute")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -521,14 +521,14 @@ func (a *StaticRoutesApiService) DeleteDeviceSwitchRoutingStaticRouteExecute(r S
 	return localVarHTTPResponse, nil
 }
 
-type StaticRoutesApiDeleteNetworkApplianceStaticRouteRequest struct {
+type StaticRoutesAPIDeleteNetworkApplianceStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *StaticRoutesApiService
+	ApiService *StaticRoutesAPIService
 	networkId string
 	staticRouteId string
 }
 
-func (r StaticRoutesApiDeleteNetworkApplianceStaticRouteRequest) Execute() (*http.Response, error) {
+func (r StaticRoutesAPIDeleteNetworkApplianceStaticRouteRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkApplianceStaticRouteExecute(r)
 }
 
@@ -540,10 +540,10 @@ Delete a static route from an MX or teleworker network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param staticRouteId Static route ID
- @return StaticRoutesApiDeleteNetworkApplianceStaticRouteRequest
+ @return StaticRoutesAPIDeleteNetworkApplianceStaticRouteRequest
 */
-func (a *StaticRoutesApiService) DeleteNetworkApplianceStaticRoute(ctx context.Context, networkId string, staticRouteId string) StaticRoutesApiDeleteNetworkApplianceStaticRouteRequest {
-	return StaticRoutesApiDeleteNetworkApplianceStaticRouteRequest{
+func (a *StaticRoutesAPIService) DeleteNetworkApplianceStaticRoute(ctx context.Context, networkId string, staticRouteId string) StaticRoutesAPIDeleteNetworkApplianceStaticRouteRequest {
+	return StaticRoutesAPIDeleteNetworkApplianceStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -552,14 +552,14 @@ func (a *StaticRoutesApiService) DeleteNetworkApplianceStaticRoute(ctx context.C
 }
 
 // Execute executes the request
-func (a *StaticRoutesApiService) DeleteNetworkApplianceStaticRouteExecute(r StaticRoutesApiDeleteNetworkApplianceStaticRouteRequest) (*http.Response, error) {
+func (a *StaticRoutesAPIService) DeleteNetworkApplianceStaticRouteExecute(r StaticRoutesAPIDeleteNetworkApplianceStaticRouteRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesApiService.DeleteNetworkApplianceStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesAPIService.DeleteNetworkApplianceStaticRoute")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -631,15 +631,15 @@ func (a *StaticRoutesApiService) DeleteNetworkApplianceStaticRouteExecute(r Stat
 	return localVarHTTPResponse, nil
 }
 
-type StaticRoutesApiDeleteNetworkSwitchStackRoutingStaticRouteRequest struct {
+type StaticRoutesAPIDeleteNetworkSwitchStackRoutingStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *StaticRoutesApiService
+	ApiService *StaticRoutesAPIService
 	networkId string
 	switchStackId string
 	staticRouteId string
 }
 
-func (r StaticRoutesApiDeleteNetworkSwitchStackRoutingStaticRouteRequest) Execute() (*http.Response, error) {
+func (r StaticRoutesAPIDeleteNetworkSwitchStackRoutingStaticRouteRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkSwitchStackRoutingStaticRouteExecute(r)
 }
 
@@ -652,10 +652,10 @@ Delete a layer 3 static route for a switch stack
  @param networkId Network ID
  @param switchStackId Switch stack ID
  @param staticRouteId Static route ID
- @return StaticRoutesApiDeleteNetworkSwitchStackRoutingStaticRouteRequest
+ @return StaticRoutesAPIDeleteNetworkSwitchStackRoutingStaticRouteRequest
 */
-func (a *StaticRoutesApiService) DeleteNetworkSwitchStackRoutingStaticRoute(ctx context.Context, networkId string, switchStackId string, staticRouteId string) StaticRoutesApiDeleteNetworkSwitchStackRoutingStaticRouteRequest {
-	return StaticRoutesApiDeleteNetworkSwitchStackRoutingStaticRouteRequest{
+func (a *StaticRoutesAPIService) DeleteNetworkSwitchStackRoutingStaticRoute(ctx context.Context, networkId string, switchStackId string, staticRouteId string) StaticRoutesAPIDeleteNetworkSwitchStackRoutingStaticRouteRequest {
+	return StaticRoutesAPIDeleteNetworkSwitchStackRoutingStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -665,14 +665,14 @@ func (a *StaticRoutesApiService) DeleteNetworkSwitchStackRoutingStaticRoute(ctx 
 }
 
 // Execute executes the request
-func (a *StaticRoutesApiService) DeleteNetworkSwitchStackRoutingStaticRouteExecute(r StaticRoutesApiDeleteNetworkSwitchStackRoutingStaticRouteRequest) (*http.Response, error) {
+func (a *StaticRoutesAPIService) DeleteNetworkSwitchStackRoutingStaticRouteExecute(r StaticRoutesAPIDeleteNetworkSwitchStackRoutingStaticRouteRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesApiService.DeleteNetworkSwitchStackRoutingStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesAPIService.DeleteNetworkSwitchStackRoutingStaticRoute")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -745,14 +745,14 @@ func (a *StaticRoutesApiService) DeleteNetworkSwitchStackRoutingStaticRouteExecu
 	return localVarHTTPResponse, nil
 }
 
-type StaticRoutesApiGetDeviceSwitchRoutingStaticRouteRequest struct {
+type StaticRoutesAPIGetDeviceSwitchRoutingStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *StaticRoutesApiService
+	ApiService *StaticRoutesAPIService
 	serial string
 	staticRouteId string
 }
 
-func (r StaticRoutesApiGetDeviceSwitchRoutingStaticRouteRequest) Execute() (*GetDeviceSwitchRoutingStaticRoute200Response, *http.Response, error) {
+func (r StaticRoutesAPIGetDeviceSwitchRoutingStaticRouteRequest) Execute() (*GetDeviceSwitchRoutingStaticRoute200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceSwitchRoutingStaticRouteExecute(r)
 }
 
@@ -764,10 +764,10 @@ Return a layer 3 static route for a switch
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param staticRouteId Static route ID
- @return StaticRoutesApiGetDeviceSwitchRoutingStaticRouteRequest
+ @return StaticRoutesAPIGetDeviceSwitchRoutingStaticRouteRequest
 */
-func (a *StaticRoutesApiService) GetDeviceSwitchRoutingStaticRoute(ctx context.Context, serial string, staticRouteId string) StaticRoutesApiGetDeviceSwitchRoutingStaticRouteRequest {
-	return StaticRoutesApiGetDeviceSwitchRoutingStaticRouteRequest{
+func (a *StaticRoutesAPIService) GetDeviceSwitchRoutingStaticRoute(ctx context.Context, serial string, staticRouteId string) StaticRoutesAPIGetDeviceSwitchRoutingStaticRouteRequest {
+	return StaticRoutesAPIGetDeviceSwitchRoutingStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -777,7 +777,7 @@ func (a *StaticRoutesApiService) GetDeviceSwitchRoutingStaticRoute(ctx context.C
 
 // Execute executes the request
 //  @return GetDeviceSwitchRoutingStaticRoute200Response
-func (a *StaticRoutesApiService) GetDeviceSwitchRoutingStaticRouteExecute(r StaticRoutesApiGetDeviceSwitchRoutingStaticRouteRequest) (*GetDeviceSwitchRoutingStaticRoute200Response, *http.Response, error) {
+func (a *StaticRoutesAPIService) GetDeviceSwitchRoutingStaticRouteExecute(r StaticRoutesAPIGetDeviceSwitchRoutingStaticRouteRequest) (*GetDeviceSwitchRoutingStaticRoute200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -785,7 +785,7 @@ func (a *StaticRoutesApiService) GetDeviceSwitchRoutingStaticRouteExecute(r Stat
 		localVarReturnValue  *GetDeviceSwitchRoutingStaticRoute200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesApiService.GetDeviceSwitchRoutingStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesAPIService.GetDeviceSwitchRoutingStaticRoute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -866,13 +866,13 @@ func (a *StaticRoutesApiService) GetDeviceSwitchRoutingStaticRouteExecute(r Stat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StaticRoutesApiGetDeviceSwitchRoutingStaticRoutesRequest struct {
+type StaticRoutesAPIGetDeviceSwitchRoutingStaticRoutesRequest struct {
 	ctx context.Context
-	ApiService *StaticRoutesApiService
+	ApiService *StaticRoutesAPIService
 	serial string
 }
 
-func (r StaticRoutesApiGetDeviceSwitchRoutingStaticRoutesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r StaticRoutesAPIGetDeviceSwitchRoutingStaticRoutesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceSwitchRoutingStaticRoutesExecute(r)
 }
 
@@ -883,10 +883,10 @@ List layer 3 static routes for a switch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return StaticRoutesApiGetDeviceSwitchRoutingStaticRoutesRequest
+ @return StaticRoutesAPIGetDeviceSwitchRoutingStaticRoutesRequest
 */
-func (a *StaticRoutesApiService) GetDeviceSwitchRoutingStaticRoutes(ctx context.Context, serial string) StaticRoutesApiGetDeviceSwitchRoutingStaticRoutesRequest {
-	return StaticRoutesApiGetDeviceSwitchRoutingStaticRoutesRequest{
+func (a *StaticRoutesAPIService) GetDeviceSwitchRoutingStaticRoutes(ctx context.Context, serial string) StaticRoutesAPIGetDeviceSwitchRoutingStaticRoutesRequest {
+	return StaticRoutesAPIGetDeviceSwitchRoutingStaticRoutesRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -895,7 +895,7 @@ func (a *StaticRoutesApiService) GetDeviceSwitchRoutingStaticRoutes(ctx context.
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *StaticRoutesApiService) GetDeviceSwitchRoutingStaticRoutesExecute(r StaticRoutesApiGetDeviceSwitchRoutingStaticRoutesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *StaticRoutesAPIService) GetDeviceSwitchRoutingStaticRoutesExecute(r StaticRoutesAPIGetDeviceSwitchRoutingStaticRoutesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -903,7 +903,7 @@ func (a *StaticRoutesApiService) GetDeviceSwitchRoutingStaticRoutesExecute(r Sta
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesApiService.GetDeviceSwitchRoutingStaticRoutes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesAPIService.GetDeviceSwitchRoutingStaticRoutes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -983,14 +983,14 @@ func (a *StaticRoutesApiService) GetDeviceSwitchRoutingStaticRoutesExecute(r Sta
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StaticRoutesApiGetNetworkApplianceStaticRouteRequest struct {
+type StaticRoutesAPIGetNetworkApplianceStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *StaticRoutesApiService
+	ApiService *StaticRoutesAPIService
 	networkId string
 	staticRouteId string
 }
 
-func (r StaticRoutesApiGetNetworkApplianceStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r StaticRoutesAPIGetNetworkApplianceStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceStaticRouteExecute(r)
 }
 
@@ -1002,10 +1002,10 @@ Return a static route for an MX or teleworker network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param staticRouteId Static route ID
- @return StaticRoutesApiGetNetworkApplianceStaticRouteRequest
+ @return StaticRoutesAPIGetNetworkApplianceStaticRouteRequest
 */
-func (a *StaticRoutesApiService) GetNetworkApplianceStaticRoute(ctx context.Context, networkId string, staticRouteId string) StaticRoutesApiGetNetworkApplianceStaticRouteRequest {
-	return StaticRoutesApiGetNetworkApplianceStaticRouteRequest{
+func (a *StaticRoutesAPIService) GetNetworkApplianceStaticRoute(ctx context.Context, networkId string, staticRouteId string) StaticRoutesAPIGetNetworkApplianceStaticRouteRequest {
+	return StaticRoutesAPIGetNetworkApplianceStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1015,7 +1015,7 @@ func (a *StaticRoutesApiService) GetNetworkApplianceStaticRoute(ctx context.Cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *StaticRoutesApiService) GetNetworkApplianceStaticRouteExecute(r StaticRoutesApiGetNetworkApplianceStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
+func (a *StaticRoutesAPIService) GetNetworkApplianceStaticRouteExecute(r StaticRoutesAPIGetNetworkApplianceStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1023,7 +1023,7 @@ func (a *StaticRoutesApiService) GetNetworkApplianceStaticRouteExecute(r StaticR
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesApiService.GetNetworkApplianceStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesAPIService.GetNetworkApplianceStaticRoute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1104,13 +1104,13 @@ func (a *StaticRoutesApiService) GetNetworkApplianceStaticRouteExecute(r StaticR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StaticRoutesApiGetNetworkApplianceStaticRoutesRequest struct {
+type StaticRoutesAPIGetNetworkApplianceStaticRoutesRequest struct {
 	ctx context.Context
-	ApiService *StaticRoutesApiService
+	ApiService *StaticRoutesAPIService
 	networkId string
 }
 
-func (r StaticRoutesApiGetNetworkApplianceStaticRoutesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r StaticRoutesAPIGetNetworkApplianceStaticRoutesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceStaticRoutesExecute(r)
 }
 
@@ -1121,10 +1121,10 @@ List the static routes for an MX or teleworker network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return StaticRoutesApiGetNetworkApplianceStaticRoutesRequest
+ @return StaticRoutesAPIGetNetworkApplianceStaticRoutesRequest
 */
-func (a *StaticRoutesApiService) GetNetworkApplianceStaticRoutes(ctx context.Context, networkId string) StaticRoutesApiGetNetworkApplianceStaticRoutesRequest {
-	return StaticRoutesApiGetNetworkApplianceStaticRoutesRequest{
+func (a *StaticRoutesAPIService) GetNetworkApplianceStaticRoutes(ctx context.Context, networkId string) StaticRoutesAPIGetNetworkApplianceStaticRoutesRequest {
+	return StaticRoutesAPIGetNetworkApplianceStaticRoutesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1133,7 +1133,7 @@ func (a *StaticRoutesApiService) GetNetworkApplianceStaticRoutes(ctx context.Con
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *StaticRoutesApiService) GetNetworkApplianceStaticRoutesExecute(r StaticRoutesApiGetNetworkApplianceStaticRoutesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *StaticRoutesAPIService) GetNetworkApplianceStaticRoutesExecute(r StaticRoutesAPIGetNetworkApplianceStaticRoutesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1141,7 +1141,7 @@ func (a *StaticRoutesApiService) GetNetworkApplianceStaticRoutesExecute(r Static
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesApiService.GetNetworkApplianceStaticRoutes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesAPIService.GetNetworkApplianceStaticRoutes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1221,15 +1221,15 @@ func (a *StaticRoutesApiService) GetNetworkApplianceStaticRoutesExecute(r Static
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StaticRoutesApiGetNetworkSwitchStackRoutingStaticRouteRequest struct {
+type StaticRoutesAPIGetNetworkSwitchStackRoutingStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *StaticRoutesApiService
+	ApiService *StaticRoutesAPIService
 	networkId string
 	switchStackId string
 	staticRouteId string
 }
 
-func (r StaticRoutesApiGetNetworkSwitchStackRoutingStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r StaticRoutesAPIGetNetworkSwitchStackRoutingStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchStackRoutingStaticRouteExecute(r)
 }
 
@@ -1242,10 +1242,10 @@ Return a layer 3 static route for a switch stack
  @param networkId Network ID
  @param switchStackId Switch stack ID
  @param staticRouteId Static route ID
- @return StaticRoutesApiGetNetworkSwitchStackRoutingStaticRouteRequest
+ @return StaticRoutesAPIGetNetworkSwitchStackRoutingStaticRouteRequest
 */
-func (a *StaticRoutesApiService) GetNetworkSwitchStackRoutingStaticRoute(ctx context.Context, networkId string, switchStackId string, staticRouteId string) StaticRoutesApiGetNetworkSwitchStackRoutingStaticRouteRequest {
-	return StaticRoutesApiGetNetworkSwitchStackRoutingStaticRouteRequest{
+func (a *StaticRoutesAPIService) GetNetworkSwitchStackRoutingStaticRoute(ctx context.Context, networkId string, switchStackId string, staticRouteId string) StaticRoutesAPIGetNetworkSwitchStackRoutingStaticRouteRequest {
+	return StaticRoutesAPIGetNetworkSwitchStackRoutingStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1256,7 +1256,7 @@ func (a *StaticRoutesApiService) GetNetworkSwitchStackRoutingStaticRoute(ctx con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *StaticRoutesApiService) GetNetworkSwitchStackRoutingStaticRouteExecute(r StaticRoutesApiGetNetworkSwitchStackRoutingStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
+func (a *StaticRoutesAPIService) GetNetworkSwitchStackRoutingStaticRouteExecute(r StaticRoutesAPIGetNetworkSwitchStackRoutingStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1264,7 +1264,7 @@ func (a *StaticRoutesApiService) GetNetworkSwitchStackRoutingStaticRouteExecute(
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesApiService.GetNetworkSwitchStackRoutingStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesAPIService.GetNetworkSwitchStackRoutingStaticRoute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1346,14 +1346,14 @@ func (a *StaticRoutesApiService) GetNetworkSwitchStackRoutingStaticRouteExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StaticRoutesApiGetNetworkSwitchStackRoutingStaticRoutesRequest struct {
+type StaticRoutesAPIGetNetworkSwitchStackRoutingStaticRoutesRequest struct {
 	ctx context.Context
-	ApiService *StaticRoutesApiService
+	ApiService *StaticRoutesAPIService
 	networkId string
 	switchStackId string
 }
 
-func (r StaticRoutesApiGetNetworkSwitchStackRoutingStaticRoutesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r StaticRoutesAPIGetNetworkSwitchStackRoutingStaticRoutesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchStackRoutingStaticRoutesExecute(r)
 }
 
@@ -1365,10 +1365,10 @@ List layer 3 static routes for a switch stack
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param switchStackId Switch stack ID
- @return StaticRoutesApiGetNetworkSwitchStackRoutingStaticRoutesRequest
+ @return StaticRoutesAPIGetNetworkSwitchStackRoutingStaticRoutesRequest
 */
-func (a *StaticRoutesApiService) GetNetworkSwitchStackRoutingStaticRoutes(ctx context.Context, networkId string, switchStackId string) StaticRoutesApiGetNetworkSwitchStackRoutingStaticRoutesRequest {
-	return StaticRoutesApiGetNetworkSwitchStackRoutingStaticRoutesRequest{
+func (a *StaticRoutesAPIService) GetNetworkSwitchStackRoutingStaticRoutes(ctx context.Context, networkId string, switchStackId string) StaticRoutesAPIGetNetworkSwitchStackRoutingStaticRoutesRequest {
+	return StaticRoutesAPIGetNetworkSwitchStackRoutingStaticRoutesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1378,7 +1378,7 @@ func (a *StaticRoutesApiService) GetNetworkSwitchStackRoutingStaticRoutes(ctx co
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *StaticRoutesApiService) GetNetworkSwitchStackRoutingStaticRoutesExecute(r StaticRoutesApiGetNetworkSwitchStackRoutingStaticRoutesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *StaticRoutesAPIService) GetNetworkSwitchStackRoutingStaticRoutesExecute(r StaticRoutesAPIGetNetworkSwitchStackRoutingStaticRoutesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1386,7 +1386,7 @@ func (a *StaticRoutesApiService) GetNetworkSwitchStackRoutingStaticRoutesExecute
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesApiService.GetNetworkSwitchStackRoutingStaticRoutes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesAPIService.GetNetworkSwitchStackRoutingStaticRoutes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1467,20 +1467,20 @@ func (a *StaticRoutesApiService) GetNetworkSwitchStackRoutingStaticRoutesExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StaticRoutesApiUpdateDeviceSwitchRoutingStaticRouteRequest struct {
+type StaticRoutesAPIUpdateDeviceSwitchRoutingStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *StaticRoutesApiService
+	ApiService *StaticRoutesAPIService
 	serial string
 	staticRouteId string
 	updateDeviceSwitchRoutingStaticRouteRequest *UpdateDeviceSwitchRoutingStaticRouteRequest
 }
 
-func (r StaticRoutesApiUpdateDeviceSwitchRoutingStaticRouteRequest) UpdateDeviceSwitchRoutingStaticRouteRequest(updateDeviceSwitchRoutingStaticRouteRequest UpdateDeviceSwitchRoutingStaticRouteRequest) StaticRoutesApiUpdateDeviceSwitchRoutingStaticRouteRequest {
+func (r StaticRoutesAPIUpdateDeviceSwitchRoutingStaticRouteRequest) UpdateDeviceSwitchRoutingStaticRouteRequest(updateDeviceSwitchRoutingStaticRouteRequest UpdateDeviceSwitchRoutingStaticRouteRequest) StaticRoutesAPIUpdateDeviceSwitchRoutingStaticRouteRequest {
 	r.updateDeviceSwitchRoutingStaticRouteRequest = &updateDeviceSwitchRoutingStaticRouteRequest
 	return r
 }
 
-func (r StaticRoutesApiUpdateDeviceSwitchRoutingStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r StaticRoutesAPIUpdateDeviceSwitchRoutingStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceSwitchRoutingStaticRouteExecute(r)
 }
 
@@ -1492,10 +1492,10 @@ Update a layer 3 static route for a switch
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param staticRouteId Static route ID
- @return StaticRoutesApiUpdateDeviceSwitchRoutingStaticRouteRequest
+ @return StaticRoutesAPIUpdateDeviceSwitchRoutingStaticRouteRequest
 */
-func (a *StaticRoutesApiService) UpdateDeviceSwitchRoutingStaticRoute(ctx context.Context, serial string, staticRouteId string) StaticRoutesApiUpdateDeviceSwitchRoutingStaticRouteRequest {
-	return StaticRoutesApiUpdateDeviceSwitchRoutingStaticRouteRequest{
+func (a *StaticRoutesAPIService) UpdateDeviceSwitchRoutingStaticRoute(ctx context.Context, serial string, staticRouteId string) StaticRoutesAPIUpdateDeviceSwitchRoutingStaticRouteRequest {
+	return StaticRoutesAPIUpdateDeviceSwitchRoutingStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1505,7 +1505,7 @@ func (a *StaticRoutesApiService) UpdateDeviceSwitchRoutingStaticRoute(ctx contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *StaticRoutesApiService) UpdateDeviceSwitchRoutingStaticRouteExecute(r StaticRoutesApiUpdateDeviceSwitchRoutingStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
+func (a *StaticRoutesAPIService) UpdateDeviceSwitchRoutingStaticRouteExecute(r StaticRoutesAPIUpdateDeviceSwitchRoutingStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1513,7 +1513,7 @@ func (a *StaticRoutesApiService) UpdateDeviceSwitchRoutingStaticRouteExecute(r S
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesApiService.UpdateDeviceSwitchRoutingStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesAPIService.UpdateDeviceSwitchRoutingStaticRoute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1596,20 +1596,20 @@ func (a *StaticRoutesApiService) UpdateDeviceSwitchRoutingStaticRouteExecute(r S
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StaticRoutesApiUpdateNetworkApplianceStaticRouteRequest struct {
+type StaticRoutesAPIUpdateNetworkApplianceStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *StaticRoutesApiService
+	ApiService *StaticRoutesAPIService
 	networkId string
 	staticRouteId string
 	updateNetworkApplianceStaticRouteRequest *UpdateNetworkApplianceStaticRouteRequest
 }
 
-func (r StaticRoutesApiUpdateNetworkApplianceStaticRouteRequest) UpdateNetworkApplianceStaticRouteRequest(updateNetworkApplianceStaticRouteRequest UpdateNetworkApplianceStaticRouteRequest) StaticRoutesApiUpdateNetworkApplianceStaticRouteRequest {
+func (r StaticRoutesAPIUpdateNetworkApplianceStaticRouteRequest) UpdateNetworkApplianceStaticRouteRequest(updateNetworkApplianceStaticRouteRequest UpdateNetworkApplianceStaticRouteRequest) StaticRoutesAPIUpdateNetworkApplianceStaticRouteRequest {
 	r.updateNetworkApplianceStaticRouteRequest = &updateNetworkApplianceStaticRouteRequest
 	return r
 }
 
-func (r StaticRoutesApiUpdateNetworkApplianceStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r StaticRoutesAPIUpdateNetworkApplianceStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceStaticRouteExecute(r)
 }
 
@@ -1621,10 +1621,10 @@ Update a static route for an MX or teleworker network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param staticRouteId Static route ID
- @return StaticRoutesApiUpdateNetworkApplianceStaticRouteRequest
+ @return StaticRoutesAPIUpdateNetworkApplianceStaticRouteRequest
 */
-func (a *StaticRoutesApiService) UpdateNetworkApplianceStaticRoute(ctx context.Context, networkId string, staticRouteId string) StaticRoutesApiUpdateNetworkApplianceStaticRouteRequest {
-	return StaticRoutesApiUpdateNetworkApplianceStaticRouteRequest{
+func (a *StaticRoutesAPIService) UpdateNetworkApplianceStaticRoute(ctx context.Context, networkId string, staticRouteId string) StaticRoutesAPIUpdateNetworkApplianceStaticRouteRequest {
+	return StaticRoutesAPIUpdateNetworkApplianceStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1634,7 +1634,7 @@ func (a *StaticRoutesApiService) UpdateNetworkApplianceStaticRoute(ctx context.C
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *StaticRoutesApiService) UpdateNetworkApplianceStaticRouteExecute(r StaticRoutesApiUpdateNetworkApplianceStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
+func (a *StaticRoutesAPIService) UpdateNetworkApplianceStaticRouteExecute(r StaticRoutesAPIUpdateNetworkApplianceStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1642,7 +1642,7 @@ func (a *StaticRoutesApiService) UpdateNetworkApplianceStaticRouteExecute(r Stat
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesApiService.UpdateNetworkApplianceStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesAPIService.UpdateNetworkApplianceStaticRoute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1725,21 +1725,21 @@ func (a *StaticRoutesApiService) UpdateNetworkApplianceStaticRouteExecute(r Stat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StaticRoutesApiUpdateNetworkSwitchStackRoutingStaticRouteRequest struct {
+type StaticRoutesAPIUpdateNetworkSwitchStackRoutingStaticRouteRequest struct {
 	ctx context.Context
-	ApiService *StaticRoutesApiService
+	ApiService *StaticRoutesAPIService
 	networkId string
 	switchStackId string
 	staticRouteId string
 	updateDeviceSwitchRoutingStaticRouteRequest *UpdateDeviceSwitchRoutingStaticRouteRequest
 }
 
-func (r StaticRoutesApiUpdateNetworkSwitchStackRoutingStaticRouteRequest) UpdateDeviceSwitchRoutingStaticRouteRequest(updateDeviceSwitchRoutingStaticRouteRequest UpdateDeviceSwitchRoutingStaticRouteRequest) StaticRoutesApiUpdateNetworkSwitchStackRoutingStaticRouteRequest {
+func (r StaticRoutesAPIUpdateNetworkSwitchStackRoutingStaticRouteRequest) UpdateDeviceSwitchRoutingStaticRouteRequest(updateDeviceSwitchRoutingStaticRouteRequest UpdateDeviceSwitchRoutingStaticRouteRequest) StaticRoutesAPIUpdateNetworkSwitchStackRoutingStaticRouteRequest {
 	r.updateDeviceSwitchRoutingStaticRouteRequest = &updateDeviceSwitchRoutingStaticRouteRequest
 	return r
 }
 
-func (r StaticRoutesApiUpdateNetworkSwitchStackRoutingStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r StaticRoutesAPIUpdateNetworkSwitchStackRoutingStaticRouteRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchStackRoutingStaticRouteExecute(r)
 }
 
@@ -1752,10 +1752,10 @@ Update a layer 3 static route for a switch stack
  @param networkId Network ID
  @param switchStackId Switch stack ID
  @param staticRouteId Static route ID
- @return StaticRoutesApiUpdateNetworkSwitchStackRoutingStaticRouteRequest
+ @return StaticRoutesAPIUpdateNetworkSwitchStackRoutingStaticRouteRequest
 */
-func (a *StaticRoutesApiService) UpdateNetworkSwitchStackRoutingStaticRoute(ctx context.Context, networkId string, switchStackId string, staticRouteId string) StaticRoutesApiUpdateNetworkSwitchStackRoutingStaticRouteRequest {
-	return StaticRoutesApiUpdateNetworkSwitchStackRoutingStaticRouteRequest{
+func (a *StaticRoutesAPIService) UpdateNetworkSwitchStackRoutingStaticRoute(ctx context.Context, networkId string, switchStackId string, staticRouteId string) StaticRoutesAPIUpdateNetworkSwitchStackRoutingStaticRouteRequest {
+	return StaticRoutesAPIUpdateNetworkSwitchStackRoutingStaticRouteRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1766,7 +1766,7 @@ func (a *StaticRoutesApiService) UpdateNetworkSwitchStackRoutingStaticRoute(ctx 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *StaticRoutesApiService) UpdateNetworkSwitchStackRoutingStaticRouteExecute(r StaticRoutesApiUpdateNetworkSwitchStackRoutingStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
+func (a *StaticRoutesAPIService) UpdateNetworkSwitchStackRoutingStaticRouteExecute(r StaticRoutesAPIUpdateNetworkSwitchStackRoutingStaticRouteRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1774,7 +1774,7 @@ func (a *StaticRoutesApiService) UpdateNetworkSwitchStackRoutingStaticRouteExecu
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesApiService.UpdateNetworkSwitchStackRoutingStaticRoute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticRoutesAPIService.UpdateNetworkSwitchStackRoutingStaticRoute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

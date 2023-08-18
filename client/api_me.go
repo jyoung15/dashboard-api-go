@@ -19,15 +19,15 @@ import (
 )
 
 
-// MeApiService MeApi service
-type MeApiService service
+// MeAPIService MeAPI service
+type MeAPIService service
 
-type MeApiGetAdministeredIdentitiesMeRequest struct {
+type MeAPIGetAdministeredIdentitiesMeRequest struct {
 	ctx context.Context
-	ApiService *MeApiService
+	ApiService *MeAPIService
 }
 
-func (r MeApiGetAdministeredIdentitiesMeRequest) Execute() (*GetAdministeredIdentitiesMe200Response, *http.Response, error) {
+func (r MeAPIGetAdministeredIdentitiesMeRequest) Execute() (*GetAdministeredIdentitiesMe200Response, *http.Response, error) {
 	return r.ApiService.GetAdministeredIdentitiesMeExecute(r)
 }
 
@@ -37,10 +37,10 @@ GetAdministeredIdentitiesMe Returns the identity of the current user.
 Returns the identity of the current user.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MeApiGetAdministeredIdentitiesMeRequest
+ @return MeAPIGetAdministeredIdentitiesMeRequest
 */
-func (a *MeApiService) GetAdministeredIdentitiesMe(ctx context.Context) MeApiGetAdministeredIdentitiesMeRequest {
-	return MeApiGetAdministeredIdentitiesMeRequest{
+func (a *MeAPIService) GetAdministeredIdentitiesMe(ctx context.Context) MeAPIGetAdministeredIdentitiesMeRequest {
+	return MeAPIGetAdministeredIdentitiesMeRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -48,7 +48,7 @@ func (a *MeApiService) GetAdministeredIdentitiesMe(ctx context.Context) MeApiGet
 
 // Execute executes the request
 //  @return GetAdministeredIdentitiesMe200Response
-func (a *MeApiService) GetAdministeredIdentitiesMeExecute(r MeApiGetAdministeredIdentitiesMeRequest) (*GetAdministeredIdentitiesMe200Response, *http.Response, error) {
+func (a *MeAPIService) GetAdministeredIdentitiesMeExecute(r MeAPIGetAdministeredIdentitiesMeRequest) (*GetAdministeredIdentitiesMe200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -56,7 +56,7 @@ func (a *MeApiService) GetAdministeredIdentitiesMeExecute(r MeApiGetAdministered
 		localVarReturnValue  *GetAdministeredIdentitiesMe200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeApiService.GetAdministeredIdentitiesMe")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeAPIService.GetAdministeredIdentitiesMe")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

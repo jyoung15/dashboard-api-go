@@ -20,22 +20,22 @@ import (
 )
 
 
-// TrustedServersApiService TrustedServersApi service
-type TrustedServersApiService service
+// TrustedServersAPIService TrustedServersAPI service
+type TrustedServersAPIService service
 
-type TrustedServersApiCreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest struct {
+type TrustedServersAPICreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest struct {
 	ctx context.Context
-	ApiService *TrustedServersApiService
+	ApiService *TrustedServersAPIService
 	networkId string
 	createNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest *CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest
 }
 
-func (r TrustedServersApiCreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest(createNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) TrustedServersApiCreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest {
+func (r TrustedServersAPICreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest(createNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) TrustedServersAPICreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest {
 	r.createNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest = &createNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest
 	return r
 }
 
-func (r TrustedServersApiCreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) Execute() (*GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner, *http.Response, error) {
+func (r TrustedServersAPICreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) Execute() (*GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerExecute(r)
 }
 
@@ -46,10 +46,10 @@ Add a server to be trusted by Dynamic ARP Inspection on this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return TrustedServersApiCreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest
+ @return TrustedServersAPICreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest
 */
-func (a *TrustedServersApiService) CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer(ctx context.Context, networkId string) TrustedServersApiCreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest {
-	return TrustedServersApiCreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest{
+func (a *TrustedServersAPIService) CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer(ctx context.Context, networkId string) TrustedServersAPICreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest {
+	return TrustedServersAPICreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -58,7 +58,7 @@ func (a *TrustedServersApiService) CreateNetworkSwitchDhcpServerPolicyArpInspect
 
 // Execute executes the request
 //  @return GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner
-func (a *TrustedServersApiService) CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerExecute(r TrustedServersApiCreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) (*GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner, *http.Response, error) {
+func (a *TrustedServersAPIService) CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerExecute(r TrustedServersAPICreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) (*GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *TrustedServersApiService) CreateNetworkSwitchDhcpServerPolicyArpInspect
 		localVarReturnValue  *GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrustedServersApiService.CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrustedServersAPIService.CreateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,14 +151,14 @@ func (a *TrustedServersApiService) CreateNetworkSwitchDhcpServerPolicyArpInspect
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type TrustedServersApiDeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest struct {
+type TrustedServersAPIDeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest struct {
 	ctx context.Context
-	ApiService *TrustedServersApiService
+	ApiService *TrustedServersAPIService
 	networkId string
 	trustedServerId string
 }
 
-func (r TrustedServersApiDeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) Execute() (*http.Response, error) {
+func (r TrustedServersAPIDeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerExecute(r)
 }
 
@@ -170,10 +170,10 @@ Remove a server from being trusted by Dynamic ARP Inspection on this network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param trustedServerId Trusted server ID
- @return TrustedServersApiDeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest
+ @return TrustedServersAPIDeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest
 */
-func (a *TrustedServersApiService) DeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer(ctx context.Context, networkId string, trustedServerId string) TrustedServersApiDeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest {
-	return TrustedServersApiDeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest{
+func (a *TrustedServersAPIService) DeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer(ctx context.Context, networkId string, trustedServerId string) TrustedServersAPIDeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest {
+	return TrustedServersAPIDeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -182,14 +182,14 @@ func (a *TrustedServersApiService) DeleteNetworkSwitchDhcpServerPolicyArpInspect
 }
 
 // Execute executes the request
-func (a *TrustedServersApiService) DeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerExecute(r TrustedServersApiDeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) (*http.Response, error) {
+func (a *TrustedServersAPIService) DeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerExecute(r TrustedServersAPIDeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrustedServersApiService.DeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrustedServersAPIService.DeleteNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -261,9 +261,9 @@ func (a *TrustedServersApiService) DeleteNetworkSwitchDhcpServerPolicyArpInspect
 	return localVarHTTPResponse, nil
 }
 
-type TrustedServersApiGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest struct {
+type TrustedServersAPIGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest struct {
 	ctx context.Context
-	ApiService *TrustedServersApiService
+	ApiService *TrustedServersAPIService
 	networkId string
 	perPage *int32
 	startingAfter *string
@@ -271,24 +271,24 @@ type TrustedServersApiGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r TrustedServersApiGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest) PerPage(perPage int32) TrustedServersApiGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest {
+func (r TrustedServersAPIGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest) PerPage(perPage int32) TrustedServersAPIGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r TrustedServersApiGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest) StartingAfter(startingAfter string) TrustedServersApiGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest {
+func (r TrustedServersAPIGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest) StartingAfter(startingAfter string) TrustedServersAPIGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r TrustedServersApiGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest) EndingBefore(endingBefore string) TrustedServersApiGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest {
+func (r TrustedServersAPIGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest) EndingBefore(endingBefore string) TrustedServersAPIGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r TrustedServersApiGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest) Execute() ([]GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner, *http.Response, error) {
+func (r TrustedServersAPIGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest) Execute() ([]GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersExecute(r)
 }
 
@@ -299,10 +299,10 @@ Return the list of servers trusted by Dynamic ARP Inspection on this network. Th
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return TrustedServersApiGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest
+ @return TrustedServersAPIGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest
 */
-func (a *TrustedServersApiService) GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers(ctx context.Context, networkId string) TrustedServersApiGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest {
-	return TrustedServersApiGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest{
+func (a *TrustedServersAPIService) GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers(ctx context.Context, networkId string) TrustedServersAPIGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest {
+	return TrustedServersAPIGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -311,7 +311,7 @@ func (a *TrustedServersApiService) GetNetworkSwitchDhcpServerPolicyArpInspection
 
 // Execute executes the request
 //  @return []GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner
-func (a *TrustedServersApiService) GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersExecute(r TrustedServersApiGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest) ([]GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner, *http.Response, error) {
+func (a *TrustedServersAPIService) GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersExecute(r TrustedServersAPIGetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServersRequest) ([]GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -319,7 +319,7 @@ func (a *TrustedServersApiService) GetNetworkSwitchDhcpServerPolicyArpInspection
 		localVarReturnValue  []GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrustedServersApiService.GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrustedServersAPIService.GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -408,20 +408,20 @@ func (a *TrustedServersApiService) GetNetworkSwitchDhcpServerPolicyArpInspection
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type TrustedServersApiUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest struct {
+type TrustedServersAPIUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest struct {
 	ctx context.Context
-	ApiService *TrustedServersApiService
+	ApiService *TrustedServersAPIService
 	networkId string
 	trustedServerId string
 	updateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest *UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest
 }
 
-func (r TrustedServersApiUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest(updateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) TrustedServersApiUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest {
+func (r TrustedServersAPIUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest(updateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) TrustedServersAPIUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest {
 	r.updateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest = &updateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest
 	return r
 }
 
-func (r TrustedServersApiUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) Execute() (*GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner, *http.Response, error) {
+func (r TrustedServersAPIUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) Execute() (*GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerExecute(r)
 }
 
@@ -433,10 +433,10 @@ Update a server that is trusted by Dynamic ARP Inspection on this network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param trustedServerId Trusted server ID
- @return TrustedServersApiUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest
+ @return TrustedServersAPIUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest
 */
-func (a *TrustedServersApiService) UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer(ctx context.Context, networkId string, trustedServerId string) TrustedServersApiUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest {
-	return TrustedServersApiUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest{
+func (a *TrustedServersAPIService) UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer(ctx context.Context, networkId string, trustedServerId string) TrustedServersAPIUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest {
+	return TrustedServersAPIUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -446,7 +446,7 @@ func (a *TrustedServersApiService) UpdateNetworkSwitchDhcpServerPolicyArpInspect
 
 // Execute executes the request
 //  @return GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner
-func (a *TrustedServersApiService) UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerExecute(r TrustedServersApiUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) (*GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner, *http.Response, error) {
+func (a *TrustedServersAPIService) UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerExecute(r TrustedServersAPIUpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServerRequest) (*GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -454,7 +454,7 @@ func (a *TrustedServersApiService) UpdateNetworkSwitchDhcpServerPolicyArpInspect
 		localVarReturnValue  *GetNetworkSwitchDhcpServerPolicyArpInspectionTrustedServers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrustedServersApiService.UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrustedServersAPIService.UpdateNetworkSwitchDhcpServerPolicyArpInspectionTrustedServer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

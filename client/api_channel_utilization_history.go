@@ -20,12 +20,12 @@ import (
 )
 
 
-// ChannelUtilizationHistoryApiService ChannelUtilizationHistoryApi service
-type ChannelUtilizationHistoryApiService service
+// ChannelUtilizationHistoryAPIService ChannelUtilizationHistoryAPI service
+type ChannelUtilizationHistoryAPIService service
 
-type ChannelUtilizationHistoryApiGetNetworkWirelessChannelUtilizationHistoryRequest struct {
+type ChannelUtilizationHistoryAPIGetNetworkWirelessChannelUtilizationHistoryRequest struct {
 	ctx context.Context
-	ApiService *ChannelUtilizationHistoryApiService
+	ApiService *ChannelUtilizationHistoryAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -39,60 +39,60 @@ type ChannelUtilizationHistoryApiGetNetworkWirelessChannelUtilizationHistoryRequ
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r ChannelUtilizationHistoryApiGetNetworkWirelessChannelUtilizationHistoryRequest) T0(t0 string) ChannelUtilizationHistoryApiGetNetworkWirelessChannelUtilizationHistoryRequest {
+func (r ChannelUtilizationHistoryAPIGetNetworkWirelessChannelUtilizationHistoryRequest) T0(t0 string) ChannelUtilizationHistoryAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ChannelUtilizationHistoryApiGetNetworkWirelessChannelUtilizationHistoryRequest) T1(t1 string) ChannelUtilizationHistoryApiGetNetworkWirelessChannelUtilizationHistoryRequest {
+func (r ChannelUtilizationHistoryAPIGetNetworkWirelessChannelUtilizationHistoryRequest) T1(t1 string) ChannelUtilizationHistoryAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r ChannelUtilizationHistoryApiGetNetworkWirelessChannelUtilizationHistoryRequest) Timespan(timespan float32) ChannelUtilizationHistoryApiGetNetworkWirelessChannelUtilizationHistoryRequest {
+func (r ChannelUtilizationHistoryAPIGetNetworkWirelessChannelUtilizationHistoryRequest) Timespan(timespan float32) ChannelUtilizationHistoryAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 600, 1200, 3600, 14400, 86400. The default is 86400.
-func (r ChannelUtilizationHistoryApiGetNetworkWirelessChannelUtilizationHistoryRequest) Resolution(resolution int32) ChannelUtilizationHistoryApiGetNetworkWirelessChannelUtilizationHistoryRequest {
+func (r ChannelUtilizationHistoryAPIGetNetworkWirelessChannelUtilizationHistoryRequest) Resolution(resolution int32) ChannelUtilizationHistoryAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // Automatically select a data resolution based on the given timespan; this overrides the value specified by the &#39;resolution&#39; parameter. The default setting is false.
-func (r ChannelUtilizationHistoryApiGetNetworkWirelessChannelUtilizationHistoryRequest) AutoResolution(autoResolution bool) ChannelUtilizationHistoryApiGetNetworkWirelessChannelUtilizationHistoryRequest {
+func (r ChannelUtilizationHistoryAPIGetNetworkWirelessChannelUtilizationHistoryRequest) AutoResolution(autoResolution bool) ChannelUtilizationHistoryAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
 	r.autoResolution = &autoResolution
 	return r
 }
 
 // Filter results by network client to return per-device, per-band AP channel utilization metrics inner joined by the queried client&#39;s connection history.
-func (r ChannelUtilizationHistoryApiGetNetworkWirelessChannelUtilizationHistoryRequest) ClientId(clientId string) ChannelUtilizationHistoryApiGetNetworkWirelessChannelUtilizationHistoryRequest {
+func (r ChannelUtilizationHistoryAPIGetNetworkWirelessChannelUtilizationHistoryRequest) ClientId(clientId string) ChannelUtilizationHistoryAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
 	r.clientId = &clientId
 	return r
 }
 
 // Filter results by device to return AP channel utilization metrics for the queried device; either :band or :clientId must be jointly specified.
-func (r ChannelUtilizationHistoryApiGetNetworkWirelessChannelUtilizationHistoryRequest) DeviceSerial(deviceSerial string) ChannelUtilizationHistoryApiGetNetworkWirelessChannelUtilizationHistoryRequest {
+func (r ChannelUtilizationHistoryAPIGetNetworkWirelessChannelUtilizationHistoryRequest) DeviceSerial(deviceSerial string) ChannelUtilizationHistoryAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
 	r.deviceSerial = &deviceSerial
 	return r
 }
 
 // Filter results by AP tag to return AP channel utilization metrics for devices labeled with the given tag; either :clientId or :deviceSerial must be jointly specified.
-func (r ChannelUtilizationHistoryApiGetNetworkWirelessChannelUtilizationHistoryRequest) ApTag(apTag string) ChannelUtilizationHistoryApiGetNetworkWirelessChannelUtilizationHistoryRequest {
+func (r ChannelUtilizationHistoryAPIGetNetworkWirelessChannelUtilizationHistoryRequest) ApTag(apTag string) ChannelUtilizationHistoryAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;).
-func (r ChannelUtilizationHistoryApiGetNetworkWirelessChannelUtilizationHistoryRequest) Band(band string) ChannelUtilizationHistoryApiGetNetworkWirelessChannelUtilizationHistoryRequest {
+func (r ChannelUtilizationHistoryAPIGetNetworkWirelessChannelUtilizationHistoryRequest) Band(band string) ChannelUtilizationHistoryAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
 	r.band = &band
 	return r
 }
 
-func (r ChannelUtilizationHistoryApiGetNetworkWirelessChannelUtilizationHistoryRequest) Execute() ([]GetNetworkWirelessChannelUtilizationHistory200ResponseInner, *http.Response, error) {
+func (r ChannelUtilizationHistoryAPIGetNetworkWirelessChannelUtilizationHistoryRequest) Execute() ([]GetNetworkWirelessChannelUtilizationHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessChannelUtilizationHistoryExecute(r)
 }
 
@@ -103,10 +103,10 @@ Return AP channel utilization over time for a device or network client
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ChannelUtilizationHistoryApiGetNetworkWirelessChannelUtilizationHistoryRequest
+ @return ChannelUtilizationHistoryAPIGetNetworkWirelessChannelUtilizationHistoryRequest
 */
-func (a *ChannelUtilizationHistoryApiService) GetNetworkWirelessChannelUtilizationHistory(ctx context.Context, networkId string) ChannelUtilizationHistoryApiGetNetworkWirelessChannelUtilizationHistoryRequest {
-	return ChannelUtilizationHistoryApiGetNetworkWirelessChannelUtilizationHistoryRequest{
+func (a *ChannelUtilizationHistoryAPIService) GetNetworkWirelessChannelUtilizationHistory(ctx context.Context, networkId string) ChannelUtilizationHistoryAPIGetNetworkWirelessChannelUtilizationHistoryRequest {
+	return ChannelUtilizationHistoryAPIGetNetworkWirelessChannelUtilizationHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -115,7 +115,7 @@ func (a *ChannelUtilizationHistoryApiService) GetNetworkWirelessChannelUtilizati
 
 // Execute executes the request
 //  @return []GetNetworkWirelessChannelUtilizationHistory200ResponseInner
-func (a *ChannelUtilizationHistoryApiService) GetNetworkWirelessChannelUtilizationHistoryExecute(r ChannelUtilizationHistoryApiGetNetworkWirelessChannelUtilizationHistoryRequest) ([]GetNetworkWirelessChannelUtilizationHistory200ResponseInner, *http.Response, error) {
+func (a *ChannelUtilizationHistoryAPIService) GetNetworkWirelessChannelUtilizationHistoryExecute(r ChannelUtilizationHistoryAPIGetNetworkWirelessChannelUtilizationHistoryRequest) ([]GetNetworkWirelessChannelUtilizationHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -123,7 +123,7 @@ func (a *ChannelUtilizationHistoryApiService) GetNetworkWirelessChannelUtilizati
 		localVarReturnValue  []GetNetworkWirelessChannelUtilizationHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChannelUtilizationHistoryApiService.GetNetworkWirelessChannelUtilizationHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChannelUtilizationHistoryAPIService.GetNetworkWirelessChannelUtilizationHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

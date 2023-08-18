@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing SchedulesApiService
+Testing SchedulesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_SchedulesApiService(t *testing.T) {
+func Test_client_SchedulesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test SchedulesApiService GetNetworkCameraSchedules", func(t *testing.T) {
+	t.Run("Test SchedulesAPIService GetNetworkCameraSchedules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SchedulesApi.GetNetworkCameraSchedules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SchedulesAPI.GetNetworkCameraSchedules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,14 +36,14 @@ func Test_client_SchedulesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SchedulesApiService GetNetworkWirelessSsidSchedules", func(t *testing.T) {
+	t.Run("Test SchedulesAPIService GetNetworkWirelessSsidSchedules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.SchedulesApi.GetNetworkWirelessSsidSchedules(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.SchedulesAPI.GetNetworkWirelessSsidSchedules(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -51,14 +51,14 @@ func Test_client_SchedulesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SchedulesApiService UpdateNetworkWirelessSsidSchedules", func(t *testing.T) {
+	t.Run("Test SchedulesAPIService UpdateNetworkWirelessSsidSchedules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.SchedulesApi.UpdateNetworkWirelessSsidSchedules(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.SchedulesAPI.UpdateNetworkWirelessSsidSchedules(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

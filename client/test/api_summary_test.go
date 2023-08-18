@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing SummaryApiService
+Testing SummaryAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_SummaryApiService(t *testing.T) {
+func Test_client_SummaryAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test SummaryApiService GetOrganizationSummaryTopAppliancesByUtilization", func(t *testing.T) {
+	t.Run("Test SummaryAPIService GetOrganizationSummaryTopAppliancesByUtilization", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.SummaryApi.GetOrganizationSummaryTopAppliancesByUtilization(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.SummaryAPI.GetOrganizationSummaryTopAppliancesByUtilization(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_SummaryApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SummaryApiService GetOrganizationSummaryTopClientsByUsage", func(t *testing.T) {
+	t.Run("Test SummaryAPIService GetOrganizationSummaryTopClientsByUsage", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.SummaryApi.GetOrganizationSummaryTopClientsByUsage(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.SummaryAPI.GetOrganizationSummaryTopClientsByUsage(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,13 +50,13 @@ func Test_client_SummaryApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SummaryApiService GetOrganizationSummaryTopClientsManufacturersByUsage", func(t *testing.T) {
+	t.Run("Test SummaryAPIService GetOrganizationSummaryTopClientsManufacturersByUsage", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.SummaryApi.GetOrganizationSummaryTopClientsManufacturersByUsage(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.SummaryAPI.GetOrganizationSummaryTopClientsManufacturersByUsage(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,13 +64,13 @@ func Test_client_SummaryApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SummaryApiService GetOrganizationSummaryTopDevicesByUsage", func(t *testing.T) {
+	t.Run("Test SummaryAPIService GetOrganizationSummaryTopDevicesByUsage", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.SummaryApi.GetOrganizationSummaryTopDevicesByUsage(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.SummaryAPI.GetOrganizationSummaryTopDevicesByUsage(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -78,13 +78,13 @@ func Test_client_SummaryApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SummaryApiService GetOrganizationSummaryTopDevicesModelsByUsage", func(t *testing.T) {
+	t.Run("Test SummaryAPIService GetOrganizationSummaryTopDevicesModelsByUsage", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.SummaryApi.GetOrganizationSummaryTopDevicesModelsByUsage(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.SummaryAPI.GetOrganizationSummaryTopDevicesModelsByUsage(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -92,13 +92,13 @@ func Test_client_SummaryApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SummaryApiService GetOrganizationSummaryTopSsidsByUsage", func(t *testing.T) {
+	t.Run("Test SummaryAPIService GetOrganizationSummaryTopSsidsByUsage", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.SummaryApi.GetOrganizationSummaryTopSsidsByUsage(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.SummaryAPI.GetOrganizationSummaryTopSsidsByUsage(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -106,13 +106,13 @@ func Test_client_SummaryApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SummaryApiService GetOrganizationSummaryTopSwitchesByEnergyUsage", func(t *testing.T) {
+	t.Run("Test SummaryAPIService GetOrganizationSummaryTopSwitchesByEnergyUsage", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.SummaryApi.GetOrganizationSummaryTopSwitchesByEnergyUsage(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.SummaryAPI.GetOrganizationSummaryTopSwitchesByEnergyUsage(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

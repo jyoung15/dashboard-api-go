@@ -21,16 +21,16 @@ import (
 )
 
 
-// VpnApiService VpnApi service
-type VpnApiService service
+// VpnAPIService VpnAPI service
+type VpnAPIService service
 
-type VpnApiGetNetworkApplianceVpnBgpRequest struct {
+type VpnAPIGetNetworkApplianceVpnBgpRequest struct {
 	ctx context.Context
-	ApiService *VpnApiService
+	ApiService *VpnAPIService
 	networkId string
 }
 
-func (r VpnApiGetNetworkApplianceVpnBgpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r VpnAPIGetNetworkApplianceVpnBgpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceVpnBgpExecute(r)
 }
 
@@ -41,10 +41,10 @@ Return a Hub BGP Configuration
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return VpnApiGetNetworkApplianceVpnBgpRequest
+ @return VpnAPIGetNetworkApplianceVpnBgpRequest
 */
-func (a *VpnApiService) GetNetworkApplianceVpnBgp(ctx context.Context, networkId string) VpnApiGetNetworkApplianceVpnBgpRequest {
-	return VpnApiGetNetworkApplianceVpnBgpRequest{
+func (a *VpnAPIService) GetNetworkApplianceVpnBgp(ctx context.Context, networkId string) VpnAPIGetNetworkApplianceVpnBgpRequest {
+	return VpnAPIGetNetworkApplianceVpnBgpRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -53,7 +53,7 @@ func (a *VpnApiService) GetNetworkApplianceVpnBgp(ctx context.Context, networkId
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *VpnApiService) GetNetworkApplianceVpnBgpExecute(r VpnApiGetNetworkApplianceVpnBgpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *VpnAPIService) GetNetworkApplianceVpnBgpExecute(r VpnAPIGetNetworkApplianceVpnBgpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -61,7 +61,7 @@ func (a *VpnApiService) GetNetworkApplianceVpnBgpExecute(r VpnApiGetNetworkAppli
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnApiService.GetNetworkApplianceVpnBgp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.GetNetworkApplianceVpnBgp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -141,13 +141,13 @@ func (a *VpnApiService) GetNetworkApplianceVpnBgpExecute(r VpnApiGetNetworkAppli
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type VpnApiGetNetworkApplianceVpnSiteToSiteVpnRequest struct {
+type VpnAPIGetNetworkApplianceVpnSiteToSiteVpnRequest struct {
 	ctx context.Context
-	ApiService *VpnApiService
+	ApiService *VpnAPIService
 	networkId string
 }
 
-func (r VpnApiGetNetworkApplianceVpnSiteToSiteVpnRequest) Execute() (*GetNetworkApplianceVpnSiteToSiteVpn200Response, *http.Response, error) {
+func (r VpnAPIGetNetworkApplianceVpnSiteToSiteVpnRequest) Execute() (*GetNetworkApplianceVpnSiteToSiteVpn200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceVpnSiteToSiteVpnExecute(r)
 }
 
@@ -158,10 +158,10 @@ Return the site-to-site VPN settings of a network. Only valid for MX networks.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return VpnApiGetNetworkApplianceVpnSiteToSiteVpnRequest
+ @return VpnAPIGetNetworkApplianceVpnSiteToSiteVpnRequest
 */
-func (a *VpnApiService) GetNetworkApplianceVpnSiteToSiteVpn(ctx context.Context, networkId string) VpnApiGetNetworkApplianceVpnSiteToSiteVpnRequest {
-	return VpnApiGetNetworkApplianceVpnSiteToSiteVpnRequest{
+func (a *VpnAPIService) GetNetworkApplianceVpnSiteToSiteVpn(ctx context.Context, networkId string) VpnAPIGetNetworkApplianceVpnSiteToSiteVpnRequest {
+	return VpnAPIGetNetworkApplianceVpnSiteToSiteVpnRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -170,7 +170,7 @@ func (a *VpnApiService) GetNetworkApplianceVpnSiteToSiteVpn(ctx context.Context,
 
 // Execute executes the request
 //  @return GetNetworkApplianceVpnSiteToSiteVpn200Response
-func (a *VpnApiService) GetNetworkApplianceVpnSiteToSiteVpnExecute(r VpnApiGetNetworkApplianceVpnSiteToSiteVpnRequest) (*GetNetworkApplianceVpnSiteToSiteVpn200Response, *http.Response, error) {
+func (a *VpnAPIService) GetNetworkApplianceVpnSiteToSiteVpnExecute(r VpnAPIGetNetworkApplianceVpnSiteToSiteVpnRequest) (*GetNetworkApplianceVpnSiteToSiteVpn200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -178,7 +178,7 @@ func (a *VpnApiService) GetNetworkApplianceVpnSiteToSiteVpnExecute(r VpnApiGetNe
 		localVarReturnValue  *GetNetworkApplianceVpnSiteToSiteVpn200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnApiService.GetNetworkApplianceVpnSiteToSiteVpn")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.GetNetworkApplianceVpnSiteToSiteVpn")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -258,14 +258,14 @@ func (a *VpnApiService) GetNetworkApplianceVpnSiteToSiteVpnExecute(r VpnApiGetNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type VpnApiGetNetworkWirelessSsidVpnRequest struct {
+type VpnAPIGetNetworkWirelessSsidVpnRequest struct {
 	ctx context.Context
-	ApiService *VpnApiService
+	ApiService *VpnAPIService
 	networkId string
 	number string
 }
 
-func (r VpnApiGetNetworkWirelessSsidVpnRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r VpnAPIGetNetworkWirelessSsidVpnRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidVpnExecute(r)
 }
 
@@ -277,10 +277,10 @@ List the VPN settings for the SSID.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return VpnApiGetNetworkWirelessSsidVpnRequest
+ @return VpnAPIGetNetworkWirelessSsidVpnRequest
 */
-func (a *VpnApiService) GetNetworkWirelessSsidVpn(ctx context.Context, networkId string, number string) VpnApiGetNetworkWirelessSsidVpnRequest {
-	return VpnApiGetNetworkWirelessSsidVpnRequest{
+func (a *VpnAPIService) GetNetworkWirelessSsidVpn(ctx context.Context, networkId string, number string) VpnAPIGetNetworkWirelessSsidVpnRequest {
+	return VpnAPIGetNetworkWirelessSsidVpnRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -290,7 +290,7 @@ func (a *VpnApiService) GetNetworkWirelessSsidVpn(ctx context.Context, networkId
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *VpnApiService) GetNetworkWirelessSsidVpnExecute(r VpnApiGetNetworkWirelessSsidVpnRequest) (map[string]interface{}, *http.Response, error) {
+func (a *VpnAPIService) GetNetworkWirelessSsidVpnExecute(r VpnAPIGetNetworkWirelessSsidVpnRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -298,7 +298,7 @@ func (a *VpnApiService) GetNetworkWirelessSsidVpnExecute(r VpnApiGetNetworkWirel
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnApiService.GetNetworkWirelessSsidVpn")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.GetNetworkWirelessSsidVpn")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -379,9 +379,9 @@ func (a *VpnApiService) GetNetworkWirelessSsidVpnExecute(r VpnApiGetNetworkWirel
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type VpnApiGetOrganizationApplianceVpnStatsRequest struct {
+type VpnAPIGetOrganizationApplianceVpnStatsRequest struct {
 	ctx context.Context
-	ApiService *VpnApiService
+	ApiService *VpnAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -393,48 +393,48 @@ type VpnApiGetOrganizationApplianceVpnStatsRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 300. Default is 300.
-func (r VpnApiGetOrganizationApplianceVpnStatsRequest) PerPage(perPage int32) VpnApiGetOrganizationApplianceVpnStatsRequest {
+func (r VpnAPIGetOrganizationApplianceVpnStatsRequest) PerPage(perPage int32) VpnAPIGetOrganizationApplianceVpnStatsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r VpnApiGetOrganizationApplianceVpnStatsRequest) StartingAfter(startingAfter string) VpnApiGetOrganizationApplianceVpnStatsRequest {
+func (r VpnAPIGetOrganizationApplianceVpnStatsRequest) StartingAfter(startingAfter string) VpnAPIGetOrganizationApplianceVpnStatsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r VpnApiGetOrganizationApplianceVpnStatsRequest) EndingBefore(endingBefore string) VpnApiGetOrganizationApplianceVpnStatsRequest {
+func (r VpnAPIGetOrganizationApplianceVpnStatsRequest) EndingBefore(endingBefore string) VpnAPIGetOrganizationApplianceVpnStatsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // A list of Meraki network IDs to filter results to contain only specified networks. E.g.: networkIds[]&#x3D;N_12345678&amp;networkIds[]&#x3D;L_3456
-func (r VpnApiGetOrganizationApplianceVpnStatsRequest) NetworkIds(networkIds []string) VpnApiGetOrganizationApplianceVpnStatsRequest {
+func (r VpnAPIGetOrganizationApplianceVpnStatsRequest) NetworkIds(networkIds []string) VpnAPIGetOrganizationApplianceVpnStatsRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r VpnApiGetOrganizationApplianceVpnStatsRequest) T0(t0 string) VpnApiGetOrganizationApplianceVpnStatsRequest {
+func (r VpnAPIGetOrganizationApplianceVpnStatsRequest) T0(t0 string) VpnAPIGetOrganizationApplianceVpnStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r VpnApiGetOrganizationApplianceVpnStatsRequest) T1(t1 string) VpnApiGetOrganizationApplianceVpnStatsRequest {
+func (r VpnAPIGetOrganizationApplianceVpnStatsRequest) T1(t1 string) VpnAPIGetOrganizationApplianceVpnStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r VpnApiGetOrganizationApplianceVpnStatsRequest) Timespan(timespan float32) VpnApiGetOrganizationApplianceVpnStatsRequest {
+func (r VpnAPIGetOrganizationApplianceVpnStatsRequest) Timespan(timespan float32) VpnAPIGetOrganizationApplianceVpnStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r VpnApiGetOrganizationApplianceVpnStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r VpnAPIGetOrganizationApplianceVpnStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceVpnStatsExecute(r)
 }
 
@@ -445,10 +445,10 @@ Show VPN history stat for networks in an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return VpnApiGetOrganizationApplianceVpnStatsRequest
+ @return VpnAPIGetOrganizationApplianceVpnStatsRequest
 */
-func (a *VpnApiService) GetOrganizationApplianceVpnStats(ctx context.Context, organizationId string) VpnApiGetOrganizationApplianceVpnStatsRequest {
-	return VpnApiGetOrganizationApplianceVpnStatsRequest{
+func (a *VpnAPIService) GetOrganizationApplianceVpnStats(ctx context.Context, organizationId string) VpnAPIGetOrganizationApplianceVpnStatsRequest {
+	return VpnAPIGetOrganizationApplianceVpnStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -457,7 +457,7 @@ func (a *VpnApiService) GetOrganizationApplianceVpnStats(ctx context.Context, or
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *VpnApiService) GetOrganizationApplianceVpnStatsExecute(r VpnApiGetOrganizationApplianceVpnStatsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *VpnAPIService) GetOrganizationApplianceVpnStatsExecute(r VpnAPIGetOrganizationApplianceVpnStatsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -465,7 +465,7 @@ func (a *VpnApiService) GetOrganizationApplianceVpnStatsExecute(r VpnApiGetOrgan
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnApiService.GetOrganizationApplianceVpnStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.GetOrganizationApplianceVpnStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -574,9 +574,9 @@ func (a *VpnApiService) GetOrganizationApplianceVpnStatsExecute(r VpnApiGetOrgan
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type VpnApiGetOrganizationApplianceVpnStatusesRequest struct {
+type VpnAPIGetOrganizationApplianceVpnStatusesRequest struct {
 	ctx context.Context
-	ApiService *VpnApiService
+	ApiService *VpnAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -585,30 +585,30 @@ type VpnApiGetOrganizationApplianceVpnStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 300. Default is 300.
-func (r VpnApiGetOrganizationApplianceVpnStatusesRequest) PerPage(perPage int32) VpnApiGetOrganizationApplianceVpnStatusesRequest {
+func (r VpnAPIGetOrganizationApplianceVpnStatusesRequest) PerPage(perPage int32) VpnAPIGetOrganizationApplianceVpnStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r VpnApiGetOrganizationApplianceVpnStatusesRequest) StartingAfter(startingAfter string) VpnApiGetOrganizationApplianceVpnStatusesRequest {
+func (r VpnAPIGetOrganizationApplianceVpnStatusesRequest) StartingAfter(startingAfter string) VpnAPIGetOrganizationApplianceVpnStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r VpnApiGetOrganizationApplianceVpnStatusesRequest) EndingBefore(endingBefore string) VpnApiGetOrganizationApplianceVpnStatusesRequest {
+func (r VpnAPIGetOrganizationApplianceVpnStatusesRequest) EndingBefore(endingBefore string) VpnAPIGetOrganizationApplianceVpnStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // A list of Meraki network IDs to filter results to contain only specified networks. E.g.: networkIds[]&#x3D;N_12345678&amp;networkIds[]&#x3D;L_3456
-func (r VpnApiGetOrganizationApplianceVpnStatusesRequest) NetworkIds(networkIds []string) VpnApiGetOrganizationApplianceVpnStatusesRequest {
+func (r VpnAPIGetOrganizationApplianceVpnStatusesRequest) NetworkIds(networkIds []string) VpnAPIGetOrganizationApplianceVpnStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
-func (r VpnApiGetOrganizationApplianceVpnStatusesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r VpnAPIGetOrganizationApplianceVpnStatusesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceVpnStatusesExecute(r)
 }
 
@@ -619,10 +619,10 @@ Show VPN status for networks in an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return VpnApiGetOrganizationApplianceVpnStatusesRequest
+ @return VpnAPIGetOrganizationApplianceVpnStatusesRequest
 */
-func (a *VpnApiService) GetOrganizationApplianceVpnStatuses(ctx context.Context, organizationId string) VpnApiGetOrganizationApplianceVpnStatusesRequest {
-	return VpnApiGetOrganizationApplianceVpnStatusesRequest{
+func (a *VpnAPIService) GetOrganizationApplianceVpnStatuses(ctx context.Context, organizationId string) VpnAPIGetOrganizationApplianceVpnStatusesRequest {
+	return VpnAPIGetOrganizationApplianceVpnStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -631,7 +631,7 @@ func (a *VpnApiService) GetOrganizationApplianceVpnStatuses(ctx context.Context,
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *VpnApiService) GetOrganizationApplianceVpnStatusesExecute(r VpnApiGetOrganizationApplianceVpnStatusesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *VpnAPIService) GetOrganizationApplianceVpnStatusesExecute(r VpnAPIGetOrganizationApplianceVpnStatusesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -639,7 +639,7 @@ func (a *VpnApiService) GetOrganizationApplianceVpnStatusesExecute(r VpnApiGetOr
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnApiService.GetOrganizationApplianceVpnStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.GetOrganizationApplianceVpnStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -739,13 +739,13 @@ func (a *VpnApiService) GetOrganizationApplianceVpnStatusesExecute(r VpnApiGetOr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type VpnApiGetOrganizationApplianceVpnThirdPartyVPNPeersRequest struct {
+type VpnAPIGetOrganizationApplianceVpnThirdPartyVPNPeersRequest struct {
 	ctx context.Context
-	ApiService *VpnApiService
+	ApiService *VpnAPIService
 	organizationId string
 }
 
-func (r VpnApiGetOrganizationApplianceVpnThirdPartyVPNPeersRequest) Execute() (*GetOrganizationApplianceVpnThirdPartyVPNPeers200Response, *http.Response, error) {
+func (r VpnAPIGetOrganizationApplianceVpnThirdPartyVPNPeersRequest) Execute() (*GetOrganizationApplianceVpnThirdPartyVPNPeers200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceVpnThirdPartyVPNPeersExecute(r)
 }
 
@@ -756,10 +756,10 @@ Return the third party VPN peers for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return VpnApiGetOrganizationApplianceVpnThirdPartyVPNPeersRequest
+ @return VpnAPIGetOrganizationApplianceVpnThirdPartyVPNPeersRequest
 */
-func (a *VpnApiService) GetOrganizationApplianceVpnThirdPartyVPNPeers(ctx context.Context, organizationId string) VpnApiGetOrganizationApplianceVpnThirdPartyVPNPeersRequest {
-	return VpnApiGetOrganizationApplianceVpnThirdPartyVPNPeersRequest{
+func (a *VpnAPIService) GetOrganizationApplianceVpnThirdPartyVPNPeers(ctx context.Context, organizationId string) VpnAPIGetOrganizationApplianceVpnThirdPartyVPNPeersRequest {
+	return VpnAPIGetOrganizationApplianceVpnThirdPartyVPNPeersRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -768,7 +768,7 @@ func (a *VpnApiService) GetOrganizationApplianceVpnThirdPartyVPNPeers(ctx contex
 
 // Execute executes the request
 //  @return GetOrganizationApplianceVpnThirdPartyVPNPeers200Response
-func (a *VpnApiService) GetOrganizationApplianceVpnThirdPartyVPNPeersExecute(r VpnApiGetOrganizationApplianceVpnThirdPartyVPNPeersRequest) (*GetOrganizationApplianceVpnThirdPartyVPNPeers200Response, *http.Response, error) {
+func (a *VpnAPIService) GetOrganizationApplianceVpnThirdPartyVPNPeersExecute(r VpnAPIGetOrganizationApplianceVpnThirdPartyVPNPeersRequest) (*GetOrganizationApplianceVpnThirdPartyVPNPeers200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -776,7 +776,7 @@ func (a *VpnApiService) GetOrganizationApplianceVpnThirdPartyVPNPeersExecute(r V
 		localVarReturnValue  *GetOrganizationApplianceVpnThirdPartyVPNPeers200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnApiService.GetOrganizationApplianceVpnThirdPartyVPNPeers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.GetOrganizationApplianceVpnThirdPartyVPNPeers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -856,13 +856,13 @@ func (a *VpnApiService) GetOrganizationApplianceVpnThirdPartyVPNPeersExecute(r V
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type VpnApiGetOrganizationApplianceVpnVpnFirewallRulesRequest struct {
+type VpnAPIGetOrganizationApplianceVpnVpnFirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *VpnApiService
+	ApiService *VpnAPIService
 	organizationId string
 }
 
-func (r VpnApiGetOrganizationApplianceVpnVpnFirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r VpnAPIGetOrganizationApplianceVpnVpnFirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceVpnVpnFirewallRulesExecute(r)
 }
 
@@ -873,10 +873,10 @@ Return the firewall rules for an organization's site-to-site VPN
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return VpnApiGetOrganizationApplianceVpnVpnFirewallRulesRequest
+ @return VpnAPIGetOrganizationApplianceVpnVpnFirewallRulesRequest
 */
-func (a *VpnApiService) GetOrganizationApplianceVpnVpnFirewallRules(ctx context.Context, organizationId string) VpnApiGetOrganizationApplianceVpnVpnFirewallRulesRequest {
-	return VpnApiGetOrganizationApplianceVpnVpnFirewallRulesRequest{
+func (a *VpnAPIService) GetOrganizationApplianceVpnVpnFirewallRules(ctx context.Context, organizationId string) VpnAPIGetOrganizationApplianceVpnVpnFirewallRulesRequest {
+	return VpnAPIGetOrganizationApplianceVpnVpnFirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -885,7 +885,7 @@ func (a *VpnApiService) GetOrganizationApplianceVpnVpnFirewallRules(ctx context.
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *VpnApiService) GetOrganizationApplianceVpnVpnFirewallRulesExecute(r VpnApiGetOrganizationApplianceVpnVpnFirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *VpnAPIService) GetOrganizationApplianceVpnVpnFirewallRulesExecute(r VpnAPIGetOrganizationApplianceVpnVpnFirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -893,7 +893,7 @@ func (a *VpnApiService) GetOrganizationApplianceVpnVpnFirewallRulesExecute(r Vpn
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnApiService.GetOrganizationApplianceVpnVpnFirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.GetOrganizationApplianceVpnVpnFirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -973,19 +973,19 @@ func (a *VpnApiService) GetOrganizationApplianceVpnVpnFirewallRulesExecute(r Vpn
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type VpnApiUpdateNetworkApplianceVpnBgpRequest struct {
+type VpnAPIUpdateNetworkApplianceVpnBgpRequest struct {
 	ctx context.Context
-	ApiService *VpnApiService
+	ApiService *VpnAPIService
 	networkId string
 	updateNetworkApplianceVpnBgpRequest *UpdateNetworkApplianceVpnBgpRequest
 }
 
-func (r VpnApiUpdateNetworkApplianceVpnBgpRequest) UpdateNetworkApplianceVpnBgpRequest(updateNetworkApplianceVpnBgpRequest UpdateNetworkApplianceVpnBgpRequest) VpnApiUpdateNetworkApplianceVpnBgpRequest {
+func (r VpnAPIUpdateNetworkApplianceVpnBgpRequest) UpdateNetworkApplianceVpnBgpRequest(updateNetworkApplianceVpnBgpRequest UpdateNetworkApplianceVpnBgpRequest) VpnAPIUpdateNetworkApplianceVpnBgpRequest {
 	r.updateNetworkApplianceVpnBgpRequest = &updateNetworkApplianceVpnBgpRequest
 	return r
 }
 
-func (r VpnApiUpdateNetworkApplianceVpnBgpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r VpnAPIUpdateNetworkApplianceVpnBgpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceVpnBgpExecute(r)
 }
 
@@ -996,10 +996,10 @@ Update a Hub BGP Configuration
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return VpnApiUpdateNetworkApplianceVpnBgpRequest
+ @return VpnAPIUpdateNetworkApplianceVpnBgpRequest
 */
-func (a *VpnApiService) UpdateNetworkApplianceVpnBgp(ctx context.Context, networkId string) VpnApiUpdateNetworkApplianceVpnBgpRequest {
-	return VpnApiUpdateNetworkApplianceVpnBgpRequest{
+func (a *VpnAPIService) UpdateNetworkApplianceVpnBgp(ctx context.Context, networkId string) VpnAPIUpdateNetworkApplianceVpnBgpRequest {
+	return VpnAPIUpdateNetworkApplianceVpnBgpRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1008,7 +1008,7 @@ func (a *VpnApiService) UpdateNetworkApplianceVpnBgp(ctx context.Context, networ
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *VpnApiService) UpdateNetworkApplianceVpnBgpExecute(r VpnApiUpdateNetworkApplianceVpnBgpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *VpnAPIService) UpdateNetworkApplianceVpnBgpExecute(r VpnAPIUpdateNetworkApplianceVpnBgpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1016,7 +1016,7 @@ func (a *VpnApiService) UpdateNetworkApplianceVpnBgpExecute(r VpnApiUpdateNetwor
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnApiService.UpdateNetworkApplianceVpnBgp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.UpdateNetworkApplianceVpnBgp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1101,19 +1101,19 @@ func (a *VpnApiService) UpdateNetworkApplianceVpnBgpExecute(r VpnApiUpdateNetwor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type VpnApiUpdateNetworkApplianceVpnSiteToSiteVpnRequest struct {
+type VpnAPIUpdateNetworkApplianceVpnSiteToSiteVpnRequest struct {
 	ctx context.Context
-	ApiService *VpnApiService
+	ApiService *VpnAPIService
 	networkId string
 	updateNetworkApplianceVpnSiteToSiteVpnRequest *UpdateNetworkApplianceVpnSiteToSiteVpnRequest
 }
 
-func (r VpnApiUpdateNetworkApplianceVpnSiteToSiteVpnRequest) UpdateNetworkApplianceVpnSiteToSiteVpnRequest(updateNetworkApplianceVpnSiteToSiteVpnRequest UpdateNetworkApplianceVpnSiteToSiteVpnRequest) VpnApiUpdateNetworkApplianceVpnSiteToSiteVpnRequest {
+func (r VpnAPIUpdateNetworkApplianceVpnSiteToSiteVpnRequest) UpdateNetworkApplianceVpnSiteToSiteVpnRequest(updateNetworkApplianceVpnSiteToSiteVpnRequest UpdateNetworkApplianceVpnSiteToSiteVpnRequest) VpnAPIUpdateNetworkApplianceVpnSiteToSiteVpnRequest {
 	r.updateNetworkApplianceVpnSiteToSiteVpnRequest = &updateNetworkApplianceVpnSiteToSiteVpnRequest
 	return r
 }
 
-func (r VpnApiUpdateNetworkApplianceVpnSiteToSiteVpnRequest) Execute() (*GetNetworkApplianceVpnSiteToSiteVpn200Response, *http.Response, error) {
+func (r VpnAPIUpdateNetworkApplianceVpnSiteToSiteVpnRequest) Execute() (*GetNetworkApplianceVpnSiteToSiteVpn200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceVpnSiteToSiteVpnExecute(r)
 }
 
@@ -1124,10 +1124,10 @@ Update the site-to-site VPN settings of a network. Only valid for MX networks in
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return VpnApiUpdateNetworkApplianceVpnSiteToSiteVpnRequest
+ @return VpnAPIUpdateNetworkApplianceVpnSiteToSiteVpnRequest
 */
-func (a *VpnApiService) UpdateNetworkApplianceVpnSiteToSiteVpn(ctx context.Context, networkId string) VpnApiUpdateNetworkApplianceVpnSiteToSiteVpnRequest {
-	return VpnApiUpdateNetworkApplianceVpnSiteToSiteVpnRequest{
+func (a *VpnAPIService) UpdateNetworkApplianceVpnSiteToSiteVpn(ctx context.Context, networkId string) VpnAPIUpdateNetworkApplianceVpnSiteToSiteVpnRequest {
+	return VpnAPIUpdateNetworkApplianceVpnSiteToSiteVpnRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1136,7 +1136,7 @@ func (a *VpnApiService) UpdateNetworkApplianceVpnSiteToSiteVpn(ctx context.Conte
 
 // Execute executes the request
 //  @return GetNetworkApplianceVpnSiteToSiteVpn200Response
-func (a *VpnApiService) UpdateNetworkApplianceVpnSiteToSiteVpnExecute(r VpnApiUpdateNetworkApplianceVpnSiteToSiteVpnRequest) (*GetNetworkApplianceVpnSiteToSiteVpn200Response, *http.Response, error) {
+func (a *VpnAPIService) UpdateNetworkApplianceVpnSiteToSiteVpnExecute(r VpnAPIUpdateNetworkApplianceVpnSiteToSiteVpnRequest) (*GetNetworkApplianceVpnSiteToSiteVpn200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1144,7 +1144,7 @@ func (a *VpnApiService) UpdateNetworkApplianceVpnSiteToSiteVpnExecute(r VpnApiUp
 		localVarReturnValue  *GetNetworkApplianceVpnSiteToSiteVpn200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnApiService.UpdateNetworkApplianceVpnSiteToSiteVpn")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.UpdateNetworkApplianceVpnSiteToSiteVpn")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1229,20 +1229,20 @@ func (a *VpnApiService) UpdateNetworkApplianceVpnSiteToSiteVpnExecute(r VpnApiUp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type VpnApiUpdateNetworkWirelessSsidVpnRequest struct {
+type VpnAPIUpdateNetworkWirelessSsidVpnRequest struct {
 	ctx context.Context
-	ApiService *VpnApiService
+	ApiService *VpnAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidVpnRequest *UpdateNetworkWirelessSsidVpnRequest
 }
 
-func (r VpnApiUpdateNetworkWirelessSsidVpnRequest) UpdateNetworkWirelessSsidVpnRequest(updateNetworkWirelessSsidVpnRequest UpdateNetworkWirelessSsidVpnRequest) VpnApiUpdateNetworkWirelessSsidVpnRequest {
+func (r VpnAPIUpdateNetworkWirelessSsidVpnRequest) UpdateNetworkWirelessSsidVpnRequest(updateNetworkWirelessSsidVpnRequest UpdateNetworkWirelessSsidVpnRequest) VpnAPIUpdateNetworkWirelessSsidVpnRequest {
 	r.updateNetworkWirelessSsidVpnRequest = &updateNetworkWirelessSsidVpnRequest
 	return r
 }
 
-func (r VpnApiUpdateNetworkWirelessSsidVpnRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r VpnAPIUpdateNetworkWirelessSsidVpnRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidVpnExecute(r)
 }
 
@@ -1254,10 +1254,10 @@ Update the VPN settings for the SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return VpnApiUpdateNetworkWirelessSsidVpnRequest
+ @return VpnAPIUpdateNetworkWirelessSsidVpnRequest
 */
-func (a *VpnApiService) UpdateNetworkWirelessSsidVpn(ctx context.Context, networkId string, number string) VpnApiUpdateNetworkWirelessSsidVpnRequest {
-	return VpnApiUpdateNetworkWirelessSsidVpnRequest{
+func (a *VpnAPIService) UpdateNetworkWirelessSsidVpn(ctx context.Context, networkId string, number string) VpnAPIUpdateNetworkWirelessSsidVpnRequest {
+	return VpnAPIUpdateNetworkWirelessSsidVpnRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1267,7 +1267,7 @@ func (a *VpnApiService) UpdateNetworkWirelessSsidVpn(ctx context.Context, networ
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *VpnApiService) UpdateNetworkWirelessSsidVpnExecute(r VpnApiUpdateNetworkWirelessSsidVpnRequest) (map[string]interface{}, *http.Response, error) {
+func (a *VpnAPIService) UpdateNetworkWirelessSsidVpnExecute(r VpnAPIUpdateNetworkWirelessSsidVpnRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1275,7 +1275,7 @@ func (a *VpnApiService) UpdateNetworkWirelessSsidVpnExecute(r VpnApiUpdateNetwor
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnApiService.UpdateNetworkWirelessSsidVpn")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.UpdateNetworkWirelessSsidVpn")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1358,19 +1358,19 @@ func (a *VpnApiService) UpdateNetworkWirelessSsidVpnExecute(r VpnApiUpdateNetwor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type VpnApiUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest struct {
+type VpnAPIUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest struct {
 	ctx context.Context
-	ApiService *VpnApiService
+	ApiService *VpnAPIService
 	organizationId string
 	updateOrganizationApplianceVpnThirdPartyVPNPeersRequest *UpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest
 }
 
-func (r VpnApiUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest) UpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest(updateOrganizationApplianceVpnThirdPartyVPNPeersRequest UpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest) VpnApiUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest {
+func (r VpnAPIUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest) UpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest(updateOrganizationApplianceVpnThirdPartyVPNPeersRequest UpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest) VpnAPIUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest {
 	r.updateOrganizationApplianceVpnThirdPartyVPNPeersRequest = &updateOrganizationApplianceVpnThirdPartyVPNPeersRequest
 	return r
 }
 
-func (r VpnApiUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest) Execute() (*GetOrganizationApplianceVpnThirdPartyVPNPeers200Response, *http.Response, error) {
+func (r VpnAPIUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest) Execute() (*GetOrganizationApplianceVpnThirdPartyVPNPeers200Response, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationApplianceVpnThirdPartyVPNPeersExecute(r)
 }
 
@@ -1381,10 +1381,10 @@ Update the third party VPN peers for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return VpnApiUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest
+ @return VpnAPIUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest
 */
-func (a *VpnApiService) UpdateOrganizationApplianceVpnThirdPartyVPNPeers(ctx context.Context, organizationId string) VpnApiUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest {
-	return VpnApiUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest{
+func (a *VpnAPIService) UpdateOrganizationApplianceVpnThirdPartyVPNPeers(ctx context.Context, organizationId string) VpnAPIUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest {
+	return VpnAPIUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1393,7 +1393,7 @@ func (a *VpnApiService) UpdateOrganizationApplianceVpnThirdPartyVPNPeers(ctx con
 
 // Execute executes the request
 //  @return GetOrganizationApplianceVpnThirdPartyVPNPeers200Response
-func (a *VpnApiService) UpdateOrganizationApplianceVpnThirdPartyVPNPeersExecute(r VpnApiUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest) (*GetOrganizationApplianceVpnThirdPartyVPNPeers200Response, *http.Response, error) {
+func (a *VpnAPIService) UpdateOrganizationApplianceVpnThirdPartyVPNPeersExecute(r VpnAPIUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest) (*GetOrganizationApplianceVpnThirdPartyVPNPeers200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1401,7 +1401,7 @@ func (a *VpnApiService) UpdateOrganizationApplianceVpnThirdPartyVPNPeersExecute(
 		localVarReturnValue  *GetOrganizationApplianceVpnThirdPartyVPNPeers200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnApiService.UpdateOrganizationApplianceVpnThirdPartyVPNPeers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.UpdateOrganizationApplianceVpnThirdPartyVPNPeers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1486,19 +1486,19 @@ func (a *VpnApiService) UpdateOrganizationApplianceVpnThirdPartyVPNPeersExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type VpnApiUpdateOrganizationApplianceVpnVpnFirewallRulesRequest struct {
+type VpnAPIUpdateOrganizationApplianceVpnVpnFirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *VpnApiService
+	ApiService *VpnAPIService
 	organizationId string
 	updateOrganizationApplianceVpnVpnFirewallRulesRequest *UpdateOrganizationApplianceVpnVpnFirewallRulesRequest
 }
 
-func (r VpnApiUpdateOrganizationApplianceVpnVpnFirewallRulesRequest) UpdateOrganizationApplianceVpnVpnFirewallRulesRequest(updateOrganizationApplianceVpnVpnFirewallRulesRequest UpdateOrganizationApplianceVpnVpnFirewallRulesRequest) VpnApiUpdateOrganizationApplianceVpnVpnFirewallRulesRequest {
+func (r VpnAPIUpdateOrganizationApplianceVpnVpnFirewallRulesRequest) UpdateOrganizationApplianceVpnVpnFirewallRulesRequest(updateOrganizationApplianceVpnVpnFirewallRulesRequest UpdateOrganizationApplianceVpnVpnFirewallRulesRequest) VpnAPIUpdateOrganizationApplianceVpnVpnFirewallRulesRequest {
 	r.updateOrganizationApplianceVpnVpnFirewallRulesRequest = &updateOrganizationApplianceVpnVpnFirewallRulesRequest
 	return r
 }
 
-func (r VpnApiUpdateOrganizationApplianceVpnVpnFirewallRulesRequest) Execute() (*UpdateOrganizationApplianceVpnVpnFirewallRules200Response, *http.Response, error) {
+func (r VpnAPIUpdateOrganizationApplianceVpnVpnFirewallRulesRequest) Execute() (*UpdateOrganizationApplianceVpnVpnFirewallRules200Response, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationApplianceVpnVpnFirewallRulesExecute(r)
 }
 
@@ -1509,10 +1509,10 @@ Update the firewall rules of an organization's site-to-site VPN
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return VpnApiUpdateOrganizationApplianceVpnVpnFirewallRulesRequest
+ @return VpnAPIUpdateOrganizationApplianceVpnVpnFirewallRulesRequest
 */
-func (a *VpnApiService) UpdateOrganizationApplianceVpnVpnFirewallRules(ctx context.Context, organizationId string) VpnApiUpdateOrganizationApplianceVpnVpnFirewallRulesRequest {
-	return VpnApiUpdateOrganizationApplianceVpnVpnFirewallRulesRequest{
+func (a *VpnAPIService) UpdateOrganizationApplianceVpnVpnFirewallRules(ctx context.Context, organizationId string) VpnAPIUpdateOrganizationApplianceVpnVpnFirewallRulesRequest {
+	return VpnAPIUpdateOrganizationApplianceVpnVpnFirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1521,7 +1521,7 @@ func (a *VpnApiService) UpdateOrganizationApplianceVpnVpnFirewallRules(ctx conte
 
 // Execute executes the request
 //  @return UpdateOrganizationApplianceVpnVpnFirewallRules200Response
-func (a *VpnApiService) UpdateOrganizationApplianceVpnVpnFirewallRulesExecute(r VpnApiUpdateOrganizationApplianceVpnVpnFirewallRulesRequest) (*UpdateOrganizationApplianceVpnVpnFirewallRules200Response, *http.Response, error) {
+func (a *VpnAPIService) UpdateOrganizationApplianceVpnVpnFirewallRulesExecute(r VpnAPIUpdateOrganizationApplianceVpnVpnFirewallRulesRequest) (*UpdateOrganizationApplianceVpnVpnFirewallRules200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1529,7 +1529,7 @@ func (a *VpnApiService) UpdateOrganizationApplianceVpnVpnFirewallRulesExecute(r 
 		localVarReturnValue  *UpdateOrganizationApplianceVpnVpnFirewallRules200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnApiService.UpdateOrganizationApplianceVpnVpnFirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnAPIService.UpdateOrganizationApplianceVpnVpnFirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

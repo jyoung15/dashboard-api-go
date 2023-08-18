@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing VpnFirewallRulesApiService
+Testing VpnFirewallRulesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_VpnFirewallRulesApiService(t *testing.T) {
+func Test_client_VpnFirewallRulesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test VpnFirewallRulesApiService GetOrganizationApplianceVpnVpnFirewallRules", func(t *testing.T) {
+	t.Run("Test VpnFirewallRulesAPIService GetOrganizationApplianceVpnVpnFirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.VpnFirewallRulesApi.GetOrganizationApplianceVpnVpnFirewallRules(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.VpnFirewallRulesAPI.GetOrganizationApplianceVpnVpnFirewallRules(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_VpnFirewallRulesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VpnFirewallRulesApiService UpdateOrganizationApplianceVpnVpnFirewallRules", func(t *testing.T) {
+	t.Run("Test VpnFirewallRulesAPIService UpdateOrganizationApplianceVpnVpnFirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.VpnFirewallRulesApi.UpdateOrganizationApplianceVpnVpnFirewallRules(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.VpnFirewallRulesAPI.UpdateOrganizationApplianceVpnVpnFirewallRules(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

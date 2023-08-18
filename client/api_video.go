@@ -20,16 +20,16 @@ import (
 )
 
 
-// VideoApiService VideoApi service
-type VideoApiService service
+// VideoAPIService VideoAPI service
+type VideoAPIService service
 
-type VideoApiGetDeviceCameraVideoSettingsRequest struct {
+type VideoAPIGetDeviceCameraVideoSettingsRequest struct {
 	ctx context.Context
-	ApiService *VideoApiService
+	ApiService *VideoAPIService
 	serial string
 }
 
-func (r VideoApiGetDeviceCameraVideoSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r VideoAPIGetDeviceCameraVideoSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraVideoSettingsExecute(r)
 }
 
@@ -40,10 +40,10 @@ Returns video settings for the given camera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return VideoApiGetDeviceCameraVideoSettingsRequest
+ @return VideoAPIGetDeviceCameraVideoSettingsRequest
 */
-func (a *VideoApiService) GetDeviceCameraVideoSettings(ctx context.Context, serial string) VideoApiGetDeviceCameraVideoSettingsRequest {
-	return VideoApiGetDeviceCameraVideoSettingsRequest{
+func (a *VideoAPIService) GetDeviceCameraVideoSettings(ctx context.Context, serial string) VideoAPIGetDeviceCameraVideoSettingsRequest {
+	return VideoAPIGetDeviceCameraVideoSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -52,7 +52,7 @@ func (a *VideoApiService) GetDeviceCameraVideoSettings(ctx context.Context, seri
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *VideoApiService) GetDeviceCameraVideoSettingsExecute(r VideoApiGetDeviceCameraVideoSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *VideoAPIService) GetDeviceCameraVideoSettingsExecute(r VideoAPIGetDeviceCameraVideoSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *VideoApiService) GetDeviceCameraVideoSettingsExecute(r VideoApiGetDevic
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VideoApiService.GetDeviceCameraVideoSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VideoAPIService.GetDeviceCameraVideoSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *VideoApiService) GetDeviceCameraVideoSettingsExecute(r VideoApiGetDevic
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type VideoApiUpdateDeviceCameraVideoSettingsRequest struct {
+type VideoAPIUpdateDeviceCameraVideoSettingsRequest struct {
 	ctx context.Context
-	ApiService *VideoApiService
+	ApiService *VideoAPIService
 	serial string
 	updateDeviceCameraVideoSettingsRequest *UpdateDeviceCameraVideoSettingsRequest
 }
 
-func (r VideoApiUpdateDeviceCameraVideoSettingsRequest) UpdateDeviceCameraVideoSettingsRequest(updateDeviceCameraVideoSettingsRequest UpdateDeviceCameraVideoSettingsRequest) VideoApiUpdateDeviceCameraVideoSettingsRequest {
+func (r VideoAPIUpdateDeviceCameraVideoSettingsRequest) UpdateDeviceCameraVideoSettingsRequest(updateDeviceCameraVideoSettingsRequest UpdateDeviceCameraVideoSettingsRequest) VideoAPIUpdateDeviceCameraVideoSettingsRequest {
 	r.updateDeviceCameraVideoSettingsRequest = &updateDeviceCameraVideoSettingsRequest
 	return r
 }
 
-func (r VideoApiUpdateDeviceCameraVideoSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r VideoAPIUpdateDeviceCameraVideoSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceCameraVideoSettingsExecute(r)
 }
 
@@ -163,10 +163,10 @@ Update video settings for the given camera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return VideoApiUpdateDeviceCameraVideoSettingsRequest
+ @return VideoAPIUpdateDeviceCameraVideoSettingsRequest
 */
-func (a *VideoApiService) UpdateDeviceCameraVideoSettings(ctx context.Context, serial string) VideoApiUpdateDeviceCameraVideoSettingsRequest {
-	return VideoApiUpdateDeviceCameraVideoSettingsRequest{
+func (a *VideoAPIService) UpdateDeviceCameraVideoSettings(ctx context.Context, serial string) VideoAPIUpdateDeviceCameraVideoSettingsRequest {
+	return VideoAPIUpdateDeviceCameraVideoSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -175,7 +175,7 @@ func (a *VideoApiService) UpdateDeviceCameraVideoSettings(ctx context.Context, s
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *VideoApiService) UpdateDeviceCameraVideoSettingsExecute(r VideoApiUpdateDeviceCameraVideoSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *VideoAPIService) UpdateDeviceCameraVideoSettingsExecute(r VideoAPIUpdateDeviceCameraVideoSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *VideoApiService) UpdateDeviceCameraVideoSettingsExecute(r VideoApiUpdat
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VideoApiService.UpdateDeviceCameraVideoSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VideoAPIService.UpdateDeviceCameraVideoSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

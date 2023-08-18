@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing LicensesApiService
+Testing LicensesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_LicensesApiService(t *testing.T) {
+func Test_client_LicensesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test LicensesApiService AssignOrganizationLicensesSeats", func(t *testing.T) {
+	t.Run("Test LicensesAPIService AssignOrganizationLicensesSeats", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.LicensesApi.AssignOrganizationLicensesSeats(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.LicensesAPI.AssignOrganizationLicensesSeats(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,14 +36,14 @@ func Test_client_LicensesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test LicensesApiService GetOrganizationLicense", func(t *testing.T) {
+	t.Run("Test LicensesAPIService GetOrganizationLicense", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var licenseId string
 
-		resp, httpRes, err := apiClient.LicensesApi.GetOrganizationLicense(context.Background(), organizationId, licenseId).Execute()
+		resp, httpRes, err := apiClient.LicensesAPI.GetOrganizationLicense(context.Background(), organizationId, licenseId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -51,13 +51,13 @@ func Test_client_LicensesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test LicensesApiService GetOrganizationLicenses", func(t *testing.T) {
+	t.Run("Test LicensesAPIService GetOrganizationLicenses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.LicensesApi.GetOrganizationLicenses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.LicensesAPI.GetOrganizationLicenses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -65,13 +65,13 @@ func Test_client_LicensesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test LicensesApiService GetOrganizationLicensesOverview", func(t *testing.T) {
+	t.Run("Test LicensesAPIService GetOrganizationLicensesOverview", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.LicensesApi.GetOrganizationLicensesOverview(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.LicensesAPI.GetOrganizationLicensesOverview(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,13 +79,13 @@ func Test_client_LicensesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test LicensesApiService GetOrganizationLicensingCotermLicenses", func(t *testing.T) {
+	t.Run("Test LicensesAPIService GetOrganizationLicensingCotermLicenses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.LicensesApi.GetOrganizationLicensingCotermLicenses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.LicensesAPI.GetOrganizationLicensingCotermLicenses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -93,13 +93,13 @@ func Test_client_LicensesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test LicensesApiService MoveOrganizationLicenses", func(t *testing.T) {
+	t.Run("Test LicensesAPIService MoveOrganizationLicenses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.LicensesApi.MoveOrganizationLicenses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.LicensesAPI.MoveOrganizationLicenses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -107,13 +107,13 @@ func Test_client_LicensesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test LicensesApiService MoveOrganizationLicensesSeats", func(t *testing.T) {
+	t.Run("Test LicensesAPIService MoveOrganizationLicensesSeats", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.LicensesApi.MoveOrganizationLicensesSeats(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.LicensesAPI.MoveOrganizationLicensesSeats(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -121,13 +121,13 @@ func Test_client_LicensesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test LicensesApiService MoveOrganizationLicensingCotermLicenses", func(t *testing.T) {
+	t.Run("Test LicensesAPIService MoveOrganizationLicensingCotermLicenses", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.LicensesApi.MoveOrganizationLicensingCotermLicenses(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.LicensesAPI.MoveOrganizationLicensingCotermLicenses(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -135,13 +135,13 @@ func Test_client_LicensesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test LicensesApiService RenewOrganizationLicensesSeats", func(t *testing.T) {
+	t.Run("Test LicensesAPIService RenewOrganizationLicensesSeats", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.LicensesApi.RenewOrganizationLicensesSeats(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.LicensesAPI.RenewOrganizationLicensesSeats(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -149,14 +149,14 @@ func Test_client_LicensesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test LicensesApiService UpdateOrganizationLicense", func(t *testing.T) {
+	t.Run("Test LicensesAPIService UpdateOrganizationLicense", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var licenseId string
 
-		resp, httpRes, err := apiClient.LicensesApi.UpdateOrganizationLicense(context.Background(), organizationId, licenseId).Execute()
+		resp, httpRes, err := apiClient.LicensesAPI.UpdateOrganizationLicense(context.Background(), organizationId, licenseId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

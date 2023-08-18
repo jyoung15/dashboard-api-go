@@ -20,16 +20,16 @@ import (
 )
 
 
-// DscpToCosMappingsApiService DscpToCosMappingsApi service
-type DscpToCosMappingsApiService service
+// DscpToCosMappingsAPIService DscpToCosMappingsAPI service
+type DscpToCosMappingsAPIService service
 
-type DscpToCosMappingsApiGetNetworkSwitchDscpToCosMappingsRequest struct {
+type DscpToCosMappingsAPIGetNetworkSwitchDscpToCosMappingsRequest struct {
 	ctx context.Context
-	ApiService *DscpToCosMappingsApiService
+	ApiService *DscpToCosMappingsAPIService
 	networkId string
 }
 
-func (r DscpToCosMappingsApiGetNetworkSwitchDscpToCosMappingsRequest) Execute() (*GetNetworkSwitchDscpToCosMappings200Response, *http.Response, error) {
+func (r DscpToCosMappingsAPIGetNetworkSwitchDscpToCosMappingsRequest) Execute() (*GetNetworkSwitchDscpToCosMappings200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchDscpToCosMappingsExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the DSCP to CoS mappings
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return DscpToCosMappingsApiGetNetworkSwitchDscpToCosMappingsRequest
+ @return DscpToCosMappingsAPIGetNetworkSwitchDscpToCosMappingsRequest
 */
-func (a *DscpToCosMappingsApiService) GetNetworkSwitchDscpToCosMappings(ctx context.Context, networkId string) DscpToCosMappingsApiGetNetworkSwitchDscpToCosMappingsRequest {
-	return DscpToCosMappingsApiGetNetworkSwitchDscpToCosMappingsRequest{
+func (a *DscpToCosMappingsAPIService) GetNetworkSwitchDscpToCosMappings(ctx context.Context, networkId string) DscpToCosMappingsAPIGetNetworkSwitchDscpToCosMappingsRequest {
+	return DscpToCosMappingsAPIGetNetworkSwitchDscpToCosMappingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *DscpToCosMappingsApiService) GetNetworkSwitchDscpToCosMappings(ctx cont
 
 // Execute executes the request
 //  @return GetNetworkSwitchDscpToCosMappings200Response
-func (a *DscpToCosMappingsApiService) GetNetworkSwitchDscpToCosMappingsExecute(r DscpToCosMappingsApiGetNetworkSwitchDscpToCosMappingsRequest) (*GetNetworkSwitchDscpToCosMappings200Response, *http.Response, error) {
+func (a *DscpToCosMappingsAPIService) GetNetworkSwitchDscpToCosMappingsExecute(r DscpToCosMappingsAPIGetNetworkSwitchDscpToCosMappingsRequest) (*GetNetworkSwitchDscpToCosMappings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *DscpToCosMappingsApiService) GetNetworkSwitchDscpToCosMappingsExecute(r
 		localVarReturnValue  *GetNetworkSwitchDscpToCosMappings200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DscpToCosMappingsApiService.GetNetworkSwitchDscpToCosMappings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DscpToCosMappingsAPIService.GetNetworkSwitchDscpToCosMappings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *DscpToCosMappingsApiService) GetNetworkSwitchDscpToCosMappingsExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DscpToCosMappingsApiUpdateNetworkSwitchDscpToCosMappingsRequest struct {
+type DscpToCosMappingsAPIUpdateNetworkSwitchDscpToCosMappingsRequest struct {
 	ctx context.Context
-	ApiService *DscpToCosMappingsApiService
+	ApiService *DscpToCosMappingsAPIService
 	networkId string
 	updateNetworkSwitchDscpToCosMappingsRequest *UpdateNetworkSwitchDscpToCosMappingsRequest
 }
 
-func (r DscpToCosMappingsApiUpdateNetworkSwitchDscpToCosMappingsRequest) UpdateNetworkSwitchDscpToCosMappingsRequest(updateNetworkSwitchDscpToCosMappingsRequest UpdateNetworkSwitchDscpToCosMappingsRequest) DscpToCosMappingsApiUpdateNetworkSwitchDscpToCosMappingsRequest {
+func (r DscpToCosMappingsAPIUpdateNetworkSwitchDscpToCosMappingsRequest) UpdateNetworkSwitchDscpToCosMappingsRequest(updateNetworkSwitchDscpToCosMappingsRequest UpdateNetworkSwitchDscpToCosMappingsRequest) DscpToCosMappingsAPIUpdateNetworkSwitchDscpToCosMappingsRequest {
 	r.updateNetworkSwitchDscpToCosMappingsRequest = &updateNetworkSwitchDscpToCosMappingsRequest
 	return r
 }
 
-func (r DscpToCosMappingsApiUpdateNetworkSwitchDscpToCosMappingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r DscpToCosMappingsAPIUpdateNetworkSwitchDscpToCosMappingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchDscpToCosMappingsExecute(r)
 }
 
@@ -163,10 +163,10 @@ Update the DSCP to CoS mappings
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return DscpToCosMappingsApiUpdateNetworkSwitchDscpToCosMappingsRequest
+ @return DscpToCosMappingsAPIUpdateNetworkSwitchDscpToCosMappingsRequest
 */
-func (a *DscpToCosMappingsApiService) UpdateNetworkSwitchDscpToCosMappings(ctx context.Context, networkId string) DscpToCosMappingsApiUpdateNetworkSwitchDscpToCosMappingsRequest {
-	return DscpToCosMappingsApiUpdateNetworkSwitchDscpToCosMappingsRequest{
+func (a *DscpToCosMappingsAPIService) UpdateNetworkSwitchDscpToCosMappings(ctx context.Context, networkId string) DscpToCosMappingsAPIUpdateNetworkSwitchDscpToCosMappingsRequest {
+	return DscpToCosMappingsAPIUpdateNetworkSwitchDscpToCosMappingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -175,7 +175,7 @@ func (a *DscpToCosMappingsApiService) UpdateNetworkSwitchDscpToCosMappings(ctx c
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DscpToCosMappingsApiService) UpdateNetworkSwitchDscpToCosMappingsExecute(r DscpToCosMappingsApiUpdateNetworkSwitchDscpToCosMappingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DscpToCosMappingsAPIService) UpdateNetworkSwitchDscpToCosMappingsExecute(r DscpToCosMappingsAPIUpdateNetworkSwitchDscpToCosMappingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *DscpToCosMappingsApiService) UpdateNetworkSwitchDscpToCosMappingsExecut
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DscpToCosMappingsApiService.UpdateNetworkSwitchDscpToCosMappings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DscpToCosMappingsAPIService.UpdateNetworkSwitchDscpToCosMappings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

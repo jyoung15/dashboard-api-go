@@ -20,12 +20,12 @@ import (
 )
 
 
-// LicensingApiService LicensingApi service
-type LicensingApiService service
+// LicensingAPIService LicensingAPI service
+type LicensingAPIService service
 
-type LicensingApiGetOrganizationLicensingCotermLicensesRequest struct {
+type LicensingAPIGetOrganizationLicensingCotermLicensesRequest struct {
 	ctx context.Context
-	ApiService *LicensingApiService
+	ApiService *LicensingAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -35,36 +35,36 @@ type LicensingApiGetOrganizationLicensingCotermLicensesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r LicensingApiGetOrganizationLicensingCotermLicensesRequest) PerPage(perPage int32) LicensingApiGetOrganizationLicensingCotermLicensesRequest {
+func (r LicensingAPIGetOrganizationLicensingCotermLicensesRequest) PerPage(perPage int32) LicensingAPIGetOrganizationLicensingCotermLicensesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r LicensingApiGetOrganizationLicensingCotermLicensesRequest) StartingAfter(startingAfter string) LicensingApiGetOrganizationLicensingCotermLicensesRequest {
+func (r LicensingAPIGetOrganizationLicensingCotermLicensesRequest) StartingAfter(startingAfter string) LicensingAPIGetOrganizationLicensingCotermLicensesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r LicensingApiGetOrganizationLicensingCotermLicensesRequest) EndingBefore(endingBefore string) LicensingApiGetOrganizationLicensingCotermLicensesRequest {
+func (r LicensingAPIGetOrganizationLicensingCotermLicensesRequest) EndingBefore(endingBefore string) LicensingAPIGetOrganizationLicensingCotermLicensesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Filter for licenses that are invalidated
-func (r LicensingApiGetOrganizationLicensingCotermLicensesRequest) Invalidated(invalidated bool) LicensingApiGetOrganizationLicensingCotermLicensesRequest {
+func (r LicensingAPIGetOrganizationLicensingCotermLicensesRequest) Invalidated(invalidated bool) LicensingAPIGetOrganizationLicensingCotermLicensesRequest {
 	r.invalidated = &invalidated
 	return r
 }
 
 // Filter for licenses that are expired
-func (r LicensingApiGetOrganizationLicensingCotermLicensesRequest) Expired(expired bool) LicensingApiGetOrganizationLicensingCotermLicensesRequest {
+func (r LicensingAPIGetOrganizationLicensingCotermLicensesRequest) Expired(expired bool) LicensingAPIGetOrganizationLicensingCotermLicensesRequest {
 	r.expired = &expired
 	return r
 }
 
-func (r LicensingApiGetOrganizationLicensingCotermLicensesRequest) Execute() ([]GetOrganizationLicensingCotermLicenses200ResponseInner, *http.Response, error) {
+func (r LicensingAPIGetOrganizationLicensingCotermLicensesRequest) Execute() ([]GetOrganizationLicensingCotermLicenses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationLicensingCotermLicensesExecute(r)
 }
 
@@ -75,10 +75,10 @@ List the licenses in a coterm organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return LicensingApiGetOrganizationLicensingCotermLicensesRequest
+ @return LicensingAPIGetOrganizationLicensingCotermLicensesRequest
 */
-func (a *LicensingApiService) GetOrganizationLicensingCotermLicenses(ctx context.Context, organizationId string) LicensingApiGetOrganizationLicensingCotermLicensesRequest {
-	return LicensingApiGetOrganizationLicensingCotermLicensesRequest{
+func (a *LicensingAPIService) GetOrganizationLicensingCotermLicenses(ctx context.Context, organizationId string) LicensingAPIGetOrganizationLicensingCotermLicensesRequest {
+	return LicensingAPIGetOrganizationLicensingCotermLicensesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -87,7 +87,7 @@ func (a *LicensingApiService) GetOrganizationLicensingCotermLicenses(ctx context
 
 // Execute executes the request
 //  @return []GetOrganizationLicensingCotermLicenses200ResponseInner
-func (a *LicensingApiService) GetOrganizationLicensingCotermLicensesExecute(r LicensingApiGetOrganizationLicensingCotermLicensesRequest) ([]GetOrganizationLicensingCotermLicenses200ResponseInner, *http.Response, error) {
+func (a *LicensingAPIService) GetOrganizationLicensingCotermLicensesExecute(r LicensingAPIGetOrganizationLicensingCotermLicensesRequest) ([]GetOrganizationLicensingCotermLicenses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -95,7 +95,7 @@ func (a *LicensingApiService) GetOrganizationLicensingCotermLicensesExecute(r Li
 		localVarReturnValue  []GetOrganizationLicensingCotermLicenses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LicensingApiService.GetOrganizationLicensingCotermLicenses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LicensingAPIService.GetOrganizationLicensingCotermLicenses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -190,19 +190,19 @@ func (a *LicensingApiService) GetOrganizationLicensingCotermLicensesExecute(r Li
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type LicensingApiMoveOrganizationLicensingCotermLicensesRequest struct {
+type LicensingAPIMoveOrganizationLicensingCotermLicensesRequest struct {
 	ctx context.Context
-	ApiService *LicensingApiService
+	ApiService *LicensingAPIService
 	organizationId string
 	moveOrganizationLicensingCotermLicensesRequest *MoveOrganizationLicensingCotermLicensesRequest
 }
 
-func (r LicensingApiMoveOrganizationLicensingCotermLicensesRequest) MoveOrganizationLicensingCotermLicensesRequest(moveOrganizationLicensingCotermLicensesRequest MoveOrganizationLicensingCotermLicensesRequest) LicensingApiMoveOrganizationLicensingCotermLicensesRequest {
+func (r LicensingAPIMoveOrganizationLicensingCotermLicensesRequest) MoveOrganizationLicensingCotermLicensesRequest(moveOrganizationLicensingCotermLicensesRequest MoveOrganizationLicensingCotermLicensesRequest) LicensingAPIMoveOrganizationLicensingCotermLicensesRequest {
 	r.moveOrganizationLicensingCotermLicensesRequest = &moveOrganizationLicensingCotermLicensesRequest
 	return r
 }
 
-func (r LicensingApiMoveOrganizationLicensingCotermLicensesRequest) Execute() (*MoveOrganizationLicensingCotermLicenses200Response, *http.Response, error) {
+func (r LicensingAPIMoveOrganizationLicensingCotermLicensesRequest) Execute() (*MoveOrganizationLicensingCotermLicenses200Response, *http.Response, error) {
 	return r.ApiService.MoveOrganizationLicensingCotermLicensesExecute(r)
 }
 
@@ -213,10 +213,10 @@ Moves a license to a different organization (coterm only)
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return LicensingApiMoveOrganizationLicensingCotermLicensesRequest
+ @return LicensingAPIMoveOrganizationLicensingCotermLicensesRequest
 */
-func (a *LicensingApiService) MoveOrganizationLicensingCotermLicenses(ctx context.Context, organizationId string) LicensingApiMoveOrganizationLicensingCotermLicensesRequest {
-	return LicensingApiMoveOrganizationLicensingCotermLicensesRequest{
+func (a *LicensingAPIService) MoveOrganizationLicensingCotermLicenses(ctx context.Context, organizationId string) LicensingAPIMoveOrganizationLicensingCotermLicensesRequest {
+	return LicensingAPIMoveOrganizationLicensingCotermLicensesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -225,7 +225,7 @@ func (a *LicensingApiService) MoveOrganizationLicensingCotermLicenses(ctx contex
 
 // Execute executes the request
 //  @return MoveOrganizationLicensingCotermLicenses200Response
-func (a *LicensingApiService) MoveOrganizationLicensingCotermLicensesExecute(r LicensingApiMoveOrganizationLicensingCotermLicensesRequest) (*MoveOrganizationLicensingCotermLicenses200Response, *http.Response, error) {
+func (a *LicensingAPIService) MoveOrganizationLicensingCotermLicensesExecute(r LicensingAPIMoveOrganizationLicensingCotermLicensesRequest) (*MoveOrganizationLicensingCotermLicenses200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -233,7 +233,7 @@ func (a *LicensingApiService) MoveOrganizationLicensingCotermLicensesExecute(r L
 		localVarReturnValue  *MoveOrganizationLicensingCotermLicenses200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LicensingApiService.MoveOrganizationLicensingCotermLicenses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LicensingAPIService.MoveOrganizationLicensingCotermLicenses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

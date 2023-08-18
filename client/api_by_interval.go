@@ -21,12 +21,12 @@ import (
 )
 
 
-// ByIntervalApiService ByIntervalApi service
-type ByIntervalApiService service
+// ByIntervalAPIService ByIntervalAPI service
+type ByIntervalAPIService service
 
-type ByIntervalApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest struct {
+type ByIntervalAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest struct {
 	ctx context.Context
-	ApiService *ByIntervalApiService
+	ApiService *ByIntervalAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -40,60 +40,60 @@ type ByIntervalApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalReque
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r ByIntervalApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) T0(t0 string) ByIntervalApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r ByIntervalAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) T0(t0 string) ByIntervalAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ByIntervalApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) T1(t1 string) ByIntervalApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r ByIntervalAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) T1(t1 string) ByIntervalAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 31 days. If interval is provided, the timespan will be autocalculated.
-func (r ByIntervalApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Timespan(timespan float32) ByIntervalApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r ByIntervalAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Timespan(timespan float32) ByIntervalAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time interval in seconds for returned data. The valid intervals are: 120, 3600, 14400, 21600. The default is 21600. Interval is calculated if time params are provided.
-func (r ByIntervalApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Interval(interval int32) ByIntervalApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r ByIntervalAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Interval(interval int32) ByIntervalAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.interval = &interval
 	return r
 }
 
 // Filter by API version of the endpoint. Allowable values are: [0, 1]
-func (r ByIntervalApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Version(version int32) ByIntervalApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r ByIntervalAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Version(version int32) ByIntervalAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.version = &version
 	return r
 }
 
 // Filter by operation ID of the endpoint
-func (r ByIntervalApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) OperationIds(operationIds []string) ByIntervalApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r ByIntervalAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) OperationIds(operationIds []string) ByIntervalAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.operationIds = &operationIds
 	return r
 }
 
 // Filter by source IP that made the API request
-func (r ByIntervalApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) SourceIps(sourceIps []string) ByIntervalApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r ByIntervalAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) SourceIps(sourceIps []string) ByIntervalAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.sourceIps = &sourceIps
 	return r
 }
 
 // Filter by admin ID of user that made the API request
-func (r ByIntervalApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) AdminIds(adminIds []string) ByIntervalApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r ByIntervalAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) AdminIds(adminIds []string) ByIntervalAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.adminIds = &adminIds
 	return r
 }
 
 // Filter by user agent string for API request. This will filter by a complete or partial match.
-func (r ByIntervalApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) UserAgent(userAgent string) ByIntervalApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r ByIntervalAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) UserAgent(userAgent string) ByIntervalAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.userAgent = &userAgent
 	return r
 }
 
-func (r ByIntervalApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Execute() ([]GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner, *http.Response, error) {
+func (r ByIntervalAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Execute() ([]GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationApiRequestsOverviewResponseCodesByIntervalExecute(r)
 }
 
@@ -104,10 +104,10 @@ Tracks organizations' API requests by response code across a given time period
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ByIntervalApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest
+ @return ByIntervalAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest
 */
-func (a *ByIntervalApiService) GetOrganizationApiRequestsOverviewResponseCodesByInterval(ctx context.Context, organizationId string) ByIntervalApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
-	return ByIntervalApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest{
+func (a *ByIntervalAPIService) GetOrganizationApiRequestsOverviewResponseCodesByInterval(ctx context.Context, organizationId string) ByIntervalAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+	return ByIntervalAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -116,7 +116,7 @@ func (a *ByIntervalApiService) GetOrganizationApiRequestsOverviewResponseCodesBy
 
 // Execute executes the request
 //  @return []GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner
-func (a *ByIntervalApiService) GetOrganizationApiRequestsOverviewResponseCodesByIntervalExecute(r ByIntervalApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) ([]GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner, *http.Response, error) {
+func (a *ByIntervalAPIService) GetOrganizationApiRequestsOverviewResponseCodesByIntervalExecute(r ByIntervalAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) ([]GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -124,7 +124,7 @@ func (a *ByIntervalApiService) GetOrganizationApiRequestsOverviewResponseCodesBy
 		localVarReturnValue  []GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByIntervalApiService.GetOrganizationApiRequestsOverviewResponseCodesByInterval")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByIntervalAPIService.GetOrganizationApiRequestsOverviewResponseCodesByInterval")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -255,9 +255,9 @@ func (a *ByIntervalApiService) GetOrganizationApiRequestsOverviewResponseCodesBy
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest struct {
+type ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest struct {
 	ctx context.Context
-	ApiService *ByIntervalApiService
+	ApiService *ByIntervalAPIService
 	organizationId string
 	networkIds *[]string
 	serials *[]string
@@ -271,60 +271,60 @@ type ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDevic
 }
 
 // Filter results by network.
-func (r ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) NetworkIds(networkIds []string) ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) NetworkIds(networkIds []string) ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Filter results by device.
-func (r ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Serials(serials []string) ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Serials(serials []string) ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.serials = &serials
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) PerPage(perPage int32) ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) PerPage(perPage int32) ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) StartingAfter(startingAfter string) ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) StartingAfter(startingAfter string) ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) EndingBefore(endingBefore string) ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) EndingBefore(endingBefore string) ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) T0(t0 string) ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) T0(t0 string) ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) T1(t1 string) ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) T1(t1 string) ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Timespan(timespan float32) ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Timespan(timespan float32) ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time interval in seconds for returned data. The valid intervals are: 300, 600, 3600, 7200, 14400, 21600. The default is 3600.
-func (r ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Interval(interval int32) ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Interval(interval int32) ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.interval = &interval
 	return r
 }
 
-func (r ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner, *http.Response, error) {
+func (r ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalExecute(r)
 }
 
@@ -335,10 +335,10 @@ Get a time-series of average channel utilization for all bands, segmented by dev
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest
+ @return ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest
 */
-func (a *ByIntervalApiService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval(ctx context.Context, organizationId string) ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
-	return ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest{
+func (a *ByIntervalAPIService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval(ctx context.Context, organizationId string) ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+	return ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -347,7 +347,7 @@ func (a *ByIntervalApiService) GetOrganizationWirelessDevicesChannelUtilizationH
 
 // Execute executes the request
 //  @return []GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner
-func (a *ByIntervalApiService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalExecute(r ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner, *http.Response, error) {
+func (a *ByIntervalAPIService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalExecute(r ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -355,7 +355,7 @@ func (a *ByIntervalApiService) GetOrganizationWirelessDevicesChannelUtilizationH
 		localVarReturnValue  []GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByIntervalApiService.GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByIntervalAPIService.GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -478,9 +478,9 @@ func (a *ByIntervalApiService) GetOrganizationWirelessDevicesChannelUtilizationH
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest struct {
+type ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest struct {
 	ctx context.Context
-	ApiService *ByIntervalApiService
+	ApiService *ByIntervalAPIService
 	organizationId string
 	networkIds *[]string
 	serials *[]string
@@ -494,60 +494,60 @@ type ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetwo
 }
 
 // Filter results by network.
-func (r ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) NetworkIds(networkIds []string) ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) NetworkIds(networkIds []string) ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Filter results by device.
-func (r ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Serials(serials []string) ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Serials(serials []string) ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.serials = &serials
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) PerPage(perPage int32) ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) PerPage(perPage int32) ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) StartingAfter(startingAfter string) ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) StartingAfter(startingAfter string) ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) EndingBefore(endingBefore string) ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) EndingBefore(endingBefore string) ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) T0(t0 string) ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) T0(t0 string) ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) T1(t1 string) ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) T1(t1 string) ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Timespan(timespan float32) ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Timespan(timespan float32) ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time interval in seconds for returned data. The valid intervals are: 300, 600, 3600, 7200, 14400, 21600. The default is 3600.
-func (r ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Interval(interval int32) ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Interval(interval int32) ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.interval = &interval
 	return r
 }
 
-func (r ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval200ResponseInner, *http.Response, error) {
+func (r ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalExecute(r)
 }
 
@@ -558,10 +558,10 @@ Get a time-series of average channel utilization for all bands
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest
+ @return ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest
 */
-func (a *ByIntervalApiService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval(ctx context.Context, organizationId string) ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
-	return ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest{
+func (a *ByIntervalAPIService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval(ctx context.Context, organizationId string) ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+	return ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -570,7 +570,7 @@ func (a *ByIntervalApiService) GetOrganizationWirelessDevicesChannelUtilizationH
 
 // Execute executes the request
 //  @return []GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval200ResponseInner
-func (a *ByIntervalApiService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalExecute(r ByIntervalApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval200ResponseInner, *http.Response, error) {
+func (a *ByIntervalAPIService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalExecute(r ByIntervalAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -578,7 +578,7 @@ func (a *ByIntervalApiService) GetOrganizationWirelessDevicesChannelUtilizationH
 		localVarReturnValue  []GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByIntervalApiService.GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ByIntervalAPIService.GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

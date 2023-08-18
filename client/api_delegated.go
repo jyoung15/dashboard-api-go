@@ -20,22 +20,22 @@ import (
 )
 
 
-// DelegatedApiService DelegatedApi service
-type DelegatedApiService service
+// DelegatedAPIService DelegatedAPI service
+type DelegatedAPIService service
 
-type DelegatedApiCreateNetworkAppliancePrefixesDelegatedStaticRequest struct {
+type DelegatedAPICreateNetworkAppliancePrefixesDelegatedStaticRequest struct {
 	ctx context.Context
-	ApiService *DelegatedApiService
+	ApiService *DelegatedAPIService
 	networkId string
 	createNetworkAppliancePrefixesDelegatedStaticRequest *CreateNetworkAppliancePrefixesDelegatedStaticRequest
 }
 
-func (r DelegatedApiCreateNetworkAppliancePrefixesDelegatedStaticRequest) CreateNetworkAppliancePrefixesDelegatedStaticRequest(createNetworkAppliancePrefixesDelegatedStaticRequest CreateNetworkAppliancePrefixesDelegatedStaticRequest) DelegatedApiCreateNetworkAppliancePrefixesDelegatedStaticRequest {
+func (r DelegatedAPICreateNetworkAppliancePrefixesDelegatedStaticRequest) CreateNetworkAppliancePrefixesDelegatedStaticRequest(createNetworkAppliancePrefixesDelegatedStaticRequest CreateNetworkAppliancePrefixesDelegatedStaticRequest) DelegatedAPICreateNetworkAppliancePrefixesDelegatedStaticRequest {
 	r.createNetworkAppliancePrefixesDelegatedStaticRequest = &createNetworkAppliancePrefixesDelegatedStaticRequest
 	return r
 }
 
-func (r DelegatedApiCreateNetworkAppliancePrefixesDelegatedStaticRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r DelegatedAPICreateNetworkAppliancePrefixesDelegatedStaticRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkAppliancePrefixesDelegatedStaticExecute(r)
 }
 
@@ -46,10 +46,10 @@ Add a static delegated prefix from a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return DelegatedApiCreateNetworkAppliancePrefixesDelegatedStaticRequest
+ @return DelegatedAPICreateNetworkAppliancePrefixesDelegatedStaticRequest
 */
-func (a *DelegatedApiService) CreateNetworkAppliancePrefixesDelegatedStatic(ctx context.Context, networkId string) DelegatedApiCreateNetworkAppliancePrefixesDelegatedStaticRequest {
-	return DelegatedApiCreateNetworkAppliancePrefixesDelegatedStaticRequest{
+func (a *DelegatedAPIService) CreateNetworkAppliancePrefixesDelegatedStatic(ctx context.Context, networkId string) DelegatedAPICreateNetworkAppliancePrefixesDelegatedStaticRequest {
+	return DelegatedAPICreateNetworkAppliancePrefixesDelegatedStaticRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -58,7 +58,7 @@ func (a *DelegatedApiService) CreateNetworkAppliancePrefixesDelegatedStatic(ctx 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DelegatedApiService) CreateNetworkAppliancePrefixesDelegatedStaticExecute(r DelegatedApiCreateNetworkAppliancePrefixesDelegatedStaticRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DelegatedAPIService) CreateNetworkAppliancePrefixesDelegatedStaticExecute(r DelegatedAPICreateNetworkAppliancePrefixesDelegatedStaticRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *DelegatedApiService) CreateNetworkAppliancePrefixesDelegatedStaticExecu
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedApiService.CreateNetworkAppliancePrefixesDelegatedStatic")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAPIService.CreateNetworkAppliancePrefixesDelegatedStatic")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,14 +151,14 @@ func (a *DelegatedApiService) CreateNetworkAppliancePrefixesDelegatedStaticExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DelegatedApiDeleteNetworkAppliancePrefixesDelegatedStaticRequest struct {
+type DelegatedAPIDeleteNetworkAppliancePrefixesDelegatedStaticRequest struct {
 	ctx context.Context
-	ApiService *DelegatedApiService
+	ApiService *DelegatedAPIService
 	networkId string
 	staticDelegatedPrefixId string
 }
 
-func (r DelegatedApiDeleteNetworkAppliancePrefixesDelegatedStaticRequest) Execute() (*http.Response, error) {
+func (r DelegatedAPIDeleteNetworkAppliancePrefixesDelegatedStaticRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkAppliancePrefixesDelegatedStaticExecute(r)
 }
 
@@ -170,10 +170,10 @@ Delete a static delegated prefix from a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param staticDelegatedPrefixId Static delegated prefix ID
- @return DelegatedApiDeleteNetworkAppliancePrefixesDelegatedStaticRequest
+ @return DelegatedAPIDeleteNetworkAppliancePrefixesDelegatedStaticRequest
 */
-func (a *DelegatedApiService) DeleteNetworkAppliancePrefixesDelegatedStatic(ctx context.Context, networkId string, staticDelegatedPrefixId string) DelegatedApiDeleteNetworkAppliancePrefixesDelegatedStaticRequest {
-	return DelegatedApiDeleteNetworkAppliancePrefixesDelegatedStaticRequest{
+func (a *DelegatedAPIService) DeleteNetworkAppliancePrefixesDelegatedStatic(ctx context.Context, networkId string, staticDelegatedPrefixId string) DelegatedAPIDeleteNetworkAppliancePrefixesDelegatedStaticRequest {
+	return DelegatedAPIDeleteNetworkAppliancePrefixesDelegatedStaticRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -182,14 +182,14 @@ func (a *DelegatedApiService) DeleteNetworkAppliancePrefixesDelegatedStatic(ctx 
 }
 
 // Execute executes the request
-func (a *DelegatedApiService) DeleteNetworkAppliancePrefixesDelegatedStaticExecute(r DelegatedApiDeleteNetworkAppliancePrefixesDelegatedStaticRequest) (*http.Response, error) {
+func (a *DelegatedAPIService) DeleteNetworkAppliancePrefixesDelegatedStaticExecute(r DelegatedAPIDeleteNetworkAppliancePrefixesDelegatedStaticRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedApiService.DeleteNetworkAppliancePrefixesDelegatedStatic")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAPIService.DeleteNetworkAppliancePrefixesDelegatedStatic")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -261,13 +261,13 @@ func (a *DelegatedApiService) DeleteNetworkAppliancePrefixesDelegatedStaticExecu
 	return localVarHTTPResponse, nil
 }
 
-type DelegatedApiGetDeviceAppliancePrefixesDelegatedRequest struct {
+type DelegatedAPIGetDeviceAppliancePrefixesDelegatedRequest struct {
 	ctx context.Context
-	ApiService *DelegatedApiService
+	ApiService *DelegatedAPIService
 	serial string
 }
 
-func (r DelegatedApiGetDeviceAppliancePrefixesDelegatedRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r DelegatedAPIGetDeviceAppliancePrefixesDelegatedRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceAppliancePrefixesDelegatedExecute(r)
 }
 
@@ -278,10 +278,10 @@ Return current delegated IPv6 prefixes on an appliance.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return DelegatedApiGetDeviceAppliancePrefixesDelegatedRequest
+ @return DelegatedAPIGetDeviceAppliancePrefixesDelegatedRequest
 */
-func (a *DelegatedApiService) GetDeviceAppliancePrefixesDelegated(ctx context.Context, serial string) DelegatedApiGetDeviceAppliancePrefixesDelegatedRequest {
-	return DelegatedApiGetDeviceAppliancePrefixesDelegatedRequest{
+func (a *DelegatedAPIService) GetDeviceAppliancePrefixesDelegated(ctx context.Context, serial string) DelegatedAPIGetDeviceAppliancePrefixesDelegatedRequest {
+	return DelegatedAPIGetDeviceAppliancePrefixesDelegatedRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -290,7 +290,7 @@ func (a *DelegatedApiService) GetDeviceAppliancePrefixesDelegated(ctx context.Co
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *DelegatedApiService) GetDeviceAppliancePrefixesDelegatedExecute(r DelegatedApiGetDeviceAppliancePrefixesDelegatedRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *DelegatedAPIService) GetDeviceAppliancePrefixesDelegatedExecute(r DelegatedAPIGetDeviceAppliancePrefixesDelegatedRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -298,7 +298,7 @@ func (a *DelegatedApiService) GetDeviceAppliancePrefixesDelegatedExecute(r Deleg
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedApiService.GetDeviceAppliancePrefixesDelegated")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAPIService.GetDeviceAppliancePrefixesDelegated")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -378,13 +378,13 @@ func (a *DelegatedApiService) GetDeviceAppliancePrefixesDelegatedExecute(r Deleg
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DelegatedApiGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest struct {
+type DelegatedAPIGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest struct {
 	ctx context.Context
-	ApiService *DelegatedApiService
+	ApiService *DelegatedAPIService
 	serial string
 }
 
-func (r DelegatedApiGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r DelegatedAPIGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceAppliancePrefixesDelegatedVlanAssignmentsExecute(r)
 }
 
@@ -395,10 +395,10 @@ Return prefixes assigned to all IPv6 enabled VLANs on an appliance.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return DelegatedApiGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest
+ @return DelegatedAPIGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest
 */
-func (a *DelegatedApiService) GetDeviceAppliancePrefixesDelegatedVlanAssignments(ctx context.Context, serial string) DelegatedApiGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest {
-	return DelegatedApiGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest{
+func (a *DelegatedAPIService) GetDeviceAppliancePrefixesDelegatedVlanAssignments(ctx context.Context, serial string) DelegatedAPIGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest {
+	return DelegatedAPIGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -407,7 +407,7 @@ func (a *DelegatedApiService) GetDeviceAppliancePrefixesDelegatedVlanAssignments
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *DelegatedApiService) GetDeviceAppliancePrefixesDelegatedVlanAssignmentsExecute(r DelegatedApiGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *DelegatedAPIService) GetDeviceAppliancePrefixesDelegatedVlanAssignmentsExecute(r DelegatedAPIGetDeviceAppliancePrefixesDelegatedVlanAssignmentsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -415,7 +415,7 @@ func (a *DelegatedApiService) GetDeviceAppliancePrefixesDelegatedVlanAssignments
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedApiService.GetDeviceAppliancePrefixesDelegatedVlanAssignments")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAPIService.GetDeviceAppliancePrefixesDelegatedVlanAssignments")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -495,14 +495,14 @@ func (a *DelegatedApiService) GetDeviceAppliancePrefixesDelegatedVlanAssignments
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DelegatedApiGetNetworkAppliancePrefixesDelegatedStaticRequest struct {
+type DelegatedAPIGetNetworkAppliancePrefixesDelegatedStaticRequest struct {
 	ctx context.Context
-	ApiService *DelegatedApiService
+	ApiService *DelegatedAPIService
 	networkId string
 	staticDelegatedPrefixId string
 }
 
-func (r DelegatedApiGetNetworkAppliancePrefixesDelegatedStaticRequest) Execute() (*GetNetworkAppliancePrefixesDelegatedStatics200ResponseInner, *http.Response, error) {
+func (r DelegatedAPIGetNetworkAppliancePrefixesDelegatedStaticRequest) Execute() (*GetNetworkAppliancePrefixesDelegatedStatics200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkAppliancePrefixesDelegatedStaticExecute(r)
 }
 
@@ -514,10 +514,10 @@ Return a static delegated prefix from a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param staticDelegatedPrefixId Static delegated prefix ID
- @return DelegatedApiGetNetworkAppliancePrefixesDelegatedStaticRequest
+ @return DelegatedAPIGetNetworkAppliancePrefixesDelegatedStaticRequest
 */
-func (a *DelegatedApiService) GetNetworkAppliancePrefixesDelegatedStatic(ctx context.Context, networkId string, staticDelegatedPrefixId string) DelegatedApiGetNetworkAppliancePrefixesDelegatedStaticRequest {
-	return DelegatedApiGetNetworkAppliancePrefixesDelegatedStaticRequest{
+func (a *DelegatedAPIService) GetNetworkAppliancePrefixesDelegatedStatic(ctx context.Context, networkId string, staticDelegatedPrefixId string) DelegatedAPIGetNetworkAppliancePrefixesDelegatedStaticRequest {
+	return DelegatedAPIGetNetworkAppliancePrefixesDelegatedStaticRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -527,7 +527,7 @@ func (a *DelegatedApiService) GetNetworkAppliancePrefixesDelegatedStatic(ctx con
 
 // Execute executes the request
 //  @return GetNetworkAppliancePrefixesDelegatedStatics200ResponseInner
-func (a *DelegatedApiService) GetNetworkAppliancePrefixesDelegatedStaticExecute(r DelegatedApiGetNetworkAppliancePrefixesDelegatedStaticRequest) (*GetNetworkAppliancePrefixesDelegatedStatics200ResponseInner, *http.Response, error) {
+func (a *DelegatedAPIService) GetNetworkAppliancePrefixesDelegatedStaticExecute(r DelegatedAPIGetNetworkAppliancePrefixesDelegatedStaticRequest) (*GetNetworkAppliancePrefixesDelegatedStatics200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -535,7 +535,7 @@ func (a *DelegatedApiService) GetNetworkAppliancePrefixesDelegatedStaticExecute(
 		localVarReturnValue  *GetNetworkAppliancePrefixesDelegatedStatics200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedApiService.GetNetworkAppliancePrefixesDelegatedStatic")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAPIService.GetNetworkAppliancePrefixesDelegatedStatic")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -616,13 +616,13 @@ func (a *DelegatedApiService) GetNetworkAppliancePrefixesDelegatedStaticExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DelegatedApiGetNetworkAppliancePrefixesDelegatedStaticsRequest struct {
+type DelegatedAPIGetNetworkAppliancePrefixesDelegatedStaticsRequest struct {
 	ctx context.Context
-	ApiService *DelegatedApiService
+	ApiService *DelegatedAPIService
 	networkId string
 }
 
-func (r DelegatedApiGetNetworkAppliancePrefixesDelegatedStaticsRequest) Execute() ([]GetNetworkAppliancePrefixesDelegatedStatics200ResponseInner, *http.Response, error) {
+func (r DelegatedAPIGetNetworkAppliancePrefixesDelegatedStaticsRequest) Execute() ([]GetNetworkAppliancePrefixesDelegatedStatics200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkAppliancePrefixesDelegatedStaticsExecute(r)
 }
 
@@ -633,10 +633,10 @@ List static delegated prefixes for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return DelegatedApiGetNetworkAppliancePrefixesDelegatedStaticsRequest
+ @return DelegatedAPIGetNetworkAppliancePrefixesDelegatedStaticsRequest
 */
-func (a *DelegatedApiService) GetNetworkAppliancePrefixesDelegatedStatics(ctx context.Context, networkId string) DelegatedApiGetNetworkAppliancePrefixesDelegatedStaticsRequest {
-	return DelegatedApiGetNetworkAppliancePrefixesDelegatedStaticsRequest{
+func (a *DelegatedAPIService) GetNetworkAppliancePrefixesDelegatedStatics(ctx context.Context, networkId string) DelegatedAPIGetNetworkAppliancePrefixesDelegatedStaticsRequest {
+	return DelegatedAPIGetNetworkAppliancePrefixesDelegatedStaticsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -645,7 +645,7 @@ func (a *DelegatedApiService) GetNetworkAppliancePrefixesDelegatedStatics(ctx co
 
 // Execute executes the request
 //  @return []GetNetworkAppliancePrefixesDelegatedStatics200ResponseInner
-func (a *DelegatedApiService) GetNetworkAppliancePrefixesDelegatedStaticsExecute(r DelegatedApiGetNetworkAppliancePrefixesDelegatedStaticsRequest) ([]GetNetworkAppliancePrefixesDelegatedStatics200ResponseInner, *http.Response, error) {
+func (a *DelegatedAPIService) GetNetworkAppliancePrefixesDelegatedStaticsExecute(r DelegatedAPIGetNetworkAppliancePrefixesDelegatedStaticsRequest) ([]GetNetworkAppliancePrefixesDelegatedStatics200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -653,7 +653,7 @@ func (a *DelegatedApiService) GetNetworkAppliancePrefixesDelegatedStaticsExecute
 		localVarReturnValue  []GetNetworkAppliancePrefixesDelegatedStatics200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedApiService.GetNetworkAppliancePrefixesDelegatedStatics")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAPIService.GetNetworkAppliancePrefixesDelegatedStatics")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -733,20 +733,20 @@ func (a *DelegatedApiService) GetNetworkAppliancePrefixesDelegatedStaticsExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DelegatedApiUpdateNetworkAppliancePrefixesDelegatedStaticRequest struct {
+type DelegatedAPIUpdateNetworkAppliancePrefixesDelegatedStaticRequest struct {
 	ctx context.Context
-	ApiService *DelegatedApiService
+	ApiService *DelegatedAPIService
 	networkId string
 	staticDelegatedPrefixId string
 	updateNetworkAppliancePrefixesDelegatedStaticRequest *UpdateNetworkAppliancePrefixesDelegatedStaticRequest
 }
 
-func (r DelegatedApiUpdateNetworkAppliancePrefixesDelegatedStaticRequest) UpdateNetworkAppliancePrefixesDelegatedStaticRequest(updateNetworkAppliancePrefixesDelegatedStaticRequest UpdateNetworkAppliancePrefixesDelegatedStaticRequest) DelegatedApiUpdateNetworkAppliancePrefixesDelegatedStaticRequest {
+func (r DelegatedAPIUpdateNetworkAppliancePrefixesDelegatedStaticRequest) UpdateNetworkAppliancePrefixesDelegatedStaticRequest(updateNetworkAppliancePrefixesDelegatedStaticRequest UpdateNetworkAppliancePrefixesDelegatedStaticRequest) DelegatedAPIUpdateNetworkAppliancePrefixesDelegatedStaticRequest {
 	r.updateNetworkAppliancePrefixesDelegatedStaticRequest = &updateNetworkAppliancePrefixesDelegatedStaticRequest
 	return r
 }
 
-func (r DelegatedApiUpdateNetworkAppliancePrefixesDelegatedStaticRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r DelegatedAPIUpdateNetworkAppliancePrefixesDelegatedStaticRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkAppliancePrefixesDelegatedStaticExecute(r)
 }
 
@@ -758,10 +758,10 @@ Update a static delegated prefix from a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param staticDelegatedPrefixId Static delegated prefix ID
- @return DelegatedApiUpdateNetworkAppliancePrefixesDelegatedStaticRequest
+ @return DelegatedAPIUpdateNetworkAppliancePrefixesDelegatedStaticRequest
 */
-func (a *DelegatedApiService) UpdateNetworkAppliancePrefixesDelegatedStatic(ctx context.Context, networkId string, staticDelegatedPrefixId string) DelegatedApiUpdateNetworkAppliancePrefixesDelegatedStaticRequest {
-	return DelegatedApiUpdateNetworkAppliancePrefixesDelegatedStaticRequest{
+func (a *DelegatedAPIService) UpdateNetworkAppliancePrefixesDelegatedStatic(ctx context.Context, networkId string, staticDelegatedPrefixId string) DelegatedAPIUpdateNetworkAppliancePrefixesDelegatedStaticRequest {
+	return DelegatedAPIUpdateNetworkAppliancePrefixesDelegatedStaticRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -771,7 +771,7 @@ func (a *DelegatedApiService) UpdateNetworkAppliancePrefixesDelegatedStatic(ctx 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DelegatedApiService) UpdateNetworkAppliancePrefixesDelegatedStaticExecute(r DelegatedApiUpdateNetworkAppliancePrefixesDelegatedStaticRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DelegatedAPIService) UpdateNetworkAppliancePrefixesDelegatedStaticExecute(r DelegatedAPIUpdateNetworkAppliancePrefixesDelegatedStaticRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -779,7 +779,7 @@ func (a *DelegatedApiService) UpdateNetworkAppliancePrefixesDelegatedStaticExecu
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedApiService.UpdateNetworkAppliancePrefixesDelegatedStatic")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAPIService.UpdateNetworkAppliancePrefixesDelegatedStatic")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

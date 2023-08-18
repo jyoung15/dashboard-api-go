@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing BySwitchApiService
+Testing BySwitchAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_BySwitchApiService(t *testing.T) {
+func Test_client_BySwitchAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test BySwitchApiService GetOrganizationSwitchPortsBySwitch", func(t *testing.T) {
+	t.Run("Test BySwitchAPIService GetOrganizationSwitchPortsBySwitch", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.BySwitchApi.GetOrganizationSwitchPortsBySwitch(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.BySwitchAPI.GetOrganizationSwitchPortsBySwitch(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

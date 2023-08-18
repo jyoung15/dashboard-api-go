@@ -20,17 +20,17 @@ import (
 )
 
 
-// VppAccountsApiService VppAccountsApi service
-type VppAccountsApiService service
+// VppAccountsAPIService VppAccountsAPI service
+type VppAccountsAPIService service
 
-type VppAccountsApiGetOrganizationSmVppAccountRequest struct {
+type VppAccountsAPIGetOrganizationSmVppAccountRequest struct {
 	ctx context.Context
-	ApiService *VppAccountsApiService
+	ApiService *VppAccountsAPIService
 	organizationId string
 	vppAccountId string
 }
 
-func (r VppAccountsApiGetOrganizationSmVppAccountRequest) Execute() (*GetOrganizationSmVppAccounts200ResponseInner, *http.Response, error) {
+func (r VppAccountsAPIGetOrganizationSmVppAccountRequest) Execute() (*GetOrganizationSmVppAccounts200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSmVppAccountExecute(r)
 }
 
@@ -42,10 +42,10 @@ Get a hash containing the unparsed token of the VPP account with the given ID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param vppAccountId Vpp account ID
- @return VppAccountsApiGetOrganizationSmVppAccountRequest
+ @return VppAccountsAPIGetOrganizationSmVppAccountRequest
 */
-func (a *VppAccountsApiService) GetOrganizationSmVppAccount(ctx context.Context, organizationId string, vppAccountId string) VppAccountsApiGetOrganizationSmVppAccountRequest {
-	return VppAccountsApiGetOrganizationSmVppAccountRequest{
+func (a *VppAccountsAPIService) GetOrganizationSmVppAccount(ctx context.Context, organizationId string, vppAccountId string) VppAccountsAPIGetOrganizationSmVppAccountRequest {
+	return VppAccountsAPIGetOrganizationSmVppAccountRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -55,7 +55,7 @@ func (a *VppAccountsApiService) GetOrganizationSmVppAccount(ctx context.Context,
 
 // Execute executes the request
 //  @return GetOrganizationSmVppAccounts200ResponseInner
-func (a *VppAccountsApiService) GetOrganizationSmVppAccountExecute(r VppAccountsApiGetOrganizationSmVppAccountRequest) (*GetOrganizationSmVppAccounts200ResponseInner, *http.Response, error) {
+func (a *VppAccountsAPIService) GetOrganizationSmVppAccountExecute(r VppAccountsAPIGetOrganizationSmVppAccountRequest) (*GetOrganizationSmVppAccounts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -63,7 +63,7 @@ func (a *VppAccountsApiService) GetOrganizationSmVppAccountExecute(r VppAccounts
 		localVarReturnValue  *GetOrganizationSmVppAccounts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VppAccountsApiService.GetOrganizationSmVppAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VppAccountsAPIService.GetOrganizationSmVppAccount")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -144,13 +144,13 @@ func (a *VppAccountsApiService) GetOrganizationSmVppAccountExecute(r VppAccounts
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type VppAccountsApiGetOrganizationSmVppAccountsRequest struct {
+type VppAccountsAPIGetOrganizationSmVppAccountsRequest struct {
 	ctx context.Context
-	ApiService *VppAccountsApiService
+	ApiService *VppAccountsAPIService
 	organizationId string
 }
 
-func (r VppAccountsApiGetOrganizationSmVppAccountsRequest) Execute() ([]GetOrganizationSmVppAccounts200ResponseInner, *http.Response, error) {
+func (r VppAccountsAPIGetOrganizationSmVppAccountsRequest) Execute() ([]GetOrganizationSmVppAccounts200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSmVppAccountsExecute(r)
 }
 
@@ -161,10 +161,10 @@ List the VPP accounts in the organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return VppAccountsApiGetOrganizationSmVppAccountsRequest
+ @return VppAccountsAPIGetOrganizationSmVppAccountsRequest
 */
-func (a *VppAccountsApiService) GetOrganizationSmVppAccounts(ctx context.Context, organizationId string) VppAccountsApiGetOrganizationSmVppAccountsRequest {
-	return VppAccountsApiGetOrganizationSmVppAccountsRequest{
+func (a *VppAccountsAPIService) GetOrganizationSmVppAccounts(ctx context.Context, organizationId string) VppAccountsAPIGetOrganizationSmVppAccountsRequest {
+	return VppAccountsAPIGetOrganizationSmVppAccountsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -173,7 +173,7 @@ func (a *VppAccountsApiService) GetOrganizationSmVppAccounts(ctx context.Context
 
 // Execute executes the request
 //  @return []GetOrganizationSmVppAccounts200ResponseInner
-func (a *VppAccountsApiService) GetOrganizationSmVppAccountsExecute(r VppAccountsApiGetOrganizationSmVppAccountsRequest) ([]GetOrganizationSmVppAccounts200ResponseInner, *http.Response, error) {
+func (a *VppAccountsAPIService) GetOrganizationSmVppAccountsExecute(r VppAccountsAPIGetOrganizationSmVppAccountsRequest) ([]GetOrganizationSmVppAccounts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -181,7 +181,7 @@ func (a *VppAccountsApiService) GetOrganizationSmVppAccountsExecute(r VppAccount
 		localVarReturnValue  []GetOrganizationSmVppAccounts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VppAccountsApiService.GetOrganizationSmVppAccounts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VppAccountsAPIService.GetOrganizationSmVppAccounts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

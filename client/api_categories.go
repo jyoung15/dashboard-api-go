@@ -20,16 +20,16 @@ import (
 )
 
 
-// CategoriesApiService CategoriesApi service
-type CategoriesApiService service
+// CategoriesAPIService CategoriesAPI service
+type CategoriesAPIService service
 
-type CategoriesApiGetNetworkApplianceContentFilteringCategoriesRequest struct {
+type CategoriesAPIGetNetworkApplianceContentFilteringCategoriesRequest struct {
 	ctx context.Context
-	ApiService *CategoriesApiService
+	ApiService *CategoriesAPIService
 	networkId string
 }
 
-func (r CategoriesApiGetNetworkApplianceContentFilteringCategoriesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CategoriesAPIGetNetworkApplianceContentFilteringCategoriesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceContentFilteringCategoriesExecute(r)
 }
 
@@ -40,10 +40,10 @@ List all available content filtering categories for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return CategoriesApiGetNetworkApplianceContentFilteringCategoriesRequest
+ @return CategoriesAPIGetNetworkApplianceContentFilteringCategoriesRequest
 */
-func (a *CategoriesApiService) GetNetworkApplianceContentFilteringCategories(ctx context.Context, networkId string) CategoriesApiGetNetworkApplianceContentFilteringCategoriesRequest {
-	return CategoriesApiGetNetworkApplianceContentFilteringCategoriesRequest{
+func (a *CategoriesAPIService) GetNetworkApplianceContentFilteringCategories(ctx context.Context, networkId string) CategoriesAPIGetNetworkApplianceContentFilteringCategoriesRequest {
+	return CategoriesAPIGetNetworkApplianceContentFilteringCategoriesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *CategoriesApiService) GetNetworkApplianceContentFilteringCategories(ctx
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CategoriesApiService) GetNetworkApplianceContentFilteringCategoriesExecute(r CategoriesApiGetNetworkApplianceContentFilteringCategoriesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CategoriesAPIService) GetNetworkApplianceContentFilteringCategoriesExecute(r CategoriesAPIGetNetworkApplianceContentFilteringCategoriesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *CategoriesApiService) GetNetworkApplianceContentFilteringCategoriesExec
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CategoriesApiService.GetNetworkApplianceContentFilteringCategories")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CategoriesAPIService.GetNetworkApplianceContentFilteringCategories")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

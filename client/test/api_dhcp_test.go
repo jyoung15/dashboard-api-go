@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing DhcpApiService
+Testing DhcpAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_DhcpApiService(t *testing.T) {
+func Test_client_DhcpAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test DhcpApiService GetDeviceApplianceDhcpSubnets", func(t *testing.T) {
+	t.Run("Test DhcpAPIService GetDeviceApplianceDhcpSubnets", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.DhcpApi.GetDeviceApplianceDhcpSubnets(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.DhcpAPI.GetDeviceApplianceDhcpSubnets(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,14 +36,14 @@ func Test_client_DhcpApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DhcpApiService GetDeviceSwitchRoutingInterfaceDhcp", func(t *testing.T) {
+	t.Run("Test DhcpAPIService GetDeviceSwitchRoutingInterfaceDhcp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var interfaceId string
 
-		resp, httpRes, err := apiClient.DhcpApi.GetDeviceSwitchRoutingInterfaceDhcp(context.Background(), serial, interfaceId).Execute()
+		resp, httpRes, err := apiClient.DhcpAPI.GetDeviceSwitchRoutingInterfaceDhcp(context.Background(), serial, interfaceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -51,13 +51,13 @@ func Test_client_DhcpApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DhcpApiService GetNetworkCellularGatewayDhcp", func(t *testing.T) {
+	t.Run("Test DhcpAPIService GetNetworkCellularGatewayDhcp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.DhcpApi.GetNetworkCellularGatewayDhcp(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.DhcpAPI.GetNetworkCellularGatewayDhcp(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -65,13 +65,13 @@ func Test_client_DhcpApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DhcpApiService GetNetworkSwitchDhcpV4ServersSeen", func(t *testing.T) {
+	t.Run("Test DhcpAPIService GetNetworkSwitchDhcpV4ServersSeen", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.DhcpApi.GetNetworkSwitchDhcpV4ServersSeen(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.DhcpAPI.GetNetworkSwitchDhcpV4ServersSeen(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,7 +79,7 @@ func Test_client_DhcpApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DhcpApiService GetNetworkSwitchStackRoutingInterfaceDhcp", func(t *testing.T) {
+	t.Run("Test DhcpAPIService GetNetworkSwitchStackRoutingInterfaceDhcp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -87,7 +87,7 @@ func Test_client_DhcpApiService(t *testing.T) {
 		var switchStackId string
 		var interfaceId string
 
-		resp, httpRes, err := apiClient.DhcpApi.GetNetworkSwitchStackRoutingInterfaceDhcp(context.Background(), networkId, switchStackId, interfaceId).Execute()
+		resp, httpRes, err := apiClient.DhcpAPI.GetNetworkSwitchStackRoutingInterfaceDhcp(context.Background(), networkId, switchStackId, interfaceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -95,14 +95,14 @@ func Test_client_DhcpApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DhcpApiService UpdateDeviceSwitchRoutingInterfaceDhcp", func(t *testing.T) {
+	t.Run("Test DhcpAPIService UpdateDeviceSwitchRoutingInterfaceDhcp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var interfaceId string
 
-		resp, httpRes, err := apiClient.DhcpApi.UpdateDeviceSwitchRoutingInterfaceDhcp(context.Background(), serial, interfaceId).Execute()
+		resp, httpRes, err := apiClient.DhcpAPI.UpdateDeviceSwitchRoutingInterfaceDhcp(context.Background(), serial, interfaceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -110,13 +110,13 @@ func Test_client_DhcpApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DhcpApiService UpdateNetworkCellularGatewayDhcp", func(t *testing.T) {
+	t.Run("Test DhcpAPIService UpdateNetworkCellularGatewayDhcp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.DhcpApi.UpdateNetworkCellularGatewayDhcp(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.DhcpAPI.UpdateNetworkCellularGatewayDhcp(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -124,7 +124,7 @@ func Test_client_DhcpApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test DhcpApiService UpdateNetworkSwitchStackRoutingInterfaceDhcp", func(t *testing.T) {
+	t.Run("Test DhcpAPIService UpdateNetworkSwitchStackRoutingInterfaceDhcp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -132,7 +132,7 @@ func Test_client_DhcpApiService(t *testing.T) {
 		var switchStackId string
 		var interfaceId string
 
-		resp, httpRes, err := apiClient.DhcpApi.UpdateNetworkSwitchStackRoutingInterfaceDhcp(context.Background(), networkId, switchStackId, interfaceId).Execute()
+		resp, httpRes, err := apiClient.DhcpAPI.UpdateNetworkSwitchStackRoutingInterfaceDhcp(context.Background(), networkId, switchStackId, interfaceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

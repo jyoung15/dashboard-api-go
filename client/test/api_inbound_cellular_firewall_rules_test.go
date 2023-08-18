@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing InboundCellularFirewallRulesApiService
+Testing InboundCellularFirewallRulesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_InboundCellularFirewallRulesApiService(t *testing.T) {
+func Test_client_InboundCellularFirewallRulesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test InboundCellularFirewallRulesApiService GetNetworkApplianceFirewallInboundCellularFirewallRules", func(t *testing.T) {
+	t.Run("Test InboundCellularFirewallRulesAPIService GetNetworkApplianceFirewallInboundCellularFirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.InboundCellularFirewallRulesApi.GetNetworkApplianceFirewallInboundCellularFirewallRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.InboundCellularFirewallRulesAPI.GetNetworkApplianceFirewallInboundCellularFirewallRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_InboundCellularFirewallRulesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test InboundCellularFirewallRulesApiService UpdateNetworkApplianceFirewallInboundCellularFirewallRules", func(t *testing.T) {
+	t.Run("Test InboundCellularFirewallRulesAPIService UpdateNetworkApplianceFirewallInboundCellularFirewallRules", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.InboundCellularFirewallRulesApi.UpdateNetworkApplianceFirewallInboundCellularFirewallRules(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.InboundCellularFirewallRulesAPI.UpdateNetworkApplianceFirewallInboundCellularFirewallRules(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

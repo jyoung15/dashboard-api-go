@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing LiveApiService
+Testing LiveAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_LiveApiService(t *testing.T) {
+func Test_client_LiveAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test LiveApiService GetDeviceCameraAnalyticsLive", func(t *testing.T) {
+	t.Run("Test LiveAPIService GetDeviceCameraAnalyticsLive", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.LiveApi.GetDeviceCameraAnalyticsLive(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.LiveAPI.GetDeviceCameraAnalyticsLive(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

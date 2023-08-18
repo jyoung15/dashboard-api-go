@@ -20,22 +20,22 @@ import (
 )
 
 
-// InsightApiService InsightApi service
-type InsightApiService service
+// InsightAPIService InsightAPI service
+type InsightAPIService service
 
-type InsightApiCreateOrganizationInsightMonitoredMediaServerRequest struct {
+type InsightAPICreateOrganizationInsightMonitoredMediaServerRequest struct {
 	ctx context.Context
-	ApiService *InsightApiService
+	ApiService *InsightAPIService
 	organizationId string
 	createOrganizationInsightMonitoredMediaServerRequest *CreateOrganizationInsightMonitoredMediaServerRequest
 }
 
-func (r InsightApiCreateOrganizationInsightMonitoredMediaServerRequest) CreateOrganizationInsightMonitoredMediaServerRequest(createOrganizationInsightMonitoredMediaServerRequest CreateOrganizationInsightMonitoredMediaServerRequest) InsightApiCreateOrganizationInsightMonitoredMediaServerRequest {
+func (r InsightAPICreateOrganizationInsightMonitoredMediaServerRequest) CreateOrganizationInsightMonitoredMediaServerRequest(createOrganizationInsightMonitoredMediaServerRequest CreateOrganizationInsightMonitoredMediaServerRequest) InsightAPICreateOrganizationInsightMonitoredMediaServerRequest {
 	r.createOrganizationInsightMonitoredMediaServerRequest = &createOrganizationInsightMonitoredMediaServerRequest
 	return r
 }
 
-func (r InsightApiCreateOrganizationInsightMonitoredMediaServerRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r InsightAPICreateOrganizationInsightMonitoredMediaServerRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateOrganizationInsightMonitoredMediaServerExecute(r)
 }
 
@@ -46,10 +46,10 @@ Add a media server to be monitored for this organization. Only valid for organiz
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return InsightApiCreateOrganizationInsightMonitoredMediaServerRequest
+ @return InsightAPICreateOrganizationInsightMonitoredMediaServerRequest
 */
-func (a *InsightApiService) CreateOrganizationInsightMonitoredMediaServer(ctx context.Context, organizationId string) InsightApiCreateOrganizationInsightMonitoredMediaServerRequest {
-	return InsightApiCreateOrganizationInsightMonitoredMediaServerRequest{
+func (a *InsightAPIService) CreateOrganizationInsightMonitoredMediaServer(ctx context.Context, organizationId string) InsightAPICreateOrganizationInsightMonitoredMediaServerRequest {
+	return InsightAPICreateOrganizationInsightMonitoredMediaServerRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -58,7 +58,7 @@ func (a *InsightApiService) CreateOrganizationInsightMonitoredMediaServer(ctx co
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *InsightApiService) CreateOrganizationInsightMonitoredMediaServerExecute(r InsightApiCreateOrganizationInsightMonitoredMediaServerRequest) (map[string]interface{}, *http.Response, error) {
+func (a *InsightAPIService) CreateOrganizationInsightMonitoredMediaServerExecute(r InsightAPICreateOrganizationInsightMonitoredMediaServerRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *InsightApiService) CreateOrganizationInsightMonitoredMediaServerExecute
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsightApiService.CreateOrganizationInsightMonitoredMediaServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsightAPIService.CreateOrganizationInsightMonitoredMediaServer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,14 +151,14 @@ func (a *InsightApiService) CreateOrganizationInsightMonitoredMediaServerExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type InsightApiDeleteOrganizationInsightMonitoredMediaServerRequest struct {
+type InsightAPIDeleteOrganizationInsightMonitoredMediaServerRequest struct {
 	ctx context.Context
-	ApiService *InsightApiService
+	ApiService *InsightAPIService
 	organizationId string
 	monitoredMediaServerId string
 }
 
-func (r InsightApiDeleteOrganizationInsightMonitoredMediaServerRequest) Execute() (*http.Response, error) {
+func (r InsightAPIDeleteOrganizationInsightMonitoredMediaServerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationInsightMonitoredMediaServerExecute(r)
 }
 
@@ -170,10 +170,10 @@ Delete a monitored media server from this organization. Only valid for organizat
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param monitoredMediaServerId Monitored media server ID
- @return InsightApiDeleteOrganizationInsightMonitoredMediaServerRequest
+ @return InsightAPIDeleteOrganizationInsightMonitoredMediaServerRequest
 */
-func (a *InsightApiService) DeleteOrganizationInsightMonitoredMediaServer(ctx context.Context, organizationId string, monitoredMediaServerId string) InsightApiDeleteOrganizationInsightMonitoredMediaServerRequest {
-	return InsightApiDeleteOrganizationInsightMonitoredMediaServerRequest{
+func (a *InsightAPIService) DeleteOrganizationInsightMonitoredMediaServer(ctx context.Context, organizationId string, monitoredMediaServerId string) InsightAPIDeleteOrganizationInsightMonitoredMediaServerRequest {
+	return InsightAPIDeleteOrganizationInsightMonitoredMediaServerRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -182,14 +182,14 @@ func (a *InsightApiService) DeleteOrganizationInsightMonitoredMediaServer(ctx co
 }
 
 // Execute executes the request
-func (a *InsightApiService) DeleteOrganizationInsightMonitoredMediaServerExecute(r InsightApiDeleteOrganizationInsightMonitoredMediaServerRequest) (*http.Response, error) {
+func (a *InsightAPIService) DeleteOrganizationInsightMonitoredMediaServerExecute(r InsightAPIDeleteOrganizationInsightMonitoredMediaServerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsightApiService.DeleteOrganizationInsightMonitoredMediaServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsightAPIService.DeleteOrganizationInsightMonitoredMediaServer")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -261,9 +261,9 @@ func (a *InsightApiService) DeleteOrganizationInsightMonitoredMediaServerExecute
 	return localVarHTTPResponse, nil
 }
 
-type InsightApiGetNetworkInsightApplicationHealthByTimeRequest struct {
+type InsightAPIGetNetworkInsightApplicationHealthByTimeRequest struct {
 	ctx context.Context
-	ApiService *InsightApiService
+	ApiService *InsightAPIService
 	networkId string
 	applicationId string
 	t0 *string
@@ -273,30 +273,30 @@ type InsightApiGetNetworkInsightApplicationHealthByTimeRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 7 days from today.
-func (r InsightApiGetNetworkInsightApplicationHealthByTimeRequest) T0(t0 string) InsightApiGetNetworkInsightApplicationHealthByTimeRequest {
+func (r InsightAPIGetNetworkInsightApplicationHealthByTimeRequest) T0(t0 string) InsightAPIGetNetworkInsightApplicationHealthByTimeRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r InsightApiGetNetworkInsightApplicationHealthByTimeRequest) T1(t1 string) InsightApiGetNetworkInsightApplicationHealthByTimeRequest {
+func (r InsightAPIGetNetworkInsightApplicationHealthByTimeRequest) T1(t1 string) InsightAPIGetNetworkInsightApplicationHealthByTimeRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. The default is 2 hours.
-func (r InsightApiGetNetworkInsightApplicationHealthByTimeRequest) Timespan(timespan float32) InsightApiGetNetworkInsightApplicationHealthByTimeRequest {
+func (r InsightAPIGetNetworkInsightApplicationHealthByTimeRequest) Timespan(timespan float32) InsightAPIGetNetworkInsightApplicationHealthByTimeRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 60, 300, 3600, 86400. The default is 300.
-func (r InsightApiGetNetworkInsightApplicationHealthByTimeRequest) Resolution(resolution int32) InsightApiGetNetworkInsightApplicationHealthByTimeRequest {
+func (r InsightAPIGetNetworkInsightApplicationHealthByTimeRequest) Resolution(resolution int32) InsightAPIGetNetworkInsightApplicationHealthByTimeRequest {
 	r.resolution = &resolution
 	return r
 }
 
-func (r InsightApiGetNetworkInsightApplicationHealthByTimeRequest) Execute() ([]GetNetworkInsightApplicationHealthByTime200ResponseInner, *http.Response, error) {
+func (r InsightAPIGetNetworkInsightApplicationHealthByTimeRequest) Execute() ([]GetNetworkInsightApplicationHealthByTime200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkInsightApplicationHealthByTimeExecute(r)
 }
 
@@ -308,10 +308,10 @@ Get application health by time
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param applicationId Application ID
- @return InsightApiGetNetworkInsightApplicationHealthByTimeRequest
+ @return InsightAPIGetNetworkInsightApplicationHealthByTimeRequest
 */
-func (a *InsightApiService) GetNetworkInsightApplicationHealthByTime(ctx context.Context, networkId string, applicationId string) InsightApiGetNetworkInsightApplicationHealthByTimeRequest {
-	return InsightApiGetNetworkInsightApplicationHealthByTimeRequest{
+func (a *InsightAPIService) GetNetworkInsightApplicationHealthByTime(ctx context.Context, networkId string, applicationId string) InsightAPIGetNetworkInsightApplicationHealthByTimeRequest {
+	return InsightAPIGetNetworkInsightApplicationHealthByTimeRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -321,7 +321,7 @@ func (a *InsightApiService) GetNetworkInsightApplicationHealthByTime(ctx context
 
 // Execute executes the request
 //  @return []GetNetworkInsightApplicationHealthByTime200ResponseInner
-func (a *InsightApiService) GetNetworkInsightApplicationHealthByTimeExecute(r InsightApiGetNetworkInsightApplicationHealthByTimeRequest) ([]GetNetworkInsightApplicationHealthByTime200ResponseInner, *http.Response, error) {
+func (a *InsightAPIService) GetNetworkInsightApplicationHealthByTimeExecute(r InsightAPIGetNetworkInsightApplicationHealthByTimeRequest) ([]GetNetworkInsightApplicationHealthByTime200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -329,7 +329,7 @@ func (a *InsightApiService) GetNetworkInsightApplicationHealthByTimeExecute(r In
 		localVarReturnValue  []GetNetworkInsightApplicationHealthByTime200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsightApiService.GetNetworkInsightApplicationHealthByTime")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsightAPIService.GetNetworkInsightApplicationHealthByTime")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -422,13 +422,13 @@ func (a *InsightApiService) GetNetworkInsightApplicationHealthByTimeExecute(r In
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type InsightApiGetOrganizationInsightApplicationsRequest struct {
+type InsightAPIGetOrganizationInsightApplicationsRequest struct {
 	ctx context.Context
-	ApiService *InsightApiService
+	ApiService *InsightAPIService
 	organizationId string
 }
 
-func (r InsightApiGetOrganizationInsightApplicationsRequest) Execute() ([]GetOrganizationInsightApplications200ResponseInner, *http.Response, error) {
+func (r InsightAPIGetOrganizationInsightApplicationsRequest) Execute() ([]GetOrganizationInsightApplications200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationInsightApplicationsExecute(r)
 }
 
@@ -439,10 +439,10 @@ List all Insight tracked applications
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return InsightApiGetOrganizationInsightApplicationsRequest
+ @return InsightAPIGetOrganizationInsightApplicationsRequest
 */
-func (a *InsightApiService) GetOrganizationInsightApplications(ctx context.Context, organizationId string) InsightApiGetOrganizationInsightApplicationsRequest {
-	return InsightApiGetOrganizationInsightApplicationsRequest{
+func (a *InsightAPIService) GetOrganizationInsightApplications(ctx context.Context, organizationId string) InsightAPIGetOrganizationInsightApplicationsRequest {
+	return InsightAPIGetOrganizationInsightApplicationsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -451,7 +451,7 @@ func (a *InsightApiService) GetOrganizationInsightApplications(ctx context.Conte
 
 // Execute executes the request
 //  @return []GetOrganizationInsightApplications200ResponseInner
-func (a *InsightApiService) GetOrganizationInsightApplicationsExecute(r InsightApiGetOrganizationInsightApplicationsRequest) ([]GetOrganizationInsightApplications200ResponseInner, *http.Response, error) {
+func (a *InsightAPIService) GetOrganizationInsightApplicationsExecute(r InsightAPIGetOrganizationInsightApplicationsRequest) ([]GetOrganizationInsightApplications200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -459,7 +459,7 @@ func (a *InsightApiService) GetOrganizationInsightApplicationsExecute(r InsightA
 		localVarReturnValue  []GetOrganizationInsightApplications200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsightApiService.GetOrganizationInsightApplications")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsightAPIService.GetOrganizationInsightApplications")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -539,14 +539,14 @@ func (a *InsightApiService) GetOrganizationInsightApplicationsExecute(r InsightA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type InsightApiGetOrganizationInsightMonitoredMediaServerRequest struct {
+type InsightAPIGetOrganizationInsightMonitoredMediaServerRequest struct {
 	ctx context.Context
-	ApiService *InsightApiService
+	ApiService *InsightAPIService
 	organizationId string
 	monitoredMediaServerId string
 }
 
-func (r InsightApiGetOrganizationInsightMonitoredMediaServerRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r InsightAPIGetOrganizationInsightMonitoredMediaServerRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationInsightMonitoredMediaServerExecute(r)
 }
 
@@ -558,10 +558,10 @@ Return a monitored media server for this organization. Only valid for organizati
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param monitoredMediaServerId Monitored media server ID
- @return InsightApiGetOrganizationInsightMonitoredMediaServerRequest
+ @return InsightAPIGetOrganizationInsightMonitoredMediaServerRequest
 */
-func (a *InsightApiService) GetOrganizationInsightMonitoredMediaServer(ctx context.Context, organizationId string, monitoredMediaServerId string) InsightApiGetOrganizationInsightMonitoredMediaServerRequest {
-	return InsightApiGetOrganizationInsightMonitoredMediaServerRequest{
+func (a *InsightAPIService) GetOrganizationInsightMonitoredMediaServer(ctx context.Context, organizationId string, monitoredMediaServerId string) InsightAPIGetOrganizationInsightMonitoredMediaServerRequest {
+	return InsightAPIGetOrganizationInsightMonitoredMediaServerRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -571,7 +571,7 @@ func (a *InsightApiService) GetOrganizationInsightMonitoredMediaServer(ctx conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *InsightApiService) GetOrganizationInsightMonitoredMediaServerExecute(r InsightApiGetOrganizationInsightMonitoredMediaServerRequest) (map[string]interface{}, *http.Response, error) {
+func (a *InsightAPIService) GetOrganizationInsightMonitoredMediaServerExecute(r InsightAPIGetOrganizationInsightMonitoredMediaServerRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -579,7 +579,7 @@ func (a *InsightApiService) GetOrganizationInsightMonitoredMediaServerExecute(r 
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsightApiService.GetOrganizationInsightMonitoredMediaServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsightAPIService.GetOrganizationInsightMonitoredMediaServer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -660,13 +660,13 @@ func (a *InsightApiService) GetOrganizationInsightMonitoredMediaServerExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type InsightApiGetOrganizationInsightMonitoredMediaServersRequest struct {
+type InsightAPIGetOrganizationInsightMonitoredMediaServersRequest struct {
 	ctx context.Context
-	ApiService *InsightApiService
+	ApiService *InsightAPIService
 	organizationId string
 }
 
-func (r InsightApiGetOrganizationInsightMonitoredMediaServersRequest) Execute() ([]GetOrganizationInsightMonitoredMediaServers200ResponseInner, *http.Response, error) {
+func (r InsightAPIGetOrganizationInsightMonitoredMediaServersRequest) Execute() ([]GetOrganizationInsightMonitoredMediaServers200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationInsightMonitoredMediaServersExecute(r)
 }
 
@@ -677,10 +677,10 @@ List the monitored media servers for this organization. Only valid for organizat
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return InsightApiGetOrganizationInsightMonitoredMediaServersRequest
+ @return InsightAPIGetOrganizationInsightMonitoredMediaServersRequest
 */
-func (a *InsightApiService) GetOrganizationInsightMonitoredMediaServers(ctx context.Context, organizationId string) InsightApiGetOrganizationInsightMonitoredMediaServersRequest {
-	return InsightApiGetOrganizationInsightMonitoredMediaServersRequest{
+func (a *InsightAPIService) GetOrganizationInsightMonitoredMediaServers(ctx context.Context, organizationId string) InsightAPIGetOrganizationInsightMonitoredMediaServersRequest {
+	return InsightAPIGetOrganizationInsightMonitoredMediaServersRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -689,7 +689,7 @@ func (a *InsightApiService) GetOrganizationInsightMonitoredMediaServers(ctx cont
 
 // Execute executes the request
 //  @return []GetOrganizationInsightMonitoredMediaServers200ResponseInner
-func (a *InsightApiService) GetOrganizationInsightMonitoredMediaServersExecute(r InsightApiGetOrganizationInsightMonitoredMediaServersRequest) ([]GetOrganizationInsightMonitoredMediaServers200ResponseInner, *http.Response, error) {
+func (a *InsightAPIService) GetOrganizationInsightMonitoredMediaServersExecute(r InsightAPIGetOrganizationInsightMonitoredMediaServersRequest) ([]GetOrganizationInsightMonitoredMediaServers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -697,7 +697,7 @@ func (a *InsightApiService) GetOrganizationInsightMonitoredMediaServersExecute(r
 		localVarReturnValue  []GetOrganizationInsightMonitoredMediaServers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsightApiService.GetOrganizationInsightMonitoredMediaServers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsightAPIService.GetOrganizationInsightMonitoredMediaServers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -777,20 +777,20 @@ func (a *InsightApiService) GetOrganizationInsightMonitoredMediaServersExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type InsightApiUpdateOrganizationInsightMonitoredMediaServerRequest struct {
+type InsightAPIUpdateOrganizationInsightMonitoredMediaServerRequest struct {
 	ctx context.Context
-	ApiService *InsightApiService
+	ApiService *InsightAPIService
 	organizationId string
 	monitoredMediaServerId string
 	updateOrganizationInsightMonitoredMediaServerRequest *UpdateOrganizationInsightMonitoredMediaServerRequest
 }
 
-func (r InsightApiUpdateOrganizationInsightMonitoredMediaServerRequest) UpdateOrganizationInsightMonitoredMediaServerRequest(updateOrganizationInsightMonitoredMediaServerRequest UpdateOrganizationInsightMonitoredMediaServerRequest) InsightApiUpdateOrganizationInsightMonitoredMediaServerRequest {
+func (r InsightAPIUpdateOrganizationInsightMonitoredMediaServerRequest) UpdateOrganizationInsightMonitoredMediaServerRequest(updateOrganizationInsightMonitoredMediaServerRequest UpdateOrganizationInsightMonitoredMediaServerRequest) InsightAPIUpdateOrganizationInsightMonitoredMediaServerRequest {
 	r.updateOrganizationInsightMonitoredMediaServerRequest = &updateOrganizationInsightMonitoredMediaServerRequest
 	return r
 }
 
-func (r InsightApiUpdateOrganizationInsightMonitoredMediaServerRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r InsightAPIUpdateOrganizationInsightMonitoredMediaServerRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationInsightMonitoredMediaServerExecute(r)
 }
 
@@ -802,10 +802,10 @@ Update a monitored media server for this organization. Only valid for organizati
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param monitoredMediaServerId Monitored media server ID
- @return InsightApiUpdateOrganizationInsightMonitoredMediaServerRequest
+ @return InsightAPIUpdateOrganizationInsightMonitoredMediaServerRequest
 */
-func (a *InsightApiService) UpdateOrganizationInsightMonitoredMediaServer(ctx context.Context, organizationId string, monitoredMediaServerId string) InsightApiUpdateOrganizationInsightMonitoredMediaServerRequest {
-	return InsightApiUpdateOrganizationInsightMonitoredMediaServerRequest{
+func (a *InsightAPIService) UpdateOrganizationInsightMonitoredMediaServer(ctx context.Context, organizationId string, monitoredMediaServerId string) InsightAPIUpdateOrganizationInsightMonitoredMediaServerRequest {
+	return InsightAPIUpdateOrganizationInsightMonitoredMediaServerRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -815,7 +815,7 @@ func (a *InsightApiService) UpdateOrganizationInsightMonitoredMediaServer(ctx co
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *InsightApiService) UpdateOrganizationInsightMonitoredMediaServerExecute(r InsightApiUpdateOrganizationInsightMonitoredMediaServerRequest) (map[string]interface{}, *http.Response, error) {
+func (a *InsightAPIService) UpdateOrganizationInsightMonitoredMediaServerExecute(r InsightAPIUpdateOrganizationInsightMonitoredMediaServerRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -823,7 +823,7 @@ func (a *InsightApiService) UpdateOrganizationInsightMonitoredMediaServerExecute
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsightApiService.UpdateOrganizationInsightMonitoredMediaServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsightAPIService.UpdateOrganizationInsightMonitoredMediaServer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

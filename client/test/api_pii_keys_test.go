@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing PiiKeysApiService
+Testing PiiKeysAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_PiiKeysApiService(t *testing.T) {
+func Test_client_PiiKeysAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test PiiKeysApiService GetNetworkPiiPiiKeys", func(t *testing.T) {
+	t.Run("Test PiiKeysAPIService GetNetworkPiiPiiKeys", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.PiiKeysApi.GetNetworkPiiPiiKeys(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.PiiKeysAPI.GetNetworkPiiPiiKeys(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

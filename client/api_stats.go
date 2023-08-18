@@ -21,12 +21,12 @@ import (
 )
 
 
-// StatsApiService StatsApi service
-type StatsApiService service
+// StatsAPIService StatsAPI service
+type StatsAPIService service
 
-type StatsApiGetOrganizationApplianceVpnStatsRequest struct {
+type StatsAPIGetOrganizationApplianceVpnStatsRequest struct {
 	ctx context.Context
-	ApiService *StatsApiService
+	ApiService *StatsAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -38,48 +38,48 @@ type StatsApiGetOrganizationApplianceVpnStatsRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 300. Default is 300.
-func (r StatsApiGetOrganizationApplianceVpnStatsRequest) PerPage(perPage int32) StatsApiGetOrganizationApplianceVpnStatsRequest {
+func (r StatsAPIGetOrganizationApplianceVpnStatsRequest) PerPage(perPage int32) StatsAPIGetOrganizationApplianceVpnStatsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r StatsApiGetOrganizationApplianceVpnStatsRequest) StartingAfter(startingAfter string) StatsApiGetOrganizationApplianceVpnStatsRequest {
+func (r StatsAPIGetOrganizationApplianceVpnStatsRequest) StartingAfter(startingAfter string) StatsAPIGetOrganizationApplianceVpnStatsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r StatsApiGetOrganizationApplianceVpnStatsRequest) EndingBefore(endingBefore string) StatsApiGetOrganizationApplianceVpnStatsRequest {
+func (r StatsAPIGetOrganizationApplianceVpnStatsRequest) EndingBefore(endingBefore string) StatsAPIGetOrganizationApplianceVpnStatsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // A list of Meraki network IDs to filter results to contain only specified networks. E.g.: networkIds[]&#x3D;N_12345678&amp;networkIds[]&#x3D;L_3456
-func (r StatsApiGetOrganizationApplianceVpnStatsRequest) NetworkIds(networkIds []string) StatsApiGetOrganizationApplianceVpnStatsRequest {
+func (r StatsAPIGetOrganizationApplianceVpnStatsRequest) NetworkIds(networkIds []string) StatsAPIGetOrganizationApplianceVpnStatsRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r StatsApiGetOrganizationApplianceVpnStatsRequest) T0(t0 string) StatsApiGetOrganizationApplianceVpnStatsRequest {
+func (r StatsAPIGetOrganizationApplianceVpnStatsRequest) T0(t0 string) StatsAPIGetOrganizationApplianceVpnStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r StatsApiGetOrganizationApplianceVpnStatsRequest) T1(t1 string) StatsApiGetOrganizationApplianceVpnStatsRequest {
+func (r StatsAPIGetOrganizationApplianceVpnStatsRequest) T1(t1 string) StatsAPIGetOrganizationApplianceVpnStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r StatsApiGetOrganizationApplianceVpnStatsRequest) Timespan(timespan float32) StatsApiGetOrganizationApplianceVpnStatsRequest {
+func (r StatsAPIGetOrganizationApplianceVpnStatsRequest) Timespan(timespan float32) StatsAPIGetOrganizationApplianceVpnStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r StatsApiGetOrganizationApplianceVpnStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r StatsAPIGetOrganizationApplianceVpnStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceVpnStatsExecute(r)
 }
 
@@ -90,10 +90,10 @@ Show VPN history stat for networks in an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return StatsApiGetOrganizationApplianceVpnStatsRequest
+ @return StatsAPIGetOrganizationApplianceVpnStatsRequest
 */
-func (a *StatsApiService) GetOrganizationApplianceVpnStats(ctx context.Context, organizationId string) StatsApiGetOrganizationApplianceVpnStatsRequest {
-	return StatsApiGetOrganizationApplianceVpnStatsRequest{
+func (a *StatsAPIService) GetOrganizationApplianceVpnStats(ctx context.Context, organizationId string) StatsAPIGetOrganizationApplianceVpnStatsRequest {
+	return StatsAPIGetOrganizationApplianceVpnStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -102,7 +102,7 @@ func (a *StatsApiService) GetOrganizationApplianceVpnStats(ctx context.Context, 
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *StatsApiService) GetOrganizationApplianceVpnStatsExecute(r StatsApiGetOrganizationApplianceVpnStatsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *StatsAPIService) GetOrganizationApplianceVpnStatsExecute(r StatsAPIGetOrganizationApplianceVpnStatsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -110,7 +110,7 @@ func (a *StatsApiService) GetOrganizationApplianceVpnStatsExecute(r StatsApiGetO
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatsApiService.GetOrganizationApplianceVpnStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatsAPIService.GetOrganizationApplianceVpnStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

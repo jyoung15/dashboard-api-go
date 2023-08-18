@@ -20,16 +20,16 @@ import (
 )
 
 
-// SchedulesApiService SchedulesApi service
-type SchedulesApiService service
+// SchedulesAPIService SchedulesAPI service
+type SchedulesAPIService service
 
-type SchedulesApiGetNetworkCameraSchedulesRequest struct {
+type SchedulesAPIGetNetworkCameraSchedulesRequest struct {
 	ctx context.Context
-	ApiService *SchedulesApiService
+	ApiService *SchedulesAPIService
 	networkId string
 }
 
-func (r SchedulesApiGetNetworkCameraSchedulesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r SchedulesAPIGetNetworkCameraSchedulesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkCameraSchedulesExecute(r)
 }
 
@@ -40,10 +40,10 @@ Returns a list of all camera recording schedules.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SchedulesApiGetNetworkCameraSchedulesRequest
+ @return SchedulesAPIGetNetworkCameraSchedulesRequest
 */
-func (a *SchedulesApiService) GetNetworkCameraSchedules(ctx context.Context, networkId string) SchedulesApiGetNetworkCameraSchedulesRequest {
-	return SchedulesApiGetNetworkCameraSchedulesRequest{
+func (a *SchedulesAPIService) GetNetworkCameraSchedules(ctx context.Context, networkId string) SchedulesAPIGetNetworkCameraSchedulesRequest {
+	return SchedulesAPIGetNetworkCameraSchedulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *SchedulesApiService) GetNetworkCameraSchedules(ctx context.Context, net
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *SchedulesApiService) GetNetworkCameraSchedulesExecute(r SchedulesApiGetNetworkCameraSchedulesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *SchedulesAPIService) GetNetworkCameraSchedulesExecute(r SchedulesAPIGetNetworkCameraSchedulesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *SchedulesApiService) GetNetworkCameraSchedulesExecute(r SchedulesApiGet
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SchedulesApiService.GetNetworkCameraSchedules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SchedulesAPIService.GetNetworkCameraSchedules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,14 +140,14 @@ func (a *SchedulesApiService) GetNetworkCameraSchedulesExecute(r SchedulesApiGet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SchedulesApiGetNetworkWirelessSsidSchedulesRequest struct {
+type SchedulesAPIGetNetworkWirelessSsidSchedulesRequest struct {
 	ctx context.Context
-	ApiService *SchedulesApiService
+	ApiService *SchedulesAPIService
 	networkId string
 	number string
 }
 
-func (r SchedulesApiGetNetworkWirelessSsidSchedulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SchedulesAPIGetNetworkWirelessSsidSchedulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidSchedulesExecute(r)
 }
 
@@ -159,10 +159,10 @@ List the outage schedule for the SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SchedulesApiGetNetworkWirelessSsidSchedulesRequest
+ @return SchedulesAPIGetNetworkWirelessSsidSchedulesRequest
 */
-func (a *SchedulesApiService) GetNetworkWirelessSsidSchedules(ctx context.Context, networkId string, number string) SchedulesApiGetNetworkWirelessSsidSchedulesRequest {
-	return SchedulesApiGetNetworkWirelessSsidSchedulesRequest{
+func (a *SchedulesAPIService) GetNetworkWirelessSsidSchedules(ctx context.Context, networkId string, number string) SchedulesAPIGetNetworkWirelessSsidSchedulesRequest {
+	return SchedulesAPIGetNetworkWirelessSsidSchedulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -172,7 +172,7 @@ func (a *SchedulesApiService) GetNetworkWirelessSsidSchedules(ctx context.Contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SchedulesApiService) GetNetworkWirelessSsidSchedulesExecute(r SchedulesApiGetNetworkWirelessSsidSchedulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SchedulesAPIService) GetNetworkWirelessSsidSchedulesExecute(r SchedulesAPIGetNetworkWirelessSsidSchedulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -180,7 +180,7 @@ func (a *SchedulesApiService) GetNetworkWirelessSsidSchedulesExecute(r Schedules
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SchedulesApiService.GetNetworkWirelessSsidSchedules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SchedulesAPIService.GetNetworkWirelessSsidSchedules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -261,20 +261,20 @@ func (a *SchedulesApiService) GetNetworkWirelessSsidSchedulesExecute(r Schedules
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SchedulesApiUpdateNetworkWirelessSsidSchedulesRequest struct {
+type SchedulesAPIUpdateNetworkWirelessSsidSchedulesRequest struct {
 	ctx context.Context
-	ApiService *SchedulesApiService
+	ApiService *SchedulesAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidSchedulesRequest *UpdateNetworkWirelessSsidSchedulesRequest
 }
 
-func (r SchedulesApiUpdateNetworkWirelessSsidSchedulesRequest) UpdateNetworkWirelessSsidSchedulesRequest(updateNetworkWirelessSsidSchedulesRequest UpdateNetworkWirelessSsidSchedulesRequest) SchedulesApiUpdateNetworkWirelessSsidSchedulesRequest {
+func (r SchedulesAPIUpdateNetworkWirelessSsidSchedulesRequest) UpdateNetworkWirelessSsidSchedulesRequest(updateNetworkWirelessSsidSchedulesRequest UpdateNetworkWirelessSsidSchedulesRequest) SchedulesAPIUpdateNetworkWirelessSsidSchedulesRequest {
 	r.updateNetworkWirelessSsidSchedulesRequest = &updateNetworkWirelessSsidSchedulesRequest
 	return r
 }
 
-func (r SchedulesApiUpdateNetworkWirelessSsidSchedulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SchedulesAPIUpdateNetworkWirelessSsidSchedulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidSchedulesExecute(r)
 }
 
@@ -286,10 +286,10 @@ Update the outage schedule for the SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return SchedulesApiUpdateNetworkWirelessSsidSchedulesRequest
+ @return SchedulesAPIUpdateNetworkWirelessSsidSchedulesRequest
 */
-func (a *SchedulesApiService) UpdateNetworkWirelessSsidSchedules(ctx context.Context, networkId string, number string) SchedulesApiUpdateNetworkWirelessSsidSchedulesRequest {
-	return SchedulesApiUpdateNetworkWirelessSsidSchedulesRequest{
+func (a *SchedulesAPIService) UpdateNetworkWirelessSsidSchedules(ctx context.Context, networkId string, number string) SchedulesAPIUpdateNetworkWirelessSsidSchedulesRequest {
+	return SchedulesAPIUpdateNetworkWirelessSsidSchedulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -299,7 +299,7 @@ func (a *SchedulesApiService) UpdateNetworkWirelessSsidSchedules(ctx context.Con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SchedulesApiService) UpdateNetworkWirelessSsidSchedulesExecute(r SchedulesApiUpdateNetworkWirelessSsidSchedulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SchedulesAPIService) UpdateNetworkWirelessSsidSchedulesExecute(r SchedulesAPIUpdateNetworkWirelessSsidSchedulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -307,7 +307,7 @@ func (a *SchedulesApiService) UpdateNetworkWirelessSsidSchedulesExecute(r Schedu
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SchedulesApiService.UpdateNetworkWirelessSsidSchedules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SchedulesAPIService.UpdateNetworkWirelessSsidSchedules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

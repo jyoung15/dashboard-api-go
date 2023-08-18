@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing PrioritiesApiService
+Testing PrioritiesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_PrioritiesApiService(t *testing.T) {
+func Test_client_PrioritiesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test PrioritiesApiService GetOrganizationBrandingPoliciesPriorities", func(t *testing.T) {
+	t.Run("Test PrioritiesAPIService GetOrganizationBrandingPoliciesPriorities", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.PrioritiesApi.GetOrganizationBrandingPoliciesPriorities(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.PrioritiesAPI.GetOrganizationBrandingPoliciesPriorities(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_PrioritiesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PrioritiesApiService UpdateOrganizationBrandingPoliciesPriorities", func(t *testing.T) {
+	t.Run("Test PrioritiesAPIService UpdateOrganizationBrandingPoliciesPriorities", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.PrioritiesApi.UpdateOrganizationBrandingPoliciesPriorities(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.PrioritiesAPI.UpdateOrganizationBrandingPoliciesPriorities(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

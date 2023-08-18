@@ -20,12 +20,12 @@ import (
 )
 
 
-// LatencyStatsApiService LatencyStatsApi service
-type LatencyStatsApiService service
+// LatencyStatsAPIService LatencyStatsAPI service
+type LatencyStatsAPIService service
 
-type LatencyStatsApiGetDeviceWirelessLatencyStatsRequest struct {
+type LatencyStatsAPIGetDeviceWirelessLatencyStatsRequest struct {
 	ctx context.Context
-	ApiService *LatencyStatsApiService
+	ApiService *LatencyStatsAPIService
 	serial string
 	t0 *string
 	t1 *string
@@ -38,54 +38,54 @@ type LatencyStatsApiGetDeviceWirelessLatencyStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r LatencyStatsApiGetDeviceWirelessLatencyStatsRequest) T0(t0 string) LatencyStatsApiGetDeviceWirelessLatencyStatsRequest {
+func (r LatencyStatsAPIGetDeviceWirelessLatencyStatsRequest) T0(t0 string) LatencyStatsAPIGetDeviceWirelessLatencyStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r LatencyStatsApiGetDeviceWirelessLatencyStatsRequest) T1(t1 string) LatencyStatsApiGetDeviceWirelessLatencyStatsRequest {
+func (r LatencyStatsAPIGetDeviceWirelessLatencyStatsRequest) T1(t1 string) LatencyStatsAPIGetDeviceWirelessLatencyStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r LatencyStatsApiGetDeviceWirelessLatencyStatsRequest) Timespan(timespan float32) LatencyStatsApiGetDeviceWirelessLatencyStatsRequest {
+func (r LatencyStatsAPIGetDeviceWirelessLatencyStatsRequest) Timespan(timespan float32) LatencyStatsAPIGetDeviceWirelessLatencyStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r LatencyStatsApiGetDeviceWirelessLatencyStatsRequest) Band(band string) LatencyStatsApiGetDeviceWirelessLatencyStatsRequest {
+func (r LatencyStatsAPIGetDeviceWirelessLatencyStatsRequest) Band(band string) LatencyStatsAPIGetDeviceWirelessLatencyStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r LatencyStatsApiGetDeviceWirelessLatencyStatsRequest) Ssid(ssid int32) LatencyStatsApiGetDeviceWirelessLatencyStatsRequest {
+func (r LatencyStatsAPIGetDeviceWirelessLatencyStatsRequest) Ssid(ssid int32) LatencyStatsAPIGetDeviceWirelessLatencyStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r LatencyStatsApiGetDeviceWirelessLatencyStatsRequest) Vlan(vlan int32) LatencyStatsApiGetDeviceWirelessLatencyStatsRequest {
+func (r LatencyStatsAPIGetDeviceWirelessLatencyStatsRequest) Vlan(vlan int32) LatencyStatsAPIGetDeviceWirelessLatencyStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r LatencyStatsApiGetDeviceWirelessLatencyStatsRequest) ApTag(apTag string) LatencyStatsApiGetDeviceWirelessLatencyStatsRequest {
+func (r LatencyStatsAPIGetDeviceWirelessLatencyStatsRequest) ApTag(apTag string) LatencyStatsAPIGetDeviceWirelessLatencyStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Partial selection: If present, this call will return only the selected fields of [\&quot;rawDistribution\&quot;, \&quot;avg\&quot;]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
-func (r LatencyStatsApiGetDeviceWirelessLatencyStatsRequest) Fields(fields string) LatencyStatsApiGetDeviceWirelessLatencyStatsRequest {
+func (r LatencyStatsAPIGetDeviceWirelessLatencyStatsRequest) Fields(fields string) LatencyStatsAPIGetDeviceWirelessLatencyStatsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r LatencyStatsApiGetDeviceWirelessLatencyStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r LatencyStatsAPIGetDeviceWirelessLatencyStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceWirelessLatencyStatsExecute(r)
 }
 
@@ -96,10 +96,10 @@ Aggregated latency info for a given AP on this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return LatencyStatsApiGetDeviceWirelessLatencyStatsRequest
+ @return LatencyStatsAPIGetDeviceWirelessLatencyStatsRequest
 */
-func (a *LatencyStatsApiService) GetDeviceWirelessLatencyStats(ctx context.Context, serial string) LatencyStatsApiGetDeviceWirelessLatencyStatsRequest {
-	return LatencyStatsApiGetDeviceWirelessLatencyStatsRequest{
+func (a *LatencyStatsAPIService) GetDeviceWirelessLatencyStats(ctx context.Context, serial string) LatencyStatsAPIGetDeviceWirelessLatencyStatsRequest {
+	return LatencyStatsAPIGetDeviceWirelessLatencyStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -108,7 +108,7 @@ func (a *LatencyStatsApiService) GetDeviceWirelessLatencyStats(ctx context.Conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *LatencyStatsApiService) GetDeviceWirelessLatencyStatsExecute(r LatencyStatsApiGetDeviceWirelessLatencyStatsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *LatencyStatsAPIService) GetDeviceWirelessLatencyStatsExecute(r LatencyStatsAPIGetDeviceWirelessLatencyStatsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -116,7 +116,7 @@ func (a *LatencyStatsApiService) GetDeviceWirelessLatencyStatsExecute(r LatencyS
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LatencyStatsApiService.GetDeviceWirelessLatencyStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LatencyStatsAPIService.GetDeviceWirelessLatencyStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -220,9 +220,9 @@ func (a *LatencyStatsApiService) GetDeviceWirelessLatencyStatsExecute(r LatencyS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type LatencyStatsApiGetNetworkWirelessClientLatencyStatsRequest struct {
+type LatencyStatsAPIGetNetworkWirelessClientLatencyStatsRequest struct {
 	ctx context.Context
-	ApiService *LatencyStatsApiService
+	ApiService *LatencyStatsAPIService
 	networkId string
 	clientId string
 	t0 *string
@@ -236,54 +236,54 @@ type LatencyStatsApiGetNetworkWirelessClientLatencyStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r LatencyStatsApiGetNetworkWirelessClientLatencyStatsRequest) T0(t0 string) LatencyStatsApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessClientLatencyStatsRequest) T0(t0 string) LatencyStatsAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r LatencyStatsApiGetNetworkWirelessClientLatencyStatsRequest) T1(t1 string) LatencyStatsApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessClientLatencyStatsRequest) T1(t1 string) LatencyStatsAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r LatencyStatsApiGetNetworkWirelessClientLatencyStatsRequest) Timespan(timespan float32) LatencyStatsApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessClientLatencyStatsRequest) Timespan(timespan float32) LatencyStatsAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r LatencyStatsApiGetNetworkWirelessClientLatencyStatsRequest) Band(band string) LatencyStatsApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessClientLatencyStatsRequest) Band(band string) LatencyStatsAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r LatencyStatsApiGetNetworkWirelessClientLatencyStatsRequest) Ssid(ssid int32) LatencyStatsApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessClientLatencyStatsRequest) Ssid(ssid int32) LatencyStatsAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r LatencyStatsApiGetNetworkWirelessClientLatencyStatsRequest) Vlan(vlan int32) LatencyStatsApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessClientLatencyStatsRequest) Vlan(vlan int32) LatencyStatsAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r LatencyStatsApiGetNetworkWirelessClientLatencyStatsRequest) ApTag(apTag string) LatencyStatsApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessClientLatencyStatsRequest) ApTag(apTag string) LatencyStatsAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Partial selection: If present, this call will return only the selected fields of [\&quot;rawDistribution\&quot;, \&quot;avg\&quot;]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
-func (r LatencyStatsApiGetNetworkWirelessClientLatencyStatsRequest) Fields(fields string) LatencyStatsApiGetNetworkWirelessClientLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessClientLatencyStatsRequest) Fields(fields string) LatencyStatsAPIGetNetworkWirelessClientLatencyStatsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r LatencyStatsApiGetNetworkWirelessClientLatencyStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r LatencyStatsAPIGetNetworkWirelessClientLatencyStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessClientLatencyStatsExecute(r)
 }
 
@@ -295,10 +295,10 @@ Aggregated latency info for a given client on this network. Clients are identifi
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return LatencyStatsApiGetNetworkWirelessClientLatencyStatsRequest
+ @return LatencyStatsAPIGetNetworkWirelessClientLatencyStatsRequest
 */
-func (a *LatencyStatsApiService) GetNetworkWirelessClientLatencyStats(ctx context.Context, networkId string, clientId string) LatencyStatsApiGetNetworkWirelessClientLatencyStatsRequest {
-	return LatencyStatsApiGetNetworkWirelessClientLatencyStatsRequest{
+func (a *LatencyStatsAPIService) GetNetworkWirelessClientLatencyStats(ctx context.Context, networkId string, clientId string) LatencyStatsAPIGetNetworkWirelessClientLatencyStatsRequest {
+	return LatencyStatsAPIGetNetworkWirelessClientLatencyStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -308,7 +308,7 @@ func (a *LatencyStatsApiService) GetNetworkWirelessClientLatencyStats(ctx contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *LatencyStatsApiService) GetNetworkWirelessClientLatencyStatsExecute(r LatencyStatsApiGetNetworkWirelessClientLatencyStatsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *LatencyStatsAPIService) GetNetworkWirelessClientLatencyStatsExecute(r LatencyStatsAPIGetNetworkWirelessClientLatencyStatsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -316,7 +316,7 @@ func (a *LatencyStatsApiService) GetNetworkWirelessClientLatencyStatsExecute(r L
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LatencyStatsApiService.GetNetworkWirelessClientLatencyStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LatencyStatsAPIService.GetNetworkWirelessClientLatencyStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -421,9 +421,9 @@ func (a *LatencyStatsApiService) GetNetworkWirelessClientLatencyStatsExecute(r L
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type LatencyStatsApiGetNetworkWirelessClientsLatencyStatsRequest struct {
+type LatencyStatsAPIGetNetworkWirelessClientsLatencyStatsRequest struct {
 	ctx context.Context
-	ApiService *LatencyStatsApiService
+	ApiService *LatencyStatsAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -436,54 +436,54 @@ type LatencyStatsApiGetNetworkWirelessClientsLatencyStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r LatencyStatsApiGetNetworkWirelessClientsLatencyStatsRequest) T0(t0 string) LatencyStatsApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessClientsLatencyStatsRequest) T0(t0 string) LatencyStatsAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r LatencyStatsApiGetNetworkWirelessClientsLatencyStatsRequest) T1(t1 string) LatencyStatsApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessClientsLatencyStatsRequest) T1(t1 string) LatencyStatsAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r LatencyStatsApiGetNetworkWirelessClientsLatencyStatsRequest) Timespan(timespan float32) LatencyStatsApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessClientsLatencyStatsRequest) Timespan(timespan float32) LatencyStatsAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r LatencyStatsApiGetNetworkWirelessClientsLatencyStatsRequest) Band(band string) LatencyStatsApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessClientsLatencyStatsRequest) Band(band string) LatencyStatsAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r LatencyStatsApiGetNetworkWirelessClientsLatencyStatsRequest) Ssid(ssid int32) LatencyStatsApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessClientsLatencyStatsRequest) Ssid(ssid int32) LatencyStatsAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r LatencyStatsApiGetNetworkWirelessClientsLatencyStatsRequest) Vlan(vlan int32) LatencyStatsApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessClientsLatencyStatsRequest) Vlan(vlan int32) LatencyStatsAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r LatencyStatsApiGetNetworkWirelessClientsLatencyStatsRequest) ApTag(apTag string) LatencyStatsApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessClientsLatencyStatsRequest) ApTag(apTag string) LatencyStatsAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Partial selection: If present, this call will return only the selected fields of [\&quot;rawDistribution\&quot;, \&quot;avg\&quot;]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
-func (r LatencyStatsApiGetNetworkWirelessClientsLatencyStatsRequest) Fields(fields string) LatencyStatsApiGetNetworkWirelessClientsLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessClientsLatencyStatsRequest) Fields(fields string) LatencyStatsAPIGetNetworkWirelessClientsLatencyStatsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r LatencyStatsApiGetNetworkWirelessClientsLatencyStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r LatencyStatsAPIGetNetworkWirelessClientsLatencyStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessClientsLatencyStatsExecute(r)
 }
 
@@ -494,10 +494,10 @@ Aggregated latency info for this network, grouped by clients
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return LatencyStatsApiGetNetworkWirelessClientsLatencyStatsRequest
+ @return LatencyStatsAPIGetNetworkWirelessClientsLatencyStatsRequest
 */
-func (a *LatencyStatsApiService) GetNetworkWirelessClientsLatencyStats(ctx context.Context, networkId string) LatencyStatsApiGetNetworkWirelessClientsLatencyStatsRequest {
-	return LatencyStatsApiGetNetworkWirelessClientsLatencyStatsRequest{
+func (a *LatencyStatsAPIService) GetNetworkWirelessClientsLatencyStats(ctx context.Context, networkId string) LatencyStatsAPIGetNetworkWirelessClientsLatencyStatsRequest {
+	return LatencyStatsAPIGetNetworkWirelessClientsLatencyStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -506,7 +506,7 @@ func (a *LatencyStatsApiService) GetNetworkWirelessClientsLatencyStats(ctx conte
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *LatencyStatsApiService) GetNetworkWirelessClientsLatencyStatsExecute(r LatencyStatsApiGetNetworkWirelessClientsLatencyStatsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *LatencyStatsAPIService) GetNetworkWirelessClientsLatencyStatsExecute(r LatencyStatsAPIGetNetworkWirelessClientsLatencyStatsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -514,7 +514,7 @@ func (a *LatencyStatsApiService) GetNetworkWirelessClientsLatencyStatsExecute(r 
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LatencyStatsApiService.GetNetworkWirelessClientsLatencyStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LatencyStatsAPIService.GetNetworkWirelessClientsLatencyStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -618,9 +618,9 @@ func (a *LatencyStatsApiService) GetNetworkWirelessClientsLatencyStatsExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type LatencyStatsApiGetNetworkWirelessDevicesLatencyStatsRequest struct {
+type LatencyStatsAPIGetNetworkWirelessDevicesLatencyStatsRequest struct {
 	ctx context.Context
-	ApiService *LatencyStatsApiService
+	ApiService *LatencyStatsAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -633,54 +633,54 @@ type LatencyStatsApiGetNetworkWirelessDevicesLatencyStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r LatencyStatsApiGetNetworkWirelessDevicesLatencyStatsRequest) T0(t0 string) LatencyStatsApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessDevicesLatencyStatsRequest) T0(t0 string) LatencyStatsAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r LatencyStatsApiGetNetworkWirelessDevicesLatencyStatsRequest) T1(t1 string) LatencyStatsApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessDevicesLatencyStatsRequest) T1(t1 string) LatencyStatsAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r LatencyStatsApiGetNetworkWirelessDevicesLatencyStatsRequest) Timespan(timespan float32) LatencyStatsApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessDevicesLatencyStatsRequest) Timespan(timespan float32) LatencyStatsAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r LatencyStatsApiGetNetworkWirelessDevicesLatencyStatsRequest) Band(band string) LatencyStatsApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessDevicesLatencyStatsRequest) Band(band string) LatencyStatsAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r LatencyStatsApiGetNetworkWirelessDevicesLatencyStatsRequest) Ssid(ssid int32) LatencyStatsApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessDevicesLatencyStatsRequest) Ssid(ssid int32) LatencyStatsAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r LatencyStatsApiGetNetworkWirelessDevicesLatencyStatsRequest) Vlan(vlan int32) LatencyStatsApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessDevicesLatencyStatsRequest) Vlan(vlan int32) LatencyStatsAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r LatencyStatsApiGetNetworkWirelessDevicesLatencyStatsRequest) ApTag(apTag string) LatencyStatsApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessDevicesLatencyStatsRequest) ApTag(apTag string) LatencyStatsAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Partial selection: If present, this call will return only the selected fields of [\&quot;rawDistribution\&quot;, \&quot;avg\&quot;]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
-func (r LatencyStatsApiGetNetworkWirelessDevicesLatencyStatsRequest) Fields(fields string) LatencyStatsApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessDevicesLatencyStatsRequest) Fields(fields string) LatencyStatsAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r LatencyStatsApiGetNetworkWirelessDevicesLatencyStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r LatencyStatsAPIGetNetworkWirelessDevicesLatencyStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessDevicesLatencyStatsExecute(r)
 }
 
@@ -691,10 +691,10 @@ Aggregated latency info for this network, grouped by node
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return LatencyStatsApiGetNetworkWirelessDevicesLatencyStatsRequest
+ @return LatencyStatsAPIGetNetworkWirelessDevicesLatencyStatsRequest
 */
-func (a *LatencyStatsApiService) GetNetworkWirelessDevicesLatencyStats(ctx context.Context, networkId string) LatencyStatsApiGetNetworkWirelessDevicesLatencyStatsRequest {
-	return LatencyStatsApiGetNetworkWirelessDevicesLatencyStatsRequest{
+func (a *LatencyStatsAPIService) GetNetworkWirelessDevicesLatencyStats(ctx context.Context, networkId string) LatencyStatsAPIGetNetworkWirelessDevicesLatencyStatsRequest {
+	return LatencyStatsAPIGetNetworkWirelessDevicesLatencyStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -703,7 +703,7 @@ func (a *LatencyStatsApiService) GetNetworkWirelessDevicesLatencyStats(ctx conte
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *LatencyStatsApiService) GetNetworkWirelessDevicesLatencyStatsExecute(r LatencyStatsApiGetNetworkWirelessDevicesLatencyStatsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *LatencyStatsAPIService) GetNetworkWirelessDevicesLatencyStatsExecute(r LatencyStatsAPIGetNetworkWirelessDevicesLatencyStatsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -711,7 +711,7 @@ func (a *LatencyStatsApiService) GetNetworkWirelessDevicesLatencyStatsExecute(r 
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LatencyStatsApiService.GetNetworkWirelessDevicesLatencyStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LatencyStatsAPIService.GetNetworkWirelessDevicesLatencyStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -815,9 +815,9 @@ func (a *LatencyStatsApiService) GetNetworkWirelessDevicesLatencyStatsExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type LatencyStatsApiGetNetworkWirelessLatencyStatsRequest struct {
+type LatencyStatsAPIGetNetworkWirelessLatencyStatsRequest struct {
 	ctx context.Context
-	ApiService *LatencyStatsApiService
+	ApiService *LatencyStatsAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -830,54 +830,54 @@ type LatencyStatsApiGetNetworkWirelessLatencyStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r LatencyStatsApiGetNetworkWirelessLatencyStatsRequest) T0(t0 string) LatencyStatsApiGetNetworkWirelessLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessLatencyStatsRequest) T0(t0 string) LatencyStatsAPIGetNetworkWirelessLatencyStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r LatencyStatsApiGetNetworkWirelessLatencyStatsRequest) T1(t1 string) LatencyStatsApiGetNetworkWirelessLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessLatencyStatsRequest) T1(t1 string) LatencyStatsAPIGetNetworkWirelessLatencyStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r LatencyStatsApiGetNetworkWirelessLatencyStatsRequest) Timespan(timespan float32) LatencyStatsApiGetNetworkWirelessLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessLatencyStatsRequest) Timespan(timespan float32) LatencyStatsAPIGetNetworkWirelessLatencyStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r LatencyStatsApiGetNetworkWirelessLatencyStatsRequest) Band(band string) LatencyStatsApiGetNetworkWirelessLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessLatencyStatsRequest) Band(band string) LatencyStatsAPIGetNetworkWirelessLatencyStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r LatencyStatsApiGetNetworkWirelessLatencyStatsRequest) Ssid(ssid int32) LatencyStatsApiGetNetworkWirelessLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessLatencyStatsRequest) Ssid(ssid int32) LatencyStatsAPIGetNetworkWirelessLatencyStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r LatencyStatsApiGetNetworkWirelessLatencyStatsRequest) Vlan(vlan int32) LatencyStatsApiGetNetworkWirelessLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessLatencyStatsRequest) Vlan(vlan int32) LatencyStatsAPIGetNetworkWirelessLatencyStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r LatencyStatsApiGetNetworkWirelessLatencyStatsRequest) ApTag(apTag string) LatencyStatsApiGetNetworkWirelessLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessLatencyStatsRequest) ApTag(apTag string) LatencyStatsAPIGetNetworkWirelessLatencyStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Partial selection: If present, this call will return only the selected fields of [\&quot;rawDistribution\&quot;, \&quot;avg\&quot;]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
-func (r LatencyStatsApiGetNetworkWirelessLatencyStatsRequest) Fields(fields string) LatencyStatsApiGetNetworkWirelessLatencyStatsRequest {
+func (r LatencyStatsAPIGetNetworkWirelessLatencyStatsRequest) Fields(fields string) LatencyStatsAPIGetNetworkWirelessLatencyStatsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r LatencyStatsApiGetNetworkWirelessLatencyStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r LatencyStatsAPIGetNetworkWirelessLatencyStatsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessLatencyStatsExecute(r)
 }
 
@@ -888,10 +888,10 @@ Aggregated latency info for this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return LatencyStatsApiGetNetworkWirelessLatencyStatsRequest
+ @return LatencyStatsAPIGetNetworkWirelessLatencyStatsRequest
 */
-func (a *LatencyStatsApiService) GetNetworkWirelessLatencyStats(ctx context.Context, networkId string) LatencyStatsApiGetNetworkWirelessLatencyStatsRequest {
-	return LatencyStatsApiGetNetworkWirelessLatencyStatsRequest{
+func (a *LatencyStatsAPIService) GetNetworkWirelessLatencyStats(ctx context.Context, networkId string) LatencyStatsAPIGetNetworkWirelessLatencyStatsRequest {
+	return LatencyStatsAPIGetNetworkWirelessLatencyStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -900,7 +900,7 @@ func (a *LatencyStatsApiService) GetNetworkWirelessLatencyStats(ctx context.Cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *LatencyStatsApiService) GetNetworkWirelessLatencyStatsExecute(r LatencyStatsApiGetNetworkWirelessLatencyStatsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *LatencyStatsAPIService) GetNetworkWirelessLatencyStatsExecute(r LatencyStatsAPIGetNetworkWirelessLatencyStatsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -908,7 +908,7 @@ func (a *LatencyStatsApiService) GetNetworkWirelessLatencyStatsExecute(r Latency
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LatencyStatsApiService.GetNetworkWirelessLatencyStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LatencyStatsAPIService.GetNetworkWirelessLatencyStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

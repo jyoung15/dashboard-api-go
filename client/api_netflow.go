@@ -20,16 +20,16 @@ import (
 )
 
 
-// NetflowApiService NetflowApi service
-type NetflowApiService service
+// NetflowAPIService NetflowAPI service
+type NetflowAPIService service
 
-type NetflowApiGetNetworkNetflowRequest struct {
+type NetflowAPIGetNetworkNetflowRequest struct {
 	ctx context.Context
-	ApiService *NetflowApiService
+	ApiService *NetflowAPIService
 	networkId string
 }
 
-func (r NetflowApiGetNetworkNetflowRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetflowAPIGetNetworkNetflowRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkNetflowExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the NetFlow traffic reporting settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetflowApiGetNetworkNetflowRequest
+ @return NetflowAPIGetNetworkNetflowRequest
 */
-func (a *NetflowApiService) GetNetworkNetflow(ctx context.Context, networkId string) NetflowApiGetNetworkNetflowRequest {
-	return NetflowApiGetNetworkNetflowRequest{
+func (a *NetflowAPIService) GetNetworkNetflow(ctx context.Context, networkId string) NetflowAPIGetNetworkNetflowRequest {
+	return NetflowAPIGetNetworkNetflowRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *NetflowApiService) GetNetworkNetflow(ctx context.Context, networkId str
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetflowApiService) GetNetworkNetflowExecute(r NetflowApiGetNetworkNetflowRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetflowAPIService) GetNetworkNetflowExecute(r NetflowAPIGetNetworkNetflowRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *NetflowApiService) GetNetworkNetflowExecute(r NetflowApiGetNetworkNetfl
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetflowApiService.GetNetworkNetflow")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetflowAPIService.GetNetworkNetflow")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *NetflowApiService) GetNetworkNetflowExecute(r NetflowApiGetNetworkNetfl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type NetflowApiUpdateNetworkNetflowRequest struct {
+type NetflowAPIUpdateNetworkNetflowRequest struct {
 	ctx context.Context
-	ApiService *NetflowApiService
+	ApiService *NetflowAPIService
 	networkId string
 	updateNetworkNetflowRequest *UpdateNetworkNetflowRequest
 }
 
-func (r NetflowApiUpdateNetworkNetflowRequest) UpdateNetworkNetflowRequest(updateNetworkNetflowRequest UpdateNetworkNetflowRequest) NetflowApiUpdateNetworkNetflowRequest {
+func (r NetflowAPIUpdateNetworkNetflowRequest) UpdateNetworkNetflowRequest(updateNetworkNetflowRequest UpdateNetworkNetflowRequest) NetflowAPIUpdateNetworkNetflowRequest {
 	r.updateNetworkNetflowRequest = &updateNetworkNetflowRequest
 	return r
 }
 
-func (r NetflowApiUpdateNetworkNetflowRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r NetflowAPIUpdateNetworkNetflowRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkNetflowExecute(r)
 }
 
@@ -163,10 +163,10 @@ Update the NetFlow traffic reporting settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return NetflowApiUpdateNetworkNetflowRequest
+ @return NetflowAPIUpdateNetworkNetflowRequest
 */
-func (a *NetflowApiService) UpdateNetworkNetflow(ctx context.Context, networkId string) NetflowApiUpdateNetworkNetflowRequest {
-	return NetflowApiUpdateNetworkNetflowRequest{
+func (a *NetflowAPIService) UpdateNetworkNetflow(ctx context.Context, networkId string) NetflowAPIUpdateNetworkNetflowRequest {
+	return NetflowAPIUpdateNetworkNetflowRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -175,7 +175,7 @@ func (a *NetflowApiService) UpdateNetworkNetflow(ctx context.Context, networkId 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NetflowApiService) UpdateNetworkNetflowExecute(r NetflowApiUpdateNetworkNetflowRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NetflowAPIService) UpdateNetworkNetflowExecute(r NetflowAPIUpdateNetworkNetflowRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *NetflowApiService) UpdateNetworkNetflowExecute(r NetflowApiUpdateNetwor
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetflowApiService.UpdateNetworkNetflow")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetflowAPIService.UpdateNetworkNetflow")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

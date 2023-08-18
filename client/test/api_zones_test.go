@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing ZonesApiService
+Testing ZonesAPIService
 
 */
 
@@ -17,19 +17,19 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_ZonesApiService(t *testing.T) {
+func Test_client_ZonesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test ZonesApiService GetDeviceCameraAnalyticsZoneHistory", func(t *testing.T) {
+	t.Run("Test ZonesAPIService GetDeviceCameraAnalyticsZoneHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var zoneId string
 
-		resp, httpRes, err := apiClient.ZonesApi.GetDeviceCameraAnalyticsZoneHistory(context.Background(), serial, zoneId).Execute()
+		resp, httpRes, err := apiClient.ZonesAPI.GetDeviceCameraAnalyticsZoneHistory(context.Background(), serial, zoneId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -37,13 +37,13 @@ func Test_client_ZonesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ZonesApiService GetDeviceCameraAnalyticsZones", func(t *testing.T) {
+	t.Run("Test ZonesAPIService GetDeviceCameraAnalyticsZones", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ZonesApi.GetDeviceCameraAnalyticsZones(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ZonesAPI.GetDeviceCameraAnalyticsZones(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

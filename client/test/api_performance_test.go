@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing PerformanceApiService
+Testing PerformanceAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_PerformanceApiService(t *testing.T) {
+func Test_client_PerformanceAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test PerformanceApiService GetDeviceAppliancePerformance", func(t *testing.T) {
+	t.Run("Test PerformanceAPIService GetDeviceAppliancePerformance", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.PerformanceApi.GetDeviceAppliancePerformance(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.PerformanceAPI.GetDeviceAppliancePerformance(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

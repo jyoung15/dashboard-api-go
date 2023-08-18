@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing BypassActivationLockAttemptsApiService
+Testing BypassActivationLockAttemptsAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_BypassActivationLockAttemptsApiService(t *testing.T) {
+func Test_client_BypassActivationLockAttemptsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test BypassActivationLockAttemptsApiService CreateNetworkSmBypassActivationLockAttempt", func(t *testing.T) {
+	t.Run("Test BypassActivationLockAttemptsAPIService CreateNetworkSmBypassActivationLockAttempt", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.BypassActivationLockAttemptsApi.CreateNetworkSmBypassActivationLockAttempt(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.BypassActivationLockAttemptsAPI.CreateNetworkSmBypassActivationLockAttempt(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,14 +36,14 @@ func Test_client_BypassActivationLockAttemptsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test BypassActivationLockAttemptsApiService GetNetworkSmBypassActivationLockAttempt", func(t *testing.T) {
+	t.Run("Test BypassActivationLockAttemptsAPIService GetNetworkSmBypassActivationLockAttempt", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var attemptId string
 
-		resp, httpRes, err := apiClient.BypassActivationLockAttemptsApi.GetNetworkSmBypassActivationLockAttempt(context.Background(), networkId, attemptId).Execute()
+		resp, httpRes, err := apiClient.BypassActivationLockAttemptsAPI.GetNetworkSmBypassActivationLockAttempt(context.Background(), networkId, attemptId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

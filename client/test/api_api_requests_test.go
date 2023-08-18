@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing ApiRequestsApiService
+Testing ApiRequestsAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_ApiRequestsApiService(t *testing.T) {
+func Test_client_ApiRequestsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test ApiRequestsApiService GetOrganizationApiRequests", func(t *testing.T) {
+	t.Run("Test ApiRequestsAPIService GetOrganizationApiRequests", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ApiRequestsApi.GetOrganizationApiRequests(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ApiRequestsAPI.GetOrganizationApiRequests(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_ApiRequestsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ApiRequestsApiService GetOrganizationApiRequestsOverview", func(t *testing.T) {
+	t.Run("Test ApiRequestsAPIService GetOrganizationApiRequestsOverview", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ApiRequestsApi.GetOrganizationApiRequestsOverview(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ApiRequestsAPI.GetOrganizationApiRequestsOverview(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,13 +50,13 @@ func Test_client_ApiRequestsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ApiRequestsApiService GetOrganizationApiRequestsOverviewResponseCodesByInterval", func(t *testing.T) {
+	t.Run("Test ApiRequestsAPIService GetOrganizationApiRequestsOverviewResponseCodesByInterval", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ApiRequestsApi.GetOrganizationApiRequestsOverviewResponseCodesByInterval(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ApiRequestsAPI.GetOrganizationApiRequestsOverviewResponseCodesByInterval(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

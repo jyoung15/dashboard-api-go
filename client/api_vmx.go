@@ -20,16 +20,16 @@ import (
 )
 
 
-// VmxApiService VmxApi service
-type VmxApiService service
+// VmxAPIService VmxAPI service
+type VmxAPIService service
 
-type VmxApiCreateDeviceApplianceVmxAuthenticationTokenRequest struct {
+type VmxAPICreateDeviceApplianceVmxAuthenticationTokenRequest struct {
 	ctx context.Context
-	ApiService *VmxApiService
+	ApiService *VmxAPIService
 	serial string
 }
 
-func (r VmxApiCreateDeviceApplianceVmxAuthenticationTokenRequest) Execute() (*CreateDeviceApplianceVmxAuthenticationToken201Response, *http.Response, error) {
+func (r VmxAPICreateDeviceApplianceVmxAuthenticationTokenRequest) Execute() (*CreateDeviceApplianceVmxAuthenticationToken201Response, *http.Response, error) {
 	return r.ApiService.CreateDeviceApplianceVmxAuthenticationTokenExecute(r)
 }
 
@@ -40,10 +40,10 @@ Generate a new vMX authentication token
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return VmxApiCreateDeviceApplianceVmxAuthenticationTokenRequest
+ @return VmxAPICreateDeviceApplianceVmxAuthenticationTokenRequest
 */
-func (a *VmxApiService) CreateDeviceApplianceVmxAuthenticationToken(ctx context.Context, serial string) VmxApiCreateDeviceApplianceVmxAuthenticationTokenRequest {
-	return VmxApiCreateDeviceApplianceVmxAuthenticationTokenRequest{
+func (a *VmxAPIService) CreateDeviceApplianceVmxAuthenticationToken(ctx context.Context, serial string) VmxAPICreateDeviceApplianceVmxAuthenticationTokenRequest {
+	return VmxAPICreateDeviceApplianceVmxAuthenticationTokenRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -52,7 +52,7 @@ func (a *VmxApiService) CreateDeviceApplianceVmxAuthenticationToken(ctx context.
 
 // Execute executes the request
 //  @return CreateDeviceApplianceVmxAuthenticationToken201Response
-func (a *VmxApiService) CreateDeviceApplianceVmxAuthenticationTokenExecute(r VmxApiCreateDeviceApplianceVmxAuthenticationTokenRequest) (*CreateDeviceApplianceVmxAuthenticationToken201Response, *http.Response, error) {
+func (a *VmxAPIService) CreateDeviceApplianceVmxAuthenticationTokenExecute(r VmxAPICreateDeviceApplianceVmxAuthenticationTokenRequest) (*CreateDeviceApplianceVmxAuthenticationToken201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *VmxApiService) CreateDeviceApplianceVmxAuthenticationTokenExecute(r Vmx
 		localVarReturnValue  *CreateDeviceApplianceVmxAuthenticationToken201Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VmxApiService.CreateDeviceApplianceVmxAuthenticationToken")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VmxAPIService.CreateDeviceApplianceVmxAuthenticationToken")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -20,12 +20,12 @@ import (
 )
 
 
-// UsageHistoriesApiService UsageHistoriesApi service
-type UsageHistoriesApiService service
+// UsageHistoriesAPIService UsageHistoriesAPI service
+type UsageHistoriesAPIService service
 
-type UsageHistoriesApiGetNetworkClientsUsageHistoriesRequest struct {
+type UsageHistoriesAPIGetNetworkClientsUsageHistoriesRequest struct {
 	ctx context.Context
-	ApiService *UsageHistoriesApiService
+	ApiService *UsageHistoriesAPIService
 	networkId string
 	clients *string
 	ssidNumber *int32
@@ -38,54 +38,54 @@ type UsageHistoriesApiGetNetworkClientsUsageHistoriesRequest struct {
 }
 
 // A list of client keys, MACs or IPs separated by comma.
-func (r UsageHistoriesApiGetNetworkClientsUsageHistoriesRequest) Clients(clients string) UsageHistoriesApiGetNetworkClientsUsageHistoriesRequest {
+func (r UsageHistoriesAPIGetNetworkClientsUsageHistoriesRequest) Clients(clients string) UsageHistoriesAPIGetNetworkClientsUsageHistoriesRequest {
 	r.clients = &clients
 	return r
 }
 
 // An SSID number to include. If not specified, events for all SSIDs will be returned.
-func (r UsageHistoriesApiGetNetworkClientsUsageHistoriesRequest) SsidNumber(ssidNumber int32) UsageHistoriesApiGetNetworkClientsUsageHistoriesRequest {
+func (r UsageHistoriesAPIGetNetworkClientsUsageHistoriesRequest) SsidNumber(ssidNumber int32) UsageHistoriesAPIGetNetworkClientsUsageHistoriesRequest {
 	r.ssidNumber = &ssidNumber
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000.
-func (r UsageHistoriesApiGetNetworkClientsUsageHistoriesRequest) PerPage(perPage int32) UsageHistoriesApiGetNetworkClientsUsageHistoriesRequest {
+func (r UsageHistoriesAPIGetNetworkClientsUsageHistoriesRequest) PerPage(perPage int32) UsageHistoriesAPIGetNetworkClientsUsageHistoriesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r UsageHistoriesApiGetNetworkClientsUsageHistoriesRequest) StartingAfter(startingAfter string) UsageHistoriesApiGetNetworkClientsUsageHistoriesRequest {
+func (r UsageHistoriesAPIGetNetworkClientsUsageHistoriesRequest) StartingAfter(startingAfter string) UsageHistoriesAPIGetNetworkClientsUsageHistoriesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r UsageHistoriesApiGetNetworkClientsUsageHistoriesRequest) EndingBefore(endingBefore string) UsageHistoriesApiGetNetworkClientsUsageHistoriesRequest {
+func (r UsageHistoriesAPIGetNetworkClientsUsageHistoriesRequest) EndingBefore(endingBefore string) UsageHistoriesAPIGetNetworkClientsUsageHistoriesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r UsageHistoriesApiGetNetworkClientsUsageHistoriesRequest) T0(t0 string) UsageHistoriesApiGetNetworkClientsUsageHistoriesRequest {
+func (r UsageHistoriesAPIGetNetworkClientsUsageHistoriesRequest) T0(t0 string) UsageHistoriesAPIGetNetworkClientsUsageHistoriesRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r UsageHistoriesApiGetNetworkClientsUsageHistoriesRequest) T1(t1 string) UsageHistoriesApiGetNetworkClientsUsageHistoriesRequest {
+func (r UsageHistoriesAPIGetNetworkClientsUsageHistoriesRequest) T1(t1 string) UsageHistoriesAPIGetNetworkClientsUsageHistoriesRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r UsageHistoriesApiGetNetworkClientsUsageHistoriesRequest) Timespan(timespan float32) UsageHistoriesApiGetNetworkClientsUsageHistoriesRequest {
+func (r UsageHistoriesAPIGetNetworkClientsUsageHistoriesRequest) Timespan(timespan float32) UsageHistoriesAPIGetNetworkClientsUsageHistoriesRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r UsageHistoriesApiGetNetworkClientsUsageHistoriesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r UsageHistoriesAPIGetNetworkClientsUsageHistoriesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientsUsageHistoriesExecute(r)
 }
 
@@ -96,10 +96,10 @@ Return the usage histories for clients. Usage data is in kilobytes. Clients can 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return UsageHistoriesApiGetNetworkClientsUsageHistoriesRequest
+ @return UsageHistoriesAPIGetNetworkClientsUsageHistoriesRequest
 */
-func (a *UsageHistoriesApiService) GetNetworkClientsUsageHistories(ctx context.Context, networkId string) UsageHistoriesApiGetNetworkClientsUsageHistoriesRequest {
-	return UsageHistoriesApiGetNetworkClientsUsageHistoriesRequest{
+func (a *UsageHistoriesAPIService) GetNetworkClientsUsageHistories(ctx context.Context, networkId string) UsageHistoriesAPIGetNetworkClientsUsageHistoriesRequest {
+	return UsageHistoriesAPIGetNetworkClientsUsageHistoriesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -108,7 +108,7 @@ func (a *UsageHistoriesApiService) GetNetworkClientsUsageHistories(ctx context.C
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *UsageHistoriesApiService) GetNetworkClientsUsageHistoriesExecute(r UsageHistoriesApiGetNetworkClientsUsageHistoriesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *UsageHistoriesAPIService) GetNetworkClientsUsageHistoriesExecute(r UsageHistoriesAPIGetNetworkClientsUsageHistoriesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -116,7 +116,7 @@ func (a *UsageHistoriesApiService) GetNetworkClientsUsageHistoriesExecute(r Usag
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsageHistoriesApiService.GetNetworkClientsUsageHistories")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsageHistoriesAPIService.GetNetworkClientsUsageHistories")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

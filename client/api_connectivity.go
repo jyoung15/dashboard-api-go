@@ -20,12 +20,12 @@ import (
 )
 
 
-// ConnectivityApiService ConnectivityApi service
-type ConnectivityApiService service
+// ConnectivityAPIService ConnectivityAPI service
+type ConnectivityAPIService service
 
-type ConnectivityApiGetNetworkSmDeviceConnectivityRequest struct {
+type ConnectivityAPIGetNetworkSmDeviceConnectivityRequest struct {
 	ctx context.Context
-	ApiService *ConnectivityApiService
+	ApiService *ConnectivityAPIService
 	networkId string
 	deviceId string
 	perPage *int32
@@ -34,24 +34,24 @@ type ConnectivityApiGetNetworkSmDeviceConnectivityRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r ConnectivityApiGetNetworkSmDeviceConnectivityRequest) PerPage(perPage int32) ConnectivityApiGetNetworkSmDeviceConnectivityRequest {
+func (r ConnectivityAPIGetNetworkSmDeviceConnectivityRequest) PerPage(perPage int32) ConnectivityAPIGetNetworkSmDeviceConnectivityRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ConnectivityApiGetNetworkSmDeviceConnectivityRequest) StartingAfter(startingAfter string) ConnectivityApiGetNetworkSmDeviceConnectivityRequest {
+func (r ConnectivityAPIGetNetworkSmDeviceConnectivityRequest) StartingAfter(startingAfter string) ConnectivityAPIGetNetworkSmDeviceConnectivityRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ConnectivityApiGetNetworkSmDeviceConnectivityRequest) EndingBefore(endingBefore string) ConnectivityApiGetNetworkSmDeviceConnectivityRequest {
+func (r ConnectivityAPIGetNetworkSmDeviceConnectivityRequest) EndingBefore(endingBefore string) ConnectivityAPIGetNetworkSmDeviceConnectivityRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r ConnectivityApiGetNetworkSmDeviceConnectivityRequest) Execute() ([]GetNetworkSmDeviceConnectivity200ResponseInner, *http.Response, error) {
+func (r ConnectivityAPIGetNetworkSmDeviceConnectivityRequest) Execute() ([]GetNetworkSmDeviceConnectivity200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceConnectivityExecute(r)
 }
 
@@ -63,10 +63,10 @@ Returns historical connectivity data (whether a device is regularly checking in 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return ConnectivityApiGetNetworkSmDeviceConnectivityRequest
+ @return ConnectivityAPIGetNetworkSmDeviceConnectivityRequest
 */
-func (a *ConnectivityApiService) GetNetworkSmDeviceConnectivity(ctx context.Context, networkId string, deviceId string) ConnectivityApiGetNetworkSmDeviceConnectivityRequest {
-	return ConnectivityApiGetNetworkSmDeviceConnectivityRequest{
+func (a *ConnectivityAPIService) GetNetworkSmDeviceConnectivity(ctx context.Context, networkId string, deviceId string) ConnectivityAPIGetNetworkSmDeviceConnectivityRequest {
+	return ConnectivityAPIGetNetworkSmDeviceConnectivityRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -76,7 +76,7 @@ func (a *ConnectivityApiService) GetNetworkSmDeviceConnectivity(ctx context.Cont
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceConnectivity200ResponseInner
-func (a *ConnectivityApiService) GetNetworkSmDeviceConnectivityExecute(r ConnectivityApiGetNetworkSmDeviceConnectivityRequest) ([]GetNetworkSmDeviceConnectivity200ResponseInner, *http.Response, error) {
+func (a *ConnectivityAPIService) GetNetworkSmDeviceConnectivityExecute(r ConnectivityAPIGetNetworkSmDeviceConnectivityRequest) ([]GetNetworkSmDeviceConnectivity200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -84,7 +84,7 @@ func (a *ConnectivityApiService) GetNetworkSmDeviceConnectivityExecute(r Connect
 		localVarReturnValue  []GetNetworkSmDeviceConnectivity200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectivityApiService.GetNetworkSmDeviceConnectivity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectivityAPIService.GetNetworkSmDeviceConnectivity")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

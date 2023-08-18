@@ -20,12 +20,12 @@ import (
 )
 
 
-// SecurityApiService SecurityApi service
-type SecurityApiService service
+// SecurityAPIService SecurityAPI service
+type SecurityAPIService service
 
-type SecurityApiGetNetworkApplianceClientSecurityEventsRequest struct {
+type SecurityAPIGetNetworkApplianceClientSecurityEventsRequest struct {
 	ctx context.Context
-	ApiService *SecurityApiService
+	ApiService *SecurityAPIService
 	networkId string
 	clientId string
 	t0 *string
@@ -38,48 +38,48 @@ type SecurityApiGetNetworkApplianceClientSecurityEventsRequest struct {
 }
 
 // The beginning of the timespan for the data. Data is gathered after the specified t0 value. The maximum lookback period is 791 days from today.
-func (r SecurityApiGetNetworkApplianceClientSecurityEventsRequest) T0(t0 string) SecurityApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r SecurityAPIGetNetworkApplianceClientSecurityEventsRequest) T0(t0 string) SecurityAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 791 days after t0.
-func (r SecurityApiGetNetworkApplianceClientSecurityEventsRequest) T1(t1 string) SecurityApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r SecurityAPIGetNetworkApplianceClientSecurityEventsRequest) T1(t1 string) SecurityAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 791 days. The default is 31 days.
-func (r SecurityApiGetNetworkApplianceClientSecurityEventsRequest) Timespan(timespan float32) SecurityApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r SecurityAPIGetNetworkApplianceClientSecurityEventsRequest) Timespan(timespan float32) SecurityAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
-func (r SecurityApiGetNetworkApplianceClientSecurityEventsRequest) PerPage(perPage int32) SecurityApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r SecurityAPIGetNetworkApplianceClientSecurityEventsRequest) PerPage(perPage int32) SecurityAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SecurityApiGetNetworkApplianceClientSecurityEventsRequest) StartingAfter(startingAfter string) SecurityApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r SecurityAPIGetNetworkApplianceClientSecurityEventsRequest) StartingAfter(startingAfter string) SecurityAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SecurityApiGetNetworkApplianceClientSecurityEventsRequest) EndingBefore(endingBefore string) SecurityApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r SecurityAPIGetNetworkApplianceClientSecurityEventsRequest) EndingBefore(endingBefore string) SecurityAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Sorted order of security events based on event detection time. Order options are &#39;ascending&#39; or &#39;descending&#39;. Default is ascending order.
-func (r SecurityApiGetNetworkApplianceClientSecurityEventsRequest) SortOrder(sortOrder string) SecurityApiGetNetworkApplianceClientSecurityEventsRequest {
+func (r SecurityAPIGetNetworkApplianceClientSecurityEventsRequest) SortOrder(sortOrder string) SecurityAPIGetNetworkApplianceClientSecurityEventsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
-func (r SecurityApiGetNetworkApplianceClientSecurityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r SecurityAPIGetNetworkApplianceClientSecurityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceClientSecurityEventsExecute(r)
 }
 
@@ -91,10 +91,10 @@ List the security events for a client. Clients can be identified by a client key
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return SecurityApiGetNetworkApplianceClientSecurityEventsRequest
+ @return SecurityAPIGetNetworkApplianceClientSecurityEventsRequest
 */
-func (a *SecurityApiService) GetNetworkApplianceClientSecurityEvents(ctx context.Context, networkId string, clientId string) SecurityApiGetNetworkApplianceClientSecurityEventsRequest {
-	return SecurityApiGetNetworkApplianceClientSecurityEventsRequest{
+func (a *SecurityAPIService) GetNetworkApplianceClientSecurityEvents(ctx context.Context, networkId string, clientId string) SecurityAPIGetNetworkApplianceClientSecurityEventsRequest {
+	return SecurityAPIGetNetworkApplianceClientSecurityEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -104,7 +104,7 @@ func (a *SecurityApiService) GetNetworkApplianceClientSecurityEvents(ctx context
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *SecurityApiService) GetNetworkApplianceClientSecurityEventsExecute(r SecurityApiGetNetworkApplianceClientSecurityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *SecurityAPIService) GetNetworkApplianceClientSecurityEventsExecute(r SecurityAPIGetNetworkApplianceClientSecurityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -112,7 +112,7 @@ func (a *SecurityApiService) GetNetworkApplianceClientSecurityEventsExecute(r Se
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityApiService.GetNetworkApplianceClientSecurityEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityAPIService.GetNetworkApplianceClientSecurityEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -214,9 +214,9 @@ func (a *SecurityApiService) GetNetworkApplianceClientSecurityEventsExecute(r Se
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SecurityApiGetNetworkApplianceSecurityEventsRequest struct {
+type SecurityAPIGetNetworkApplianceSecurityEventsRequest struct {
 	ctx context.Context
-	ApiService *SecurityApiService
+	ApiService *SecurityAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -228,48 +228,48 @@ type SecurityApiGetNetworkApplianceSecurityEventsRequest struct {
 }
 
 // The beginning of the timespan for the data. Data is gathered after the specified t0 value. The maximum lookback period is 365 days from today.
-func (r SecurityApiGetNetworkApplianceSecurityEventsRequest) T0(t0 string) SecurityApiGetNetworkApplianceSecurityEventsRequest {
+func (r SecurityAPIGetNetworkApplianceSecurityEventsRequest) T0(t0 string) SecurityAPIGetNetworkApplianceSecurityEventsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 365 days after t0.
-func (r SecurityApiGetNetworkApplianceSecurityEventsRequest) T1(t1 string) SecurityApiGetNetworkApplianceSecurityEventsRequest {
+func (r SecurityAPIGetNetworkApplianceSecurityEventsRequest) T1(t1 string) SecurityAPIGetNetworkApplianceSecurityEventsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 365 days. The default is 31 days.
-func (r SecurityApiGetNetworkApplianceSecurityEventsRequest) Timespan(timespan float32) SecurityApiGetNetworkApplianceSecurityEventsRequest {
+func (r SecurityAPIGetNetworkApplianceSecurityEventsRequest) Timespan(timespan float32) SecurityAPIGetNetworkApplianceSecurityEventsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
-func (r SecurityApiGetNetworkApplianceSecurityEventsRequest) PerPage(perPage int32) SecurityApiGetNetworkApplianceSecurityEventsRequest {
+func (r SecurityAPIGetNetworkApplianceSecurityEventsRequest) PerPage(perPage int32) SecurityAPIGetNetworkApplianceSecurityEventsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SecurityApiGetNetworkApplianceSecurityEventsRequest) StartingAfter(startingAfter string) SecurityApiGetNetworkApplianceSecurityEventsRequest {
+func (r SecurityAPIGetNetworkApplianceSecurityEventsRequest) StartingAfter(startingAfter string) SecurityAPIGetNetworkApplianceSecurityEventsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SecurityApiGetNetworkApplianceSecurityEventsRequest) EndingBefore(endingBefore string) SecurityApiGetNetworkApplianceSecurityEventsRequest {
+func (r SecurityAPIGetNetworkApplianceSecurityEventsRequest) EndingBefore(endingBefore string) SecurityAPIGetNetworkApplianceSecurityEventsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Sorted order of security events based on event detection time. Order options are &#39;ascending&#39; or &#39;descending&#39;. Default is ascending order.
-func (r SecurityApiGetNetworkApplianceSecurityEventsRequest) SortOrder(sortOrder string) SecurityApiGetNetworkApplianceSecurityEventsRequest {
+func (r SecurityAPIGetNetworkApplianceSecurityEventsRequest) SortOrder(sortOrder string) SecurityAPIGetNetworkApplianceSecurityEventsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
-func (r SecurityApiGetNetworkApplianceSecurityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r SecurityAPIGetNetworkApplianceSecurityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceSecurityEventsExecute(r)
 }
 
@@ -280,10 +280,10 @@ List the security events for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SecurityApiGetNetworkApplianceSecurityEventsRequest
+ @return SecurityAPIGetNetworkApplianceSecurityEventsRequest
 */
-func (a *SecurityApiService) GetNetworkApplianceSecurityEvents(ctx context.Context, networkId string) SecurityApiGetNetworkApplianceSecurityEventsRequest {
-	return SecurityApiGetNetworkApplianceSecurityEventsRequest{
+func (a *SecurityAPIService) GetNetworkApplianceSecurityEvents(ctx context.Context, networkId string) SecurityAPIGetNetworkApplianceSecurityEventsRequest {
+	return SecurityAPIGetNetworkApplianceSecurityEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -292,7 +292,7 @@ func (a *SecurityApiService) GetNetworkApplianceSecurityEvents(ctx context.Conte
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *SecurityApiService) GetNetworkApplianceSecurityEventsExecute(r SecurityApiGetNetworkApplianceSecurityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *SecurityAPIService) GetNetworkApplianceSecurityEventsExecute(r SecurityAPIGetNetworkApplianceSecurityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -300,7 +300,7 @@ func (a *SecurityApiService) GetNetworkApplianceSecurityEventsExecute(r Security
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityApiService.GetNetworkApplianceSecurityEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityAPIService.GetNetworkApplianceSecurityEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -401,13 +401,13 @@ func (a *SecurityApiService) GetNetworkApplianceSecurityEventsExecute(r Security
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SecurityApiGetNetworkApplianceSecurityIntrusionRequest struct {
+type SecurityAPIGetNetworkApplianceSecurityIntrusionRequest struct {
 	ctx context.Context
-	ApiService *SecurityApiService
+	ApiService *SecurityAPIService
 	networkId string
 }
 
-func (r SecurityApiGetNetworkApplianceSecurityIntrusionRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SecurityAPIGetNetworkApplianceSecurityIntrusionRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceSecurityIntrusionExecute(r)
 }
 
@@ -418,10 +418,10 @@ Returns all supported intrusion settings for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SecurityApiGetNetworkApplianceSecurityIntrusionRequest
+ @return SecurityAPIGetNetworkApplianceSecurityIntrusionRequest
 */
-func (a *SecurityApiService) GetNetworkApplianceSecurityIntrusion(ctx context.Context, networkId string) SecurityApiGetNetworkApplianceSecurityIntrusionRequest {
-	return SecurityApiGetNetworkApplianceSecurityIntrusionRequest{
+func (a *SecurityAPIService) GetNetworkApplianceSecurityIntrusion(ctx context.Context, networkId string) SecurityAPIGetNetworkApplianceSecurityIntrusionRequest {
+	return SecurityAPIGetNetworkApplianceSecurityIntrusionRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -430,7 +430,7 @@ func (a *SecurityApiService) GetNetworkApplianceSecurityIntrusion(ctx context.Co
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SecurityApiService) GetNetworkApplianceSecurityIntrusionExecute(r SecurityApiGetNetworkApplianceSecurityIntrusionRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SecurityAPIService) GetNetworkApplianceSecurityIntrusionExecute(r SecurityAPIGetNetworkApplianceSecurityIntrusionRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -438,7 +438,7 @@ func (a *SecurityApiService) GetNetworkApplianceSecurityIntrusionExecute(r Secur
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityApiService.GetNetworkApplianceSecurityIntrusion")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityAPIService.GetNetworkApplianceSecurityIntrusion")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -518,13 +518,13 @@ func (a *SecurityApiService) GetNetworkApplianceSecurityIntrusionExecute(r Secur
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SecurityApiGetNetworkApplianceSecurityMalwareRequest struct {
+type SecurityAPIGetNetworkApplianceSecurityMalwareRequest struct {
 	ctx context.Context
-	ApiService *SecurityApiService
+	ApiService *SecurityAPIService
 	networkId string
 }
 
-func (r SecurityApiGetNetworkApplianceSecurityMalwareRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SecurityAPIGetNetworkApplianceSecurityMalwareRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceSecurityMalwareExecute(r)
 }
 
@@ -535,10 +535,10 @@ Returns all supported malware settings for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SecurityApiGetNetworkApplianceSecurityMalwareRequest
+ @return SecurityAPIGetNetworkApplianceSecurityMalwareRequest
 */
-func (a *SecurityApiService) GetNetworkApplianceSecurityMalware(ctx context.Context, networkId string) SecurityApiGetNetworkApplianceSecurityMalwareRequest {
-	return SecurityApiGetNetworkApplianceSecurityMalwareRequest{
+func (a *SecurityAPIService) GetNetworkApplianceSecurityMalware(ctx context.Context, networkId string) SecurityAPIGetNetworkApplianceSecurityMalwareRequest {
+	return SecurityAPIGetNetworkApplianceSecurityMalwareRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -547,7 +547,7 @@ func (a *SecurityApiService) GetNetworkApplianceSecurityMalware(ctx context.Cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SecurityApiService) GetNetworkApplianceSecurityMalwareExecute(r SecurityApiGetNetworkApplianceSecurityMalwareRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SecurityAPIService) GetNetworkApplianceSecurityMalwareExecute(r SecurityAPIGetNetworkApplianceSecurityMalwareRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -555,7 +555,7 @@ func (a *SecurityApiService) GetNetworkApplianceSecurityMalwareExecute(r Securit
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityApiService.GetNetworkApplianceSecurityMalware")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityAPIService.GetNetworkApplianceSecurityMalware")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -635,9 +635,9 @@ func (a *SecurityApiService) GetNetworkApplianceSecurityMalwareExecute(r Securit
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SecurityApiGetOrganizationApplianceSecurityEventsRequest struct {
+type SecurityAPIGetOrganizationApplianceSecurityEventsRequest struct {
 	ctx context.Context
-	ApiService *SecurityApiService
+	ApiService *SecurityAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -649,48 +649,48 @@ type SecurityApiGetOrganizationApplianceSecurityEventsRequest struct {
 }
 
 // The beginning of the timespan for the data. Data is gathered after the specified t0 value. The maximum lookback period is 365 days from today.
-func (r SecurityApiGetOrganizationApplianceSecurityEventsRequest) T0(t0 string) SecurityApiGetOrganizationApplianceSecurityEventsRequest {
+func (r SecurityAPIGetOrganizationApplianceSecurityEventsRequest) T0(t0 string) SecurityAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 365 days after t0.
-func (r SecurityApiGetOrganizationApplianceSecurityEventsRequest) T1(t1 string) SecurityApiGetOrganizationApplianceSecurityEventsRequest {
+func (r SecurityAPIGetOrganizationApplianceSecurityEventsRequest) T1(t1 string) SecurityAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 365 days. The default is 31 days.
-func (r SecurityApiGetOrganizationApplianceSecurityEventsRequest) Timespan(timespan float32) SecurityApiGetOrganizationApplianceSecurityEventsRequest {
+func (r SecurityAPIGetOrganizationApplianceSecurityEventsRequest) Timespan(timespan float32) SecurityAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
-func (r SecurityApiGetOrganizationApplianceSecurityEventsRequest) PerPage(perPage int32) SecurityApiGetOrganizationApplianceSecurityEventsRequest {
+func (r SecurityAPIGetOrganizationApplianceSecurityEventsRequest) PerPage(perPage int32) SecurityAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SecurityApiGetOrganizationApplianceSecurityEventsRequest) StartingAfter(startingAfter string) SecurityApiGetOrganizationApplianceSecurityEventsRequest {
+func (r SecurityAPIGetOrganizationApplianceSecurityEventsRequest) StartingAfter(startingAfter string) SecurityAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SecurityApiGetOrganizationApplianceSecurityEventsRequest) EndingBefore(endingBefore string) SecurityApiGetOrganizationApplianceSecurityEventsRequest {
+func (r SecurityAPIGetOrganizationApplianceSecurityEventsRequest) EndingBefore(endingBefore string) SecurityAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Sorted order of security events based on event detection time. Order options are &#39;ascending&#39; or &#39;descending&#39;. Default is ascending order.
-func (r SecurityApiGetOrganizationApplianceSecurityEventsRequest) SortOrder(sortOrder string) SecurityApiGetOrganizationApplianceSecurityEventsRequest {
+func (r SecurityAPIGetOrganizationApplianceSecurityEventsRequest) SortOrder(sortOrder string) SecurityAPIGetOrganizationApplianceSecurityEventsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
-func (r SecurityApiGetOrganizationApplianceSecurityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r SecurityAPIGetOrganizationApplianceSecurityEventsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceSecurityEventsExecute(r)
 }
 
@@ -701,10 +701,10 @@ List the security events for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return SecurityApiGetOrganizationApplianceSecurityEventsRequest
+ @return SecurityAPIGetOrganizationApplianceSecurityEventsRequest
 */
-func (a *SecurityApiService) GetOrganizationApplianceSecurityEvents(ctx context.Context, organizationId string) SecurityApiGetOrganizationApplianceSecurityEventsRequest {
-	return SecurityApiGetOrganizationApplianceSecurityEventsRequest{
+func (a *SecurityAPIService) GetOrganizationApplianceSecurityEvents(ctx context.Context, organizationId string) SecurityAPIGetOrganizationApplianceSecurityEventsRequest {
+	return SecurityAPIGetOrganizationApplianceSecurityEventsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -713,7 +713,7 @@ func (a *SecurityApiService) GetOrganizationApplianceSecurityEvents(ctx context.
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *SecurityApiService) GetOrganizationApplianceSecurityEventsExecute(r SecurityApiGetOrganizationApplianceSecurityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *SecurityAPIService) GetOrganizationApplianceSecurityEventsExecute(r SecurityAPIGetOrganizationApplianceSecurityEventsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -721,7 +721,7 @@ func (a *SecurityApiService) GetOrganizationApplianceSecurityEventsExecute(r Sec
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityApiService.GetOrganizationApplianceSecurityEvents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityAPIService.GetOrganizationApplianceSecurityEvents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -822,13 +822,13 @@ func (a *SecurityApiService) GetOrganizationApplianceSecurityEventsExecute(r Sec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SecurityApiGetOrganizationApplianceSecurityIntrusionRequest struct {
+type SecurityAPIGetOrganizationApplianceSecurityIntrusionRequest struct {
 	ctx context.Context
-	ApiService *SecurityApiService
+	ApiService *SecurityAPIService
 	organizationId string
 }
 
-func (r SecurityApiGetOrganizationApplianceSecurityIntrusionRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SecurityAPIGetOrganizationApplianceSecurityIntrusionRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceSecurityIntrusionExecute(r)
 }
 
@@ -839,10 +839,10 @@ Returns all supported intrusion settings for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return SecurityApiGetOrganizationApplianceSecurityIntrusionRequest
+ @return SecurityAPIGetOrganizationApplianceSecurityIntrusionRequest
 */
-func (a *SecurityApiService) GetOrganizationApplianceSecurityIntrusion(ctx context.Context, organizationId string) SecurityApiGetOrganizationApplianceSecurityIntrusionRequest {
-	return SecurityApiGetOrganizationApplianceSecurityIntrusionRequest{
+func (a *SecurityAPIService) GetOrganizationApplianceSecurityIntrusion(ctx context.Context, organizationId string) SecurityAPIGetOrganizationApplianceSecurityIntrusionRequest {
+	return SecurityAPIGetOrganizationApplianceSecurityIntrusionRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -851,7 +851,7 @@ func (a *SecurityApiService) GetOrganizationApplianceSecurityIntrusion(ctx conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SecurityApiService) GetOrganizationApplianceSecurityIntrusionExecute(r SecurityApiGetOrganizationApplianceSecurityIntrusionRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SecurityAPIService) GetOrganizationApplianceSecurityIntrusionExecute(r SecurityAPIGetOrganizationApplianceSecurityIntrusionRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -859,7 +859,7 @@ func (a *SecurityApiService) GetOrganizationApplianceSecurityIntrusionExecute(r 
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityApiService.GetOrganizationApplianceSecurityIntrusion")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityAPIService.GetOrganizationApplianceSecurityIntrusion")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -939,19 +939,19 @@ func (a *SecurityApiService) GetOrganizationApplianceSecurityIntrusionExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SecurityApiUpdateNetworkApplianceSecurityIntrusionRequest struct {
+type SecurityAPIUpdateNetworkApplianceSecurityIntrusionRequest struct {
 	ctx context.Context
-	ApiService *SecurityApiService
+	ApiService *SecurityAPIService
 	networkId string
 	updateNetworkApplianceSecurityIntrusionRequest *UpdateNetworkApplianceSecurityIntrusionRequest
 }
 
-func (r SecurityApiUpdateNetworkApplianceSecurityIntrusionRequest) UpdateNetworkApplianceSecurityIntrusionRequest(updateNetworkApplianceSecurityIntrusionRequest UpdateNetworkApplianceSecurityIntrusionRequest) SecurityApiUpdateNetworkApplianceSecurityIntrusionRequest {
+func (r SecurityAPIUpdateNetworkApplianceSecurityIntrusionRequest) UpdateNetworkApplianceSecurityIntrusionRequest(updateNetworkApplianceSecurityIntrusionRequest UpdateNetworkApplianceSecurityIntrusionRequest) SecurityAPIUpdateNetworkApplianceSecurityIntrusionRequest {
 	r.updateNetworkApplianceSecurityIntrusionRequest = &updateNetworkApplianceSecurityIntrusionRequest
 	return r
 }
 
-func (r SecurityApiUpdateNetworkApplianceSecurityIntrusionRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SecurityAPIUpdateNetworkApplianceSecurityIntrusionRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceSecurityIntrusionExecute(r)
 }
 
@@ -962,10 +962,10 @@ Set the supported intrusion settings for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SecurityApiUpdateNetworkApplianceSecurityIntrusionRequest
+ @return SecurityAPIUpdateNetworkApplianceSecurityIntrusionRequest
 */
-func (a *SecurityApiService) UpdateNetworkApplianceSecurityIntrusion(ctx context.Context, networkId string) SecurityApiUpdateNetworkApplianceSecurityIntrusionRequest {
-	return SecurityApiUpdateNetworkApplianceSecurityIntrusionRequest{
+func (a *SecurityAPIService) UpdateNetworkApplianceSecurityIntrusion(ctx context.Context, networkId string) SecurityAPIUpdateNetworkApplianceSecurityIntrusionRequest {
+	return SecurityAPIUpdateNetworkApplianceSecurityIntrusionRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -974,7 +974,7 @@ func (a *SecurityApiService) UpdateNetworkApplianceSecurityIntrusion(ctx context
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SecurityApiService) UpdateNetworkApplianceSecurityIntrusionExecute(r SecurityApiUpdateNetworkApplianceSecurityIntrusionRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SecurityAPIService) UpdateNetworkApplianceSecurityIntrusionExecute(r SecurityAPIUpdateNetworkApplianceSecurityIntrusionRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -982,7 +982,7 @@ func (a *SecurityApiService) UpdateNetworkApplianceSecurityIntrusionExecute(r Se
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityApiService.UpdateNetworkApplianceSecurityIntrusion")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityAPIService.UpdateNetworkApplianceSecurityIntrusion")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1064,19 +1064,19 @@ func (a *SecurityApiService) UpdateNetworkApplianceSecurityIntrusionExecute(r Se
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SecurityApiUpdateNetworkApplianceSecurityMalwareRequest struct {
+type SecurityAPIUpdateNetworkApplianceSecurityMalwareRequest struct {
 	ctx context.Context
-	ApiService *SecurityApiService
+	ApiService *SecurityAPIService
 	networkId string
 	updateNetworkApplianceSecurityMalwareRequest *UpdateNetworkApplianceSecurityMalwareRequest
 }
 
-func (r SecurityApiUpdateNetworkApplianceSecurityMalwareRequest) UpdateNetworkApplianceSecurityMalwareRequest(updateNetworkApplianceSecurityMalwareRequest UpdateNetworkApplianceSecurityMalwareRequest) SecurityApiUpdateNetworkApplianceSecurityMalwareRequest {
+func (r SecurityAPIUpdateNetworkApplianceSecurityMalwareRequest) UpdateNetworkApplianceSecurityMalwareRequest(updateNetworkApplianceSecurityMalwareRequest UpdateNetworkApplianceSecurityMalwareRequest) SecurityAPIUpdateNetworkApplianceSecurityMalwareRequest {
 	r.updateNetworkApplianceSecurityMalwareRequest = &updateNetworkApplianceSecurityMalwareRequest
 	return r
 }
 
-func (r SecurityApiUpdateNetworkApplianceSecurityMalwareRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SecurityAPIUpdateNetworkApplianceSecurityMalwareRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceSecurityMalwareExecute(r)
 }
 
@@ -1087,10 +1087,10 @@ Set the supported malware settings for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SecurityApiUpdateNetworkApplianceSecurityMalwareRequest
+ @return SecurityAPIUpdateNetworkApplianceSecurityMalwareRequest
 */
-func (a *SecurityApiService) UpdateNetworkApplianceSecurityMalware(ctx context.Context, networkId string) SecurityApiUpdateNetworkApplianceSecurityMalwareRequest {
-	return SecurityApiUpdateNetworkApplianceSecurityMalwareRequest{
+func (a *SecurityAPIService) UpdateNetworkApplianceSecurityMalware(ctx context.Context, networkId string) SecurityAPIUpdateNetworkApplianceSecurityMalwareRequest {
+	return SecurityAPIUpdateNetworkApplianceSecurityMalwareRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1099,7 +1099,7 @@ func (a *SecurityApiService) UpdateNetworkApplianceSecurityMalware(ctx context.C
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SecurityApiService) UpdateNetworkApplianceSecurityMalwareExecute(r SecurityApiUpdateNetworkApplianceSecurityMalwareRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SecurityAPIService) UpdateNetworkApplianceSecurityMalwareExecute(r SecurityAPIUpdateNetworkApplianceSecurityMalwareRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1107,7 +1107,7 @@ func (a *SecurityApiService) UpdateNetworkApplianceSecurityMalwareExecute(r Secu
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityApiService.UpdateNetworkApplianceSecurityMalware")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityAPIService.UpdateNetworkApplianceSecurityMalware")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1192,19 +1192,19 @@ func (a *SecurityApiService) UpdateNetworkApplianceSecurityMalwareExecute(r Secu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SecurityApiUpdateOrganizationApplianceSecurityIntrusionRequest struct {
+type SecurityAPIUpdateOrganizationApplianceSecurityIntrusionRequest struct {
 	ctx context.Context
-	ApiService *SecurityApiService
+	ApiService *SecurityAPIService
 	organizationId string
 	updateOrganizationApplianceSecurityIntrusionRequest *UpdateOrganizationApplianceSecurityIntrusionRequest
 }
 
-func (r SecurityApiUpdateOrganizationApplianceSecurityIntrusionRequest) UpdateOrganizationApplianceSecurityIntrusionRequest(updateOrganizationApplianceSecurityIntrusionRequest UpdateOrganizationApplianceSecurityIntrusionRequest) SecurityApiUpdateOrganizationApplianceSecurityIntrusionRequest {
+func (r SecurityAPIUpdateOrganizationApplianceSecurityIntrusionRequest) UpdateOrganizationApplianceSecurityIntrusionRequest(updateOrganizationApplianceSecurityIntrusionRequest UpdateOrganizationApplianceSecurityIntrusionRequest) SecurityAPIUpdateOrganizationApplianceSecurityIntrusionRequest {
 	r.updateOrganizationApplianceSecurityIntrusionRequest = &updateOrganizationApplianceSecurityIntrusionRequest
 	return r
 }
 
-func (r SecurityApiUpdateOrganizationApplianceSecurityIntrusionRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SecurityAPIUpdateOrganizationApplianceSecurityIntrusionRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationApplianceSecurityIntrusionExecute(r)
 }
 
@@ -1215,10 +1215,10 @@ Sets supported intrusion settings for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return SecurityApiUpdateOrganizationApplianceSecurityIntrusionRequest
+ @return SecurityAPIUpdateOrganizationApplianceSecurityIntrusionRequest
 */
-func (a *SecurityApiService) UpdateOrganizationApplianceSecurityIntrusion(ctx context.Context, organizationId string) SecurityApiUpdateOrganizationApplianceSecurityIntrusionRequest {
-	return SecurityApiUpdateOrganizationApplianceSecurityIntrusionRequest{
+func (a *SecurityAPIService) UpdateOrganizationApplianceSecurityIntrusion(ctx context.Context, organizationId string) SecurityAPIUpdateOrganizationApplianceSecurityIntrusionRequest {
+	return SecurityAPIUpdateOrganizationApplianceSecurityIntrusionRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1227,7 +1227,7 @@ func (a *SecurityApiService) UpdateOrganizationApplianceSecurityIntrusion(ctx co
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SecurityApiService) UpdateOrganizationApplianceSecurityIntrusionExecute(r SecurityApiUpdateOrganizationApplianceSecurityIntrusionRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SecurityAPIService) UpdateOrganizationApplianceSecurityIntrusionExecute(r SecurityAPIUpdateOrganizationApplianceSecurityIntrusionRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1235,7 +1235,7 @@ func (a *SecurityApiService) UpdateOrganizationApplianceSecurityIntrusionExecute
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityApiService.UpdateOrganizationApplianceSecurityIntrusion")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityAPIService.UpdateOrganizationApplianceSecurityIntrusion")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -20,16 +20,16 @@ import (
 )
 
 
-// RelationshipsApiService RelationshipsApi service
-type RelationshipsApiService service
+// RelationshipsAPIService RelationshipsAPI service
+type RelationshipsAPIService service
 
-type RelationshipsApiGetDeviceSensorRelationshipsRequest struct {
+type RelationshipsAPIGetDeviceSensorRelationshipsRequest struct {
 	ctx context.Context
-	ApiService *RelationshipsApiService
+	ApiService *RelationshipsAPIService
 	serial string
 }
 
-func (r RelationshipsApiGetDeviceSensorRelationshipsRequest) Execute() ([]GetDeviceSensorRelationships200ResponseInner, *http.Response, error) {
+func (r RelationshipsAPIGetDeviceSensorRelationshipsRequest) Execute() ([]GetDeviceSensorRelationships200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetDeviceSensorRelationshipsExecute(r)
 }
 
@@ -40,10 +40,10 @@ List the sensor roles for a given sensor or camera device.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return RelationshipsApiGetDeviceSensorRelationshipsRequest
+ @return RelationshipsAPIGetDeviceSensorRelationshipsRequest
 */
-func (a *RelationshipsApiService) GetDeviceSensorRelationships(ctx context.Context, serial string) RelationshipsApiGetDeviceSensorRelationshipsRequest {
-	return RelationshipsApiGetDeviceSensorRelationshipsRequest{
+func (a *RelationshipsAPIService) GetDeviceSensorRelationships(ctx context.Context, serial string) RelationshipsAPIGetDeviceSensorRelationshipsRequest {
+	return RelationshipsAPIGetDeviceSensorRelationshipsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -52,7 +52,7 @@ func (a *RelationshipsApiService) GetDeviceSensorRelationships(ctx context.Conte
 
 // Execute executes the request
 //  @return []GetDeviceSensorRelationships200ResponseInner
-func (a *RelationshipsApiService) GetDeviceSensorRelationshipsExecute(r RelationshipsApiGetDeviceSensorRelationshipsRequest) ([]GetDeviceSensorRelationships200ResponseInner, *http.Response, error) {
+func (a *RelationshipsAPIService) GetDeviceSensorRelationshipsExecute(r RelationshipsAPIGetDeviceSensorRelationshipsRequest) ([]GetDeviceSensorRelationships200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *RelationshipsApiService) GetDeviceSensorRelationshipsExecute(r Relation
 		localVarReturnValue  []GetDeviceSensorRelationships200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RelationshipsApiService.GetDeviceSensorRelationships")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RelationshipsAPIService.GetDeviceSensorRelationships")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,13 +140,13 @@ func (a *RelationshipsApiService) GetDeviceSensorRelationshipsExecute(r Relation
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type RelationshipsApiGetNetworkSensorRelationshipsRequest struct {
+type RelationshipsAPIGetNetworkSensorRelationshipsRequest struct {
 	ctx context.Context
-	ApiService *RelationshipsApiService
+	ApiService *RelationshipsAPIService
 	networkId string
 }
 
-func (r RelationshipsApiGetNetworkSensorRelationshipsRequest) Execute() ([]GetNetworkSensorRelationships200ResponseInner, *http.Response, error) {
+func (r RelationshipsAPIGetNetworkSensorRelationshipsRequest) Execute() ([]GetNetworkSensorRelationships200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSensorRelationshipsExecute(r)
 }
 
@@ -157,10 +157,10 @@ List the sensor roles for devices in a given network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return RelationshipsApiGetNetworkSensorRelationshipsRequest
+ @return RelationshipsAPIGetNetworkSensorRelationshipsRequest
 */
-func (a *RelationshipsApiService) GetNetworkSensorRelationships(ctx context.Context, networkId string) RelationshipsApiGetNetworkSensorRelationshipsRequest {
-	return RelationshipsApiGetNetworkSensorRelationshipsRequest{
+func (a *RelationshipsAPIService) GetNetworkSensorRelationships(ctx context.Context, networkId string) RelationshipsAPIGetNetworkSensorRelationshipsRequest {
+	return RelationshipsAPIGetNetworkSensorRelationshipsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -169,7 +169,7 @@ func (a *RelationshipsApiService) GetNetworkSensorRelationships(ctx context.Cont
 
 // Execute executes the request
 //  @return []GetNetworkSensorRelationships200ResponseInner
-func (a *RelationshipsApiService) GetNetworkSensorRelationshipsExecute(r RelationshipsApiGetNetworkSensorRelationshipsRequest) ([]GetNetworkSensorRelationships200ResponseInner, *http.Response, error) {
+func (a *RelationshipsAPIService) GetNetworkSensorRelationshipsExecute(r RelationshipsAPIGetNetworkSensorRelationshipsRequest) ([]GetNetworkSensorRelationships200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -177,7 +177,7 @@ func (a *RelationshipsApiService) GetNetworkSensorRelationshipsExecute(r Relatio
 		localVarReturnValue  []GetNetworkSensorRelationships200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RelationshipsApiService.GetNetworkSensorRelationships")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RelationshipsAPIService.GetNetworkSensorRelationships")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -257,19 +257,19 @@ func (a *RelationshipsApiService) GetNetworkSensorRelationshipsExecute(r Relatio
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type RelationshipsApiUpdateDeviceSensorRelationshipsRequest struct {
+type RelationshipsAPIUpdateDeviceSensorRelationshipsRequest struct {
 	ctx context.Context
-	ApiService *RelationshipsApiService
+	ApiService *RelationshipsAPIService
 	serial string
 	updateDeviceSensorRelationshipsRequest *UpdateDeviceSensorRelationshipsRequest
 }
 
-func (r RelationshipsApiUpdateDeviceSensorRelationshipsRequest) UpdateDeviceSensorRelationshipsRequest(updateDeviceSensorRelationshipsRequest UpdateDeviceSensorRelationshipsRequest) RelationshipsApiUpdateDeviceSensorRelationshipsRequest {
+func (r RelationshipsAPIUpdateDeviceSensorRelationshipsRequest) UpdateDeviceSensorRelationshipsRequest(updateDeviceSensorRelationshipsRequest UpdateDeviceSensorRelationshipsRequest) RelationshipsAPIUpdateDeviceSensorRelationshipsRequest {
 	r.updateDeviceSensorRelationshipsRequest = &updateDeviceSensorRelationshipsRequest
 	return r
 }
 
-func (r RelationshipsApiUpdateDeviceSensorRelationshipsRequest) Execute() (*GetDeviceSensorRelationships200ResponseInner, *http.Response, error) {
+func (r RelationshipsAPIUpdateDeviceSensorRelationshipsRequest) Execute() (*GetDeviceSensorRelationships200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateDeviceSensorRelationshipsExecute(r)
 }
 
@@ -280,10 +280,10 @@ Assign one or more sensor roles to a given sensor or camera device.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return RelationshipsApiUpdateDeviceSensorRelationshipsRequest
+ @return RelationshipsAPIUpdateDeviceSensorRelationshipsRequest
 */
-func (a *RelationshipsApiService) UpdateDeviceSensorRelationships(ctx context.Context, serial string) RelationshipsApiUpdateDeviceSensorRelationshipsRequest {
-	return RelationshipsApiUpdateDeviceSensorRelationshipsRequest{
+func (a *RelationshipsAPIService) UpdateDeviceSensorRelationships(ctx context.Context, serial string) RelationshipsAPIUpdateDeviceSensorRelationshipsRequest {
+	return RelationshipsAPIUpdateDeviceSensorRelationshipsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -292,7 +292,7 @@ func (a *RelationshipsApiService) UpdateDeviceSensorRelationships(ctx context.Co
 
 // Execute executes the request
 //  @return GetDeviceSensorRelationships200ResponseInner
-func (a *RelationshipsApiService) UpdateDeviceSensorRelationshipsExecute(r RelationshipsApiUpdateDeviceSensorRelationshipsRequest) (*GetDeviceSensorRelationships200ResponseInner, *http.Response, error) {
+func (a *RelationshipsAPIService) UpdateDeviceSensorRelationshipsExecute(r RelationshipsAPIUpdateDeviceSensorRelationshipsRequest) (*GetDeviceSensorRelationships200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -300,7 +300,7 @@ func (a *RelationshipsApiService) UpdateDeviceSensorRelationshipsExecute(r Relat
 		localVarReturnValue  *GetDeviceSensorRelationships200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RelationshipsApiService.UpdateDeviceSensorRelationships")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RelationshipsAPIService.UpdateDeviceSensorRelationships")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

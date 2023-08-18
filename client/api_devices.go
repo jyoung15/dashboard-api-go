@@ -21,22 +21,22 @@ import (
 )
 
 
-// DevicesApiService DevicesApi service
-type DevicesApiService service
+// DevicesAPIService DevicesAPI service
+type DevicesAPIService service
 
-type DevicesApiBlinkDeviceLedsRequest struct {
+type DevicesAPIBlinkDeviceLedsRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	serial string
 	blinkDeviceLedsRequest *BlinkDeviceLedsRequest
 }
 
-func (r DevicesApiBlinkDeviceLedsRequest) BlinkDeviceLedsRequest(blinkDeviceLedsRequest BlinkDeviceLedsRequest) DevicesApiBlinkDeviceLedsRequest {
+func (r DevicesAPIBlinkDeviceLedsRequest) BlinkDeviceLedsRequest(blinkDeviceLedsRequest BlinkDeviceLedsRequest) DevicesAPIBlinkDeviceLedsRequest {
 	r.blinkDeviceLedsRequest = &blinkDeviceLedsRequest
 	return r
 }
 
-func (r DevicesApiBlinkDeviceLedsRequest) Execute() (*BlinkDeviceLeds202Response, *http.Response, error) {
+func (r DevicesAPIBlinkDeviceLedsRequest) Execute() (*BlinkDeviceLeds202Response, *http.Response, error) {
 	return r.ApiService.BlinkDeviceLedsExecute(r)
 }
 
@@ -47,10 +47,10 @@ Blink the LEDs on a device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return DevicesApiBlinkDeviceLedsRequest
+ @return DevicesAPIBlinkDeviceLedsRequest
 */
-func (a *DevicesApiService) BlinkDeviceLeds(ctx context.Context, serial string) DevicesApiBlinkDeviceLedsRequest {
-	return DevicesApiBlinkDeviceLedsRequest{
+func (a *DevicesAPIService) BlinkDeviceLeds(ctx context.Context, serial string) DevicesAPIBlinkDeviceLedsRequest {
+	return DevicesAPIBlinkDeviceLedsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -59,7 +59,7 @@ func (a *DevicesApiService) BlinkDeviceLeds(ctx context.Context, serial string) 
 
 // Execute executes the request
 //  @return BlinkDeviceLeds202Response
-func (a *DevicesApiService) BlinkDeviceLedsExecute(r DevicesApiBlinkDeviceLedsRequest) (*BlinkDeviceLeds202Response, *http.Response, error) {
+func (a *DevicesAPIService) BlinkDeviceLedsExecute(r DevicesAPIBlinkDeviceLedsRequest) (*BlinkDeviceLeds202Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -67,7 +67,7 @@ func (a *DevicesApiService) BlinkDeviceLedsExecute(r DevicesApiBlinkDeviceLedsRe
 		localVarReturnValue  *BlinkDeviceLeds202Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.BlinkDeviceLeds")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.BlinkDeviceLeds")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -149,19 +149,19 @@ func (a *DevicesApiService) BlinkDeviceLedsExecute(r DevicesApiBlinkDeviceLedsRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiCheckinNetworkSmDevicesRequest struct {
+type DevicesAPICheckinNetworkSmDevicesRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	networkId string
 	checkinNetworkSmDevicesRequest *CheckinNetworkSmDevicesRequest
 }
 
-func (r DevicesApiCheckinNetworkSmDevicesRequest) CheckinNetworkSmDevicesRequest(checkinNetworkSmDevicesRequest CheckinNetworkSmDevicesRequest) DevicesApiCheckinNetworkSmDevicesRequest {
+func (r DevicesAPICheckinNetworkSmDevicesRequest) CheckinNetworkSmDevicesRequest(checkinNetworkSmDevicesRequest CheckinNetworkSmDevicesRequest) DevicesAPICheckinNetworkSmDevicesRequest {
 	r.checkinNetworkSmDevicesRequest = &checkinNetworkSmDevicesRequest
 	return r
 }
 
-func (r DevicesApiCheckinNetworkSmDevicesRequest) Execute() (*CheckinNetworkSmDevices200Response, *http.Response, error) {
+func (r DevicesAPICheckinNetworkSmDevicesRequest) Execute() (*CheckinNetworkSmDevices200Response, *http.Response, error) {
 	return r.ApiService.CheckinNetworkSmDevicesExecute(r)
 }
 
@@ -172,10 +172,10 @@ Force check-in a set of devices
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return DevicesApiCheckinNetworkSmDevicesRequest
+ @return DevicesAPICheckinNetworkSmDevicesRequest
 */
-func (a *DevicesApiService) CheckinNetworkSmDevices(ctx context.Context, networkId string) DevicesApiCheckinNetworkSmDevicesRequest {
-	return DevicesApiCheckinNetworkSmDevicesRequest{
+func (a *DevicesAPIService) CheckinNetworkSmDevices(ctx context.Context, networkId string) DevicesAPICheckinNetworkSmDevicesRequest {
+	return DevicesAPICheckinNetworkSmDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -184,7 +184,7 @@ func (a *DevicesApiService) CheckinNetworkSmDevices(ctx context.Context, network
 
 // Execute executes the request
 //  @return CheckinNetworkSmDevices200Response
-func (a *DevicesApiService) CheckinNetworkSmDevicesExecute(r DevicesApiCheckinNetworkSmDevicesRequest) (*CheckinNetworkSmDevices200Response, *http.Response, error) {
+func (a *DevicesAPIService) CheckinNetworkSmDevicesExecute(r DevicesAPICheckinNetworkSmDevicesRequest) (*CheckinNetworkSmDevices200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -192,7 +192,7 @@ func (a *DevicesApiService) CheckinNetworkSmDevicesExecute(r DevicesApiCheckinNe
 		localVarReturnValue  *CheckinNetworkSmDevices200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.CheckinNetworkSmDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.CheckinNetworkSmDevices")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -274,19 +274,19 @@ func (a *DevicesApiService) CheckinNetworkSmDevicesExecute(r DevicesApiCheckinNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiClaimNetworkDevicesRequest struct {
+type DevicesAPIClaimNetworkDevicesRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	networkId string
 	claimNetworkDevicesRequest *ClaimNetworkDevicesRequest
 }
 
-func (r DevicesApiClaimNetworkDevicesRequest) ClaimNetworkDevicesRequest(claimNetworkDevicesRequest ClaimNetworkDevicesRequest) DevicesApiClaimNetworkDevicesRequest {
+func (r DevicesAPIClaimNetworkDevicesRequest) ClaimNetworkDevicesRequest(claimNetworkDevicesRequest ClaimNetworkDevicesRequest) DevicesAPIClaimNetworkDevicesRequest {
 	r.claimNetworkDevicesRequest = &claimNetworkDevicesRequest
 	return r
 }
 
-func (r DevicesApiClaimNetworkDevicesRequest) Execute() (*http.Response, error) {
+func (r DevicesAPIClaimNetworkDevicesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.ClaimNetworkDevicesExecute(r)
 }
 
@@ -297,10 +297,10 @@ Claim devices into a network. (Note: for recently claimed devices, it may take a
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return DevicesApiClaimNetworkDevicesRequest
+ @return DevicesAPIClaimNetworkDevicesRequest
 */
-func (a *DevicesApiService) ClaimNetworkDevices(ctx context.Context, networkId string) DevicesApiClaimNetworkDevicesRequest {
-	return DevicesApiClaimNetworkDevicesRequest{
+func (a *DevicesAPIService) ClaimNetworkDevices(ctx context.Context, networkId string) DevicesAPIClaimNetworkDevicesRequest {
+	return DevicesAPIClaimNetworkDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -308,14 +308,14 @@ func (a *DevicesApiService) ClaimNetworkDevices(ctx context.Context, networkId s
 }
 
 // Execute executes the request
-func (a *DevicesApiService) ClaimNetworkDevicesExecute(r DevicesApiClaimNetworkDevicesRequest) (*http.Response, error) {
+func (a *DevicesAPIService) ClaimNetworkDevicesExecute(r DevicesAPIClaimNetworkDevicesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.ClaimNetworkDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.ClaimNetworkDevices")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -391,19 +391,19 @@ func (a *DevicesApiService) ClaimNetworkDevicesExecute(r DevicesApiClaimNetworkD
 	return localVarHTTPResponse, nil
 }
 
-type DevicesApiCloneOrganizationSwitchDevicesRequest struct {
+type DevicesAPICloneOrganizationSwitchDevicesRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	organizationId string
 	cloneOrganizationSwitchDevicesRequest *CloneOrganizationSwitchDevicesRequest
 }
 
-func (r DevicesApiCloneOrganizationSwitchDevicesRequest) CloneOrganizationSwitchDevicesRequest(cloneOrganizationSwitchDevicesRequest CloneOrganizationSwitchDevicesRequest) DevicesApiCloneOrganizationSwitchDevicesRequest {
+func (r DevicesAPICloneOrganizationSwitchDevicesRequest) CloneOrganizationSwitchDevicesRequest(cloneOrganizationSwitchDevicesRequest CloneOrganizationSwitchDevicesRequest) DevicesAPICloneOrganizationSwitchDevicesRequest {
 	r.cloneOrganizationSwitchDevicesRequest = &cloneOrganizationSwitchDevicesRequest
 	return r
 }
 
-func (r DevicesApiCloneOrganizationSwitchDevicesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r DevicesAPICloneOrganizationSwitchDevicesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CloneOrganizationSwitchDevicesExecute(r)
 }
 
@@ -414,10 +414,10 @@ Clone port-level and some switch-level configuration settings from a source swit
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return DevicesApiCloneOrganizationSwitchDevicesRequest
+ @return DevicesAPICloneOrganizationSwitchDevicesRequest
 */
-func (a *DevicesApiService) CloneOrganizationSwitchDevices(ctx context.Context, organizationId string) DevicesApiCloneOrganizationSwitchDevicesRequest {
-	return DevicesApiCloneOrganizationSwitchDevicesRequest{
+func (a *DevicesAPIService) CloneOrganizationSwitchDevices(ctx context.Context, organizationId string) DevicesAPICloneOrganizationSwitchDevicesRequest {
+	return DevicesAPICloneOrganizationSwitchDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -426,7 +426,7 @@ func (a *DevicesApiService) CloneOrganizationSwitchDevices(ctx context.Context, 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DevicesApiService) CloneOrganizationSwitchDevicesExecute(r DevicesApiCloneOrganizationSwitchDevicesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DevicesAPIService) CloneOrganizationSwitchDevicesExecute(r DevicesAPICloneOrganizationSwitchDevicesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -434,7 +434,7 @@ func (a *DevicesApiService) CloneOrganizationSwitchDevicesExecute(r DevicesApiCl
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.CloneOrganizationSwitchDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.CloneOrganizationSwitchDevices")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -519,19 +519,19 @@ func (a *DevicesApiService) CloneOrganizationSwitchDevicesExecute(r DevicesApiCl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiCreateDeviceLiveToolsPingRequest struct {
+type DevicesAPICreateDeviceLiveToolsPingRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	serial string
 	createDeviceLiveToolsPingRequest *CreateDeviceLiveToolsPingRequest
 }
 
-func (r DevicesApiCreateDeviceLiveToolsPingRequest) CreateDeviceLiveToolsPingRequest(createDeviceLiveToolsPingRequest CreateDeviceLiveToolsPingRequest) DevicesApiCreateDeviceLiveToolsPingRequest {
+func (r DevicesAPICreateDeviceLiveToolsPingRequest) CreateDeviceLiveToolsPingRequest(createDeviceLiveToolsPingRequest CreateDeviceLiveToolsPingRequest) DevicesAPICreateDeviceLiveToolsPingRequest {
 	r.createDeviceLiveToolsPingRequest = &createDeviceLiveToolsPingRequest
 	return r
 }
 
-func (r DevicesApiCreateDeviceLiveToolsPingRequest) Execute() (*CreateDeviceLiveToolsPing201Response, *http.Response, error) {
+func (r DevicesAPICreateDeviceLiveToolsPingRequest) Execute() (*CreateDeviceLiveToolsPing201Response, *http.Response, error) {
 	return r.ApiService.CreateDeviceLiveToolsPingExecute(r)
 }
 
@@ -542,10 +542,10 @@ Enqueue a job to ping a target host from the device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return DevicesApiCreateDeviceLiveToolsPingRequest
+ @return DevicesAPICreateDeviceLiveToolsPingRequest
 */
-func (a *DevicesApiService) CreateDeviceLiveToolsPing(ctx context.Context, serial string) DevicesApiCreateDeviceLiveToolsPingRequest {
-	return DevicesApiCreateDeviceLiveToolsPingRequest{
+func (a *DevicesAPIService) CreateDeviceLiveToolsPing(ctx context.Context, serial string) DevicesAPICreateDeviceLiveToolsPingRequest {
+	return DevicesAPICreateDeviceLiveToolsPingRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -554,7 +554,7 @@ func (a *DevicesApiService) CreateDeviceLiveToolsPing(ctx context.Context, seria
 
 // Execute executes the request
 //  @return CreateDeviceLiveToolsPing201Response
-func (a *DevicesApiService) CreateDeviceLiveToolsPingExecute(r DevicesApiCreateDeviceLiveToolsPingRequest) (*CreateDeviceLiveToolsPing201Response, *http.Response, error) {
+func (a *DevicesAPIService) CreateDeviceLiveToolsPingExecute(r DevicesAPICreateDeviceLiveToolsPingRequest) (*CreateDeviceLiveToolsPing201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -562,7 +562,7 @@ func (a *DevicesApiService) CreateDeviceLiveToolsPingExecute(r DevicesApiCreateD
 		localVarReturnValue  *CreateDeviceLiveToolsPing201Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.CreateDeviceLiveToolsPing")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.CreateDeviceLiveToolsPing")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -647,19 +647,19 @@ func (a *DevicesApiService) CreateDeviceLiveToolsPingExecute(r DevicesApiCreateD
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiCreateDeviceLiveToolsPingDeviceRequest struct {
+type DevicesAPICreateDeviceLiveToolsPingDeviceRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	serial string
 	createDeviceLiveToolsPingDeviceRequest *CreateDeviceLiveToolsPingDeviceRequest
 }
 
-func (r DevicesApiCreateDeviceLiveToolsPingDeviceRequest) CreateDeviceLiveToolsPingDeviceRequest(createDeviceLiveToolsPingDeviceRequest CreateDeviceLiveToolsPingDeviceRequest) DevicesApiCreateDeviceLiveToolsPingDeviceRequest {
+func (r DevicesAPICreateDeviceLiveToolsPingDeviceRequest) CreateDeviceLiveToolsPingDeviceRequest(createDeviceLiveToolsPingDeviceRequest CreateDeviceLiveToolsPingDeviceRequest) DevicesAPICreateDeviceLiveToolsPingDeviceRequest {
 	r.createDeviceLiveToolsPingDeviceRequest = &createDeviceLiveToolsPingDeviceRequest
 	return r
 }
 
-func (r DevicesApiCreateDeviceLiveToolsPingDeviceRequest) Execute() (*CreateDeviceLiveToolsPing201Response, *http.Response, error) {
+func (r DevicesAPICreateDeviceLiveToolsPingDeviceRequest) Execute() (*CreateDeviceLiveToolsPing201Response, *http.Response, error) {
 	return r.ApiService.CreateDeviceLiveToolsPingDeviceExecute(r)
 }
 
@@ -670,10 +670,10 @@ Enqueue a job to check connectivity status to the device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return DevicesApiCreateDeviceLiveToolsPingDeviceRequest
+ @return DevicesAPICreateDeviceLiveToolsPingDeviceRequest
 */
-func (a *DevicesApiService) CreateDeviceLiveToolsPingDevice(ctx context.Context, serial string) DevicesApiCreateDeviceLiveToolsPingDeviceRequest {
-	return DevicesApiCreateDeviceLiveToolsPingDeviceRequest{
+func (a *DevicesAPIService) CreateDeviceLiveToolsPingDevice(ctx context.Context, serial string) DevicesAPICreateDeviceLiveToolsPingDeviceRequest {
+	return DevicesAPICreateDeviceLiveToolsPingDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -682,7 +682,7 @@ func (a *DevicesApiService) CreateDeviceLiveToolsPingDevice(ctx context.Context,
 
 // Execute executes the request
 //  @return CreateDeviceLiveToolsPing201Response
-func (a *DevicesApiService) CreateDeviceLiveToolsPingDeviceExecute(r DevicesApiCreateDeviceLiveToolsPingDeviceRequest) (*CreateDeviceLiveToolsPing201Response, *http.Response, error) {
+func (a *DevicesAPIService) CreateDeviceLiveToolsPingDeviceExecute(r DevicesAPICreateDeviceLiveToolsPingDeviceRequest) (*CreateDeviceLiveToolsPing201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -690,7 +690,7 @@ func (a *DevicesApiService) CreateDeviceLiveToolsPingDeviceExecute(r DevicesApiC
 		localVarReturnValue  *CreateDeviceLiveToolsPing201Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.CreateDeviceLiveToolsPingDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.CreateDeviceLiveToolsPingDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -772,13 +772,13 @@ func (a *DevicesApiService) CreateDeviceLiveToolsPingDeviceExecute(r DevicesApiC
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetDeviceRequest struct {
+type DevicesAPIGetDeviceRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	serial string
 }
 
-func (r DevicesApiGetDeviceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r DevicesAPIGetDeviceRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceExecute(r)
 }
 
@@ -789,10 +789,10 @@ Return a single device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return DevicesApiGetDeviceRequest
+ @return DevicesAPIGetDeviceRequest
 */
-func (a *DevicesApiService) GetDevice(ctx context.Context, serial string) DevicesApiGetDeviceRequest {
-	return DevicesApiGetDeviceRequest{
+func (a *DevicesAPIService) GetDevice(ctx context.Context, serial string) DevicesAPIGetDeviceRequest {
+	return DevicesAPIGetDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -801,7 +801,7 @@ func (a *DevicesApiService) GetDevice(ctx context.Context, serial string) Device
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DevicesApiService) GetDeviceExecute(r DevicesApiGetDeviceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DevicesAPIService) GetDeviceExecute(r DevicesAPIGetDeviceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -809,7 +809,7 @@ func (a *DevicesApiService) GetDeviceExecute(r DevicesApiGetDeviceRequest) (map[
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -889,13 +889,13 @@ func (a *DevicesApiService) GetDeviceExecute(r DevicesApiGetDeviceRequest) (map[
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetDeviceCellularSimsRequest struct {
+type DevicesAPIGetDeviceCellularSimsRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	serial string
 }
 
-func (r DevicesApiGetDeviceCellularSimsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r DevicesAPIGetDeviceCellularSimsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCellularSimsExecute(r)
 }
 
@@ -906,10 +906,10 @@ Return the SIM and APN configurations for a cellular device.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return DevicesApiGetDeviceCellularSimsRequest
+ @return DevicesAPIGetDeviceCellularSimsRequest
 */
-func (a *DevicesApiService) GetDeviceCellularSims(ctx context.Context, serial string) DevicesApiGetDeviceCellularSimsRequest {
-	return DevicesApiGetDeviceCellularSimsRequest{
+func (a *DevicesAPIService) GetDeviceCellularSims(ctx context.Context, serial string) DevicesAPIGetDeviceCellularSimsRequest {
+	return DevicesAPIGetDeviceCellularSimsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -918,7 +918,7 @@ func (a *DevicesApiService) GetDeviceCellularSims(ctx context.Context, serial st
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DevicesApiService) GetDeviceCellularSimsExecute(r DevicesApiGetDeviceCellularSimsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DevicesAPIService) GetDeviceCellularSimsExecute(r DevicesAPIGetDeviceCellularSimsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -926,7 +926,7 @@ func (a *DevicesApiService) GetDeviceCellularSimsExecute(r DevicesApiGetDeviceCe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetDeviceCellularSims")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetDeviceCellularSims")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1006,27 +1006,27 @@ func (a *DevicesApiService) GetDeviceCellularSimsExecute(r DevicesApiGetDeviceCe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetDeviceClientsRequest struct {
+type DevicesAPIGetDeviceClientsRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	serial string
 	t0 *string
 	timespan *float32
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r DevicesApiGetDeviceClientsRequest) T0(t0 string) DevicesApiGetDeviceClientsRequest {
+func (r DevicesAPIGetDeviceClientsRequest) T0(t0 string) DevicesAPIGetDeviceClientsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r DevicesApiGetDeviceClientsRequest) Timespan(timespan float32) DevicesApiGetDeviceClientsRequest {
+func (r DevicesAPIGetDeviceClientsRequest) Timespan(timespan float32) DevicesAPIGetDeviceClientsRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r DevicesApiGetDeviceClientsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r DevicesAPIGetDeviceClientsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceClientsExecute(r)
 }
 
@@ -1037,10 +1037,10 @@ List the clients of a device, up to a maximum of a month ago. The usage of each 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return DevicesApiGetDeviceClientsRequest
+ @return DevicesAPIGetDeviceClientsRequest
 */
-func (a *DevicesApiService) GetDeviceClients(ctx context.Context, serial string) DevicesApiGetDeviceClientsRequest {
-	return DevicesApiGetDeviceClientsRequest{
+func (a *DevicesAPIService) GetDeviceClients(ctx context.Context, serial string) DevicesAPIGetDeviceClientsRequest {
+	return DevicesAPIGetDeviceClientsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1049,7 +1049,7 @@ func (a *DevicesApiService) GetDeviceClients(ctx context.Context, serial string)
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *DevicesApiService) GetDeviceClientsExecute(r DevicesApiGetDeviceClientsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *DevicesAPIService) GetDeviceClientsExecute(r DevicesAPIGetDeviceClientsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1057,7 +1057,7 @@ func (a *DevicesApiService) GetDeviceClientsExecute(r DevicesApiGetDeviceClients
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetDeviceClients")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetDeviceClients")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1143,14 +1143,14 @@ func (a *DevicesApiService) GetDeviceClientsExecute(r DevicesApiGetDeviceClients
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetDeviceLiveToolsPingRequest struct {
+type DevicesAPIGetDeviceLiveToolsPingRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	serial string
 	id string
 }
 
-func (r DevicesApiGetDeviceLiveToolsPingRequest) Execute() (*GetDeviceLiveToolsPing200Response, *http.Response, error) {
+func (r DevicesAPIGetDeviceLiveToolsPingRequest) Execute() (*GetDeviceLiveToolsPing200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceLiveToolsPingExecute(r)
 }
 
@@ -1162,10 +1162,10 @@ Return a ping job. Latency unit in response is in milliseconds. Size is in bytes
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param id ID
- @return DevicesApiGetDeviceLiveToolsPingRequest
+ @return DevicesAPIGetDeviceLiveToolsPingRequest
 */
-func (a *DevicesApiService) GetDeviceLiveToolsPing(ctx context.Context, serial string, id string) DevicesApiGetDeviceLiveToolsPingRequest {
-	return DevicesApiGetDeviceLiveToolsPingRequest{
+func (a *DevicesAPIService) GetDeviceLiveToolsPing(ctx context.Context, serial string, id string) DevicesAPIGetDeviceLiveToolsPingRequest {
+	return DevicesAPIGetDeviceLiveToolsPingRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1175,7 +1175,7 @@ func (a *DevicesApiService) GetDeviceLiveToolsPing(ctx context.Context, serial s
 
 // Execute executes the request
 //  @return GetDeviceLiveToolsPing200Response
-func (a *DevicesApiService) GetDeviceLiveToolsPingExecute(r DevicesApiGetDeviceLiveToolsPingRequest) (*GetDeviceLiveToolsPing200Response, *http.Response, error) {
+func (a *DevicesAPIService) GetDeviceLiveToolsPingExecute(r DevicesAPIGetDeviceLiveToolsPingRequest) (*GetDeviceLiveToolsPing200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1183,7 +1183,7 @@ func (a *DevicesApiService) GetDeviceLiveToolsPingExecute(r DevicesApiGetDeviceL
 		localVarReturnValue  *GetDeviceLiveToolsPing200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetDeviceLiveToolsPing")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetDeviceLiveToolsPing")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1264,14 +1264,14 @@ func (a *DevicesApiService) GetDeviceLiveToolsPingExecute(r DevicesApiGetDeviceL
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetDeviceLiveToolsPingDeviceRequest struct {
+type DevicesAPIGetDeviceLiveToolsPingDeviceRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	serial string
 	id string
 }
 
-func (r DevicesApiGetDeviceLiveToolsPingDeviceRequest) Execute() (*GetDeviceLiveToolsPing200Response, *http.Response, error) {
+func (r DevicesAPIGetDeviceLiveToolsPingDeviceRequest) Execute() (*GetDeviceLiveToolsPing200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceLiveToolsPingDeviceExecute(r)
 }
 
@@ -1283,10 +1283,10 @@ Return a ping device job. Latency unit in response is in milliseconds. Size is i
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param id ID
- @return DevicesApiGetDeviceLiveToolsPingDeviceRequest
+ @return DevicesAPIGetDeviceLiveToolsPingDeviceRequest
 */
-func (a *DevicesApiService) GetDeviceLiveToolsPingDevice(ctx context.Context, serial string, id string) DevicesApiGetDeviceLiveToolsPingDeviceRequest {
-	return DevicesApiGetDeviceLiveToolsPingDeviceRequest{
+func (a *DevicesAPIService) GetDeviceLiveToolsPingDevice(ctx context.Context, serial string, id string) DevicesAPIGetDeviceLiveToolsPingDeviceRequest {
+	return DevicesAPIGetDeviceLiveToolsPingDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1296,7 +1296,7 @@ func (a *DevicesApiService) GetDeviceLiveToolsPingDevice(ctx context.Context, se
 
 // Execute executes the request
 //  @return GetDeviceLiveToolsPing200Response
-func (a *DevicesApiService) GetDeviceLiveToolsPingDeviceExecute(r DevicesApiGetDeviceLiveToolsPingDeviceRequest) (*GetDeviceLiveToolsPing200Response, *http.Response, error) {
+func (a *DevicesAPIService) GetDeviceLiveToolsPingDeviceExecute(r DevicesAPIGetDeviceLiveToolsPingDeviceRequest) (*GetDeviceLiveToolsPing200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1304,7 +1304,7 @@ func (a *DevicesApiService) GetDeviceLiveToolsPingDeviceExecute(r DevicesApiGetD
 		localVarReturnValue  *GetDeviceLiveToolsPing200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetDeviceLiveToolsPingDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetDeviceLiveToolsPingDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1385,13 +1385,13 @@ func (a *DevicesApiService) GetDeviceLiveToolsPingDeviceExecute(r DevicesApiGetD
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetDeviceLldpCdpRequest struct {
+type DevicesAPIGetDeviceLldpCdpRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	serial string
 }
 
-func (r DevicesApiGetDeviceLldpCdpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r DevicesAPIGetDeviceLldpCdpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceLldpCdpExecute(r)
 }
 
@@ -1402,10 +1402,10 @@ List LLDP and CDP information for a device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return DevicesApiGetDeviceLldpCdpRequest
+ @return DevicesAPIGetDeviceLldpCdpRequest
 */
-func (a *DevicesApiService) GetDeviceLldpCdp(ctx context.Context, serial string) DevicesApiGetDeviceLldpCdpRequest {
-	return DevicesApiGetDeviceLldpCdpRequest{
+func (a *DevicesAPIService) GetDeviceLldpCdp(ctx context.Context, serial string) DevicesAPIGetDeviceLldpCdpRequest {
+	return DevicesAPIGetDeviceLldpCdpRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1414,7 +1414,7 @@ func (a *DevicesApiService) GetDeviceLldpCdp(ctx context.Context, serial string)
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DevicesApiService) GetDeviceLldpCdpExecute(r DevicesApiGetDeviceLldpCdpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DevicesAPIService) GetDeviceLldpCdpExecute(r DevicesAPIGetDeviceLldpCdpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1422,7 +1422,7 @@ func (a *DevicesApiService) GetDeviceLldpCdpExecute(r DevicesApiGetDeviceLldpCdp
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetDeviceLldpCdp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetDeviceLldpCdp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1502,9 +1502,9 @@ func (a *DevicesApiService) GetDeviceLldpCdpExecute(r DevicesApiGetDeviceLldpCdp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetDeviceLossAndLatencyHistoryRequest struct {
+type DevicesAPIGetDeviceLossAndLatencyHistoryRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	serial string
 	ip *string
 	t0 *string
@@ -1515,42 +1515,42 @@ type DevicesApiGetDeviceLossAndLatencyHistoryRequest struct {
 }
 
 // The destination IP used to obtain the requested stats. This is required.
-func (r DevicesApiGetDeviceLossAndLatencyHistoryRequest) Ip(ip string) DevicesApiGetDeviceLossAndLatencyHistoryRequest {
+func (r DevicesAPIGetDeviceLossAndLatencyHistoryRequest) Ip(ip string) DevicesAPIGetDeviceLossAndLatencyHistoryRequest {
 	r.ip = &ip
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 60 days from today.
-func (r DevicesApiGetDeviceLossAndLatencyHistoryRequest) T0(t0 string) DevicesApiGetDeviceLossAndLatencyHistoryRequest {
+func (r DevicesAPIGetDeviceLossAndLatencyHistoryRequest) T0(t0 string) DevicesAPIGetDeviceLossAndLatencyHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r DevicesApiGetDeviceLossAndLatencyHistoryRequest) T1(t1 string) DevicesApiGetDeviceLossAndLatencyHistoryRequest {
+func (r DevicesAPIGetDeviceLossAndLatencyHistoryRequest) T1(t1 string) DevicesAPIGetDeviceLossAndLatencyHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r DevicesApiGetDeviceLossAndLatencyHistoryRequest) Timespan(timespan float32) DevicesApiGetDeviceLossAndLatencyHistoryRequest {
+func (r DevicesAPIGetDeviceLossAndLatencyHistoryRequest) Timespan(timespan float32) DevicesAPIGetDeviceLossAndLatencyHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 60, 600, 3600, 86400. The default is 60.
-func (r DevicesApiGetDeviceLossAndLatencyHistoryRequest) Resolution(resolution int32) DevicesApiGetDeviceLossAndLatencyHistoryRequest {
+func (r DevicesAPIGetDeviceLossAndLatencyHistoryRequest) Resolution(resolution int32) DevicesAPIGetDeviceLossAndLatencyHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // The WAN uplink used to obtain the requested stats. Valid uplinks are wan1, wan2, wan3, cellular. The default is wan1.
-func (r DevicesApiGetDeviceLossAndLatencyHistoryRequest) Uplink(uplink string) DevicesApiGetDeviceLossAndLatencyHistoryRequest {
+func (r DevicesAPIGetDeviceLossAndLatencyHistoryRequest) Uplink(uplink string) DevicesAPIGetDeviceLossAndLatencyHistoryRequest {
 	r.uplink = &uplink
 	return r
 }
 
-func (r DevicesApiGetDeviceLossAndLatencyHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r DevicesAPIGetDeviceLossAndLatencyHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceLossAndLatencyHistoryExecute(r)
 }
 
@@ -1561,10 +1561,10 @@ Get the uplink loss percentage and latency in milliseconds, and goodput in kilob
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return DevicesApiGetDeviceLossAndLatencyHistoryRequest
+ @return DevicesAPIGetDeviceLossAndLatencyHistoryRequest
 */
-func (a *DevicesApiService) GetDeviceLossAndLatencyHistory(ctx context.Context, serial string) DevicesApiGetDeviceLossAndLatencyHistoryRequest {
-	return DevicesApiGetDeviceLossAndLatencyHistoryRequest{
+func (a *DevicesAPIService) GetDeviceLossAndLatencyHistory(ctx context.Context, serial string) DevicesAPIGetDeviceLossAndLatencyHistoryRequest {
+	return DevicesAPIGetDeviceLossAndLatencyHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1573,7 +1573,7 @@ func (a *DevicesApiService) GetDeviceLossAndLatencyHistory(ctx context.Context, 
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *DevicesApiService) GetDeviceLossAndLatencyHistoryExecute(r DevicesApiGetDeviceLossAndLatencyHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *DevicesAPIService) GetDeviceLossAndLatencyHistoryExecute(r DevicesAPIGetDeviceLossAndLatencyHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1581,7 +1581,7 @@ func (a *DevicesApiService) GetDeviceLossAndLatencyHistoryExecute(r DevicesApiGe
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetDeviceLossAndLatencyHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetDeviceLossAndLatencyHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1680,13 +1680,13 @@ func (a *DevicesApiService) GetDeviceLossAndLatencyHistoryExecute(r DevicesApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetDeviceManagementInterfaceRequest struct {
+type DevicesAPIGetDeviceManagementInterfaceRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	serial string
 }
 
-func (r DevicesApiGetDeviceManagementInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r DevicesAPIGetDeviceManagementInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceManagementInterfaceExecute(r)
 }
 
@@ -1697,10 +1697,10 @@ Return the management interface settings for a device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return DevicesApiGetDeviceManagementInterfaceRequest
+ @return DevicesAPIGetDeviceManagementInterfaceRequest
 */
-func (a *DevicesApiService) GetDeviceManagementInterface(ctx context.Context, serial string) DevicesApiGetDeviceManagementInterfaceRequest {
-	return DevicesApiGetDeviceManagementInterfaceRequest{
+func (a *DevicesAPIService) GetDeviceManagementInterface(ctx context.Context, serial string) DevicesAPIGetDeviceManagementInterfaceRequest {
+	return DevicesAPIGetDeviceManagementInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1709,7 +1709,7 @@ func (a *DevicesApiService) GetDeviceManagementInterface(ctx context.Context, se
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DevicesApiService) GetDeviceManagementInterfaceExecute(r DevicesApiGetDeviceManagementInterfaceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DevicesAPIService) GetDeviceManagementInterfaceExecute(r DevicesAPIGetDeviceManagementInterfaceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1717,7 +1717,7 @@ func (a *DevicesApiService) GetDeviceManagementInterfaceExecute(r DevicesApiGetD
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetDeviceManagementInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetDeviceManagementInterface")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1797,13 +1797,13 @@ func (a *DevicesApiService) GetDeviceManagementInterfaceExecute(r DevicesApiGetD
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetNetworkDevicesRequest struct {
+type DevicesAPIGetNetworkDevicesRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	networkId string
 }
 
-func (r DevicesApiGetNetworkDevicesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r DevicesAPIGetNetworkDevicesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkDevicesExecute(r)
 }
 
@@ -1814,10 +1814,10 @@ List the devices in a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return DevicesApiGetNetworkDevicesRequest
+ @return DevicesAPIGetNetworkDevicesRequest
 */
-func (a *DevicesApiService) GetNetworkDevices(ctx context.Context, networkId string) DevicesApiGetNetworkDevicesRequest {
-	return DevicesApiGetNetworkDevicesRequest{
+func (a *DevicesAPIService) GetNetworkDevices(ctx context.Context, networkId string) DevicesAPIGetNetworkDevicesRequest {
+	return DevicesAPIGetNetworkDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1826,7 +1826,7 @@ func (a *DevicesApiService) GetNetworkDevices(ctx context.Context, networkId str
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *DevicesApiService) GetNetworkDevicesExecute(r DevicesApiGetNetworkDevicesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *DevicesAPIService) GetNetworkDevicesExecute(r DevicesAPIGetNetworkDevicesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1834,7 +1834,7 @@ func (a *DevicesApiService) GetNetworkDevicesExecute(r DevicesApiGetNetworkDevic
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetNetworkDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetNetworkDevices")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1914,14 +1914,14 @@ func (a *DevicesApiService) GetNetworkDevicesExecute(r DevicesApiGetNetworkDevic
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetNetworkSmDeviceCellularUsageHistoryRequest struct {
+type DevicesAPIGetNetworkSmDeviceCellularUsageHistoryRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	networkId string
 	deviceId string
 }
 
-func (r DevicesApiGetNetworkSmDeviceCellularUsageHistoryRequest) Execute() ([]GetNetworkSmDeviceCellularUsageHistory200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetNetworkSmDeviceCellularUsageHistoryRequest) Execute() ([]GetNetworkSmDeviceCellularUsageHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceCellularUsageHistoryExecute(r)
 }
 
@@ -1933,10 +1933,10 @@ Return the client's daily cellular data usage history. Usage data is in kilobyte
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return DevicesApiGetNetworkSmDeviceCellularUsageHistoryRequest
+ @return DevicesAPIGetNetworkSmDeviceCellularUsageHistoryRequest
 */
-func (a *DevicesApiService) GetNetworkSmDeviceCellularUsageHistory(ctx context.Context, networkId string, deviceId string) DevicesApiGetNetworkSmDeviceCellularUsageHistoryRequest {
-	return DevicesApiGetNetworkSmDeviceCellularUsageHistoryRequest{
+func (a *DevicesAPIService) GetNetworkSmDeviceCellularUsageHistory(ctx context.Context, networkId string, deviceId string) DevicesAPIGetNetworkSmDeviceCellularUsageHistoryRequest {
+	return DevicesAPIGetNetworkSmDeviceCellularUsageHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1946,7 +1946,7 @@ func (a *DevicesApiService) GetNetworkSmDeviceCellularUsageHistory(ctx context.C
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceCellularUsageHistory200ResponseInner
-func (a *DevicesApiService) GetNetworkSmDeviceCellularUsageHistoryExecute(r DevicesApiGetNetworkSmDeviceCellularUsageHistoryRequest) ([]GetNetworkSmDeviceCellularUsageHistory200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetNetworkSmDeviceCellularUsageHistoryExecute(r DevicesAPIGetNetworkSmDeviceCellularUsageHistoryRequest) ([]GetNetworkSmDeviceCellularUsageHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1954,7 +1954,7 @@ func (a *DevicesApiService) GetNetworkSmDeviceCellularUsageHistoryExecute(r Devi
 		localVarReturnValue  []GetNetworkSmDeviceCellularUsageHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetNetworkSmDeviceCellularUsageHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetNetworkSmDeviceCellularUsageHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2035,14 +2035,14 @@ func (a *DevicesApiService) GetNetworkSmDeviceCellularUsageHistoryExecute(r Devi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetNetworkSmDeviceCertsRequest struct {
+type DevicesAPIGetNetworkSmDeviceCertsRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	networkId string
 	deviceId string
 }
 
-func (r DevicesApiGetNetworkSmDeviceCertsRequest) Execute() ([]GetNetworkSmDeviceCerts200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetNetworkSmDeviceCertsRequest) Execute() ([]GetNetworkSmDeviceCerts200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceCertsExecute(r)
 }
 
@@ -2054,10 +2054,10 @@ List the certs on a device
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return DevicesApiGetNetworkSmDeviceCertsRequest
+ @return DevicesAPIGetNetworkSmDeviceCertsRequest
 */
-func (a *DevicesApiService) GetNetworkSmDeviceCerts(ctx context.Context, networkId string, deviceId string) DevicesApiGetNetworkSmDeviceCertsRequest {
-	return DevicesApiGetNetworkSmDeviceCertsRequest{
+func (a *DevicesAPIService) GetNetworkSmDeviceCerts(ctx context.Context, networkId string, deviceId string) DevicesAPIGetNetworkSmDeviceCertsRequest {
+	return DevicesAPIGetNetworkSmDeviceCertsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2067,7 +2067,7 @@ func (a *DevicesApiService) GetNetworkSmDeviceCerts(ctx context.Context, network
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceCerts200ResponseInner
-func (a *DevicesApiService) GetNetworkSmDeviceCertsExecute(r DevicesApiGetNetworkSmDeviceCertsRequest) ([]GetNetworkSmDeviceCerts200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetNetworkSmDeviceCertsExecute(r DevicesAPIGetNetworkSmDeviceCertsRequest) ([]GetNetworkSmDeviceCerts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2075,7 +2075,7 @@ func (a *DevicesApiService) GetNetworkSmDeviceCertsExecute(r DevicesApiGetNetwor
 		localVarReturnValue  []GetNetworkSmDeviceCerts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetNetworkSmDeviceCerts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetNetworkSmDeviceCerts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2156,9 +2156,9 @@ func (a *DevicesApiService) GetNetworkSmDeviceCertsExecute(r DevicesApiGetNetwor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetNetworkSmDeviceConnectivityRequest struct {
+type DevicesAPIGetNetworkSmDeviceConnectivityRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	networkId string
 	deviceId string
 	perPage *int32
@@ -2167,24 +2167,24 @@ type DevicesApiGetNetworkSmDeviceConnectivityRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r DevicesApiGetNetworkSmDeviceConnectivityRequest) PerPage(perPage int32) DevicesApiGetNetworkSmDeviceConnectivityRequest {
+func (r DevicesAPIGetNetworkSmDeviceConnectivityRequest) PerPage(perPage int32) DevicesAPIGetNetworkSmDeviceConnectivityRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetNetworkSmDeviceConnectivityRequest) StartingAfter(startingAfter string) DevicesApiGetNetworkSmDeviceConnectivityRequest {
+func (r DevicesAPIGetNetworkSmDeviceConnectivityRequest) StartingAfter(startingAfter string) DevicesAPIGetNetworkSmDeviceConnectivityRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetNetworkSmDeviceConnectivityRequest) EndingBefore(endingBefore string) DevicesApiGetNetworkSmDeviceConnectivityRequest {
+func (r DevicesAPIGetNetworkSmDeviceConnectivityRequest) EndingBefore(endingBefore string) DevicesAPIGetNetworkSmDeviceConnectivityRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r DevicesApiGetNetworkSmDeviceConnectivityRequest) Execute() ([]GetNetworkSmDeviceConnectivity200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetNetworkSmDeviceConnectivityRequest) Execute() ([]GetNetworkSmDeviceConnectivity200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceConnectivityExecute(r)
 }
 
@@ -2196,10 +2196,10 @@ Returns historical connectivity data (whether a device is regularly checking in 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return DevicesApiGetNetworkSmDeviceConnectivityRequest
+ @return DevicesAPIGetNetworkSmDeviceConnectivityRequest
 */
-func (a *DevicesApiService) GetNetworkSmDeviceConnectivity(ctx context.Context, networkId string, deviceId string) DevicesApiGetNetworkSmDeviceConnectivityRequest {
-	return DevicesApiGetNetworkSmDeviceConnectivityRequest{
+func (a *DevicesAPIService) GetNetworkSmDeviceConnectivity(ctx context.Context, networkId string, deviceId string) DevicesAPIGetNetworkSmDeviceConnectivityRequest {
+	return DevicesAPIGetNetworkSmDeviceConnectivityRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2209,7 +2209,7 @@ func (a *DevicesApiService) GetNetworkSmDeviceConnectivity(ctx context.Context, 
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceConnectivity200ResponseInner
-func (a *DevicesApiService) GetNetworkSmDeviceConnectivityExecute(r DevicesApiGetNetworkSmDeviceConnectivityRequest) ([]GetNetworkSmDeviceConnectivity200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetNetworkSmDeviceConnectivityExecute(r DevicesAPIGetNetworkSmDeviceConnectivityRequest) ([]GetNetworkSmDeviceConnectivity200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2217,7 +2217,7 @@ func (a *DevicesApiService) GetNetworkSmDeviceConnectivityExecute(r DevicesApiGe
 		localVarReturnValue  []GetNetworkSmDeviceConnectivity200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetNetworkSmDeviceConnectivity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetNetworkSmDeviceConnectivity")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2307,9 +2307,9 @@ func (a *DevicesApiService) GetNetworkSmDeviceConnectivityExecute(r DevicesApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetNetworkSmDeviceDesktopLogsRequest struct {
+type DevicesAPIGetNetworkSmDeviceDesktopLogsRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	networkId string
 	deviceId string
 	perPage *int32
@@ -2318,24 +2318,24 @@ type DevicesApiGetNetworkSmDeviceDesktopLogsRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r DevicesApiGetNetworkSmDeviceDesktopLogsRequest) PerPage(perPage int32) DevicesApiGetNetworkSmDeviceDesktopLogsRequest {
+func (r DevicesAPIGetNetworkSmDeviceDesktopLogsRequest) PerPage(perPage int32) DevicesAPIGetNetworkSmDeviceDesktopLogsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetNetworkSmDeviceDesktopLogsRequest) StartingAfter(startingAfter string) DevicesApiGetNetworkSmDeviceDesktopLogsRequest {
+func (r DevicesAPIGetNetworkSmDeviceDesktopLogsRequest) StartingAfter(startingAfter string) DevicesAPIGetNetworkSmDeviceDesktopLogsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetNetworkSmDeviceDesktopLogsRequest) EndingBefore(endingBefore string) DevicesApiGetNetworkSmDeviceDesktopLogsRequest {
+func (r DevicesAPIGetNetworkSmDeviceDesktopLogsRequest) EndingBefore(endingBefore string) DevicesAPIGetNetworkSmDeviceDesktopLogsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r DevicesApiGetNetworkSmDeviceDesktopLogsRequest) Execute() ([]GetNetworkSmDeviceDesktopLogs200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetNetworkSmDeviceDesktopLogsRequest) Execute() ([]GetNetworkSmDeviceDesktopLogs200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceDesktopLogsExecute(r)
 }
 
@@ -2347,10 +2347,10 @@ Return historical records of various Systems Manager network connection details 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return DevicesApiGetNetworkSmDeviceDesktopLogsRequest
+ @return DevicesAPIGetNetworkSmDeviceDesktopLogsRequest
 */
-func (a *DevicesApiService) GetNetworkSmDeviceDesktopLogs(ctx context.Context, networkId string, deviceId string) DevicesApiGetNetworkSmDeviceDesktopLogsRequest {
-	return DevicesApiGetNetworkSmDeviceDesktopLogsRequest{
+func (a *DevicesAPIService) GetNetworkSmDeviceDesktopLogs(ctx context.Context, networkId string, deviceId string) DevicesAPIGetNetworkSmDeviceDesktopLogsRequest {
+	return DevicesAPIGetNetworkSmDeviceDesktopLogsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2360,7 +2360,7 @@ func (a *DevicesApiService) GetNetworkSmDeviceDesktopLogs(ctx context.Context, n
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceDesktopLogs200ResponseInner
-func (a *DevicesApiService) GetNetworkSmDeviceDesktopLogsExecute(r DevicesApiGetNetworkSmDeviceDesktopLogsRequest) ([]GetNetworkSmDeviceDesktopLogs200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetNetworkSmDeviceDesktopLogsExecute(r DevicesAPIGetNetworkSmDeviceDesktopLogsRequest) ([]GetNetworkSmDeviceDesktopLogs200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2368,7 +2368,7 @@ func (a *DevicesApiService) GetNetworkSmDeviceDesktopLogsExecute(r DevicesApiGet
 		localVarReturnValue  []GetNetworkSmDeviceDesktopLogs200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetNetworkSmDeviceDesktopLogs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetNetworkSmDeviceDesktopLogs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2458,9 +2458,9 @@ func (a *DevicesApiService) GetNetworkSmDeviceDesktopLogsExecute(r DevicesApiGet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetNetworkSmDeviceDeviceCommandLogsRequest struct {
+type DevicesAPIGetNetworkSmDeviceDeviceCommandLogsRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	networkId string
 	deviceId string
 	perPage *int32
@@ -2469,24 +2469,24 @@ type DevicesApiGetNetworkSmDeviceDeviceCommandLogsRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r DevicesApiGetNetworkSmDeviceDeviceCommandLogsRequest) PerPage(perPage int32) DevicesApiGetNetworkSmDeviceDeviceCommandLogsRequest {
+func (r DevicesAPIGetNetworkSmDeviceDeviceCommandLogsRequest) PerPage(perPage int32) DevicesAPIGetNetworkSmDeviceDeviceCommandLogsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetNetworkSmDeviceDeviceCommandLogsRequest) StartingAfter(startingAfter string) DevicesApiGetNetworkSmDeviceDeviceCommandLogsRequest {
+func (r DevicesAPIGetNetworkSmDeviceDeviceCommandLogsRequest) StartingAfter(startingAfter string) DevicesAPIGetNetworkSmDeviceDeviceCommandLogsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetNetworkSmDeviceDeviceCommandLogsRequest) EndingBefore(endingBefore string) DevicesApiGetNetworkSmDeviceDeviceCommandLogsRequest {
+func (r DevicesAPIGetNetworkSmDeviceDeviceCommandLogsRequest) EndingBefore(endingBefore string) DevicesAPIGetNetworkSmDeviceDeviceCommandLogsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r DevicesApiGetNetworkSmDeviceDeviceCommandLogsRequest) Execute() ([]GetNetworkSmDeviceDeviceCommandLogs200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetNetworkSmDeviceDeviceCommandLogsRequest) Execute() ([]GetNetworkSmDeviceDeviceCommandLogs200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceDeviceCommandLogsExecute(r)
 }
 
@@ -2498,10 +2498,10 @@ Return historical records of commands sent to Systems Manager devices. Note that
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return DevicesApiGetNetworkSmDeviceDeviceCommandLogsRequest
+ @return DevicesAPIGetNetworkSmDeviceDeviceCommandLogsRequest
 */
-func (a *DevicesApiService) GetNetworkSmDeviceDeviceCommandLogs(ctx context.Context, networkId string, deviceId string) DevicesApiGetNetworkSmDeviceDeviceCommandLogsRequest {
-	return DevicesApiGetNetworkSmDeviceDeviceCommandLogsRequest{
+func (a *DevicesAPIService) GetNetworkSmDeviceDeviceCommandLogs(ctx context.Context, networkId string, deviceId string) DevicesAPIGetNetworkSmDeviceDeviceCommandLogsRequest {
+	return DevicesAPIGetNetworkSmDeviceDeviceCommandLogsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2511,7 +2511,7 @@ func (a *DevicesApiService) GetNetworkSmDeviceDeviceCommandLogs(ctx context.Cont
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceDeviceCommandLogs200ResponseInner
-func (a *DevicesApiService) GetNetworkSmDeviceDeviceCommandLogsExecute(r DevicesApiGetNetworkSmDeviceDeviceCommandLogsRequest) ([]GetNetworkSmDeviceDeviceCommandLogs200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetNetworkSmDeviceDeviceCommandLogsExecute(r DevicesAPIGetNetworkSmDeviceDeviceCommandLogsRequest) ([]GetNetworkSmDeviceDeviceCommandLogs200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2519,7 +2519,7 @@ func (a *DevicesApiService) GetNetworkSmDeviceDeviceCommandLogsExecute(r Devices
 		localVarReturnValue  []GetNetworkSmDeviceDeviceCommandLogs200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetNetworkSmDeviceDeviceCommandLogs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetNetworkSmDeviceDeviceCommandLogs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2609,14 +2609,14 @@ func (a *DevicesApiService) GetNetworkSmDeviceDeviceCommandLogsExecute(r Devices
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetNetworkSmDeviceDeviceProfilesRequest struct {
+type DevicesAPIGetNetworkSmDeviceDeviceProfilesRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	networkId string
 	deviceId string
 }
 
-func (r DevicesApiGetNetworkSmDeviceDeviceProfilesRequest) Execute() ([]GetNetworkSmDeviceDeviceProfiles200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetNetworkSmDeviceDeviceProfilesRequest) Execute() ([]GetNetworkSmDeviceDeviceProfiles200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceDeviceProfilesExecute(r)
 }
 
@@ -2628,10 +2628,10 @@ Get the installed profiles associated with a device
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return DevicesApiGetNetworkSmDeviceDeviceProfilesRequest
+ @return DevicesAPIGetNetworkSmDeviceDeviceProfilesRequest
 */
-func (a *DevicesApiService) GetNetworkSmDeviceDeviceProfiles(ctx context.Context, networkId string, deviceId string) DevicesApiGetNetworkSmDeviceDeviceProfilesRequest {
-	return DevicesApiGetNetworkSmDeviceDeviceProfilesRequest{
+func (a *DevicesAPIService) GetNetworkSmDeviceDeviceProfiles(ctx context.Context, networkId string, deviceId string) DevicesAPIGetNetworkSmDeviceDeviceProfilesRequest {
+	return DevicesAPIGetNetworkSmDeviceDeviceProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2641,7 +2641,7 @@ func (a *DevicesApiService) GetNetworkSmDeviceDeviceProfiles(ctx context.Context
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceDeviceProfiles200ResponseInner
-func (a *DevicesApiService) GetNetworkSmDeviceDeviceProfilesExecute(r DevicesApiGetNetworkSmDeviceDeviceProfilesRequest) ([]GetNetworkSmDeviceDeviceProfiles200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetNetworkSmDeviceDeviceProfilesExecute(r DevicesAPIGetNetworkSmDeviceDeviceProfilesRequest) ([]GetNetworkSmDeviceDeviceProfiles200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2649,7 +2649,7 @@ func (a *DevicesApiService) GetNetworkSmDeviceDeviceProfilesExecute(r DevicesApi
 		localVarReturnValue  []GetNetworkSmDeviceDeviceProfiles200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetNetworkSmDeviceDeviceProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetNetworkSmDeviceDeviceProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2730,14 +2730,14 @@ func (a *DevicesApiService) GetNetworkSmDeviceDeviceProfilesExecute(r DevicesApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetNetworkSmDeviceNetworkAdaptersRequest struct {
+type DevicesAPIGetNetworkSmDeviceNetworkAdaptersRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	networkId string
 	deviceId string
 }
 
-func (r DevicesApiGetNetworkSmDeviceNetworkAdaptersRequest) Execute() ([]GetNetworkSmDeviceNetworkAdapters200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetNetworkSmDeviceNetworkAdaptersRequest) Execute() ([]GetNetworkSmDeviceNetworkAdapters200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceNetworkAdaptersExecute(r)
 }
 
@@ -2749,10 +2749,10 @@ List the network adapters of a device
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return DevicesApiGetNetworkSmDeviceNetworkAdaptersRequest
+ @return DevicesAPIGetNetworkSmDeviceNetworkAdaptersRequest
 */
-func (a *DevicesApiService) GetNetworkSmDeviceNetworkAdapters(ctx context.Context, networkId string, deviceId string) DevicesApiGetNetworkSmDeviceNetworkAdaptersRequest {
-	return DevicesApiGetNetworkSmDeviceNetworkAdaptersRequest{
+func (a *DevicesAPIService) GetNetworkSmDeviceNetworkAdapters(ctx context.Context, networkId string, deviceId string) DevicesAPIGetNetworkSmDeviceNetworkAdaptersRequest {
+	return DevicesAPIGetNetworkSmDeviceNetworkAdaptersRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2762,7 +2762,7 @@ func (a *DevicesApiService) GetNetworkSmDeviceNetworkAdapters(ctx context.Contex
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceNetworkAdapters200ResponseInner
-func (a *DevicesApiService) GetNetworkSmDeviceNetworkAdaptersExecute(r DevicesApiGetNetworkSmDeviceNetworkAdaptersRequest) ([]GetNetworkSmDeviceNetworkAdapters200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetNetworkSmDeviceNetworkAdaptersExecute(r DevicesAPIGetNetworkSmDeviceNetworkAdaptersRequest) ([]GetNetworkSmDeviceNetworkAdapters200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2770,7 +2770,7 @@ func (a *DevicesApiService) GetNetworkSmDeviceNetworkAdaptersExecute(r DevicesAp
 		localVarReturnValue  []GetNetworkSmDeviceNetworkAdapters200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetNetworkSmDeviceNetworkAdapters")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetNetworkSmDeviceNetworkAdapters")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2851,9 +2851,9 @@ func (a *DevicesApiService) GetNetworkSmDeviceNetworkAdaptersExecute(r DevicesAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetNetworkSmDevicePerformanceHistoryRequest struct {
+type DevicesAPIGetNetworkSmDevicePerformanceHistoryRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	networkId string
 	deviceId string
 	perPage *int32
@@ -2862,24 +2862,24 @@ type DevicesApiGetNetworkSmDevicePerformanceHistoryRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r DevicesApiGetNetworkSmDevicePerformanceHistoryRequest) PerPage(perPage int32) DevicesApiGetNetworkSmDevicePerformanceHistoryRequest {
+func (r DevicesAPIGetNetworkSmDevicePerformanceHistoryRequest) PerPage(perPage int32) DevicesAPIGetNetworkSmDevicePerformanceHistoryRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetNetworkSmDevicePerformanceHistoryRequest) StartingAfter(startingAfter string) DevicesApiGetNetworkSmDevicePerformanceHistoryRequest {
+func (r DevicesAPIGetNetworkSmDevicePerformanceHistoryRequest) StartingAfter(startingAfter string) DevicesAPIGetNetworkSmDevicePerformanceHistoryRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetNetworkSmDevicePerformanceHistoryRequest) EndingBefore(endingBefore string) DevicesApiGetNetworkSmDevicePerformanceHistoryRequest {
+func (r DevicesAPIGetNetworkSmDevicePerformanceHistoryRequest) EndingBefore(endingBefore string) DevicesAPIGetNetworkSmDevicePerformanceHistoryRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r DevicesApiGetNetworkSmDevicePerformanceHistoryRequest) Execute() ([]GetNetworkSmDevicePerformanceHistory200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetNetworkSmDevicePerformanceHistoryRequest) Execute() ([]GetNetworkSmDevicePerformanceHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDevicePerformanceHistoryExecute(r)
 }
 
@@ -2891,10 +2891,10 @@ Return historical records of various Systems Manager client metrics for desktop 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return DevicesApiGetNetworkSmDevicePerformanceHistoryRequest
+ @return DevicesAPIGetNetworkSmDevicePerformanceHistoryRequest
 */
-func (a *DevicesApiService) GetNetworkSmDevicePerformanceHistory(ctx context.Context, networkId string, deviceId string) DevicesApiGetNetworkSmDevicePerformanceHistoryRequest {
-	return DevicesApiGetNetworkSmDevicePerformanceHistoryRequest{
+func (a *DevicesAPIService) GetNetworkSmDevicePerformanceHistory(ctx context.Context, networkId string, deviceId string) DevicesAPIGetNetworkSmDevicePerformanceHistoryRequest {
+	return DevicesAPIGetNetworkSmDevicePerformanceHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2904,7 +2904,7 @@ func (a *DevicesApiService) GetNetworkSmDevicePerformanceHistory(ctx context.Con
 
 // Execute executes the request
 //  @return []GetNetworkSmDevicePerformanceHistory200ResponseInner
-func (a *DevicesApiService) GetNetworkSmDevicePerformanceHistoryExecute(r DevicesApiGetNetworkSmDevicePerformanceHistoryRequest) ([]GetNetworkSmDevicePerformanceHistory200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetNetworkSmDevicePerformanceHistoryExecute(r DevicesAPIGetNetworkSmDevicePerformanceHistoryRequest) ([]GetNetworkSmDevicePerformanceHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2912,7 +2912,7 @@ func (a *DevicesApiService) GetNetworkSmDevicePerformanceHistoryExecute(r Device
 		localVarReturnValue  []GetNetworkSmDevicePerformanceHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetNetworkSmDevicePerformanceHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetNetworkSmDevicePerformanceHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3002,14 +3002,14 @@ func (a *DevicesApiService) GetNetworkSmDevicePerformanceHistoryExecute(r Device
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetNetworkSmDeviceRestrictionsRequest struct {
+type DevicesAPIGetNetworkSmDeviceRestrictionsRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	networkId string
 	deviceId string
 }
 
-func (r DevicesApiGetNetworkSmDeviceRestrictionsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r DevicesAPIGetNetworkSmDeviceRestrictionsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceRestrictionsExecute(r)
 }
 
@@ -3021,10 +3021,10 @@ List the restrictions on a device
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return DevicesApiGetNetworkSmDeviceRestrictionsRequest
+ @return DevicesAPIGetNetworkSmDeviceRestrictionsRequest
 */
-func (a *DevicesApiService) GetNetworkSmDeviceRestrictions(ctx context.Context, networkId string, deviceId string) DevicesApiGetNetworkSmDeviceRestrictionsRequest {
-	return DevicesApiGetNetworkSmDeviceRestrictionsRequest{
+func (a *DevicesAPIService) GetNetworkSmDeviceRestrictions(ctx context.Context, networkId string, deviceId string) DevicesAPIGetNetworkSmDeviceRestrictionsRequest {
+	return DevicesAPIGetNetworkSmDeviceRestrictionsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3034,7 +3034,7 @@ func (a *DevicesApiService) GetNetworkSmDeviceRestrictions(ctx context.Context, 
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *DevicesApiService) GetNetworkSmDeviceRestrictionsExecute(r DevicesApiGetNetworkSmDeviceRestrictionsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *DevicesAPIService) GetNetworkSmDeviceRestrictionsExecute(r DevicesAPIGetNetworkSmDeviceRestrictionsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3042,7 +3042,7 @@ func (a *DevicesApiService) GetNetworkSmDeviceRestrictionsExecute(r DevicesApiGe
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetNetworkSmDeviceRestrictions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetNetworkSmDeviceRestrictions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3123,14 +3123,14 @@ func (a *DevicesApiService) GetNetworkSmDeviceRestrictionsExecute(r DevicesApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetNetworkSmDeviceSecurityCentersRequest struct {
+type DevicesAPIGetNetworkSmDeviceSecurityCentersRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	networkId string
 	deviceId string
 }
 
-func (r DevicesApiGetNetworkSmDeviceSecurityCentersRequest) Execute() ([]GetNetworkSmDeviceSecurityCenters200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetNetworkSmDeviceSecurityCentersRequest) Execute() ([]GetNetworkSmDeviceSecurityCenters200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceSecurityCentersExecute(r)
 }
 
@@ -3142,10 +3142,10 @@ List the security centers on a device
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return DevicesApiGetNetworkSmDeviceSecurityCentersRequest
+ @return DevicesAPIGetNetworkSmDeviceSecurityCentersRequest
 */
-func (a *DevicesApiService) GetNetworkSmDeviceSecurityCenters(ctx context.Context, networkId string, deviceId string) DevicesApiGetNetworkSmDeviceSecurityCentersRequest {
-	return DevicesApiGetNetworkSmDeviceSecurityCentersRequest{
+func (a *DevicesAPIService) GetNetworkSmDeviceSecurityCenters(ctx context.Context, networkId string, deviceId string) DevicesAPIGetNetworkSmDeviceSecurityCentersRequest {
+	return DevicesAPIGetNetworkSmDeviceSecurityCentersRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3155,7 +3155,7 @@ func (a *DevicesApiService) GetNetworkSmDeviceSecurityCenters(ctx context.Contex
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceSecurityCenters200ResponseInner
-func (a *DevicesApiService) GetNetworkSmDeviceSecurityCentersExecute(r DevicesApiGetNetworkSmDeviceSecurityCentersRequest) ([]GetNetworkSmDeviceSecurityCenters200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetNetworkSmDeviceSecurityCentersExecute(r DevicesAPIGetNetworkSmDeviceSecurityCentersRequest) ([]GetNetworkSmDeviceSecurityCenters200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3163,7 +3163,7 @@ func (a *DevicesApiService) GetNetworkSmDeviceSecurityCentersExecute(r DevicesAp
 		localVarReturnValue  []GetNetworkSmDeviceSecurityCenters200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetNetworkSmDeviceSecurityCenters")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetNetworkSmDeviceSecurityCenters")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3244,14 +3244,14 @@ func (a *DevicesApiService) GetNetworkSmDeviceSecurityCentersExecute(r DevicesAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetNetworkSmDeviceSoftwaresRequest struct {
+type DevicesAPIGetNetworkSmDeviceSoftwaresRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	networkId string
 	deviceId string
 }
 
-func (r DevicesApiGetNetworkSmDeviceSoftwaresRequest) Execute() ([]GetNetworkSmDeviceSoftwares200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetNetworkSmDeviceSoftwaresRequest) Execute() ([]GetNetworkSmDeviceSoftwares200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceSoftwaresExecute(r)
 }
 
@@ -3263,10 +3263,10 @@ Get a list of softwares associated with a device
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return DevicesApiGetNetworkSmDeviceSoftwaresRequest
+ @return DevicesAPIGetNetworkSmDeviceSoftwaresRequest
 */
-func (a *DevicesApiService) GetNetworkSmDeviceSoftwares(ctx context.Context, networkId string, deviceId string) DevicesApiGetNetworkSmDeviceSoftwaresRequest {
-	return DevicesApiGetNetworkSmDeviceSoftwaresRequest{
+func (a *DevicesAPIService) GetNetworkSmDeviceSoftwares(ctx context.Context, networkId string, deviceId string) DevicesAPIGetNetworkSmDeviceSoftwaresRequest {
+	return DevicesAPIGetNetworkSmDeviceSoftwaresRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3276,7 +3276,7 @@ func (a *DevicesApiService) GetNetworkSmDeviceSoftwares(ctx context.Context, net
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceSoftwares200ResponseInner
-func (a *DevicesApiService) GetNetworkSmDeviceSoftwaresExecute(r DevicesApiGetNetworkSmDeviceSoftwaresRequest) ([]GetNetworkSmDeviceSoftwares200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetNetworkSmDeviceSoftwaresExecute(r DevicesAPIGetNetworkSmDeviceSoftwaresRequest) ([]GetNetworkSmDeviceSoftwares200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3284,7 +3284,7 @@ func (a *DevicesApiService) GetNetworkSmDeviceSoftwaresExecute(r DevicesApiGetNe
 		localVarReturnValue  []GetNetworkSmDeviceSoftwares200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetNetworkSmDeviceSoftwares")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetNetworkSmDeviceSoftwares")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3365,14 +3365,14 @@ func (a *DevicesApiService) GetNetworkSmDeviceSoftwaresExecute(r DevicesApiGetNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetNetworkSmDeviceWlanListsRequest struct {
+type DevicesAPIGetNetworkSmDeviceWlanListsRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	networkId string
 	deviceId string
 }
 
-func (r DevicesApiGetNetworkSmDeviceWlanListsRequest) Execute() ([]GetNetworkSmDeviceWlanLists200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetNetworkSmDeviceWlanListsRequest) Execute() ([]GetNetworkSmDeviceWlanLists200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceWlanListsExecute(r)
 }
 
@@ -3384,10 +3384,10 @@ List the saved SSID names on a device
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return DevicesApiGetNetworkSmDeviceWlanListsRequest
+ @return DevicesAPIGetNetworkSmDeviceWlanListsRequest
 */
-func (a *DevicesApiService) GetNetworkSmDeviceWlanLists(ctx context.Context, networkId string, deviceId string) DevicesApiGetNetworkSmDeviceWlanListsRequest {
-	return DevicesApiGetNetworkSmDeviceWlanListsRequest{
+func (a *DevicesAPIService) GetNetworkSmDeviceWlanLists(ctx context.Context, networkId string, deviceId string) DevicesAPIGetNetworkSmDeviceWlanListsRequest {
+	return DevicesAPIGetNetworkSmDeviceWlanListsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3397,7 +3397,7 @@ func (a *DevicesApiService) GetNetworkSmDeviceWlanLists(ctx context.Context, net
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceWlanLists200ResponseInner
-func (a *DevicesApiService) GetNetworkSmDeviceWlanListsExecute(r DevicesApiGetNetworkSmDeviceWlanListsRequest) ([]GetNetworkSmDeviceWlanLists200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetNetworkSmDeviceWlanListsExecute(r DevicesAPIGetNetworkSmDeviceWlanListsRequest) ([]GetNetworkSmDeviceWlanLists200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3405,7 +3405,7 @@ func (a *DevicesApiService) GetNetworkSmDeviceWlanListsExecute(r DevicesApiGetNe
 		localVarReturnValue  []GetNetworkSmDeviceWlanLists200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetNetworkSmDeviceWlanLists")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetNetworkSmDeviceWlanLists")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3486,9 +3486,9 @@ func (a *DevicesApiService) GetNetworkSmDeviceWlanListsExecute(r DevicesApiGetNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetNetworkSmDevicesRequest struct {
+type DevicesAPIGetNetworkSmDevicesRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	networkId string
 	fields *[]string
 	wifiMacs *[]string
@@ -3501,54 +3501,54 @@ type DevicesApiGetNetworkSmDevicesRequest struct {
 }
 
 // Additional fields that will be displayed for each device.     The default fields are: id, name, tags, ssid, wifiMac, osName, systemModel, uuid, and serialNumber. The additional fields are: ip,     systemType, availableDeviceCapacity, kioskAppName, biosVersion, lastConnected, missingAppsCount, userSuppliedAddress, location, lastUser,     ownerEmail, ownerUsername, osBuild, publicIp, phoneNumber, diskInfoJson, deviceCapacity, isManaged, hadMdm, isSupervised, meid, imei, iccid,     simCarrierNetwork, cellularDataUsed, isHotspotEnabled, createdAt, batteryEstCharge, quarantined, avName, avRunning, asName, fwName,     isRooted, loginRequired, screenLockEnabled, screenLockDelay, autoLoginDisabled, autoTags, hasMdm, hasDesktopAgent, diskEncryptionEnabled,     hardwareEncryptionCaps, passCodeLock, usesHardwareKeystore, androidSecurityPatchVersion, and url.
-func (r DevicesApiGetNetworkSmDevicesRequest) Fields(fields []string) DevicesApiGetNetworkSmDevicesRequest {
+func (r DevicesAPIGetNetworkSmDevicesRequest) Fields(fields []string) DevicesAPIGetNetworkSmDevicesRequest {
 	r.fields = &fields
 	return r
 }
 
 // Filter devices by wifi mac(s).
-func (r DevicesApiGetNetworkSmDevicesRequest) WifiMacs(wifiMacs []string) DevicesApiGetNetworkSmDevicesRequest {
+func (r DevicesAPIGetNetworkSmDevicesRequest) WifiMacs(wifiMacs []string) DevicesAPIGetNetworkSmDevicesRequest {
 	r.wifiMacs = &wifiMacs
 	return r
 }
 
 // Filter devices by serial(s).
-func (r DevicesApiGetNetworkSmDevicesRequest) Serials(serials []string) DevicesApiGetNetworkSmDevicesRequest {
+func (r DevicesAPIGetNetworkSmDevicesRequest) Serials(serials []string) DevicesAPIGetNetworkSmDevicesRequest {
 	r.serials = &serials
 	return r
 }
 
 // Filter devices by id(s).
-func (r DevicesApiGetNetworkSmDevicesRequest) Ids(ids []string) DevicesApiGetNetworkSmDevicesRequest {
+func (r DevicesAPIGetNetworkSmDevicesRequest) Ids(ids []string) DevicesAPIGetNetworkSmDevicesRequest {
 	r.ids = &ids
 	return r
 }
 
 // Specify a scope (one of all, none, withAny, withAll, withoutAny, or withoutAll) and a set of tags.
-func (r DevicesApiGetNetworkSmDevicesRequest) Scope(scope []string) DevicesApiGetNetworkSmDevicesRequest {
+func (r DevicesAPIGetNetworkSmDevicesRequest) Scope(scope []string) DevicesAPIGetNetworkSmDevicesRequest {
 	r.scope = &scope
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r DevicesApiGetNetworkSmDevicesRequest) PerPage(perPage int32) DevicesApiGetNetworkSmDevicesRequest {
+func (r DevicesAPIGetNetworkSmDevicesRequest) PerPage(perPage int32) DevicesAPIGetNetworkSmDevicesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetNetworkSmDevicesRequest) StartingAfter(startingAfter string) DevicesApiGetNetworkSmDevicesRequest {
+func (r DevicesAPIGetNetworkSmDevicesRequest) StartingAfter(startingAfter string) DevicesAPIGetNetworkSmDevicesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetNetworkSmDevicesRequest) EndingBefore(endingBefore string) DevicesApiGetNetworkSmDevicesRequest {
+func (r DevicesAPIGetNetworkSmDevicesRequest) EndingBefore(endingBefore string) DevicesAPIGetNetworkSmDevicesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r DevicesApiGetNetworkSmDevicesRequest) Execute() ([]GetNetworkSmDevices200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetNetworkSmDevicesRequest) Execute() ([]GetNetworkSmDevices200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDevicesExecute(r)
 }
 
@@ -3559,10 +3559,10 @@ List the devices enrolled in an SM network with various specified fields and fil
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return DevicesApiGetNetworkSmDevicesRequest
+ @return DevicesAPIGetNetworkSmDevicesRequest
 */
-func (a *DevicesApiService) GetNetworkSmDevices(ctx context.Context, networkId string) DevicesApiGetNetworkSmDevicesRequest {
-	return DevicesApiGetNetworkSmDevicesRequest{
+func (a *DevicesAPIService) GetNetworkSmDevices(ctx context.Context, networkId string) DevicesAPIGetNetworkSmDevicesRequest {
+	return DevicesAPIGetNetworkSmDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3571,7 +3571,7 @@ func (a *DevicesApiService) GetNetworkSmDevices(ctx context.Context, networkId s
 
 // Execute executes the request
 //  @return []GetNetworkSmDevices200ResponseInner
-func (a *DevicesApiService) GetNetworkSmDevicesExecute(r DevicesApiGetNetworkSmDevicesRequest) ([]GetNetworkSmDevices200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetNetworkSmDevicesExecute(r DevicesAPIGetNetworkSmDevicesRequest) ([]GetNetworkSmDevices200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3579,7 +3579,7 @@ func (a *DevicesApiService) GetNetworkSmDevicesExecute(r DevicesApiGetNetworkSmD
 		localVarReturnValue  []GetNetworkSmDevices200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetNetworkSmDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetNetworkSmDevices")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3723,9 +3723,9 @@ func (a *DevicesApiService) GetNetworkSmDevicesExecute(r DevicesApiGetNetworkSmD
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetNetworkWirelessDevicesConnectionStatsRequest struct {
+type DevicesAPIGetNetworkWirelessDevicesConnectionStatsRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -3737,48 +3737,48 @@ type DevicesApiGetNetworkWirelessDevicesConnectionStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r DevicesApiGetNetworkWirelessDevicesConnectionStatsRequest) T0(t0 string) DevicesApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r DevicesAPIGetNetworkWirelessDevicesConnectionStatsRequest) T0(t0 string) DevicesAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r DevicesApiGetNetworkWirelessDevicesConnectionStatsRequest) T1(t1 string) DevicesApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r DevicesAPIGetNetworkWirelessDevicesConnectionStatsRequest) T1(t1 string) DevicesAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r DevicesApiGetNetworkWirelessDevicesConnectionStatsRequest) Timespan(timespan float32) DevicesApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r DevicesAPIGetNetworkWirelessDevicesConnectionStatsRequest) Timespan(timespan float32) DevicesAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r DevicesApiGetNetworkWirelessDevicesConnectionStatsRequest) Band(band string) DevicesApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r DevicesAPIGetNetworkWirelessDevicesConnectionStatsRequest) Band(band string) DevicesAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r DevicesApiGetNetworkWirelessDevicesConnectionStatsRequest) Ssid(ssid int32) DevicesApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r DevicesAPIGetNetworkWirelessDevicesConnectionStatsRequest) Ssid(ssid int32) DevicesAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r DevicesApiGetNetworkWirelessDevicesConnectionStatsRequest) Vlan(vlan int32) DevicesApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r DevicesAPIGetNetworkWirelessDevicesConnectionStatsRequest) Vlan(vlan int32) DevicesAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r DevicesApiGetNetworkWirelessDevicesConnectionStatsRequest) ApTag(apTag string) DevicesApiGetNetworkWirelessDevicesConnectionStatsRequest {
+func (r DevicesAPIGetNetworkWirelessDevicesConnectionStatsRequest) ApTag(apTag string) DevicesAPIGetNetworkWirelessDevicesConnectionStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
-func (r DevicesApiGetNetworkWirelessDevicesConnectionStatsRequest) Execute() ([]GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
+func (r DevicesAPIGetNetworkWirelessDevicesConnectionStatsRequest) Execute() ([]GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessDevicesConnectionStatsExecute(r)
 }
 
@@ -3789,10 +3789,10 @@ Aggregated connectivity info for this network, grouped by node
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return DevicesApiGetNetworkWirelessDevicesConnectionStatsRequest
+ @return DevicesAPIGetNetworkWirelessDevicesConnectionStatsRequest
 */
-func (a *DevicesApiService) GetNetworkWirelessDevicesConnectionStats(ctx context.Context, networkId string) DevicesApiGetNetworkWirelessDevicesConnectionStatsRequest {
-	return DevicesApiGetNetworkWirelessDevicesConnectionStatsRequest{
+func (a *DevicesAPIService) GetNetworkWirelessDevicesConnectionStats(ctx context.Context, networkId string) DevicesAPIGetNetworkWirelessDevicesConnectionStatsRequest {
+	return DevicesAPIGetNetworkWirelessDevicesConnectionStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3801,7 +3801,7 @@ func (a *DevicesApiService) GetNetworkWirelessDevicesConnectionStats(ctx context
 
 // Execute executes the request
 //  @return []GetDeviceWirelessConnectionStats200Response
-func (a *DevicesApiService) GetNetworkWirelessDevicesConnectionStatsExecute(r DevicesApiGetNetworkWirelessDevicesConnectionStatsRequest) ([]GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
+func (a *DevicesAPIService) GetNetworkWirelessDevicesConnectionStatsExecute(r DevicesAPIGetNetworkWirelessDevicesConnectionStatsRequest) ([]GetDeviceWirelessConnectionStats200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3809,7 +3809,7 @@ func (a *DevicesApiService) GetNetworkWirelessDevicesConnectionStatsExecute(r De
 		localVarReturnValue  []GetDeviceWirelessConnectionStats200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetNetworkWirelessDevicesConnectionStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetNetworkWirelessDevicesConnectionStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3910,9 +3910,9 @@ func (a *DevicesApiService) GetNetworkWirelessDevicesConnectionStatsExecute(r De
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetNetworkWirelessDevicesLatencyStatsRequest struct {
+type DevicesAPIGetNetworkWirelessDevicesLatencyStatsRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -3925,54 +3925,54 @@ type DevicesApiGetNetworkWirelessDevicesLatencyStatsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 180 days from today.
-func (r DevicesApiGetNetworkWirelessDevicesLatencyStatsRequest) T0(t0 string) DevicesApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r DevicesAPIGetNetworkWirelessDevicesLatencyStatsRequest) T0(t0 string) DevicesAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r DevicesApiGetNetworkWirelessDevicesLatencyStatsRequest) T1(t1 string) DevicesApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r DevicesAPIGetNetworkWirelessDevicesLatencyStatsRequest) T1(t1 string) DevicesAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days.
-func (r DevicesApiGetNetworkWirelessDevicesLatencyStatsRequest) Timespan(timespan float32) DevicesApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r DevicesAPIGetNetworkWirelessDevicesLatencyStatsRequest) Timespan(timespan float32) DevicesAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;). Note that data prior to February 2020 will not have band information.
-func (r DevicesApiGetNetworkWirelessDevicesLatencyStatsRequest) Band(band string) DevicesApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r DevicesAPIGetNetworkWirelessDevicesLatencyStatsRequest) Band(band string) DevicesAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID
-func (r DevicesApiGetNetworkWirelessDevicesLatencyStatsRequest) Ssid(ssid int32) DevicesApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r DevicesAPIGetNetworkWirelessDevicesLatencyStatsRequest) Ssid(ssid int32) DevicesAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter results by VLAN
-func (r DevicesApiGetNetworkWirelessDevicesLatencyStatsRequest) Vlan(vlan int32) DevicesApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r DevicesAPIGetNetworkWirelessDevicesLatencyStatsRequest) Vlan(vlan int32) DevicesAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.vlan = &vlan
 	return r
 }
 
 // Filter results by AP Tag
-func (r DevicesApiGetNetworkWirelessDevicesLatencyStatsRequest) ApTag(apTag string) DevicesApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r DevicesAPIGetNetworkWirelessDevicesLatencyStatsRequest) ApTag(apTag string) DevicesAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Partial selection: If present, this call will return only the selected fields of [\&quot;rawDistribution\&quot;, \&quot;avg\&quot;]. All fields will be returned by default. Selected fields must be entered as a comma separated string.
-func (r DevicesApiGetNetworkWirelessDevicesLatencyStatsRequest) Fields(fields string) DevicesApiGetNetworkWirelessDevicesLatencyStatsRequest {
+func (r DevicesAPIGetNetworkWirelessDevicesLatencyStatsRequest) Fields(fields string) DevicesAPIGetNetworkWirelessDevicesLatencyStatsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r DevicesApiGetNetworkWirelessDevicesLatencyStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r DevicesAPIGetNetworkWirelessDevicesLatencyStatsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessDevicesLatencyStatsExecute(r)
 }
 
@@ -3983,10 +3983,10 @@ Aggregated latency info for this network, grouped by node
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return DevicesApiGetNetworkWirelessDevicesLatencyStatsRequest
+ @return DevicesAPIGetNetworkWirelessDevicesLatencyStatsRequest
 */
-func (a *DevicesApiService) GetNetworkWirelessDevicesLatencyStats(ctx context.Context, networkId string) DevicesApiGetNetworkWirelessDevicesLatencyStatsRequest {
-	return DevicesApiGetNetworkWirelessDevicesLatencyStatsRequest{
+func (a *DevicesAPIService) GetNetworkWirelessDevicesLatencyStats(ctx context.Context, networkId string) DevicesAPIGetNetworkWirelessDevicesLatencyStatsRequest {
+	return DevicesAPIGetNetworkWirelessDevicesLatencyStatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3995,7 +3995,7 @@ func (a *DevicesApiService) GetNetworkWirelessDevicesLatencyStats(ctx context.Co
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *DevicesApiService) GetNetworkWirelessDevicesLatencyStatsExecute(r DevicesApiGetNetworkWirelessDevicesLatencyStatsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *DevicesAPIService) GetNetworkWirelessDevicesLatencyStatsExecute(r DevicesAPIGetNetworkWirelessDevicesLatencyStatsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4003,7 +4003,7 @@ func (a *DevicesApiService) GetNetworkWirelessDevicesLatencyStatsExecute(r Devic
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetNetworkWirelessDevicesLatencyStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetNetworkWirelessDevicesLatencyStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4107,9 +4107,9 @@ func (a *DevicesApiService) GetNetworkWirelessDevicesLatencyStatsExecute(r Devic
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetOrganizationDevicesRequest struct {
+type DevicesAPIGetOrganizationDevicesRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -4131,108 +4131,108 @@ type DevicesApiGetOrganizationDevicesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r DevicesApiGetOrganizationDevicesRequest) PerPage(perPage int32) DevicesApiGetOrganizationDevicesRequest {
+func (r DevicesAPIGetOrganizationDevicesRequest) PerPage(perPage int32) DevicesAPIGetOrganizationDevicesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetOrganizationDevicesRequest) StartingAfter(startingAfter string) DevicesApiGetOrganizationDevicesRequest {
+func (r DevicesAPIGetOrganizationDevicesRequest) StartingAfter(startingAfter string) DevicesAPIGetOrganizationDevicesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetOrganizationDevicesRequest) EndingBefore(endingBefore string) DevicesApiGetOrganizationDevicesRequest {
+func (r DevicesAPIGetOrganizationDevicesRequest) EndingBefore(endingBefore string) DevicesAPIGetOrganizationDevicesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Filter results by whether or not the device&#39;s configuration has been updated after the given timestamp
-func (r DevicesApiGetOrganizationDevicesRequest) ConfigurationUpdatedAfter(configurationUpdatedAfter string) DevicesApiGetOrganizationDevicesRequest {
+func (r DevicesAPIGetOrganizationDevicesRequest) ConfigurationUpdatedAfter(configurationUpdatedAfter string) DevicesAPIGetOrganizationDevicesRequest {
 	r.configurationUpdatedAfter = &configurationUpdatedAfter
 	return r
 }
 
 // Optional parameter to filter devices by network.
-func (r DevicesApiGetOrganizationDevicesRequest) NetworkIds(networkIds []string) DevicesApiGetOrganizationDevicesRequest {
+func (r DevicesAPIGetOrganizationDevicesRequest) NetworkIds(networkIds []string) DevicesAPIGetOrganizationDevicesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter devices by product type. Valid types are wireless, appliance, switch, systemsManager, camera, cellularGateway, sensor, and cloudGateway.
-func (r DevicesApiGetOrganizationDevicesRequest) ProductTypes(productTypes []string) DevicesApiGetOrganizationDevicesRequest {
+func (r DevicesAPIGetOrganizationDevicesRequest) ProductTypes(productTypes []string) DevicesAPIGetOrganizationDevicesRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter devices by tags.
-func (r DevicesApiGetOrganizationDevicesRequest) Tags(tags []string) DevicesApiGetOrganizationDevicesRequest {
+func (r DevicesAPIGetOrganizationDevicesRequest) Tags(tags []string) DevicesAPIGetOrganizationDevicesRequest {
 	r.tags = &tags
 	return r
 }
 
 // Optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return networks which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r DevicesApiGetOrganizationDevicesRequest) TagsFilterType(tagsFilterType string) DevicesApiGetOrganizationDevicesRequest {
+func (r DevicesAPIGetOrganizationDevicesRequest) TagsFilterType(tagsFilterType string) DevicesAPIGetOrganizationDevicesRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
 // Optional parameter to filter devices by name. All returned devices will have a name that contains the search term or is an exact match.
-func (r DevicesApiGetOrganizationDevicesRequest) Name(name string) DevicesApiGetOrganizationDevicesRequest {
+func (r DevicesAPIGetOrganizationDevicesRequest) Name(name string) DevicesAPIGetOrganizationDevicesRequest {
 	r.name = &name
 	return r
 }
 
 // Optional parameter to filter devices by MAC address. All returned devices will have a MAC address that contains the search term or is an exact match.
-func (r DevicesApiGetOrganizationDevicesRequest) Mac(mac string) DevicesApiGetOrganizationDevicesRequest {
+func (r DevicesAPIGetOrganizationDevicesRequest) Mac(mac string) DevicesAPIGetOrganizationDevicesRequest {
 	r.mac = &mac
 	return r
 }
 
 // Optional parameter to filter devices by serial number. All returned devices will have a serial number that contains the search term or is an exact match.
-func (r DevicesApiGetOrganizationDevicesRequest) Serial(serial string) DevicesApiGetOrganizationDevicesRequest {
+func (r DevicesAPIGetOrganizationDevicesRequest) Serial(serial string) DevicesAPIGetOrganizationDevicesRequest {
 	r.serial = &serial
 	return r
 }
 
 // Optional parameter to filter devices by model. All returned devices will have a model that contains the search term or is an exact match.
-func (r DevicesApiGetOrganizationDevicesRequest) Model(model string) DevicesApiGetOrganizationDevicesRequest {
+func (r DevicesAPIGetOrganizationDevicesRequest) Model(model string) DevicesAPIGetOrganizationDevicesRequest {
 	r.model = &model
 	return r
 }
 
 // Optional parameter to filter devices by one or more MAC addresses. All returned devices will have a MAC address that is an exact match.
-func (r DevicesApiGetOrganizationDevicesRequest) Macs(macs []string) DevicesApiGetOrganizationDevicesRequest {
+func (r DevicesAPIGetOrganizationDevicesRequest) Macs(macs []string) DevicesAPIGetOrganizationDevicesRequest {
 	r.macs = &macs
 	return r
 }
 
 // Optional parameter to filter devices by one or more serial numbers. All returned devices will have a serial number that is an exact match.
-func (r DevicesApiGetOrganizationDevicesRequest) Serials(serials []string) DevicesApiGetOrganizationDevicesRequest {
+func (r DevicesAPIGetOrganizationDevicesRequest) Serials(serials []string) DevicesAPIGetOrganizationDevicesRequest {
 	r.serials = &serials
 	return r
 }
 
 // Optional parameter to filter devices by the metrics that they provide. Only applies to sensor devices.
-func (r DevicesApiGetOrganizationDevicesRequest) SensorMetrics(sensorMetrics []string) DevicesApiGetOrganizationDevicesRequest {
+func (r DevicesAPIGetOrganizationDevicesRequest) SensorMetrics(sensorMetrics []string) DevicesAPIGetOrganizationDevicesRequest {
 	r.sensorMetrics = &sensorMetrics
 	return r
 }
 
 // Optional parameter to filter devices by the alert profiles that are bound to them. Only applies to sensor devices.
-func (r DevicesApiGetOrganizationDevicesRequest) SensorAlertProfileIds(sensorAlertProfileIds []string) DevicesApiGetOrganizationDevicesRequest {
+func (r DevicesAPIGetOrganizationDevicesRequest) SensorAlertProfileIds(sensorAlertProfileIds []string) DevicesAPIGetOrganizationDevicesRequest {
 	r.sensorAlertProfileIds = &sensorAlertProfileIds
 	return r
 }
 
 // Optional parameter to filter devices by one or more models. All returned devices will have a model that is an exact match.
-func (r DevicesApiGetOrganizationDevicesRequest) Models(models []string) DevicesApiGetOrganizationDevicesRequest {
+func (r DevicesAPIGetOrganizationDevicesRequest) Models(models []string) DevicesAPIGetOrganizationDevicesRequest {
 	r.models = &models
 	return r
 }
 
-func (r DevicesApiGetOrganizationDevicesRequest) Execute() ([]GetNetworkFloorPlans200ResponseInnerDevicesInner, *http.Response, error) {
+func (r DevicesAPIGetOrganizationDevicesRequest) Execute() ([]GetNetworkFloorPlans200ResponseInnerDevicesInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesExecute(r)
 }
 
@@ -4243,10 +4243,10 @@ List the devices in an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return DevicesApiGetOrganizationDevicesRequest
+ @return DevicesAPIGetOrganizationDevicesRequest
 */
-func (a *DevicesApiService) GetOrganizationDevices(ctx context.Context, organizationId string) DevicesApiGetOrganizationDevicesRequest {
-	return DevicesApiGetOrganizationDevicesRequest{
+func (a *DevicesAPIService) GetOrganizationDevices(ctx context.Context, organizationId string) DevicesAPIGetOrganizationDevicesRequest {
+	return DevicesAPIGetOrganizationDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -4255,7 +4255,7 @@ func (a *DevicesApiService) GetOrganizationDevices(ctx context.Context, organiza
 
 // Execute executes the request
 //  @return []GetNetworkFloorPlans200ResponseInnerDevicesInner
-func (a *DevicesApiService) GetOrganizationDevicesExecute(r DevicesApiGetOrganizationDevicesRequest) ([]GetNetworkFloorPlans200ResponseInnerDevicesInner, *http.Response, error) {
+func (a *DevicesAPIService) GetOrganizationDevicesExecute(r DevicesAPIGetOrganizationDevicesRequest) ([]GetNetworkFloorPlans200ResponseInnerDevicesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4263,7 +4263,7 @@ func (a *DevicesApiService) GetOrganizationDevicesExecute(r DevicesApiGetOrganiz
 		localVarReturnValue  []GetNetworkFloorPlans200ResponseInnerDevicesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetOrganizationDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetOrganizationDevices")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4458,9 +4458,9 @@ func (a *DevicesApiService) GetOrganizationDevicesExecute(r DevicesApiGetOrganiz
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetOrganizationDevicesAvailabilitiesRequest struct {
+type DevicesAPIGetOrganizationDevicesAvailabilitiesRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -4473,54 +4473,54 @@ type DevicesApiGetOrganizationDevicesAvailabilitiesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r DevicesApiGetOrganizationDevicesAvailabilitiesRequest) PerPage(perPage int32) DevicesApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r DevicesAPIGetOrganizationDevicesAvailabilitiesRequest) PerPage(perPage int32) DevicesAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetOrganizationDevicesAvailabilitiesRequest) StartingAfter(startingAfter string) DevicesApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r DevicesAPIGetOrganizationDevicesAvailabilitiesRequest) StartingAfter(startingAfter string) DevicesAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetOrganizationDevicesAvailabilitiesRequest) EndingBefore(endingBefore string) DevicesApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r DevicesAPIGetOrganizationDevicesAvailabilitiesRequest) EndingBefore(endingBefore string) DevicesAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter device availabilities by network ID. This filter uses multiple exact matches.
-func (r DevicesApiGetOrganizationDevicesAvailabilitiesRequest) NetworkIds(networkIds []string) DevicesApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r DevicesAPIGetOrganizationDevicesAvailabilitiesRequest) NetworkIds(networkIds []string) DevicesAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter device availabilities by device product types. This filter uses multiple exact matches.
-func (r DevicesApiGetOrganizationDevicesAvailabilitiesRequest) ProductTypes(productTypes []string) DevicesApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r DevicesAPIGetOrganizationDevicesAvailabilitiesRequest) ProductTypes(productTypes []string) DevicesAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter device availabilities by device serial numbers. This filter uses multiple exact matches.
-func (r DevicesApiGetOrganizationDevicesAvailabilitiesRequest) Serials(serials []string) DevicesApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r DevicesAPIGetOrganizationDevicesAvailabilitiesRequest) Serials(serials []string) DevicesAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.serials = &serials
 	return r
 }
 
 // An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below). This filter uses multiple exact matches.
-func (r DevicesApiGetOrganizationDevicesAvailabilitiesRequest) Tags(tags []string) DevicesApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r DevicesAPIGetOrganizationDevicesAvailabilitiesRequest) Tags(tags []string) DevicesAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.tags = &tags
 	return r
 }
 
 // An optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return devices which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r DevicesApiGetOrganizationDevicesAvailabilitiesRequest) TagsFilterType(tagsFilterType string) DevicesApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r DevicesAPIGetOrganizationDevicesAvailabilitiesRequest) TagsFilterType(tagsFilterType string) DevicesAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
-func (r DevicesApiGetOrganizationDevicesAvailabilitiesRequest) Execute() ([]GetOrganizationDevicesAvailabilities200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetOrganizationDevicesAvailabilitiesRequest) Execute() ([]GetOrganizationDevicesAvailabilities200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesAvailabilitiesExecute(r)
 }
 
@@ -4531,10 +4531,10 @@ List the availability information for devices in an organization. The data retur
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return DevicesApiGetOrganizationDevicesAvailabilitiesRequest
+ @return DevicesAPIGetOrganizationDevicesAvailabilitiesRequest
 */
-func (a *DevicesApiService) GetOrganizationDevicesAvailabilities(ctx context.Context, organizationId string) DevicesApiGetOrganizationDevicesAvailabilitiesRequest {
-	return DevicesApiGetOrganizationDevicesAvailabilitiesRequest{
+func (a *DevicesAPIService) GetOrganizationDevicesAvailabilities(ctx context.Context, organizationId string) DevicesAPIGetOrganizationDevicesAvailabilitiesRequest {
+	return DevicesAPIGetOrganizationDevicesAvailabilitiesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -4543,7 +4543,7 @@ func (a *DevicesApiService) GetOrganizationDevicesAvailabilities(ctx context.Con
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesAvailabilities200ResponseInner
-func (a *DevicesApiService) GetOrganizationDevicesAvailabilitiesExecute(r DevicesApiGetOrganizationDevicesAvailabilitiesRequest) ([]GetOrganizationDevicesAvailabilities200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetOrganizationDevicesAvailabilitiesExecute(r DevicesAPIGetOrganizationDevicesAvailabilitiesRequest) ([]GetOrganizationDevicesAvailabilities200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4551,7 +4551,7 @@ func (a *DevicesApiService) GetOrganizationDevicesAvailabilitiesExecute(r Device
 		localVarReturnValue  []GetOrganizationDevicesAvailabilities200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetOrganizationDevicesAvailabilities")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetOrganizationDevicesAvailabilities")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4687,9 +4687,9 @@ func (a *DevicesApiService) GetOrganizationDevicesAvailabilitiesExecute(r Device
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest struct {
+type DevicesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -4704,66 +4704,66 @@ type DevicesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r DevicesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) PerPage(perPage int32) DevicesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r DevicesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) PerPage(perPage int32) DevicesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) StartingAfter(startingAfter string) DevicesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r DevicesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) StartingAfter(startingAfter string) DevicesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) EndingBefore(endingBefore string) DevicesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r DevicesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) EndingBefore(endingBefore string) DevicesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 14 days from today.
-func (r DevicesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) T0(t0 string) DevicesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r DevicesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) T0(t0 string) DevicesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 14 days after t0.
-func (r DevicesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) T1(t1 string) DevicesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r DevicesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) T1(t1 string) DevicesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 14 days. The default is 1 day.
-func (r DevicesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Timespan(timespan float32) DevicesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r DevicesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Timespan(timespan float32) DevicesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Optional parameter to filter device availabilities history by device serial numbers
-func (r DevicesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Serials(serials []string) DevicesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r DevicesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Serials(serials []string) DevicesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.serials = &serials
 	return r
 }
 
 // Optional parameter to filter device availabilities history by device product types
-func (r DevicesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) ProductTypes(productTypes []string) DevicesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r DevicesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) ProductTypes(productTypes []string) DevicesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter device availabilities history by network IDs
-func (r DevicesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) NetworkIds(networkIds []string) DevicesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r DevicesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) NetworkIds(networkIds []string) DevicesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter device availabilities history by device statuses
-func (r DevicesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Statuses(statuses []string) DevicesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r DevicesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Statuses(statuses []string) DevicesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.statuses = &statuses
 	return r
 }
 
-func (r DevicesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Execute() ([]GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Execute() ([]GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesAvailabilitiesChangeHistoryExecute(r)
 }
 
@@ -4774,10 +4774,10 @@ List the availability history information for devices in an organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return DevicesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest
+ @return DevicesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest
 */
-func (a *DevicesApiService) GetOrganizationDevicesAvailabilitiesChangeHistory(ctx context.Context, organizationId string) DevicesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
-	return DevicesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest{
+func (a *DevicesAPIService) GetOrganizationDevicesAvailabilitiesChangeHistory(ctx context.Context, organizationId string) DevicesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+	return DevicesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -4786,7 +4786,7 @@ func (a *DevicesApiService) GetOrganizationDevicesAvailabilitiesChangeHistory(ct
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner
-func (a *DevicesApiService) GetOrganizationDevicesAvailabilitiesChangeHistoryExecute(r DevicesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) ([]GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetOrganizationDevicesAvailabilitiesChangeHistoryExecute(r DevicesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) ([]GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4794,7 +4794,7 @@ func (a *DevicesApiService) GetOrganizationDevicesAvailabilitiesChangeHistoryExe
 		localVarReturnValue  []GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetOrganizationDevicesAvailabilitiesChangeHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetOrganizationDevicesAvailabilitiesChangeHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4936,9 +4936,9 @@ func (a *DevicesApiService) GetOrganizationDevicesAvailabilitiesChangeHistoryExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest struct {
+type DevicesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -4951,54 +4951,54 @@ type DevicesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest struct 
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r DevicesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) PerPage(perPage int32) DevicesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r DevicesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) PerPage(perPage int32) DevicesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) StartingAfter(startingAfter string) DevicesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r DevicesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) StartingAfter(startingAfter string) DevicesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) EndingBefore(endingBefore string) DevicesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r DevicesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) EndingBefore(endingBefore string) DevicesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter device availabilities by network ID. This filter uses multiple exact matches.
-func (r DevicesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) NetworkIds(networkIds []string) DevicesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r DevicesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) NetworkIds(networkIds []string) DevicesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter device availabilities by device product types. This filter uses multiple exact matches.
-func (r DevicesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) ProductTypes(productTypes []string) DevicesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r DevicesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) ProductTypes(productTypes []string) DevicesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter device availabilities by device serial numbers. This filter uses multiple exact matches.
-func (r DevicesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Serials(serials []string) DevicesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r DevicesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Serials(serials []string) DevicesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.serials = &serials
 	return r
 }
 
 // An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below). This filter uses multiple exact matches.
-func (r DevicesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Tags(tags []string) DevicesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r DevicesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Tags(tags []string) DevicesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.tags = &tags
 	return r
 }
 
 // An optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return devices which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r DevicesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) TagsFilterType(tagsFilterType string) DevicesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r DevicesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) TagsFilterType(tagsFilterType string) DevicesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
-func (r DevicesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Execute() ([]GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Execute() ([]GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesPowerModulesStatusesByDeviceExecute(r)
 }
 
@@ -5009,10 +5009,10 @@ List the power status information for devices in an organization. The data retur
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return DevicesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest
+ @return DevicesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest
 */
-func (a *DevicesApiService) GetOrganizationDevicesPowerModulesStatusesByDevice(ctx context.Context, organizationId string) DevicesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
-	return DevicesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest{
+func (a *DevicesAPIService) GetOrganizationDevicesPowerModulesStatusesByDevice(ctx context.Context, organizationId string) DevicesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+	return DevicesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -5021,7 +5021,7 @@ func (a *DevicesApiService) GetOrganizationDevicesPowerModulesStatusesByDevice(c
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner
-func (a *DevicesApiService) GetOrganizationDevicesPowerModulesStatusesByDeviceExecute(r DevicesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) ([]GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetOrganizationDevicesPowerModulesStatusesByDeviceExecute(r DevicesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) ([]GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5029,7 +5029,7 @@ func (a *DevicesApiService) GetOrganizationDevicesPowerModulesStatusesByDeviceEx
 		localVarReturnValue  []GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetOrganizationDevicesPowerModulesStatusesByDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetOrganizationDevicesPowerModulesStatusesByDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5165,9 +5165,9 @@ func (a *DevicesApiService) GetOrganizationDevicesPowerModulesStatusesByDeviceEx
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetOrganizationDevicesProvisioningStatusesRequest struct {
+type DevicesAPIGetOrganizationDevicesProvisioningStatusesRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -5181,60 +5181,60 @@ type DevicesApiGetOrganizationDevicesProvisioningStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r DevicesApiGetOrganizationDevicesProvisioningStatusesRequest) PerPage(perPage int32) DevicesApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r DevicesAPIGetOrganizationDevicesProvisioningStatusesRequest) PerPage(perPage int32) DevicesAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetOrganizationDevicesProvisioningStatusesRequest) StartingAfter(startingAfter string) DevicesApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r DevicesAPIGetOrganizationDevicesProvisioningStatusesRequest) StartingAfter(startingAfter string) DevicesAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetOrganizationDevicesProvisioningStatusesRequest) EndingBefore(endingBefore string) DevicesApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r DevicesAPIGetOrganizationDevicesProvisioningStatusesRequest) EndingBefore(endingBefore string) DevicesAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter device by network ID. This filter uses multiple exact matches.
-func (r DevicesApiGetOrganizationDevicesProvisioningStatusesRequest) NetworkIds(networkIds []string) DevicesApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r DevicesAPIGetOrganizationDevicesProvisioningStatusesRequest) NetworkIds(networkIds []string) DevicesAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter device by device product types. This filter uses multiple exact matches.
-func (r DevicesApiGetOrganizationDevicesProvisioningStatusesRequest) ProductTypes(productTypes []string) DevicesApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r DevicesAPIGetOrganizationDevicesProvisioningStatusesRequest) ProductTypes(productTypes []string) DevicesAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter device by device serial numbers. This filter uses multiple exact matches.
-func (r DevicesApiGetOrganizationDevicesProvisioningStatusesRequest) Serials(serials []string) DevicesApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r DevicesAPIGetOrganizationDevicesProvisioningStatusesRequest) Serials(serials []string) DevicesAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.serials = &serials
 	return r
 }
 
 // An optional parameter to filter devices by the provisioning status. Accepted statuses: unprovisioned, incomplete, complete.
-func (r DevicesApiGetOrganizationDevicesProvisioningStatusesRequest) Status(status string) DevicesApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r DevicesAPIGetOrganizationDevicesProvisioningStatusesRequest) Status(status string) DevicesAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.status = &status
 	return r
 }
 
 // An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below). This filter uses multiple exact matches.
-func (r DevicesApiGetOrganizationDevicesProvisioningStatusesRequest) Tags(tags []string) DevicesApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r DevicesAPIGetOrganizationDevicesProvisioningStatusesRequest) Tags(tags []string) DevicesAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.tags = &tags
 	return r
 }
 
 // An optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return devices which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r DevicesApiGetOrganizationDevicesProvisioningStatusesRequest) TagsFilterType(tagsFilterType string) DevicesApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r DevicesAPIGetOrganizationDevicesProvisioningStatusesRequest) TagsFilterType(tagsFilterType string) DevicesAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
-func (r DevicesApiGetOrganizationDevicesProvisioningStatusesRequest) Execute() ([]GetOrganizationDevicesProvisioningStatuses200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetOrganizationDevicesProvisioningStatusesRequest) Execute() ([]GetOrganizationDevicesProvisioningStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesProvisioningStatusesExecute(r)
 }
 
@@ -5245,10 +5245,10 @@ List the provisioning statuses information for devices in an organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return DevicesApiGetOrganizationDevicesProvisioningStatusesRequest
+ @return DevicesAPIGetOrganizationDevicesProvisioningStatusesRequest
 */
-func (a *DevicesApiService) GetOrganizationDevicesProvisioningStatuses(ctx context.Context, organizationId string) DevicesApiGetOrganizationDevicesProvisioningStatusesRequest {
-	return DevicesApiGetOrganizationDevicesProvisioningStatusesRequest{
+func (a *DevicesAPIService) GetOrganizationDevicesProvisioningStatuses(ctx context.Context, organizationId string) DevicesAPIGetOrganizationDevicesProvisioningStatusesRequest {
+	return DevicesAPIGetOrganizationDevicesProvisioningStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -5257,7 +5257,7 @@ func (a *DevicesApiService) GetOrganizationDevicesProvisioningStatuses(ctx conte
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesProvisioningStatuses200ResponseInner
-func (a *DevicesApiService) GetOrganizationDevicesProvisioningStatusesExecute(r DevicesApiGetOrganizationDevicesProvisioningStatusesRequest) ([]GetOrganizationDevicesProvisioningStatuses200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetOrganizationDevicesProvisioningStatusesExecute(r DevicesAPIGetOrganizationDevicesProvisioningStatusesRequest) ([]GetOrganizationDevicesProvisioningStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5265,7 +5265,7 @@ func (a *DevicesApiService) GetOrganizationDevicesProvisioningStatusesExecute(r 
 		localVarReturnValue  []GetOrganizationDevicesProvisioningStatuses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetOrganizationDevicesProvisioningStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetOrganizationDevicesProvisioningStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5404,9 +5404,9 @@ func (a *DevicesApiService) GetOrganizationDevicesProvisioningStatusesExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetOrganizationDevicesStatusesRequest struct {
+type DevicesAPIGetOrganizationDevicesStatusesRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -5421,66 +5421,66 @@ type DevicesApiGetOrganizationDevicesStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r DevicesApiGetOrganizationDevicesStatusesRequest) PerPage(perPage int32) DevicesApiGetOrganizationDevicesStatusesRequest {
+func (r DevicesAPIGetOrganizationDevicesStatusesRequest) PerPage(perPage int32) DevicesAPIGetOrganizationDevicesStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetOrganizationDevicesStatusesRequest) StartingAfter(startingAfter string) DevicesApiGetOrganizationDevicesStatusesRequest {
+func (r DevicesAPIGetOrganizationDevicesStatusesRequest) StartingAfter(startingAfter string) DevicesAPIGetOrganizationDevicesStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetOrganizationDevicesStatusesRequest) EndingBefore(endingBefore string) DevicesApiGetOrganizationDevicesStatusesRequest {
+func (r DevicesAPIGetOrganizationDevicesStatusesRequest) EndingBefore(endingBefore string) DevicesAPIGetOrganizationDevicesStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter devices by network ids.
-func (r DevicesApiGetOrganizationDevicesStatusesRequest) NetworkIds(networkIds []string) DevicesApiGetOrganizationDevicesStatusesRequest {
+func (r DevicesAPIGetOrganizationDevicesStatusesRequest) NetworkIds(networkIds []string) DevicesAPIGetOrganizationDevicesStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter devices by serials.
-func (r DevicesApiGetOrganizationDevicesStatusesRequest) Serials(serials []string) DevicesApiGetOrganizationDevicesStatusesRequest {
+func (r DevicesAPIGetOrganizationDevicesStatusesRequest) Serials(serials []string) DevicesAPIGetOrganizationDevicesStatusesRequest {
 	r.serials = &serials
 	return r
 }
 
 // Optional parameter to filter devices by statuses. Valid statuses are [\&quot;online\&quot;, \&quot;alerting\&quot;, \&quot;offline\&quot;, \&quot;dormant\&quot;].
-func (r DevicesApiGetOrganizationDevicesStatusesRequest) Statuses(statuses []string) DevicesApiGetOrganizationDevicesStatusesRequest {
+func (r DevicesAPIGetOrganizationDevicesStatusesRequest) Statuses(statuses []string) DevicesAPIGetOrganizationDevicesStatusesRequest {
 	r.statuses = &statuses
 	return r
 }
 
 // An optional parameter to filter device statuses by product type. Valid types are wireless, appliance, switch, systemsManager, camera, cellularGateway, sensor, and cloudGateway.
-func (r DevicesApiGetOrganizationDevicesStatusesRequest) ProductTypes(productTypes []string) DevicesApiGetOrganizationDevicesStatusesRequest {
+func (r DevicesAPIGetOrganizationDevicesStatusesRequest) ProductTypes(productTypes []string) DevicesAPIGetOrganizationDevicesStatusesRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter devices by models.
-func (r DevicesApiGetOrganizationDevicesStatusesRequest) Models(models []string) DevicesApiGetOrganizationDevicesStatusesRequest {
+func (r DevicesAPIGetOrganizationDevicesStatusesRequest) Models(models []string) DevicesAPIGetOrganizationDevicesStatusesRequest {
 	r.models = &models
 	return r
 }
 
 // An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below).
-func (r DevicesApiGetOrganizationDevicesStatusesRequest) Tags(tags []string) DevicesApiGetOrganizationDevicesStatusesRequest {
+func (r DevicesAPIGetOrganizationDevicesStatusesRequest) Tags(tags []string) DevicesAPIGetOrganizationDevicesStatusesRequest {
 	r.tags = &tags
 	return r
 }
 
 // An optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return devices which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r DevicesApiGetOrganizationDevicesStatusesRequest) TagsFilterType(tagsFilterType string) DevicesApiGetOrganizationDevicesStatusesRequest {
+func (r DevicesAPIGetOrganizationDevicesStatusesRequest) TagsFilterType(tagsFilterType string) DevicesAPIGetOrganizationDevicesStatusesRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
-func (r DevicesApiGetOrganizationDevicesStatusesRequest) Execute() ([]GetOrganizationDevicesStatuses200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetOrganizationDevicesStatusesRequest) Execute() ([]GetOrganizationDevicesStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesStatusesExecute(r)
 }
 
@@ -5491,10 +5491,10 @@ List the status of every Meraki device in the organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return DevicesApiGetOrganizationDevicesStatusesRequest
+ @return DevicesAPIGetOrganizationDevicesStatusesRequest
 */
-func (a *DevicesApiService) GetOrganizationDevicesStatuses(ctx context.Context, organizationId string) DevicesApiGetOrganizationDevicesStatusesRequest {
-	return DevicesApiGetOrganizationDevicesStatusesRequest{
+func (a *DevicesAPIService) GetOrganizationDevicesStatuses(ctx context.Context, organizationId string) DevicesAPIGetOrganizationDevicesStatusesRequest {
+	return DevicesAPIGetOrganizationDevicesStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -5503,7 +5503,7 @@ func (a *DevicesApiService) GetOrganizationDevicesStatuses(ctx context.Context, 
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesStatuses200ResponseInner
-func (a *DevicesApiService) GetOrganizationDevicesStatusesExecute(r DevicesApiGetOrganizationDevicesStatusesRequest) ([]GetOrganizationDevicesStatuses200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetOrganizationDevicesStatusesExecute(r DevicesAPIGetOrganizationDevicesStatusesRequest) ([]GetOrganizationDevicesStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5511,7 +5511,7 @@ func (a *DevicesApiService) GetOrganizationDevicesStatusesExecute(r DevicesApiGe
 		localVarReturnValue  []GetOrganizationDevicesStatuses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetOrganizationDevicesStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetOrganizationDevicesStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5669,27 +5669,27 @@ func (a *DevicesApiService) GetOrganizationDevicesStatusesExecute(r DevicesApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetOrganizationDevicesStatusesOverviewRequest struct {
+type DevicesAPIGetOrganizationDevicesStatusesOverviewRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	organizationId string
 	productTypes *[]string
 	networkIds *[]string
 }
 
 // An optional parameter to filter device statuses by product type. Valid types are wireless, appliance, switch, systemsManager, camera, cellularGateway, sensor, and cloudGateway.
-func (r DevicesApiGetOrganizationDevicesStatusesOverviewRequest) ProductTypes(productTypes []string) DevicesApiGetOrganizationDevicesStatusesOverviewRequest {
+func (r DevicesAPIGetOrganizationDevicesStatusesOverviewRequest) ProductTypes(productTypes []string) DevicesAPIGetOrganizationDevicesStatusesOverviewRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // An optional parameter to filter device statuses by network.
-func (r DevicesApiGetOrganizationDevicesStatusesOverviewRequest) NetworkIds(networkIds []string) DevicesApiGetOrganizationDevicesStatusesOverviewRequest {
+func (r DevicesAPIGetOrganizationDevicesStatusesOverviewRequest) NetworkIds(networkIds []string) DevicesAPIGetOrganizationDevicesStatusesOverviewRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
-func (r DevicesApiGetOrganizationDevicesStatusesOverviewRequest) Execute() (*GetOrganizationDevicesStatusesOverview200Response, *http.Response, error) {
+func (r DevicesAPIGetOrganizationDevicesStatusesOverviewRequest) Execute() (*GetOrganizationDevicesStatusesOverview200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesStatusesOverviewExecute(r)
 }
 
@@ -5700,10 +5700,10 @@ Return an overview of current device statuses
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return DevicesApiGetOrganizationDevicesStatusesOverviewRequest
+ @return DevicesAPIGetOrganizationDevicesStatusesOverviewRequest
 */
-func (a *DevicesApiService) GetOrganizationDevicesStatusesOverview(ctx context.Context, organizationId string) DevicesApiGetOrganizationDevicesStatusesOverviewRequest {
-	return DevicesApiGetOrganizationDevicesStatusesOverviewRequest{
+func (a *DevicesAPIService) GetOrganizationDevicesStatusesOverview(ctx context.Context, organizationId string) DevicesAPIGetOrganizationDevicesStatusesOverviewRequest {
+	return DevicesAPIGetOrganizationDevicesStatusesOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -5712,7 +5712,7 @@ func (a *DevicesApiService) GetOrganizationDevicesStatusesOverview(ctx context.C
 
 // Execute executes the request
 //  @return GetOrganizationDevicesStatusesOverview200Response
-func (a *DevicesApiService) GetOrganizationDevicesStatusesOverviewExecute(r DevicesApiGetOrganizationDevicesStatusesOverviewRequest) (*GetOrganizationDevicesStatusesOverview200Response, *http.Response, error) {
+func (a *DevicesAPIService) GetOrganizationDevicesStatusesOverviewExecute(r DevicesAPIGetOrganizationDevicesStatusesOverviewRequest) (*GetOrganizationDevicesStatusesOverview200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5720,7 +5720,7 @@ func (a *DevicesApiService) GetOrganizationDevicesStatusesOverviewExecute(r Devi
 		localVarReturnValue  *GetOrganizationDevicesStatusesOverview200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetOrganizationDevicesStatusesOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetOrganizationDevicesStatusesOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5822,9 +5822,9 @@ func (a *DevicesApiService) GetOrganizationDevicesStatusesOverviewExecute(r Devi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest struct {
+type DevicesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -5837,54 +5837,54 @@ type DevicesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r DevicesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) PerPage(perPage int32) DevicesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r DevicesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) PerPage(perPage int32) DevicesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) StartingAfter(startingAfter string) DevicesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r DevicesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) StartingAfter(startingAfter string) DevicesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) EndingBefore(endingBefore string) DevicesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r DevicesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) EndingBefore(endingBefore string) DevicesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter device uplinks by network ID. This filter uses multiple exact matches.
-func (r DevicesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) NetworkIds(networkIds []string) DevicesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r DevicesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) NetworkIds(networkIds []string) DevicesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter device uplinks by device product types. This filter uses multiple exact matches.
-func (r DevicesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) ProductTypes(productTypes []string) DevicesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r DevicesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) ProductTypes(productTypes []string) DevicesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter device availabilities by device serial numbers. This filter uses multiple exact matches.
-func (r DevicesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) Serials(serials []string) DevicesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r DevicesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) Serials(serials []string) DevicesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.serials = &serials
 	return r
 }
 
 // An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below). This filter uses multiple exact matches.
-func (r DevicesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) Tags(tags []string) DevicesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r DevicesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) Tags(tags []string) DevicesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.tags = &tags
 	return r
 }
 
 // An optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return devices which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r DevicesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) TagsFilterType(tagsFilterType string) DevicesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r DevicesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) TagsFilterType(tagsFilterType string) DevicesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
-func (r DevicesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) Execute() ([]GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) Execute() ([]GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesUplinksAddressesByDeviceExecute(r)
 }
 
@@ -5895,10 +5895,10 @@ List the current uplink addresses for devices in an organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return DevicesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest
+ @return DevicesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest
 */
-func (a *DevicesApiService) GetOrganizationDevicesUplinksAddressesByDevice(ctx context.Context, organizationId string) DevicesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
-	return DevicesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest{
+func (a *DevicesAPIService) GetOrganizationDevicesUplinksAddressesByDevice(ctx context.Context, organizationId string) DevicesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+	return DevicesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -5907,7 +5907,7 @@ func (a *DevicesApiService) GetOrganizationDevicesUplinksAddressesByDevice(ctx c
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner
-func (a *DevicesApiService) GetOrganizationDevicesUplinksAddressesByDeviceExecute(r DevicesApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) ([]GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetOrganizationDevicesUplinksAddressesByDeviceExecute(r DevicesAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) ([]GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5915,7 +5915,7 @@ func (a *DevicesApiService) GetOrganizationDevicesUplinksAddressesByDeviceExecut
 		localVarReturnValue  []GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetOrganizationDevicesUplinksAddressesByDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetOrganizationDevicesUplinksAddressesByDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6051,9 +6051,9 @@ func (a *DevicesApiService) GetOrganizationDevicesUplinksAddressesByDeviceExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetOrganizationDevicesUplinksLossAndLatencyRequest struct {
+type DevicesAPIGetOrganizationDevicesUplinksLossAndLatencyRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -6063,36 +6063,36 @@ type DevicesApiGetOrganizationDevicesUplinksLossAndLatencyRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 60 days from today.
-func (r DevicesApiGetOrganizationDevicesUplinksLossAndLatencyRequest) T0(t0 string) DevicesApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
+func (r DevicesAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) T0(t0 string) DevicesAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 5 minutes after t0. The latest possible time that t1 can be is 2 minutes into the past.
-func (r DevicesApiGetOrganizationDevicesUplinksLossAndLatencyRequest) T1(t1 string) DevicesApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
+func (r DevicesAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) T1(t1 string) DevicesAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 5 minutes. The default is 5 minutes.
-func (r DevicesApiGetOrganizationDevicesUplinksLossAndLatencyRequest) Timespan(timespan float32) DevicesApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
+func (r DevicesAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) Timespan(timespan float32) DevicesAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Optional filter for a specific WAN uplink. Valid uplinks are wan1, wan2, wan3, cellular. Default will return all uplinks.
-func (r DevicesApiGetOrganizationDevicesUplinksLossAndLatencyRequest) Uplink(uplink string) DevicesApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
+func (r DevicesAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) Uplink(uplink string) DevicesAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
 	r.uplink = &uplink
 	return r
 }
 
 // Optional filter for a specific destination IP. Default will return all destination IPs.
-func (r DevicesApiGetOrganizationDevicesUplinksLossAndLatencyRequest) Ip(ip string) DevicesApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
+func (r DevicesAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) Ip(ip string) DevicesAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
 	r.ip = &ip
 	return r
 }
 
-func (r DevicesApiGetOrganizationDevicesUplinksLossAndLatencyRequest) Execute() ([]GetOrganizationDevicesUplinksLossAndLatency200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) Execute() ([]GetOrganizationDevicesUplinksLossAndLatency200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesUplinksLossAndLatencyExecute(r)
 }
 
@@ -6103,10 +6103,10 @@ Return the uplink loss and latency for every MX in the organization from at late
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return DevicesApiGetOrganizationDevicesUplinksLossAndLatencyRequest
+ @return DevicesAPIGetOrganizationDevicesUplinksLossAndLatencyRequest
 */
-func (a *DevicesApiService) GetOrganizationDevicesUplinksLossAndLatency(ctx context.Context, organizationId string) DevicesApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
-	return DevicesApiGetOrganizationDevicesUplinksLossAndLatencyRequest{
+func (a *DevicesAPIService) GetOrganizationDevicesUplinksLossAndLatency(ctx context.Context, organizationId string) DevicesAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
+	return DevicesAPIGetOrganizationDevicesUplinksLossAndLatencyRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -6115,7 +6115,7 @@ func (a *DevicesApiService) GetOrganizationDevicesUplinksLossAndLatency(ctx cont
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesUplinksLossAndLatency200ResponseInner
-func (a *DevicesApiService) GetOrganizationDevicesUplinksLossAndLatencyExecute(r DevicesApiGetOrganizationDevicesUplinksLossAndLatencyRequest) ([]GetOrganizationDevicesUplinksLossAndLatency200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetOrganizationDevicesUplinksLossAndLatencyExecute(r DevicesAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) ([]GetOrganizationDevicesUplinksLossAndLatency200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6123,7 +6123,7 @@ func (a *DevicesApiService) GetOrganizationDevicesUplinksLossAndLatencyExecute(r
 		localVarReturnValue  []GetOrganizationDevicesUplinksLossAndLatency200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetOrganizationDevicesUplinksLossAndLatency")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetOrganizationDevicesUplinksLossAndLatency")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6218,14 +6218,14 @@ func (a *DevicesApiService) GetOrganizationDevicesUplinksLossAndLatencyExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetOrganizationInventoryDeviceRequest struct {
+type DevicesAPIGetOrganizationInventoryDeviceRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	organizationId string
 	serial string
 }
 
-func (r DevicesApiGetOrganizationInventoryDeviceRequest) Execute() (*GetOrganizationInventoryDevices200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetOrganizationInventoryDeviceRequest) Execute() (*GetOrganizationInventoryDevices200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationInventoryDeviceExecute(r)
 }
 
@@ -6237,10 +6237,10 @@ Return a single device from the inventory of an organization
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param serial Serial
- @return DevicesApiGetOrganizationInventoryDeviceRequest
+ @return DevicesAPIGetOrganizationInventoryDeviceRequest
 */
-func (a *DevicesApiService) GetOrganizationInventoryDevice(ctx context.Context, organizationId string, serial string) DevicesApiGetOrganizationInventoryDeviceRequest {
-	return DevicesApiGetOrganizationInventoryDeviceRequest{
+func (a *DevicesAPIService) GetOrganizationInventoryDevice(ctx context.Context, organizationId string, serial string) DevicesAPIGetOrganizationInventoryDeviceRequest {
+	return DevicesAPIGetOrganizationInventoryDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -6250,7 +6250,7 @@ func (a *DevicesApiService) GetOrganizationInventoryDevice(ctx context.Context, 
 
 // Execute executes the request
 //  @return GetOrganizationInventoryDevices200ResponseInner
-func (a *DevicesApiService) GetOrganizationInventoryDeviceExecute(r DevicesApiGetOrganizationInventoryDeviceRequest) (*GetOrganizationInventoryDevices200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetOrganizationInventoryDeviceExecute(r DevicesAPIGetOrganizationInventoryDeviceRequest) (*GetOrganizationInventoryDevices200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6258,7 +6258,7 @@ func (a *DevicesApiService) GetOrganizationInventoryDeviceExecute(r DevicesApiGe
 		localVarReturnValue  *GetOrganizationInventoryDevices200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetOrganizationInventoryDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetOrganizationInventoryDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6339,9 +6339,9 @@ func (a *DevicesApiService) GetOrganizationInventoryDeviceExecute(r DevicesApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetOrganizationInventoryDevicesRequest struct {
+type DevicesAPIGetOrganizationInventoryDevicesRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -6359,84 +6359,84 @@ type DevicesApiGetOrganizationInventoryDevicesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r DevicesApiGetOrganizationInventoryDevicesRequest) PerPage(perPage int32) DevicesApiGetOrganizationInventoryDevicesRequest {
+func (r DevicesAPIGetOrganizationInventoryDevicesRequest) PerPage(perPage int32) DevicesAPIGetOrganizationInventoryDevicesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetOrganizationInventoryDevicesRequest) StartingAfter(startingAfter string) DevicesApiGetOrganizationInventoryDevicesRequest {
+func (r DevicesAPIGetOrganizationInventoryDevicesRequest) StartingAfter(startingAfter string) DevicesAPIGetOrganizationInventoryDevicesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetOrganizationInventoryDevicesRequest) EndingBefore(endingBefore string) DevicesApiGetOrganizationInventoryDevicesRequest {
+func (r DevicesAPIGetOrganizationInventoryDevicesRequest) EndingBefore(endingBefore string) DevicesAPIGetOrganizationInventoryDevicesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Filter results by used or unused inventory. Accepted values are &#39;used&#39; or &#39;unused&#39;.
-func (r DevicesApiGetOrganizationInventoryDevicesRequest) UsedState(usedState string) DevicesApiGetOrganizationInventoryDevicesRequest {
+func (r DevicesAPIGetOrganizationInventoryDevicesRequest) UsedState(usedState string) DevicesAPIGetOrganizationInventoryDevicesRequest {
 	r.usedState = &usedState
 	return r
 }
 
 // Search for devices in inventory based on serial number, mac address, or model.
-func (r DevicesApiGetOrganizationInventoryDevicesRequest) Search(search string) DevicesApiGetOrganizationInventoryDevicesRequest {
+func (r DevicesAPIGetOrganizationInventoryDevicesRequest) Search(search string) DevicesAPIGetOrganizationInventoryDevicesRequest {
 	r.search = &search
 	return r
 }
 
 // Search for devices in inventory based on mac addresses.
-func (r DevicesApiGetOrganizationInventoryDevicesRequest) Macs(macs []string) DevicesApiGetOrganizationInventoryDevicesRequest {
+func (r DevicesAPIGetOrganizationInventoryDevicesRequest) Macs(macs []string) DevicesAPIGetOrganizationInventoryDevicesRequest {
 	r.macs = &macs
 	return r
 }
 
 // Search for devices in inventory based on network ids.
-func (r DevicesApiGetOrganizationInventoryDevicesRequest) NetworkIds(networkIds []string) DevicesApiGetOrganizationInventoryDevicesRequest {
+func (r DevicesAPIGetOrganizationInventoryDevicesRequest) NetworkIds(networkIds []string) DevicesAPIGetOrganizationInventoryDevicesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Search for devices in inventory based on serials.
-func (r DevicesApiGetOrganizationInventoryDevicesRequest) Serials(serials []string) DevicesApiGetOrganizationInventoryDevicesRequest {
+func (r DevicesAPIGetOrganizationInventoryDevicesRequest) Serials(serials []string) DevicesAPIGetOrganizationInventoryDevicesRequest {
 	r.serials = &serials
 	return r
 }
 
 // Search for devices in inventory based on model.
-func (r DevicesApiGetOrganizationInventoryDevicesRequest) Models(models []string) DevicesApiGetOrganizationInventoryDevicesRequest {
+func (r DevicesAPIGetOrganizationInventoryDevicesRequest) Models(models []string) DevicesAPIGetOrganizationInventoryDevicesRequest {
 	r.models = &models
 	return r
 }
 
 // Search for devices in inventory based on order numbers.
-func (r DevicesApiGetOrganizationInventoryDevicesRequest) OrderNumbers(orderNumbers []string) DevicesApiGetOrganizationInventoryDevicesRequest {
+func (r DevicesAPIGetOrganizationInventoryDevicesRequest) OrderNumbers(orderNumbers []string) DevicesAPIGetOrganizationInventoryDevicesRequest {
 	r.orderNumbers = &orderNumbers
 	return r
 }
 
 // Filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below).
-func (r DevicesApiGetOrganizationInventoryDevicesRequest) Tags(tags []string) DevicesApiGetOrganizationInventoryDevicesRequest {
+func (r DevicesAPIGetOrganizationInventoryDevicesRequest) Tags(tags []string) DevicesAPIGetOrganizationInventoryDevicesRequest {
 	r.tags = &tags
 	return r
 }
 
 // To use with &#39;tags&#39; parameter, to filter devices which contain ANY or ALL given tags. Accepted values are &#39;withAnyTags&#39; or &#39;withAllTags&#39;, default is &#39;withAnyTags&#39;.
-func (r DevicesApiGetOrganizationInventoryDevicesRequest) TagsFilterType(tagsFilterType string) DevicesApiGetOrganizationInventoryDevicesRequest {
+func (r DevicesAPIGetOrganizationInventoryDevicesRequest) TagsFilterType(tagsFilterType string) DevicesAPIGetOrganizationInventoryDevicesRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
 // Filter devices by product type. Accepted values are appliance, camera, cellularGateway, cloudGateway, sensor, switch, systemsManager, and wireless.
-func (r DevicesApiGetOrganizationInventoryDevicesRequest) ProductTypes(productTypes []string) DevicesApiGetOrganizationInventoryDevicesRequest {
+func (r DevicesAPIGetOrganizationInventoryDevicesRequest) ProductTypes(productTypes []string) DevicesAPIGetOrganizationInventoryDevicesRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
-func (r DevicesApiGetOrganizationInventoryDevicesRequest) Execute() ([]GetOrganizationInventoryDevices200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetOrganizationInventoryDevicesRequest) Execute() ([]GetOrganizationInventoryDevices200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationInventoryDevicesExecute(r)
 }
 
@@ -6447,10 +6447,10 @@ Return the device inventory for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return DevicesApiGetOrganizationInventoryDevicesRequest
+ @return DevicesAPIGetOrganizationInventoryDevicesRequest
 */
-func (a *DevicesApiService) GetOrganizationInventoryDevices(ctx context.Context, organizationId string) DevicesApiGetOrganizationInventoryDevicesRequest {
-	return DevicesApiGetOrganizationInventoryDevicesRequest{
+func (a *DevicesAPIService) GetOrganizationInventoryDevices(ctx context.Context, organizationId string) DevicesAPIGetOrganizationInventoryDevicesRequest {
+	return DevicesAPIGetOrganizationInventoryDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -6459,7 +6459,7 @@ func (a *DevicesApiService) GetOrganizationInventoryDevices(ctx context.Context,
 
 // Execute executes the request
 //  @return []GetOrganizationInventoryDevices200ResponseInner
-func (a *DevicesApiService) GetOrganizationInventoryDevicesExecute(r DevicesApiGetOrganizationInventoryDevicesRequest) ([]GetOrganizationInventoryDevices200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetOrganizationInventoryDevicesExecute(r DevicesAPIGetOrganizationInventoryDevicesRequest) ([]GetOrganizationInventoryDevices200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6467,7 +6467,7 @@ func (a *DevicesApiService) GetOrganizationInventoryDevicesExecute(r DevicesApiG
 		localVarReturnValue  []GetOrganizationInventoryDevices200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetOrganizationInventoryDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetOrganizationInventoryDevices")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6642,9 +6642,9 @@ func (a *DevicesApiService) GetOrganizationInventoryDevicesExecute(r DevicesApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetOrganizationSummaryTopDevicesByUsageRequest struct {
+type DevicesAPIGetOrganizationSummaryTopDevicesByUsageRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -6652,24 +6652,24 @@ type DevicesApiGetOrganizationSummaryTopDevicesByUsageRequest struct {
 }
 
 // The beginning of the timespan for the data.
-func (r DevicesApiGetOrganizationSummaryTopDevicesByUsageRequest) T0(t0 string) DevicesApiGetOrganizationSummaryTopDevicesByUsageRequest {
+func (r DevicesAPIGetOrganizationSummaryTopDevicesByUsageRequest) T0(t0 string) DevicesAPIGetOrganizationSummaryTopDevicesByUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r DevicesApiGetOrganizationSummaryTopDevicesByUsageRequest) T1(t1 string) DevicesApiGetOrganizationSummaryTopDevicesByUsageRequest {
+func (r DevicesAPIGetOrganizationSummaryTopDevicesByUsageRequest) T1(t1 string) DevicesAPIGetOrganizationSummaryTopDevicesByUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r DevicesApiGetOrganizationSummaryTopDevicesByUsageRequest) Timespan(timespan float32) DevicesApiGetOrganizationSummaryTopDevicesByUsageRequest {
+func (r DevicesAPIGetOrganizationSummaryTopDevicesByUsageRequest) Timespan(timespan float32) DevicesAPIGetOrganizationSummaryTopDevicesByUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r DevicesApiGetOrganizationSummaryTopDevicesByUsageRequest) Execute() ([]GetOrganizationSummaryTopDevicesByUsage200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetOrganizationSummaryTopDevicesByUsageRequest) Execute() ([]GetOrganizationSummaryTopDevicesByUsage200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSummaryTopDevicesByUsageExecute(r)
 }
 
@@ -6680,10 +6680,10 @@ Return metrics for organization's top 10 devices sorted by data usage over given
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return DevicesApiGetOrganizationSummaryTopDevicesByUsageRequest
+ @return DevicesAPIGetOrganizationSummaryTopDevicesByUsageRequest
 */
-func (a *DevicesApiService) GetOrganizationSummaryTopDevicesByUsage(ctx context.Context, organizationId string) DevicesApiGetOrganizationSummaryTopDevicesByUsageRequest {
-	return DevicesApiGetOrganizationSummaryTopDevicesByUsageRequest{
+func (a *DevicesAPIService) GetOrganizationSummaryTopDevicesByUsage(ctx context.Context, organizationId string) DevicesAPIGetOrganizationSummaryTopDevicesByUsageRequest {
+	return DevicesAPIGetOrganizationSummaryTopDevicesByUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -6692,7 +6692,7 @@ func (a *DevicesApiService) GetOrganizationSummaryTopDevicesByUsage(ctx context.
 
 // Execute executes the request
 //  @return []GetOrganizationSummaryTopDevicesByUsage200ResponseInner
-func (a *DevicesApiService) GetOrganizationSummaryTopDevicesByUsageExecute(r DevicesApiGetOrganizationSummaryTopDevicesByUsageRequest) ([]GetOrganizationSummaryTopDevicesByUsage200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetOrganizationSummaryTopDevicesByUsageExecute(r DevicesAPIGetOrganizationSummaryTopDevicesByUsageRequest) ([]GetOrganizationSummaryTopDevicesByUsage200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6700,7 +6700,7 @@ func (a *DevicesApiService) GetOrganizationSummaryTopDevicesByUsageExecute(r Dev
 		localVarReturnValue  []GetOrganizationSummaryTopDevicesByUsage200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetOrganizationSummaryTopDevicesByUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetOrganizationSummaryTopDevicesByUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6789,9 +6789,9 @@ func (a *DevicesApiService) GetOrganizationSummaryTopDevicesByUsageExecute(r Dev
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetOrganizationSummaryTopDevicesModelsByUsageRequest struct {
+type DevicesAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -6799,24 +6799,24 @@ type DevicesApiGetOrganizationSummaryTopDevicesModelsByUsageRequest struct {
 }
 
 // The beginning of the timespan for the data.
-func (r DevicesApiGetOrganizationSummaryTopDevicesModelsByUsageRequest) T0(t0 string) DevicesApiGetOrganizationSummaryTopDevicesModelsByUsageRequest {
+func (r DevicesAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest) T0(t0 string) DevicesAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r DevicesApiGetOrganizationSummaryTopDevicesModelsByUsageRequest) T1(t1 string) DevicesApiGetOrganizationSummaryTopDevicesModelsByUsageRequest {
+func (r DevicesAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest) T1(t1 string) DevicesAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r DevicesApiGetOrganizationSummaryTopDevicesModelsByUsageRequest) Timespan(timespan float32) DevicesApiGetOrganizationSummaryTopDevicesModelsByUsageRequest {
+func (r DevicesAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest) Timespan(timespan float32) DevicesAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r DevicesApiGetOrganizationSummaryTopDevicesModelsByUsageRequest) Execute() ([]GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest) Execute() ([]GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSummaryTopDevicesModelsByUsageExecute(r)
 }
 
@@ -6827,10 +6827,10 @@ Return metrics for organization's top 10 device models sorted by data usage over
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return DevicesApiGetOrganizationSummaryTopDevicesModelsByUsageRequest
+ @return DevicesAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest
 */
-func (a *DevicesApiService) GetOrganizationSummaryTopDevicesModelsByUsage(ctx context.Context, organizationId string) DevicesApiGetOrganizationSummaryTopDevicesModelsByUsageRequest {
-	return DevicesApiGetOrganizationSummaryTopDevicesModelsByUsageRequest{
+func (a *DevicesAPIService) GetOrganizationSummaryTopDevicesModelsByUsage(ctx context.Context, organizationId string) DevicesAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest {
+	return DevicesAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -6839,7 +6839,7 @@ func (a *DevicesApiService) GetOrganizationSummaryTopDevicesModelsByUsage(ctx co
 
 // Execute executes the request
 //  @return []GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner
-func (a *DevicesApiService) GetOrganizationSummaryTopDevicesModelsByUsageExecute(r DevicesApiGetOrganizationSummaryTopDevicesModelsByUsageRequest) ([]GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetOrganizationSummaryTopDevicesModelsByUsageExecute(r DevicesAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest) ([]GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6847,7 +6847,7 @@ func (a *DevicesApiService) GetOrganizationSummaryTopDevicesModelsByUsageExecute
 		localVarReturnValue  []GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetOrganizationSummaryTopDevicesModelsByUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetOrganizationSummaryTopDevicesModelsByUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6936,9 +6936,9 @@ func (a *DevicesApiService) GetOrganizationSummaryTopDevicesModelsByUsageExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest struct {
+type DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	organizationId string
 	networkIds *[]string
 	serials *[]string
@@ -6952,60 +6952,60 @@ type DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest s
 }
 
 // Filter results by network.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) NetworkIds(networkIds []string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) NetworkIds(networkIds []string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Filter results by device.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Serials(serials []string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Serials(serials []string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.serials = &serials
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) PerPage(perPage int32) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) PerPage(perPage int32) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) StartingAfter(startingAfter string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) StartingAfter(startingAfter string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) EndingBefore(endingBefore string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) EndingBefore(endingBefore string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 90 days from today.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) T0(t0 string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) T0(t0 string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 90 days after t0.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) T1(t1 string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) T1(t1 string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 90 days. The default is 7 days.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Timespan(timespan float32) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Timespan(timespan float32) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time interval in seconds for returned data. The valid intervals are: 300, 600, 3600, 7200, 14400, 21600. The default is 3600.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Interval(interval int32) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Interval(interval int32) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
 	r.interval = &interval
 	return r
 }
 
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationByDevice200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationByDevice200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationWirelessDevicesChannelUtilizationByDeviceExecute(r)
 }
 
@@ -7016,10 +7016,10 @@ Get average channel utilization for all bands in a network, split by AP
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest
+ @return DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest
 */
-func (a *DevicesApiService) GetOrganizationWirelessDevicesChannelUtilizationByDevice(ctx context.Context, organizationId string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
-	return DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest{
+func (a *DevicesAPIService) GetOrganizationWirelessDevicesChannelUtilizationByDevice(ctx context.Context, organizationId string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest {
+	return DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -7028,7 +7028,7 @@ func (a *DevicesApiService) GetOrganizationWirelessDevicesChannelUtilizationByDe
 
 // Execute executes the request
 //  @return []GetOrganizationWirelessDevicesChannelUtilizationByDevice200ResponseInner
-func (a *DevicesApiService) GetOrganizationWirelessDevicesChannelUtilizationByDeviceExecute(r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationByDevice200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetOrganizationWirelessDevicesChannelUtilizationByDeviceExecute(r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByDeviceRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationByDevice200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7036,7 +7036,7 @@ func (a *DevicesApiService) GetOrganizationWirelessDevicesChannelUtilizationByDe
 		localVarReturnValue  []GetOrganizationWirelessDevicesChannelUtilizationByDevice200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetOrganizationWirelessDevicesChannelUtilizationByDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetOrganizationWirelessDevicesChannelUtilizationByDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7159,9 +7159,9 @@ func (a *DevicesApiService) GetOrganizationWirelessDevicesChannelUtilizationByDe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest struct {
+type DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	organizationId string
 	networkIds *[]string
 	serials *[]string
@@ -7175,60 +7175,60 @@ type DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest 
 }
 
 // Filter results by network.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) NetworkIds(networkIds []string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) NetworkIds(networkIds []string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Filter results by device.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) Serials(serials []string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) Serials(serials []string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
 	r.serials = &serials
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) PerPage(perPage int32) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) PerPage(perPage int32) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) StartingAfter(startingAfter string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) StartingAfter(startingAfter string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) EndingBefore(endingBefore string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) EndingBefore(endingBefore string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 90 days from today.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) T0(t0 string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) T0(t0 string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 90 days after t0.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) T1(t1 string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) T1(t1 string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 90 days. The default is 7 days.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) Timespan(timespan float32) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) Timespan(timespan float32) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time interval in seconds for returned data. The valid intervals are: 300, 600, 3600, 7200, 14400, 21600. The default is 3600.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) Interval(interval int32) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) Interval(interval int32) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
 	r.interval = &interval
 	return r
 }
 
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationByNetwork200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationByNetwork200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationWirelessDevicesChannelUtilizationByNetworkExecute(r)
 }
 
@@ -7239,10 +7239,10 @@ Get average channel utilization across all bands for all networks in the organiz
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest
+ @return DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest
 */
-func (a *DevicesApiService) GetOrganizationWirelessDevicesChannelUtilizationByNetwork(ctx context.Context, organizationId string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
-	return DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest{
+func (a *DevicesAPIService) GetOrganizationWirelessDevicesChannelUtilizationByNetwork(ctx context.Context, organizationId string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest {
+	return DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -7251,7 +7251,7 @@ func (a *DevicesApiService) GetOrganizationWirelessDevicesChannelUtilizationByNe
 
 // Execute executes the request
 //  @return []GetOrganizationWirelessDevicesChannelUtilizationByNetwork200ResponseInner
-func (a *DevicesApiService) GetOrganizationWirelessDevicesChannelUtilizationByNetworkExecute(r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationByNetwork200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetOrganizationWirelessDevicesChannelUtilizationByNetworkExecute(r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationByNetworkRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationByNetwork200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7259,7 +7259,7 @@ func (a *DevicesApiService) GetOrganizationWirelessDevicesChannelUtilizationByNe
 		localVarReturnValue  []GetOrganizationWirelessDevicesChannelUtilizationByNetwork200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetOrganizationWirelessDevicesChannelUtilizationByNetwork")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetOrganizationWirelessDevicesChannelUtilizationByNetwork")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7382,9 +7382,9 @@ func (a *DevicesApiService) GetOrganizationWirelessDevicesChannelUtilizationByNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest struct {
+type DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	organizationId string
 	networkIds *[]string
 	serials *[]string
@@ -7398,60 +7398,60 @@ type DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceBy
 }
 
 // Filter results by network.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) NetworkIds(networkIds []string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) NetworkIds(networkIds []string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Filter results by device.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Serials(serials []string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Serials(serials []string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.serials = &serials
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) PerPage(perPage int32) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) PerPage(perPage int32) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) StartingAfter(startingAfter string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) StartingAfter(startingAfter string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) EndingBefore(endingBefore string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) EndingBefore(endingBefore string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) T0(t0 string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) T0(t0 string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) T1(t1 string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) T1(t1 string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Timespan(timespan float32) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Timespan(timespan float32) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time interval in seconds for returned data. The valid intervals are: 300, 600, 3600, 7200, 14400, 21600. The default is 3600.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Interval(interval int32) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Interval(interval int32) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
 	r.interval = &interval
 	return r
 }
 
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalExecute(r)
 }
 
@@ -7462,10 +7462,10 @@ Get a time-series of average channel utilization for all bands, segmented by dev
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest
+ @return DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest
 */
-func (a *DevicesApiService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval(ctx context.Context, organizationId string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
-	return DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest{
+func (a *DevicesAPIService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval(ctx context.Context, organizationId string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest {
+	return DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -7474,7 +7474,7 @@ func (a *DevicesApiService) GetOrganizationWirelessDevicesChannelUtilizationHist
 
 // Execute executes the request
 //  @return []GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner
-func (a *DevicesApiService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalExecute(r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalExecute(r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByIntervalRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7482,7 +7482,7 @@ func (a *DevicesApiService) GetOrganizationWirelessDevicesChannelUtilizationHist
 		localVarReturnValue  []GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetOrganizationWirelessDevicesChannelUtilizationHistoryByDeviceByInterval")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7605,9 +7605,9 @@ func (a *DevicesApiService) GetOrganizationWirelessDevicesChannelUtilizationHist
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest struct {
+type DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	organizationId string
 	networkIds *[]string
 	serials *[]string
@@ -7621,60 +7621,60 @@ type DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkB
 }
 
 // Filter results by network.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) NetworkIds(networkIds []string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) NetworkIds(networkIds []string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Filter results by device.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Serials(serials []string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Serials(serials []string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.serials = &serials
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) PerPage(perPage int32) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) PerPage(perPage int32) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) StartingAfter(startingAfter string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) StartingAfter(startingAfter string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) EndingBefore(endingBefore string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) EndingBefore(endingBefore string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) T0(t0 string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) T0(t0 string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) T1(t1 string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) T1(t1 string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Timespan(timespan float32) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Timespan(timespan float32) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time interval in seconds for returned data. The valid intervals are: 300, 600, 3600, 7200, 14400, 21600. The default is 3600.
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Interval(interval int32) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Interval(interval int32) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
 	r.interval = &interval
 	return r
 }
 
-func (r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) Execute() ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalExecute(r)
 }
 
@@ -7685,10 +7685,10 @@ Get a time-series of average channel utilization for all bands
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest
+ @return DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest
 */
-func (a *DevicesApiService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval(ctx context.Context, organizationId string) DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
-	return DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest{
+func (a *DevicesAPIService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval(ctx context.Context, organizationId string) DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest {
+	return DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -7697,7 +7697,7 @@ func (a *DevicesApiService) GetOrganizationWirelessDevicesChannelUtilizationHist
 
 // Execute executes the request
 //  @return []GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval200ResponseInner
-func (a *DevicesApiService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalExecute(r DevicesApiGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalExecute(r DevicesAPIGetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByIntervalRequest) ([]GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7705,7 +7705,7 @@ func (a *DevicesApiService) GetOrganizationWirelessDevicesChannelUtilizationHist
 		localVarReturnValue  []GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7828,9 +7828,9 @@ func (a *DevicesApiService) GetOrganizationWirelessDevicesChannelUtilizationHist
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiGetOrganizationWirelessDevicesEthernetStatusesRequest struct {
+type DevicesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -7839,30 +7839,30 @@ type DevicesApiGetOrganizationWirelessDevicesEthernetStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
-func (r DevicesApiGetOrganizationWirelessDevicesEthernetStatusesRequest) PerPage(perPage int32) DevicesApiGetOrganizationWirelessDevicesEthernetStatusesRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) PerPage(perPage int32) DevicesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetOrganizationWirelessDevicesEthernetStatusesRequest) StartingAfter(startingAfter string) DevicesApiGetOrganizationWirelessDevicesEthernetStatusesRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) StartingAfter(startingAfter string) DevicesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r DevicesApiGetOrganizationWirelessDevicesEthernetStatusesRequest) EndingBefore(endingBefore string) DevicesApiGetOrganizationWirelessDevicesEthernetStatusesRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) EndingBefore(endingBefore string) DevicesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // A list of Meraki network IDs to filter results to contain only specified networks. E.g.: networkIds[]&#x3D;N_12345678&amp;networkIds[]&#x3D;L_3456
-func (r DevicesApiGetOrganizationWirelessDevicesEthernetStatusesRequest) NetworkIds(networkIds []string) DevicesApiGetOrganizationWirelessDevicesEthernetStatusesRequest {
+func (r DevicesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) NetworkIds(networkIds []string) DevicesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
-func (r DevicesApiGetOrganizationWirelessDevicesEthernetStatusesRequest) Execute() ([]GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner, *http.Response, error) {
+func (r DevicesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) Execute() ([]GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationWirelessDevicesEthernetStatusesExecute(r)
 }
 
@@ -7873,10 +7873,10 @@ List the most recent Ethernet link speed, duplex, aggregation and power mode and
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return DevicesApiGetOrganizationWirelessDevicesEthernetStatusesRequest
+ @return DevicesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest
 */
-func (a *DevicesApiService) GetOrganizationWirelessDevicesEthernetStatuses(ctx context.Context, organizationId string) DevicesApiGetOrganizationWirelessDevicesEthernetStatusesRequest {
-	return DevicesApiGetOrganizationWirelessDevicesEthernetStatusesRequest{
+func (a *DevicesAPIService) GetOrganizationWirelessDevicesEthernetStatuses(ctx context.Context, organizationId string) DevicesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest {
+	return DevicesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -7885,7 +7885,7 @@ func (a *DevicesApiService) GetOrganizationWirelessDevicesEthernetStatuses(ctx c
 
 // Execute executes the request
 //  @return []GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner
-func (a *DevicesApiService) GetOrganizationWirelessDevicesEthernetStatusesExecute(r DevicesApiGetOrganizationWirelessDevicesEthernetStatusesRequest) ([]GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) GetOrganizationWirelessDevicesEthernetStatusesExecute(r DevicesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) ([]GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7893,7 +7893,7 @@ func (a *DevicesApiService) GetOrganizationWirelessDevicesEthernetStatusesExecut
 		localVarReturnValue  []GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.GetOrganizationWirelessDevicesEthernetStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetOrganizationWirelessDevicesEthernetStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7993,19 +7993,19 @@ func (a *DevicesApiService) GetOrganizationWirelessDevicesEthernetStatusesExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiLockNetworkSmDevicesRequest struct {
+type DevicesAPILockNetworkSmDevicesRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	networkId string
 	lockNetworkSmDevicesRequest *LockNetworkSmDevicesRequest
 }
 
-func (r DevicesApiLockNetworkSmDevicesRequest) LockNetworkSmDevicesRequest(lockNetworkSmDevicesRequest LockNetworkSmDevicesRequest) DevicesApiLockNetworkSmDevicesRequest {
+func (r DevicesAPILockNetworkSmDevicesRequest) LockNetworkSmDevicesRequest(lockNetworkSmDevicesRequest LockNetworkSmDevicesRequest) DevicesAPILockNetworkSmDevicesRequest {
 	r.lockNetworkSmDevicesRequest = &lockNetworkSmDevicesRequest
 	return r
 }
 
-func (r DevicesApiLockNetworkSmDevicesRequest) Execute() (*CheckinNetworkSmDevices200Response, *http.Response, error) {
+func (r DevicesAPILockNetworkSmDevicesRequest) Execute() (*CheckinNetworkSmDevices200Response, *http.Response, error) {
 	return r.ApiService.LockNetworkSmDevicesExecute(r)
 }
 
@@ -8016,10 +8016,10 @@ Lock a set of devices
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return DevicesApiLockNetworkSmDevicesRequest
+ @return DevicesAPILockNetworkSmDevicesRequest
 */
-func (a *DevicesApiService) LockNetworkSmDevices(ctx context.Context, networkId string) DevicesApiLockNetworkSmDevicesRequest {
-	return DevicesApiLockNetworkSmDevicesRequest{
+func (a *DevicesAPIService) LockNetworkSmDevices(ctx context.Context, networkId string) DevicesAPILockNetworkSmDevicesRequest {
+	return DevicesAPILockNetworkSmDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -8028,7 +8028,7 @@ func (a *DevicesApiService) LockNetworkSmDevices(ctx context.Context, networkId 
 
 // Execute executes the request
 //  @return CheckinNetworkSmDevices200Response
-func (a *DevicesApiService) LockNetworkSmDevicesExecute(r DevicesApiLockNetworkSmDevicesRequest) (*CheckinNetworkSmDevices200Response, *http.Response, error) {
+func (a *DevicesAPIService) LockNetworkSmDevicesExecute(r DevicesAPILockNetworkSmDevicesRequest) (*CheckinNetworkSmDevices200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -8036,7 +8036,7 @@ func (a *DevicesApiService) LockNetworkSmDevicesExecute(r DevicesApiLockNetworkS
 		localVarReturnValue  *CheckinNetworkSmDevices200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.LockNetworkSmDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.LockNetworkSmDevices")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8118,19 +8118,19 @@ func (a *DevicesApiService) LockNetworkSmDevicesExecute(r DevicesApiLockNetworkS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiModifyNetworkSmDevicesTagsRequest struct {
+type DevicesAPIModifyNetworkSmDevicesTagsRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	networkId string
 	modifyNetworkSmDevicesTagsRequest *ModifyNetworkSmDevicesTagsRequest
 }
 
-func (r DevicesApiModifyNetworkSmDevicesTagsRequest) ModifyNetworkSmDevicesTagsRequest(modifyNetworkSmDevicesTagsRequest ModifyNetworkSmDevicesTagsRequest) DevicesApiModifyNetworkSmDevicesTagsRequest {
+func (r DevicesAPIModifyNetworkSmDevicesTagsRequest) ModifyNetworkSmDevicesTagsRequest(modifyNetworkSmDevicesTagsRequest ModifyNetworkSmDevicesTagsRequest) DevicesAPIModifyNetworkSmDevicesTagsRequest {
 	r.modifyNetworkSmDevicesTagsRequest = &modifyNetworkSmDevicesTagsRequest
 	return r
 }
 
-func (r DevicesApiModifyNetworkSmDevicesTagsRequest) Execute() ([]ModifyNetworkSmDevicesTags200ResponseInner, *http.Response, error) {
+func (r DevicesAPIModifyNetworkSmDevicesTagsRequest) Execute() ([]ModifyNetworkSmDevicesTags200ResponseInner, *http.Response, error) {
 	return r.ApiService.ModifyNetworkSmDevicesTagsExecute(r)
 }
 
@@ -8141,10 +8141,10 @@ Add, delete, or update the tags of a set of devices
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return DevicesApiModifyNetworkSmDevicesTagsRequest
+ @return DevicesAPIModifyNetworkSmDevicesTagsRequest
 */
-func (a *DevicesApiService) ModifyNetworkSmDevicesTags(ctx context.Context, networkId string) DevicesApiModifyNetworkSmDevicesTagsRequest {
-	return DevicesApiModifyNetworkSmDevicesTagsRequest{
+func (a *DevicesAPIService) ModifyNetworkSmDevicesTags(ctx context.Context, networkId string) DevicesAPIModifyNetworkSmDevicesTagsRequest {
+	return DevicesAPIModifyNetworkSmDevicesTagsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -8153,7 +8153,7 @@ func (a *DevicesApiService) ModifyNetworkSmDevicesTags(ctx context.Context, netw
 
 // Execute executes the request
 //  @return []ModifyNetworkSmDevicesTags200ResponseInner
-func (a *DevicesApiService) ModifyNetworkSmDevicesTagsExecute(r DevicesApiModifyNetworkSmDevicesTagsRequest) ([]ModifyNetworkSmDevicesTags200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) ModifyNetworkSmDevicesTagsExecute(r DevicesAPIModifyNetworkSmDevicesTagsRequest) ([]ModifyNetworkSmDevicesTags200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -8161,7 +8161,7 @@ func (a *DevicesApiService) ModifyNetworkSmDevicesTagsExecute(r DevicesApiModify
 		localVarReturnValue  []ModifyNetworkSmDevicesTags200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.ModifyNetworkSmDevicesTags")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.ModifyNetworkSmDevicesTags")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8246,19 +8246,19 @@ func (a *DevicesApiService) ModifyNetworkSmDevicesTagsExecute(r DevicesApiModify
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiMoveNetworkSmDevicesRequest struct {
+type DevicesAPIMoveNetworkSmDevicesRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	networkId string
 	moveNetworkSmDevicesRequest *MoveNetworkSmDevicesRequest
 }
 
-func (r DevicesApiMoveNetworkSmDevicesRequest) MoveNetworkSmDevicesRequest(moveNetworkSmDevicesRequest MoveNetworkSmDevicesRequest) DevicesApiMoveNetworkSmDevicesRequest {
+func (r DevicesAPIMoveNetworkSmDevicesRequest) MoveNetworkSmDevicesRequest(moveNetworkSmDevicesRequest MoveNetworkSmDevicesRequest) DevicesAPIMoveNetworkSmDevicesRequest {
 	r.moveNetworkSmDevicesRequest = &moveNetworkSmDevicesRequest
 	return r
 }
 
-func (r DevicesApiMoveNetworkSmDevicesRequest) Execute() (*MoveNetworkSmDevices200Response, *http.Response, error) {
+func (r DevicesAPIMoveNetworkSmDevicesRequest) Execute() (*MoveNetworkSmDevices200Response, *http.Response, error) {
 	return r.ApiService.MoveNetworkSmDevicesExecute(r)
 }
 
@@ -8269,10 +8269,10 @@ Move a set of devices to a new network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return DevicesApiMoveNetworkSmDevicesRequest
+ @return DevicesAPIMoveNetworkSmDevicesRequest
 */
-func (a *DevicesApiService) MoveNetworkSmDevices(ctx context.Context, networkId string) DevicesApiMoveNetworkSmDevicesRequest {
-	return DevicesApiMoveNetworkSmDevicesRequest{
+func (a *DevicesAPIService) MoveNetworkSmDevices(ctx context.Context, networkId string) DevicesAPIMoveNetworkSmDevicesRequest {
+	return DevicesAPIMoveNetworkSmDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -8281,7 +8281,7 @@ func (a *DevicesApiService) MoveNetworkSmDevices(ctx context.Context, networkId 
 
 // Execute executes the request
 //  @return MoveNetworkSmDevices200Response
-func (a *DevicesApiService) MoveNetworkSmDevicesExecute(r DevicesApiMoveNetworkSmDevicesRequest) (*MoveNetworkSmDevices200Response, *http.Response, error) {
+func (a *DevicesAPIService) MoveNetworkSmDevicesExecute(r DevicesAPIMoveNetworkSmDevicesRequest) (*MoveNetworkSmDevices200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -8289,7 +8289,7 @@ func (a *DevicesApiService) MoveNetworkSmDevicesExecute(r DevicesApiMoveNetworkS
 		localVarReturnValue  *MoveNetworkSmDevices200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.MoveNetworkSmDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.MoveNetworkSmDevices")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8374,13 +8374,13 @@ func (a *DevicesApiService) MoveNetworkSmDevicesExecute(r DevicesApiMoveNetworkS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiRebootDeviceRequest struct {
+type DevicesAPIRebootDeviceRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	serial string
 }
 
-func (r DevicesApiRebootDeviceRequest) Execute() (*RebootDevice202Response, *http.Response, error) {
+func (r DevicesAPIRebootDeviceRequest) Execute() (*RebootDevice202Response, *http.Response, error) {
 	return r.ApiService.RebootDeviceExecute(r)
 }
 
@@ -8391,10 +8391,10 @@ Reboot a device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return DevicesApiRebootDeviceRequest
+ @return DevicesAPIRebootDeviceRequest
 */
-func (a *DevicesApiService) RebootDevice(ctx context.Context, serial string) DevicesApiRebootDeviceRequest {
-	return DevicesApiRebootDeviceRequest{
+func (a *DevicesAPIService) RebootDevice(ctx context.Context, serial string) DevicesAPIRebootDeviceRequest {
+	return DevicesAPIRebootDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -8403,7 +8403,7 @@ func (a *DevicesApiService) RebootDevice(ctx context.Context, serial string) Dev
 
 // Execute executes the request
 //  @return RebootDevice202Response
-func (a *DevicesApiService) RebootDeviceExecute(r DevicesApiRebootDeviceRequest) (*RebootDevice202Response, *http.Response, error) {
+func (a *DevicesAPIService) RebootDeviceExecute(r DevicesAPIRebootDeviceRequest) (*RebootDevice202Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -8411,7 +8411,7 @@ func (a *DevicesApiService) RebootDeviceExecute(r DevicesApiRebootDeviceRequest)
 		localVarReturnValue  *RebootDevice202Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.RebootDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.RebootDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8491,14 +8491,14 @@ func (a *DevicesApiService) RebootDeviceExecute(r DevicesApiRebootDeviceRequest)
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiRefreshNetworkSmDeviceDetailsRequest struct {
+type DevicesAPIRefreshNetworkSmDeviceDetailsRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	networkId string
 	deviceId string
 }
 
-func (r DevicesApiRefreshNetworkSmDeviceDetailsRequest) Execute() (*http.Response, error) {
+func (r DevicesAPIRefreshNetworkSmDeviceDetailsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.RefreshNetworkSmDeviceDetailsExecute(r)
 }
 
@@ -8510,10 +8510,10 @@ Refresh the details of a device
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return DevicesApiRefreshNetworkSmDeviceDetailsRequest
+ @return DevicesAPIRefreshNetworkSmDeviceDetailsRequest
 */
-func (a *DevicesApiService) RefreshNetworkSmDeviceDetails(ctx context.Context, networkId string, deviceId string) DevicesApiRefreshNetworkSmDeviceDetailsRequest {
-	return DevicesApiRefreshNetworkSmDeviceDetailsRequest{
+func (a *DevicesAPIService) RefreshNetworkSmDeviceDetails(ctx context.Context, networkId string, deviceId string) DevicesAPIRefreshNetworkSmDeviceDetailsRequest {
+	return DevicesAPIRefreshNetworkSmDeviceDetailsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -8522,14 +8522,14 @@ func (a *DevicesApiService) RefreshNetworkSmDeviceDetails(ctx context.Context, n
 }
 
 // Execute executes the request
-func (a *DevicesApiService) RefreshNetworkSmDeviceDetailsExecute(r DevicesApiRefreshNetworkSmDeviceDetailsRequest) (*http.Response, error) {
+func (a *DevicesAPIService) RefreshNetworkSmDeviceDetailsExecute(r DevicesAPIRefreshNetworkSmDeviceDetailsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.RefreshNetworkSmDeviceDetails")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.RefreshNetworkSmDeviceDetails")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8601,19 +8601,19 @@ func (a *DevicesApiService) RefreshNetworkSmDeviceDetailsExecute(r DevicesApiRef
 	return localVarHTTPResponse, nil
 }
 
-type DevicesApiRemoveNetworkDevicesRequest struct {
+type DevicesAPIRemoveNetworkDevicesRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	networkId string
 	removeNetworkDevicesRequest *RemoveNetworkDevicesRequest
 }
 
-func (r DevicesApiRemoveNetworkDevicesRequest) RemoveNetworkDevicesRequest(removeNetworkDevicesRequest RemoveNetworkDevicesRequest) DevicesApiRemoveNetworkDevicesRequest {
+func (r DevicesAPIRemoveNetworkDevicesRequest) RemoveNetworkDevicesRequest(removeNetworkDevicesRequest RemoveNetworkDevicesRequest) DevicesAPIRemoveNetworkDevicesRequest {
 	r.removeNetworkDevicesRequest = &removeNetworkDevicesRequest
 	return r
 }
 
-func (r DevicesApiRemoveNetworkDevicesRequest) Execute() (*http.Response, error) {
+func (r DevicesAPIRemoveNetworkDevicesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.RemoveNetworkDevicesExecute(r)
 }
 
@@ -8624,10 +8624,10 @@ Remove a single device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return DevicesApiRemoveNetworkDevicesRequest
+ @return DevicesAPIRemoveNetworkDevicesRequest
 */
-func (a *DevicesApiService) RemoveNetworkDevices(ctx context.Context, networkId string) DevicesApiRemoveNetworkDevicesRequest {
-	return DevicesApiRemoveNetworkDevicesRequest{
+func (a *DevicesAPIService) RemoveNetworkDevices(ctx context.Context, networkId string) DevicesAPIRemoveNetworkDevicesRequest {
+	return DevicesAPIRemoveNetworkDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -8635,14 +8635,14 @@ func (a *DevicesApiService) RemoveNetworkDevices(ctx context.Context, networkId 
 }
 
 // Execute executes the request
-func (a *DevicesApiService) RemoveNetworkDevicesExecute(r DevicesApiRemoveNetworkDevicesRequest) (*http.Response, error) {
+func (a *DevicesAPIService) RemoveNetworkDevicesExecute(r DevicesAPIRemoveNetworkDevicesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.RemoveNetworkDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.RemoveNetworkDevices")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8718,14 +8718,14 @@ func (a *DevicesApiService) RemoveNetworkDevicesExecute(r DevicesApiRemoveNetwor
 	return localVarHTTPResponse, nil
 }
 
-type DevicesApiUnenrollNetworkSmDeviceRequest struct {
+type DevicesAPIUnenrollNetworkSmDeviceRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	networkId string
 	deviceId string
 }
 
-func (r DevicesApiUnenrollNetworkSmDeviceRequest) Execute() (*UnenrollNetworkSmDevice200Response, *http.Response, error) {
+func (r DevicesAPIUnenrollNetworkSmDeviceRequest) Execute() (*UnenrollNetworkSmDevice200Response, *http.Response, error) {
 	return r.ApiService.UnenrollNetworkSmDeviceExecute(r)
 }
 
@@ -8737,10 +8737,10 @@ Unenroll a device
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return DevicesApiUnenrollNetworkSmDeviceRequest
+ @return DevicesAPIUnenrollNetworkSmDeviceRequest
 */
-func (a *DevicesApiService) UnenrollNetworkSmDevice(ctx context.Context, networkId string, deviceId string) DevicesApiUnenrollNetworkSmDeviceRequest {
-	return DevicesApiUnenrollNetworkSmDeviceRequest{
+func (a *DevicesAPIService) UnenrollNetworkSmDevice(ctx context.Context, networkId string, deviceId string) DevicesAPIUnenrollNetworkSmDeviceRequest {
+	return DevicesAPIUnenrollNetworkSmDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -8750,7 +8750,7 @@ func (a *DevicesApiService) UnenrollNetworkSmDevice(ctx context.Context, network
 
 // Execute executes the request
 //  @return UnenrollNetworkSmDevice200Response
-func (a *DevicesApiService) UnenrollNetworkSmDeviceExecute(r DevicesApiUnenrollNetworkSmDeviceRequest) (*UnenrollNetworkSmDevice200Response, *http.Response, error) {
+func (a *DevicesAPIService) UnenrollNetworkSmDeviceExecute(r DevicesAPIUnenrollNetworkSmDeviceRequest) (*UnenrollNetworkSmDevice200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -8758,7 +8758,7 @@ func (a *DevicesApiService) UnenrollNetworkSmDeviceExecute(r DevicesApiUnenrollN
 		localVarReturnValue  *UnenrollNetworkSmDevice200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.UnenrollNetworkSmDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.UnenrollNetworkSmDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8839,19 +8839,19 @@ func (a *DevicesApiService) UnenrollNetworkSmDeviceExecute(r DevicesApiUnenrollN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiUpdateDeviceRequest struct {
+type DevicesAPIUpdateDeviceRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	serial string
 	updateDeviceRequest *UpdateDeviceRequest
 }
 
-func (r DevicesApiUpdateDeviceRequest) UpdateDeviceRequest(updateDeviceRequest UpdateDeviceRequest) DevicesApiUpdateDeviceRequest {
+func (r DevicesAPIUpdateDeviceRequest) UpdateDeviceRequest(updateDeviceRequest UpdateDeviceRequest) DevicesAPIUpdateDeviceRequest {
 	r.updateDeviceRequest = &updateDeviceRequest
 	return r
 }
 
-func (r DevicesApiUpdateDeviceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r DevicesAPIUpdateDeviceRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceExecute(r)
 }
 
@@ -8862,10 +8862,10 @@ Update the attributes of a device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return DevicesApiUpdateDeviceRequest
+ @return DevicesAPIUpdateDeviceRequest
 */
-func (a *DevicesApiService) UpdateDevice(ctx context.Context, serial string) DevicesApiUpdateDeviceRequest {
-	return DevicesApiUpdateDeviceRequest{
+func (a *DevicesAPIService) UpdateDevice(ctx context.Context, serial string) DevicesAPIUpdateDeviceRequest {
+	return DevicesAPIUpdateDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -8874,7 +8874,7 @@ func (a *DevicesApiService) UpdateDevice(ctx context.Context, serial string) Dev
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DevicesApiService) UpdateDeviceExecute(r DevicesApiUpdateDeviceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DevicesAPIService) UpdateDeviceExecute(r DevicesAPIUpdateDeviceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -8882,7 +8882,7 @@ func (a *DevicesApiService) UpdateDeviceExecute(r DevicesApiUpdateDeviceRequest)
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.UpdateDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.UpdateDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8964,19 +8964,19 @@ func (a *DevicesApiService) UpdateDeviceExecute(r DevicesApiUpdateDeviceRequest)
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiUpdateDeviceCellularSimsRequest struct {
+type DevicesAPIUpdateDeviceCellularSimsRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	serial string
 	updateDeviceCellularSimsRequest *UpdateDeviceCellularSimsRequest
 }
 
-func (r DevicesApiUpdateDeviceCellularSimsRequest) UpdateDeviceCellularSimsRequest(updateDeviceCellularSimsRequest UpdateDeviceCellularSimsRequest) DevicesApiUpdateDeviceCellularSimsRequest {
+func (r DevicesAPIUpdateDeviceCellularSimsRequest) UpdateDeviceCellularSimsRequest(updateDeviceCellularSimsRequest UpdateDeviceCellularSimsRequest) DevicesAPIUpdateDeviceCellularSimsRequest {
 	r.updateDeviceCellularSimsRequest = &updateDeviceCellularSimsRequest
 	return r
 }
 
-func (r DevicesApiUpdateDeviceCellularSimsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r DevicesAPIUpdateDeviceCellularSimsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceCellularSimsExecute(r)
 }
 
@@ -8987,10 +8987,10 @@ Updates the SIM and APN configurations for a cellular device.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return DevicesApiUpdateDeviceCellularSimsRequest
+ @return DevicesAPIUpdateDeviceCellularSimsRequest
 */
-func (a *DevicesApiService) UpdateDeviceCellularSims(ctx context.Context, serial string) DevicesApiUpdateDeviceCellularSimsRequest {
-	return DevicesApiUpdateDeviceCellularSimsRequest{
+func (a *DevicesAPIService) UpdateDeviceCellularSims(ctx context.Context, serial string) DevicesAPIUpdateDeviceCellularSimsRequest {
+	return DevicesAPIUpdateDeviceCellularSimsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -8999,7 +8999,7 @@ func (a *DevicesApiService) UpdateDeviceCellularSims(ctx context.Context, serial
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DevicesApiService) UpdateDeviceCellularSimsExecute(r DevicesApiUpdateDeviceCellularSimsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DevicesAPIService) UpdateDeviceCellularSimsExecute(r DevicesAPIUpdateDeviceCellularSimsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9007,7 +9007,7 @@ func (a *DevicesApiService) UpdateDeviceCellularSimsExecute(r DevicesApiUpdateDe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.UpdateDeviceCellularSims")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.UpdateDeviceCellularSims")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9089,19 +9089,19 @@ func (a *DevicesApiService) UpdateDeviceCellularSimsExecute(r DevicesApiUpdateDe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiUpdateDeviceManagementInterfaceRequest struct {
+type DevicesAPIUpdateDeviceManagementInterfaceRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	serial string
 	updateDeviceManagementInterfaceRequest *UpdateDeviceManagementInterfaceRequest
 }
 
-func (r DevicesApiUpdateDeviceManagementInterfaceRequest) UpdateDeviceManagementInterfaceRequest(updateDeviceManagementInterfaceRequest UpdateDeviceManagementInterfaceRequest) DevicesApiUpdateDeviceManagementInterfaceRequest {
+func (r DevicesAPIUpdateDeviceManagementInterfaceRequest) UpdateDeviceManagementInterfaceRequest(updateDeviceManagementInterfaceRequest UpdateDeviceManagementInterfaceRequest) DevicesAPIUpdateDeviceManagementInterfaceRequest {
 	r.updateDeviceManagementInterfaceRequest = &updateDeviceManagementInterfaceRequest
 	return r
 }
 
-func (r DevicesApiUpdateDeviceManagementInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r DevicesAPIUpdateDeviceManagementInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceManagementInterfaceExecute(r)
 }
 
@@ -9112,10 +9112,10 @@ Update the management interface settings for a device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return DevicesApiUpdateDeviceManagementInterfaceRequest
+ @return DevicesAPIUpdateDeviceManagementInterfaceRequest
 */
-func (a *DevicesApiService) UpdateDeviceManagementInterface(ctx context.Context, serial string) DevicesApiUpdateDeviceManagementInterfaceRequest {
-	return DevicesApiUpdateDeviceManagementInterfaceRequest{
+func (a *DevicesAPIService) UpdateDeviceManagementInterface(ctx context.Context, serial string) DevicesAPIUpdateDeviceManagementInterfaceRequest {
+	return DevicesAPIUpdateDeviceManagementInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -9124,7 +9124,7 @@ func (a *DevicesApiService) UpdateDeviceManagementInterface(ctx context.Context,
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DevicesApiService) UpdateDeviceManagementInterfaceExecute(r DevicesApiUpdateDeviceManagementInterfaceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DevicesAPIService) UpdateDeviceManagementInterfaceExecute(r DevicesAPIUpdateDeviceManagementInterfaceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9132,7 +9132,7 @@ func (a *DevicesApiService) UpdateDeviceManagementInterfaceExecute(r DevicesApiU
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.UpdateDeviceManagementInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.UpdateDeviceManagementInterface")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9214,19 +9214,19 @@ func (a *DevicesApiService) UpdateDeviceManagementInterfaceExecute(r DevicesApiU
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiUpdateNetworkSmDevicesFieldsRequest struct {
+type DevicesAPIUpdateNetworkSmDevicesFieldsRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	networkId string
 	updateNetworkSmDevicesFieldsRequest *UpdateNetworkSmDevicesFieldsRequest
 }
 
-func (r DevicesApiUpdateNetworkSmDevicesFieldsRequest) UpdateNetworkSmDevicesFieldsRequest(updateNetworkSmDevicesFieldsRequest UpdateNetworkSmDevicesFieldsRequest) DevicesApiUpdateNetworkSmDevicesFieldsRequest {
+func (r DevicesAPIUpdateNetworkSmDevicesFieldsRequest) UpdateNetworkSmDevicesFieldsRequest(updateNetworkSmDevicesFieldsRequest UpdateNetworkSmDevicesFieldsRequest) DevicesAPIUpdateNetworkSmDevicesFieldsRequest {
 	r.updateNetworkSmDevicesFieldsRequest = &updateNetworkSmDevicesFieldsRequest
 	return r
 }
 
-func (r DevicesApiUpdateNetworkSmDevicesFieldsRequest) Execute() ([]UpdateNetworkSmDevicesFields200ResponseInner, *http.Response, error) {
+func (r DevicesAPIUpdateNetworkSmDevicesFieldsRequest) Execute() ([]UpdateNetworkSmDevicesFields200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSmDevicesFieldsExecute(r)
 }
 
@@ -9237,10 +9237,10 @@ Modify the fields of a device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return DevicesApiUpdateNetworkSmDevicesFieldsRequest
+ @return DevicesAPIUpdateNetworkSmDevicesFieldsRequest
 */
-func (a *DevicesApiService) UpdateNetworkSmDevicesFields(ctx context.Context, networkId string) DevicesApiUpdateNetworkSmDevicesFieldsRequest {
-	return DevicesApiUpdateNetworkSmDevicesFieldsRequest{
+func (a *DevicesAPIService) UpdateNetworkSmDevicesFields(ctx context.Context, networkId string) DevicesAPIUpdateNetworkSmDevicesFieldsRequest {
+	return DevicesAPIUpdateNetworkSmDevicesFieldsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9249,7 +9249,7 @@ func (a *DevicesApiService) UpdateNetworkSmDevicesFields(ctx context.Context, ne
 
 // Execute executes the request
 //  @return []UpdateNetworkSmDevicesFields200ResponseInner
-func (a *DevicesApiService) UpdateNetworkSmDevicesFieldsExecute(r DevicesApiUpdateNetworkSmDevicesFieldsRequest) ([]UpdateNetworkSmDevicesFields200ResponseInner, *http.Response, error) {
+func (a *DevicesAPIService) UpdateNetworkSmDevicesFieldsExecute(r DevicesAPIUpdateNetworkSmDevicesFieldsRequest) ([]UpdateNetworkSmDevicesFields200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -9257,7 +9257,7 @@ func (a *DevicesApiService) UpdateNetworkSmDevicesFieldsExecute(r DevicesApiUpda
 		localVarReturnValue  []UpdateNetworkSmDevicesFields200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.UpdateNetworkSmDevicesFields")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.UpdateNetworkSmDevicesFields")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9342,19 +9342,19 @@ func (a *DevicesApiService) UpdateNetworkSmDevicesFieldsExecute(r DevicesApiUpda
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiVmxNetworkDevicesClaimRequest struct {
+type DevicesAPIVmxNetworkDevicesClaimRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	networkId string
 	vmxNetworkDevicesClaimRequest *VmxNetworkDevicesClaimRequest
 }
 
-func (r DevicesApiVmxNetworkDevicesClaimRequest) VmxNetworkDevicesClaimRequest(vmxNetworkDevicesClaimRequest VmxNetworkDevicesClaimRequest) DevicesApiVmxNetworkDevicesClaimRequest {
+func (r DevicesAPIVmxNetworkDevicesClaimRequest) VmxNetworkDevicesClaimRequest(vmxNetworkDevicesClaimRequest VmxNetworkDevicesClaimRequest) DevicesAPIVmxNetworkDevicesClaimRequest {
 	r.vmxNetworkDevicesClaimRequest = &vmxNetworkDevicesClaimRequest
 	return r
 }
 
-func (r DevicesApiVmxNetworkDevicesClaimRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r DevicesAPIVmxNetworkDevicesClaimRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.VmxNetworkDevicesClaimExecute(r)
 }
 
@@ -9365,10 +9365,10 @@ Claim a vMX into a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return DevicesApiVmxNetworkDevicesClaimRequest
+ @return DevicesAPIVmxNetworkDevicesClaimRequest
 */
-func (a *DevicesApiService) VmxNetworkDevicesClaim(ctx context.Context, networkId string) DevicesApiVmxNetworkDevicesClaimRequest {
-	return DevicesApiVmxNetworkDevicesClaimRequest{
+func (a *DevicesAPIService) VmxNetworkDevicesClaim(ctx context.Context, networkId string) DevicesAPIVmxNetworkDevicesClaimRequest {
+	return DevicesAPIVmxNetworkDevicesClaimRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9377,7 +9377,7 @@ func (a *DevicesApiService) VmxNetworkDevicesClaim(ctx context.Context, networkI
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DevicesApiService) VmxNetworkDevicesClaimExecute(r DevicesApiVmxNetworkDevicesClaimRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DevicesAPIService) VmxNetworkDevicesClaimExecute(r DevicesAPIVmxNetworkDevicesClaimRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -9385,7 +9385,7 @@ func (a *DevicesApiService) VmxNetworkDevicesClaimExecute(r DevicesApiVmxNetwork
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.VmxNetworkDevicesClaim")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.VmxNetworkDevicesClaim")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9470,19 +9470,19 @@ func (a *DevicesApiService) VmxNetworkDevicesClaimExecute(r DevicesApiVmxNetwork
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DevicesApiWipeNetworkSmDevicesRequest struct {
+type DevicesAPIWipeNetworkSmDevicesRequest struct {
 	ctx context.Context
-	ApiService *DevicesApiService
+	ApiService *DevicesAPIService
 	networkId string
 	wipeNetworkSmDevicesRequest *WipeNetworkSmDevicesRequest
 }
 
-func (r DevicesApiWipeNetworkSmDevicesRequest) WipeNetworkSmDevicesRequest(wipeNetworkSmDevicesRequest WipeNetworkSmDevicesRequest) DevicesApiWipeNetworkSmDevicesRequest {
+func (r DevicesAPIWipeNetworkSmDevicesRequest) WipeNetworkSmDevicesRequest(wipeNetworkSmDevicesRequest WipeNetworkSmDevicesRequest) DevicesAPIWipeNetworkSmDevicesRequest {
 	r.wipeNetworkSmDevicesRequest = &wipeNetworkSmDevicesRequest
 	return r
 }
 
-func (r DevicesApiWipeNetworkSmDevicesRequest) Execute() (*WipeNetworkSmDevices200Response, *http.Response, error) {
+func (r DevicesAPIWipeNetworkSmDevicesRequest) Execute() (*WipeNetworkSmDevices200Response, *http.Response, error) {
 	return r.ApiService.WipeNetworkSmDevicesExecute(r)
 }
 
@@ -9493,10 +9493,10 @@ Wipe a device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return DevicesApiWipeNetworkSmDevicesRequest
+ @return DevicesAPIWipeNetworkSmDevicesRequest
 */
-func (a *DevicesApiService) WipeNetworkSmDevices(ctx context.Context, networkId string) DevicesApiWipeNetworkSmDevicesRequest {
-	return DevicesApiWipeNetworkSmDevicesRequest{
+func (a *DevicesAPIService) WipeNetworkSmDevices(ctx context.Context, networkId string) DevicesAPIWipeNetworkSmDevicesRequest {
+	return DevicesAPIWipeNetworkSmDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -9505,7 +9505,7 @@ func (a *DevicesApiService) WipeNetworkSmDevices(ctx context.Context, networkId 
 
 // Execute executes the request
 //  @return WipeNetworkSmDevices200Response
-func (a *DevicesApiService) WipeNetworkSmDevicesExecute(r DevicesApiWipeNetworkSmDevicesRequest) (*WipeNetworkSmDevices200Response, *http.Response, error) {
+func (a *DevicesAPIService) WipeNetworkSmDevicesExecute(r DevicesAPIWipeNetworkSmDevicesRequest) (*WipeNetworkSmDevices200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -9513,7 +9513,7 @@ func (a *DevicesApiService) WipeNetworkSmDevicesExecute(r DevicesApiWipeNetworkS
 		localVarReturnValue  *WipeNetworkSmDevices200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesApiService.WipeNetworkSmDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.WipeNetworkSmDevices")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

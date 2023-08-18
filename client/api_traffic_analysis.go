@@ -20,16 +20,16 @@ import (
 )
 
 
-// TrafficAnalysisApiService TrafficAnalysisApi service
-type TrafficAnalysisApiService service
+// TrafficAnalysisAPIService TrafficAnalysisAPI service
+type TrafficAnalysisAPIService service
 
-type TrafficAnalysisApiGetNetworkTrafficAnalysisRequest struct {
+type TrafficAnalysisAPIGetNetworkTrafficAnalysisRequest struct {
 	ctx context.Context
-	ApiService *TrafficAnalysisApiService
+	ApiService *TrafficAnalysisAPIService
 	networkId string
 }
 
-func (r TrafficAnalysisApiGetNetworkTrafficAnalysisRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r TrafficAnalysisAPIGetNetworkTrafficAnalysisRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkTrafficAnalysisExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the traffic analysis settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return TrafficAnalysisApiGetNetworkTrafficAnalysisRequest
+ @return TrafficAnalysisAPIGetNetworkTrafficAnalysisRequest
 */
-func (a *TrafficAnalysisApiService) GetNetworkTrafficAnalysis(ctx context.Context, networkId string) TrafficAnalysisApiGetNetworkTrafficAnalysisRequest {
-	return TrafficAnalysisApiGetNetworkTrafficAnalysisRequest{
+func (a *TrafficAnalysisAPIService) GetNetworkTrafficAnalysis(ctx context.Context, networkId string) TrafficAnalysisAPIGetNetworkTrafficAnalysisRequest {
+	return TrafficAnalysisAPIGetNetworkTrafficAnalysisRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *TrafficAnalysisApiService) GetNetworkTrafficAnalysis(ctx context.Contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *TrafficAnalysisApiService) GetNetworkTrafficAnalysisExecute(r TrafficAnalysisApiGetNetworkTrafficAnalysisRequest) (map[string]interface{}, *http.Response, error) {
+func (a *TrafficAnalysisAPIService) GetNetworkTrafficAnalysisExecute(r TrafficAnalysisAPIGetNetworkTrafficAnalysisRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *TrafficAnalysisApiService) GetNetworkTrafficAnalysisExecute(r TrafficAn
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficAnalysisApiService.GetNetworkTrafficAnalysis")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficAnalysisAPIService.GetNetworkTrafficAnalysis")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *TrafficAnalysisApiService) GetNetworkTrafficAnalysisExecute(r TrafficAn
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type TrafficAnalysisApiUpdateNetworkTrafficAnalysisRequest struct {
+type TrafficAnalysisAPIUpdateNetworkTrafficAnalysisRequest struct {
 	ctx context.Context
-	ApiService *TrafficAnalysisApiService
+	ApiService *TrafficAnalysisAPIService
 	networkId string
 	updateNetworkTrafficAnalysisRequest *UpdateNetworkTrafficAnalysisRequest
 }
 
-func (r TrafficAnalysisApiUpdateNetworkTrafficAnalysisRequest) UpdateNetworkTrafficAnalysisRequest(updateNetworkTrafficAnalysisRequest UpdateNetworkTrafficAnalysisRequest) TrafficAnalysisApiUpdateNetworkTrafficAnalysisRequest {
+func (r TrafficAnalysisAPIUpdateNetworkTrafficAnalysisRequest) UpdateNetworkTrafficAnalysisRequest(updateNetworkTrafficAnalysisRequest UpdateNetworkTrafficAnalysisRequest) TrafficAnalysisAPIUpdateNetworkTrafficAnalysisRequest {
 	r.updateNetworkTrafficAnalysisRequest = &updateNetworkTrafficAnalysisRequest
 	return r
 }
 
-func (r TrafficAnalysisApiUpdateNetworkTrafficAnalysisRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r TrafficAnalysisAPIUpdateNetworkTrafficAnalysisRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkTrafficAnalysisExecute(r)
 }
 
@@ -163,10 +163,10 @@ Update the traffic analysis settings for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return TrafficAnalysisApiUpdateNetworkTrafficAnalysisRequest
+ @return TrafficAnalysisAPIUpdateNetworkTrafficAnalysisRequest
 */
-func (a *TrafficAnalysisApiService) UpdateNetworkTrafficAnalysis(ctx context.Context, networkId string) TrafficAnalysisApiUpdateNetworkTrafficAnalysisRequest {
-	return TrafficAnalysisApiUpdateNetworkTrafficAnalysisRequest{
+func (a *TrafficAnalysisAPIService) UpdateNetworkTrafficAnalysis(ctx context.Context, networkId string) TrafficAnalysisAPIUpdateNetworkTrafficAnalysisRequest {
+	return TrafficAnalysisAPIUpdateNetworkTrafficAnalysisRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -175,7 +175,7 @@ func (a *TrafficAnalysisApiService) UpdateNetworkTrafficAnalysis(ctx context.Con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *TrafficAnalysisApiService) UpdateNetworkTrafficAnalysisExecute(r TrafficAnalysisApiUpdateNetworkTrafficAnalysisRequest) (map[string]interface{}, *http.Response, error) {
+func (a *TrafficAnalysisAPIService) UpdateNetworkTrafficAnalysisExecute(r TrafficAnalysisAPIUpdateNetworkTrafficAnalysisRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *TrafficAnalysisApiService) UpdateNetworkTrafficAnalysisExecute(r Traffi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficAnalysisApiService.UpdateNetworkTrafficAnalysis")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficAnalysisAPIService.UpdateNetworkTrafficAnalysis")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

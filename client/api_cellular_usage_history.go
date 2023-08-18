@@ -20,17 +20,17 @@ import (
 )
 
 
-// CellularUsageHistoryApiService CellularUsageHistoryApi service
-type CellularUsageHistoryApiService service
+// CellularUsageHistoryAPIService CellularUsageHistoryAPI service
+type CellularUsageHistoryAPIService service
 
-type CellularUsageHistoryApiGetNetworkSmDeviceCellularUsageHistoryRequest struct {
+type CellularUsageHistoryAPIGetNetworkSmDeviceCellularUsageHistoryRequest struct {
 	ctx context.Context
-	ApiService *CellularUsageHistoryApiService
+	ApiService *CellularUsageHistoryAPIService
 	networkId string
 	deviceId string
 }
 
-func (r CellularUsageHistoryApiGetNetworkSmDeviceCellularUsageHistoryRequest) Execute() ([]GetNetworkSmDeviceCellularUsageHistory200ResponseInner, *http.Response, error) {
+func (r CellularUsageHistoryAPIGetNetworkSmDeviceCellularUsageHistoryRequest) Execute() ([]GetNetworkSmDeviceCellularUsageHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceCellularUsageHistoryExecute(r)
 }
 
@@ -42,10 +42,10 @@ Return the client's daily cellular data usage history. Usage data is in kilobyte
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return CellularUsageHistoryApiGetNetworkSmDeviceCellularUsageHistoryRequest
+ @return CellularUsageHistoryAPIGetNetworkSmDeviceCellularUsageHistoryRequest
 */
-func (a *CellularUsageHistoryApiService) GetNetworkSmDeviceCellularUsageHistory(ctx context.Context, networkId string, deviceId string) CellularUsageHistoryApiGetNetworkSmDeviceCellularUsageHistoryRequest {
-	return CellularUsageHistoryApiGetNetworkSmDeviceCellularUsageHistoryRequest{
+func (a *CellularUsageHistoryAPIService) GetNetworkSmDeviceCellularUsageHistory(ctx context.Context, networkId string, deviceId string) CellularUsageHistoryAPIGetNetworkSmDeviceCellularUsageHistoryRequest {
+	return CellularUsageHistoryAPIGetNetworkSmDeviceCellularUsageHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -55,7 +55,7 @@ func (a *CellularUsageHistoryApiService) GetNetworkSmDeviceCellularUsageHistory(
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceCellularUsageHistory200ResponseInner
-func (a *CellularUsageHistoryApiService) GetNetworkSmDeviceCellularUsageHistoryExecute(r CellularUsageHistoryApiGetNetworkSmDeviceCellularUsageHistoryRequest) ([]GetNetworkSmDeviceCellularUsageHistory200ResponseInner, *http.Response, error) {
+func (a *CellularUsageHistoryAPIService) GetNetworkSmDeviceCellularUsageHistoryExecute(r CellularUsageHistoryAPIGetNetworkSmDeviceCellularUsageHistoryRequest) ([]GetNetworkSmDeviceCellularUsageHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -63,7 +63,7 @@ func (a *CellularUsageHistoryApiService) GetNetworkSmDeviceCellularUsageHistoryE
 		localVarReturnValue  []GetNetworkSmDeviceCellularUsageHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularUsageHistoryApiService.GetNetworkSmDeviceCellularUsageHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CellularUsageHistoryAPIService.GetNetworkSmDeviceCellularUsageHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

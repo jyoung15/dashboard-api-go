@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing PingDeviceApiService
+Testing PingDeviceAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_PingDeviceApiService(t *testing.T) {
+func Test_client_PingDeviceAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test PingDeviceApiService CreateDeviceLiveToolsPingDevice", func(t *testing.T) {
+	t.Run("Test PingDeviceAPIService CreateDeviceLiveToolsPingDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.PingDeviceApi.CreateDeviceLiveToolsPingDevice(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.PingDeviceAPI.CreateDeviceLiveToolsPingDevice(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,14 +36,14 @@ func Test_client_PingDeviceApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test PingDeviceApiService GetDeviceLiveToolsPingDevice", func(t *testing.T) {
+	t.Run("Test PingDeviceAPIService GetDeviceLiveToolsPingDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var id string
 
-		resp, httpRes, err := apiClient.PingDeviceApi.GetDeviceLiveToolsPingDevice(context.Background(), serial, id).Execute()
+		resp, httpRes, err := apiClient.PingDeviceAPI.GetDeviceLiveToolsPingDevice(context.Background(), serial, id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -20,22 +20,22 @@ import (
 )
 
 
-// WirelessProfilesApiService WirelessProfilesApi service
-type WirelessProfilesApiService service
+// WirelessProfilesAPIService WirelessProfilesAPI service
+type WirelessProfilesAPIService service
 
-type WirelessProfilesApiCreateNetworkCameraWirelessProfileRequest struct {
+type WirelessProfilesAPICreateNetworkCameraWirelessProfileRequest struct {
 	ctx context.Context
-	ApiService *WirelessProfilesApiService
+	ApiService *WirelessProfilesAPIService
 	networkId string
 	createNetworkCameraWirelessProfileRequest *CreateNetworkCameraWirelessProfileRequest
 }
 
-func (r WirelessProfilesApiCreateNetworkCameraWirelessProfileRequest) CreateNetworkCameraWirelessProfileRequest(createNetworkCameraWirelessProfileRequest CreateNetworkCameraWirelessProfileRequest) WirelessProfilesApiCreateNetworkCameraWirelessProfileRequest {
+func (r WirelessProfilesAPICreateNetworkCameraWirelessProfileRequest) CreateNetworkCameraWirelessProfileRequest(createNetworkCameraWirelessProfileRequest CreateNetworkCameraWirelessProfileRequest) WirelessProfilesAPICreateNetworkCameraWirelessProfileRequest {
 	r.createNetworkCameraWirelessProfileRequest = &createNetworkCameraWirelessProfileRequest
 	return r
 }
 
-func (r WirelessProfilesApiCreateNetworkCameraWirelessProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessProfilesAPICreateNetworkCameraWirelessProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkCameraWirelessProfileExecute(r)
 }
 
@@ -46,10 +46,10 @@ Creates a new camera wireless profile for this network.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessProfilesApiCreateNetworkCameraWirelessProfileRequest
+ @return WirelessProfilesAPICreateNetworkCameraWirelessProfileRequest
 */
-func (a *WirelessProfilesApiService) CreateNetworkCameraWirelessProfile(ctx context.Context, networkId string) WirelessProfilesApiCreateNetworkCameraWirelessProfileRequest {
-	return WirelessProfilesApiCreateNetworkCameraWirelessProfileRequest{
+func (a *WirelessProfilesAPIService) CreateNetworkCameraWirelessProfile(ctx context.Context, networkId string) WirelessProfilesAPICreateNetworkCameraWirelessProfileRequest {
+	return WirelessProfilesAPICreateNetworkCameraWirelessProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -58,7 +58,7 @@ func (a *WirelessProfilesApiService) CreateNetworkCameraWirelessProfile(ctx cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessProfilesApiService) CreateNetworkCameraWirelessProfileExecute(r WirelessProfilesApiCreateNetworkCameraWirelessProfileRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessProfilesAPIService) CreateNetworkCameraWirelessProfileExecute(r WirelessProfilesAPICreateNetworkCameraWirelessProfileRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *WirelessProfilesApiService) CreateNetworkCameraWirelessProfileExecute(r
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessProfilesApiService.CreateNetworkCameraWirelessProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessProfilesAPIService.CreateNetworkCameraWirelessProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,14 +151,14 @@ func (a *WirelessProfilesApiService) CreateNetworkCameraWirelessProfileExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessProfilesApiDeleteNetworkCameraWirelessProfileRequest struct {
+type WirelessProfilesAPIDeleteNetworkCameraWirelessProfileRequest struct {
 	ctx context.Context
-	ApiService *WirelessProfilesApiService
+	ApiService *WirelessProfilesAPIService
 	networkId string
 	wirelessProfileId string
 }
 
-func (r WirelessProfilesApiDeleteNetworkCameraWirelessProfileRequest) Execute() (*http.Response, error) {
+func (r WirelessProfilesAPIDeleteNetworkCameraWirelessProfileRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkCameraWirelessProfileExecute(r)
 }
 
@@ -170,10 +170,10 @@ Delete an existing camera wireless profile for this network.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param wirelessProfileId Wireless profile ID
- @return WirelessProfilesApiDeleteNetworkCameraWirelessProfileRequest
+ @return WirelessProfilesAPIDeleteNetworkCameraWirelessProfileRequest
 */
-func (a *WirelessProfilesApiService) DeleteNetworkCameraWirelessProfile(ctx context.Context, networkId string, wirelessProfileId string) WirelessProfilesApiDeleteNetworkCameraWirelessProfileRequest {
-	return WirelessProfilesApiDeleteNetworkCameraWirelessProfileRequest{
+func (a *WirelessProfilesAPIService) DeleteNetworkCameraWirelessProfile(ctx context.Context, networkId string, wirelessProfileId string) WirelessProfilesAPIDeleteNetworkCameraWirelessProfileRequest {
+	return WirelessProfilesAPIDeleteNetworkCameraWirelessProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -182,14 +182,14 @@ func (a *WirelessProfilesApiService) DeleteNetworkCameraWirelessProfile(ctx cont
 }
 
 // Execute executes the request
-func (a *WirelessProfilesApiService) DeleteNetworkCameraWirelessProfileExecute(r WirelessProfilesApiDeleteNetworkCameraWirelessProfileRequest) (*http.Response, error) {
+func (a *WirelessProfilesAPIService) DeleteNetworkCameraWirelessProfileExecute(r WirelessProfilesAPIDeleteNetworkCameraWirelessProfileRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessProfilesApiService.DeleteNetworkCameraWirelessProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessProfilesAPIService.DeleteNetworkCameraWirelessProfile")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -261,13 +261,13 @@ func (a *WirelessProfilesApiService) DeleteNetworkCameraWirelessProfileExecute(r
 	return localVarHTTPResponse, nil
 }
 
-type WirelessProfilesApiGetDeviceCameraWirelessProfilesRequest struct {
+type WirelessProfilesAPIGetDeviceCameraWirelessProfilesRequest struct {
 	ctx context.Context
-	ApiService *WirelessProfilesApiService
+	ApiService *WirelessProfilesAPIService
 	serial string
 }
 
-func (r WirelessProfilesApiGetDeviceCameraWirelessProfilesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessProfilesAPIGetDeviceCameraWirelessProfilesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraWirelessProfilesExecute(r)
 }
 
@@ -278,10 +278,10 @@ Returns wireless profile assigned to the given camera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return WirelessProfilesApiGetDeviceCameraWirelessProfilesRequest
+ @return WirelessProfilesAPIGetDeviceCameraWirelessProfilesRequest
 */
-func (a *WirelessProfilesApiService) GetDeviceCameraWirelessProfiles(ctx context.Context, serial string) WirelessProfilesApiGetDeviceCameraWirelessProfilesRequest {
-	return WirelessProfilesApiGetDeviceCameraWirelessProfilesRequest{
+func (a *WirelessProfilesAPIService) GetDeviceCameraWirelessProfiles(ctx context.Context, serial string) WirelessProfilesAPIGetDeviceCameraWirelessProfilesRequest {
+	return WirelessProfilesAPIGetDeviceCameraWirelessProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -290,7 +290,7 @@ func (a *WirelessProfilesApiService) GetDeviceCameraWirelessProfiles(ctx context
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessProfilesApiService) GetDeviceCameraWirelessProfilesExecute(r WirelessProfilesApiGetDeviceCameraWirelessProfilesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessProfilesAPIService) GetDeviceCameraWirelessProfilesExecute(r WirelessProfilesAPIGetDeviceCameraWirelessProfilesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -298,7 +298,7 @@ func (a *WirelessProfilesApiService) GetDeviceCameraWirelessProfilesExecute(r Wi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessProfilesApiService.GetDeviceCameraWirelessProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessProfilesAPIService.GetDeviceCameraWirelessProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -378,14 +378,14 @@ func (a *WirelessProfilesApiService) GetDeviceCameraWirelessProfilesExecute(r Wi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessProfilesApiGetNetworkCameraWirelessProfileRequest struct {
+type WirelessProfilesAPIGetNetworkCameraWirelessProfileRequest struct {
 	ctx context.Context
-	ApiService *WirelessProfilesApiService
+	ApiService *WirelessProfilesAPIService
 	networkId string
 	wirelessProfileId string
 }
 
-func (r WirelessProfilesApiGetNetworkCameraWirelessProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessProfilesAPIGetNetworkCameraWirelessProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkCameraWirelessProfileExecute(r)
 }
 
@@ -397,10 +397,10 @@ Retrieve a single camera wireless profile.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param wirelessProfileId Wireless profile ID
- @return WirelessProfilesApiGetNetworkCameraWirelessProfileRequest
+ @return WirelessProfilesAPIGetNetworkCameraWirelessProfileRequest
 */
-func (a *WirelessProfilesApiService) GetNetworkCameraWirelessProfile(ctx context.Context, networkId string, wirelessProfileId string) WirelessProfilesApiGetNetworkCameraWirelessProfileRequest {
-	return WirelessProfilesApiGetNetworkCameraWirelessProfileRequest{
+func (a *WirelessProfilesAPIService) GetNetworkCameraWirelessProfile(ctx context.Context, networkId string, wirelessProfileId string) WirelessProfilesAPIGetNetworkCameraWirelessProfileRequest {
+	return WirelessProfilesAPIGetNetworkCameraWirelessProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -410,7 +410,7 @@ func (a *WirelessProfilesApiService) GetNetworkCameraWirelessProfile(ctx context
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessProfilesApiService) GetNetworkCameraWirelessProfileExecute(r WirelessProfilesApiGetNetworkCameraWirelessProfileRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessProfilesAPIService) GetNetworkCameraWirelessProfileExecute(r WirelessProfilesAPIGetNetworkCameraWirelessProfileRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -418,7 +418,7 @@ func (a *WirelessProfilesApiService) GetNetworkCameraWirelessProfileExecute(r Wi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessProfilesApiService.GetNetworkCameraWirelessProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessProfilesAPIService.GetNetworkCameraWirelessProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -499,13 +499,13 @@ func (a *WirelessProfilesApiService) GetNetworkCameraWirelessProfileExecute(r Wi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessProfilesApiGetNetworkCameraWirelessProfilesRequest struct {
+type WirelessProfilesAPIGetNetworkCameraWirelessProfilesRequest struct {
 	ctx context.Context
-	ApiService *WirelessProfilesApiService
+	ApiService *WirelessProfilesAPIService
 	networkId string
 }
 
-func (r WirelessProfilesApiGetNetworkCameraWirelessProfilesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r WirelessProfilesAPIGetNetworkCameraWirelessProfilesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkCameraWirelessProfilesExecute(r)
 }
 
@@ -516,10 +516,10 @@ List the camera wireless profiles for this network.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return WirelessProfilesApiGetNetworkCameraWirelessProfilesRequest
+ @return WirelessProfilesAPIGetNetworkCameraWirelessProfilesRequest
 */
-func (a *WirelessProfilesApiService) GetNetworkCameraWirelessProfiles(ctx context.Context, networkId string) WirelessProfilesApiGetNetworkCameraWirelessProfilesRequest {
-	return WirelessProfilesApiGetNetworkCameraWirelessProfilesRequest{
+func (a *WirelessProfilesAPIService) GetNetworkCameraWirelessProfiles(ctx context.Context, networkId string) WirelessProfilesAPIGetNetworkCameraWirelessProfilesRequest {
+	return WirelessProfilesAPIGetNetworkCameraWirelessProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -528,7 +528,7 @@ func (a *WirelessProfilesApiService) GetNetworkCameraWirelessProfiles(ctx contex
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *WirelessProfilesApiService) GetNetworkCameraWirelessProfilesExecute(r WirelessProfilesApiGetNetworkCameraWirelessProfilesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *WirelessProfilesAPIService) GetNetworkCameraWirelessProfilesExecute(r WirelessProfilesAPIGetNetworkCameraWirelessProfilesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -536,7 +536,7 @@ func (a *WirelessProfilesApiService) GetNetworkCameraWirelessProfilesExecute(r W
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessProfilesApiService.GetNetworkCameraWirelessProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessProfilesAPIService.GetNetworkCameraWirelessProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -616,19 +616,19 @@ func (a *WirelessProfilesApiService) GetNetworkCameraWirelessProfilesExecute(r W
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessProfilesApiUpdateDeviceCameraWirelessProfilesRequest struct {
+type WirelessProfilesAPIUpdateDeviceCameraWirelessProfilesRequest struct {
 	ctx context.Context
-	ApiService *WirelessProfilesApiService
+	ApiService *WirelessProfilesAPIService
 	serial string
 	updateDeviceCameraWirelessProfilesRequest *UpdateDeviceCameraWirelessProfilesRequest
 }
 
-func (r WirelessProfilesApiUpdateDeviceCameraWirelessProfilesRequest) UpdateDeviceCameraWirelessProfilesRequest(updateDeviceCameraWirelessProfilesRequest UpdateDeviceCameraWirelessProfilesRequest) WirelessProfilesApiUpdateDeviceCameraWirelessProfilesRequest {
+func (r WirelessProfilesAPIUpdateDeviceCameraWirelessProfilesRequest) UpdateDeviceCameraWirelessProfilesRequest(updateDeviceCameraWirelessProfilesRequest UpdateDeviceCameraWirelessProfilesRequest) WirelessProfilesAPIUpdateDeviceCameraWirelessProfilesRequest {
 	r.updateDeviceCameraWirelessProfilesRequest = &updateDeviceCameraWirelessProfilesRequest
 	return r
 }
 
-func (r WirelessProfilesApiUpdateDeviceCameraWirelessProfilesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessProfilesAPIUpdateDeviceCameraWirelessProfilesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceCameraWirelessProfilesExecute(r)
 }
 
@@ -639,10 +639,10 @@ Assign wireless profiles to the given camera. Incremental updates are not suppor
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return WirelessProfilesApiUpdateDeviceCameraWirelessProfilesRequest
+ @return WirelessProfilesAPIUpdateDeviceCameraWirelessProfilesRequest
 */
-func (a *WirelessProfilesApiService) UpdateDeviceCameraWirelessProfiles(ctx context.Context, serial string) WirelessProfilesApiUpdateDeviceCameraWirelessProfilesRequest {
-	return WirelessProfilesApiUpdateDeviceCameraWirelessProfilesRequest{
+func (a *WirelessProfilesAPIService) UpdateDeviceCameraWirelessProfiles(ctx context.Context, serial string) WirelessProfilesAPIUpdateDeviceCameraWirelessProfilesRequest {
+	return WirelessProfilesAPIUpdateDeviceCameraWirelessProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -651,7 +651,7 @@ func (a *WirelessProfilesApiService) UpdateDeviceCameraWirelessProfiles(ctx cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessProfilesApiService) UpdateDeviceCameraWirelessProfilesExecute(r WirelessProfilesApiUpdateDeviceCameraWirelessProfilesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessProfilesAPIService) UpdateDeviceCameraWirelessProfilesExecute(r WirelessProfilesAPIUpdateDeviceCameraWirelessProfilesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -659,7 +659,7 @@ func (a *WirelessProfilesApiService) UpdateDeviceCameraWirelessProfilesExecute(r
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessProfilesApiService.UpdateDeviceCameraWirelessProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessProfilesAPIService.UpdateDeviceCameraWirelessProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -744,20 +744,20 @@ func (a *WirelessProfilesApiService) UpdateDeviceCameraWirelessProfilesExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WirelessProfilesApiUpdateNetworkCameraWirelessProfileRequest struct {
+type WirelessProfilesAPIUpdateNetworkCameraWirelessProfileRequest struct {
 	ctx context.Context
-	ApiService *WirelessProfilesApiService
+	ApiService *WirelessProfilesAPIService
 	networkId string
 	wirelessProfileId string
 	updateNetworkCameraWirelessProfileRequest *UpdateNetworkCameraWirelessProfileRequest
 }
 
-func (r WirelessProfilesApiUpdateNetworkCameraWirelessProfileRequest) UpdateNetworkCameraWirelessProfileRequest(updateNetworkCameraWirelessProfileRequest UpdateNetworkCameraWirelessProfileRequest) WirelessProfilesApiUpdateNetworkCameraWirelessProfileRequest {
+func (r WirelessProfilesAPIUpdateNetworkCameraWirelessProfileRequest) UpdateNetworkCameraWirelessProfileRequest(updateNetworkCameraWirelessProfileRequest UpdateNetworkCameraWirelessProfileRequest) WirelessProfilesAPIUpdateNetworkCameraWirelessProfileRequest {
 	r.updateNetworkCameraWirelessProfileRequest = &updateNetworkCameraWirelessProfileRequest
 	return r
 }
 
-func (r WirelessProfilesApiUpdateNetworkCameraWirelessProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r WirelessProfilesAPIUpdateNetworkCameraWirelessProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkCameraWirelessProfileExecute(r)
 }
 
@@ -769,10 +769,10 @@ Update an existing camera wireless profile in this network.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param wirelessProfileId Wireless profile ID
- @return WirelessProfilesApiUpdateNetworkCameraWirelessProfileRequest
+ @return WirelessProfilesAPIUpdateNetworkCameraWirelessProfileRequest
 */
-func (a *WirelessProfilesApiService) UpdateNetworkCameraWirelessProfile(ctx context.Context, networkId string, wirelessProfileId string) WirelessProfilesApiUpdateNetworkCameraWirelessProfileRequest {
-	return WirelessProfilesApiUpdateNetworkCameraWirelessProfileRequest{
+func (a *WirelessProfilesAPIService) UpdateNetworkCameraWirelessProfile(ctx context.Context, networkId string, wirelessProfileId string) WirelessProfilesAPIUpdateNetworkCameraWirelessProfileRequest {
+	return WirelessProfilesAPIUpdateNetworkCameraWirelessProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -782,7 +782,7 @@ func (a *WirelessProfilesApiService) UpdateNetworkCameraWirelessProfile(ctx cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *WirelessProfilesApiService) UpdateNetworkCameraWirelessProfileExecute(r WirelessProfilesApiUpdateNetworkCameraWirelessProfileRequest) (map[string]interface{}, *http.Response, error) {
+func (a *WirelessProfilesAPIService) UpdateNetworkCameraWirelessProfileExecute(r WirelessProfilesAPIUpdateNetworkCameraWirelessProfileRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -790,7 +790,7 @@ func (a *WirelessProfilesApiService) UpdateNetworkCameraWirelessProfileExecute(r
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessProfilesApiService.UpdateNetworkCameraWirelessProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessProfilesAPIService.UpdateNetworkCameraWirelessProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

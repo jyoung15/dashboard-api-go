@@ -14,36 +14,36 @@ import (
 	"encoding/json"
 )
 
-// checks if the GetNetworkClients200ResponseUsage type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GetNetworkClients200ResponseUsage{}
+// checks if the GetNetworkClients200ResponseInnerUsage type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GetNetworkClients200ResponseInnerUsage{}
 
-// GetNetworkClients200ResponseUsage Usage, sent and received
-type GetNetworkClients200ResponseUsage struct {
+// GetNetworkClients200ResponseInnerUsage Usage, sent and received
+type GetNetworkClients200ResponseInnerUsage struct {
 	// Usage sent by the client
 	Sent *float32 `json:"sent,omitempty"`
 	// Usage received by the client
 	Recv *float32 `json:"recv,omitempty"`
 }
 
-// NewGetNetworkClients200ResponseUsage instantiates a new GetNetworkClients200ResponseUsage object
+// NewGetNetworkClients200ResponseInnerUsage instantiates a new GetNetworkClients200ResponseInnerUsage object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGetNetworkClients200ResponseUsage() *GetNetworkClients200ResponseUsage {
-	this := GetNetworkClients200ResponseUsage{}
+func NewGetNetworkClients200ResponseInnerUsage() *GetNetworkClients200ResponseInnerUsage {
+	this := GetNetworkClients200ResponseInnerUsage{}
 	return &this
 }
 
-// NewGetNetworkClients200ResponseUsageWithDefaults instantiates a new GetNetworkClients200ResponseUsage object
+// NewGetNetworkClients200ResponseInnerUsageWithDefaults instantiates a new GetNetworkClients200ResponseInnerUsage object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewGetNetworkClients200ResponseUsageWithDefaults() *GetNetworkClients200ResponseUsage {
-	this := GetNetworkClients200ResponseUsage{}
+func NewGetNetworkClients200ResponseInnerUsageWithDefaults() *GetNetworkClients200ResponseInnerUsage {
+	this := GetNetworkClients200ResponseInnerUsage{}
 	return &this
 }
 
 // GetSent returns the Sent field value if set, zero value otherwise.
-func (o *GetNetworkClients200ResponseUsage) GetSent() float32 {
+func (o *GetNetworkClients200ResponseInnerUsage) GetSent() float32 {
 	if o == nil || IsNil(o.Sent) {
 		var ret float32
 		return ret
@@ -53,7 +53,7 @@ func (o *GetNetworkClients200ResponseUsage) GetSent() float32 {
 
 // GetSentOk returns a tuple with the Sent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkClients200ResponseUsage) GetSentOk() (*float32, bool) {
+func (o *GetNetworkClients200ResponseInnerUsage) GetSentOk() (*float32, bool) {
 	if o == nil || IsNil(o.Sent) {
 		return nil, false
 	}
@@ -61,7 +61,7 @@ func (o *GetNetworkClients200ResponseUsage) GetSentOk() (*float32, bool) {
 }
 
 // HasSent returns a boolean if a field has been set.
-func (o *GetNetworkClients200ResponseUsage) HasSent() bool {
+func (o *GetNetworkClients200ResponseInnerUsage) HasSent() bool {
 	if o != nil && !IsNil(o.Sent) {
 		return true
 	}
@@ -70,12 +70,12 @@ func (o *GetNetworkClients200ResponseUsage) HasSent() bool {
 }
 
 // SetSent gets a reference to the given float32 and assigns it to the Sent field.
-func (o *GetNetworkClients200ResponseUsage) SetSent(v float32) {
+func (o *GetNetworkClients200ResponseInnerUsage) SetSent(v float32) {
 	o.Sent = &v
 }
 
 // GetRecv returns the Recv field value if set, zero value otherwise.
-func (o *GetNetworkClients200ResponseUsage) GetRecv() float32 {
+func (o *GetNetworkClients200ResponseInnerUsage) GetRecv() float32 {
 	if o == nil || IsNil(o.Recv) {
 		var ret float32
 		return ret
@@ -85,7 +85,7 @@ func (o *GetNetworkClients200ResponseUsage) GetRecv() float32 {
 
 // GetRecvOk returns a tuple with the Recv field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkClients200ResponseUsage) GetRecvOk() (*float32, bool) {
+func (o *GetNetworkClients200ResponseInnerUsage) GetRecvOk() (*float32, bool) {
 	if o == nil || IsNil(o.Recv) {
 		return nil, false
 	}
@@ -93,7 +93,7 @@ func (o *GetNetworkClients200ResponseUsage) GetRecvOk() (*float32, bool) {
 }
 
 // HasRecv returns a boolean if a field has been set.
-func (o *GetNetworkClients200ResponseUsage) HasRecv() bool {
+func (o *GetNetworkClients200ResponseInnerUsage) HasRecv() bool {
 	if o != nil && !IsNil(o.Recv) {
 		return true
 	}
@@ -102,11 +102,11 @@ func (o *GetNetworkClients200ResponseUsage) HasRecv() bool {
 }
 
 // SetRecv gets a reference to the given float32 and assigns it to the Recv field.
-func (o *GetNetworkClients200ResponseUsage) SetRecv(v float32) {
+func (o *GetNetworkClients200ResponseInnerUsage) SetRecv(v float32) {
 	o.Recv = &v
 }
 
-func (o GetNetworkClients200ResponseUsage) MarshalJSON() ([]byte, error) {
+func (o GetNetworkClients200ResponseInnerUsage) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -114,7 +114,7 @@ func (o GetNetworkClients200ResponseUsage) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o GetNetworkClients200ResponseUsage) ToMap() (map[string]interface{}, error) {
+func (o GetNetworkClients200ResponseInnerUsage) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Sent) {
 		toSerialize["sent"] = o.Sent
@@ -125,38 +125,38 @@ func (o GetNetworkClients200ResponseUsage) ToMap() (map[string]interface{}, erro
 	return toSerialize, nil
 }
 
-type NullableGetNetworkClients200ResponseUsage struct {
-	value *GetNetworkClients200ResponseUsage
+type NullableGetNetworkClients200ResponseInnerUsage struct {
+	value *GetNetworkClients200ResponseInnerUsage
 	isSet bool
 }
 
-func (v NullableGetNetworkClients200ResponseUsage) Get() *GetNetworkClients200ResponseUsage {
+func (v NullableGetNetworkClients200ResponseInnerUsage) Get() *GetNetworkClients200ResponseInnerUsage {
 	return v.value
 }
 
-func (v *NullableGetNetworkClients200ResponseUsage) Set(val *GetNetworkClients200ResponseUsage) {
+func (v *NullableGetNetworkClients200ResponseInnerUsage) Set(val *GetNetworkClients200ResponseInnerUsage) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableGetNetworkClients200ResponseUsage) IsSet() bool {
+func (v NullableGetNetworkClients200ResponseInnerUsage) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableGetNetworkClients200ResponseUsage) Unset() {
+func (v *NullableGetNetworkClients200ResponseInnerUsage) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableGetNetworkClients200ResponseUsage(val *GetNetworkClients200ResponseUsage) *NullableGetNetworkClients200ResponseUsage {
-	return &NullableGetNetworkClients200ResponseUsage{value: val, isSet: true}
+func NewNullableGetNetworkClients200ResponseInnerUsage(val *GetNetworkClients200ResponseInnerUsage) *NullableGetNetworkClients200ResponseInnerUsage {
+	return &NullableGetNetworkClients200ResponseInnerUsage{value: val, isSet: true}
 }
 
-func (v NullableGetNetworkClients200ResponseUsage) MarshalJSON() ([]byte, error) {
+func (v NullableGetNetworkClients200ResponseInnerUsage) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableGetNetworkClients200ResponseUsage) UnmarshalJSON(src []byte) error {
+func (v *NullableGetNetworkClients200ResponseInnerUsage) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

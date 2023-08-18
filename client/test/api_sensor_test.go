@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing SensorApiService
+Testing SensorAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_SensorApiService(t *testing.T) {
+func Test_client_SensorAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test SensorApiService CreateNetworkSensorAlertsProfile", func(t *testing.T) {
+	t.Run("Test SensorAPIService CreateNetworkSensorAlertsProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SensorApi.CreateNetworkSensorAlertsProfile(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SensorAPI.CreateNetworkSensorAlertsProfile(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,27 +36,27 @@ func Test_client_SensorApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SensorApiService DeleteNetworkSensorAlertsProfile", func(t *testing.T) {
+	t.Run("Test SensorAPIService DeleteNetworkSensorAlertsProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var id string
 
-		httpRes, err := apiClient.SensorApi.DeleteNetworkSensorAlertsProfile(context.Background(), networkId, id).Execute()
+		httpRes, err := apiClient.SensorAPI.DeleteNetworkSensorAlertsProfile(context.Background(), networkId, id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SensorApiService GetDeviceSensorRelationships", func(t *testing.T) {
+	t.Run("Test SensorAPIService GetDeviceSensorRelationships", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.SensorApi.GetDeviceSensorRelationships(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.SensorAPI.GetDeviceSensorRelationships(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,13 +64,13 @@ func Test_client_SensorApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SensorApiService GetNetworkSensorAlertsCurrentOverviewByMetric", func(t *testing.T) {
+	t.Run("Test SensorAPIService GetNetworkSensorAlertsCurrentOverviewByMetric", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SensorApi.GetNetworkSensorAlertsCurrentOverviewByMetric(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SensorAPI.GetNetworkSensorAlertsCurrentOverviewByMetric(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -78,13 +78,13 @@ func Test_client_SensorApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SensorApiService GetNetworkSensorAlertsOverviewByMetric", func(t *testing.T) {
+	t.Run("Test SensorAPIService GetNetworkSensorAlertsOverviewByMetric", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SensorApi.GetNetworkSensorAlertsOverviewByMetric(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SensorAPI.GetNetworkSensorAlertsOverviewByMetric(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -92,14 +92,14 @@ func Test_client_SensorApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SensorApiService GetNetworkSensorAlertsProfile", func(t *testing.T) {
+	t.Run("Test SensorAPIService GetNetworkSensorAlertsProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var id string
 
-		resp, httpRes, err := apiClient.SensorApi.GetNetworkSensorAlertsProfile(context.Background(), networkId, id).Execute()
+		resp, httpRes, err := apiClient.SensorAPI.GetNetworkSensorAlertsProfile(context.Background(), networkId, id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -107,13 +107,13 @@ func Test_client_SensorApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SensorApiService GetNetworkSensorAlertsProfiles", func(t *testing.T) {
+	t.Run("Test SensorAPIService GetNetworkSensorAlertsProfiles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SensorApi.GetNetworkSensorAlertsProfiles(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SensorAPI.GetNetworkSensorAlertsProfiles(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -121,14 +121,14 @@ func Test_client_SensorApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SensorApiService GetNetworkSensorMqttBroker", func(t *testing.T) {
+	t.Run("Test SensorAPIService GetNetworkSensorMqttBroker", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var mqttBrokerId string
 
-		resp, httpRes, err := apiClient.SensorApi.GetNetworkSensorMqttBroker(context.Background(), networkId, mqttBrokerId).Execute()
+		resp, httpRes, err := apiClient.SensorAPI.GetNetworkSensorMqttBroker(context.Background(), networkId, mqttBrokerId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -136,13 +136,13 @@ func Test_client_SensorApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SensorApiService GetNetworkSensorMqttBrokers", func(t *testing.T) {
+	t.Run("Test SensorAPIService GetNetworkSensorMqttBrokers", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SensorApi.GetNetworkSensorMqttBrokers(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SensorAPI.GetNetworkSensorMqttBrokers(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -150,13 +150,13 @@ func Test_client_SensorApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SensorApiService GetNetworkSensorRelationships", func(t *testing.T) {
+	t.Run("Test SensorAPIService GetNetworkSensorRelationships", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SensorApi.GetNetworkSensorRelationships(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SensorAPI.GetNetworkSensorRelationships(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -164,13 +164,13 @@ func Test_client_SensorApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SensorApiService GetOrganizationSensorReadingsHistory", func(t *testing.T) {
+	t.Run("Test SensorAPIService GetOrganizationSensorReadingsHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.SensorApi.GetOrganizationSensorReadingsHistory(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.SensorAPI.GetOrganizationSensorReadingsHistory(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -178,13 +178,13 @@ func Test_client_SensorApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SensorApiService GetOrganizationSensorReadingsLatest", func(t *testing.T) {
+	t.Run("Test SensorAPIService GetOrganizationSensorReadingsLatest", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.SensorApi.GetOrganizationSensorReadingsLatest(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.SensorAPI.GetOrganizationSensorReadingsLatest(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -192,13 +192,13 @@ func Test_client_SensorApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SensorApiService UpdateDeviceSensorRelationships", func(t *testing.T) {
+	t.Run("Test SensorAPIService UpdateDeviceSensorRelationships", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.SensorApi.UpdateDeviceSensorRelationships(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.SensorAPI.UpdateDeviceSensorRelationships(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -206,14 +206,14 @@ func Test_client_SensorApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SensorApiService UpdateNetworkSensorAlertsProfile", func(t *testing.T) {
+	t.Run("Test SensorAPIService UpdateNetworkSensorAlertsProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var id string
 
-		resp, httpRes, err := apiClient.SensorApi.UpdateNetworkSensorAlertsProfile(context.Background(), networkId, id).Execute()
+		resp, httpRes, err := apiClient.SensorAPI.UpdateNetworkSensorAlertsProfile(context.Background(), networkId, id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -221,14 +221,14 @@ func Test_client_SensorApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SensorApiService UpdateNetworkSensorMqttBroker", func(t *testing.T) {
+	t.Run("Test SensorAPIService UpdateNetworkSensorMqttBroker", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var mqttBrokerId string
 
-		resp, httpRes, err := apiClient.SensorApi.UpdateNetworkSensorMqttBroker(context.Background(), networkId, mqttBrokerId).Execute()
+		resp, httpRes, err := apiClient.SensorAPI.UpdateNetworkSensorMqttBroker(context.Background(), networkId, mqttBrokerId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

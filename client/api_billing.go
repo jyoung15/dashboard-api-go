@@ -20,16 +20,16 @@ import (
 )
 
 
-// BillingApiService BillingApi service
-type BillingApiService service
+// BillingAPIService BillingAPI service
+type BillingAPIService service
 
-type BillingApiGetNetworkWirelessBillingRequest struct {
+type BillingAPIGetNetworkWirelessBillingRequest struct {
 	ctx context.Context
-	ApiService *BillingApiService
+	ApiService *BillingAPIService
 	networkId string
 }
 
-func (r BillingApiGetNetworkWirelessBillingRequest) Execute() (*GetNetworkWirelessBilling200Response, *http.Response, error) {
+func (r BillingAPIGetNetworkWirelessBillingRequest) Execute() (*GetNetworkWirelessBilling200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessBillingExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the billing settings of this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return BillingApiGetNetworkWirelessBillingRequest
+ @return BillingAPIGetNetworkWirelessBillingRequest
 */
-func (a *BillingApiService) GetNetworkWirelessBilling(ctx context.Context, networkId string) BillingApiGetNetworkWirelessBillingRequest {
-	return BillingApiGetNetworkWirelessBillingRequest{
+func (a *BillingAPIService) GetNetworkWirelessBilling(ctx context.Context, networkId string) BillingAPIGetNetworkWirelessBillingRequest {
+	return BillingAPIGetNetworkWirelessBillingRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *BillingApiService) GetNetworkWirelessBilling(ctx context.Context, netwo
 
 // Execute executes the request
 //  @return GetNetworkWirelessBilling200Response
-func (a *BillingApiService) GetNetworkWirelessBillingExecute(r BillingApiGetNetworkWirelessBillingRequest) (*GetNetworkWirelessBilling200Response, *http.Response, error) {
+func (a *BillingAPIService) GetNetworkWirelessBillingExecute(r BillingAPIGetNetworkWirelessBillingRequest) (*GetNetworkWirelessBilling200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *BillingApiService) GetNetworkWirelessBillingExecute(r BillingApiGetNetw
 		localVarReturnValue  *GetNetworkWirelessBilling200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingApiService.GetNetworkWirelessBilling")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingAPIService.GetNetworkWirelessBilling")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *BillingApiService) GetNetworkWirelessBillingExecute(r BillingApiGetNetw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BillingApiUpdateNetworkWirelessBillingRequest struct {
+type BillingAPIUpdateNetworkWirelessBillingRequest struct {
 	ctx context.Context
-	ApiService *BillingApiService
+	ApiService *BillingAPIService
 	networkId string
 	updateNetworkWirelessBillingRequest *UpdateNetworkWirelessBillingRequest
 }
 
-func (r BillingApiUpdateNetworkWirelessBillingRequest) UpdateNetworkWirelessBillingRequest(updateNetworkWirelessBillingRequest UpdateNetworkWirelessBillingRequest) BillingApiUpdateNetworkWirelessBillingRequest {
+func (r BillingAPIUpdateNetworkWirelessBillingRequest) UpdateNetworkWirelessBillingRequest(updateNetworkWirelessBillingRequest UpdateNetworkWirelessBillingRequest) BillingAPIUpdateNetworkWirelessBillingRequest {
 	r.updateNetworkWirelessBillingRequest = &updateNetworkWirelessBillingRequest
 	return r
 }
 
-func (r BillingApiUpdateNetworkWirelessBillingRequest) Execute() (*GetNetworkWirelessBilling200Response, *http.Response, error) {
+func (r BillingAPIUpdateNetworkWirelessBillingRequest) Execute() (*GetNetworkWirelessBilling200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessBillingExecute(r)
 }
 
@@ -163,10 +163,10 @@ Update the billing settings
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return BillingApiUpdateNetworkWirelessBillingRequest
+ @return BillingAPIUpdateNetworkWirelessBillingRequest
 */
-func (a *BillingApiService) UpdateNetworkWirelessBilling(ctx context.Context, networkId string) BillingApiUpdateNetworkWirelessBillingRequest {
-	return BillingApiUpdateNetworkWirelessBillingRequest{
+func (a *BillingAPIService) UpdateNetworkWirelessBilling(ctx context.Context, networkId string) BillingAPIUpdateNetworkWirelessBillingRequest {
+	return BillingAPIUpdateNetworkWirelessBillingRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -175,7 +175,7 @@ func (a *BillingApiService) UpdateNetworkWirelessBilling(ctx context.Context, ne
 
 // Execute executes the request
 //  @return GetNetworkWirelessBilling200Response
-func (a *BillingApiService) UpdateNetworkWirelessBillingExecute(r BillingApiUpdateNetworkWirelessBillingRequest) (*GetNetworkWirelessBilling200Response, *http.Response, error) {
+func (a *BillingAPIService) UpdateNetworkWirelessBillingExecute(r BillingAPIUpdateNetworkWirelessBillingRequest) (*GetNetworkWirelessBilling200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *BillingApiService) UpdateNetworkWirelessBillingExecute(r BillingApiUpda
 		localVarReturnValue  *GetNetworkWirelessBilling200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingApiService.UpdateNetworkWirelessBilling")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingAPIService.UpdateNetworkWirelessBilling")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

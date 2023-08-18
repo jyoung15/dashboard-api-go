@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing TrafficHistoryApiService
+Testing TrafficHistoryAPIService
 
 */
 
@@ -17,19 +17,19 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_TrafficHistoryApiService(t *testing.T) {
+func Test_client_TrafficHistoryAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test TrafficHistoryApiService GetNetworkClientTrafficHistory", func(t *testing.T) {
+	t.Run("Test TrafficHistoryAPIService GetNetworkClientTrafficHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var clientId string
 
-		resp, httpRes, err := apiClient.TrafficHistoryApi.GetNetworkClientTrafficHistory(context.Background(), networkId, clientId).Execute()
+		resp, httpRes, err := apiClient.TrafficHistoryAPI.GetNetworkClientTrafficHistory(context.Background(), networkId, clientId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

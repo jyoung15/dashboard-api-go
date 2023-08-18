@@ -20,22 +20,22 @@ import (
 )
 
 
-// GroupsApiService GroupsApi service
-type GroupsApiService service
+// GroupsAPIService GroupsAPI service
+type GroupsAPIService service
 
-type GroupsApiCreateNetworkFirmwareUpgradesStagedGroupRequest struct {
+type GroupsAPICreateNetworkFirmwareUpgradesStagedGroupRequest struct {
 	ctx context.Context
-	ApiService *GroupsApiService
+	ApiService *GroupsAPIService
 	networkId string
 	createNetworkFirmwareUpgradesStagedGroupRequest *CreateNetworkFirmwareUpgradesStagedGroupRequest
 }
 
-func (r GroupsApiCreateNetworkFirmwareUpgradesStagedGroupRequest) CreateNetworkFirmwareUpgradesStagedGroupRequest(createNetworkFirmwareUpgradesStagedGroupRequest CreateNetworkFirmwareUpgradesStagedGroupRequest) GroupsApiCreateNetworkFirmwareUpgradesStagedGroupRequest {
+func (r GroupsAPICreateNetworkFirmwareUpgradesStagedGroupRequest) CreateNetworkFirmwareUpgradesStagedGroupRequest(createNetworkFirmwareUpgradesStagedGroupRequest CreateNetworkFirmwareUpgradesStagedGroupRequest) GroupsAPICreateNetworkFirmwareUpgradesStagedGroupRequest {
 	r.createNetworkFirmwareUpgradesStagedGroupRequest = &createNetworkFirmwareUpgradesStagedGroupRequest
 	return r
 }
 
-func (r GroupsApiCreateNetworkFirmwareUpgradesStagedGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r GroupsAPICreateNetworkFirmwareUpgradesStagedGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkFirmwareUpgradesStagedGroupExecute(r)
 }
 
@@ -46,10 +46,10 @@ Create a Staged Upgrade Group for a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return GroupsApiCreateNetworkFirmwareUpgradesStagedGroupRequest
+ @return GroupsAPICreateNetworkFirmwareUpgradesStagedGroupRequest
 */
-func (a *GroupsApiService) CreateNetworkFirmwareUpgradesStagedGroup(ctx context.Context, networkId string) GroupsApiCreateNetworkFirmwareUpgradesStagedGroupRequest {
-	return GroupsApiCreateNetworkFirmwareUpgradesStagedGroupRequest{
+func (a *GroupsAPIService) CreateNetworkFirmwareUpgradesStagedGroup(ctx context.Context, networkId string) GroupsAPICreateNetworkFirmwareUpgradesStagedGroupRequest {
+	return GroupsAPICreateNetworkFirmwareUpgradesStagedGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -58,7 +58,7 @@ func (a *GroupsApiService) CreateNetworkFirmwareUpgradesStagedGroup(ctx context.
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *GroupsApiService) CreateNetworkFirmwareUpgradesStagedGroupExecute(r GroupsApiCreateNetworkFirmwareUpgradesStagedGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *GroupsAPIService) CreateNetworkFirmwareUpgradesStagedGroupExecute(r GroupsAPICreateNetworkFirmwareUpgradesStagedGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *GroupsApiService) CreateNetworkFirmwareUpgradesStagedGroupExecute(r Gro
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsApiService.CreateNetworkFirmwareUpgradesStagedGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.CreateNetworkFirmwareUpgradesStagedGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,19 +151,19 @@ func (a *GroupsApiService) CreateNetworkFirmwareUpgradesStagedGroupExecute(r Gro
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type GroupsApiCreateOrganizationAdaptivePolicyGroupRequest struct {
+type GroupsAPICreateOrganizationAdaptivePolicyGroupRequest struct {
 	ctx context.Context
-	ApiService *GroupsApiService
+	ApiService *GroupsAPIService
 	organizationId string
 	createOrganizationAdaptivePolicyGroupRequest *CreateOrganizationAdaptivePolicyGroupRequest
 }
 
-func (r GroupsApiCreateOrganizationAdaptivePolicyGroupRequest) CreateOrganizationAdaptivePolicyGroupRequest(createOrganizationAdaptivePolicyGroupRequest CreateOrganizationAdaptivePolicyGroupRequest) GroupsApiCreateOrganizationAdaptivePolicyGroupRequest {
+func (r GroupsAPICreateOrganizationAdaptivePolicyGroupRequest) CreateOrganizationAdaptivePolicyGroupRequest(createOrganizationAdaptivePolicyGroupRequest CreateOrganizationAdaptivePolicyGroupRequest) GroupsAPICreateOrganizationAdaptivePolicyGroupRequest {
 	r.createOrganizationAdaptivePolicyGroupRequest = &createOrganizationAdaptivePolicyGroupRequest
 	return r
 }
 
-func (r GroupsApiCreateOrganizationAdaptivePolicyGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r GroupsAPICreateOrganizationAdaptivePolicyGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateOrganizationAdaptivePolicyGroupExecute(r)
 }
 
@@ -174,10 +174,10 @@ Creates a new adaptive policy group
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return GroupsApiCreateOrganizationAdaptivePolicyGroupRequest
+ @return GroupsAPICreateOrganizationAdaptivePolicyGroupRequest
 */
-func (a *GroupsApiService) CreateOrganizationAdaptivePolicyGroup(ctx context.Context, organizationId string) GroupsApiCreateOrganizationAdaptivePolicyGroupRequest {
-	return GroupsApiCreateOrganizationAdaptivePolicyGroupRequest{
+func (a *GroupsAPIService) CreateOrganizationAdaptivePolicyGroup(ctx context.Context, organizationId string) GroupsAPICreateOrganizationAdaptivePolicyGroupRequest {
+	return GroupsAPICreateOrganizationAdaptivePolicyGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -186,7 +186,7 @@ func (a *GroupsApiService) CreateOrganizationAdaptivePolicyGroup(ctx context.Con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *GroupsApiService) CreateOrganizationAdaptivePolicyGroupExecute(r GroupsApiCreateOrganizationAdaptivePolicyGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *GroupsAPIService) CreateOrganizationAdaptivePolicyGroupExecute(r GroupsAPICreateOrganizationAdaptivePolicyGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -194,7 +194,7 @@ func (a *GroupsApiService) CreateOrganizationAdaptivePolicyGroupExecute(r Groups
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsApiService.CreateOrganizationAdaptivePolicyGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.CreateOrganizationAdaptivePolicyGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -279,19 +279,19 @@ func (a *GroupsApiService) CreateOrganizationAdaptivePolicyGroupExecute(r Groups
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type GroupsApiCreateOrganizationPolicyObjectsGroupRequest struct {
+type GroupsAPICreateOrganizationPolicyObjectsGroupRequest struct {
 	ctx context.Context
-	ApiService *GroupsApiService
+	ApiService *GroupsAPIService
 	organizationId string
 	createOrganizationPolicyObjectsGroupRequest *CreateOrganizationPolicyObjectsGroupRequest
 }
 
-func (r GroupsApiCreateOrganizationPolicyObjectsGroupRequest) CreateOrganizationPolicyObjectsGroupRequest(createOrganizationPolicyObjectsGroupRequest CreateOrganizationPolicyObjectsGroupRequest) GroupsApiCreateOrganizationPolicyObjectsGroupRequest {
+func (r GroupsAPICreateOrganizationPolicyObjectsGroupRequest) CreateOrganizationPolicyObjectsGroupRequest(createOrganizationPolicyObjectsGroupRequest CreateOrganizationPolicyObjectsGroupRequest) GroupsAPICreateOrganizationPolicyObjectsGroupRequest {
 	r.createOrganizationPolicyObjectsGroupRequest = &createOrganizationPolicyObjectsGroupRequest
 	return r
 }
 
-func (r GroupsApiCreateOrganizationPolicyObjectsGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r GroupsAPICreateOrganizationPolicyObjectsGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateOrganizationPolicyObjectsGroupExecute(r)
 }
 
@@ -302,10 +302,10 @@ Creates a new Policy Object Group.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return GroupsApiCreateOrganizationPolicyObjectsGroupRequest
+ @return GroupsAPICreateOrganizationPolicyObjectsGroupRequest
 */
-func (a *GroupsApiService) CreateOrganizationPolicyObjectsGroup(ctx context.Context, organizationId string) GroupsApiCreateOrganizationPolicyObjectsGroupRequest {
-	return GroupsApiCreateOrganizationPolicyObjectsGroupRequest{
+func (a *GroupsAPIService) CreateOrganizationPolicyObjectsGroup(ctx context.Context, organizationId string) GroupsAPICreateOrganizationPolicyObjectsGroupRequest {
+	return GroupsAPICreateOrganizationPolicyObjectsGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -314,7 +314,7 @@ func (a *GroupsApiService) CreateOrganizationPolicyObjectsGroup(ctx context.Cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *GroupsApiService) CreateOrganizationPolicyObjectsGroupExecute(r GroupsApiCreateOrganizationPolicyObjectsGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *GroupsAPIService) CreateOrganizationPolicyObjectsGroupExecute(r GroupsAPICreateOrganizationPolicyObjectsGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -322,7 +322,7 @@ func (a *GroupsApiService) CreateOrganizationPolicyObjectsGroupExecute(r GroupsA
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsApiService.CreateOrganizationPolicyObjectsGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.CreateOrganizationPolicyObjectsGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -407,14 +407,14 @@ func (a *GroupsApiService) CreateOrganizationPolicyObjectsGroupExecute(r GroupsA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type GroupsApiDeleteNetworkFirmwareUpgradesStagedGroupRequest struct {
+type GroupsAPIDeleteNetworkFirmwareUpgradesStagedGroupRequest struct {
 	ctx context.Context
-	ApiService *GroupsApiService
+	ApiService *GroupsAPIService
 	networkId string
 	groupId string
 }
 
-func (r GroupsApiDeleteNetworkFirmwareUpgradesStagedGroupRequest) Execute() (*http.Response, error) {
+func (r GroupsAPIDeleteNetworkFirmwareUpgradesStagedGroupRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkFirmwareUpgradesStagedGroupExecute(r)
 }
 
@@ -426,10 +426,10 @@ Delete a Staged Upgrade Group
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param groupId Group ID
- @return GroupsApiDeleteNetworkFirmwareUpgradesStagedGroupRequest
+ @return GroupsAPIDeleteNetworkFirmwareUpgradesStagedGroupRequest
 */
-func (a *GroupsApiService) DeleteNetworkFirmwareUpgradesStagedGroup(ctx context.Context, networkId string, groupId string) GroupsApiDeleteNetworkFirmwareUpgradesStagedGroupRequest {
-	return GroupsApiDeleteNetworkFirmwareUpgradesStagedGroupRequest{
+func (a *GroupsAPIService) DeleteNetworkFirmwareUpgradesStagedGroup(ctx context.Context, networkId string, groupId string) GroupsAPIDeleteNetworkFirmwareUpgradesStagedGroupRequest {
+	return GroupsAPIDeleteNetworkFirmwareUpgradesStagedGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -438,14 +438,14 @@ func (a *GroupsApiService) DeleteNetworkFirmwareUpgradesStagedGroup(ctx context.
 }
 
 // Execute executes the request
-func (a *GroupsApiService) DeleteNetworkFirmwareUpgradesStagedGroupExecute(r GroupsApiDeleteNetworkFirmwareUpgradesStagedGroupRequest) (*http.Response, error) {
+func (a *GroupsAPIService) DeleteNetworkFirmwareUpgradesStagedGroupExecute(r GroupsAPIDeleteNetworkFirmwareUpgradesStagedGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsApiService.DeleteNetworkFirmwareUpgradesStagedGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.DeleteNetworkFirmwareUpgradesStagedGroup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -517,14 +517,14 @@ func (a *GroupsApiService) DeleteNetworkFirmwareUpgradesStagedGroupExecute(r Gro
 	return localVarHTTPResponse, nil
 }
 
-type GroupsApiDeleteOrganizationAdaptivePolicyGroupRequest struct {
+type GroupsAPIDeleteOrganizationAdaptivePolicyGroupRequest struct {
 	ctx context.Context
-	ApiService *GroupsApiService
+	ApiService *GroupsAPIService
 	organizationId string
 	id string
 }
 
-func (r GroupsApiDeleteOrganizationAdaptivePolicyGroupRequest) Execute() (*http.Response, error) {
+func (r GroupsAPIDeleteOrganizationAdaptivePolicyGroupRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationAdaptivePolicyGroupExecute(r)
 }
 
@@ -536,10 +536,10 @@ Deletes the specified adaptive policy group and any associated policies and refe
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param id ID
- @return GroupsApiDeleteOrganizationAdaptivePolicyGroupRequest
+ @return GroupsAPIDeleteOrganizationAdaptivePolicyGroupRequest
 */
-func (a *GroupsApiService) DeleteOrganizationAdaptivePolicyGroup(ctx context.Context, organizationId string, id string) GroupsApiDeleteOrganizationAdaptivePolicyGroupRequest {
-	return GroupsApiDeleteOrganizationAdaptivePolicyGroupRequest{
+func (a *GroupsAPIService) DeleteOrganizationAdaptivePolicyGroup(ctx context.Context, organizationId string, id string) GroupsAPIDeleteOrganizationAdaptivePolicyGroupRequest {
+	return GroupsAPIDeleteOrganizationAdaptivePolicyGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -548,14 +548,14 @@ func (a *GroupsApiService) DeleteOrganizationAdaptivePolicyGroup(ctx context.Con
 }
 
 // Execute executes the request
-func (a *GroupsApiService) DeleteOrganizationAdaptivePolicyGroupExecute(r GroupsApiDeleteOrganizationAdaptivePolicyGroupRequest) (*http.Response, error) {
+func (a *GroupsAPIService) DeleteOrganizationAdaptivePolicyGroupExecute(r GroupsAPIDeleteOrganizationAdaptivePolicyGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsApiService.DeleteOrganizationAdaptivePolicyGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.DeleteOrganizationAdaptivePolicyGroup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -627,14 +627,14 @@ func (a *GroupsApiService) DeleteOrganizationAdaptivePolicyGroupExecute(r Groups
 	return localVarHTTPResponse, nil
 }
 
-type GroupsApiDeleteOrganizationPolicyObjectsGroupRequest struct {
+type GroupsAPIDeleteOrganizationPolicyObjectsGroupRequest struct {
 	ctx context.Context
-	ApiService *GroupsApiService
+	ApiService *GroupsAPIService
 	organizationId string
 	policyObjectGroupId string
 }
 
-func (r GroupsApiDeleteOrganizationPolicyObjectsGroupRequest) Execute() (*http.Response, error) {
+func (r GroupsAPIDeleteOrganizationPolicyObjectsGroupRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationPolicyObjectsGroupExecute(r)
 }
 
@@ -646,10 +646,10 @@ Deletes a Policy Object Group.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param policyObjectGroupId Policy object group ID
- @return GroupsApiDeleteOrganizationPolicyObjectsGroupRequest
+ @return GroupsAPIDeleteOrganizationPolicyObjectsGroupRequest
 */
-func (a *GroupsApiService) DeleteOrganizationPolicyObjectsGroup(ctx context.Context, organizationId string, policyObjectGroupId string) GroupsApiDeleteOrganizationPolicyObjectsGroupRequest {
-	return GroupsApiDeleteOrganizationPolicyObjectsGroupRequest{
+func (a *GroupsAPIService) DeleteOrganizationPolicyObjectsGroup(ctx context.Context, organizationId string, policyObjectGroupId string) GroupsAPIDeleteOrganizationPolicyObjectsGroupRequest {
+	return GroupsAPIDeleteOrganizationPolicyObjectsGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -658,14 +658,14 @@ func (a *GroupsApiService) DeleteOrganizationPolicyObjectsGroup(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *GroupsApiService) DeleteOrganizationPolicyObjectsGroupExecute(r GroupsApiDeleteOrganizationPolicyObjectsGroupRequest) (*http.Response, error) {
+func (a *GroupsAPIService) DeleteOrganizationPolicyObjectsGroupExecute(r GroupsAPIDeleteOrganizationPolicyObjectsGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsApiService.DeleteOrganizationPolicyObjectsGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.DeleteOrganizationPolicyObjectsGroup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -737,14 +737,14 @@ func (a *GroupsApiService) DeleteOrganizationPolicyObjectsGroupExecute(r GroupsA
 	return localVarHTTPResponse, nil
 }
 
-type GroupsApiGetNetworkFirmwareUpgradesStagedGroupRequest struct {
+type GroupsAPIGetNetworkFirmwareUpgradesStagedGroupRequest struct {
 	ctx context.Context
-	ApiService *GroupsApiService
+	ApiService *GroupsAPIService
 	networkId string
 	groupId string
 }
 
-func (r GroupsApiGetNetworkFirmwareUpgradesStagedGroupRequest) Execute() (*GetNetworkFirmwareUpgradesStagedGroups200ResponseInner, *http.Response, error) {
+func (r GroupsAPIGetNetworkFirmwareUpgradesStagedGroupRequest) Execute() (*GetNetworkFirmwareUpgradesStagedGroups200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkFirmwareUpgradesStagedGroupExecute(r)
 }
 
@@ -756,10 +756,10 @@ Get a Staged Upgrade Group from a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param groupId Group ID
- @return GroupsApiGetNetworkFirmwareUpgradesStagedGroupRequest
+ @return GroupsAPIGetNetworkFirmwareUpgradesStagedGroupRequest
 */
-func (a *GroupsApiService) GetNetworkFirmwareUpgradesStagedGroup(ctx context.Context, networkId string, groupId string) GroupsApiGetNetworkFirmwareUpgradesStagedGroupRequest {
-	return GroupsApiGetNetworkFirmwareUpgradesStagedGroupRequest{
+func (a *GroupsAPIService) GetNetworkFirmwareUpgradesStagedGroup(ctx context.Context, networkId string, groupId string) GroupsAPIGetNetworkFirmwareUpgradesStagedGroupRequest {
+	return GroupsAPIGetNetworkFirmwareUpgradesStagedGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -769,7 +769,7 @@ func (a *GroupsApiService) GetNetworkFirmwareUpgradesStagedGroup(ctx context.Con
 
 // Execute executes the request
 //  @return GetNetworkFirmwareUpgradesStagedGroups200ResponseInner
-func (a *GroupsApiService) GetNetworkFirmwareUpgradesStagedGroupExecute(r GroupsApiGetNetworkFirmwareUpgradesStagedGroupRequest) (*GetNetworkFirmwareUpgradesStagedGroups200ResponseInner, *http.Response, error) {
+func (a *GroupsAPIService) GetNetworkFirmwareUpgradesStagedGroupExecute(r GroupsAPIGetNetworkFirmwareUpgradesStagedGroupRequest) (*GetNetworkFirmwareUpgradesStagedGroups200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -777,7 +777,7 @@ func (a *GroupsApiService) GetNetworkFirmwareUpgradesStagedGroupExecute(r Groups
 		localVarReturnValue  *GetNetworkFirmwareUpgradesStagedGroups200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsApiService.GetNetworkFirmwareUpgradesStagedGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.GetNetworkFirmwareUpgradesStagedGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -858,13 +858,13 @@ func (a *GroupsApiService) GetNetworkFirmwareUpgradesStagedGroupExecute(r Groups
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type GroupsApiGetNetworkFirmwareUpgradesStagedGroupsRequest struct {
+type GroupsAPIGetNetworkFirmwareUpgradesStagedGroupsRequest struct {
 	ctx context.Context
-	ApiService *GroupsApiService
+	ApiService *GroupsAPIService
 	networkId string
 }
 
-func (r GroupsApiGetNetworkFirmwareUpgradesStagedGroupsRequest) Execute() ([]GetNetworkFirmwareUpgradesStagedGroups200ResponseInner, *http.Response, error) {
+func (r GroupsAPIGetNetworkFirmwareUpgradesStagedGroupsRequest) Execute() ([]GetNetworkFirmwareUpgradesStagedGroups200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkFirmwareUpgradesStagedGroupsExecute(r)
 }
 
@@ -875,10 +875,10 @@ List of Staged Upgrade Groups in a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return GroupsApiGetNetworkFirmwareUpgradesStagedGroupsRequest
+ @return GroupsAPIGetNetworkFirmwareUpgradesStagedGroupsRequest
 */
-func (a *GroupsApiService) GetNetworkFirmwareUpgradesStagedGroups(ctx context.Context, networkId string) GroupsApiGetNetworkFirmwareUpgradesStagedGroupsRequest {
-	return GroupsApiGetNetworkFirmwareUpgradesStagedGroupsRequest{
+func (a *GroupsAPIService) GetNetworkFirmwareUpgradesStagedGroups(ctx context.Context, networkId string) GroupsAPIGetNetworkFirmwareUpgradesStagedGroupsRequest {
+	return GroupsAPIGetNetworkFirmwareUpgradesStagedGroupsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -887,7 +887,7 @@ func (a *GroupsApiService) GetNetworkFirmwareUpgradesStagedGroups(ctx context.Co
 
 // Execute executes the request
 //  @return []GetNetworkFirmwareUpgradesStagedGroups200ResponseInner
-func (a *GroupsApiService) GetNetworkFirmwareUpgradesStagedGroupsExecute(r GroupsApiGetNetworkFirmwareUpgradesStagedGroupsRequest) ([]GetNetworkFirmwareUpgradesStagedGroups200ResponseInner, *http.Response, error) {
+func (a *GroupsAPIService) GetNetworkFirmwareUpgradesStagedGroupsExecute(r GroupsAPIGetNetworkFirmwareUpgradesStagedGroupsRequest) ([]GetNetworkFirmwareUpgradesStagedGroups200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -895,7 +895,7 @@ func (a *GroupsApiService) GetNetworkFirmwareUpgradesStagedGroupsExecute(r Group
 		localVarReturnValue  []GetNetworkFirmwareUpgradesStagedGroups200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsApiService.GetNetworkFirmwareUpgradesStagedGroups")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.GetNetworkFirmwareUpgradesStagedGroups")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -975,14 +975,14 @@ func (a *GroupsApiService) GetNetworkFirmwareUpgradesStagedGroupsExecute(r Group
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type GroupsApiGetOrganizationAdaptivePolicyGroupRequest struct {
+type GroupsAPIGetOrganizationAdaptivePolicyGroupRequest struct {
 	ctx context.Context
-	ApiService *GroupsApiService
+	ApiService *GroupsAPIService
 	organizationId string
 	id string
 }
 
-func (r GroupsApiGetOrganizationAdaptivePolicyGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r GroupsAPIGetOrganizationAdaptivePolicyGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationAdaptivePolicyGroupExecute(r)
 }
 
@@ -994,10 +994,10 @@ Returns an adaptive policy group
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param id ID
- @return GroupsApiGetOrganizationAdaptivePolicyGroupRequest
+ @return GroupsAPIGetOrganizationAdaptivePolicyGroupRequest
 */
-func (a *GroupsApiService) GetOrganizationAdaptivePolicyGroup(ctx context.Context, organizationId string, id string) GroupsApiGetOrganizationAdaptivePolicyGroupRequest {
-	return GroupsApiGetOrganizationAdaptivePolicyGroupRequest{
+func (a *GroupsAPIService) GetOrganizationAdaptivePolicyGroup(ctx context.Context, organizationId string, id string) GroupsAPIGetOrganizationAdaptivePolicyGroupRequest {
+	return GroupsAPIGetOrganizationAdaptivePolicyGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1007,7 +1007,7 @@ func (a *GroupsApiService) GetOrganizationAdaptivePolicyGroup(ctx context.Contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *GroupsApiService) GetOrganizationAdaptivePolicyGroupExecute(r GroupsApiGetOrganizationAdaptivePolicyGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *GroupsAPIService) GetOrganizationAdaptivePolicyGroupExecute(r GroupsAPIGetOrganizationAdaptivePolicyGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1015,7 +1015,7 @@ func (a *GroupsApiService) GetOrganizationAdaptivePolicyGroupExecute(r GroupsApi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsApiService.GetOrganizationAdaptivePolicyGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.GetOrganizationAdaptivePolicyGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1096,13 +1096,13 @@ func (a *GroupsApiService) GetOrganizationAdaptivePolicyGroupExecute(r GroupsApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type GroupsApiGetOrganizationAdaptivePolicyGroupsRequest struct {
+type GroupsAPIGetOrganizationAdaptivePolicyGroupsRequest struct {
 	ctx context.Context
-	ApiService *GroupsApiService
+	ApiService *GroupsAPIService
 	organizationId string
 }
 
-func (r GroupsApiGetOrganizationAdaptivePolicyGroupsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r GroupsAPIGetOrganizationAdaptivePolicyGroupsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationAdaptivePolicyGroupsExecute(r)
 }
 
@@ -1113,10 +1113,10 @@ List adaptive policy groups in a organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return GroupsApiGetOrganizationAdaptivePolicyGroupsRequest
+ @return GroupsAPIGetOrganizationAdaptivePolicyGroupsRequest
 */
-func (a *GroupsApiService) GetOrganizationAdaptivePolicyGroups(ctx context.Context, organizationId string) GroupsApiGetOrganizationAdaptivePolicyGroupsRequest {
-	return GroupsApiGetOrganizationAdaptivePolicyGroupsRequest{
+func (a *GroupsAPIService) GetOrganizationAdaptivePolicyGroups(ctx context.Context, organizationId string) GroupsAPIGetOrganizationAdaptivePolicyGroupsRequest {
+	return GroupsAPIGetOrganizationAdaptivePolicyGroupsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1125,7 +1125,7 @@ func (a *GroupsApiService) GetOrganizationAdaptivePolicyGroups(ctx context.Conte
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *GroupsApiService) GetOrganizationAdaptivePolicyGroupsExecute(r GroupsApiGetOrganizationAdaptivePolicyGroupsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *GroupsAPIService) GetOrganizationAdaptivePolicyGroupsExecute(r GroupsAPIGetOrganizationAdaptivePolicyGroupsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1133,7 +1133,7 @@ func (a *GroupsApiService) GetOrganizationAdaptivePolicyGroupsExecute(r GroupsAp
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsApiService.GetOrganizationAdaptivePolicyGroups")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.GetOrganizationAdaptivePolicyGroups")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1213,14 +1213,14 @@ func (a *GroupsApiService) GetOrganizationAdaptivePolicyGroupsExecute(r GroupsAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type GroupsApiGetOrganizationPolicyObjectsGroupRequest struct {
+type GroupsAPIGetOrganizationPolicyObjectsGroupRequest struct {
 	ctx context.Context
-	ApiService *GroupsApiService
+	ApiService *GroupsAPIService
 	organizationId string
 	policyObjectGroupId string
 }
 
-func (r GroupsApiGetOrganizationPolicyObjectsGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r GroupsAPIGetOrganizationPolicyObjectsGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationPolicyObjectsGroupExecute(r)
 }
 
@@ -1232,10 +1232,10 @@ Shows details of a Policy Object Group.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param policyObjectGroupId Policy object group ID
- @return GroupsApiGetOrganizationPolicyObjectsGroupRequest
+ @return GroupsAPIGetOrganizationPolicyObjectsGroupRequest
 */
-func (a *GroupsApiService) GetOrganizationPolicyObjectsGroup(ctx context.Context, organizationId string, policyObjectGroupId string) GroupsApiGetOrganizationPolicyObjectsGroupRequest {
-	return GroupsApiGetOrganizationPolicyObjectsGroupRequest{
+func (a *GroupsAPIService) GetOrganizationPolicyObjectsGroup(ctx context.Context, organizationId string, policyObjectGroupId string) GroupsAPIGetOrganizationPolicyObjectsGroupRequest {
+	return GroupsAPIGetOrganizationPolicyObjectsGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1245,7 +1245,7 @@ func (a *GroupsApiService) GetOrganizationPolicyObjectsGroup(ctx context.Context
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *GroupsApiService) GetOrganizationPolicyObjectsGroupExecute(r GroupsApiGetOrganizationPolicyObjectsGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *GroupsAPIService) GetOrganizationPolicyObjectsGroupExecute(r GroupsAPIGetOrganizationPolicyObjectsGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1253,7 +1253,7 @@ func (a *GroupsApiService) GetOrganizationPolicyObjectsGroupExecute(r GroupsApiG
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsApiService.GetOrganizationPolicyObjectsGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.GetOrganizationPolicyObjectsGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1334,9 +1334,9 @@ func (a *GroupsApiService) GetOrganizationPolicyObjectsGroupExecute(r GroupsApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type GroupsApiGetOrganizationPolicyObjectsGroupsRequest struct {
+type GroupsAPIGetOrganizationPolicyObjectsGroupsRequest struct {
 	ctx context.Context
-	ApiService *GroupsApiService
+	ApiService *GroupsAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -1344,24 +1344,24 @@ type GroupsApiGetOrganizationPolicyObjectsGroupsRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 10 - 1000. Default is 1000.
-func (r GroupsApiGetOrganizationPolicyObjectsGroupsRequest) PerPage(perPage int32) GroupsApiGetOrganizationPolicyObjectsGroupsRequest {
+func (r GroupsAPIGetOrganizationPolicyObjectsGroupsRequest) PerPage(perPage int32) GroupsAPIGetOrganizationPolicyObjectsGroupsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r GroupsApiGetOrganizationPolicyObjectsGroupsRequest) StartingAfter(startingAfter string) GroupsApiGetOrganizationPolicyObjectsGroupsRequest {
+func (r GroupsAPIGetOrganizationPolicyObjectsGroupsRequest) StartingAfter(startingAfter string) GroupsAPIGetOrganizationPolicyObjectsGroupsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r GroupsApiGetOrganizationPolicyObjectsGroupsRequest) EndingBefore(endingBefore string) GroupsApiGetOrganizationPolicyObjectsGroupsRequest {
+func (r GroupsAPIGetOrganizationPolicyObjectsGroupsRequest) EndingBefore(endingBefore string) GroupsAPIGetOrganizationPolicyObjectsGroupsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r GroupsApiGetOrganizationPolicyObjectsGroupsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r GroupsAPIGetOrganizationPolicyObjectsGroupsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationPolicyObjectsGroupsExecute(r)
 }
 
@@ -1372,10 +1372,10 @@ Lists Policy Object Groups belonging to the organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return GroupsApiGetOrganizationPolicyObjectsGroupsRequest
+ @return GroupsAPIGetOrganizationPolicyObjectsGroupsRequest
 */
-func (a *GroupsApiService) GetOrganizationPolicyObjectsGroups(ctx context.Context, organizationId string) GroupsApiGetOrganizationPolicyObjectsGroupsRequest {
-	return GroupsApiGetOrganizationPolicyObjectsGroupsRequest{
+func (a *GroupsAPIService) GetOrganizationPolicyObjectsGroups(ctx context.Context, organizationId string) GroupsAPIGetOrganizationPolicyObjectsGroupsRequest {
+	return GroupsAPIGetOrganizationPolicyObjectsGroupsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1384,7 +1384,7 @@ func (a *GroupsApiService) GetOrganizationPolicyObjectsGroups(ctx context.Contex
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *GroupsApiService) GetOrganizationPolicyObjectsGroupsExecute(r GroupsApiGetOrganizationPolicyObjectsGroupsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *GroupsAPIService) GetOrganizationPolicyObjectsGroupsExecute(r GroupsAPIGetOrganizationPolicyObjectsGroupsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1392,7 +1392,7 @@ func (a *GroupsApiService) GetOrganizationPolicyObjectsGroupsExecute(r GroupsApi
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsApiService.GetOrganizationPolicyObjectsGroups")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.GetOrganizationPolicyObjectsGroups")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1481,20 +1481,20 @@ func (a *GroupsApiService) GetOrganizationPolicyObjectsGroupsExecute(r GroupsApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type GroupsApiUpdateNetworkFirmwareUpgradesStagedGroupRequest struct {
+type GroupsAPIUpdateNetworkFirmwareUpgradesStagedGroupRequest struct {
 	ctx context.Context
-	ApiService *GroupsApiService
+	ApiService *GroupsAPIService
 	networkId string
 	groupId string
 	createNetworkFirmwareUpgradesStagedGroupRequest *CreateNetworkFirmwareUpgradesStagedGroupRequest
 }
 
-func (r GroupsApiUpdateNetworkFirmwareUpgradesStagedGroupRequest) CreateNetworkFirmwareUpgradesStagedGroupRequest(createNetworkFirmwareUpgradesStagedGroupRequest CreateNetworkFirmwareUpgradesStagedGroupRequest) GroupsApiUpdateNetworkFirmwareUpgradesStagedGroupRequest {
+func (r GroupsAPIUpdateNetworkFirmwareUpgradesStagedGroupRequest) CreateNetworkFirmwareUpgradesStagedGroupRequest(createNetworkFirmwareUpgradesStagedGroupRequest CreateNetworkFirmwareUpgradesStagedGroupRequest) GroupsAPIUpdateNetworkFirmwareUpgradesStagedGroupRequest {
 	r.createNetworkFirmwareUpgradesStagedGroupRequest = &createNetworkFirmwareUpgradesStagedGroupRequest
 	return r
 }
 
-func (r GroupsApiUpdateNetworkFirmwareUpgradesStagedGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r GroupsAPIUpdateNetworkFirmwareUpgradesStagedGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkFirmwareUpgradesStagedGroupExecute(r)
 }
 
@@ -1506,10 +1506,10 @@ Update a Staged Upgrade Group for a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param groupId Group ID
- @return GroupsApiUpdateNetworkFirmwareUpgradesStagedGroupRequest
+ @return GroupsAPIUpdateNetworkFirmwareUpgradesStagedGroupRequest
 */
-func (a *GroupsApiService) UpdateNetworkFirmwareUpgradesStagedGroup(ctx context.Context, networkId string, groupId string) GroupsApiUpdateNetworkFirmwareUpgradesStagedGroupRequest {
-	return GroupsApiUpdateNetworkFirmwareUpgradesStagedGroupRequest{
+func (a *GroupsAPIService) UpdateNetworkFirmwareUpgradesStagedGroup(ctx context.Context, networkId string, groupId string) GroupsAPIUpdateNetworkFirmwareUpgradesStagedGroupRequest {
+	return GroupsAPIUpdateNetworkFirmwareUpgradesStagedGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1519,7 +1519,7 @@ func (a *GroupsApiService) UpdateNetworkFirmwareUpgradesStagedGroup(ctx context.
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *GroupsApiService) UpdateNetworkFirmwareUpgradesStagedGroupExecute(r GroupsApiUpdateNetworkFirmwareUpgradesStagedGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *GroupsAPIService) UpdateNetworkFirmwareUpgradesStagedGroupExecute(r GroupsAPIUpdateNetworkFirmwareUpgradesStagedGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1527,7 +1527,7 @@ func (a *GroupsApiService) UpdateNetworkFirmwareUpgradesStagedGroupExecute(r Gro
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsApiService.UpdateNetworkFirmwareUpgradesStagedGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.UpdateNetworkFirmwareUpgradesStagedGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1613,20 +1613,20 @@ func (a *GroupsApiService) UpdateNetworkFirmwareUpgradesStagedGroupExecute(r Gro
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type GroupsApiUpdateOrganizationAdaptivePolicyGroupRequest struct {
+type GroupsAPIUpdateOrganizationAdaptivePolicyGroupRequest struct {
 	ctx context.Context
-	ApiService *GroupsApiService
+	ApiService *GroupsAPIService
 	organizationId string
 	id string
 	updateOrganizationAdaptivePolicyGroupRequest *UpdateOrganizationAdaptivePolicyGroupRequest
 }
 
-func (r GroupsApiUpdateOrganizationAdaptivePolicyGroupRequest) UpdateOrganizationAdaptivePolicyGroupRequest(updateOrganizationAdaptivePolicyGroupRequest UpdateOrganizationAdaptivePolicyGroupRequest) GroupsApiUpdateOrganizationAdaptivePolicyGroupRequest {
+func (r GroupsAPIUpdateOrganizationAdaptivePolicyGroupRequest) UpdateOrganizationAdaptivePolicyGroupRequest(updateOrganizationAdaptivePolicyGroupRequest UpdateOrganizationAdaptivePolicyGroupRequest) GroupsAPIUpdateOrganizationAdaptivePolicyGroupRequest {
 	r.updateOrganizationAdaptivePolicyGroupRequest = &updateOrganizationAdaptivePolicyGroupRequest
 	return r
 }
 
-func (r GroupsApiUpdateOrganizationAdaptivePolicyGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r GroupsAPIUpdateOrganizationAdaptivePolicyGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationAdaptivePolicyGroupExecute(r)
 }
 
@@ -1638,10 +1638,10 @@ Updates an adaptive policy group. If updating "Infrastructure", only the SGT is 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param id ID
- @return GroupsApiUpdateOrganizationAdaptivePolicyGroupRequest
+ @return GroupsAPIUpdateOrganizationAdaptivePolicyGroupRequest
 */
-func (a *GroupsApiService) UpdateOrganizationAdaptivePolicyGroup(ctx context.Context, organizationId string, id string) GroupsApiUpdateOrganizationAdaptivePolicyGroupRequest {
-	return GroupsApiUpdateOrganizationAdaptivePolicyGroupRequest{
+func (a *GroupsAPIService) UpdateOrganizationAdaptivePolicyGroup(ctx context.Context, organizationId string, id string) GroupsAPIUpdateOrganizationAdaptivePolicyGroupRequest {
+	return GroupsAPIUpdateOrganizationAdaptivePolicyGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1651,7 +1651,7 @@ func (a *GroupsApiService) UpdateOrganizationAdaptivePolicyGroup(ctx context.Con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *GroupsApiService) UpdateOrganizationAdaptivePolicyGroupExecute(r GroupsApiUpdateOrganizationAdaptivePolicyGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *GroupsAPIService) UpdateOrganizationAdaptivePolicyGroupExecute(r GroupsAPIUpdateOrganizationAdaptivePolicyGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1659,7 +1659,7 @@ func (a *GroupsApiService) UpdateOrganizationAdaptivePolicyGroupExecute(r Groups
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsApiService.UpdateOrganizationAdaptivePolicyGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.UpdateOrganizationAdaptivePolicyGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1742,20 +1742,20 @@ func (a *GroupsApiService) UpdateOrganizationAdaptivePolicyGroupExecute(r Groups
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type GroupsApiUpdateOrganizationPolicyObjectsGroupRequest struct {
+type GroupsAPIUpdateOrganizationPolicyObjectsGroupRequest struct {
 	ctx context.Context
-	ApiService *GroupsApiService
+	ApiService *GroupsAPIService
 	organizationId string
 	policyObjectGroupId string
 	updateOrganizationPolicyObjectsGroupRequest *UpdateOrganizationPolicyObjectsGroupRequest
 }
 
-func (r GroupsApiUpdateOrganizationPolicyObjectsGroupRequest) UpdateOrganizationPolicyObjectsGroupRequest(updateOrganizationPolicyObjectsGroupRequest UpdateOrganizationPolicyObjectsGroupRequest) GroupsApiUpdateOrganizationPolicyObjectsGroupRequest {
+func (r GroupsAPIUpdateOrganizationPolicyObjectsGroupRequest) UpdateOrganizationPolicyObjectsGroupRequest(updateOrganizationPolicyObjectsGroupRequest UpdateOrganizationPolicyObjectsGroupRequest) GroupsAPIUpdateOrganizationPolicyObjectsGroupRequest {
 	r.updateOrganizationPolicyObjectsGroupRequest = &updateOrganizationPolicyObjectsGroupRequest
 	return r
 }
 
-func (r GroupsApiUpdateOrganizationPolicyObjectsGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r GroupsAPIUpdateOrganizationPolicyObjectsGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationPolicyObjectsGroupExecute(r)
 }
 
@@ -1767,10 +1767,10 @@ Updates a Policy Object Group.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param policyObjectGroupId Policy object group ID
- @return GroupsApiUpdateOrganizationPolicyObjectsGroupRequest
+ @return GroupsAPIUpdateOrganizationPolicyObjectsGroupRequest
 */
-func (a *GroupsApiService) UpdateOrganizationPolicyObjectsGroup(ctx context.Context, organizationId string, policyObjectGroupId string) GroupsApiUpdateOrganizationPolicyObjectsGroupRequest {
-	return GroupsApiUpdateOrganizationPolicyObjectsGroupRequest{
+func (a *GroupsAPIService) UpdateOrganizationPolicyObjectsGroup(ctx context.Context, organizationId string, policyObjectGroupId string) GroupsAPIUpdateOrganizationPolicyObjectsGroupRequest {
+	return GroupsAPIUpdateOrganizationPolicyObjectsGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1780,7 +1780,7 @@ func (a *GroupsApiService) UpdateOrganizationPolicyObjectsGroup(ctx context.Cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *GroupsApiService) UpdateOrganizationPolicyObjectsGroupExecute(r GroupsApiUpdateOrganizationPolicyObjectsGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *GroupsAPIService) UpdateOrganizationPolicyObjectsGroupExecute(r GroupsAPIUpdateOrganizationPolicyObjectsGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1788,7 +1788,7 @@ func (a *GroupsApiService) UpdateOrganizationPolicyObjectsGroupExecute(r GroupsA
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsApiService.UpdateOrganizationPolicyObjectsGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.UpdateOrganizationPolicyObjectsGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

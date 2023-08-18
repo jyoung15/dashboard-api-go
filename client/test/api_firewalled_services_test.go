@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing FirewalledServicesApiService
+Testing FirewalledServicesAPIService
 
 */
 
@@ -17,19 +17,19 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_FirewalledServicesApiService(t *testing.T) {
+func Test_client_FirewalledServicesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test FirewalledServicesApiService GetNetworkApplianceFirewallFirewalledService", func(t *testing.T) {
+	t.Run("Test FirewalledServicesAPIService GetNetworkApplianceFirewallFirewalledService", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var service string
 
-		resp, httpRes, err := apiClient.FirewalledServicesApi.GetNetworkApplianceFirewallFirewalledService(context.Background(), networkId, service).Execute()
+		resp, httpRes, err := apiClient.FirewalledServicesAPI.GetNetworkApplianceFirewallFirewalledService(context.Background(), networkId, service).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -37,13 +37,13 @@ func Test_client_FirewalledServicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirewalledServicesApiService GetNetworkApplianceFirewallFirewalledServices", func(t *testing.T) {
+	t.Run("Test FirewalledServicesAPIService GetNetworkApplianceFirewallFirewalledServices", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.FirewalledServicesApi.GetNetworkApplianceFirewallFirewalledServices(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.FirewalledServicesAPI.GetNetworkApplianceFirewallFirewalledServices(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -51,14 +51,14 @@ func Test_client_FirewalledServicesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FirewalledServicesApiService UpdateNetworkApplianceFirewallFirewalledService", func(t *testing.T) {
+	t.Run("Test FirewalledServicesAPIService UpdateNetworkApplianceFirewallFirewalledService", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var service string
 
-		resp, httpRes, err := apiClient.FirewalledServicesApi.UpdateNetworkApplianceFirewallFirewalledService(context.Background(), networkId, service).Execute()
+		resp, httpRes, err := apiClient.FirewalledServicesAPI.UpdateNetworkApplianceFirewallFirewalledService(context.Background(), networkId, service).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

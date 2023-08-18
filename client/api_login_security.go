@@ -20,16 +20,16 @@ import (
 )
 
 
-// LoginSecurityApiService LoginSecurityApi service
-type LoginSecurityApiService service
+// LoginSecurityAPIService LoginSecurityAPI service
+type LoginSecurityAPIService service
 
-type LoginSecurityApiGetOrganizationLoginSecurityRequest struct {
+type LoginSecurityAPIGetOrganizationLoginSecurityRequest struct {
 	ctx context.Context
-	ApiService *LoginSecurityApiService
+	ApiService *LoginSecurityAPIService
 	organizationId string
 }
 
-func (r LoginSecurityApiGetOrganizationLoginSecurityRequest) Execute() (*GetOrganizationLoginSecurity200Response, *http.Response, error) {
+func (r LoginSecurityAPIGetOrganizationLoginSecurityRequest) Execute() (*GetOrganizationLoginSecurity200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationLoginSecurityExecute(r)
 }
 
@@ -40,10 +40,10 @@ Returns the login security settings for an organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return LoginSecurityApiGetOrganizationLoginSecurityRequest
+ @return LoginSecurityAPIGetOrganizationLoginSecurityRequest
 */
-func (a *LoginSecurityApiService) GetOrganizationLoginSecurity(ctx context.Context, organizationId string) LoginSecurityApiGetOrganizationLoginSecurityRequest {
-	return LoginSecurityApiGetOrganizationLoginSecurityRequest{
+func (a *LoginSecurityAPIService) GetOrganizationLoginSecurity(ctx context.Context, organizationId string) LoginSecurityAPIGetOrganizationLoginSecurityRequest {
+	return LoginSecurityAPIGetOrganizationLoginSecurityRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -52,7 +52,7 @@ func (a *LoginSecurityApiService) GetOrganizationLoginSecurity(ctx context.Conte
 
 // Execute executes the request
 //  @return GetOrganizationLoginSecurity200Response
-func (a *LoginSecurityApiService) GetOrganizationLoginSecurityExecute(r LoginSecurityApiGetOrganizationLoginSecurityRequest) (*GetOrganizationLoginSecurity200Response, *http.Response, error) {
+func (a *LoginSecurityAPIService) GetOrganizationLoginSecurityExecute(r LoginSecurityAPIGetOrganizationLoginSecurityRequest) (*GetOrganizationLoginSecurity200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *LoginSecurityApiService) GetOrganizationLoginSecurityExecute(r LoginSec
 		localVarReturnValue  *GetOrganizationLoginSecurity200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoginSecurityApiService.GetOrganizationLoginSecurity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoginSecurityAPIService.GetOrganizationLoginSecurity")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *LoginSecurityApiService) GetOrganizationLoginSecurityExecute(r LoginSec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type LoginSecurityApiUpdateOrganizationLoginSecurityRequest struct {
+type LoginSecurityAPIUpdateOrganizationLoginSecurityRequest struct {
 	ctx context.Context
-	ApiService *LoginSecurityApiService
+	ApiService *LoginSecurityAPIService
 	organizationId string
 	updateOrganizationLoginSecurityRequest *UpdateOrganizationLoginSecurityRequest
 }
 
-func (r LoginSecurityApiUpdateOrganizationLoginSecurityRequest) UpdateOrganizationLoginSecurityRequest(updateOrganizationLoginSecurityRequest UpdateOrganizationLoginSecurityRequest) LoginSecurityApiUpdateOrganizationLoginSecurityRequest {
+func (r LoginSecurityAPIUpdateOrganizationLoginSecurityRequest) UpdateOrganizationLoginSecurityRequest(updateOrganizationLoginSecurityRequest UpdateOrganizationLoginSecurityRequest) LoginSecurityAPIUpdateOrganizationLoginSecurityRequest {
 	r.updateOrganizationLoginSecurityRequest = &updateOrganizationLoginSecurityRequest
 	return r
 }
 
-func (r LoginSecurityApiUpdateOrganizationLoginSecurityRequest) Execute() (*GetOrganizationLoginSecurity200Response, *http.Response, error) {
+func (r LoginSecurityAPIUpdateOrganizationLoginSecurityRequest) Execute() (*GetOrganizationLoginSecurity200Response, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationLoginSecurityExecute(r)
 }
 
@@ -163,10 +163,10 @@ Update the login security settings for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return LoginSecurityApiUpdateOrganizationLoginSecurityRequest
+ @return LoginSecurityAPIUpdateOrganizationLoginSecurityRequest
 */
-func (a *LoginSecurityApiService) UpdateOrganizationLoginSecurity(ctx context.Context, organizationId string) LoginSecurityApiUpdateOrganizationLoginSecurityRequest {
-	return LoginSecurityApiUpdateOrganizationLoginSecurityRequest{
+func (a *LoginSecurityAPIService) UpdateOrganizationLoginSecurity(ctx context.Context, organizationId string) LoginSecurityAPIUpdateOrganizationLoginSecurityRequest {
+	return LoginSecurityAPIUpdateOrganizationLoginSecurityRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -175,7 +175,7 @@ func (a *LoginSecurityApiService) UpdateOrganizationLoginSecurity(ctx context.Co
 
 // Execute executes the request
 //  @return GetOrganizationLoginSecurity200Response
-func (a *LoginSecurityApiService) UpdateOrganizationLoginSecurityExecute(r LoginSecurityApiUpdateOrganizationLoginSecurityRequest) (*GetOrganizationLoginSecurity200Response, *http.Response, error) {
+func (a *LoginSecurityAPIService) UpdateOrganizationLoginSecurityExecute(r LoginSecurityAPIUpdateOrganizationLoginSecurityRequest) (*GetOrganizationLoginSecurity200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *LoginSecurityApiService) UpdateOrganizationLoginSecurityExecute(r Login
 		localVarReturnValue  *GetOrganizationLoginSecurity200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoginSecurityApiService.UpdateOrganizationLoginSecurity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoginSecurityAPIService.UpdateOrganizationLoginSecurity")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

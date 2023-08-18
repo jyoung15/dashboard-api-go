@@ -20,16 +20,16 @@ import (
 )
 
 
-// SiteToSiteVpnApiService SiteToSiteVpnApi service
-type SiteToSiteVpnApiService service
+// SiteToSiteVpnAPIService SiteToSiteVpnAPI service
+type SiteToSiteVpnAPIService service
 
-type SiteToSiteVpnApiGetNetworkApplianceVpnSiteToSiteVpnRequest struct {
+type SiteToSiteVpnAPIGetNetworkApplianceVpnSiteToSiteVpnRequest struct {
 	ctx context.Context
-	ApiService *SiteToSiteVpnApiService
+	ApiService *SiteToSiteVpnAPIService
 	networkId string
 }
 
-func (r SiteToSiteVpnApiGetNetworkApplianceVpnSiteToSiteVpnRequest) Execute() (*GetNetworkApplianceVpnSiteToSiteVpn200Response, *http.Response, error) {
+func (r SiteToSiteVpnAPIGetNetworkApplianceVpnSiteToSiteVpnRequest) Execute() (*GetNetworkApplianceVpnSiteToSiteVpn200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceVpnSiteToSiteVpnExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the site-to-site VPN settings of a network. Only valid for MX networks.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SiteToSiteVpnApiGetNetworkApplianceVpnSiteToSiteVpnRequest
+ @return SiteToSiteVpnAPIGetNetworkApplianceVpnSiteToSiteVpnRequest
 */
-func (a *SiteToSiteVpnApiService) GetNetworkApplianceVpnSiteToSiteVpn(ctx context.Context, networkId string) SiteToSiteVpnApiGetNetworkApplianceVpnSiteToSiteVpnRequest {
-	return SiteToSiteVpnApiGetNetworkApplianceVpnSiteToSiteVpnRequest{
+func (a *SiteToSiteVpnAPIService) GetNetworkApplianceVpnSiteToSiteVpn(ctx context.Context, networkId string) SiteToSiteVpnAPIGetNetworkApplianceVpnSiteToSiteVpnRequest {
+	return SiteToSiteVpnAPIGetNetworkApplianceVpnSiteToSiteVpnRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *SiteToSiteVpnApiService) GetNetworkApplianceVpnSiteToSiteVpn(ctx contex
 
 // Execute executes the request
 //  @return GetNetworkApplianceVpnSiteToSiteVpn200Response
-func (a *SiteToSiteVpnApiService) GetNetworkApplianceVpnSiteToSiteVpnExecute(r SiteToSiteVpnApiGetNetworkApplianceVpnSiteToSiteVpnRequest) (*GetNetworkApplianceVpnSiteToSiteVpn200Response, *http.Response, error) {
+func (a *SiteToSiteVpnAPIService) GetNetworkApplianceVpnSiteToSiteVpnExecute(r SiteToSiteVpnAPIGetNetworkApplianceVpnSiteToSiteVpnRequest) (*GetNetworkApplianceVpnSiteToSiteVpn200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *SiteToSiteVpnApiService) GetNetworkApplianceVpnSiteToSiteVpnExecute(r S
 		localVarReturnValue  *GetNetworkApplianceVpnSiteToSiteVpn200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SiteToSiteVpnApiService.GetNetworkApplianceVpnSiteToSiteVpn")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SiteToSiteVpnAPIService.GetNetworkApplianceVpnSiteToSiteVpn")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *SiteToSiteVpnApiService) GetNetworkApplianceVpnSiteToSiteVpnExecute(r S
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SiteToSiteVpnApiUpdateNetworkApplianceVpnSiteToSiteVpnRequest struct {
+type SiteToSiteVpnAPIUpdateNetworkApplianceVpnSiteToSiteVpnRequest struct {
 	ctx context.Context
-	ApiService *SiteToSiteVpnApiService
+	ApiService *SiteToSiteVpnAPIService
 	networkId string
 	updateNetworkApplianceVpnSiteToSiteVpnRequest *UpdateNetworkApplianceVpnSiteToSiteVpnRequest
 }
 
-func (r SiteToSiteVpnApiUpdateNetworkApplianceVpnSiteToSiteVpnRequest) UpdateNetworkApplianceVpnSiteToSiteVpnRequest(updateNetworkApplianceVpnSiteToSiteVpnRequest UpdateNetworkApplianceVpnSiteToSiteVpnRequest) SiteToSiteVpnApiUpdateNetworkApplianceVpnSiteToSiteVpnRequest {
+func (r SiteToSiteVpnAPIUpdateNetworkApplianceVpnSiteToSiteVpnRequest) UpdateNetworkApplianceVpnSiteToSiteVpnRequest(updateNetworkApplianceVpnSiteToSiteVpnRequest UpdateNetworkApplianceVpnSiteToSiteVpnRequest) SiteToSiteVpnAPIUpdateNetworkApplianceVpnSiteToSiteVpnRequest {
 	r.updateNetworkApplianceVpnSiteToSiteVpnRequest = &updateNetworkApplianceVpnSiteToSiteVpnRequest
 	return r
 }
 
-func (r SiteToSiteVpnApiUpdateNetworkApplianceVpnSiteToSiteVpnRequest) Execute() (*GetNetworkApplianceVpnSiteToSiteVpn200Response, *http.Response, error) {
+func (r SiteToSiteVpnAPIUpdateNetworkApplianceVpnSiteToSiteVpnRequest) Execute() (*GetNetworkApplianceVpnSiteToSiteVpn200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceVpnSiteToSiteVpnExecute(r)
 }
 
@@ -163,10 +163,10 @@ Update the site-to-site VPN settings of a network. Only valid for MX networks in
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SiteToSiteVpnApiUpdateNetworkApplianceVpnSiteToSiteVpnRequest
+ @return SiteToSiteVpnAPIUpdateNetworkApplianceVpnSiteToSiteVpnRequest
 */
-func (a *SiteToSiteVpnApiService) UpdateNetworkApplianceVpnSiteToSiteVpn(ctx context.Context, networkId string) SiteToSiteVpnApiUpdateNetworkApplianceVpnSiteToSiteVpnRequest {
-	return SiteToSiteVpnApiUpdateNetworkApplianceVpnSiteToSiteVpnRequest{
+func (a *SiteToSiteVpnAPIService) UpdateNetworkApplianceVpnSiteToSiteVpn(ctx context.Context, networkId string) SiteToSiteVpnAPIUpdateNetworkApplianceVpnSiteToSiteVpnRequest {
+	return SiteToSiteVpnAPIUpdateNetworkApplianceVpnSiteToSiteVpnRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -175,7 +175,7 @@ func (a *SiteToSiteVpnApiService) UpdateNetworkApplianceVpnSiteToSiteVpn(ctx con
 
 // Execute executes the request
 //  @return GetNetworkApplianceVpnSiteToSiteVpn200Response
-func (a *SiteToSiteVpnApiService) UpdateNetworkApplianceVpnSiteToSiteVpnExecute(r SiteToSiteVpnApiUpdateNetworkApplianceVpnSiteToSiteVpnRequest) (*GetNetworkApplianceVpnSiteToSiteVpn200Response, *http.Response, error) {
+func (a *SiteToSiteVpnAPIService) UpdateNetworkApplianceVpnSiteToSiteVpnExecute(r SiteToSiteVpnAPIUpdateNetworkApplianceVpnSiteToSiteVpnRequest) (*GetNetworkApplianceVpnSiteToSiteVpn200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *SiteToSiteVpnApiService) UpdateNetworkApplianceVpnSiteToSiteVpnExecute(
 		localVarReturnValue  *GetNetworkApplianceVpnSiteToSiteVpn200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SiteToSiteVpnApiService.UpdateNetworkApplianceVpnSiteToSiteVpn")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SiteToSiteVpnAPIService.UpdateNetworkApplianceVpnSiteToSiteVpn")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

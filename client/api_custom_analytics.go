@@ -20,22 +20,22 @@ import (
 )
 
 
-// CustomAnalyticsApiService CustomAnalyticsApi service
-type CustomAnalyticsApiService service
+// CustomAnalyticsAPIService CustomAnalyticsAPI service
+type CustomAnalyticsAPIService service
 
-type CustomAnalyticsApiCreateOrganizationCameraCustomAnalyticsArtifactRequest struct {
+type CustomAnalyticsAPICreateOrganizationCameraCustomAnalyticsArtifactRequest struct {
 	ctx context.Context
-	ApiService *CustomAnalyticsApiService
+	ApiService *CustomAnalyticsAPIService
 	organizationId string
 	createOrganizationCameraCustomAnalyticsArtifactRequest *CreateOrganizationCameraCustomAnalyticsArtifactRequest
 }
 
-func (r CustomAnalyticsApiCreateOrganizationCameraCustomAnalyticsArtifactRequest) CreateOrganizationCameraCustomAnalyticsArtifactRequest(createOrganizationCameraCustomAnalyticsArtifactRequest CreateOrganizationCameraCustomAnalyticsArtifactRequest) CustomAnalyticsApiCreateOrganizationCameraCustomAnalyticsArtifactRequest {
+func (r CustomAnalyticsAPICreateOrganizationCameraCustomAnalyticsArtifactRequest) CreateOrganizationCameraCustomAnalyticsArtifactRequest(createOrganizationCameraCustomAnalyticsArtifactRequest CreateOrganizationCameraCustomAnalyticsArtifactRequest) CustomAnalyticsAPICreateOrganizationCameraCustomAnalyticsArtifactRequest {
 	r.createOrganizationCameraCustomAnalyticsArtifactRequest = &createOrganizationCameraCustomAnalyticsArtifactRequest
 	return r
 }
 
-func (r CustomAnalyticsApiCreateOrganizationCameraCustomAnalyticsArtifactRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CustomAnalyticsAPICreateOrganizationCameraCustomAnalyticsArtifactRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateOrganizationCameraCustomAnalyticsArtifactExecute(r)
 }
 
@@ -46,10 +46,10 @@ Create custom analytics artifact. Returns an artifact upload URL with expiry tim
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return CustomAnalyticsApiCreateOrganizationCameraCustomAnalyticsArtifactRequest
+ @return CustomAnalyticsAPICreateOrganizationCameraCustomAnalyticsArtifactRequest
 */
-func (a *CustomAnalyticsApiService) CreateOrganizationCameraCustomAnalyticsArtifact(ctx context.Context, organizationId string) CustomAnalyticsApiCreateOrganizationCameraCustomAnalyticsArtifactRequest {
-	return CustomAnalyticsApiCreateOrganizationCameraCustomAnalyticsArtifactRequest{
+func (a *CustomAnalyticsAPIService) CreateOrganizationCameraCustomAnalyticsArtifact(ctx context.Context, organizationId string) CustomAnalyticsAPICreateOrganizationCameraCustomAnalyticsArtifactRequest {
+	return CustomAnalyticsAPICreateOrganizationCameraCustomAnalyticsArtifactRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -58,7 +58,7 @@ func (a *CustomAnalyticsApiService) CreateOrganizationCameraCustomAnalyticsArtif
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CustomAnalyticsApiService) CreateOrganizationCameraCustomAnalyticsArtifactExecute(r CustomAnalyticsApiCreateOrganizationCameraCustomAnalyticsArtifactRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CustomAnalyticsAPIService) CreateOrganizationCameraCustomAnalyticsArtifactExecute(r CustomAnalyticsAPICreateOrganizationCameraCustomAnalyticsArtifactRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *CustomAnalyticsApiService) CreateOrganizationCameraCustomAnalyticsArtif
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomAnalyticsApiService.CreateOrganizationCameraCustomAnalyticsArtifact")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomAnalyticsAPIService.CreateOrganizationCameraCustomAnalyticsArtifact")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -148,14 +148,14 @@ func (a *CustomAnalyticsApiService) CreateOrganizationCameraCustomAnalyticsArtif
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CustomAnalyticsApiDeleteOrganizationCameraCustomAnalyticsArtifactRequest struct {
+type CustomAnalyticsAPIDeleteOrganizationCameraCustomAnalyticsArtifactRequest struct {
 	ctx context.Context
-	ApiService *CustomAnalyticsApiService
+	ApiService *CustomAnalyticsAPIService
 	organizationId string
 	artifactId string
 }
 
-func (r CustomAnalyticsApiDeleteOrganizationCameraCustomAnalyticsArtifactRequest) Execute() (*http.Response, error) {
+func (r CustomAnalyticsAPIDeleteOrganizationCameraCustomAnalyticsArtifactRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationCameraCustomAnalyticsArtifactExecute(r)
 }
 
@@ -167,10 +167,10 @@ Delete Custom Analytics Artifact
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param artifactId Artifact ID
- @return CustomAnalyticsApiDeleteOrganizationCameraCustomAnalyticsArtifactRequest
+ @return CustomAnalyticsAPIDeleteOrganizationCameraCustomAnalyticsArtifactRequest
 */
-func (a *CustomAnalyticsApiService) DeleteOrganizationCameraCustomAnalyticsArtifact(ctx context.Context, organizationId string, artifactId string) CustomAnalyticsApiDeleteOrganizationCameraCustomAnalyticsArtifactRequest {
-	return CustomAnalyticsApiDeleteOrganizationCameraCustomAnalyticsArtifactRequest{
+func (a *CustomAnalyticsAPIService) DeleteOrganizationCameraCustomAnalyticsArtifact(ctx context.Context, organizationId string, artifactId string) CustomAnalyticsAPIDeleteOrganizationCameraCustomAnalyticsArtifactRequest {
+	return CustomAnalyticsAPIDeleteOrganizationCameraCustomAnalyticsArtifactRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -179,14 +179,14 @@ func (a *CustomAnalyticsApiService) DeleteOrganizationCameraCustomAnalyticsArtif
 }
 
 // Execute executes the request
-func (a *CustomAnalyticsApiService) DeleteOrganizationCameraCustomAnalyticsArtifactExecute(r CustomAnalyticsApiDeleteOrganizationCameraCustomAnalyticsArtifactRequest) (*http.Response, error) {
+func (a *CustomAnalyticsAPIService) DeleteOrganizationCameraCustomAnalyticsArtifactExecute(r CustomAnalyticsAPIDeleteOrganizationCameraCustomAnalyticsArtifactRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomAnalyticsApiService.DeleteOrganizationCameraCustomAnalyticsArtifact")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomAnalyticsAPIService.DeleteOrganizationCameraCustomAnalyticsArtifact")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -258,13 +258,13 @@ func (a *CustomAnalyticsApiService) DeleteOrganizationCameraCustomAnalyticsArtif
 	return localVarHTTPResponse, nil
 }
 
-type CustomAnalyticsApiGetDeviceCameraCustomAnalyticsRequest struct {
+type CustomAnalyticsAPIGetDeviceCameraCustomAnalyticsRequest struct {
 	ctx context.Context
-	ApiService *CustomAnalyticsApiService
+	ApiService *CustomAnalyticsAPIService
 	serial string
 }
 
-func (r CustomAnalyticsApiGetDeviceCameraCustomAnalyticsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CustomAnalyticsAPIGetDeviceCameraCustomAnalyticsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCameraCustomAnalyticsExecute(r)
 }
 
@@ -275,10 +275,10 @@ Return custom analytics settings for a camera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return CustomAnalyticsApiGetDeviceCameraCustomAnalyticsRequest
+ @return CustomAnalyticsAPIGetDeviceCameraCustomAnalyticsRequest
 */
-func (a *CustomAnalyticsApiService) GetDeviceCameraCustomAnalytics(ctx context.Context, serial string) CustomAnalyticsApiGetDeviceCameraCustomAnalyticsRequest {
-	return CustomAnalyticsApiGetDeviceCameraCustomAnalyticsRequest{
+func (a *CustomAnalyticsAPIService) GetDeviceCameraCustomAnalytics(ctx context.Context, serial string) CustomAnalyticsAPIGetDeviceCameraCustomAnalyticsRequest {
+	return CustomAnalyticsAPIGetDeviceCameraCustomAnalyticsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -287,7 +287,7 @@ func (a *CustomAnalyticsApiService) GetDeviceCameraCustomAnalytics(ctx context.C
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CustomAnalyticsApiService) GetDeviceCameraCustomAnalyticsExecute(r CustomAnalyticsApiGetDeviceCameraCustomAnalyticsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CustomAnalyticsAPIService) GetDeviceCameraCustomAnalyticsExecute(r CustomAnalyticsAPIGetDeviceCameraCustomAnalyticsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -295,7 +295,7 @@ func (a *CustomAnalyticsApiService) GetDeviceCameraCustomAnalyticsExecute(r Cust
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomAnalyticsApiService.GetDeviceCameraCustomAnalytics")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomAnalyticsAPIService.GetDeviceCameraCustomAnalytics")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -375,14 +375,14 @@ func (a *CustomAnalyticsApiService) GetDeviceCameraCustomAnalyticsExecute(r Cust
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CustomAnalyticsApiGetOrganizationCameraCustomAnalyticsArtifactRequest struct {
+type CustomAnalyticsAPIGetOrganizationCameraCustomAnalyticsArtifactRequest struct {
 	ctx context.Context
-	ApiService *CustomAnalyticsApiService
+	ApiService *CustomAnalyticsAPIService
 	organizationId string
 	artifactId string
 }
 
-func (r CustomAnalyticsApiGetOrganizationCameraCustomAnalyticsArtifactRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CustomAnalyticsAPIGetOrganizationCameraCustomAnalyticsArtifactRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationCameraCustomAnalyticsArtifactExecute(r)
 }
 
@@ -394,10 +394,10 @@ Get Custom Analytics Artifact
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param artifactId Artifact ID
- @return CustomAnalyticsApiGetOrganizationCameraCustomAnalyticsArtifactRequest
+ @return CustomAnalyticsAPIGetOrganizationCameraCustomAnalyticsArtifactRequest
 */
-func (a *CustomAnalyticsApiService) GetOrganizationCameraCustomAnalyticsArtifact(ctx context.Context, organizationId string, artifactId string) CustomAnalyticsApiGetOrganizationCameraCustomAnalyticsArtifactRequest {
-	return CustomAnalyticsApiGetOrganizationCameraCustomAnalyticsArtifactRequest{
+func (a *CustomAnalyticsAPIService) GetOrganizationCameraCustomAnalyticsArtifact(ctx context.Context, organizationId string, artifactId string) CustomAnalyticsAPIGetOrganizationCameraCustomAnalyticsArtifactRequest {
+	return CustomAnalyticsAPIGetOrganizationCameraCustomAnalyticsArtifactRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -407,7 +407,7 @@ func (a *CustomAnalyticsApiService) GetOrganizationCameraCustomAnalyticsArtifact
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CustomAnalyticsApiService) GetOrganizationCameraCustomAnalyticsArtifactExecute(r CustomAnalyticsApiGetOrganizationCameraCustomAnalyticsArtifactRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CustomAnalyticsAPIService) GetOrganizationCameraCustomAnalyticsArtifactExecute(r CustomAnalyticsAPIGetOrganizationCameraCustomAnalyticsArtifactRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -415,7 +415,7 @@ func (a *CustomAnalyticsApiService) GetOrganizationCameraCustomAnalyticsArtifact
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomAnalyticsApiService.GetOrganizationCameraCustomAnalyticsArtifact")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomAnalyticsAPIService.GetOrganizationCameraCustomAnalyticsArtifact")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -496,13 +496,13 @@ func (a *CustomAnalyticsApiService) GetOrganizationCameraCustomAnalyticsArtifact
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CustomAnalyticsApiGetOrganizationCameraCustomAnalyticsArtifactsRequest struct {
+type CustomAnalyticsAPIGetOrganizationCameraCustomAnalyticsArtifactsRequest struct {
 	ctx context.Context
-	ApiService *CustomAnalyticsApiService
+	ApiService *CustomAnalyticsAPIService
 	organizationId string
 }
 
-func (r CustomAnalyticsApiGetOrganizationCameraCustomAnalyticsArtifactsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r CustomAnalyticsAPIGetOrganizationCameraCustomAnalyticsArtifactsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationCameraCustomAnalyticsArtifactsExecute(r)
 }
 
@@ -513,10 +513,10 @@ List Custom Analytics Artifacts
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return CustomAnalyticsApiGetOrganizationCameraCustomAnalyticsArtifactsRequest
+ @return CustomAnalyticsAPIGetOrganizationCameraCustomAnalyticsArtifactsRequest
 */
-func (a *CustomAnalyticsApiService) GetOrganizationCameraCustomAnalyticsArtifacts(ctx context.Context, organizationId string) CustomAnalyticsApiGetOrganizationCameraCustomAnalyticsArtifactsRequest {
-	return CustomAnalyticsApiGetOrganizationCameraCustomAnalyticsArtifactsRequest{
+func (a *CustomAnalyticsAPIService) GetOrganizationCameraCustomAnalyticsArtifacts(ctx context.Context, organizationId string) CustomAnalyticsAPIGetOrganizationCameraCustomAnalyticsArtifactsRequest {
+	return CustomAnalyticsAPIGetOrganizationCameraCustomAnalyticsArtifactsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -525,7 +525,7 @@ func (a *CustomAnalyticsApiService) GetOrganizationCameraCustomAnalyticsArtifact
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *CustomAnalyticsApiService) GetOrganizationCameraCustomAnalyticsArtifactsExecute(r CustomAnalyticsApiGetOrganizationCameraCustomAnalyticsArtifactsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *CustomAnalyticsAPIService) GetOrganizationCameraCustomAnalyticsArtifactsExecute(r CustomAnalyticsAPIGetOrganizationCameraCustomAnalyticsArtifactsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -533,7 +533,7 @@ func (a *CustomAnalyticsApiService) GetOrganizationCameraCustomAnalyticsArtifact
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomAnalyticsApiService.GetOrganizationCameraCustomAnalyticsArtifacts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomAnalyticsAPIService.GetOrganizationCameraCustomAnalyticsArtifacts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -613,19 +613,19 @@ func (a *CustomAnalyticsApiService) GetOrganizationCameraCustomAnalyticsArtifact
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CustomAnalyticsApiUpdateDeviceCameraCustomAnalyticsRequest struct {
+type CustomAnalyticsAPIUpdateDeviceCameraCustomAnalyticsRequest struct {
 	ctx context.Context
-	ApiService *CustomAnalyticsApiService
+	ApiService *CustomAnalyticsAPIService
 	serial string
 	updateDeviceCameraCustomAnalyticsRequest *UpdateDeviceCameraCustomAnalyticsRequest
 }
 
-func (r CustomAnalyticsApiUpdateDeviceCameraCustomAnalyticsRequest) UpdateDeviceCameraCustomAnalyticsRequest(updateDeviceCameraCustomAnalyticsRequest UpdateDeviceCameraCustomAnalyticsRequest) CustomAnalyticsApiUpdateDeviceCameraCustomAnalyticsRequest {
+func (r CustomAnalyticsAPIUpdateDeviceCameraCustomAnalyticsRequest) UpdateDeviceCameraCustomAnalyticsRequest(updateDeviceCameraCustomAnalyticsRequest UpdateDeviceCameraCustomAnalyticsRequest) CustomAnalyticsAPIUpdateDeviceCameraCustomAnalyticsRequest {
 	r.updateDeviceCameraCustomAnalyticsRequest = &updateDeviceCameraCustomAnalyticsRequest
 	return r
 }
 
-func (r CustomAnalyticsApiUpdateDeviceCameraCustomAnalyticsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r CustomAnalyticsAPIUpdateDeviceCameraCustomAnalyticsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceCameraCustomAnalyticsExecute(r)
 }
 
@@ -636,10 +636,10 @@ Update custom analytics settings for a camera
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return CustomAnalyticsApiUpdateDeviceCameraCustomAnalyticsRequest
+ @return CustomAnalyticsAPIUpdateDeviceCameraCustomAnalyticsRequest
 */
-func (a *CustomAnalyticsApiService) UpdateDeviceCameraCustomAnalytics(ctx context.Context, serial string) CustomAnalyticsApiUpdateDeviceCameraCustomAnalyticsRequest {
-	return CustomAnalyticsApiUpdateDeviceCameraCustomAnalyticsRequest{
+func (a *CustomAnalyticsAPIService) UpdateDeviceCameraCustomAnalytics(ctx context.Context, serial string) CustomAnalyticsAPIUpdateDeviceCameraCustomAnalyticsRequest {
+	return CustomAnalyticsAPIUpdateDeviceCameraCustomAnalyticsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -648,7 +648,7 @@ func (a *CustomAnalyticsApiService) UpdateDeviceCameraCustomAnalytics(ctx contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CustomAnalyticsApiService) UpdateDeviceCameraCustomAnalyticsExecute(r CustomAnalyticsApiUpdateDeviceCameraCustomAnalyticsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CustomAnalyticsAPIService) UpdateDeviceCameraCustomAnalyticsExecute(r CustomAnalyticsAPIUpdateDeviceCameraCustomAnalyticsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -656,7 +656,7 @@ func (a *CustomAnalyticsApiService) UpdateDeviceCameraCustomAnalyticsExecute(r C
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomAnalyticsApiService.UpdateDeviceCameraCustomAnalytics")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomAnalyticsAPIService.UpdateDeviceCameraCustomAnalytics")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

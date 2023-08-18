@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing ByNetworkApiService
+Testing ByNetworkAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_ByNetworkApiService(t *testing.T) {
+func Test_client_ByNetworkAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test ByNetworkApiService GetOrganizationApplianceUplinksUsageByNetwork", func(t *testing.T) {
+	t.Run("Test ByNetworkAPIService GetOrganizationApplianceUplinksUsageByNetwork", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ByNetworkApi.GetOrganizationApplianceUplinksUsageByNetwork(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ByNetworkAPI.GetOrganizationApplianceUplinksUsageByNetwork(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_ByNetworkApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ByNetworkApiService GetOrganizationWirelessDevicesChannelUtilizationByNetwork", func(t *testing.T) {
+	t.Run("Test ByNetworkAPIService GetOrganizationWirelessDevicesChannelUtilizationByNetwork", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ByNetworkApi.GetOrganizationWirelessDevicesChannelUtilizationByNetwork(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ByNetworkAPI.GetOrganizationWirelessDevicesChannelUtilizationByNetwork(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,13 +50,13 @@ func Test_client_ByNetworkApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ByNetworkApiService GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval", func(t *testing.T) {
+	t.Run("Test ByNetworkAPIService GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ByNetworkApi.GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ByNetworkAPI.GetOrganizationWirelessDevicesChannelUtilizationHistoryByNetworkByInterval(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

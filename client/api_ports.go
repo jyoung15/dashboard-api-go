@@ -21,22 +21,22 @@ import (
 )
 
 
-// PortsApiService PortsApi service
-type PortsApiService service
+// PortsAPIService PortsAPI service
+type PortsAPIService service
 
-type PortsApiCycleDeviceSwitchPortsRequest struct {
+type PortsAPICycleDeviceSwitchPortsRequest struct {
 	ctx context.Context
-	ApiService *PortsApiService
+	ApiService *PortsAPIService
 	serial string
 	cycleDeviceSwitchPortsRequest *CycleDeviceSwitchPortsRequest
 }
 
-func (r PortsApiCycleDeviceSwitchPortsRequest) CycleDeviceSwitchPortsRequest(cycleDeviceSwitchPortsRequest CycleDeviceSwitchPortsRequest) PortsApiCycleDeviceSwitchPortsRequest {
+func (r PortsAPICycleDeviceSwitchPortsRequest) CycleDeviceSwitchPortsRequest(cycleDeviceSwitchPortsRequest CycleDeviceSwitchPortsRequest) PortsAPICycleDeviceSwitchPortsRequest {
 	r.cycleDeviceSwitchPortsRequest = &cycleDeviceSwitchPortsRequest
 	return r
 }
 
-func (r PortsApiCycleDeviceSwitchPortsRequest) Execute() (*CycleDeviceSwitchPorts200Response, *http.Response, error) {
+func (r PortsAPICycleDeviceSwitchPortsRequest) Execute() (*CycleDeviceSwitchPorts200Response, *http.Response, error) {
 	return r.ApiService.CycleDeviceSwitchPortsExecute(r)
 }
 
@@ -47,10 +47,10 @@ Cycle a set of switch ports
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return PortsApiCycleDeviceSwitchPortsRequest
+ @return PortsAPICycleDeviceSwitchPortsRequest
 */
-func (a *PortsApiService) CycleDeviceSwitchPorts(ctx context.Context, serial string) PortsApiCycleDeviceSwitchPortsRequest {
-	return PortsApiCycleDeviceSwitchPortsRequest{
+func (a *PortsAPIService) CycleDeviceSwitchPorts(ctx context.Context, serial string) PortsAPICycleDeviceSwitchPortsRequest {
+	return PortsAPICycleDeviceSwitchPortsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -59,7 +59,7 @@ func (a *PortsApiService) CycleDeviceSwitchPorts(ctx context.Context, serial str
 
 // Execute executes the request
 //  @return CycleDeviceSwitchPorts200Response
-func (a *PortsApiService) CycleDeviceSwitchPortsExecute(r PortsApiCycleDeviceSwitchPortsRequest) (*CycleDeviceSwitchPorts200Response, *http.Response, error) {
+func (a *PortsAPIService) CycleDeviceSwitchPortsExecute(r PortsAPICycleDeviceSwitchPortsRequest) (*CycleDeviceSwitchPorts200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -67,7 +67,7 @@ func (a *PortsApiService) CycleDeviceSwitchPortsExecute(r PortsApiCycleDeviceSwi
 		localVarReturnValue  *CycleDeviceSwitchPorts200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortsApiService.CycleDeviceSwitchPorts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortsAPIService.CycleDeviceSwitchPorts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -152,14 +152,14 @@ func (a *PortsApiService) CycleDeviceSwitchPortsExecute(r PortsApiCycleDeviceSwi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PortsApiGetDeviceSwitchPortRequest struct {
+type PortsAPIGetDeviceSwitchPortRequest struct {
 	ctx context.Context
-	ApiService *PortsApiService
+	ApiService *PortsAPIService
 	serial string
 	portId string
 }
 
-func (r PortsApiGetDeviceSwitchPortRequest) Execute() (*GetDeviceSwitchPorts200ResponseInner, *http.Response, error) {
+func (r PortsAPIGetDeviceSwitchPortRequest) Execute() (*GetDeviceSwitchPorts200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetDeviceSwitchPortExecute(r)
 }
 
@@ -171,10 +171,10 @@ Return a switch port
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param portId Port ID
- @return PortsApiGetDeviceSwitchPortRequest
+ @return PortsAPIGetDeviceSwitchPortRequest
 */
-func (a *PortsApiService) GetDeviceSwitchPort(ctx context.Context, serial string, portId string) PortsApiGetDeviceSwitchPortRequest {
-	return PortsApiGetDeviceSwitchPortRequest{
+func (a *PortsAPIService) GetDeviceSwitchPort(ctx context.Context, serial string, portId string) PortsAPIGetDeviceSwitchPortRequest {
+	return PortsAPIGetDeviceSwitchPortRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -184,7 +184,7 @@ func (a *PortsApiService) GetDeviceSwitchPort(ctx context.Context, serial string
 
 // Execute executes the request
 //  @return GetDeviceSwitchPorts200ResponseInner
-func (a *PortsApiService) GetDeviceSwitchPortExecute(r PortsApiGetDeviceSwitchPortRequest) (*GetDeviceSwitchPorts200ResponseInner, *http.Response, error) {
+func (a *PortsAPIService) GetDeviceSwitchPortExecute(r PortsAPIGetDeviceSwitchPortRequest) (*GetDeviceSwitchPorts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -192,7 +192,7 @@ func (a *PortsApiService) GetDeviceSwitchPortExecute(r PortsApiGetDeviceSwitchPo
 		localVarReturnValue  *GetDeviceSwitchPorts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortsApiService.GetDeviceSwitchPort")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortsAPIService.GetDeviceSwitchPort")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -273,13 +273,13 @@ func (a *PortsApiService) GetDeviceSwitchPortExecute(r PortsApiGetDeviceSwitchPo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PortsApiGetDeviceSwitchPortsRequest struct {
+type PortsAPIGetDeviceSwitchPortsRequest struct {
 	ctx context.Context
-	ApiService *PortsApiService
+	ApiService *PortsAPIService
 	serial string
 }
 
-func (r PortsApiGetDeviceSwitchPortsRequest) Execute() ([]GetDeviceSwitchPorts200ResponseInner, *http.Response, error) {
+func (r PortsAPIGetDeviceSwitchPortsRequest) Execute() ([]GetDeviceSwitchPorts200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetDeviceSwitchPortsExecute(r)
 }
 
@@ -290,10 +290,10 @@ List the switch ports for a switch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return PortsApiGetDeviceSwitchPortsRequest
+ @return PortsAPIGetDeviceSwitchPortsRequest
 */
-func (a *PortsApiService) GetDeviceSwitchPorts(ctx context.Context, serial string) PortsApiGetDeviceSwitchPortsRequest {
-	return PortsApiGetDeviceSwitchPortsRequest{
+func (a *PortsAPIService) GetDeviceSwitchPorts(ctx context.Context, serial string) PortsAPIGetDeviceSwitchPortsRequest {
+	return PortsAPIGetDeviceSwitchPortsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -302,7 +302,7 @@ func (a *PortsApiService) GetDeviceSwitchPorts(ctx context.Context, serial strin
 
 // Execute executes the request
 //  @return []GetDeviceSwitchPorts200ResponseInner
-func (a *PortsApiService) GetDeviceSwitchPortsExecute(r PortsApiGetDeviceSwitchPortsRequest) ([]GetDeviceSwitchPorts200ResponseInner, *http.Response, error) {
+func (a *PortsAPIService) GetDeviceSwitchPortsExecute(r PortsAPIGetDeviceSwitchPortsRequest) ([]GetDeviceSwitchPorts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -310,7 +310,7 @@ func (a *PortsApiService) GetDeviceSwitchPortsExecute(r PortsApiGetDeviceSwitchP
 		localVarReturnValue  []GetDeviceSwitchPorts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortsApiService.GetDeviceSwitchPorts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortsAPIService.GetDeviceSwitchPorts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -390,27 +390,27 @@ func (a *PortsApiService) GetDeviceSwitchPortsExecute(r PortsApiGetDeviceSwitchP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PortsApiGetDeviceSwitchPortsStatusesRequest struct {
+type PortsAPIGetDeviceSwitchPortsStatusesRequest struct {
 	ctx context.Context
-	ApiService *PortsApiService
+	ApiService *PortsAPIService
 	serial string
 	t0 *string
 	timespan *float32
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r PortsApiGetDeviceSwitchPortsStatusesRequest) T0(t0 string) PortsApiGetDeviceSwitchPortsStatusesRequest {
+func (r PortsAPIGetDeviceSwitchPortsStatusesRequest) T0(t0 string) PortsAPIGetDeviceSwitchPortsStatusesRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r PortsApiGetDeviceSwitchPortsStatusesRequest) Timespan(timespan float32) PortsApiGetDeviceSwitchPortsStatusesRequest {
+func (r PortsAPIGetDeviceSwitchPortsStatusesRequest) Timespan(timespan float32) PortsAPIGetDeviceSwitchPortsStatusesRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r PortsApiGetDeviceSwitchPortsStatusesRequest) Execute() ([]GetDeviceSwitchPortsStatuses200ResponseInner, *http.Response, error) {
+func (r PortsAPIGetDeviceSwitchPortsStatusesRequest) Execute() ([]GetDeviceSwitchPortsStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetDeviceSwitchPortsStatusesExecute(r)
 }
 
@@ -421,10 +421,10 @@ Return the status for all the ports of a switch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return PortsApiGetDeviceSwitchPortsStatusesRequest
+ @return PortsAPIGetDeviceSwitchPortsStatusesRequest
 */
-func (a *PortsApiService) GetDeviceSwitchPortsStatuses(ctx context.Context, serial string) PortsApiGetDeviceSwitchPortsStatusesRequest {
-	return PortsApiGetDeviceSwitchPortsStatusesRequest{
+func (a *PortsAPIService) GetDeviceSwitchPortsStatuses(ctx context.Context, serial string) PortsAPIGetDeviceSwitchPortsStatusesRequest {
+	return PortsAPIGetDeviceSwitchPortsStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -433,7 +433,7 @@ func (a *PortsApiService) GetDeviceSwitchPortsStatuses(ctx context.Context, seri
 
 // Execute executes the request
 //  @return []GetDeviceSwitchPortsStatuses200ResponseInner
-func (a *PortsApiService) GetDeviceSwitchPortsStatusesExecute(r PortsApiGetDeviceSwitchPortsStatusesRequest) ([]GetDeviceSwitchPortsStatuses200ResponseInner, *http.Response, error) {
+func (a *PortsAPIService) GetDeviceSwitchPortsStatusesExecute(r PortsAPIGetDeviceSwitchPortsStatusesRequest) ([]GetDeviceSwitchPortsStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -441,7 +441,7 @@ func (a *PortsApiService) GetDeviceSwitchPortsStatusesExecute(r PortsApiGetDevic
 		localVarReturnValue  []GetDeviceSwitchPortsStatuses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortsApiService.GetDeviceSwitchPortsStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortsAPIService.GetDeviceSwitchPortsStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -527,27 +527,27 @@ func (a *PortsApiService) GetDeviceSwitchPortsStatusesExecute(r PortsApiGetDevic
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PortsApiGetDeviceSwitchPortsStatusesPacketsRequest struct {
+type PortsAPIGetDeviceSwitchPortsStatusesPacketsRequest struct {
 	ctx context.Context
-	ApiService *PortsApiService
+	ApiService *PortsAPIService
 	serial string
 	t0 *string
 	timespan *float32
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 1 day from today.
-func (r PortsApiGetDeviceSwitchPortsStatusesPacketsRequest) T0(t0 string) PortsApiGetDeviceSwitchPortsStatusesPacketsRequest {
+func (r PortsAPIGetDeviceSwitchPortsStatusesPacketsRequest) T0(t0 string) PortsAPIGetDeviceSwitchPortsStatusesPacketsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 1 day. The default is 1 day.
-func (r PortsApiGetDeviceSwitchPortsStatusesPacketsRequest) Timespan(timespan float32) PortsApiGetDeviceSwitchPortsStatusesPacketsRequest {
+func (r PortsAPIGetDeviceSwitchPortsStatusesPacketsRequest) Timespan(timespan float32) PortsAPIGetDeviceSwitchPortsStatusesPacketsRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r PortsApiGetDeviceSwitchPortsStatusesPacketsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r PortsAPIGetDeviceSwitchPortsStatusesPacketsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceSwitchPortsStatusesPacketsExecute(r)
 }
 
@@ -558,10 +558,10 @@ Return the packet counters for all the ports of a switch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return PortsApiGetDeviceSwitchPortsStatusesPacketsRequest
+ @return PortsAPIGetDeviceSwitchPortsStatusesPacketsRequest
 */
-func (a *PortsApiService) GetDeviceSwitchPortsStatusesPackets(ctx context.Context, serial string) PortsApiGetDeviceSwitchPortsStatusesPacketsRequest {
-	return PortsApiGetDeviceSwitchPortsStatusesPacketsRequest{
+func (a *PortsAPIService) GetDeviceSwitchPortsStatusesPackets(ctx context.Context, serial string) PortsAPIGetDeviceSwitchPortsStatusesPacketsRequest {
+	return PortsAPIGetDeviceSwitchPortsStatusesPacketsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -570,7 +570,7 @@ func (a *PortsApiService) GetDeviceSwitchPortsStatusesPackets(ctx context.Contex
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *PortsApiService) GetDeviceSwitchPortsStatusesPacketsExecute(r PortsApiGetDeviceSwitchPortsStatusesPacketsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *PortsAPIService) GetDeviceSwitchPortsStatusesPacketsExecute(r PortsAPIGetDeviceSwitchPortsStatusesPacketsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -578,7 +578,7 @@ func (a *PortsApiService) GetDeviceSwitchPortsStatusesPacketsExecute(r PortsApiG
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortsApiService.GetDeviceSwitchPortsStatusesPackets")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortsAPIService.GetDeviceSwitchPortsStatusesPackets")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -664,14 +664,14 @@ func (a *PortsApiService) GetDeviceSwitchPortsStatusesPacketsExecute(r PortsApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PortsApiGetNetworkAppliancePortRequest struct {
+type PortsAPIGetNetworkAppliancePortRequest struct {
 	ctx context.Context
-	ApiService *PortsApiService
+	ApiService *PortsAPIService
 	networkId string
 	portId string
 }
 
-func (r PortsApiGetNetworkAppliancePortRequest) Execute() (*GetNetworkAppliancePorts200ResponseInner, *http.Response, error) {
+func (r PortsAPIGetNetworkAppliancePortRequest) Execute() (*GetNetworkAppliancePorts200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkAppliancePortExecute(r)
 }
 
@@ -683,10 +683,10 @@ Return per-port VLAN settings for a single MX port.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param portId Port ID
- @return PortsApiGetNetworkAppliancePortRequest
+ @return PortsAPIGetNetworkAppliancePortRequest
 */
-func (a *PortsApiService) GetNetworkAppliancePort(ctx context.Context, networkId string, portId string) PortsApiGetNetworkAppliancePortRequest {
-	return PortsApiGetNetworkAppliancePortRequest{
+func (a *PortsAPIService) GetNetworkAppliancePort(ctx context.Context, networkId string, portId string) PortsAPIGetNetworkAppliancePortRequest {
+	return PortsAPIGetNetworkAppliancePortRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -696,7 +696,7 @@ func (a *PortsApiService) GetNetworkAppliancePort(ctx context.Context, networkId
 
 // Execute executes the request
 //  @return GetNetworkAppliancePorts200ResponseInner
-func (a *PortsApiService) GetNetworkAppliancePortExecute(r PortsApiGetNetworkAppliancePortRequest) (*GetNetworkAppliancePorts200ResponseInner, *http.Response, error) {
+func (a *PortsAPIService) GetNetworkAppliancePortExecute(r PortsAPIGetNetworkAppliancePortRequest) (*GetNetworkAppliancePorts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -704,7 +704,7 @@ func (a *PortsApiService) GetNetworkAppliancePortExecute(r PortsApiGetNetworkApp
 		localVarReturnValue  *GetNetworkAppliancePorts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortsApiService.GetNetworkAppliancePort")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortsAPIService.GetNetworkAppliancePort")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -785,13 +785,13 @@ func (a *PortsApiService) GetNetworkAppliancePortExecute(r PortsApiGetNetworkApp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PortsApiGetNetworkAppliancePortsRequest struct {
+type PortsAPIGetNetworkAppliancePortsRequest struct {
 	ctx context.Context
-	ApiService *PortsApiService
+	ApiService *PortsAPIService
 	networkId string
 }
 
-func (r PortsApiGetNetworkAppliancePortsRequest) Execute() ([]GetNetworkAppliancePorts200ResponseInner, *http.Response, error) {
+func (r PortsAPIGetNetworkAppliancePortsRequest) Execute() ([]GetNetworkAppliancePorts200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkAppliancePortsExecute(r)
 }
 
@@ -802,10 +802,10 @@ List per-port VLAN settings for all ports of a MX.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return PortsApiGetNetworkAppliancePortsRequest
+ @return PortsAPIGetNetworkAppliancePortsRequest
 */
-func (a *PortsApiService) GetNetworkAppliancePorts(ctx context.Context, networkId string) PortsApiGetNetworkAppliancePortsRequest {
-	return PortsApiGetNetworkAppliancePortsRequest{
+func (a *PortsAPIService) GetNetworkAppliancePorts(ctx context.Context, networkId string) PortsAPIGetNetworkAppliancePortsRequest {
+	return PortsAPIGetNetworkAppliancePortsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -814,7 +814,7 @@ func (a *PortsApiService) GetNetworkAppliancePorts(ctx context.Context, networkI
 
 // Execute executes the request
 //  @return []GetNetworkAppliancePorts200ResponseInner
-func (a *PortsApiService) GetNetworkAppliancePortsExecute(r PortsApiGetNetworkAppliancePortsRequest) ([]GetNetworkAppliancePorts200ResponseInner, *http.Response, error) {
+func (a *PortsAPIService) GetNetworkAppliancePortsExecute(r PortsAPIGetNetworkAppliancePortsRequest) ([]GetNetworkAppliancePorts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -822,7 +822,7 @@ func (a *PortsApiService) GetNetworkAppliancePortsExecute(r PortsApiGetNetworkAp
 		localVarReturnValue  []GetNetworkAppliancePorts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortsApiService.GetNetworkAppliancePorts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortsAPIService.GetNetworkAppliancePorts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -902,16 +902,16 @@ func (a *PortsApiService) GetNetworkAppliancePortsExecute(r PortsApiGetNetworkAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PortsApiGetOrganizationConfigTemplateSwitchProfilePortRequest struct {
+type PortsAPIGetOrganizationConfigTemplateSwitchProfilePortRequest struct {
 	ctx context.Context
-	ApiService *PortsApiService
+	ApiService *PortsAPIService
 	organizationId string
 	configTemplateId string
 	profileId string
 	portId string
 }
 
-func (r PortsApiGetOrganizationConfigTemplateSwitchProfilePortRequest) Execute() (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
+func (r PortsAPIGetOrganizationConfigTemplateSwitchProfilePortRequest) Execute() (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationConfigTemplateSwitchProfilePortExecute(r)
 }
 
@@ -925,10 +925,10 @@ Return a switch template port
  @param configTemplateId Config template ID
  @param profileId Profile ID
  @param portId Port ID
- @return PortsApiGetOrganizationConfigTemplateSwitchProfilePortRequest
+ @return PortsAPIGetOrganizationConfigTemplateSwitchProfilePortRequest
 */
-func (a *PortsApiService) GetOrganizationConfigTemplateSwitchProfilePort(ctx context.Context, organizationId string, configTemplateId string, profileId string, portId string) PortsApiGetOrganizationConfigTemplateSwitchProfilePortRequest {
-	return PortsApiGetOrganizationConfigTemplateSwitchProfilePortRequest{
+func (a *PortsAPIService) GetOrganizationConfigTemplateSwitchProfilePort(ctx context.Context, organizationId string, configTemplateId string, profileId string, portId string) PortsAPIGetOrganizationConfigTemplateSwitchProfilePortRequest {
+	return PortsAPIGetOrganizationConfigTemplateSwitchProfilePortRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -940,7 +940,7 @@ func (a *PortsApiService) GetOrganizationConfigTemplateSwitchProfilePort(ctx con
 
 // Execute executes the request
 //  @return GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner
-func (a *PortsApiService) GetOrganizationConfigTemplateSwitchProfilePortExecute(r PortsApiGetOrganizationConfigTemplateSwitchProfilePortRequest) (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
+func (a *PortsAPIService) GetOrganizationConfigTemplateSwitchProfilePortExecute(r PortsAPIGetOrganizationConfigTemplateSwitchProfilePortRequest) (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -948,7 +948,7 @@ func (a *PortsApiService) GetOrganizationConfigTemplateSwitchProfilePortExecute(
 		localVarReturnValue  *GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortsApiService.GetOrganizationConfigTemplateSwitchProfilePort")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortsAPIService.GetOrganizationConfigTemplateSwitchProfilePort")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1031,15 +1031,15 @@ func (a *PortsApiService) GetOrganizationConfigTemplateSwitchProfilePortExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PortsApiGetOrganizationConfigTemplateSwitchProfilePortsRequest struct {
+type PortsAPIGetOrganizationConfigTemplateSwitchProfilePortsRequest struct {
 	ctx context.Context
-	ApiService *PortsApiService
+	ApiService *PortsAPIService
 	organizationId string
 	configTemplateId string
 	profileId string
 }
 
-func (r PortsApiGetOrganizationConfigTemplateSwitchProfilePortsRequest) Execute() ([]GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
+func (r PortsAPIGetOrganizationConfigTemplateSwitchProfilePortsRequest) Execute() ([]GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationConfigTemplateSwitchProfilePortsExecute(r)
 }
 
@@ -1052,10 +1052,10 @@ Return all the ports of a switch template
  @param organizationId Organization ID
  @param configTemplateId Config template ID
  @param profileId Profile ID
- @return PortsApiGetOrganizationConfigTemplateSwitchProfilePortsRequest
+ @return PortsAPIGetOrganizationConfigTemplateSwitchProfilePortsRequest
 */
-func (a *PortsApiService) GetOrganizationConfigTemplateSwitchProfilePorts(ctx context.Context, organizationId string, configTemplateId string, profileId string) PortsApiGetOrganizationConfigTemplateSwitchProfilePortsRequest {
-	return PortsApiGetOrganizationConfigTemplateSwitchProfilePortsRequest{
+func (a *PortsAPIService) GetOrganizationConfigTemplateSwitchProfilePorts(ctx context.Context, organizationId string, configTemplateId string, profileId string) PortsAPIGetOrganizationConfigTemplateSwitchProfilePortsRequest {
+	return PortsAPIGetOrganizationConfigTemplateSwitchProfilePortsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1066,7 +1066,7 @@ func (a *PortsApiService) GetOrganizationConfigTemplateSwitchProfilePorts(ctx co
 
 // Execute executes the request
 //  @return []GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner
-func (a *PortsApiService) GetOrganizationConfigTemplateSwitchProfilePortsExecute(r PortsApiGetOrganizationConfigTemplateSwitchProfilePortsRequest) ([]GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
+func (a *PortsAPIService) GetOrganizationConfigTemplateSwitchProfilePortsExecute(r PortsAPIGetOrganizationConfigTemplateSwitchProfilePortsRequest) ([]GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1074,7 +1074,7 @@ func (a *PortsApiService) GetOrganizationConfigTemplateSwitchProfilePortsExecute
 		localVarReturnValue  []GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortsApiService.GetOrganizationConfigTemplateSwitchProfilePorts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortsAPIService.GetOrganizationConfigTemplateSwitchProfilePorts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1156,9 +1156,9 @@ func (a *PortsApiService) GetOrganizationConfigTemplateSwitchProfilePortsExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PortsApiGetOrganizationSwitchPortsBySwitchRequest struct {
+type PortsAPIGetOrganizationSwitchPortsBySwitchRequest struct {
 	ctx context.Context
-	ApiService *PortsApiService
+	ApiService *PortsAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -1174,72 +1174,72 @@ type PortsApiGetOrganizationSwitchPortsBySwitchRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 50. Default is 50.
-func (r PortsApiGetOrganizationSwitchPortsBySwitchRequest) PerPage(perPage int32) PortsApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r PortsAPIGetOrganizationSwitchPortsBySwitchRequest) PerPage(perPage int32) PortsAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r PortsApiGetOrganizationSwitchPortsBySwitchRequest) StartingAfter(startingAfter string) PortsApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r PortsAPIGetOrganizationSwitchPortsBySwitchRequest) StartingAfter(startingAfter string) PortsAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r PortsApiGetOrganizationSwitchPortsBySwitchRequest) EndingBefore(endingBefore string) PortsApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r PortsAPIGetOrganizationSwitchPortsBySwitchRequest) EndingBefore(endingBefore string) PortsAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter switchports by network.
-func (r PortsApiGetOrganizationSwitchPortsBySwitchRequest) NetworkIds(networkIds []string) PortsApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r PortsAPIGetOrganizationSwitchPortsBySwitchRequest) NetworkIds(networkIds []string) PortsAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter switchports belonging to the specified port profiles.
-func (r PortsApiGetOrganizationSwitchPortsBySwitchRequest) PortProfileIds(portProfileIds []string) PortsApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r PortsAPIGetOrganizationSwitchPortsBySwitchRequest) PortProfileIds(portProfileIds []string) PortsAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.portProfileIds = &portProfileIds
 	return r
 }
 
 // Optional parameter to filter switchports belonging to switches by name. All returned switches will have a name that contains the search term or is an exact match.
-func (r PortsApiGetOrganizationSwitchPortsBySwitchRequest) Name(name string) PortsApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r PortsAPIGetOrganizationSwitchPortsBySwitchRequest) Name(name string) PortsAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.name = &name
 	return r
 }
 
 // Optional parameter to filter switchports belonging to switches by MAC address. All returned switches will have a MAC address that contains the search term or is an exact match.
-func (r PortsApiGetOrganizationSwitchPortsBySwitchRequest) Mac(mac string) PortsApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r PortsAPIGetOrganizationSwitchPortsBySwitchRequest) Mac(mac string) PortsAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.mac = &mac
 	return r
 }
 
 // Optional parameter to filter switchports by one or more MAC addresses belonging to devices. All switchports returned belong to MAC addresses of switches that are an exact match.
-func (r PortsApiGetOrganizationSwitchPortsBySwitchRequest) Macs(macs []string) PortsApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r PortsAPIGetOrganizationSwitchPortsBySwitchRequest) Macs(macs []string) PortsAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.macs = &macs
 	return r
 }
 
 // Optional parameter to filter switchports belonging to switches by serial number. All returned switches will have a serial number that contains the search term or is an exact match.
-func (r PortsApiGetOrganizationSwitchPortsBySwitchRequest) Serial(serial string) PortsApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r PortsAPIGetOrganizationSwitchPortsBySwitchRequest) Serial(serial string) PortsAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.serial = &serial
 	return r
 }
 
 // Optional parameter to filter switchports belonging to switches with one or more serial numbers. All switchports returned belong to serial numbers of switches that are an exact match.
-func (r PortsApiGetOrganizationSwitchPortsBySwitchRequest) Serials(serials []string) PortsApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r PortsAPIGetOrganizationSwitchPortsBySwitchRequest) Serials(serials []string) PortsAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.serials = &serials
 	return r
 }
 
 // Optional parameter to filter results by switches where the configuration has been updated after the given timestamp.
-func (r PortsApiGetOrganizationSwitchPortsBySwitchRequest) ConfigurationUpdatedAfter(configurationUpdatedAfter string) PortsApiGetOrganizationSwitchPortsBySwitchRequest {
+func (r PortsAPIGetOrganizationSwitchPortsBySwitchRequest) ConfigurationUpdatedAfter(configurationUpdatedAfter string) PortsAPIGetOrganizationSwitchPortsBySwitchRequest {
 	r.configurationUpdatedAfter = &configurationUpdatedAfter
 	return r
 }
 
-func (r PortsApiGetOrganizationSwitchPortsBySwitchRequest) Execute() ([]GetOrganizationSwitchPortsBySwitch200ResponseInner, *http.Response, error) {
+func (r PortsAPIGetOrganizationSwitchPortsBySwitchRequest) Execute() ([]GetOrganizationSwitchPortsBySwitch200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSwitchPortsBySwitchExecute(r)
 }
 
@@ -1250,10 +1250,10 @@ List the switchports in an organization by switch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return PortsApiGetOrganizationSwitchPortsBySwitchRequest
+ @return PortsAPIGetOrganizationSwitchPortsBySwitchRequest
 */
-func (a *PortsApiService) GetOrganizationSwitchPortsBySwitch(ctx context.Context, organizationId string) PortsApiGetOrganizationSwitchPortsBySwitchRequest {
-	return PortsApiGetOrganizationSwitchPortsBySwitchRequest{
+func (a *PortsAPIService) GetOrganizationSwitchPortsBySwitch(ctx context.Context, organizationId string) PortsAPIGetOrganizationSwitchPortsBySwitchRequest {
+	return PortsAPIGetOrganizationSwitchPortsBySwitchRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1262,7 +1262,7 @@ func (a *PortsApiService) GetOrganizationSwitchPortsBySwitch(ctx context.Context
 
 // Execute executes the request
 //  @return []GetOrganizationSwitchPortsBySwitch200ResponseInner
-func (a *PortsApiService) GetOrganizationSwitchPortsBySwitchExecute(r PortsApiGetOrganizationSwitchPortsBySwitchRequest) ([]GetOrganizationSwitchPortsBySwitch200ResponseInner, *http.Response, error) {
+func (a *PortsAPIService) GetOrganizationSwitchPortsBySwitchExecute(r PortsAPIGetOrganizationSwitchPortsBySwitchRequest) ([]GetOrganizationSwitchPortsBySwitch200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1270,7 +1270,7 @@ func (a *PortsApiService) GetOrganizationSwitchPortsBySwitchExecute(r PortsApiGe
 		localVarReturnValue  []GetOrganizationSwitchPortsBySwitch200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortsApiService.GetOrganizationSwitchPortsBySwitch")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortsAPIService.GetOrganizationSwitchPortsBySwitch")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1415,20 +1415,20 @@ func (a *PortsApiService) GetOrganizationSwitchPortsBySwitchExecute(r PortsApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PortsApiUpdateDeviceSwitchPortRequest struct {
+type PortsAPIUpdateDeviceSwitchPortRequest struct {
 	ctx context.Context
-	ApiService *PortsApiService
+	ApiService *PortsAPIService
 	serial string
 	portId string
 	updateDeviceSwitchPortRequest *UpdateDeviceSwitchPortRequest
 }
 
-func (r PortsApiUpdateDeviceSwitchPortRequest) UpdateDeviceSwitchPortRequest(updateDeviceSwitchPortRequest UpdateDeviceSwitchPortRequest) PortsApiUpdateDeviceSwitchPortRequest {
+func (r PortsAPIUpdateDeviceSwitchPortRequest) UpdateDeviceSwitchPortRequest(updateDeviceSwitchPortRequest UpdateDeviceSwitchPortRequest) PortsAPIUpdateDeviceSwitchPortRequest {
 	r.updateDeviceSwitchPortRequest = &updateDeviceSwitchPortRequest
 	return r
 }
 
-func (r PortsApiUpdateDeviceSwitchPortRequest) Execute() (*GetDeviceSwitchPorts200ResponseInner, *http.Response, error) {
+func (r PortsAPIUpdateDeviceSwitchPortRequest) Execute() (*GetDeviceSwitchPorts200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateDeviceSwitchPortExecute(r)
 }
 
@@ -1440,10 +1440,10 @@ Update a switch port
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
  @param portId Port ID
- @return PortsApiUpdateDeviceSwitchPortRequest
+ @return PortsAPIUpdateDeviceSwitchPortRequest
 */
-func (a *PortsApiService) UpdateDeviceSwitchPort(ctx context.Context, serial string, portId string) PortsApiUpdateDeviceSwitchPortRequest {
-	return PortsApiUpdateDeviceSwitchPortRequest{
+func (a *PortsAPIService) UpdateDeviceSwitchPort(ctx context.Context, serial string, portId string) PortsAPIUpdateDeviceSwitchPortRequest {
+	return PortsAPIUpdateDeviceSwitchPortRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -1453,7 +1453,7 @@ func (a *PortsApiService) UpdateDeviceSwitchPort(ctx context.Context, serial str
 
 // Execute executes the request
 //  @return GetDeviceSwitchPorts200ResponseInner
-func (a *PortsApiService) UpdateDeviceSwitchPortExecute(r PortsApiUpdateDeviceSwitchPortRequest) (*GetDeviceSwitchPorts200ResponseInner, *http.Response, error) {
+func (a *PortsAPIService) UpdateDeviceSwitchPortExecute(r PortsAPIUpdateDeviceSwitchPortRequest) (*GetDeviceSwitchPorts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1461,7 +1461,7 @@ func (a *PortsApiService) UpdateDeviceSwitchPortExecute(r PortsApiUpdateDeviceSw
 		localVarReturnValue  *GetDeviceSwitchPorts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortsApiService.UpdateDeviceSwitchPort")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortsAPIService.UpdateDeviceSwitchPort")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1544,20 +1544,20 @@ func (a *PortsApiService) UpdateDeviceSwitchPortExecute(r PortsApiUpdateDeviceSw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PortsApiUpdateNetworkAppliancePortRequest struct {
+type PortsAPIUpdateNetworkAppliancePortRequest struct {
 	ctx context.Context
-	ApiService *PortsApiService
+	ApiService *PortsAPIService
 	networkId string
 	portId string
 	updateNetworkAppliancePortRequest *UpdateNetworkAppliancePortRequest
 }
 
-func (r PortsApiUpdateNetworkAppliancePortRequest) UpdateNetworkAppliancePortRequest(updateNetworkAppliancePortRequest UpdateNetworkAppliancePortRequest) PortsApiUpdateNetworkAppliancePortRequest {
+func (r PortsAPIUpdateNetworkAppliancePortRequest) UpdateNetworkAppliancePortRequest(updateNetworkAppliancePortRequest UpdateNetworkAppliancePortRequest) PortsAPIUpdateNetworkAppliancePortRequest {
 	r.updateNetworkAppliancePortRequest = &updateNetworkAppliancePortRequest
 	return r
 }
 
-func (r PortsApiUpdateNetworkAppliancePortRequest) Execute() (*GetNetworkAppliancePorts200ResponseInner, *http.Response, error) {
+func (r PortsAPIUpdateNetworkAppliancePortRequest) Execute() (*GetNetworkAppliancePorts200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkAppliancePortExecute(r)
 }
 
@@ -1569,10 +1569,10 @@ Update the per-port VLAN settings for a single MX port.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param portId Port ID
- @return PortsApiUpdateNetworkAppliancePortRequest
+ @return PortsAPIUpdateNetworkAppliancePortRequest
 */
-func (a *PortsApiService) UpdateNetworkAppliancePort(ctx context.Context, networkId string, portId string) PortsApiUpdateNetworkAppliancePortRequest {
-	return PortsApiUpdateNetworkAppliancePortRequest{
+func (a *PortsAPIService) UpdateNetworkAppliancePort(ctx context.Context, networkId string, portId string) PortsAPIUpdateNetworkAppliancePortRequest {
+	return PortsAPIUpdateNetworkAppliancePortRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1582,7 +1582,7 @@ func (a *PortsApiService) UpdateNetworkAppliancePort(ctx context.Context, networ
 
 // Execute executes the request
 //  @return GetNetworkAppliancePorts200ResponseInner
-func (a *PortsApiService) UpdateNetworkAppliancePortExecute(r PortsApiUpdateNetworkAppliancePortRequest) (*GetNetworkAppliancePorts200ResponseInner, *http.Response, error) {
+func (a *PortsAPIService) UpdateNetworkAppliancePortExecute(r PortsAPIUpdateNetworkAppliancePortRequest) (*GetNetworkAppliancePorts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1590,7 +1590,7 @@ func (a *PortsApiService) UpdateNetworkAppliancePortExecute(r PortsApiUpdateNetw
 		localVarReturnValue  *GetNetworkAppliancePorts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortsApiService.UpdateNetworkAppliancePort")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortsAPIService.UpdateNetworkAppliancePort")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1673,9 +1673,9 @@ func (a *PortsApiService) UpdateNetworkAppliancePortExecute(r PortsApiUpdateNetw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PortsApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest struct {
+type PortsAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest struct {
 	ctx context.Context
-	ApiService *PortsApiService
+	ApiService *PortsAPIService
 	organizationId string
 	configTemplateId string
 	profileId string
@@ -1683,12 +1683,12 @@ type PortsApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest struct {
 	updateOrganizationConfigTemplateSwitchProfilePortRequest *UpdateOrganizationConfigTemplateSwitchProfilePortRequest
 }
 
-func (r PortsApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest) UpdateOrganizationConfigTemplateSwitchProfilePortRequest(updateOrganizationConfigTemplateSwitchProfilePortRequest UpdateOrganizationConfigTemplateSwitchProfilePortRequest) PortsApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest {
+func (r PortsAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest) UpdateOrganizationConfigTemplateSwitchProfilePortRequest(updateOrganizationConfigTemplateSwitchProfilePortRequest UpdateOrganizationConfigTemplateSwitchProfilePortRequest) PortsAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest {
 	r.updateOrganizationConfigTemplateSwitchProfilePortRequest = &updateOrganizationConfigTemplateSwitchProfilePortRequest
 	return r
 }
 
-func (r PortsApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest) Execute() (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
+func (r PortsAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest) Execute() (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationConfigTemplateSwitchProfilePortExecute(r)
 }
 
@@ -1702,10 +1702,10 @@ Update a switch template port
  @param configTemplateId Config template ID
  @param profileId Profile ID
  @param portId Port ID
- @return PortsApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest
+ @return PortsAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest
 */
-func (a *PortsApiService) UpdateOrganizationConfigTemplateSwitchProfilePort(ctx context.Context, organizationId string, configTemplateId string, profileId string, portId string) PortsApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest {
-	return PortsApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest{
+func (a *PortsAPIService) UpdateOrganizationConfigTemplateSwitchProfilePort(ctx context.Context, organizationId string, configTemplateId string, profileId string, portId string) PortsAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest {
+	return PortsAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1717,7 +1717,7 @@ func (a *PortsApiService) UpdateOrganizationConfigTemplateSwitchProfilePort(ctx 
 
 // Execute executes the request
 //  @return GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner
-func (a *PortsApiService) UpdateOrganizationConfigTemplateSwitchProfilePortExecute(r PortsApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest) (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
+func (a *PortsAPIService) UpdateOrganizationConfigTemplateSwitchProfilePortExecute(r PortsAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest) (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1725,7 +1725,7 @@ func (a *PortsApiService) UpdateOrganizationConfigTemplateSwitchProfilePortExecu
 		localVarReturnValue  *GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortsApiService.UpdateOrganizationConfigTemplateSwitchProfilePort")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PortsAPIService.UpdateOrganizationConfigTemplateSwitchProfilePort")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

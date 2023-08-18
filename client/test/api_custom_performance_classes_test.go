@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing CustomPerformanceClassesApiService
+Testing CustomPerformanceClassesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_CustomPerformanceClassesApiService(t *testing.T) {
+func Test_client_CustomPerformanceClassesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test CustomPerformanceClassesApiService CreateNetworkApplianceTrafficShapingCustomPerformanceClass", func(t *testing.T) {
+	t.Run("Test CustomPerformanceClassesAPIService CreateNetworkApplianceTrafficShapingCustomPerformanceClass", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.CustomPerformanceClassesApi.CreateNetworkApplianceTrafficShapingCustomPerformanceClass(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.CustomPerformanceClassesAPI.CreateNetworkApplianceTrafficShapingCustomPerformanceClass(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,42 +36,28 @@ func Test_client_CustomPerformanceClassesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test CustomPerformanceClassesApiService DeleteNetworkApplianceTrafficShapingCustomPerformanceClass", func(t *testing.T) {
+	t.Run("Test CustomPerformanceClassesAPIService DeleteNetworkApplianceTrafficShapingCustomPerformanceClass", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var customPerformanceClassId string
 
-		httpRes, err := apiClient.CustomPerformanceClassesApi.DeleteNetworkApplianceTrafficShapingCustomPerformanceClass(context.Background(), networkId, customPerformanceClassId).Execute()
+		httpRes, err := apiClient.CustomPerformanceClassesAPI.DeleteNetworkApplianceTrafficShapingCustomPerformanceClass(context.Background(), networkId, customPerformanceClassId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test CustomPerformanceClassesApiService GetNetworkApplianceTrafficShapingCustomPerformanceClass", func(t *testing.T) {
+	t.Run("Test CustomPerformanceClassesAPIService GetNetworkApplianceTrafficShapingCustomPerformanceClass", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var customPerformanceClassId string
 
-		resp, httpRes, err := apiClient.CustomPerformanceClassesApi.GetNetworkApplianceTrafficShapingCustomPerformanceClass(context.Background(), networkId, customPerformanceClassId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test CustomPerformanceClassesApiService GetNetworkApplianceTrafficShapingCustomPerformanceClasses", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-
-		resp, httpRes, err := apiClient.CustomPerformanceClassesApi.GetNetworkApplianceTrafficShapingCustomPerformanceClasses(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.CustomPerformanceClassesAPI.GetNetworkApplianceTrafficShapingCustomPerformanceClass(context.Background(), networkId, customPerformanceClassId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,14 +65,28 @@ func Test_client_CustomPerformanceClassesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test CustomPerformanceClassesApiService UpdateNetworkApplianceTrafficShapingCustomPerformanceClass", func(t *testing.T) {
+	t.Run("Test CustomPerformanceClassesAPIService GetNetworkApplianceTrafficShapingCustomPerformanceClasses", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+
+		resp, httpRes, err := apiClient.CustomPerformanceClassesAPI.GetNetworkApplianceTrafficShapingCustomPerformanceClasses(context.Background(), networkId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CustomPerformanceClassesAPIService UpdateNetworkApplianceTrafficShapingCustomPerformanceClass", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var customPerformanceClassId string
 
-		resp, httpRes, err := apiClient.CustomPerformanceClassesApi.UpdateNetworkApplianceTrafficShapingCustomPerformanceClass(context.Background(), networkId, customPerformanceClassId).Execute()
+		resp, httpRes, err := apiClient.CustomPerformanceClassesAPI.UpdateNetworkApplianceTrafficShapingCustomPerformanceClass(context.Background(), networkId, customPerformanceClassId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

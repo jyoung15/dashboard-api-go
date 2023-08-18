@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing SamlApiService
+Testing SamlAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_SamlApiService(t *testing.T) {
+func Test_client_SamlAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test SamlApiService CreateOrganizationSamlIdp", func(t *testing.T) {
+	t.Run("Test SamlAPIService CreateOrganizationSamlIdp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.SamlApi.CreateOrganizationSamlIdp(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.SamlAPI.CreateOrganizationSamlIdp(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,27 +36,27 @@ func Test_client_SamlApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SamlApiService DeleteOrganizationSamlIdp", func(t *testing.T) {
+	t.Run("Test SamlAPIService DeleteOrganizationSamlIdp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var idpId string
 
-		httpRes, err := apiClient.SamlApi.DeleteOrganizationSamlIdp(context.Background(), organizationId, idpId).Execute()
+		httpRes, err := apiClient.SamlAPI.DeleteOrganizationSamlIdp(context.Background(), organizationId, idpId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SamlApiService GetOrganizationSaml", func(t *testing.T) {
+	t.Run("Test SamlAPIService GetOrganizationSaml", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.SamlApi.GetOrganizationSaml(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.SamlAPI.GetOrganizationSaml(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,14 +64,14 @@ func Test_client_SamlApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SamlApiService GetOrganizationSamlIdp", func(t *testing.T) {
+	t.Run("Test SamlAPIService GetOrganizationSamlIdp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var idpId string
 
-		resp, httpRes, err := apiClient.SamlApi.GetOrganizationSamlIdp(context.Background(), organizationId, idpId).Execute()
+		resp, httpRes, err := apiClient.SamlAPI.GetOrganizationSamlIdp(context.Background(), organizationId, idpId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,13 +79,13 @@ func Test_client_SamlApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SamlApiService GetOrganizationSamlIdps", func(t *testing.T) {
+	t.Run("Test SamlAPIService GetOrganizationSamlIdps", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.SamlApi.GetOrganizationSamlIdps(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.SamlAPI.GetOrganizationSamlIdps(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -93,13 +93,13 @@ func Test_client_SamlApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SamlApiService UpdateOrganizationSaml", func(t *testing.T) {
+	t.Run("Test SamlAPIService UpdateOrganizationSaml", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.SamlApi.UpdateOrganizationSaml(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.SamlAPI.UpdateOrganizationSaml(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -107,14 +107,14 @@ func Test_client_SamlApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test SamlApiService UpdateOrganizationSamlIdp", func(t *testing.T) {
+	t.Run("Test SamlAPIService UpdateOrganizationSamlIdp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var idpId string
 
-		resp, httpRes, err := apiClient.SamlApi.UpdateOrganizationSamlIdp(context.Background(), organizationId, idpId).Execute()
+		resp, httpRes, err := apiClient.SamlAPI.UpdateOrganizationSamlIdp(context.Background(), organizationId, idpId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

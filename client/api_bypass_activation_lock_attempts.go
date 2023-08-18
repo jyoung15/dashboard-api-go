@@ -20,22 +20,22 @@ import (
 )
 
 
-// BypassActivationLockAttemptsApiService BypassActivationLockAttemptsApi service
-type BypassActivationLockAttemptsApiService service
+// BypassActivationLockAttemptsAPIService BypassActivationLockAttemptsAPI service
+type BypassActivationLockAttemptsAPIService service
 
-type BypassActivationLockAttemptsApiCreateNetworkSmBypassActivationLockAttemptRequest struct {
+type BypassActivationLockAttemptsAPICreateNetworkSmBypassActivationLockAttemptRequest struct {
 	ctx context.Context
-	ApiService *BypassActivationLockAttemptsApiService
+	ApiService *BypassActivationLockAttemptsAPIService
 	networkId string
 	createNetworkSmBypassActivationLockAttemptRequest *CreateNetworkSmBypassActivationLockAttemptRequest
 }
 
-func (r BypassActivationLockAttemptsApiCreateNetworkSmBypassActivationLockAttemptRequest) CreateNetworkSmBypassActivationLockAttemptRequest(createNetworkSmBypassActivationLockAttemptRequest CreateNetworkSmBypassActivationLockAttemptRequest) BypassActivationLockAttemptsApiCreateNetworkSmBypassActivationLockAttemptRequest {
+func (r BypassActivationLockAttemptsAPICreateNetworkSmBypassActivationLockAttemptRequest) CreateNetworkSmBypassActivationLockAttemptRequest(createNetworkSmBypassActivationLockAttemptRequest CreateNetworkSmBypassActivationLockAttemptRequest) BypassActivationLockAttemptsAPICreateNetworkSmBypassActivationLockAttemptRequest {
 	r.createNetworkSmBypassActivationLockAttemptRequest = &createNetworkSmBypassActivationLockAttemptRequest
 	return r
 }
 
-func (r BypassActivationLockAttemptsApiCreateNetworkSmBypassActivationLockAttemptRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r BypassActivationLockAttemptsAPICreateNetworkSmBypassActivationLockAttemptRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkSmBypassActivationLockAttemptExecute(r)
 }
 
@@ -46,10 +46,10 @@ Bypass activation lock attempt
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return BypassActivationLockAttemptsApiCreateNetworkSmBypassActivationLockAttemptRequest
+ @return BypassActivationLockAttemptsAPICreateNetworkSmBypassActivationLockAttemptRequest
 */
-func (a *BypassActivationLockAttemptsApiService) CreateNetworkSmBypassActivationLockAttempt(ctx context.Context, networkId string) BypassActivationLockAttemptsApiCreateNetworkSmBypassActivationLockAttemptRequest {
-	return BypassActivationLockAttemptsApiCreateNetworkSmBypassActivationLockAttemptRequest{
+func (a *BypassActivationLockAttemptsAPIService) CreateNetworkSmBypassActivationLockAttempt(ctx context.Context, networkId string) BypassActivationLockAttemptsAPICreateNetworkSmBypassActivationLockAttemptRequest {
+	return BypassActivationLockAttemptsAPICreateNetworkSmBypassActivationLockAttemptRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -58,7 +58,7 @@ func (a *BypassActivationLockAttemptsApiService) CreateNetworkSmBypassActivation
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *BypassActivationLockAttemptsApiService) CreateNetworkSmBypassActivationLockAttemptExecute(r BypassActivationLockAttemptsApiCreateNetworkSmBypassActivationLockAttemptRequest) (map[string]interface{}, *http.Response, error) {
+func (a *BypassActivationLockAttemptsAPIService) CreateNetworkSmBypassActivationLockAttemptExecute(r BypassActivationLockAttemptsAPICreateNetworkSmBypassActivationLockAttemptRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *BypassActivationLockAttemptsApiService) CreateNetworkSmBypassActivation
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BypassActivationLockAttemptsApiService.CreateNetworkSmBypassActivationLockAttempt")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BypassActivationLockAttemptsAPIService.CreateNetworkSmBypassActivationLockAttempt")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,14 +151,14 @@ func (a *BypassActivationLockAttemptsApiService) CreateNetworkSmBypassActivation
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BypassActivationLockAttemptsApiGetNetworkSmBypassActivationLockAttemptRequest struct {
+type BypassActivationLockAttemptsAPIGetNetworkSmBypassActivationLockAttemptRequest struct {
 	ctx context.Context
-	ApiService *BypassActivationLockAttemptsApiService
+	ApiService *BypassActivationLockAttemptsAPIService
 	networkId string
 	attemptId string
 }
 
-func (r BypassActivationLockAttemptsApiGetNetworkSmBypassActivationLockAttemptRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r BypassActivationLockAttemptsAPIGetNetworkSmBypassActivationLockAttemptRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSmBypassActivationLockAttemptExecute(r)
 }
 
@@ -170,10 +170,10 @@ Bypass activation lock attempt status
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param attemptId Attempt ID
- @return BypassActivationLockAttemptsApiGetNetworkSmBypassActivationLockAttemptRequest
+ @return BypassActivationLockAttemptsAPIGetNetworkSmBypassActivationLockAttemptRequest
 */
-func (a *BypassActivationLockAttemptsApiService) GetNetworkSmBypassActivationLockAttempt(ctx context.Context, networkId string, attemptId string) BypassActivationLockAttemptsApiGetNetworkSmBypassActivationLockAttemptRequest {
-	return BypassActivationLockAttemptsApiGetNetworkSmBypassActivationLockAttemptRequest{
+func (a *BypassActivationLockAttemptsAPIService) GetNetworkSmBypassActivationLockAttempt(ctx context.Context, networkId string, attemptId string) BypassActivationLockAttemptsAPIGetNetworkSmBypassActivationLockAttemptRequest {
+	return BypassActivationLockAttemptsAPIGetNetworkSmBypassActivationLockAttemptRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -183,7 +183,7 @@ func (a *BypassActivationLockAttemptsApiService) GetNetworkSmBypassActivationLoc
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *BypassActivationLockAttemptsApiService) GetNetworkSmBypassActivationLockAttemptExecute(r BypassActivationLockAttemptsApiGetNetworkSmBypassActivationLockAttemptRequest) (map[string]interface{}, *http.Response, error) {
+func (a *BypassActivationLockAttemptsAPIService) GetNetworkSmBypassActivationLockAttemptExecute(r BypassActivationLockAttemptsAPIGetNetworkSmBypassActivationLockAttemptRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -191,7 +191,7 @@ func (a *BypassActivationLockAttemptsApiService) GetNetworkSmBypassActivationLoc
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BypassActivationLockAttemptsApiService.GetNetworkSmBypassActivationLockAttempt")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BypassActivationLockAttemptsAPIService.GetNetworkSmBypassActivationLockAttempt")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

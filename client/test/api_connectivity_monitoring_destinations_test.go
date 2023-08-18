@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing ConnectivityMonitoringDestinationsApiService
+Testing ConnectivityMonitoringDestinationsAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_ConnectivityMonitoringDestinationsApiService(t *testing.T) {
+func Test_client_ConnectivityMonitoringDestinationsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test ConnectivityMonitoringDestinationsApiService GetNetworkApplianceConnectivityMonitoringDestinations", func(t *testing.T) {
+	t.Run("Test ConnectivityMonitoringDestinationsAPIService GetNetworkApplianceConnectivityMonitoringDestinations", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConnectivityMonitoringDestinationsApi.GetNetworkApplianceConnectivityMonitoringDestinations(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConnectivityMonitoringDestinationsAPI.GetNetworkApplianceConnectivityMonitoringDestinations(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_ConnectivityMonitoringDestinationsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConnectivityMonitoringDestinationsApiService GetNetworkCellularGatewayConnectivityMonitoringDestinations", func(t *testing.T) {
+	t.Run("Test ConnectivityMonitoringDestinationsAPIService GetNetworkCellularGatewayConnectivityMonitoringDestinations", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConnectivityMonitoringDestinationsApi.GetNetworkCellularGatewayConnectivityMonitoringDestinations(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConnectivityMonitoringDestinationsAPI.GetNetworkCellularGatewayConnectivityMonitoringDestinations(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,13 +50,13 @@ func Test_client_ConnectivityMonitoringDestinationsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConnectivityMonitoringDestinationsApiService UpdateNetworkApplianceConnectivityMonitoringDestinations", func(t *testing.T) {
+	t.Run("Test ConnectivityMonitoringDestinationsAPIService UpdateNetworkApplianceConnectivityMonitoringDestinations", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConnectivityMonitoringDestinationsApi.UpdateNetworkApplianceConnectivityMonitoringDestinations(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConnectivityMonitoringDestinationsAPI.UpdateNetworkApplianceConnectivityMonitoringDestinations(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,13 +64,13 @@ func Test_client_ConnectivityMonitoringDestinationsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConnectivityMonitoringDestinationsApiService UpdateNetworkCellularGatewayConnectivityMonitoringDestinations", func(t *testing.T) {
+	t.Run("Test ConnectivityMonitoringDestinationsAPIService UpdateNetworkCellularGatewayConnectivityMonitoringDestinations", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.ConnectivityMonitoringDestinationsApi.UpdateNetworkCellularGatewayConnectivityMonitoringDestinations(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.ConnectivityMonitoringDestinationsAPI.UpdateNetworkCellularGatewayConnectivityMonitoringDestinations(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

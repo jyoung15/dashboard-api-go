@@ -20,22 +20,22 @@ import (
 )
 
 
-// RequestsApiService RequestsApi service
-type RequestsApiService service
+// RequestsAPIService RequestsAPI service
+type RequestsAPIService service
 
-type RequestsApiCreateNetworkPiiRequestRequest struct {
+type RequestsAPICreateNetworkPiiRequestRequest struct {
 	ctx context.Context
-	ApiService *RequestsApiService
+	ApiService *RequestsAPIService
 	networkId string
 	createNetworkPiiRequestRequest *CreateNetworkPiiRequestRequest
 }
 
-func (r RequestsApiCreateNetworkPiiRequestRequest) CreateNetworkPiiRequestRequest(createNetworkPiiRequestRequest CreateNetworkPiiRequestRequest) RequestsApiCreateNetworkPiiRequestRequest {
+func (r RequestsAPICreateNetworkPiiRequestRequest) CreateNetworkPiiRequestRequest(createNetworkPiiRequestRequest CreateNetworkPiiRequestRequest) RequestsAPICreateNetworkPiiRequestRequest {
 	r.createNetworkPiiRequestRequest = &createNetworkPiiRequestRequest
 	return r
 }
 
-func (r RequestsApiCreateNetworkPiiRequestRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r RequestsAPICreateNetworkPiiRequestRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkPiiRequestExecute(r)
 }
 
@@ -52,10 +52,10 @@ Submit a new delete or restrict processing PII request
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return RequestsApiCreateNetworkPiiRequestRequest
+ @return RequestsAPICreateNetworkPiiRequestRequest
 */
-func (a *RequestsApiService) CreateNetworkPiiRequest(ctx context.Context, networkId string) RequestsApiCreateNetworkPiiRequestRequest {
-	return RequestsApiCreateNetworkPiiRequestRequest{
+func (a *RequestsAPIService) CreateNetworkPiiRequest(ctx context.Context, networkId string) RequestsAPICreateNetworkPiiRequestRequest {
+	return RequestsAPICreateNetworkPiiRequestRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -64,7 +64,7 @@ func (a *RequestsApiService) CreateNetworkPiiRequest(ctx context.Context, networ
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *RequestsApiService) CreateNetworkPiiRequestExecute(r RequestsApiCreateNetworkPiiRequestRequest) (map[string]interface{}, *http.Response, error) {
+func (a *RequestsAPIService) CreateNetworkPiiRequestExecute(r RequestsAPICreateNetworkPiiRequestRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -72,7 +72,7 @@ func (a *RequestsApiService) CreateNetworkPiiRequestExecute(r RequestsApiCreateN
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RequestsApiService.CreateNetworkPiiRequest")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RequestsAPIService.CreateNetworkPiiRequest")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -154,14 +154,14 @@ func (a *RequestsApiService) CreateNetworkPiiRequestExecute(r RequestsApiCreateN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type RequestsApiDeleteNetworkPiiRequestRequest struct {
+type RequestsAPIDeleteNetworkPiiRequestRequest struct {
 	ctx context.Context
-	ApiService *RequestsApiService
+	ApiService *RequestsAPIService
 	networkId string
 	requestId string
 }
 
-func (r RequestsApiDeleteNetworkPiiRequestRequest) Execute() (*http.Response, error) {
+func (r RequestsAPIDeleteNetworkPiiRequestRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkPiiRequestExecute(r)
 }
 
@@ -179,10 +179,10 @@ Delete a restrict processing PII request
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param requestId Request ID
- @return RequestsApiDeleteNetworkPiiRequestRequest
+ @return RequestsAPIDeleteNetworkPiiRequestRequest
 */
-func (a *RequestsApiService) DeleteNetworkPiiRequest(ctx context.Context, networkId string, requestId string) RequestsApiDeleteNetworkPiiRequestRequest {
-	return RequestsApiDeleteNetworkPiiRequestRequest{
+func (a *RequestsAPIService) DeleteNetworkPiiRequest(ctx context.Context, networkId string, requestId string) RequestsAPIDeleteNetworkPiiRequestRequest {
+	return RequestsAPIDeleteNetworkPiiRequestRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -191,14 +191,14 @@ func (a *RequestsApiService) DeleteNetworkPiiRequest(ctx context.Context, networ
 }
 
 // Execute executes the request
-func (a *RequestsApiService) DeleteNetworkPiiRequestExecute(r RequestsApiDeleteNetworkPiiRequestRequest) (*http.Response, error) {
+func (a *RequestsAPIService) DeleteNetworkPiiRequestExecute(r RequestsAPIDeleteNetworkPiiRequestRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RequestsApiService.DeleteNetworkPiiRequest")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RequestsAPIService.DeleteNetworkPiiRequest")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -270,14 +270,14 @@ func (a *RequestsApiService) DeleteNetworkPiiRequestExecute(r RequestsApiDeleteN
 	return localVarHTTPResponse, nil
 }
 
-type RequestsApiGetNetworkPiiRequestRequest struct {
+type RequestsAPIGetNetworkPiiRequestRequest struct {
 	ctx context.Context
-	ApiService *RequestsApiService
+	ApiService *RequestsAPIService
 	networkId string
 	requestId string
 }
 
-func (r RequestsApiGetNetworkPiiRequestRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r RequestsAPIGetNetworkPiiRequestRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkPiiRequestExecute(r)
 }
 
@@ -295,10 +295,10 @@ Return a PII request
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param requestId Request ID
- @return RequestsApiGetNetworkPiiRequestRequest
+ @return RequestsAPIGetNetworkPiiRequestRequest
 */
-func (a *RequestsApiService) GetNetworkPiiRequest(ctx context.Context, networkId string, requestId string) RequestsApiGetNetworkPiiRequestRequest {
-	return RequestsApiGetNetworkPiiRequestRequest{
+func (a *RequestsAPIService) GetNetworkPiiRequest(ctx context.Context, networkId string, requestId string) RequestsAPIGetNetworkPiiRequestRequest {
+	return RequestsAPIGetNetworkPiiRequestRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -308,7 +308,7 @@ func (a *RequestsApiService) GetNetworkPiiRequest(ctx context.Context, networkId
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *RequestsApiService) GetNetworkPiiRequestExecute(r RequestsApiGetNetworkPiiRequestRequest) (map[string]interface{}, *http.Response, error) {
+func (a *RequestsAPIService) GetNetworkPiiRequestExecute(r RequestsAPIGetNetworkPiiRequestRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -316,7 +316,7 @@ func (a *RequestsApiService) GetNetworkPiiRequestExecute(r RequestsApiGetNetwork
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RequestsApiService.GetNetworkPiiRequest")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RequestsAPIService.GetNetworkPiiRequest")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -397,13 +397,13 @@ func (a *RequestsApiService) GetNetworkPiiRequestExecute(r RequestsApiGetNetwork
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type RequestsApiGetNetworkPiiRequestsRequest struct {
+type RequestsAPIGetNetworkPiiRequestsRequest struct {
 	ctx context.Context
-	ApiService *RequestsApiService
+	ApiService *RequestsAPIService
 	networkId string
 }
 
-func (r RequestsApiGetNetworkPiiRequestsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r RequestsAPIGetNetworkPiiRequestsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkPiiRequestsExecute(r)
 }
 
@@ -420,10 +420,10 @@ List the PII requests for this network or organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return RequestsApiGetNetworkPiiRequestsRequest
+ @return RequestsAPIGetNetworkPiiRequestsRequest
 */
-func (a *RequestsApiService) GetNetworkPiiRequests(ctx context.Context, networkId string) RequestsApiGetNetworkPiiRequestsRequest {
-	return RequestsApiGetNetworkPiiRequestsRequest{
+func (a *RequestsAPIService) GetNetworkPiiRequests(ctx context.Context, networkId string) RequestsAPIGetNetworkPiiRequestsRequest {
+	return RequestsAPIGetNetworkPiiRequestsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -432,7 +432,7 @@ func (a *RequestsApiService) GetNetworkPiiRequests(ctx context.Context, networkI
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *RequestsApiService) GetNetworkPiiRequestsExecute(r RequestsApiGetNetworkPiiRequestsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *RequestsAPIService) GetNetworkPiiRequestsExecute(r RequestsAPIGetNetworkPiiRequestsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -440,7 +440,7 @@ func (a *RequestsApiService) GetNetworkPiiRequestsExecute(r RequestsApiGetNetwor
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RequestsApiService.GetNetworkPiiRequests")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RequestsAPIService.GetNetworkPiiRequests")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

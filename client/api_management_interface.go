@@ -20,16 +20,16 @@ import (
 )
 
 
-// ManagementInterfaceApiService ManagementInterfaceApi service
-type ManagementInterfaceApiService service
+// ManagementInterfaceAPIService ManagementInterfaceAPI service
+type ManagementInterfaceAPIService service
 
-type ManagementInterfaceApiGetDeviceManagementInterfaceRequest struct {
+type ManagementInterfaceAPIGetDeviceManagementInterfaceRequest struct {
 	ctx context.Context
-	ApiService *ManagementInterfaceApiService
+	ApiService *ManagementInterfaceAPIService
 	serial string
 }
 
-func (r ManagementInterfaceApiGetDeviceManagementInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ManagementInterfaceAPIGetDeviceManagementInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceManagementInterfaceExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the management interface settings for a device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return ManagementInterfaceApiGetDeviceManagementInterfaceRequest
+ @return ManagementInterfaceAPIGetDeviceManagementInterfaceRequest
 */
-func (a *ManagementInterfaceApiService) GetDeviceManagementInterface(ctx context.Context, serial string) ManagementInterfaceApiGetDeviceManagementInterfaceRequest {
-	return ManagementInterfaceApiGetDeviceManagementInterfaceRequest{
+func (a *ManagementInterfaceAPIService) GetDeviceManagementInterface(ctx context.Context, serial string) ManagementInterfaceAPIGetDeviceManagementInterfaceRequest {
+	return ManagementInterfaceAPIGetDeviceManagementInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -52,7 +52,7 @@ func (a *ManagementInterfaceApiService) GetDeviceManagementInterface(ctx context
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ManagementInterfaceApiService) GetDeviceManagementInterfaceExecute(r ManagementInterfaceApiGetDeviceManagementInterfaceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ManagementInterfaceAPIService) GetDeviceManagementInterfaceExecute(r ManagementInterfaceAPIGetDeviceManagementInterfaceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *ManagementInterfaceApiService) GetDeviceManagementInterfaceExecute(r Ma
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManagementInterfaceApiService.GetDeviceManagementInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManagementInterfaceAPIService.GetDeviceManagementInterface")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *ManagementInterfaceApiService) GetDeviceManagementInterfaceExecute(r Ma
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ManagementInterfaceApiUpdateDeviceManagementInterfaceRequest struct {
+type ManagementInterfaceAPIUpdateDeviceManagementInterfaceRequest struct {
 	ctx context.Context
-	ApiService *ManagementInterfaceApiService
+	ApiService *ManagementInterfaceAPIService
 	serial string
 	updateDeviceManagementInterfaceRequest *UpdateDeviceManagementInterfaceRequest
 }
 
-func (r ManagementInterfaceApiUpdateDeviceManagementInterfaceRequest) UpdateDeviceManagementInterfaceRequest(updateDeviceManagementInterfaceRequest UpdateDeviceManagementInterfaceRequest) ManagementInterfaceApiUpdateDeviceManagementInterfaceRequest {
+func (r ManagementInterfaceAPIUpdateDeviceManagementInterfaceRequest) UpdateDeviceManagementInterfaceRequest(updateDeviceManagementInterfaceRequest UpdateDeviceManagementInterfaceRequest) ManagementInterfaceAPIUpdateDeviceManagementInterfaceRequest {
 	r.updateDeviceManagementInterfaceRequest = &updateDeviceManagementInterfaceRequest
 	return r
 }
 
-func (r ManagementInterfaceApiUpdateDeviceManagementInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ManagementInterfaceAPIUpdateDeviceManagementInterfaceRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceManagementInterfaceExecute(r)
 }
 
@@ -163,10 +163,10 @@ Update the management interface settings for a device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return ManagementInterfaceApiUpdateDeviceManagementInterfaceRequest
+ @return ManagementInterfaceAPIUpdateDeviceManagementInterfaceRequest
 */
-func (a *ManagementInterfaceApiService) UpdateDeviceManagementInterface(ctx context.Context, serial string) ManagementInterfaceApiUpdateDeviceManagementInterfaceRequest {
-	return ManagementInterfaceApiUpdateDeviceManagementInterfaceRequest{
+func (a *ManagementInterfaceAPIService) UpdateDeviceManagementInterface(ctx context.Context, serial string) ManagementInterfaceAPIUpdateDeviceManagementInterfaceRequest {
+	return ManagementInterfaceAPIUpdateDeviceManagementInterfaceRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -175,7 +175,7 @@ func (a *ManagementInterfaceApiService) UpdateDeviceManagementInterface(ctx cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ManagementInterfaceApiService) UpdateDeviceManagementInterfaceExecute(r ManagementInterfaceApiUpdateDeviceManagementInterfaceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ManagementInterfaceAPIService) UpdateDeviceManagementInterfaceExecute(r ManagementInterfaceAPIUpdateDeviceManagementInterfaceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *ManagementInterfaceApiService) UpdateDeviceManagementInterfaceExecute(r
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManagementInterfaceApiService.UpdateDeviceManagementInterface")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManagementInterfaceAPIService.UpdateDeviceManagementInterface")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -21,12 +21,12 @@ import (
 )
 
 
-// ReadingsApiService ReadingsApi service
-type ReadingsApiService service
+// ReadingsAPIService ReadingsAPI service
+type ReadingsAPIService service
 
-type ReadingsApiGetOrganizationSensorReadingsHistoryRequest struct {
+type ReadingsAPIGetOrganizationSensorReadingsHistoryRequest struct {
 	ctx context.Context
-	ApiService *ReadingsApiService
+	ApiService *ReadingsAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -40,60 +40,60 @@ type ReadingsApiGetOrganizationSensorReadingsHistoryRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r ReadingsApiGetOrganizationSensorReadingsHistoryRequest) PerPage(perPage int32) ReadingsApiGetOrganizationSensorReadingsHistoryRequest {
+func (r ReadingsAPIGetOrganizationSensorReadingsHistoryRequest) PerPage(perPage int32) ReadingsAPIGetOrganizationSensorReadingsHistoryRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ReadingsApiGetOrganizationSensorReadingsHistoryRequest) StartingAfter(startingAfter string) ReadingsApiGetOrganizationSensorReadingsHistoryRequest {
+func (r ReadingsAPIGetOrganizationSensorReadingsHistoryRequest) StartingAfter(startingAfter string) ReadingsAPIGetOrganizationSensorReadingsHistoryRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ReadingsApiGetOrganizationSensorReadingsHistoryRequest) EndingBefore(endingBefore string) ReadingsApiGetOrganizationSensorReadingsHistoryRequest {
+func (r ReadingsAPIGetOrganizationSensorReadingsHistoryRequest) EndingBefore(endingBefore string) ReadingsAPIGetOrganizationSensorReadingsHistoryRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 365 days and 6 hours from today.
-func (r ReadingsApiGetOrganizationSensorReadingsHistoryRequest) T0(t0 string) ReadingsApiGetOrganizationSensorReadingsHistoryRequest {
+func (r ReadingsAPIGetOrganizationSensorReadingsHistoryRequest) T0(t0 string) ReadingsAPIGetOrganizationSensorReadingsHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 7 days after t0.
-func (r ReadingsApiGetOrganizationSensorReadingsHistoryRequest) T1(t1 string) ReadingsApiGetOrganizationSensorReadingsHistoryRequest {
+func (r ReadingsAPIGetOrganizationSensorReadingsHistoryRequest) T1(t1 string) ReadingsAPIGetOrganizationSensorReadingsHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 7 days. The default is 2 hours.
-func (r ReadingsApiGetOrganizationSensorReadingsHistoryRequest) Timespan(timespan float32) ReadingsApiGetOrganizationSensorReadingsHistoryRequest {
+func (r ReadingsAPIGetOrganizationSensorReadingsHistoryRequest) Timespan(timespan float32) ReadingsAPIGetOrganizationSensorReadingsHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Optional parameter to filter readings by network.
-func (r ReadingsApiGetOrganizationSensorReadingsHistoryRequest) NetworkIds(networkIds []string) ReadingsApiGetOrganizationSensorReadingsHistoryRequest {
+func (r ReadingsAPIGetOrganizationSensorReadingsHistoryRequest) NetworkIds(networkIds []string) ReadingsAPIGetOrganizationSensorReadingsHistoryRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter readings by sensor.
-func (r ReadingsApiGetOrganizationSensorReadingsHistoryRequest) Serials(serials []string) ReadingsApiGetOrganizationSensorReadingsHistoryRequest {
+func (r ReadingsAPIGetOrganizationSensorReadingsHistoryRequest) Serials(serials []string) ReadingsAPIGetOrganizationSensorReadingsHistoryRequest {
 	r.serials = &serials
 	return r
 }
 
 // Types of sensor readings to retrieve. If no metrics are supplied, all available types of readings will be retrieved. Allowed values are battery, button, door, humidity, indoorAirQuality, noise, pm25, temperature, tvoc, and water.
-func (r ReadingsApiGetOrganizationSensorReadingsHistoryRequest) Metrics(metrics []string) ReadingsApiGetOrganizationSensorReadingsHistoryRequest {
+func (r ReadingsAPIGetOrganizationSensorReadingsHistoryRequest) Metrics(metrics []string) ReadingsAPIGetOrganizationSensorReadingsHistoryRequest {
 	r.metrics = &metrics
 	return r
 }
 
-func (r ReadingsApiGetOrganizationSensorReadingsHistoryRequest) Execute() ([]GetOrganizationSensorReadingsHistory200ResponseInner, *http.Response, error) {
+func (r ReadingsAPIGetOrganizationSensorReadingsHistoryRequest) Execute() ([]GetOrganizationSensorReadingsHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSensorReadingsHistoryExecute(r)
 }
 
@@ -104,10 +104,10 @@ Return all reported readings from sensors in a given timespan, sorted by timesta
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ReadingsApiGetOrganizationSensorReadingsHistoryRequest
+ @return ReadingsAPIGetOrganizationSensorReadingsHistoryRequest
 */
-func (a *ReadingsApiService) GetOrganizationSensorReadingsHistory(ctx context.Context, organizationId string) ReadingsApiGetOrganizationSensorReadingsHistoryRequest {
-	return ReadingsApiGetOrganizationSensorReadingsHistoryRequest{
+func (a *ReadingsAPIService) GetOrganizationSensorReadingsHistory(ctx context.Context, organizationId string) ReadingsAPIGetOrganizationSensorReadingsHistoryRequest {
+	return ReadingsAPIGetOrganizationSensorReadingsHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -116,7 +116,7 @@ func (a *ReadingsApiService) GetOrganizationSensorReadingsHistory(ctx context.Co
 
 // Execute executes the request
 //  @return []GetOrganizationSensorReadingsHistory200ResponseInner
-func (a *ReadingsApiService) GetOrganizationSensorReadingsHistoryExecute(r ReadingsApiGetOrganizationSensorReadingsHistoryRequest) ([]GetOrganizationSensorReadingsHistory200ResponseInner, *http.Response, error) {
+func (a *ReadingsAPIService) GetOrganizationSensorReadingsHistoryExecute(r ReadingsAPIGetOrganizationSensorReadingsHistoryRequest) ([]GetOrganizationSensorReadingsHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -124,7 +124,7 @@ func (a *ReadingsApiService) GetOrganizationSensorReadingsHistoryExecute(r Readi
 		localVarReturnValue  []GetOrganizationSensorReadingsHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReadingsApiService.GetOrganizationSensorReadingsHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReadingsAPIService.GetOrganizationSensorReadingsHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -255,9 +255,9 @@ func (a *ReadingsApiService) GetOrganizationSensorReadingsHistoryExecute(r Readi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ReadingsApiGetOrganizationSensorReadingsLatestRequest struct {
+type ReadingsAPIGetOrganizationSensorReadingsLatestRequest struct {
 	ctx context.Context
-	ApiService *ReadingsApiService
+	ApiService *ReadingsAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -268,42 +268,42 @@ type ReadingsApiGetOrganizationSensorReadingsLatestRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 100. Default is 100.
-func (r ReadingsApiGetOrganizationSensorReadingsLatestRequest) PerPage(perPage int32) ReadingsApiGetOrganizationSensorReadingsLatestRequest {
+func (r ReadingsAPIGetOrganizationSensorReadingsLatestRequest) PerPage(perPage int32) ReadingsAPIGetOrganizationSensorReadingsLatestRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ReadingsApiGetOrganizationSensorReadingsLatestRequest) StartingAfter(startingAfter string) ReadingsApiGetOrganizationSensorReadingsLatestRequest {
+func (r ReadingsAPIGetOrganizationSensorReadingsLatestRequest) StartingAfter(startingAfter string) ReadingsAPIGetOrganizationSensorReadingsLatestRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ReadingsApiGetOrganizationSensorReadingsLatestRequest) EndingBefore(endingBefore string) ReadingsApiGetOrganizationSensorReadingsLatestRequest {
+func (r ReadingsAPIGetOrganizationSensorReadingsLatestRequest) EndingBefore(endingBefore string) ReadingsAPIGetOrganizationSensorReadingsLatestRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter readings by network.
-func (r ReadingsApiGetOrganizationSensorReadingsLatestRequest) NetworkIds(networkIds []string) ReadingsApiGetOrganizationSensorReadingsLatestRequest {
+func (r ReadingsAPIGetOrganizationSensorReadingsLatestRequest) NetworkIds(networkIds []string) ReadingsAPIGetOrganizationSensorReadingsLatestRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter readings by sensor.
-func (r ReadingsApiGetOrganizationSensorReadingsLatestRequest) Serials(serials []string) ReadingsApiGetOrganizationSensorReadingsLatestRequest {
+func (r ReadingsAPIGetOrganizationSensorReadingsLatestRequest) Serials(serials []string) ReadingsAPIGetOrganizationSensorReadingsLatestRequest {
 	r.serials = &serials
 	return r
 }
 
 // Types of sensor readings to retrieve. If no metrics are supplied, all available types of readings will be retrieved. Allowed values are battery, button, door, humidity, indoorAirQuality, noise, pm25, temperature, tvoc, and water.
-func (r ReadingsApiGetOrganizationSensorReadingsLatestRequest) Metrics(metrics []string) ReadingsApiGetOrganizationSensorReadingsLatestRequest {
+func (r ReadingsAPIGetOrganizationSensorReadingsLatestRequest) Metrics(metrics []string) ReadingsAPIGetOrganizationSensorReadingsLatestRequest {
 	r.metrics = &metrics
 	return r
 }
 
-func (r ReadingsApiGetOrganizationSensorReadingsLatestRequest) Execute() ([]GetOrganizationSensorReadingsLatest200ResponseInner, *http.Response, error) {
+func (r ReadingsAPIGetOrganizationSensorReadingsLatestRequest) Execute() ([]GetOrganizationSensorReadingsLatest200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSensorReadingsLatestExecute(r)
 }
 
@@ -314,10 +314,10 @@ Return the latest available reading for each metric from each sensor, sorted by 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ReadingsApiGetOrganizationSensorReadingsLatestRequest
+ @return ReadingsAPIGetOrganizationSensorReadingsLatestRequest
 */
-func (a *ReadingsApiService) GetOrganizationSensorReadingsLatest(ctx context.Context, organizationId string) ReadingsApiGetOrganizationSensorReadingsLatestRequest {
-	return ReadingsApiGetOrganizationSensorReadingsLatestRequest{
+func (a *ReadingsAPIService) GetOrganizationSensorReadingsLatest(ctx context.Context, organizationId string) ReadingsAPIGetOrganizationSensorReadingsLatestRequest {
+	return ReadingsAPIGetOrganizationSensorReadingsLatestRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -326,7 +326,7 @@ func (a *ReadingsApiService) GetOrganizationSensorReadingsLatest(ctx context.Con
 
 // Execute executes the request
 //  @return []GetOrganizationSensorReadingsLatest200ResponseInner
-func (a *ReadingsApiService) GetOrganizationSensorReadingsLatestExecute(r ReadingsApiGetOrganizationSensorReadingsLatestRequest) ([]GetOrganizationSensorReadingsLatest200ResponseInner, *http.Response, error) {
+func (a *ReadingsAPIService) GetOrganizationSensorReadingsLatestExecute(r ReadingsAPIGetOrganizationSensorReadingsLatestRequest) ([]GetOrganizationSensorReadingsLatest200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -334,7 +334,7 @@ func (a *ReadingsApiService) GetOrganizationSensorReadingsLatestExecute(r Readin
 		localVarReturnValue  []GetOrganizationSensorReadingsLatest200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReadingsApiService.GetOrganizationSensorReadingsLatest")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReadingsAPIService.GetOrganizationSensorReadingsLatest")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

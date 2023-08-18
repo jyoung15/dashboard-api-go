@@ -20,16 +20,16 @@ import (
 )
 
 
-// ApplicationCategoriesApiService ApplicationCategoriesApi service
-type ApplicationCategoriesApiService service
+// ApplicationCategoriesAPIService ApplicationCategoriesAPI service
+type ApplicationCategoriesAPIService service
 
-type ApplicationCategoriesApiGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest struct {
+type ApplicationCategoriesAPIGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest struct {
 	ctx context.Context
-	ApiService *ApplicationCategoriesApiService
+	ApiService *ApplicationCategoriesAPIService
 	networkId string
 }
 
-func (r ApplicationCategoriesApiGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest) Execute() (*GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories200Response, *http.Response, error) {
+func (r ApplicationCategoriesAPIGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest) Execute() (*GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the L7 firewall application categories and their associated applications 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplicationCategoriesApiGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest
+ @return ApplicationCategoriesAPIGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest
 */
-func (a *ApplicationCategoriesApiService) GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories(ctx context.Context, networkId string) ApplicationCategoriesApiGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest {
-	return ApplicationCategoriesApiGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest{
+func (a *ApplicationCategoriesAPIService) GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories(ctx context.Context, networkId string) ApplicationCategoriesAPIGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest {
+	return ApplicationCategoriesAPIGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *ApplicationCategoriesApiService) GetNetworkApplianceFirewallL7FirewallR
 
 // Execute executes the request
 //  @return GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories200Response
-func (a *ApplicationCategoriesApiService) GetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesExecute(r ApplicationCategoriesApiGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest) (*GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories200Response, *http.Response, error) {
+func (a *ApplicationCategoriesAPIService) GetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesExecute(r ApplicationCategoriesAPIGetNetworkApplianceFirewallL7FirewallRulesApplicationCategoriesRequest) (*GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *ApplicationCategoriesApiService) GetNetworkApplianceFirewallL7FirewallR
 		localVarReturnValue  *GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationCategoriesApiService.GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationCategoriesAPIService.GetNetworkApplianceFirewallL7FirewallRulesApplicationCategories")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,13 +140,13 @@ func (a *ApplicationCategoriesApiService) GetNetworkApplianceFirewallL7FirewallR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApplicationCategoriesApiGetNetworkTrafficShapingApplicationCategoriesRequest struct {
+type ApplicationCategoriesAPIGetNetworkTrafficShapingApplicationCategoriesRequest struct {
 	ctx context.Context
-	ApiService *ApplicationCategoriesApiService
+	ApiService *ApplicationCategoriesAPIService
 	networkId string
 }
 
-func (r ApplicationCategoriesApiGetNetworkTrafficShapingApplicationCategoriesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApplicationCategoriesAPIGetNetworkTrafficShapingApplicationCategoriesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkTrafficShapingApplicationCategoriesExecute(r)
 }
 
@@ -157,10 +157,10 @@ Returns the application categories for traffic shaping rules.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ApplicationCategoriesApiGetNetworkTrafficShapingApplicationCategoriesRequest
+ @return ApplicationCategoriesAPIGetNetworkTrafficShapingApplicationCategoriesRequest
 */
-func (a *ApplicationCategoriesApiService) GetNetworkTrafficShapingApplicationCategories(ctx context.Context, networkId string) ApplicationCategoriesApiGetNetworkTrafficShapingApplicationCategoriesRequest {
-	return ApplicationCategoriesApiGetNetworkTrafficShapingApplicationCategoriesRequest{
+func (a *ApplicationCategoriesAPIService) GetNetworkTrafficShapingApplicationCategories(ctx context.Context, networkId string) ApplicationCategoriesAPIGetNetworkTrafficShapingApplicationCategoriesRequest {
+	return ApplicationCategoriesAPIGetNetworkTrafficShapingApplicationCategoriesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -169,7 +169,7 @@ func (a *ApplicationCategoriesApiService) GetNetworkTrafficShapingApplicationCat
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ApplicationCategoriesApiService) GetNetworkTrafficShapingApplicationCategoriesExecute(r ApplicationCategoriesApiGetNetworkTrafficShapingApplicationCategoriesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ApplicationCategoriesAPIService) GetNetworkTrafficShapingApplicationCategoriesExecute(r ApplicationCategoriesAPIGetNetworkTrafficShapingApplicationCategoriesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -177,7 +177,7 @@ func (a *ApplicationCategoriesApiService) GetNetworkTrafficShapingApplicationCat
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationCategoriesApiService.GetNetworkTrafficShapingApplicationCategories")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationCategoriesAPIService.GetNetworkTrafficShapingApplicationCategories")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

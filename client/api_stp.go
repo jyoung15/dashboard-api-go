@@ -20,16 +20,16 @@ import (
 )
 
 
-// StpApiService StpApi service
-type StpApiService service
+// StpAPIService StpAPI service
+type StpAPIService service
 
-type StpApiGetNetworkSwitchStpRequest struct {
+type StpAPIGetNetworkSwitchStpRequest struct {
 	ctx context.Context
-	ApiService *StpApiService
+	ApiService *StpAPIService
 	networkId string
 }
 
-func (r StpApiGetNetworkSwitchStpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r StpAPIGetNetworkSwitchStpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchStpExecute(r)
 }
 
@@ -40,10 +40,10 @@ Returns STP settings
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return StpApiGetNetworkSwitchStpRequest
+ @return StpAPIGetNetworkSwitchStpRequest
 */
-func (a *StpApiService) GetNetworkSwitchStp(ctx context.Context, networkId string) StpApiGetNetworkSwitchStpRequest {
-	return StpApiGetNetworkSwitchStpRequest{
+func (a *StpAPIService) GetNetworkSwitchStp(ctx context.Context, networkId string) StpAPIGetNetworkSwitchStpRequest {
+	return StpAPIGetNetworkSwitchStpRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *StpApiService) GetNetworkSwitchStp(ctx context.Context, networkId strin
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *StpApiService) GetNetworkSwitchStpExecute(r StpApiGetNetworkSwitchStpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *StpAPIService) GetNetworkSwitchStpExecute(r StpAPIGetNetworkSwitchStpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *StpApiService) GetNetworkSwitchStpExecute(r StpApiGetNetworkSwitchStpRe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StpApiService.GetNetworkSwitchStp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StpAPIService.GetNetworkSwitchStp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *StpApiService) GetNetworkSwitchStpExecute(r StpApiGetNetworkSwitchStpRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StpApiUpdateNetworkSwitchStpRequest struct {
+type StpAPIUpdateNetworkSwitchStpRequest struct {
 	ctx context.Context
-	ApiService *StpApiService
+	ApiService *StpAPIService
 	networkId string
 	updateNetworkSwitchStpRequest *UpdateNetworkSwitchStpRequest
 }
 
-func (r StpApiUpdateNetworkSwitchStpRequest) UpdateNetworkSwitchStpRequest(updateNetworkSwitchStpRequest UpdateNetworkSwitchStpRequest) StpApiUpdateNetworkSwitchStpRequest {
+func (r StpAPIUpdateNetworkSwitchStpRequest) UpdateNetworkSwitchStpRequest(updateNetworkSwitchStpRequest UpdateNetworkSwitchStpRequest) StpAPIUpdateNetworkSwitchStpRequest {
 	r.updateNetworkSwitchStpRequest = &updateNetworkSwitchStpRequest
 	return r
 }
 
-func (r StpApiUpdateNetworkSwitchStpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r StpAPIUpdateNetworkSwitchStpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchStpExecute(r)
 }
 
@@ -163,10 +163,10 @@ Updates STP settings
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return StpApiUpdateNetworkSwitchStpRequest
+ @return StpAPIUpdateNetworkSwitchStpRequest
 */
-func (a *StpApiService) UpdateNetworkSwitchStp(ctx context.Context, networkId string) StpApiUpdateNetworkSwitchStpRequest {
-	return StpApiUpdateNetworkSwitchStpRequest{
+func (a *StpAPIService) UpdateNetworkSwitchStp(ctx context.Context, networkId string) StpAPIUpdateNetworkSwitchStpRequest {
+	return StpAPIUpdateNetworkSwitchStpRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -175,7 +175,7 @@ func (a *StpApiService) UpdateNetworkSwitchStp(ctx context.Context, networkId st
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *StpApiService) UpdateNetworkSwitchStpExecute(r StpApiUpdateNetworkSwitchStpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *StpAPIService) UpdateNetworkSwitchStpExecute(r StpAPIUpdateNetworkSwitchStpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *StpApiService) UpdateNetworkSwitchStpExecute(r StpApiUpdateNetworkSwitc
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StpApiService.UpdateNetworkSwitchStp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StpAPIService.UpdateNetworkSwitchStp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

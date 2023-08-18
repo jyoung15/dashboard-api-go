@@ -20,16 +20,16 @@ import (
 )
 
 
-// ThirdPartyVPNPeersApiService ThirdPartyVPNPeersApi service
-type ThirdPartyVPNPeersApiService service
+// ThirdPartyVPNPeersAPIService ThirdPartyVPNPeersAPI service
+type ThirdPartyVPNPeersAPIService service
 
-type ThirdPartyVPNPeersApiGetOrganizationApplianceVpnThirdPartyVPNPeersRequest struct {
+type ThirdPartyVPNPeersAPIGetOrganizationApplianceVpnThirdPartyVPNPeersRequest struct {
 	ctx context.Context
-	ApiService *ThirdPartyVPNPeersApiService
+	ApiService *ThirdPartyVPNPeersAPIService
 	organizationId string
 }
 
-func (r ThirdPartyVPNPeersApiGetOrganizationApplianceVpnThirdPartyVPNPeersRequest) Execute() (*GetOrganizationApplianceVpnThirdPartyVPNPeers200Response, *http.Response, error) {
+func (r ThirdPartyVPNPeersAPIGetOrganizationApplianceVpnThirdPartyVPNPeersRequest) Execute() (*GetOrganizationApplianceVpnThirdPartyVPNPeers200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceVpnThirdPartyVPNPeersExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the third party VPN peers for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ThirdPartyVPNPeersApiGetOrganizationApplianceVpnThirdPartyVPNPeersRequest
+ @return ThirdPartyVPNPeersAPIGetOrganizationApplianceVpnThirdPartyVPNPeersRequest
 */
-func (a *ThirdPartyVPNPeersApiService) GetOrganizationApplianceVpnThirdPartyVPNPeers(ctx context.Context, organizationId string) ThirdPartyVPNPeersApiGetOrganizationApplianceVpnThirdPartyVPNPeersRequest {
-	return ThirdPartyVPNPeersApiGetOrganizationApplianceVpnThirdPartyVPNPeersRequest{
+func (a *ThirdPartyVPNPeersAPIService) GetOrganizationApplianceVpnThirdPartyVPNPeers(ctx context.Context, organizationId string) ThirdPartyVPNPeersAPIGetOrganizationApplianceVpnThirdPartyVPNPeersRequest {
+	return ThirdPartyVPNPeersAPIGetOrganizationApplianceVpnThirdPartyVPNPeersRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -52,7 +52,7 @@ func (a *ThirdPartyVPNPeersApiService) GetOrganizationApplianceVpnThirdPartyVPNP
 
 // Execute executes the request
 //  @return GetOrganizationApplianceVpnThirdPartyVPNPeers200Response
-func (a *ThirdPartyVPNPeersApiService) GetOrganizationApplianceVpnThirdPartyVPNPeersExecute(r ThirdPartyVPNPeersApiGetOrganizationApplianceVpnThirdPartyVPNPeersRequest) (*GetOrganizationApplianceVpnThirdPartyVPNPeers200Response, *http.Response, error) {
+func (a *ThirdPartyVPNPeersAPIService) GetOrganizationApplianceVpnThirdPartyVPNPeersExecute(r ThirdPartyVPNPeersAPIGetOrganizationApplianceVpnThirdPartyVPNPeersRequest) (*GetOrganizationApplianceVpnThirdPartyVPNPeers200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *ThirdPartyVPNPeersApiService) GetOrganizationApplianceVpnThirdPartyVPNP
 		localVarReturnValue  *GetOrganizationApplianceVpnThirdPartyVPNPeers200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThirdPartyVPNPeersApiService.GetOrganizationApplianceVpnThirdPartyVPNPeers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThirdPartyVPNPeersAPIService.GetOrganizationApplianceVpnThirdPartyVPNPeers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *ThirdPartyVPNPeersApiService) GetOrganizationApplianceVpnThirdPartyVPNP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ThirdPartyVPNPeersApiUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest struct {
+type ThirdPartyVPNPeersAPIUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest struct {
 	ctx context.Context
-	ApiService *ThirdPartyVPNPeersApiService
+	ApiService *ThirdPartyVPNPeersAPIService
 	organizationId string
 	updateOrganizationApplianceVpnThirdPartyVPNPeersRequest *UpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest
 }
 
-func (r ThirdPartyVPNPeersApiUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest) UpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest(updateOrganizationApplianceVpnThirdPartyVPNPeersRequest UpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest) ThirdPartyVPNPeersApiUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest {
+func (r ThirdPartyVPNPeersAPIUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest) UpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest(updateOrganizationApplianceVpnThirdPartyVPNPeersRequest UpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest) ThirdPartyVPNPeersAPIUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest {
 	r.updateOrganizationApplianceVpnThirdPartyVPNPeersRequest = &updateOrganizationApplianceVpnThirdPartyVPNPeersRequest
 	return r
 }
 
-func (r ThirdPartyVPNPeersApiUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest) Execute() (*GetOrganizationApplianceVpnThirdPartyVPNPeers200Response, *http.Response, error) {
+func (r ThirdPartyVPNPeersAPIUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest) Execute() (*GetOrganizationApplianceVpnThirdPartyVPNPeers200Response, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationApplianceVpnThirdPartyVPNPeersExecute(r)
 }
 
@@ -163,10 +163,10 @@ Update the third party VPN peers for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ThirdPartyVPNPeersApiUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest
+ @return ThirdPartyVPNPeersAPIUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest
 */
-func (a *ThirdPartyVPNPeersApiService) UpdateOrganizationApplianceVpnThirdPartyVPNPeers(ctx context.Context, organizationId string) ThirdPartyVPNPeersApiUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest {
-	return ThirdPartyVPNPeersApiUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest{
+func (a *ThirdPartyVPNPeersAPIService) UpdateOrganizationApplianceVpnThirdPartyVPNPeers(ctx context.Context, organizationId string) ThirdPartyVPNPeersAPIUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest {
+	return ThirdPartyVPNPeersAPIUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -175,7 +175,7 @@ func (a *ThirdPartyVPNPeersApiService) UpdateOrganizationApplianceVpnThirdPartyV
 
 // Execute executes the request
 //  @return GetOrganizationApplianceVpnThirdPartyVPNPeers200Response
-func (a *ThirdPartyVPNPeersApiService) UpdateOrganizationApplianceVpnThirdPartyVPNPeersExecute(r ThirdPartyVPNPeersApiUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest) (*GetOrganizationApplianceVpnThirdPartyVPNPeers200Response, *http.Response, error) {
+func (a *ThirdPartyVPNPeersAPIService) UpdateOrganizationApplianceVpnThirdPartyVPNPeersExecute(r ThirdPartyVPNPeersAPIUpdateOrganizationApplianceVpnThirdPartyVPNPeersRequest) (*GetOrganizationApplianceVpnThirdPartyVPNPeers200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *ThirdPartyVPNPeersApiService) UpdateOrganizationApplianceVpnThirdPartyV
 		localVarReturnValue  *GetOrganizationApplianceVpnThirdPartyVPNPeers200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThirdPartyVPNPeersApiService.UpdateOrganizationApplianceVpnThirdPartyVPNPeers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThirdPartyVPNPeersAPIService.UpdateOrganizationApplianceVpnThirdPartyVPNPeers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

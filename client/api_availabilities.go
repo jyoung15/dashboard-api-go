@@ -21,12 +21,12 @@ import (
 )
 
 
-// AvailabilitiesApiService AvailabilitiesApi service
-type AvailabilitiesApiService service
+// AvailabilitiesAPIService AvailabilitiesAPI service
+type AvailabilitiesAPIService service
 
-type AvailabilitiesApiGetOrganizationDevicesAvailabilitiesRequest struct {
+type AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesRequest struct {
 	ctx context.Context
-	ApiService *AvailabilitiesApiService
+	ApiService *AvailabilitiesAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -39,54 +39,54 @@ type AvailabilitiesApiGetOrganizationDevicesAvailabilitiesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r AvailabilitiesApiGetOrganizationDevicesAvailabilitiesRequest) PerPage(perPage int32) AvailabilitiesApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesRequest) PerPage(perPage int32) AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r AvailabilitiesApiGetOrganizationDevicesAvailabilitiesRequest) StartingAfter(startingAfter string) AvailabilitiesApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesRequest) StartingAfter(startingAfter string) AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r AvailabilitiesApiGetOrganizationDevicesAvailabilitiesRequest) EndingBefore(endingBefore string) AvailabilitiesApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesRequest) EndingBefore(endingBefore string) AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter device availabilities by network ID. This filter uses multiple exact matches.
-func (r AvailabilitiesApiGetOrganizationDevicesAvailabilitiesRequest) NetworkIds(networkIds []string) AvailabilitiesApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesRequest) NetworkIds(networkIds []string) AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter device availabilities by device product types. This filter uses multiple exact matches.
-func (r AvailabilitiesApiGetOrganizationDevicesAvailabilitiesRequest) ProductTypes(productTypes []string) AvailabilitiesApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesRequest) ProductTypes(productTypes []string) AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter device availabilities by device serial numbers. This filter uses multiple exact matches.
-func (r AvailabilitiesApiGetOrganizationDevicesAvailabilitiesRequest) Serials(serials []string) AvailabilitiesApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesRequest) Serials(serials []string) AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.serials = &serials
 	return r
 }
 
 // An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below). This filter uses multiple exact matches.
-func (r AvailabilitiesApiGetOrganizationDevicesAvailabilitiesRequest) Tags(tags []string) AvailabilitiesApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesRequest) Tags(tags []string) AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.tags = &tags
 	return r
 }
 
 // An optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return devices which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r AvailabilitiesApiGetOrganizationDevicesAvailabilitiesRequest) TagsFilterType(tagsFilterType string) AvailabilitiesApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesRequest) TagsFilterType(tagsFilterType string) AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
-func (r AvailabilitiesApiGetOrganizationDevicesAvailabilitiesRequest) Execute() ([]GetOrganizationDevicesAvailabilities200ResponseInner, *http.Response, error) {
+func (r AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesRequest) Execute() ([]GetOrganizationDevicesAvailabilities200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesAvailabilitiesExecute(r)
 }
 
@@ -97,10 +97,10 @@ List the availability information for devices in an organization. The data retur
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return AvailabilitiesApiGetOrganizationDevicesAvailabilitiesRequest
+ @return AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesRequest
 */
-func (a *AvailabilitiesApiService) GetOrganizationDevicesAvailabilities(ctx context.Context, organizationId string) AvailabilitiesApiGetOrganizationDevicesAvailabilitiesRequest {
-	return AvailabilitiesApiGetOrganizationDevicesAvailabilitiesRequest{
+func (a *AvailabilitiesAPIService) GetOrganizationDevicesAvailabilities(ctx context.Context, organizationId string) AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesRequest {
+	return AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -109,7 +109,7 @@ func (a *AvailabilitiesApiService) GetOrganizationDevicesAvailabilities(ctx cont
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesAvailabilities200ResponseInner
-func (a *AvailabilitiesApiService) GetOrganizationDevicesAvailabilitiesExecute(r AvailabilitiesApiGetOrganizationDevicesAvailabilitiesRequest) ([]GetOrganizationDevicesAvailabilities200ResponseInner, *http.Response, error) {
+func (a *AvailabilitiesAPIService) GetOrganizationDevicesAvailabilitiesExecute(r AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesRequest) ([]GetOrganizationDevicesAvailabilities200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -117,7 +117,7 @@ func (a *AvailabilitiesApiService) GetOrganizationDevicesAvailabilitiesExecute(r
 		localVarReturnValue  []GetOrganizationDevicesAvailabilities200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AvailabilitiesApiService.GetOrganizationDevicesAvailabilities")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AvailabilitiesAPIService.GetOrganizationDevicesAvailabilities")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -253,9 +253,9 @@ func (a *AvailabilitiesApiService) GetOrganizationDevicesAvailabilitiesExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AvailabilitiesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest struct {
+type AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest struct {
 	ctx context.Context
-	ApiService *AvailabilitiesApiService
+	ApiService *AvailabilitiesAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -270,66 +270,66 @@ type AvailabilitiesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest s
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r AvailabilitiesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) PerPage(perPage int32) AvailabilitiesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) PerPage(perPage int32) AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r AvailabilitiesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) StartingAfter(startingAfter string) AvailabilitiesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) StartingAfter(startingAfter string) AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r AvailabilitiesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) EndingBefore(endingBefore string) AvailabilitiesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) EndingBefore(endingBefore string) AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 14 days from today.
-func (r AvailabilitiesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) T0(t0 string) AvailabilitiesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) T0(t0 string) AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 14 days after t0.
-func (r AvailabilitiesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) T1(t1 string) AvailabilitiesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) T1(t1 string) AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 14 days. The default is 1 day.
-func (r AvailabilitiesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Timespan(timespan float32) AvailabilitiesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Timespan(timespan float32) AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Optional parameter to filter device availabilities history by device serial numbers
-func (r AvailabilitiesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Serials(serials []string) AvailabilitiesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Serials(serials []string) AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.serials = &serials
 	return r
 }
 
 // Optional parameter to filter device availabilities history by device product types
-func (r AvailabilitiesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) ProductTypes(productTypes []string) AvailabilitiesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) ProductTypes(productTypes []string) AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter device availabilities history by network IDs
-func (r AvailabilitiesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) NetworkIds(networkIds []string) AvailabilitiesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) NetworkIds(networkIds []string) AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter device availabilities history by device statuses
-func (r AvailabilitiesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Statuses(statuses []string) AvailabilitiesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Statuses(statuses []string) AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.statuses = &statuses
 	return r
 }
 
-func (r AvailabilitiesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Execute() ([]GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner, *http.Response, error) {
+func (r AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Execute() ([]GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesAvailabilitiesChangeHistoryExecute(r)
 }
 
@@ -340,10 +340,10 @@ List the availability history information for devices in an organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return AvailabilitiesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest
+ @return AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest
 */
-func (a *AvailabilitiesApiService) GetOrganizationDevicesAvailabilitiesChangeHistory(ctx context.Context, organizationId string) AvailabilitiesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
-	return AvailabilitiesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest{
+func (a *AvailabilitiesAPIService) GetOrganizationDevicesAvailabilitiesChangeHistory(ctx context.Context, organizationId string) AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+	return AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -352,7 +352,7 @@ func (a *AvailabilitiesApiService) GetOrganizationDevicesAvailabilitiesChangeHis
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner
-func (a *AvailabilitiesApiService) GetOrganizationDevicesAvailabilitiesChangeHistoryExecute(r AvailabilitiesApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) ([]GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner, *http.Response, error) {
+func (a *AvailabilitiesAPIService) GetOrganizationDevicesAvailabilitiesChangeHistoryExecute(r AvailabilitiesAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) ([]GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -360,7 +360,7 @@ func (a *AvailabilitiesApiService) GetOrganizationDevicesAvailabilitiesChangeHis
 		localVarReturnValue  []GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AvailabilitiesApiService.GetOrganizationDevicesAvailabilitiesChangeHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AvailabilitiesAPIService.GetOrganizationDevicesAvailabilitiesChangeHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

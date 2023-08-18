@@ -20,16 +20,16 @@ import (
 )
 
 
-// OspfApiService OspfApi service
-type OspfApiService service
+// OspfAPIService OspfAPI service
+type OspfAPIService service
 
-type OspfApiGetNetworkSwitchRoutingOspfRequest struct {
+type OspfAPIGetNetworkSwitchRoutingOspfRequest struct {
 	ctx context.Context
-	ApiService *OspfApiService
+	ApiService *OspfAPIService
 	networkId string
 }
 
-func (r OspfApiGetNetworkSwitchRoutingOspfRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OspfAPIGetNetworkSwitchRoutingOspfRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchRoutingOspfExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return layer 3 OSPF routing configuration
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return OspfApiGetNetworkSwitchRoutingOspfRequest
+ @return OspfAPIGetNetworkSwitchRoutingOspfRequest
 */
-func (a *OspfApiService) GetNetworkSwitchRoutingOspf(ctx context.Context, networkId string) OspfApiGetNetworkSwitchRoutingOspfRequest {
-	return OspfApiGetNetworkSwitchRoutingOspfRequest{
+func (a *OspfAPIService) GetNetworkSwitchRoutingOspf(ctx context.Context, networkId string) OspfAPIGetNetworkSwitchRoutingOspfRequest {
+	return OspfAPIGetNetworkSwitchRoutingOspfRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *OspfApiService) GetNetworkSwitchRoutingOspf(ctx context.Context, networ
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OspfApiService) GetNetworkSwitchRoutingOspfExecute(r OspfApiGetNetworkSwitchRoutingOspfRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OspfAPIService) GetNetworkSwitchRoutingOspfExecute(r OspfAPIGetNetworkSwitchRoutingOspfRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *OspfApiService) GetNetworkSwitchRoutingOspfExecute(r OspfApiGetNetworkS
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OspfApiService.GetNetworkSwitchRoutingOspf")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OspfAPIService.GetNetworkSwitchRoutingOspf")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *OspfApiService) GetNetworkSwitchRoutingOspfExecute(r OspfApiGetNetworkS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OspfApiUpdateNetworkSwitchRoutingOspfRequest struct {
+type OspfAPIUpdateNetworkSwitchRoutingOspfRequest struct {
 	ctx context.Context
-	ApiService *OspfApiService
+	ApiService *OspfAPIService
 	networkId string
 	updateNetworkSwitchRoutingOspfRequest *UpdateNetworkSwitchRoutingOspfRequest
 }
 
-func (r OspfApiUpdateNetworkSwitchRoutingOspfRequest) UpdateNetworkSwitchRoutingOspfRequest(updateNetworkSwitchRoutingOspfRequest UpdateNetworkSwitchRoutingOspfRequest) OspfApiUpdateNetworkSwitchRoutingOspfRequest {
+func (r OspfAPIUpdateNetworkSwitchRoutingOspfRequest) UpdateNetworkSwitchRoutingOspfRequest(updateNetworkSwitchRoutingOspfRequest UpdateNetworkSwitchRoutingOspfRequest) OspfAPIUpdateNetworkSwitchRoutingOspfRequest {
 	r.updateNetworkSwitchRoutingOspfRequest = &updateNetworkSwitchRoutingOspfRequest
 	return r
 }
 
-func (r OspfApiUpdateNetworkSwitchRoutingOspfRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OspfAPIUpdateNetworkSwitchRoutingOspfRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchRoutingOspfExecute(r)
 }
 
@@ -163,10 +163,10 @@ Update layer 3 OSPF routing configuration
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return OspfApiUpdateNetworkSwitchRoutingOspfRequest
+ @return OspfAPIUpdateNetworkSwitchRoutingOspfRequest
 */
-func (a *OspfApiService) UpdateNetworkSwitchRoutingOspf(ctx context.Context, networkId string) OspfApiUpdateNetworkSwitchRoutingOspfRequest {
-	return OspfApiUpdateNetworkSwitchRoutingOspfRequest{
+func (a *OspfAPIService) UpdateNetworkSwitchRoutingOspf(ctx context.Context, networkId string) OspfAPIUpdateNetworkSwitchRoutingOspfRequest {
+	return OspfAPIUpdateNetworkSwitchRoutingOspfRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -175,7 +175,7 @@ func (a *OspfApiService) UpdateNetworkSwitchRoutingOspf(ctx context.Context, net
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OspfApiService) UpdateNetworkSwitchRoutingOspfExecute(r OspfApiUpdateNetworkSwitchRoutingOspfRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OspfAPIService) UpdateNetworkSwitchRoutingOspfExecute(r OspfAPIUpdateNetworkSwitchRoutingOspfRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *OspfApiService) UpdateNetworkSwitchRoutingOspfExecute(r OspfApiUpdateNe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OspfApiService.UpdateNetworkSwitchRoutingOspf")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OspfAPIService.UpdateNetworkSwitchRoutingOspf")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

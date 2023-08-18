@@ -20,16 +20,16 @@ import (
 )
 
 
-// ContentFilteringApiService ContentFilteringApi service
-type ContentFilteringApiService service
+// ContentFilteringAPIService ContentFilteringAPI service
+type ContentFilteringAPIService service
 
-type ContentFilteringApiGetNetworkApplianceContentFilteringRequest struct {
+type ContentFilteringAPIGetNetworkApplianceContentFilteringRequest struct {
 	ctx context.Context
-	ApiService *ContentFilteringApiService
+	ApiService *ContentFilteringAPIService
 	networkId string
 }
 
-func (r ContentFilteringApiGetNetworkApplianceContentFilteringRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ContentFilteringAPIGetNetworkApplianceContentFilteringRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceContentFilteringExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the content filtering settings for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ContentFilteringApiGetNetworkApplianceContentFilteringRequest
+ @return ContentFilteringAPIGetNetworkApplianceContentFilteringRequest
 */
-func (a *ContentFilteringApiService) GetNetworkApplianceContentFiltering(ctx context.Context, networkId string) ContentFilteringApiGetNetworkApplianceContentFilteringRequest {
-	return ContentFilteringApiGetNetworkApplianceContentFilteringRequest{
+func (a *ContentFilteringAPIService) GetNetworkApplianceContentFiltering(ctx context.Context, networkId string) ContentFilteringAPIGetNetworkApplianceContentFilteringRequest {
+	return ContentFilteringAPIGetNetworkApplianceContentFilteringRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *ContentFilteringApiService) GetNetworkApplianceContentFiltering(ctx con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ContentFilteringApiService) GetNetworkApplianceContentFilteringExecute(r ContentFilteringApiGetNetworkApplianceContentFilteringRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ContentFilteringAPIService) GetNetworkApplianceContentFilteringExecute(r ContentFilteringAPIGetNetworkApplianceContentFilteringRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *ContentFilteringApiService) GetNetworkApplianceContentFilteringExecute(
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContentFilteringApiService.GetNetworkApplianceContentFiltering")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContentFilteringAPIService.GetNetworkApplianceContentFiltering")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,13 +140,13 @@ func (a *ContentFilteringApiService) GetNetworkApplianceContentFilteringExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ContentFilteringApiGetNetworkApplianceContentFilteringCategoriesRequest struct {
+type ContentFilteringAPIGetNetworkApplianceContentFilteringCategoriesRequest struct {
 	ctx context.Context
-	ApiService *ContentFilteringApiService
+	ApiService *ContentFilteringAPIService
 	networkId string
 }
 
-func (r ContentFilteringApiGetNetworkApplianceContentFilteringCategoriesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ContentFilteringAPIGetNetworkApplianceContentFilteringCategoriesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceContentFilteringCategoriesExecute(r)
 }
 
@@ -157,10 +157,10 @@ List all available content filtering categories for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ContentFilteringApiGetNetworkApplianceContentFilteringCategoriesRequest
+ @return ContentFilteringAPIGetNetworkApplianceContentFilteringCategoriesRequest
 */
-func (a *ContentFilteringApiService) GetNetworkApplianceContentFilteringCategories(ctx context.Context, networkId string) ContentFilteringApiGetNetworkApplianceContentFilteringCategoriesRequest {
-	return ContentFilteringApiGetNetworkApplianceContentFilteringCategoriesRequest{
+func (a *ContentFilteringAPIService) GetNetworkApplianceContentFilteringCategories(ctx context.Context, networkId string) ContentFilteringAPIGetNetworkApplianceContentFilteringCategoriesRequest {
+	return ContentFilteringAPIGetNetworkApplianceContentFilteringCategoriesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -169,7 +169,7 @@ func (a *ContentFilteringApiService) GetNetworkApplianceContentFilteringCategori
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ContentFilteringApiService) GetNetworkApplianceContentFilteringCategoriesExecute(r ContentFilteringApiGetNetworkApplianceContentFilteringCategoriesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ContentFilteringAPIService) GetNetworkApplianceContentFilteringCategoriesExecute(r ContentFilteringAPIGetNetworkApplianceContentFilteringCategoriesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -177,7 +177,7 @@ func (a *ContentFilteringApiService) GetNetworkApplianceContentFilteringCategori
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContentFilteringApiService.GetNetworkApplianceContentFilteringCategories")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContentFilteringAPIService.GetNetworkApplianceContentFilteringCategories")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -257,19 +257,19 @@ func (a *ContentFilteringApiService) GetNetworkApplianceContentFilteringCategori
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ContentFilteringApiUpdateNetworkApplianceContentFilteringRequest struct {
+type ContentFilteringAPIUpdateNetworkApplianceContentFilteringRequest struct {
 	ctx context.Context
-	ApiService *ContentFilteringApiService
+	ApiService *ContentFilteringAPIService
 	networkId string
 	updateNetworkApplianceContentFilteringRequest *UpdateNetworkApplianceContentFilteringRequest
 }
 
-func (r ContentFilteringApiUpdateNetworkApplianceContentFilteringRequest) UpdateNetworkApplianceContentFilteringRequest(updateNetworkApplianceContentFilteringRequest UpdateNetworkApplianceContentFilteringRequest) ContentFilteringApiUpdateNetworkApplianceContentFilteringRequest {
+func (r ContentFilteringAPIUpdateNetworkApplianceContentFilteringRequest) UpdateNetworkApplianceContentFilteringRequest(updateNetworkApplianceContentFilteringRequest UpdateNetworkApplianceContentFilteringRequest) ContentFilteringAPIUpdateNetworkApplianceContentFilteringRequest {
 	r.updateNetworkApplianceContentFilteringRequest = &updateNetworkApplianceContentFilteringRequest
 	return r
 }
 
-func (r ContentFilteringApiUpdateNetworkApplianceContentFilteringRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ContentFilteringAPIUpdateNetworkApplianceContentFilteringRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceContentFilteringExecute(r)
 }
 
@@ -280,10 +280,10 @@ Update the content filtering settings for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ContentFilteringApiUpdateNetworkApplianceContentFilteringRequest
+ @return ContentFilteringAPIUpdateNetworkApplianceContentFilteringRequest
 */
-func (a *ContentFilteringApiService) UpdateNetworkApplianceContentFiltering(ctx context.Context, networkId string) ContentFilteringApiUpdateNetworkApplianceContentFilteringRequest {
-	return ContentFilteringApiUpdateNetworkApplianceContentFilteringRequest{
+func (a *ContentFilteringAPIService) UpdateNetworkApplianceContentFiltering(ctx context.Context, networkId string) ContentFilteringAPIUpdateNetworkApplianceContentFilteringRequest {
+	return ContentFilteringAPIUpdateNetworkApplianceContentFilteringRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -292,7 +292,7 @@ func (a *ContentFilteringApiService) UpdateNetworkApplianceContentFiltering(ctx 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ContentFilteringApiService) UpdateNetworkApplianceContentFilteringExecute(r ContentFilteringApiUpdateNetworkApplianceContentFilteringRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ContentFilteringAPIService) UpdateNetworkApplianceContentFilteringExecute(r ContentFilteringAPIUpdateNetworkApplianceContentFilteringRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -300,7 +300,7 @@ func (a *ContentFilteringApiService) UpdateNetworkApplianceContentFilteringExecu
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContentFilteringApiService.UpdateNetworkApplianceContentFiltering")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContentFilteringAPIService.UpdateNetworkApplianceContentFiltering")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

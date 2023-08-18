@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing LiveToolsApiService
+Testing LiveToolsAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_LiveToolsApiService(t *testing.T) {
+func Test_client_LiveToolsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test LiveToolsApiService BlinkDeviceLeds", func(t *testing.T) {
+	t.Run("Test LiveToolsAPIService BlinkDeviceLeds", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.LiveToolsApi.BlinkDeviceLeds(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.LiveToolsAPI.BlinkDeviceLeds(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_LiveToolsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test LiveToolsApiService CreateDeviceLiveToolsPing", func(t *testing.T) {
+	t.Run("Test LiveToolsAPIService CreateDeviceLiveToolsPing", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.LiveToolsApi.CreateDeviceLiveToolsPing(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.LiveToolsAPI.CreateDeviceLiveToolsPing(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,13 +50,13 @@ func Test_client_LiveToolsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test LiveToolsApiService CreateDeviceLiveToolsPingDevice", func(t *testing.T) {
+	t.Run("Test LiveToolsAPIService CreateDeviceLiveToolsPingDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.LiveToolsApi.CreateDeviceLiveToolsPingDevice(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.LiveToolsAPI.CreateDeviceLiveToolsPingDevice(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,13 +64,13 @@ func Test_client_LiveToolsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test LiveToolsApiService CycleDeviceSwitchPorts", func(t *testing.T) {
+	t.Run("Test LiveToolsAPIService CycleDeviceSwitchPorts", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.LiveToolsApi.CycleDeviceSwitchPorts(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.LiveToolsAPI.CycleDeviceSwitchPorts(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -78,14 +78,14 @@ func Test_client_LiveToolsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test LiveToolsApiService GetDeviceLiveToolsPing", func(t *testing.T) {
+	t.Run("Test LiveToolsAPIService GetDeviceLiveToolsPing", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var id string
 
-		resp, httpRes, err := apiClient.LiveToolsApi.GetDeviceLiveToolsPing(context.Background(), serial, id).Execute()
+		resp, httpRes, err := apiClient.LiveToolsAPI.GetDeviceLiveToolsPing(context.Background(), serial, id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -93,14 +93,14 @@ func Test_client_LiveToolsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test LiveToolsApiService GetDeviceLiveToolsPingDevice", func(t *testing.T) {
+	t.Run("Test LiveToolsAPIService GetDeviceLiveToolsPingDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var id string
 
-		resp, httpRes, err := apiClient.LiveToolsApi.GetDeviceLiveToolsPingDevice(context.Background(), serial, id).Execute()
+		resp, httpRes, err := apiClient.LiveToolsAPI.GetDeviceLiveToolsPingDevice(context.Background(), serial, id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -108,13 +108,13 @@ func Test_client_LiveToolsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test LiveToolsApiService RebootDevice", func(t *testing.T) {
+	t.Run("Test LiveToolsAPIService RebootDevice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.LiveToolsApi.RebootDevice(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.LiveToolsAPI.RebootDevice(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

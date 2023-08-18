@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing WirelessProfilesApiService
+Testing WirelessProfilesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_WirelessProfilesApiService(t *testing.T) {
+func Test_client_WirelessProfilesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test WirelessProfilesApiService CreateNetworkCameraWirelessProfile", func(t *testing.T) {
+	t.Run("Test WirelessProfilesAPIService CreateNetworkCameraWirelessProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessProfilesApi.CreateNetworkCameraWirelessProfile(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessProfilesAPI.CreateNetworkCameraWirelessProfile(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,27 +36,27 @@ func Test_client_WirelessProfilesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessProfilesApiService DeleteNetworkCameraWirelessProfile", func(t *testing.T) {
+	t.Run("Test WirelessProfilesAPIService DeleteNetworkCameraWirelessProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var wirelessProfileId string
 
-		httpRes, err := apiClient.WirelessProfilesApi.DeleteNetworkCameraWirelessProfile(context.Background(), networkId, wirelessProfileId).Execute()
+		httpRes, err := apiClient.WirelessProfilesAPI.DeleteNetworkCameraWirelessProfile(context.Background(), networkId, wirelessProfileId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test WirelessProfilesApiService GetDeviceCameraWirelessProfiles", func(t *testing.T) {
+	t.Run("Test WirelessProfilesAPIService GetDeviceCameraWirelessProfiles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.WirelessProfilesApi.GetDeviceCameraWirelessProfiles(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.WirelessProfilesAPI.GetDeviceCameraWirelessProfiles(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,14 +64,14 @@ func Test_client_WirelessProfilesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessProfilesApiService GetNetworkCameraWirelessProfile", func(t *testing.T) {
+	t.Run("Test WirelessProfilesAPIService GetNetworkCameraWirelessProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var wirelessProfileId string
 
-		resp, httpRes, err := apiClient.WirelessProfilesApi.GetNetworkCameraWirelessProfile(context.Background(), networkId, wirelessProfileId).Execute()
+		resp, httpRes, err := apiClient.WirelessProfilesAPI.GetNetworkCameraWirelessProfile(context.Background(), networkId, wirelessProfileId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,13 +79,13 @@ func Test_client_WirelessProfilesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessProfilesApiService GetNetworkCameraWirelessProfiles", func(t *testing.T) {
+	t.Run("Test WirelessProfilesAPIService GetNetworkCameraWirelessProfiles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.WirelessProfilesApi.GetNetworkCameraWirelessProfiles(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.WirelessProfilesAPI.GetNetworkCameraWirelessProfiles(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -93,13 +93,13 @@ func Test_client_WirelessProfilesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessProfilesApiService UpdateDeviceCameraWirelessProfiles", func(t *testing.T) {
+	t.Run("Test WirelessProfilesAPIService UpdateDeviceCameraWirelessProfiles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.WirelessProfilesApi.UpdateDeviceCameraWirelessProfiles(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.WirelessProfilesAPI.UpdateDeviceCameraWirelessProfiles(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -107,14 +107,14 @@ func Test_client_WirelessProfilesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test WirelessProfilesApiService UpdateNetworkCameraWirelessProfile", func(t *testing.T) {
+	t.Run("Test WirelessProfilesAPIService UpdateNetworkCameraWirelessProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var wirelessProfileId string
 
-		resp, httpRes, err := apiClient.WirelessProfilesApi.UpdateNetworkCameraWirelessProfile(context.Background(), networkId, wirelessProfileId).Execute()
+		resp, httpRes, err := apiClient.WirelessProfilesAPI.UpdateNetworkCameraWirelessProfile(context.Background(), networkId, wirelessProfileId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

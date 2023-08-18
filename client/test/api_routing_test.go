@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing RoutingApiService
+Testing RoutingAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_RoutingApiService(t *testing.T) {
+func Test_client_RoutingAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test RoutingApiService CreateDeviceSwitchRoutingInterface", func(t *testing.T) {
+	t.Run("Test RoutingAPIService CreateDeviceSwitchRoutingInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.RoutingApi.CreateDeviceSwitchRoutingInterface(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.CreateDeviceSwitchRoutingInterface(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_RoutingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingApiService CreateDeviceSwitchRoutingStaticRoute", func(t *testing.T) {
+	t.Run("Test RoutingAPIService CreateDeviceSwitchRoutingStaticRoute", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.RoutingApi.CreateDeviceSwitchRoutingStaticRoute(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.CreateDeviceSwitchRoutingStaticRoute(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,13 +50,13 @@ func Test_client_RoutingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingApiService CreateNetworkSwitchRoutingMulticastRendezvousPoint", func(t *testing.T) {
+	t.Run("Test RoutingAPIService CreateNetworkSwitchRoutingMulticastRendezvousPoint", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.RoutingApi.CreateNetworkSwitchRoutingMulticastRendezvousPoint(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.CreateNetworkSwitchRoutingMulticastRendezvousPoint(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,14 +64,14 @@ func Test_client_RoutingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingApiService CreateNetworkSwitchStackRoutingInterface", func(t *testing.T) {
+	t.Run("Test RoutingAPIService CreateNetworkSwitchStackRoutingInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var switchStackId string
 
-		resp, httpRes, err := apiClient.RoutingApi.CreateNetworkSwitchStackRoutingInterface(context.Background(), networkId, switchStackId).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.CreateNetworkSwitchStackRoutingInterface(context.Background(), networkId, switchStackId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,14 +79,14 @@ func Test_client_RoutingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingApiService CreateNetworkSwitchStackRoutingStaticRoute", func(t *testing.T) {
+	t.Run("Test RoutingAPIService CreateNetworkSwitchStackRoutingStaticRoute", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var switchStackId string
 
-		resp, httpRes, err := apiClient.RoutingApi.CreateNetworkSwitchStackRoutingStaticRoute(context.Background(), networkId, switchStackId).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.CreateNetworkSwitchStackRoutingStaticRoute(context.Background(), networkId, switchStackId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -94,49 +94,49 @@ func Test_client_RoutingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingApiService DeleteDeviceSwitchRoutingInterface", func(t *testing.T) {
+	t.Run("Test RoutingAPIService DeleteDeviceSwitchRoutingInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var interfaceId string
 
-		httpRes, err := apiClient.RoutingApi.DeleteDeviceSwitchRoutingInterface(context.Background(), serial, interfaceId).Execute()
+		httpRes, err := apiClient.RoutingAPI.DeleteDeviceSwitchRoutingInterface(context.Background(), serial, interfaceId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RoutingApiService DeleteDeviceSwitchRoutingStaticRoute", func(t *testing.T) {
+	t.Run("Test RoutingAPIService DeleteDeviceSwitchRoutingStaticRoute", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var staticRouteId string
 
-		httpRes, err := apiClient.RoutingApi.DeleteDeviceSwitchRoutingStaticRoute(context.Background(), serial, staticRouteId).Execute()
+		httpRes, err := apiClient.RoutingAPI.DeleteDeviceSwitchRoutingStaticRoute(context.Background(), serial, staticRouteId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RoutingApiService DeleteNetworkSwitchRoutingMulticastRendezvousPoint", func(t *testing.T) {
+	t.Run("Test RoutingAPIService DeleteNetworkSwitchRoutingMulticastRendezvousPoint", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var rendezvousPointId string
 
-		httpRes, err := apiClient.RoutingApi.DeleteNetworkSwitchRoutingMulticastRendezvousPoint(context.Background(), networkId, rendezvousPointId).Execute()
+		httpRes, err := apiClient.RoutingAPI.DeleteNetworkSwitchRoutingMulticastRendezvousPoint(context.Background(), networkId, rendezvousPointId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RoutingApiService DeleteNetworkSwitchStackRoutingInterface", func(t *testing.T) {
+	t.Run("Test RoutingAPIService DeleteNetworkSwitchStackRoutingInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -144,14 +144,14 @@ func Test_client_RoutingApiService(t *testing.T) {
 		var switchStackId string
 		var interfaceId string
 
-		httpRes, err := apiClient.RoutingApi.DeleteNetworkSwitchStackRoutingInterface(context.Background(), networkId, switchStackId, interfaceId).Execute()
+		httpRes, err := apiClient.RoutingAPI.DeleteNetworkSwitchStackRoutingInterface(context.Background(), networkId, switchStackId, interfaceId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RoutingApiService DeleteNetworkSwitchStackRoutingStaticRoute", func(t *testing.T) {
+	t.Run("Test RoutingAPIService DeleteNetworkSwitchStackRoutingStaticRoute", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -159,21 +159,21 @@ func Test_client_RoutingApiService(t *testing.T) {
 		var switchStackId string
 		var staticRouteId string
 
-		httpRes, err := apiClient.RoutingApi.DeleteNetworkSwitchStackRoutingStaticRoute(context.Background(), networkId, switchStackId, staticRouteId).Execute()
+		httpRes, err := apiClient.RoutingAPI.DeleteNetworkSwitchStackRoutingStaticRoute(context.Background(), networkId, switchStackId, staticRouteId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RoutingApiService GetDeviceSwitchRoutingInterface", func(t *testing.T) {
+	t.Run("Test RoutingAPIService GetDeviceSwitchRoutingInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var interfaceId string
 
-		resp, httpRes, err := apiClient.RoutingApi.GetDeviceSwitchRoutingInterface(context.Background(), serial, interfaceId).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.GetDeviceSwitchRoutingInterface(context.Background(), serial, interfaceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -181,14 +181,14 @@ func Test_client_RoutingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingApiService GetDeviceSwitchRoutingInterfaceDhcp", func(t *testing.T) {
+	t.Run("Test RoutingAPIService GetDeviceSwitchRoutingInterfaceDhcp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var interfaceId string
 
-		resp, httpRes, err := apiClient.RoutingApi.GetDeviceSwitchRoutingInterfaceDhcp(context.Background(), serial, interfaceId).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.GetDeviceSwitchRoutingInterfaceDhcp(context.Background(), serial, interfaceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -196,13 +196,13 @@ func Test_client_RoutingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingApiService GetDeviceSwitchRoutingInterfaces", func(t *testing.T) {
+	t.Run("Test RoutingAPIService GetDeviceSwitchRoutingInterfaces", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.RoutingApi.GetDeviceSwitchRoutingInterfaces(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.GetDeviceSwitchRoutingInterfaces(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -210,14 +210,14 @@ func Test_client_RoutingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingApiService GetDeviceSwitchRoutingStaticRoute", func(t *testing.T) {
+	t.Run("Test RoutingAPIService GetDeviceSwitchRoutingStaticRoute", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var staticRouteId string
 
-		resp, httpRes, err := apiClient.RoutingApi.GetDeviceSwitchRoutingStaticRoute(context.Background(), serial, staticRouteId).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.GetDeviceSwitchRoutingStaticRoute(context.Background(), serial, staticRouteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -225,13 +225,13 @@ func Test_client_RoutingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingApiService GetDeviceSwitchRoutingStaticRoutes", func(t *testing.T) {
+	t.Run("Test RoutingAPIService GetDeviceSwitchRoutingStaticRoutes", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.RoutingApi.GetDeviceSwitchRoutingStaticRoutes(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.GetDeviceSwitchRoutingStaticRoutes(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -239,13 +239,13 @@ func Test_client_RoutingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingApiService GetNetworkSwitchRoutingMulticast", func(t *testing.T) {
+	t.Run("Test RoutingAPIService GetNetworkSwitchRoutingMulticast", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.RoutingApi.GetNetworkSwitchRoutingMulticast(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.GetNetworkSwitchRoutingMulticast(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -253,14 +253,14 @@ func Test_client_RoutingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingApiService GetNetworkSwitchRoutingMulticastRendezvousPoint", func(t *testing.T) {
+	t.Run("Test RoutingAPIService GetNetworkSwitchRoutingMulticastRendezvousPoint", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var rendezvousPointId string
 
-		resp, httpRes, err := apiClient.RoutingApi.GetNetworkSwitchRoutingMulticastRendezvousPoint(context.Background(), networkId, rendezvousPointId).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.GetNetworkSwitchRoutingMulticastRendezvousPoint(context.Background(), networkId, rendezvousPointId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -268,13 +268,13 @@ func Test_client_RoutingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingApiService GetNetworkSwitchRoutingMulticastRendezvousPoints", func(t *testing.T) {
+	t.Run("Test RoutingAPIService GetNetworkSwitchRoutingMulticastRendezvousPoints", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.RoutingApi.GetNetworkSwitchRoutingMulticastRendezvousPoints(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.GetNetworkSwitchRoutingMulticastRendezvousPoints(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -282,13 +282,13 @@ func Test_client_RoutingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingApiService GetNetworkSwitchRoutingOspf", func(t *testing.T) {
+	t.Run("Test RoutingAPIService GetNetworkSwitchRoutingOspf", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.RoutingApi.GetNetworkSwitchRoutingOspf(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.GetNetworkSwitchRoutingOspf(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -296,23 +296,7 @@ func Test_client_RoutingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingApiService GetNetworkSwitchStackRoutingInterface", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-		var switchStackId string
-		var interfaceId string
-
-		resp, httpRes, err := apiClient.RoutingApi.GetNetworkSwitchStackRoutingInterface(context.Background(), networkId, switchStackId, interfaceId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RoutingApiService GetNetworkSwitchStackRoutingInterfaceDhcp", func(t *testing.T) {
+	t.Run("Test RoutingAPIService GetNetworkSwitchStackRoutingInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -320,7 +304,7 @@ func Test_client_RoutingApiService(t *testing.T) {
 		var switchStackId string
 		var interfaceId string
 
-		resp, httpRes, err := apiClient.RoutingApi.GetNetworkSwitchStackRoutingInterfaceDhcp(context.Background(), networkId, switchStackId, interfaceId).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.GetNetworkSwitchStackRoutingInterface(context.Background(), networkId, switchStackId, interfaceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -328,14 +312,30 @@ func Test_client_RoutingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingApiService GetNetworkSwitchStackRoutingInterfaces", func(t *testing.T) {
+	t.Run("Test RoutingAPIService GetNetworkSwitchStackRoutingInterfaceDhcp", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+		var switchStackId string
+		var interfaceId string
+
+		resp, httpRes, err := apiClient.RoutingAPI.GetNetworkSwitchStackRoutingInterfaceDhcp(context.Background(), networkId, switchStackId, interfaceId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RoutingAPIService GetNetworkSwitchStackRoutingInterfaces", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var switchStackId string
 
-		resp, httpRes, err := apiClient.RoutingApi.GetNetworkSwitchStackRoutingInterfaces(context.Background(), networkId, switchStackId).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.GetNetworkSwitchStackRoutingInterfaces(context.Background(), networkId, switchStackId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -343,7 +343,7 @@ func Test_client_RoutingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingApiService GetNetworkSwitchStackRoutingStaticRoute", func(t *testing.T) {
+	t.Run("Test RoutingAPIService GetNetworkSwitchStackRoutingStaticRoute", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -351,7 +351,7 @@ func Test_client_RoutingApiService(t *testing.T) {
 		var switchStackId string
 		var staticRouteId string
 
-		resp, httpRes, err := apiClient.RoutingApi.GetNetworkSwitchStackRoutingStaticRoute(context.Background(), networkId, switchStackId, staticRouteId).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.GetNetworkSwitchStackRoutingStaticRoute(context.Background(), networkId, switchStackId, staticRouteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -359,14 +359,14 @@ func Test_client_RoutingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingApiService GetNetworkSwitchStackRoutingStaticRoutes", func(t *testing.T) {
+	t.Run("Test RoutingAPIService GetNetworkSwitchStackRoutingStaticRoutes", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var switchStackId string
 
-		resp, httpRes, err := apiClient.RoutingApi.GetNetworkSwitchStackRoutingStaticRoutes(context.Background(), networkId, switchStackId).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.GetNetworkSwitchStackRoutingStaticRoutes(context.Background(), networkId, switchStackId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -374,14 +374,14 @@ func Test_client_RoutingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingApiService UpdateDeviceSwitchRoutingInterface", func(t *testing.T) {
+	t.Run("Test RoutingAPIService UpdateDeviceSwitchRoutingInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var interfaceId string
 
-		resp, httpRes, err := apiClient.RoutingApi.UpdateDeviceSwitchRoutingInterface(context.Background(), serial, interfaceId).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.UpdateDeviceSwitchRoutingInterface(context.Background(), serial, interfaceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -389,14 +389,14 @@ func Test_client_RoutingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingApiService UpdateDeviceSwitchRoutingInterfaceDhcp", func(t *testing.T) {
+	t.Run("Test RoutingAPIService UpdateDeviceSwitchRoutingInterfaceDhcp", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var interfaceId string
 
-		resp, httpRes, err := apiClient.RoutingApi.UpdateDeviceSwitchRoutingInterfaceDhcp(context.Background(), serial, interfaceId).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.UpdateDeviceSwitchRoutingInterfaceDhcp(context.Background(), serial, interfaceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -404,14 +404,14 @@ func Test_client_RoutingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingApiService UpdateDeviceSwitchRoutingStaticRoute", func(t *testing.T) {
+	t.Run("Test RoutingAPIService UpdateDeviceSwitchRoutingStaticRoute", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 		var staticRouteId string
 
-		resp, httpRes, err := apiClient.RoutingApi.UpdateDeviceSwitchRoutingStaticRoute(context.Background(), serial, staticRouteId).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.UpdateDeviceSwitchRoutingStaticRoute(context.Background(), serial, staticRouteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -419,13 +419,13 @@ func Test_client_RoutingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingApiService UpdateNetworkSwitchRoutingMulticast", func(t *testing.T) {
+	t.Run("Test RoutingAPIService UpdateNetworkSwitchRoutingMulticast", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.RoutingApi.UpdateNetworkSwitchRoutingMulticast(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.UpdateNetworkSwitchRoutingMulticast(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -433,14 +433,14 @@ func Test_client_RoutingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingApiService UpdateNetworkSwitchRoutingMulticastRendezvousPoint", func(t *testing.T) {
+	t.Run("Test RoutingAPIService UpdateNetworkSwitchRoutingMulticastRendezvousPoint", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var rendezvousPointId string
 
-		resp, httpRes, err := apiClient.RoutingApi.UpdateNetworkSwitchRoutingMulticastRendezvousPoint(context.Background(), networkId, rendezvousPointId).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.UpdateNetworkSwitchRoutingMulticastRendezvousPoint(context.Background(), networkId, rendezvousPointId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -448,13 +448,13 @@ func Test_client_RoutingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingApiService UpdateNetworkSwitchRoutingOspf", func(t *testing.T) {
+	t.Run("Test RoutingAPIService UpdateNetworkSwitchRoutingOspf", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.RoutingApi.UpdateNetworkSwitchRoutingOspf(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.UpdateNetworkSwitchRoutingOspf(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -462,23 +462,7 @@ func Test_client_RoutingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingApiService UpdateNetworkSwitchStackRoutingInterface", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-		var switchStackId string
-		var interfaceId string
-
-		resp, httpRes, err := apiClient.RoutingApi.UpdateNetworkSwitchStackRoutingInterface(context.Background(), networkId, switchStackId, interfaceId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RoutingApiService UpdateNetworkSwitchStackRoutingInterfaceDhcp", func(t *testing.T) {
+	t.Run("Test RoutingAPIService UpdateNetworkSwitchStackRoutingInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -486,7 +470,7 @@ func Test_client_RoutingApiService(t *testing.T) {
 		var switchStackId string
 		var interfaceId string
 
-		resp, httpRes, err := apiClient.RoutingApi.UpdateNetworkSwitchStackRoutingInterfaceDhcp(context.Background(), networkId, switchStackId, interfaceId).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.UpdateNetworkSwitchStackRoutingInterface(context.Background(), networkId, switchStackId, interfaceId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -494,7 +478,23 @@ func Test_client_RoutingApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RoutingApiService UpdateNetworkSwitchStackRoutingStaticRoute", func(t *testing.T) {
+	t.Run("Test RoutingAPIService UpdateNetworkSwitchStackRoutingInterfaceDhcp", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+		var switchStackId string
+		var interfaceId string
+
+		resp, httpRes, err := apiClient.RoutingAPI.UpdateNetworkSwitchStackRoutingInterfaceDhcp(context.Background(), networkId, switchStackId, interfaceId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RoutingAPIService UpdateNetworkSwitchStackRoutingStaticRoute", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -502,7 +502,7 @@ func Test_client_RoutingApiService(t *testing.T) {
 		var switchStackId string
 		var staticRouteId string
 
-		resp, httpRes, err := apiClient.RoutingApi.UpdateNetworkSwitchStackRoutingStaticRoute(context.Background(), networkId, switchStackId, staticRouteId).Execute()
+		resp, httpRes, err := apiClient.RoutingAPI.UpdateNetworkSwitchStackRoutingStaticRoute(context.Background(), networkId, switchStackId, staticRouteId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

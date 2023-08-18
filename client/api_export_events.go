@@ -20,22 +20,22 @@ import (
 )
 
 
-// ExportEventsApiService ExportEventsApi service
-type ExportEventsApiService service
+// ExportEventsAPIService ExportEventsAPI service
+type ExportEventsAPIService service
 
-type ExportEventsApiCreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest struct {
+type ExportEventsAPICreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest struct {
 	ctx context.Context
-	ApiService *ExportEventsApiService
+	ApiService *ExportEventsAPIService
 	organizationId string
 	createOrganizationInventoryOnboardingCloudMonitoringExportEventRequest *CreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest
 }
 
-func (r ExportEventsApiCreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest) CreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest(createOrganizationInventoryOnboardingCloudMonitoringExportEventRequest CreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest) ExportEventsApiCreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest {
+func (r ExportEventsAPICreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest) CreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest(createOrganizationInventoryOnboardingCloudMonitoringExportEventRequest CreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest) ExportEventsAPICreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest {
 	r.createOrganizationInventoryOnboardingCloudMonitoringExportEventRequest = &createOrganizationInventoryOnboardingCloudMonitoringExportEventRequest
 	return r
 }
 
-func (r ExportEventsApiCreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ExportEventsAPICreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateOrganizationInventoryOnboardingCloudMonitoringExportEventExecute(r)
 }
 
@@ -46,10 +46,10 @@ Imports event logs related to the onboarding app into elastisearch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ExportEventsApiCreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest
+ @return ExportEventsAPICreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest
 */
-func (a *ExportEventsApiService) CreateOrganizationInventoryOnboardingCloudMonitoringExportEvent(ctx context.Context, organizationId string) ExportEventsApiCreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest {
-	return ExportEventsApiCreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest{
+func (a *ExportEventsAPIService) CreateOrganizationInventoryOnboardingCloudMonitoringExportEvent(ctx context.Context, organizationId string) ExportEventsAPICreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest {
+	return ExportEventsAPICreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -58,7 +58,7 @@ func (a *ExportEventsApiService) CreateOrganizationInventoryOnboardingCloudMonit
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *ExportEventsApiService) CreateOrganizationInventoryOnboardingCloudMonitoringExportEventExecute(r ExportEventsApiCreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest) (map[string]interface{}, *http.Response, error) {
+func (a *ExportEventsAPIService) CreateOrganizationInventoryOnboardingCloudMonitoringExportEventExecute(r ExportEventsAPICreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *ExportEventsApiService) CreateOrganizationInventoryOnboardingCloudMonit
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExportEventsApiService.CreateOrganizationInventoryOnboardingCloudMonitoringExportEvent")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExportEventsAPIService.CreateOrganizationInventoryOnboardingCloudMonitoringExportEvent")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

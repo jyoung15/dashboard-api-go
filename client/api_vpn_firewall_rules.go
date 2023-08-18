@@ -20,16 +20,16 @@ import (
 )
 
 
-// VpnFirewallRulesApiService VpnFirewallRulesApi service
-type VpnFirewallRulesApiService service
+// VpnFirewallRulesAPIService VpnFirewallRulesAPI service
+type VpnFirewallRulesAPIService service
 
-type VpnFirewallRulesApiGetOrganizationApplianceVpnVpnFirewallRulesRequest struct {
+type VpnFirewallRulesAPIGetOrganizationApplianceVpnVpnFirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *VpnFirewallRulesApiService
+	ApiService *VpnFirewallRulesAPIService
 	organizationId string
 }
 
-func (r VpnFirewallRulesApiGetOrganizationApplianceVpnVpnFirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r VpnFirewallRulesAPIGetOrganizationApplianceVpnVpnFirewallRulesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceVpnVpnFirewallRulesExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the firewall rules for an organization's site-to-site VPN
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return VpnFirewallRulesApiGetOrganizationApplianceVpnVpnFirewallRulesRequest
+ @return VpnFirewallRulesAPIGetOrganizationApplianceVpnVpnFirewallRulesRequest
 */
-func (a *VpnFirewallRulesApiService) GetOrganizationApplianceVpnVpnFirewallRules(ctx context.Context, organizationId string) VpnFirewallRulesApiGetOrganizationApplianceVpnVpnFirewallRulesRequest {
-	return VpnFirewallRulesApiGetOrganizationApplianceVpnVpnFirewallRulesRequest{
+func (a *VpnFirewallRulesAPIService) GetOrganizationApplianceVpnVpnFirewallRules(ctx context.Context, organizationId string) VpnFirewallRulesAPIGetOrganizationApplianceVpnVpnFirewallRulesRequest {
+	return VpnFirewallRulesAPIGetOrganizationApplianceVpnVpnFirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -52,7 +52,7 @@ func (a *VpnFirewallRulesApiService) GetOrganizationApplianceVpnVpnFirewallRules
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *VpnFirewallRulesApiService) GetOrganizationApplianceVpnVpnFirewallRulesExecute(r VpnFirewallRulesApiGetOrganizationApplianceVpnVpnFirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *VpnFirewallRulesAPIService) GetOrganizationApplianceVpnVpnFirewallRulesExecute(r VpnFirewallRulesAPIGetOrganizationApplianceVpnVpnFirewallRulesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *VpnFirewallRulesApiService) GetOrganizationApplianceVpnVpnFirewallRules
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnFirewallRulesApiService.GetOrganizationApplianceVpnVpnFirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnFirewallRulesAPIService.GetOrganizationApplianceVpnVpnFirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *VpnFirewallRulesApiService) GetOrganizationApplianceVpnVpnFirewallRules
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type VpnFirewallRulesApiUpdateOrganizationApplianceVpnVpnFirewallRulesRequest struct {
+type VpnFirewallRulesAPIUpdateOrganizationApplianceVpnVpnFirewallRulesRequest struct {
 	ctx context.Context
-	ApiService *VpnFirewallRulesApiService
+	ApiService *VpnFirewallRulesAPIService
 	organizationId string
 	updateOrganizationApplianceVpnVpnFirewallRulesRequest *UpdateOrganizationApplianceVpnVpnFirewallRulesRequest
 }
 
-func (r VpnFirewallRulesApiUpdateOrganizationApplianceVpnVpnFirewallRulesRequest) UpdateOrganizationApplianceVpnVpnFirewallRulesRequest(updateOrganizationApplianceVpnVpnFirewallRulesRequest UpdateOrganizationApplianceVpnVpnFirewallRulesRequest) VpnFirewallRulesApiUpdateOrganizationApplianceVpnVpnFirewallRulesRequest {
+func (r VpnFirewallRulesAPIUpdateOrganizationApplianceVpnVpnFirewallRulesRequest) UpdateOrganizationApplianceVpnVpnFirewallRulesRequest(updateOrganizationApplianceVpnVpnFirewallRulesRequest UpdateOrganizationApplianceVpnVpnFirewallRulesRequest) VpnFirewallRulesAPIUpdateOrganizationApplianceVpnVpnFirewallRulesRequest {
 	r.updateOrganizationApplianceVpnVpnFirewallRulesRequest = &updateOrganizationApplianceVpnVpnFirewallRulesRequest
 	return r
 }
 
-func (r VpnFirewallRulesApiUpdateOrganizationApplianceVpnVpnFirewallRulesRequest) Execute() (*UpdateOrganizationApplianceVpnVpnFirewallRules200Response, *http.Response, error) {
+func (r VpnFirewallRulesAPIUpdateOrganizationApplianceVpnVpnFirewallRulesRequest) Execute() (*UpdateOrganizationApplianceVpnVpnFirewallRules200Response, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationApplianceVpnVpnFirewallRulesExecute(r)
 }
 
@@ -163,10 +163,10 @@ Update the firewall rules of an organization's site-to-site VPN
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return VpnFirewallRulesApiUpdateOrganizationApplianceVpnVpnFirewallRulesRequest
+ @return VpnFirewallRulesAPIUpdateOrganizationApplianceVpnVpnFirewallRulesRequest
 */
-func (a *VpnFirewallRulesApiService) UpdateOrganizationApplianceVpnVpnFirewallRules(ctx context.Context, organizationId string) VpnFirewallRulesApiUpdateOrganizationApplianceVpnVpnFirewallRulesRequest {
-	return VpnFirewallRulesApiUpdateOrganizationApplianceVpnVpnFirewallRulesRequest{
+func (a *VpnFirewallRulesAPIService) UpdateOrganizationApplianceVpnVpnFirewallRules(ctx context.Context, organizationId string) VpnFirewallRulesAPIUpdateOrganizationApplianceVpnVpnFirewallRulesRequest {
+	return VpnFirewallRulesAPIUpdateOrganizationApplianceVpnVpnFirewallRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -175,7 +175,7 @@ func (a *VpnFirewallRulesApiService) UpdateOrganizationApplianceVpnVpnFirewallRu
 
 // Execute executes the request
 //  @return UpdateOrganizationApplianceVpnVpnFirewallRules200Response
-func (a *VpnFirewallRulesApiService) UpdateOrganizationApplianceVpnVpnFirewallRulesExecute(r VpnFirewallRulesApiUpdateOrganizationApplianceVpnVpnFirewallRulesRequest) (*UpdateOrganizationApplianceVpnVpnFirewallRules200Response, *http.Response, error) {
+func (a *VpnFirewallRulesAPIService) UpdateOrganizationApplianceVpnVpnFirewallRulesExecute(r VpnFirewallRulesAPIUpdateOrganizationApplianceVpnVpnFirewallRulesRequest) (*UpdateOrganizationApplianceVpnVpnFirewallRules200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *VpnFirewallRulesApiService) UpdateOrganizationApplianceVpnVpnFirewallRu
 		localVarReturnValue  *UpdateOrganizationApplianceVpnVpnFirewallRules200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnFirewallRulesApiService.UpdateOrganizationApplianceVpnVpnFirewallRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VpnFirewallRulesAPIService.UpdateOrganizationApplianceVpnVpnFirewallRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

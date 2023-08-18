@@ -21,22 +21,22 @@ import (
 )
 
 
-// OrganizationsApiService OrganizationsApi service
-type OrganizationsApiService service
+// OrganizationsAPIService OrganizationsAPI service
+type OrganizationsAPIService service
 
-type OrganizationsApiAssignOrganizationLicensesSeatsRequest struct {
+type OrganizationsAPIAssignOrganizationLicensesSeatsRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	assignOrganizationLicensesSeatsRequest *AssignOrganizationLicensesSeatsRequest
 }
 
-func (r OrganizationsApiAssignOrganizationLicensesSeatsRequest) AssignOrganizationLicensesSeatsRequest(assignOrganizationLicensesSeatsRequest AssignOrganizationLicensesSeatsRequest) OrganizationsApiAssignOrganizationLicensesSeatsRequest {
+func (r OrganizationsAPIAssignOrganizationLicensesSeatsRequest) AssignOrganizationLicensesSeatsRequest(assignOrganizationLicensesSeatsRequest AssignOrganizationLicensesSeatsRequest) OrganizationsAPIAssignOrganizationLicensesSeatsRequest {
 	r.assignOrganizationLicensesSeatsRequest = &assignOrganizationLicensesSeatsRequest
 	return r
 }
 
-func (r OrganizationsApiAssignOrganizationLicensesSeatsRequest) Execute() (*AssignOrganizationLicensesSeats200Response, *http.Response, error) {
+func (r OrganizationsAPIAssignOrganizationLicensesSeatsRequest) Execute() (*AssignOrganizationLicensesSeats200Response, *http.Response, error) {
 	return r.ApiService.AssignOrganizationLicensesSeatsExecute(r)
 }
 
@@ -47,10 +47,10 @@ Assign SM seats to a network. This will increase the managed SM device limit of 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiAssignOrganizationLicensesSeatsRequest
+ @return OrganizationsAPIAssignOrganizationLicensesSeatsRequest
 */
-func (a *OrganizationsApiService) AssignOrganizationLicensesSeats(ctx context.Context, organizationId string) OrganizationsApiAssignOrganizationLicensesSeatsRequest {
-	return OrganizationsApiAssignOrganizationLicensesSeatsRequest{
+func (a *OrganizationsAPIService) AssignOrganizationLicensesSeats(ctx context.Context, organizationId string) OrganizationsAPIAssignOrganizationLicensesSeatsRequest {
+	return OrganizationsAPIAssignOrganizationLicensesSeatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -59,7 +59,7 @@ func (a *OrganizationsApiService) AssignOrganizationLicensesSeats(ctx context.Co
 
 // Execute executes the request
 //  @return AssignOrganizationLicensesSeats200Response
-func (a *OrganizationsApiService) AssignOrganizationLicensesSeatsExecute(r OrganizationsApiAssignOrganizationLicensesSeatsRequest) (*AssignOrganizationLicensesSeats200Response, *http.Response, error) {
+func (a *OrganizationsAPIService) AssignOrganizationLicensesSeatsExecute(r OrganizationsAPIAssignOrganizationLicensesSeatsRequest) (*AssignOrganizationLicensesSeats200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -67,7 +67,7 @@ func (a *OrganizationsApiService) AssignOrganizationLicensesSeatsExecute(r Organ
 		localVarReturnValue  *AssignOrganizationLicensesSeats200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.AssignOrganizationLicensesSeats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.AssignOrganizationLicensesSeats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -152,19 +152,19 @@ func (a *OrganizationsApiService) AssignOrganizationLicensesSeatsExecute(r Organ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiClaimIntoOrganizationRequest struct {
+type OrganizationsAPIClaimIntoOrganizationRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	claimIntoOrganizationRequest *ClaimIntoOrganizationRequest
 }
 
-func (r OrganizationsApiClaimIntoOrganizationRequest) ClaimIntoOrganizationRequest(claimIntoOrganizationRequest ClaimIntoOrganizationRequest) OrganizationsApiClaimIntoOrganizationRequest {
+func (r OrganizationsAPIClaimIntoOrganizationRequest) ClaimIntoOrganizationRequest(claimIntoOrganizationRequest ClaimIntoOrganizationRequest) OrganizationsAPIClaimIntoOrganizationRequest {
 	r.claimIntoOrganizationRequest = &claimIntoOrganizationRequest
 	return r
 }
 
-func (r OrganizationsApiClaimIntoOrganizationRequest) Execute() (*ClaimIntoOrganization200Response, *http.Response, error) {
+func (r OrganizationsAPIClaimIntoOrganizationRequest) Execute() (*ClaimIntoOrganization200Response, *http.Response, error) {
 	return r.ApiService.ClaimIntoOrganizationExecute(r)
 }
 
@@ -175,12 +175,12 @@ Claim a list of devices, licenses, and/or orders into an organization. When clai
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiClaimIntoOrganizationRequest
+ @return OrganizationsAPIClaimIntoOrganizationRequest
 
 Deprecated
 */
-func (a *OrganizationsApiService) ClaimIntoOrganization(ctx context.Context, organizationId string) OrganizationsApiClaimIntoOrganizationRequest {
-	return OrganizationsApiClaimIntoOrganizationRequest{
+func (a *OrganizationsAPIService) ClaimIntoOrganization(ctx context.Context, organizationId string) OrganizationsAPIClaimIntoOrganizationRequest {
+	return OrganizationsAPIClaimIntoOrganizationRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -190,7 +190,7 @@ func (a *OrganizationsApiService) ClaimIntoOrganization(ctx context.Context, org
 // Execute executes the request
 //  @return ClaimIntoOrganization200Response
 // Deprecated
-func (a *OrganizationsApiService) ClaimIntoOrganizationExecute(r OrganizationsApiClaimIntoOrganizationRequest) (*ClaimIntoOrganization200Response, *http.Response, error) {
+func (a *OrganizationsAPIService) ClaimIntoOrganizationExecute(r OrganizationsAPIClaimIntoOrganizationRequest) (*ClaimIntoOrganization200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -198,7 +198,7 @@ func (a *OrganizationsApiService) ClaimIntoOrganizationExecute(r OrganizationsAp
 		localVarReturnValue  *ClaimIntoOrganization200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.ClaimIntoOrganization")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.ClaimIntoOrganization")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -280,19 +280,19 @@ func (a *OrganizationsApiService) ClaimIntoOrganizationExecute(r OrganizationsAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiClaimIntoOrganizationInventoryRequest struct {
+type OrganizationsAPIClaimIntoOrganizationInventoryRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	claimIntoOrganizationInventoryRequest *ClaimIntoOrganizationInventoryRequest
 }
 
-func (r OrganizationsApiClaimIntoOrganizationInventoryRequest) ClaimIntoOrganizationInventoryRequest(claimIntoOrganizationInventoryRequest ClaimIntoOrganizationInventoryRequest) OrganizationsApiClaimIntoOrganizationInventoryRequest {
+func (r OrganizationsAPIClaimIntoOrganizationInventoryRequest) ClaimIntoOrganizationInventoryRequest(claimIntoOrganizationInventoryRequest ClaimIntoOrganizationInventoryRequest) OrganizationsAPIClaimIntoOrganizationInventoryRequest {
 	r.claimIntoOrganizationInventoryRequest = &claimIntoOrganizationInventoryRequest
 	return r
 }
 
-func (r OrganizationsApiClaimIntoOrganizationInventoryRequest) Execute() (*ClaimIntoOrganization200Response, *http.Response, error) {
+func (r OrganizationsAPIClaimIntoOrganizationInventoryRequest) Execute() (*ClaimIntoOrganization200Response, *http.Response, error) {
 	return r.ApiService.ClaimIntoOrganizationInventoryExecute(r)
 }
 
@@ -303,10 +303,10 @@ Claim a list of devices, licenses, and/or orders into an organization inventory.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiClaimIntoOrganizationInventoryRequest
+ @return OrganizationsAPIClaimIntoOrganizationInventoryRequest
 */
-func (a *OrganizationsApiService) ClaimIntoOrganizationInventory(ctx context.Context, organizationId string) OrganizationsApiClaimIntoOrganizationInventoryRequest {
-	return OrganizationsApiClaimIntoOrganizationInventoryRequest{
+func (a *OrganizationsAPIService) ClaimIntoOrganizationInventory(ctx context.Context, organizationId string) OrganizationsAPIClaimIntoOrganizationInventoryRequest {
+	return OrganizationsAPIClaimIntoOrganizationInventoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -315,7 +315,7 @@ func (a *OrganizationsApiService) ClaimIntoOrganizationInventory(ctx context.Con
 
 // Execute executes the request
 //  @return ClaimIntoOrganization200Response
-func (a *OrganizationsApiService) ClaimIntoOrganizationInventoryExecute(r OrganizationsApiClaimIntoOrganizationInventoryRequest) (*ClaimIntoOrganization200Response, *http.Response, error) {
+func (a *OrganizationsAPIService) ClaimIntoOrganizationInventoryExecute(r OrganizationsAPIClaimIntoOrganizationInventoryRequest) (*ClaimIntoOrganization200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -323,7 +323,7 @@ func (a *OrganizationsApiService) ClaimIntoOrganizationInventoryExecute(r Organi
 		localVarReturnValue  *ClaimIntoOrganization200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.ClaimIntoOrganizationInventory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.ClaimIntoOrganizationInventory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -405,19 +405,19 @@ func (a *OrganizationsApiService) ClaimIntoOrganizationInventoryExecute(r Organi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiCloneOrganizationRequest struct {
+type OrganizationsAPICloneOrganizationRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	cloneOrganizationRequest *CloneOrganizationRequest
 }
 
-func (r OrganizationsApiCloneOrganizationRequest) CloneOrganizationRequest(cloneOrganizationRequest CloneOrganizationRequest) OrganizationsApiCloneOrganizationRequest {
+func (r OrganizationsAPICloneOrganizationRequest) CloneOrganizationRequest(cloneOrganizationRequest CloneOrganizationRequest) OrganizationsAPICloneOrganizationRequest {
 	r.cloneOrganizationRequest = &cloneOrganizationRequest
 	return r
 }
 
-func (r OrganizationsApiCloneOrganizationRequest) Execute() (*GetOrganizations200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPICloneOrganizationRequest) Execute() (*GetOrganizations200ResponseInner, *http.Response, error) {
 	return r.ApiService.CloneOrganizationExecute(r)
 }
 
@@ -428,10 +428,10 @@ Create a new organization by cloning the addressed organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiCloneOrganizationRequest
+ @return OrganizationsAPICloneOrganizationRequest
 */
-func (a *OrganizationsApiService) CloneOrganization(ctx context.Context, organizationId string) OrganizationsApiCloneOrganizationRequest {
-	return OrganizationsApiCloneOrganizationRequest{
+func (a *OrganizationsAPIService) CloneOrganization(ctx context.Context, organizationId string) OrganizationsAPICloneOrganizationRequest {
+	return OrganizationsAPICloneOrganizationRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -440,7 +440,7 @@ func (a *OrganizationsApiService) CloneOrganization(ctx context.Context, organiz
 
 // Execute executes the request
 //  @return GetOrganizations200ResponseInner
-func (a *OrganizationsApiService) CloneOrganizationExecute(r OrganizationsApiCloneOrganizationRequest) (*GetOrganizations200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) CloneOrganizationExecute(r OrganizationsAPICloneOrganizationRequest) (*GetOrganizations200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -448,7 +448,7 @@ func (a *OrganizationsApiService) CloneOrganizationExecute(r OrganizationsApiClo
 		localVarReturnValue  *GetOrganizations200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.CloneOrganization")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.CloneOrganization")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -533,19 +533,19 @@ func (a *OrganizationsApiService) CloneOrganizationExecute(r OrganizationsApiClo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiCombineOrganizationNetworksRequest struct {
+type OrganizationsAPICombineOrganizationNetworksRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	combineOrganizationNetworksRequest *CombineOrganizationNetworksRequest
 }
 
-func (r OrganizationsApiCombineOrganizationNetworksRequest) CombineOrganizationNetworksRequest(combineOrganizationNetworksRequest CombineOrganizationNetworksRequest) OrganizationsApiCombineOrganizationNetworksRequest {
+func (r OrganizationsAPICombineOrganizationNetworksRequest) CombineOrganizationNetworksRequest(combineOrganizationNetworksRequest CombineOrganizationNetworksRequest) OrganizationsAPICombineOrganizationNetworksRequest {
 	r.combineOrganizationNetworksRequest = &combineOrganizationNetworksRequest
 	return r
 }
 
-func (r OrganizationsApiCombineOrganizationNetworksRequest) Execute() (*CombineOrganizationNetworks200Response, *http.Response, error) {
+func (r OrganizationsAPICombineOrganizationNetworksRequest) Execute() (*CombineOrganizationNetworks200Response, *http.Response, error) {
 	return r.ApiService.CombineOrganizationNetworksExecute(r)
 }
 
@@ -556,10 +556,10 @@ Combine multiple networks into a single network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiCombineOrganizationNetworksRequest
+ @return OrganizationsAPICombineOrganizationNetworksRequest
 */
-func (a *OrganizationsApiService) CombineOrganizationNetworks(ctx context.Context, organizationId string) OrganizationsApiCombineOrganizationNetworksRequest {
-	return OrganizationsApiCombineOrganizationNetworksRequest{
+func (a *OrganizationsAPIService) CombineOrganizationNetworks(ctx context.Context, organizationId string) OrganizationsAPICombineOrganizationNetworksRequest {
+	return OrganizationsAPICombineOrganizationNetworksRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -568,7 +568,7 @@ func (a *OrganizationsApiService) CombineOrganizationNetworks(ctx context.Contex
 
 // Execute executes the request
 //  @return CombineOrganizationNetworks200Response
-func (a *OrganizationsApiService) CombineOrganizationNetworksExecute(r OrganizationsApiCombineOrganizationNetworksRequest) (*CombineOrganizationNetworks200Response, *http.Response, error) {
+func (a *OrganizationsAPIService) CombineOrganizationNetworksExecute(r OrganizationsAPICombineOrganizationNetworksRequest) (*CombineOrganizationNetworks200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -576,7 +576,7 @@ func (a *OrganizationsApiService) CombineOrganizationNetworksExecute(r Organizat
 		localVarReturnValue  *CombineOrganizationNetworks200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.CombineOrganizationNetworks")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.CombineOrganizationNetworks")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -661,18 +661,18 @@ func (a *OrganizationsApiService) CombineOrganizationNetworksExecute(r Organizat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiCreateOrganizationRequest struct {
+type OrganizationsAPICreateOrganizationRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	createOrganizationRequest *CreateOrganizationRequest
 }
 
-func (r OrganizationsApiCreateOrganizationRequest) CreateOrganizationRequest(createOrganizationRequest CreateOrganizationRequest) OrganizationsApiCreateOrganizationRequest {
+func (r OrganizationsAPICreateOrganizationRequest) CreateOrganizationRequest(createOrganizationRequest CreateOrganizationRequest) OrganizationsAPICreateOrganizationRequest {
 	r.createOrganizationRequest = &createOrganizationRequest
 	return r
 }
 
-func (r OrganizationsApiCreateOrganizationRequest) Execute() (*GetOrganizations200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPICreateOrganizationRequest) Execute() (*GetOrganizations200ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateOrganizationExecute(r)
 }
 
@@ -682,10 +682,10 @@ CreateOrganization Create a new organization
 Create a new organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return OrganizationsApiCreateOrganizationRequest
+ @return OrganizationsAPICreateOrganizationRequest
 */
-func (a *OrganizationsApiService) CreateOrganization(ctx context.Context) OrganizationsApiCreateOrganizationRequest {
-	return OrganizationsApiCreateOrganizationRequest{
+func (a *OrganizationsAPIService) CreateOrganization(ctx context.Context) OrganizationsAPICreateOrganizationRequest {
+	return OrganizationsAPICreateOrganizationRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -693,7 +693,7 @@ func (a *OrganizationsApiService) CreateOrganization(ctx context.Context) Organi
 
 // Execute executes the request
 //  @return GetOrganizations200ResponseInner
-func (a *OrganizationsApiService) CreateOrganizationExecute(r OrganizationsApiCreateOrganizationRequest) (*GetOrganizations200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) CreateOrganizationExecute(r OrganizationsAPICreateOrganizationRequest) (*GetOrganizations200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -701,7 +701,7 @@ func (a *OrganizationsApiService) CreateOrganizationExecute(r OrganizationsApiCr
 		localVarReturnValue  *GetOrganizations200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.CreateOrganization")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.CreateOrganization")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -785,19 +785,19 @@ func (a *OrganizationsApiService) CreateOrganizationExecute(r OrganizationsApiCr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiCreateOrganizationActionBatchRequest struct {
+type OrganizationsAPICreateOrganizationActionBatchRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	createOrganizationActionBatchRequest *CreateOrganizationActionBatchRequest
 }
 
-func (r OrganizationsApiCreateOrganizationActionBatchRequest) CreateOrganizationActionBatchRequest(createOrganizationActionBatchRequest CreateOrganizationActionBatchRequest) OrganizationsApiCreateOrganizationActionBatchRequest {
+func (r OrganizationsAPICreateOrganizationActionBatchRequest) CreateOrganizationActionBatchRequest(createOrganizationActionBatchRequest CreateOrganizationActionBatchRequest) OrganizationsAPICreateOrganizationActionBatchRequest {
 	r.createOrganizationActionBatchRequest = &createOrganizationActionBatchRequest
 	return r
 }
 
-func (r OrganizationsApiCreateOrganizationActionBatchRequest) Execute() (*CreateOrganizationActionBatch201Response, *http.Response, error) {
+func (r OrganizationsAPICreateOrganizationActionBatchRequest) Execute() (*CreateOrganizationActionBatch201Response, *http.Response, error) {
 	return r.ApiService.CreateOrganizationActionBatchExecute(r)
 }
 
@@ -808,10 +808,10 @@ Create an action batch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiCreateOrganizationActionBatchRequest
+ @return OrganizationsAPICreateOrganizationActionBatchRequest
 */
-func (a *OrganizationsApiService) CreateOrganizationActionBatch(ctx context.Context, organizationId string) OrganizationsApiCreateOrganizationActionBatchRequest {
-	return OrganizationsApiCreateOrganizationActionBatchRequest{
+func (a *OrganizationsAPIService) CreateOrganizationActionBatch(ctx context.Context, organizationId string) OrganizationsAPICreateOrganizationActionBatchRequest {
+	return OrganizationsAPICreateOrganizationActionBatchRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -820,7 +820,7 @@ func (a *OrganizationsApiService) CreateOrganizationActionBatch(ctx context.Cont
 
 // Execute executes the request
 //  @return CreateOrganizationActionBatch201Response
-func (a *OrganizationsApiService) CreateOrganizationActionBatchExecute(r OrganizationsApiCreateOrganizationActionBatchRequest) (*CreateOrganizationActionBatch201Response, *http.Response, error) {
+func (a *OrganizationsAPIService) CreateOrganizationActionBatchExecute(r OrganizationsAPICreateOrganizationActionBatchRequest) (*CreateOrganizationActionBatch201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -828,7 +828,7 @@ func (a *OrganizationsApiService) CreateOrganizationActionBatchExecute(r Organiz
 		localVarReturnValue  *CreateOrganizationActionBatch201Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.CreateOrganizationActionBatch")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.CreateOrganizationActionBatch")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -913,19 +913,19 @@ func (a *OrganizationsApiService) CreateOrganizationActionBatchExecute(r Organiz
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiCreateOrganizationAdaptivePolicyAclRequest struct {
+type OrganizationsAPICreateOrganizationAdaptivePolicyAclRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	createOrganizationAdaptivePolicyAclRequest *CreateOrganizationAdaptivePolicyAclRequest
 }
 
-func (r OrganizationsApiCreateOrganizationAdaptivePolicyAclRequest) CreateOrganizationAdaptivePolicyAclRequest(createOrganizationAdaptivePolicyAclRequest CreateOrganizationAdaptivePolicyAclRequest) OrganizationsApiCreateOrganizationAdaptivePolicyAclRequest {
+func (r OrganizationsAPICreateOrganizationAdaptivePolicyAclRequest) CreateOrganizationAdaptivePolicyAclRequest(createOrganizationAdaptivePolicyAclRequest CreateOrganizationAdaptivePolicyAclRequest) OrganizationsAPICreateOrganizationAdaptivePolicyAclRequest {
 	r.createOrganizationAdaptivePolicyAclRequest = &createOrganizationAdaptivePolicyAclRequest
 	return r
 }
 
-func (r OrganizationsApiCreateOrganizationAdaptivePolicyAclRequest) Execute() (*GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPICreateOrganizationAdaptivePolicyAclRequest) Execute() (*GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateOrganizationAdaptivePolicyAclExecute(r)
 }
 
@@ -936,10 +936,10 @@ Creates new adaptive policy ACL
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiCreateOrganizationAdaptivePolicyAclRequest
+ @return OrganizationsAPICreateOrganizationAdaptivePolicyAclRequest
 */
-func (a *OrganizationsApiService) CreateOrganizationAdaptivePolicyAcl(ctx context.Context, organizationId string) OrganizationsApiCreateOrganizationAdaptivePolicyAclRequest {
-	return OrganizationsApiCreateOrganizationAdaptivePolicyAclRequest{
+func (a *OrganizationsAPIService) CreateOrganizationAdaptivePolicyAcl(ctx context.Context, organizationId string) OrganizationsAPICreateOrganizationAdaptivePolicyAclRequest {
+	return OrganizationsAPICreateOrganizationAdaptivePolicyAclRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -948,7 +948,7 @@ func (a *OrganizationsApiService) CreateOrganizationAdaptivePolicyAcl(ctx contex
 
 // Execute executes the request
 //  @return GetOrganizationAdaptivePolicyAcls200ResponseInner
-func (a *OrganizationsApiService) CreateOrganizationAdaptivePolicyAclExecute(r OrganizationsApiCreateOrganizationAdaptivePolicyAclRequest) (*GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) CreateOrganizationAdaptivePolicyAclExecute(r OrganizationsAPICreateOrganizationAdaptivePolicyAclRequest) (*GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -956,7 +956,7 @@ func (a *OrganizationsApiService) CreateOrganizationAdaptivePolicyAclExecute(r O
 		localVarReturnValue  *GetOrganizationAdaptivePolicyAcls200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.CreateOrganizationAdaptivePolicyAcl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.CreateOrganizationAdaptivePolicyAcl")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1041,19 +1041,19 @@ func (a *OrganizationsApiService) CreateOrganizationAdaptivePolicyAclExecute(r O
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiCreateOrganizationAdaptivePolicyGroupRequest struct {
+type OrganizationsAPICreateOrganizationAdaptivePolicyGroupRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	createOrganizationAdaptivePolicyGroupRequest *CreateOrganizationAdaptivePolicyGroupRequest
 }
 
-func (r OrganizationsApiCreateOrganizationAdaptivePolicyGroupRequest) CreateOrganizationAdaptivePolicyGroupRequest(createOrganizationAdaptivePolicyGroupRequest CreateOrganizationAdaptivePolicyGroupRequest) OrganizationsApiCreateOrganizationAdaptivePolicyGroupRequest {
+func (r OrganizationsAPICreateOrganizationAdaptivePolicyGroupRequest) CreateOrganizationAdaptivePolicyGroupRequest(createOrganizationAdaptivePolicyGroupRequest CreateOrganizationAdaptivePolicyGroupRequest) OrganizationsAPICreateOrganizationAdaptivePolicyGroupRequest {
 	r.createOrganizationAdaptivePolicyGroupRequest = &createOrganizationAdaptivePolicyGroupRequest
 	return r
 }
 
-func (r OrganizationsApiCreateOrganizationAdaptivePolicyGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPICreateOrganizationAdaptivePolicyGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateOrganizationAdaptivePolicyGroupExecute(r)
 }
 
@@ -1064,10 +1064,10 @@ Creates a new adaptive policy group
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiCreateOrganizationAdaptivePolicyGroupRequest
+ @return OrganizationsAPICreateOrganizationAdaptivePolicyGroupRequest
 */
-func (a *OrganizationsApiService) CreateOrganizationAdaptivePolicyGroup(ctx context.Context, organizationId string) OrganizationsApiCreateOrganizationAdaptivePolicyGroupRequest {
-	return OrganizationsApiCreateOrganizationAdaptivePolicyGroupRequest{
+func (a *OrganizationsAPIService) CreateOrganizationAdaptivePolicyGroup(ctx context.Context, organizationId string) OrganizationsAPICreateOrganizationAdaptivePolicyGroupRequest {
+	return OrganizationsAPICreateOrganizationAdaptivePolicyGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1076,7 +1076,7 @@ func (a *OrganizationsApiService) CreateOrganizationAdaptivePolicyGroup(ctx cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) CreateOrganizationAdaptivePolicyGroupExecute(r OrganizationsApiCreateOrganizationAdaptivePolicyGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) CreateOrganizationAdaptivePolicyGroupExecute(r OrganizationsAPICreateOrganizationAdaptivePolicyGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1084,7 +1084,7 @@ func (a *OrganizationsApiService) CreateOrganizationAdaptivePolicyGroupExecute(r
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.CreateOrganizationAdaptivePolicyGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.CreateOrganizationAdaptivePolicyGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1169,19 +1169,19 @@ func (a *OrganizationsApiService) CreateOrganizationAdaptivePolicyGroupExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiCreateOrganizationAdaptivePolicyPolicyRequest struct {
+type OrganizationsAPICreateOrganizationAdaptivePolicyPolicyRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	createOrganizationAdaptivePolicyPolicyRequest *CreateOrganizationAdaptivePolicyPolicyRequest
 }
 
-func (r OrganizationsApiCreateOrganizationAdaptivePolicyPolicyRequest) CreateOrganizationAdaptivePolicyPolicyRequest(createOrganizationAdaptivePolicyPolicyRequest CreateOrganizationAdaptivePolicyPolicyRequest) OrganizationsApiCreateOrganizationAdaptivePolicyPolicyRequest {
+func (r OrganizationsAPICreateOrganizationAdaptivePolicyPolicyRequest) CreateOrganizationAdaptivePolicyPolicyRequest(createOrganizationAdaptivePolicyPolicyRequest CreateOrganizationAdaptivePolicyPolicyRequest) OrganizationsAPICreateOrganizationAdaptivePolicyPolicyRequest {
 	r.createOrganizationAdaptivePolicyPolicyRequest = &createOrganizationAdaptivePolicyPolicyRequest
 	return r
 }
 
-func (r OrganizationsApiCreateOrganizationAdaptivePolicyPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPICreateOrganizationAdaptivePolicyPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateOrganizationAdaptivePolicyPolicyExecute(r)
 }
 
@@ -1192,10 +1192,10 @@ Add an Adaptive Policy
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiCreateOrganizationAdaptivePolicyPolicyRequest
+ @return OrganizationsAPICreateOrganizationAdaptivePolicyPolicyRequest
 */
-func (a *OrganizationsApiService) CreateOrganizationAdaptivePolicyPolicy(ctx context.Context, organizationId string) OrganizationsApiCreateOrganizationAdaptivePolicyPolicyRequest {
-	return OrganizationsApiCreateOrganizationAdaptivePolicyPolicyRequest{
+func (a *OrganizationsAPIService) CreateOrganizationAdaptivePolicyPolicy(ctx context.Context, organizationId string) OrganizationsAPICreateOrganizationAdaptivePolicyPolicyRequest {
+	return OrganizationsAPICreateOrganizationAdaptivePolicyPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1204,7 +1204,7 @@ func (a *OrganizationsApiService) CreateOrganizationAdaptivePolicyPolicy(ctx con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) CreateOrganizationAdaptivePolicyPolicyExecute(r OrganizationsApiCreateOrganizationAdaptivePolicyPolicyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) CreateOrganizationAdaptivePolicyPolicyExecute(r OrganizationsAPICreateOrganizationAdaptivePolicyPolicyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1212,7 +1212,7 @@ func (a *OrganizationsApiService) CreateOrganizationAdaptivePolicyPolicyExecute(
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.CreateOrganizationAdaptivePolicyPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.CreateOrganizationAdaptivePolicyPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1297,19 +1297,19 @@ func (a *OrganizationsApiService) CreateOrganizationAdaptivePolicyPolicyExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiCreateOrganizationAdminRequest struct {
+type OrganizationsAPICreateOrganizationAdminRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	createOrganizationAdminRequest *CreateOrganizationAdminRequest
 }
 
-func (r OrganizationsApiCreateOrganizationAdminRequest) CreateOrganizationAdminRequest(createOrganizationAdminRequest CreateOrganizationAdminRequest) OrganizationsApiCreateOrganizationAdminRequest {
+func (r OrganizationsAPICreateOrganizationAdminRequest) CreateOrganizationAdminRequest(createOrganizationAdminRequest CreateOrganizationAdminRequest) OrganizationsAPICreateOrganizationAdminRequest {
 	r.createOrganizationAdminRequest = &createOrganizationAdminRequest
 	return r
 }
 
-func (r OrganizationsApiCreateOrganizationAdminRequest) Execute() (*GetOrganizationAdmins200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPICreateOrganizationAdminRequest) Execute() (*GetOrganizationAdmins200ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateOrganizationAdminExecute(r)
 }
 
@@ -1320,10 +1320,10 @@ Create a new dashboard administrator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiCreateOrganizationAdminRequest
+ @return OrganizationsAPICreateOrganizationAdminRequest
 */
-func (a *OrganizationsApiService) CreateOrganizationAdmin(ctx context.Context, organizationId string) OrganizationsApiCreateOrganizationAdminRequest {
-	return OrganizationsApiCreateOrganizationAdminRequest{
+func (a *OrganizationsAPIService) CreateOrganizationAdmin(ctx context.Context, organizationId string) OrganizationsAPICreateOrganizationAdminRequest {
+	return OrganizationsAPICreateOrganizationAdminRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1332,7 +1332,7 @@ func (a *OrganizationsApiService) CreateOrganizationAdmin(ctx context.Context, o
 
 // Execute executes the request
 //  @return GetOrganizationAdmins200ResponseInner
-func (a *OrganizationsApiService) CreateOrganizationAdminExecute(r OrganizationsApiCreateOrganizationAdminRequest) (*GetOrganizationAdmins200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) CreateOrganizationAdminExecute(r OrganizationsAPICreateOrganizationAdminRequest) (*GetOrganizationAdmins200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1340,7 +1340,7 @@ func (a *OrganizationsApiService) CreateOrganizationAdminExecute(r Organizations
 		localVarReturnValue  *GetOrganizationAdmins200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.CreateOrganizationAdmin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.CreateOrganizationAdmin")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1425,19 +1425,19 @@ func (a *OrganizationsApiService) CreateOrganizationAdminExecute(r Organizations
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiCreateOrganizationAlertsProfileRequest struct {
+type OrganizationsAPICreateOrganizationAlertsProfileRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	createOrganizationAlertsProfileRequest *CreateOrganizationAlertsProfileRequest
 }
 
-func (r OrganizationsApiCreateOrganizationAlertsProfileRequest) CreateOrganizationAlertsProfileRequest(createOrganizationAlertsProfileRequest CreateOrganizationAlertsProfileRequest) OrganizationsApiCreateOrganizationAlertsProfileRequest {
+func (r OrganizationsAPICreateOrganizationAlertsProfileRequest) CreateOrganizationAlertsProfileRequest(createOrganizationAlertsProfileRequest CreateOrganizationAlertsProfileRequest) OrganizationsAPICreateOrganizationAlertsProfileRequest {
 	r.createOrganizationAlertsProfileRequest = &createOrganizationAlertsProfileRequest
 	return r
 }
 
-func (r OrganizationsApiCreateOrganizationAlertsProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPICreateOrganizationAlertsProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateOrganizationAlertsProfileExecute(r)
 }
 
@@ -1448,10 +1448,10 @@ Create an organization-wide alert configuration
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiCreateOrganizationAlertsProfileRequest
+ @return OrganizationsAPICreateOrganizationAlertsProfileRequest
 */
-func (a *OrganizationsApiService) CreateOrganizationAlertsProfile(ctx context.Context, organizationId string) OrganizationsApiCreateOrganizationAlertsProfileRequest {
-	return OrganizationsApiCreateOrganizationAlertsProfileRequest{
+func (a *OrganizationsAPIService) CreateOrganizationAlertsProfile(ctx context.Context, organizationId string) OrganizationsAPICreateOrganizationAlertsProfileRequest {
+	return OrganizationsAPICreateOrganizationAlertsProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1460,7 +1460,7 @@ func (a *OrganizationsApiService) CreateOrganizationAlertsProfile(ctx context.Co
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) CreateOrganizationAlertsProfileExecute(r OrganizationsApiCreateOrganizationAlertsProfileRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) CreateOrganizationAlertsProfileExecute(r OrganizationsAPICreateOrganizationAlertsProfileRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1468,7 +1468,7 @@ func (a *OrganizationsApiService) CreateOrganizationAlertsProfileExecute(r Organ
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.CreateOrganizationAlertsProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.CreateOrganizationAlertsProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1553,19 +1553,19 @@ func (a *OrganizationsApiService) CreateOrganizationAlertsProfileExecute(r Organ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiCreateOrganizationBrandingPolicyRequest struct {
+type OrganizationsAPICreateOrganizationBrandingPolicyRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	createOrganizationBrandingPolicyRequest *CreateOrganizationBrandingPolicyRequest
 }
 
-func (r OrganizationsApiCreateOrganizationBrandingPolicyRequest) CreateOrganizationBrandingPolicyRequest(createOrganizationBrandingPolicyRequest CreateOrganizationBrandingPolicyRequest) OrganizationsApiCreateOrganizationBrandingPolicyRequest {
+func (r OrganizationsAPICreateOrganizationBrandingPolicyRequest) CreateOrganizationBrandingPolicyRequest(createOrganizationBrandingPolicyRequest CreateOrganizationBrandingPolicyRequest) OrganizationsAPICreateOrganizationBrandingPolicyRequest {
 	r.createOrganizationBrandingPolicyRequest = &createOrganizationBrandingPolicyRequest
 	return r
 }
 
-func (r OrganizationsApiCreateOrganizationBrandingPolicyRequest) Execute() (*CreateOrganizationBrandingPolicy201Response, *http.Response, error) {
+func (r OrganizationsAPICreateOrganizationBrandingPolicyRequest) Execute() (*CreateOrganizationBrandingPolicy201Response, *http.Response, error) {
 	return r.ApiService.CreateOrganizationBrandingPolicyExecute(r)
 }
 
@@ -1576,10 +1576,10 @@ Add a new branding policy to an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiCreateOrganizationBrandingPolicyRequest
+ @return OrganizationsAPICreateOrganizationBrandingPolicyRequest
 */
-func (a *OrganizationsApiService) CreateOrganizationBrandingPolicy(ctx context.Context, organizationId string) OrganizationsApiCreateOrganizationBrandingPolicyRequest {
-	return OrganizationsApiCreateOrganizationBrandingPolicyRequest{
+func (a *OrganizationsAPIService) CreateOrganizationBrandingPolicy(ctx context.Context, organizationId string) OrganizationsAPICreateOrganizationBrandingPolicyRequest {
+	return OrganizationsAPICreateOrganizationBrandingPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1588,7 +1588,7 @@ func (a *OrganizationsApiService) CreateOrganizationBrandingPolicy(ctx context.C
 
 // Execute executes the request
 //  @return CreateOrganizationBrandingPolicy201Response
-func (a *OrganizationsApiService) CreateOrganizationBrandingPolicyExecute(r OrganizationsApiCreateOrganizationBrandingPolicyRequest) (*CreateOrganizationBrandingPolicy201Response, *http.Response, error) {
+func (a *OrganizationsAPIService) CreateOrganizationBrandingPolicyExecute(r OrganizationsAPICreateOrganizationBrandingPolicyRequest) (*CreateOrganizationBrandingPolicy201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1596,7 +1596,7 @@ func (a *OrganizationsApiService) CreateOrganizationBrandingPolicyExecute(r Orga
 		localVarReturnValue  *CreateOrganizationBrandingPolicy201Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.CreateOrganizationBrandingPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.CreateOrganizationBrandingPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1678,19 +1678,19 @@ func (a *OrganizationsApiService) CreateOrganizationBrandingPolicyExecute(r Orga
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiCreateOrganizationConfigTemplateRequest struct {
+type OrganizationsAPICreateOrganizationConfigTemplateRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	createOrganizationConfigTemplateRequest *CreateOrganizationConfigTemplateRequest
 }
 
-func (r OrganizationsApiCreateOrganizationConfigTemplateRequest) CreateOrganizationConfigTemplateRequest(createOrganizationConfigTemplateRequest CreateOrganizationConfigTemplateRequest) OrganizationsApiCreateOrganizationConfigTemplateRequest {
+func (r OrganizationsAPICreateOrganizationConfigTemplateRequest) CreateOrganizationConfigTemplateRequest(createOrganizationConfigTemplateRequest CreateOrganizationConfigTemplateRequest) OrganizationsAPICreateOrganizationConfigTemplateRequest {
 	r.createOrganizationConfigTemplateRequest = &createOrganizationConfigTemplateRequest
 	return r
 }
 
-func (r OrganizationsApiCreateOrganizationConfigTemplateRequest) Execute() (*GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPICreateOrganizationConfigTemplateRequest) Execute() (*GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateOrganizationConfigTemplateExecute(r)
 }
 
@@ -1701,10 +1701,10 @@ Create a new configuration template
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiCreateOrganizationConfigTemplateRequest
+ @return OrganizationsAPICreateOrganizationConfigTemplateRequest
 */
-func (a *OrganizationsApiService) CreateOrganizationConfigTemplate(ctx context.Context, organizationId string) OrganizationsApiCreateOrganizationConfigTemplateRequest {
-	return OrganizationsApiCreateOrganizationConfigTemplateRequest{
+func (a *OrganizationsAPIService) CreateOrganizationConfigTemplate(ctx context.Context, organizationId string) OrganizationsAPICreateOrganizationConfigTemplateRequest {
+	return OrganizationsAPICreateOrganizationConfigTemplateRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1713,7 +1713,7 @@ func (a *OrganizationsApiService) CreateOrganizationConfigTemplate(ctx context.C
 
 // Execute executes the request
 //  @return GetOrganizationConfigTemplates200ResponseInner
-func (a *OrganizationsApiService) CreateOrganizationConfigTemplateExecute(r OrganizationsApiCreateOrganizationConfigTemplateRequest) (*GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) CreateOrganizationConfigTemplateExecute(r OrganizationsAPICreateOrganizationConfigTemplateRequest) (*GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1721,7 +1721,7 @@ func (a *OrganizationsApiService) CreateOrganizationConfigTemplateExecute(r Orga
 		localVarReturnValue  *GetOrganizationConfigTemplates200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.CreateOrganizationConfigTemplate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.CreateOrganizationConfigTemplate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1806,19 +1806,19 @@ func (a *OrganizationsApiService) CreateOrganizationConfigTemplateExecute(r Orga
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiCreateOrganizationEarlyAccessFeaturesOptInRequest struct {
+type OrganizationsAPICreateOrganizationEarlyAccessFeaturesOptInRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	createOrganizationEarlyAccessFeaturesOptInRequest *CreateOrganizationEarlyAccessFeaturesOptInRequest
 }
 
-func (r OrganizationsApiCreateOrganizationEarlyAccessFeaturesOptInRequest) CreateOrganizationEarlyAccessFeaturesOptInRequest(createOrganizationEarlyAccessFeaturesOptInRequest CreateOrganizationEarlyAccessFeaturesOptInRequest) OrganizationsApiCreateOrganizationEarlyAccessFeaturesOptInRequest {
+func (r OrganizationsAPICreateOrganizationEarlyAccessFeaturesOptInRequest) CreateOrganizationEarlyAccessFeaturesOptInRequest(createOrganizationEarlyAccessFeaturesOptInRequest CreateOrganizationEarlyAccessFeaturesOptInRequest) OrganizationsAPICreateOrganizationEarlyAccessFeaturesOptInRequest {
 	r.createOrganizationEarlyAccessFeaturesOptInRequest = &createOrganizationEarlyAccessFeaturesOptInRequest
 	return r
 }
 
-func (r OrganizationsApiCreateOrganizationEarlyAccessFeaturesOptInRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPICreateOrganizationEarlyAccessFeaturesOptInRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateOrganizationEarlyAccessFeaturesOptInExecute(r)
 }
 
@@ -1829,10 +1829,10 @@ Create a new early access feature opt-in for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiCreateOrganizationEarlyAccessFeaturesOptInRequest
+ @return OrganizationsAPICreateOrganizationEarlyAccessFeaturesOptInRequest
 */
-func (a *OrganizationsApiService) CreateOrganizationEarlyAccessFeaturesOptIn(ctx context.Context, organizationId string) OrganizationsApiCreateOrganizationEarlyAccessFeaturesOptInRequest {
-	return OrganizationsApiCreateOrganizationEarlyAccessFeaturesOptInRequest{
+func (a *OrganizationsAPIService) CreateOrganizationEarlyAccessFeaturesOptIn(ctx context.Context, organizationId string) OrganizationsAPICreateOrganizationEarlyAccessFeaturesOptInRequest {
+	return OrganizationsAPICreateOrganizationEarlyAccessFeaturesOptInRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1841,7 +1841,7 @@ func (a *OrganizationsApiService) CreateOrganizationEarlyAccessFeaturesOptIn(ctx
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) CreateOrganizationEarlyAccessFeaturesOptInExecute(r OrganizationsApiCreateOrganizationEarlyAccessFeaturesOptInRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) CreateOrganizationEarlyAccessFeaturesOptInExecute(r OrganizationsAPICreateOrganizationEarlyAccessFeaturesOptInRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1849,7 +1849,7 @@ func (a *OrganizationsApiService) CreateOrganizationEarlyAccessFeaturesOptInExec
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.CreateOrganizationEarlyAccessFeaturesOptIn")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.CreateOrganizationEarlyAccessFeaturesOptIn")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1934,19 +1934,19 @@ func (a *OrganizationsApiService) CreateOrganizationEarlyAccessFeaturesOptInExec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiCreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest struct {
+type OrganizationsAPICreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	createOrganizationInventoryOnboardingCloudMonitoringExportEventRequest *CreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest
 }
 
-func (r OrganizationsApiCreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest) CreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest(createOrganizationInventoryOnboardingCloudMonitoringExportEventRequest CreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest) OrganizationsApiCreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest {
+func (r OrganizationsAPICreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest) CreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest(createOrganizationInventoryOnboardingCloudMonitoringExportEventRequest CreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest) OrganizationsAPICreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest {
 	r.createOrganizationInventoryOnboardingCloudMonitoringExportEventRequest = &createOrganizationInventoryOnboardingCloudMonitoringExportEventRequest
 	return r
 }
 
-func (r OrganizationsApiCreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPICreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateOrganizationInventoryOnboardingCloudMonitoringExportEventExecute(r)
 }
 
@@ -1957,10 +1957,10 @@ Imports event logs related to the onboarding app into elastisearch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiCreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest
+ @return OrganizationsAPICreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest
 */
-func (a *OrganizationsApiService) CreateOrganizationInventoryOnboardingCloudMonitoringExportEvent(ctx context.Context, organizationId string) OrganizationsApiCreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest {
-	return OrganizationsApiCreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest{
+func (a *OrganizationsAPIService) CreateOrganizationInventoryOnboardingCloudMonitoringExportEvent(ctx context.Context, organizationId string) OrganizationsAPICreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest {
+	return OrganizationsAPICreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1969,7 +1969,7 @@ func (a *OrganizationsApiService) CreateOrganizationInventoryOnboardingCloudMoni
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) CreateOrganizationInventoryOnboardingCloudMonitoringExportEventExecute(r OrganizationsApiCreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) CreateOrganizationInventoryOnboardingCloudMonitoringExportEventExecute(r OrganizationsAPICreateOrganizationInventoryOnboardingCloudMonitoringExportEventRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1977,7 +1977,7 @@ func (a *OrganizationsApiService) CreateOrganizationInventoryOnboardingCloudMoni
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.CreateOrganizationInventoryOnboardingCloudMonitoringExportEvent")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.CreateOrganizationInventoryOnboardingCloudMonitoringExportEvent")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2062,19 +2062,19 @@ func (a *OrganizationsApiService) CreateOrganizationInventoryOnboardingCloudMoni
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiCreateOrganizationInventoryOnboardingCloudMonitoringImportRequest struct {
+type OrganizationsAPICreateOrganizationInventoryOnboardingCloudMonitoringImportRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	createOrganizationInventoryOnboardingCloudMonitoringImportRequest *CreateOrganizationInventoryOnboardingCloudMonitoringImportRequest
 }
 
-func (r OrganizationsApiCreateOrganizationInventoryOnboardingCloudMonitoringImportRequest) CreateOrganizationInventoryOnboardingCloudMonitoringImportRequest(createOrganizationInventoryOnboardingCloudMonitoringImportRequest CreateOrganizationInventoryOnboardingCloudMonitoringImportRequest) OrganizationsApiCreateOrganizationInventoryOnboardingCloudMonitoringImportRequest {
+func (r OrganizationsAPICreateOrganizationInventoryOnboardingCloudMonitoringImportRequest) CreateOrganizationInventoryOnboardingCloudMonitoringImportRequest(createOrganizationInventoryOnboardingCloudMonitoringImportRequest CreateOrganizationInventoryOnboardingCloudMonitoringImportRequest) OrganizationsAPICreateOrganizationInventoryOnboardingCloudMonitoringImportRequest {
 	r.createOrganizationInventoryOnboardingCloudMonitoringImportRequest = &createOrganizationInventoryOnboardingCloudMonitoringImportRequest
 	return r
 }
 
-func (r OrganizationsApiCreateOrganizationInventoryOnboardingCloudMonitoringImportRequest) Execute() ([]CreateOrganizationInventoryOnboardingCloudMonitoringImport201ResponseInner, *http.Response, error) {
+func (r OrganizationsAPICreateOrganizationInventoryOnboardingCloudMonitoringImportRequest) Execute() ([]CreateOrganizationInventoryOnboardingCloudMonitoringImport201ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateOrganizationInventoryOnboardingCloudMonitoringImportExecute(r)
 }
 
@@ -2085,10 +2085,10 @@ Commits the import operation to complete the onboarding of a device into Dashboa
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiCreateOrganizationInventoryOnboardingCloudMonitoringImportRequest
+ @return OrganizationsAPICreateOrganizationInventoryOnboardingCloudMonitoringImportRequest
 */
-func (a *OrganizationsApiService) CreateOrganizationInventoryOnboardingCloudMonitoringImport(ctx context.Context, organizationId string) OrganizationsApiCreateOrganizationInventoryOnboardingCloudMonitoringImportRequest {
-	return OrganizationsApiCreateOrganizationInventoryOnboardingCloudMonitoringImportRequest{
+func (a *OrganizationsAPIService) CreateOrganizationInventoryOnboardingCloudMonitoringImport(ctx context.Context, organizationId string) OrganizationsAPICreateOrganizationInventoryOnboardingCloudMonitoringImportRequest {
+	return OrganizationsAPICreateOrganizationInventoryOnboardingCloudMonitoringImportRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -2097,7 +2097,7 @@ func (a *OrganizationsApiService) CreateOrganizationInventoryOnboardingCloudMoni
 
 // Execute executes the request
 //  @return []CreateOrganizationInventoryOnboardingCloudMonitoringImport201ResponseInner
-func (a *OrganizationsApiService) CreateOrganizationInventoryOnboardingCloudMonitoringImportExecute(r OrganizationsApiCreateOrganizationInventoryOnboardingCloudMonitoringImportRequest) ([]CreateOrganizationInventoryOnboardingCloudMonitoringImport201ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) CreateOrganizationInventoryOnboardingCloudMonitoringImportExecute(r OrganizationsAPICreateOrganizationInventoryOnboardingCloudMonitoringImportRequest) ([]CreateOrganizationInventoryOnboardingCloudMonitoringImport201ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2105,7 +2105,7 @@ func (a *OrganizationsApiService) CreateOrganizationInventoryOnboardingCloudMoni
 		localVarReturnValue  []CreateOrganizationInventoryOnboardingCloudMonitoringImport201ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.CreateOrganizationInventoryOnboardingCloudMonitoringImport")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.CreateOrganizationInventoryOnboardingCloudMonitoringImport")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2190,19 +2190,19 @@ func (a *OrganizationsApiService) CreateOrganizationInventoryOnboardingCloudMoni
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiCreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest struct {
+type OrganizationsAPICreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	createOrganizationInventoryOnboardingCloudMonitoringPrepareRequest *CreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest
 }
 
-func (r OrganizationsApiCreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest) CreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest(createOrganizationInventoryOnboardingCloudMonitoringPrepareRequest CreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest) OrganizationsApiCreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest {
+func (r OrganizationsAPICreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest) CreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest(createOrganizationInventoryOnboardingCloudMonitoringPrepareRequest CreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest) OrganizationsAPICreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest {
 	r.createOrganizationInventoryOnboardingCloudMonitoringPrepareRequest = &createOrganizationInventoryOnboardingCloudMonitoringPrepareRequest
 	return r
 }
 
-func (r OrganizationsApiCreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest) Execute() ([]CreateOrganizationInventoryOnboardingCloudMonitoringPrepare201ResponseInner, *http.Response, error) {
+func (r OrganizationsAPICreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest) Execute() ([]CreateOrganizationInventoryOnboardingCloudMonitoringPrepare201ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateOrganizationInventoryOnboardingCloudMonitoringPrepareExecute(r)
 }
 
@@ -2213,10 +2213,10 @@ Initiates or updates an import session. An import ID will be generated and used 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiCreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest
+ @return OrganizationsAPICreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest
 */
-func (a *OrganizationsApiService) CreateOrganizationInventoryOnboardingCloudMonitoringPrepare(ctx context.Context, organizationId string) OrganizationsApiCreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest {
-	return OrganizationsApiCreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest{
+func (a *OrganizationsAPIService) CreateOrganizationInventoryOnboardingCloudMonitoringPrepare(ctx context.Context, organizationId string) OrganizationsAPICreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest {
+	return OrganizationsAPICreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -2225,7 +2225,7 @@ func (a *OrganizationsApiService) CreateOrganizationInventoryOnboardingCloudMoni
 
 // Execute executes the request
 //  @return []CreateOrganizationInventoryOnboardingCloudMonitoringPrepare201ResponseInner
-func (a *OrganizationsApiService) CreateOrganizationInventoryOnboardingCloudMonitoringPrepareExecute(r OrganizationsApiCreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest) ([]CreateOrganizationInventoryOnboardingCloudMonitoringPrepare201ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) CreateOrganizationInventoryOnboardingCloudMonitoringPrepareExecute(r OrganizationsAPICreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest) ([]CreateOrganizationInventoryOnboardingCloudMonitoringPrepare201ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2233,7 +2233,7 @@ func (a *OrganizationsApiService) CreateOrganizationInventoryOnboardingCloudMoni
 		localVarReturnValue  []CreateOrganizationInventoryOnboardingCloudMonitoringPrepare201ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.CreateOrganizationInventoryOnboardingCloudMonitoringPrepare")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.CreateOrganizationInventoryOnboardingCloudMonitoringPrepare")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2318,19 +2318,19 @@ func (a *OrganizationsApiService) CreateOrganizationInventoryOnboardingCloudMoni
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiCreateOrganizationNetworkRequest struct {
+type OrganizationsAPICreateOrganizationNetworkRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	createOrganizationNetworkRequest *CreateOrganizationNetworkRequest
 }
 
-func (r OrganizationsApiCreateOrganizationNetworkRequest) CreateOrganizationNetworkRequest(createOrganizationNetworkRequest CreateOrganizationNetworkRequest) OrganizationsApiCreateOrganizationNetworkRequest {
+func (r OrganizationsAPICreateOrganizationNetworkRequest) CreateOrganizationNetworkRequest(createOrganizationNetworkRequest CreateOrganizationNetworkRequest) OrganizationsAPICreateOrganizationNetworkRequest {
 	r.createOrganizationNetworkRequest = &createOrganizationNetworkRequest
 	return r
 }
 
-func (r OrganizationsApiCreateOrganizationNetworkRequest) Execute() (*GetNetwork200Response, *http.Response, error) {
+func (r OrganizationsAPICreateOrganizationNetworkRequest) Execute() (*GetNetwork200Response, *http.Response, error) {
 	return r.ApiService.CreateOrganizationNetworkExecute(r)
 }
 
@@ -2341,10 +2341,10 @@ Create a network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiCreateOrganizationNetworkRequest
+ @return OrganizationsAPICreateOrganizationNetworkRequest
 */
-func (a *OrganizationsApiService) CreateOrganizationNetwork(ctx context.Context, organizationId string) OrganizationsApiCreateOrganizationNetworkRequest {
-	return OrganizationsApiCreateOrganizationNetworkRequest{
+func (a *OrganizationsAPIService) CreateOrganizationNetwork(ctx context.Context, organizationId string) OrganizationsAPICreateOrganizationNetworkRequest {
+	return OrganizationsAPICreateOrganizationNetworkRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -2353,7 +2353,7 @@ func (a *OrganizationsApiService) CreateOrganizationNetwork(ctx context.Context,
 
 // Execute executes the request
 //  @return GetNetwork200Response
-func (a *OrganizationsApiService) CreateOrganizationNetworkExecute(r OrganizationsApiCreateOrganizationNetworkRequest) (*GetNetwork200Response, *http.Response, error) {
+func (a *OrganizationsAPIService) CreateOrganizationNetworkExecute(r OrganizationsAPICreateOrganizationNetworkRequest) (*GetNetwork200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2361,7 +2361,7 @@ func (a *OrganizationsApiService) CreateOrganizationNetworkExecute(r Organizatio
 		localVarReturnValue  *GetNetwork200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.CreateOrganizationNetwork")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.CreateOrganizationNetwork")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2446,19 +2446,19 @@ func (a *OrganizationsApiService) CreateOrganizationNetworkExecute(r Organizatio
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiCreateOrganizationPolicyObjectRequest struct {
+type OrganizationsAPICreateOrganizationPolicyObjectRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	createOrganizationPolicyObjectRequest *CreateOrganizationPolicyObjectRequest
 }
 
-func (r OrganizationsApiCreateOrganizationPolicyObjectRequest) CreateOrganizationPolicyObjectRequest(createOrganizationPolicyObjectRequest CreateOrganizationPolicyObjectRequest) OrganizationsApiCreateOrganizationPolicyObjectRequest {
+func (r OrganizationsAPICreateOrganizationPolicyObjectRequest) CreateOrganizationPolicyObjectRequest(createOrganizationPolicyObjectRequest CreateOrganizationPolicyObjectRequest) OrganizationsAPICreateOrganizationPolicyObjectRequest {
 	r.createOrganizationPolicyObjectRequest = &createOrganizationPolicyObjectRequest
 	return r
 }
 
-func (r OrganizationsApiCreateOrganizationPolicyObjectRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPICreateOrganizationPolicyObjectRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateOrganizationPolicyObjectExecute(r)
 }
 
@@ -2469,10 +2469,10 @@ Creates a new Policy Object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiCreateOrganizationPolicyObjectRequest
+ @return OrganizationsAPICreateOrganizationPolicyObjectRequest
 */
-func (a *OrganizationsApiService) CreateOrganizationPolicyObject(ctx context.Context, organizationId string) OrganizationsApiCreateOrganizationPolicyObjectRequest {
-	return OrganizationsApiCreateOrganizationPolicyObjectRequest{
+func (a *OrganizationsAPIService) CreateOrganizationPolicyObject(ctx context.Context, organizationId string) OrganizationsAPICreateOrganizationPolicyObjectRequest {
+	return OrganizationsAPICreateOrganizationPolicyObjectRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -2481,7 +2481,7 @@ func (a *OrganizationsApiService) CreateOrganizationPolicyObject(ctx context.Con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) CreateOrganizationPolicyObjectExecute(r OrganizationsApiCreateOrganizationPolicyObjectRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) CreateOrganizationPolicyObjectExecute(r OrganizationsAPICreateOrganizationPolicyObjectRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2489,7 +2489,7 @@ func (a *OrganizationsApiService) CreateOrganizationPolicyObjectExecute(r Organi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.CreateOrganizationPolicyObject")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.CreateOrganizationPolicyObject")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2574,19 +2574,19 @@ func (a *OrganizationsApiService) CreateOrganizationPolicyObjectExecute(r Organi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiCreateOrganizationPolicyObjectsGroupRequest struct {
+type OrganizationsAPICreateOrganizationPolicyObjectsGroupRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	createOrganizationPolicyObjectsGroupRequest *CreateOrganizationPolicyObjectsGroupRequest
 }
 
-func (r OrganizationsApiCreateOrganizationPolicyObjectsGroupRequest) CreateOrganizationPolicyObjectsGroupRequest(createOrganizationPolicyObjectsGroupRequest CreateOrganizationPolicyObjectsGroupRequest) OrganizationsApiCreateOrganizationPolicyObjectsGroupRequest {
+func (r OrganizationsAPICreateOrganizationPolicyObjectsGroupRequest) CreateOrganizationPolicyObjectsGroupRequest(createOrganizationPolicyObjectsGroupRequest CreateOrganizationPolicyObjectsGroupRequest) OrganizationsAPICreateOrganizationPolicyObjectsGroupRequest {
 	r.createOrganizationPolicyObjectsGroupRequest = &createOrganizationPolicyObjectsGroupRequest
 	return r
 }
 
-func (r OrganizationsApiCreateOrganizationPolicyObjectsGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPICreateOrganizationPolicyObjectsGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateOrganizationPolicyObjectsGroupExecute(r)
 }
 
@@ -2597,10 +2597,10 @@ Creates a new Policy Object Group.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiCreateOrganizationPolicyObjectsGroupRequest
+ @return OrganizationsAPICreateOrganizationPolicyObjectsGroupRequest
 */
-func (a *OrganizationsApiService) CreateOrganizationPolicyObjectsGroup(ctx context.Context, organizationId string) OrganizationsApiCreateOrganizationPolicyObjectsGroupRequest {
-	return OrganizationsApiCreateOrganizationPolicyObjectsGroupRequest{
+func (a *OrganizationsAPIService) CreateOrganizationPolicyObjectsGroup(ctx context.Context, organizationId string) OrganizationsAPICreateOrganizationPolicyObjectsGroupRequest {
+	return OrganizationsAPICreateOrganizationPolicyObjectsGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -2609,7 +2609,7 @@ func (a *OrganizationsApiService) CreateOrganizationPolicyObjectsGroup(ctx conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) CreateOrganizationPolicyObjectsGroupExecute(r OrganizationsApiCreateOrganizationPolicyObjectsGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) CreateOrganizationPolicyObjectsGroupExecute(r OrganizationsAPICreateOrganizationPolicyObjectsGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2617,7 +2617,7 @@ func (a *OrganizationsApiService) CreateOrganizationPolicyObjectsGroupExecute(r 
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.CreateOrganizationPolicyObjectsGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.CreateOrganizationPolicyObjectsGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2702,19 +2702,19 @@ func (a *OrganizationsApiService) CreateOrganizationPolicyObjectsGroupExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiCreateOrganizationSamlIdpRequest struct {
+type OrganizationsAPICreateOrganizationSamlIdpRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	createOrganizationSamlIdpRequest *CreateOrganizationSamlIdpRequest
 }
 
-func (r OrganizationsApiCreateOrganizationSamlIdpRequest) CreateOrganizationSamlIdpRequest(createOrganizationSamlIdpRequest CreateOrganizationSamlIdpRequest) OrganizationsApiCreateOrganizationSamlIdpRequest {
+func (r OrganizationsAPICreateOrganizationSamlIdpRequest) CreateOrganizationSamlIdpRequest(createOrganizationSamlIdpRequest CreateOrganizationSamlIdpRequest) OrganizationsAPICreateOrganizationSamlIdpRequest {
 	r.createOrganizationSamlIdpRequest = &createOrganizationSamlIdpRequest
 	return r
 }
 
-func (r OrganizationsApiCreateOrganizationSamlIdpRequest) Execute() ([]GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPICreateOrganizationSamlIdpRequest) Execute() ([]GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateOrganizationSamlIdpExecute(r)
 }
 
@@ -2725,10 +2725,10 @@ Create a SAML IdP for your organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiCreateOrganizationSamlIdpRequest
+ @return OrganizationsAPICreateOrganizationSamlIdpRequest
 */
-func (a *OrganizationsApiService) CreateOrganizationSamlIdp(ctx context.Context, organizationId string) OrganizationsApiCreateOrganizationSamlIdpRequest {
-	return OrganizationsApiCreateOrganizationSamlIdpRequest{
+func (a *OrganizationsAPIService) CreateOrganizationSamlIdp(ctx context.Context, organizationId string) OrganizationsAPICreateOrganizationSamlIdpRequest {
+	return OrganizationsAPICreateOrganizationSamlIdpRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -2737,7 +2737,7 @@ func (a *OrganizationsApiService) CreateOrganizationSamlIdp(ctx context.Context,
 
 // Execute executes the request
 //  @return []GetOrganizationSamlIdps200ResponseInner
-func (a *OrganizationsApiService) CreateOrganizationSamlIdpExecute(r OrganizationsApiCreateOrganizationSamlIdpRequest) ([]GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) CreateOrganizationSamlIdpExecute(r OrganizationsAPICreateOrganizationSamlIdpRequest) ([]GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2745,7 +2745,7 @@ func (a *OrganizationsApiService) CreateOrganizationSamlIdpExecute(r Organizatio
 		localVarReturnValue  []GetOrganizationSamlIdps200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.CreateOrganizationSamlIdp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.CreateOrganizationSamlIdp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2830,19 +2830,19 @@ func (a *OrganizationsApiService) CreateOrganizationSamlIdpExecute(r Organizatio
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiCreateOrganizationSamlRoleRequest struct {
+type OrganizationsAPICreateOrganizationSamlRoleRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	createOrganizationSamlRoleRequest *CreateOrganizationSamlRoleRequest
 }
 
-func (r OrganizationsApiCreateOrganizationSamlRoleRequest) CreateOrganizationSamlRoleRequest(createOrganizationSamlRoleRequest CreateOrganizationSamlRoleRequest) OrganizationsApiCreateOrganizationSamlRoleRequest {
+func (r OrganizationsAPICreateOrganizationSamlRoleRequest) CreateOrganizationSamlRoleRequest(createOrganizationSamlRoleRequest CreateOrganizationSamlRoleRequest) OrganizationsAPICreateOrganizationSamlRoleRequest {
 	r.createOrganizationSamlRoleRequest = &createOrganizationSamlRoleRequest
 	return r
 }
 
-func (r OrganizationsApiCreateOrganizationSamlRoleRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPICreateOrganizationSamlRoleRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateOrganizationSamlRoleExecute(r)
 }
 
@@ -2853,10 +2853,10 @@ Create a SAML role
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiCreateOrganizationSamlRoleRequest
+ @return OrganizationsAPICreateOrganizationSamlRoleRequest
 */
-func (a *OrganizationsApiService) CreateOrganizationSamlRole(ctx context.Context, organizationId string) OrganizationsApiCreateOrganizationSamlRoleRequest {
-	return OrganizationsApiCreateOrganizationSamlRoleRequest{
+func (a *OrganizationsAPIService) CreateOrganizationSamlRole(ctx context.Context, organizationId string) OrganizationsAPICreateOrganizationSamlRoleRequest {
+	return OrganizationsAPICreateOrganizationSamlRoleRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -2865,7 +2865,7 @@ func (a *OrganizationsApiService) CreateOrganizationSamlRole(ctx context.Context
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) CreateOrganizationSamlRoleExecute(r OrganizationsApiCreateOrganizationSamlRoleRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) CreateOrganizationSamlRoleExecute(r OrganizationsAPICreateOrganizationSamlRoleRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2873,7 +2873,7 @@ func (a *OrganizationsApiService) CreateOrganizationSamlRoleExecute(r Organizati
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.CreateOrganizationSamlRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.CreateOrganizationSamlRole")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2958,13 +2958,13 @@ func (a *OrganizationsApiService) CreateOrganizationSamlRoleExecute(r Organizati
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiDeleteOrganizationRequest struct {
+type OrganizationsAPIDeleteOrganizationRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 }
 
-func (r OrganizationsApiDeleteOrganizationRequest) Execute() (*http.Response, error) {
+func (r OrganizationsAPIDeleteOrganizationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationExecute(r)
 }
 
@@ -2975,10 +2975,10 @@ Delete an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiDeleteOrganizationRequest
+ @return OrganizationsAPIDeleteOrganizationRequest
 */
-func (a *OrganizationsApiService) DeleteOrganization(ctx context.Context, organizationId string) OrganizationsApiDeleteOrganizationRequest {
-	return OrganizationsApiDeleteOrganizationRequest{
+func (a *OrganizationsAPIService) DeleteOrganization(ctx context.Context, organizationId string) OrganizationsAPIDeleteOrganizationRequest {
+	return OrganizationsAPIDeleteOrganizationRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -2986,14 +2986,14 @@ func (a *OrganizationsApiService) DeleteOrganization(ctx context.Context, organi
 }
 
 // Execute executes the request
-func (a *OrganizationsApiService) DeleteOrganizationExecute(r OrganizationsApiDeleteOrganizationRequest) (*http.Response, error) {
+func (a *OrganizationsAPIService) DeleteOrganizationExecute(r OrganizationsAPIDeleteOrganizationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.DeleteOrganization")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.DeleteOrganization")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3064,14 +3064,14 @@ func (a *OrganizationsApiService) DeleteOrganizationExecute(r OrganizationsApiDe
 	return localVarHTTPResponse, nil
 }
 
-type OrganizationsApiDeleteOrganizationActionBatchRequest struct {
+type OrganizationsAPIDeleteOrganizationActionBatchRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	actionBatchId string
 }
 
-func (r OrganizationsApiDeleteOrganizationActionBatchRequest) Execute() (*http.Response, error) {
+func (r OrganizationsAPIDeleteOrganizationActionBatchRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationActionBatchExecute(r)
 }
 
@@ -3083,10 +3083,10 @@ Delete an action batch
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param actionBatchId Action batch ID
- @return OrganizationsApiDeleteOrganizationActionBatchRequest
+ @return OrganizationsAPIDeleteOrganizationActionBatchRequest
 */
-func (a *OrganizationsApiService) DeleteOrganizationActionBatch(ctx context.Context, organizationId string, actionBatchId string) OrganizationsApiDeleteOrganizationActionBatchRequest {
-	return OrganizationsApiDeleteOrganizationActionBatchRequest{
+func (a *OrganizationsAPIService) DeleteOrganizationActionBatch(ctx context.Context, organizationId string, actionBatchId string) OrganizationsAPIDeleteOrganizationActionBatchRequest {
+	return OrganizationsAPIDeleteOrganizationActionBatchRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -3095,14 +3095,14 @@ func (a *OrganizationsApiService) DeleteOrganizationActionBatch(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *OrganizationsApiService) DeleteOrganizationActionBatchExecute(r OrganizationsApiDeleteOrganizationActionBatchRequest) (*http.Response, error) {
+func (a *OrganizationsAPIService) DeleteOrganizationActionBatchExecute(r OrganizationsAPIDeleteOrganizationActionBatchRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.DeleteOrganizationActionBatch")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.DeleteOrganizationActionBatch")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3174,14 +3174,14 @@ func (a *OrganizationsApiService) DeleteOrganizationActionBatchExecute(r Organiz
 	return localVarHTTPResponse, nil
 }
 
-type OrganizationsApiDeleteOrganizationAdaptivePolicyAclRequest struct {
+type OrganizationsAPIDeleteOrganizationAdaptivePolicyAclRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	aclId string
 }
 
-func (r OrganizationsApiDeleteOrganizationAdaptivePolicyAclRequest) Execute() (*http.Response, error) {
+func (r OrganizationsAPIDeleteOrganizationAdaptivePolicyAclRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationAdaptivePolicyAclExecute(r)
 }
 
@@ -3193,10 +3193,10 @@ Deletes the specified adaptive policy ACL. Note this adaptive policy ACL will al
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param aclId Acl ID
- @return OrganizationsApiDeleteOrganizationAdaptivePolicyAclRequest
+ @return OrganizationsAPIDeleteOrganizationAdaptivePolicyAclRequest
 */
-func (a *OrganizationsApiService) DeleteOrganizationAdaptivePolicyAcl(ctx context.Context, organizationId string, aclId string) OrganizationsApiDeleteOrganizationAdaptivePolicyAclRequest {
-	return OrganizationsApiDeleteOrganizationAdaptivePolicyAclRequest{
+func (a *OrganizationsAPIService) DeleteOrganizationAdaptivePolicyAcl(ctx context.Context, organizationId string, aclId string) OrganizationsAPIDeleteOrganizationAdaptivePolicyAclRequest {
+	return OrganizationsAPIDeleteOrganizationAdaptivePolicyAclRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -3205,14 +3205,14 @@ func (a *OrganizationsApiService) DeleteOrganizationAdaptivePolicyAcl(ctx contex
 }
 
 // Execute executes the request
-func (a *OrganizationsApiService) DeleteOrganizationAdaptivePolicyAclExecute(r OrganizationsApiDeleteOrganizationAdaptivePolicyAclRequest) (*http.Response, error) {
+func (a *OrganizationsAPIService) DeleteOrganizationAdaptivePolicyAclExecute(r OrganizationsAPIDeleteOrganizationAdaptivePolicyAclRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.DeleteOrganizationAdaptivePolicyAcl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.DeleteOrganizationAdaptivePolicyAcl")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3284,14 +3284,14 @@ func (a *OrganizationsApiService) DeleteOrganizationAdaptivePolicyAclExecute(r O
 	return localVarHTTPResponse, nil
 }
 
-type OrganizationsApiDeleteOrganizationAdaptivePolicyGroupRequest struct {
+type OrganizationsAPIDeleteOrganizationAdaptivePolicyGroupRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	id string
 }
 
-func (r OrganizationsApiDeleteOrganizationAdaptivePolicyGroupRequest) Execute() (*http.Response, error) {
+func (r OrganizationsAPIDeleteOrganizationAdaptivePolicyGroupRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationAdaptivePolicyGroupExecute(r)
 }
 
@@ -3303,10 +3303,10 @@ Deletes the specified adaptive policy group and any associated policies and refe
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param id ID
- @return OrganizationsApiDeleteOrganizationAdaptivePolicyGroupRequest
+ @return OrganizationsAPIDeleteOrganizationAdaptivePolicyGroupRequest
 */
-func (a *OrganizationsApiService) DeleteOrganizationAdaptivePolicyGroup(ctx context.Context, organizationId string, id string) OrganizationsApiDeleteOrganizationAdaptivePolicyGroupRequest {
-	return OrganizationsApiDeleteOrganizationAdaptivePolicyGroupRequest{
+func (a *OrganizationsAPIService) DeleteOrganizationAdaptivePolicyGroup(ctx context.Context, organizationId string, id string) OrganizationsAPIDeleteOrganizationAdaptivePolicyGroupRequest {
+	return OrganizationsAPIDeleteOrganizationAdaptivePolicyGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -3315,14 +3315,14 @@ func (a *OrganizationsApiService) DeleteOrganizationAdaptivePolicyGroup(ctx cont
 }
 
 // Execute executes the request
-func (a *OrganizationsApiService) DeleteOrganizationAdaptivePolicyGroupExecute(r OrganizationsApiDeleteOrganizationAdaptivePolicyGroupRequest) (*http.Response, error) {
+func (a *OrganizationsAPIService) DeleteOrganizationAdaptivePolicyGroupExecute(r OrganizationsAPIDeleteOrganizationAdaptivePolicyGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.DeleteOrganizationAdaptivePolicyGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.DeleteOrganizationAdaptivePolicyGroup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3394,14 +3394,14 @@ func (a *OrganizationsApiService) DeleteOrganizationAdaptivePolicyGroupExecute(r
 	return localVarHTTPResponse, nil
 }
 
-type OrganizationsApiDeleteOrganizationAdaptivePolicyPolicyRequest struct {
+type OrganizationsAPIDeleteOrganizationAdaptivePolicyPolicyRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	id string
 }
 
-func (r OrganizationsApiDeleteOrganizationAdaptivePolicyPolicyRequest) Execute() (*http.Response, error) {
+func (r OrganizationsAPIDeleteOrganizationAdaptivePolicyPolicyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationAdaptivePolicyPolicyExecute(r)
 }
 
@@ -3413,10 +3413,10 @@ Delete an Adaptive Policy
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param id ID
- @return OrganizationsApiDeleteOrganizationAdaptivePolicyPolicyRequest
+ @return OrganizationsAPIDeleteOrganizationAdaptivePolicyPolicyRequest
 */
-func (a *OrganizationsApiService) DeleteOrganizationAdaptivePolicyPolicy(ctx context.Context, organizationId string, id string) OrganizationsApiDeleteOrganizationAdaptivePolicyPolicyRequest {
-	return OrganizationsApiDeleteOrganizationAdaptivePolicyPolicyRequest{
+func (a *OrganizationsAPIService) DeleteOrganizationAdaptivePolicyPolicy(ctx context.Context, organizationId string, id string) OrganizationsAPIDeleteOrganizationAdaptivePolicyPolicyRequest {
+	return OrganizationsAPIDeleteOrganizationAdaptivePolicyPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -3425,14 +3425,14 @@ func (a *OrganizationsApiService) DeleteOrganizationAdaptivePolicyPolicy(ctx con
 }
 
 // Execute executes the request
-func (a *OrganizationsApiService) DeleteOrganizationAdaptivePolicyPolicyExecute(r OrganizationsApiDeleteOrganizationAdaptivePolicyPolicyRequest) (*http.Response, error) {
+func (a *OrganizationsAPIService) DeleteOrganizationAdaptivePolicyPolicyExecute(r OrganizationsAPIDeleteOrganizationAdaptivePolicyPolicyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.DeleteOrganizationAdaptivePolicyPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.DeleteOrganizationAdaptivePolicyPolicy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3504,14 +3504,14 @@ func (a *OrganizationsApiService) DeleteOrganizationAdaptivePolicyPolicyExecute(
 	return localVarHTTPResponse, nil
 }
 
-type OrganizationsApiDeleteOrganizationAdminRequest struct {
+type OrganizationsAPIDeleteOrganizationAdminRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	adminId string
 }
 
-func (r OrganizationsApiDeleteOrganizationAdminRequest) Execute() (*http.Response, error) {
+func (r OrganizationsAPIDeleteOrganizationAdminRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationAdminExecute(r)
 }
 
@@ -3523,10 +3523,10 @@ Revoke all access for a dashboard administrator within this organization
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param adminId Admin ID
- @return OrganizationsApiDeleteOrganizationAdminRequest
+ @return OrganizationsAPIDeleteOrganizationAdminRequest
 */
-func (a *OrganizationsApiService) DeleteOrganizationAdmin(ctx context.Context, organizationId string, adminId string) OrganizationsApiDeleteOrganizationAdminRequest {
-	return OrganizationsApiDeleteOrganizationAdminRequest{
+func (a *OrganizationsAPIService) DeleteOrganizationAdmin(ctx context.Context, organizationId string, adminId string) OrganizationsAPIDeleteOrganizationAdminRequest {
+	return OrganizationsAPIDeleteOrganizationAdminRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -3535,14 +3535,14 @@ func (a *OrganizationsApiService) DeleteOrganizationAdmin(ctx context.Context, o
 }
 
 // Execute executes the request
-func (a *OrganizationsApiService) DeleteOrganizationAdminExecute(r OrganizationsApiDeleteOrganizationAdminRequest) (*http.Response, error) {
+func (a *OrganizationsAPIService) DeleteOrganizationAdminExecute(r OrganizationsAPIDeleteOrganizationAdminRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.DeleteOrganizationAdmin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.DeleteOrganizationAdmin")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3614,14 +3614,14 @@ func (a *OrganizationsApiService) DeleteOrganizationAdminExecute(r Organizations
 	return localVarHTTPResponse, nil
 }
 
-type OrganizationsApiDeleteOrganizationAlertsProfileRequest struct {
+type OrganizationsAPIDeleteOrganizationAlertsProfileRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	alertConfigId string
 }
 
-func (r OrganizationsApiDeleteOrganizationAlertsProfileRequest) Execute() (*http.Response, error) {
+func (r OrganizationsAPIDeleteOrganizationAlertsProfileRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationAlertsProfileExecute(r)
 }
 
@@ -3633,10 +3633,10 @@ Removes an organization-wide alert config
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param alertConfigId Alert config ID
- @return OrganizationsApiDeleteOrganizationAlertsProfileRequest
+ @return OrganizationsAPIDeleteOrganizationAlertsProfileRequest
 */
-func (a *OrganizationsApiService) DeleteOrganizationAlertsProfile(ctx context.Context, organizationId string, alertConfigId string) OrganizationsApiDeleteOrganizationAlertsProfileRequest {
-	return OrganizationsApiDeleteOrganizationAlertsProfileRequest{
+func (a *OrganizationsAPIService) DeleteOrganizationAlertsProfile(ctx context.Context, organizationId string, alertConfigId string) OrganizationsAPIDeleteOrganizationAlertsProfileRequest {
+	return OrganizationsAPIDeleteOrganizationAlertsProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -3645,14 +3645,14 @@ func (a *OrganizationsApiService) DeleteOrganizationAlertsProfile(ctx context.Co
 }
 
 // Execute executes the request
-func (a *OrganizationsApiService) DeleteOrganizationAlertsProfileExecute(r OrganizationsApiDeleteOrganizationAlertsProfileRequest) (*http.Response, error) {
+func (a *OrganizationsAPIService) DeleteOrganizationAlertsProfileExecute(r OrganizationsAPIDeleteOrganizationAlertsProfileRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.DeleteOrganizationAlertsProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.DeleteOrganizationAlertsProfile")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3724,14 +3724,14 @@ func (a *OrganizationsApiService) DeleteOrganizationAlertsProfileExecute(r Organ
 	return localVarHTTPResponse, nil
 }
 
-type OrganizationsApiDeleteOrganizationBrandingPolicyRequest struct {
+type OrganizationsAPIDeleteOrganizationBrandingPolicyRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	brandingPolicyId string
 }
 
-func (r OrganizationsApiDeleteOrganizationBrandingPolicyRequest) Execute() (*http.Response, error) {
+func (r OrganizationsAPIDeleteOrganizationBrandingPolicyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationBrandingPolicyExecute(r)
 }
 
@@ -3743,10 +3743,10 @@ Delete a branding policy
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param brandingPolicyId Branding policy ID
- @return OrganizationsApiDeleteOrganizationBrandingPolicyRequest
+ @return OrganizationsAPIDeleteOrganizationBrandingPolicyRequest
 */
-func (a *OrganizationsApiService) DeleteOrganizationBrandingPolicy(ctx context.Context, organizationId string, brandingPolicyId string) OrganizationsApiDeleteOrganizationBrandingPolicyRequest {
-	return OrganizationsApiDeleteOrganizationBrandingPolicyRequest{
+func (a *OrganizationsAPIService) DeleteOrganizationBrandingPolicy(ctx context.Context, organizationId string, brandingPolicyId string) OrganizationsAPIDeleteOrganizationBrandingPolicyRequest {
+	return OrganizationsAPIDeleteOrganizationBrandingPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -3755,14 +3755,14 @@ func (a *OrganizationsApiService) DeleteOrganizationBrandingPolicy(ctx context.C
 }
 
 // Execute executes the request
-func (a *OrganizationsApiService) DeleteOrganizationBrandingPolicyExecute(r OrganizationsApiDeleteOrganizationBrandingPolicyRequest) (*http.Response, error) {
+func (a *OrganizationsAPIService) DeleteOrganizationBrandingPolicyExecute(r OrganizationsAPIDeleteOrganizationBrandingPolicyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.DeleteOrganizationBrandingPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.DeleteOrganizationBrandingPolicy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3834,14 +3834,14 @@ func (a *OrganizationsApiService) DeleteOrganizationBrandingPolicyExecute(r Orga
 	return localVarHTTPResponse, nil
 }
 
-type OrganizationsApiDeleteOrganizationConfigTemplateRequest struct {
+type OrganizationsAPIDeleteOrganizationConfigTemplateRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	configTemplateId string
 }
 
-func (r OrganizationsApiDeleteOrganizationConfigTemplateRequest) Execute() (*http.Response, error) {
+func (r OrganizationsAPIDeleteOrganizationConfigTemplateRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationConfigTemplateExecute(r)
 }
 
@@ -3853,10 +3853,10 @@ Remove a configuration template
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param configTemplateId Config template ID
- @return OrganizationsApiDeleteOrganizationConfigTemplateRequest
+ @return OrganizationsAPIDeleteOrganizationConfigTemplateRequest
 */
-func (a *OrganizationsApiService) DeleteOrganizationConfigTemplate(ctx context.Context, organizationId string, configTemplateId string) OrganizationsApiDeleteOrganizationConfigTemplateRequest {
-	return OrganizationsApiDeleteOrganizationConfigTemplateRequest{
+func (a *OrganizationsAPIService) DeleteOrganizationConfigTemplate(ctx context.Context, organizationId string, configTemplateId string) OrganizationsAPIDeleteOrganizationConfigTemplateRequest {
+	return OrganizationsAPIDeleteOrganizationConfigTemplateRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -3865,14 +3865,14 @@ func (a *OrganizationsApiService) DeleteOrganizationConfigTemplate(ctx context.C
 }
 
 // Execute executes the request
-func (a *OrganizationsApiService) DeleteOrganizationConfigTemplateExecute(r OrganizationsApiDeleteOrganizationConfigTemplateRequest) (*http.Response, error) {
+func (a *OrganizationsAPIService) DeleteOrganizationConfigTemplateExecute(r OrganizationsAPIDeleteOrganizationConfigTemplateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.DeleteOrganizationConfigTemplate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.DeleteOrganizationConfigTemplate")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3944,14 +3944,14 @@ func (a *OrganizationsApiService) DeleteOrganizationConfigTemplateExecute(r Orga
 	return localVarHTTPResponse, nil
 }
 
-type OrganizationsApiDeleteOrganizationEarlyAccessFeaturesOptInRequest struct {
+type OrganizationsAPIDeleteOrganizationEarlyAccessFeaturesOptInRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	optInId string
 }
 
-func (r OrganizationsApiDeleteOrganizationEarlyAccessFeaturesOptInRequest) Execute() (*http.Response, error) {
+func (r OrganizationsAPIDeleteOrganizationEarlyAccessFeaturesOptInRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationEarlyAccessFeaturesOptInExecute(r)
 }
 
@@ -3963,10 +3963,10 @@ Delete an early access feature opt-in
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param optInId Opt in ID
- @return OrganizationsApiDeleteOrganizationEarlyAccessFeaturesOptInRequest
+ @return OrganizationsAPIDeleteOrganizationEarlyAccessFeaturesOptInRequest
 */
-func (a *OrganizationsApiService) DeleteOrganizationEarlyAccessFeaturesOptIn(ctx context.Context, organizationId string, optInId string) OrganizationsApiDeleteOrganizationEarlyAccessFeaturesOptInRequest {
-	return OrganizationsApiDeleteOrganizationEarlyAccessFeaturesOptInRequest{
+func (a *OrganizationsAPIService) DeleteOrganizationEarlyAccessFeaturesOptIn(ctx context.Context, organizationId string, optInId string) OrganizationsAPIDeleteOrganizationEarlyAccessFeaturesOptInRequest {
+	return OrganizationsAPIDeleteOrganizationEarlyAccessFeaturesOptInRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -3975,14 +3975,14 @@ func (a *OrganizationsApiService) DeleteOrganizationEarlyAccessFeaturesOptIn(ctx
 }
 
 // Execute executes the request
-func (a *OrganizationsApiService) DeleteOrganizationEarlyAccessFeaturesOptInExecute(r OrganizationsApiDeleteOrganizationEarlyAccessFeaturesOptInRequest) (*http.Response, error) {
+func (a *OrganizationsAPIService) DeleteOrganizationEarlyAccessFeaturesOptInExecute(r OrganizationsAPIDeleteOrganizationEarlyAccessFeaturesOptInRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.DeleteOrganizationEarlyAccessFeaturesOptIn")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.DeleteOrganizationEarlyAccessFeaturesOptIn")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4054,14 +4054,14 @@ func (a *OrganizationsApiService) DeleteOrganizationEarlyAccessFeaturesOptInExec
 	return localVarHTTPResponse, nil
 }
 
-type OrganizationsApiDeleteOrganizationPolicyObjectRequest struct {
+type OrganizationsAPIDeleteOrganizationPolicyObjectRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	policyObjectId string
 }
 
-func (r OrganizationsApiDeleteOrganizationPolicyObjectRequest) Execute() (*http.Response, error) {
+func (r OrganizationsAPIDeleteOrganizationPolicyObjectRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationPolicyObjectExecute(r)
 }
 
@@ -4073,10 +4073,10 @@ Deletes a Policy Object.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param policyObjectId Policy object ID
- @return OrganizationsApiDeleteOrganizationPolicyObjectRequest
+ @return OrganizationsAPIDeleteOrganizationPolicyObjectRequest
 */
-func (a *OrganizationsApiService) DeleteOrganizationPolicyObject(ctx context.Context, organizationId string, policyObjectId string) OrganizationsApiDeleteOrganizationPolicyObjectRequest {
-	return OrganizationsApiDeleteOrganizationPolicyObjectRequest{
+func (a *OrganizationsAPIService) DeleteOrganizationPolicyObject(ctx context.Context, organizationId string, policyObjectId string) OrganizationsAPIDeleteOrganizationPolicyObjectRequest {
+	return OrganizationsAPIDeleteOrganizationPolicyObjectRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -4085,14 +4085,14 @@ func (a *OrganizationsApiService) DeleteOrganizationPolicyObject(ctx context.Con
 }
 
 // Execute executes the request
-func (a *OrganizationsApiService) DeleteOrganizationPolicyObjectExecute(r OrganizationsApiDeleteOrganizationPolicyObjectRequest) (*http.Response, error) {
+func (a *OrganizationsAPIService) DeleteOrganizationPolicyObjectExecute(r OrganizationsAPIDeleteOrganizationPolicyObjectRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.DeleteOrganizationPolicyObject")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.DeleteOrganizationPolicyObject")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4164,14 +4164,14 @@ func (a *OrganizationsApiService) DeleteOrganizationPolicyObjectExecute(r Organi
 	return localVarHTTPResponse, nil
 }
 
-type OrganizationsApiDeleteOrganizationPolicyObjectsGroupRequest struct {
+type OrganizationsAPIDeleteOrganizationPolicyObjectsGroupRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	policyObjectGroupId string
 }
 
-func (r OrganizationsApiDeleteOrganizationPolicyObjectsGroupRequest) Execute() (*http.Response, error) {
+func (r OrganizationsAPIDeleteOrganizationPolicyObjectsGroupRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationPolicyObjectsGroupExecute(r)
 }
 
@@ -4183,10 +4183,10 @@ Deletes a Policy Object Group.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param policyObjectGroupId Policy object group ID
- @return OrganizationsApiDeleteOrganizationPolicyObjectsGroupRequest
+ @return OrganizationsAPIDeleteOrganizationPolicyObjectsGroupRequest
 */
-func (a *OrganizationsApiService) DeleteOrganizationPolicyObjectsGroup(ctx context.Context, organizationId string, policyObjectGroupId string) OrganizationsApiDeleteOrganizationPolicyObjectsGroupRequest {
-	return OrganizationsApiDeleteOrganizationPolicyObjectsGroupRequest{
+func (a *OrganizationsAPIService) DeleteOrganizationPolicyObjectsGroup(ctx context.Context, organizationId string, policyObjectGroupId string) OrganizationsAPIDeleteOrganizationPolicyObjectsGroupRequest {
+	return OrganizationsAPIDeleteOrganizationPolicyObjectsGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -4195,14 +4195,14 @@ func (a *OrganizationsApiService) DeleteOrganizationPolicyObjectsGroup(ctx conte
 }
 
 // Execute executes the request
-func (a *OrganizationsApiService) DeleteOrganizationPolicyObjectsGroupExecute(r OrganizationsApiDeleteOrganizationPolicyObjectsGroupRequest) (*http.Response, error) {
+func (a *OrganizationsAPIService) DeleteOrganizationPolicyObjectsGroupExecute(r OrganizationsAPIDeleteOrganizationPolicyObjectsGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.DeleteOrganizationPolicyObjectsGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.DeleteOrganizationPolicyObjectsGroup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4274,14 +4274,14 @@ func (a *OrganizationsApiService) DeleteOrganizationPolicyObjectsGroupExecute(r 
 	return localVarHTTPResponse, nil
 }
 
-type OrganizationsApiDeleteOrganizationSamlIdpRequest struct {
+type OrganizationsAPIDeleteOrganizationSamlIdpRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	idpId string
 }
 
-func (r OrganizationsApiDeleteOrganizationSamlIdpRequest) Execute() (*http.Response, error) {
+func (r OrganizationsAPIDeleteOrganizationSamlIdpRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationSamlIdpExecute(r)
 }
 
@@ -4293,10 +4293,10 @@ Remove a SAML IdP in your organization.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param idpId Idp ID
- @return OrganizationsApiDeleteOrganizationSamlIdpRequest
+ @return OrganizationsAPIDeleteOrganizationSamlIdpRequest
 */
-func (a *OrganizationsApiService) DeleteOrganizationSamlIdp(ctx context.Context, organizationId string, idpId string) OrganizationsApiDeleteOrganizationSamlIdpRequest {
-	return OrganizationsApiDeleteOrganizationSamlIdpRequest{
+func (a *OrganizationsAPIService) DeleteOrganizationSamlIdp(ctx context.Context, organizationId string, idpId string) OrganizationsAPIDeleteOrganizationSamlIdpRequest {
+	return OrganizationsAPIDeleteOrganizationSamlIdpRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -4305,14 +4305,14 @@ func (a *OrganizationsApiService) DeleteOrganizationSamlIdp(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *OrganizationsApiService) DeleteOrganizationSamlIdpExecute(r OrganizationsApiDeleteOrganizationSamlIdpRequest) (*http.Response, error) {
+func (a *OrganizationsAPIService) DeleteOrganizationSamlIdpExecute(r OrganizationsAPIDeleteOrganizationSamlIdpRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.DeleteOrganizationSamlIdp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.DeleteOrganizationSamlIdp")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4384,14 +4384,14 @@ func (a *OrganizationsApiService) DeleteOrganizationSamlIdpExecute(r Organizatio
 	return localVarHTTPResponse, nil
 }
 
-type OrganizationsApiDeleteOrganizationSamlRoleRequest struct {
+type OrganizationsAPIDeleteOrganizationSamlRoleRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	samlRoleId string
 }
 
-func (r OrganizationsApiDeleteOrganizationSamlRoleRequest) Execute() (*http.Response, error) {
+func (r OrganizationsAPIDeleteOrganizationSamlRoleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationSamlRoleExecute(r)
 }
 
@@ -4403,10 +4403,10 @@ Remove a SAML role
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param samlRoleId Saml role ID
- @return OrganizationsApiDeleteOrganizationSamlRoleRequest
+ @return OrganizationsAPIDeleteOrganizationSamlRoleRequest
 */
-func (a *OrganizationsApiService) DeleteOrganizationSamlRole(ctx context.Context, organizationId string, samlRoleId string) OrganizationsApiDeleteOrganizationSamlRoleRequest {
-	return OrganizationsApiDeleteOrganizationSamlRoleRequest{
+func (a *OrganizationsAPIService) DeleteOrganizationSamlRole(ctx context.Context, organizationId string, samlRoleId string) OrganizationsAPIDeleteOrganizationSamlRoleRequest {
+	return OrganizationsAPIDeleteOrganizationSamlRoleRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -4415,14 +4415,14 @@ func (a *OrganizationsApiService) DeleteOrganizationSamlRole(ctx context.Context
 }
 
 // Execute executes the request
-func (a *OrganizationsApiService) DeleteOrganizationSamlRoleExecute(r OrganizationsApiDeleteOrganizationSamlRoleRequest) (*http.Response, error) {
+func (a *OrganizationsAPIService) DeleteOrganizationSamlRoleExecute(r OrganizationsAPIDeleteOrganizationSamlRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.DeleteOrganizationSamlRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.DeleteOrganizationSamlRole")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4494,13 +4494,13 @@ func (a *OrganizationsApiService) DeleteOrganizationSamlRoleExecute(r Organizati
 	return localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationRequest struct {
+type OrganizationsAPIGetOrganizationRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 }
 
-func (r OrganizationsApiGetOrganizationRequest) Execute() (*GetOrganizations200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationRequest) Execute() (*GetOrganizations200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationExecute(r)
 }
 
@@ -4511,10 +4511,10 @@ Return an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationRequest
+ @return OrganizationsAPIGetOrganizationRequest
 */
-func (a *OrganizationsApiService) GetOrganization(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationRequest {
-	return OrganizationsApiGetOrganizationRequest{
+func (a *OrganizationsAPIService) GetOrganization(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationRequest {
+	return OrganizationsAPIGetOrganizationRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -4523,7 +4523,7 @@ func (a *OrganizationsApiService) GetOrganization(ctx context.Context, organizat
 
 // Execute executes the request
 //  @return GetOrganizations200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationExecute(r OrganizationsApiGetOrganizationRequest) (*GetOrganizations200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationExecute(r OrganizationsAPIGetOrganizationRequest) (*GetOrganizations200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4531,7 +4531,7 @@ func (a *OrganizationsApiService) GetOrganizationExecute(r OrganizationsApiGetOr
 		localVarReturnValue  *GetOrganizations200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganization")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganization")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4611,14 +4611,14 @@ func (a *OrganizationsApiService) GetOrganizationExecute(r OrganizationsApiGetOr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationActionBatchRequest struct {
+type OrganizationsAPIGetOrganizationActionBatchRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	actionBatchId string
 }
 
-func (r OrganizationsApiGetOrganizationActionBatchRequest) Execute() (*CreateOrganizationActionBatch201Response, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationActionBatchRequest) Execute() (*CreateOrganizationActionBatch201Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationActionBatchExecute(r)
 }
 
@@ -4630,10 +4630,10 @@ Return an action batch
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param actionBatchId Action batch ID
- @return OrganizationsApiGetOrganizationActionBatchRequest
+ @return OrganizationsAPIGetOrganizationActionBatchRequest
 */
-func (a *OrganizationsApiService) GetOrganizationActionBatch(ctx context.Context, organizationId string, actionBatchId string) OrganizationsApiGetOrganizationActionBatchRequest {
-	return OrganizationsApiGetOrganizationActionBatchRequest{
+func (a *OrganizationsAPIService) GetOrganizationActionBatch(ctx context.Context, organizationId string, actionBatchId string) OrganizationsAPIGetOrganizationActionBatchRequest {
+	return OrganizationsAPIGetOrganizationActionBatchRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -4643,7 +4643,7 @@ func (a *OrganizationsApiService) GetOrganizationActionBatch(ctx context.Context
 
 // Execute executes the request
 //  @return CreateOrganizationActionBatch201Response
-func (a *OrganizationsApiService) GetOrganizationActionBatchExecute(r OrganizationsApiGetOrganizationActionBatchRequest) (*CreateOrganizationActionBatch201Response, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationActionBatchExecute(r OrganizationsAPIGetOrganizationActionBatchRequest) (*CreateOrganizationActionBatch201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4651,7 +4651,7 @@ func (a *OrganizationsApiService) GetOrganizationActionBatchExecute(r Organizati
 		localVarReturnValue  *CreateOrganizationActionBatch201Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationActionBatch")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationActionBatch")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4732,20 +4732,20 @@ func (a *OrganizationsApiService) GetOrganizationActionBatchExecute(r Organizati
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationActionBatchesRequest struct {
+type OrganizationsAPIGetOrganizationActionBatchesRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	status *string
 }
 
 // Filter batches by status. Valid types are pending, completed, and failed.
-func (r OrganizationsApiGetOrganizationActionBatchesRequest) Status(status string) OrganizationsApiGetOrganizationActionBatchesRequest {
+func (r OrganizationsAPIGetOrganizationActionBatchesRequest) Status(status string) OrganizationsAPIGetOrganizationActionBatchesRequest {
 	r.status = &status
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationActionBatchesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationActionBatchesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationActionBatchesExecute(r)
 }
 
@@ -4756,10 +4756,10 @@ Return the list of action batches in the organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationActionBatchesRequest
+ @return OrganizationsAPIGetOrganizationActionBatchesRequest
 */
-func (a *OrganizationsApiService) GetOrganizationActionBatches(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationActionBatchesRequest {
-	return OrganizationsApiGetOrganizationActionBatchesRequest{
+func (a *OrganizationsAPIService) GetOrganizationActionBatches(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationActionBatchesRequest {
+	return OrganizationsAPIGetOrganizationActionBatchesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -4768,7 +4768,7 @@ func (a *OrganizationsApiService) GetOrganizationActionBatches(ctx context.Conte
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *OrganizationsApiService) GetOrganizationActionBatchesExecute(r OrganizationsApiGetOrganizationActionBatchesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationActionBatchesExecute(r OrganizationsAPIGetOrganizationActionBatchesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4776,7 +4776,7 @@ func (a *OrganizationsApiService) GetOrganizationActionBatchesExecute(r Organiza
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationActionBatches")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationActionBatches")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4859,14 +4859,14 @@ func (a *OrganizationsApiService) GetOrganizationActionBatchesExecute(r Organiza
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationAdaptivePolicyAclRequest struct {
+type OrganizationsAPIGetOrganizationAdaptivePolicyAclRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	aclId string
 }
 
-func (r OrganizationsApiGetOrganizationAdaptivePolicyAclRequest) Execute() (*GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationAdaptivePolicyAclRequest) Execute() (*GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationAdaptivePolicyAclExecute(r)
 }
 
@@ -4878,10 +4878,10 @@ Returns the adaptive policy ACL information
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param aclId Acl ID
- @return OrganizationsApiGetOrganizationAdaptivePolicyAclRequest
+ @return OrganizationsAPIGetOrganizationAdaptivePolicyAclRequest
 */
-func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyAcl(ctx context.Context, organizationId string, aclId string) OrganizationsApiGetOrganizationAdaptivePolicyAclRequest {
-	return OrganizationsApiGetOrganizationAdaptivePolicyAclRequest{
+func (a *OrganizationsAPIService) GetOrganizationAdaptivePolicyAcl(ctx context.Context, organizationId string, aclId string) OrganizationsAPIGetOrganizationAdaptivePolicyAclRequest {
+	return OrganizationsAPIGetOrganizationAdaptivePolicyAclRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -4891,7 +4891,7 @@ func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyAcl(ctx context.C
 
 // Execute executes the request
 //  @return GetOrganizationAdaptivePolicyAcls200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyAclExecute(r OrganizationsApiGetOrganizationAdaptivePolicyAclRequest) (*GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationAdaptivePolicyAclExecute(r OrganizationsAPIGetOrganizationAdaptivePolicyAclRequest) (*GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4899,7 +4899,7 @@ func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyAclExecute(r Orga
 		localVarReturnValue  *GetOrganizationAdaptivePolicyAcls200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationAdaptivePolicyAcl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationAdaptivePolicyAcl")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4980,13 +4980,13 @@ func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyAclExecute(r Orga
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationAdaptivePolicyAclsRequest struct {
+type OrganizationsAPIGetOrganizationAdaptivePolicyAclsRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 }
 
-func (r OrganizationsApiGetOrganizationAdaptivePolicyAclsRequest) Execute() ([]GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationAdaptivePolicyAclsRequest) Execute() ([]GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationAdaptivePolicyAclsExecute(r)
 }
 
@@ -4997,10 +4997,10 @@ List adaptive policy ACLs in a organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationAdaptivePolicyAclsRequest
+ @return OrganizationsAPIGetOrganizationAdaptivePolicyAclsRequest
 */
-func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyAcls(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationAdaptivePolicyAclsRequest {
-	return OrganizationsApiGetOrganizationAdaptivePolicyAclsRequest{
+func (a *OrganizationsAPIService) GetOrganizationAdaptivePolicyAcls(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationAdaptivePolicyAclsRequest {
+	return OrganizationsAPIGetOrganizationAdaptivePolicyAclsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -5009,7 +5009,7 @@ func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyAcls(ctx context.
 
 // Execute executes the request
 //  @return []GetOrganizationAdaptivePolicyAcls200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyAclsExecute(r OrganizationsApiGetOrganizationAdaptivePolicyAclsRequest) ([]GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationAdaptivePolicyAclsExecute(r OrganizationsAPIGetOrganizationAdaptivePolicyAclsRequest) ([]GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5017,7 +5017,7 @@ func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyAclsExecute(r Org
 		localVarReturnValue  []GetOrganizationAdaptivePolicyAcls200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationAdaptivePolicyAcls")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationAdaptivePolicyAcls")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5097,14 +5097,14 @@ func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyAclsExecute(r Org
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationAdaptivePolicyGroupRequest struct {
+type OrganizationsAPIGetOrganizationAdaptivePolicyGroupRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	id string
 }
 
-func (r OrganizationsApiGetOrganizationAdaptivePolicyGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationAdaptivePolicyGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationAdaptivePolicyGroupExecute(r)
 }
 
@@ -5116,10 +5116,10 @@ Returns an adaptive policy group
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param id ID
- @return OrganizationsApiGetOrganizationAdaptivePolicyGroupRequest
+ @return OrganizationsAPIGetOrganizationAdaptivePolicyGroupRequest
 */
-func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyGroup(ctx context.Context, organizationId string, id string) OrganizationsApiGetOrganizationAdaptivePolicyGroupRequest {
-	return OrganizationsApiGetOrganizationAdaptivePolicyGroupRequest{
+func (a *OrganizationsAPIService) GetOrganizationAdaptivePolicyGroup(ctx context.Context, organizationId string, id string) OrganizationsAPIGetOrganizationAdaptivePolicyGroupRequest {
+	return OrganizationsAPIGetOrganizationAdaptivePolicyGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -5129,7 +5129,7 @@ func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyGroup(ctx context
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyGroupExecute(r OrganizationsApiGetOrganizationAdaptivePolicyGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationAdaptivePolicyGroupExecute(r OrganizationsAPIGetOrganizationAdaptivePolicyGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5137,7 +5137,7 @@ func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyGroupExecute(r Or
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationAdaptivePolicyGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationAdaptivePolicyGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5218,13 +5218,13 @@ func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyGroupExecute(r Or
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationAdaptivePolicyGroupsRequest struct {
+type OrganizationsAPIGetOrganizationAdaptivePolicyGroupsRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 }
 
-func (r OrganizationsApiGetOrganizationAdaptivePolicyGroupsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationAdaptivePolicyGroupsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationAdaptivePolicyGroupsExecute(r)
 }
 
@@ -5235,10 +5235,10 @@ List adaptive policy groups in a organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationAdaptivePolicyGroupsRequest
+ @return OrganizationsAPIGetOrganizationAdaptivePolicyGroupsRequest
 */
-func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyGroups(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationAdaptivePolicyGroupsRequest {
-	return OrganizationsApiGetOrganizationAdaptivePolicyGroupsRequest{
+func (a *OrganizationsAPIService) GetOrganizationAdaptivePolicyGroups(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationAdaptivePolicyGroupsRequest {
+	return OrganizationsAPIGetOrganizationAdaptivePolicyGroupsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -5247,7 +5247,7 @@ func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyGroups(ctx contex
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyGroupsExecute(r OrganizationsApiGetOrganizationAdaptivePolicyGroupsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationAdaptivePolicyGroupsExecute(r OrganizationsAPIGetOrganizationAdaptivePolicyGroupsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5255,7 +5255,7 @@ func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyGroupsExecute(r O
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationAdaptivePolicyGroups")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationAdaptivePolicyGroups")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5335,13 +5335,13 @@ func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyGroupsExecute(r O
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationAdaptivePolicyOverviewRequest struct {
+type OrganizationsAPIGetOrganizationAdaptivePolicyOverviewRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 }
 
-func (r OrganizationsApiGetOrganizationAdaptivePolicyOverviewRequest) Execute() (*GetOrganizationAdaptivePolicyOverview200Response, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationAdaptivePolicyOverviewRequest) Execute() (*GetOrganizationAdaptivePolicyOverview200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationAdaptivePolicyOverviewExecute(r)
 }
 
@@ -5352,10 +5352,10 @@ Returns adaptive policy aggregate statistics for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationAdaptivePolicyOverviewRequest
+ @return OrganizationsAPIGetOrganizationAdaptivePolicyOverviewRequest
 */
-func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyOverview(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationAdaptivePolicyOverviewRequest {
-	return OrganizationsApiGetOrganizationAdaptivePolicyOverviewRequest{
+func (a *OrganizationsAPIService) GetOrganizationAdaptivePolicyOverview(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationAdaptivePolicyOverviewRequest {
+	return OrganizationsAPIGetOrganizationAdaptivePolicyOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -5364,7 +5364,7 @@ func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyOverview(ctx cont
 
 // Execute executes the request
 //  @return GetOrganizationAdaptivePolicyOverview200Response
-func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyOverviewExecute(r OrganizationsApiGetOrganizationAdaptivePolicyOverviewRequest) (*GetOrganizationAdaptivePolicyOverview200Response, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationAdaptivePolicyOverviewExecute(r OrganizationsAPIGetOrganizationAdaptivePolicyOverviewRequest) (*GetOrganizationAdaptivePolicyOverview200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5372,7 +5372,7 @@ func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyOverviewExecute(r
 		localVarReturnValue  *GetOrganizationAdaptivePolicyOverview200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationAdaptivePolicyOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationAdaptivePolicyOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5452,13 +5452,13 @@ func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyOverviewExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationAdaptivePolicyPoliciesRequest struct {
+type OrganizationsAPIGetOrganizationAdaptivePolicyPoliciesRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 }
 
-func (r OrganizationsApiGetOrganizationAdaptivePolicyPoliciesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationAdaptivePolicyPoliciesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationAdaptivePolicyPoliciesExecute(r)
 }
 
@@ -5469,10 +5469,10 @@ List adaptive policies in an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationAdaptivePolicyPoliciesRequest
+ @return OrganizationsAPIGetOrganizationAdaptivePolicyPoliciesRequest
 */
-func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyPolicies(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationAdaptivePolicyPoliciesRequest {
-	return OrganizationsApiGetOrganizationAdaptivePolicyPoliciesRequest{
+func (a *OrganizationsAPIService) GetOrganizationAdaptivePolicyPolicies(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationAdaptivePolicyPoliciesRequest {
+	return OrganizationsAPIGetOrganizationAdaptivePolicyPoliciesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -5481,7 +5481,7 @@ func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyPolicies(ctx cont
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyPoliciesExecute(r OrganizationsApiGetOrganizationAdaptivePolicyPoliciesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationAdaptivePolicyPoliciesExecute(r OrganizationsAPIGetOrganizationAdaptivePolicyPoliciesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5489,7 +5489,7 @@ func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyPoliciesExecute(r
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationAdaptivePolicyPolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationAdaptivePolicyPolicies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5569,14 +5569,14 @@ func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyPoliciesExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationAdaptivePolicyPolicyRequest struct {
+type OrganizationsAPIGetOrganizationAdaptivePolicyPolicyRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	id string
 }
 
-func (r OrganizationsApiGetOrganizationAdaptivePolicyPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationAdaptivePolicyPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationAdaptivePolicyPolicyExecute(r)
 }
 
@@ -5588,10 +5588,10 @@ Return an adaptive policy
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param id ID
- @return OrganizationsApiGetOrganizationAdaptivePolicyPolicyRequest
+ @return OrganizationsAPIGetOrganizationAdaptivePolicyPolicyRequest
 */
-func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyPolicy(ctx context.Context, organizationId string, id string) OrganizationsApiGetOrganizationAdaptivePolicyPolicyRequest {
-	return OrganizationsApiGetOrganizationAdaptivePolicyPolicyRequest{
+func (a *OrganizationsAPIService) GetOrganizationAdaptivePolicyPolicy(ctx context.Context, organizationId string, id string) OrganizationsAPIGetOrganizationAdaptivePolicyPolicyRequest {
+	return OrganizationsAPIGetOrganizationAdaptivePolicyPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -5601,7 +5601,7 @@ func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyPolicy(ctx contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyPolicyExecute(r OrganizationsApiGetOrganizationAdaptivePolicyPolicyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationAdaptivePolicyPolicyExecute(r OrganizationsAPIGetOrganizationAdaptivePolicyPolicyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5609,7 +5609,7 @@ func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyPolicyExecute(r O
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationAdaptivePolicyPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationAdaptivePolicyPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5690,13 +5690,13 @@ func (a *OrganizationsApiService) GetOrganizationAdaptivePolicyPolicyExecute(r O
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationAdaptivePolicySettingsRequest struct {
+type OrganizationsAPIGetOrganizationAdaptivePolicySettingsRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 }
 
-func (r OrganizationsApiGetOrganizationAdaptivePolicySettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationAdaptivePolicySettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationAdaptivePolicySettingsExecute(r)
 }
 
@@ -5707,10 +5707,10 @@ Returns global adaptive policy settings in an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationAdaptivePolicySettingsRequest
+ @return OrganizationsAPIGetOrganizationAdaptivePolicySettingsRequest
 */
-func (a *OrganizationsApiService) GetOrganizationAdaptivePolicySettings(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationAdaptivePolicySettingsRequest {
-	return OrganizationsApiGetOrganizationAdaptivePolicySettingsRequest{
+func (a *OrganizationsAPIService) GetOrganizationAdaptivePolicySettings(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationAdaptivePolicySettingsRequest {
+	return OrganizationsAPIGetOrganizationAdaptivePolicySettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -5719,7 +5719,7 @@ func (a *OrganizationsApiService) GetOrganizationAdaptivePolicySettings(ctx cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) GetOrganizationAdaptivePolicySettingsExecute(r OrganizationsApiGetOrganizationAdaptivePolicySettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationAdaptivePolicySettingsExecute(r OrganizationsAPIGetOrganizationAdaptivePolicySettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5727,7 +5727,7 @@ func (a *OrganizationsApiService) GetOrganizationAdaptivePolicySettingsExecute(r
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationAdaptivePolicySettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationAdaptivePolicySettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5807,13 +5807,13 @@ func (a *OrganizationsApiService) GetOrganizationAdaptivePolicySettingsExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationAdminsRequest struct {
+type OrganizationsAPIGetOrganizationAdminsRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 }
 
-func (r OrganizationsApiGetOrganizationAdminsRequest) Execute() ([]GetOrganizationAdmins200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationAdminsRequest) Execute() ([]GetOrganizationAdmins200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationAdminsExecute(r)
 }
 
@@ -5824,10 +5824,10 @@ List the dashboard administrators in this organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationAdminsRequest
+ @return OrganizationsAPIGetOrganizationAdminsRequest
 */
-func (a *OrganizationsApiService) GetOrganizationAdmins(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationAdminsRequest {
-	return OrganizationsApiGetOrganizationAdminsRequest{
+func (a *OrganizationsAPIService) GetOrganizationAdmins(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationAdminsRequest {
+	return OrganizationsAPIGetOrganizationAdminsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -5836,7 +5836,7 @@ func (a *OrganizationsApiService) GetOrganizationAdmins(ctx context.Context, org
 
 // Execute executes the request
 //  @return []GetOrganizationAdmins200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationAdminsExecute(r OrganizationsApiGetOrganizationAdminsRequest) ([]GetOrganizationAdmins200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationAdminsExecute(r OrganizationsAPIGetOrganizationAdminsRequest) ([]GetOrganizationAdmins200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5844,7 +5844,7 @@ func (a *OrganizationsApiService) GetOrganizationAdminsExecute(r OrganizationsAp
 		localVarReturnValue  []GetOrganizationAdmins200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationAdmins")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationAdmins")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5924,13 +5924,13 @@ func (a *OrganizationsApiService) GetOrganizationAdminsExecute(r OrganizationsAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationAlertsProfilesRequest struct {
+type OrganizationsAPIGetOrganizationAlertsProfilesRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 }
 
-func (r OrganizationsApiGetOrganizationAlertsProfilesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationAlertsProfilesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationAlertsProfilesExecute(r)
 }
 
@@ -5941,10 +5941,10 @@ List all organization-wide alert configurations
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationAlertsProfilesRequest
+ @return OrganizationsAPIGetOrganizationAlertsProfilesRequest
 */
-func (a *OrganizationsApiService) GetOrganizationAlertsProfiles(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationAlertsProfilesRequest {
-	return OrganizationsApiGetOrganizationAlertsProfilesRequest{
+func (a *OrganizationsAPIService) GetOrganizationAlertsProfiles(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationAlertsProfilesRequest {
+	return OrganizationsAPIGetOrganizationAlertsProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -5953,7 +5953,7 @@ func (a *OrganizationsApiService) GetOrganizationAlertsProfiles(ctx context.Cont
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *OrganizationsApiService) GetOrganizationAlertsProfilesExecute(r OrganizationsApiGetOrganizationAlertsProfilesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationAlertsProfilesExecute(r OrganizationsAPIGetOrganizationAlertsProfilesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5961,7 +5961,7 @@ func (a *OrganizationsApiService) GetOrganizationAlertsProfilesExecute(r Organiz
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationAlertsProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationAlertsProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6041,9 +6041,9 @@ func (a *OrganizationsApiService) GetOrganizationAlertsProfilesExecute(r Organiz
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationApiRequestsRequest struct {
+type OrganizationsAPIGetOrganizationApiRequestsRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -6062,90 +6062,90 @@ type OrganizationsApiGetOrganizationApiRequestsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r OrganizationsApiGetOrganizationApiRequestsRequest) T0(t0 string) OrganizationsApiGetOrganizationApiRequestsRequest {
+func (r OrganizationsAPIGetOrganizationApiRequestsRequest) T0(t0 string) OrganizationsAPIGetOrganizationApiRequestsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r OrganizationsApiGetOrganizationApiRequestsRequest) T1(t1 string) OrganizationsApiGetOrganizationApiRequestsRequest {
+func (r OrganizationsAPIGetOrganizationApiRequestsRequest) T1(t1 string) OrganizationsAPIGetOrganizationApiRequestsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 31 days.
-func (r OrganizationsApiGetOrganizationApiRequestsRequest) Timespan(timespan float32) OrganizationsApiGetOrganizationApiRequestsRequest {
+func (r OrganizationsAPIGetOrganizationApiRequestsRequest) Timespan(timespan float32) OrganizationsAPIGetOrganizationApiRequestsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.
-func (r OrganizationsApiGetOrganizationApiRequestsRequest) PerPage(perPage int32) OrganizationsApiGetOrganizationApiRequestsRequest {
+func (r OrganizationsAPIGetOrganizationApiRequestsRequest) PerPage(perPage int32) OrganizationsAPIGetOrganizationApiRequestsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationApiRequestsRequest) StartingAfter(startingAfter string) OrganizationsApiGetOrganizationApiRequestsRequest {
+func (r OrganizationsAPIGetOrganizationApiRequestsRequest) StartingAfter(startingAfter string) OrganizationsAPIGetOrganizationApiRequestsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationApiRequestsRequest) EndingBefore(endingBefore string) OrganizationsApiGetOrganizationApiRequestsRequest {
+func (r OrganizationsAPIGetOrganizationApiRequestsRequest) EndingBefore(endingBefore string) OrganizationsAPIGetOrganizationApiRequestsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Filter the results by the ID of the admin who made the API requests
-func (r OrganizationsApiGetOrganizationApiRequestsRequest) AdminId(adminId string) OrganizationsApiGetOrganizationApiRequestsRequest {
+func (r OrganizationsAPIGetOrganizationApiRequestsRequest) AdminId(adminId string) OrganizationsAPIGetOrganizationApiRequestsRequest {
 	r.adminId = &adminId
 	return r
 }
 
 // Filter the results by the path of the API requests
-func (r OrganizationsApiGetOrganizationApiRequestsRequest) Path(path string) OrganizationsApiGetOrganizationApiRequestsRequest {
+func (r OrganizationsAPIGetOrganizationApiRequestsRequest) Path(path string) OrganizationsAPIGetOrganizationApiRequestsRequest {
 	r.path = &path
 	return r
 }
 
 // Filter the results by the method of the API requests (must be &#39;GET&#39;, &#39;PUT&#39;, &#39;POST&#39; or &#39;DELETE&#39;)
-func (r OrganizationsApiGetOrganizationApiRequestsRequest) Method(method string) OrganizationsApiGetOrganizationApiRequestsRequest {
+func (r OrganizationsAPIGetOrganizationApiRequestsRequest) Method(method string) OrganizationsAPIGetOrganizationApiRequestsRequest {
 	r.method = &method
 	return r
 }
 
 // Filter the results by the response code of the API requests
-func (r OrganizationsApiGetOrganizationApiRequestsRequest) ResponseCode(responseCode int32) OrganizationsApiGetOrganizationApiRequestsRequest {
+func (r OrganizationsAPIGetOrganizationApiRequestsRequest) ResponseCode(responseCode int32) OrganizationsAPIGetOrganizationApiRequestsRequest {
 	r.responseCode = &responseCode
 	return r
 }
 
 // Filter the results by the IP address of the originating API request
-func (r OrganizationsApiGetOrganizationApiRequestsRequest) SourceIp(sourceIp string) OrganizationsApiGetOrganizationApiRequestsRequest {
+func (r OrganizationsAPIGetOrganizationApiRequestsRequest) SourceIp(sourceIp string) OrganizationsAPIGetOrganizationApiRequestsRequest {
 	r.sourceIp = &sourceIp
 	return r
 }
 
 // Filter the results by the user agent string of the API request
-func (r OrganizationsApiGetOrganizationApiRequestsRequest) UserAgent(userAgent string) OrganizationsApiGetOrganizationApiRequestsRequest {
+func (r OrganizationsAPIGetOrganizationApiRequestsRequest) UserAgent(userAgent string) OrganizationsAPIGetOrganizationApiRequestsRequest {
 	r.userAgent = &userAgent
 	return r
 }
 
 // Filter the results by the API version of the API request
-func (r OrganizationsApiGetOrganizationApiRequestsRequest) Version(version int32) OrganizationsApiGetOrganizationApiRequestsRequest {
+func (r OrganizationsAPIGetOrganizationApiRequestsRequest) Version(version int32) OrganizationsAPIGetOrganizationApiRequestsRequest {
 	r.version = &version
 	return r
 }
 
 // Filter the results by one or more operation IDs for the API request
-func (r OrganizationsApiGetOrganizationApiRequestsRequest) OperationIds(operationIds []string) OrganizationsApiGetOrganizationApiRequestsRequest {
+func (r OrganizationsAPIGetOrganizationApiRequestsRequest) OperationIds(operationIds []string) OrganizationsAPIGetOrganizationApiRequestsRequest {
 	r.operationIds = &operationIds
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationApiRequestsRequest) Execute() ([]GetOrganizationApiRequests200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationApiRequestsRequest) Execute() ([]GetOrganizationApiRequests200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationApiRequestsExecute(r)
 }
 
@@ -6156,10 +6156,10 @@ List the API requests made by an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationApiRequestsRequest
+ @return OrganizationsAPIGetOrganizationApiRequestsRequest
 */
-func (a *OrganizationsApiService) GetOrganizationApiRequests(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationApiRequestsRequest {
-	return OrganizationsApiGetOrganizationApiRequestsRequest{
+func (a *OrganizationsAPIService) GetOrganizationApiRequests(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationApiRequestsRequest {
+	return OrganizationsAPIGetOrganizationApiRequestsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -6168,7 +6168,7 @@ func (a *OrganizationsApiService) GetOrganizationApiRequests(ctx context.Context
 
 // Execute executes the request
 //  @return []GetOrganizationApiRequests200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationApiRequestsExecute(r OrganizationsApiGetOrganizationApiRequestsRequest) ([]GetOrganizationApiRequests200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationApiRequestsExecute(r OrganizationsAPIGetOrganizationApiRequestsRequest) ([]GetOrganizationApiRequests200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6176,7 +6176,7 @@ func (a *OrganizationsApiService) GetOrganizationApiRequestsExecute(r Organizati
 		localVarReturnValue  []GetOrganizationApiRequests200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationApiRequests")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationApiRequests")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6306,9 +6306,9 @@ func (a *OrganizationsApiService) GetOrganizationApiRequestsExecute(r Organizati
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationApiRequestsOverviewRequest struct {
+type OrganizationsAPIGetOrganizationApiRequestsOverviewRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -6316,24 +6316,24 @@ type OrganizationsApiGetOrganizationApiRequestsOverviewRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r OrganizationsApiGetOrganizationApiRequestsOverviewRequest) T0(t0 string) OrganizationsApiGetOrganizationApiRequestsOverviewRequest {
+func (r OrganizationsAPIGetOrganizationApiRequestsOverviewRequest) T0(t0 string) OrganizationsAPIGetOrganizationApiRequestsOverviewRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r OrganizationsApiGetOrganizationApiRequestsOverviewRequest) T1(t1 string) OrganizationsApiGetOrganizationApiRequestsOverviewRequest {
+func (r OrganizationsAPIGetOrganizationApiRequestsOverviewRequest) T1(t1 string) OrganizationsAPIGetOrganizationApiRequestsOverviewRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 31 days.
-func (r OrganizationsApiGetOrganizationApiRequestsOverviewRequest) Timespan(timespan float32) OrganizationsApiGetOrganizationApiRequestsOverviewRequest {
+func (r OrganizationsAPIGetOrganizationApiRequestsOverviewRequest) Timespan(timespan float32) OrganizationsAPIGetOrganizationApiRequestsOverviewRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationApiRequestsOverviewRequest) Execute() (*GetOrganizationApiRequestsOverview200Response, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationApiRequestsOverviewRequest) Execute() (*GetOrganizationApiRequestsOverview200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationApiRequestsOverviewExecute(r)
 }
 
@@ -6344,10 +6344,10 @@ Return an aggregated overview of API requests data
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationApiRequestsOverviewRequest
+ @return OrganizationsAPIGetOrganizationApiRequestsOverviewRequest
 */
-func (a *OrganizationsApiService) GetOrganizationApiRequestsOverview(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationApiRequestsOverviewRequest {
-	return OrganizationsApiGetOrganizationApiRequestsOverviewRequest{
+func (a *OrganizationsAPIService) GetOrganizationApiRequestsOverview(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationApiRequestsOverviewRequest {
+	return OrganizationsAPIGetOrganizationApiRequestsOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -6356,7 +6356,7 @@ func (a *OrganizationsApiService) GetOrganizationApiRequestsOverview(ctx context
 
 // Execute executes the request
 //  @return GetOrganizationApiRequestsOverview200Response
-func (a *OrganizationsApiService) GetOrganizationApiRequestsOverviewExecute(r OrganizationsApiGetOrganizationApiRequestsOverviewRequest) (*GetOrganizationApiRequestsOverview200Response, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationApiRequestsOverviewExecute(r OrganizationsAPIGetOrganizationApiRequestsOverviewRequest) (*GetOrganizationApiRequestsOverview200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6364,7 +6364,7 @@ func (a *OrganizationsApiService) GetOrganizationApiRequestsOverviewExecute(r Or
 		localVarReturnValue  *GetOrganizationApiRequestsOverview200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationApiRequestsOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationApiRequestsOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6453,9 +6453,9 @@ func (a *OrganizationsApiService) GetOrganizationApiRequestsOverviewExecute(r Or
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest struct {
+type OrganizationsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -6469,60 +6469,60 @@ type OrganizationsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRe
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r OrganizationsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) T0(t0 string) OrganizationsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r OrganizationsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) T0(t0 string) OrganizationsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r OrganizationsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) T1(t1 string) OrganizationsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r OrganizationsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) T1(t1 string) OrganizationsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 31 days. If interval is provided, the timespan will be autocalculated.
-func (r OrganizationsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Timespan(timespan float32) OrganizationsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r OrganizationsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Timespan(timespan float32) OrganizationsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time interval in seconds for returned data. The valid intervals are: 120, 3600, 14400, 21600. The default is 21600. Interval is calculated if time params are provided.
-func (r OrganizationsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Interval(interval int32) OrganizationsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r OrganizationsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Interval(interval int32) OrganizationsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.interval = &interval
 	return r
 }
 
 // Filter by API version of the endpoint. Allowable values are: [0, 1]
-func (r OrganizationsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Version(version int32) OrganizationsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r OrganizationsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Version(version int32) OrganizationsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.version = &version
 	return r
 }
 
 // Filter by operation ID of the endpoint
-func (r OrganizationsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) OperationIds(operationIds []string) OrganizationsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r OrganizationsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) OperationIds(operationIds []string) OrganizationsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.operationIds = &operationIds
 	return r
 }
 
 // Filter by source IP that made the API request
-func (r OrganizationsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) SourceIps(sourceIps []string) OrganizationsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r OrganizationsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) SourceIps(sourceIps []string) OrganizationsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.sourceIps = &sourceIps
 	return r
 }
 
 // Filter by admin ID of user that made the API request
-func (r OrganizationsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) AdminIds(adminIds []string) OrganizationsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r OrganizationsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) AdminIds(adminIds []string) OrganizationsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.adminIds = &adminIds
 	return r
 }
 
 // Filter by user agent string for API request. This will filter by a complete or partial match.
-func (r OrganizationsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) UserAgent(userAgent string) OrganizationsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+func (r OrganizationsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) UserAgent(userAgent string) OrganizationsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
 	r.userAgent = &userAgent
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Execute() ([]GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) Execute() ([]GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationApiRequestsOverviewResponseCodesByIntervalExecute(r)
 }
 
@@ -6533,10 +6533,10 @@ Tracks organizations' API requests by response code across a given time period
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest
+ @return OrganizationsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest
 */
-func (a *OrganizationsApiService) GetOrganizationApiRequestsOverviewResponseCodesByInterval(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
-	return OrganizationsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest{
+func (a *OrganizationsAPIService) GetOrganizationApiRequestsOverviewResponseCodesByInterval(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest {
+	return OrganizationsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -6545,7 +6545,7 @@ func (a *OrganizationsApiService) GetOrganizationApiRequestsOverviewResponseCode
 
 // Execute executes the request
 //  @return []GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationApiRequestsOverviewResponseCodesByIntervalExecute(r OrganizationsApiGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) ([]GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationApiRequestsOverviewResponseCodesByIntervalExecute(r OrganizationsAPIGetOrganizationApiRequestsOverviewResponseCodesByIntervalRequest) ([]GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6553,7 +6553,7 @@ func (a *OrganizationsApiService) GetOrganizationApiRequestsOverviewResponseCode
 		localVarReturnValue  []GetOrganizationApiRequestsOverviewResponseCodesByInterval200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationApiRequestsOverviewResponseCodesByInterval")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationApiRequestsOverviewResponseCodesByInterval")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6684,13 +6684,13 @@ func (a *OrganizationsApiService) GetOrganizationApiRequestsOverviewResponseCode
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationBrandingPoliciesRequest struct {
+type OrganizationsAPIGetOrganizationBrandingPoliciesRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 }
 
-func (r OrganizationsApiGetOrganizationBrandingPoliciesRequest) Execute() ([]GetOrganizationBrandingPolicies200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationBrandingPoliciesRequest) Execute() ([]GetOrganizationBrandingPolicies200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationBrandingPoliciesExecute(r)
 }
 
@@ -6701,10 +6701,10 @@ List the branding policies of an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationBrandingPoliciesRequest
+ @return OrganizationsAPIGetOrganizationBrandingPoliciesRequest
 */
-func (a *OrganizationsApiService) GetOrganizationBrandingPolicies(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationBrandingPoliciesRequest {
-	return OrganizationsApiGetOrganizationBrandingPoliciesRequest{
+func (a *OrganizationsAPIService) GetOrganizationBrandingPolicies(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationBrandingPoliciesRequest {
+	return OrganizationsAPIGetOrganizationBrandingPoliciesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -6713,7 +6713,7 @@ func (a *OrganizationsApiService) GetOrganizationBrandingPolicies(ctx context.Co
 
 // Execute executes the request
 //  @return []GetOrganizationBrandingPolicies200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationBrandingPoliciesExecute(r OrganizationsApiGetOrganizationBrandingPoliciesRequest) ([]GetOrganizationBrandingPolicies200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationBrandingPoliciesExecute(r OrganizationsAPIGetOrganizationBrandingPoliciesRequest) ([]GetOrganizationBrandingPolicies200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6721,7 +6721,7 @@ func (a *OrganizationsApiService) GetOrganizationBrandingPoliciesExecute(r Organ
 		localVarReturnValue  []GetOrganizationBrandingPolicies200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationBrandingPolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationBrandingPolicies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6801,13 +6801,13 @@ func (a *OrganizationsApiService) GetOrganizationBrandingPoliciesExecute(r Organ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationBrandingPoliciesPrioritiesRequest struct {
+type OrganizationsAPIGetOrganizationBrandingPoliciesPrioritiesRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 }
 
-func (r OrganizationsApiGetOrganizationBrandingPoliciesPrioritiesRequest) Execute() (*GetOrganizationBrandingPoliciesPriorities200Response, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationBrandingPoliciesPrioritiesRequest) Execute() (*GetOrganizationBrandingPoliciesPriorities200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationBrandingPoliciesPrioritiesExecute(r)
 }
 
@@ -6818,10 +6818,10 @@ Return the branding policy IDs of an organization in priority order. IDs are ord
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationBrandingPoliciesPrioritiesRequest
+ @return OrganizationsAPIGetOrganizationBrandingPoliciesPrioritiesRequest
 */
-func (a *OrganizationsApiService) GetOrganizationBrandingPoliciesPriorities(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationBrandingPoliciesPrioritiesRequest {
-	return OrganizationsApiGetOrganizationBrandingPoliciesPrioritiesRequest{
+func (a *OrganizationsAPIService) GetOrganizationBrandingPoliciesPriorities(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationBrandingPoliciesPrioritiesRequest {
+	return OrganizationsAPIGetOrganizationBrandingPoliciesPrioritiesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -6830,7 +6830,7 @@ func (a *OrganizationsApiService) GetOrganizationBrandingPoliciesPriorities(ctx 
 
 // Execute executes the request
 //  @return GetOrganizationBrandingPoliciesPriorities200Response
-func (a *OrganizationsApiService) GetOrganizationBrandingPoliciesPrioritiesExecute(r OrganizationsApiGetOrganizationBrandingPoliciesPrioritiesRequest) (*GetOrganizationBrandingPoliciesPriorities200Response, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationBrandingPoliciesPrioritiesExecute(r OrganizationsAPIGetOrganizationBrandingPoliciesPrioritiesRequest) (*GetOrganizationBrandingPoliciesPriorities200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6838,7 +6838,7 @@ func (a *OrganizationsApiService) GetOrganizationBrandingPoliciesPrioritiesExecu
 		localVarReturnValue  *GetOrganizationBrandingPoliciesPriorities200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationBrandingPoliciesPriorities")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationBrandingPoliciesPriorities")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6918,14 +6918,14 @@ func (a *OrganizationsApiService) GetOrganizationBrandingPoliciesPrioritiesExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationBrandingPolicyRequest struct {
+type OrganizationsAPIGetOrganizationBrandingPolicyRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	brandingPolicyId string
 }
 
-func (r OrganizationsApiGetOrganizationBrandingPolicyRequest) Execute() (*GetOrganizationBrandingPolicies200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationBrandingPolicyRequest) Execute() (*GetOrganizationBrandingPolicies200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationBrandingPolicyExecute(r)
 }
 
@@ -6937,10 +6937,10 @@ Return a branding policy
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param brandingPolicyId Branding policy ID
- @return OrganizationsApiGetOrganizationBrandingPolicyRequest
+ @return OrganizationsAPIGetOrganizationBrandingPolicyRequest
 */
-func (a *OrganizationsApiService) GetOrganizationBrandingPolicy(ctx context.Context, organizationId string, brandingPolicyId string) OrganizationsApiGetOrganizationBrandingPolicyRequest {
-	return OrganizationsApiGetOrganizationBrandingPolicyRequest{
+func (a *OrganizationsAPIService) GetOrganizationBrandingPolicy(ctx context.Context, organizationId string, brandingPolicyId string) OrganizationsAPIGetOrganizationBrandingPolicyRequest {
+	return OrganizationsAPIGetOrganizationBrandingPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -6950,7 +6950,7 @@ func (a *OrganizationsApiService) GetOrganizationBrandingPolicy(ctx context.Cont
 
 // Execute executes the request
 //  @return GetOrganizationBrandingPolicies200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationBrandingPolicyExecute(r OrganizationsApiGetOrganizationBrandingPolicyRequest) (*GetOrganizationBrandingPolicies200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationBrandingPolicyExecute(r OrganizationsAPIGetOrganizationBrandingPolicyRequest) (*GetOrganizationBrandingPolicies200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -6958,7 +6958,7 @@ func (a *OrganizationsApiService) GetOrganizationBrandingPolicyExecute(r Organiz
 		localVarReturnValue  *GetOrganizationBrandingPolicies200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationBrandingPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationBrandingPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7039,9 +7039,9 @@ func (a *OrganizationsApiService) GetOrganizationBrandingPolicyExecute(r Organiz
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationClientsBandwidthUsageHistoryRequest struct {
+type OrganizationsAPIGetOrganizationClientsBandwidthUsageHistoryRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -7049,24 +7049,24 @@ type OrganizationsApiGetOrganizationClientsBandwidthUsageHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data.
-func (r OrganizationsApiGetOrganizationClientsBandwidthUsageHistoryRequest) T0(t0 string) OrganizationsApiGetOrganizationClientsBandwidthUsageHistoryRequest {
+func (r OrganizationsAPIGetOrganizationClientsBandwidthUsageHistoryRequest) T0(t0 string) OrganizationsAPIGetOrganizationClientsBandwidthUsageHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r OrganizationsApiGetOrganizationClientsBandwidthUsageHistoryRequest) T1(t1 string) OrganizationsApiGetOrganizationClientsBandwidthUsageHistoryRequest {
+func (r OrganizationsAPIGetOrganizationClientsBandwidthUsageHistoryRequest) T1(t1 string) OrganizationsAPIGetOrganizationClientsBandwidthUsageHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r OrganizationsApiGetOrganizationClientsBandwidthUsageHistoryRequest) Timespan(timespan float32) OrganizationsApiGetOrganizationClientsBandwidthUsageHistoryRequest {
+func (r OrganizationsAPIGetOrganizationClientsBandwidthUsageHistoryRequest) Timespan(timespan float32) OrganizationsAPIGetOrganizationClientsBandwidthUsageHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationClientsBandwidthUsageHistoryRequest) Execute() ([]GetOrganizationClientsBandwidthUsageHistory200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationClientsBandwidthUsageHistoryRequest) Execute() ([]GetOrganizationClientsBandwidthUsageHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationClientsBandwidthUsageHistoryExecute(r)
 }
 
@@ -7077,10 +7077,10 @@ Return data usage (in megabits per second) over time for all clients in the give
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationClientsBandwidthUsageHistoryRequest
+ @return OrganizationsAPIGetOrganizationClientsBandwidthUsageHistoryRequest
 */
-func (a *OrganizationsApiService) GetOrganizationClientsBandwidthUsageHistory(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationClientsBandwidthUsageHistoryRequest {
-	return OrganizationsApiGetOrganizationClientsBandwidthUsageHistoryRequest{
+func (a *OrganizationsAPIService) GetOrganizationClientsBandwidthUsageHistory(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationClientsBandwidthUsageHistoryRequest {
+	return OrganizationsAPIGetOrganizationClientsBandwidthUsageHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -7089,7 +7089,7 @@ func (a *OrganizationsApiService) GetOrganizationClientsBandwidthUsageHistory(ct
 
 // Execute executes the request
 //  @return []GetOrganizationClientsBandwidthUsageHistory200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationClientsBandwidthUsageHistoryExecute(r OrganizationsApiGetOrganizationClientsBandwidthUsageHistoryRequest) ([]GetOrganizationClientsBandwidthUsageHistory200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationClientsBandwidthUsageHistoryExecute(r OrganizationsAPIGetOrganizationClientsBandwidthUsageHistoryRequest) ([]GetOrganizationClientsBandwidthUsageHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7097,7 +7097,7 @@ func (a *OrganizationsApiService) GetOrganizationClientsBandwidthUsageHistoryExe
 		localVarReturnValue  []GetOrganizationClientsBandwidthUsageHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationClientsBandwidthUsageHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationClientsBandwidthUsageHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7186,9 +7186,9 @@ func (a *OrganizationsApiService) GetOrganizationClientsBandwidthUsageHistoryExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationClientsOverviewRequest struct {
+type OrganizationsAPIGetOrganizationClientsOverviewRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -7196,24 +7196,24 @@ type OrganizationsApiGetOrganizationClientsOverviewRequest struct {
 }
 
 // The beginning of the timespan for the data.
-func (r OrganizationsApiGetOrganizationClientsOverviewRequest) T0(t0 string) OrganizationsApiGetOrganizationClientsOverviewRequest {
+func (r OrganizationsAPIGetOrganizationClientsOverviewRequest) T0(t0 string) OrganizationsAPIGetOrganizationClientsOverviewRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r OrganizationsApiGetOrganizationClientsOverviewRequest) T1(t1 string) OrganizationsApiGetOrganizationClientsOverviewRequest {
+func (r OrganizationsAPIGetOrganizationClientsOverviewRequest) T1(t1 string) OrganizationsAPIGetOrganizationClientsOverviewRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r OrganizationsApiGetOrganizationClientsOverviewRequest) Timespan(timespan float32) OrganizationsApiGetOrganizationClientsOverviewRequest {
+func (r OrganizationsAPIGetOrganizationClientsOverviewRequest) Timespan(timespan float32) OrganizationsAPIGetOrganizationClientsOverviewRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationClientsOverviewRequest) Execute() (*GetOrganizationClientsOverview200Response, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationClientsOverviewRequest) Execute() (*GetOrganizationClientsOverview200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationClientsOverviewExecute(r)
 }
 
@@ -7224,10 +7224,10 @@ Return summary information around client data usage (in mb) across the given org
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationClientsOverviewRequest
+ @return OrganizationsAPIGetOrganizationClientsOverviewRequest
 */
-func (a *OrganizationsApiService) GetOrganizationClientsOverview(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationClientsOverviewRequest {
-	return OrganizationsApiGetOrganizationClientsOverviewRequest{
+func (a *OrganizationsAPIService) GetOrganizationClientsOverview(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationClientsOverviewRequest {
+	return OrganizationsAPIGetOrganizationClientsOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -7236,7 +7236,7 @@ func (a *OrganizationsApiService) GetOrganizationClientsOverview(ctx context.Con
 
 // Execute executes the request
 //  @return GetOrganizationClientsOverview200Response
-func (a *OrganizationsApiService) GetOrganizationClientsOverviewExecute(r OrganizationsApiGetOrganizationClientsOverviewRequest) (*GetOrganizationClientsOverview200Response, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationClientsOverviewExecute(r OrganizationsAPIGetOrganizationClientsOverviewRequest) (*GetOrganizationClientsOverview200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7244,7 +7244,7 @@ func (a *OrganizationsApiService) GetOrganizationClientsOverviewExecute(r Organi
 		localVarReturnValue  *GetOrganizationClientsOverview200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationClientsOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationClientsOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7333,9 +7333,9 @@ func (a *OrganizationsApiService) GetOrganizationClientsOverviewExecute(r Organi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationClientsSearchRequest struct {
+type OrganizationsAPIGetOrganizationClientsSearchRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	mac *string
 	perPage *int32
@@ -7344,30 +7344,30 @@ type OrganizationsApiGetOrganizationClientsSearchRequest struct {
 }
 
 // The MAC address of the client. Required.
-func (r OrganizationsApiGetOrganizationClientsSearchRequest) Mac(mac string) OrganizationsApiGetOrganizationClientsSearchRequest {
+func (r OrganizationsAPIGetOrganizationClientsSearchRequest) Mac(mac string) OrganizationsAPIGetOrganizationClientsSearchRequest {
 	r.mac = &mac
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 5. Default is 5.
-func (r OrganizationsApiGetOrganizationClientsSearchRequest) PerPage(perPage int32) OrganizationsApiGetOrganizationClientsSearchRequest {
+func (r OrganizationsAPIGetOrganizationClientsSearchRequest) PerPage(perPage int32) OrganizationsAPIGetOrganizationClientsSearchRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationClientsSearchRequest) StartingAfter(startingAfter string) OrganizationsApiGetOrganizationClientsSearchRequest {
+func (r OrganizationsAPIGetOrganizationClientsSearchRequest) StartingAfter(startingAfter string) OrganizationsAPIGetOrganizationClientsSearchRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationClientsSearchRequest) EndingBefore(endingBefore string) OrganizationsApiGetOrganizationClientsSearchRequest {
+func (r OrganizationsAPIGetOrganizationClientsSearchRequest) EndingBefore(endingBefore string) OrganizationsAPIGetOrganizationClientsSearchRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationClientsSearchRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationClientsSearchRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationClientsSearchExecute(r)
 }
 
@@ -7378,10 +7378,10 @@ Return the client details in an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationClientsSearchRequest
+ @return OrganizationsAPIGetOrganizationClientsSearchRequest
 */
-func (a *OrganizationsApiService) GetOrganizationClientsSearch(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationClientsSearchRequest {
-	return OrganizationsApiGetOrganizationClientsSearchRequest{
+func (a *OrganizationsAPIService) GetOrganizationClientsSearch(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationClientsSearchRequest {
+	return OrganizationsAPIGetOrganizationClientsSearchRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -7390,7 +7390,7 @@ func (a *OrganizationsApiService) GetOrganizationClientsSearch(ctx context.Conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) GetOrganizationClientsSearchExecute(r OrganizationsApiGetOrganizationClientsSearchRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationClientsSearchExecute(r OrganizationsAPIGetOrganizationClientsSearchRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7398,7 +7398,7 @@ func (a *OrganizationsApiService) GetOrganizationClientsSearchExecute(r Organiza
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationClientsSearch")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationClientsSearch")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7491,14 +7491,14 @@ func (a *OrganizationsApiService) GetOrganizationClientsSearchExecute(r Organiza
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationConfigTemplateRequest struct {
+type OrganizationsAPIGetOrganizationConfigTemplateRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	configTemplateId string
 }
 
-func (r OrganizationsApiGetOrganizationConfigTemplateRequest) Execute() (*GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationConfigTemplateRequest) Execute() (*GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationConfigTemplateExecute(r)
 }
 
@@ -7510,10 +7510,10 @@ Return a single configuration template
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param configTemplateId Config template ID
- @return OrganizationsApiGetOrganizationConfigTemplateRequest
+ @return OrganizationsAPIGetOrganizationConfigTemplateRequest
 */
-func (a *OrganizationsApiService) GetOrganizationConfigTemplate(ctx context.Context, organizationId string, configTemplateId string) OrganizationsApiGetOrganizationConfigTemplateRequest {
-	return OrganizationsApiGetOrganizationConfigTemplateRequest{
+func (a *OrganizationsAPIService) GetOrganizationConfigTemplate(ctx context.Context, organizationId string, configTemplateId string) OrganizationsAPIGetOrganizationConfigTemplateRequest {
+	return OrganizationsAPIGetOrganizationConfigTemplateRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -7523,7 +7523,7 @@ func (a *OrganizationsApiService) GetOrganizationConfigTemplate(ctx context.Cont
 
 // Execute executes the request
 //  @return GetOrganizationConfigTemplates200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationConfigTemplateExecute(r OrganizationsApiGetOrganizationConfigTemplateRequest) (*GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationConfigTemplateExecute(r OrganizationsAPIGetOrganizationConfigTemplateRequest) (*GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7531,7 +7531,7 @@ func (a *OrganizationsApiService) GetOrganizationConfigTemplateExecute(r Organiz
 		localVarReturnValue  *GetOrganizationConfigTemplates200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationConfigTemplate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationConfigTemplate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7612,13 +7612,13 @@ func (a *OrganizationsApiService) GetOrganizationConfigTemplateExecute(r Organiz
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationConfigTemplatesRequest struct {
+type OrganizationsAPIGetOrganizationConfigTemplatesRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 }
 
-func (r OrganizationsApiGetOrganizationConfigTemplatesRequest) Execute() ([]GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationConfigTemplatesRequest) Execute() ([]GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationConfigTemplatesExecute(r)
 }
 
@@ -7629,10 +7629,10 @@ List the configuration templates for this organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationConfigTemplatesRequest
+ @return OrganizationsAPIGetOrganizationConfigTemplatesRequest
 */
-func (a *OrganizationsApiService) GetOrganizationConfigTemplates(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationConfigTemplatesRequest {
-	return OrganizationsApiGetOrganizationConfigTemplatesRequest{
+func (a *OrganizationsAPIService) GetOrganizationConfigTemplates(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationConfigTemplatesRequest {
+	return OrganizationsAPIGetOrganizationConfigTemplatesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -7641,7 +7641,7 @@ func (a *OrganizationsApiService) GetOrganizationConfigTemplates(ctx context.Con
 
 // Execute executes the request
 //  @return []GetOrganizationConfigTemplates200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationConfigTemplatesExecute(r OrganizationsApiGetOrganizationConfigTemplatesRequest) ([]GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationConfigTemplatesExecute(r OrganizationsAPIGetOrganizationConfigTemplatesRequest) ([]GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7649,7 +7649,7 @@ func (a *OrganizationsApiService) GetOrganizationConfigTemplatesExecute(r Organi
 		localVarReturnValue  []GetOrganizationConfigTemplates200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationConfigTemplates")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationConfigTemplates")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7729,9 +7729,9 @@ func (a *OrganizationsApiService) GetOrganizationConfigTemplatesExecute(r Organi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationConfigurationChangesRequest struct {
+type OrganizationsAPIGetOrganizationConfigurationChangesRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -7744,54 +7744,54 @@ type OrganizationsApiGetOrganizationConfigurationChangesRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
-func (r OrganizationsApiGetOrganizationConfigurationChangesRequest) T0(t0 string) OrganizationsApiGetOrganizationConfigurationChangesRequest {
+func (r OrganizationsAPIGetOrganizationConfigurationChangesRequest) T0(t0 string) OrganizationsAPIGetOrganizationConfigurationChangesRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 365 days after t0.
-func (r OrganizationsApiGetOrganizationConfigurationChangesRequest) T1(t1 string) OrganizationsApiGetOrganizationConfigurationChangesRequest {
+func (r OrganizationsAPIGetOrganizationConfigurationChangesRequest) T1(t1 string) OrganizationsAPIGetOrganizationConfigurationChangesRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 365 days. The default is 365 days.
-func (r OrganizationsApiGetOrganizationConfigurationChangesRequest) Timespan(timespan float32) OrganizationsApiGetOrganizationConfigurationChangesRequest {
+func (r OrganizationsAPIGetOrganizationConfigurationChangesRequest) Timespan(timespan float32) OrganizationsAPIGetOrganizationConfigurationChangesRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 5000. Default is 5000.
-func (r OrganizationsApiGetOrganizationConfigurationChangesRequest) PerPage(perPage int32) OrganizationsApiGetOrganizationConfigurationChangesRequest {
+func (r OrganizationsAPIGetOrganizationConfigurationChangesRequest) PerPage(perPage int32) OrganizationsAPIGetOrganizationConfigurationChangesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationConfigurationChangesRequest) StartingAfter(startingAfter string) OrganizationsApiGetOrganizationConfigurationChangesRequest {
+func (r OrganizationsAPIGetOrganizationConfigurationChangesRequest) StartingAfter(startingAfter string) OrganizationsAPIGetOrganizationConfigurationChangesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationConfigurationChangesRequest) EndingBefore(endingBefore string) OrganizationsApiGetOrganizationConfigurationChangesRequest {
+func (r OrganizationsAPIGetOrganizationConfigurationChangesRequest) EndingBefore(endingBefore string) OrganizationsAPIGetOrganizationConfigurationChangesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Filters on the given network
-func (r OrganizationsApiGetOrganizationConfigurationChangesRequest) NetworkId(networkId string) OrganizationsApiGetOrganizationConfigurationChangesRequest {
+func (r OrganizationsAPIGetOrganizationConfigurationChangesRequest) NetworkId(networkId string) OrganizationsAPIGetOrganizationConfigurationChangesRequest {
 	r.networkId = &networkId
 	return r
 }
 
 // Filters on the given Admin
-func (r OrganizationsApiGetOrganizationConfigurationChangesRequest) AdminId(adminId string) OrganizationsApiGetOrganizationConfigurationChangesRequest {
+func (r OrganizationsAPIGetOrganizationConfigurationChangesRequest) AdminId(adminId string) OrganizationsAPIGetOrganizationConfigurationChangesRequest {
 	r.adminId = &adminId
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationConfigurationChangesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationConfigurationChangesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationConfigurationChangesExecute(r)
 }
 
@@ -7802,10 +7802,10 @@ View the Change Log for your organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationConfigurationChangesRequest
+ @return OrganizationsAPIGetOrganizationConfigurationChangesRequest
 */
-func (a *OrganizationsApiService) GetOrganizationConfigurationChanges(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationConfigurationChangesRequest {
-	return OrganizationsApiGetOrganizationConfigurationChangesRequest{
+func (a *OrganizationsAPIService) GetOrganizationConfigurationChanges(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationConfigurationChangesRequest {
+	return OrganizationsAPIGetOrganizationConfigurationChangesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -7814,7 +7814,7 @@ func (a *OrganizationsApiService) GetOrganizationConfigurationChanges(ctx contex
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *OrganizationsApiService) GetOrganizationConfigurationChangesExecute(r OrganizationsApiGetOrganizationConfigurationChangesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationConfigurationChangesExecute(r OrganizationsAPIGetOrganizationConfigurationChangesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -7822,7 +7822,7 @@ func (a *OrganizationsApiService) GetOrganizationConfigurationChangesExecute(r O
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationConfigurationChanges")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationConfigurationChanges")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7926,9 +7926,9 @@ func (a *OrganizationsApiService) GetOrganizationConfigurationChangesExecute(r O
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationDevicesRequest struct {
+type OrganizationsAPIGetOrganizationDevicesRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -7950,108 +7950,108 @@ type OrganizationsApiGetOrganizationDevicesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r OrganizationsApiGetOrganizationDevicesRequest) PerPage(perPage int32) OrganizationsApiGetOrganizationDevicesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesRequest) PerPage(perPage int32) OrganizationsAPIGetOrganizationDevicesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationDevicesRequest) StartingAfter(startingAfter string) OrganizationsApiGetOrganizationDevicesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesRequest) StartingAfter(startingAfter string) OrganizationsAPIGetOrganizationDevicesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationDevicesRequest) EndingBefore(endingBefore string) OrganizationsApiGetOrganizationDevicesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesRequest) EndingBefore(endingBefore string) OrganizationsAPIGetOrganizationDevicesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Filter results by whether or not the device&#39;s configuration has been updated after the given timestamp
-func (r OrganizationsApiGetOrganizationDevicesRequest) ConfigurationUpdatedAfter(configurationUpdatedAfter string) OrganizationsApiGetOrganizationDevicesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesRequest) ConfigurationUpdatedAfter(configurationUpdatedAfter string) OrganizationsAPIGetOrganizationDevicesRequest {
 	r.configurationUpdatedAfter = &configurationUpdatedAfter
 	return r
 }
 
 // Optional parameter to filter devices by network.
-func (r OrganizationsApiGetOrganizationDevicesRequest) NetworkIds(networkIds []string) OrganizationsApiGetOrganizationDevicesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesRequest) NetworkIds(networkIds []string) OrganizationsAPIGetOrganizationDevicesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter devices by product type. Valid types are wireless, appliance, switch, systemsManager, camera, cellularGateway, sensor, and cloudGateway.
-func (r OrganizationsApiGetOrganizationDevicesRequest) ProductTypes(productTypes []string) OrganizationsApiGetOrganizationDevicesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesRequest) ProductTypes(productTypes []string) OrganizationsAPIGetOrganizationDevicesRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter devices by tags.
-func (r OrganizationsApiGetOrganizationDevicesRequest) Tags(tags []string) OrganizationsApiGetOrganizationDevicesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesRequest) Tags(tags []string) OrganizationsAPIGetOrganizationDevicesRequest {
 	r.tags = &tags
 	return r
 }
 
 // Optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return networks which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r OrganizationsApiGetOrganizationDevicesRequest) TagsFilterType(tagsFilterType string) OrganizationsApiGetOrganizationDevicesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesRequest) TagsFilterType(tagsFilterType string) OrganizationsAPIGetOrganizationDevicesRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
 // Optional parameter to filter devices by name. All returned devices will have a name that contains the search term or is an exact match.
-func (r OrganizationsApiGetOrganizationDevicesRequest) Name(name string) OrganizationsApiGetOrganizationDevicesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesRequest) Name(name string) OrganizationsAPIGetOrganizationDevicesRequest {
 	r.name = &name
 	return r
 }
 
 // Optional parameter to filter devices by MAC address. All returned devices will have a MAC address that contains the search term or is an exact match.
-func (r OrganizationsApiGetOrganizationDevicesRequest) Mac(mac string) OrganizationsApiGetOrganizationDevicesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesRequest) Mac(mac string) OrganizationsAPIGetOrganizationDevicesRequest {
 	r.mac = &mac
 	return r
 }
 
 // Optional parameter to filter devices by serial number. All returned devices will have a serial number that contains the search term or is an exact match.
-func (r OrganizationsApiGetOrganizationDevicesRequest) Serial(serial string) OrganizationsApiGetOrganizationDevicesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesRequest) Serial(serial string) OrganizationsAPIGetOrganizationDevicesRequest {
 	r.serial = &serial
 	return r
 }
 
 // Optional parameter to filter devices by model. All returned devices will have a model that contains the search term or is an exact match.
-func (r OrganizationsApiGetOrganizationDevicesRequest) Model(model string) OrganizationsApiGetOrganizationDevicesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesRequest) Model(model string) OrganizationsAPIGetOrganizationDevicesRequest {
 	r.model = &model
 	return r
 }
 
 // Optional parameter to filter devices by one or more MAC addresses. All returned devices will have a MAC address that is an exact match.
-func (r OrganizationsApiGetOrganizationDevicesRequest) Macs(macs []string) OrganizationsApiGetOrganizationDevicesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesRequest) Macs(macs []string) OrganizationsAPIGetOrganizationDevicesRequest {
 	r.macs = &macs
 	return r
 }
 
 // Optional parameter to filter devices by one or more serial numbers. All returned devices will have a serial number that is an exact match.
-func (r OrganizationsApiGetOrganizationDevicesRequest) Serials(serials []string) OrganizationsApiGetOrganizationDevicesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesRequest) Serials(serials []string) OrganizationsAPIGetOrganizationDevicesRequest {
 	r.serials = &serials
 	return r
 }
 
 // Optional parameter to filter devices by the metrics that they provide. Only applies to sensor devices.
-func (r OrganizationsApiGetOrganizationDevicesRequest) SensorMetrics(sensorMetrics []string) OrganizationsApiGetOrganizationDevicesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesRequest) SensorMetrics(sensorMetrics []string) OrganizationsAPIGetOrganizationDevicesRequest {
 	r.sensorMetrics = &sensorMetrics
 	return r
 }
 
 // Optional parameter to filter devices by the alert profiles that are bound to them. Only applies to sensor devices.
-func (r OrganizationsApiGetOrganizationDevicesRequest) SensorAlertProfileIds(sensorAlertProfileIds []string) OrganizationsApiGetOrganizationDevicesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesRequest) SensorAlertProfileIds(sensorAlertProfileIds []string) OrganizationsAPIGetOrganizationDevicesRequest {
 	r.sensorAlertProfileIds = &sensorAlertProfileIds
 	return r
 }
 
 // Optional parameter to filter devices by one or more models. All returned devices will have a model that is an exact match.
-func (r OrganizationsApiGetOrganizationDevicesRequest) Models(models []string) OrganizationsApiGetOrganizationDevicesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesRequest) Models(models []string) OrganizationsAPIGetOrganizationDevicesRequest {
 	r.models = &models
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationDevicesRequest) Execute() ([]GetNetworkFloorPlans200ResponseInnerDevicesInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationDevicesRequest) Execute() ([]GetNetworkFloorPlans200ResponseInnerDevicesInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesExecute(r)
 }
 
@@ -8062,10 +8062,10 @@ List the devices in an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationDevicesRequest
+ @return OrganizationsAPIGetOrganizationDevicesRequest
 */
-func (a *OrganizationsApiService) GetOrganizationDevices(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationDevicesRequest {
-	return OrganizationsApiGetOrganizationDevicesRequest{
+func (a *OrganizationsAPIService) GetOrganizationDevices(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationDevicesRequest {
+	return OrganizationsAPIGetOrganizationDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -8074,7 +8074,7 @@ func (a *OrganizationsApiService) GetOrganizationDevices(ctx context.Context, or
 
 // Execute executes the request
 //  @return []GetNetworkFloorPlans200ResponseInnerDevicesInner
-func (a *OrganizationsApiService) GetOrganizationDevicesExecute(r OrganizationsApiGetOrganizationDevicesRequest) ([]GetNetworkFloorPlans200ResponseInnerDevicesInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationDevicesExecute(r OrganizationsAPIGetOrganizationDevicesRequest) ([]GetNetworkFloorPlans200ResponseInnerDevicesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -8082,7 +8082,7 @@ func (a *OrganizationsApiService) GetOrganizationDevicesExecute(r OrganizationsA
 		localVarReturnValue  []GetNetworkFloorPlans200ResponseInnerDevicesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationDevices")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8277,9 +8277,9 @@ func (a *OrganizationsApiService) GetOrganizationDevicesExecute(r OrganizationsA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationDevicesAvailabilitiesRequest struct {
+type OrganizationsAPIGetOrganizationDevicesAvailabilitiesRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -8292,54 +8292,54 @@ type OrganizationsApiGetOrganizationDevicesAvailabilitiesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r OrganizationsApiGetOrganizationDevicesAvailabilitiesRequest) PerPage(perPage int32) OrganizationsApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesAvailabilitiesRequest) PerPage(perPage int32) OrganizationsAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationDevicesAvailabilitiesRequest) StartingAfter(startingAfter string) OrganizationsApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesAvailabilitiesRequest) StartingAfter(startingAfter string) OrganizationsAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationDevicesAvailabilitiesRequest) EndingBefore(endingBefore string) OrganizationsApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesAvailabilitiesRequest) EndingBefore(endingBefore string) OrganizationsAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter device availabilities by network ID. This filter uses multiple exact matches.
-func (r OrganizationsApiGetOrganizationDevicesAvailabilitiesRequest) NetworkIds(networkIds []string) OrganizationsApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesAvailabilitiesRequest) NetworkIds(networkIds []string) OrganizationsAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter device availabilities by device product types. This filter uses multiple exact matches.
-func (r OrganizationsApiGetOrganizationDevicesAvailabilitiesRequest) ProductTypes(productTypes []string) OrganizationsApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesAvailabilitiesRequest) ProductTypes(productTypes []string) OrganizationsAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter device availabilities by device serial numbers. This filter uses multiple exact matches.
-func (r OrganizationsApiGetOrganizationDevicesAvailabilitiesRequest) Serials(serials []string) OrganizationsApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesAvailabilitiesRequest) Serials(serials []string) OrganizationsAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.serials = &serials
 	return r
 }
 
 // An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below). This filter uses multiple exact matches.
-func (r OrganizationsApiGetOrganizationDevicesAvailabilitiesRequest) Tags(tags []string) OrganizationsApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesAvailabilitiesRequest) Tags(tags []string) OrganizationsAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.tags = &tags
 	return r
 }
 
 // An optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return devices which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r OrganizationsApiGetOrganizationDevicesAvailabilitiesRequest) TagsFilterType(tagsFilterType string) OrganizationsApiGetOrganizationDevicesAvailabilitiesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesAvailabilitiesRequest) TagsFilterType(tagsFilterType string) OrganizationsAPIGetOrganizationDevicesAvailabilitiesRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationDevicesAvailabilitiesRequest) Execute() ([]GetOrganizationDevicesAvailabilities200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationDevicesAvailabilitiesRequest) Execute() ([]GetOrganizationDevicesAvailabilities200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesAvailabilitiesExecute(r)
 }
 
@@ -8350,10 +8350,10 @@ List the availability information for devices in an organization. The data retur
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationDevicesAvailabilitiesRequest
+ @return OrganizationsAPIGetOrganizationDevicesAvailabilitiesRequest
 */
-func (a *OrganizationsApiService) GetOrganizationDevicesAvailabilities(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationDevicesAvailabilitiesRequest {
-	return OrganizationsApiGetOrganizationDevicesAvailabilitiesRequest{
+func (a *OrganizationsAPIService) GetOrganizationDevicesAvailabilities(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationDevicesAvailabilitiesRequest {
+	return OrganizationsAPIGetOrganizationDevicesAvailabilitiesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -8362,7 +8362,7 @@ func (a *OrganizationsApiService) GetOrganizationDevicesAvailabilities(ctx conte
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesAvailabilities200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationDevicesAvailabilitiesExecute(r OrganizationsApiGetOrganizationDevicesAvailabilitiesRequest) ([]GetOrganizationDevicesAvailabilities200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationDevicesAvailabilitiesExecute(r OrganizationsAPIGetOrganizationDevicesAvailabilitiesRequest) ([]GetOrganizationDevicesAvailabilities200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -8370,7 +8370,7 @@ func (a *OrganizationsApiService) GetOrganizationDevicesAvailabilitiesExecute(r 
 		localVarReturnValue  []GetOrganizationDevicesAvailabilities200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationDevicesAvailabilities")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationDevicesAvailabilities")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8506,9 +8506,9 @@ func (a *OrganizationsApiService) GetOrganizationDevicesAvailabilitiesExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest struct {
+type OrganizationsAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -8523,66 +8523,66 @@ type OrganizationsApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest st
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r OrganizationsApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) PerPage(perPage int32) OrganizationsApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r OrganizationsAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) PerPage(perPage int32) OrganizationsAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) StartingAfter(startingAfter string) OrganizationsApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r OrganizationsAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) StartingAfter(startingAfter string) OrganizationsAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) EndingBefore(endingBefore string) OrganizationsApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r OrganizationsAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) EndingBefore(endingBefore string) OrganizationsAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 14 days from today.
-func (r OrganizationsApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) T0(t0 string) OrganizationsApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r OrganizationsAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) T0(t0 string) OrganizationsAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 14 days after t0.
-func (r OrganizationsApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) T1(t1 string) OrganizationsApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r OrganizationsAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) T1(t1 string) OrganizationsAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 14 days. The default is 1 day.
-func (r OrganizationsApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Timespan(timespan float32) OrganizationsApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r OrganizationsAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Timespan(timespan float32) OrganizationsAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Optional parameter to filter device availabilities history by device serial numbers
-func (r OrganizationsApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Serials(serials []string) OrganizationsApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r OrganizationsAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Serials(serials []string) OrganizationsAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.serials = &serials
 	return r
 }
 
 // Optional parameter to filter device availabilities history by device product types
-func (r OrganizationsApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) ProductTypes(productTypes []string) OrganizationsApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r OrganizationsAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) ProductTypes(productTypes []string) OrganizationsAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter device availabilities history by network IDs
-func (r OrganizationsApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) NetworkIds(networkIds []string) OrganizationsApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r OrganizationsAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) NetworkIds(networkIds []string) OrganizationsAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter device availabilities history by device statuses
-func (r OrganizationsApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Statuses(statuses []string) OrganizationsApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+func (r OrganizationsAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Statuses(statuses []string) OrganizationsAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
 	r.statuses = &statuses
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Execute() ([]GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) Execute() ([]GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesAvailabilitiesChangeHistoryExecute(r)
 }
 
@@ -8593,10 +8593,10 @@ List the availability history information for devices in an organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest
+ @return OrganizationsAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest
 */
-func (a *OrganizationsApiService) GetOrganizationDevicesAvailabilitiesChangeHistory(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
-	return OrganizationsApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest{
+func (a *OrganizationsAPIService) GetOrganizationDevicesAvailabilitiesChangeHistory(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest {
+	return OrganizationsAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -8605,7 +8605,7 @@ func (a *OrganizationsApiService) GetOrganizationDevicesAvailabilitiesChangeHist
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationDevicesAvailabilitiesChangeHistoryExecute(r OrganizationsApiGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) ([]GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationDevicesAvailabilitiesChangeHistoryExecute(r OrganizationsAPIGetOrganizationDevicesAvailabilitiesChangeHistoryRequest) ([]GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -8613,7 +8613,7 @@ func (a *OrganizationsApiService) GetOrganizationDevicesAvailabilitiesChangeHist
 		localVarReturnValue  []GetOrganizationDevicesAvailabilitiesChangeHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationDevicesAvailabilitiesChangeHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationDevicesAvailabilitiesChangeHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8755,9 +8755,9 @@ func (a *OrganizationsApiService) GetOrganizationDevicesAvailabilitiesChangeHist
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest struct {
+type OrganizationsAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -8770,54 +8770,54 @@ type OrganizationsApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest s
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r OrganizationsApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) PerPage(perPage int32) OrganizationsApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r OrganizationsAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) PerPage(perPage int32) OrganizationsAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) StartingAfter(startingAfter string) OrganizationsApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r OrganizationsAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) StartingAfter(startingAfter string) OrganizationsAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) EndingBefore(endingBefore string) OrganizationsApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r OrganizationsAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) EndingBefore(endingBefore string) OrganizationsAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter device availabilities by network ID. This filter uses multiple exact matches.
-func (r OrganizationsApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) NetworkIds(networkIds []string) OrganizationsApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r OrganizationsAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) NetworkIds(networkIds []string) OrganizationsAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter device availabilities by device product types. This filter uses multiple exact matches.
-func (r OrganizationsApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) ProductTypes(productTypes []string) OrganizationsApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r OrganizationsAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) ProductTypes(productTypes []string) OrganizationsAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter device availabilities by device serial numbers. This filter uses multiple exact matches.
-func (r OrganizationsApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Serials(serials []string) OrganizationsApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r OrganizationsAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Serials(serials []string) OrganizationsAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.serials = &serials
 	return r
 }
 
 // An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below). This filter uses multiple exact matches.
-func (r OrganizationsApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Tags(tags []string) OrganizationsApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r OrganizationsAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Tags(tags []string) OrganizationsAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.tags = &tags
 	return r
 }
 
 // An optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return devices which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r OrganizationsApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) TagsFilterType(tagsFilterType string) OrganizationsApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r OrganizationsAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) TagsFilterType(tagsFilterType string) OrganizationsAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Execute() ([]GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Execute() ([]GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesPowerModulesStatusesByDeviceExecute(r)
 }
 
@@ -8828,10 +8828,10 @@ List the power status information for devices in an organization. The data retur
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest
+ @return OrganizationsAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest
 */
-func (a *OrganizationsApiService) GetOrganizationDevicesPowerModulesStatusesByDevice(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
-	return OrganizationsApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest{
+func (a *OrganizationsAPIService) GetOrganizationDevicesPowerModulesStatusesByDevice(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+	return OrganizationsAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -8840,7 +8840,7 @@ func (a *OrganizationsApiService) GetOrganizationDevicesPowerModulesStatusesByDe
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationDevicesPowerModulesStatusesByDeviceExecute(r OrganizationsApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) ([]GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationDevicesPowerModulesStatusesByDeviceExecute(r OrganizationsAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) ([]GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -8848,7 +8848,7 @@ func (a *OrganizationsApiService) GetOrganizationDevicesPowerModulesStatusesByDe
 		localVarReturnValue  []GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationDevicesPowerModulesStatusesByDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationDevicesPowerModulesStatusesByDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8984,9 +8984,9 @@ func (a *OrganizationsApiService) GetOrganizationDevicesPowerModulesStatusesByDe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationDevicesProvisioningStatusesRequest struct {
+type OrganizationsAPIGetOrganizationDevicesProvisioningStatusesRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -9000,60 +9000,60 @@ type OrganizationsApiGetOrganizationDevicesProvisioningStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r OrganizationsApiGetOrganizationDevicesProvisioningStatusesRequest) PerPage(perPage int32) OrganizationsApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesProvisioningStatusesRequest) PerPage(perPage int32) OrganizationsAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationDevicesProvisioningStatusesRequest) StartingAfter(startingAfter string) OrganizationsApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesProvisioningStatusesRequest) StartingAfter(startingAfter string) OrganizationsAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationDevicesProvisioningStatusesRequest) EndingBefore(endingBefore string) OrganizationsApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesProvisioningStatusesRequest) EndingBefore(endingBefore string) OrganizationsAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter device by network ID. This filter uses multiple exact matches.
-func (r OrganizationsApiGetOrganizationDevicesProvisioningStatusesRequest) NetworkIds(networkIds []string) OrganizationsApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesProvisioningStatusesRequest) NetworkIds(networkIds []string) OrganizationsAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter device by device product types. This filter uses multiple exact matches.
-func (r OrganizationsApiGetOrganizationDevicesProvisioningStatusesRequest) ProductTypes(productTypes []string) OrganizationsApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesProvisioningStatusesRequest) ProductTypes(productTypes []string) OrganizationsAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter device by device serial numbers. This filter uses multiple exact matches.
-func (r OrganizationsApiGetOrganizationDevicesProvisioningStatusesRequest) Serials(serials []string) OrganizationsApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesProvisioningStatusesRequest) Serials(serials []string) OrganizationsAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.serials = &serials
 	return r
 }
 
 // An optional parameter to filter devices by the provisioning status. Accepted statuses: unprovisioned, incomplete, complete.
-func (r OrganizationsApiGetOrganizationDevicesProvisioningStatusesRequest) Status(status string) OrganizationsApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesProvisioningStatusesRequest) Status(status string) OrganizationsAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.status = &status
 	return r
 }
 
 // An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below). This filter uses multiple exact matches.
-func (r OrganizationsApiGetOrganizationDevicesProvisioningStatusesRequest) Tags(tags []string) OrganizationsApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesProvisioningStatusesRequest) Tags(tags []string) OrganizationsAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.tags = &tags
 	return r
 }
 
 // An optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return devices which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r OrganizationsApiGetOrganizationDevicesProvisioningStatusesRequest) TagsFilterType(tagsFilterType string) OrganizationsApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesProvisioningStatusesRequest) TagsFilterType(tagsFilterType string) OrganizationsAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationDevicesProvisioningStatusesRequest) Execute() ([]GetOrganizationDevicesProvisioningStatuses200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationDevicesProvisioningStatusesRequest) Execute() ([]GetOrganizationDevicesProvisioningStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesProvisioningStatusesExecute(r)
 }
 
@@ -9064,10 +9064,10 @@ List the provisioning statuses information for devices in an organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationDevicesProvisioningStatusesRequest
+ @return OrganizationsAPIGetOrganizationDevicesProvisioningStatusesRequest
 */
-func (a *OrganizationsApiService) GetOrganizationDevicesProvisioningStatuses(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationDevicesProvisioningStatusesRequest {
-	return OrganizationsApiGetOrganizationDevicesProvisioningStatusesRequest{
+func (a *OrganizationsAPIService) GetOrganizationDevicesProvisioningStatuses(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationDevicesProvisioningStatusesRequest {
+	return OrganizationsAPIGetOrganizationDevicesProvisioningStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -9076,7 +9076,7 @@ func (a *OrganizationsApiService) GetOrganizationDevicesProvisioningStatuses(ctx
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesProvisioningStatuses200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationDevicesProvisioningStatusesExecute(r OrganizationsApiGetOrganizationDevicesProvisioningStatusesRequest) ([]GetOrganizationDevicesProvisioningStatuses200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationDevicesProvisioningStatusesExecute(r OrganizationsAPIGetOrganizationDevicesProvisioningStatusesRequest) ([]GetOrganizationDevicesProvisioningStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -9084,7 +9084,7 @@ func (a *OrganizationsApiService) GetOrganizationDevicesProvisioningStatusesExec
 		localVarReturnValue  []GetOrganizationDevicesProvisioningStatuses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationDevicesProvisioningStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationDevicesProvisioningStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9223,9 +9223,9 @@ func (a *OrganizationsApiService) GetOrganizationDevicesProvisioningStatusesExec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationDevicesStatusesRequest struct {
+type OrganizationsAPIGetOrganizationDevicesStatusesRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -9240,66 +9240,66 @@ type OrganizationsApiGetOrganizationDevicesStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r OrganizationsApiGetOrganizationDevicesStatusesRequest) PerPage(perPage int32) OrganizationsApiGetOrganizationDevicesStatusesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesStatusesRequest) PerPage(perPage int32) OrganizationsAPIGetOrganizationDevicesStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationDevicesStatusesRequest) StartingAfter(startingAfter string) OrganizationsApiGetOrganizationDevicesStatusesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesStatusesRequest) StartingAfter(startingAfter string) OrganizationsAPIGetOrganizationDevicesStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationDevicesStatusesRequest) EndingBefore(endingBefore string) OrganizationsApiGetOrganizationDevicesStatusesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesStatusesRequest) EndingBefore(endingBefore string) OrganizationsAPIGetOrganizationDevicesStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter devices by network ids.
-func (r OrganizationsApiGetOrganizationDevicesStatusesRequest) NetworkIds(networkIds []string) OrganizationsApiGetOrganizationDevicesStatusesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesStatusesRequest) NetworkIds(networkIds []string) OrganizationsAPIGetOrganizationDevicesStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter devices by serials.
-func (r OrganizationsApiGetOrganizationDevicesStatusesRequest) Serials(serials []string) OrganizationsApiGetOrganizationDevicesStatusesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesStatusesRequest) Serials(serials []string) OrganizationsAPIGetOrganizationDevicesStatusesRequest {
 	r.serials = &serials
 	return r
 }
 
 // Optional parameter to filter devices by statuses. Valid statuses are [\&quot;online\&quot;, \&quot;alerting\&quot;, \&quot;offline\&quot;, \&quot;dormant\&quot;].
-func (r OrganizationsApiGetOrganizationDevicesStatusesRequest) Statuses(statuses []string) OrganizationsApiGetOrganizationDevicesStatusesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesStatusesRequest) Statuses(statuses []string) OrganizationsAPIGetOrganizationDevicesStatusesRequest {
 	r.statuses = &statuses
 	return r
 }
 
 // An optional parameter to filter device statuses by product type. Valid types are wireless, appliance, switch, systemsManager, camera, cellularGateway, sensor, and cloudGateway.
-func (r OrganizationsApiGetOrganizationDevicesStatusesRequest) ProductTypes(productTypes []string) OrganizationsApiGetOrganizationDevicesStatusesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesStatusesRequest) ProductTypes(productTypes []string) OrganizationsAPIGetOrganizationDevicesStatusesRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter devices by models.
-func (r OrganizationsApiGetOrganizationDevicesStatusesRequest) Models(models []string) OrganizationsApiGetOrganizationDevicesStatusesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesStatusesRequest) Models(models []string) OrganizationsAPIGetOrganizationDevicesStatusesRequest {
 	r.models = &models
 	return r
 }
 
 // An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below).
-func (r OrganizationsApiGetOrganizationDevicesStatusesRequest) Tags(tags []string) OrganizationsApiGetOrganizationDevicesStatusesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesStatusesRequest) Tags(tags []string) OrganizationsAPIGetOrganizationDevicesStatusesRequest {
 	r.tags = &tags
 	return r
 }
 
 // An optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return devices which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r OrganizationsApiGetOrganizationDevicesStatusesRequest) TagsFilterType(tagsFilterType string) OrganizationsApiGetOrganizationDevicesStatusesRequest {
+func (r OrganizationsAPIGetOrganizationDevicesStatusesRequest) TagsFilterType(tagsFilterType string) OrganizationsAPIGetOrganizationDevicesStatusesRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationDevicesStatusesRequest) Execute() ([]GetOrganizationDevicesStatuses200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationDevicesStatusesRequest) Execute() ([]GetOrganizationDevicesStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesStatusesExecute(r)
 }
 
@@ -9310,10 +9310,10 @@ List the status of every Meraki device in the organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationDevicesStatusesRequest
+ @return OrganizationsAPIGetOrganizationDevicesStatusesRequest
 */
-func (a *OrganizationsApiService) GetOrganizationDevicesStatuses(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationDevicesStatusesRequest {
-	return OrganizationsApiGetOrganizationDevicesStatusesRequest{
+func (a *OrganizationsAPIService) GetOrganizationDevicesStatuses(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationDevicesStatusesRequest {
+	return OrganizationsAPIGetOrganizationDevicesStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -9322,7 +9322,7 @@ func (a *OrganizationsApiService) GetOrganizationDevicesStatuses(ctx context.Con
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesStatuses200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationDevicesStatusesExecute(r OrganizationsApiGetOrganizationDevicesStatusesRequest) ([]GetOrganizationDevicesStatuses200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationDevicesStatusesExecute(r OrganizationsAPIGetOrganizationDevicesStatusesRequest) ([]GetOrganizationDevicesStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -9330,7 +9330,7 @@ func (a *OrganizationsApiService) GetOrganizationDevicesStatusesExecute(r Organi
 		localVarReturnValue  []GetOrganizationDevicesStatuses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationDevicesStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationDevicesStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9488,27 +9488,27 @@ func (a *OrganizationsApiService) GetOrganizationDevicesStatusesExecute(r Organi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationDevicesStatusesOverviewRequest struct {
+type OrganizationsAPIGetOrganizationDevicesStatusesOverviewRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	productTypes *[]string
 	networkIds *[]string
 }
 
 // An optional parameter to filter device statuses by product type. Valid types are wireless, appliance, switch, systemsManager, camera, cellularGateway, sensor, and cloudGateway.
-func (r OrganizationsApiGetOrganizationDevicesStatusesOverviewRequest) ProductTypes(productTypes []string) OrganizationsApiGetOrganizationDevicesStatusesOverviewRequest {
+func (r OrganizationsAPIGetOrganizationDevicesStatusesOverviewRequest) ProductTypes(productTypes []string) OrganizationsAPIGetOrganizationDevicesStatusesOverviewRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // An optional parameter to filter device statuses by network.
-func (r OrganizationsApiGetOrganizationDevicesStatusesOverviewRequest) NetworkIds(networkIds []string) OrganizationsApiGetOrganizationDevicesStatusesOverviewRequest {
+func (r OrganizationsAPIGetOrganizationDevicesStatusesOverviewRequest) NetworkIds(networkIds []string) OrganizationsAPIGetOrganizationDevicesStatusesOverviewRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationDevicesStatusesOverviewRequest) Execute() (*GetOrganizationDevicesStatusesOverview200Response, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationDevicesStatusesOverviewRequest) Execute() (*GetOrganizationDevicesStatusesOverview200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesStatusesOverviewExecute(r)
 }
 
@@ -9519,10 +9519,10 @@ Return an overview of current device statuses
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationDevicesStatusesOverviewRequest
+ @return OrganizationsAPIGetOrganizationDevicesStatusesOverviewRequest
 */
-func (a *OrganizationsApiService) GetOrganizationDevicesStatusesOverview(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationDevicesStatusesOverviewRequest {
-	return OrganizationsApiGetOrganizationDevicesStatusesOverviewRequest{
+func (a *OrganizationsAPIService) GetOrganizationDevicesStatusesOverview(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationDevicesStatusesOverviewRequest {
+	return OrganizationsAPIGetOrganizationDevicesStatusesOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -9531,7 +9531,7 @@ func (a *OrganizationsApiService) GetOrganizationDevicesStatusesOverview(ctx con
 
 // Execute executes the request
 //  @return GetOrganizationDevicesStatusesOverview200Response
-func (a *OrganizationsApiService) GetOrganizationDevicesStatusesOverviewExecute(r OrganizationsApiGetOrganizationDevicesStatusesOverviewRequest) (*GetOrganizationDevicesStatusesOverview200Response, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationDevicesStatusesOverviewExecute(r OrganizationsAPIGetOrganizationDevicesStatusesOverviewRequest) (*GetOrganizationDevicesStatusesOverview200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -9539,7 +9539,7 @@ func (a *OrganizationsApiService) GetOrganizationDevicesStatusesOverviewExecute(
 		localVarReturnValue  *GetOrganizationDevicesStatusesOverview200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationDevicesStatusesOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationDevicesStatusesOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9641,9 +9641,9 @@ func (a *OrganizationsApiService) GetOrganizationDevicesStatusesOverviewExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationDevicesUplinksAddressesByDeviceRequest struct {
+type OrganizationsAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -9656,54 +9656,54 @@ type OrganizationsApiGetOrganizationDevicesUplinksAddressesByDeviceRequest struc
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r OrganizationsApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) PerPage(perPage int32) OrganizationsApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r OrganizationsAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) PerPage(perPage int32) OrganizationsAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) StartingAfter(startingAfter string) OrganizationsApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r OrganizationsAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) StartingAfter(startingAfter string) OrganizationsAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) EndingBefore(endingBefore string) OrganizationsApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r OrganizationsAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) EndingBefore(endingBefore string) OrganizationsAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter device uplinks by network ID. This filter uses multiple exact matches.
-func (r OrganizationsApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) NetworkIds(networkIds []string) OrganizationsApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r OrganizationsAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) NetworkIds(networkIds []string) OrganizationsAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter device uplinks by device product types. This filter uses multiple exact matches.
-func (r OrganizationsApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) ProductTypes(productTypes []string) OrganizationsApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r OrganizationsAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) ProductTypes(productTypes []string) OrganizationsAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter device availabilities by device serial numbers. This filter uses multiple exact matches.
-func (r OrganizationsApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) Serials(serials []string) OrganizationsApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r OrganizationsAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) Serials(serials []string) OrganizationsAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.serials = &serials
 	return r
 }
 
 // An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below). This filter uses multiple exact matches.
-func (r OrganizationsApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) Tags(tags []string) OrganizationsApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r OrganizationsAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) Tags(tags []string) OrganizationsAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.tags = &tags
 	return r
 }
 
 // An optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return devices which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r OrganizationsApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) TagsFilterType(tagsFilterType string) OrganizationsApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+func (r OrganizationsAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) TagsFilterType(tagsFilterType string) OrganizationsAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) Execute() ([]GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) Execute() ([]GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesUplinksAddressesByDeviceExecute(r)
 }
 
@@ -9714,10 +9714,10 @@ List the current uplink addresses for devices in an organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationDevicesUplinksAddressesByDeviceRequest
+ @return OrganizationsAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest
 */
-func (a *OrganizationsApiService) GetOrganizationDevicesUplinksAddressesByDevice(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationDevicesUplinksAddressesByDeviceRequest {
-	return OrganizationsApiGetOrganizationDevicesUplinksAddressesByDeviceRequest{
+func (a *OrganizationsAPIService) GetOrganizationDevicesUplinksAddressesByDevice(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest {
+	return OrganizationsAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -9726,7 +9726,7 @@ func (a *OrganizationsApiService) GetOrganizationDevicesUplinksAddressesByDevice
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationDevicesUplinksAddressesByDeviceExecute(r OrganizationsApiGetOrganizationDevicesUplinksAddressesByDeviceRequest) ([]GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationDevicesUplinksAddressesByDeviceExecute(r OrganizationsAPIGetOrganizationDevicesUplinksAddressesByDeviceRequest) ([]GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -9734,7 +9734,7 @@ func (a *OrganizationsApiService) GetOrganizationDevicesUplinksAddressesByDevice
 		localVarReturnValue  []GetOrganizationDevicesUplinksAddressesByDevice200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationDevicesUplinksAddressesByDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationDevicesUplinksAddressesByDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9870,9 +9870,9 @@ func (a *OrganizationsApiService) GetOrganizationDevicesUplinksAddressesByDevice
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationDevicesUplinksLossAndLatencyRequest struct {
+type OrganizationsAPIGetOrganizationDevicesUplinksLossAndLatencyRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -9882,36 +9882,36 @@ type OrganizationsApiGetOrganizationDevicesUplinksLossAndLatencyRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 60 days from today.
-func (r OrganizationsApiGetOrganizationDevicesUplinksLossAndLatencyRequest) T0(t0 string) OrganizationsApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
+func (r OrganizationsAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) T0(t0 string) OrganizationsAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 5 minutes after t0. The latest possible time that t1 can be is 2 minutes into the past.
-func (r OrganizationsApiGetOrganizationDevicesUplinksLossAndLatencyRequest) T1(t1 string) OrganizationsApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
+func (r OrganizationsAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) T1(t1 string) OrganizationsAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 5 minutes. The default is 5 minutes.
-func (r OrganizationsApiGetOrganizationDevicesUplinksLossAndLatencyRequest) Timespan(timespan float32) OrganizationsApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
+func (r OrganizationsAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) Timespan(timespan float32) OrganizationsAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Optional filter for a specific WAN uplink. Valid uplinks are wan1, wan2, wan3, cellular. Default will return all uplinks.
-func (r OrganizationsApiGetOrganizationDevicesUplinksLossAndLatencyRequest) Uplink(uplink string) OrganizationsApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
+func (r OrganizationsAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) Uplink(uplink string) OrganizationsAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
 	r.uplink = &uplink
 	return r
 }
 
 // Optional filter for a specific destination IP. Default will return all destination IPs.
-func (r OrganizationsApiGetOrganizationDevicesUplinksLossAndLatencyRequest) Ip(ip string) OrganizationsApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
+func (r OrganizationsAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) Ip(ip string) OrganizationsAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
 	r.ip = &ip
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationDevicesUplinksLossAndLatencyRequest) Execute() ([]GetOrganizationDevicesUplinksLossAndLatency200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) Execute() ([]GetOrganizationDevicesUplinksLossAndLatency200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesUplinksLossAndLatencyExecute(r)
 }
 
@@ -9922,10 +9922,10 @@ Return the uplink loss and latency for every MX in the organization from at late
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationDevicesUplinksLossAndLatencyRequest
+ @return OrganizationsAPIGetOrganizationDevicesUplinksLossAndLatencyRequest
 */
-func (a *OrganizationsApiService) GetOrganizationDevicesUplinksLossAndLatency(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
-	return OrganizationsApiGetOrganizationDevicesUplinksLossAndLatencyRequest{
+func (a *OrganizationsAPIService) GetOrganizationDevicesUplinksLossAndLatency(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
+	return OrganizationsAPIGetOrganizationDevicesUplinksLossAndLatencyRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -9934,7 +9934,7 @@ func (a *OrganizationsApiService) GetOrganizationDevicesUplinksLossAndLatency(ct
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesUplinksLossAndLatency200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationDevicesUplinksLossAndLatencyExecute(r OrganizationsApiGetOrganizationDevicesUplinksLossAndLatencyRequest) ([]GetOrganizationDevicesUplinksLossAndLatency200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationDevicesUplinksLossAndLatencyExecute(r OrganizationsAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) ([]GetOrganizationDevicesUplinksLossAndLatency200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -9942,7 +9942,7 @@ func (a *OrganizationsApiService) GetOrganizationDevicesUplinksLossAndLatencyExe
 		localVarReturnValue  []GetOrganizationDevicesUplinksLossAndLatency200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationDevicesUplinksLossAndLatency")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationDevicesUplinksLossAndLatency")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10037,13 +10037,13 @@ func (a *OrganizationsApiService) GetOrganizationDevicesUplinksLossAndLatencyExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationEarlyAccessFeaturesRequest struct {
+type OrganizationsAPIGetOrganizationEarlyAccessFeaturesRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 }
 
-func (r OrganizationsApiGetOrganizationEarlyAccessFeaturesRequest) Execute() ([]GetOrganizationEarlyAccessFeatures200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationEarlyAccessFeaturesRequest) Execute() ([]GetOrganizationEarlyAccessFeatures200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationEarlyAccessFeaturesExecute(r)
 }
 
@@ -10054,10 +10054,10 @@ List the available early access features for organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationEarlyAccessFeaturesRequest
+ @return OrganizationsAPIGetOrganizationEarlyAccessFeaturesRequest
 */
-func (a *OrganizationsApiService) GetOrganizationEarlyAccessFeatures(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationEarlyAccessFeaturesRequest {
-	return OrganizationsApiGetOrganizationEarlyAccessFeaturesRequest{
+func (a *OrganizationsAPIService) GetOrganizationEarlyAccessFeatures(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationEarlyAccessFeaturesRequest {
+	return OrganizationsAPIGetOrganizationEarlyAccessFeaturesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -10066,7 +10066,7 @@ func (a *OrganizationsApiService) GetOrganizationEarlyAccessFeatures(ctx context
 
 // Execute executes the request
 //  @return []GetOrganizationEarlyAccessFeatures200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationEarlyAccessFeaturesExecute(r OrganizationsApiGetOrganizationEarlyAccessFeaturesRequest) ([]GetOrganizationEarlyAccessFeatures200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationEarlyAccessFeaturesExecute(r OrganizationsAPIGetOrganizationEarlyAccessFeaturesRequest) ([]GetOrganizationEarlyAccessFeatures200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -10074,7 +10074,7 @@ func (a *OrganizationsApiService) GetOrganizationEarlyAccessFeaturesExecute(r Or
 		localVarReturnValue  []GetOrganizationEarlyAccessFeatures200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationEarlyAccessFeatures")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationEarlyAccessFeatures")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10154,14 +10154,14 @@ func (a *OrganizationsApiService) GetOrganizationEarlyAccessFeaturesExecute(r Or
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationEarlyAccessFeaturesOptInRequest struct {
+type OrganizationsAPIGetOrganizationEarlyAccessFeaturesOptInRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	optInId string
 }
 
-func (r OrganizationsApiGetOrganizationEarlyAccessFeaturesOptInRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationEarlyAccessFeaturesOptInRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationEarlyAccessFeaturesOptInExecute(r)
 }
 
@@ -10173,10 +10173,10 @@ Show an early access feature opt-in for an organization
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param optInId Opt in ID
- @return OrganizationsApiGetOrganizationEarlyAccessFeaturesOptInRequest
+ @return OrganizationsAPIGetOrganizationEarlyAccessFeaturesOptInRequest
 */
-func (a *OrganizationsApiService) GetOrganizationEarlyAccessFeaturesOptIn(ctx context.Context, organizationId string, optInId string) OrganizationsApiGetOrganizationEarlyAccessFeaturesOptInRequest {
-	return OrganizationsApiGetOrganizationEarlyAccessFeaturesOptInRequest{
+func (a *OrganizationsAPIService) GetOrganizationEarlyAccessFeaturesOptIn(ctx context.Context, organizationId string, optInId string) OrganizationsAPIGetOrganizationEarlyAccessFeaturesOptInRequest {
+	return OrganizationsAPIGetOrganizationEarlyAccessFeaturesOptInRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -10186,7 +10186,7 @@ func (a *OrganizationsApiService) GetOrganizationEarlyAccessFeaturesOptIn(ctx co
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) GetOrganizationEarlyAccessFeaturesOptInExecute(r OrganizationsApiGetOrganizationEarlyAccessFeaturesOptInRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationEarlyAccessFeaturesOptInExecute(r OrganizationsAPIGetOrganizationEarlyAccessFeaturesOptInRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -10194,7 +10194,7 @@ func (a *OrganizationsApiService) GetOrganizationEarlyAccessFeaturesOptInExecute
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationEarlyAccessFeaturesOptIn")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationEarlyAccessFeaturesOptIn")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10275,13 +10275,13 @@ func (a *OrganizationsApiService) GetOrganizationEarlyAccessFeaturesOptInExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationEarlyAccessFeaturesOptInsRequest struct {
+type OrganizationsAPIGetOrganizationEarlyAccessFeaturesOptInsRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 }
 
-func (r OrganizationsApiGetOrganizationEarlyAccessFeaturesOptInsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationEarlyAccessFeaturesOptInsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationEarlyAccessFeaturesOptInsExecute(r)
 }
 
@@ -10292,10 +10292,10 @@ List the early access feature opt-ins for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationEarlyAccessFeaturesOptInsRequest
+ @return OrganizationsAPIGetOrganizationEarlyAccessFeaturesOptInsRequest
 */
-func (a *OrganizationsApiService) GetOrganizationEarlyAccessFeaturesOptIns(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationEarlyAccessFeaturesOptInsRequest {
-	return OrganizationsApiGetOrganizationEarlyAccessFeaturesOptInsRequest{
+func (a *OrganizationsAPIService) GetOrganizationEarlyAccessFeaturesOptIns(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationEarlyAccessFeaturesOptInsRequest {
+	return OrganizationsAPIGetOrganizationEarlyAccessFeaturesOptInsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -10304,7 +10304,7 @@ func (a *OrganizationsApiService) GetOrganizationEarlyAccessFeaturesOptIns(ctx c
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *OrganizationsApiService) GetOrganizationEarlyAccessFeaturesOptInsExecute(r OrganizationsApiGetOrganizationEarlyAccessFeaturesOptInsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationEarlyAccessFeaturesOptInsExecute(r OrganizationsAPIGetOrganizationEarlyAccessFeaturesOptInsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -10312,7 +10312,7 @@ func (a *OrganizationsApiService) GetOrganizationEarlyAccessFeaturesOptInsExecut
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationEarlyAccessFeaturesOptIns")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationEarlyAccessFeaturesOptIns")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10392,27 +10392,27 @@ func (a *OrganizationsApiService) GetOrganizationEarlyAccessFeaturesOptInsExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationFirmwareUpgradesRequest struct {
+type OrganizationsAPIGetOrganizationFirmwareUpgradesRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	status *[]string
 	productTypes *[]string
 }
 
 // The status of an upgrade 
-func (r OrganizationsApiGetOrganizationFirmwareUpgradesRequest) Status(status []string) OrganizationsApiGetOrganizationFirmwareUpgradesRequest {
+func (r OrganizationsAPIGetOrganizationFirmwareUpgradesRequest) Status(status []string) OrganizationsAPIGetOrganizationFirmwareUpgradesRequest {
 	r.status = &status
 	return r
 }
 
 // The product type in a given upgrade ID
-func (r OrganizationsApiGetOrganizationFirmwareUpgradesRequest) ProductTypes(productTypes []string) OrganizationsApiGetOrganizationFirmwareUpgradesRequest {
+func (r OrganizationsAPIGetOrganizationFirmwareUpgradesRequest) ProductTypes(productTypes []string) OrganizationsAPIGetOrganizationFirmwareUpgradesRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationFirmwareUpgradesRequest) Execute() ([]GetOrganizationFirmwareUpgrades200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationFirmwareUpgradesRequest) Execute() ([]GetOrganizationFirmwareUpgrades200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationFirmwareUpgradesExecute(r)
 }
 
@@ -10423,10 +10423,10 @@ Get firmware upgrade information for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationFirmwareUpgradesRequest
+ @return OrganizationsAPIGetOrganizationFirmwareUpgradesRequest
 */
-func (a *OrganizationsApiService) GetOrganizationFirmwareUpgrades(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationFirmwareUpgradesRequest {
-	return OrganizationsApiGetOrganizationFirmwareUpgradesRequest{
+func (a *OrganizationsAPIService) GetOrganizationFirmwareUpgrades(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationFirmwareUpgradesRequest {
+	return OrganizationsAPIGetOrganizationFirmwareUpgradesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -10435,7 +10435,7 @@ func (a *OrganizationsApiService) GetOrganizationFirmwareUpgrades(ctx context.Co
 
 // Execute executes the request
 //  @return []GetOrganizationFirmwareUpgrades200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationFirmwareUpgradesExecute(r OrganizationsApiGetOrganizationFirmwareUpgradesRequest) ([]GetOrganizationFirmwareUpgrades200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationFirmwareUpgradesExecute(r OrganizationsAPIGetOrganizationFirmwareUpgradesRequest) ([]GetOrganizationFirmwareUpgrades200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -10443,7 +10443,7 @@ func (a *OrganizationsApiService) GetOrganizationFirmwareUpgradesExecute(r Organ
 		localVarReturnValue  []GetOrganizationFirmwareUpgrades200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationFirmwareUpgrades")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationFirmwareUpgrades")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10545,9 +10545,9 @@ func (a *OrganizationsApiService) GetOrganizationFirmwareUpgradesExecute(r Organ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationFirmwareUpgradesByDeviceRequest struct {
+type OrganizationsAPIGetOrganizationFirmwareUpgradesByDeviceRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -10560,54 +10560,54 @@ type OrganizationsApiGetOrganizationFirmwareUpgradesByDeviceRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.
-func (r OrganizationsApiGetOrganizationFirmwareUpgradesByDeviceRequest) PerPage(perPage int32) OrganizationsApiGetOrganizationFirmwareUpgradesByDeviceRequest {
+func (r OrganizationsAPIGetOrganizationFirmwareUpgradesByDeviceRequest) PerPage(perPage int32) OrganizationsAPIGetOrganizationFirmwareUpgradesByDeviceRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationFirmwareUpgradesByDeviceRequest) StartingAfter(startingAfter string) OrganizationsApiGetOrganizationFirmwareUpgradesByDeviceRequest {
+func (r OrganizationsAPIGetOrganizationFirmwareUpgradesByDeviceRequest) StartingAfter(startingAfter string) OrganizationsAPIGetOrganizationFirmwareUpgradesByDeviceRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationFirmwareUpgradesByDeviceRequest) EndingBefore(endingBefore string) OrganizationsApiGetOrganizationFirmwareUpgradesByDeviceRequest {
+func (r OrganizationsAPIGetOrganizationFirmwareUpgradesByDeviceRequest) EndingBefore(endingBefore string) OrganizationsAPIGetOrganizationFirmwareUpgradesByDeviceRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter by network
-func (r OrganizationsApiGetOrganizationFirmwareUpgradesByDeviceRequest) NetworkIds(networkIds []string) OrganizationsApiGetOrganizationFirmwareUpgradesByDeviceRequest {
+func (r OrganizationsAPIGetOrganizationFirmwareUpgradesByDeviceRequest) NetworkIds(networkIds []string) OrganizationsAPIGetOrganizationFirmwareUpgradesByDeviceRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter by serial number.  All returned devices will have a serial number that is an exact match.
-func (r OrganizationsApiGetOrganizationFirmwareUpgradesByDeviceRequest) Serials(serials []string) OrganizationsApiGetOrganizationFirmwareUpgradesByDeviceRequest {
+func (r OrganizationsAPIGetOrganizationFirmwareUpgradesByDeviceRequest) Serials(serials []string) OrganizationsAPIGetOrganizationFirmwareUpgradesByDeviceRequest {
 	r.serials = &serials
 	return r
 }
 
 // Optional parameter to filter by one or more MAC addresses belonging to devices. All devices returned belong to MAC addresses that are an exact match.
-func (r OrganizationsApiGetOrganizationFirmwareUpgradesByDeviceRequest) Macs(macs []string) OrganizationsApiGetOrganizationFirmwareUpgradesByDeviceRequest {
+func (r OrganizationsAPIGetOrganizationFirmwareUpgradesByDeviceRequest) Macs(macs []string) OrganizationsAPIGetOrganizationFirmwareUpgradesByDeviceRequest {
 	r.macs = &macs
 	return r
 }
 
 // Optional parameter to filter by firmware upgrade batch ids.
-func (r OrganizationsApiGetOrganizationFirmwareUpgradesByDeviceRequest) FirmwareUpgradeBatchIds(firmwareUpgradeBatchIds []string) OrganizationsApiGetOrganizationFirmwareUpgradesByDeviceRequest {
+func (r OrganizationsAPIGetOrganizationFirmwareUpgradesByDeviceRequest) FirmwareUpgradeBatchIds(firmwareUpgradeBatchIds []string) OrganizationsAPIGetOrganizationFirmwareUpgradesByDeviceRequest {
 	r.firmwareUpgradeBatchIds = &firmwareUpgradeBatchIds
 	return r
 }
 
 // Optional parameter to filter by firmware upgrade statuses.
-func (r OrganizationsApiGetOrganizationFirmwareUpgradesByDeviceRequest) UpgradeStatuses(upgradeStatuses []string) OrganizationsApiGetOrganizationFirmwareUpgradesByDeviceRequest {
+func (r OrganizationsAPIGetOrganizationFirmwareUpgradesByDeviceRequest) UpgradeStatuses(upgradeStatuses []string) OrganizationsAPIGetOrganizationFirmwareUpgradesByDeviceRequest {
 	r.upgradeStatuses = &upgradeStatuses
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationFirmwareUpgradesByDeviceRequest) Execute() ([]GetOrganizationFirmwareUpgradesByDevice200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationFirmwareUpgradesByDeviceRequest) Execute() ([]GetOrganizationFirmwareUpgradesByDevice200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationFirmwareUpgradesByDeviceExecute(r)
 }
 
@@ -10618,10 +10618,10 @@ Get firmware upgrade status for the filtered devices
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationFirmwareUpgradesByDeviceRequest
+ @return OrganizationsAPIGetOrganizationFirmwareUpgradesByDeviceRequest
 */
-func (a *OrganizationsApiService) GetOrganizationFirmwareUpgradesByDevice(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationFirmwareUpgradesByDeviceRequest {
-	return OrganizationsApiGetOrganizationFirmwareUpgradesByDeviceRequest{
+func (a *OrganizationsAPIService) GetOrganizationFirmwareUpgradesByDevice(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationFirmwareUpgradesByDeviceRequest {
+	return OrganizationsAPIGetOrganizationFirmwareUpgradesByDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -10630,7 +10630,7 @@ func (a *OrganizationsApiService) GetOrganizationFirmwareUpgradesByDevice(ctx co
 
 // Execute executes the request
 //  @return []GetOrganizationFirmwareUpgradesByDevice200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationFirmwareUpgradesByDeviceExecute(r OrganizationsApiGetOrganizationFirmwareUpgradesByDeviceRequest) ([]GetOrganizationFirmwareUpgradesByDevice200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationFirmwareUpgradesByDeviceExecute(r OrganizationsAPIGetOrganizationFirmwareUpgradesByDeviceRequest) ([]GetOrganizationFirmwareUpgradesByDevice200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -10638,7 +10638,7 @@ func (a *OrganizationsApiService) GetOrganizationFirmwareUpgradesByDeviceExecute
 		localVarReturnValue  []GetOrganizationFirmwareUpgradesByDevice200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationFirmwareUpgradesByDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationFirmwareUpgradesByDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10782,14 +10782,14 @@ func (a *OrganizationsApiService) GetOrganizationFirmwareUpgradesByDeviceExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationInventoryDeviceRequest struct {
+type OrganizationsAPIGetOrganizationInventoryDeviceRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	serial string
 }
 
-func (r OrganizationsApiGetOrganizationInventoryDeviceRequest) Execute() (*GetOrganizationInventoryDevices200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationInventoryDeviceRequest) Execute() (*GetOrganizationInventoryDevices200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationInventoryDeviceExecute(r)
 }
 
@@ -10801,10 +10801,10 @@ Return a single device from the inventory of an organization
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param serial Serial
- @return OrganizationsApiGetOrganizationInventoryDeviceRequest
+ @return OrganizationsAPIGetOrganizationInventoryDeviceRequest
 */
-func (a *OrganizationsApiService) GetOrganizationInventoryDevice(ctx context.Context, organizationId string, serial string) OrganizationsApiGetOrganizationInventoryDeviceRequest {
-	return OrganizationsApiGetOrganizationInventoryDeviceRequest{
+func (a *OrganizationsAPIService) GetOrganizationInventoryDevice(ctx context.Context, organizationId string, serial string) OrganizationsAPIGetOrganizationInventoryDeviceRequest {
+	return OrganizationsAPIGetOrganizationInventoryDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -10814,7 +10814,7 @@ func (a *OrganizationsApiService) GetOrganizationInventoryDevice(ctx context.Con
 
 // Execute executes the request
 //  @return GetOrganizationInventoryDevices200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationInventoryDeviceExecute(r OrganizationsApiGetOrganizationInventoryDeviceRequest) (*GetOrganizationInventoryDevices200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationInventoryDeviceExecute(r OrganizationsAPIGetOrganizationInventoryDeviceRequest) (*GetOrganizationInventoryDevices200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -10822,7 +10822,7 @@ func (a *OrganizationsApiService) GetOrganizationInventoryDeviceExecute(r Organi
 		localVarReturnValue  *GetOrganizationInventoryDevices200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationInventoryDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationInventoryDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10903,9 +10903,9 @@ func (a *OrganizationsApiService) GetOrganizationInventoryDeviceExecute(r Organi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationInventoryDevicesRequest struct {
+type OrganizationsAPIGetOrganizationInventoryDevicesRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -10923,84 +10923,84 @@ type OrganizationsApiGetOrganizationInventoryDevicesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r OrganizationsApiGetOrganizationInventoryDevicesRequest) PerPage(perPage int32) OrganizationsApiGetOrganizationInventoryDevicesRequest {
+func (r OrganizationsAPIGetOrganizationInventoryDevicesRequest) PerPage(perPage int32) OrganizationsAPIGetOrganizationInventoryDevicesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationInventoryDevicesRequest) StartingAfter(startingAfter string) OrganizationsApiGetOrganizationInventoryDevicesRequest {
+func (r OrganizationsAPIGetOrganizationInventoryDevicesRequest) StartingAfter(startingAfter string) OrganizationsAPIGetOrganizationInventoryDevicesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationInventoryDevicesRequest) EndingBefore(endingBefore string) OrganizationsApiGetOrganizationInventoryDevicesRequest {
+func (r OrganizationsAPIGetOrganizationInventoryDevicesRequest) EndingBefore(endingBefore string) OrganizationsAPIGetOrganizationInventoryDevicesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Filter results by used or unused inventory. Accepted values are &#39;used&#39; or &#39;unused&#39;.
-func (r OrganizationsApiGetOrganizationInventoryDevicesRequest) UsedState(usedState string) OrganizationsApiGetOrganizationInventoryDevicesRequest {
+func (r OrganizationsAPIGetOrganizationInventoryDevicesRequest) UsedState(usedState string) OrganizationsAPIGetOrganizationInventoryDevicesRequest {
 	r.usedState = &usedState
 	return r
 }
 
 // Search for devices in inventory based on serial number, mac address, or model.
-func (r OrganizationsApiGetOrganizationInventoryDevicesRequest) Search(search string) OrganizationsApiGetOrganizationInventoryDevicesRequest {
+func (r OrganizationsAPIGetOrganizationInventoryDevicesRequest) Search(search string) OrganizationsAPIGetOrganizationInventoryDevicesRequest {
 	r.search = &search
 	return r
 }
 
 // Search for devices in inventory based on mac addresses.
-func (r OrganizationsApiGetOrganizationInventoryDevicesRequest) Macs(macs []string) OrganizationsApiGetOrganizationInventoryDevicesRequest {
+func (r OrganizationsAPIGetOrganizationInventoryDevicesRequest) Macs(macs []string) OrganizationsAPIGetOrganizationInventoryDevicesRequest {
 	r.macs = &macs
 	return r
 }
 
 // Search for devices in inventory based on network ids.
-func (r OrganizationsApiGetOrganizationInventoryDevicesRequest) NetworkIds(networkIds []string) OrganizationsApiGetOrganizationInventoryDevicesRequest {
+func (r OrganizationsAPIGetOrganizationInventoryDevicesRequest) NetworkIds(networkIds []string) OrganizationsAPIGetOrganizationInventoryDevicesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Search for devices in inventory based on serials.
-func (r OrganizationsApiGetOrganizationInventoryDevicesRequest) Serials(serials []string) OrganizationsApiGetOrganizationInventoryDevicesRequest {
+func (r OrganizationsAPIGetOrganizationInventoryDevicesRequest) Serials(serials []string) OrganizationsAPIGetOrganizationInventoryDevicesRequest {
 	r.serials = &serials
 	return r
 }
 
 // Search for devices in inventory based on model.
-func (r OrganizationsApiGetOrganizationInventoryDevicesRequest) Models(models []string) OrganizationsApiGetOrganizationInventoryDevicesRequest {
+func (r OrganizationsAPIGetOrganizationInventoryDevicesRequest) Models(models []string) OrganizationsAPIGetOrganizationInventoryDevicesRequest {
 	r.models = &models
 	return r
 }
 
 // Search for devices in inventory based on order numbers.
-func (r OrganizationsApiGetOrganizationInventoryDevicesRequest) OrderNumbers(orderNumbers []string) OrganizationsApiGetOrganizationInventoryDevicesRequest {
+func (r OrganizationsAPIGetOrganizationInventoryDevicesRequest) OrderNumbers(orderNumbers []string) OrganizationsAPIGetOrganizationInventoryDevicesRequest {
 	r.orderNumbers = &orderNumbers
 	return r
 }
 
 // Filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below).
-func (r OrganizationsApiGetOrganizationInventoryDevicesRequest) Tags(tags []string) OrganizationsApiGetOrganizationInventoryDevicesRequest {
+func (r OrganizationsAPIGetOrganizationInventoryDevicesRequest) Tags(tags []string) OrganizationsAPIGetOrganizationInventoryDevicesRequest {
 	r.tags = &tags
 	return r
 }
 
 // To use with &#39;tags&#39; parameter, to filter devices which contain ANY or ALL given tags. Accepted values are &#39;withAnyTags&#39; or &#39;withAllTags&#39;, default is &#39;withAnyTags&#39;.
-func (r OrganizationsApiGetOrganizationInventoryDevicesRequest) TagsFilterType(tagsFilterType string) OrganizationsApiGetOrganizationInventoryDevicesRequest {
+func (r OrganizationsAPIGetOrganizationInventoryDevicesRequest) TagsFilterType(tagsFilterType string) OrganizationsAPIGetOrganizationInventoryDevicesRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
 // Filter devices by product type. Accepted values are appliance, camera, cellularGateway, cloudGateway, sensor, switch, systemsManager, and wireless.
-func (r OrganizationsApiGetOrganizationInventoryDevicesRequest) ProductTypes(productTypes []string) OrganizationsApiGetOrganizationInventoryDevicesRequest {
+func (r OrganizationsAPIGetOrganizationInventoryDevicesRequest) ProductTypes(productTypes []string) OrganizationsAPIGetOrganizationInventoryDevicesRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationInventoryDevicesRequest) Execute() ([]GetOrganizationInventoryDevices200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationInventoryDevicesRequest) Execute() ([]GetOrganizationInventoryDevices200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationInventoryDevicesExecute(r)
 }
 
@@ -11011,10 +11011,10 @@ Return the device inventory for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationInventoryDevicesRequest
+ @return OrganizationsAPIGetOrganizationInventoryDevicesRequest
 */
-func (a *OrganizationsApiService) GetOrganizationInventoryDevices(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationInventoryDevicesRequest {
-	return OrganizationsApiGetOrganizationInventoryDevicesRequest{
+func (a *OrganizationsAPIService) GetOrganizationInventoryDevices(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationInventoryDevicesRequest {
+	return OrganizationsAPIGetOrganizationInventoryDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -11023,7 +11023,7 @@ func (a *OrganizationsApiService) GetOrganizationInventoryDevices(ctx context.Co
 
 // Execute executes the request
 //  @return []GetOrganizationInventoryDevices200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationInventoryDevicesExecute(r OrganizationsApiGetOrganizationInventoryDevicesRequest) ([]GetOrganizationInventoryDevices200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationInventoryDevicesExecute(r OrganizationsAPIGetOrganizationInventoryDevicesRequest) ([]GetOrganizationInventoryDevices200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -11031,7 +11031,7 @@ func (a *OrganizationsApiService) GetOrganizationInventoryDevicesExecute(r Organ
 		localVarReturnValue  []GetOrganizationInventoryDevices200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationInventoryDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationInventoryDevices")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11206,20 +11206,20 @@ func (a *OrganizationsApiService) GetOrganizationInventoryDevicesExecute(r Organ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest struct {
+type OrganizationsAPIGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	importIds *[]string
 }
 
 // import ids from an imports
-func (r OrganizationsApiGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest) ImportIds(importIds []string) OrganizationsApiGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest {
+func (r OrganizationsAPIGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest) ImportIds(importIds []string) OrganizationsAPIGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest {
 	r.importIds = &importIds
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest) Execute() ([]GetOrganizationInventoryOnboardingCloudMonitoringImports200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest) Execute() ([]GetOrganizationInventoryOnboardingCloudMonitoringImports200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationInventoryOnboardingCloudMonitoringImportsExecute(r)
 }
 
@@ -11230,10 +11230,10 @@ Check the status of a committed Import operation
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest
+ @return OrganizationsAPIGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest
 */
-func (a *OrganizationsApiService) GetOrganizationInventoryOnboardingCloudMonitoringImports(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest {
-	return OrganizationsApiGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest{
+func (a *OrganizationsAPIService) GetOrganizationInventoryOnboardingCloudMonitoringImports(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest {
+	return OrganizationsAPIGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -11242,7 +11242,7 @@ func (a *OrganizationsApiService) GetOrganizationInventoryOnboardingCloudMonitor
 
 // Execute executes the request
 //  @return []GetOrganizationInventoryOnboardingCloudMonitoringImports200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationInventoryOnboardingCloudMonitoringImportsExecute(r OrganizationsApiGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest) ([]GetOrganizationInventoryOnboardingCloudMonitoringImports200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationInventoryOnboardingCloudMonitoringImportsExecute(r OrganizationsAPIGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest) ([]GetOrganizationInventoryOnboardingCloudMonitoringImports200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -11250,7 +11250,7 @@ func (a *OrganizationsApiService) GetOrganizationInventoryOnboardingCloudMonitor
 		localVarReturnValue  []GetOrganizationInventoryOnboardingCloudMonitoringImports200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationInventoryOnboardingCloudMonitoringImports")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationInventoryOnboardingCloudMonitoringImports")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11344,9 +11344,9 @@ func (a *OrganizationsApiService) GetOrganizationInventoryOnboardingCloudMonitor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest struct {
+type OrganizationsAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	deviceType *string
 	perPage *int32
@@ -11355,30 +11355,30 @@ type OrganizationsApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRe
 }
 
 // Device Type switch or wireless controller
-func (r OrganizationsApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) DeviceType(deviceType string) OrganizationsApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
+func (r OrganizationsAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) DeviceType(deviceType string) OrganizationsAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
 	r.deviceType = &deviceType
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 100000. Default is 1000.
-func (r OrganizationsApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) PerPage(perPage int32) OrganizationsApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
+func (r OrganizationsAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) PerPage(perPage int32) OrganizationsAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) StartingAfter(startingAfter string) OrganizationsApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
+func (r OrganizationsAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) StartingAfter(startingAfter string) OrganizationsAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) EndingBefore(endingBefore string) OrganizationsApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
+func (r OrganizationsAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) EndingBefore(endingBefore string) OrganizationsAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) Execute() ([]GetNetwork200Response, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) Execute() ([]GetNetwork200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationInventoryOnboardingCloudMonitoringNetworksExecute(r)
 }
 
@@ -11389,10 +11389,10 @@ Returns list of networks eligible for adding cloud monitored device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest
+ @return OrganizationsAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest
 */
-func (a *OrganizationsApiService) GetOrganizationInventoryOnboardingCloudMonitoringNetworks(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
-	return OrganizationsApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest{
+func (a *OrganizationsAPIService) GetOrganizationInventoryOnboardingCloudMonitoringNetworks(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest {
+	return OrganizationsAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -11401,7 +11401,7 @@ func (a *OrganizationsApiService) GetOrganizationInventoryOnboardingCloudMonitor
 
 // Execute executes the request
 //  @return []GetNetwork200Response
-func (a *OrganizationsApiService) GetOrganizationInventoryOnboardingCloudMonitoringNetworksExecute(r OrganizationsApiGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) ([]GetNetwork200Response, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationInventoryOnboardingCloudMonitoringNetworksExecute(r OrganizationsAPIGetOrganizationInventoryOnboardingCloudMonitoringNetworksRequest) ([]GetNetwork200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -11409,7 +11409,7 @@ func (a *OrganizationsApiService) GetOrganizationInventoryOnboardingCloudMonitor
 		localVarReturnValue  []GetNetwork200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationInventoryOnboardingCloudMonitoringNetworks")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationInventoryOnboardingCloudMonitoringNetworks")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11502,14 +11502,14 @@ func (a *OrganizationsApiService) GetOrganizationInventoryOnboardingCloudMonitor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationLicenseRequest struct {
+type OrganizationsAPIGetOrganizationLicenseRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	licenseId string
 }
 
-func (r OrganizationsApiGetOrganizationLicenseRequest) Execute() (*GetOrganizationLicenses200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationLicenseRequest) Execute() (*GetOrganizationLicenses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationLicenseExecute(r)
 }
 
@@ -11521,10 +11521,10 @@ Display a license
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param licenseId License ID
- @return OrganizationsApiGetOrganizationLicenseRequest
+ @return OrganizationsAPIGetOrganizationLicenseRequest
 */
-func (a *OrganizationsApiService) GetOrganizationLicense(ctx context.Context, organizationId string, licenseId string) OrganizationsApiGetOrganizationLicenseRequest {
-	return OrganizationsApiGetOrganizationLicenseRequest{
+func (a *OrganizationsAPIService) GetOrganizationLicense(ctx context.Context, organizationId string, licenseId string) OrganizationsAPIGetOrganizationLicenseRequest {
+	return OrganizationsAPIGetOrganizationLicenseRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -11534,7 +11534,7 @@ func (a *OrganizationsApiService) GetOrganizationLicense(ctx context.Context, or
 
 // Execute executes the request
 //  @return GetOrganizationLicenses200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationLicenseExecute(r OrganizationsApiGetOrganizationLicenseRequest) (*GetOrganizationLicenses200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationLicenseExecute(r OrganizationsAPIGetOrganizationLicenseRequest) (*GetOrganizationLicenses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -11542,7 +11542,7 @@ func (a *OrganizationsApiService) GetOrganizationLicenseExecute(r OrganizationsA
 		localVarReturnValue  *GetOrganizationLicenses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationLicense")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationLicense")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11623,9 +11623,9 @@ func (a *OrganizationsApiService) GetOrganizationLicenseExecute(r OrganizationsA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationLicensesRequest struct {
+type OrganizationsAPIGetOrganizationLicensesRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -11636,42 +11636,42 @@ type OrganizationsApiGetOrganizationLicensesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r OrganizationsApiGetOrganizationLicensesRequest) PerPage(perPage int32) OrganizationsApiGetOrganizationLicensesRequest {
+func (r OrganizationsAPIGetOrganizationLicensesRequest) PerPage(perPage int32) OrganizationsAPIGetOrganizationLicensesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationLicensesRequest) StartingAfter(startingAfter string) OrganizationsApiGetOrganizationLicensesRequest {
+func (r OrganizationsAPIGetOrganizationLicensesRequest) StartingAfter(startingAfter string) OrganizationsAPIGetOrganizationLicensesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationLicensesRequest) EndingBefore(endingBefore string) OrganizationsApiGetOrganizationLicensesRequest {
+func (r OrganizationsAPIGetOrganizationLicensesRequest) EndingBefore(endingBefore string) OrganizationsAPIGetOrganizationLicensesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Filter the licenses to those assigned to a particular device. Returned in the same order that they are queued to the device.
-func (r OrganizationsApiGetOrganizationLicensesRequest) DeviceSerial(deviceSerial string) OrganizationsApiGetOrganizationLicensesRequest {
+func (r OrganizationsAPIGetOrganizationLicensesRequest) DeviceSerial(deviceSerial string) OrganizationsAPIGetOrganizationLicensesRequest {
 	r.deviceSerial = &deviceSerial
 	return r
 }
 
 // Filter the licenses to those assigned in a particular network
-func (r OrganizationsApiGetOrganizationLicensesRequest) NetworkId(networkId string) OrganizationsApiGetOrganizationLicensesRequest {
+func (r OrganizationsAPIGetOrganizationLicensesRequest) NetworkId(networkId string) OrganizationsAPIGetOrganizationLicensesRequest {
 	r.networkId = &networkId
 	return r
 }
 
 // Filter the licenses to those in a particular state. Can be one of &#39;active&#39;, &#39;expired&#39;, &#39;expiring&#39;, &#39;recentlyQueued&#39;, &#39;unused&#39; or &#39;unusedActive&#39;
-func (r OrganizationsApiGetOrganizationLicensesRequest) State(state string) OrganizationsApiGetOrganizationLicensesRequest {
+func (r OrganizationsAPIGetOrganizationLicensesRequest) State(state string) OrganizationsAPIGetOrganizationLicensesRequest {
 	r.state = &state
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationLicensesRequest) Execute() ([]GetOrganizationLicenses200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationLicensesRequest) Execute() ([]GetOrganizationLicenses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationLicensesExecute(r)
 }
 
@@ -11682,10 +11682,10 @@ List the licenses for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationLicensesRequest
+ @return OrganizationsAPIGetOrganizationLicensesRequest
 */
-func (a *OrganizationsApiService) GetOrganizationLicenses(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationLicensesRequest {
-	return OrganizationsApiGetOrganizationLicensesRequest{
+func (a *OrganizationsAPIService) GetOrganizationLicenses(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationLicensesRequest {
+	return OrganizationsAPIGetOrganizationLicensesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -11694,7 +11694,7 @@ func (a *OrganizationsApiService) GetOrganizationLicenses(ctx context.Context, o
 
 // Execute executes the request
 //  @return []GetOrganizationLicenses200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationLicensesExecute(r OrganizationsApiGetOrganizationLicensesRequest) ([]GetOrganizationLicenses200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationLicensesExecute(r OrganizationsAPIGetOrganizationLicensesRequest) ([]GetOrganizationLicenses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -11702,7 +11702,7 @@ func (a *OrganizationsApiService) GetOrganizationLicensesExecute(r Organizations
 		localVarReturnValue  []GetOrganizationLicenses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationLicenses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationLicenses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11800,13 +11800,13 @@ func (a *OrganizationsApiService) GetOrganizationLicensesExecute(r Organizations
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationLicensesOverviewRequest struct {
+type OrganizationsAPIGetOrganizationLicensesOverviewRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 }
 
-func (r OrganizationsApiGetOrganizationLicensesOverviewRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationLicensesOverviewRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationLicensesOverviewExecute(r)
 }
 
@@ -11817,10 +11817,10 @@ Return an overview of the license state for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationLicensesOverviewRequest
+ @return OrganizationsAPIGetOrganizationLicensesOverviewRequest
 */
-func (a *OrganizationsApiService) GetOrganizationLicensesOverview(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationLicensesOverviewRequest {
-	return OrganizationsApiGetOrganizationLicensesOverviewRequest{
+func (a *OrganizationsAPIService) GetOrganizationLicensesOverview(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationLicensesOverviewRequest {
+	return OrganizationsAPIGetOrganizationLicensesOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -11829,7 +11829,7 @@ func (a *OrganizationsApiService) GetOrganizationLicensesOverview(ctx context.Co
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) GetOrganizationLicensesOverviewExecute(r OrganizationsApiGetOrganizationLicensesOverviewRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationLicensesOverviewExecute(r OrganizationsAPIGetOrganizationLicensesOverviewRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -11837,7 +11837,7 @@ func (a *OrganizationsApiService) GetOrganizationLicensesOverviewExecute(r Organ
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationLicensesOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationLicensesOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11917,13 +11917,13 @@ func (a *OrganizationsApiService) GetOrganizationLicensesOverviewExecute(r Organ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationLoginSecurityRequest struct {
+type OrganizationsAPIGetOrganizationLoginSecurityRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 }
 
-func (r OrganizationsApiGetOrganizationLoginSecurityRequest) Execute() (*GetOrganizationLoginSecurity200Response, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationLoginSecurityRequest) Execute() (*GetOrganizationLoginSecurity200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationLoginSecurityExecute(r)
 }
 
@@ -11934,10 +11934,10 @@ Returns the login security settings for an organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationLoginSecurityRequest
+ @return OrganizationsAPIGetOrganizationLoginSecurityRequest
 */
-func (a *OrganizationsApiService) GetOrganizationLoginSecurity(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationLoginSecurityRequest {
-	return OrganizationsApiGetOrganizationLoginSecurityRequest{
+func (a *OrganizationsAPIService) GetOrganizationLoginSecurity(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationLoginSecurityRequest {
+	return OrganizationsAPIGetOrganizationLoginSecurityRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -11946,7 +11946,7 @@ func (a *OrganizationsApiService) GetOrganizationLoginSecurity(ctx context.Conte
 
 // Execute executes the request
 //  @return GetOrganizationLoginSecurity200Response
-func (a *OrganizationsApiService) GetOrganizationLoginSecurityExecute(r OrganizationsApiGetOrganizationLoginSecurityRequest) (*GetOrganizationLoginSecurity200Response, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationLoginSecurityExecute(r OrganizationsAPIGetOrganizationLoginSecurityRequest) (*GetOrganizationLoginSecurity200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -11954,7 +11954,7 @@ func (a *OrganizationsApiService) GetOrganizationLoginSecurityExecute(r Organiza
 		localVarReturnValue  *GetOrganizationLoginSecurity200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationLoginSecurity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationLoginSecurity")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12034,9 +12034,9 @@ func (a *OrganizationsApiService) GetOrganizationLoginSecurityExecute(r Organiza
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationNetworksRequest struct {
+type OrganizationsAPIGetOrganizationNetworksRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	configTemplateId *string
 	isBoundToConfigTemplate *bool
@@ -12048,48 +12048,48 @@ type OrganizationsApiGetOrganizationNetworksRequest struct {
 }
 
 // An optional parameter that is the ID of a config template. Will return all networks bound to that template.
-func (r OrganizationsApiGetOrganizationNetworksRequest) ConfigTemplateId(configTemplateId string) OrganizationsApiGetOrganizationNetworksRequest {
+func (r OrganizationsAPIGetOrganizationNetworksRequest) ConfigTemplateId(configTemplateId string) OrganizationsAPIGetOrganizationNetworksRequest {
 	r.configTemplateId = &configTemplateId
 	return r
 }
 
 // An optional parameter to filter config template bound networks. If configTemplateId is set, this cannot be false.
-func (r OrganizationsApiGetOrganizationNetworksRequest) IsBoundToConfigTemplate(isBoundToConfigTemplate bool) OrganizationsApiGetOrganizationNetworksRequest {
+func (r OrganizationsAPIGetOrganizationNetworksRequest) IsBoundToConfigTemplate(isBoundToConfigTemplate bool) OrganizationsAPIGetOrganizationNetworksRequest {
 	r.isBoundToConfigTemplate = &isBoundToConfigTemplate
 	return r
 }
 
 // An optional parameter to filter networks by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below).
-func (r OrganizationsApiGetOrganizationNetworksRequest) Tags(tags []string) OrganizationsApiGetOrganizationNetworksRequest {
+func (r OrganizationsAPIGetOrganizationNetworksRequest) Tags(tags []string) OrganizationsAPIGetOrganizationNetworksRequest {
 	r.tags = &tags
 	return r
 }
 
 // An optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return networks which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r OrganizationsApiGetOrganizationNetworksRequest) TagsFilterType(tagsFilterType string) OrganizationsApiGetOrganizationNetworksRequest {
+func (r OrganizationsAPIGetOrganizationNetworksRequest) TagsFilterType(tagsFilterType string) OrganizationsAPIGetOrganizationNetworksRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 100000. Default is 1000.
-func (r OrganizationsApiGetOrganizationNetworksRequest) PerPage(perPage int32) OrganizationsApiGetOrganizationNetworksRequest {
+func (r OrganizationsAPIGetOrganizationNetworksRequest) PerPage(perPage int32) OrganizationsAPIGetOrganizationNetworksRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationNetworksRequest) StartingAfter(startingAfter string) OrganizationsApiGetOrganizationNetworksRequest {
+func (r OrganizationsAPIGetOrganizationNetworksRequest) StartingAfter(startingAfter string) OrganizationsAPIGetOrganizationNetworksRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationNetworksRequest) EndingBefore(endingBefore string) OrganizationsApiGetOrganizationNetworksRequest {
+func (r OrganizationsAPIGetOrganizationNetworksRequest) EndingBefore(endingBefore string) OrganizationsAPIGetOrganizationNetworksRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationNetworksRequest) Execute() ([]GetNetwork200Response, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationNetworksRequest) Execute() ([]GetNetwork200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationNetworksExecute(r)
 }
 
@@ -12100,10 +12100,10 @@ List the networks that the user has privileges on in an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationNetworksRequest
+ @return OrganizationsAPIGetOrganizationNetworksRequest
 */
-func (a *OrganizationsApiService) GetOrganizationNetworks(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationNetworksRequest {
-	return OrganizationsApiGetOrganizationNetworksRequest{
+func (a *OrganizationsAPIService) GetOrganizationNetworks(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationNetworksRequest {
+	return OrganizationsAPIGetOrganizationNetworksRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -12112,7 +12112,7 @@ func (a *OrganizationsApiService) GetOrganizationNetworks(ctx context.Context, o
 
 // Execute executes the request
 //  @return []GetNetwork200Response
-func (a *OrganizationsApiService) GetOrganizationNetworksExecute(r OrganizationsApiGetOrganizationNetworksRequest) ([]GetNetwork200Response, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationNetworksExecute(r OrganizationsAPIGetOrganizationNetworksRequest) ([]GetNetwork200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -12120,7 +12120,7 @@ func (a *OrganizationsApiService) GetOrganizationNetworksExecute(r Organizations
 		localVarReturnValue  []GetNetwork200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationNetworks")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationNetworks")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12229,20 +12229,20 @@ func (a *OrganizationsApiService) GetOrganizationNetworksExecute(r Organizations
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationOpenapiSpecRequest struct {
+type OrganizationsAPIGetOrganizationOpenapiSpecRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	version *int32
 }
 
 // OpenAPI Specification version to return. Default is 2
-func (r OrganizationsApiGetOrganizationOpenapiSpecRequest) Version(version int32) OrganizationsApiGetOrganizationOpenapiSpecRequest {
+func (r OrganizationsAPIGetOrganizationOpenapiSpecRequest) Version(version int32) OrganizationsAPIGetOrganizationOpenapiSpecRequest {
 	r.version = &version
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationOpenapiSpecRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationOpenapiSpecRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationOpenapiSpecExecute(r)
 }
 
@@ -12253,10 +12253,10 @@ Return the OpenAPI Specification of the organization's API documentation in JSON
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationOpenapiSpecRequest
+ @return OrganizationsAPIGetOrganizationOpenapiSpecRequest
 */
-func (a *OrganizationsApiService) GetOrganizationOpenapiSpec(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationOpenapiSpecRequest {
-	return OrganizationsApiGetOrganizationOpenapiSpecRequest{
+func (a *OrganizationsAPIService) GetOrganizationOpenapiSpec(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationOpenapiSpecRequest {
+	return OrganizationsAPIGetOrganizationOpenapiSpecRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -12265,7 +12265,7 @@ func (a *OrganizationsApiService) GetOrganizationOpenapiSpec(ctx context.Context
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) GetOrganizationOpenapiSpecExecute(r OrganizationsApiGetOrganizationOpenapiSpecRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationOpenapiSpecExecute(r OrganizationsAPIGetOrganizationOpenapiSpecRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -12273,7 +12273,7 @@ func (a *OrganizationsApiService) GetOrganizationOpenapiSpecExecute(r Organizati
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationOpenapiSpec")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationOpenapiSpec")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12356,14 +12356,14 @@ func (a *OrganizationsApiService) GetOrganizationOpenapiSpecExecute(r Organizati
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationPolicyObjectRequest struct {
+type OrganizationsAPIGetOrganizationPolicyObjectRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	policyObjectId string
 }
 
-func (r OrganizationsApiGetOrganizationPolicyObjectRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationPolicyObjectRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationPolicyObjectExecute(r)
 }
 
@@ -12375,10 +12375,10 @@ Shows details of a Policy Object.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param policyObjectId Policy object ID
- @return OrganizationsApiGetOrganizationPolicyObjectRequest
+ @return OrganizationsAPIGetOrganizationPolicyObjectRequest
 */
-func (a *OrganizationsApiService) GetOrganizationPolicyObject(ctx context.Context, organizationId string, policyObjectId string) OrganizationsApiGetOrganizationPolicyObjectRequest {
-	return OrganizationsApiGetOrganizationPolicyObjectRequest{
+func (a *OrganizationsAPIService) GetOrganizationPolicyObject(ctx context.Context, organizationId string, policyObjectId string) OrganizationsAPIGetOrganizationPolicyObjectRequest {
+	return OrganizationsAPIGetOrganizationPolicyObjectRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -12388,7 +12388,7 @@ func (a *OrganizationsApiService) GetOrganizationPolicyObject(ctx context.Contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) GetOrganizationPolicyObjectExecute(r OrganizationsApiGetOrganizationPolicyObjectRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationPolicyObjectExecute(r OrganizationsAPIGetOrganizationPolicyObjectRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -12396,7 +12396,7 @@ func (a *OrganizationsApiService) GetOrganizationPolicyObjectExecute(r Organizat
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationPolicyObject")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationPolicyObject")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12477,9 +12477,9 @@ func (a *OrganizationsApiService) GetOrganizationPolicyObjectExecute(r Organizat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationPolicyObjectsRequest struct {
+type OrganizationsAPIGetOrganizationPolicyObjectsRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -12487,24 +12487,24 @@ type OrganizationsApiGetOrganizationPolicyObjectsRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 10 - 5000. Default is 5000.
-func (r OrganizationsApiGetOrganizationPolicyObjectsRequest) PerPage(perPage int32) OrganizationsApiGetOrganizationPolicyObjectsRequest {
+func (r OrganizationsAPIGetOrganizationPolicyObjectsRequest) PerPage(perPage int32) OrganizationsAPIGetOrganizationPolicyObjectsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationPolicyObjectsRequest) StartingAfter(startingAfter string) OrganizationsApiGetOrganizationPolicyObjectsRequest {
+func (r OrganizationsAPIGetOrganizationPolicyObjectsRequest) StartingAfter(startingAfter string) OrganizationsAPIGetOrganizationPolicyObjectsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationPolicyObjectsRequest) EndingBefore(endingBefore string) OrganizationsApiGetOrganizationPolicyObjectsRequest {
+func (r OrganizationsAPIGetOrganizationPolicyObjectsRequest) EndingBefore(endingBefore string) OrganizationsAPIGetOrganizationPolicyObjectsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationPolicyObjectsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationPolicyObjectsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationPolicyObjectsExecute(r)
 }
 
@@ -12515,10 +12515,10 @@ Lists Policy Objects belonging to the organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationPolicyObjectsRequest
+ @return OrganizationsAPIGetOrganizationPolicyObjectsRequest
 */
-func (a *OrganizationsApiService) GetOrganizationPolicyObjects(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationPolicyObjectsRequest {
-	return OrganizationsApiGetOrganizationPolicyObjectsRequest{
+func (a *OrganizationsAPIService) GetOrganizationPolicyObjects(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationPolicyObjectsRequest {
+	return OrganizationsAPIGetOrganizationPolicyObjectsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -12527,7 +12527,7 @@ func (a *OrganizationsApiService) GetOrganizationPolicyObjects(ctx context.Conte
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *OrganizationsApiService) GetOrganizationPolicyObjectsExecute(r OrganizationsApiGetOrganizationPolicyObjectsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationPolicyObjectsExecute(r OrganizationsAPIGetOrganizationPolicyObjectsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -12535,7 +12535,7 @@ func (a *OrganizationsApiService) GetOrganizationPolicyObjectsExecute(r Organiza
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationPolicyObjects")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationPolicyObjects")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12624,14 +12624,14 @@ func (a *OrganizationsApiService) GetOrganizationPolicyObjectsExecute(r Organiza
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationPolicyObjectsGroupRequest struct {
+type OrganizationsAPIGetOrganizationPolicyObjectsGroupRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	policyObjectGroupId string
 }
 
-func (r OrganizationsApiGetOrganizationPolicyObjectsGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationPolicyObjectsGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationPolicyObjectsGroupExecute(r)
 }
 
@@ -12643,10 +12643,10 @@ Shows details of a Policy Object Group.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param policyObjectGroupId Policy object group ID
- @return OrganizationsApiGetOrganizationPolicyObjectsGroupRequest
+ @return OrganizationsAPIGetOrganizationPolicyObjectsGroupRequest
 */
-func (a *OrganizationsApiService) GetOrganizationPolicyObjectsGroup(ctx context.Context, organizationId string, policyObjectGroupId string) OrganizationsApiGetOrganizationPolicyObjectsGroupRequest {
-	return OrganizationsApiGetOrganizationPolicyObjectsGroupRequest{
+func (a *OrganizationsAPIService) GetOrganizationPolicyObjectsGroup(ctx context.Context, organizationId string, policyObjectGroupId string) OrganizationsAPIGetOrganizationPolicyObjectsGroupRequest {
+	return OrganizationsAPIGetOrganizationPolicyObjectsGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -12656,7 +12656,7 @@ func (a *OrganizationsApiService) GetOrganizationPolicyObjectsGroup(ctx context.
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) GetOrganizationPolicyObjectsGroupExecute(r OrganizationsApiGetOrganizationPolicyObjectsGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationPolicyObjectsGroupExecute(r OrganizationsAPIGetOrganizationPolicyObjectsGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -12664,7 +12664,7 @@ func (a *OrganizationsApiService) GetOrganizationPolicyObjectsGroupExecute(r Org
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationPolicyObjectsGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationPolicyObjectsGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12745,9 +12745,9 @@ func (a *OrganizationsApiService) GetOrganizationPolicyObjectsGroupExecute(r Org
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationPolicyObjectsGroupsRequest struct {
+type OrganizationsAPIGetOrganizationPolicyObjectsGroupsRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -12755,24 +12755,24 @@ type OrganizationsApiGetOrganizationPolicyObjectsGroupsRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 10 - 1000. Default is 1000.
-func (r OrganizationsApiGetOrganizationPolicyObjectsGroupsRequest) PerPage(perPage int32) OrganizationsApiGetOrganizationPolicyObjectsGroupsRequest {
+func (r OrganizationsAPIGetOrganizationPolicyObjectsGroupsRequest) PerPage(perPage int32) OrganizationsAPIGetOrganizationPolicyObjectsGroupsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationPolicyObjectsGroupsRequest) StartingAfter(startingAfter string) OrganizationsApiGetOrganizationPolicyObjectsGroupsRequest {
+func (r OrganizationsAPIGetOrganizationPolicyObjectsGroupsRequest) StartingAfter(startingAfter string) OrganizationsAPIGetOrganizationPolicyObjectsGroupsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationPolicyObjectsGroupsRequest) EndingBefore(endingBefore string) OrganizationsApiGetOrganizationPolicyObjectsGroupsRequest {
+func (r OrganizationsAPIGetOrganizationPolicyObjectsGroupsRequest) EndingBefore(endingBefore string) OrganizationsAPIGetOrganizationPolicyObjectsGroupsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationPolicyObjectsGroupsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationPolicyObjectsGroupsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationPolicyObjectsGroupsExecute(r)
 }
 
@@ -12783,10 +12783,10 @@ Lists Policy Object Groups belonging to the organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationPolicyObjectsGroupsRequest
+ @return OrganizationsAPIGetOrganizationPolicyObjectsGroupsRequest
 */
-func (a *OrganizationsApiService) GetOrganizationPolicyObjectsGroups(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationPolicyObjectsGroupsRequest {
-	return OrganizationsApiGetOrganizationPolicyObjectsGroupsRequest{
+func (a *OrganizationsAPIService) GetOrganizationPolicyObjectsGroups(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationPolicyObjectsGroupsRequest {
+	return OrganizationsAPIGetOrganizationPolicyObjectsGroupsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -12795,7 +12795,7 @@ func (a *OrganizationsApiService) GetOrganizationPolicyObjectsGroups(ctx context
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *OrganizationsApiService) GetOrganizationPolicyObjectsGroupsExecute(r OrganizationsApiGetOrganizationPolicyObjectsGroupsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationPolicyObjectsGroupsExecute(r OrganizationsAPIGetOrganizationPolicyObjectsGroupsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -12803,7 +12803,7 @@ func (a *OrganizationsApiService) GetOrganizationPolicyObjectsGroupsExecute(r Or
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationPolicyObjectsGroups")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationPolicyObjectsGroups")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12892,13 +12892,13 @@ func (a *OrganizationsApiService) GetOrganizationPolicyObjectsGroupsExecute(r Or
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationSamlRequest struct {
+type OrganizationsAPIGetOrganizationSamlRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 }
 
-func (r OrganizationsApiGetOrganizationSamlRequest) Execute() (*GetOrganizationSaml200Response, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationSamlRequest) Execute() (*GetOrganizationSaml200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationSamlExecute(r)
 }
 
@@ -12909,10 +12909,10 @@ Returns the SAML SSO enabled settings for an organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationSamlRequest
+ @return OrganizationsAPIGetOrganizationSamlRequest
 */
-func (a *OrganizationsApiService) GetOrganizationSaml(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationSamlRequest {
-	return OrganizationsApiGetOrganizationSamlRequest{
+func (a *OrganizationsAPIService) GetOrganizationSaml(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationSamlRequest {
+	return OrganizationsAPIGetOrganizationSamlRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -12921,7 +12921,7 @@ func (a *OrganizationsApiService) GetOrganizationSaml(ctx context.Context, organ
 
 // Execute executes the request
 //  @return GetOrganizationSaml200Response
-func (a *OrganizationsApiService) GetOrganizationSamlExecute(r OrganizationsApiGetOrganizationSamlRequest) (*GetOrganizationSaml200Response, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationSamlExecute(r OrganizationsAPIGetOrganizationSamlRequest) (*GetOrganizationSaml200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -12929,7 +12929,7 @@ func (a *OrganizationsApiService) GetOrganizationSamlExecute(r OrganizationsApiG
 		localVarReturnValue  *GetOrganizationSaml200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationSaml")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationSaml")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13009,14 +13009,14 @@ func (a *OrganizationsApiService) GetOrganizationSamlExecute(r OrganizationsApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationSamlIdpRequest struct {
+type OrganizationsAPIGetOrganizationSamlIdpRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	idpId string
 }
 
-func (r OrganizationsApiGetOrganizationSamlIdpRequest) Execute() (*GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationSamlIdpRequest) Execute() (*GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSamlIdpExecute(r)
 }
 
@@ -13028,10 +13028,10 @@ Get a SAML IdP from your organization.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param idpId Idp ID
- @return OrganizationsApiGetOrganizationSamlIdpRequest
+ @return OrganizationsAPIGetOrganizationSamlIdpRequest
 */
-func (a *OrganizationsApiService) GetOrganizationSamlIdp(ctx context.Context, organizationId string, idpId string) OrganizationsApiGetOrganizationSamlIdpRequest {
-	return OrganizationsApiGetOrganizationSamlIdpRequest{
+func (a *OrganizationsAPIService) GetOrganizationSamlIdp(ctx context.Context, organizationId string, idpId string) OrganizationsAPIGetOrganizationSamlIdpRequest {
+	return OrganizationsAPIGetOrganizationSamlIdpRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -13041,7 +13041,7 @@ func (a *OrganizationsApiService) GetOrganizationSamlIdp(ctx context.Context, or
 
 // Execute executes the request
 //  @return GetOrganizationSamlIdps200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationSamlIdpExecute(r OrganizationsApiGetOrganizationSamlIdpRequest) (*GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationSamlIdpExecute(r OrganizationsAPIGetOrganizationSamlIdpRequest) (*GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -13049,7 +13049,7 @@ func (a *OrganizationsApiService) GetOrganizationSamlIdpExecute(r OrganizationsA
 		localVarReturnValue  *GetOrganizationSamlIdps200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationSamlIdp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationSamlIdp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13130,13 +13130,13 @@ func (a *OrganizationsApiService) GetOrganizationSamlIdpExecute(r OrganizationsA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationSamlIdpsRequest struct {
+type OrganizationsAPIGetOrganizationSamlIdpsRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 }
 
-func (r OrganizationsApiGetOrganizationSamlIdpsRequest) Execute() ([]GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationSamlIdpsRequest) Execute() ([]GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSamlIdpsExecute(r)
 }
 
@@ -13147,10 +13147,10 @@ List the SAML IdPs in your organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationSamlIdpsRequest
+ @return OrganizationsAPIGetOrganizationSamlIdpsRequest
 */
-func (a *OrganizationsApiService) GetOrganizationSamlIdps(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationSamlIdpsRequest {
-	return OrganizationsApiGetOrganizationSamlIdpsRequest{
+func (a *OrganizationsAPIService) GetOrganizationSamlIdps(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationSamlIdpsRequest {
+	return OrganizationsAPIGetOrganizationSamlIdpsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -13159,7 +13159,7 @@ func (a *OrganizationsApiService) GetOrganizationSamlIdps(ctx context.Context, o
 
 // Execute executes the request
 //  @return []GetOrganizationSamlIdps200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationSamlIdpsExecute(r OrganizationsApiGetOrganizationSamlIdpsRequest) ([]GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationSamlIdpsExecute(r OrganizationsAPIGetOrganizationSamlIdpsRequest) ([]GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -13167,7 +13167,7 @@ func (a *OrganizationsApiService) GetOrganizationSamlIdpsExecute(r Organizations
 		localVarReturnValue  []GetOrganizationSamlIdps200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationSamlIdps")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationSamlIdps")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13247,14 +13247,14 @@ func (a *OrganizationsApiService) GetOrganizationSamlIdpsExecute(r Organizations
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationSamlRoleRequest struct {
+type OrganizationsAPIGetOrganizationSamlRoleRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	samlRoleId string
 }
 
-func (r OrganizationsApiGetOrganizationSamlRoleRequest) Execute() (*GetOrganizationSamlRoles200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationSamlRoleRequest) Execute() (*GetOrganizationSamlRoles200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSamlRoleExecute(r)
 }
 
@@ -13266,10 +13266,10 @@ Return a SAML role
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param samlRoleId Saml role ID
- @return OrganizationsApiGetOrganizationSamlRoleRequest
+ @return OrganizationsAPIGetOrganizationSamlRoleRequest
 */
-func (a *OrganizationsApiService) GetOrganizationSamlRole(ctx context.Context, organizationId string, samlRoleId string) OrganizationsApiGetOrganizationSamlRoleRequest {
-	return OrganizationsApiGetOrganizationSamlRoleRequest{
+func (a *OrganizationsAPIService) GetOrganizationSamlRole(ctx context.Context, organizationId string, samlRoleId string) OrganizationsAPIGetOrganizationSamlRoleRequest {
+	return OrganizationsAPIGetOrganizationSamlRoleRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -13279,7 +13279,7 @@ func (a *OrganizationsApiService) GetOrganizationSamlRole(ctx context.Context, o
 
 // Execute executes the request
 //  @return GetOrganizationSamlRoles200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationSamlRoleExecute(r OrganizationsApiGetOrganizationSamlRoleRequest) (*GetOrganizationSamlRoles200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationSamlRoleExecute(r OrganizationsAPIGetOrganizationSamlRoleRequest) (*GetOrganizationSamlRoles200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -13287,7 +13287,7 @@ func (a *OrganizationsApiService) GetOrganizationSamlRoleExecute(r Organizations
 		localVarReturnValue  *GetOrganizationSamlRoles200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationSamlRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationSamlRole")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13368,13 +13368,13 @@ func (a *OrganizationsApiService) GetOrganizationSamlRoleExecute(r Organizations
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationSamlRolesRequest struct {
+type OrganizationsAPIGetOrganizationSamlRolesRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 }
 
-func (r OrganizationsApiGetOrganizationSamlRolesRequest) Execute() ([]GetOrganizationSamlRoles200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationSamlRolesRequest) Execute() ([]GetOrganizationSamlRoles200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSamlRolesExecute(r)
 }
 
@@ -13385,10 +13385,10 @@ List the SAML roles for this organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationSamlRolesRequest
+ @return OrganizationsAPIGetOrganizationSamlRolesRequest
 */
-func (a *OrganizationsApiService) GetOrganizationSamlRoles(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationSamlRolesRequest {
-	return OrganizationsApiGetOrganizationSamlRolesRequest{
+func (a *OrganizationsAPIService) GetOrganizationSamlRoles(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationSamlRolesRequest {
+	return OrganizationsAPIGetOrganizationSamlRolesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -13397,7 +13397,7 @@ func (a *OrganizationsApiService) GetOrganizationSamlRoles(ctx context.Context, 
 
 // Execute executes the request
 //  @return []GetOrganizationSamlRoles200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationSamlRolesExecute(r OrganizationsApiGetOrganizationSamlRolesRequest) ([]GetOrganizationSamlRoles200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationSamlRolesExecute(r OrganizationsAPIGetOrganizationSamlRolesRequest) ([]GetOrganizationSamlRoles200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -13405,7 +13405,7 @@ func (a *OrganizationsApiService) GetOrganizationSamlRolesExecute(r Organization
 		localVarReturnValue  []GetOrganizationSamlRoles200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationSamlRoles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationSamlRoles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13485,13 +13485,13 @@ func (a *OrganizationsApiService) GetOrganizationSamlRolesExecute(r Organization
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationSnmpRequest struct {
+type OrganizationsAPIGetOrganizationSnmpRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 }
 
-func (r OrganizationsApiGetOrganizationSnmpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationSnmpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationSnmpExecute(r)
 }
 
@@ -13502,10 +13502,10 @@ Return the SNMP settings for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationSnmpRequest
+ @return OrganizationsAPIGetOrganizationSnmpRequest
 */
-func (a *OrganizationsApiService) GetOrganizationSnmp(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationSnmpRequest {
-	return OrganizationsApiGetOrganizationSnmpRequest{
+func (a *OrganizationsAPIService) GetOrganizationSnmp(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationSnmpRequest {
+	return OrganizationsAPIGetOrganizationSnmpRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -13514,7 +13514,7 @@ func (a *OrganizationsApiService) GetOrganizationSnmp(ctx context.Context, organ
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) GetOrganizationSnmpExecute(r OrganizationsApiGetOrganizationSnmpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationSnmpExecute(r OrganizationsAPIGetOrganizationSnmpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -13522,7 +13522,7 @@ func (a *OrganizationsApiService) GetOrganizationSnmpExecute(r OrganizationsApiG
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationSnmp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationSnmp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13602,9 +13602,9 @@ func (a *OrganizationsApiService) GetOrganizationSnmpExecute(r OrganizationsApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationSummaryTopAppliancesByUtilizationRequest struct {
+type OrganizationsAPIGetOrganizationSummaryTopAppliancesByUtilizationRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -13612,24 +13612,24 @@ type OrganizationsApiGetOrganizationSummaryTopAppliancesByUtilizationRequest str
 }
 
 // The beginning of the timespan for the data.
-func (r OrganizationsApiGetOrganizationSummaryTopAppliancesByUtilizationRequest) T0(t0 string) OrganizationsApiGetOrganizationSummaryTopAppliancesByUtilizationRequest {
+func (r OrganizationsAPIGetOrganizationSummaryTopAppliancesByUtilizationRequest) T0(t0 string) OrganizationsAPIGetOrganizationSummaryTopAppliancesByUtilizationRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r OrganizationsApiGetOrganizationSummaryTopAppliancesByUtilizationRequest) T1(t1 string) OrganizationsApiGetOrganizationSummaryTopAppliancesByUtilizationRequest {
+func (r OrganizationsAPIGetOrganizationSummaryTopAppliancesByUtilizationRequest) T1(t1 string) OrganizationsAPIGetOrganizationSummaryTopAppliancesByUtilizationRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r OrganizationsApiGetOrganizationSummaryTopAppliancesByUtilizationRequest) Timespan(timespan float32) OrganizationsApiGetOrganizationSummaryTopAppliancesByUtilizationRequest {
+func (r OrganizationsAPIGetOrganizationSummaryTopAppliancesByUtilizationRequest) Timespan(timespan float32) OrganizationsAPIGetOrganizationSummaryTopAppliancesByUtilizationRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationSummaryTopAppliancesByUtilizationRequest) Execute() ([]GetOrganizationSummaryTopAppliancesByUtilization200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationSummaryTopAppliancesByUtilizationRequest) Execute() ([]GetOrganizationSummaryTopAppliancesByUtilization200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSummaryTopAppliancesByUtilizationExecute(r)
 }
 
@@ -13640,10 +13640,10 @@ Return the top 10 appliances sorted by utilization over given time range.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationSummaryTopAppliancesByUtilizationRequest
+ @return OrganizationsAPIGetOrganizationSummaryTopAppliancesByUtilizationRequest
 */
-func (a *OrganizationsApiService) GetOrganizationSummaryTopAppliancesByUtilization(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationSummaryTopAppliancesByUtilizationRequest {
-	return OrganizationsApiGetOrganizationSummaryTopAppliancesByUtilizationRequest{
+func (a *OrganizationsAPIService) GetOrganizationSummaryTopAppliancesByUtilization(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationSummaryTopAppliancesByUtilizationRequest {
+	return OrganizationsAPIGetOrganizationSummaryTopAppliancesByUtilizationRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -13652,7 +13652,7 @@ func (a *OrganizationsApiService) GetOrganizationSummaryTopAppliancesByUtilizati
 
 // Execute executes the request
 //  @return []GetOrganizationSummaryTopAppliancesByUtilization200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationSummaryTopAppliancesByUtilizationExecute(r OrganizationsApiGetOrganizationSummaryTopAppliancesByUtilizationRequest) ([]GetOrganizationSummaryTopAppliancesByUtilization200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationSummaryTopAppliancesByUtilizationExecute(r OrganizationsAPIGetOrganizationSummaryTopAppliancesByUtilizationRequest) ([]GetOrganizationSummaryTopAppliancesByUtilization200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -13660,7 +13660,7 @@ func (a *OrganizationsApiService) GetOrganizationSummaryTopAppliancesByUtilizati
 		localVarReturnValue  []GetOrganizationSummaryTopAppliancesByUtilization200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationSummaryTopAppliancesByUtilization")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationSummaryTopAppliancesByUtilization")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13749,9 +13749,9 @@ func (a *OrganizationsApiService) GetOrganizationSummaryTopAppliancesByUtilizati
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationSummaryTopClientsByUsageRequest struct {
+type OrganizationsAPIGetOrganizationSummaryTopClientsByUsageRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -13759,24 +13759,24 @@ type OrganizationsApiGetOrganizationSummaryTopClientsByUsageRequest struct {
 }
 
 // The beginning of the timespan for the data.
-func (r OrganizationsApiGetOrganizationSummaryTopClientsByUsageRequest) T0(t0 string) OrganizationsApiGetOrganizationSummaryTopClientsByUsageRequest {
+func (r OrganizationsAPIGetOrganizationSummaryTopClientsByUsageRequest) T0(t0 string) OrganizationsAPIGetOrganizationSummaryTopClientsByUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r OrganizationsApiGetOrganizationSummaryTopClientsByUsageRequest) T1(t1 string) OrganizationsApiGetOrganizationSummaryTopClientsByUsageRequest {
+func (r OrganizationsAPIGetOrganizationSummaryTopClientsByUsageRequest) T1(t1 string) OrganizationsAPIGetOrganizationSummaryTopClientsByUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r OrganizationsApiGetOrganizationSummaryTopClientsByUsageRequest) Timespan(timespan float32) OrganizationsApiGetOrganizationSummaryTopClientsByUsageRequest {
+func (r OrganizationsAPIGetOrganizationSummaryTopClientsByUsageRequest) Timespan(timespan float32) OrganizationsAPIGetOrganizationSummaryTopClientsByUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationSummaryTopClientsByUsageRequest) Execute() ([]GetOrganizationSummaryTopClientsByUsage200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationSummaryTopClientsByUsageRequest) Execute() ([]GetOrganizationSummaryTopClientsByUsage200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSummaryTopClientsByUsageExecute(r)
 }
 
@@ -13787,10 +13787,10 @@ Return metrics for organization's top 10 clients by data usage (in mb) over give
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationSummaryTopClientsByUsageRequest
+ @return OrganizationsAPIGetOrganizationSummaryTopClientsByUsageRequest
 */
-func (a *OrganizationsApiService) GetOrganizationSummaryTopClientsByUsage(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationSummaryTopClientsByUsageRequest {
-	return OrganizationsApiGetOrganizationSummaryTopClientsByUsageRequest{
+func (a *OrganizationsAPIService) GetOrganizationSummaryTopClientsByUsage(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationSummaryTopClientsByUsageRequest {
+	return OrganizationsAPIGetOrganizationSummaryTopClientsByUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -13799,7 +13799,7 @@ func (a *OrganizationsApiService) GetOrganizationSummaryTopClientsByUsage(ctx co
 
 // Execute executes the request
 //  @return []GetOrganizationSummaryTopClientsByUsage200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationSummaryTopClientsByUsageExecute(r OrganizationsApiGetOrganizationSummaryTopClientsByUsageRequest) ([]GetOrganizationSummaryTopClientsByUsage200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationSummaryTopClientsByUsageExecute(r OrganizationsAPIGetOrganizationSummaryTopClientsByUsageRequest) ([]GetOrganizationSummaryTopClientsByUsage200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -13807,7 +13807,7 @@ func (a *OrganizationsApiService) GetOrganizationSummaryTopClientsByUsageExecute
 		localVarReturnValue  []GetOrganizationSummaryTopClientsByUsage200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationSummaryTopClientsByUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationSummaryTopClientsByUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13896,9 +13896,9 @@ func (a *OrganizationsApiService) GetOrganizationSummaryTopClientsByUsageExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest struct {
+type OrganizationsAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -13906,24 +13906,24 @@ type OrganizationsApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest
 }
 
 // The beginning of the timespan for the data.
-func (r OrganizationsApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest) T0(t0 string) OrganizationsApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
+func (r OrganizationsAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest) T0(t0 string) OrganizationsAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r OrganizationsApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest) T1(t1 string) OrganizationsApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
+func (r OrganizationsAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest) T1(t1 string) OrganizationsAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r OrganizationsApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest) Timespan(timespan float32) OrganizationsApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
+func (r OrganizationsAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest) Timespan(timespan float32) OrganizationsAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest) Execute() ([]GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest) Execute() ([]GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSummaryTopClientsManufacturersByUsageExecute(r)
 }
 
@@ -13934,10 +13934,10 @@ Return metrics for organization's top clients by data usage (in mb) over given t
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest
+ @return OrganizationsAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest
 */
-func (a *OrganizationsApiService) GetOrganizationSummaryTopClientsManufacturersByUsage(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
-	return OrganizationsApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest{
+func (a *OrganizationsAPIService) GetOrganizationSummaryTopClientsManufacturersByUsage(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest {
+	return OrganizationsAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -13946,7 +13946,7 @@ func (a *OrganizationsApiService) GetOrganizationSummaryTopClientsManufacturersB
 
 // Execute executes the request
 //  @return []GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationSummaryTopClientsManufacturersByUsageExecute(r OrganizationsApiGetOrganizationSummaryTopClientsManufacturersByUsageRequest) ([]GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationSummaryTopClientsManufacturersByUsageExecute(r OrganizationsAPIGetOrganizationSummaryTopClientsManufacturersByUsageRequest) ([]GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -13954,7 +13954,7 @@ func (a *OrganizationsApiService) GetOrganizationSummaryTopClientsManufacturersB
 		localVarReturnValue  []GetOrganizationSummaryTopClientsManufacturersByUsage200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationSummaryTopClientsManufacturersByUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationSummaryTopClientsManufacturersByUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14043,9 +14043,9 @@ func (a *OrganizationsApiService) GetOrganizationSummaryTopClientsManufacturersB
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationSummaryTopDevicesByUsageRequest struct {
+type OrganizationsAPIGetOrganizationSummaryTopDevicesByUsageRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -14053,24 +14053,24 @@ type OrganizationsApiGetOrganizationSummaryTopDevicesByUsageRequest struct {
 }
 
 // The beginning of the timespan for the data.
-func (r OrganizationsApiGetOrganizationSummaryTopDevicesByUsageRequest) T0(t0 string) OrganizationsApiGetOrganizationSummaryTopDevicesByUsageRequest {
+func (r OrganizationsAPIGetOrganizationSummaryTopDevicesByUsageRequest) T0(t0 string) OrganizationsAPIGetOrganizationSummaryTopDevicesByUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r OrganizationsApiGetOrganizationSummaryTopDevicesByUsageRequest) T1(t1 string) OrganizationsApiGetOrganizationSummaryTopDevicesByUsageRequest {
+func (r OrganizationsAPIGetOrganizationSummaryTopDevicesByUsageRequest) T1(t1 string) OrganizationsAPIGetOrganizationSummaryTopDevicesByUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r OrganizationsApiGetOrganizationSummaryTopDevicesByUsageRequest) Timespan(timespan float32) OrganizationsApiGetOrganizationSummaryTopDevicesByUsageRequest {
+func (r OrganizationsAPIGetOrganizationSummaryTopDevicesByUsageRequest) Timespan(timespan float32) OrganizationsAPIGetOrganizationSummaryTopDevicesByUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationSummaryTopDevicesByUsageRequest) Execute() ([]GetOrganizationSummaryTopDevicesByUsage200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationSummaryTopDevicesByUsageRequest) Execute() ([]GetOrganizationSummaryTopDevicesByUsage200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSummaryTopDevicesByUsageExecute(r)
 }
 
@@ -14081,10 +14081,10 @@ Return metrics for organization's top 10 devices sorted by data usage over given
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationSummaryTopDevicesByUsageRequest
+ @return OrganizationsAPIGetOrganizationSummaryTopDevicesByUsageRequest
 */
-func (a *OrganizationsApiService) GetOrganizationSummaryTopDevicesByUsage(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationSummaryTopDevicesByUsageRequest {
-	return OrganizationsApiGetOrganizationSummaryTopDevicesByUsageRequest{
+func (a *OrganizationsAPIService) GetOrganizationSummaryTopDevicesByUsage(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationSummaryTopDevicesByUsageRequest {
+	return OrganizationsAPIGetOrganizationSummaryTopDevicesByUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -14093,7 +14093,7 @@ func (a *OrganizationsApiService) GetOrganizationSummaryTopDevicesByUsage(ctx co
 
 // Execute executes the request
 //  @return []GetOrganizationSummaryTopDevicesByUsage200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationSummaryTopDevicesByUsageExecute(r OrganizationsApiGetOrganizationSummaryTopDevicesByUsageRequest) ([]GetOrganizationSummaryTopDevicesByUsage200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationSummaryTopDevicesByUsageExecute(r OrganizationsAPIGetOrganizationSummaryTopDevicesByUsageRequest) ([]GetOrganizationSummaryTopDevicesByUsage200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -14101,7 +14101,7 @@ func (a *OrganizationsApiService) GetOrganizationSummaryTopDevicesByUsageExecute
 		localVarReturnValue  []GetOrganizationSummaryTopDevicesByUsage200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationSummaryTopDevicesByUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationSummaryTopDevicesByUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14190,9 +14190,9 @@ func (a *OrganizationsApiService) GetOrganizationSummaryTopDevicesByUsageExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationSummaryTopDevicesModelsByUsageRequest struct {
+type OrganizationsAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -14200,24 +14200,24 @@ type OrganizationsApiGetOrganizationSummaryTopDevicesModelsByUsageRequest struct
 }
 
 // The beginning of the timespan for the data.
-func (r OrganizationsApiGetOrganizationSummaryTopDevicesModelsByUsageRequest) T0(t0 string) OrganizationsApiGetOrganizationSummaryTopDevicesModelsByUsageRequest {
+func (r OrganizationsAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest) T0(t0 string) OrganizationsAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r OrganizationsApiGetOrganizationSummaryTopDevicesModelsByUsageRequest) T1(t1 string) OrganizationsApiGetOrganizationSummaryTopDevicesModelsByUsageRequest {
+func (r OrganizationsAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest) T1(t1 string) OrganizationsAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r OrganizationsApiGetOrganizationSummaryTopDevicesModelsByUsageRequest) Timespan(timespan float32) OrganizationsApiGetOrganizationSummaryTopDevicesModelsByUsageRequest {
+func (r OrganizationsAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest) Timespan(timespan float32) OrganizationsAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationSummaryTopDevicesModelsByUsageRequest) Execute() ([]GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest) Execute() ([]GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSummaryTopDevicesModelsByUsageExecute(r)
 }
 
@@ -14228,10 +14228,10 @@ Return metrics for organization's top 10 device models sorted by data usage over
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationSummaryTopDevicesModelsByUsageRequest
+ @return OrganizationsAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest
 */
-func (a *OrganizationsApiService) GetOrganizationSummaryTopDevicesModelsByUsage(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationSummaryTopDevicesModelsByUsageRequest {
-	return OrganizationsApiGetOrganizationSummaryTopDevicesModelsByUsageRequest{
+func (a *OrganizationsAPIService) GetOrganizationSummaryTopDevicesModelsByUsage(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest {
+	return OrganizationsAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -14240,7 +14240,7 @@ func (a *OrganizationsApiService) GetOrganizationSummaryTopDevicesModelsByUsage(
 
 // Execute executes the request
 //  @return []GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationSummaryTopDevicesModelsByUsageExecute(r OrganizationsApiGetOrganizationSummaryTopDevicesModelsByUsageRequest) ([]GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationSummaryTopDevicesModelsByUsageExecute(r OrganizationsAPIGetOrganizationSummaryTopDevicesModelsByUsageRequest) ([]GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -14248,7 +14248,7 @@ func (a *OrganizationsApiService) GetOrganizationSummaryTopDevicesModelsByUsageE
 		localVarReturnValue  []GetOrganizationSummaryTopDevicesModelsByUsage200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationSummaryTopDevicesModelsByUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationSummaryTopDevicesModelsByUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14337,9 +14337,9 @@ func (a *OrganizationsApiService) GetOrganizationSummaryTopDevicesModelsByUsageE
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationSummaryTopSsidsByUsageRequest struct {
+type OrganizationsAPIGetOrganizationSummaryTopSsidsByUsageRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -14347,24 +14347,24 @@ type OrganizationsApiGetOrganizationSummaryTopSsidsByUsageRequest struct {
 }
 
 // The beginning of the timespan for the data.
-func (r OrganizationsApiGetOrganizationSummaryTopSsidsByUsageRequest) T0(t0 string) OrganizationsApiGetOrganizationSummaryTopSsidsByUsageRequest {
+func (r OrganizationsAPIGetOrganizationSummaryTopSsidsByUsageRequest) T0(t0 string) OrganizationsAPIGetOrganizationSummaryTopSsidsByUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r OrganizationsApiGetOrganizationSummaryTopSsidsByUsageRequest) T1(t1 string) OrganizationsApiGetOrganizationSummaryTopSsidsByUsageRequest {
+func (r OrganizationsAPIGetOrganizationSummaryTopSsidsByUsageRequest) T1(t1 string) OrganizationsAPIGetOrganizationSummaryTopSsidsByUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r OrganizationsApiGetOrganizationSummaryTopSsidsByUsageRequest) Timespan(timespan float32) OrganizationsApiGetOrganizationSummaryTopSsidsByUsageRequest {
+func (r OrganizationsAPIGetOrganizationSummaryTopSsidsByUsageRequest) Timespan(timespan float32) OrganizationsAPIGetOrganizationSummaryTopSsidsByUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationSummaryTopSsidsByUsageRequest) Execute() ([]GetOrganizationSummaryTopSsidsByUsage200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationSummaryTopSsidsByUsageRequest) Execute() ([]GetOrganizationSummaryTopSsidsByUsage200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSummaryTopSsidsByUsageExecute(r)
 }
 
@@ -14375,10 +14375,10 @@ Return metrics for organization's top 10 ssids by data usage over given time ran
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationSummaryTopSsidsByUsageRequest
+ @return OrganizationsAPIGetOrganizationSummaryTopSsidsByUsageRequest
 */
-func (a *OrganizationsApiService) GetOrganizationSummaryTopSsidsByUsage(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationSummaryTopSsidsByUsageRequest {
-	return OrganizationsApiGetOrganizationSummaryTopSsidsByUsageRequest{
+func (a *OrganizationsAPIService) GetOrganizationSummaryTopSsidsByUsage(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationSummaryTopSsidsByUsageRequest {
+	return OrganizationsAPIGetOrganizationSummaryTopSsidsByUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -14387,7 +14387,7 @@ func (a *OrganizationsApiService) GetOrganizationSummaryTopSsidsByUsage(ctx cont
 
 // Execute executes the request
 //  @return []GetOrganizationSummaryTopSsidsByUsage200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationSummaryTopSsidsByUsageExecute(r OrganizationsApiGetOrganizationSummaryTopSsidsByUsageRequest) ([]GetOrganizationSummaryTopSsidsByUsage200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationSummaryTopSsidsByUsageExecute(r OrganizationsAPIGetOrganizationSummaryTopSsidsByUsageRequest) ([]GetOrganizationSummaryTopSsidsByUsage200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -14395,7 +14395,7 @@ func (a *OrganizationsApiService) GetOrganizationSummaryTopSsidsByUsageExecute(r
 		localVarReturnValue  []GetOrganizationSummaryTopSsidsByUsage200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationSummaryTopSsidsByUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationSummaryTopSsidsByUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14484,9 +14484,9 @@ func (a *OrganizationsApiService) GetOrganizationSummaryTopSsidsByUsageExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest struct {
+type OrganizationsAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -14494,24 +14494,24 @@ type OrganizationsApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest struc
 }
 
 // The beginning of the timespan for the data.
-func (r OrganizationsApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) T0(t0 string) OrganizationsApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest {
+func (r OrganizationsAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) T0(t0 string) OrganizationsAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r OrganizationsApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) T1(t1 string) OrganizationsApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest {
+func (r OrganizationsAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) T1(t1 string) OrganizationsAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r OrganizationsApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) Timespan(timespan float32) OrganizationsApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest {
+func (r OrganizationsAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) Timespan(timespan float32) OrganizationsAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) Execute() ([]GetOrganizationSummaryTopSwitchesByEnergyUsage200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) Execute() ([]GetOrganizationSummaryTopSwitchesByEnergyUsage200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSummaryTopSwitchesByEnergyUsageExecute(r)
 }
 
@@ -14522,10 +14522,10 @@ Return metrics for organization's top 10 switches by energy usage over given tim
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest
+ @return OrganizationsAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest
 */
-func (a *OrganizationsApiService) GetOrganizationSummaryTopSwitchesByEnergyUsage(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest {
-	return OrganizationsApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest{
+func (a *OrganizationsAPIService) GetOrganizationSummaryTopSwitchesByEnergyUsage(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest {
+	return OrganizationsAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -14534,7 +14534,7 @@ func (a *OrganizationsApiService) GetOrganizationSummaryTopSwitchesByEnergyUsage
 
 // Execute executes the request
 //  @return []GetOrganizationSummaryTopSwitchesByEnergyUsage200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationSummaryTopSwitchesByEnergyUsageExecute(r OrganizationsApiGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) ([]GetOrganizationSummaryTopSwitchesByEnergyUsage200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationSummaryTopSwitchesByEnergyUsageExecute(r OrganizationsAPIGetOrganizationSummaryTopSwitchesByEnergyUsageRequest) ([]GetOrganizationSummaryTopSwitchesByEnergyUsage200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -14542,7 +14542,7 @@ func (a *OrganizationsApiService) GetOrganizationSummaryTopSwitchesByEnergyUsage
 		localVarReturnValue  []GetOrganizationSummaryTopSwitchesByEnergyUsage200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationSummaryTopSwitchesByEnergyUsage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationSummaryTopSwitchesByEnergyUsage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14631,9 +14631,9 @@ func (a *OrganizationsApiService) GetOrganizationSummaryTopSwitchesByEnergyUsage
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationUplinksStatusesRequest struct {
+type OrganizationsAPIGetOrganizationUplinksStatusesRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -14644,42 +14644,42 @@ type OrganizationsApiGetOrganizationUplinksStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r OrganizationsApiGetOrganizationUplinksStatusesRequest) PerPage(perPage int32) OrganizationsApiGetOrganizationUplinksStatusesRequest {
+func (r OrganizationsAPIGetOrganizationUplinksStatusesRequest) PerPage(perPage int32) OrganizationsAPIGetOrganizationUplinksStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationUplinksStatusesRequest) StartingAfter(startingAfter string) OrganizationsApiGetOrganizationUplinksStatusesRequest {
+func (r OrganizationsAPIGetOrganizationUplinksStatusesRequest) StartingAfter(startingAfter string) OrganizationsAPIGetOrganizationUplinksStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationUplinksStatusesRequest) EndingBefore(endingBefore string) OrganizationsApiGetOrganizationUplinksStatusesRequest {
+func (r OrganizationsAPIGetOrganizationUplinksStatusesRequest) EndingBefore(endingBefore string) OrganizationsAPIGetOrganizationUplinksStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // A list of network IDs. The returned devices will be filtered to only include these networks.
-func (r OrganizationsApiGetOrganizationUplinksStatusesRequest) NetworkIds(networkIds []string) OrganizationsApiGetOrganizationUplinksStatusesRequest {
+func (r OrganizationsAPIGetOrganizationUplinksStatusesRequest) NetworkIds(networkIds []string) OrganizationsAPIGetOrganizationUplinksStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // A list of serial numbers. The returned devices will be filtered to only include these serials.
-func (r OrganizationsApiGetOrganizationUplinksStatusesRequest) Serials(serials []string) OrganizationsApiGetOrganizationUplinksStatusesRequest {
+func (r OrganizationsAPIGetOrganizationUplinksStatusesRequest) Serials(serials []string) OrganizationsAPIGetOrganizationUplinksStatusesRequest {
 	r.serials = &serials
 	return r
 }
 
 // A list of ICCIDs. The returned devices will be filtered to only include these ICCIDs.
-func (r OrganizationsApiGetOrganizationUplinksStatusesRequest) Iccids(iccids []string) OrganizationsApiGetOrganizationUplinksStatusesRequest {
+func (r OrganizationsAPIGetOrganizationUplinksStatusesRequest) Iccids(iccids []string) OrganizationsAPIGetOrganizationUplinksStatusesRequest {
 	r.iccids = &iccids
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationUplinksStatusesRequest) Execute() ([]GetOrganizationUplinksStatuses200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationUplinksStatusesRequest) Execute() ([]GetOrganizationUplinksStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationUplinksStatusesExecute(r)
 }
 
@@ -14690,10 +14690,10 @@ List the uplink status of every Meraki MX, MG and Z series devices in the organi
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationUplinksStatusesRequest
+ @return OrganizationsAPIGetOrganizationUplinksStatusesRequest
 */
-func (a *OrganizationsApiService) GetOrganizationUplinksStatuses(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationUplinksStatusesRequest {
-	return OrganizationsApiGetOrganizationUplinksStatusesRequest{
+func (a *OrganizationsAPIService) GetOrganizationUplinksStatuses(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationUplinksStatusesRequest {
+	return OrganizationsAPIGetOrganizationUplinksStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -14702,7 +14702,7 @@ func (a *OrganizationsApiService) GetOrganizationUplinksStatuses(ctx context.Con
 
 // Execute executes the request
 //  @return []GetOrganizationUplinksStatuses200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationUplinksStatusesExecute(r OrganizationsApiGetOrganizationUplinksStatusesRequest) ([]GetOrganizationUplinksStatuses200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationUplinksStatusesExecute(r OrganizationsAPIGetOrganizationUplinksStatusesRequest) ([]GetOrganizationUplinksStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -14710,7 +14710,7 @@ func (a *OrganizationsApiService) GetOrganizationUplinksStatusesExecute(r Organi
 		localVarReturnValue  []GetOrganizationUplinksStatuses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationUplinksStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationUplinksStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14832,20 +14832,20 @@ func (a *OrganizationsApiService) GetOrganizationUplinksStatusesExecute(r Organi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationWebhooksAlertTypesRequest struct {
+type OrganizationsAPIGetOrganizationWebhooksAlertTypesRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	productType *string
 }
 
 // Filter sample alerts to a specific product type
-func (r OrganizationsApiGetOrganizationWebhooksAlertTypesRequest) ProductType(productType string) OrganizationsApiGetOrganizationWebhooksAlertTypesRequest {
+func (r OrganizationsAPIGetOrganizationWebhooksAlertTypesRequest) ProductType(productType string) OrganizationsAPIGetOrganizationWebhooksAlertTypesRequest {
 	r.productType = &productType
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationWebhooksAlertTypesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationWebhooksAlertTypesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationWebhooksAlertTypesExecute(r)
 }
 
@@ -14856,10 +14856,10 @@ Return a list of alert types to be used with managing webhook alerts
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationWebhooksAlertTypesRequest
+ @return OrganizationsAPIGetOrganizationWebhooksAlertTypesRequest
 */
-func (a *OrganizationsApiService) GetOrganizationWebhooksAlertTypes(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationWebhooksAlertTypesRequest {
-	return OrganizationsApiGetOrganizationWebhooksAlertTypesRequest{
+func (a *OrganizationsAPIService) GetOrganizationWebhooksAlertTypes(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationWebhooksAlertTypesRequest {
+	return OrganizationsAPIGetOrganizationWebhooksAlertTypesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -14868,7 +14868,7 @@ func (a *OrganizationsApiService) GetOrganizationWebhooksAlertTypes(ctx context.
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *OrganizationsApiService) GetOrganizationWebhooksAlertTypesExecute(r OrganizationsApiGetOrganizationWebhooksAlertTypesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationWebhooksAlertTypesExecute(r OrganizationsAPIGetOrganizationWebhooksAlertTypesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -14876,7 +14876,7 @@ func (a *OrganizationsApiService) GetOrganizationWebhooksAlertTypesExecute(r Org
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationWebhooksAlertTypes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationWebhooksAlertTypes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14959,9 +14959,9 @@ func (a *OrganizationsApiService) GetOrganizationWebhooksAlertTypesExecute(r Org
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationWebhooksLogsRequest struct {
+type OrganizationsAPIGetOrganizationWebhooksLogsRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -14973,48 +14973,48 @@ type OrganizationsApiGetOrganizationWebhooksLogsRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 90 days from today.
-func (r OrganizationsApiGetOrganizationWebhooksLogsRequest) T0(t0 string) OrganizationsApiGetOrganizationWebhooksLogsRequest {
+func (r OrganizationsAPIGetOrganizationWebhooksLogsRequest) T0(t0 string) OrganizationsAPIGetOrganizationWebhooksLogsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r OrganizationsApiGetOrganizationWebhooksLogsRequest) T1(t1 string) OrganizationsApiGetOrganizationWebhooksLogsRequest {
+func (r OrganizationsAPIGetOrganizationWebhooksLogsRequest) T1(t1 string) OrganizationsAPIGetOrganizationWebhooksLogsRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r OrganizationsApiGetOrganizationWebhooksLogsRequest) Timespan(timespan float32) OrganizationsApiGetOrganizationWebhooksLogsRequest {
+func (r OrganizationsAPIGetOrganizationWebhooksLogsRequest) Timespan(timespan float32) OrganizationsAPIGetOrganizationWebhooksLogsRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.
-func (r OrganizationsApiGetOrganizationWebhooksLogsRequest) PerPage(perPage int32) OrganizationsApiGetOrganizationWebhooksLogsRequest {
+func (r OrganizationsAPIGetOrganizationWebhooksLogsRequest) PerPage(perPage int32) OrganizationsAPIGetOrganizationWebhooksLogsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationWebhooksLogsRequest) StartingAfter(startingAfter string) OrganizationsApiGetOrganizationWebhooksLogsRequest {
+func (r OrganizationsAPIGetOrganizationWebhooksLogsRequest) StartingAfter(startingAfter string) OrganizationsAPIGetOrganizationWebhooksLogsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r OrganizationsApiGetOrganizationWebhooksLogsRequest) EndingBefore(endingBefore string) OrganizationsApiGetOrganizationWebhooksLogsRequest {
+func (r OrganizationsAPIGetOrganizationWebhooksLogsRequest) EndingBefore(endingBefore string) OrganizationsAPIGetOrganizationWebhooksLogsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The URL the webhook was sent to
-func (r OrganizationsApiGetOrganizationWebhooksLogsRequest) Url(url string) OrganizationsApiGetOrganizationWebhooksLogsRequest {
+func (r OrganizationsAPIGetOrganizationWebhooksLogsRequest) Url(url string) OrganizationsAPIGetOrganizationWebhooksLogsRequest {
 	r.url = &url
 	return r
 }
 
-func (r OrganizationsApiGetOrganizationWebhooksLogsRequest) Execute() ([]GetOrganizationWebhooksLogs200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationWebhooksLogsRequest) Execute() ([]GetOrganizationWebhooksLogs200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationWebhooksLogsExecute(r)
 }
 
@@ -15025,10 +15025,10 @@ Return the log of webhook POSTs sent
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiGetOrganizationWebhooksLogsRequest
+ @return OrganizationsAPIGetOrganizationWebhooksLogsRequest
 */
-func (a *OrganizationsApiService) GetOrganizationWebhooksLogs(ctx context.Context, organizationId string) OrganizationsApiGetOrganizationWebhooksLogsRequest {
-	return OrganizationsApiGetOrganizationWebhooksLogsRequest{
+func (a *OrganizationsAPIService) GetOrganizationWebhooksLogs(ctx context.Context, organizationId string) OrganizationsAPIGetOrganizationWebhooksLogsRequest {
+	return OrganizationsAPIGetOrganizationWebhooksLogsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -15037,7 +15037,7 @@ func (a *OrganizationsApiService) GetOrganizationWebhooksLogs(ctx context.Contex
 
 // Execute executes the request
 //  @return []GetOrganizationWebhooksLogs200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationWebhooksLogsExecute(r OrganizationsApiGetOrganizationWebhooksLogsRequest) ([]GetOrganizationWebhooksLogs200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationWebhooksLogsExecute(r OrganizationsAPIGetOrganizationWebhooksLogsRequest) ([]GetOrganizationWebhooksLogs200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -15045,7 +15045,7 @@ func (a *OrganizationsApiService) GetOrganizationWebhooksLogsExecute(r Organizat
 		localVarReturnValue  []GetOrganizationWebhooksLogs200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizationWebhooksLogs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationWebhooksLogs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15146,12 +15146,12 @@ func (a *OrganizationsApiService) GetOrganizationWebhooksLogsExecute(r Organizat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiGetOrganizationsRequest struct {
+type OrganizationsAPIGetOrganizationsRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 }
 
-func (r OrganizationsApiGetOrganizationsRequest) Execute() ([]GetOrganizations200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationsRequest) Execute() ([]GetOrganizations200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationsExecute(r)
 }
 
@@ -15161,10 +15161,10 @@ GetOrganizations List the organizations that the user has privileges on
 List the organizations that the user has privileges on
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return OrganizationsApiGetOrganizationsRequest
+ @return OrganizationsAPIGetOrganizationsRequest
 */
-func (a *OrganizationsApiService) GetOrganizations(ctx context.Context) OrganizationsApiGetOrganizationsRequest {
-	return OrganizationsApiGetOrganizationsRequest{
+func (a *OrganizationsAPIService) GetOrganizations(ctx context.Context) OrganizationsAPIGetOrganizationsRequest {
+	return OrganizationsAPIGetOrganizationsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -15172,7 +15172,7 @@ func (a *OrganizationsApiService) GetOrganizations(ctx context.Context) Organiza
 
 // Execute executes the request
 //  @return []GetOrganizations200ResponseInner
-func (a *OrganizationsApiService) GetOrganizationsExecute(r OrganizationsApiGetOrganizationsRequest) ([]GetOrganizations200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) GetOrganizationsExecute(r OrganizationsAPIGetOrganizationsRequest) ([]GetOrganizations200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -15180,7 +15180,7 @@ func (a *OrganizationsApiService) GetOrganizationsExecute(r OrganizationsApiGetO
 		localVarReturnValue  []GetOrganizations200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.GetOrganizations")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizations")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15259,19 +15259,19 @@ func (a *OrganizationsApiService) GetOrganizationsExecute(r OrganizationsApiGetO
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiMoveOrganizationLicensesRequest struct {
+type OrganizationsAPIMoveOrganizationLicensesRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	moveOrganizationLicensesRequest *MoveOrganizationLicensesRequest
 }
 
-func (r OrganizationsApiMoveOrganizationLicensesRequest) MoveOrganizationLicensesRequest(moveOrganizationLicensesRequest MoveOrganizationLicensesRequest) OrganizationsApiMoveOrganizationLicensesRequest {
+func (r OrganizationsAPIMoveOrganizationLicensesRequest) MoveOrganizationLicensesRequest(moveOrganizationLicensesRequest MoveOrganizationLicensesRequest) OrganizationsAPIMoveOrganizationLicensesRequest {
 	r.moveOrganizationLicensesRequest = &moveOrganizationLicensesRequest
 	return r
 }
 
-func (r OrganizationsApiMoveOrganizationLicensesRequest) Execute() (*MoveOrganizationLicenses200Response, *http.Response, error) {
+func (r OrganizationsAPIMoveOrganizationLicensesRequest) Execute() (*MoveOrganizationLicenses200Response, *http.Response, error) {
 	return r.ApiService.MoveOrganizationLicensesExecute(r)
 }
 
@@ -15282,10 +15282,10 @@ Move licenses to another organization. This will also move any devices that the 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiMoveOrganizationLicensesRequest
+ @return OrganizationsAPIMoveOrganizationLicensesRequest
 */
-func (a *OrganizationsApiService) MoveOrganizationLicenses(ctx context.Context, organizationId string) OrganizationsApiMoveOrganizationLicensesRequest {
-	return OrganizationsApiMoveOrganizationLicensesRequest{
+func (a *OrganizationsAPIService) MoveOrganizationLicenses(ctx context.Context, organizationId string) OrganizationsAPIMoveOrganizationLicensesRequest {
+	return OrganizationsAPIMoveOrganizationLicensesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -15294,7 +15294,7 @@ func (a *OrganizationsApiService) MoveOrganizationLicenses(ctx context.Context, 
 
 // Execute executes the request
 //  @return MoveOrganizationLicenses200Response
-func (a *OrganizationsApiService) MoveOrganizationLicensesExecute(r OrganizationsApiMoveOrganizationLicensesRequest) (*MoveOrganizationLicenses200Response, *http.Response, error) {
+func (a *OrganizationsAPIService) MoveOrganizationLicensesExecute(r OrganizationsAPIMoveOrganizationLicensesRequest) (*MoveOrganizationLicenses200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -15302,7 +15302,7 @@ func (a *OrganizationsApiService) MoveOrganizationLicensesExecute(r Organization
 		localVarReturnValue  *MoveOrganizationLicenses200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.MoveOrganizationLicenses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.MoveOrganizationLicenses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15387,19 +15387,19 @@ func (a *OrganizationsApiService) MoveOrganizationLicensesExecute(r Organization
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiMoveOrganizationLicensesSeatsRequest struct {
+type OrganizationsAPIMoveOrganizationLicensesSeatsRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	moveOrganizationLicensesSeatsRequest *MoveOrganizationLicensesSeatsRequest
 }
 
-func (r OrganizationsApiMoveOrganizationLicensesSeatsRequest) MoveOrganizationLicensesSeatsRequest(moveOrganizationLicensesSeatsRequest MoveOrganizationLicensesSeatsRequest) OrganizationsApiMoveOrganizationLicensesSeatsRequest {
+func (r OrganizationsAPIMoveOrganizationLicensesSeatsRequest) MoveOrganizationLicensesSeatsRequest(moveOrganizationLicensesSeatsRequest MoveOrganizationLicensesSeatsRequest) OrganizationsAPIMoveOrganizationLicensesSeatsRequest {
 	r.moveOrganizationLicensesSeatsRequest = &moveOrganizationLicensesSeatsRequest
 	return r
 }
 
-func (r OrganizationsApiMoveOrganizationLicensesSeatsRequest) Execute() (*MoveOrganizationLicensesSeats200Response, *http.Response, error) {
+func (r OrganizationsAPIMoveOrganizationLicensesSeatsRequest) Execute() (*MoveOrganizationLicensesSeats200Response, *http.Response, error) {
 	return r.ApiService.MoveOrganizationLicensesSeatsExecute(r)
 }
 
@@ -15410,10 +15410,10 @@ Move SM seats to another organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiMoveOrganizationLicensesSeatsRequest
+ @return OrganizationsAPIMoveOrganizationLicensesSeatsRequest
 */
-func (a *OrganizationsApiService) MoveOrganizationLicensesSeats(ctx context.Context, organizationId string) OrganizationsApiMoveOrganizationLicensesSeatsRequest {
-	return OrganizationsApiMoveOrganizationLicensesSeatsRequest{
+func (a *OrganizationsAPIService) MoveOrganizationLicensesSeats(ctx context.Context, organizationId string) OrganizationsAPIMoveOrganizationLicensesSeatsRequest {
+	return OrganizationsAPIMoveOrganizationLicensesSeatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -15422,7 +15422,7 @@ func (a *OrganizationsApiService) MoveOrganizationLicensesSeats(ctx context.Cont
 
 // Execute executes the request
 //  @return MoveOrganizationLicensesSeats200Response
-func (a *OrganizationsApiService) MoveOrganizationLicensesSeatsExecute(r OrganizationsApiMoveOrganizationLicensesSeatsRequest) (*MoveOrganizationLicensesSeats200Response, *http.Response, error) {
+func (a *OrganizationsAPIService) MoveOrganizationLicensesSeatsExecute(r OrganizationsAPIMoveOrganizationLicensesSeatsRequest) (*MoveOrganizationLicensesSeats200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -15430,7 +15430,7 @@ func (a *OrganizationsApiService) MoveOrganizationLicensesSeatsExecute(r Organiz
 		localVarReturnValue  *MoveOrganizationLicensesSeats200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.MoveOrganizationLicensesSeats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.MoveOrganizationLicensesSeats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15515,19 +15515,19 @@ func (a *OrganizationsApiService) MoveOrganizationLicensesSeatsExecute(r Organiz
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiReleaseFromOrganizationInventoryRequest struct {
+type OrganizationsAPIReleaseFromOrganizationInventoryRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	releaseFromOrganizationInventoryRequest *ReleaseFromOrganizationInventoryRequest
 }
 
-func (r OrganizationsApiReleaseFromOrganizationInventoryRequest) ReleaseFromOrganizationInventoryRequest(releaseFromOrganizationInventoryRequest ReleaseFromOrganizationInventoryRequest) OrganizationsApiReleaseFromOrganizationInventoryRequest {
+func (r OrganizationsAPIReleaseFromOrganizationInventoryRequest) ReleaseFromOrganizationInventoryRequest(releaseFromOrganizationInventoryRequest ReleaseFromOrganizationInventoryRequest) OrganizationsAPIReleaseFromOrganizationInventoryRequest {
 	r.releaseFromOrganizationInventoryRequest = &releaseFromOrganizationInventoryRequest
 	return r
 }
 
-func (r OrganizationsApiReleaseFromOrganizationInventoryRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIReleaseFromOrganizationInventoryRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.ReleaseFromOrganizationInventoryExecute(r)
 }
 
@@ -15538,10 +15538,10 @@ Release a list of claimed devices from an organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiReleaseFromOrganizationInventoryRequest
+ @return OrganizationsAPIReleaseFromOrganizationInventoryRequest
 */
-func (a *OrganizationsApiService) ReleaseFromOrganizationInventory(ctx context.Context, organizationId string) OrganizationsApiReleaseFromOrganizationInventoryRequest {
-	return OrganizationsApiReleaseFromOrganizationInventoryRequest{
+func (a *OrganizationsAPIService) ReleaseFromOrganizationInventory(ctx context.Context, organizationId string) OrganizationsAPIReleaseFromOrganizationInventoryRequest {
+	return OrganizationsAPIReleaseFromOrganizationInventoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -15550,7 +15550,7 @@ func (a *OrganizationsApiService) ReleaseFromOrganizationInventory(ctx context.C
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) ReleaseFromOrganizationInventoryExecute(r OrganizationsApiReleaseFromOrganizationInventoryRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) ReleaseFromOrganizationInventoryExecute(r OrganizationsAPIReleaseFromOrganizationInventoryRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -15558,7 +15558,7 @@ func (a *OrganizationsApiService) ReleaseFromOrganizationInventoryExecute(r Orga
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.ReleaseFromOrganizationInventory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.ReleaseFromOrganizationInventory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15640,19 +15640,19 @@ func (a *OrganizationsApiService) ReleaseFromOrganizationInventoryExecute(r Orga
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiRenewOrganizationLicensesSeatsRequest struct {
+type OrganizationsAPIRenewOrganizationLicensesSeatsRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	renewOrganizationLicensesSeatsRequest *RenewOrganizationLicensesSeatsRequest
 }
 
-func (r OrganizationsApiRenewOrganizationLicensesSeatsRequest) RenewOrganizationLicensesSeatsRequest(renewOrganizationLicensesSeatsRequest RenewOrganizationLicensesSeatsRequest) OrganizationsApiRenewOrganizationLicensesSeatsRequest {
+func (r OrganizationsAPIRenewOrganizationLicensesSeatsRequest) RenewOrganizationLicensesSeatsRequest(renewOrganizationLicensesSeatsRequest RenewOrganizationLicensesSeatsRequest) OrganizationsAPIRenewOrganizationLicensesSeatsRequest {
 	r.renewOrganizationLicensesSeatsRequest = &renewOrganizationLicensesSeatsRequest
 	return r
 }
 
-func (r OrganizationsApiRenewOrganizationLicensesSeatsRequest) Execute() (*AssignOrganizationLicensesSeats200Response, *http.Response, error) {
+func (r OrganizationsAPIRenewOrganizationLicensesSeatsRequest) Execute() (*AssignOrganizationLicensesSeats200Response, *http.Response, error) {
 	return r.ApiService.RenewOrganizationLicensesSeatsExecute(r)
 }
 
@@ -15663,10 +15663,10 @@ Renew SM seats of a license. This will extend the license expiration date of man
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiRenewOrganizationLicensesSeatsRequest
+ @return OrganizationsAPIRenewOrganizationLicensesSeatsRequest
 */
-func (a *OrganizationsApiService) RenewOrganizationLicensesSeats(ctx context.Context, organizationId string) OrganizationsApiRenewOrganizationLicensesSeatsRequest {
-	return OrganizationsApiRenewOrganizationLicensesSeatsRequest{
+func (a *OrganizationsAPIService) RenewOrganizationLicensesSeats(ctx context.Context, organizationId string) OrganizationsAPIRenewOrganizationLicensesSeatsRequest {
+	return OrganizationsAPIRenewOrganizationLicensesSeatsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -15675,7 +15675,7 @@ func (a *OrganizationsApiService) RenewOrganizationLicensesSeats(ctx context.Con
 
 // Execute executes the request
 //  @return AssignOrganizationLicensesSeats200Response
-func (a *OrganizationsApiService) RenewOrganizationLicensesSeatsExecute(r OrganizationsApiRenewOrganizationLicensesSeatsRequest) (*AssignOrganizationLicensesSeats200Response, *http.Response, error) {
+func (a *OrganizationsAPIService) RenewOrganizationLicensesSeatsExecute(r OrganizationsAPIRenewOrganizationLicensesSeatsRequest) (*AssignOrganizationLicensesSeats200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -15683,7 +15683,7 @@ func (a *OrganizationsApiService) RenewOrganizationLicensesSeatsExecute(r Organi
 		localVarReturnValue  *AssignOrganizationLicensesSeats200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.RenewOrganizationLicensesSeats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.RenewOrganizationLicensesSeats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15768,19 +15768,19 @@ func (a *OrganizationsApiService) RenewOrganizationLicensesSeatsExecute(r Organi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiUpdateOrganizationRequest struct {
+type OrganizationsAPIUpdateOrganizationRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	updateOrganizationRequest *UpdateOrganizationRequest
 }
 
-func (r OrganizationsApiUpdateOrganizationRequest) UpdateOrganizationRequest(updateOrganizationRequest UpdateOrganizationRequest) OrganizationsApiUpdateOrganizationRequest {
+func (r OrganizationsAPIUpdateOrganizationRequest) UpdateOrganizationRequest(updateOrganizationRequest UpdateOrganizationRequest) OrganizationsAPIUpdateOrganizationRequest {
 	r.updateOrganizationRequest = &updateOrganizationRequest
 	return r
 }
 
-func (r OrganizationsApiUpdateOrganizationRequest) Execute() (*GetOrganizations200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIUpdateOrganizationRequest) Execute() (*GetOrganizations200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationExecute(r)
 }
 
@@ -15791,10 +15791,10 @@ Update an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiUpdateOrganizationRequest
+ @return OrganizationsAPIUpdateOrganizationRequest
 */
-func (a *OrganizationsApiService) UpdateOrganization(ctx context.Context, organizationId string) OrganizationsApiUpdateOrganizationRequest {
-	return OrganizationsApiUpdateOrganizationRequest{
+func (a *OrganizationsAPIService) UpdateOrganization(ctx context.Context, organizationId string) OrganizationsAPIUpdateOrganizationRequest {
+	return OrganizationsAPIUpdateOrganizationRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -15803,7 +15803,7 @@ func (a *OrganizationsApiService) UpdateOrganization(ctx context.Context, organi
 
 // Execute executes the request
 //  @return GetOrganizations200ResponseInner
-func (a *OrganizationsApiService) UpdateOrganizationExecute(r OrganizationsApiUpdateOrganizationRequest) (*GetOrganizations200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) UpdateOrganizationExecute(r OrganizationsAPIUpdateOrganizationRequest) (*GetOrganizations200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -15811,7 +15811,7 @@ func (a *OrganizationsApiService) UpdateOrganizationExecute(r OrganizationsApiUp
 		localVarReturnValue  *GetOrganizations200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.UpdateOrganization")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.UpdateOrganization")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15893,20 +15893,20 @@ func (a *OrganizationsApiService) UpdateOrganizationExecute(r OrganizationsApiUp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiUpdateOrganizationActionBatchRequest struct {
+type OrganizationsAPIUpdateOrganizationActionBatchRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	actionBatchId string
 	updateOrganizationActionBatchRequest *UpdateOrganizationActionBatchRequest
 }
 
-func (r OrganizationsApiUpdateOrganizationActionBatchRequest) UpdateOrganizationActionBatchRequest(updateOrganizationActionBatchRequest UpdateOrganizationActionBatchRequest) OrganizationsApiUpdateOrganizationActionBatchRequest {
+func (r OrganizationsAPIUpdateOrganizationActionBatchRequest) UpdateOrganizationActionBatchRequest(updateOrganizationActionBatchRequest UpdateOrganizationActionBatchRequest) OrganizationsAPIUpdateOrganizationActionBatchRequest {
 	r.updateOrganizationActionBatchRequest = &updateOrganizationActionBatchRequest
 	return r
 }
 
-func (r OrganizationsApiUpdateOrganizationActionBatchRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIUpdateOrganizationActionBatchRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationActionBatchExecute(r)
 }
 
@@ -15918,10 +15918,10 @@ Update an action batch
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param actionBatchId Action batch ID
- @return OrganizationsApiUpdateOrganizationActionBatchRequest
+ @return OrganizationsAPIUpdateOrganizationActionBatchRequest
 */
-func (a *OrganizationsApiService) UpdateOrganizationActionBatch(ctx context.Context, organizationId string, actionBatchId string) OrganizationsApiUpdateOrganizationActionBatchRequest {
-	return OrganizationsApiUpdateOrganizationActionBatchRequest{
+func (a *OrganizationsAPIService) UpdateOrganizationActionBatch(ctx context.Context, organizationId string, actionBatchId string) OrganizationsAPIUpdateOrganizationActionBatchRequest {
+	return OrganizationsAPIUpdateOrganizationActionBatchRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -15931,7 +15931,7 @@ func (a *OrganizationsApiService) UpdateOrganizationActionBatch(ctx context.Cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) UpdateOrganizationActionBatchExecute(r OrganizationsApiUpdateOrganizationActionBatchRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) UpdateOrganizationActionBatchExecute(r OrganizationsAPIUpdateOrganizationActionBatchRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -15939,7 +15939,7 @@ func (a *OrganizationsApiService) UpdateOrganizationActionBatchExecute(r Organiz
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.UpdateOrganizationActionBatch")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.UpdateOrganizationActionBatch")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16022,20 +16022,20 @@ func (a *OrganizationsApiService) UpdateOrganizationActionBatchExecute(r Organiz
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiUpdateOrganizationAdaptivePolicyAclRequest struct {
+type OrganizationsAPIUpdateOrganizationAdaptivePolicyAclRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	aclId string
 	updateOrganizationAdaptivePolicyAclRequest *UpdateOrganizationAdaptivePolicyAclRequest
 }
 
-func (r OrganizationsApiUpdateOrganizationAdaptivePolicyAclRequest) UpdateOrganizationAdaptivePolicyAclRequest(updateOrganizationAdaptivePolicyAclRequest UpdateOrganizationAdaptivePolicyAclRequest) OrganizationsApiUpdateOrganizationAdaptivePolicyAclRequest {
+func (r OrganizationsAPIUpdateOrganizationAdaptivePolicyAclRequest) UpdateOrganizationAdaptivePolicyAclRequest(updateOrganizationAdaptivePolicyAclRequest UpdateOrganizationAdaptivePolicyAclRequest) OrganizationsAPIUpdateOrganizationAdaptivePolicyAclRequest {
 	r.updateOrganizationAdaptivePolicyAclRequest = &updateOrganizationAdaptivePolicyAclRequest
 	return r
 }
 
-func (r OrganizationsApiUpdateOrganizationAdaptivePolicyAclRequest) Execute() (*GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIUpdateOrganizationAdaptivePolicyAclRequest) Execute() (*GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationAdaptivePolicyAclExecute(r)
 }
 
@@ -16047,10 +16047,10 @@ Updates an adaptive policy ACL
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param aclId Acl ID
- @return OrganizationsApiUpdateOrganizationAdaptivePolicyAclRequest
+ @return OrganizationsAPIUpdateOrganizationAdaptivePolicyAclRequest
 */
-func (a *OrganizationsApiService) UpdateOrganizationAdaptivePolicyAcl(ctx context.Context, organizationId string, aclId string) OrganizationsApiUpdateOrganizationAdaptivePolicyAclRequest {
-	return OrganizationsApiUpdateOrganizationAdaptivePolicyAclRequest{
+func (a *OrganizationsAPIService) UpdateOrganizationAdaptivePolicyAcl(ctx context.Context, organizationId string, aclId string) OrganizationsAPIUpdateOrganizationAdaptivePolicyAclRequest {
+	return OrganizationsAPIUpdateOrganizationAdaptivePolicyAclRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -16060,7 +16060,7 @@ func (a *OrganizationsApiService) UpdateOrganizationAdaptivePolicyAcl(ctx contex
 
 // Execute executes the request
 //  @return GetOrganizationAdaptivePolicyAcls200ResponseInner
-func (a *OrganizationsApiService) UpdateOrganizationAdaptivePolicyAclExecute(r OrganizationsApiUpdateOrganizationAdaptivePolicyAclRequest) (*GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) UpdateOrganizationAdaptivePolicyAclExecute(r OrganizationsAPIUpdateOrganizationAdaptivePolicyAclRequest) (*GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -16068,7 +16068,7 @@ func (a *OrganizationsApiService) UpdateOrganizationAdaptivePolicyAclExecute(r O
 		localVarReturnValue  *GetOrganizationAdaptivePolicyAcls200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.UpdateOrganizationAdaptivePolicyAcl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.UpdateOrganizationAdaptivePolicyAcl")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16151,20 +16151,20 @@ func (a *OrganizationsApiService) UpdateOrganizationAdaptivePolicyAclExecute(r O
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiUpdateOrganizationAdaptivePolicyGroupRequest struct {
+type OrganizationsAPIUpdateOrganizationAdaptivePolicyGroupRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	id string
 	updateOrganizationAdaptivePolicyGroupRequest *UpdateOrganizationAdaptivePolicyGroupRequest
 }
 
-func (r OrganizationsApiUpdateOrganizationAdaptivePolicyGroupRequest) UpdateOrganizationAdaptivePolicyGroupRequest(updateOrganizationAdaptivePolicyGroupRequest UpdateOrganizationAdaptivePolicyGroupRequest) OrganizationsApiUpdateOrganizationAdaptivePolicyGroupRequest {
+func (r OrganizationsAPIUpdateOrganizationAdaptivePolicyGroupRequest) UpdateOrganizationAdaptivePolicyGroupRequest(updateOrganizationAdaptivePolicyGroupRequest UpdateOrganizationAdaptivePolicyGroupRequest) OrganizationsAPIUpdateOrganizationAdaptivePolicyGroupRequest {
 	r.updateOrganizationAdaptivePolicyGroupRequest = &updateOrganizationAdaptivePolicyGroupRequest
 	return r
 }
 
-func (r OrganizationsApiUpdateOrganizationAdaptivePolicyGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIUpdateOrganizationAdaptivePolicyGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationAdaptivePolicyGroupExecute(r)
 }
 
@@ -16176,10 +16176,10 @@ Updates an adaptive policy group. If updating "Infrastructure", only the SGT is 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param id ID
- @return OrganizationsApiUpdateOrganizationAdaptivePolicyGroupRequest
+ @return OrganizationsAPIUpdateOrganizationAdaptivePolicyGroupRequest
 */
-func (a *OrganizationsApiService) UpdateOrganizationAdaptivePolicyGroup(ctx context.Context, organizationId string, id string) OrganizationsApiUpdateOrganizationAdaptivePolicyGroupRequest {
-	return OrganizationsApiUpdateOrganizationAdaptivePolicyGroupRequest{
+func (a *OrganizationsAPIService) UpdateOrganizationAdaptivePolicyGroup(ctx context.Context, organizationId string, id string) OrganizationsAPIUpdateOrganizationAdaptivePolicyGroupRequest {
+	return OrganizationsAPIUpdateOrganizationAdaptivePolicyGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -16189,7 +16189,7 @@ func (a *OrganizationsApiService) UpdateOrganizationAdaptivePolicyGroup(ctx cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) UpdateOrganizationAdaptivePolicyGroupExecute(r OrganizationsApiUpdateOrganizationAdaptivePolicyGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) UpdateOrganizationAdaptivePolicyGroupExecute(r OrganizationsAPIUpdateOrganizationAdaptivePolicyGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -16197,7 +16197,7 @@ func (a *OrganizationsApiService) UpdateOrganizationAdaptivePolicyGroupExecute(r
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.UpdateOrganizationAdaptivePolicyGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.UpdateOrganizationAdaptivePolicyGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16280,20 +16280,20 @@ func (a *OrganizationsApiService) UpdateOrganizationAdaptivePolicyGroupExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiUpdateOrganizationAdaptivePolicyPolicyRequest struct {
+type OrganizationsAPIUpdateOrganizationAdaptivePolicyPolicyRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	id string
 	updateOrganizationAdaptivePolicyPolicyRequest *UpdateOrganizationAdaptivePolicyPolicyRequest
 }
 
-func (r OrganizationsApiUpdateOrganizationAdaptivePolicyPolicyRequest) UpdateOrganizationAdaptivePolicyPolicyRequest(updateOrganizationAdaptivePolicyPolicyRequest UpdateOrganizationAdaptivePolicyPolicyRequest) OrganizationsApiUpdateOrganizationAdaptivePolicyPolicyRequest {
+func (r OrganizationsAPIUpdateOrganizationAdaptivePolicyPolicyRequest) UpdateOrganizationAdaptivePolicyPolicyRequest(updateOrganizationAdaptivePolicyPolicyRequest UpdateOrganizationAdaptivePolicyPolicyRequest) OrganizationsAPIUpdateOrganizationAdaptivePolicyPolicyRequest {
 	r.updateOrganizationAdaptivePolicyPolicyRequest = &updateOrganizationAdaptivePolicyPolicyRequest
 	return r
 }
 
-func (r OrganizationsApiUpdateOrganizationAdaptivePolicyPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIUpdateOrganizationAdaptivePolicyPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationAdaptivePolicyPolicyExecute(r)
 }
 
@@ -16305,10 +16305,10 @@ Update an Adaptive Policy
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param id ID
- @return OrganizationsApiUpdateOrganizationAdaptivePolicyPolicyRequest
+ @return OrganizationsAPIUpdateOrganizationAdaptivePolicyPolicyRequest
 */
-func (a *OrganizationsApiService) UpdateOrganizationAdaptivePolicyPolicy(ctx context.Context, organizationId string, id string) OrganizationsApiUpdateOrganizationAdaptivePolicyPolicyRequest {
-	return OrganizationsApiUpdateOrganizationAdaptivePolicyPolicyRequest{
+func (a *OrganizationsAPIService) UpdateOrganizationAdaptivePolicyPolicy(ctx context.Context, organizationId string, id string) OrganizationsAPIUpdateOrganizationAdaptivePolicyPolicyRequest {
+	return OrganizationsAPIUpdateOrganizationAdaptivePolicyPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -16318,7 +16318,7 @@ func (a *OrganizationsApiService) UpdateOrganizationAdaptivePolicyPolicy(ctx con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) UpdateOrganizationAdaptivePolicyPolicyExecute(r OrganizationsApiUpdateOrganizationAdaptivePolicyPolicyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) UpdateOrganizationAdaptivePolicyPolicyExecute(r OrganizationsAPIUpdateOrganizationAdaptivePolicyPolicyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -16326,7 +16326,7 @@ func (a *OrganizationsApiService) UpdateOrganizationAdaptivePolicyPolicyExecute(
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.UpdateOrganizationAdaptivePolicyPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.UpdateOrganizationAdaptivePolicyPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16409,19 +16409,19 @@ func (a *OrganizationsApiService) UpdateOrganizationAdaptivePolicyPolicyExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiUpdateOrganizationAdaptivePolicySettingsRequest struct {
+type OrganizationsAPIUpdateOrganizationAdaptivePolicySettingsRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	updateOrganizationAdaptivePolicySettingsRequest *UpdateOrganizationAdaptivePolicySettingsRequest
 }
 
-func (r OrganizationsApiUpdateOrganizationAdaptivePolicySettingsRequest) UpdateOrganizationAdaptivePolicySettingsRequest(updateOrganizationAdaptivePolicySettingsRequest UpdateOrganizationAdaptivePolicySettingsRequest) OrganizationsApiUpdateOrganizationAdaptivePolicySettingsRequest {
+func (r OrganizationsAPIUpdateOrganizationAdaptivePolicySettingsRequest) UpdateOrganizationAdaptivePolicySettingsRequest(updateOrganizationAdaptivePolicySettingsRequest UpdateOrganizationAdaptivePolicySettingsRequest) OrganizationsAPIUpdateOrganizationAdaptivePolicySettingsRequest {
 	r.updateOrganizationAdaptivePolicySettingsRequest = &updateOrganizationAdaptivePolicySettingsRequest
 	return r
 }
 
-func (r OrganizationsApiUpdateOrganizationAdaptivePolicySettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIUpdateOrganizationAdaptivePolicySettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationAdaptivePolicySettingsExecute(r)
 }
 
@@ -16432,10 +16432,10 @@ Update global adaptive policy settings
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiUpdateOrganizationAdaptivePolicySettingsRequest
+ @return OrganizationsAPIUpdateOrganizationAdaptivePolicySettingsRequest
 */
-func (a *OrganizationsApiService) UpdateOrganizationAdaptivePolicySettings(ctx context.Context, organizationId string) OrganizationsApiUpdateOrganizationAdaptivePolicySettingsRequest {
-	return OrganizationsApiUpdateOrganizationAdaptivePolicySettingsRequest{
+func (a *OrganizationsAPIService) UpdateOrganizationAdaptivePolicySettings(ctx context.Context, organizationId string) OrganizationsAPIUpdateOrganizationAdaptivePolicySettingsRequest {
+	return OrganizationsAPIUpdateOrganizationAdaptivePolicySettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -16444,7 +16444,7 @@ func (a *OrganizationsApiService) UpdateOrganizationAdaptivePolicySettings(ctx c
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) UpdateOrganizationAdaptivePolicySettingsExecute(r OrganizationsApiUpdateOrganizationAdaptivePolicySettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) UpdateOrganizationAdaptivePolicySettingsExecute(r OrganizationsAPIUpdateOrganizationAdaptivePolicySettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -16452,7 +16452,7 @@ func (a *OrganizationsApiService) UpdateOrganizationAdaptivePolicySettingsExecut
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.UpdateOrganizationAdaptivePolicySettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.UpdateOrganizationAdaptivePolicySettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16534,20 +16534,20 @@ func (a *OrganizationsApiService) UpdateOrganizationAdaptivePolicySettingsExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiUpdateOrganizationAdminRequest struct {
+type OrganizationsAPIUpdateOrganizationAdminRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	adminId string
 	updateOrganizationAdminRequest *UpdateOrganizationAdminRequest
 }
 
-func (r OrganizationsApiUpdateOrganizationAdminRequest) UpdateOrganizationAdminRequest(updateOrganizationAdminRequest UpdateOrganizationAdminRequest) OrganizationsApiUpdateOrganizationAdminRequest {
+func (r OrganizationsAPIUpdateOrganizationAdminRequest) UpdateOrganizationAdminRequest(updateOrganizationAdminRequest UpdateOrganizationAdminRequest) OrganizationsAPIUpdateOrganizationAdminRequest {
 	r.updateOrganizationAdminRequest = &updateOrganizationAdminRequest
 	return r
 }
 
-func (r OrganizationsApiUpdateOrganizationAdminRequest) Execute() (*GetOrganizationAdmins200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIUpdateOrganizationAdminRequest) Execute() (*GetOrganizationAdmins200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationAdminExecute(r)
 }
 
@@ -16559,10 +16559,10 @@ Update an administrator
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param adminId Admin ID
- @return OrganizationsApiUpdateOrganizationAdminRequest
+ @return OrganizationsAPIUpdateOrganizationAdminRequest
 */
-func (a *OrganizationsApiService) UpdateOrganizationAdmin(ctx context.Context, organizationId string, adminId string) OrganizationsApiUpdateOrganizationAdminRequest {
-	return OrganizationsApiUpdateOrganizationAdminRequest{
+func (a *OrganizationsAPIService) UpdateOrganizationAdmin(ctx context.Context, organizationId string, adminId string) OrganizationsAPIUpdateOrganizationAdminRequest {
+	return OrganizationsAPIUpdateOrganizationAdminRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -16572,7 +16572,7 @@ func (a *OrganizationsApiService) UpdateOrganizationAdmin(ctx context.Context, o
 
 // Execute executes the request
 //  @return GetOrganizationAdmins200ResponseInner
-func (a *OrganizationsApiService) UpdateOrganizationAdminExecute(r OrganizationsApiUpdateOrganizationAdminRequest) (*GetOrganizationAdmins200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) UpdateOrganizationAdminExecute(r OrganizationsAPIUpdateOrganizationAdminRequest) (*GetOrganizationAdmins200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -16580,7 +16580,7 @@ func (a *OrganizationsApiService) UpdateOrganizationAdminExecute(r Organizations
 		localVarReturnValue  *GetOrganizationAdmins200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.UpdateOrganizationAdmin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.UpdateOrganizationAdmin")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16663,20 +16663,20 @@ func (a *OrganizationsApiService) UpdateOrganizationAdminExecute(r Organizations
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiUpdateOrganizationAlertsProfileRequest struct {
+type OrganizationsAPIUpdateOrganizationAlertsProfileRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	alertConfigId string
 	updateOrganizationAlertsProfileRequest *UpdateOrganizationAlertsProfileRequest
 }
 
-func (r OrganizationsApiUpdateOrganizationAlertsProfileRequest) UpdateOrganizationAlertsProfileRequest(updateOrganizationAlertsProfileRequest UpdateOrganizationAlertsProfileRequest) OrganizationsApiUpdateOrganizationAlertsProfileRequest {
+func (r OrganizationsAPIUpdateOrganizationAlertsProfileRequest) UpdateOrganizationAlertsProfileRequest(updateOrganizationAlertsProfileRequest UpdateOrganizationAlertsProfileRequest) OrganizationsAPIUpdateOrganizationAlertsProfileRequest {
 	r.updateOrganizationAlertsProfileRequest = &updateOrganizationAlertsProfileRequest
 	return r
 }
 
-func (r OrganizationsApiUpdateOrganizationAlertsProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIUpdateOrganizationAlertsProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationAlertsProfileExecute(r)
 }
 
@@ -16688,10 +16688,10 @@ Update an organization-wide alert config
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param alertConfigId Alert config ID
- @return OrganizationsApiUpdateOrganizationAlertsProfileRequest
+ @return OrganizationsAPIUpdateOrganizationAlertsProfileRequest
 */
-func (a *OrganizationsApiService) UpdateOrganizationAlertsProfile(ctx context.Context, organizationId string, alertConfigId string) OrganizationsApiUpdateOrganizationAlertsProfileRequest {
-	return OrganizationsApiUpdateOrganizationAlertsProfileRequest{
+func (a *OrganizationsAPIService) UpdateOrganizationAlertsProfile(ctx context.Context, organizationId string, alertConfigId string) OrganizationsAPIUpdateOrganizationAlertsProfileRequest {
+	return OrganizationsAPIUpdateOrganizationAlertsProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -16701,7 +16701,7 @@ func (a *OrganizationsApiService) UpdateOrganizationAlertsProfile(ctx context.Co
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) UpdateOrganizationAlertsProfileExecute(r OrganizationsApiUpdateOrganizationAlertsProfileRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) UpdateOrganizationAlertsProfileExecute(r OrganizationsAPIUpdateOrganizationAlertsProfileRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -16709,7 +16709,7 @@ func (a *OrganizationsApiService) UpdateOrganizationAlertsProfileExecute(r Organ
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.UpdateOrganizationAlertsProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.UpdateOrganizationAlertsProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16792,19 +16792,19 @@ func (a *OrganizationsApiService) UpdateOrganizationAlertsProfileExecute(r Organ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiUpdateOrganizationBrandingPoliciesPrioritiesRequest struct {
+type OrganizationsAPIUpdateOrganizationBrandingPoliciesPrioritiesRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	updateOrganizationBrandingPoliciesPrioritiesRequest *UpdateOrganizationBrandingPoliciesPrioritiesRequest
 }
 
-func (r OrganizationsApiUpdateOrganizationBrandingPoliciesPrioritiesRequest) UpdateOrganizationBrandingPoliciesPrioritiesRequest(updateOrganizationBrandingPoliciesPrioritiesRequest UpdateOrganizationBrandingPoliciesPrioritiesRequest) OrganizationsApiUpdateOrganizationBrandingPoliciesPrioritiesRequest {
+func (r OrganizationsAPIUpdateOrganizationBrandingPoliciesPrioritiesRequest) UpdateOrganizationBrandingPoliciesPrioritiesRequest(updateOrganizationBrandingPoliciesPrioritiesRequest UpdateOrganizationBrandingPoliciesPrioritiesRequest) OrganizationsAPIUpdateOrganizationBrandingPoliciesPrioritiesRequest {
 	r.updateOrganizationBrandingPoliciesPrioritiesRequest = &updateOrganizationBrandingPoliciesPrioritiesRequest
 	return r
 }
 
-func (r OrganizationsApiUpdateOrganizationBrandingPoliciesPrioritiesRequest) Execute() (*GetOrganizationBrandingPoliciesPriorities200Response, *http.Response, error) {
+func (r OrganizationsAPIUpdateOrganizationBrandingPoliciesPrioritiesRequest) Execute() (*GetOrganizationBrandingPoliciesPriorities200Response, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationBrandingPoliciesPrioritiesExecute(r)
 }
 
@@ -16815,10 +16815,10 @@ Update the priority ordering of an organization's branding policies.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiUpdateOrganizationBrandingPoliciesPrioritiesRequest
+ @return OrganizationsAPIUpdateOrganizationBrandingPoliciesPrioritiesRequest
 */
-func (a *OrganizationsApiService) UpdateOrganizationBrandingPoliciesPriorities(ctx context.Context, organizationId string) OrganizationsApiUpdateOrganizationBrandingPoliciesPrioritiesRequest {
-	return OrganizationsApiUpdateOrganizationBrandingPoliciesPrioritiesRequest{
+func (a *OrganizationsAPIService) UpdateOrganizationBrandingPoliciesPriorities(ctx context.Context, organizationId string) OrganizationsAPIUpdateOrganizationBrandingPoliciesPrioritiesRequest {
+	return OrganizationsAPIUpdateOrganizationBrandingPoliciesPrioritiesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -16827,7 +16827,7 @@ func (a *OrganizationsApiService) UpdateOrganizationBrandingPoliciesPriorities(c
 
 // Execute executes the request
 //  @return GetOrganizationBrandingPoliciesPriorities200Response
-func (a *OrganizationsApiService) UpdateOrganizationBrandingPoliciesPrioritiesExecute(r OrganizationsApiUpdateOrganizationBrandingPoliciesPrioritiesRequest) (*GetOrganizationBrandingPoliciesPriorities200Response, *http.Response, error) {
+func (a *OrganizationsAPIService) UpdateOrganizationBrandingPoliciesPrioritiesExecute(r OrganizationsAPIUpdateOrganizationBrandingPoliciesPrioritiesRequest) (*GetOrganizationBrandingPoliciesPriorities200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -16835,7 +16835,7 @@ func (a *OrganizationsApiService) UpdateOrganizationBrandingPoliciesPrioritiesEx
 		localVarReturnValue  *GetOrganizationBrandingPoliciesPriorities200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.UpdateOrganizationBrandingPoliciesPriorities")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.UpdateOrganizationBrandingPoliciesPriorities")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16917,20 +16917,20 @@ func (a *OrganizationsApiService) UpdateOrganizationBrandingPoliciesPrioritiesEx
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiUpdateOrganizationBrandingPolicyRequest struct {
+type OrganizationsAPIUpdateOrganizationBrandingPolicyRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	brandingPolicyId string
 	updateOrganizationBrandingPolicyRequest *UpdateOrganizationBrandingPolicyRequest
 }
 
-func (r OrganizationsApiUpdateOrganizationBrandingPolicyRequest) UpdateOrganizationBrandingPolicyRequest(updateOrganizationBrandingPolicyRequest UpdateOrganizationBrandingPolicyRequest) OrganizationsApiUpdateOrganizationBrandingPolicyRequest {
+func (r OrganizationsAPIUpdateOrganizationBrandingPolicyRequest) UpdateOrganizationBrandingPolicyRequest(updateOrganizationBrandingPolicyRequest UpdateOrganizationBrandingPolicyRequest) OrganizationsAPIUpdateOrganizationBrandingPolicyRequest {
 	r.updateOrganizationBrandingPolicyRequest = &updateOrganizationBrandingPolicyRequest
 	return r
 }
 
-func (r OrganizationsApiUpdateOrganizationBrandingPolicyRequest) Execute() (*GetOrganizationBrandingPolicies200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIUpdateOrganizationBrandingPolicyRequest) Execute() (*GetOrganizationBrandingPolicies200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationBrandingPolicyExecute(r)
 }
 
@@ -16942,10 +16942,10 @@ Update a branding policy
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param brandingPolicyId Branding policy ID
- @return OrganizationsApiUpdateOrganizationBrandingPolicyRequest
+ @return OrganizationsAPIUpdateOrganizationBrandingPolicyRequest
 */
-func (a *OrganizationsApiService) UpdateOrganizationBrandingPolicy(ctx context.Context, organizationId string, brandingPolicyId string) OrganizationsApiUpdateOrganizationBrandingPolicyRequest {
-	return OrganizationsApiUpdateOrganizationBrandingPolicyRequest{
+func (a *OrganizationsAPIService) UpdateOrganizationBrandingPolicy(ctx context.Context, organizationId string, brandingPolicyId string) OrganizationsAPIUpdateOrganizationBrandingPolicyRequest {
+	return OrganizationsAPIUpdateOrganizationBrandingPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -16955,7 +16955,7 @@ func (a *OrganizationsApiService) UpdateOrganizationBrandingPolicy(ctx context.C
 
 // Execute executes the request
 //  @return GetOrganizationBrandingPolicies200ResponseInner
-func (a *OrganizationsApiService) UpdateOrganizationBrandingPolicyExecute(r OrganizationsApiUpdateOrganizationBrandingPolicyRequest) (*GetOrganizationBrandingPolicies200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) UpdateOrganizationBrandingPolicyExecute(r OrganizationsAPIUpdateOrganizationBrandingPolicyRequest) (*GetOrganizationBrandingPolicies200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -16963,7 +16963,7 @@ func (a *OrganizationsApiService) UpdateOrganizationBrandingPolicyExecute(r Orga
 		localVarReturnValue  *GetOrganizationBrandingPolicies200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.UpdateOrganizationBrandingPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.UpdateOrganizationBrandingPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17046,20 +17046,20 @@ func (a *OrganizationsApiService) UpdateOrganizationBrandingPolicyExecute(r Orga
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiUpdateOrganizationConfigTemplateRequest struct {
+type OrganizationsAPIUpdateOrganizationConfigTemplateRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	configTemplateId string
 	updateOrganizationConfigTemplateRequest *UpdateOrganizationConfigTemplateRequest
 }
 
-func (r OrganizationsApiUpdateOrganizationConfigTemplateRequest) UpdateOrganizationConfigTemplateRequest(updateOrganizationConfigTemplateRequest UpdateOrganizationConfigTemplateRequest) OrganizationsApiUpdateOrganizationConfigTemplateRequest {
+func (r OrganizationsAPIUpdateOrganizationConfigTemplateRequest) UpdateOrganizationConfigTemplateRequest(updateOrganizationConfigTemplateRequest UpdateOrganizationConfigTemplateRequest) OrganizationsAPIUpdateOrganizationConfigTemplateRequest {
 	r.updateOrganizationConfigTemplateRequest = &updateOrganizationConfigTemplateRequest
 	return r
 }
 
-func (r OrganizationsApiUpdateOrganizationConfigTemplateRequest) Execute() (*GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIUpdateOrganizationConfigTemplateRequest) Execute() (*GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationConfigTemplateExecute(r)
 }
 
@@ -17071,10 +17071,10 @@ Update a configuration template
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param configTemplateId Config template ID
- @return OrganizationsApiUpdateOrganizationConfigTemplateRequest
+ @return OrganizationsAPIUpdateOrganizationConfigTemplateRequest
 */
-func (a *OrganizationsApiService) UpdateOrganizationConfigTemplate(ctx context.Context, organizationId string, configTemplateId string) OrganizationsApiUpdateOrganizationConfigTemplateRequest {
-	return OrganizationsApiUpdateOrganizationConfigTemplateRequest{
+func (a *OrganizationsAPIService) UpdateOrganizationConfigTemplate(ctx context.Context, organizationId string, configTemplateId string) OrganizationsAPIUpdateOrganizationConfigTemplateRequest {
+	return OrganizationsAPIUpdateOrganizationConfigTemplateRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -17084,7 +17084,7 @@ func (a *OrganizationsApiService) UpdateOrganizationConfigTemplate(ctx context.C
 
 // Execute executes the request
 //  @return GetOrganizationConfigTemplates200ResponseInner
-func (a *OrganizationsApiService) UpdateOrganizationConfigTemplateExecute(r OrganizationsApiUpdateOrganizationConfigTemplateRequest) (*GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) UpdateOrganizationConfigTemplateExecute(r OrganizationsAPIUpdateOrganizationConfigTemplateRequest) (*GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -17092,7 +17092,7 @@ func (a *OrganizationsApiService) UpdateOrganizationConfigTemplateExecute(r Orga
 		localVarReturnValue  *GetOrganizationConfigTemplates200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.UpdateOrganizationConfigTemplate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.UpdateOrganizationConfigTemplate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17175,20 +17175,20 @@ func (a *OrganizationsApiService) UpdateOrganizationConfigTemplateExecute(r Orga
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiUpdateOrganizationEarlyAccessFeaturesOptInRequest struct {
+type OrganizationsAPIUpdateOrganizationEarlyAccessFeaturesOptInRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	optInId string
 	updateOrganizationEarlyAccessFeaturesOptInRequest *UpdateOrganizationEarlyAccessFeaturesOptInRequest
 }
 
-func (r OrganizationsApiUpdateOrganizationEarlyAccessFeaturesOptInRequest) UpdateOrganizationEarlyAccessFeaturesOptInRequest(updateOrganizationEarlyAccessFeaturesOptInRequest UpdateOrganizationEarlyAccessFeaturesOptInRequest) OrganizationsApiUpdateOrganizationEarlyAccessFeaturesOptInRequest {
+func (r OrganizationsAPIUpdateOrganizationEarlyAccessFeaturesOptInRequest) UpdateOrganizationEarlyAccessFeaturesOptInRequest(updateOrganizationEarlyAccessFeaturesOptInRequest UpdateOrganizationEarlyAccessFeaturesOptInRequest) OrganizationsAPIUpdateOrganizationEarlyAccessFeaturesOptInRequest {
 	r.updateOrganizationEarlyAccessFeaturesOptInRequest = &updateOrganizationEarlyAccessFeaturesOptInRequest
 	return r
 }
 
-func (r OrganizationsApiUpdateOrganizationEarlyAccessFeaturesOptInRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIUpdateOrganizationEarlyAccessFeaturesOptInRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationEarlyAccessFeaturesOptInExecute(r)
 }
 
@@ -17200,10 +17200,10 @@ Update an early access feature opt-in for an organization
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param optInId Opt in ID
- @return OrganizationsApiUpdateOrganizationEarlyAccessFeaturesOptInRequest
+ @return OrganizationsAPIUpdateOrganizationEarlyAccessFeaturesOptInRequest
 */
-func (a *OrganizationsApiService) UpdateOrganizationEarlyAccessFeaturesOptIn(ctx context.Context, organizationId string, optInId string) OrganizationsApiUpdateOrganizationEarlyAccessFeaturesOptInRequest {
-	return OrganizationsApiUpdateOrganizationEarlyAccessFeaturesOptInRequest{
+func (a *OrganizationsAPIService) UpdateOrganizationEarlyAccessFeaturesOptIn(ctx context.Context, organizationId string, optInId string) OrganizationsAPIUpdateOrganizationEarlyAccessFeaturesOptInRequest {
+	return OrganizationsAPIUpdateOrganizationEarlyAccessFeaturesOptInRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -17213,7 +17213,7 @@ func (a *OrganizationsApiService) UpdateOrganizationEarlyAccessFeaturesOptIn(ctx
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) UpdateOrganizationEarlyAccessFeaturesOptInExecute(r OrganizationsApiUpdateOrganizationEarlyAccessFeaturesOptInRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) UpdateOrganizationEarlyAccessFeaturesOptInExecute(r OrganizationsAPIUpdateOrganizationEarlyAccessFeaturesOptInRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -17221,7 +17221,7 @@ func (a *OrganizationsApiService) UpdateOrganizationEarlyAccessFeaturesOptInExec
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.UpdateOrganizationEarlyAccessFeaturesOptIn")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.UpdateOrganizationEarlyAccessFeaturesOptIn")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17304,20 +17304,20 @@ func (a *OrganizationsApiService) UpdateOrganizationEarlyAccessFeaturesOptInExec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiUpdateOrganizationLicenseRequest struct {
+type OrganizationsAPIUpdateOrganizationLicenseRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	licenseId string
 	updateOrganizationLicenseRequest *UpdateOrganizationLicenseRequest
 }
 
-func (r OrganizationsApiUpdateOrganizationLicenseRequest) UpdateOrganizationLicenseRequest(updateOrganizationLicenseRequest UpdateOrganizationLicenseRequest) OrganizationsApiUpdateOrganizationLicenseRequest {
+func (r OrganizationsAPIUpdateOrganizationLicenseRequest) UpdateOrganizationLicenseRequest(updateOrganizationLicenseRequest UpdateOrganizationLicenseRequest) OrganizationsAPIUpdateOrganizationLicenseRequest {
 	r.updateOrganizationLicenseRequest = &updateOrganizationLicenseRequest
 	return r
 }
 
-func (r OrganizationsApiUpdateOrganizationLicenseRequest) Execute() (*GetOrganizationLicenses200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIUpdateOrganizationLicenseRequest) Execute() (*GetOrganizationLicenses200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationLicenseExecute(r)
 }
 
@@ -17329,10 +17329,10 @@ Update a license
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param licenseId License ID
- @return OrganizationsApiUpdateOrganizationLicenseRequest
+ @return OrganizationsAPIUpdateOrganizationLicenseRequest
 */
-func (a *OrganizationsApiService) UpdateOrganizationLicense(ctx context.Context, organizationId string, licenseId string) OrganizationsApiUpdateOrganizationLicenseRequest {
-	return OrganizationsApiUpdateOrganizationLicenseRequest{
+func (a *OrganizationsAPIService) UpdateOrganizationLicense(ctx context.Context, organizationId string, licenseId string) OrganizationsAPIUpdateOrganizationLicenseRequest {
+	return OrganizationsAPIUpdateOrganizationLicenseRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -17342,7 +17342,7 @@ func (a *OrganizationsApiService) UpdateOrganizationLicense(ctx context.Context,
 
 // Execute executes the request
 //  @return GetOrganizationLicenses200ResponseInner
-func (a *OrganizationsApiService) UpdateOrganizationLicenseExecute(r OrganizationsApiUpdateOrganizationLicenseRequest) (*GetOrganizationLicenses200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) UpdateOrganizationLicenseExecute(r OrganizationsAPIUpdateOrganizationLicenseRequest) (*GetOrganizationLicenses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -17350,7 +17350,7 @@ func (a *OrganizationsApiService) UpdateOrganizationLicenseExecute(r Organizatio
 		localVarReturnValue  *GetOrganizationLicenses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.UpdateOrganizationLicense")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.UpdateOrganizationLicense")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17433,19 +17433,19 @@ func (a *OrganizationsApiService) UpdateOrganizationLicenseExecute(r Organizatio
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiUpdateOrganizationLoginSecurityRequest struct {
+type OrganizationsAPIUpdateOrganizationLoginSecurityRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	updateOrganizationLoginSecurityRequest *UpdateOrganizationLoginSecurityRequest
 }
 
-func (r OrganizationsApiUpdateOrganizationLoginSecurityRequest) UpdateOrganizationLoginSecurityRequest(updateOrganizationLoginSecurityRequest UpdateOrganizationLoginSecurityRequest) OrganizationsApiUpdateOrganizationLoginSecurityRequest {
+func (r OrganizationsAPIUpdateOrganizationLoginSecurityRequest) UpdateOrganizationLoginSecurityRequest(updateOrganizationLoginSecurityRequest UpdateOrganizationLoginSecurityRequest) OrganizationsAPIUpdateOrganizationLoginSecurityRequest {
 	r.updateOrganizationLoginSecurityRequest = &updateOrganizationLoginSecurityRequest
 	return r
 }
 
-func (r OrganizationsApiUpdateOrganizationLoginSecurityRequest) Execute() (*GetOrganizationLoginSecurity200Response, *http.Response, error) {
+func (r OrganizationsAPIUpdateOrganizationLoginSecurityRequest) Execute() (*GetOrganizationLoginSecurity200Response, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationLoginSecurityExecute(r)
 }
 
@@ -17456,10 +17456,10 @@ Update the login security settings for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiUpdateOrganizationLoginSecurityRequest
+ @return OrganizationsAPIUpdateOrganizationLoginSecurityRequest
 */
-func (a *OrganizationsApiService) UpdateOrganizationLoginSecurity(ctx context.Context, organizationId string) OrganizationsApiUpdateOrganizationLoginSecurityRequest {
-	return OrganizationsApiUpdateOrganizationLoginSecurityRequest{
+func (a *OrganizationsAPIService) UpdateOrganizationLoginSecurity(ctx context.Context, organizationId string) OrganizationsAPIUpdateOrganizationLoginSecurityRequest {
+	return OrganizationsAPIUpdateOrganizationLoginSecurityRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -17468,7 +17468,7 @@ func (a *OrganizationsApiService) UpdateOrganizationLoginSecurity(ctx context.Co
 
 // Execute executes the request
 //  @return GetOrganizationLoginSecurity200Response
-func (a *OrganizationsApiService) UpdateOrganizationLoginSecurityExecute(r OrganizationsApiUpdateOrganizationLoginSecurityRequest) (*GetOrganizationLoginSecurity200Response, *http.Response, error) {
+func (a *OrganizationsAPIService) UpdateOrganizationLoginSecurityExecute(r OrganizationsAPIUpdateOrganizationLoginSecurityRequest) (*GetOrganizationLoginSecurity200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -17476,7 +17476,7 @@ func (a *OrganizationsApiService) UpdateOrganizationLoginSecurityExecute(r Organ
 		localVarReturnValue  *GetOrganizationLoginSecurity200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.UpdateOrganizationLoginSecurity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.UpdateOrganizationLoginSecurity")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17558,20 +17558,20 @@ func (a *OrganizationsApiService) UpdateOrganizationLoginSecurityExecute(r Organ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiUpdateOrganizationPolicyObjectRequest struct {
+type OrganizationsAPIUpdateOrganizationPolicyObjectRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	policyObjectId string
 	updateOrganizationPolicyObjectRequest *UpdateOrganizationPolicyObjectRequest
 }
 
-func (r OrganizationsApiUpdateOrganizationPolicyObjectRequest) UpdateOrganizationPolicyObjectRequest(updateOrganizationPolicyObjectRequest UpdateOrganizationPolicyObjectRequest) OrganizationsApiUpdateOrganizationPolicyObjectRequest {
+func (r OrganizationsAPIUpdateOrganizationPolicyObjectRequest) UpdateOrganizationPolicyObjectRequest(updateOrganizationPolicyObjectRequest UpdateOrganizationPolicyObjectRequest) OrganizationsAPIUpdateOrganizationPolicyObjectRequest {
 	r.updateOrganizationPolicyObjectRequest = &updateOrganizationPolicyObjectRequest
 	return r
 }
 
-func (r OrganizationsApiUpdateOrganizationPolicyObjectRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIUpdateOrganizationPolicyObjectRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationPolicyObjectExecute(r)
 }
 
@@ -17583,10 +17583,10 @@ Updates a Policy Object.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param policyObjectId Policy object ID
- @return OrganizationsApiUpdateOrganizationPolicyObjectRequest
+ @return OrganizationsAPIUpdateOrganizationPolicyObjectRequest
 */
-func (a *OrganizationsApiService) UpdateOrganizationPolicyObject(ctx context.Context, organizationId string, policyObjectId string) OrganizationsApiUpdateOrganizationPolicyObjectRequest {
-	return OrganizationsApiUpdateOrganizationPolicyObjectRequest{
+func (a *OrganizationsAPIService) UpdateOrganizationPolicyObject(ctx context.Context, organizationId string, policyObjectId string) OrganizationsAPIUpdateOrganizationPolicyObjectRequest {
+	return OrganizationsAPIUpdateOrganizationPolicyObjectRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -17596,7 +17596,7 @@ func (a *OrganizationsApiService) UpdateOrganizationPolicyObject(ctx context.Con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) UpdateOrganizationPolicyObjectExecute(r OrganizationsApiUpdateOrganizationPolicyObjectRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) UpdateOrganizationPolicyObjectExecute(r OrganizationsAPIUpdateOrganizationPolicyObjectRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -17604,7 +17604,7 @@ func (a *OrganizationsApiService) UpdateOrganizationPolicyObjectExecute(r Organi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.UpdateOrganizationPolicyObject")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.UpdateOrganizationPolicyObject")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17687,20 +17687,20 @@ func (a *OrganizationsApiService) UpdateOrganizationPolicyObjectExecute(r Organi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiUpdateOrganizationPolicyObjectsGroupRequest struct {
+type OrganizationsAPIUpdateOrganizationPolicyObjectsGroupRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	policyObjectGroupId string
 	updateOrganizationPolicyObjectsGroupRequest *UpdateOrganizationPolicyObjectsGroupRequest
 }
 
-func (r OrganizationsApiUpdateOrganizationPolicyObjectsGroupRequest) UpdateOrganizationPolicyObjectsGroupRequest(updateOrganizationPolicyObjectsGroupRequest UpdateOrganizationPolicyObjectsGroupRequest) OrganizationsApiUpdateOrganizationPolicyObjectsGroupRequest {
+func (r OrganizationsAPIUpdateOrganizationPolicyObjectsGroupRequest) UpdateOrganizationPolicyObjectsGroupRequest(updateOrganizationPolicyObjectsGroupRequest UpdateOrganizationPolicyObjectsGroupRequest) OrganizationsAPIUpdateOrganizationPolicyObjectsGroupRequest {
 	r.updateOrganizationPolicyObjectsGroupRequest = &updateOrganizationPolicyObjectsGroupRequest
 	return r
 }
 
-func (r OrganizationsApiUpdateOrganizationPolicyObjectsGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIUpdateOrganizationPolicyObjectsGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationPolicyObjectsGroupExecute(r)
 }
 
@@ -17712,10 +17712,10 @@ Updates a Policy Object Group.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param policyObjectGroupId Policy object group ID
- @return OrganizationsApiUpdateOrganizationPolicyObjectsGroupRequest
+ @return OrganizationsAPIUpdateOrganizationPolicyObjectsGroupRequest
 */
-func (a *OrganizationsApiService) UpdateOrganizationPolicyObjectsGroup(ctx context.Context, organizationId string, policyObjectGroupId string) OrganizationsApiUpdateOrganizationPolicyObjectsGroupRequest {
-	return OrganizationsApiUpdateOrganizationPolicyObjectsGroupRequest{
+func (a *OrganizationsAPIService) UpdateOrganizationPolicyObjectsGroup(ctx context.Context, organizationId string, policyObjectGroupId string) OrganizationsAPIUpdateOrganizationPolicyObjectsGroupRequest {
+	return OrganizationsAPIUpdateOrganizationPolicyObjectsGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -17725,7 +17725,7 @@ func (a *OrganizationsApiService) UpdateOrganizationPolicyObjectsGroup(ctx conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) UpdateOrganizationPolicyObjectsGroupExecute(r OrganizationsApiUpdateOrganizationPolicyObjectsGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) UpdateOrganizationPolicyObjectsGroupExecute(r OrganizationsAPIUpdateOrganizationPolicyObjectsGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -17733,7 +17733,7 @@ func (a *OrganizationsApiService) UpdateOrganizationPolicyObjectsGroupExecute(r 
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.UpdateOrganizationPolicyObjectsGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.UpdateOrganizationPolicyObjectsGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17816,19 +17816,19 @@ func (a *OrganizationsApiService) UpdateOrganizationPolicyObjectsGroupExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiUpdateOrganizationSamlRequest struct {
+type OrganizationsAPIUpdateOrganizationSamlRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	updateOrganizationSamlRequest *UpdateOrganizationSamlRequest
 }
 
-func (r OrganizationsApiUpdateOrganizationSamlRequest) UpdateOrganizationSamlRequest(updateOrganizationSamlRequest UpdateOrganizationSamlRequest) OrganizationsApiUpdateOrganizationSamlRequest {
+func (r OrganizationsAPIUpdateOrganizationSamlRequest) UpdateOrganizationSamlRequest(updateOrganizationSamlRequest UpdateOrganizationSamlRequest) OrganizationsAPIUpdateOrganizationSamlRequest {
 	r.updateOrganizationSamlRequest = &updateOrganizationSamlRequest
 	return r
 }
 
-func (r OrganizationsApiUpdateOrganizationSamlRequest) Execute() (*GetOrganizationSaml200Response, *http.Response, error) {
+func (r OrganizationsAPIUpdateOrganizationSamlRequest) Execute() (*GetOrganizationSaml200Response, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationSamlExecute(r)
 }
 
@@ -17839,10 +17839,10 @@ Updates the SAML SSO enabled settings for an organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiUpdateOrganizationSamlRequest
+ @return OrganizationsAPIUpdateOrganizationSamlRequest
 */
-func (a *OrganizationsApiService) UpdateOrganizationSaml(ctx context.Context, organizationId string) OrganizationsApiUpdateOrganizationSamlRequest {
-	return OrganizationsApiUpdateOrganizationSamlRequest{
+func (a *OrganizationsAPIService) UpdateOrganizationSaml(ctx context.Context, organizationId string) OrganizationsAPIUpdateOrganizationSamlRequest {
+	return OrganizationsAPIUpdateOrganizationSamlRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -17851,7 +17851,7 @@ func (a *OrganizationsApiService) UpdateOrganizationSaml(ctx context.Context, or
 
 // Execute executes the request
 //  @return GetOrganizationSaml200Response
-func (a *OrganizationsApiService) UpdateOrganizationSamlExecute(r OrganizationsApiUpdateOrganizationSamlRequest) (*GetOrganizationSaml200Response, *http.Response, error) {
+func (a *OrganizationsAPIService) UpdateOrganizationSamlExecute(r OrganizationsAPIUpdateOrganizationSamlRequest) (*GetOrganizationSaml200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -17859,7 +17859,7 @@ func (a *OrganizationsApiService) UpdateOrganizationSamlExecute(r OrganizationsA
 		localVarReturnValue  *GetOrganizationSaml200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.UpdateOrganizationSaml")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.UpdateOrganizationSaml")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17941,20 +17941,20 @@ func (a *OrganizationsApiService) UpdateOrganizationSamlExecute(r OrganizationsA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiUpdateOrganizationSamlIdpRequest struct {
+type OrganizationsAPIUpdateOrganizationSamlIdpRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	idpId string
 	updateOrganizationSamlIdpRequest *UpdateOrganizationSamlIdpRequest
 }
 
-func (r OrganizationsApiUpdateOrganizationSamlIdpRequest) UpdateOrganizationSamlIdpRequest(updateOrganizationSamlIdpRequest UpdateOrganizationSamlIdpRequest) OrganizationsApiUpdateOrganizationSamlIdpRequest {
+func (r OrganizationsAPIUpdateOrganizationSamlIdpRequest) UpdateOrganizationSamlIdpRequest(updateOrganizationSamlIdpRequest UpdateOrganizationSamlIdpRequest) OrganizationsAPIUpdateOrganizationSamlIdpRequest {
 	r.updateOrganizationSamlIdpRequest = &updateOrganizationSamlIdpRequest
 	return r
 }
 
-func (r OrganizationsApiUpdateOrganizationSamlIdpRequest) Execute() ([]GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIUpdateOrganizationSamlIdpRequest) Execute() ([]GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationSamlIdpExecute(r)
 }
 
@@ -17966,10 +17966,10 @@ Update a SAML IdP in your organization
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param idpId Idp ID
- @return OrganizationsApiUpdateOrganizationSamlIdpRequest
+ @return OrganizationsAPIUpdateOrganizationSamlIdpRequest
 */
-func (a *OrganizationsApiService) UpdateOrganizationSamlIdp(ctx context.Context, organizationId string, idpId string) OrganizationsApiUpdateOrganizationSamlIdpRequest {
-	return OrganizationsApiUpdateOrganizationSamlIdpRequest{
+func (a *OrganizationsAPIService) UpdateOrganizationSamlIdp(ctx context.Context, organizationId string, idpId string) OrganizationsAPIUpdateOrganizationSamlIdpRequest {
+	return OrganizationsAPIUpdateOrganizationSamlIdpRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -17979,7 +17979,7 @@ func (a *OrganizationsApiService) UpdateOrganizationSamlIdp(ctx context.Context,
 
 // Execute executes the request
 //  @return []GetOrganizationSamlIdps200ResponseInner
-func (a *OrganizationsApiService) UpdateOrganizationSamlIdpExecute(r OrganizationsApiUpdateOrganizationSamlIdpRequest) ([]GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) UpdateOrganizationSamlIdpExecute(r OrganizationsAPIUpdateOrganizationSamlIdpRequest) ([]GetOrganizationSamlIdps200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -17987,7 +17987,7 @@ func (a *OrganizationsApiService) UpdateOrganizationSamlIdpExecute(r Organizatio
 		localVarReturnValue  []GetOrganizationSamlIdps200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.UpdateOrganizationSamlIdp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.UpdateOrganizationSamlIdp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -18070,20 +18070,20 @@ func (a *OrganizationsApiService) UpdateOrganizationSamlIdpExecute(r Organizatio
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiUpdateOrganizationSamlRoleRequest struct {
+type OrganizationsAPIUpdateOrganizationSamlRoleRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	samlRoleId string
 	updateOrganizationSamlRoleRequest *UpdateOrganizationSamlRoleRequest
 }
 
-func (r OrganizationsApiUpdateOrganizationSamlRoleRequest) UpdateOrganizationSamlRoleRequest(updateOrganizationSamlRoleRequest UpdateOrganizationSamlRoleRequest) OrganizationsApiUpdateOrganizationSamlRoleRequest {
+func (r OrganizationsAPIUpdateOrganizationSamlRoleRequest) UpdateOrganizationSamlRoleRequest(updateOrganizationSamlRoleRequest UpdateOrganizationSamlRoleRequest) OrganizationsAPIUpdateOrganizationSamlRoleRequest {
 	r.updateOrganizationSamlRoleRequest = &updateOrganizationSamlRoleRequest
 	return r
 }
 
-func (r OrganizationsApiUpdateOrganizationSamlRoleRequest) Execute() (*GetOrganizationSamlRoles200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIUpdateOrganizationSamlRoleRequest) Execute() (*GetOrganizationSamlRoles200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationSamlRoleExecute(r)
 }
 
@@ -18095,10 +18095,10 @@ Update a SAML role
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param samlRoleId Saml role ID
- @return OrganizationsApiUpdateOrganizationSamlRoleRequest
+ @return OrganizationsAPIUpdateOrganizationSamlRoleRequest
 */
-func (a *OrganizationsApiService) UpdateOrganizationSamlRole(ctx context.Context, organizationId string, samlRoleId string) OrganizationsApiUpdateOrganizationSamlRoleRequest {
-	return OrganizationsApiUpdateOrganizationSamlRoleRequest{
+func (a *OrganizationsAPIService) UpdateOrganizationSamlRole(ctx context.Context, organizationId string, samlRoleId string) OrganizationsAPIUpdateOrganizationSamlRoleRequest {
+	return OrganizationsAPIUpdateOrganizationSamlRoleRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -18108,7 +18108,7 @@ func (a *OrganizationsApiService) UpdateOrganizationSamlRole(ctx context.Context
 
 // Execute executes the request
 //  @return GetOrganizationSamlRoles200ResponseInner
-func (a *OrganizationsApiService) UpdateOrganizationSamlRoleExecute(r OrganizationsApiUpdateOrganizationSamlRoleRequest) (*GetOrganizationSamlRoles200ResponseInner, *http.Response, error) {
+func (a *OrganizationsAPIService) UpdateOrganizationSamlRoleExecute(r OrganizationsAPIUpdateOrganizationSamlRoleRequest) (*GetOrganizationSamlRoles200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -18116,7 +18116,7 @@ func (a *OrganizationsApiService) UpdateOrganizationSamlRoleExecute(r Organizati
 		localVarReturnValue  *GetOrganizationSamlRoles200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.UpdateOrganizationSamlRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.UpdateOrganizationSamlRole")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -18199,19 +18199,19 @@ func (a *OrganizationsApiService) UpdateOrganizationSamlRoleExecute(r Organizati
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrganizationsApiUpdateOrganizationSnmpRequest struct {
+type OrganizationsAPIUpdateOrganizationSnmpRequest struct {
 	ctx context.Context
-	ApiService *OrganizationsApiService
+	ApiService *OrganizationsAPIService
 	organizationId string
 	updateOrganizationSnmpRequest *UpdateOrganizationSnmpRequest
 }
 
-func (r OrganizationsApiUpdateOrganizationSnmpRequest) UpdateOrganizationSnmpRequest(updateOrganizationSnmpRequest UpdateOrganizationSnmpRequest) OrganizationsApiUpdateOrganizationSnmpRequest {
+func (r OrganizationsAPIUpdateOrganizationSnmpRequest) UpdateOrganizationSnmpRequest(updateOrganizationSnmpRequest UpdateOrganizationSnmpRequest) OrganizationsAPIUpdateOrganizationSnmpRequest {
 	r.updateOrganizationSnmpRequest = &updateOrganizationSnmpRequest
 	return r
 }
 
-func (r OrganizationsApiUpdateOrganizationSnmpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r OrganizationsAPIUpdateOrganizationSnmpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationSnmpExecute(r)
 }
 
@@ -18222,10 +18222,10 @@ Update the SNMP settings for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return OrganizationsApiUpdateOrganizationSnmpRequest
+ @return OrganizationsAPIUpdateOrganizationSnmpRequest
 */
-func (a *OrganizationsApiService) UpdateOrganizationSnmp(ctx context.Context, organizationId string) OrganizationsApiUpdateOrganizationSnmpRequest {
-	return OrganizationsApiUpdateOrganizationSnmpRequest{
+func (a *OrganizationsAPIService) UpdateOrganizationSnmp(ctx context.Context, organizationId string) OrganizationsAPIUpdateOrganizationSnmpRequest {
+	return OrganizationsAPIUpdateOrganizationSnmpRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -18234,7 +18234,7 @@ func (a *OrganizationsApiService) UpdateOrganizationSnmp(ctx context.Context, or
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *OrganizationsApiService) UpdateOrganizationSnmpExecute(r OrganizationsApiUpdateOrganizationSnmpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *OrganizationsAPIService) UpdateOrganizationSnmpExecute(r OrganizationsAPIUpdateOrganizationSnmpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -18242,7 +18242,7 @@ func (a *OrganizationsApiService) UpdateOrganizationSnmpExecute(r OrganizationsA
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsApiService.UpdateOrganizationSnmp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.UpdateOrganizationSnmp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

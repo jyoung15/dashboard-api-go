@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing ActionBatchesApiService
+Testing ActionBatchesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_ActionBatchesApiService(t *testing.T) {
+func Test_client_ActionBatchesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test ActionBatchesApiService CreateOrganizationActionBatch", func(t *testing.T) {
+	t.Run("Test ActionBatchesAPIService CreateOrganizationActionBatch", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ActionBatchesApi.CreateOrganizationActionBatch(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ActionBatchesAPI.CreateOrganizationActionBatch(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,42 +36,28 @@ func Test_client_ActionBatchesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ActionBatchesApiService DeleteOrganizationActionBatch", func(t *testing.T) {
+	t.Run("Test ActionBatchesAPIService DeleteOrganizationActionBatch", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var actionBatchId string
 
-		httpRes, err := apiClient.ActionBatchesApi.DeleteOrganizationActionBatch(context.Background(), organizationId, actionBatchId).Execute()
+		httpRes, err := apiClient.ActionBatchesAPI.DeleteOrganizationActionBatch(context.Background(), organizationId, actionBatchId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ActionBatchesApiService GetOrganizationActionBatch", func(t *testing.T) {
+	t.Run("Test ActionBatchesAPIService GetOrganizationActionBatch", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var actionBatchId string
 
-		resp, httpRes, err := apiClient.ActionBatchesApi.GetOrganizationActionBatch(context.Background(), organizationId, actionBatchId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ActionBatchesApiService GetOrganizationActionBatches", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var organizationId string
-
-		resp, httpRes, err := apiClient.ActionBatchesApi.GetOrganizationActionBatches(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ActionBatchesAPI.GetOrganizationActionBatch(context.Background(), organizationId, actionBatchId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,14 +65,28 @@ func Test_client_ActionBatchesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ActionBatchesApiService UpdateOrganizationActionBatch", func(t *testing.T) {
+	t.Run("Test ActionBatchesAPIService GetOrganizationActionBatches", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var organizationId string
+
+		resp, httpRes, err := apiClient.ActionBatchesAPI.GetOrganizationActionBatches(context.Background(), organizationId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ActionBatchesAPIService UpdateOrganizationActionBatch", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var actionBatchId string
 
-		resp, httpRes, err := apiClient.ActionBatchesApi.UpdateOrganizationActionBatch(context.Background(), organizationId, actionBatchId).Execute()
+		resp, httpRes, err := apiClient.ActionBatchesAPI.UpdateOrganizationActionBatch(context.Background(), organizationId, actionBatchId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

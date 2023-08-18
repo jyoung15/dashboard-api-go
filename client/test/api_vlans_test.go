@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing VlansApiService
+Testing VlansAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_VlansApiService(t *testing.T) {
+func Test_client_VlansAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test VlansApiService CreateNetworkApplianceVlan", func(t *testing.T) {
+	t.Run("Test VlansAPIService CreateNetworkApplianceVlan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.VlansApi.CreateNetworkApplianceVlan(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.VlansAPI.CreateNetworkApplianceVlan(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,28 +36,28 @@ func Test_client_VlansApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VlansApiService DeleteNetworkApplianceVlan", func(t *testing.T) {
+	t.Run("Test VlansAPIService DeleteNetworkApplianceVlan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var vlanId string
 
-		httpRes, err := apiClient.VlansApi.DeleteNetworkApplianceVlan(context.Background(), networkId, vlanId).Execute()
+		httpRes, err := apiClient.VlansAPI.DeleteNetworkApplianceVlan(context.Background(), networkId, vlanId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test VlansApiService GetNetworkApplianceVlan", func(t *testing.T) {
+	t.Run("Test VlansAPIService GetNetworkApplianceVlan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var vlanId string
 
-		resp, httpRes, err := apiClient.VlansApi.GetNetworkApplianceVlan(context.Background(), networkId, vlanId).Execute()
+		resp, httpRes, err := apiClient.VlansAPI.GetNetworkApplianceVlan(context.Background(), networkId, vlanId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -65,13 +65,13 @@ func Test_client_VlansApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VlansApiService GetNetworkApplianceVlans", func(t *testing.T) {
+	t.Run("Test VlansAPIService GetNetworkApplianceVlans", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.VlansApi.GetNetworkApplianceVlans(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.VlansAPI.GetNetworkApplianceVlans(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,13 +79,13 @@ func Test_client_VlansApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VlansApiService GetNetworkApplianceVlansSettings", func(t *testing.T) {
+	t.Run("Test VlansAPIService GetNetworkApplianceVlansSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.VlansApi.GetNetworkApplianceVlansSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.VlansAPI.GetNetworkApplianceVlansSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -93,14 +93,14 @@ func Test_client_VlansApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VlansApiService UpdateNetworkApplianceVlan", func(t *testing.T) {
+	t.Run("Test VlansAPIService UpdateNetworkApplianceVlan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var vlanId string
 
-		resp, httpRes, err := apiClient.VlansApi.UpdateNetworkApplianceVlan(context.Background(), networkId, vlanId).Execute()
+		resp, httpRes, err := apiClient.VlansAPI.UpdateNetworkApplianceVlan(context.Background(), networkId, vlanId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -108,13 +108,13 @@ func Test_client_VlansApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VlansApiService UpdateNetworkApplianceVlansSettings", func(t *testing.T) {
+	t.Run("Test VlansAPIService UpdateNetworkApplianceVlansSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.VlansApi.UpdateNetworkApplianceVlansSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.VlansAPI.UpdateNetworkApplianceVlansSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -20,12 +20,12 @@ import (
 )
 
 
-// SearchApiService SearchApi service
-type SearchApiService service
+// SearchAPIService SearchAPI service
+type SearchAPIService service
 
-type SearchApiGetOrganizationClientsSearchRequest struct {
+type SearchAPIGetOrganizationClientsSearchRequest struct {
 	ctx context.Context
-	ApiService *SearchApiService
+	ApiService *SearchAPIService
 	organizationId string
 	mac *string
 	perPage *int32
@@ -34,30 +34,30 @@ type SearchApiGetOrganizationClientsSearchRequest struct {
 }
 
 // The MAC address of the client. Required.
-func (r SearchApiGetOrganizationClientsSearchRequest) Mac(mac string) SearchApiGetOrganizationClientsSearchRequest {
+func (r SearchAPIGetOrganizationClientsSearchRequest) Mac(mac string) SearchAPIGetOrganizationClientsSearchRequest {
 	r.mac = &mac
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 5. Default is 5.
-func (r SearchApiGetOrganizationClientsSearchRequest) PerPage(perPage int32) SearchApiGetOrganizationClientsSearchRequest {
+func (r SearchAPIGetOrganizationClientsSearchRequest) PerPage(perPage int32) SearchAPIGetOrganizationClientsSearchRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SearchApiGetOrganizationClientsSearchRequest) StartingAfter(startingAfter string) SearchApiGetOrganizationClientsSearchRequest {
+func (r SearchAPIGetOrganizationClientsSearchRequest) StartingAfter(startingAfter string) SearchAPIGetOrganizationClientsSearchRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SearchApiGetOrganizationClientsSearchRequest) EndingBefore(endingBefore string) SearchApiGetOrganizationClientsSearchRequest {
+func (r SearchAPIGetOrganizationClientsSearchRequest) EndingBefore(endingBefore string) SearchAPIGetOrganizationClientsSearchRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r SearchApiGetOrganizationClientsSearchRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SearchAPIGetOrganizationClientsSearchRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationClientsSearchExecute(r)
 }
 
@@ -68,10 +68,10 @@ Return the client details in an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return SearchApiGetOrganizationClientsSearchRequest
+ @return SearchAPIGetOrganizationClientsSearchRequest
 */
-func (a *SearchApiService) GetOrganizationClientsSearch(ctx context.Context, organizationId string) SearchApiGetOrganizationClientsSearchRequest {
-	return SearchApiGetOrganizationClientsSearchRequest{
+func (a *SearchAPIService) GetOrganizationClientsSearch(ctx context.Context, organizationId string) SearchAPIGetOrganizationClientsSearchRequest {
+	return SearchAPIGetOrganizationClientsSearchRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -80,7 +80,7 @@ func (a *SearchApiService) GetOrganizationClientsSearch(ctx context.Context, org
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SearchApiService) GetOrganizationClientsSearchExecute(r SearchApiGetOrganizationClientsSearchRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SearchAPIService) GetOrganizationClientsSearchExecute(r SearchAPIGetOrganizationClientsSearchRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -88,7 +88,7 @@ func (a *SearchApiService) GetOrganizationClientsSearchExecute(r SearchApiGetOrg
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SearchApiService.GetOrganizationClientsSearch")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SearchAPIService.GetOrganizationClientsSearch")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

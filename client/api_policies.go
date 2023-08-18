@@ -20,22 +20,22 @@ import (
 )
 
 
-// PoliciesApiService PoliciesApi service
-type PoliciesApiService service
+// PoliciesAPIService PoliciesAPI service
+type PoliciesAPIService service
 
-type PoliciesApiCreateOrganizationAdaptivePolicyPolicyRequest struct {
+type PoliciesAPICreateOrganizationAdaptivePolicyPolicyRequest struct {
 	ctx context.Context
-	ApiService *PoliciesApiService
+	ApiService *PoliciesAPIService
 	organizationId string
 	createOrganizationAdaptivePolicyPolicyRequest *CreateOrganizationAdaptivePolicyPolicyRequest
 }
 
-func (r PoliciesApiCreateOrganizationAdaptivePolicyPolicyRequest) CreateOrganizationAdaptivePolicyPolicyRequest(createOrganizationAdaptivePolicyPolicyRequest CreateOrganizationAdaptivePolicyPolicyRequest) PoliciesApiCreateOrganizationAdaptivePolicyPolicyRequest {
+func (r PoliciesAPICreateOrganizationAdaptivePolicyPolicyRequest) CreateOrganizationAdaptivePolicyPolicyRequest(createOrganizationAdaptivePolicyPolicyRequest CreateOrganizationAdaptivePolicyPolicyRequest) PoliciesAPICreateOrganizationAdaptivePolicyPolicyRequest {
 	r.createOrganizationAdaptivePolicyPolicyRequest = &createOrganizationAdaptivePolicyPolicyRequest
 	return r
 }
 
-func (r PoliciesApiCreateOrganizationAdaptivePolicyPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r PoliciesAPICreateOrganizationAdaptivePolicyPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateOrganizationAdaptivePolicyPolicyExecute(r)
 }
 
@@ -46,10 +46,10 @@ Add an Adaptive Policy
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return PoliciesApiCreateOrganizationAdaptivePolicyPolicyRequest
+ @return PoliciesAPICreateOrganizationAdaptivePolicyPolicyRequest
 */
-func (a *PoliciesApiService) CreateOrganizationAdaptivePolicyPolicy(ctx context.Context, organizationId string) PoliciesApiCreateOrganizationAdaptivePolicyPolicyRequest {
-	return PoliciesApiCreateOrganizationAdaptivePolicyPolicyRequest{
+func (a *PoliciesAPIService) CreateOrganizationAdaptivePolicyPolicy(ctx context.Context, organizationId string) PoliciesAPICreateOrganizationAdaptivePolicyPolicyRequest {
+	return PoliciesAPICreateOrganizationAdaptivePolicyPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -58,7 +58,7 @@ func (a *PoliciesApiService) CreateOrganizationAdaptivePolicyPolicy(ctx context.
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PoliciesApiService) CreateOrganizationAdaptivePolicyPolicyExecute(r PoliciesApiCreateOrganizationAdaptivePolicyPolicyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PoliciesAPIService) CreateOrganizationAdaptivePolicyPolicyExecute(r PoliciesAPICreateOrganizationAdaptivePolicyPolicyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *PoliciesApiService) CreateOrganizationAdaptivePolicyPolicyExecute(r Pol
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesApiService.CreateOrganizationAdaptivePolicyPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesAPIService.CreateOrganizationAdaptivePolicyPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,14 +151,14 @@ func (a *PoliciesApiService) CreateOrganizationAdaptivePolicyPolicyExecute(r Pol
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PoliciesApiDeleteOrganizationAdaptivePolicyPolicyRequest struct {
+type PoliciesAPIDeleteOrganizationAdaptivePolicyPolicyRequest struct {
 	ctx context.Context
-	ApiService *PoliciesApiService
+	ApiService *PoliciesAPIService
 	organizationId string
 	id string
 }
 
-func (r PoliciesApiDeleteOrganizationAdaptivePolicyPolicyRequest) Execute() (*http.Response, error) {
+func (r PoliciesAPIDeleteOrganizationAdaptivePolicyPolicyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationAdaptivePolicyPolicyExecute(r)
 }
 
@@ -170,10 +170,10 @@ Delete an Adaptive Policy
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param id ID
- @return PoliciesApiDeleteOrganizationAdaptivePolicyPolicyRequest
+ @return PoliciesAPIDeleteOrganizationAdaptivePolicyPolicyRequest
 */
-func (a *PoliciesApiService) DeleteOrganizationAdaptivePolicyPolicy(ctx context.Context, organizationId string, id string) PoliciesApiDeleteOrganizationAdaptivePolicyPolicyRequest {
-	return PoliciesApiDeleteOrganizationAdaptivePolicyPolicyRequest{
+func (a *PoliciesAPIService) DeleteOrganizationAdaptivePolicyPolicy(ctx context.Context, organizationId string, id string) PoliciesAPIDeleteOrganizationAdaptivePolicyPolicyRequest {
+	return PoliciesAPIDeleteOrganizationAdaptivePolicyPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -182,14 +182,14 @@ func (a *PoliciesApiService) DeleteOrganizationAdaptivePolicyPolicy(ctx context.
 }
 
 // Execute executes the request
-func (a *PoliciesApiService) DeleteOrganizationAdaptivePolicyPolicyExecute(r PoliciesApiDeleteOrganizationAdaptivePolicyPolicyRequest) (*http.Response, error) {
+func (a *PoliciesAPIService) DeleteOrganizationAdaptivePolicyPolicyExecute(r PoliciesAPIDeleteOrganizationAdaptivePolicyPolicyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesApiService.DeleteOrganizationAdaptivePolicyPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesAPIService.DeleteOrganizationAdaptivePolicyPolicy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -261,9 +261,9 @@ func (a *PoliciesApiService) DeleteOrganizationAdaptivePolicyPolicyExecute(r Pol
 	return localVarHTTPResponse, nil
 }
 
-type PoliciesApiGetNetworkPoliciesByClientRequest struct {
+type PoliciesAPIGetNetworkPoliciesByClientRequest struct {
 	ctx context.Context
-	ApiService *PoliciesApiService
+	ApiService *PoliciesAPIService
 	networkId string
 	perPage *int32
 	startingAfter *string
@@ -273,36 +273,36 @@ type PoliciesApiGetNetworkPoliciesByClientRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 50.
-func (r PoliciesApiGetNetworkPoliciesByClientRequest) PerPage(perPage int32) PoliciesApiGetNetworkPoliciesByClientRequest {
+func (r PoliciesAPIGetNetworkPoliciesByClientRequest) PerPage(perPage int32) PoliciesAPIGetNetworkPoliciesByClientRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r PoliciesApiGetNetworkPoliciesByClientRequest) StartingAfter(startingAfter string) PoliciesApiGetNetworkPoliciesByClientRequest {
+func (r PoliciesAPIGetNetworkPoliciesByClientRequest) StartingAfter(startingAfter string) PoliciesAPIGetNetworkPoliciesByClientRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r PoliciesApiGetNetworkPoliciesByClientRequest) EndingBefore(endingBefore string) PoliciesApiGetNetworkPoliciesByClientRequest {
+func (r PoliciesAPIGetNetworkPoliciesByClientRequest) EndingBefore(endingBefore string) PoliciesAPIGetNetworkPoliciesByClientRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r PoliciesApiGetNetworkPoliciesByClientRequest) T0(t0 string) PoliciesApiGetNetworkPoliciesByClientRequest {
+func (r PoliciesAPIGetNetworkPoliciesByClientRequest) T0(t0 string) PoliciesAPIGetNetworkPoliciesByClientRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r PoliciesApiGetNetworkPoliciesByClientRequest) Timespan(timespan float32) PoliciesApiGetNetworkPoliciesByClientRequest {
+func (r PoliciesAPIGetNetworkPoliciesByClientRequest) Timespan(timespan float32) PoliciesAPIGetNetworkPoliciesByClientRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r PoliciesApiGetNetworkPoliciesByClientRequest) Execute() ([]GetNetworkPoliciesByClient200ResponseInner, *http.Response, error) {
+func (r PoliciesAPIGetNetworkPoliciesByClientRequest) Execute() ([]GetNetworkPoliciesByClient200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkPoliciesByClientExecute(r)
 }
 
@@ -313,10 +313,10 @@ Get policies for all clients with policies
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return PoliciesApiGetNetworkPoliciesByClientRequest
+ @return PoliciesAPIGetNetworkPoliciesByClientRequest
 */
-func (a *PoliciesApiService) GetNetworkPoliciesByClient(ctx context.Context, networkId string) PoliciesApiGetNetworkPoliciesByClientRequest {
-	return PoliciesApiGetNetworkPoliciesByClientRequest{
+func (a *PoliciesAPIService) GetNetworkPoliciesByClient(ctx context.Context, networkId string) PoliciesAPIGetNetworkPoliciesByClientRequest {
+	return PoliciesAPIGetNetworkPoliciesByClientRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -325,7 +325,7 @@ func (a *PoliciesApiService) GetNetworkPoliciesByClient(ctx context.Context, net
 
 // Execute executes the request
 //  @return []GetNetworkPoliciesByClient200ResponseInner
-func (a *PoliciesApiService) GetNetworkPoliciesByClientExecute(r PoliciesApiGetNetworkPoliciesByClientRequest) ([]GetNetworkPoliciesByClient200ResponseInner, *http.Response, error) {
+func (a *PoliciesAPIService) GetNetworkPoliciesByClientExecute(r PoliciesAPIGetNetworkPoliciesByClientRequest) ([]GetNetworkPoliciesByClient200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -333,7 +333,7 @@ func (a *PoliciesApiService) GetNetworkPoliciesByClientExecute(r PoliciesApiGetN
 		localVarReturnValue  []GetNetworkPoliciesByClient200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesApiService.GetNetworkPoliciesByClient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesAPIService.GetNetworkPoliciesByClient")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -428,13 +428,13 @@ func (a *PoliciesApiService) GetNetworkPoliciesByClientExecute(r PoliciesApiGetN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PoliciesApiGetOrganizationAdaptivePolicyPoliciesRequest struct {
+type PoliciesAPIGetOrganizationAdaptivePolicyPoliciesRequest struct {
 	ctx context.Context
-	ApiService *PoliciesApiService
+	ApiService *PoliciesAPIService
 	organizationId string
 }
 
-func (r PoliciesApiGetOrganizationAdaptivePolicyPoliciesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r PoliciesAPIGetOrganizationAdaptivePolicyPoliciesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationAdaptivePolicyPoliciesExecute(r)
 }
 
@@ -445,10 +445,10 @@ List adaptive policies in an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return PoliciesApiGetOrganizationAdaptivePolicyPoliciesRequest
+ @return PoliciesAPIGetOrganizationAdaptivePolicyPoliciesRequest
 */
-func (a *PoliciesApiService) GetOrganizationAdaptivePolicyPolicies(ctx context.Context, organizationId string) PoliciesApiGetOrganizationAdaptivePolicyPoliciesRequest {
-	return PoliciesApiGetOrganizationAdaptivePolicyPoliciesRequest{
+func (a *PoliciesAPIService) GetOrganizationAdaptivePolicyPolicies(ctx context.Context, organizationId string) PoliciesAPIGetOrganizationAdaptivePolicyPoliciesRequest {
+	return PoliciesAPIGetOrganizationAdaptivePolicyPoliciesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -457,7 +457,7 @@ func (a *PoliciesApiService) GetOrganizationAdaptivePolicyPolicies(ctx context.C
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *PoliciesApiService) GetOrganizationAdaptivePolicyPoliciesExecute(r PoliciesApiGetOrganizationAdaptivePolicyPoliciesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *PoliciesAPIService) GetOrganizationAdaptivePolicyPoliciesExecute(r PoliciesAPIGetOrganizationAdaptivePolicyPoliciesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -465,7 +465,7 @@ func (a *PoliciesApiService) GetOrganizationAdaptivePolicyPoliciesExecute(r Poli
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesApiService.GetOrganizationAdaptivePolicyPolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesAPIService.GetOrganizationAdaptivePolicyPolicies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -545,14 +545,14 @@ func (a *PoliciesApiService) GetOrganizationAdaptivePolicyPoliciesExecute(r Poli
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PoliciesApiGetOrganizationAdaptivePolicyPolicyRequest struct {
+type PoliciesAPIGetOrganizationAdaptivePolicyPolicyRequest struct {
 	ctx context.Context
-	ApiService *PoliciesApiService
+	ApiService *PoliciesAPIService
 	organizationId string
 	id string
 }
 
-func (r PoliciesApiGetOrganizationAdaptivePolicyPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r PoliciesAPIGetOrganizationAdaptivePolicyPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationAdaptivePolicyPolicyExecute(r)
 }
 
@@ -564,10 +564,10 @@ Return an adaptive policy
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param id ID
- @return PoliciesApiGetOrganizationAdaptivePolicyPolicyRequest
+ @return PoliciesAPIGetOrganizationAdaptivePolicyPolicyRequest
 */
-func (a *PoliciesApiService) GetOrganizationAdaptivePolicyPolicy(ctx context.Context, organizationId string, id string) PoliciesApiGetOrganizationAdaptivePolicyPolicyRequest {
-	return PoliciesApiGetOrganizationAdaptivePolicyPolicyRequest{
+func (a *PoliciesAPIService) GetOrganizationAdaptivePolicyPolicy(ctx context.Context, organizationId string, id string) PoliciesAPIGetOrganizationAdaptivePolicyPolicyRequest {
+	return PoliciesAPIGetOrganizationAdaptivePolicyPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -577,7 +577,7 @@ func (a *PoliciesApiService) GetOrganizationAdaptivePolicyPolicy(ctx context.Con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PoliciesApiService) GetOrganizationAdaptivePolicyPolicyExecute(r PoliciesApiGetOrganizationAdaptivePolicyPolicyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PoliciesAPIService) GetOrganizationAdaptivePolicyPolicyExecute(r PoliciesAPIGetOrganizationAdaptivePolicyPolicyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -585,7 +585,7 @@ func (a *PoliciesApiService) GetOrganizationAdaptivePolicyPolicyExecute(r Polici
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesApiService.GetOrganizationAdaptivePolicyPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesAPIService.GetOrganizationAdaptivePolicyPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -666,20 +666,20 @@ func (a *PoliciesApiService) GetOrganizationAdaptivePolicyPolicyExecute(r Polici
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PoliciesApiUpdateOrganizationAdaptivePolicyPolicyRequest struct {
+type PoliciesAPIUpdateOrganizationAdaptivePolicyPolicyRequest struct {
 	ctx context.Context
-	ApiService *PoliciesApiService
+	ApiService *PoliciesAPIService
 	organizationId string
 	id string
 	updateOrganizationAdaptivePolicyPolicyRequest *UpdateOrganizationAdaptivePolicyPolicyRequest
 }
 
-func (r PoliciesApiUpdateOrganizationAdaptivePolicyPolicyRequest) UpdateOrganizationAdaptivePolicyPolicyRequest(updateOrganizationAdaptivePolicyPolicyRequest UpdateOrganizationAdaptivePolicyPolicyRequest) PoliciesApiUpdateOrganizationAdaptivePolicyPolicyRequest {
+func (r PoliciesAPIUpdateOrganizationAdaptivePolicyPolicyRequest) UpdateOrganizationAdaptivePolicyPolicyRequest(updateOrganizationAdaptivePolicyPolicyRequest UpdateOrganizationAdaptivePolicyPolicyRequest) PoliciesAPIUpdateOrganizationAdaptivePolicyPolicyRequest {
 	r.updateOrganizationAdaptivePolicyPolicyRequest = &updateOrganizationAdaptivePolicyPolicyRequest
 	return r
 }
 
-func (r PoliciesApiUpdateOrganizationAdaptivePolicyPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r PoliciesAPIUpdateOrganizationAdaptivePolicyPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationAdaptivePolicyPolicyExecute(r)
 }
 
@@ -691,10 +691,10 @@ Update an Adaptive Policy
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param id ID
- @return PoliciesApiUpdateOrganizationAdaptivePolicyPolicyRequest
+ @return PoliciesAPIUpdateOrganizationAdaptivePolicyPolicyRequest
 */
-func (a *PoliciesApiService) UpdateOrganizationAdaptivePolicyPolicy(ctx context.Context, organizationId string, id string) PoliciesApiUpdateOrganizationAdaptivePolicyPolicyRequest {
-	return PoliciesApiUpdateOrganizationAdaptivePolicyPolicyRequest{
+func (a *PoliciesAPIService) UpdateOrganizationAdaptivePolicyPolicy(ctx context.Context, organizationId string, id string) PoliciesAPIUpdateOrganizationAdaptivePolicyPolicyRequest {
+	return PoliciesAPIUpdateOrganizationAdaptivePolicyPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -704,7 +704,7 @@ func (a *PoliciesApiService) UpdateOrganizationAdaptivePolicyPolicy(ctx context.
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PoliciesApiService) UpdateOrganizationAdaptivePolicyPolicyExecute(r PoliciesApiUpdateOrganizationAdaptivePolicyPolicyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PoliciesAPIService) UpdateOrganizationAdaptivePolicyPolicyExecute(r PoliciesAPIUpdateOrganizationAdaptivePolicyPolicyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -712,7 +712,7 @@ func (a *PoliciesApiService) UpdateOrganizationAdaptivePolicyPolicyExecute(r Pol
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesApiService.UpdateOrganizationAdaptivePolicyPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoliciesAPIService.UpdateOrganizationAdaptivePolicyPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

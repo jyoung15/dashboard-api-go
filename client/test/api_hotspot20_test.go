@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing Hotspot20ApiService
+Testing Hotspot20APIService
 
 */
 
@@ -17,19 +17,19 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_Hotspot20ApiService(t *testing.T) {
+func Test_client_Hotspot20APIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test Hotspot20ApiService GetNetworkWirelessSsidHotspot20", func(t *testing.T) {
+	t.Run("Test Hotspot20APIService GetNetworkWirelessSsidHotspot20", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.Hotspot20Api.GetNetworkWirelessSsidHotspot20(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.Hotspot20API.GetNetworkWirelessSsidHotspot20(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -37,14 +37,14 @@ func Test_client_Hotspot20ApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test Hotspot20ApiService UpdateNetworkWirelessSsidHotspot20", func(t *testing.T) {
+	t.Run("Test Hotspot20APIService UpdateNetworkWirelessSsidHotspot20", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var number string
 
-		resp, httpRes, err := apiClient.Hotspot20Api.UpdateNetworkWirelessSsidHotspot20(context.Background(), networkId, number).Execute()
+		resp, httpRes, err := apiClient.Hotspot20API.UpdateNetworkWirelessSsidHotspot20(context.Background(), networkId, number).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

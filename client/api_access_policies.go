@@ -20,22 +20,22 @@ import (
 )
 
 
-// AccessPoliciesApiService AccessPoliciesApi service
-type AccessPoliciesApiService service
+// AccessPoliciesAPIService AccessPoliciesAPI service
+type AccessPoliciesAPIService service
 
-type AccessPoliciesApiCreateNetworkSwitchAccessPolicyRequest struct {
+type AccessPoliciesAPICreateNetworkSwitchAccessPolicyRequest struct {
 	ctx context.Context
-	ApiService *AccessPoliciesApiService
+	ApiService *AccessPoliciesAPIService
 	networkId string
 	createNetworkSwitchAccessPolicyRequest *CreateNetworkSwitchAccessPolicyRequest
 }
 
-func (r AccessPoliciesApiCreateNetworkSwitchAccessPolicyRequest) CreateNetworkSwitchAccessPolicyRequest(createNetworkSwitchAccessPolicyRequest CreateNetworkSwitchAccessPolicyRequest) AccessPoliciesApiCreateNetworkSwitchAccessPolicyRequest {
+func (r AccessPoliciesAPICreateNetworkSwitchAccessPolicyRequest) CreateNetworkSwitchAccessPolicyRequest(createNetworkSwitchAccessPolicyRequest CreateNetworkSwitchAccessPolicyRequest) AccessPoliciesAPICreateNetworkSwitchAccessPolicyRequest {
 	r.createNetworkSwitchAccessPolicyRequest = &createNetworkSwitchAccessPolicyRequest
 	return r
 }
 
-func (r AccessPoliciesApiCreateNetworkSwitchAccessPolicyRequest) Execute() (*GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
+func (r AccessPoliciesAPICreateNetworkSwitchAccessPolicyRequest) Execute() (*GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateNetworkSwitchAccessPolicyExecute(r)
 }
 
@@ -46,10 +46,10 @@ Create an access policy for a switch network. If you would like to enable Meraki
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return AccessPoliciesApiCreateNetworkSwitchAccessPolicyRequest
+ @return AccessPoliciesAPICreateNetworkSwitchAccessPolicyRequest
 */
-func (a *AccessPoliciesApiService) CreateNetworkSwitchAccessPolicy(ctx context.Context, networkId string) AccessPoliciesApiCreateNetworkSwitchAccessPolicyRequest {
-	return AccessPoliciesApiCreateNetworkSwitchAccessPolicyRequest{
+func (a *AccessPoliciesAPIService) CreateNetworkSwitchAccessPolicy(ctx context.Context, networkId string) AccessPoliciesAPICreateNetworkSwitchAccessPolicyRequest {
+	return AccessPoliciesAPICreateNetworkSwitchAccessPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -58,7 +58,7 @@ func (a *AccessPoliciesApiService) CreateNetworkSwitchAccessPolicy(ctx context.C
 
 // Execute executes the request
 //  @return GetNetworkSwitchAccessPolicies200ResponseInner
-func (a *AccessPoliciesApiService) CreateNetworkSwitchAccessPolicyExecute(r AccessPoliciesApiCreateNetworkSwitchAccessPolicyRequest) (*GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
+func (a *AccessPoliciesAPIService) CreateNetworkSwitchAccessPolicyExecute(r AccessPoliciesAPICreateNetworkSwitchAccessPolicyRequest) (*GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *AccessPoliciesApiService) CreateNetworkSwitchAccessPolicyExecute(r Acce
 		localVarReturnValue  *GetNetworkSwitchAccessPolicies200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessPoliciesApiService.CreateNetworkSwitchAccessPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessPoliciesAPIService.CreateNetworkSwitchAccessPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,14 +151,14 @@ func (a *AccessPoliciesApiService) CreateNetworkSwitchAccessPolicyExecute(r Acce
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AccessPoliciesApiDeleteNetworkSwitchAccessPolicyRequest struct {
+type AccessPoliciesAPIDeleteNetworkSwitchAccessPolicyRequest struct {
 	ctx context.Context
-	ApiService *AccessPoliciesApiService
+	ApiService *AccessPoliciesAPIService
 	networkId string
 	accessPolicyNumber string
 }
 
-func (r AccessPoliciesApiDeleteNetworkSwitchAccessPolicyRequest) Execute() (*http.Response, error) {
+func (r AccessPoliciesAPIDeleteNetworkSwitchAccessPolicyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkSwitchAccessPolicyExecute(r)
 }
 
@@ -170,10 +170,10 @@ Delete an access policy for a switch network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param accessPolicyNumber Access policy number
- @return AccessPoliciesApiDeleteNetworkSwitchAccessPolicyRequest
+ @return AccessPoliciesAPIDeleteNetworkSwitchAccessPolicyRequest
 */
-func (a *AccessPoliciesApiService) DeleteNetworkSwitchAccessPolicy(ctx context.Context, networkId string, accessPolicyNumber string) AccessPoliciesApiDeleteNetworkSwitchAccessPolicyRequest {
-	return AccessPoliciesApiDeleteNetworkSwitchAccessPolicyRequest{
+func (a *AccessPoliciesAPIService) DeleteNetworkSwitchAccessPolicy(ctx context.Context, networkId string, accessPolicyNumber string) AccessPoliciesAPIDeleteNetworkSwitchAccessPolicyRequest {
+	return AccessPoliciesAPIDeleteNetworkSwitchAccessPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -182,14 +182,14 @@ func (a *AccessPoliciesApiService) DeleteNetworkSwitchAccessPolicy(ctx context.C
 }
 
 // Execute executes the request
-func (a *AccessPoliciesApiService) DeleteNetworkSwitchAccessPolicyExecute(r AccessPoliciesApiDeleteNetworkSwitchAccessPolicyRequest) (*http.Response, error) {
+func (a *AccessPoliciesAPIService) DeleteNetworkSwitchAccessPolicyExecute(r AccessPoliciesAPIDeleteNetworkSwitchAccessPolicyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessPoliciesApiService.DeleteNetworkSwitchAccessPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessPoliciesAPIService.DeleteNetworkSwitchAccessPolicy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -261,13 +261,13 @@ func (a *AccessPoliciesApiService) DeleteNetworkSwitchAccessPolicyExecute(r Acce
 	return localVarHTTPResponse, nil
 }
 
-type AccessPoliciesApiGetNetworkSwitchAccessPoliciesRequest struct {
+type AccessPoliciesAPIGetNetworkSwitchAccessPoliciesRequest struct {
 	ctx context.Context
-	ApiService *AccessPoliciesApiService
+	ApiService *AccessPoliciesAPIService
 	networkId string
 }
 
-func (r AccessPoliciesApiGetNetworkSwitchAccessPoliciesRequest) Execute() ([]GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
+func (r AccessPoliciesAPIGetNetworkSwitchAccessPoliciesRequest) Execute() ([]GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchAccessPoliciesExecute(r)
 }
 
@@ -278,10 +278,10 @@ List the access policies for a switch network. Only returns access policies with
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return AccessPoliciesApiGetNetworkSwitchAccessPoliciesRequest
+ @return AccessPoliciesAPIGetNetworkSwitchAccessPoliciesRequest
 */
-func (a *AccessPoliciesApiService) GetNetworkSwitchAccessPolicies(ctx context.Context, networkId string) AccessPoliciesApiGetNetworkSwitchAccessPoliciesRequest {
-	return AccessPoliciesApiGetNetworkSwitchAccessPoliciesRequest{
+func (a *AccessPoliciesAPIService) GetNetworkSwitchAccessPolicies(ctx context.Context, networkId string) AccessPoliciesAPIGetNetworkSwitchAccessPoliciesRequest {
+	return AccessPoliciesAPIGetNetworkSwitchAccessPoliciesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -290,7 +290,7 @@ func (a *AccessPoliciesApiService) GetNetworkSwitchAccessPolicies(ctx context.Co
 
 // Execute executes the request
 //  @return []GetNetworkSwitchAccessPolicies200ResponseInner
-func (a *AccessPoliciesApiService) GetNetworkSwitchAccessPoliciesExecute(r AccessPoliciesApiGetNetworkSwitchAccessPoliciesRequest) ([]GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
+func (a *AccessPoliciesAPIService) GetNetworkSwitchAccessPoliciesExecute(r AccessPoliciesAPIGetNetworkSwitchAccessPoliciesRequest) ([]GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -298,7 +298,7 @@ func (a *AccessPoliciesApiService) GetNetworkSwitchAccessPoliciesExecute(r Acces
 		localVarReturnValue  []GetNetworkSwitchAccessPolicies200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessPoliciesApiService.GetNetworkSwitchAccessPolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessPoliciesAPIService.GetNetworkSwitchAccessPolicies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -378,14 +378,14 @@ func (a *AccessPoliciesApiService) GetNetworkSwitchAccessPoliciesExecute(r Acces
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AccessPoliciesApiGetNetworkSwitchAccessPolicyRequest struct {
+type AccessPoliciesAPIGetNetworkSwitchAccessPolicyRequest struct {
 	ctx context.Context
-	ApiService *AccessPoliciesApiService
+	ApiService *AccessPoliciesAPIService
 	networkId string
 	accessPolicyNumber string
 }
 
-func (r AccessPoliciesApiGetNetworkSwitchAccessPolicyRequest) Execute() (*GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
+func (r AccessPoliciesAPIGetNetworkSwitchAccessPolicyRequest) Execute() (*GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchAccessPolicyExecute(r)
 }
 
@@ -397,10 +397,10 @@ Return a specific access policy for a switch network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param accessPolicyNumber Access policy number
- @return AccessPoliciesApiGetNetworkSwitchAccessPolicyRequest
+ @return AccessPoliciesAPIGetNetworkSwitchAccessPolicyRequest
 */
-func (a *AccessPoliciesApiService) GetNetworkSwitchAccessPolicy(ctx context.Context, networkId string, accessPolicyNumber string) AccessPoliciesApiGetNetworkSwitchAccessPolicyRequest {
-	return AccessPoliciesApiGetNetworkSwitchAccessPolicyRequest{
+func (a *AccessPoliciesAPIService) GetNetworkSwitchAccessPolicy(ctx context.Context, networkId string, accessPolicyNumber string) AccessPoliciesAPIGetNetworkSwitchAccessPolicyRequest {
+	return AccessPoliciesAPIGetNetworkSwitchAccessPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -410,7 +410,7 @@ func (a *AccessPoliciesApiService) GetNetworkSwitchAccessPolicy(ctx context.Cont
 
 // Execute executes the request
 //  @return GetNetworkSwitchAccessPolicies200ResponseInner
-func (a *AccessPoliciesApiService) GetNetworkSwitchAccessPolicyExecute(r AccessPoliciesApiGetNetworkSwitchAccessPolicyRequest) (*GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
+func (a *AccessPoliciesAPIService) GetNetworkSwitchAccessPolicyExecute(r AccessPoliciesAPIGetNetworkSwitchAccessPolicyRequest) (*GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -418,7 +418,7 @@ func (a *AccessPoliciesApiService) GetNetworkSwitchAccessPolicyExecute(r AccessP
 		localVarReturnValue  *GetNetworkSwitchAccessPolicies200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessPoliciesApiService.GetNetworkSwitchAccessPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessPoliciesAPIService.GetNetworkSwitchAccessPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -499,20 +499,20 @@ func (a *AccessPoliciesApiService) GetNetworkSwitchAccessPolicyExecute(r AccessP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AccessPoliciesApiUpdateNetworkSwitchAccessPolicyRequest struct {
+type AccessPoliciesAPIUpdateNetworkSwitchAccessPolicyRequest struct {
 	ctx context.Context
-	ApiService *AccessPoliciesApiService
+	ApiService *AccessPoliciesAPIService
 	networkId string
 	accessPolicyNumber string
 	updateNetworkSwitchAccessPolicyRequest *UpdateNetworkSwitchAccessPolicyRequest
 }
 
-func (r AccessPoliciesApiUpdateNetworkSwitchAccessPolicyRequest) UpdateNetworkSwitchAccessPolicyRequest(updateNetworkSwitchAccessPolicyRequest UpdateNetworkSwitchAccessPolicyRequest) AccessPoliciesApiUpdateNetworkSwitchAccessPolicyRequest {
+func (r AccessPoliciesAPIUpdateNetworkSwitchAccessPolicyRequest) UpdateNetworkSwitchAccessPolicyRequest(updateNetworkSwitchAccessPolicyRequest UpdateNetworkSwitchAccessPolicyRequest) AccessPoliciesAPIUpdateNetworkSwitchAccessPolicyRequest {
 	r.updateNetworkSwitchAccessPolicyRequest = &updateNetworkSwitchAccessPolicyRequest
 	return r
 }
 
-func (r AccessPoliciesApiUpdateNetworkSwitchAccessPolicyRequest) Execute() (*GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
+func (r AccessPoliciesAPIUpdateNetworkSwitchAccessPolicyRequest) Execute() (*GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchAccessPolicyExecute(r)
 }
 
@@ -524,10 +524,10 @@ Update an access policy for a switch network. If you would like to enable Meraki
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param accessPolicyNumber Access policy number
- @return AccessPoliciesApiUpdateNetworkSwitchAccessPolicyRequest
+ @return AccessPoliciesAPIUpdateNetworkSwitchAccessPolicyRequest
 */
-func (a *AccessPoliciesApiService) UpdateNetworkSwitchAccessPolicy(ctx context.Context, networkId string, accessPolicyNumber string) AccessPoliciesApiUpdateNetworkSwitchAccessPolicyRequest {
-	return AccessPoliciesApiUpdateNetworkSwitchAccessPolicyRequest{
+func (a *AccessPoliciesAPIService) UpdateNetworkSwitchAccessPolicy(ctx context.Context, networkId string, accessPolicyNumber string) AccessPoliciesAPIUpdateNetworkSwitchAccessPolicyRequest {
+	return AccessPoliciesAPIUpdateNetworkSwitchAccessPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -537,7 +537,7 @@ func (a *AccessPoliciesApiService) UpdateNetworkSwitchAccessPolicy(ctx context.C
 
 // Execute executes the request
 //  @return GetNetworkSwitchAccessPolicies200ResponseInner
-func (a *AccessPoliciesApiService) UpdateNetworkSwitchAccessPolicyExecute(r AccessPoliciesApiUpdateNetworkSwitchAccessPolicyRequest) (*GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
+func (a *AccessPoliciesAPIService) UpdateNetworkSwitchAccessPolicyExecute(r AccessPoliciesAPIUpdateNetworkSwitchAccessPolicyRequest) (*GetNetworkSwitchAccessPolicies200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -545,7 +545,7 @@ func (a *AccessPoliciesApiService) UpdateNetworkSwitchAccessPolicyExecute(r Acce
 		localVarReturnValue  *GetNetworkSwitchAccessPolicies200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessPoliciesApiService.UpdateNetworkSwitchAccessPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessPoliciesAPIService.UpdateNetworkSwitchAccessPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

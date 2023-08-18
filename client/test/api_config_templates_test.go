@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing ConfigTemplatesApiService
+Testing ConfigTemplatesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_ConfigTemplatesApiService(t *testing.T) {
+func Test_client_ConfigTemplatesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test ConfigTemplatesApiService CreateOrganizationConfigTemplate", func(t *testing.T) {
+	t.Run("Test ConfigTemplatesAPIService CreateOrganizationConfigTemplate", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.ConfigTemplatesApi.CreateOrganizationConfigTemplate(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.ConfigTemplatesAPI.CreateOrganizationConfigTemplate(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,28 +36,28 @@ func Test_client_ConfigTemplatesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigTemplatesApiService DeleteOrganizationConfigTemplate", func(t *testing.T) {
+	t.Run("Test ConfigTemplatesAPIService DeleteOrganizationConfigTemplate", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var configTemplateId string
 
-		httpRes, err := apiClient.ConfigTemplatesApi.DeleteOrganizationConfigTemplate(context.Background(), organizationId, configTemplateId).Execute()
+		httpRes, err := apiClient.ConfigTemplatesAPI.DeleteOrganizationConfigTemplate(context.Background(), organizationId, configTemplateId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ConfigTemplatesApiService GetOrganizationConfigTemplate", func(t *testing.T) {
+	t.Run("Test ConfigTemplatesAPIService GetOrganizationConfigTemplate", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var configTemplateId string
 
-		resp, httpRes, err := apiClient.ConfigTemplatesApi.GetOrganizationConfigTemplate(context.Background(), organizationId, configTemplateId).Execute()
+		resp, httpRes, err := apiClient.ConfigTemplatesAPI.GetOrganizationConfigTemplate(context.Background(), organizationId, configTemplateId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -65,84 +65,7 @@ func Test_client_ConfigTemplatesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test ConfigTemplatesApiService GetOrganizationConfigTemplateSwitchProfilePort", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var organizationId string
-		var configTemplateId string
-		var profileId string
-		var portId string
-
-		resp, httpRes, err := apiClient.ConfigTemplatesApi.GetOrganizationConfigTemplateSwitchProfilePort(context.Background(), organizationId, configTemplateId, profileId, portId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ConfigTemplatesApiService GetOrganizationConfigTemplateSwitchProfilePorts", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var organizationId string
-		var configTemplateId string
-		var profileId string
-
-		resp, httpRes, err := apiClient.ConfigTemplatesApi.GetOrganizationConfigTemplateSwitchProfilePorts(context.Background(), organizationId, configTemplateId, profileId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ConfigTemplatesApiService GetOrganizationConfigTemplateSwitchProfiles", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var organizationId string
-		var configTemplateId string
-
-		resp, httpRes, err := apiClient.ConfigTemplatesApi.GetOrganizationConfigTemplateSwitchProfiles(context.Background(), organizationId, configTemplateId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ConfigTemplatesApiService GetOrganizationConfigTemplates", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var organizationId string
-
-		resp, httpRes, err := apiClient.ConfigTemplatesApi.GetOrganizationConfigTemplates(context.Background(), organizationId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ConfigTemplatesApiService UpdateOrganizationConfigTemplate", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var organizationId string
-		var configTemplateId string
-
-		resp, httpRes, err := apiClient.ConfigTemplatesApi.UpdateOrganizationConfigTemplate(context.Background(), organizationId, configTemplateId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ConfigTemplatesApiService UpdateOrganizationConfigTemplateSwitchProfilePort", func(t *testing.T) {
+	t.Run("Test ConfigTemplatesAPIService GetOrganizationConfigTemplateSwitchProfilePort", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
@@ -151,7 +74,84 @@ func Test_client_ConfigTemplatesApiService(t *testing.T) {
 		var profileId string
 		var portId string
 
-		resp, httpRes, err := apiClient.ConfigTemplatesApi.UpdateOrganizationConfigTemplateSwitchProfilePort(context.Background(), organizationId, configTemplateId, profileId, portId).Execute()
+		resp, httpRes, err := apiClient.ConfigTemplatesAPI.GetOrganizationConfigTemplateSwitchProfilePort(context.Background(), organizationId, configTemplateId, profileId, portId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ConfigTemplatesAPIService GetOrganizationConfigTemplateSwitchProfilePorts", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var organizationId string
+		var configTemplateId string
+		var profileId string
+
+		resp, httpRes, err := apiClient.ConfigTemplatesAPI.GetOrganizationConfigTemplateSwitchProfilePorts(context.Background(), organizationId, configTemplateId, profileId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ConfigTemplatesAPIService GetOrganizationConfigTemplateSwitchProfiles", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var organizationId string
+		var configTemplateId string
+
+		resp, httpRes, err := apiClient.ConfigTemplatesAPI.GetOrganizationConfigTemplateSwitchProfiles(context.Background(), organizationId, configTemplateId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ConfigTemplatesAPIService GetOrganizationConfigTemplates", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var organizationId string
+
+		resp, httpRes, err := apiClient.ConfigTemplatesAPI.GetOrganizationConfigTemplates(context.Background(), organizationId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ConfigTemplatesAPIService UpdateOrganizationConfigTemplate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var organizationId string
+		var configTemplateId string
+
+		resp, httpRes, err := apiClient.ConfigTemplatesAPI.UpdateOrganizationConfigTemplate(context.Background(), organizationId, configTemplateId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ConfigTemplatesAPIService UpdateOrganizationConfigTemplateSwitchProfilePort", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var organizationId string
+		var configTemplateId string
+		var profileId string
+		var portId string
+
+		resp, httpRes, err := apiClient.ConfigTemplatesAPI.UpdateOrganizationConfigTemplateSwitchProfilePort(context.Background(), organizationId, configTemplateId, profileId, portId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

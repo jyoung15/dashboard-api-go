@@ -20,12 +20,12 @@ import (
 )
 
 
-// TrafficHistoryApiService TrafficHistoryApi service
-type TrafficHistoryApiService service
+// TrafficHistoryAPIService TrafficHistoryAPI service
+type TrafficHistoryAPIService service
 
-type TrafficHistoryApiGetNetworkClientTrafficHistoryRequest struct {
+type TrafficHistoryAPIGetNetworkClientTrafficHistoryRequest struct {
 	ctx context.Context
-	ApiService *TrafficHistoryApiService
+	ApiService *TrafficHistoryAPIService
 	networkId string
 	clientId string
 	perPage *int32
@@ -34,24 +34,24 @@ type TrafficHistoryApiGetNetworkClientTrafficHistoryRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000.
-func (r TrafficHistoryApiGetNetworkClientTrafficHistoryRequest) PerPage(perPage int32) TrafficHistoryApiGetNetworkClientTrafficHistoryRequest {
+func (r TrafficHistoryAPIGetNetworkClientTrafficHistoryRequest) PerPage(perPage int32) TrafficHistoryAPIGetNetworkClientTrafficHistoryRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r TrafficHistoryApiGetNetworkClientTrafficHistoryRequest) StartingAfter(startingAfter string) TrafficHistoryApiGetNetworkClientTrafficHistoryRequest {
+func (r TrafficHistoryAPIGetNetworkClientTrafficHistoryRequest) StartingAfter(startingAfter string) TrafficHistoryAPIGetNetworkClientTrafficHistoryRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r TrafficHistoryApiGetNetworkClientTrafficHistoryRequest) EndingBefore(endingBefore string) TrafficHistoryApiGetNetworkClientTrafficHistoryRequest {
+func (r TrafficHistoryAPIGetNetworkClientTrafficHistoryRequest) EndingBefore(endingBefore string) TrafficHistoryAPIGetNetworkClientTrafficHistoryRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r TrafficHistoryApiGetNetworkClientTrafficHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r TrafficHistoryAPIGetNetworkClientTrafficHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientTrafficHistoryExecute(r)
 }
 
@@ -63,10 +63,10 @@ Return the client's network traffic data over time. Usage data is in kilobytes. 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return TrafficHistoryApiGetNetworkClientTrafficHistoryRequest
+ @return TrafficHistoryAPIGetNetworkClientTrafficHistoryRequest
 */
-func (a *TrafficHistoryApiService) GetNetworkClientTrafficHistory(ctx context.Context, networkId string, clientId string) TrafficHistoryApiGetNetworkClientTrafficHistoryRequest {
-	return TrafficHistoryApiGetNetworkClientTrafficHistoryRequest{
+func (a *TrafficHistoryAPIService) GetNetworkClientTrafficHistory(ctx context.Context, networkId string, clientId string) TrafficHistoryAPIGetNetworkClientTrafficHistoryRequest {
+	return TrafficHistoryAPIGetNetworkClientTrafficHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -76,7 +76,7 @@ func (a *TrafficHistoryApiService) GetNetworkClientTrafficHistory(ctx context.Co
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *TrafficHistoryApiService) GetNetworkClientTrafficHistoryExecute(r TrafficHistoryApiGetNetworkClientTrafficHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *TrafficHistoryAPIService) GetNetworkClientTrafficHistoryExecute(r TrafficHistoryAPIGetNetworkClientTrafficHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -84,7 +84,7 @@ func (a *TrafficHistoryApiService) GetNetworkClientTrafficHistoryExecute(r Traff
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficHistoryApiService.GetNetworkClientTrafficHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrafficHistoryAPIService.GetNetworkClientTrafficHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

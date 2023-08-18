@@ -20,17 +20,17 @@ import (
 )
 
 
-// DeviceTypeGroupPoliciesApiService DeviceTypeGroupPoliciesApi service
-type DeviceTypeGroupPoliciesApiService service
+// DeviceTypeGroupPoliciesAPIService DeviceTypeGroupPoliciesAPI service
+type DeviceTypeGroupPoliciesAPIService service
 
-type DeviceTypeGroupPoliciesApiGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest struct {
+type DeviceTypeGroupPoliciesAPIGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest struct {
 	ctx context.Context
-	ApiService *DeviceTypeGroupPoliciesApiService
+	ApiService *DeviceTypeGroupPoliciesAPIService
 	networkId string
 	number string
 }
 
-func (r DeviceTypeGroupPoliciesApiGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r DeviceTypeGroupPoliciesAPIGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessSsidDeviceTypeGroupPoliciesExecute(r)
 }
 
@@ -42,10 +42,10 @@ List the device type group policies for the SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return DeviceTypeGroupPoliciesApiGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest
+ @return DeviceTypeGroupPoliciesAPIGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest
 */
-func (a *DeviceTypeGroupPoliciesApiService) GetNetworkWirelessSsidDeviceTypeGroupPolicies(ctx context.Context, networkId string, number string) DeviceTypeGroupPoliciesApiGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest {
-	return DeviceTypeGroupPoliciesApiGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest{
+func (a *DeviceTypeGroupPoliciesAPIService) GetNetworkWirelessSsidDeviceTypeGroupPolicies(ctx context.Context, networkId string, number string) DeviceTypeGroupPoliciesAPIGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest {
+	return DeviceTypeGroupPoliciesAPIGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -55,7 +55,7 @@ func (a *DeviceTypeGroupPoliciesApiService) GetNetworkWirelessSsidDeviceTypeGrou
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DeviceTypeGroupPoliciesApiService) GetNetworkWirelessSsidDeviceTypeGroupPoliciesExecute(r DeviceTypeGroupPoliciesApiGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DeviceTypeGroupPoliciesAPIService) GetNetworkWirelessSsidDeviceTypeGroupPoliciesExecute(r DeviceTypeGroupPoliciesAPIGetNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -63,7 +63,7 @@ func (a *DeviceTypeGroupPoliciesApiService) GetNetworkWirelessSsidDeviceTypeGrou
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceTypeGroupPoliciesApiService.GetNetworkWirelessSsidDeviceTypeGroupPolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceTypeGroupPoliciesAPIService.GetNetworkWirelessSsidDeviceTypeGroupPolicies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -144,20 +144,20 @@ func (a *DeviceTypeGroupPoliciesApiService) GetNetworkWirelessSsidDeviceTypeGrou
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type DeviceTypeGroupPoliciesApiUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest struct {
+type DeviceTypeGroupPoliciesAPIUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest struct {
 	ctx context.Context
-	ApiService *DeviceTypeGroupPoliciesApiService
+	ApiService *DeviceTypeGroupPoliciesAPIService
 	networkId string
 	number string
 	updateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest *UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest
 }
 
-func (r DeviceTypeGroupPoliciesApiUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest(updateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) DeviceTypeGroupPoliciesApiUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest {
+func (r DeviceTypeGroupPoliciesAPIUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest(updateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) DeviceTypeGroupPoliciesAPIUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest {
 	r.updateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest = &updateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest
 	return r
 }
 
-func (r DeviceTypeGroupPoliciesApiUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r DeviceTypeGroupPoliciesAPIUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesExecute(r)
 }
 
@@ -169,10 +169,10 @@ Update the device type group policies for the SSID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param number Number
- @return DeviceTypeGroupPoliciesApiUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest
+ @return DeviceTypeGroupPoliciesAPIUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest
 */
-func (a *DeviceTypeGroupPoliciesApiService) UpdateNetworkWirelessSsidDeviceTypeGroupPolicies(ctx context.Context, networkId string, number string) DeviceTypeGroupPoliciesApiUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest {
-	return DeviceTypeGroupPoliciesApiUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest{
+func (a *DeviceTypeGroupPoliciesAPIService) UpdateNetworkWirelessSsidDeviceTypeGroupPolicies(ctx context.Context, networkId string, number string) DeviceTypeGroupPoliciesAPIUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest {
+	return DeviceTypeGroupPoliciesAPIUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -182,7 +182,7 @@ func (a *DeviceTypeGroupPoliciesApiService) UpdateNetworkWirelessSsidDeviceTypeG
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DeviceTypeGroupPoliciesApiService) UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesExecute(r DeviceTypeGroupPoliciesApiUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DeviceTypeGroupPoliciesAPIService) UpdateNetworkWirelessSsidDeviceTypeGroupPoliciesExecute(r DeviceTypeGroupPoliciesAPIUpdateNetworkWirelessSsidDeviceTypeGroupPoliciesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -190,7 +190,7 @@ func (a *DeviceTypeGroupPoliciesApiService) UpdateNetworkWirelessSsidDeviceTypeG
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceTypeGroupPoliciesApiService.UpdateNetworkWirelessSsidDeviceTypeGroupPolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceTypeGroupPoliciesAPIService.UpdateNetworkWirelessSsidDeviceTypeGroupPolicies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

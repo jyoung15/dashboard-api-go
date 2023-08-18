@@ -20,12 +20,12 @@ import (
 )
 
 
-// LatencyHistoryApiService LatencyHistoryApi service
-type LatencyHistoryApiService service
+// LatencyHistoryAPIService LatencyHistoryAPI service
+type LatencyHistoryAPIService service
 
-type LatencyHistoryApiGetNetworkWirelessClientLatencyHistoryRequest struct {
+type LatencyHistoryAPIGetNetworkWirelessClientLatencyHistoryRequest struct {
 	ctx context.Context
-	ApiService *LatencyHistoryApiService
+	ApiService *LatencyHistoryAPIService
 	networkId string
 	clientId string
 	t0 *string
@@ -35,30 +35,30 @@ type LatencyHistoryApiGetNetworkWirelessClientLatencyHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 791 days from today.
-func (r LatencyHistoryApiGetNetworkWirelessClientLatencyHistoryRequest) T0(t0 string) LatencyHistoryApiGetNetworkWirelessClientLatencyHistoryRequest {
+func (r LatencyHistoryAPIGetNetworkWirelessClientLatencyHistoryRequest) T0(t0 string) LatencyHistoryAPIGetNetworkWirelessClientLatencyHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 791 days after t0.
-func (r LatencyHistoryApiGetNetworkWirelessClientLatencyHistoryRequest) T1(t1 string) LatencyHistoryApiGetNetworkWirelessClientLatencyHistoryRequest {
+func (r LatencyHistoryAPIGetNetworkWirelessClientLatencyHistoryRequest) T1(t1 string) LatencyHistoryAPIGetNetworkWirelessClientLatencyHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 791 days. The default is 1 day.
-func (r LatencyHistoryApiGetNetworkWirelessClientLatencyHistoryRequest) Timespan(timespan float32) LatencyHistoryApiGetNetworkWirelessClientLatencyHistoryRequest {
+func (r LatencyHistoryAPIGetNetworkWirelessClientLatencyHistoryRequest) Timespan(timespan float32) LatencyHistoryAPIGetNetworkWirelessClientLatencyHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 86400. The default is 86400.
-func (r LatencyHistoryApiGetNetworkWirelessClientLatencyHistoryRequest) Resolution(resolution int32) LatencyHistoryApiGetNetworkWirelessClientLatencyHistoryRequest {
+func (r LatencyHistoryAPIGetNetworkWirelessClientLatencyHistoryRequest) Resolution(resolution int32) LatencyHistoryAPIGetNetworkWirelessClientLatencyHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
-func (r LatencyHistoryApiGetNetworkWirelessClientLatencyHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r LatencyHistoryAPIGetNetworkWirelessClientLatencyHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessClientLatencyHistoryExecute(r)
 }
 
@@ -70,10 +70,10 @@ Return the latency history for a client. Clients can be identified by a client k
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return LatencyHistoryApiGetNetworkWirelessClientLatencyHistoryRequest
+ @return LatencyHistoryAPIGetNetworkWirelessClientLatencyHistoryRequest
 */
-func (a *LatencyHistoryApiService) GetNetworkWirelessClientLatencyHistory(ctx context.Context, networkId string, clientId string) LatencyHistoryApiGetNetworkWirelessClientLatencyHistoryRequest {
-	return LatencyHistoryApiGetNetworkWirelessClientLatencyHistoryRequest{
+func (a *LatencyHistoryAPIService) GetNetworkWirelessClientLatencyHistory(ctx context.Context, networkId string, clientId string) LatencyHistoryAPIGetNetworkWirelessClientLatencyHistoryRequest {
+	return LatencyHistoryAPIGetNetworkWirelessClientLatencyHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -83,7 +83,7 @@ func (a *LatencyHistoryApiService) GetNetworkWirelessClientLatencyHistory(ctx co
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *LatencyHistoryApiService) GetNetworkWirelessClientLatencyHistoryExecute(r LatencyHistoryApiGetNetworkWirelessClientLatencyHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *LatencyHistoryAPIService) GetNetworkWirelessClientLatencyHistoryExecute(r LatencyHistoryAPIGetNetworkWirelessClientLatencyHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -91,7 +91,7 @@ func (a *LatencyHistoryApiService) GetNetworkWirelessClientLatencyHistoryExecute
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LatencyHistoryApiService.GetNetworkWirelessClientLatencyHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LatencyHistoryAPIService.GetNetworkWirelessClientLatencyHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -184,9 +184,9 @@ func (a *LatencyHistoryApiService) GetNetworkWirelessClientLatencyHistoryExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest struct {
+type LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest struct {
 	ctx context.Context
-	ApiService *LatencyHistoryApiService
+	ApiService *LatencyHistoryAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -202,72 +202,72 @@ type LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest) T0(t0 string) LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest {
+func (r LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest) T0(t0 string) LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest) T1(t1 string) LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest {
+func (r LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest) T1(t1 string) LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest) Timespan(timespan float32) LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest {
+func (r LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest) Timespan(timespan float32) LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 300, 600, 1200, 3600, 14400, 86400. The default is 86400.
-func (r LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest) Resolution(resolution int32) LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest {
+func (r LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest) Resolution(resolution int32) LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // Automatically select a data resolution based on the given timespan; this overrides the value specified by the &#39;resolution&#39; parameter. The default setting is false.
-func (r LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest) AutoResolution(autoResolution bool) LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest {
+func (r LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest) AutoResolution(autoResolution bool) LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.autoResolution = &autoResolution
 	return r
 }
 
 // Filter results by network client.
-func (r LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest) ClientId(clientId string) LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest {
+func (r LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest) ClientId(clientId string) LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.clientId = &clientId
 	return r
 }
 
 // Filter results by device.
-func (r LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest) DeviceSerial(deviceSerial string) LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest {
+func (r LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest) DeviceSerial(deviceSerial string) LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.deviceSerial = &deviceSerial
 	return r
 }
 
 // Filter results by AP tag.
-func (r LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest) ApTag(apTag string) LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest {
+func (r LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest) ApTag(apTag string) LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;).
-func (r LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest) Band(band string) LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest {
+func (r LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest) Band(band string) LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID number.
-func (r LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest) Ssid(ssid int32) LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest {
+func (r LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest) Ssid(ssid int32) LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.ssid = &ssid
 	return r
 }
 
 // Filter by access category.
-func (r LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest) AccessCategory(accessCategory string) LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest {
+func (r LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest) AccessCategory(accessCategory string) LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest {
 	r.accessCategory = &accessCategory
 	return r
 }
 
-func (r LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest) Execute() ([]GetNetworkWirelessLatencyHistory200ResponseInner, *http.Response, error) {
+func (r LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest) Execute() ([]GetNetworkWirelessLatencyHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessLatencyHistoryExecute(r)
 }
 
@@ -278,10 +278,10 @@ Return average wireless latency over time for a network, device, or network clie
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest
+ @return LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest
 */
-func (a *LatencyHistoryApiService) GetNetworkWirelessLatencyHistory(ctx context.Context, networkId string) LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest {
-	return LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest{
+func (a *LatencyHistoryAPIService) GetNetworkWirelessLatencyHistory(ctx context.Context, networkId string) LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest {
+	return LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -290,7 +290,7 @@ func (a *LatencyHistoryApiService) GetNetworkWirelessLatencyHistory(ctx context.
 
 // Execute executes the request
 //  @return []GetNetworkWirelessLatencyHistory200ResponseInner
-func (a *LatencyHistoryApiService) GetNetworkWirelessLatencyHistoryExecute(r LatencyHistoryApiGetNetworkWirelessLatencyHistoryRequest) ([]GetNetworkWirelessLatencyHistory200ResponseInner, *http.Response, error) {
+func (a *LatencyHistoryAPIService) GetNetworkWirelessLatencyHistoryExecute(r LatencyHistoryAPIGetNetworkWirelessLatencyHistoryRequest) ([]GetNetworkWirelessLatencyHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -298,7 +298,7 @@ func (a *LatencyHistoryApiService) GetNetworkWirelessLatencyHistoryExecute(r Lat
 		localVarReturnValue  []GetNetworkWirelessLatencyHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LatencyHistoryApiService.GetNetworkWirelessLatencyHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LatencyHistoryAPIService.GetNetworkWirelessLatencyHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

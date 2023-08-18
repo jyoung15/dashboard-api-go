@@ -20,16 +20,16 @@ import (
 )
 
 
-// UplinkSelectionApiService UplinkSelectionApi service
-type UplinkSelectionApiService service
+// UplinkSelectionAPIService UplinkSelectionAPI service
+type UplinkSelectionAPIService service
 
-type UplinkSelectionApiGetNetworkApplianceTrafficShapingUplinkSelectionRequest struct {
+type UplinkSelectionAPIGetNetworkApplianceTrafficShapingUplinkSelectionRequest struct {
 	ctx context.Context
-	ApiService *UplinkSelectionApiService
+	ApiService *UplinkSelectionAPIService
 	networkId string
 }
 
-func (r UplinkSelectionApiGetNetworkApplianceTrafficShapingUplinkSelectionRequest) Execute() (*GetNetworkApplianceTrafficShapingUplinkSelection200Response, *http.Response, error) {
+func (r UplinkSelectionAPIGetNetworkApplianceTrafficShapingUplinkSelectionRequest) Execute() (*GetNetworkApplianceTrafficShapingUplinkSelection200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceTrafficShapingUplinkSelectionExecute(r)
 }
 
@@ -40,10 +40,10 @@ Show uplink selection settings for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return UplinkSelectionApiGetNetworkApplianceTrafficShapingUplinkSelectionRequest
+ @return UplinkSelectionAPIGetNetworkApplianceTrafficShapingUplinkSelectionRequest
 */
-func (a *UplinkSelectionApiService) GetNetworkApplianceTrafficShapingUplinkSelection(ctx context.Context, networkId string) UplinkSelectionApiGetNetworkApplianceTrafficShapingUplinkSelectionRequest {
-	return UplinkSelectionApiGetNetworkApplianceTrafficShapingUplinkSelectionRequest{
+func (a *UplinkSelectionAPIService) GetNetworkApplianceTrafficShapingUplinkSelection(ctx context.Context, networkId string) UplinkSelectionAPIGetNetworkApplianceTrafficShapingUplinkSelectionRequest {
+	return UplinkSelectionAPIGetNetworkApplianceTrafficShapingUplinkSelectionRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *UplinkSelectionApiService) GetNetworkApplianceTrafficShapingUplinkSelec
 
 // Execute executes the request
 //  @return GetNetworkApplianceTrafficShapingUplinkSelection200Response
-func (a *UplinkSelectionApiService) GetNetworkApplianceTrafficShapingUplinkSelectionExecute(r UplinkSelectionApiGetNetworkApplianceTrafficShapingUplinkSelectionRequest) (*GetNetworkApplianceTrafficShapingUplinkSelection200Response, *http.Response, error) {
+func (a *UplinkSelectionAPIService) GetNetworkApplianceTrafficShapingUplinkSelectionExecute(r UplinkSelectionAPIGetNetworkApplianceTrafficShapingUplinkSelectionRequest) (*GetNetworkApplianceTrafficShapingUplinkSelection200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *UplinkSelectionApiService) GetNetworkApplianceTrafficShapingUplinkSelec
 		localVarReturnValue  *GetNetworkApplianceTrafficShapingUplinkSelection200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinkSelectionApiService.GetNetworkApplianceTrafficShapingUplinkSelection")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinkSelectionAPIService.GetNetworkApplianceTrafficShapingUplinkSelection")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *UplinkSelectionApiService) GetNetworkApplianceTrafficShapingUplinkSelec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type UplinkSelectionApiUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest struct {
+type UplinkSelectionAPIUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest struct {
 	ctx context.Context
-	ApiService *UplinkSelectionApiService
+	ApiService *UplinkSelectionAPIService
 	networkId string
 	updateNetworkApplianceTrafficShapingUplinkSelectionRequest *UpdateNetworkApplianceTrafficShapingUplinkSelectionRequest
 }
 
-func (r UplinkSelectionApiUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest) UpdateNetworkApplianceTrafficShapingUplinkSelectionRequest(updateNetworkApplianceTrafficShapingUplinkSelectionRequest UpdateNetworkApplianceTrafficShapingUplinkSelectionRequest) UplinkSelectionApiUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest {
+func (r UplinkSelectionAPIUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest) UpdateNetworkApplianceTrafficShapingUplinkSelectionRequest(updateNetworkApplianceTrafficShapingUplinkSelectionRequest UpdateNetworkApplianceTrafficShapingUplinkSelectionRequest) UplinkSelectionAPIUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest {
 	r.updateNetworkApplianceTrafficShapingUplinkSelectionRequest = &updateNetworkApplianceTrafficShapingUplinkSelectionRequest
 	return r
 }
 
-func (r UplinkSelectionApiUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest) Execute() (*GetNetworkApplianceTrafficShapingUplinkSelection200Response, *http.Response, error) {
+func (r UplinkSelectionAPIUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest) Execute() (*GetNetworkApplianceTrafficShapingUplinkSelection200Response, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceTrafficShapingUplinkSelectionExecute(r)
 }
 
@@ -163,10 +163,10 @@ Update uplink selection settings for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return UplinkSelectionApiUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest
+ @return UplinkSelectionAPIUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest
 */
-func (a *UplinkSelectionApiService) UpdateNetworkApplianceTrafficShapingUplinkSelection(ctx context.Context, networkId string) UplinkSelectionApiUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest {
-	return UplinkSelectionApiUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest{
+func (a *UplinkSelectionAPIService) UpdateNetworkApplianceTrafficShapingUplinkSelection(ctx context.Context, networkId string) UplinkSelectionAPIUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest {
+	return UplinkSelectionAPIUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -175,7 +175,7 @@ func (a *UplinkSelectionApiService) UpdateNetworkApplianceTrafficShapingUplinkSe
 
 // Execute executes the request
 //  @return GetNetworkApplianceTrafficShapingUplinkSelection200Response
-func (a *UplinkSelectionApiService) UpdateNetworkApplianceTrafficShapingUplinkSelectionExecute(r UplinkSelectionApiUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest) (*GetNetworkApplianceTrafficShapingUplinkSelection200Response, *http.Response, error) {
+func (a *UplinkSelectionAPIService) UpdateNetworkApplianceTrafficShapingUplinkSelectionExecute(r UplinkSelectionAPIUpdateNetworkApplianceTrafficShapingUplinkSelectionRequest) (*GetNetworkApplianceTrafficShapingUplinkSelection200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *UplinkSelectionApiService) UpdateNetworkApplianceTrafficShapingUplinkSe
 		localVarReturnValue  *GetNetworkApplianceTrafficShapingUplinkSelection200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinkSelectionApiService.UpdateNetworkApplianceTrafficShapingUplinkSelection")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinkSelectionAPIService.UpdateNetworkApplianceTrafficShapingUplinkSelection")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

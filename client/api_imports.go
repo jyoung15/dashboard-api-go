@@ -21,22 +21,22 @@ import (
 )
 
 
-// ImportsApiService ImportsApi service
-type ImportsApiService service
+// ImportsAPIService ImportsAPI service
+type ImportsAPIService service
 
-type ImportsApiCreateOrganizationInventoryOnboardingCloudMonitoringImportRequest struct {
+type ImportsAPICreateOrganizationInventoryOnboardingCloudMonitoringImportRequest struct {
 	ctx context.Context
-	ApiService *ImportsApiService
+	ApiService *ImportsAPIService
 	organizationId string
 	createOrganizationInventoryOnboardingCloudMonitoringImportRequest *CreateOrganizationInventoryOnboardingCloudMonitoringImportRequest
 }
 
-func (r ImportsApiCreateOrganizationInventoryOnboardingCloudMonitoringImportRequest) CreateOrganizationInventoryOnboardingCloudMonitoringImportRequest(createOrganizationInventoryOnboardingCloudMonitoringImportRequest CreateOrganizationInventoryOnboardingCloudMonitoringImportRequest) ImportsApiCreateOrganizationInventoryOnboardingCloudMonitoringImportRequest {
+func (r ImportsAPICreateOrganizationInventoryOnboardingCloudMonitoringImportRequest) CreateOrganizationInventoryOnboardingCloudMonitoringImportRequest(createOrganizationInventoryOnboardingCloudMonitoringImportRequest CreateOrganizationInventoryOnboardingCloudMonitoringImportRequest) ImportsAPICreateOrganizationInventoryOnboardingCloudMonitoringImportRequest {
 	r.createOrganizationInventoryOnboardingCloudMonitoringImportRequest = &createOrganizationInventoryOnboardingCloudMonitoringImportRequest
 	return r
 }
 
-func (r ImportsApiCreateOrganizationInventoryOnboardingCloudMonitoringImportRequest) Execute() ([]CreateOrganizationInventoryOnboardingCloudMonitoringImport201ResponseInner, *http.Response, error) {
+func (r ImportsAPICreateOrganizationInventoryOnboardingCloudMonitoringImportRequest) Execute() ([]CreateOrganizationInventoryOnboardingCloudMonitoringImport201ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateOrganizationInventoryOnboardingCloudMonitoringImportExecute(r)
 }
 
@@ -47,10 +47,10 @@ Commits the import operation to complete the onboarding of a device into Dashboa
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ImportsApiCreateOrganizationInventoryOnboardingCloudMonitoringImportRequest
+ @return ImportsAPICreateOrganizationInventoryOnboardingCloudMonitoringImportRequest
 */
-func (a *ImportsApiService) CreateOrganizationInventoryOnboardingCloudMonitoringImport(ctx context.Context, organizationId string) ImportsApiCreateOrganizationInventoryOnboardingCloudMonitoringImportRequest {
-	return ImportsApiCreateOrganizationInventoryOnboardingCloudMonitoringImportRequest{
+func (a *ImportsAPIService) CreateOrganizationInventoryOnboardingCloudMonitoringImport(ctx context.Context, organizationId string) ImportsAPICreateOrganizationInventoryOnboardingCloudMonitoringImportRequest {
+	return ImportsAPICreateOrganizationInventoryOnboardingCloudMonitoringImportRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -59,7 +59,7 @@ func (a *ImportsApiService) CreateOrganizationInventoryOnboardingCloudMonitoring
 
 // Execute executes the request
 //  @return []CreateOrganizationInventoryOnboardingCloudMonitoringImport201ResponseInner
-func (a *ImportsApiService) CreateOrganizationInventoryOnboardingCloudMonitoringImportExecute(r ImportsApiCreateOrganizationInventoryOnboardingCloudMonitoringImportRequest) ([]CreateOrganizationInventoryOnboardingCloudMonitoringImport201ResponseInner, *http.Response, error) {
+func (a *ImportsAPIService) CreateOrganizationInventoryOnboardingCloudMonitoringImportExecute(r ImportsAPICreateOrganizationInventoryOnboardingCloudMonitoringImportRequest) ([]CreateOrganizationInventoryOnboardingCloudMonitoringImport201ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -67,7 +67,7 @@ func (a *ImportsApiService) CreateOrganizationInventoryOnboardingCloudMonitoring
 		localVarReturnValue  []CreateOrganizationInventoryOnboardingCloudMonitoringImport201ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportsApiService.CreateOrganizationInventoryOnboardingCloudMonitoringImport")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportsAPIService.CreateOrganizationInventoryOnboardingCloudMonitoringImport")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -152,20 +152,20 @@ func (a *ImportsApiService) CreateOrganizationInventoryOnboardingCloudMonitoring
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ImportsApiGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest struct {
+type ImportsAPIGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest struct {
 	ctx context.Context
-	ApiService *ImportsApiService
+	ApiService *ImportsAPIService
 	organizationId string
 	importIds *[]string
 }
 
 // import ids from an imports
-func (r ImportsApiGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest) ImportIds(importIds []string) ImportsApiGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest {
+func (r ImportsAPIGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest) ImportIds(importIds []string) ImportsAPIGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest {
 	r.importIds = &importIds
 	return r
 }
 
-func (r ImportsApiGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest) Execute() ([]GetOrganizationInventoryOnboardingCloudMonitoringImports200ResponseInner, *http.Response, error) {
+func (r ImportsAPIGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest) Execute() ([]GetOrganizationInventoryOnboardingCloudMonitoringImports200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationInventoryOnboardingCloudMonitoringImportsExecute(r)
 }
 
@@ -176,10 +176,10 @@ Check the status of a committed Import operation
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ImportsApiGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest
+ @return ImportsAPIGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest
 */
-func (a *ImportsApiService) GetOrganizationInventoryOnboardingCloudMonitoringImports(ctx context.Context, organizationId string) ImportsApiGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest {
-	return ImportsApiGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest{
+func (a *ImportsAPIService) GetOrganizationInventoryOnboardingCloudMonitoringImports(ctx context.Context, organizationId string) ImportsAPIGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest {
+	return ImportsAPIGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -188,7 +188,7 @@ func (a *ImportsApiService) GetOrganizationInventoryOnboardingCloudMonitoringImp
 
 // Execute executes the request
 //  @return []GetOrganizationInventoryOnboardingCloudMonitoringImports200ResponseInner
-func (a *ImportsApiService) GetOrganizationInventoryOnboardingCloudMonitoringImportsExecute(r ImportsApiGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest) ([]GetOrganizationInventoryOnboardingCloudMonitoringImports200ResponseInner, *http.Response, error) {
+func (a *ImportsAPIService) GetOrganizationInventoryOnboardingCloudMonitoringImportsExecute(r ImportsAPIGetOrganizationInventoryOnboardingCloudMonitoringImportsRequest) ([]GetOrganizationInventoryOnboardingCloudMonitoringImports200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -196,7 +196,7 @@ func (a *ImportsApiService) GetOrganizationInventoryOnboardingCloudMonitoringImp
 		localVarReturnValue  []GetOrganizationInventoryOnboardingCloudMonitoringImports200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportsApiService.GetOrganizationInventoryOnboardingCloudMonitoringImports")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportsAPIService.GetOrganizationInventoryOnboardingCloudMonitoringImports")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

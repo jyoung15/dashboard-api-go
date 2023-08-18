@@ -20,16 +20,16 @@ import (
 )
 
 
-// IntrusionApiService IntrusionApi service
-type IntrusionApiService service
+// IntrusionAPIService IntrusionAPI service
+type IntrusionAPIService service
 
-type IntrusionApiGetNetworkApplianceSecurityIntrusionRequest struct {
+type IntrusionAPIGetNetworkApplianceSecurityIntrusionRequest struct {
 	ctx context.Context
-	ApiService *IntrusionApiService
+	ApiService *IntrusionAPIService
 	networkId string
 }
 
-func (r IntrusionApiGetNetworkApplianceSecurityIntrusionRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r IntrusionAPIGetNetworkApplianceSecurityIntrusionRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceSecurityIntrusionExecute(r)
 }
 
@@ -40,10 +40,10 @@ Returns all supported intrusion settings for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return IntrusionApiGetNetworkApplianceSecurityIntrusionRequest
+ @return IntrusionAPIGetNetworkApplianceSecurityIntrusionRequest
 */
-func (a *IntrusionApiService) GetNetworkApplianceSecurityIntrusion(ctx context.Context, networkId string) IntrusionApiGetNetworkApplianceSecurityIntrusionRequest {
-	return IntrusionApiGetNetworkApplianceSecurityIntrusionRequest{
+func (a *IntrusionAPIService) GetNetworkApplianceSecurityIntrusion(ctx context.Context, networkId string) IntrusionAPIGetNetworkApplianceSecurityIntrusionRequest {
+	return IntrusionAPIGetNetworkApplianceSecurityIntrusionRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *IntrusionApiService) GetNetworkApplianceSecurityIntrusion(ctx context.C
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *IntrusionApiService) GetNetworkApplianceSecurityIntrusionExecute(r IntrusionApiGetNetworkApplianceSecurityIntrusionRequest) (map[string]interface{}, *http.Response, error) {
+func (a *IntrusionAPIService) GetNetworkApplianceSecurityIntrusionExecute(r IntrusionAPIGetNetworkApplianceSecurityIntrusionRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *IntrusionApiService) GetNetworkApplianceSecurityIntrusionExecute(r Intr
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IntrusionApiService.GetNetworkApplianceSecurityIntrusion")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IntrusionAPIService.GetNetworkApplianceSecurityIntrusion")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,13 +140,13 @@ func (a *IntrusionApiService) GetNetworkApplianceSecurityIntrusionExecute(r Intr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type IntrusionApiGetOrganizationApplianceSecurityIntrusionRequest struct {
+type IntrusionAPIGetOrganizationApplianceSecurityIntrusionRequest struct {
 	ctx context.Context
-	ApiService *IntrusionApiService
+	ApiService *IntrusionAPIService
 	organizationId string
 }
 
-func (r IntrusionApiGetOrganizationApplianceSecurityIntrusionRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r IntrusionAPIGetOrganizationApplianceSecurityIntrusionRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceSecurityIntrusionExecute(r)
 }
 
@@ -157,10 +157,10 @@ Returns all supported intrusion settings for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return IntrusionApiGetOrganizationApplianceSecurityIntrusionRequest
+ @return IntrusionAPIGetOrganizationApplianceSecurityIntrusionRequest
 */
-func (a *IntrusionApiService) GetOrganizationApplianceSecurityIntrusion(ctx context.Context, organizationId string) IntrusionApiGetOrganizationApplianceSecurityIntrusionRequest {
-	return IntrusionApiGetOrganizationApplianceSecurityIntrusionRequest{
+func (a *IntrusionAPIService) GetOrganizationApplianceSecurityIntrusion(ctx context.Context, organizationId string) IntrusionAPIGetOrganizationApplianceSecurityIntrusionRequest {
+	return IntrusionAPIGetOrganizationApplianceSecurityIntrusionRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -169,7 +169,7 @@ func (a *IntrusionApiService) GetOrganizationApplianceSecurityIntrusion(ctx cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *IntrusionApiService) GetOrganizationApplianceSecurityIntrusionExecute(r IntrusionApiGetOrganizationApplianceSecurityIntrusionRequest) (map[string]interface{}, *http.Response, error) {
+func (a *IntrusionAPIService) GetOrganizationApplianceSecurityIntrusionExecute(r IntrusionAPIGetOrganizationApplianceSecurityIntrusionRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -177,7 +177,7 @@ func (a *IntrusionApiService) GetOrganizationApplianceSecurityIntrusionExecute(r
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IntrusionApiService.GetOrganizationApplianceSecurityIntrusion")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IntrusionAPIService.GetOrganizationApplianceSecurityIntrusion")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -257,19 +257,19 @@ func (a *IntrusionApiService) GetOrganizationApplianceSecurityIntrusionExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type IntrusionApiUpdateNetworkApplianceSecurityIntrusionRequest struct {
+type IntrusionAPIUpdateNetworkApplianceSecurityIntrusionRequest struct {
 	ctx context.Context
-	ApiService *IntrusionApiService
+	ApiService *IntrusionAPIService
 	networkId string
 	updateNetworkApplianceSecurityIntrusionRequest *UpdateNetworkApplianceSecurityIntrusionRequest
 }
 
-func (r IntrusionApiUpdateNetworkApplianceSecurityIntrusionRequest) UpdateNetworkApplianceSecurityIntrusionRequest(updateNetworkApplianceSecurityIntrusionRequest UpdateNetworkApplianceSecurityIntrusionRequest) IntrusionApiUpdateNetworkApplianceSecurityIntrusionRequest {
+func (r IntrusionAPIUpdateNetworkApplianceSecurityIntrusionRequest) UpdateNetworkApplianceSecurityIntrusionRequest(updateNetworkApplianceSecurityIntrusionRequest UpdateNetworkApplianceSecurityIntrusionRequest) IntrusionAPIUpdateNetworkApplianceSecurityIntrusionRequest {
 	r.updateNetworkApplianceSecurityIntrusionRequest = &updateNetworkApplianceSecurityIntrusionRequest
 	return r
 }
 
-func (r IntrusionApiUpdateNetworkApplianceSecurityIntrusionRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r IntrusionAPIUpdateNetworkApplianceSecurityIntrusionRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceSecurityIntrusionExecute(r)
 }
 
@@ -280,10 +280,10 @@ Set the supported intrusion settings for an MX network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return IntrusionApiUpdateNetworkApplianceSecurityIntrusionRequest
+ @return IntrusionAPIUpdateNetworkApplianceSecurityIntrusionRequest
 */
-func (a *IntrusionApiService) UpdateNetworkApplianceSecurityIntrusion(ctx context.Context, networkId string) IntrusionApiUpdateNetworkApplianceSecurityIntrusionRequest {
-	return IntrusionApiUpdateNetworkApplianceSecurityIntrusionRequest{
+func (a *IntrusionAPIService) UpdateNetworkApplianceSecurityIntrusion(ctx context.Context, networkId string) IntrusionAPIUpdateNetworkApplianceSecurityIntrusionRequest {
+	return IntrusionAPIUpdateNetworkApplianceSecurityIntrusionRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -292,7 +292,7 @@ func (a *IntrusionApiService) UpdateNetworkApplianceSecurityIntrusion(ctx contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *IntrusionApiService) UpdateNetworkApplianceSecurityIntrusionExecute(r IntrusionApiUpdateNetworkApplianceSecurityIntrusionRequest) (map[string]interface{}, *http.Response, error) {
+func (a *IntrusionAPIService) UpdateNetworkApplianceSecurityIntrusionExecute(r IntrusionAPIUpdateNetworkApplianceSecurityIntrusionRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -300,7 +300,7 @@ func (a *IntrusionApiService) UpdateNetworkApplianceSecurityIntrusionExecute(r I
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IntrusionApiService.UpdateNetworkApplianceSecurityIntrusion")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IntrusionAPIService.UpdateNetworkApplianceSecurityIntrusion")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -382,19 +382,19 @@ func (a *IntrusionApiService) UpdateNetworkApplianceSecurityIntrusionExecute(r I
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type IntrusionApiUpdateOrganizationApplianceSecurityIntrusionRequest struct {
+type IntrusionAPIUpdateOrganizationApplianceSecurityIntrusionRequest struct {
 	ctx context.Context
-	ApiService *IntrusionApiService
+	ApiService *IntrusionAPIService
 	organizationId string
 	updateOrganizationApplianceSecurityIntrusionRequest *UpdateOrganizationApplianceSecurityIntrusionRequest
 }
 
-func (r IntrusionApiUpdateOrganizationApplianceSecurityIntrusionRequest) UpdateOrganizationApplianceSecurityIntrusionRequest(updateOrganizationApplianceSecurityIntrusionRequest UpdateOrganizationApplianceSecurityIntrusionRequest) IntrusionApiUpdateOrganizationApplianceSecurityIntrusionRequest {
+func (r IntrusionAPIUpdateOrganizationApplianceSecurityIntrusionRequest) UpdateOrganizationApplianceSecurityIntrusionRequest(updateOrganizationApplianceSecurityIntrusionRequest UpdateOrganizationApplianceSecurityIntrusionRequest) IntrusionAPIUpdateOrganizationApplianceSecurityIntrusionRequest {
 	r.updateOrganizationApplianceSecurityIntrusionRequest = &updateOrganizationApplianceSecurityIntrusionRequest
 	return r
 }
 
-func (r IntrusionApiUpdateOrganizationApplianceSecurityIntrusionRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r IntrusionAPIUpdateOrganizationApplianceSecurityIntrusionRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationApplianceSecurityIntrusionExecute(r)
 }
 
@@ -405,10 +405,10 @@ Sets supported intrusion settings for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return IntrusionApiUpdateOrganizationApplianceSecurityIntrusionRequest
+ @return IntrusionAPIUpdateOrganizationApplianceSecurityIntrusionRequest
 */
-func (a *IntrusionApiService) UpdateOrganizationApplianceSecurityIntrusion(ctx context.Context, organizationId string) IntrusionApiUpdateOrganizationApplianceSecurityIntrusionRequest {
-	return IntrusionApiUpdateOrganizationApplianceSecurityIntrusionRequest{
+func (a *IntrusionAPIService) UpdateOrganizationApplianceSecurityIntrusion(ctx context.Context, organizationId string) IntrusionAPIUpdateOrganizationApplianceSecurityIntrusionRequest {
+	return IntrusionAPIUpdateOrganizationApplianceSecurityIntrusionRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -417,7 +417,7 @@ func (a *IntrusionApiService) UpdateOrganizationApplianceSecurityIntrusion(ctx c
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *IntrusionApiService) UpdateOrganizationApplianceSecurityIntrusionExecute(r IntrusionApiUpdateOrganizationApplianceSecurityIntrusionRequest) (map[string]interface{}, *http.Response, error) {
+func (a *IntrusionAPIService) UpdateOrganizationApplianceSecurityIntrusionExecute(r IntrusionAPIUpdateOrganizationApplianceSecurityIntrusionRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -425,7 +425,7 @@ func (a *IntrusionApiService) UpdateOrganizationApplianceSecurityIntrusionExecut
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IntrusionApiService.UpdateOrganizationApplianceSecurityIntrusion")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IntrusionAPIService.UpdateOrganizationApplianceSecurityIntrusion")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

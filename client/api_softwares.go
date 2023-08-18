@@ -20,17 +20,17 @@ import (
 )
 
 
-// SoftwaresApiService SoftwaresApi service
-type SoftwaresApiService service
+// SoftwaresAPIService SoftwaresAPI service
+type SoftwaresAPIService service
 
-type SoftwaresApiGetNetworkSmDeviceSoftwaresRequest struct {
+type SoftwaresAPIGetNetworkSmDeviceSoftwaresRequest struct {
 	ctx context.Context
-	ApiService *SoftwaresApiService
+	ApiService *SoftwaresAPIService
 	networkId string
 	deviceId string
 }
 
-func (r SoftwaresApiGetNetworkSmDeviceSoftwaresRequest) Execute() ([]GetNetworkSmDeviceSoftwares200ResponseInner, *http.Response, error) {
+func (r SoftwaresAPIGetNetworkSmDeviceSoftwaresRequest) Execute() ([]GetNetworkSmDeviceSoftwares200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceSoftwaresExecute(r)
 }
 
@@ -42,10 +42,10 @@ Get a list of softwares associated with a device
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return SoftwaresApiGetNetworkSmDeviceSoftwaresRequest
+ @return SoftwaresAPIGetNetworkSmDeviceSoftwaresRequest
 */
-func (a *SoftwaresApiService) GetNetworkSmDeviceSoftwares(ctx context.Context, networkId string, deviceId string) SoftwaresApiGetNetworkSmDeviceSoftwaresRequest {
-	return SoftwaresApiGetNetworkSmDeviceSoftwaresRequest{
+func (a *SoftwaresAPIService) GetNetworkSmDeviceSoftwares(ctx context.Context, networkId string, deviceId string) SoftwaresAPIGetNetworkSmDeviceSoftwaresRequest {
+	return SoftwaresAPIGetNetworkSmDeviceSoftwaresRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -55,7 +55,7 @@ func (a *SoftwaresApiService) GetNetworkSmDeviceSoftwares(ctx context.Context, n
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceSoftwares200ResponseInner
-func (a *SoftwaresApiService) GetNetworkSmDeviceSoftwaresExecute(r SoftwaresApiGetNetworkSmDeviceSoftwaresRequest) ([]GetNetworkSmDeviceSoftwares200ResponseInner, *http.Response, error) {
+func (a *SoftwaresAPIService) GetNetworkSmDeviceSoftwaresExecute(r SoftwaresAPIGetNetworkSmDeviceSoftwaresRequest) ([]GetNetworkSmDeviceSoftwares200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -63,7 +63,7 @@ func (a *SoftwaresApiService) GetNetworkSmDeviceSoftwaresExecute(r SoftwaresApiG
 		localVarReturnValue  []GetNetworkSmDeviceSoftwares200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SoftwaresApiService.GetNetworkSmDeviceSoftwares")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SoftwaresAPIService.GetNetworkSmDeviceSoftwares")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -144,14 +144,14 @@ func (a *SoftwaresApiService) GetNetworkSmDeviceSoftwaresExecute(r SoftwaresApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SoftwaresApiGetNetworkSmUserSoftwaresRequest struct {
+type SoftwaresAPIGetNetworkSmUserSoftwaresRequest struct {
 	ctx context.Context
-	ApiService *SoftwaresApiService
+	ApiService *SoftwaresAPIService
 	networkId string
 	userId string
 }
 
-func (r SoftwaresApiGetNetworkSmUserSoftwaresRequest) Execute() ([]GetNetworkSmDeviceSoftwares200ResponseInner, *http.Response, error) {
+func (r SoftwaresAPIGetNetworkSmUserSoftwaresRequest) Execute() ([]GetNetworkSmDeviceSoftwares200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmUserSoftwaresExecute(r)
 }
 
@@ -163,10 +163,10 @@ Get a list of softwares associated with a user
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param userId User ID
- @return SoftwaresApiGetNetworkSmUserSoftwaresRequest
+ @return SoftwaresAPIGetNetworkSmUserSoftwaresRequest
 */
-func (a *SoftwaresApiService) GetNetworkSmUserSoftwares(ctx context.Context, networkId string, userId string) SoftwaresApiGetNetworkSmUserSoftwaresRequest {
-	return SoftwaresApiGetNetworkSmUserSoftwaresRequest{
+func (a *SoftwaresAPIService) GetNetworkSmUserSoftwares(ctx context.Context, networkId string, userId string) SoftwaresAPIGetNetworkSmUserSoftwaresRequest {
+	return SoftwaresAPIGetNetworkSmUserSoftwaresRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -176,7 +176,7 @@ func (a *SoftwaresApiService) GetNetworkSmUserSoftwares(ctx context.Context, net
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceSoftwares200ResponseInner
-func (a *SoftwaresApiService) GetNetworkSmUserSoftwaresExecute(r SoftwaresApiGetNetworkSmUserSoftwaresRequest) ([]GetNetworkSmDeviceSoftwares200ResponseInner, *http.Response, error) {
+func (a *SoftwaresAPIService) GetNetworkSmUserSoftwaresExecute(r SoftwaresAPIGetNetworkSmUserSoftwaresRequest) ([]GetNetworkSmDeviceSoftwares200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -184,7 +184,7 @@ func (a *SoftwaresApiService) GetNetworkSmUserSoftwaresExecute(r SoftwaresApiGet
 		localVarReturnValue  []GetNetworkSmDeviceSoftwares200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SoftwaresApiService.GetNetworkSmUserSoftwares")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SoftwaresAPIService.GetNetworkSmUserSoftwares")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

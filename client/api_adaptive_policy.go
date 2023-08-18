@@ -20,22 +20,22 @@ import (
 )
 
 
-// AdaptivePolicyApiService AdaptivePolicyApi service
-type AdaptivePolicyApiService service
+// AdaptivePolicyAPIService AdaptivePolicyAPI service
+type AdaptivePolicyAPIService service
 
-type AdaptivePolicyApiCreateOrganizationAdaptivePolicyAclRequest struct {
+type AdaptivePolicyAPICreateOrganizationAdaptivePolicyAclRequest struct {
 	ctx context.Context
-	ApiService *AdaptivePolicyApiService
+	ApiService *AdaptivePolicyAPIService
 	organizationId string
 	createOrganizationAdaptivePolicyAclRequest *CreateOrganizationAdaptivePolicyAclRequest
 }
 
-func (r AdaptivePolicyApiCreateOrganizationAdaptivePolicyAclRequest) CreateOrganizationAdaptivePolicyAclRequest(createOrganizationAdaptivePolicyAclRequest CreateOrganizationAdaptivePolicyAclRequest) AdaptivePolicyApiCreateOrganizationAdaptivePolicyAclRequest {
+func (r AdaptivePolicyAPICreateOrganizationAdaptivePolicyAclRequest) CreateOrganizationAdaptivePolicyAclRequest(createOrganizationAdaptivePolicyAclRequest CreateOrganizationAdaptivePolicyAclRequest) AdaptivePolicyAPICreateOrganizationAdaptivePolicyAclRequest {
 	r.createOrganizationAdaptivePolicyAclRequest = &createOrganizationAdaptivePolicyAclRequest
 	return r
 }
 
-func (r AdaptivePolicyApiCreateOrganizationAdaptivePolicyAclRequest) Execute() (*GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
+func (r AdaptivePolicyAPICreateOrganizationAdaptivePolicyAclRequest) Execute() (*GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateOrganizationAdaptivePolicyAclExecute(r)
 }
 
@@ -46,10 +46,10 @@ Creates new adaptive policy ACL
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return AdaptivePolicyApiCreateOrganizationAdaptivePolicyAclRequest
+ @return AdaptivePolicyAPICreateOrganizationAdaptivePolicyAclRequest
 */
-func (a *AdaptivePolicyApiService) CreateOrganizationAdaptivePolicyAcl(ctx context.Context, organizationId string) AdaptivePolicyApiCreateOrganizationAdaptivePolicyAclRequest {
-	return AdaptivePolicyApiCreateOrganizationAdaptivePolicyAclRequest{
+func (a *AdaptivePolicyAPIService) CreateOrganizationAdaptivePolicyAcl(ctx context.Context, organizationId string) AdaptivePolicyAPICreateOrganizationAdaptivePolicyAclRequest {
+	return AdaptivePolicyAPICreateOrganizationAdaptivePolicyAclRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -58,7 +58,7 @@ func (a *AdaptivePolicyApiService) CreateOrganizationAdaptivePolicyAcl(ctx conte
 
 // Execute executes the request
 //  @return GetOrganizationAdaptivePolicyAcls200ResponseInner
-func (a *AdaptivePolicyApiService) CreateOrganizationAdaptivePolicyAclExecute(r AdaptivePolicyApiCreateOrganizationAdaptivePolicyAclRequest) (*GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
+func (a *AdaptivePolicyAPIService) CreateOrganizationAdaptivePolicyAclExecute(r AdaptivePolicyAPICreateOrganizationAdaptivePolicyAclRequest) (*GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *AdaptivePolicyApiService) CreateOrganizationAdaptivePolicyAclExecute(r 
 		localVarReturnValue  *GetOrganizationAdaptivePolicyAcls200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyApiService.CreateOrganizationAdaptivePolicyAcl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyAPIService.CreateOrganizationAdaptivePolicyAcl")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,19 +151,19 @@ func (a *AdaptivePolicyApiService) CreateOrganizationAdaptivePolicyAclExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AdaptivePolicyApiCreateOrganizationAdaptivePolicyGroupRequest struct {
+type AdaptivePolicyAPICreateOrganizationAdaptivePolicyGroupRequest struct {
 	ctx context.Context
-	ApiService *AdaptivePolicyApiService
+	ApiService *AdaptivePolicyAPIService
 	organizationId string
 	createOrganizationAdaptivePolicyGroupRequest *CreateOrganizationAdaptivePolicyGroupRequest
 }
 
-func (r AdaptivePolicyApiCreateOrganizationAdaptivePolicyGroupRequest) CreateOrganizationAdaptivePolicyGroupRequest(createOrganizationAdaptivePolicyGroupRequest CreateOrganizationAdaptivePolicyGroupRequest) AdaptivePolicyApiCreateOrganizationAdaptivePolicyGroupRequest {
+func (r AdaptivePolicyAPICreateOrganizationAdaptivePolicyGroupRequest) CreateOrganizationAdaptivePolicyGroupRequest(createOrganizationAdaptivePolicyGroupRequest CreateOrganizationAdaptivePolicyGroupRequest) AdaptivePolicyAPICreateOrganizationAdaptivePolicyGroupRequest {
 	r.createOrganizationAdaptivePolicyGroupRequest = &createOrganizationAdaptivePolicyGroupRequest
 	return r
 }
 
-func (r AdaptivePolicyApiCreateOrganizationAdaptivePolicyGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r AdaptivePolicyAPICreateOrganizationAdaptivePolicyGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateOrganizationAdaptivePolicyGroupExecute(r)
 }
 
@@ -174,10 +174,10 @@ Creates a new adaptive policy group
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return AdaptivePolicyApiCreateOrganizationAdaptivePolicyGroupRequest
+ @return AdaptivePolicyAPICreateOrganizationAdaptivePolicyGroupRequest
 */
-func (a *AdaptivePolicyApiService) CreateOrganizationAdaptivePolicyGroup(ctx context.Context, organizationId string) AdaptivePolicyApiCreateOrganizationAdaptivePolicyGroupRequest {
-	return AdaptivePolicyApiCreateOrganizationAdaptivePolicyGroupRequest{
+func (a *AdaptivePolicyAPIService) CreateOrganizationAdaptivePolicyGroup(ctx context.Context, organizationId string) AdaptivePolicyAPICreateOrganizationAdaptivePolicyGroupRequest {
+	return AdaptivePolicyAPICreateOrganizationAdaptivePolicyGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -186,7 +186,7 @@ func (a *AdaptivePolicyApiService) CreateOrganizationAdaptivePolicyGroup(ctx con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *AdaptivePolicyApiService) CreateOrganizationAdaptivePolicyGroupExecute(r AdaptivePolicyApiCreateOrganizationAdaptivePolicyGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *AdaptivePolicyAPIService) CreateOrganizationAdaptivePolicyGroupExecute(r AdaptivePolicyAPICreateOrganizationAdaptivePolicyGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -194,7 +194,7 @@ func (a *AdaptivePolicyApiService) CreateOrganizationAdaptivePolicyGroupExecute(
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyApiService.CreateOrganizationAdaptivePolicyGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyAPIService.CreateOrganizationAdaptivePolicyGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -279,19 +279,19 @@ func (a *AdaptivePolicyApiService) CreateOrganizationAdaptivePolicyGroupExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AdaptivePolicyApiCreateOrganizationAdaptivePolicyPolicyRequest struct {
+type AdaptivePolicyAPICreateOrganizationAdaptivePolicyPolicyRequest struct {
 	ctx context.Context
-	ApiService *AdaptivePolicyApiService
+	ApiService *AdaptivePolicyAPIService
 	organizationId string
 	createOrganizationAdaptivePolicyPolicyRequest *CreateOrganizationAdaptivePolicyPolicyRequest
 }
 
-func (r AdaptivePolicyApiCreateOrganizationAdaptivePolicyPolicyRequest) CreateOrganizationAdaptivePolicyPolicyRequest(createOrganizationAdaptivePolicyPolicyRequest CreateOrganizationAdaptivePolicyPolicyRequest) AdaptivePolicyApiCreateOrganizationAdaptivePolicyPolicyRequest {
+func (r AdaptivePolicyAPICreateOrganizationAdaptivePolicyPolicyRequest) CreateOrganizationAdaptivePolicyPolicyRequest(createOrganizationAdaptivePolicyPolicyRequest CreateOrganizationAdaptivePolicyPolicyRequest) AdaptivePolicyAPICreateOrganizationAdaptivePolicyPolicyRequest {
 	r.createOrganizationAdaptivePolicyPolicyRequest = &createOrganizationAdaptivePolicyPolicyRequest
 	return r
 }
 
-func (r AdaptivePolicyApiCreateOrganizationAdaptivePolicyPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r AdaptivePolicyAPICreateOrganizationAdaptivePolicyPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateOrganizationAdaptivePolicyPolicyExecute(r)
 }
 
@@ -302,10 +302,10 @@ Add an Adaptive Policy
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return AdaptivePolicyApiCreateOrganizationAdaptivePolicyPolicyRequest
+ @return AdaptivePolicyAPICreateOrganizationAdaptivePolicyPolicyRequest
 */
-func (a *AdaptivePolicyApiService) CreateOrganizationAdaptivePolicyPolicy(ctx context.Context, organizationId string) AdaptivePolicyApiCreateOrganizationAdaptivePolicyPolicyRequest {
-	return AdaptivePolicyApiCreateOrganizationAdaptivePolicyPolicyRequest{
+func (a *AdaptivePolicyAPIService) CreateOrganizationAdaptivePolicyPolicy(ctx context.Context, organizationId string) AdaptivePolicyAPICreateOrganizationAdaptivePolicyPolicyRequest {
+	return AdaptivePolicyAPICreateOrganizationAdaptivePolicyPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -314,7 +314,7 @@ func (a *AdaptivePolicyApiService) CreateOrganizationAdaptivePolicyPolicy(ctx co
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *AdaptivePolicyApiService) CreateOrganizationAdaptivePolicyPolicyExecute(r AdaptivePolicyApiCreateOrganizationAdaptivePolicyPolicyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *AdaptivePolicyAPIService) CreateOrganizationAdaptivePolicyPolicyExecute(r AdaptivePolicyAPICreateOrganizationAdaptivePolicyPolicyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -322,7 +322,7 @@ func (a *AdaptivePolicyApiService) CreateOrganizationAdaptivePolicyPolicyExecute
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyApiService.CreateOrganizationAdaptivePolicyPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyAPIService.CreateOrganizationAdaptivePolicyPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -407,14 +407,14 @@ func (a *AdaptivePolicyApiService) CreateOrganizationAdaptivePolicyPolicyExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AdaptivePolicyApiDeleteOrganizationAdaptivePolicyAclRequest struct {
+type AdaptivePolicyAPIDeleteOrganizationAdaptivePolicyAclRequest struct {
 	ctx context.Context
-	ApiService *AdaptivePolicyApiService
+	ApiService *AdaptivePolicyAPIService
 	organizationId string
 	aclId string
 }
 
-func (r AdaptivePolicyApiDeleteOrganizationAdaptivePolicyAclRequest) Execute() (*http.Response, error) {
+func (r AdaptivePolicyAPIDeleteOrganizationAdaptivePolicyAclRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationAdaptivePolicyAclExecute(r)
 }
 
@@ -426,10 +426,10 @@ Deletes the specified adaptive policy ACL. Note this adaptive policy ACL will al
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param aclId Acl ID
- @return AdaptivePolicyApiDeleteOrganizationAdaptivePolicyAclRequest
+ @return AdaptivePolicyAPIDeleteOrganizationAdaptivePolicyAclRequest
 */
-func (a *AdaptivePolicyApiService) DeleteOrganizationAdaptivePolicyAcl(ctx context.Context, organizationId string, aclId string) AdaptivePolicyApiDeleteOrganizationAdaptivePolicyAclRequest {
-	return AdaptivePolicyApiDeleteOrganizationAdaptivePolicyAclRequest{
+func (a *AdaptivePolicyAPIService) DeleteOrganizationAdaptivePolicyAcl(ctx context.Context, organizationId string, aclId string) AdaptivePolicyAPIDeleteOrganizationAdaptivePolicyAclRequest {
+	return AdaptivePolicyAPIDeleteOrganizationAdaptivePolicyAclRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -438,14 +438,14 @@ func (a *AdaptivePolicyApiService) DeleteOrganizationAdaptivePolicyAcl(ctx conte
 }
 
 // Execute executes the request
-func (a *AdaptivePolicyApiService) DeleteOrganizationAdaptivePolicyAclExecute(r AdaptivePolicyApiDeleteOrganizationAdaptivePolicyAclRequest) (*http.Response, error) {
+func (a *AdaptivePolicyAPIService) DeleteOrganizationAdaptivePolicyAclExecute(r AdaptivePolicyAPIDeleteOrganizationAdaptivePolicyAclRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyApiService.DeleteOrganizationAdaptivePolicyAcl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyAPIService.DeleteOrganizationAdaptivePolicyAcl")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -517,14 +517,14 @@ func (a *AdaptivePolicyApiService) DeleteOrganizationAdaptivePolicyAclExecute(r 
 	return localVarHTTPResponse, nil
 }
 
-type AdaptivePolicyApiDeleteOrganizationAdaptivePolicyGroupRequest struct {
+type AdaptivePolicyAPIDeleteOrganizationAdaptivePolicyGroupRequest struct {
 	ctx context.Context
-	ApiService *AdaptivePolicyApiService
+	ApiService *AdaptivePolicyAPIService
 	organizationId string
 	id string
 }
 
-func (r AdaptivePolicyApiDeleteOrganizationAdaptivePolicyGroupRequest) Execute() (*http.Response, error) {
+func (r AdaptivePolicyAPIDeleteOrganizationAdaptivePolicyGroupRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationAdaptivePolicyGroupExecute(r)
 }
 
@@ -536,10 +536,10 @@ Deletes the specified adaptive policy group and any associated policies and refe
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param id ID
- @return AdaptivePolicyApiDeleteOrganizationAdaptivePolicyGroupRequest
+ @return AdaptivePolicyAPIDeleteOrganizationAdaptivePolicyGroupRequest
 */
-func (a *AdaptivePolicyApiService) DeleteOrganizationAdaptivePolicyGroup(ctx context.Context, organizationId string, id string) AdaptivePolicyApiDeleteOrganizationAdaptivePolicyGroupRequest {
-	return AdaptivePolicyApiDeleteOrganizationAdaptivePolicyGroupRequest{
+func (a *AdaptivePolicyAPIService) DeleteOrganizationAdaptivePolicyGroup(ctx context.Context, organizationId string, id string) AdaptivePolicyAPIDeleteOrganizationAdaptivePolicyGroupRequest {
+	return AdaptivePolicyAPIDeleteOrganizationAdaptivePolicyGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -548,14 +548,14 @@ func (a *AdaptivePolicyApiService) DeleteOrganizationAdaptivePolicyGroup(ctx con
 }
 
 // Execute executes the request
-func (a *AdaptivePolicyApiService) DeleteOrganizationAdaptivePolicyGroupExecute(r AdaptivePolicyApiDeleteOrganizationAdaptivePolicyGroupRequest) (*http.Response, error) {
+func (a *AdaptivePolicyAPIService) DeleteOrganizationAdaptivePolicyGroupExecute(r AdaptivePolicyAPIDeleteOrganizationAdaptivePolicyGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyApiService.DeleteOrganizationAdaptivePolicyGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyAPIService.DeleteOrganizationAdaptivePolicyGroup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -627,14 +627,14 @@ func (a *AdaptivePolicyApiService) DeleteOrganizationAdaptivePolicyGroupExecute(
 	return localVarHTTPResponse, nil
 }
 
-type AdaptivePolicyApiDeleteOrganizationAdaptivePolicyPolicyRequest struct {
+type AdaptivePolicyAPIDeleteOrganizationAdaptivePolicyPolicyRequest struct {
 	ctx context.Context
-	ApiService *AdaptivePolicyApiService
+	ApiService *AdaptivePolicyAPIService
 	organizationId string
 	id string
 }
 
-func (r AdaptivePolicyApiDeleteOrganizationAdaptivePolicyPolicyRequest) Execute() (*http.Response, error) {
+func (r AdaptivePolicyAPIDeleteOrganizationAdaptivePolicyPolicyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationAdaptivePolicyPolicyExecute(r)
 }
 
@@ -646,10 +646,10 @@ Delete an Adaptive Policy
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param id ID
- @return AdaptivePolicyApiDeleteOrganizationAdaptivePolicyPolicyRequest
+ @return AdaptivePolicyAPIDeleteOrganizationAdaptivePolicyPolicyRequest
 */
-func (a *AdaptivePolicyApiService) DeleteOrganizationAdaptivePolicyPolicy(ctx context.Context, organizationId string, id string) AdaptivePolicyApiDeleteOrganizationAdaptivePolicyPolicyRequest {
-	return AdaptivePolicyApiDeleteOrganizationAdaptivePolicyPolicyRequest{
+func (a *AdaptivePolicyAPIService) DeleteOrganizationAdaptivePolicyPolicy(ctx context.Context, organizationId string, id string) AdaptivePolicyAPIDeleteOrganizationAdaptivePolicyPolicyRequest {
+	return AdaptivePolicyAPIDeleteOrganizationAdaptivePolicyPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -658,14 +658,14 @@ func (a *AdaptivePolicyApiService) DeleteOrganizationAdaptivePolicyPolicy(ctx co
 }
 
 // Execute executes the request
-func (a *AdaptivePolicyApiService) DeleteOrganizationAdaptivePolicyPolicyExecute(r AdaptivePolicyApiDeleteOrganizationAdaptivePolicyPolicyRequest) (*http.Response, error) {
+func (a *AdaptivePolicyAPIService) DeleteOrganizationAdaptivePolicyPolicyExecute(r AdaptivePolicyAPIDeleteOrganizationAdaptivePolicyPolicyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyApiService.DeleteOrganizationAdaptivePolicyPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyAPIService.DeleteOrganizationAdaptivePolicyPolicy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -737,14 +737,14 @@ func (a *AdaptivePolicyApiService) DeleteOrganizationAdaptivePolicyPolicyExecute
 	return localVarHTTPResponse, nil
 }
 
-type AdaptivePolicyApiGetOrganizationAdaptivePolicyAclRequest struct {
+type AdaptivePolicyAPIGetOrganizationAdaptivePolicyAclRequest struct {
 	ctx context.Context
-	ApiService *AdaptivePolicyApiService
+	ApiService *AdaptivePolicyAPIService
 	organizationId string
 	aclId string
 }
 
-func (r AdaptivePolicyApiGetOrganizationAdaptivePolicyAclRequest) Execute() (*GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
+func (r AdaptivePolicyAPIGetOrganizationAdaptivePolicyAclRequest) Execute() (*GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationAdaptivePolicyAclExecute(r)
 }
 
@@ -756,10 +756,10 @@ Returns the adaptive policy ACL information
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param aclId Acl ID
- @return AdaptivePolicyApiGetOrganizationAdaptivePolicyAclRequest
+ @return AdaptivePolicyAPIGetOrganizationAdaptivePolicyAclRequest
 */
-func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyAcl(ctx context.Context, organizationId string, aclId string) AdaptivePolicyApiGetOrganizationAdaptivePolicyAclRequest {
-	return AdaptivePolicyApiGetOrganizationAdaptivePolicyAclRequest{
+func (a *AdaptivePolicyAPIService) GetOrganizationAdaptivePolicyAcl(ctx context.Context, organizationId string, aclId string) AdaptivePolicyAPIGetOrganizationAdaptivePolicyAclRequest {
+	return AdaptivePolicyAPIGetOrganizationAdaptivePolicyAclRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -769,7 +769,7 @@ func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyAcl(ctx context.
 
 // Execute executes the request
 //  @return GetOrganizationAdaptivePolicyAcls200ResponseInner
-func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyAclExecute(r AdaptivePolicyApiGetOrganizationAdaptivePolicyAclRequest) (*GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
+func (a *AdaptivePolicyAPIService) GetOrganizationAdaptivePolicyAclExecute(r AdaptivePolicyAPIGetOrganizationAdaptivePolicyAclRequest) (*GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -777,7 +777,7 @@ func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyAclExecute(r Ada
 		localVarReturnValue  *GetOrganizationAdaptivePolicyAcls200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyApiService.GetOrganizationAdaptivePolicyAcl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyAPIService.GetOrganizationAdaptivePolicyAcl")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -858,13 +858,13 @@ func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyAclExecute(r Ada
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AdaptivePolicyApiGetOrganizationAdaptivePolicyAclsRequest struct {
+type AdaptivePolicyAPIGetOrganizationAdaptivePolicyAclsRequest struct {
 	ctx context.Context
-	ApiService *AdaptivePolicyApiService
+	ApiService *AdaptivePolicyAPIService
 	organizationId string
 }
 
-func (r AdaptivePolicyApiGetOrganizationAdaptivePolicyAclsRequest) Execute() ([]GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
+func (r AdaptivePolicyAPIGetOrganizationAdaptivePolicyAclsRequest) Execute() ([]GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationAdaptivePolicyAclsExecute(r)
 }
 
@@ -875,10 +875,10 @@ List adaptive policy ACLs in a organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return AdaptivePolicyApiGetOrganizationAdaptivePolicyAclsRequest
+ @return AdaptivePolicyAPIGetOrganizationAdaptivePolicyAclsRequest
 */
-func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyAcls(ctx context.Context, organizationId string) AdaptivePolicyApiGetOrganizationAdaptivePolicyAclsRequest {
-	return AdaptivePolicyApiGetOrganizationAdaptivePolicyAclsRequest{
+func (a *AdaptivePolicyAPIService) GetOrganizationAdaptivePolicyAcls(ctx context.Context, organizationId string) AdaptivePolicyAPIGetOrganizationAdaptivePolicyAclsRequest {
+	return AdaptivePolicyAPIGetOrganizationAdaptivePolicyAclsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -887,7 +887,7 @@ func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyAcls(ctx context
 
 // Execute executes the request
 //  @return []GetOrganizationAdaptivePolicyAcls200ResponseInner
-func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyAclsExecute(r AdaptivePolicyApiGetOrganizationAdaptivePolicyAclsRequest) ([]GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
+func (a *AdaptivePolicyAPIService) GetOrganizationAdaptivePolicyAclsExecute(r AdaptivePolicyAPIGetOrganizationAdaptivePolicyAclsRequest) ([]GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -895,7 +895,7 @@ func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyAclsExecute(r Ad
 		localVarReturnValue  []GetOrganizationAdaptivePolicyAcls200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyApiService.GetOrganizationAdaptivePolicyAcls")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyAPIService.GetOrganizationAdaptivePolicyAcls")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -975,14 +975,14 @@ func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyAclsExecute(r Ad
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AdaptivePolicyApiGetOrganizationAdaptivePolicyGroupRequest struct {
+type AdaptivePolicyAPIGetOrganizationAdaptivePolicyGroupRequest struct {
 	ctx context.Context
-	ApiService *AdaptivePolicyApiService
+	ApiService *AdaptivePolicyAPIService
 	organizationId string
 	id string
 }
 
-func (r AdaptivePolicyApiGetOrganizationAdaptivePolicyGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r AdaptivePolicyAPIGetOrganizationAdaptivePolicyGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationAdaptivePolicyGroupExecute(r)
 }
 
@@ -994,10 +994,10 @@ Returns an adaptive policy group
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param id ID
- @return AdaptivePolicyApiGetOrganizationAdaptivePolicyGroupRequest
+ @return AdaptivePolicyAPIGetOrganizationAdaptivePolicyGroupRequest
 */
-func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyGroup(ctx context.Context, organizationId string, id string) AdaptivePolicyApiGetOrganizationAdaptivePolicyGroupRequest {
-	return AdaptivePolicyApiGetOrganizationAdaptivePolicyGroupRequest{
+func (a *AdaptivePolicyAPIService) GetOrganizationAdaptivePolicyGroup(ctx context.Context, organizationId string, id string) AdaptivePolicyAPIGetOrganizationAdaptivePolicyGroupRequest {
+	return AdaptivePolicyAPIGetOrganizationAdaptivePolicyGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1007,7 +1007,7 @@ func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyGroup(ctx contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyGroupExecute(r AdaptivePolicyApiGetOrganizationAdaptivePolicyGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *AdaptivePolicyAPIService) GetOrganizationAdaptivePolicyGroupExecute(r AdaptivePolicyAPIGetOrganizationAdaptivePolicyGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1015,7 +1015,7 @@ func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyGroupExecute(r A
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyApiService.GetOrganizationAdaptivePolicyGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyAPIService.GetOrganizationAdaptivePolicyGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1096,13 +1096,13 @@ func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyGroupExecute(r A
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AdaptivePolicyApiGetOrganizationAdaptivePolicyGroupsRequest struct {
+type AdaptivePolicyAPIGetOrganizationAdaptivePolicyGroupsRequest struct {
 	ctx context.Context
-	ApiService *AdaptivePolicyApiService
+	ApiService *AdaptivePolicyAPIService
 	organizationId string
 }
 
-func (r AdaptivePolicyApiGetOrganizationAdaptivePolicyGroupsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r AdaptivePolicyAPIGetOrganizationAdaptivePolicyGroupsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationAdaptivePolicyGroupsExecute(r)
 }
 
@@ -1113,10 +1113,10 @@ List adaptive policy groups in a organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return AdaptivePolicyApiGetOrganizationAdaptivePolicyGroupsRequest
+ @return AdaptivePolicyAPIGetOrganizationAdaptivePolicyGroupsRequest
 */
-func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyGroups(ctx context.Context, organizationId string) AdaptivePolicyApiGetOrganizationAdaptivePolicyGroupsRequest {
-	return AdaptivePolicyApiGetOrganizationAdaptivePolicyGroupsRequest{
+func (a *AdaptivePolicyAPIService) GetOrganizationAdaptivePolicyGroups(ctx context.Context, organizationId string) AdaptivePolicyAPIGetOrganizationAdaptivePolicyGroupsRequest {
+	return AdaptivePolicyAPIGetOrganizationAdaptivePolicyGroupsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1125,7 +1125,7 @@ func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyGroups(ctx conte
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyGroupsExecute(r AdaptivePolicyApiGetOrganizationAdaptivePolicyGroupsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *AdaptivePolicyAPIService) GetOrganizationAdaptivePolicyGroupsExecute(r AdaptivePolicyAPIGetOrganizationAdaptivePolicyGroupsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1133,7 +1133,7 @@ func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyGroupsExecute(r 
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyApiService.GetOrganizationAdaptivePolicyGroups")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyAPIService.GetOrganizationAdaptivePolicyGroups")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1213,13 +1213,13 @@ func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyGroupsExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AdaptivePolicyApiGetOrganizationAdaptivePolicyOverviewRequest struct {
+type AdaptivePolicyAPIGetOrganizationAdaptivePolicyOverviewRequest struct {
 	ctx context.Context
-	ApiService *AdaptivePolicyApiService
+	ApiService *AdaptivePolicyAPIService
 	organizationId string
 }
 
-func (r AdaptivePolicyApiGetOrganizationAdaptivePolicyOverviewRequest) Execute() (*GetOrganizationAdaptivePolicyOverview200Response, *http.Response, error) {
+func (r AdaptivePolicyAPIGetOrganizationAdaptivePolicyOverviewRequest) Execute() (*GetOrganizationAdaptivePolicyOverview200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationAdaptivePolicyOverviewExecute(r)
 }
 
@@ -1230,10 +1230,10 @@ Returns adaptive policy aggregate statistics for an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return AdaptivePolicyApiGetOrganizationAdaptivePolicyOverviewRequest
+ @return AdaptivePolicyAPIGetOrganizationAdaptivePolicyOverviewRequest
 */
-func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyOverview(ctx context.Context, organizationId string) AdaptivePolicyApiGetOrganizationAdaptivePolicyOverviewRequest {
-	return AdaptivePolicyApiGetOrganizationAdaptivePolicyOverviewRequest{
+func (a *AdaptivePolicyAPIService) GetOrganizationAdaptivePolicyOverview(ctx context.Context, organizationId string) AdaptivePolicyAPIGetOrganizationAdaptivePolicyOverviewRequest {
+	return AdaptivePolicyAPIGetOrganizationAdaptivePolicyOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1242,7 +1242,7 @@ func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyOverview(ctx con
 
 // Execute executes the request
 //  @return GetOrganizationAdaptivePolicyOverview200Response
-func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyOverviewExecute(r AdaptivePolicyApiGetOrganizationAdaptivePolicyOverviewRequest) (*GetOrganizationAdaptivePolicyOverview200Response, *http.Response, error) {
+func (a *AdaptivePolicyAPIService) GetOrganizationAdaptivePolicyOverviewExecute(r AdaptivePolicyAPIGetOrganizationAdaptivePolicyOverviewRequest) (*GetOrganizationAdaptivePolicyOverview200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1250,7 +1250,7 @@ func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyOverviewExecute(
 		localVarReturnValue  *GetOrganizationAdaptivePolicyOverview200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyApiService.GetOrganizationAdaptivePolicyOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyAPIService.GetOrganizationAdaptivePolicyOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1330,13 +1330,13 @@ func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyOverviewExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AdaptivePolicyApiGetOrganizationAdaptivePolicyPoliciesRequest struct {
+type AdaptivePolicyAPIGetOrganizationAdaptivePolicyPoliciesRequest struct {
 	ctx context.Context
-	ApiService *AdaptivePolicyApiService
+	ApiService *AdaptivePolicyAPIService
 	organizationId string
 }
 
-func (r AdaptivePolicyApiGetOrganizationAdaptivePolicyPoliciesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r AdaptivePolicyAPIGetOrganizationAdaptivePolicyPoliciesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationAdaptivePolicyPoliciesExecute(r)
 }
 
@@ -1347,10 +1347,10 @@ List adaptive policies in an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return AdaptivePolicyApiGetOrganizationAdaptivePolicyPoliciesRequest
+ @return AdaptivePolicyAPIGetOrganizationAdaptivePolicyPoliciesRequest
 */
-func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyPolicies(ctx context.Context, organizationId string) AdaptivePolicyApiGetOrganizationAdaptivePolicyPoliciesRequest {
-	return AdaptivePolicyApiGetOrganizationAdaptivePolicyPoliciesRequest{
+func (a *AdaptivePolicyAPIService) GetOrganizationAdaptivePolicyPolicies(ctx context.Context, organizationId string) AdaptivePolicyAPIGetOrganizationAdaptivePolicyPoliciesRequest {
+	return AdaptivePolicyAPIGetOrganizationAdaptivePolicyPoliciesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1359,7 +1359,7 @@ func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyPolicies(ctx con
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyPoliciesExecute(r AdaptivePolicyApiGetOrganizationAdaptivePolicyPoliciesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *AdaptivePolicyAPIService) GetOrganizationAdaptivePolicyPoliciesExecute(r AdaptivePolicyAPIGetOrganizationAdaptivePolicyPoliciesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1367,7 +1367,7 @@ func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyPoliciesExecute(
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyApiService.GetOrganizationAdaptivePolicyPolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyAPIService.GetOrganizationAdaptivePolicyPolicies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1447,14 +1447,14 @@ func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyPoliciesExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AdaptivePolicyApiGetOrganizationAdaptivePolicyPolicyRequest struct {
+type AdaptivePolicyAPIGetOrganizationAdaptivePolicyPolicyRequest struct {
 	ctx context.Context
-	ApiService *AdaptivePolicyApiService
+	ApiService *AdaptivePolicyAPIService
 	organizationId string
 	id string
 }
 
-func (r AdaptivePolicyApiGetOrganizationAdaptivePolicyPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r AdaptivePolicyAPIGetOrganizationAdaptivePolicyPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationAdaptivePolicyPolicyExecute(r)
 }
 
@@ -1466,10 +1466,10 @@ Return an adaptive policy
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param id ID
- @return AdaptivePolicyApiGetOrganizationAdaptivePolicyPolicyRequest
+ @return AdaptivePolicyAPIGetOrganizationAdaptivePolicyPolicyRequest
 */
-func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyPolicy(ctx context.Context, organizationId string, id string) AdaptivePolicyApiGetOrganizationAdaptivePolicyPolicyRequest {
-	return AdaptivePolicyApiGetOrganizationAdaptivePolicyPolicyRequest{
+func (a *AdaptivePolicyAPIService) GetOrganizationAdaptivePolicyPolicy(ctx context.Context, organizationId string, id string) AdaptivePolicyAPIGetOrganizationAdaptivePolicyPolicyRequest {
+	return AdaptivePolicyAPIGetOrganizationAdaptivePolicyPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1479,7 +1479,7 @@ func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyPolicy(ctx conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyPolicyExecute(r AdaptivePolicyApiGetOrganizationAdaptivePolicyPolicyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *AdaptivePolicyAPIService) GetOrganizationAdaptivePolicyPolicyExecute(r AdaptivePolicyAPIGetOrganizationAdaptivePolicyPolicyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1487,7 +1487,7 @@ func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyPolicyExecute(r 
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyApiService.GetOrganizationAdaptivePolicyPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyAPIService.GetOrganizationAdaptivePolicyPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1568,13 +1568,13 @@ func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicyPolicyExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AdaptivePolicyApiGetOrganizationAdaptivePolicySettingsRequest struct {
+type AdaptivePolicyAPIGetOrganizationAdaptivePolicySettingsRequest struct {
 	ctx context.Context
-	ApiService *AdaptivePolicyApiService
+	ApiService *AdaptivePolicyAPIService
 	organizationId string
 }
 
-func (r AdaptivePolicyApiGetOrganizationAdaptivePolicySettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r AdaptivePolicyAPIGetOrganizationAdaptivePolicySettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationAdaptivePolicySettingsExecute(r)
 }
 
@@ -1585,10 +1585,10 @@ Returns global adaptive policy settings in an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return AdaptivePolicyApiGetOrganizationAdaptivePolicySettingsRequest
+ @return AdaptivePolicyAPIGetOrganizationAdaptivePolicySettingsRequest
 */
-func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicySettings(ctx context.Context, organizationId string) AdaptivePolicyApiGetOrganizationAdaptivePolicySettingsRequest {
-	return AdaptivePolicyApiGetOrganizationAdaptivePolicySettingsRequest{
+func (a *AdaptivePolicyAPIService) GetOrganizationAdaptivePolicySettings(ctx context.Context, organizationId string) AdaptivePolicyAPIGetOrganizationAdaptivePolicySettingsRequest {
+	return AdaptivePolicyAPIGetOrganizationAdaptivePolicySettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1597,7 +1597,7 @@ func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicySettings(ctx con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicySettingsExecute(r AdaptivePolicyApiGetOrganizationAdaptivePolicySettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *AdaptivePolicyAPIService) GetOrganizationAdaptivePolicySettingsExecute(r AdaptivePolicyAPIGetOrganizationAdaptivePolicySettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1605,7 +1605,7 @@ func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicySettingsExecute(
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyApiService.GetOrganizationAdaptivePolicySettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyAPIService.GetOrganizationAdaptivePolicySettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1685,20 +1685,20 @@ func (a *AdaptivePolicyApiService) GetOrganizationAdaptivePolicySettingsExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AdaptivePolicyApiUpdateOrganizationAdaptivePolicyAclRequest struct {
+type AdaptivePolicyAPIUpdateOrganizationAdaptivePolicyAclRequest struct {
 	ctx context.Context
-	ApiService *AdaptivePolicyApiService
+	ApiService *AdaptivePolicyAPIService
 	organizationId string
 	aclId string
 	updateOrganizationAdaptivePolicyAclRequest *UpdateOrganizationAdaptivePolicyAclRequest
 }
 
-func (r AdaptivePolicyApiUpdateOrganizationAdaptivePolicyAclRequest) UpdateOrganizationAdaptivePolicyAclRequest(updateOrganizationAdaptivePolicyAclRequest UpdateOrganizationAdaptivePolicyAclRequest) AdaptivePolicyApiUpdateOrganizationAdaptivePolicyAclRequest {
+func (r AdaptivePolicyAPIUpdateOrganizationAdaptivePolicyAclRequest) UpdateOrganizationAdaptivePolicyAclRequest(updateOrganizationAdaptivePolicyAclRequest UpdateOrganizationAdaptivePolicyAclRequest) AdaptivePolicyAPIUpdateOrganizationAdaptivePolicyAclRequest {
 	r.updateOrganizationAdaptivePolicyAclRequest = &updateOrganizationAdaptivePolicyAclRequest
 	return r
 }
 
-func (r AdaptivePolicyApiUpdateOrganizationAdaptivePolicyAclRequest) Execute() (*GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
+func (r AdaptivePolicyAPIUpdateOrganizationAdaptivePolicyAclRequest) Execute() (*GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationAdaptivePolicyAclExecute(r)
 }
 
@@ -1710,10 +1710,10 @@ Updates an adaptive policy ACL
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param aclId Acl ID
- @return AdaptivePolicyApiUpdateOrganizationAdaptivePolicyAclRequest
+ @return AdaptivePolicyAPIUpdateOrganizationAdaptivePolicyAclRequest
 */
-func (a *AdaptivePolicyApiService) UpdateOrganizationAdaptivePolicyAcl(ctx context.Context, organizationId string, aclId string) AdaptivePolicyApiUpdateOrganizationAdaptivePolicyAclRequest {
-	return AdaptivePolicyApiUpdateOrganizationAdaptivePolicyAclRequest{
+func (a *AdaptivePolicyAPIService) UpdateOrganizationAdaptivePolicyAcl(ctx context.Context, organizationId string, aclId string) AdaptivePolicyAPIUpdateOrganizationAdaptivePolicyAclRequest {
+	return AdaptivePolicyAPIUpdateOrganizationAdaptivePolicyAclRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1723,7 +1723,7 @@ func (a *AdaptivePolicyApiService) UpdateOrganizationAdaptivePolicyAcl(ctx conte
 
 // Execute executes the request
 //  @return GetOrganizationAdaptivePolicyAcls200ResponseInner
-func (a *AdaptivePolicyApiService) UpdateOrganizationAdaptivePolicyAclExecute(r AdaptivePolicyApiUpdateOrganizationAdaptivePolicyAclRequest) (*GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
+func (a *AdaptivePolicyAPIService) UpdateOrganizationAdaptivePolicyAclExecute(r AdaptivePolicyAPIUpdateOrganizationAdaptivePolicyAclRequest) (*GetOrganizationAdaptivePolicyAcls200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1731,7 +1731,7 @@ func (a *AdaptivePolicyApiService) UpdateOrganizationAdaptivePolicyAclExecute(r 
 		localVarReturnValue  *GetOrganizationAdaptivePolicyAcls200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyApiService.UpdateOrganizationAdaptivePolicyAcl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyAPIService.UpdateOrganizationAdaptivePolicyAcl")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1814,20 +1814,20 @@ func (a *AdaptivePolicyApiService) UpdateOrganizationAdaptivePolicyAclExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AdaptivePolicyApiUpdateOrganizationAdaptivePolicyGroupRequest struct {
+type AdaptivePolicyAPIUpdateOrganizationAdaptivePolicyGroupRequest struct {
 	ctx context.Context
-	ApiService *AdaptivePolicyApiService
+	ApiService *AdaptivePolicyAPIService
 	organizationId string
 	id string
 	updateOrganizationAdaptivePolicyGroupRequest *UpdateOrganizationAdaptivePolicyGroupRequest
 }
 
-func (r AdaptivePolicyApiUpdateOrganizationAdaptivePolicyGroupRequest) UpdateOrganizationAdaptivePolicyGroupRequest(updateOrganizationAdaptivePolicyGroupRequest UpdateOrganizationAdaptivePolicyGroupRequest) AdaptivePolicyApiUpdateOrganizationAdaptivePolicyGroupRequest {
+func (r AdaptivePolicyAPIUpdateOrganizationAdaptivePolicyGroupRequest) UpdateOrganizationAdaptivePolicyGroupRequest(updateOrganizationAdaptivePolicyGroupRequest UpdateOrganizationAdaptivePolicyGroupRequest) AdaptivePolicyAPIUpdateOrganizationAdaptivePolicyGroupRequest {
 	r.updateOrganizationAdaptivePolicyGroupRequest = &updateOrganizationAdaptivePolicyGroupRequest
 	return r
 }
 
-func (r AdaptivePolicyApiUpdateOrganizationAdaptivePolicyGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r AdaptivePolicyAPIUpdateOrganizationAdaptivePolicyGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationAdaptivePolicyGroupExecute(r)
 }
 
@@ -1839,10 +1839,10 @@ Updates an adaptive policy group. If updating "Infrastructure", only the SGT is 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param id ID
- @return AdaptivePolicyApiUpdateOrganizationAdaptivePolicyGroupRequest
+ @return AdaptivePolicyAPIUpdateOrganizationAdaptivePolicyGroupRequest
 */
-func (a *AdaptivePolicyApiService) UpdateOrganizationAdaptivePolicyGroup(ctx context.Context, organizationId string, id string) AdaptivePolicyApiUpdateOrganizationAdaptivePolicyGroupRequest {
-	return AdaptivePolicyApiUpdateOrganizationAdaptivePolicyGroupRequest{
+func (a *AdaptivePolicyAPIService) UpdateOrganizationAdaptivePolicyGroup(ctx context.Context, organizationId string, id string) AdaptivePolicyAPIUpdateOrganizationAdaptivePolicyGroupRequest {
+	return AdaptivePolicyAPIUpdateOrganizationAdaptivePolicyGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1852,7 +1852,7 @@ func (a *AdaptivePolicyApiService) UpdateOrganizationAdaptivePolicyGroup(ctx con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *AdaptivePolicyApiService) UpdateOrganizationAdaptivePolicyGroupExecute(r AdaptivePolicyApiUpdateOrganizationAdaptivePolicyGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *AdaptivePolicyAPIService) UpdateOrganizationAdaptivePolicyGroupExecute(r AdaptivePolicyAPIUpdateOrganizationAdaptivePolicyGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1860,7 +1860,7 @@ func (a *AdaptivePolicyApiService) UpdateOrganizationAdaptivePolicyGroupExecute(
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyApiService.UpdateOrganizationAdaptivePolicyGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyAPIService.UpdateOrganizationAdaptivePolicyGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1943,20 +1943,20 @@ func (a *AdaptivePolicyApiService) UpdateOrganizationAdaptivePolicyGroupExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AdaptivePolicyApiUpdateOrganizationAdaptivePolicyPolicyRequest struct {
+type AdaptivePolicyAPIUpdateOrganizationAdaptivePolicyPolicyRequest struct {
 	ctx context.Context
-	ApiService *AdaptivePolicyApiService
+	ApiService *AdaptivePolicyAPIService
 	organizationId string
 	id string
 	updateOrganizationAdaptivePolicyPolicyRequest *UpdateOrganizationAdaptivePolicyPolicyRequest
 }
 
-func (r AdaptivePolicyApiUpdateOrganizationAdaptivePolicyPolicyRequest) UpdateOrganizationAdaptivePolicyPolicyRequest(updateOrganizationAdaptivePolicyPolicyRequest UpdateOrganizationAdaptivePolicyPolicyRequest) AdaptivePolicyApiUpdateOrganizationAdaptivePolicyPolicyRequest {
+func (r AdaptivePolicyAPIUpdateOrganizationAdaptivePolicyPolicyRequest) UpdateOrganizationAdaptivePolicyPolicyRequest(updateOrganizationAdaptivePolicyPolicyRequest UpdateOrganizationAdaptivePolicyPolicyRequest) AdaptivePolicyAPIUpdateOrganizationAdaptivePolicyPolicyRequest {
 	r.updateOrganizationAdaptivePolicyPolicyRequest = &updateOrganizationAdaptivePolicyPolicyRequest
 	return r
 }
 
-func (r AdaptivePolicyApiUpdateOrganizationAdaptivePolicyPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r AdaptivePolicyAPIUpdateOrganizationAdaptivePolicyPolicyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationAdaptivePolicyPolicyExecute(r)
 }
 
@@ -1968,10 +1968,10 @@ Update an Adaptive Policy
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param id ID
- @return AdaptivePolicyApiUpdateOrganizationAdaptivePolicyPolicyRequest
+ @return AdaptivePolicyAPIUpdateOrganizationAdaptivePolicyPolicyRequest
 */
-func (a *AdaptivePolicyApiService) UpdateOrganizationAdaptivePolicyPolicy(ctx context.Context, organizationId string, id string) AdaptivePolicyApiUpdateOrganizationAdaptivePolicyPolicyRequest {
-	return AdaptivePolicyApiUpdateOrganizationAdaptivePolicyPolicyRequest{
+func (a *AdaptivePolicyAPIService) UpdateOrganizationAdaptivePolicyPolicy(ctx context.Context, organizationId string, id string) AdaptivePolicyAPIUpdateOrganizationAdaptivePolicyPolicyRequest {
+	return AdaptivePolicyAPIUpdateOrganizationAdaptivePolicyPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1981,7 +1981,7 @@ func (a *AdaptivePolicyApiService) UpdateOrganizationAdaptivePolicyPolicy(ctx co
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *AdaptivePolicyApiService) UpdateOrganizationAdaptivePolicyPolicyExecute(r AdaptivePolicyApiUpdateOrganizationAdaptivePolicyPolicyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *AdaptivePolicyAPIService) UpdateOrganizationAdaptivePolicyPolicyExecute(r AdaptivePolicyAPIUpdateOrganizationAdaptivePolicyPolicyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1989,7 +1989,7 @@ func (a *AdaptivePolicyApiService) UpdateOrganizationAdaptivePolicyPolicyExecute
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyApiService.UpdateOrganizationAdaptivePolicyPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyAPIService.UpdateOrganizationAdaptivePolicyPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2072,19 +2072,19 @@ func (a *AdaptivePolicyApiService) UpdateOrganizationAdaptivePolicyPolicyExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AdaptivePolicyApiUpdateOrganizationAdaptivePolicySettingsRequest struct {
+type AdaptivePolicyAPIUpdateOrganizationAdaptivePolicySettingsRequest struct {
 	ctx context.Context
-	ApiService *AdaptivePolicyApiService
+	ApiService *AdaptivePolicyAPIService
 	organizationId string
 	updateOrganizationAdaptivePolicySettingsRequest *UpdateOrganizationAdaptivePolicySettingsRequest
 }
 
-func (r AdaptivePolicyApiUpdateOrganizationAdaptivePolicySettingsRequest) UpdateOrganizationAdaptivePolicySettingsRequest(updateOrganizationAdaptivePolicySettingsRequest UpdateOrganizationAdaptivePolicySettingsRequest) AdaptivePolicyApiUpdateOrganizationAdaptivePolicySettingsRequest {
+func (r AdaptivePolicyAPIUpdateOrganizationAdaptivePolicySettingsRequest) UpdateOrganizationAdaptivePolicySettingsRequest(updateOrganizationAdaptivePolicySettingsRequest UpdateOrganizationAdaptivePolicySettingsRequest) AdaptivePolicyAPIUpdateOrganizationAdaptivePolicySettingsRequest {
 	r.updateOrganizationAdaptivePolicySettingsRequest = &updateOrganizationAdaptivePolicySettingsRequest
 	return r
 }
 
-func (r AdaptivePolicyApiUpdateOrganizationAdaptivePolicySettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r AdaptivePolicyAPIUpdateOrganizationAdaptivePolicySettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationAdaptivePolicySettingsExecute(r)
 }
 
@@ -2095,10 +2095,10 @@ Update global adaptive policy settings
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return AdaptivePolicyApiUpdateOrganizationAdaptivePolicySettingsRequest
+ @return AdaptivePolicyAPIUpdateOrganizationAdaptivePolicySettingsRequest
 */
-func (a *AdaptivePolicyApiService) UpdateOrganizationAdaptivePolicySettings(ctx context.Context, organizationId string) AdaptivePolicyApiUpdateOrganizationAdaptivePolicySettingsRequest {
-	return AdaptivePolicyApiUpdateOrganizationAdaptivePolicySettingsRequest{
+func (a *AdaptivePolicyAPIService) UpdateOrganizationAdaptivePolicySettings(ctx context.Context, organizationId string) AdaptivePolicyAPIUpdateOrganizationAdaptivePolicySettingsRequest {
+	return AdaptivePolicyAPIUpdateOrganizationAdaptivePolicySettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -2107,7 +2107,7 @@ func (a *AdaptivePolicyApiService) UpdateOrganizationAdaptivePolicySettings(ctx 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *AdaptivePolicyApiService) UpdateOrganizationAdaptivePolicySettingsExecute(r AdaptivePolicyApiUpdateOrganizationAdaptivePolicySettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *AdaptivePolicyAPIService) UpdateOrganizationAdaptivePolicySettingsExecute(r AdaptivePolicyAPIUpdateOrganizationAdaptivePolicySettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -2115,7 +2115,7 @@ func (a *AdaptivePolicyApiService) UpdateOrganizationAdaptivePolicySettingsExecu
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyApiService.UpdateOrganizationAdaptivePolicySettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdaptivePolicyAPIService.UpdateOrganizationAdaptivePolicySettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing CloudMonitoringApiService
+Testing CloudMonitoringAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_CloudMonitoringApiService(t *testing.T) {
+func Test_client_CloudMonitoringAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test CloudMonitoringApiService CreateOrganizationInventoryOnboardingCloudMonitoringExportEvent", func(t *testing.T) {
+	t.Run("Test CloudMonitoringAPIService CreateOrganizationInventoryOnboardingCloudMonitoringExportEvent", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.CloudMonitoringApi.CreateOrganizationInventoryOnboardingCloudMonitoringExportEvent(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.CloudMonitoringAPI.CreateOrganizationInventoryOnboardingCloudMonitoringExportEvent(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_CloudMonitoringApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test CloudMonitoringApiService CreateOrganizationInventoryOnboardingCloudMonitoringImport", func(t *testing.T) {
+	t.Run("Test CloudMonitoringAPIService CreateOrganizationInventoryOnboardingCloudMonitoringImport", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.CloudMonitoringApi.CreateOrganizationInventoryOnboardingCloudMonitoringImport(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.CloudMonitoringAPI.CreateOrganizationInventoryOnboardingCloudMonitoringImport(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,13 +50,13 @@ func Test_client_CloudMonitoringApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test CloudMonitoringApiService CreateOrganizationInventoryOnboardingCloudMonitoringPrepare", func(t *testing.T) {
+	t.Run("Test CloudMonitoringAPIService CreateOrganizationInventoryOnboardingCloudMonitoringPrepare", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.CloudMonitoringApi.CreateOrganizationInventoryOnboardingCloudMonitoringPrepare(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.CloudMonitoringAPI.CreateOrganizationInventoryOnboardingCloudMonitoringPrepare(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,13 +64,13 @@ func Test_client_CloudMonitoringApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test CloudMonitoringApiService GetOrganizationInventoryOnboardingCloudMonitoringImports", func(t *testing.T) {
+	t.Run("Test CloudMonitoringAPIService GetOrganizationInventoryOnboardingCloudMonitoringImports", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.CloudMonitoringApi.GetOrganizationInventoryOnboardingCloudMonitoringImports(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.CloudMonitoringAPI.GetOrganizationInventoryOnboardingCloudMonitoringImports(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -78,13 +78,13 @@ func Test_client_CloudMonitoringApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test CloudMonitoringApiService GetOrganizationInventoryOnboardingCloudMonitoringNetworks", func(t *testing.T) {
+	t.Run("Test CloudMonitoringAPIService GetOrganizationInventoryOnboardingCloudMonitoringNetworks", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.CloudMonitoringApi.GetOrganizationInventoryOnboardingCloudMonitoringNetworks(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.CloudMonitoringAPI.GetOrganizationInventoryOnboardingCloudMonitoringNetworks(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

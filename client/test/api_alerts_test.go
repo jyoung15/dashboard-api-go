@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing AlertsApiService
+Testing AlertsAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_AlertsApiService(t *testing.T) {
+func Test_client_AlertsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test AlertsApiService CreateNetworkSensorAlertsProfile", func(t *testing.T) {
+	t.Run("Test AlertsAPIService CreateNetworkSensorAlertsProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.AlertsApi.CreateNetworkSensorAlertsProfile(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.AlertsAPI.CreateNetworkSensorAlertsProfile(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_AlertsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AlertsApiService CreateOrganizationAlertsProfile", func(t *testing.T) {
+	t.Run("Test AlertsAPIService CreateOrganizationAlertsProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.AlertsApi.CreateOrganizationAlertsProfile(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.AlertsAPI.CreateOrganizationAlertsProfile(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,41 +50,41 @@ func Test_client_AlertsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AlertsApiService DeleteNetworkSensorAlertsProfile", func(t *testing.T) {
+	t.Run("Test AlertsAPIService DeleteNetworkSensorAlertsProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var id string
 
-		httpRes, err := apiClient.AlertsApi.DeleteNetworkSensorAlertsProfile(context.Background(), networkId, id).Execute()
+		httpRes, err := apiClient.AlertsAPI.DeleteNetworkSensorAlertsProfile(context.Background(), networkId, id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test AlertsApiService DeleteOrganizationAlertsProfile", func(t *testing.T) {
+	t.Run("Test AlertsAPIService DeleteOrganizationAlertsProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var alertConfigId string
 
-		httpRes, err := apiClient.AlertsApi.DeleteOrganizationAlertsProfile(context.Background(), organizationId, alertConfigId).Execute()
+		httpRes, err := apiClient.AlertsAPI.DeleteOrganizationAlertsProfile(context.Background(), organizationId, alertConfigId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test AlertsApiService GetNetworkAlertsHistory", func(t *testing.T) {
+	t.Run("Test AlertsAPIService GetNetworkAlertsHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.AlertsApi.GetNetworkAlertsHistory(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.AlertsAPI.GetNetworkAlertsHistory(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -92,13 +92,13 @@ func Test_client_AlertsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AlertsApiService GetNetworkAlertsSettings", func(t *testing.T) {
+	t.Run("Test AlertsAPIService GetNetworkAlertsSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.AlertsApi.GetNetworkAlertsSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.AlertsAPI.GetNetworkAlertsSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -106,13 +106,13 @@ func Test_client_AlertsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AlertsApiService GetNetworkHealthAlerts", func(t *testing.T) {
+	t.Run("Test AlertsAPIService GetNetworkHealthAlerts", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.AlertsApi.GetNetworkHealthAlerts(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.AlertsAPI.GetNetworkHealthAlerts(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -120,13 +120,13 @@ func Test_client_AlertsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AlertsApiService GetNetworkSensorAlertsCurrentOverviewByMetric", func(t *testing.T) {
+	t.Run("Test AlertsAPIService GetNetworkSensorAlertsCurrentOverviewByMetric", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.AlertsApi.GetNetworkSensorAlertsCurrentOverviewByMetric(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.AlertsAPI.GetNetworkSensorAlertsCurrentOverviewByMetric(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -134,13 +134,13 @@ func Test_client_AlertsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AlertsApiService GetNetworkSensorAlertsOverviewByMetric", func(t *testing.T) {
+	t.Run("Test AlertsAPIService GetNetworkSensorAlertsOverviewByMetric", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.AlertsApi.GetNetworkSensorAlertsOverviewByMetric(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.AlertsAPI.GetNetworkSensorAlertsOverviewByMetric(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -148,14 +148,14 @@ func Test_client_AlertsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AlertsApiService GetNetworkSensorAlertsProfile", func(t *testing.T) {
+	t.Run("Test AlertsAPIService GetNetworkSensorAlertsProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var id string
 
-		resp, httpRes, err := apiClient.AlertsApi.GetNetworkSensorAlertsProfile(context.Background(), networkId, id).Execute()
+		resp, httpRes, err := apiClient.AlertsAPI.GetNetworkSensorAlertsProfile(context.Background(), networkId, id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -163,13 +163,13 @@ func Test_client_AlertsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AlertsApiService GetNetworkSensorAlertsProfiles", func(t *testing.T) {
+	t.Run("Test AlertsAPIService GetNetworkSensorAlertsProfiles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.AlertsApi.GetNetworkSensorAlertsProfiles(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.AlertsAPI.GetNetworkSensorAlertsProfiles(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -177,13 +177,13 @@ func Test_client_AlertsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AlertsApiService GetOrganizationAlertsProfiles", func(t *testing.T) {
+	t.Run("Test AlertsAPIService GetOrganizationAlertsProfiles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.AlertsApi.GetOrganizationAlertsProfiles(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.AlertsAPI.GetOrganizationAlertsProfiles(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -191,13 +191,13 @@ func Test_client_AlertsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AlertsApiService UpdateNetworkAlertsSettings", func(t *testing.T) {
+	t.Run("Test AlertsAPIService UpdateNetworkAlertsSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.AlertsApi.UpdateNetworkAlertsSettings(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.AlertsAPI.UpdateNetworkAlertsSettings(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -205,14 +205,14 @@ func Test_client_AlertsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AlertsApiService UpdateNetworkSensorAlertsProfile", func(t *testing.T) {
+	t.Run("Test AlertsAPIService UpdateNetworkSensorAlertsProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var id string
 
-		resp, httpRes, err := apiClient.AlertsApi.UpdateNetworkSensorAlertsProfile(context.Background(), networkId, id).Execute()
+		resp, httpRes, err := apiClient.AlertsAPI.UpdateNetworkSensorAlertsProfile(context.Background(), networkId, id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -220,14 +220,14 @@ func Test_client_AlertsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AlertsApiService UpdateOrganizationAlertsProfile", func(t *testing.T) {
+	t.Run("Test AlertsAPIService UpdateOrganizationAlertsProfile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var alertConfigId string
 
-		resp, httpRes, err := apiClient.AlertsApi.UpdateOrganizationAlertsProfile(context.Background(), organizationId, alertConfigId).Execute()
+		resp, httpRes, err := apiClient.AlertsAPI.UpdateOrganizationAlertsProfile(context.Background(), organizationId, alertConfigId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

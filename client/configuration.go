@@ -107,7 +107,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:       getEnvOrDefaultStr("MERAKI_GO_SDK_CALLER", "meraki-golang/v1.36.0/"),
+		UserAgent:       getEnvOrDefaultStr("MERAKI_GO_SDK_CALLER", "meraki-golang/1.36.1/"),
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{

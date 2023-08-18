@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing ObjectDetectionModelsApiService
+Testing ObjectDetectionModelsAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_ObjectDetectionModelsApiService(t *testing.T) {
+func Test_client_ObjectDetectionModelsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test ObjectDetectionModelsApiService GetDeviceCameraSenseObjectDetectionModels", func(t *testing.T) {
+	t.Run("Test ObjectDetectionModelsAPIService GetDeviceCameraSenseObjectDetectionModels", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var serial string
 
-		resp, httpRes, err := apiClient.ObjectDetectionModelsApi.GetDeviceCameraSenseObjectDetectionModels(context.Background(), serial).Execute()
+		resp, httpRes, err := apiClient.ObjectDetectionModelsAPI.GetDeviceCameraSenseObjectDetectionModels(context.Background(), serial).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

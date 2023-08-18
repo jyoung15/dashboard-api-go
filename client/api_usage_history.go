@@ -20,12 +20,12 @@ import (
 )
 
 
-// UsageHistoryApiService UsageHistoryApi service
-type UsageHistoryApiService service
+// UsageHistoryAPIService UsageHistoryAPI service
+type UsageHistoryAPIService service
 
-type UsageHistoryApiGetNetworkApplianceUplinksUsageHistoryRequest struct {
+type UsageHistoryAPIGetNetworkApplianceUplinksUsageHistoryRequest struct {
 	ctx context.Context
-	ApiService *UsageHistoryApiService
+	ApiService *UsageHistoryAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -34,30 +34,30 @@ type UsageHistoryApiGetNetworkApplianceUplinksUsageHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
-func (r UsageHistoryApiGetNetworkApplianceUplinksUsageHistoryRequest) T0(t0 string) UsageHistoryApiGetNetworkApplianceUplinksUsageHistoryRequest {
+func (r UsageHistoryAPIGetNetworkApplianceUplinksUsageHistoryRequest) T0(t0 string) UsageHistoryAPIGetNetworkApplianceUplinksUsageHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r UsageHistoryApiGetNetworkApplianceUplinksUsageHistoryRequest) T1(t1 string) UsageHistoryApiGetNetworkApplianceUplinksUsageHistoryRequest {
+func (r UsageHistoryAPIGetNetworkApplianceUplinksUsageHistoryRequest) T1(t1 string) UsageHistoryAPIGetNetworkApplianceUplinksUsageHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 10 minutes.
-func (r UsageHistoryApiGetNetworkApplianceUplinksUsageHistoryRequest) Timespan(timespan float32) UsageHistoryApiGetNetworkApplianceUplinksUsageHistoryRequest {
+func (r UsageHistoryAPIGetNetworkApplianceUplinksUsageHistoryRequest) Timespan(timespan float32) UsageHistoryAPIGetNetworkApplianceUplinksUsageHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 60, 300, 600, 1800, 3600, 86400. The default is 60.
-func (r UsageHistoryApiGetNetworkApplianceUplinksUsageHistoryRequest) Resolution(resolution int32) UsageHistoryApiGetNetworkApplianceUplinksUsageHistoryRequest {
+func (r UsageHistoryAPIGetNetworkApplianceUplinksUsageHistoryRequest) Resolution(resolution int32) UsageHistoryAPIGetNetworkApplianceUplinksUsageHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
-func (r UsageHistoryApiGetNetworkApplianceUplinksUsageHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r UsageHistoryAPIGetNetworkApplianceUplinksUsageHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceUplinksUsageHistoryExecute(r)
 }
 
@@ -68,10 +68,10 @@ Get the sent and received bytes for each uplink of a network.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return UsageHistoryApiGetNetworkApplianceUplinksUsageHistoryRequest
+ @return UsageHistoryAPIGetNetworkApplianceUplinksUsageHistoryRequest
 */
-func (a *UsageHistoryApiService) GetNetworkApplianceUplinksUsageHistory(ctx context.Context, networkId string) UsageHistoryApiGetNetworkApplianceUplinksUsageHistoryRequest {
-	return UsageHistoryApiGetNetworkApplianceUplinksUsageHistoryRequest{
+func (a *UsageHistoryAPIService) GetNetworkApplianceUplinksUsageHistory(ctx context.Context, networkId string) UsageHistoryAPIGetNetworkApplianceUplinksUsageHistoryRequest {
+	return UsageHistoryAPIGetNetworkApplianceUplinksUsageHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -80,7 +80,7 @@ func (a *UsageHistoryApiService) GetNetworkApplianceUplinksUsageHistory(ctx cont
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *UsageHistoryApiService) GetNetworkApplianceUplinksUsageHistoryExecute(r UsageHistoryApiGetNetworkApplianceUplinksUsageHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *UsageHistoryAPIService) GetNetworkApplianceUplinksUsageHistoryExecute(r UsageHistoryAPIGetNetworkApplianceUplinksUsageHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -88,7 +88,7 @@ func (a *UsageHistoryApiService) GetNetworkApplianceUplinksUsageHistoryExecute(r
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsageHistoryApiService.GetNetworkApplianceUplinksUsageHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsageHistoryAPIService.GetNetworkApplianceUplinksUsageHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -180,14 +180,14 @@ func (a *UsageHistoryApiService) GetNetworkApplianceUplinksUsageHistoryExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type UsageHistoryApiGetNetworkClientUsageHistoryRequest struct {
+type UsageHistoryAPIGetNetworkClientUsageHistoryRequest struct {
 	ctx context.Context
-	ApiService *UsageHistoryApiService
+	ApiService *UsageHistoryAPIService
 	networkId string
 	clientId string
 }
 
-func (r UsageHistoryApiGetNetworkClientUsageHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r UsageHistoryAPIGetNetworkClientUsageHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkClientUsageHistoryExecute(r)
 }
 
@@ -199,10 +199,10 @@ Return the client's daily usage history. Usage data is in kilobytes. Clients can
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param clientId Client ID
- @return UsageHistoryApiGetNetworkClientUsageHistoryRequest
+ @return UsageHistoryAPIGetNetworkClientUsageHistoryRequest
 */
-func (a *UsageHistoryApiService) GetNetworkClientUsageHistory(ctx context.Context, networkId string, clientId string) UsageHistoryApiGetNetworkClientUsageHistoryRequest {
-	return UsageHistoryApiGetNetworkClientUsageHistoryRequest{
+func (a *UsageHistoryAPIService) GetNetworkClientUsageHistory(ctx context.Context, networkId string, clientId string) UsageHistoryAPIGetNetworkClientUsageHistoryRequest {
+	return UsageHistoryAPIGetNetworkClientUsageHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -212,7 +212,7 @@ func (a *UsageHistoryApiService) GetNetworkClientUsageHistory(ctx context.Contex
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *UsageHistoryApiService) GetNetworkClientUsageHistoryExecute(r UsageHistoryApiGetNetworkClientUsageHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *UsageHistoryAPIService) GetNetworkClientUsageHistoryExecute(r UsageHistoryAPIGetNetworkClientUsageHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -220,7 +220,7 @@ func (a *UsageHistoryApiService) GetNetworkClientUsageHistoryExecute(r UsageHist
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsageHistoryApiService.GetNetworkClientUsageHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsageHistoryAPIService.GetNetworkClientUsageHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -301,9 +301,9 @@ func (a *UsageHistoryApiService) GetNetworkClientUsageHistoryExecute(r UsageHist
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type UsageHistoryApiGetNetworkWirelessUsageHistoryRequest struct {
+type UsageHistoryAPIGetNetworkWirelessUsageHistoryRequest struct {
 	ctx context.Context
-	ApiService *UsageHistoryApiService
+	ApiService *UsageHistoryAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -318,66 +318,66 @@ type UsageHistoryApiGetNetworkWirelessUsageHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r UsageHistoryApiGetNetworkWirelessUsageHistoryRequest) T0(t0 string) UsageHistoryApiGetNetworkWirelessUsageHistoryRequest {
+func (r UsageHistoryAPIGetNetworkWirelessUsageHistoryRequest) T0(t0 string) UsageHistoryAPIGetNetworkWirelessUsageHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r UsageHistoryApiGetNetworkWirelessUsageHistoryRequest) T1(t1 string) UsageHistoryApiGetNetworkWirelessUsageHistoryRequest {
+func (r UsageHistoryAPIGetNetworkWirelessUsageHistoryRequest) T1(t1 string) UsageHistoryAPIGetNetworkWirelessUsageHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r UsageHistoryApiGetNetworkWirelessUsageHistoryRequest) Timespan(timespan float32) UsageHistoryApiGetNetworkWirelessUsageHistoryRequest {
+func (r UsageHistoryAPIGetNetworkWirelessUsageHistoryRequest) Timespan(timespan float32) UsageHistoryAPIGetNetworkWirelessUsageHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 300, 600, 1200, 3600, 14400, 86400. The default is 86400.
-func (r UsageHistoryApiGetNetworkWirelessUsageHistoryRequest) Resolution(resolution int32) UsageHistoryApiGetNetworkWirelessUsageHistoryRequest {
+func (r UsageHistoryAPIGetNetworkWirelessUsageHistoryRequest) Resolution(resolution int32) UsageHistoryAPIGetNetworkWirelessUsageHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // Automatically select a data resolution based on the given timespan; this overrides the value specified by the &#39;resolution&#39; parameter. The default setting is false.
-func (r UsageHistoryApiGetNetworkWirelessUsageHistoryRequest) AutoResolution(autoResolution bool) UsageHistoryApiGetNetworkWirelessUsageHistoryRequest {
+func (r UsageHistoryAPIGetNetworkWirelessUsageHistoryRequest) AutoResolution(autoResolution bool) UsageHistoryAPIGetNetworkWirelessUsageHistoryRequest {
 	r.autoResolution = &autoResolution
 	return r
 }
 
 // Filter results by network client to return per-device AP usage over time inner joined by the queried client&#39;s connection history.
-func (r UsageHistoryApiGetNetworkWirelessUsageHistoryRequest) ClientId(clientId string) UsageHistoryApiGetNetworkWirelessUsageHistoryRequest {
+func (r UsageHistoryAPIGetNetworkWirelessUsageHistoryRequest) ClientId(clientId string) UsageHistoryAPIGetNetworkWirelessUsageHistoryRequest {
 	r.clientId = &clientId
 	return r
 }
 
 // Filter results by device. Requires :band.
-func (r UsageHistoryApiGetNetworkWirelessUsageHistoryRequest) DeviceSerial(deviceSerial string) UsageHistoryApiGetNetworkWirelessUsageHistoryRequest {
+func (r UsageHistoryAPIGetNetworkWirelessUsageHistoryRequest) DeviceSerial(deviceSerial string) UsageHistoryAPIGetNetworkWirelessUsageHistoryRequest {
 	r.deviceSerial = &deviceSerial
 	return r
 }
 
 // Filter results by AP tag; either :clientId or :deviceSerial must be jointly specified.
-func (r UsageHistoryApiGetNetworkWirelessUsageHistoryRequest) ApTag(apTag string) UsageHistoryApiGetNetworkWirelessUsageHistoryRequest {
+func (r UsageHistoryAPIGetNetworkWirelessUsageHistoryRequest) ApTag(apTag string) UsageHistoryAPIGetNetworkWirelessUsageHistoryRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;).
-func (r UsageHistoryApiGetNetworkWirelessUsageHistoryRequest) Band(band string) UsageHistoryApiGetNetworkWirelessUsageHistoryRequest {
+func (r UsageHistoryAPIGetNetworkWirelessUsageHistoryRequest) Band(band string) UsageHistoryAPIGetNetworkWirelessUsageHistoryRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID number.
-func (r UsageHistoryApiGetNetworkWirelessUsageHistoryRequest) Ssid(ssid int32) UsageHistoryApiGetNetworkWirelessUsageHistoryRequest {
+func (r UsageHistoryAPIGetNetworkWirelessUsageHistoryRequest) Ssid(ssid int32) UsageHistoryAPIGetNetworkWirelessUsageHistoryRequest {
 	r.ssid = &ssid
 	return r
 }
 
-func (r UsageHistoryApiGetNetworkWirelessUsageHistoryRequest) Execute() ([]GetNetworkWirelessUsageHistory200ResponseInner, *http.Response, error) {
+func (r UsageHistoryAPIGetNetworkWirelessUsageHistoryRequest) Execute() ([]GetNetworkWirelessUsageHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessUsageHistoryExecute(r)
 }
 
@@ -388,10 +388,10 @@ Return AP usage over time for a device or network client
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return UsageHistoryApiGetNetworkWirelessUsageHistoryRequest
+ @return UsageHistoryAPIGetNetworkWirelessUsageHistoryRequest
 */
-func (a *UsageHistoryApiService) GetNetworkWirelessUsageHistory(ctx context.Context, networkId string) UsageHistoryApiGetNetworkWirelessUsageHistoryRequest {
-	return UsageHistoryApiGetNetworkWirelessUsageHistoryRequest{
+func (a *UsageHistoryAPIService) GetNetworkWirelessUsageHistory(ctx context.Context, networkId string) UsageHistoryAPIGetNetworkWirelessUsageHistoryRequest {
+	return UsageHistoryAPIGetNetworkWirelessUsageHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -400,7 +400,7 @@ func (a *UsageHistoryApiService) GetNetworkWirelessUsageHistory(ctx context.Cont
 
 // Execute executes the request
 //  @return []GetNetworkWirelessUsageHistory200ResponseInner
-func (a *UsageHistoryApiService) GetNetworkWirelessUsageHistoryExecute(r UsageHistoryApiGetNetworkWirelessUsageHistoryRequest) ([]GetNetworkWirelessUsageHistory200ResponseInner, *http.Response, error) {
+func (a *UsageHistoryAPIService) GetNetworkWirelessUsageHistoryExecute(r UsageHistoryAPIGetNetworkWirelessUsageHistoryRequest) ([]GetNetworkWirelessUsageHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -408,7 +408,7 @@ func (a *UsageHistoryApiService) GetNetworkWirelessUsageHistoryExecute(r UsageHi
 		localVarReturnValue  []GetNetworkWirelessUsageHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsageHistoryApiService.GetNetworkWirelessUsageHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsageHistoryAPIService.GetNetworkWirelessUsageHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

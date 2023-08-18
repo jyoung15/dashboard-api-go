@@ -20,22 +20,22 @@ import (
 )
 
 
-// QualityRetentionProfilesApiService QualityRetentionProfilesApi service
-type QualityRetentionProfilesApiService service
+// QualityRetentionProfilesAPIService QualityRetentionProfilesAPI service
+type QualityRetentionProfilesAPIService service
 
-type QualityRetentionProfilesApiCreateNetworkCameraQualityRetentionProfileRequest struct {
+type QualityRetentionProfilesAPICreateNetworkCameraQualityRetentionProfileRequest struct {
 	ctx context.Context
-	ApiService *QualityRetentionProfilesApiService
+	ApiService *QualityRetentionProfilesAPIService
 	networkId string
 	createNetworkCameraQualityRetentionProfileRequest *CreateNetworkCameraQualityRetentionProfileRequest
 }
 
-func (r QualityRetentionProfilesApiCreateNetworkCameraQualityRetentionProfileRequest) CreateNetworkCameraQualityRetentionProfileRequest(createNetworkCameraQualityRetentionProfileRequest CreateNetworkCameraQualityRetentionProfileRequest) QualityRetentionProfilesApiCreateNetworkCameraQualityRetentionProfileRequest {
+func (r QualityRetentionProfilesAPICreateNetworkCameraQualityRetentionProfileRequest) CreateNetworkCameraQualityRetentionProfileRequest(createNetworkCameraQualityRetentionProfileRequest CreateNetworkCameraQualityRetentionProfileRequest) QualityRetentionProfilesAPICreateNetworkCameraQualityRetentionProfileRequest {
 	r.createNetworkCameraQualityRetentionProfileRequest = &createNetworkCameraQualityRetentionProfileRequest
 	return r
 }
 
-func (r QualityRetentionProfilesApiCreateNetworkCameraQualityRetentionProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r QualityRetentionProfilesAPICreateNetworkCameraQualityRetentionProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkCameraQualityRetentionProfileExecute(r)
 }
 
@@ -46,10 +46,10 @@ Creates new quality retention profile for this network.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return QualityRetentionProfilesApiCreateNetworkCameraQualityRetentionProfileRequest
+ @return QualityRetentionProfilesAPICreateNetworkCameraQualityRetentionProfileRequest
 */
-func (a *QualityRetentionProfilesApiService) CreateNetworkCameraQualityRetentionProfile(ctx context.Context, networkId string) QualityRetentionProfilesApiCreateNetworkCameraQualityRetentionProfileRequest {
-	return QualityRetentionProfilesApiCreateNetworkCameraQualityRetentionProfileRequest{
+func (a *QualityRetentionProfilesAPIService) CreateNetworkCameraQualityRetentionProfile(ctx context.Context, networkId string) QualityRetentionProfilesAPICreateNetworkCameraQualityRetentionProfileRequest {
+	return QualityRetentionProfilesAPICreateNetworkCameraQualityRetentionProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -58,7 +58,7 @@ func (a *QualityRetentionProfilesApiService) CreateNetworkCameraQualityRetention
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *QualityRetentionProfilesApiService) CreateNetworkCameraQualityRetentionProfileExecute(r QualityRetentionProfilesApiCreateNetworkCameraQualityRetentionProfileRequest) (map[string]interface{}, *http.Response, error) {
+func (a *QualityRetentionProfilesAPIService) CreateNetworkCameraQualityRetentionProfileExecute(r QualityRetentionProfilesAPICreateNetworkCameraQualityRetentionProfileRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *QualityRetentionProfilesApiService) CreateNetworkCameraQualityRetention
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityRetentionProfilesApiService.CreateNetworkCameraQualityRetentionProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityRetentionProfilesAPIService.CreateNetworkCameraQualityRetentionProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,14 +151,14 @@ func (a *QualityRetentionProfilesApiService) CreateNetworkCameraQualityRetention
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type QualityRetentionProfilesApiDeleteNetworkCameraQualityRetentionProfileRequest struct {
+type QualityRetentionProfilesAPIDeleteNetworkCameraQualityRetentionProfileRequest struct {
 	ctx context.Context
-	ApiService *QualityRetentionProfilesApiService
+	ApiService *QualityRetentionProfilesAPIService
 	networkId string
 	qualityRetentionProfileId string
 }
 
-func (r QualityRetentionProfilesApiDeleteNetworkCameraQualityRetentionProfileRequest) Execute() (*http.Response, error) {
+func (r QualityRetentionProfilesAPIDeleteNetworkCameraQualityRetentionProfileRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkCameraQualityRetentionProfileExecute(r)
 }
 
@@ -170,10 +170,10 @@ Delete an existing quality retention profile for this network.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param qualityRetentionProfileId Quality retention profile ID
- @return QualityRetentionProfilesApiDeleteNetworkCameraQualityRetentionProfileRequest
+ @return QualityRetentionProfilesAPIDeleteNetworkCameraQualityRetentionProfileRequest
 */
-func (a *QualityRetentionProfilesApiService) DeleteNetworkCameraQualityRetentionProfile(ctx context.Context, networkId string, qualityRetentionProfileId string) QualityRetentionProfilesApiDeleteNetworkCameraQualityRetentionProfileRequest {
-	return QualityRetentionProfilesApiDeleteNetworkCameraQualityRetentionProfileRequest{
+func (a *QualityRetentionProfilesAPIService) DeleteNetworkCameraQualityRetentionProfile(ctx context.Context, networkId string, qualityRetentionProfileId string) QualityRetentionProfilesAPIDeleteNetworkCameraQualityRetentionProfileRequest {
+	return QualityRetentionProfilesAPIDeleteNetworkCameraQualityRetentionProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -182,14 +182,14 @@ func (a *QualityRetentionProfilesApiService) DeleteNetworkCameraQualityRetention
 }
 
 // Execute executes the request
-func (a *QualityRetentionProfilesApiService) DeleteNetworkCameraQualityRetentionProfileExecute(r QualityRetentionProfilesApiDeleteNetworkCameraQualityRetentionProfileRequest) (*http.Response, error) {
+func (a *QualityRetentionProfilesAPIService) DeleteNetworkCameraQualityRetentionProfileExecute(r QualityRetentionProfilesAPIDeleteNetworkCameraQualityRetentionProfileRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityRetentionProfilesApiService.DeleteNetworkCameraQualityRetentionProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityRetentionProfilesAPIService.DeleteNetworkCameraQualityRetentionProfile")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -261,14 +261,14 @@ func (a *QualityRetentionProfilesApiService) DeleteNetworkCameraQualityRetention
 	return localVarHTTPResponse, nil
 }
 
-type QualityRetentionProfilesApiGetNetworkCameraQualityRetentionProfileRequest struct {
+type QualityRetentionProfilesAPIGetNetworkCameraQualityRetentionProfileRequest struct {
 	ctx context.Context
-	ApiService *QualityRetentionProfilesApiService
+	ApiService *QualityRetentionProfilesAPIService
 	networkId string
 	qualityRetentionProfileId string
 }
 
-func (r QualityRetentionProfilesApiGetNetworkCameraQualityRetentionProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r QualityRetentionProfilesAPIGetNetworkCameraQualityRetentionProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkCameraQualityRetentionProfileExecute(r)
 }
 
@@ -280,10 +280,10 @@ Retrieve a single quality retention profile
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param qualityRetentionProfileId Quality retention profile ID
- @return QualityRetentionProfilesApiGetNetworkCameraQualityRetentionProfileRequest
+ @return QualityRetentionProfilesAPIGetNetworkCameraQualityRetentionProfileRequest
 */
-func (a *QualityRetentionProfilesApiService) GetNetworkCameraQualityRetentionProfile(ctx context.Context, networkId string, qualityRetentionProfileId string) QualityRetentionProfilesApiGetNetworkCameraQualityRetentionProfileRequest {
-	return QualityRetentionProfilesApiGetNetworkCameraQualityRetentionProfileRequest{
+func (a *QualityRetentionProfilesAPIService) GetNetworkCameraQualityRetentionProfile(ctx context.Context, networkId string, qualityRetentionProfileId string) QualityRetentionProfilesAPIGetNetworkCameraQualityRetentionProfileRequest {
+	return QualityRetentionProfilesAPIGetNetworkCameraQualityRetentionProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -293,7 +293,7 @@ func (a *QualityRetentionProfilesApiService) GetNetworkCameraQualityRetentionPro
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *QualityRetentionProfilesApiService) GetNetworkCameraQualityRetentionProfileExecute(r QualityRetentionProfilesApiGetNetworkCameraQualityRetentionProfileRequest) (map[string]interface{}, *http.Response, error) {
+func (a *QualityRetentionProfilesAPIService) GetNetworkCameraQualityRetentionProfileExecute(r QualityRetentionProfilesAPIGetNetworkCameraQualityRetentionProfileRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -301,7 +301,7 @@ func (a *QualityRetentionProfilesApiService) GetNetworkCameraQualityRetentionPro
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityRetentionProfilesApiService.GetNetworkCameraQualityRetentionProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityRetentionProfilesAPIService.GetNetworkCameraQualityRetentionProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -382,13 +382,13 @@ func (a *QualityRetentionProfilesApiService) GetNetworkCameraQualityRetentionPro
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type QualityRetentionProfilesApiGetNetworkCameraQualityRetentionProfilesRequest struct {
+type QualityRetentionProfilesAPIGetNetworkCameraQualityRetentionProfilesRequest struct {
 	ctx context.Context
-	ApiService *QualityRetentionProfilesApiService
+	ApiService *QualityRetentionProfilesAPIService
 	networkId string
 }
 
-func (r QualityRetentionProfilesApiGetNetworkCameraQualityRetentionProfilesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r QualityRetentionProfilesAPIGetNetworkCameraQualityRetentionProfilesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkCameraQualityRetentionProfilesExecute(r)
 }
 
@@ -399,10 +399,10 @@ List the quality retention profiles for this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return QualityRetentionProfilesApiGetNetworkCameraQualityRetentionProfilesRequest
+ @return QualityRetentionProfilesAPIGetNetworkCameraQualityRetentionProfilesRequest
 */
-func (a *QualityRetentionProfilesApiService) GetNetworkCameraQualityRetentionProfiles(ctx context.Context, networkId string) QualityRetentionProfilesApiGetNetworkCameraQualityRetentionProfilesRequest {
-	return QualityRetentionProfilesApiGetNetworkCameraQualityRetentionProfilesRequest{
+func (a *QualityRetentionProfilesAPIService) GetNetworkCameraQualityRetentionProfiles(ctx context.Context, networkId string) QualityRetentionProfilesAPIGetNetworkCameraQualityRetentionProfilesRequest {
+	return QualityRetentionProfilesAPIGetNetworkCameraQualityRetentionProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -411,7 +411,7 @@ func (a *QualityRetentionProfilesApiService) GetNetworkCameraQualityRetentionPro
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *QualityRetentionProfilesApiService) GetNetworkCameraQualityRetentionProfilesExecute(r QualityRetentionProfilesApiGetNetworkCameraQualityRetentionProfilesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *QualityRetentionProfilesAPIService) GetNetworkCameraQualityRetentionProfilesExecute(r QualityRetentionProfilesAPIGetNetworkCameraQualityRetentionProfilesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -419,7 +419,7 @@ func (a *QualityRetentionProfilesApiService) GetNetworkCameraQualityRetentionPro
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityRetentionProfilesApiService.GetNetworkCameraQualityRetentionProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityRetentionProfilesAPIService.GetNetworkCameraQualityRetentionProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -499,20 +499,20 @@ func (a *QualityRetentionProfilesApiService) GetNetworkCameraQualityRetentionPro
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type QualityRetentionProfilesApiUpdateNetworkCameraQualityRetentionProfileRequest struct {
+type QualityRetentionProfilesAPIUpdateNetworkCameraQualityRetentionProfileRequest struct {
 	ctx context.Context
-	ApiService *QualityRetentionProfilesApiService
+	ApiService *QualityRetentionProfilesAPIService
 	networkId string
 	qualityRetentionProfileId string
 	updateNetworkCameraQualityRetentionProfileRequest *UpdateNetworkCameraQualityRetentionProfileRequest
 }
 
-func (r QualityRetentionProfilesApiUpdateNetworkCameraQualityRetentionProfileRequest) UpdateNetworkCameraQualityRetentionProfileRequest(updateNetworkCameraQualityRetentionProfileRequest UpdateNetworkCameraQualityRetentionProfileRequest) QualityRetentionProfilesApiUpdateNetworkCameraQualityRetentionProfileRequest {
+func (r QualityRetentionProfilesAPIUpdateNetworkCameraQualityRetentionProfileRequest) UpdateNetworkCameraQualityRetentionProfileRequest(updateNetworkCameraQualityRetentionProfileRequest UpdateNetworkCameraQualityRetentionProfileRequest) QualityRetentionProfilesAPIUpdateNetworkCameraQualityRetentionProfileRequest {
 	r.updateNetworkCameraQualityRetentionProfileRequest = &updateNetworkCameraQualityRetentionProfileRequest
 	return r
 }
 
-func (r QualityRetentionProfilesApiUpdateNetworkCameraQualityRetentionProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r QualityRetentionProfilesAPIUpdateNetworkCameraQualityRetentionProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkCameraQualityRetentionProfileExecute(r)
 }
 
@@ -524,10 +524,10 @@ Update an existing quality retention profile for this network.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param qualityRetentionProfileId Quality retention profile ID
- @return QualityRetentionProfilesApiUpdateNetworkCameraQualityRetentionProfileRequest
+ @return QualityRetentionProfilesAPIUpdateNetworkCameraQualityRetentionProfileRequest
 */
-func (a *QualityRetentionProfilesApiService) UpdateNetworkCameraQualityRetentionProfile(ctx context.Context, networkId string, qualityRetentionProfileId string) QualityRetentionProfilesApiUpdateNetworkCameraQualityRetentionProfileRequest {
-	return QualityRetentionProfilesApiUpdateNetworkCameraQualityRetentionProfileRequest{
+func (a *QualityRetentionProfilesAPIService) UpdateNetworkCameraQualityRetentionProfile(ctx context.Context, networkId string, qualityRetentionProfileId string) QualityRetentionProfilesAPIUpdateNetworkCameraQualityRetentionProfileRequest {
+	return QualityRetentionProfilesAPIUpdateNetworkCameraQualityRetentionProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -537,7 +537,7 @@ func (a *QualityRetentionProfilesApiService) UpdateNetworkCameraQualityRetention
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *QualityRetentionProfilesApiService) UpdateNetworkCameraQualityRetentionProfileExecute(r QualityRetentionProfilesApiUpdateNetworkCameraQualityRetentionProfileRequest) (map[string]interface{}, *http.Response, error) {
+func (a *QualityRetentionProfilesAPIService) UpdateNetworkCameraQualityRetentionProfileExecute(r QualityRetentionProfilesAPIUpdateNetworkCameraQualityRetentionProfileRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -545,7 +545,7 @@ func (a *QualityRetentionProfilesApiService) UpdateNetworkCameraQualityRetention
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityRetentionProfilesApiService.UpdateNetworkCameraQualityRetentionProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityRetentionProfilesAPIService.UpdateNetworkCameraQualityRetentionProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

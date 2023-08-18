@@ -20,22 +20,22 @@ import (
 )
 
 
-// RollbacksApiService RollbacksApi service
-type RollbacksApiService service
+// RollbacksAPIService RollbacksAPI service
+type RollbacksAPIService service
 
-type RollbacksApiCreateNetworkFirmwareUpgradesRollbackRequest struct {
+type RollbacksAPICreateNetworkFirmwareUpgradesRollbackRequest struct {
 	ctx context.Context
-	ApiService *RollbacksApiService
+	ApiService *RollbacksAPIService
 	networkId string
 	createNetworkFirmwareUpgradesRollbackRequest *CreateNetworkFirmwareUpgradesRollbackRequest
 }
 
-func (r RollbacksApiCreateNetworkFirmwareUpgradesRollbackRequest) CreateNetworkFirmwareUpgradesRollbackRequest(createNetworkFirmwareUpgradesRollbackRequest CreateNetworkFirmwareUpgradesRollbackRequest) RollbacksApiCreateNetworkFirmwareUpgradesRollbackRequest {
+func (r RollbacksAPICreateNetworkFirmwareUpgradesRollbackRequest) CreateNetworkFirmwareUpgradesRollbackRequest(createNetworkFirmwareUpgradesRollbackRequest CreateNetworkFirmwareUpgradesRollbackRequest) RollbacksAPICreateNetworkFirmwareUpgradesRollbackRequest {
 	r.createNetworkFirmwareUpgradesRollbackRequest = &createNetworkFirmwareUpgradesRollbackRequest
 	return r
 }
 
-func (r RollbacksApiCreateNetworkFirmwareUpgradesRollbackRequest) Execute() (*CreateNetworkFirmwareUpgradesRollback200Response, *http.Response, error) {
+func (r RollbacksAPICreateNetworkFirmwareUpgradesRollbackRequest) Execute() (*CreateNetworkFirmwareUpgradesRollback200Response, *http.Response, error) {
 	return r.ApiService.CreateNetworkFirmwareUpgradesRollbackExecute(r)
 }
 
@@ -46,10 +46,10 @@ Rollback a Firmware Upgrade For A Network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return RollbacksApiCreateNetworkFirmwareUpgradesRollbackRequest
+ @return RollbacksAPICreateNetworkFirmwareUpgradesRollbackRequest
 */
-func (a *RollbacksApiService) CreateNetworkFirmwareUpgradesRollback(ctx context.Context, networkId string) RollbacksApiCreateNetworkFirmwareUpgradesRollbackRequest {
-	return RollbacksApiCreateNetworkFirmwareUpgradesRollbackRequest{
+func (a *RollbacksAPIService) CreateNetworkFirmwareUpgradesRollback(ctx context.Context, networkId string) RollbacksAPICreateNetworkFirmwareUpgradesRollbackRequest {
+	return RollbacksAPICreateNetworkFirmwareUpgradesRollbackRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -58,7 +58,7 @@ func (a *RollbacksApiService) CreateNetworkFirmwareUpgradesRollback(ctx context.
 
 // Execute executes the request
 //  @return CreateNetworkFirmwareUpgradesRollback200Response
-func (a *RollbacksApiService) CreateNetworkFirmwareUpgradesRollbackExecute(r RollbacksApiCreateNetworkFirmwareUpgradesRollbackRequest) (*CreateNetworkFirmwareUpgradesRollback200Response, *http.Response, error) {
+func (a *RollbacksAPIService) CreateNetworkFirmwareUpgradesRollbackExecute(r RollbacksAPICreateNetworkFirmwareUpgradesRollbackRequest) (*CreateNetworkFirmwareUpgradesRollback200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *RollbacksApiService) CreateNetworkFirmwareUpgradesRollbackExecute(r Rol
 		localVarReturnValue  *CreateNetworkFirmwareUpgradesRollback200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RollbacksApiService.CreateNetworkFirmwareUpgradesRollback")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RollbacksAPIService.CreateNetworkFirmwareUpgradesRollback")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

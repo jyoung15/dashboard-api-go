@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing SplashLoginAttemptsApiService
+Testing SplashLoginAttemptsAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_SplashLoginAttemptsApiService(t *testing.T) {
+func Test_client_SplashLoginAttemptsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test SplashLoginAttemptsApiService GetNetworkSplashLoginAttempts", func(t *testing.T) {
+	t.Run("Test SplashLoginAttemptsAPIService GetNetworkSplashLoginAttempts", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.SplashLoginAttemptsApi.GetNetworkSplashLoginAttempts(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.SplashLoginAttemptsAPI.GetNetworkSplashLoginAttempts(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

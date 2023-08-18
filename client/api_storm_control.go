@@ -20,16 +20,16 @@ import (
 )
 
 
-// StormControlApiService StormControlApi service
-type StormControlApiService service
+// StormControlAPIService StormControlAPI service
+type StormControlAPIService service
 
-type StormControlApiGetNetworkSwitchStormControlRequest struct {
+type StormControlAPIGetNetworkSwitchStormControlRequest struct {
 	ctx context.Context
-	ApiService *StormControlApiService
+	ApiService *StormControlAPIService
 	networkId string
 }
 
-func (r StormControlApiGetNetworkSwitchStormControlRequest) Execute() (*GetNetworkSwitchStormControl200Response, *http.Response, error) {
+func (r StormControlAPIGetNetworkSwitchStormControlRequest) Execute() (*GetNetworkSwitchStormControl200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkSwitchStormControlExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the storm control configuration for a switch network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return StormControlApiGetNetworkSwitchStormControlRequest
+ @return StormControlAPIGetNetworkSwitchStormControlRequest
 */
-func (a *StormControlApiService) GetNetworkSwitchStormControl(ctx context.Context, networkId string) StormControlApiGetNetworkSwitchStormControlRequest {
-	return StormControlApiGetNetworkSwitchStormControlRequest{
+func (a *StormControlAPIService) GetNetworkSwitchStormControl(ctx context.Context, networkId string) StormControlAPIGetNetworkSwitchStormControlRequest {
+	return StormControlAPIGetNetworkSwitchStormControlRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *StormControlApiService) GetNetworkSwitchStormControl(ctx context.Contex
 
 // Execute executes the request
 //  @return GetNetworkSwitchStormControl200Response
-func (a *StormControlApiService) GetNetworkSwitchStormControlExecute(r StormControlApiGetNetworkSwitchStormControlRequest) (*GetNetworkSwitchStormControl200Response, *http.Response, error) {
+func (a *StormControlAPIService) GetNetworkSwitchStormControlExecute(r StormControlAPIGetNetworkSwitchStormControlRequest) (*GetNetworkSwitchStormControl200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *StormControlApiService) GetNetworkSwitchStormControlExecute(r StormCont
 		localVarReturnValue  *GetNetworkSwitchStormControl200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StormControlApiService.GetNetworkSwitchStormControl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StormControlAPIService.GetNetworkSwitchStormControl")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *StormControlApiService) GetNetworkSwitchStormControlExecute(r StormCont
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StormControlApiUpdateNetworkSwitchStormControlRequest struct {
+type StormControlAPIUpdateNetworkSwitchStormControlRequest struct {
 	ctx context.Context
-	ApiService *StormControlApiService
+	ApiService *StormControlAPIService
 	networkId string
 	updateNetworkSwitchStormControlRequest *UpdateNetworkSwitchStormControlRequest
 }
 
-func (r StormControlApiUpdateNetworkSwitchStormControlRequest) UpdateNetworkSwitchStormControlRequest(updateNetworkSwitchStormControlRequest UpdateNetworkSwitchStormControlRequest) StormControlApiUpdateNetworkSwitchStormControlRequest {
+func (r StormControlAPIUpdateNetworkSwitchStormControlRequest) UpdateNetworkSwitchStormControlRequest(updateNetworkSwitchStormControlRequest UpdateNetworkSwitchStormControlRequest) StormControlAPIUpdateNetworkSwitchStormControlRequest {
 	r.updateNetworkSwitchStormControlRequest = &updateNetworkSwitchStormControlRequest
 	return r
 }
 
-func (r StormControlApiUpdateNetworkSwitchStormControlRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r StormControlAPIUpdateNetworkSwitchStormControlRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSwitchStormControlExecute(r)
 }
 
@@ -163,10 +163,10 @@ Update the storm control configuration for a switch network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return StormControlApiUpdateNetworkSwitchStormControlRequest
+ @return StormControlAPIUpdateNetworkSwitchStormControlRequest
 */
-func (a *StormControlApiService) UpdateNetworkSwitchStormControl(ctx context.Context, networkId string) StormControlApiUpdateNetworkSwitchStormControlRequest {
-	return StormControlApiUpdateNetworkSwitchStormControlRequest{
+func (a *StormControlAPIService) UpdateNetworkSwitchStormControl(ctx context.Context, networkId string) StormControlAPIUpdateNetworkSwitchStormControlRequest {
+	return StormControlAPIUpdateNetworkSwitchStormControlRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -175,7 +175,7 @@ func (a *StormControlApiService) UpdateNetworkSwitchStormControl(ctx context.Con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *StormControlApiService) UpdateNetworkSwitchStormControlExecute(r StormControlApiUpdateNetworkSwitchStormControlRequest) (map[string]interface{}, *http.Response, error) {
+func (a *StormControlAPIService) UpdateNetworkSwitchStormControlExecute(r StormControlAPIUpdateNetworkSwitchStormControlRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *StormControlApiService) UpdateNetworkSwitchStormControlExecute(r StormC
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StormControlApiService.UpdateNetworkSwitchStormControl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StormControlAPIService.UpdateNetworkSwitchStormControl")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -20,16 +20,16 @@ import (
 )
 
 
-// LanApiService LanApi service
-type LanApiService service
+// LanAPIService LanAPI service
+type LanAPIService service
 
-type LanApiGetDeviceCellularGatewayLanRequest struct {
+type LanAPIGetDeviceCellularGatewayLanRequest struct {
 	ctx context.Context
-	ApiService *LanApiService
+	ApiService *LanAPIService
 	serial string
 }
 
-func (r LanApiGetDeviceCellularGatewayLanRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r LanAPIGetDeviceCellularGatewayLanRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCellularGatewayLanExecute(r)
 }
 
@@ -40,10 +40,10 @@ Show the LAN Settings of a MG
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return LanApiGetDeviceCellularGatewayLanRequest
+ @return LanAPIGetDeviceCellularGatewayLanRequest
 */
-func (a *LanApiService) GetDeviceCellularGatewayLan(ctx context.Context, serial string) LanApiGetDeviceCellularGatewayLanRequest {
-	return LanApiGetDeviceCellularGatewayLanRequest{
+func (a *LanAPIService) GetDeviceCellularGatewayLan(ctx context.Context, serial string) LanAPIGetDeviceCellularGatewayLanRequest {
+	return LanAPIGetDeviceCellularGatewayLanRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -52,7 +52,7 @@ func (a *LanApiService) GetDeviceCellularGatewayLan(ctx context.Context, serial 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *LanApiService) GetDeviceCellularGatewayLanExecute(r LanApiGetDeviceCellularGatewayLanRequest) (map[string]interface{}, *http.Response, error) {
+func (a *LanAPIService) GetDeviceCellularGatewayLanExecute(r LanAPIGetDeviceCellularGatewayLanRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *LanApiService) GetDeviceCellularGatewayLanExecute(r LanApiGetDeviceCell
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanApiService.GetDeviceCellularGatewayLan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanAPIService.GetDeviceCellularGatewayLan")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *LanApiService) GetDeviceCellularGatewayLanExecute(r LanApiGetDeviceCell
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type LanApiUpdateDeviceCellularGatewayLanRequest struct {
+type LanAPIUpdateDeviceCellularGatewayLanRequest struct {
 	ctx context.Context
-	ApiService *LanApiService
+	ApiService *LanAPIService
 	serial string
 	updateDeviceCellularGatewayLanRequest *UpdateDeviceCellularGatewayLanRequest
 }
 
-func (r LanApiUpdateDeviceCellularGatewayLanRequest) UpdateDeviceCellularGatewayLanRequest(updateDeviceCellularGatewayLanRequest UpdateDeviceCellularGatewayLanRequest) LanApiUpdateDeviceCellularGatewayLanRequest {
+func (r LanAPIUpdateDeviceCellularGatewayLanRequest) UpdateDeviceCellularGatewayLanRequest(updateDeviceCellularGatewayLanRequest UpdateDeviceCellularGatewayLanRequest) LanAPIUpdateDeviceCellularGatewayLanRequest {
 	r.updateDeviceCellularGatewayLanRequest = &updateDeviceCellularGatewayLanRequest
 	return r
 }
 
-func (r LanApiUpdateDeviceCellularGatewayLanRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r LanAPIUpdateDeviceCellularGatewayLanRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateDeviceCellularGatewayLanExecute(r)
 }
 
@@ -163,10 +163,10 @@ Update the LAN Settings for a single MG.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return LanApiUpdateDeviceCellularGatewayLanRequest
+ @return LanAPIUpdateDeviceCellularGatewayLanRequest
 */
-func (a *LanApiService) UpdateDeviceCellularGatewayLan(ctx context.Context, serial string) LanApiUpdateDeviceCellularGatewayLanRequest {
-	return LanApiUpdateDeviceCellularGatewayLanRequest{
+func (a *LanAPIService) UpdateDeviceCellularGatewayLan(ctx context.Context, serial string) LanAPIUpdateDeviceCellularGatewayLanRequest {
+	return LanAPIUpdateDeviceCellularGatewayLanRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -175,7 +175,7 @@ func (a *LanApiService) UpdateDeviceCellularGatewayLan(ctx context.Context, seri
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *LanApiService) UpdateDeviceCellularGatewayLanExecute(r LanApiUpdateDeviceCellularGatewayLanRequest) (map[string]interface{}, *http.Response, error) {
+func (a *LanAPIService) UpdateDeviceCellularGatewayLanExecute(r LanAPIUpdateDeviceCellularGatewayLanRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *LanApiService) UpdateDeviceCellularGatewayLanExecute(r LanApiUpdateDevi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanApiService.UpdateDeviceCellularGatewayLan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanAPIService.UpdateDeviceCellularGatewayLan")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

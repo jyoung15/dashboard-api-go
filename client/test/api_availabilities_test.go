@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing AvailabilitiesApiService
+Testing AvailabilitiesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_AvailabilitiesApiService(t *testing.T) {
+func Test_client_AvailabilitiesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test AvailabilitiesApiService GetOrganizationDevicesAvailabilities", func(t *testing.T) {
+	t.Run("Test AvailabilitiesAPIService GetOrganizationDevicesAvailabilities", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.AvailabilitiesApi.GetOrganizationDevicesAvailabilities(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.AvailabilitiesAPI.GetOrganizationDevicesAvailabilities(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_AvailabilitiesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AvailabilitiesApiService GetOrganizationDevicesAvailabilitiesChangeHistory", func(t *testing.T) {
+	t.Run("Test AvailabilitiesAPIService GetOrganizationDevicesAvailabilitiesChangeHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.AvailabilitiesApi.GetOrganizationDevicesAvailabilitiesChangeHistory(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.AvailabilitiesAPI.GetOrganizationDevicesAvailabilitiesChangeHistory(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

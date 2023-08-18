@@ -20,16 +20,16 @@ import (
 )
 
 
-// StatusApiService StatusApi service
-type StatusApiService service
+// StatusAPIService StatusAPI service
+type StatusAPIService service
 
-type StatusApiGetDeviceWirelessStatusRequest struct {
+type StatusAPIGetDeviceWirelessStatusRequest struct {
 	ctx context.Context
-	ApiService *StatusApiService
+	ApiService *StatusAPIService
 	serial string
 }
 
-func (r StatusApiGetDeviceWirelessStatusRequest) Execute() (*GetDeviceWirelessStatus200Response, *http.Response, error) {
+func (r StatusAPIGetDeviceWirelessStatusRequest) Execute() (*GetDeviceWirelessStatus200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceWirelessStatusExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the SSID statuses of an access point
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return StatusApiGetDeviceWirelessStatusRequest
+ @return StatusAPIGetDeviceWirelessStatusRequest
 */
-func (a *StatusApiService) GetDeviceWirelessStatus(ctx context.Context, serial string) StatusApiGetDeviceWirelessStatusRequest {
-	return StatusApiGetDeviceWirelessStatusRequest{
+func (a *StatusAPIService) GetDeviceWirelessStatus(ctx context.Context, serial string) StatusAPIGetDeviceWirelessStatusRequest {
+	return StatusAPIGetDeviceWirelessStatusRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -52,7 +52,7 @@ func (a *StatusApiService) GetDeviceWirelessStatus(ctx context.Context, serial s
 
 // Execute executes the request
 //  @return GetDeviceWirelessStatus200Response
-func (a *StatusApiService) GetDeviceWirelessStatusExecute(r StatusApiGetDeviceWirelessStatusRequest) (*GetDeviceWirelessStatus200Response, *http.Response, error) {
+func (a *StatusAPIService) GetDeviceWirelessStatusExecute(r StatusAPIGetDeviceWirelessStatusRequest) (*GetDeviceWirelessStatus200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *StatusApiService) GetDeviceWirelessStatusExecute(r StatusApiGetDeviceWi
 		localVarReturnValue  *GetDeviceWirelessStatus200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusApiService.GetDeviceWirelessStatus")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusAPIService.GetDeviceWirelessStatus")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

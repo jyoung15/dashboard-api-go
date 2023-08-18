@@ -20,12 +20,12 @@ import (
 )
 
 
-// ConfigurationChangesApiService ConfigurationChangesApi service
-type ConfigurationChangesApiService service
+// ConfigurationChangesAPIService ConfigurationChangesAPI service
+type ConfigurationChangesAPIService service
 
-type ConfigurationChangesApiGetOrganizationConfigurationChangesRequest struct {
+type ConfigurationChangesAPIGetOrganizationConfigurationChangesRequest struct {
 	ctx context.Context
-	ApiService *ConfigurationChangesApiService
+	ApiService *ConfigurationChangesAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -38,54 +38,54 @@ type ConfigurationChangesApiGetOrganizationConfigurationChangesRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 365 days from today.
-func (r ConfigurationChangesApiGetOrganizationConfigurationChangesRequest) T0(t0 string) ConfigurationChangesApiGetOrganizationConfigurationChangesRequest {
+func (r ConfigurationChangesAPIGetOrganizationConfigurationChangesRequest) T0(t0 string) ConfigurationChangesAPIGetOrganizationConfigurationChangesRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 365 days after t0.
-func (r ConfigurationChangesApiGetOrganizationConfigurationChangesRequest) T1(t1 string) ConfigurationChangesApiGetOrganizationConfigurationChangesRequest {
+func (r ConfigurationChangesAPIGetOrganizationConfigurationChangesRequest) T1(t1 string) ConfigurationChangesAPIGetOrganizationConfigurationChangesRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 365 days. The default is 365 days.
-func (r ConfigurationChangesApiGetOrganizationConfigurationChangesRequest) Timespan(timespan float32) ConfigurationChangesApiGetOrganizationConfigurationChangesRequest {
+func (r ConfigurationChangesAPIGetOrganizationConfigurationChangesRequest) Timespan(timespan float32) ConfigurationChangesAPIGetOrganizationConfigurationChangesRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 5000. Default is 5000.
-func (r ConfigurationChangesApiGetOrganizationConfigurationChangesRequest) PerPage(perPage int32) ConfigurationChangesApiGetOrganizationConfigurationChangesRequest {
+func (r ConfigurationChangesAPIGetOrganizationConfigurationChangesRequest) PerPage(perPage int32) ConfigurationChangesAPIGetOrganizationConfigurationChangesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ConfigurationChangesApiGetOrganizationConfigurationChangesRequest) StartingAfter(startingAfter string) ConfigurationChangesApiGetOrganizationConfigurationChangesRequest {
+func (r ConfigurationChangesAPIGetOrganizationConfigurationChangesRequest) StartingAfter(startingAfter string) ConfigurationChangesAPIGetOrganizationConfigurationChangesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r ConfigurationChangesApiGetOrganizationConfigurationChangesRequest) EndingBefore(endingBefore string) ConfigurationChangesApiGetOrganizationConfigurationChangesRequest {
+func (r ConfigurationChangesAPIGetOrganizationConfigurationChangesRequest) EndingBefore(endingBefore string) ConfigurationChangesAPIGetOrganizationConfigurationChangesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Filters on the given network
-func (r ConfigurationChangesApiGetOrganizationConfigurationChangesRequest) NetworkId(networkId string) ConfigurationChangesApiGetOrganizationConfigurationChangesRequest {
+func (r ConfigurationChangesAPIGetOrganizationConfigurationChangesRequest) NetworkId(networkId string) ConfigurationChangesAPIGetOrganizationConfigurationChangesRequest {
 	r.networkId = &networkId
 	return r
 }
 
 // Filters on the given Admin
-func (r ConfigurationChangesApiGetOrganizationConfigurationChangesRequest) AdminId(adminId string) ConfigurationChangesApiGetOrganizationConfigurationChangesRequest {
+func (r ConfigurationChangesAPIGetOrganizationConfigurationChangesRequest) AdminId(adminId string) ConfigurationChangesAPIGetOrganizationConfigurationChangesRequest {
 	r.adminId = &adminId
 	return r
 }
 
-func (r ConfigurationChangesApiGetOrganizationConfigurationChangesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r ConfigurationChangesAPIGetOrganizationConfigurationChangesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationConfigurationChangesExecute(r)
 }
 
@@ -96,10 +96,10 @@ View the Change Log for your organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ConfigurationChangesApiGetOrganizationConfigurationChangesRequest
+ @return ConfigurationChangesAPIGetOrganizationConfigurationChangesRequest
 */
-func (a *ConfigurationChangesApiService) GetOrganizationConfigurationChanges(ctx context.Context, organizationId string) ConfigurationChangesApiGetOrganizationConfigurationChangesRequest {
-	return ConfigurationChangesApiGetOrganizationConfigurationChangesRequest{
+func (a *ConfigurationChangesAPIService) GetOrganizationConfigurationChanges(ctx context.Context, organizationId string) ConfigurationChangesAPIGetOrganizationConfigurationChangesRequest {
+	return ConfigurationChangesAPIGetOrganizationConfigurationChangesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -108,7 +108,7 @@ func (a *ConfigurationChangesApiService) GetOrganizationConfigurationChanges(ctx
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *ConfigurationChangesApiService) GetOrganizationConfigurationChangesExecute(r ConfigurationChangesApiGetOrganizationConfigurationChangesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *ConfigurationChangesAPIService) GetOrganizationConfigurationChangesExecute(r ConfigurationChangesAPIGetOrganizationConfigurationChangesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -116,7 +116,7 @@ func (a *ConfigurationChangesApiService) GetOrganizationConfigurationChangesExec
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigurationChangesApiService.GetOrganizationConfigurationChanges")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigurationChangesAPIService.GetOrganizationConfigurationChanges")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

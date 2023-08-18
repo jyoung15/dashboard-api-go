@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing BluetoothClientsApiService
+Testing BluetoothClientsAPIService
 
 */
 
@@ -17,19 +17,19 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_BluetoothClientsApiService(t *testing.T) {
+func Test_client_BluetoothClientsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test BluetoothClientsApiService GetNetworkBluetoothClient", func(t *testing.T) {
+	t.Run("Test BluetoothClientsAPIService GetNetworkBluetoothClient", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var bluetoothClientId string
 
-		resp, httpRes, err := apiClient.BluetoothClientsApi.GetNetworkBluetoothClient(context.Background(), networkId, bluetoothClientId).Execute()
+		resp, httpRes, err := apiClient.BluetoothClientsAPI.GetNetworkBluetoothClient(context.Background(), networkId, bluetoothClientId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -37,13 +37,13 @@ func Test_client_BluetoothClientsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test BluetoothClientsApiService GetNetworkBluetoothClients", func(t *testing.T) {
+	t.Run("Test BluetoothClientsAPIService GetNetworkBluetoothClients", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.BluetoothClientsApi.GetNetworkBluetoothClients(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.BluetoothClientsAPI.GetNetworkBluetoothClients(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

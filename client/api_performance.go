@@ -20,16 +20,16 @@ import (
 )
 
 
-// PerformanceApiService PerformanceApi service
-type PerformanceApiService service
+// PerformanceAPIService PerformanceAPI service
+type PerformanceAPIService service
 
-type PerformanceApiGetDeviceAppliancePerformanceRequest struct {
+type PerformanceAPIGetDeviceAppliancePerformanceRequest struct {
 	ctx context.Context
-	ApiService *PerformanceApiService
+	ApiService *PerformanceAPIService
 	serial string
 }
 
-func (r PerformanceApiGetDeviceAppliancePerformanceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r PerformanceAPIGetDeviceAppliancePerformanceRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceAppliancePerformanceExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return the performance score for a single MX. Only primary MX devices supported.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return PerformanceApiGetDeviceAppliancePerformanceRequest
+ @return PerformanceAPIGetDeviceAppliancePerformanceRequest
 */
-func (a *PerformanceApiService) GetDeviceAppliancePerformance(ctx context.Context, serial string) PerformanceApiGetDeviceAppliancePerformanceRequest {
-	return PerformanceApiGetDeviceAppliancePerformanceRequest{
+func (a *PerformanceAPIService) GetDeviceAppliancePerformance(ctx context.Context, serial string) PerformanceAPIGetDeviceAppliancePerformanceRequest {
+	return PerformanceAPIGetDeviceAppliancePerformanceRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -52,7 +52,7 @@ func (a *PerformanceApiService) GetDeviceAppliancePerformance(ctx context.Contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PerformanceApiService) GetDeviceAppliancePerformanceExecute(r PerformanceApiGetDeviceAppliancePerformanceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PerformanceAPIService) GetDeviceAppliancePerformanceExecute(r PerformanceAPIGetDeviceAppliancePerformanceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *PerformanceApiService) GetDeviceAppliancePerformanceExecute(r Performan
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PerformanceApiService.GetDeviceAppliancePerformance")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PerformanceAPIService.GetDeviceAppliancePerformance")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing BandwidthUsageHistoryApiService
+Testing BandwidthUsageHistoryAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_BandwidthUsageHistoryApiService(t *testing.T) {
+func Test_client_BandwidthUsageHistoryAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test BandwidthUsageHistoryApiService GetNetworkClientsBandwidthUsageHistory", func(t *testing.T) {
+	t.Run("Test BandwidthUsageHistoryAPIService GetNetworkClientsBandwidthUsageHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.BandwidthUsageHistoryApi.GetNetworkClientsBandwidthUsageHistory(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.BandwidthUsageHistoryAPI.GetNetworkClientsBandwidthUsageHistory(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_BandwidthUsageHistoryApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test BandwidthUsageHistoryApiService GetOrganizationClientsBandwidthUsageHistory", func(t *testing.T) {
+	t.Run("Test BandwidthUsageHistoryAPIService GetOrganizationClientsBandwidthUsageHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.BandwidthUsageHistoryApi.GetOrganizationClientsBandwidthUsageHistory(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.BandwidthUsageHistoryAPI.GetOrganizationClientsBandwidthUsageHistory(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

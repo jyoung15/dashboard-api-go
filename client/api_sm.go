@@ -21,22 +21,22 @@ import (
 )
 
 
-// SmApiService SmApi service
-type SmApiService service
+// SmAPIService SmAPI service
+type SmAPIService service
 
-type SmApiCheckinNetworkSmDevicesRequest struct {
+type SmAPICheckinNetworkSmDevicesRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	checkinNetworkSmDevicesRequest *CheckinNetworkSmDevicesRequest
 }
 
-func (r SmApiCheckinNetworkSmDevicesRequest) CheckinNetworkSmDevicesRequest(checkinNetworkSmDevicesRequest CheckinNetworkSmDevicesRequest) SmApiCheckinNetworkSmDevicesRequest {
+func (r SmAPICheckinNetworkSmDevicesRequest) CheckinNetworkSmDevicesRequest(checkinNetworkSmDevicesRequest CheckinNetworkSmDevicesRequest) SmAPICheckinNetworkSmDevicesRequest {
 	r.checkinNetworkSmDevicesRequest = &checkinNetworkSmDevicesRequest
 	return r
 }
 
-func (r SmApiCheckinNetworkSmDevicesRequest) Execute() (*CheckinNetworkSmDevices200Response, *http.Response, error) {
+func (r SmAPICheckinNetworkSmDevicesRequest) Execute() (*CheckinNetworkSmDevices200Response, *http.Response, error) {
 	return r.ApiService.CheckinNetworkSmDevicesExecute(r)
 }
 
@@ -47,10 +47,10 @@ Force check-in a set of devices
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SmApiCheckinNetworkSmDevicesRequest
+ @return SmAPICheckinNetworkSmDevicesRequest
 */
-func (a *SmApiService) CheckinNetworkSmDevices(ctx context.Context, networkId string) SmApiCheckinNetworkSmDevicesRequest {
-	return SmApiCheckinNetworkSmDevicesRequest{
+func (a *SmAPIService) CheckinNetworkSmDevices(ctx context.Context, networkId string) SmAPICheckinNetworkSmDevicesRequest {
+	return SmAPICheckinNetworkSmDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -59,7 +59,7 @@ func (a *SmApiService) CheckinNetworkSmDevices(ctx context.Context, networkId st
 
 // Execute executes the request
 //  @return CheckinNetworkSmDevices200Response
-func (a *SmApiService) CheckinNetworkSmDevicesExecute(r SmApiCheckinNetworkSmDevicesRequest) (*CheckinNetworkSmDevices200Response, *http.Response, error) {
+func (a *SmAPIService) CheckinNetworkSmDevicesExecute(r SmAPICheckinNetworkSmDevicesRequest) (*CheckinNetworkSmDevices200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -67,7 +67,7 @@ func (a *SmApiService) CheckinNetworkSmDevicesExecute(r SmApiCheckinNetworkSmDev
 		localVarReturnValue  *CheckinNetworkSmDevices200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.CheckinNetworkSmDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.CheckinNetworkSmDevices")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -149,19 +149,19 @@ func (a *SmApiService) CheckinNetworkSmDevicesExecute(r SmApiCheckinNetworkSmDev
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiCreateNetworkSmBypassActivationLockAttemptRequest struct {
+type SmAPICreateNetworkSmBypassActivationLockAttemptRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	createNetworkSmBypassActivationLockAttemptRequest *CreateNetworkSmBypassActivationLockAttemptRequest
 }
 
-func (r SmApiCreateNetworkSmBypassActivationLockAttemptRequest) CreateNetworkSmBypassActivationLockAttemptRequest(createNetworkSmBypassActivationLockAttemptRequest CreateNetworkSmBypassActivationLockAttemptRequest) SmApiCreateNetworkSmBypassActivationLockAttemptRequest {
+func (r SmAPICreateNetworkSmBypassActivationLockAttemptRequest) CreateNetworkSmBypassActivationLockAttemptRequest(createNetworkSmBypassActivationLockAttemptRequest CreateNetworkSmBypassActivationLockAttemptRequest) SmAPICreateNetworkSmBypassActivationLockAttemptRequest {
 	r.createNetworkSmBypassActivationLockAttemptRequest = &createNetworkSmBypassActivationLockAttemptRequest
 	return r
 }
 
-func (r SmApiCreateNetworkSmBypassActivationLockAttemptRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SmAPICreateNetworkSmBypassActivationLockAttemptRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkSmBypassActivationLockAttemptExecute(r)
 }
 
@@ -172,10 +172,10 @@ Bypass activation lock attempt
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SmApiCreateNetworkSmBypassActivationLockAttemptRequest
+ @return SmAPICreateNetworkSmBypassActivationLockAttemptRequest
 */
-func (a *SmApiService) CreateNetworkSmBypassActivationLockAttempt(ctx context.Context, networkId string) SmApiCreateNetworkSmBypassActivationLockAttemptRequest {
-	return SmApiCreateNetworkSmBypassActivationLockAttemptRequest{
+func (a *SmAPIService) CreateNetworkSmBypassActivationLockAttempt(ctx context.Context, networkId string) SmAPICreateNetworkSmBypassActivationLockAttemptRequest {
+	return SmAPICreateNetworkSmBypassActivationLockAttemptRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -184,7 +184,7 @@ func (a *SmApiService) CreateNetworkSmBypassActivationLockAttempt(ctx context.Co
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SmApiService) CreateNetworkSmBypassActivationLockAttemptExecute(r SmApiCreateNetworkSmBypassActivationLockAttemptRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SmAPIService) CreateNetworkSmBypassActivationLockAttemptExecute(r SmAPICreateNetworkSmBypassActivationLockAttemptRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -192,7 +192,7 @@ func (a *SmApiService) CreateNetworkSmBypassActivationLockAttemptExecute(r SmApi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.CreateNetworkSmBypassActivationLockAttempt")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.CreateNetworkSmBypassActivationLockAttempt")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -277,19 +277,19 @@ func (a *SmApiService) CreateNetworkSmBypassActivationLockAttemptExecute(r SmApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiCreateNetworkSmTargetGroupRequest struct {
+type SmAPICreateNetworkSmTargetGroupRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	createNetworkSmTargetGroupRequest *CreateNetworkSmTargetGroupRequest
 }
 
-func (r SmApiCreateNetworkSmTargetGroupRequest) CreateNetworkSmTargetGroupRequest(createNetworkSmTargetGroupRequest CreateNetworkSmTargetGroupRequest) SmApiCreateNetworkSmTargetGroupRequest {
+func (r SmAPICreateNetworkSmTargetGroupRequest) CreateNetworkSmTargetGroupRequest(createNetworkSmTargetGroupRequest CreateNetworkSmTargetGroupRequest) SmAPICreateNetworkSmTargetGroupRequest {
 	r.createNetworkSmTargetGroupRequest = &createNetworkSmTargetGroupRequest
 	return r
 }
 
-func (r SmApiCreateNetworkSmTargetGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SmAPICreateNetworkSmTargetGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkSmTargetGroupExecute(r)
 }
 
@@ -300,10 +300,10 @@ Add a target group
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SmApiCreateNetworkSmTargetGroupRequest
+ @return SmAPICreateNetworkSmTargetGroupRequest
 */
-func (a *SmApiService) CreateNetworkSmTargetGroup(ctx context.Context, networkId string) SmApiCreateNetworkSmTargetGroupRequest {
-	return SmApiCreateNetworkSmTargetGroupRequest{
+func (a *SmAPIService) CreateNetworkSmTargetGroup(ctx context.Context, networkId string) SmAPICreateNetworkSmTargetGroupRequest {
+	return SmAPICreateNetworkSmTargetGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -312,7 +312,7 @@ func (a *SmApiService) CreateNetworkSmTargetGroup(ctx context.Context, networkId
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SmApiService) CreateNetworkSmTargetGroupExecute(r SmApiCreateNetworkSmTargetGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SmAPIService) CreateNetworkSmTargetGroupExecute(r SmAPICreateNetworkSmTargetGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -320,7 +320,7 @@ func (a *SmApiService) CreateNetworkSmTargetGroupExecute(r SmApiCreateNetworkSmT
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.CreateNetworkSmTargetGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.CreateNetworkSmTargetGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -402,14 +402,14 @@ func (a *SmApiService) CreateNetworkSmTargetGroupExecute(r SmApiCreateNetworkSmT
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiDeleteNetworkSmTargetGroupRequest struct {
+type SmAPIDeleteNetworkSmTargetGroupRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	targetGroupId string
 }
 
-func (r SmApiDeleteNetworkSmTargetGroupRequest) Execute() (*http.Response, error) {
+func (r SmAPIDeleteNetworkSmTargetGroupRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkSmTargetGroupExecute(r)
 }
 
@@ -421,10 +421,10 @@ Delete a target group from a network
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param targetGroupId Target group ID
- @return SmApiDeleteNetworkSmTargetGroupRequest
+ @return SmAPIDeleteNetworkSmTargetGroupRequest
 */
-func (a *SmApiService) DeleteNetworkSmTargetGroup(ctx context.Context, networkId string, targetGroupId string) SmApiDeleteNetworkSmTargetGroupRequest {
-	return SmApiDeleteNetworkSmTargetGroupRequest{
+func (a *SmAPIService) DeleteNetworkSmTargetGroup(ctx context.Context, networkId string, targetGroupId string) SmAPIDeleteNetworkSmTargetGroupRequest {
+	return SmAPIDeleteNetworkSmTargetGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -433,14 +433,14 @@ func (a *SmApiService) DeleteNetworkSmTargetGroup(ctx context.Context, networkId
 }
 
 // Execute executes the request
-func (a *SmApiService) DeleteNetworkSmTargetGroupExecute(r SmApiDeleteNetworkSmTargetGroupRequest) (*http.Response, error) {
+func (a *SmAPIService) DeleteNetworkSmTargetGroupExecute(r SmAPIDeleteNetworkSmTargetGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.DeleteNetworkSmTargetGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.DeleteNetworkSmTargetGroup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -512,14 +512,14 @@ func (a *SmApiService) DeleteNetworkSmTargetGroupExecute(r SmApiDeleteNetworkSmT
 	return localVarHTTPResponse, nil
 }
 
-type SmApiDeleteNetworkSmUserAccessDeviceRequest struct {
+type SmAPIDeleteNetworkSmUserAccessDeviceRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	userAccessDeviceId string
 }
 
-func (r SmApiDeleteNetworkSmUserAccessDeviceRequest) Execute() (*http.Response, error) {
+func (r SmAPIDeleteNetworkSmUserAccessDeviceRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkSmUserAccessDeviceExecute(r)
 }
 
@@ -531,10 +531,10 @@ Delete a User Access Device
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param userAccessDeviceId User access device ID
- @return SmApiDeleteNetworkSmUserAccessDeviceRequest
+ @return SmAPIDeleteNetworkSmUserAccessDeviceRequest
 */
-func (a *SmApiService) DeleteNetworkSmUserAccessDevice(ctx context.Context, networkId string, userAccessDeviceId string) SmApiDeleteNetworkSmUserAccessDeviceRequest {
-	return SmApiDeleteNetworkSmUserAccessDeviceRequest{
+func (a *SmAPIService) DeleteNetworkSmUserAccessDevice(ctx context.Context, networkId string, userAccessDeviceId string) SmAPIDeleteNetworkSmUserAccessDeviceRequest {
+	return SmAPIDeleteNetworkSmUserAccessDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -543,14 +543,14 @@ func (a *SmApiService) DeleteNetworkSmUserAccessDevice(ctx context.Context, netw
 }
 
 // Execute executes the request
-func (a *SmApiService) DeleteNetworkSmUserAccessDeviceExecute(r SmApiDeleteNetworkSmUserAccessDeviceRequest) (*http.Response, error) {
+func (a *SmAPIService) DeleteNetworkSmUserAccessDeviceExecute(r SmAPIDeleteNetworkSmUserAccessDeviceRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.DeleteNetworkSmUserAccessDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.DeleteNetworkSmUserAccessDevice")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -622,14 +622,14 @@ func (a *SmApiService) DeleteNetworkSmUserAccessDeviceExecute(r SmApiDeleteNetwo
 	return localVarHTTPResponse, nil
 }
 
-type SmApiGetNetworkSmBypassActivationLockAttemptRequest struct {
+type SmAPIGetNetworkSmBypassActivationLockAttemptRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	attemptId string
 }
 
-func (r SmApiGetNetworkSmBypassActivationLockAttemptRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SmAPIGetNetworkSmBypassActivationLockAttemptRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSmBypassActivationLockAttemptExecute(r)
 }
 
@@ -641,10 +641,10 @@ Bypass activation lock attempt status
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param attemptId Attempt ID
- @return SmApiGetNetworkSmBypassActivationLockAttemptRequest
+ @return SmAPIGetNetworkSmBypassActivationLockAttemptRequest
 */
-func (a *SmApiService) GetNetworkSmBypassActivationLockAttempt(ctx context.Context, networkId string, attemptId string) SmApiGetNetworkSmBypassActivationLockAttemptRequest {
-	return SmApiGetNetworkSmBypassActivationLockAttemptRequest{
+func (a *SmAPIService) GetNetworkSmBypassActivationLockAttempt(ctx context.Context, networkId string, attemptId string) SmAPIGetNetworkSmBypassActivationLockAttemptRequest {
+	return SmAPIGetNetworkSmBypassActivationLockAttemptRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -654,7 +654,7 @@ func (a *SmApiService) GetNetworkSmBypassActivationLockAttempt(ctx context.Conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SmApiService) GetNetworkSmBypassActivationLockAttemptExecute(r SmApiGetNetworkSmBypassActivationLockAttemptRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SmAPIService) GetNetworkSmBypassActivationLockAttemptExecute(r SmAPIGetNetworkSmBypassActivationLockAttemptRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -662,7 +662,7 @@ func (a *SmApiService) GetNetworkSmBypassActivationLockAttemptExecute(r SmApiGet
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.GetNetworkSmBypassActivationLockAttempt")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.GetNetworkSmBypassActivationLockAttempt")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -743,14 +743,14 @@ func (a *SmApiService) GetNetworkSmBypassActivationLockAttemptExecute(r SmApiGet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiGetNetworkSmDeviceCellularUsageHistoryRequest struct {
+type SmAPIGetNetworkSmDeviceCellularUsageHistoryRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	deviceId string
 }
 
-func (r SmApiGetNetworkSmDeviceCellularUsageHistoryRequest) Execute() ([]GetNetworkSmDeviceCellularUsageHistory200ResponseInner, *http.Response, error) {
+func (r SmAPIGetNetworkSmDeviceCellularUsageHistoryRequest) Execute() ([]GetNetworkSmDeviceCellularUsageHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceCellularUsageHistoryExecute(r)
 }
 
@@ -762,10 +762,10 @@ Return the client's daily cellular data usage history. Usage data is in kilobyte
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return SmApiGetNetworkSmDeviceCellularUsageHistoryRequest
+ @return SmAPIGetNetworkSmDeviceCellularUsageHistoryRequest
 */
-func (a *SmApiService) GetNetworkSmDeviceCellularUsageHistory(ctx context.Context, networkId string, deviceId string) SmApiGetNetworkSmDeviceCellularUsageHistoryRequest {
-	return SmApiGetNetworkSmDeviceCellularUsageHistoryRequest{
+func (a *SmAPIService) GetNetworkSmDeviceCellularUsageHistory(ctx context.Context, networkId string, deviceId string) SmAPIGetNetworkSmDeviceCellularUsageHistoryRequest {
+	return SmAPIGetNetworkSmDeviceCellularUsageHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -775,7 +775,7 @@ func (a *SmApiService) GetNetworkSmDeviceCellularUsageHistory(ctx context.Contex
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceCellularUsageHistory200ResponseInner
-func (a *SmApiService) GetNetworkSmDeviceCellularUsageHistoryExecute(r SmApiGetNetworkSmDeviceCellularUsageHistoryRequest) ([]GetNetworkSmDeviceCellularUsageHistory200ResponseInner, *http.Response, error) {
+func (a *SmAPIService) GetNetworkSmDeviceCellularUsageHistoryExecute(r SmAPIGetNetworkSmDeviceCellularUsageHistoryRequest) ([]GetNetworkSmDeviceCellularUsageHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -783,7 +783,7 @@ func (a *SmApiService) GetNetworkSmDeviceCellularUsageHistoryExecute(r SmApiGetN
 		localVarReturnValue  []GetNetworkSmDeviceCellularUsageHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.GetNetworkSmDeviceCellularUsageHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.GetNetworkSmDeviceCellularUsageHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -864,14 +864,14 @@ func (a *SmApiService) GetNetworkSmDeviceCellularUsageHistoryExecute(r SmApiGetN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiGetNetworkSmDeviceCertsRequest struct {
+type SmAPIGetNetworkSmDeviceCertsRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	deviceId string
 }
 
-func (r SmApiGetNetworkSmDeviceCertsRequest) Execute() ([]GetNetworkSmDeviceCerts200ResponseInner, *http.Response, error) {
+func (r SmAPIGetNetworkSmDeviceCertsRequest) Execute() ([]GetNetworkSmDeviceCerts200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceCertsExecute(r)
 }
 
@@ -883,10 +883,10 @@ List the certs on a device
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return SmApiGetNetworkSmDeviceCertsRequest
+ @return SmAPIGetNetworkSmDeviceCertsRequest
 */
-func (a *SmApiService) GetNetworkSmDeviceCerts(ctx context.Context, networkId string, deviceId string) SmApiGetNetworkSmDeviceCertsRequest {
-	return SmApiGetNetworkSmDeviceCertsRequest{
+func (a *SmAPIService) GetNetworkSmDeviceCerts(ctx context.Context, networkId string, deviceId string) SmAPIGetNetworkSmDeviceCertsRequest {
+	return SmAPIGetNetworkSmDeviceCertsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -896,7 +896,7 @@ func (a *SmApiService) GetNetworkSmDeviceCerts(ctx context.Context, networkId st
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceCerts200ResponseInner
-func (a *SmApiService) GetNetworkSmDeviceCertsExecute(r SmApiGetNetworkSmDeviceCertsRequest) ([]GetNetworkSmDeviceCerts200ResponseInner, *http.Response, error) {
+func (a *SmAPIService) GetNetworkSmDeviceCertsExecute(r SmAPIGetNetworkSmDeviceCertsRequest) ([]GetNetworkSmDeviceCerts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -904,7 +904,7 @@ func (a *SmApiService) GetNetworkSmDeviceCertsExecute(r SmApiGetNetworkSmDeviceC
 		localVarReturnValue  []GetNetworkSmDeviceCerts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.GetNetworkSmDeviceCerts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.GetNetworkSmDeviceCerts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -985,9 +985,9 @@ func (a *SmApiService) GetNetworkSmDeviceCertsExecute(r SmApiGetNetworkSmDeviceC
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiGetNetworkSmDeviceConnectivityRequest struct {
+type SmAPIGetNetworkSmDeviceConnectivityRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	deviceId string
 	perPage *int32
@@ -996,24 +996,24 @@ type SmApiGetNetworkSmDeviceConnectivityRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r SmApiGetNetworkSmDeviceConnectivityRequest) PerPage(perPage int32) SmApiGetNetworkSmDeviceConnectivityRequest {
+func (r SmAPIGetNetworkSmDeviceConnectivityRequest) PerPage(perPage int32) SmAPIGetNetworkSmDeviceConnectivityRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SmApiGetNetworkSmDeviceConnectivityRequest) StartingAfter(startingAfter string) SmApiGetNetworkSmDeviceConnectivityRequest {
+func (r SmAPIGetNetworkSmDeviceConnectivityRequest) StartingAfter(startingAfter string) SmAPIGetNetworkSmDeviceConnectivityRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SmApiGetNetworkSmDeviceConnectivityRequest) EndingBefore(endingBefore string) SmApiGetNetworkSmDeviceConnectivityRequest {
+func (r SmAPIGetNetworkSmDeviceConnectivityRequest) EndingBefore(endingBefore string) SmAPIGetNetworkSmDeviceConnectivityRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r SmApiGetNetworkSmDeviceConnectivityRequest) Execute() ([]GetNetworkSmDeviceConnectivity200ResponseInner, *http.Response, error) {
+func (r SmAPIGetNetworkSmDeviceConnectivityRequest) Execute() ([]GetNetworkSmDeviceConnectivity200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceConnectivityExecute(r)
 }
 
@@ -1025,10 +1025,10 @@ Returns historical connectivity data (whether a device is regularly checking in 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return SmApiGetNetworkSmDeviceConnectivityRequest
+ @return SmAPIGetNetworkSmDeviceConnectivityRequest
 */
-func (a *SmApiService) GetNetworkSmDeviceConnectivity(ctx context.Context, networkId string, deviceId string) SmApiGetNetworkSmDeviceConnectivityRequest {
-	return SmApiGetNetworkSmDeviceConnectivityRequest{
+func (a *SmAPIService) GetNetworkSmDeviceConnectivity(ctx context.Context, networkId string, deviceId string) SmAPIGetNetworkSmDeviceConnectivityRequest {
+	return SmAPIGetNetworkSmDeviceConnectivityRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1038,7 +1038,7 @@ func (a *SmApiService) GetNetworkSmDeviceConnectivity(ctx context.Context, netwo
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceConnectivity200ResponseInner
-func (a *SmApiService) GetNetworkSmDeviceConnectivityExecute(r SmApiGetNetworkSmDeviceConnectivityRequest) ([]GetNetworkSmDeviceConnectivity200ResponseInner, *http.Response, error) {
+func (a *SmAPIService) GetNetworkSmDeviceConnectivityExecute(r SmAPIGetNetworkSmDeviceConnectivityRequest) ([]GetNetworkSmDeviceConnectivity200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1046,7 +1046,7 @@ func (a *SmApiService) GetNetworkSmDeviceConnectivityExecute(r SmApiGetNetworkSm
 		localVarReturnValue  []GetNetworkSmDeviceConnectivity200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.GetNetworkSmDeviceConnectivity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.GetNetworkSmDeviceConnectivity")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1136,9 +1136,9 @@ func (a *SmApiService) GetNetworkSmDeviceConnectivityExecute(r SmApiGetNetworkSm
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiGetNetworkSmDeviceDesktopLogsRequest struct {
+type SmAPIGetNetworkSmDeviceDesktopLogsRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	deviceId string
 	perPage *int32
@@ -1147,24 +1147,24 @@ type SmApiGetNetworkSmDeviceDesktopLogsRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r SmApiGetNetworkSmDeviceDesktopLogsRequest) PerPage(perPage int32) SmApiGetNetworkSmDeviceDesktopLogsRequest {
+func (r SmAPIGetNetworkSmDeviceDesktopLogsRequest) PerPage(perPage int32) SmAPIGetNetworkSmDeviceDesktopLogsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SmApiGetNetworkSmDeviceDesktopLogsRequest) StartingAfter(startingAfter string) SmApiGetNetworkSmDeviceDesktopLogsRequest {
+func (r SmAPIGetNetworkSmDeviceDesktopLogsRequest) StartingAfter(startingAfter string) SmAPIGetNetworkSmDeviceDesktopLogsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SmApiGetNetworkSmDeviceDesktopLogsRequest) EndingBefore(endingBefore string) SmApiGetNetworkSmDeviceDesktopLogsRequest {
+func (r SmAPIGetNetworkSmDeviceDesktopLogsRequest) EndingBefore(endingBefore string) SmAPIGetNetworkSmDeviceDesktopLogsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r SmApiGetNetworkSmDeviceDesktopLogsRequest) Execute() ([]GetNetworkSmDeviceDesktopLogs200ResponseInner, *http.Response, error) {
+func (r SmAPIGetNetworkSmDeviceDesktopLogsRequest) Execute() ([]GetNetworkSmDeviceDesktopLogs200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceDesktopLogsExecute(r)
 }
 
@@ -1176,10 +1176,10 @@ Return historical records of various Systems Manager network connection details 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return SmApiGetNetworkSmDeviceDesktopLogsRequest
+ @return SmAPIGetNetworkSmDeviceDesktopLogsRequest
 */
-func (a *SmApiService) GetNetworkSmDeviceDesktopLogs(ctx context.Context, networkId string, deviceId string) SmApiGetNetworkSmDeviceDesktopLogsRequest {
-	return SmApiGetNetworkSmDeviceDesktopLogsRequest{
+func (a *SmAPIService) GetNetworkSmDeviceDesktopLogs(ctx context.Context, networkId string, deviceId string) SmAPIGetNetworkSmDeviceDesktopLogsRequest {
+	return SmAPIGetNetworkSmDeviceDesktopLogsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1189,7 +1189,7 @@ func (a *SmApiService) GetNetworkSmDeviceDesktopLogs(ctx context.Context, networ
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceDesktopLogs200ResponseInner
-func (a *SmApiService) GetNetworkSmDeviceDesktopLogsExecute(r SmApiGetNetworkSmDeviceDesktopLogsRequest) ([]GetNetworkSmDeviceDesktopLogs200ResponseInner, *http.Response, error) {
+func (a *SmAPIService) GetNetworkSmDeviceDesktopLogsExecute(r SmAPIGetNetworkSmDeviceDesktopLogsRequest) ([]GetNetworkSmDeviceDesktopLogs200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1197,7 +1197,7 @@ func (a *SmApiService) GetNetworkSmDeviceDesktopLogsExecute(r SmApiGetNetworkSmD
 		localVarReturnValue  []GetNetworkSmDeviceDesktopLogs200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.GetNetworkSmDeviceDesktopLogs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.GetNetworkSmDeviceDesktopLogs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1287,9 +1287,9 @@ func (a *SmApiService) GetNetworkSmDeviceDesktopLogsExecute(r SmApiGetNetworkSmD
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiGetNetworkSmDeviceDeviceCommandLogsRequest struct {
+type SmAPIGetNetworkSmDeviceDeviceCommandLogsRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	deviceId string
 	perPage *int32
@@ -1298,24 +1298,24 @@ type SmApiGetNetworkSmDeviceDeviceCommandLogsRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r SmApiGetNetworkSmDeviceDeviceCommandLogsRequest) PerPage(perPage int32) SmApiGetNetworkSmDeviceDeviceCommandLogsRequest {
+func (r SmAPIGetNetworkSmDeviceDeviceCommandLogsRequest) PerPage(perPage int32) SmAPIGetNetworkSmDeviceDeviceCommandLogsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SmApiGetNetworkSmDeviceDeviceCommandLogsRequest) StartingAfter(startingAfter string) SmApiGetNetworkSmDeviceDeviceCommandLogsRequest {
+func (r SmAPIGetNetworkSmDeviceDeviceCommandLogsRequest) StartingAfter(startingAfter string) SmAPIGetNetworkSmDeviceDeviceCommandLogsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SmApiGetNetworkSmDeviceDeviceCommandLogsRequest) EndingBefore(endingBefore string) SmApiGetNetworkSmDeviceDeviceCommandLogsRequest {
+func (r SmAPIGetNetworkSmDeviceDeviceCommandLogsRequest) EndingBefore(endingBefore string) SmAPIGetNetworkSmDeviceDeviceCommandLogsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r SmApiGetNetworkSmDeviceDeviceCommandLogsRequest) Execute() ([]GetNetworkSmDeviceDeviceCommandLogs200ResponseInner, *http.Response, error) {
+func (r SmAPIGetNetworkSmDeviceDeviceCommandLogsRequest) Execute() ([]GetNetworkSmDeviceDeviceCommandLogs200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceDeviceCommandLogsExecute(r)
 }
 
@@ -1327,10 +1327,10 @@ Return historical records of commands sent to Systems Manager devices. Note that
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return SmApiGetNetworkSmDeviceDeviceCommandLogsRequest
+ @return SmAPIGetNetworkSmDeviceDeviceCommandLogsRequest
 */
-func (a *SmApiService) GetNetworkSmDeviceDeviceCommandLogs(ctx context.Context, networkId string, deviceId string) SmApiGetNetworkSmDeviceDeviceCommandLogsRequest {
-	return SmApiGetNetworkSmDeviceDeviceCommandLogsRequest{
+func (a *SmAPIService) GetNetworkSmDeviceDeviceCommandLogs(ctx context.Context, networkId string, deviceId string) SmAPIGetNetworkSmDeviceDeviceCommandLogsRequest {
+	return SmAPIGetNetworkSmDeviceDeviceCommandLogsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1340,7 +1340,7 @@ func (a *SmApiService) GetNetworkSmDeviceDeviceCommandLogs(ctx context.Context, 
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceDeviceCommandLogs200ResponseInner
-func (a *SmApiService) GetNetworkSmDeviceDeviceCommandLogsExecute(r SmApiGetNetworkSmDeviceDeviceCommandLogsRequest) ([]GetNetworkSmDeviceDeviceCommandLogs200ResponseInner, *http.Response, error) {
+func (a *SmAPIService) GetNetworkSmDeviceDeviceCommandLogsExecute(r SmAPIGetNetworkSmDeviceDeviceCommandLogsRequest) ([]GetNetworkSmDeviceDeviceCommandLogs200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1348,7 +1348,7 @@ func (a *SmApiService) GetNetworkSmDeviceDeviceCommandLogsExecute(r SmApiGetNetw
 		localVarReturnValue  []GetNetworkSmDeviceDeviceCommandLogs200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.GetNetworkSmDeviceDeviceCommandLogs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.GetNetworkSmDeviceDeviceCommandLogs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1438,14 +1438,14 @@ func (a *SmApiService) GetNetworkSmDeviceDeviceCommandLogsExecute(r SmApiGetNetw
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiGetNetworkSmDeviceDeviceProfilesRequest struct {
+type SmAPIGetNetworkSmDeviceDeviceProfilesRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	deviceId string
 }
 
-func (r SmApiGetNetworkSmDeviceDeviceProfilesRequest) Execute() ([]GetNetworkSmDeviceDeviceProfiles200ResponseInner, *http.Response, error) {
+func (r SmAPIGetNetworkSmDeviceDeviceProfilesRequest) Execute() ([]GetNetworkSmDeviceDeviceProfiles200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceDeviceProfilesExecute(r)
 }
 
@@ -1457,10 +1457,10 @@ Get the installed profiles associated with a device
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return SmApiGetNetworkSmDeviceDeviceProfilesRequest
+ @return SmAPIGetNetworkSmDeviceDeviceProfilesRequest
 */
-func (a *SmApiService) GetNetworkSmDeviceDeviceProfiles(ctx context.Context, networkId string, deviceId string) SmApiGetNetworkSmDeviceDeviceProfilesRequest {
-	return SmApiGetNetworkSmDeviceDeviceProfilesRequest{
+func (a *SmAPIService) GetNetworkSmDeviceDeviceProfiles(ctx context.Context, networkId string, deviceId string) SmAPIGetNetworkSmDeviceDeviceProfilesRequest {
+	return SmAPIGetNetworkSmDeviceDeviceProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1470,7 +1470,7 @@ func (a *SmApiService) GetNetworkSmDeviceDeviceProfiles(ctx context.Context, net
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceDeviceProfiles200ResponseInner
-func (a *SmApiService) GetNetworkSmDeviceDeviceProfilesExecute(r SmApiGetNetworkSmDeviceDeviceProfilesRequest) ([]GetNetworkSmDeviceDeviceProfiles200ResponseInner, *http.Response, error) {
+func (a *SmAPIService) GetNetworkSmDeviceDeviceProfilesExecute(r SmAPIGetNetworkSmDeviceDeviceProfilesRequest) ([]GetNetworkSmDeviceDeviceProfiles200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1478,7 +1478,7 @@ func (a *SmApiService) GetNetworkSmDeviceDeviceProfilesExecute(r SmApiGetNetwork
 		localVarReturnValue  []GetNetworkSmDeviceDeviceProfiles200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.GetNetworkSmDeviceDeviceProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.GetNetworkSmDeviceDeviceProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1559,14 +1559,14 @@ func (a *SmApiService) GetNetworkSmDeviceDeviceProfilesExecute(r SmApiGetNetwork
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiGetNetworkSmDeviceNetworkAdaptersRequest struct {
+type SmAPIGetNetworkSmDeviceNetworkAdaptersRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	deviceId string
 }
 
-func (r SmApiGetNetworkSmDeviceNetworkAdaptersRequest) Execute() ([]GetNetworkSmDeviceNetworkAdapters200ResponseInner, *http.Response, error) {
+func (r SmAPIGetNetworkSmDeviceNetworkAdaptersRequest) Execute() ([]GetNetworkSmDeviceNetworkAdapters200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceNetworkAdaptersExecute(r)
 }
 
@@ -1578,10 +1578,10 @@ List the network adapters of a device
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return SmApiGetNetworkSmDeviceNetworkAdaptersRequest
+ @return SmAPIGetNetworkSmDeviceNetworkAdaptersRequest
 */
-func (a *SmApiService) GetNetworkSmDeviceNetworkAdapters(ctx context.Context, networkId string, deviceId string) SmApiGetNetworkSmDeviceNetworkAdaptersRequest {
-	return SmApiGetNetworkSmDeviceNetworkAdaptersRequest{
+func (a *SmAPIService) GetNetworkSmDeviceNetworkAdapters(ctx context.Context, networkId string, deviceId string) SmAPIGetNetworkSmDeviceNetworkAdaptersRequest {
+	return SmAPIGetNetworkSmDeviceNetworkAdaptersRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1591,7 +1591,7 @@ func (a *SmApiService) GetNetworkSmDeviceNetworkAdapters(ctx context.Context, ne
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceNetworkAdapters200ResponseInner
-func (a *SmApiService) GetNetworkSmDeviceNetworkAdaptersExecute(r SmApiGetNetworkSmDeviceNetworkAdaptersRequest) ([]GetNetworkSmDeviceNetworkAdapters200ResponseInner, *http.Response, error) {
+func (a *SmAPIService) GetNetworkSmDeviceNetworkAdaptersExecute(r SmAPIGetNetworkSmDeviceNetworkAdaptersRequest) ([]GetNetworkSmDeviceNetworkAdapters200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1599,7 +1599,7 @@ func (a *SmApiService) GetNetworkSmDeviceNetworkAdaptersExecute(r SmApiGetNetwor
 		localVarReturnValue  []GetNetworkSmDeviceNetworkAdapters200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.GetNetworkSmDeviceNetworkAdapters")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.GetNetworkSmDeviceNetworkAdapters")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1680,9 +1680,9 @@ func (a *SmApiService) GetNetworkSmDeviceNetworkAdaptersExecute(r SmApiGetNetwor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiGetNetworkSmDevicePerformanceHistoryRequest struct {
+type SmAPIGetNetworkSmDevicePerformanceHistoryRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	deviceId string
 	perPage *int32
@@ -1691,24 +1691,24 @@ type SmApiGetNetworkSmDevicePerformanceHistoryRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r SmApiGetNetworkSmDevicePerformanceHistoryRequest) PerPage(perPage int32) SmApiGetNetworkSmDevicePerformanceHistoryRequest {
+func (r SmAPIGetNetworkSmDevicePerformanceHistoryRequest) PerPage(perPage int32) SmAPIGetNetworkSmDevicePerformanceHistoryRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SmApiGetNetworkSmDevicePerformanceHistoryRequest) StartingAfter(startingAfter string) SmApiGetNetworkSmDevicePerformanceHistoryRequest {
+func (r SmAPIGetNetworkSmDevicePerformanceHistoryRequest) StartingAfter(startingAfter string) SmAPIGetNetworkSmDevicePerformanceHistoryRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SmApiGetNetworkSmDevicePerformanceHistoryRequest) EndingBefore(endingBefore string) SmApiGetNetworkSmDevicePerformanceHistoryRequest {
+func (r SmAPIGetNetworkSmDevicePerformanceHistoryRequest) EndingBefore(endingBefore string) SmAPIGetNetworkSmDevicePerformanceHistoryRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r SmApiGetNetworkSmDevicePerformanceHistoryRequest) Execute() ([]GetNetworkSmDevicePerformanceHistory200ResponseInner, *http.Response, error) {
+func (r SmAPIGetNetworkSmDevicePerformanceHistoryRequest) Execute() ([]GetNetworkSmDevicePerformanceHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDevicePerformanceHistoryExecute(r)
 }
 
@@ -1720,10 +1720,10 @@ Return historical records of various Systems Manager client metrics for desktop 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return SmApiGetNetworkSmDevicePerformanceHistoryRequest
+ @return SmAPIGetNetworkSmDevicePerformanceHistoryRequest
 */
-func (a *SmApiService) GetNetworkSmDevicePerformanceHistory(ctx context.Context, networkId string, deviceId string) SmApiGetNetworkSmDevicePerformanceHistoryRequest {
-	return SmApiGetNetworkSmDevicePerformanceHistoryRequest{
+func (a *SmAPIService) GetNetworkSmDevicePerformanceHistory(ctx context.Context, networkId string, deviceId string) SmAPIGetNetworkSmDevicePerformanceHistoryRequest {
+	return SmAPIGetNetworkSmDevicePerformanceHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1733,7 +1733,7 @@ func (a *SmApiService) GetNetworkSmDevicePerformanceHistory(ctx context.Context,
 
 // Execute executes the request
 //  @return []GetNetworkSmDevicePerformanceHistory200ResponseInner
-func (a *SmApiService) GetNetworkSmDevicePerformanceHistoryExecute(r SmApiGetNetworkSmDevicePerformanceHistoryRequest) ([]GetNetworkSmDevicePerformanceHistory200ResponseInner, *http.Response, error) {
+func (a *SmAPIService) GetNetworkSmDevicePerformanceHistoryExecute(r SmAPIGetNetworkSmDevicePerformanceHistoryRequest) ([]GetNetworkSmDevicePerformanceHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1741,7 +1741,7 @@ func (a *SmApiService) GetNetworkSmDevicePerformanceHistoryExecute(r SmApiGetNet
 		localVarReturnValue  []GetNetworkSmDevicePerformanceHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.GetNetworkSmDevicePerformanceHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.GetNetworkSmDevicePerformanceHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1831,14 +1831,14 @@ func (a *SmApiService) GetNetworkSmDevicePerformanceHistoryExecute(r SmApiGetNet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiGetNetworkSmDeviceRestrictionsRequest struct {
+type SmAPIGetNetworkSmDeviceRestrictionsRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	deviceId string
 }
 
-func (r SmApiGetNetworkSmDeviceRestrictionsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r SmAPIGetNetworkSmDeviceRestrictionsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceRestrictionsExecute(r)
 }
 
@@ -1850,10 +1850,10 @@ List the restrictions on a device
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return SmApiGetNetworkSmDeviceRestrictionsRequest
+ @return SmAPIGetNetworkSmDeviceRestrictionsRequest
 */
-func (a *SmApiService) GetNetworkSmDeviceRestrictions(ctx context.Context, networkId string, deviceId string) SmApiGetNetworkSmDeviceRestrictionsRequest {
-	return SmApiGetNetworkSmDeviceRestrictionsRequest{
+func (a *SmAPIService) GetNetworkSmDeviceRestrictions(ctx context.Context, networkId string, deviceId string) SmAPIGetNetworkSmDeviceRestrictionsRequest {
+	return SmAPIGetNetworkSmDeviceRestrictionsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1863,7 +1863,7 @@ func (a *SmApiService) GetNetworkSmDeviceRestrictions(ctx context.Context, netwo
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *SmApiService) GetNetworkSmDeviceRestrictionsExecute(r SmApiGetNetworkSmDeviceRestrictionsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *SmAPIService) GetNetworkSmDeviceRestrictionsExecute(r SmAPIGetNetworkSmDeviceRestrictionsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1871,7 +1871,7 @@ func (a *SmApiService) GetNetworkSmDeviceRestrictionsExecute(r SmApiGetNetworkSm
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.GetNetworkSmDeviceRestrictions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.GetNetworkSmDeviceRestrictions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1952,14 +1952,14 @@ func (a *SmApiService) GetNetworkSmDeviceRestrictionsExecute(r SmApiGetNetworkSm
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiGetNetworkSmDeviceSecurityCentersRequest struct {
+type SmAPIGetNetworkSmDeviceSecurityCentersRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	deviceId string
 }
 
-func (r SmApiGetNetworkSmDeviceSecurityCentersRequest) Execute() ([]GetNetworkSmDeviceSecurityCenters200ResponseInner, *http.Response, error) {
+func (r SmAPIGetNetworkSmDeviceSecurityCentersRequest) Execute() ([]GetNetworkSmDeviceSecurityCenters200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceSecurityCentersExecute(r)
 }
 
@@ -1971,10 +1971,10 @@ List the security centers on a device
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return SmApiGetNetworkSmDeviceSecurityCentersRequest
+ @return SmAPIGetNetworkSmDeviceSecurityCentersRequest
 */
-func (a *SmApiService) GetNetworkSmDeviceSecurityCenters(ctx context.Context, networkId string, deviceId string) SmApiGetNetworkSmDeviceSecurityCentersRequest {
-	return SmApiGetNetworkSmDeviceSecurityCentersRequest{
+func (a *SmAPIService) GetNetworkSmDeviceSecurityCenters(ctx context.Context, networkId string, deviceId string) SmAPIGetNetworkSmDeviceSecurityCentersRequest {
+	return SmAPIGetNetworkSmDeviceSecurityCentersRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -1984,7 +1984,7 @@ func (a *SmApiService) GetNetworkSmDeviceSecurityCenters(ctx context.Context, ne
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceSecurityCenters200ResponseInner
-func (a *SmApiService) GetNetworkSmDeviceSecurityCentersExecute(r SmApiGetNetworkSmDeviceSecurityCentersRequest) ([]GetNetworkSmDeviceSecurityCenters200ResponseInner, *http.Response, error) {
+func (a *SmAPIService) GetNetworkSmDeviceSecurityCentersExecute(r SmAPIGetNetworkSmDeviceSecurityCentersRequest) ([]GetNetworkSmDeviceSecurityCenters200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1992,7 +1992,7 @@ func (a *SmApiService) GetNetworkSmDeviceSecurityCentersExecute(r SmApiGetNetwor
 		localVarReturnValue  []GetNetworkSmDeviceSecurityCenters200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.GetNetworkSmDeviceSecurityCenters")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.GetNetworkSmDeviceSecurityCenters")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2073,14 +2073,14 @@ func (a *SmApiService) GetNetworkSmDeviceSecurityCentersExecute(r SmApiGetNetwor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiGetNetworkSmDeviceSoftwaresRequest struct {
+type SmAPIGetNetworkSmDeviceSoftwaresRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	deviceId string
 }
 
-func (r SmApiGetNetworkSmDeviceSoftwaresRequest) Execute() ([]GetNetworkSmDeviceSoftwares200ResponseInner, *http.Response, error) {
+func (r SmAPIGetNetworkSmDeviceSoftwaresRequest) Execute() ([]GetNetworkSmDeviceSoftwares200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceSoftwaresExecute(r)
 }
 
@@ -2092,10 +2092,10 @@ Get a list of softwares associated with a device
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return SmApiGetNetworkSmDeviceSoftwaresRequest
+ @return SmAPIGetNetworkSmDeviceSoftwaresRequest
 */
-func (a *SmApiService) GetNetworkSmDeviceSoftwares(ctx context.Context, networkId string, deviceId string) SmApiGetNetworkSmDeviceSoftwaresRequest {
-	return SmApiGetNetworkSmDeviceSoftwaresRequest{
+func (a *SmAPIService) GetNetworkSmDeviceSoftwares(ctx context.Context, networkId string, deviceId string) SmAPIGetNetworkSmDeviceSoftwaresRequest {
+	return SmAPIGetNetworkSmDeviceSoftwaresRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2105,7 +2105,7 @@ func (a *SmApiService) GetNetworkSmDeviceSoftwares(ctx context.Context, networkI
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceSoftwares200ResponseInner
-func (a *SmApiService) GetNetworkSmDeviceSoftwaresExecute(r SmApiGetNetworkSmDeviceSoftwaresRequest) ([]GetNetworkSmDeviceSoftwares200ResponseInner, *http.Response, error) {
+func (a *SmAPIService) GetNetworkSmDeviceSoftwaresExecute(r SmAPIGetNetworkSmDeviceSoftwaresRequest) ([]GetNetworkSmDeviceSoftwares200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2113,7 +2113,7 @@ func (a *SmApiService) GetNetworkSmDeviceSoftwaresExecute(r SmApiGetNetworkSmDev
 		localVarReturnValue  []GetNetworkSmDeviceSoftwares200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.GetNetworkSmDeviceSoftwares")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.GetNetworkSmDeviceSoftwares")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2194,14 +2194,14 @@ func (a *SmApiService) GetNetworkSmDeviceSoftwaresExecute(r SmApiGetNetworkSmDev
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiGetNetworkSmDeviceWlanListsRequest struct {
+type SmAPIGetNetworkSmDeviceWlanListsRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	deviceId string
 }
 
-func (r SmApiGetNetworkSmDeviceWlanListsRequest) Execute() ([]GetNetworkSmDeviceWlanLists200ResponseInner, *http.Response, error) {
+func (r SmAPIGetNetworkSmDeviceWlanListsRequest) Execute() ([]GetNetworkSmDeviceWlanLists200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDeviceWlanListsExecute(r)
 }
 
@@ -2213,10 +2213,10 @@ List the saved SSID names on a device
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return SmApiGetNetworkSmDeviceWlanListsRequest
+ @return SmAPIGetNetworkSmDeviceWlanListsRequest
 */
-func (a *SmApiService) GetNetworkSmDeviceWlanLists(ctx context.Context, networkId string, deviceId string) SmApiGetNetworkSmDeviceWlanListsRequest {
-	return SmApiGetNetworkSmDeviceWlanListsRequest{
+func (a *SmAPIService) GetNetworkSmDeviceWlanLists(ctx context.Context, networkId string, deviceId string) SmAPIGetNetworkSmDeviceWlanListsRequest {
+	return SmAPIGetNetworkSmDeviceWlanListsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2226,7 +2226,7 @@ func (a *SmApiService) GetNetworkSmDeviceWlanLists(ctx context.Context, networkI
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceWlanLists200ResponseInner
-func (a *SmApiService) GetNetworkSmDeviceWlanListsExecute(r SmApiGetNetworkSmDeviceWlanListsRequest) ([]GetNetworkSmDeviceWlanLists200ResponseInner, *http.Response, error) {
+func (a *SmAPIService) GetNetworkSmDeviceWlanListsExecute(r SmAPIGetNetworkSmDeviceWlanListsRequest) ([]GetNetworkSmDeviceWlanLists200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2234,7 +2234,7 @@ func (a *SmApiService) GetNetworkSmDeviceWlanListsExecute(r SmApiGetNetworkSmDev
 		localVarReturnValue  []GetNetworkSmDeviceWlanLists200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.GetNetworkSmDeviceWlanLists")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.GetNetworkSmDeviceWlanLists")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2315,9 +2315,9 @@ func (a *SmApiService) GetNetworkSmDeviceWlanListsExecute(r SmApiGetNetworkSmDev
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiGetNetworkSmDevicesRequest struct {
+type SmAPIGetNetworkSmDevicesRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	fields *[]string
 	wifiMacs *[]string
@@ -2330,54 +2330,54 @@ type SmApiGetNetworkSmDevicesRequest struct {
 }
 
 // Additional fields that will be displayed for each device.     The default fields are: id, name, tags, ssid, wifiMac, osName, systemModel, uuid, and serialNumber. The additional fields are: ip,     systemType, availableDeviceCapacity, kioskAppName, biosVersion, lastConnected, missingAppsCount, userSuppliedAddress, location, lastUser,     ownerEmail, ownerUsername, osBuild, publicIp, phoneNumber, diskInfoJson, deviceCapacity, isManaged, hadMdm, isSupervised, meid, imei, iccid,     simCarrierNetwork, cellularDataUsed, isHotspotEnabled, createdAt, batteryEstCharge, quarantined, avName, avRunning, asName, fwName,     isRooted, loginRequired, screenLockEnabled, screenLockDelay, autoLoginDisabled, autoTags, hasMdm, hasDesktopAgent, diskEncryptionEnabled,     hardwareEncryptionCaps, passCodeLock, usesHardwareKeystore, androidSecurityPatchVersion, and url.
-func (r SmApiGetNetworkSmDevicesRequest) Fields(fields []string) SmApiGetNetworkSmDevicesRequest {
+func (r SmAPIGetNetworkSmDevicesRequest) Fields(fields []string) SmAPIGetNetworkSmDevicesRequest {
 	r.fields = &fields
 	return r
 }
 
 // Filter devices by wifi mac(s).
-func (r SmApiGetNetworkSmDevicesRequest) WifiMacs(wifiMacs []string) SmApiGetNetworkSmDevicesRequest {
+func (r SmAPIGetNetworkSmDevicesRequest) WifiMacs(wifiMacs []string) SmAPIGetNetworkSmDevicesRequest {
 	r.wifiMacs = &wifiMacs
 	return r
 }
 
 // Filter devices by serial(s).
-func (r SmApiGetNetworkSmDevicesRequest) Serials(serials []string) SmApiGetNetworkSmDevicesRequest {
+func (r SmAPIGetNetworkSmDevicesRequest) Serials(serials []string) SmAPIGetNetworkSmDevicesRequest {
 	r.serials = &serials
 	return r
 }
 
 // Filter devices by id(s).
-func (r SmApiGetNetworkSmDevicesRequest) Ids(ids []string) SmApiGetNetworkSmDevicesRequest {
+func (r SmAPIGetNetworkSmDevicesRequest) Ids(ids []string) SmAPIGetNetworkSmDevicesRequest {
 	r.ids = &ids
 	return r
 }
 
 // Specify a scope (one of all, none, withAny, withAll, withoutAny, or withoutAll) and a set of tags.
-func (r SmApiGetNetworkSmDevicesRequest) Scope(scope []string) SmApiGetNetworkSmDevicesRequest {
+func (r SmAPIGetNetworkSmDevicesRequest) Scope(scope []string) SmAPIGetNetworkSmDevicesRequest {
 	r.scope = &scope
 	return r
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r SmApiGetNetworkSmDevicesRequest) PerPage(perPage int32) SmApiGetNetworkSmDevicesRequest {
+func (r SmAPIGetNetworkSmDevicesRequest) PerPage(perPage int32) SmAPIGetNetworkSmDevicesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SmApiGetNetworkSmDevicesRequest) StartingAfter(startingAfter string) SmApiGetNetworkSmDevicesRequest {
+func (r SmAPIGetNetworkSmDevicesRequest) StartingAfter(startingAfter string) SmAPIGetNetworkSmDevicesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SmApiGetNetworkSmDevicesRequest) EndingBefore(endingBefore string) SmApiGetNetworkSmDevicesRequest {
+func (r SmAPIGetNetworkSmDevicesRequest) EndingBefore(endingBefore string) SmAPIGetNetworkSmDevicesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r SmApiGetNetworkSmDevicesRequest) Execute() ([]GetNetworkSmDevices200ResponseInner, *http.Response, error) {
+func (r SmAPIGetNetworkSmDevicesRequest) Execute() ([]GetNetworkSmDevices200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmDevicesExecute(r)
 }
 
@@ -2388,10 +2388,10 @@ List the devices enrolled in an SM network with various specified fields and fil
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SmApiGetNetworkSmDevicesRequest
+ @return SmAPIGetNetworkSmDevicesRequest
 */
-func (a *SmApiService) GetNetworkSmDevices(ctx context.Context, networkId string) SmApiGetNetworkSmDevicesRequest {
-	return SmApiGetNetworkSmDevicesRequest{
+func (a *SmAPIService) GetNetworkSmDevices(ctx context.Context, networkId string) SmAPIGetNetworkSmDevicesRequest {
+	return SmAPIGetNetworkSmDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2400,7 +2400,7 @@ func (a *SmApiService) GetNetworkSmDevices(ctx context.Context, networkId string
 
 // Execute executes the request
 //  @return []GetNetworkSmDevices200ResponseInner
-func (a *SmApiService) GetNetworkSmDevicesExecute(r SmApiGetNetworkSmDevicesRequest) ([]GetNetworkSmDevices200ResponseInner, *http.Response, error) {
+func (a *SmAPIService) GetNetworkSmDevicesExecute(r SmAPIGetNetworkSmDevicesRequest) ([]GetNetworkSmDevices200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2408,7 +2408,7 @@ func (a *SmApiService) GetNetworkSmDevicesExecute(r SmApiGetNetworkSmDevicesRequ
 		localVarReturnValue  []GetNetworkSmDevices200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.GetNetworkSmDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.GetNetworkSmDevices")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2552,13 +2552,13 @@ func (a *SmApiService) GetNetworkSmDevicesExecute(r SmApiGetNetworkSmDevicesRequ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiGetNetworkSmProfilesRequest struct {
+type SmAPIGetNetworkSmProfilesRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 }
 
-func (r SmApiGetNetworkSmProfilesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SmAPIGetNetworkSmProfilesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSmProfilesExecute(r)
 }
 
@@ -2569,10 +2569,10 @@ List all the profiles in the network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SmApiGetNetworkSmProfilesRequest
+ @return SmAPIGetNetworkSmProfilesRequest
 */
-func (a *SmApiService) GetNetworkSmProfiles(ctx context.Context, networkId string) SmApiGetNetworkSmProfilesRequest {
-	return SmApiGetNetworkSmProfilesRequest{
+func (a *SmAPIService) GetNetworkSmProfiles(ctx context.Context, networkId string) SmAPIGetNetworkSmProfilesRequest {
+	return SmAPIGetNetworkSmProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2581,7 +2581,7 @@ func (a *SmApiService) GetNetworkSmProfiles(ctx context.Context, networkId strin
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SmApiService) GetNetworkSmProfilesExecute(r SmApiGetNetworkSmProfilesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SmAPIService) GetNetworkSmProfilesExecute(r SmAPIGetNetworkSmProfilesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2589,7 +2589,7 @@ func (a *SmApiService) GetNetworkSmProfilesExecute(r SmApiGetNetworkSmProfilesRe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.GetNetworkSmProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.GetNetworkSmProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2669,21 +2669,21 @@ func (a *SmApiService) GetNetworkSmProfilesExecute(r SmApiGetNetworkSmProfilesRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiGetNetworkSmTargetGroupRequest struct {
+type SmAPIGetNetworkSmTargetGroupRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	targetGroupId string
 	withDetails *bool
 }
 
 // Boolean indicating if the the ids of the devices or users scoped by the target group should be included in the response
-func (r SmApiGetNetworkSmTargetGroupRequest) WithDetails(withDetails bool) SmApiGetNetworkSmTargetGroupRequest {
+func (r SmAPIGetNetworkSmTargetGroupRequest) WithDetails(withDetails bool) SmAPIGetNetworkSmTargetGroupRequest {
 	r.withDetails = &withDetails
 	return r
 }
 
-func (r SmApiGetNetworkSmTargetGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SmAPIGetNetworkSmTargetGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSmTargetGroupExecute(r)
 }
 
@@ -2695,10 +2695,10 @@ Return a target group
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param targetGroupId Target group ID
- @return SmApiGetNetworkSmTargetGroupRequest
+ @return SmAPIGetNetworkSmTargetGroupRequest
 */
-func (a *SmApiService) GetNetworkSmTargetGroup(ctx context.Context, networkId string, targetGroupId string) SmApiGetNetworkSmTargetGroupRequest {
-	return SmApiGetNetworkSmTargetGroupRequest{
+func (a *SmAPIService) GetNetworkSmTargetGroup(ctx context.Context, networkId string, targetGroupId string) SmAPIGetNetworkSmTargetGroupRequest {
+	return SmAPIGetNetworkSmTargetGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2708,7 +2708,7 @@ func (a *SmApiService) GetNetworkSmTargetGroup(ctx context.Context, networkId st
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SmApiService) GetNetworkSmTargetGroupExecute(r SmApiGetNetworkSmTargetGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SmAPIService) GetNetworkSmTargetGroupExecute(r SmAPIGetNetworkSmTargetGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2716,7 +2716,7 @@ func (a *SmApiService) GetNetworkSmTargetGroupExecute(r SmApiGetNetworkSmTargetG
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.GetNetworkSmTargetGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.GetNetworkSmTargetGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2800,20 +2800,20 @@ func (a *SmApiService) GetNetworkSmTargetGroupExecute(r SmApiGetNetworkSmTargetG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiGetNetworkSmTargetGroupsRequest struct {
+type SmAPIGetNetworkSmTargetGroupsRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	withDetails *bool
 }
 
 // Boolean indicating if the the ids of the devices or users scoped by the target group should be included in the response
-func (r SmApiGetNetworkSmTargetGroupsRequest) WithDetails(withDetails bool) SmApiGetNetworkSmTargetGroupsRequest {
+func (r SmAPIGetNetworkSmTargetGroupsRequest) WithDetails(withDetails bool) SmAPIGetNetworkSmTargetGroupsRequest {
 	r.withDetails = &withDetails
 	return r
 }
 
-func (r SmApiGetNetworkSmTargetGroupsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r SmAPIGetNetworkSmTargetGroupsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkSmTargetGroupsExecute(r)
 }
 
@@ -2824,10 +2824,10 @@ List the target groups in this network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SmApiGetNetworkSmTargetGroupsRequest
+ @return SmAPIGetNetworkSmTargetGroupsRequest
 */
-func (a *SmApiService) GetNetworkSmTargetGroups(ctx context.Context, networkId string) SmApiGetNetworkSmTargetGroupsRequest {
-	return SmApiGetNetworkSmTargetGroupsRequest{
+func (a *SmAPIService) GetNetworkSmTargetGroups(ctx context.Context, networkId string) SmAPIGetNetworkSmTargetGroupsRequest {
+	return SmAPIGetNetworkSmTargetGroupsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2836,7 +2836,7 @@ func (a *SmApiService) GetNetworkSmTargetGroups(ctx context.Context, networkId s
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *SmApiService) GetNetworkSmTargetGroupsExecute(r SmApiGetNetworkSmTargetGroupsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *SmAPIService) GetNetworkSmTargetGroupsExecute(r SmAPIGetNetworkSmTargetGroupsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2844,7 +2844,7 @@ func (a *SmApiService) GetNetworkSmTargetGroupsExecute(r SmApiGetNetworkSmTarget
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.GetNetworkSmTargetGroups")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.GetNetworkSmTargetGroups")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2927,9 +2927,9 @@ func (a *SmApiService) GetNetworkSmTargetGroupsExecute(r SmApiGetNetworkSmTarget
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiGetNetworkSmTrustedAccessConfigsRequest struct {
+type SmAPIGetNetworkSmTrustedAccessConfigsRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	perPage *int32
 	startingAfter *string
@@ -2937,24 +2937,24 @@ type SmApiGetNetworkSmTrustedAccessConfigsRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
-func (r SmApiGetNetworkSmTrustedAccessConfigsRequest) PerPage(perPage int32) SmApiGetNetworkSmTrustedAccessConfigsRequest {
+func (r SmAPIGetNetworkSmTrustedAccessConfigsRequest) PerPage(perPage int32) SmAPIGetNetworkSmTrustedAccessConfigsRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SmApiGetNetworkSmTrustedAccessConfigsRequest) StartingAfter(startingAfter string) SmApiGetNetworkSmTrustedAccessConfigsRequest {
+func (r SmAPIGetNetworkSmTrustedAccessConfigsRequest) StartingAfter(startingAfter string) SmAPIGetNetworkSmTrustedAccessConfigsRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SmApiGetNetworkSmTrustedAccessConfigsRequest) EndingBefore(endingBefore string) SmApiGetNetworkSmTrustedAccessConfigsRequest {
+func (r SmAPIGetNetworkSmTrustedAccessConfigsRequest) EndingBefore(endingBefore string) SmAPIGetNetworkSmTrustedAccessConfigsRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r SmApiGetNetworkSmTrustedAccessConfigsRequest) Execute() ([]GetNetworkSmTrustedAccessConfigs200ResponseInner, *http.Response, error) {
+func (r SmAPIGetNetworkSmTrustedAccessConfigsRequest) Execute() ([]GetNetworkSmTrustedAccessConfigs200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmTrustedAccessConfigsExecute(r)
 }
 
@@ -2965,10 +2965,10 @@ List Trusted Access Configs
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SmApiGetNetworkSmTrustedAccessConfigsRequest
+ @return SmAPIGetNetworkSmTrustedAccessConfigsRequest
 */
-func (a *SmApiService) GetNetworkSmTrustedAccessConfigs(ctx context.Context, networkId string) SmApiGetNetworkSmTrustedAccessConfigsRequest {
-	return SmApiGetNetworkSmTrustedAccessConfigsRequest{
+func (a *SmAPIService) GetNetworkSmTrustedAccessConfigs(ctx context.Context, networkId string) SmAPIGetNetworkSmTrustedAccessConfigsRequest {
+	return SmAPIGetNetworkSmTrustedAccessConfigsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -2977,7 +2977,7 @@ func (a *SmApiService) GetNetworkSmTrustedAccessConfigs(ctx context.Context, net
 
 // Execute executes the request
 //  @return []GetNetworkSmTrustedAccessConfigs200ResponseInner
-func (a *SmApiService) GetNetworkSmTrustedAccessConfigsExecute(r SmApiGetNetworkSmTrustedAccessConfigsRequest) ([]GetNetworkSmTrustedAccessConfigs200ResponseInner, *http.Response, error) {
+func (a *SmAPIService) GetNetworkSmTrustedAccessConfigsExecute(r SmAPIGetNetworkSmTrustedAccessConfigsRequest) ([]GetNetworkSmTrustedAccessConfigs200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2985,7 +2985,7 @@ func (a *SmApiService) GetNetworkSmTrustedAccessConfigsExecute(r SmApiGetNetwork
 		localVarReturnValue  []GetNetworkSmTrustedAccessConfigs200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.GetNetworkSmTrustedAccessConfigs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.GetNetworkSmTrustedAccessConfigs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3074,9 +3074,9 @@ func (a *SmApiService) GetNetworkSmTrustedAccessConfigsExecute(r SmApiGetNetwork
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiGetNetworkSmUserAccessDevicesRequest struct {
+type SmAPIGetNetworkSmUserAccessDevicesRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	perPage *int32
 	startingAfter *string
@@ -3084,24 +3084,24 @@ type SmApiGetNetworkSmUserAccessDevicesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
-func (r SmApiGetNetworkSmUserAccessDevicesRequest) PerPage(perPage int32) SmApiGetNetworkSmUserAccessDevicesRequest {
+func (r SmAPIGetNetworkSmUserAccessDevicesRequest) PerPage(perPage int32) SmAPIGetNetworkSmUserAccessDevicesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SmApiGetNetworkSmUserAccessDevicesRequest) StartingAfter(startingAfter string) SmApiGetNetworkSmUserAccessDevicesRequest {
+func (r SmAPIGetNetworkSmUserAccessDevicesRequest) StartingAfter(startingAfter string) SmAPIGetNetworkSmUserAccessDevicesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r SmApiGetNetworkSmUserAccessDevicesRequest) EndingBefore(endingBefore string) SmApiGetNetworkSmUserAccessDevicesRequest {
+func (r SmAPIGetNetworkSmUserAccessDevicesRequest) EndingBefore(endingBefore string) SmAPIGetNetworkSmUserAccessDevicesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r SmApiGetNetworkSmUserAccessDevicesRequest) Execute() ([]GetNetworkSmUserAccessDevices200ResponseInner, *http.Response, error) {
+func (r SmAPIGetNetworkSmUserAccessDevicesRequest) Execute() ([]GetNetworkSmUserAccessDevices200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmUserAccessDevicesExecute(r)
 }
 
@@ -3112,10 +3112,10 @@ List User Access Devices and its Trusted Access Connections
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SmApiGetNetworkSmUserAccessDevicesRequest
+ @return SmAPIGetNetworkSmUserAccessDevicesRequest
 */
-func (a *SmApiService) GetNetworkSmUserAccessDevices(ctx context.Context, networkId string) SmApiGetNetworkSmUserAccessDevicesRequest {
-	return SmApiGetNetworkSmUserAccessDevicesRequest{
+func (a *SmAPIService) GetNetworkSmUserAccessDevices(ctx context.Context, networkId string) SmAPIGetNetworkSmUserAccessDevicesRequest {
+	return SmAPIGetNetworkSmUserAccessDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3124,7 +3124,7 @@ func (a *SmApiService) GetNetworkSmUserAccessDevices(ctx context.Context, networ
 
 // Execute executes the request
 //  @return []GetNetworkSmUserAccessDevices200ResponseInner
-func (a *SmApiService) GetNetworkSmUserAccessDevicesExecute(r SmApiGetNetworkSmUserAccessDevicesRequest) ([]GetNetworkSmUserAccessDevices200ResponseInner, *http.Response, error) {
+func (a *SmAPIService) GetNetworkSmUserAccessDevicesExecute(r SmAPIGetNetworkSmUserAccessDevicesRequest) ([]GetNetworkSmUserAccessDevices200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3132,7 +3132,7 @@ func (a *SmApiService) GetNetworkSmUserAccessDevicesExecute(r SmApiGetNetworkSmU
 		localVarReturnValue  []GetNetworkSmUserAccessDevices200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.GetNetworkSmUserAccessDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.GetNetworkSmUserAccessDevices")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3221,14 +3221,14 @@ func (a *SmApiService) GetNetworkSmUserAccessDevicesExecute(r SmApiGetNetworkSmU
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiGetNetworkSmUserDeviceProfilesRequest struct {
+type SmAPIGetNetworkSmUserDeviceProfilesRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	userId string
 }
 
-func (r SmApiGetNetworkSmUserDeviceProfilesRequest) Execute() ([]GetNetworkSmDeviceDeviceProfiles200ResponseInner, *http.Response, error) {
+func (r SmAPIGetNetworkSmUserDeviceProfilesRequest) Execute() ([]GetNetworkSmDeviceDeviceProfiles200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmUserDeviceProfilesExecute(r)
 }
 
@@ -3240,10 +3240,10 @@ Get the profiles associated with a user
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param userId User ID
- @return SmApiGetNetworkSmUserDeviceProfilesRequest
+ @return SmAPIGetNetworkSmUserDeviceProfilesRequest
 */
-func (a *SmApiService) GetNetworkSmUserDeviceProfiles(ctx context.Context, networkId string, userId string) SmApiGetNetworkSmUserDeviceProfilesRequest {
-	return SmApiGetNetworkSmUserDeviceProfilesRequest{
+func (a *SmAPIService) GetNetworkSmUserDeviceProfiles(ctx context.Context, networkId string, userId string) SmAPIGetNetworkSmUserDeviceProfilesRequest {
+	return SmAPIGetNetworkSmUserDeviceProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3253,7 +3253,7 @@ func (a *SmApiService) GetNetworkSmUserDeviceProfiles(ctx context.Context, netwo
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceDeviceProfiles200ResponseInner
-func (a *SmApiService) GetNetworkSmUserDeviceProfilesExecute(r SmApiGetNetworkSmUserDeviceProfilesRequest) ([]GetNetworkSmDeviceDeviceProfiles200ResponseInner, *http.Response, error) {
+func (a *SmAPIService) GetNetworkSmUserDeviceProfilesExecute(r SmAPIGetNetworkSmUserDeviceProfilesRequest) ([]GetNetworkSmDeviceDeviceProfiles200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3261,7 +3261,7 @@ func (a *SmApiService) GetNetworkSmUserDeviceProfilesExecute(r SmApiGetNetworkSm
 		localVarReturnValue  []GetNetworkSmDeviceDeviceProfiles200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.GetNetworkSmUserDeviceProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.GetNetworkSmUserDeviceProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3342,14 +3342,14 @@ func (a *SmApiService) GetNetworkSmUserDeviceProfilesExecute(r SmApiGetNetworkSm
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiGetNetworkSmUserSoftwaresRequest struct {
+type SmAPIGetNetworkSmUserSoftwaresRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	userId string
 }
 
-func (r SmApiGetNetworkSmUserSoftwaresRequest) Execute() ([]GetNetworkSmDeviceSoftwares200ResponseInner, *http.Response, error) {
+func (r SmAPIGetNetworkSmUserSoftwaresRequest) Execute() ([]GetNetworkSmDeviceSoftwares200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmUserSoftwaresExecute(r)
 }
 
@@ -3361,10 +3361,10 @@ Get a list of softwares associated with a user
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param userId User ID
- @return SmApiGetNetworkSmUserSoftwaresRequest
+ @return SmAPIGetNetworkSmUserSoftwaresRequest
 */
-func (a *SmApiService) GetNetworkSmUserSoftwares(ctx context.Context, networkId string, userId string) SmApiGetNetworkSmUserSoftwaresRequest {
-	return SmApiGetNetworkSmUserSoftwaresRequest{
+func (a *SmAPIService) GetNetworkSmUserSoftwares(ctx context.Context, networkId string, userId string) SmAPIGetNetworkSmUserSoftwaresRequest {
+	return SmAPIGetNetworkSmUserSoftwaresRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3374,7 +3374,7 @@ func (a *SmApiService) GetNetworkSmUserSoftwares(ctx context.Context, networkId 
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceSoftwares200ResponseInner
-func (a *SmApiService) GetNetworkSmUserSoftwaresExecute(r SmApiGetNetworkSmUserSoftwaresRequest) ([]GetNetworkSmDeviceSoftwares200ResponseInner, *http.Response, error) {
+func (a *SmAPIService) GetNetworkSmUserSoftwaresExecute(r SmAPIGetNetworkSmUserSoftwaresRequest) ([]GetNetworkSmDeviceSoftwares200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3382,7 +3382,7 @@ func (a *SmApiService) GetNetworkSmUserSoftwaresExecute(r SmApiGetNetworkSmUserS
 		localVarReturnValue  []GetNetworkSmDeviceSoftwares200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.GetNetworkSmUserSoftwares")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.GetNetworkSmUserSoftwares")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3463,9 +3463,9 @@ func (a *SmApiService) GetNetworkSmUserSoftwaresExecute(r SmApiGetNetworkSmUserS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiGetNetworkSmUsersRequest struct {
+type SmAPIGetNetworkSmUsersRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	ids *[]string
 	usernames *[]string
@@ -3474,30 +3474,30 @@ type SmApiGetNetworkSmUsersRequest struct {
 }
 
 // Filter users by id(s).
-func (r SmApiGetNetworkSmUsersRequest) Ids(ids []string) SmApiGetNetworkSmUsersRequest {
+func (r SmAPIGetNetworkSmUsersRequest) Ids(ids []string) SmAPIGetNetworkSmUsersRequest {
 	r.ids = &ids
 	return r
 }
 
 // Filter users by username(s).
-func (r SmApiGetNetworkSmUsersRequest) Usernames(usernames []string) SmApiGetNetworkSmUsersRequest {
+func (r SmAPIGetNetworkSmUsersRequest) Usernames(usernames []string) SmAPIGetNetworkSmUsersRequest {
 	r.usernames = &usernames
 	return r
 }
 
 // Filter users by email(s).
-func (r SmApiGetNetworkSmUsersRequest) Emails(emails []string) SmApiGetNetworkSmUsersRequest {
+func (r SmAPIGetNetworkSmUsersRequest) Emails(emails []string) SmAPIGetNetworkSmUsersRequest {
 	r.emails = &emails
 	return r
 }
 
 // Specifiy a scope (one of all, none, withAny, withAll, withoutAny, withoutAll) and a set of tags.
-func (r SmApiGetNetworkSmUsersRequest) Scope(scope []string) SmApiGetNetworkSmUsersRequest {
+func (r SmAPIGetNetworkSmUsersRequest) Scope(scope []string) SmAPIGetNetworkSmUsersRequest {
 	r.scope = &scope
 	return r
 }
 
-func (r SmApiGetNetworkSmUsersRequest) Execute() ([]GetNetworkSmUsers200ResponseInner, *http.Response, error) {
+func (r SmAPIGetNetworkSmUsersRequest) Execute() ([]GetNetworkSmUsers200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmUsersExecute(r)
 }
 
@@ -3508,10 +3508,10 @@ List the owners in an SM network with various specified fields and filters
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SmApiGetNetworkSmUsersRequest
+ @return SmAPIGetNetworkSmUsersRequest
 */
-func (a *SmApiService) GetNetworkSmUsers(ctx context.Context, networkId string) SmApiGetNetworkSmUsersRequest {
-	return SmApiGetNetworkSmUsersRequest{
+func (a *SmAPIService) GetNetworkSmUsers(ctx context.Context, networkId string) SmAPIGetNetworkSmUsersRequest {
+	return SmAPIGetNetworkSmUsersRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -3520,7 +3520,7 @@ func (a *SmApiService) GetNetworkSmUsers(ctx context.Context, networkId string) 
 
 // Execute executes the request
 //  @return []GetNetworkSmUsers200ResponseInner
-func (a *SmApiService) GetNetworkSmUsersExecute(r SmApiGetNetworkSmUsersRequest) ([]GetNetworkSmUsers200ResponseInner, *http.Response, error) {
+func (a *SmAPIService) GetNetworkSmUsersExecute(r SmAPIGetNetworkSmUsersRequest) ([]GetNetworkSmUsers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3528,7 +3528,7 @@ func (a *SmApiService) GetNetworkSmUsersExecute(r SmApiGetNetworkSmUsersRequest)
 		localVarReturnValue  []GetNetworkSmUsers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.GetNetworkSmUsers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.GetNetworkSmUsers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3652,13 +3652,13 @@ func (a *SmApiService) GetNetworkSmUsersExecute(r SmApiGetNetworkSmUsersRequest)
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiGetOrganizationSmApnsCertRequest struct {
+type SmAPIGetOrganizationSmApnsCertRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	organizationId string
 }
 
-func (r SmApiGetOrganizationSmApnsCertRequest) Execute() (*GetOrganizationSmApnsCert200Response, *http.Response, error) {
+func (r SmAPIGetOrganizationSmApnsCertRequest) Execute() (*GetOrganizationSmApnsCert200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationSmApnsCertExecute(r)
 }
 
@@ -3669,10 +3669,10 @@ Get the organization's APNS certificate
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return SmApiGetOrganizationSmApnsCertRequest
+ @return SmAPIGetOrganizationSmApnsCertRequest
 */
-func (a *SmApiService) GetOrganizationSmApnsCert(ctx context.Context, organizationId string) SmApiGetOrganizationSmApnsCertRequest {
-	return SmApiGetOrganizationSmApnsCertRequest{
+func (a *SmAPIService) GetOrganizationSmApnsCert(ctx context.Context, organizationId string) SmAPIGetOrganizationSmApnsCertRequest {
+	return SmAPIGetOrganizationSmApnsCertRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -3681,7 +3681,7 @@ func (a *SmApiService) GetOrganizationSmApnsCert(ctx context.Context, organizati
 
 // Execute executes the request
 //  @return GetOrganizationSmApnsCert200Response
-func (a *SmApiService) GetOrganizationSmApnsCertExecute(r SmApiGetOrganizationSmApnsCertRequest) (*GetOrganizationSmApnsCert200Response, *http.Response, error) {
+func (a *SmAPIService) GetOrganizationSmApnsCertExecute(r SmAPIGetOrganizationSmApnsCertRequest) (*GetOrganizationSmApnsCert200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3689,7 +3689,7 @@ func (a *SmApiService) GetOrganizationSmApnsCertExecute(r SmApiGetOrganizationSm
 		localVarReturnValue  *GetOrganizationSmApnsCert200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.GetOrganizationSmApnsCert")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.GetOrganizationSmApnsCert")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3769,14 +3769,14 @@ func (a *SmApiService) GetOrganizationSmApnsCertExecute(r SmApiGetOrganizationSm
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiGetOrganizationSmVppAccountRequest struct {
+type SmAPIGetOrganizationSmVppAccountRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	organizationId string
 	vppAccountId string
 }
 
-func (r SmApiGetOrganizationSmVppAccountRequest) Execute() (*GetOrganizationSmVppAccounts200ResponseInner, *http.Response, error) {
+func (r SmAPIGetOrganizationSmVppAccountRequest) Execute() (*GetOrganizationSmVppAccounts200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSmVppAccountExecute(r)
 }
 
@@ -3788,10 +3788,10 @@ Get a hash containing the unparsed token of the VPP account with the given ID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param vppAccountId Vpp account ID
- @return SmApiGetOrganizationSmVppAccountRequest
+ @return SmAPIGetOrganizationSmVppAccountRequest
 */
-func (a *SmApiService) GetOrganizationSmVppAccount(ctx context.Context, organizationId string, vppAccountId string) SmApiGetOrganizationSmVppAccountRequest {
-	return SmApiGetOrganizationSmVppAccountRequest{
+func (a *SmAPIService) GetOrganizationSmVppAccount(ctx context.Context, organizationId string, vppAccountId string) SmAPIGetOrganizationSmVppAccountRequest {
+	return SmAPIGetOrganizationSmVppAccountRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -3801,7 +3801,7 @@ func (a *SmApiService) GetOrganizationSmVppAccount(ctx context.Context, organiza
 
 // Execute executes the request
 //  @return GetOrganizationSmVppAccounts200ResponseInner
-func (a *SmApiService) GetOrganizationSmVppAccountExecute(r SmApiGetOrganizationSmVppAccountRequest) (*GetOrganizationSmVppAccounts200ResponseInner, *http.Response, error) {
+func (a *SmAPIService) GetOrganizationSmVppAccountExecute(r SmAPIGetOrganizationSmVppAccountRequest) (*GetOrganizationSmVppAccounts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3809,7 +3809,7 @@ func (a *SmApiService) GetOrganizationSmVppAccountExecute(r SmApiGetOrganization
 		localVarReturnValue  *GetOrganizationSmVppAccounts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.GetOrganizationSmVppAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.GetOrganizationSmVppAccount")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3890,13 +3890,13 @@ func (a *SmApiService) GetOrganizationSmVppAccountExecute(r SmApiGetOrganization
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiGetOrganizationSmVppAccountsRequest struct {
+type SmAPIGetOrganizationSmVppAccountsRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	organizationId string
 }
 
-func (r SmApiGetOrganizationSmVppAccountsRequest) Execute() ([]GetOrganizationSmVppAccounts200ResponseInner, *http.Response, error) {
+func (r SmAPIGetOrganizationSmVppAccountsRequest) Execute() ([]GetOrganizationSmVppAccounts200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationSmVppAccountsExecute(r)
 }
 
@@ -3907,10 +3907,10 @@ List the VPP accounts in the organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return SmApiGetOrganizationSmVppAccountsRequest
+ @return SmAPIGetOrganizationSmVppAccountsRequest
 */
-func (a *SmApiService) GetOrganizationSmVppAccounts(ctx context.Context, organizationId string) SmApiGetOrganizationSmVppAccountsRequest {
-	return SmApiGetOrganizationSmVppAccountsRequest{
+func (a *SmAPIService) GetOrganizationSmVppAccounts(ctx context.Context, organizationId string) SmAPIGetOrganizationSmVppAccountsRequest {
+	return SmAPIGetOrganizationSmVppAccountsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -3919,7 +3919,7 @@ func (a *SmApiService) GetOrganizationSmVppAccounts(ctx context.Context, organiz
 
 // Execute executes the request
 //  @return []GetOrganizationSmVppAccounts200ResponseInner
-func (a *SmApiService) GetOrganizationSmVppAccountsExecute(r SmApiGetOrganizationSmVppAccountsRequest) ([]GetOrganizationSmVppAccounts200ResponseInner, *http.Response, error) {
+func (a *SmAPIService) GetOrganizationSmVppAccountsExecute(r SmAPIGetOrganizationSmVppAccountsRequest) ([]GetOrganizationSmVppAccounts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3927,7 +3927,7 @@ func (a *SmApiService) GetOrganizationSmVppAccountsExecute(r SmApiGetOrganizatio
 		localVarReturnValue  []GetOrganizationSmVppAccounts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.GetOrganizationSmVppAccounts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.GetOrganizationSmVppAccounts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4007,19 +4007,19 @@ func (a *SmApiService) GetOrganizationSmVppAccountsExecute(r SmApiGetOrganizatio
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiLockNetworkSmDevicesRequest struct {
+type SmAPILockNetworkSmDevicesRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	lockNetworkSmDevicesRequest *LockNetworkSmDevicesRequest
 }
 
-func (r SmApiLockNetworkSmDevicesRequest) LockNetworkSmDevicesRequest(lockNetworkSmDevicesRequest LockNetworkSmDevicesRequest) SmApiLockNetworkSmDevicesRequest {
+func (r SmAPILockNetworkSmDevicesRequest) LockNetworkSmDevicesRequest(lockNetworkSmDevicesRequest LockNetworkSmDevicesRequest) SmAPILockNetworkSmDevicesRequest {
 	r.lockNetworkSmDevicesRequest = &lockNetworkSmDevicesRequest
 	return r
 }
 
-func (r SmApiLockNetworkSmDevicesRequest) Execute() (*CheckinNetworkSmDevices200Response, *http.Response, error) {
+func (r SmAPILockNetworkSmDevicesRequest) Execute() (*CheckinNetworkSmDevices200Response, *http.Response, error) {
 	return r.ApiService.LockNetworkSmDevicesExecute(r)
 }
 
@@ -4030,10 +4030,10 @@ Lock a set of devices
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SmApiLockNetworkSmDevicesRequest
+ @return SmAPILockNetworkSmDevicesRequest
 */
-func (a *SmApiService) LockNetworkSmDevices(ctx context.Context, networkId string) SmApiLockNetworkSmDevicesRequest {
-	return SmApiLockNetworkSmDevicesRequest{
+func (a *SmAPIService) LockNetworkSmDevices(ctx context.Context, networkId string) SmAPILockNetworkSmDevicesRequest {
+	return SmAPILockNetworkSmDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4042,7 +4042,7 @@ func (a *SmApiService) LockNetworkSmDevices(ctx context.Context, networkId strin
 
 // Execute executes the request
 //  @return CheckinNetworkSmDevices200Response
-func (a *SmApiService) LockNetworkSmDevicesExecute(r SmApiLockNetworkSmDevicesRequest) (*CheckinNetworkSmDevices200Response, *http.Response, error) {
+func (a *SmAPIService) LockNetworkSmDevicesExecute(r SmAPILockNetworkSmDevicesRequest) (*CheckinNetworkSmDevices200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -4050,7 +4050,7 @@ func (a *SmApiService) LockNetworkSmDevicesExecute(r SmApiLockNetworkSmDevicesRe
 		localVarReturnValue  *CheckinNetworkSmDevices200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.LockNetworkSmDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.LockNetworkSmDevices")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4132,19 +4132,19 @@ func (a *SmApiService) LockNetworkSmDevicesExecute(r SmApiLockNetworkSmDevicesRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiModifyNetworkSmDevicesTagsRequest struct {
+type SmAPIModifyNetworkSmDevicesTagsRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	modifyNetworkSmDevicesTagsRequest *ModifyNetworkSmDevicesTagsRequest
 }
 
-func (r SmApiModifyNetworkSmDevicesTagsRequest) ModifyNetworkSmDevicesTagsRequest(modifyNetworkSmDevicesTagsRequest ModifyNetworkSmDevicesTagsRequest) SmApiModifyNetworkSmDevicesTagsRequest {
+func (r SmAPIModifyNetworkSmDevicesTagsRequest) ModifyNetworkSmDevicesTagsRequest(modifyNetworkSmDevicesTagsRequest ModifyNetworkSmDevicesTagsRequest) SmAPIModifyNetworkSmDevicesTagsRequest {
 	r.modifyNetworkSmDevicesTagsRequest = &modifyNetworkSmDevicesTagsRequest
 	return r
 }
 
-func (r SmApiModifyNetworkSmDevicesTagsRequest) Execute() ([]ModifyNetworkSmDevicesTags200ResponseInner, *http.Response, error) {
+func (r SmAPIModifyNetworkSmDevicesTagsRequest) Execute() ([]ModifyNetworkSmDevicesTags200ResponseInner, *http.Response, error) {
 	return r.ApiService.ModifyNetworkSmDevicesTagsExecute(r)
 }
 
@@ -4155,10 +4155,10 @@ Add, delete, or update the tags of a set of devices
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SmApiModifyNetworkSmDevicesTagsRequest
+ @return SmAPIModifyNetworkSmDevicesTagsRequest
 */
-func (a *SmApiService) ModifyNetworkSmDevicesTags(ctx context.Context, networkId string) SmApiModifyNetworkSmDevicesTagsRequest {
-	return SmApiModifyNetworkSmDevicesTagsRequest{
+func (a *SmAPIService) ModifyNetworkSmDevicesTags(ctx context.Context, networkId string) SmAPIModifyNetworkSmDevicesTagsRequest {
+	return SmAPIModifyNetworkSmDevicesTagsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4167,7 +4167,7 @@ func (a *SmApiService) ModifyNetworkSmDevicesTags(ctx context.Context, networkId
 
 // Execute executes the request
 //  @return []ModifyNetworkSmDevicesTags200ResponseInner
-func (a *SmApiService) ModifyNetworkSmDevicesTagsExecute(r SmApiModifyNetworkSmDevicesTagsRequest) ([]ModifyNetworkSmDevicesTags200ResponseInner, *http.Response, error) {
+func (a *SmAPIService) ModifyNetworkSmDevicesTagsExecute(r SmAPIModifyNetworkSmDevicesTagsRequest) ([]ModifyNetworkSmDevicesTags200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -4175,7 +4175,7 @@ func (a *SmApiService) ModifyNetworkSmDevicesTagsExecute(r SmApiModifyNetworkSmD
 		localVarReturnValue  []ModifyNetworkSmDevicesTags200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.ModifyNetworkSmDevicesTags")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.ModifyNetworkSmDevicesTags")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4260,19 +4260,19 @@ func (a *SmApiService) ModifyNetworkSmDevicesTagsExecute(r SmApiModifyNetworkSmD
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiMoveNetworkSmDevicesRequest struct {
+type SmAPIMoveNetworkSmDevicesRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	moveNetworkSmDevicesRequest *MoveNetworkSmDevicesRequest
 }
 
-func (r SmApiMoveNetworkSmDevicesRequest) MoveNetworkSmDevicesRequest(moveNetworkSmDevicesRequest MoveNetworkSmDevicesRequest) SmApiMoveNetworkSmDevicesRequest {
+func (r SmAPIMoveNetworkSmDevicesRequest) MoveNetworkSmDevicesRequest(moveNetworkSmDevicesRequest MoveNetworkSmDevicesRequest) SmAPIMoveNetworkSmDevicesRequest {
 	r.moveNetworkSmDevicesRequest = &moveNetworkSmDevicesRequest
 	return r
 }
 
-func (r SmApiMoveNetworkSmDevicesRequest) Execute() (*MoveNetworkSmDevices200Response, *http.Response, error) {
+func (r SmAPIMoveNetworkSmDevicesRequest) Execute() (*MoveNetworkSmDevices200Response, *http.Response, error) {
 	return r.ApiService.MoveNetworkSmDevicesExecute(r)
 }
 
@@ -4283,10 +4283,10 @@ Move a set of devices to a new network
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SmApiMoveNetworkSmDevicesRequest
+ @return SmAPIMoveNetworkSmDevicesRequest
 */
-func (a *SmApiService) MoveNetworkSmDevices(ctx context.Context, networkId string) SmApiMoveNetworkSmDevicesRequest {
-	return SmApiMoveNetworkSmDevicesRequest{
+func (a *SmAPIService) MoveNetworkSmDevices(ctx context.Context, networkId string) SmAPIMoveNetworkSmDevicesRequest {
+	return SmAPIMoveNetworkSmDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4295,7 +4295,7 @@ func (a *SmApiService) MoveNetworkSmDevices(ctx context.Context, networkId strin
 
 // Execute executes the request
 //  @return MoveNetworkSmDevices200Response
-func (a *SmApiService) MoveNetworkSmDevicesExecute(r SmApiMoveNetworkSmDevicesRequest) (*MoveNetworkSmDevices200Response, *http.Response, error) {
+func (a *SmAPIService) MoveNetworkSmDevicesExecute(r SmAPIMoveNetworkSmDevicesRequest) (*MoveNetworkSmDevices200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -4303,7 +4303,7 @@ func (a *SmApiService) MoveNetworkSmDevicesExecute(r SmApiMoveNetworkSmDevicesRe
 		localVarReturnValue  *MoveNetworkSmDevices200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.MoveNetworkSmDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.MoveNetworkSmDevices")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4388,14 +4388,14 @@ func (a *SmApiService) MoveNetworkSmDevicesExecute(r SmApiMoveNetworkSmDevicesRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiRefreshNetworkSmDeviceDetailsRequest struct {
+type SmAPIRefreshNetworkSmDeviceDetailsRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	deviceId string
 }
 
-func (r SmApiRefreshNetworkSmDeviceDetailsRequest) Execute() (*http.Response, error) {
+func (r SmAPIRefreshNetworkSmDeviceDetailsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.RefreshNetworkSmDeviceDetailsExecute(r)
 }
 
@@ -4407,10 +4407,10 @@ Refresh the details of a device
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return SmApiRefreshNetworkSmDeviceDetailsRequest
+ @return SmAPIRefreshNetworkSmDeviceDetailsRequest
 */
-func (a *SmApiService) RefreshNetworkSmDeviceDetails(ctx context.Context, networkId string, deviceId string) SmApiRefreshNetworkSmDeviceDetailsRequest {
-	return SmApiRefreshNetworkSmDeviceDetailsRequest{
+func (a *SmAPIService) RefreshNetworkSmDeviceDetails(ctx context.Context, networkId string, deviceId string) SmAPIRefreshNetworkSmDeviceDetailsRequest {
+	return SmAPIRefreshNetworkSmDeviceDetailsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4419,14 +4419,14 @@ func (a *SmApiService) RefreshNetworkSmDeviceDetails(ctx context.Context, networ
 }
 
 // Execute executes the request
-func (a *SmApiService) RefreshNetworkSmDeviceDetailsExecute(r SmApiRefreshNetworkSmDeviceDetailsRequest) (*http.Response, error) {
+func (a *SmAPIService) RefreshNetworkSmDeviceDetailsExecute(r SmAPIRefreshNetworkSmDeviceDetailsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.RefreshNetworkSmDeviceDetails")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.RefreshNetworkSmDeviceDetails")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4498,14 +4498,14 @@ func (a *SmApiService) RefreshNetworkSmDeviceDetailsExecute(r SmApiRefreshNetwor
 	return localVarHTTPResponse, nil
 }
 
-type SmApiUnenrollNetworkSmDeviceRequest struct {
+type SmAPIUnenrollNetworkSmDeviceRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	deviceId string
 }
 
-func (r SmApiUnenrollNetworkSmDeviceRequest) Execute() (*UnenrollNetworkSmDevice200Response, *http.Response, error) {
+func (r SmAPIUnenrollNetworkSmDeviceRequest) Execute() (*UnenrollNetworkSmDevice200Response, *http.Response, error) {
 	return r.ApiService.UnenrollNetworkSmDeviceExecute(r)
 }
 
@@ -4517,10 +4517,10 @@ Unenroll a device
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param deviceId Device ID
- @return SmApiUnenrollNetworkSmDeviceRequest
+ @return SmAPIUnenrollNetworkSmDeviceRequest
 */
-func (a *SmApiService) UnenrollNetworkSmDevice(ctx context.Context, networkId string, deviceId string) SmApiUnenrollNetworkSmDeviceRequest {
-	return SmApiUnenrollNetworkSmDeviceRequest{
+func (a *SmAPIService) UnenrollNetworkSmDevice(ctx context.Context, networkId string, deviceId string) SmAPIUnenrollNetworkSmDeviceRequest {
+	return SmAPIUnenrollNetworkSmDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4530,7 +4530,7 @@ func (a *SmApiService) UnenrollNetworkSmDevice(ctx context.Context, networkId st
 
 // Execute executes the request
 //  @return UnenrollNetworkSmDevice200Response
-func (a *SmApiService) UnenrollNetworkSmDeviceExecute(r SmApiUnenrollNetworkSmDeviceRequest) (*UnenrollNetworkSmDevice200Response, *http.Response, error) {
+func (a *SmAPIService) UnenrollNetworkSmDeviceExecute(r SmAPIUnenrollNetworkSmDeviceRequest) (*UnenrollNetworkSmDevice200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -4538,7 +4538,7 @@ func (a *SmApiService) UnenrollNetworkSmDeviceExecute(r SmApiUnenrollNetworkSmDe
 		localVarReturnValue  *UnenrollNetworkSmDevice200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.UnenrollNetworkSmDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.UnenrollNetworkSmDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4619,19 +4619,19 @@ func (a *SmApiService) UnenrollNetworkSmDeviceExecute(r SmApiUnenrollNetworkSmDe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiUpdateNetworkSmDevicesFieldsRequest struct {
+type SmAPIUpdateNetworkSmDevicesFieldsRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	updateNetworkSmDevicesFieldsRequest *UpdateNetworkSmDevicesFieldsRequest
 }
 
-func (r SmApiUpdateNetworkSmDevicesFieldsRequest) UpdateNetworkSmDevicesFieldsRequest(updateNetworkSmDevicesFieldsRequest UpdateNetworkSmDevicesFieldsRequest) SmApiUpdateNetworkSmDevicesFieldsRequest {
+func (r SmAPIUpdateNetworkSmDevicesFieldsRequest) UpdateNetworkSmDevicesFieldsRequest(updateNetworkSmDevicesFieldsRequest UpdateNetworkSmDevicesFieldsRequest) SmAPIUpdateNetworkSmDevicesFieldsRequest {
 	r.updateNetworkSmDevicesFieldsRequest = &updateNetworkSmDevicesFieldsRequest
 	return r
 }
 
-func (r SmApiUpdateNetworkSmDevicesFieldsRequest) Execute() ([]UpdateNetworkSmDevicesFields200ResponseInner, *http.Response, error) {
+func (r SmAPIUpdateNetworkSmDevicesFieldsRequest) Execute() ([]UpdateNetworkSmDevicesFields200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSmDevicesFieldsExecute(r)
 }
 
@@ -4642,10 +4642,10 @@ Modify the fields of a device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SmApiUpdateNetworkSmDevicesFieldsRequest
+ @return SmAPIUpdateNetworkSmDevicesFieldsRequest
 */
-func (a *SmApiService) UpdateNetworkSmDevicesFields(ctx context.Context, networkId string) SmApiUpdateNetworkSmDevicesFieldsRequest {
-	return SmApiUpdateNetworkSmDevicesFieldsRequest{
+func (a *SmAPIService) UpdateNetworkSmDevicesFields(ctx context.Context, networkId string) SmAPIUpdateNetworkSmDevicesFieldsRequest {
+	return SmAPIUpdateNetworkSmDevicesFieldsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4654,7 +4654,7 @@ func (a *SmApiService) UpdateNetworkSmDevicesFields(ctx context.Context, network
 
 // Execute executes the request
 //  @return []UpdateNetworkSmDevicesFields200ResponseInner
-func (a *SmApiService) UpdateNetworkSmDevicesFieldsExecute(r SmApiUpdateNetworkSmDevicesFieldsRequest) ([]UpdateNetworkSmDevicesFields200ResponseInner, *http.Response, error) {
+func (a *SmAPIService) UpdateNetworkSmDevicesFieldsExecute(r SmAPIUpdateNetworkSmDevicesFieldsRequest) ([]UpdateNetworkSmDevicesFields200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -4662,7 +4662,7 @@ func (a *SmApiService) UpdateNetworkSmDevicesFieldsExecute(r SmApiUpdateNetworkS
 		localVarReturnValue  []UpdateNetworkSmDevicesFields200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.UpdateNetworkSmDevicesFields")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.UpdateNetworkSmDevicesFields")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4747,20 +4747,20 @@ func (a *SmApiService) UpdateNetworkSmDevicesFieldsExecute(r SmApiUpdateNetworkS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiUpdateNetworkSmTargetGroupRequest struct {
+type SmAPIUpdateNetworkSmTargetGroupRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	targetGroupId string
 	createNetworkSmTargetGroupRequest *CreateNetworkSmTargetGroupRequest
 }
 
-func (r SmApiUpdateNetworkSmTargetGroupRequest) CreateNetworkSmTargetGroupRequest(createNetworkSmTargetGroupRequest CreateNetworkSmTargetGroupRequest) SmApiUpdateNetworkSmTargetGroupRequest {
+func (r SmAPIUpdateNetworkSmTargetGroupRequest) CreateNetworkSmTargetGroupRequest(createNetworkSmTargetGroupRequest CreateNetworkSmTargetGroupRequest) SmAPIUpdateNetworkSmTargetGroupRequest {
 	r.createNetworkSmTargetGroupRequest = &createNetworkSmTargetGroupRequest
 	return r
 }
 
-func (r SmApiUpdateNetworkSmTargetGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r SmAPIUpdateNetworkSmTargetGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkSmTargetGroupExecute(r)
 }
 
@@ -4772,10 +4772,10 @@ Update a target group
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param targetGroupId Target group ID
- @return SmApiUpdateNetworkSmTargetGroupRequest
+ @return SmAPIUpdateNetworkSmTargetGroupRequest
 */
-func (a *SmApiService) UpdateNetworkSmTargetGroup(ctx context.Context, networkId string, targetGroupId string) SmApiUpdateNetworkSmTargetGroupRequest {
-	return SmApiUpdateNetworkSmTargetGroupRequest{
+func (a *SmAPIService) UpdateNetworkSmTargetGroup(ctx context.Context, networkId string, targetGroupId string) SmAPIUpdateNetworkSmTargetGroupRequest {
+	return SmAPIUpdateNetworkSmTargetGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4785,7 +4785,7 @@ func (a *SmApiService) UpdateNetworkSmTargetGroup(ctx context.Context, networkId
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SmApiService) UpdateNetworkSmTargetGroupExecute(r SmApiUpdateNetworkSmTargetGroupRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SmAPIService) UpdateNetworkSmTargetGroupExecute(r SmAPIUpdateNetworkSmTargetGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -4793,7 +4793,7 @@ func (a *SmApiService) UpdateNetworkSmTargetGroupExecute(r SmApiUpdateNetworkSmT
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.UpdateNetworkSmTargetGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.UpdateNetworkSmTargetGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4876,19 +4876,19 @@ func (a *SmApiService) UpdateNetworkSmTargetGroupExecute(r SmApiUpdateNetworkSmT
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SmApiWipeNetworkSmDevicesRequest struct {
+type SmAPIWipeNetworkSmDevicesRequest struct {
 	ctx context.Context
-	ApiService *SmApiService
+	ApiService *SmAPIService
 	networkId string
 	wipeNetworkSmDevicesRequest *WipeNetworkSmDevicesRequest
 }
 
-func (r SmApiWipeNetworkSmDevicesRequest) WipeNetworkSmDevicesRequest(wipeNetworkSmDevicesRequest WipeNetworkSmDevicesRequest) SmApiWipeNetworkSmDevicesRequest {
+func (r SmAPIWipeNetworkSmDevicesRequest) WipeNetworkSmDevicesRequest(wipeNetworkSmDevicesRequest WipeNetworkSmDevicesRequest) SmAPIWipeNetworkSmDevicesRequest {
 	r.wipeNetworkSmDevicesRequest = &wipeNetworkSmDevicesRequest
 	return r
 }
 
-func (r SmApiWipeNetworkSmDevicesRequest) Execute() (*WipeNetworkSmDevices200Response, *http.Response, error) {
+func (r SmAPIWipeNetworkSmDevicesRequest) Execute() (*WipeNetworkSmDevices200Response, *http.Response, error) {
 	return r.ApiService.WipeNetworkSmDevicesExecute(r)
 }
 
@@ -4899,10 +4899,10 @@ Wipe a device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return SmApiWipeNetworkSmDevicesRequest
+ @return SmAPIWipeNetworkSmDevicesRequest
 */
-func (a *SmApiService) WipeNetworkSmDevices(ctx context.Context, networkId string) SmApiWipeNetworkSmDevicesRequest {
-	return SmApiWipeNetworkSmDevicesRequest{
+func (a *SmAPIService) WipeNetworkSmDevices(ctx context.Context, networkId string) SmAPIWipeNetworkSmDevicesRequest {
+	return SmAPIWipeNetworkSmDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -4911,7 +4911,7 @@ func (a *SmApiService) WipeNetworkSmDevices(ctx context.Context, networkId strin
 
 // Execute executes the request
 //  @return WipeNetworkSmDevices200Response
-func (a *SmApiService) WipeNetworkSmDevicesExecute(r SmApiWipeNetworkSmDevicesRequest) (*WipeNetworkSmDevices200Response, *http.Response, error) {
+func (a *SmAPIService) WipeNetworkSmDevicesExecute(r SmAPIWipeNetworkSmDevicesRequest) (*WipeNetworkSmDevices200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -4919,7 +4919,7 @@ func (a *SmApiService) WipeNetworkSmDevicesExecute(r SmApiWipeNetworkSmDevicesRe
 		localVarReturnValue  *WipeNetworkSmDevices200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmApiService.WipeNetworkSmDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SmAPIService.WipeNetworkSmDevices")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

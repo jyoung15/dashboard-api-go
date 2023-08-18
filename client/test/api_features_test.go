@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing FeaturesApiService
+Testing FeaturesAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_FeaturesApiService(t *testing.T) {
+func Test_client_FeaturesAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test FeaturesApiService CreateOrganizationEarlyAccessFeaturesOptIn", func(t *testing.T) {
+	t.Run("Test FeaturesAPIService CreateOrganizationEarlyAccessFeaturesOptIn", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.FeaturesApi.CreateOrganizationEarlyAccessFeaturesOptIn(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.FeaturesAPI.CreateOrganizationEarlyAccessFeaturesOptIn(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,27 +36,27 @@ func Test_client_FeaturesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FeaturesApiService DeleteOrganizationEarlyAccessFeaturesOptIn", func(t *testing.T) {
+	t.Run("Test FeaturesAPIService DeleteOrganizationEarlyAccessFeaturesOptIn", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var optInId string
 
-		httpRes, err := apiClient.FeaturesApi.DeleteOrganizationEarlyAccessFeaturesOptIn(context.Background(), organizationId, optInId).Execute()
+		httpRes, err := apiClient.FeaturesAPI.DeleteOrganizationEarlyAccessFeaturesOptIn(context.Background(), organizationId, optInId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test FeaturesApiService GetOrganizationEarlyAccessFeatures", func(t *testing.T) {
+	t.Run("Test FeaturesAPIService GetOrganizationEarlyAccessFeatures", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.FeaturesApi.GetOrganizationEarlyAccessFeatures(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.FeaturesAPI.GetOrganizationEarlyAccessFeatures(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,14 +64,14 @@ func Test_client_FeaturesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FeaturesApiService GetOrganizationEarlyAccessFeaturesOptIn", func(t *testing.T) {
+	t.Run("Test FeaturesAPIService GetOrganizationEarlyAccessFeaturesOptIn", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var optInId string
 
-		resp, httpRes, err := apiClient.FeaturesApi.GetOrganizationEarlyAccessFeaturesOptIn(context.Background(), organizationId, optInId).Execute()
+		resp, httpRes, err := apiClient.FeaturesAPI.GetOrganizationEarlyAccessFeaturesOptIn(context.Background(), organizationId, optInId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,13 +79,13 @@ func Test_client_FeaturesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FeaturesApiService GetOrganizationEarlyAccessFeaturesOptIns", func(t *testing.T) {
+	t.Run("Test FeaturesAPIService GetOrganizationEarlyAccessFeaturesOptIns", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.FeaturesApi.GetOrganizationEarlyAccessFeaturesOptIns(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.FeaturesAPI.GetOrganizationEarlyAccessFeaturesOptIns(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -93,14 +93,14 @@ func Test_client_FeaturesApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test FeaturesApiService UpdateOrganizationEarlyAccessFeaturesOptIn", func(t *testing.T) {
+	t.Run("Test FeaturesAPIService UpdateOrganizationEarlyAccessFeaturesOptIn", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var optInId string
 
-		resp, httpRes, err := apiClient.FeaturesApi.UpdateOrganizationEarlyAccessFeaturesOptIn(context.Background(), organizationId, optInId).Execute()
+		resp, httpRes, err := apiClient.FeaturesAPI.UpdateOrganizationEarlyAccessFeaturesOptIn(context.Background(), organizationId, optInId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

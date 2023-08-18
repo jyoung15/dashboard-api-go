@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing MonitoredMediaServersApiService
+Testing MonitoredMediaServersAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_MonitoredMediaServersApiService(t *testing.T) {
+func Test_client_MonitoredMediaServersAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test MonitoredMediaServersApiService CreateOrganizationInsightMonitoredMediaServer", func(t *testing.T) {
+	t.Run("Test MonitoredMediaServersAPIService CreateOrganizationInsightMonitoredMediaServer", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.MonitoredMediaServersApi.CreateOrganizationInsightMonitoredMediaServer(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.MonitoredMediaServersAPI.CreateOrganizationInsightMonitoredMediaServer(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,42 +36,28 @@ func Test_client_MonitoredMediaServersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test MonitoredMediaServersApiService DeleteOrganizationInsightMonitoredMediaServer", func(t *testing.T) {
+	t.Run("Test MonitoredMediaServersAPIService DeleteOrganizationInsightMonitoredMediaServer", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var monitoredMediaServerId string
 
-		httpRes, err := apiClient.MonitoredMediaServersApi.DeleteOrganizationInsightMonitoredMediaServer(context.Background(), organizationId, monitoredMediaServerId).Execute()
+		httpRes, err := apiClient.MonitoredMediaServersAPI.DeleteOrganizationInsightMonitoredMediaServer(context.Background(), organizationId, monitoredMediaServerId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test MonitoredMediaServersApiService GetOrganizationInsightMonitoredMediaServer", func(t *testing.T) {
+	t.Run("Test MonitoredMediaServersAPIService GetOrganizationInsightMonitoredMediaServer", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var monitoredMediaServerId string
 
-		resp, httpRes, err := apiClient.MonitoredMediaServersApi.GetOrganizationInsightMonitoredMediaServer(context.Background(), organizationId, monitoredMediaServerId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test MonitoredMediaServersApiService GetOrganizationInsightMonitoredMediaServers", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var organizationId string
-
-		resp, httpRes, err := apiClient.MonitoredMediaServersApi.GetOrganizationInsightMonitoredMediaServers(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.MonitoredMediaServersAPI.GetOrganizationInsightMonitoredMediaServer(context.Background(), organizationId, monitoredMediaServerId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,14 +65,28 @@ func Test_client_MonitoredMediaServersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test MonitoredMediaServersApiService UpdateOrganizationInsightMonitoredMediaServer", func(t *testing.T) {
+	t.Run("Test MonitoredMediaServersAPIService GetOrganizationInsightMonitoredMediaServers", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var organizationId string
+
+		resp, httpRes, err := apiClient.MonitoredMediaServersAPI.GetOrganizationInsightMonitoredMediaServers(context.Background(), organizationId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test MonitoredMediaServersAPIService UpdateOrganizationInsightMonitoredMediaServer", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 		var monitoredMediaServerId string
 
-		resp, httpRes, err := apiClient.MonitoredMediaServersApi.UpdateOrganizationInsightMonitoredMediaServer(context.Background(), organizationId, monitoredMediaServerId).Execute()
+		resp, httpRes, err := apiClient.MonitoredMediaServersAPI.UpdateOrganizationInsightMonitoredMediaServer(context.Background(), organizationId, monitoredMediaServerId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

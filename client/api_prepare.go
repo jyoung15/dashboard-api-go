@@ -20,22 +20,22 @@ import (
 )
 
 
-// PrepareApiService PrepareApi service
-type PrepareApiService service
+// PrepareAPIService PrepareAPI service
+type PrepareAPIService service
 
-type PrepareApiCreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest struct {
+type PrepareAPICreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest struct {
 	ctx context.Context
-	ApiService *PrepareApiService
+	ApiService *PrepareAPIService
 	organizationId string
 	createOrganizationInventoryOnboardingCloudMonitoringPrepareRequest *CreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest
 }
 
-func (r PrepareApiCreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest) CreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest(createOrganizationInventoryOnboardingCloudMonitoringPrepareRequest CreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest) PrepareApiCreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest {
+func (r PrepareAPICreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest) CreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest(createOrganizationInventoryOnboardingCloudMonitoringPrepareRequest CreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest) PrepareAPICreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest {
 	r.createOrganizationInventoryOnboardingCloudMonitoringPrepareRequest = &createOrganizationInventoryOnboardingCloudMonitoringPrepareRequest
 	return r
 }
 
-func (r PrepareApiCreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest) Execute() ([]CreateOrganizationInventoryOnboardingCloudMonitoringPrepare201ResponseInner, *http.Response, error) {
+func (r PrepareAPICreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest) Execute() ([]CreateOrganizationInventoryOnboardingCloudMonitoringPrepare201ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateOrganizationInventoryOnboardingCloudMonitoringPrepareExecute(r)
 }
 
@@ -46,10 +46,10 @@ Initiates or updates an import session. An import ID will be generated and used 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return PrepareApiCreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest
+ @return PrepareAPICreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest
 */
-func (a *PrepareApiService) CreateOrganizationInventoryOnboardingCloudMonitoringPrepare(ctx context.Context, organizationId string) PrepareApiCreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest {
-	return PrepareApiCreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest{
+func (a *PrepareAPIService) CreateOrganizationInventoryOnboardingCloudMonitoringPrepare(ctx context.Context, organizationId string) PrepareAPICreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest {
+	return PrepareAPICreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -58,7 +58,7 @@ func (a *PrepareApiService) CreateOrganizationInventoryOnboardingCloudMonitoring
 
 // Execute executes the request
 //  @return []CreateOrganizationInventoryOnboardingCloudMonitoringPrepare201ResponseInner
-func (a *PrepareApiService) CreateOrganizationInventoryOnboardingCloudMonitoringPrepareExecute(r PrepareApiCreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest) ([]CreateOrganizationInventoryOnboardingCloudMonitoringPrepare201ResponseInner, *http.Response, error) {
+func (a *PrepareAPIService) CreateOrganizationInventoryOnboardingCloudMonitoringPrepareExecute(r PrepareAPICreateOrganizationInventoryOnboardingCloudMonitoringPrepareRequest) ([]CreateOrganizationInventoryOnboardingCloudMonitoringPrepare201ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *PrepareApiService) CreateOrganizationInventoryOnboardingCloudMonitoring
 		localVarReturnValue  []CreateOrganizationInventoryOnboardingCloudMonitoringPrepare201ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrepareApiService.CreateOrganizationInventoryOnboardingCloudMonitoringPrepare")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrepareAPIService.CreateOrganizationInventoryOnboardingCloudMonitoringPrepare")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

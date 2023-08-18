@@ -21,30 +21,30 @@ import (
 )
 
 
-// StatusesApiService StatusesApi service
-type StatusesApiService service
+// StatusesAPIService StatusesAPI service
+type StatusesAPIService service
 
-type StatusesApiGetDeviceSwitchPortsStatusesRequest struct {
+type StatusesAPIGetDeviceSwitchPortsStatusesRequest struct {
 	ctx context.Context
-	ApiService *StatusesApiService
+	ApiService *StatusesAPIService
 	serial string
 	t0 *string
 	timespan *float32
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r StatusesApiGetDeviceSwitchPortsStatusesRequest) T0(t0 string) StatusesApiGetDeviceSwitchPortsStatusesRequest {
+func (r StatusesAPIGetDeviceSwitchPortsStatusesRequest) T0(t0 string) StatusesAPIGetDeviceSwitchPortsStatusesRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 31 days. The default is 1 day.
-func (r StatusesApiGetDeviceSwitchPortsStatusesRequest) Timespan(timespan float32) StatusesApiGetDeviceSwitchPortsStatusesRequest {
+func (r StatusesAPIGetDeviceSwitchPortsStatusesRequest) Timespan(timespan float32) StatusesAPIGetDeviceSwitchPortsStatusesRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r StatusesApiGetDeviceSwitchPortsStatusesRequest) Execute() ([]GetDeviceSwitchPortsStatuses200ResponseInner, *http.Response, error) {
+func (r StatusesAPIGetDeviceSwitchPortsStatusesRequest) Execute() ([]GetDeviceSwitchPortsStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetDeviceSwitchPortsStatusesExecute(r)
 }
 
@@ -55,10 +55,10 @@ Return the status for all the ports of a switch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return StatusesApiGetDeviceSwitchPortsStatusesRequest
+ @return StatusesAPIGetDeviceSwitchPortsStatusesRequest
 */
-func (a *StatusesApiService) GetDeviceSwitchPortsStatuses(ctx context.Context, serial string) StatusesApiGetDeviceSwitchPortsStatusesRequest {
-	return StatusesApiGetDeviceSwitchPortsStatusesRequest{
+func (a *StatusesAPIService) GetDeviceSwitchPortsStatuses(ctx context.Context, serial string) StatusesAPIGetDeviceSwitchPortsStatusesRequest {
+	return StatusesAPIGetDeviceSwitchPortsStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -67,7 +67,7 @@ func (a *StatusesApiService) GetDeviceSwitchPortsStatuses(ctx context.Context, s
 
 // Execute executes the request
 //  @return []GetDeviceSwitchPortsStatuses200ResponseInner
-func (a *StatusesApiService) GetDeviceSwitchPortsStatusesExecute(r StatusesApiGetDeviceSwitchPortsStatusesRequest) ([]GetDeviceSwitchPortsStatuses200ResponseInner, *http.Response, error) {
+func (a *StatusesAPIService) GetDeviceSwitchPortsStatusesExecute(r StatusesAPIGetDeviceSwitchPortsStatusesRequest) ([]GetDeviceSwitchPortsStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -75,7 +75,7 @@ func (a *StatusesApiService) GetDeviceSwitchPortsStatusesExecute(r StatusesApiGe
 		localVarReturnValue  []GetDeviceSwitchPortsStatuses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusesApiService.GetDeviceSwitchPortsStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusesAPIService.GetDeviceSwitchPortsStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -161,27 +161,27 @@ func (a *StatusesApiService) GetDeviceSwitchPortsStatusesExecute(r StatusesApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StatusesApiGetDeviceSwitchPortsStatusesPacketsRequest struct {
+type StatusesAPIGetDeviceSwitchPortsStatusesPacketsRequest struct {
 	ctx context.Context
-	ApiService *StatusesApiService
+	ApiService *StatusesAPIService
 	serial string
 	t0 *string
 	timespan *float32
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 1 day from today.
-func (r StatusesApiGetDeviceSwitchPortsStatusesPacketsRequest) T0(t0 string) StatusesApiGetDeviceSwitchPortsStatusesPacketsRequest {
+func (r StatusesAPIGetDeviceSwitchPortsStatusesPacketsRequest) T0(t0 string) StatusesAPIGetDeviceSwitchPortsStatusesPacketsRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameter t0. The value must be in seconds and be less than or equal to 1 day. The default is 1 day.
-func (r StatusesApiGetDeviceSwitchPortsStatusesPacketsRequest) Timespan(timespan float32) StatusesApiGetDeviceSwitchPortsStatusesPacketsRequest {
+func (r StatusesAPIGetDeviceSwitchPortsStatusesPacketsRequest) Timespan(timespan float32) StatusesAPIGetDeviceSwitchPortsStatusesPacketsRequest {
 	r.timespan = &timespan
 	return r
 }
 
-func (r StatusesApiGetDeviceSwitchPortsStatusesPacketsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r StatusesAPIGetDeviceSwitchPortsStatusesPacketsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceSwitchPortsStatusesPacketsExecute(r)
 }
 
@@ -192,10 +192,10 @@ Return the packet counters for all the ports of a switch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serial Serial
- @return StatusesApiGetDeviceSwitchPortsStatusesPacketsRequest
+ @return StatusesAPIGetDeviceSwitchPortsStatusesPacketsRequest
 */
-func (a *StatusesApiService) GetDeviceSwitchPortsStatusesPackets(ctx context.Context, serial string) StatusesApiGetDeviceSwitchPortsStatusesPacketsRequest {
-	return StatusesApiGetDeviceSwitchPortsStatusesPacketsRequest{
+func (a *StatusesAPIService) GetDeviceSwitchPortsStatusesPackets(ctx context.Context, serial string) StatusesAPIGetDeviceSwitchPortsStatusesPacketsRequest {
+	return StatusesAPIGetDeviceSwitchPortsStatusesPacketsRequest{
 		ApiService: a,
 		ctx: ctx,
 		serial: serial,
@@ -204,7 +204,7 @@ func (a *StatusesApiService) GetDeviceSwitchPortsStatusesPackets(ctx context.Con
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *StatusesApiService) GetDeviceSwitchPortsStatusesPacketsExecute(r StatusesApiGetDeviceSwitchPortsStatusesPacketsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *StatusesAPIService) GetDeviceSwitchPortsStatusesPacketsExecute(r StatusesAPIGetDeviceSwitchPortsStatusesPacketsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -212,7 +212,7 @@ func (a *StatusesApiService) GetDeviceSwitchPortsStatusesPacketsExecute(r Status
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusesApiService.GetDeviceSwitchPortsStatusesPackets")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusesAPIService.GetDeviceSwitchPortsStatusesPackets")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -298,9 +298,9 @@ func (a *StatusesApiService) GetDeviceSwitchPortsStatusesPacketsExecute(r Status
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StatusesApiGetOrganizationApplianceUplinkStatusesRequest struct {
+type StatusesAPIGetOrganizationApplianceUplinkStatusesRequest struct {
 	ctx context.Context
-	ApiService *StatusesApiService
+	ApiService *StatusesAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -311,42 +311,42 @@ type StatusesApiGetOrganizationApplianceUplinkStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r StatusesApiGetOrganizationApplianceUplinkStatusesRequest) PerPage(perPage int32) StatusesApiGetOrganizationApplianceUplinkStatusesRequest {
+func (r StatusesAPIGetOrganizationApplianceUplinkStatusesRequest) PerPage(perPage int32) StatusesAPIGetOrganizationApplianceUplinkStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r StatusesApiGetOrganizationApplianceUplinkStatusesRequest) StartingAfter(startingAfter string) StatusesApiGetOrganizationApplianceUplinkStatusesRequest {
+func (r StatusesAPIGetOrganizationApplianceUplinkStatusesRequest) StartingAfter(startingAfter string) StatusesAPIGetOrganizationApplianceUplinkStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r StatusesApiGetOrganizationApplianceUplinkStatusesRequest) EndingBefore(endingBefore string) StatusesApiGetOrganizationApplianceUplinkStatusesRequest {
+func (r StatusesAPIGetOrganizationApplianceUplinkStatusesRequest) EndingBefore(endingBefore string) StatusesAPIGetOrganizationApplianceUplinkStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // A list of network IDs. The returned devices will be filtered to only include these networks.
-func (r StatusesApiGetOrganizationApplianceUplinkStatusesRequest) NetworkIds(networkIds []string) StatusesApiGetOrganizationApplianceUplinkStatusesRequest {
+func (r StatusesAPIGetOrganizationApplianceUplinkStatusesRequest) NetworkIds(networkIds []string) StatusesAPIGetOrganizationApplianceUplinkStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // A list of serial numbers. The returned devices will be filtered to only include these serials.
-func (r StatusesApiGetOrganizationApplianceUplinkStatusesRequest) Serials(serials []string) StatusesApiGetOrganizationApplianceUplinkStatusesRequest {
+func (r StatusesAPIGetOrganizationApplianceUplinkStatusesRequest) Serials(serials []string) StatusesAPIGetOrganizationApplianceUplinkStatusesRequest {
 	r.serials = &serials
 	return r
 }
 
 // A list of ICCIDs. The returned devices will be filtered to only include these ICCIDs.
-func (r StatusesApiGetOrganizationApplianceUplinkStatusesRequest) Iccids(iccids []string) StatusesApiGetOrganizationApplianceUplinkStatusesRequest {
+func (r StatusesAPIGetOrganizationApplianceUplinkStatusesRequest) Iccids(iccids []string) StatusesAPIGetOrganizationApplianceUplinkStatusesRequest {
 	r.iccids = &iccids
 	return r
 }
 
-func (r StatusesApiGetOrganizationApplianceUplinkStatusesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r StatusesAPIGetOrganizationApplianceUplinkStatusesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceUplinkStatusesExecute(r)
 }
 
@@ -357,10 +357,10 @@ List the uplink status of every Meraki MX and Z series appliances in the organiz
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return StatusesApiGetOrganizationApplianceUplinkStatusesRequest
+ @return StatusesAPIGetOrganizationApplianceUplinkStatusesRequest
 */
-func (a *StatusesApiService) GetOrganizationApplianceUplinkStatuses(ctx context.Context, organizationId string) StatusesApiGetOrganizationApplianceUplinkStatusesRequest {
-	return StatusesApiGetOrganizationApplianceUplinkStatusesRequest{
+func (a *StatusesAPIService) GetOrganizationApplianceUplinkStatuses(ctx context.Context, organizationId string) StatusesAPIGetOrganizationApplianceUplinkStatusesRequest {
+	return StatusesAPIGetOrganizationApplianceUplinkStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -369,7 +369,7 @@ func (a *StatusesApiService) GetOrganizationApplianceUplinkStatuses(ctx context.
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *StatusesApiService) GetOrganizationApplianceUplinkStatusesExecute(r StatusesApiGetOrganizationApplianceUplinkStatusesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *StatusesAPIService) GetOrganizationApplianceUplinkStatusesExecute(r StatusesAPIGetOrganizationApplianceUplinkStatusesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -377,7 +377,7 @@ func (a *StatusesApiService) GetOrganizationApplianceUplinkStatusesExecute(r Sta
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusesApiService.GetOrganizationApplianceUplinkStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusesAPIService.GetOrganizationApplianceUplinkStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -499,9 +499,9 @@ func (a *StatusesApiService) GetOrganizationApplianceUplinkStatusesExecute(r Sta
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StatusesApiGetOrganizationApplianceVpnStatusesRequest struct {
+type StatusesAPIGetOrganizationApplianceVpnStatusesRequest struct {
 	ctx context.Context
-	ApiService *StatusesApiService
+	ApiService *StatusesAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -510,30 +510,30 @@ type StatusesApiGetOrganizationApplianceVpnStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 300. Default is 300.
-func (r StatusesApiGetOrganizationApplianceVpnStatusesRequest) PerPage(perPage int32) StatusesApiGetOrganizationApplianceVpnStatusesRequest {
+func (r StatusesAPIGetOrganizationApplianceVpnStatusesRequest) PerPage(perPage int32) StatusesAPIGetOrganizationApplianceVpnStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r StatusesApiGetOrganizationApplianceVpnStatusesRequest) StartingAfter(startingAfter string) StatusesApiGetOrganizationApplianceVpnStatusesRequest {
+func (r StatusesAPIGetOrganizationApplianceVpnStatusesRequest) StartingAfter(startingAfter string) StatusesAPIGetOrganizationApplianceVpnStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r StatusesApiGetOrganizationApplianceVpnStatusesRequest) EndingBefore(endingBefore string) StatusesApiGetOrganizationApplianceVpnStatusesRequest {
+func (r StatusesAPIGetOrganizationApplianceVpnStatusesRequest) EndingBefore(endingBefore string) StatusesAPIGetOrganizationApplianceVpnStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // A list of Meraki network IDs to filter results to contain only specified networks. E.g.: networkIds[]&#x3D;N_12345678&amp;networkIds[]&#x3D;L_3456
-func (r StatusesApiGetOrganizationApplianceVpnStatusesRequest) NetworkIds(networkIds []string) StatusesApiGetOrganizationApplianceVpnStatusesRequest {
+func (r StatusesAPIGetOrganizationApplianceVpnStatusesRequest) NetworkIds(networkIds []string) StatusesAPIGetOrganizationApplianceVpnStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
-func (r StatusesApiGetOrganizationApplianceVpnStatusesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r StatusesAPIGetOrganizationApplianceVpnStatusesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationApplianceVpnStatusesExecute(r)
 }
 
@@ -544,10 +544,10 @@ Show VPN status for networks in an organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return StatusesApiGetOrganizationApplianceVpnStatusesRequest
+ @return StatusesAPIGetOrganizationApplianceVpnStatusesRequest
 */
-func (a *StatusesApiService) GetOrganizationApplianceVpnStatuses(ctx context.Context, organizationId string) StatusesApiGetOrganizationApplianceVpnStatusesRequest {
-	return StatusesApiGetOrganizationApplianceVpnStatusesRequest{
+func (a *StatusesAPIService) GetOrganizationApplianceVpnStatuses(ctx context.Context, organizationId string) StatusesAPIGetOrganizationApplianceVpnStatusesRequest {
+	return StatusesAPIGetOrganizationApplianceVpnStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -556,7 +556,7 @@ func (a *StatusesApiService) GetOrganizationApplianceVpnStatuses(ctx context.Con
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *StatusesApiService) GetOrganizationApplianceVpnStatusesExecute(r StatusesApiGetOrganizationApplianceVpnStatusesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *StatusesAPIService) GetOrganizationApplianceVpnStatusesExecute(r StatusesAPIGetOrganizationApplianceVpnStatusesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -564,7 +564,7 @@ func (a *StatusesApiService) GetOrganizationApplianceVpnStatusesExecute(r Status
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusesApiService.GetOrganizationApplianceVpnStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusesAPIService.GetOrganizationApplianceVpnStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -664,27 +664,27 @@ func (a *StatusesApiService) GetOrganizationApplianceVpnStatusesExecute(r Status
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StatusesApiGetOrganizationCameraOnboardingStatusesRequest struct {
+type StatusesAPIGetOrganizationCameraOnboardingStatusesRequest struct {
 	ctx context.Context
-	ApiService *StatusesApiService
+	ApiService *StatusesAPIService
 	organizationId string
 	serials *[]string
 	networkIds *[]string
 }
 
 // A list of serial numbers. The returned cameras will be filtered to only include these serials.
-func (r StatusesApiGetOrganizationCameraOnboardingStatusesRequest) Serials(serials []string) StatusesApiGetOrganizationCameraOnboardingStatusesRequest {
+func (r StatusesAPIGetOrganizationCameraOnboardingStatusesRequest) Serials(serials []string) StatusesAPIGetOrganizationCameraOnboardingStatusesRequest {
 	r.serials = &serials
 	return r
 }
 
 // A list of network IDs. The returned cameras will be filtered to only include these networks.
-func (r StatusesApiGetOrganizationCameraOnboardingStatusesRequest) NetworkIds(networkIds []string) StatusesApiGetOrganizationCameraOnboardingStatusesRequest {
+func (r StatusesAPIGetOrganizationCameraOnboardingStatusesRequest) NetworkIds(networkIds []string) StatusesAPIGetOrganizationCameraOnboardingStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
-func (r StatusesApiGetOrganizationCameraOnboardingStatusesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r StatusesAPIGetOrganizationCameraOnboardingStatusesRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetOrganizationCameraOnboardingStatusesExecute(r)
 }
 
@@ -695,10 +695,10 @@ Fetch onboarding status of cameras
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return StatusesApiGetOrganizationCameraOnboardingStatusesRequest
+ @return StatusesAPIGetOrganizationCameraOnboardingStatusesRequest
 */
-func (a *StatusesApiService) GetOrganizationCameraOnboardingStatuses(ctx context.Context, organizationId string) StatusesApiGetOrganizationCameraOnboardingStatusesRequest {
-	return StatusesApiGetOrganizationCameraOnboardingStatusesRequest{
+func (a *StatusesAPIService) GetOrganizationCameraOnboardingStatuses(ctx context.Context, organizationId string) StatusesAPIGetOrganizationCameraOnboardingStatusesRequest {
+	return StatusesAPIGetOrganizationCameraOnboardingStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -707,7 +707,7 @@ func (a *StatusesApiService) GetOrganizationCameraOnboardingStatuses(ctx context
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *StatusesApiService) GetOrganizationCameraOnboardingStatusesExecute(r StatusesApiGetOrganizationCameraOnboardingStatusesRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *StatusesAPIService) GetOrganizationCameraOnboardingStatusesExecute(r StatusesAPIGetOrganizationCameraOnboardingStatusesRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -715,7 +715,7 @@ func (a *StatusesApiService) GetOrganizationCameraOnboardingStatusesExecute(r St
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusesApiService.GetOrganizationCameraOnboardingStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusesAPIService.GetOrganizationCameraOnboardingStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -817,9 +817,9 @@ func (a *StatusesApiService) GetOrganizationCameraOnboardingStatusesExecute(r St
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StatusesApiGetOrganizationCellularGatewayUplinkStatusesRequest struct {
+type StatusesAPIGetOrganizationCellularGatewayUplinkStatusesRequest struct {
 	ctx context.Context
-	ApiService *StatusesApiService
+	ApiService *StatusesAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -830,42 +830,42 @@ type StatusesApiGetOrganizationCellularGatewayUplinkStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r StatusesApiGetOrganizationCellularGatewayUplinkStatusesRequest) PerPage(perPage int32) StatusesApiGetOrganizationCellularGatewayUplinkStatusesRequest {
+func (r StatusesAPIGetOrganizationCellularGatewayUplinkStatusesRequest) PerPage(perPage int32) StatusesAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r StatusesApiGetOrganizationCellularGatewayUplinkStatusesRequest) StartingAfter(startingAfter string) StatusesApiGetOrganizationCellularGatewayUplinkStatusesRequest {
+func (r StatusesAPIGetOrganizationCellularGatewayUplinkStatusesRequest) StartingAfter(startingAfter string) StatusesAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r StatusesApiGetOrganizationCellularGatewayUplinkStatusesRequest) EndingBefore(endingBefore string) StatusesApiGetOrganizationCellularGatewayUplinkStatusesRequest {
+func (r StatusesAPIGetOrganizationCellularGatewayUplinkStatusesRequest) EndingBefore(endingBefore string) StatusesAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // A list of network IDs. The returned devices will be filtered to only include these networks.
-func (r StatusesApiGetOrganizationCellularGatewayUplinkStatusesRequest) NetworkIds(networkIds []string) StatusesApiGetOrganizationCellularGatewayUplinkStatusesRequest {
+func (r StatusesAPIGetOrganizationCellularGatewayUplinkStatusesRequest) NetworkIds(networkIds []string) StatusesAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // A list of serial numbers. The returned devices will be filtered to only include these serials.
-func (r StatusesApiGetOrganizationCellularGatewayUplinkStatusesRequest) Serials(serials []string) StatusesApiGetOrganizationCellularGatewayUplinkStatusesRequest {
+func (r StatusesAPIGetOrganizationCellularGatewayUplinkStatusesRequest) Serials(serials []string) StatusesAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
 	r.serials = &serials
 	return r
 }
 
 // A list of ICCIDs. The returned devices will be filtered to only include these ICCIDs.
-func (r StatusesApiGetOrganizationCellularGatewayUplinkStatusesRequest) Iccids(iccids []string) StatusesApiGetOrganizationCellularGatewayUplinkStatusesRequest {
+func (r StatusesAPIGetOrganizationCellularGatewayUplinkStatusesRequest) Iccids(iccids []string) StatusesAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
 	r.iccids = &iccids
 	return r
 }
 
-func (r StatusesApiGetOrganizationCellularGatewayUplinkStatusesRequest) Execute() ([]GetOrganizationCellularGatewayUplinkStatuses200ResponseInner, *http.Response, error) {
+func (r StatusesAPIGetOrganizationCellularGatewayUplinkStatusesRequest) Execute() ([]GetOrganizationCellularGatewayUplinkStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationCellularGatewayUplinkStatusesExecute(r)
 }
 
@@ -876,10 +876,10 @@ List the uplink status of every Meraki MG cellular gateway in the organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return StatusesApiGetOrganizationCellularGatewayUplinkStatusesRequest
+ @return StatusesAPIGetOrganizationCellularGatewayUplinkStatusesRequest
 */
-func (a *StatusesApiService) GetOrganizationCellularGatewayUplinkStatuses(ctx context.Context, organizationId string) StatusesApiGetOrganizationCellularGatewayUplinkStatusesRequest {
-	return StatusesApiGetOrganizationCellularGatewayUplinkStatusesRequest{
+func (a *StatusesAPIService) GetOrganizationCellularGatewayUplinkStatuses(ctx context.Context, organizationId string) StatusesAPIGetOrganizationCellularGatewayUplinkStatusesRequest {
+	return StatusesAPIGetOrganizationCellularGatewayUplinkStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -888,7 +888,7 @@ func (a *StatusesApiService) GetOrganizationCellularGatewayUplinkStatuses(ctx co
 
 // Execute executes the request
 //  @return []GetOrganizationCellularGatewayUplinkStatuses200ResponseInner
-func (a *StatusesApiService) GetOrganizationCellularGatewayUplinkStatusesExecute(r StatusesApiGetOrganizationCellularGatewayUplinkStatusesRequest) ([]GetOrganizationCellularGatewayUplinkStatuses200ResponseInner, *http.Response, error) {
+func (a *StatusesAPIService) GetOrganizationCellularGatewayUplinkStatusesExecute(r StatusesAPIGetOrganizationCellularGatewayUplinkStatusesRequest) ([]GetOrganizationCellularGatewayUplinkStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -896,7 +896,7 @@ func (a *StatusesApiService) GetOrganizationCellularGatewayUplinkStatusesExecute
 		localVarReturnValue  []GetOrganizationCellularGatewayUplinkStatuses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusesApiService.GetOrganizationCellularGatewayUplinkStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusesAPIService.GetOrganizationCellularGatewayUplinkStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1018,9 +1018,9 @@ func (a *StatusesApiService) GetOrganizationCellularGatewayUplinkStatusesExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StatusesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest struct {
+type StatusesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest struct {
 	ctx context.Context
-	ApiService *StatusesApiService
+	ApiService *StatusesAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -1033,54 +1033,54 @@ type StatusesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest struct
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r StatusesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) PerPage(perPage int32) StatusesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r StatusesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) PerPage(perPage int32) StatusesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r StatusesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) StartingAfter(startingAfter string) StatusesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r StatusesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) StartingAfter(startingAfter string) StatusesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r StatusesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) EndingBefore(endingBefore string) StatusesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r StatusesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) EndingBefore(endingBefore string) StatusesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter device availabilities by network ID. This filter uses multiple exact matches.
-func (r StatusesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) NetworkIds(networkIds []string) StatusesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r StatusesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) NetworkIds(networkIds []string) StatusesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter device availabilities by device product types. This filter uses multiple exact matches.
-func (r StatusesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) ProductTypes(productTypes []string) StatusesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r StatusesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) ProductTypes(productTypes []string) StatusesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter device availabilities by device serial numbers. This filter uses multiple exact matches.
-func (r StatusesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Serials(serials []string) StatusesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r StatusesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Serials(serials []string) StatusesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.serials = &serials
 	return r
 }
 
 // An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below). This filter uses multiple exact matches.
-func (r StatusesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Tags(tags []string) StatusesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r StatusesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Tags(tags []string) StatusesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.tags = &tags
 	return r
 }
 
 // An optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return devices which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r StatusesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) TagsFilterType(tagsFilterType string) StatusesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+func (r StatusesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) TagsFilterType(tagsFilterType string) StatusesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
-func (r StatusesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Execute() ([]GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner, *http.Response, error) {
+func (r StatusesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) Execute() ([]GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesPowerModulesStatusesByDeviceExecute(r)
 }
 
@@ -1091,10 +1091,10 @@ List the power status information for devices in an organization. The data retur
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return StatusesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest
+ @return StatusesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest
 */
-func (a *StatusesApiService) GetOrganizationDevicesPowerModulesStatusesByDevice(ctx context.Context, organizationId string) StatusesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
-	return StatusesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest{
+func (a *StatusesAPIService) GetOrganizationDevicesPowerModulesStatusesByDevice(ctx context.Context, organizationId string) StatusesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest {
+	return StatusesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1103,7 +1103,7 @@ func (a *StatusesApiService) GetOrganizationDevicesPowerModulesStatusesByDevice(
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner
-func (a *StatusesApiService) GetOrganizationDevicesPowerModulesStatusesByDeviceExecute(r StatusesApiGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) ([]GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner, *http.Response, error) {
+func (a *StatusesAPIService) GetOrganizationDevicesPowerModulesStatusesByDeviceExecute(r StatusesAPIGetOrganizationDevicesPowerModulesStatusesByDeviceRequest) ([]GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1111,7 +1111,7 @@ func (a *StatusesApiService) GetOrganizationDevicesPowerModulesStatusesByDeviceE
 		localVarReturnValue  []GetOrganizationDevicesPowerModulesStatusesByDevice200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusesApiService.GetOrganizationDevicesPowerModulesStatusesByDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusesAPIService.GetOrganizationDevicesPowerModulesStatusesByDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1247,9 +1247,9 @@ func (a *StatusesApiService) GetOrganizationDevicesPowerModulesStatusesByDeviceE
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StatusesApiGetOrganizationDevicesProvisioningStatusesRequest struct {
+type StatusesAPIGetOrganizationDevicesProvisioningStatusesRequest struct {
 	ctx context.Context
-	ApiService *StatusesApiService
+	ApiService *StatusesAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -1263,60 +1263,60 @@ type StatusesApiGetOrganizationDevicesProvisioningStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r StatusesApiGetOrganizationDevicesProvisioningStatusesRequest) PerPage(perPage int32) StatusesApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r StatusesAPIGetOrganizationDevicesProvisioningStatusesRequest) PerPage(perPage int32) StatusesAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r StatusesApiGetOrganizationDevicesProvisioningStatusesRequest) StartingAfter(startingAfter string) StatusesApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r StatusesAPIGetOrganizationDevicesProvisioningStatusesRequest) StartingAfter(startingAfter string) StatusesAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r StatusesApiGetOrganizationDevicesProvisioningStatusesRequest) EndingBefore(endingBefore string) StatusesApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r StatusesAPIGetOrganizationDevicesProvisioningStatusesRequest) EndingBefore(endingBefore string) StatusesAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter device by network ID. This filter uses multiple exact matches.
-func (r StatusesApiGetOrganizationDevicesProvisioningStatusesRequest) NetworkIds(networkIds []string) StatusesApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r StatusesAPIGetOrganizationDevicesProvisioningStatusesRequest) NetworkIds(networkIds []string) StatusesAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter device by device product types. This filter uses multiple exact matches.
-func (r StatusesApiGetOrganizationDevicesProvisioningStatusesRequest) ProductTypes(productTypes []string) StatusesApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r StatusesAPIGetOrganizationDevicesProvisioningStatusesRequest) ProductTypes(productTypes []string) StatusesAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter device by device serial numbers. This filter uses multiple exact matches.
-func (r StatusesApiGetOrganizationDevicesProvisioningStatusesRequest) Serials(serials []string) StatusesApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r StatusesAPIGetOrganizationDevicesProvisioningStatusesRequest) Serials(serials []string) StatusesAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.serials = &serials
 	return r
 }
 
 // An optional parameter to filter devices by the provisioning status. Accepted statuses: unprovisioned, incomplete, complete.
-func (r StatusesApiGetOrganizationDevicesProvisioningStatusesRequest) Status(status string) StatusesApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r StatusesAPIGetOrganizationDevicesProvisioningStatusesRequest) Status(status string) StatusesAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.status = &status
 	return r
 }
 
 // An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below). This filter uses multiple exact matches.
-func (r StatusesApiGetOrganizationDevicesProvisioningStatusesRequest) Tags(tags []string) StatusesApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r StatusesAPIGetOrganizationDevicesProvisioningStatusesRequest) Tags(tags []string) StatusesAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.tags = &tags
 	return r
 }
 
 // An optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return devices which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r StatusesApiGetOrganizationDevicesProvisioningStatusesRequest) TagsFilterType(tagsFilterType string) StatusesApiGetOrganizationDevicesProvisioningStatusesRequest {
+func (r StatusesAPIGetOrganizationDevicesProvisioningStatusesRequest) TagsFilterType(tagsFilterType string) StatusesAPIGetOrganizationDevicesProvisioningStatusesRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
-func (r StatusesApiGetOrganizationDevicesProvisioningStatusesRequest) Execute() ([]GetOrganizationDevicesProvisioningStatuses200ResponseInner, *http.Response, error) {
+func (r StatusesAPIGetOrganizationDevicesProvisioningStatusesRequest) Execute() ([]GetOrganizationDevicesProvisioningStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesProvisioningStatusesExecute(r)
 }
 
@@ -1327,10 +1327,10 @@ List the provisioning statuses information for devices in an organization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return StatusesApiGetOrganizationDevicesProvisioningStatusesRequest
+ @return StatusesAPIGetOrganizationDevicesProvisioningStatusesRequest
 */
-func (a *StatusesApiService) GetOrganizationDevicesProvisioningStatuses(ctx context.Context, organizationId string) StatusesApiGetOrganizationDevicesProvisioningStatusesRequest {
-	return StatusesApiGetOrganizationDevicesProvisioningStatusesRequest{
+func (a *StatusesAPIService) GetOrganizationDevicesProvisioningStatuses(ctx context.Context, organizationId string) StatusesAPIGetOrganizationDevicesProvisioningStatusesRequest {
+	return StatusesAPIGetOrganizationDevicesProvisioningStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1339,7 +1339,7 @@ func (a *StatusesApiService) GetOrganizationDevicesProvisioningStatuses(ctx cont
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesProvisioningStatuses200ResponseInner
-func (a *StatusesApiService) GetOrganizationDevicesProvisioningStatusesExecute(r StatusesApiGetOrganizationDevicesProvisioningStatusesRequest) ([]GetOrganizationDevicesProvisioningStatuses200ResponseInner, *http.Response, error) {
+func (a *StatusesAPIService) GetOrganizationDevicesProvisioningStatusesExecute(r StatusesAPIGetOrganizationDevicesProvisioningStatusesRequest) ([]GetOrganizationDevicesProvisioningStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1347,7 +1347,7 @@ func (a *StatusesApiService) GetOrganizationDevicesProvisioningStatusesExecute(r
 		localVarReturnValue  []GetOrganizationDevicesProvisioningStatuses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusesApiService.GetOrganizationDevicesProvisioningStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusesAPIService.GetOrganizationDevicesProvisioningStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1486,9 +1486,9 @@ func (a *StatusesApiService) GetOrganizationDevicesProvisioningStatusesExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StatusesApiGetOrganizationDevicesStatusesRequest struct {
+type StatusesAPIGetOrganizationDevicesStatusesRequest struct {
 	ctx context.Context
-	ApiService *StatusesApiService
+	ApiService *StatusesAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -1503,66 +1503,66 @@ type StatusesApiGetOrganizationDevicesStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r StatusesApiGetOrganizationDevicesStatusesRequest) PerPage(perPage int32) StatusesApiGetOrganizationDevicesStatusesRequest {
+func (r StatusesAPIGetOrganizationDevicesStatusesRequest) PerPage(perPage int32) StatusesAPIGetOrganizationDevicesStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r StatusesApiGetOrganizationDevicesStatusesRequest) StartingAfter(startingAfter string) StatusesApiGetOrganizationDevicesStatusesRequest {
+func (r StatusesAPIGetOrganizationDevicesStatusesRequest) StartingAfter(startingAfter string) StatusesAPIGetOrganizationDevicesStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r StatusesApiGetOrganizationDevicesStatusesRequest) EndingBefore(endingBefore string) StatusesApiGetOrganizationDevicesStatusesRequest {
+func (r StatusesAPIGetOrganizationDevicesStatusesRequest) EndingBefore(endingBefore string) StatusesAPIGetOrganizationDevicesStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // Optional parameter to filter devices by network ids.
-func (r StatusesApiGetOrganizationDevicesStatusesRequest) NetworkIds(networkIds []string) StatusesApiGetOrganizationDevicesStatusesRequest {
+func (r StatusesAPIGetOrganizationDevicesStatusesRequest) NetworkIds(networkIds []string) StatusesAPIGetOrganizationDevicesStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // Optional parameter to filter devices by serials.
-func (r StatusesApiGetOrganizationDevicesStatusesRequest) Serials(serials []string) StatusesApiGetOrganizationDevicesStatusesRequest {
+func (r StatusesAPIGetOrganizationDevicesStatusesRequest) Serials(serials []string) StatusesAPIGetOrganizationDevicesStatusesRequest {
 	r.serials = &serials
 	return r
 }
 
 // Optional parameter to filter devices by statuses. Valid statuses are [\&quot;online\&quot;, \&quot;alerting\&quot;, \&quot;offline\&quot;, \&quot;dormant\&quot;].
-func (r StatusesApiGetOrganizationDevicesStatusesRequest) Statuses(statuses []string) StatusesApiGetOrganizationDevicesStatusesRequest {
+func (r StatusesAPIGetOrganizationDevicesStatusesRequest) Statuses(statuses []string) StatusesAPIGetOrganizationDevicesStatusesRequest {
 	r.statuses = &statuses
 	return r
 }
 
 // An optional parameter to filter device statuses by product type. Valid types are wireless, appliance, switch, systemsManager, camera, cellularGateway, sensor, and cloudGateway.
-func (r StatusesApiGetOrganizationDevicesStatusesRequest) ProductTypes(productTypes []string) StatusesApiGetOrganizationDevicesStatusesRequest {
+func (r StatusesAPIGetOrganizationDevicesStatusesRequest) ProductTypes(productTypes []string) StatusesAPIGetOrganizationDevicesStatusesRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // Optional parameter to filter devices by models.
-func (r StatusesApiGetOrganizationDevicesStatusesRequest) Models(models []string) StatusesApiGetOrganizationDevicesStatusesRequest {
+func (r StatusesAPIGetOrganizationDevicesStatusesRequest) Models(models []string) StatusesAPIGetOrganizationDevicesStatusesRequest {
 	r.models = &models
 	return r
 }
 
 // An optional parameter to filter devices by tags. The filtering is case-sensitive. If tags are included, &#39;tagsFilterType&#39; should also be included (see below).
-func (r StatusesApiGetOrganizationDevicesStatusesRequest) Tags(tags []string) StatusesApiGetOrganizationDevicesStatusesRequest {
+func (r StatusesAPIGetOrganizationDevicesStatusesRequest) Tags(tags []string) StatusesAPIGetOrganizationDevicesStatusesRequest {
 	r.tags = &tags
 	return r
 }
 
 // An optional parameter of value &#39;withAnyTags&#39; or &#39;withAllTags&#39; to indicate whether to return devices which contain ANY or ALL of the included tags. If no type is included, &#39;withAnyTags&#39; will be selected.
-func (r StatusesApiGetOrganizationDevicesStatusesRequest) TagsFilterType(tagsFilterType string) StatusesApiGetOrganizationDevicesStatusesRequest {
+func (r StatusesAPIGetOrganizationDevicesStatusesRequest) TagsFilterType(tagsFilterType string) StatusesAPIGetOrganizationDevicesStatusesRequest {
 	r.tagsFilterType = &tagsFilterType
 	return r
 }
 
-func (r StatusesApiGetOrganizationDevicesStatusesRequest) Execute() ([]GetOrganizationDevicesStatuses200ResponseInner, *http.Response, error) {
+func (r StatusesAPIGetOrganizationDevicesStatusesRequest) Execute() ([]GetOrganizationDevicesStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesStatusesExecute(r)
 }
 
@@ -1573,10 +1573,10 @@ List the status of every Meraki device in the organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return StatusesApiGetOrganizationDevicesStatusesRequest
+ @return StatusesAPIGetOrganizationDevicesStatusesRequest
 */
-func (a *StatusesApiService) GetOrganizationDevicesStatuses(ctx context.Context, organizationId string) StatusesApiGetOrganizationDevicesStatusesRequest {
-	return StatusesApiGetOrganizationDevicesStatusesRequest{
+func (a *StatusesAPIService) GetOrganizationDevicesStatuses(ctx context.Context, organizationId string) StatusesAPIGetOrganizationDevicesStatusesRequest {
+	return StatusesAPIGetOrganizationDevicesStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1585,7 +1585,7 @@ func (a *StatusesApiService) GetOrganizationDevicesStatuses(ctx context.Context,
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesStatuses200ResponseInner
-func (a *StatusesApiService) GetOrganizationDevicesStatusesExecute(r StatusesApiGetOrganizationDevicesStatusesRequest) ([]GetOrganizationDevicesStatuses200ResponseInner, *http.Response, error) {
+func (a *StatusesAPIService) GetOrganizationDevicesStatusesExecute(r StatusesAPIGetOrganizationDevicesStatusesRequest) ([]GetOrganizationDevicesStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1593,7 +1593,7 @@ func (a *StatusesApiService) GetOrganizationDevicesStatusesExecute(r StatusesApi
 		localVarReturnValue  []GetOrganizationDevicesStatuses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusesApiService.GetOrganizationDevicesStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusesAPIService.GetOrganizationDevicesStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1751,27 +1751,27 @@ func (a *StatusesApiService) GetOrganizationDevicesStatusesExecute(r StatusesApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StatusesApiGetOrganizationDevicesStatusesOverviewRequest struct {
+type StatusesAPIGetOrganizationDevicesStatusesOverviewRequest struct {
 	ctx context.Context
-	ApiService *StatusesApiService
+	ApiService *StatusesAPIService
 	organizationId string
 	productTypes *[]string
 	networkIds *[]string
 }
 
 // An optional parameter to filter device statuses by product type. Valid types are wireless, appliance, switch, systemsManager, camera, cellularGateway, sensor, and cloudGateway.
-func (r StatusesApiGetOrganizationDevicesStatusesOverviewRequest) ProductTypes(productTypes []string) StatusesApiGetOrganizationDevicesStatusesOverviewRequest {
+func (r StatusesAPIGetOrganizationDevicesStatusesOverviewRequest) ProductTypes(productTypes []string) StatusesAPIGetOrganizationDevicesStatusesOverviewRequest {
 	r.productTypes = &productTypes
 	return r
 }
 
 // An optional parameter to filter device statuses by network.
-func (r StatusesApiGetOrganizationDevicesStatusesOverviewRequest) NetworkIds(networkIds []string) StatusesApiGetOrganizationDevicesStatusesOverviewRequest {
+func (r StatusesAPIGetOrganizationDevicesStatusesOverviewRequest) NetworkIds(networkIds []string) StatusesAPIGetOrganizationDevicesStatusesOverviewRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
-func (r StatusesApiGetOrganizationDevicesStatusesOverviewRequest) Execute() (*GetOrganizationDevicesStatusesOverview200Response, *http.Response, error) {
+func (r StatusesAPIGetOrganizationDevicesStatusesOverviewRequest) Execute() (*GetOrganizationDevicesStatusesOverview200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesStatusesOverviewExecute(r)
 }
 
@@ -1782,10 +1782,10 @@ Return an overview of current device statuses
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return StatusesApiGetOrganizationDevicesStatusesOverviewRequest
+ @return StatusesAPIGetOrganizationDevicesStatusesOverviewRequest
 */
-func (a *StatusesApiService) GetOrganizationDevicesStatusesOverview(ctx context.Context, organizationId string) StatusesApiGetOrganizationDevicesStatusesOverviewRequest {
-	return StatusesApiGetOrganizationDevicesStatusesOverviewRequest{
+func (a *StatusesAPIService) GetOrganizationDevicesStatusesOverview(ctx context.Context, organizationId string) StatusesAPIGetOrganizationDevicesStatusesOverviewRequest {
+	return StatusesAPIGetOrganizationDevicesStatusesOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1794,7 +1794,7 @@ func (a *StatusesApiService) GetOrganizationDevicesStatusesOverview(ctx context.
 
 // Execute executes the request
 //  @return GetOrganizationDevicesStatusesOverview200Response
-func (a *StatusesApiService) GetOrganizationDevicesStatusesOverviewExecute(r StatusesApiGetOrganizationDevicesStatusesOverviewRequest) (*GetOrganizationDevicesStatusesOverview200Response, *http.Response, error) {
+func (a *StatusesAPIService) GetOrganizationDevicesStatusesOverviewExecute(r StatusesAPIGetOrganizationDevicesStatusesOverviewRequest) (*GetOrganizationDevicesStatusesOverview200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1802,7 +1802,7 @@ func (a *StatusesApiService) GetOrganizationDevicesStatusesOverviewExecute(r Sta
 		localVarReturnValue  *GetOrganizationDevicesStatusesOverview200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusesApiService.GetOrganizationDevicesStatusesOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusesAPIService.GetOrganizationDevicesStatusesOverview")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1904,9 +1904,9 @@ func (a *StatusesApiService) GetOrganizationDevicesStatusesOverviewExecute(r Sta
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StatusesApiGetOrganizationUplinksStatusesRequest struct {
+type StatusesAPIGetOrganizationUplinksStatusesRequest struct {
 	ctx context.Context
-	ApiService *StatusesApiService
+	ApiService *StatusesAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -1917,42 +1917,42 @@ type StatusesApiGetOrganizationUplinksStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000.
-func (r StatusesApiGetOrganizationUplinksStatusesRequest) PerPage(perPage int32) StatusesApiGetOrganizationUplinksStatusesRequest {
+func (r StatusesAPIGetOrganizationUplinksStatusesRequest) PerPage(perPage int32) StatusesAPIGetOrganizationUplinksStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r StatusesApiGetOrganizationUplinksStatusesRequest) StartingAfter(startingAfter string) StatusesApiGetOrganizationUplinksStatusesRequest {
+func (r StatusesAPIGetOrganizationUplinksStatusesRequest) StartingAfter(startingAfter string) StatusesAPIGetOrganizationUplinksStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r StatusesApiGetOrganizationUplinksStatusesRequest) EndingBefore(endingBefore string) StatusesApiGetOrganizationUplinksStatusesRequest {
+func (r StatusesAPIGetOrganizationUplinksStatusesRequest) EndingBefore(endingBefore string) StatusesAPIGetOrganizationUplinksStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // A list of network IDs. The returned devices will be filtered to only include these networks.
-func (r StatusesApiGetOrganizationUplinksStatusesRequest) NetworkIds(networkIds []string) StatusesApiGetOrganizationUplinksStatusesRequest {
+func (r StatusesAPIGetOrganizationUplinksStatusesRequest) NetworkIds(networkIds []string) StatusesAPIGetOrganizationUplinksStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
 // A list of serial numbers. The returned devices will be filtered to only include these serials.
-func (r StatusesApiGetOrganizationUplinksStatusesRequest) Serials(serials []string) StatusesApiGetOrganizationUplinksStatusesRequest {
+func (r StatusesAPIGetOrganizationUplinksStatusesRequest) Serials(serials []string) StatusesAPIGetOrganizationUplinksStatusesRequest {
 	r.serials = &serials
 	return r
 }
 
 // A list of ICCIDs. The returned devices will be filtered to only include these ICCIDs.
-func (r StatusesApiGetOrganizationUplinksStatusesRequest) Iccids(iccids []string) StatusesApiGetOrganizationUplinksStatusesRequest {
+func (r StatusesAPIGetOrganizationUplinksStatusesRequest) Iccids(iccids []string) StatusesAPIGetOrganizationUplinksStatusesRequest {
 	r.iccids = &iccids
 	return r
 }
 
-func (r StatusesApiGetOrganizationUplinksStatusesRequest) Execute() ([]GetOrganizationUplinksStatuses200ResponseInner, *http.Response, error) {
+func (r StatusesAPIGetOrganizationUplinksStatusesRequest) Execute() ([]GetOrganizationUplinksStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationUplinksStatusesExecute(r)
 }
 
@@ -1963,10 +1963,10 @@ List the uplink status of every Meraki MX, MG and Z series devices in the organi
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return StatusesApiGetOrganizationUplinksStatusesRequest
+ @return StatusesAPIGetOrganizationUplinksStatusesRequest
 */
-func (a *StatusesApiService) GetOrganizationUplinksStatuses(ctx context.Context, organizationId string) StatusesApiGetOrganizationUplinksStatusesRequest {
-	return StatusesApiGetOrganizationUplinksStatusesRequest{
+func (a *StatusesAPIService) GetOrganizationUplinksStatuses(ctx context.Context, organizationId string) StatusesAPIGetOrganizationUplinksStatusesRequest {
+	return StatusesAPIGetOrganizationUplinksStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1975,7 +1975,7 @@ func (a *StatusesApiService) GetOrganizationUplinksStatuses(ctx context.Context,
 
 // Execute executes the request
 //  @return []GetOrganizationUplinksStatuses200ResponseInner
-func (a *StatusesApiService) GetOrganizationUplinksStatusesExecute(r StatusesApiGetOrganizationUplinksStatusesRequest) ([]GetOrganizationUplinksStatuses200ResponseInner, *http.Response, error) {
+func (a *StatusesAPIService) GetOrganizationUplinksStatusesExecute(r StatusesAPIGetOrganizationUplinksStatusesRequest) ([]GetOrganizationUplinksStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1983,7 +1983,7 @@ func (a *StatusesApiService) GetOrganizationUplinksStatusesExecute(r StatusesApi
 		localVarReturnValue  []GetOrganizationUplinksStatuses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusesApiService.GetOrganizationUplinksStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusesAPIService.GetOrganizationUplinksStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2105,9 +2105,9 @@ func (a *StatusesApiService) GetOrganizationUplinksStatusesExecute(r StatusesApi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StatusesApiGetOrganizationWirelessDevicesEthernetStatusesRequest struct {
+type StatusesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest struct {
 	ctx context.Context
-	ApiService *StatusesApiService
+	ApiService *StatusesAPIService
 	organizationId string
 	perPage *int32
 	startingAfter *string
@@ -2116,30 +2116,30 @@ type StatusesApiGetOrganizationWirelessDevicesEthernetStatusesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
-func (r StatusesApiGetOrganizationWirelessDevicesEthernetStatusesRequest) PerPage(perPage int32) StatusesApiGetOrganizationWirelessDevicesEthernetStatusesRequest {
+func (r StatusesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) PerPage(perPage int32) StatusesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r StatusesApiGetOrganizationWirelessDevicesEthernetStatusesRequest) StartingAfter(startingAfter string) StatusesApiGetOrganizationWirelessDevicesEthernetStatusesRequest {
+func (r StatusesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) StartingAfter(startingAfter string) StatusesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r StatusesApiGetOrganizationWirelessDevicesEthernetStatusesRequest) EndingBefore(endingBefore string) StatusesApiGetOrganizationWirelessDevicesEthernetStatusesRequest {
+func (r StatusesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) EndingBefore(endingBefore string) StatusesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
 // A list of Meraki network IDs to filter results to contain only specified networks. E.g.: networkIds[]&#x3D;N_12345678&amp;networkIds[]&#x3D;L_3456
-func (r StatusesApiGetOrganizationWirelessDevicesEthernetStatusesRequest) NetworkIds(networkIds []string) StatusesApiGetOrganizationWirelessDevicesEthernetStatusesRequest {
+func (r StatusesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) NetworkIds(networkIds []string) StatusesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest {
 	r.networkIds = &networkIds
 	return r
 }
 
-func (r StatusesApiGetOrganizationWirelessDevicesEthernetStatusesRequest) Execute() ([]GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner, *http.Response, error) {
+func (r StatusesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) Execute() ([]GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationWirelessDevicesEthernetStatusesExecute(r)
 }
 
@@ -2150,10 +2150,10 @@ List the most recent Ethernet link speed, duplex, aggregation and power mode and
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return StatusesApiGetOrganizationWirelessDevicesEthernetStatusesRequest
+ @return StatusesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest
 */
-func (a *StatusesApiService) GetOrganizationWirelessDevicesEthernetStatuses(ctx context.Context, organizationId string) StatusesApiGetOrganizationWirelessDevicesEthernetStatusesRequest {
-	return StatusesApiGetOrganizationWirelessDevicesEthernetStatusesRequest{
+func (a *StatusesAPIService) GetOrganizationWirelessDevicesEthernetStatuses(ctx context.Context, organizationId string) StatusesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest {
+	return StatusesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -2162,7 +2162,7 @@ func (a *StatusesApiService) GetOrganizationWirelessDevicesEthernetStatuses(ctx 
 
 // Execute executes the request
 //  @return []GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner
-func (a *StatusesApiService) GetOrganizationWirelessDevicesEthernetStatusesExecute(r StatusesApiGetOrganizationWirelessDevicesEthernetStatusesRequest) ([]GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner, *http.Response, error) {
+func (a *StatusesAPIService) GetOrganizationWirelessDevicesEthernetStatusesExecute(r StatusesAPIGetOrganizationWirelessDevicesEthernetStatusesRequest) ([]GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2170,7 +2170,7 @@ func (a *StatusesApiService) GetOrganizationWirelessDevicesEthernetStatusesExecu
 		localVarReturnValue  []GetOrganizationWirelessDevicesEthernetStatuses200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusesApiService.GetOrganizationWirelessDevicesEthernetStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusesAPIService.GetOrganizationWirelessDevicesEthernetStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2270,19 +2270,19 @@ func (a *StatusesApiService) GetOrganizationWirelessDevicesEthernetStatusesExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StatusesApiUpdateOrganizationCameraOnboardingStatusesRequest struct {
+type StatusesAPIUpdateOrganizationCameraOnboardingStatusesRequest struct {
 	ctx context.Context
-	ApiService *StatusesApiService
+	ApiService *StatusesAPIService
 	organizationId string
 	updateOrganizationCameraOnboardingStatusesRequest *UpdateOrganizationCameraOnboardingStatusesRequest
 }
 
-func (r StatusesApiUpdateOrganizationCameraOnboardingStatusesRequest) UpdateOrganizationCameraOnboardingStatusesRequest(updateOrganizationCameraOnboardingStatusesRequest UpdateOrganizationCameraOnboardingStatusesRequest) StatusesApiUpdateOrganizationCameraOnboardingStatusesRequest {
+func (r StatusesAPIUpdateOrganizationCameraOnboardingStatusesRequest) UpdateOrganizationCameraOnboardingStatusesRequest(updateOrganizationCameraOnboardingStatusesRequest UpdateOrganizationCameraOnboardingStatusesRequest) StatusesAPIUpdateOrganizationCameraOnboardingStatusesRequest {
 	r.updateOrganizationCameraOnboardingStatusesRequest = &updateOrganizationCameraOnboardingStatusesRequest
 	return r
 }
 
-func (r StatusesApiUpdateOrganizationCameraOnboardingStatusesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r StatusesAPIUpdateOrganizationCameraOnboardingStatusesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationCameraOnboardingStatusesExecute(r)
 }
 
@@ -2293,10 +2293,10 @@ Notify that credential handoff to camera has completed
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return StatusesApiUpdateOrganizationCameraOnboardingStatusesRequest
+ @return StatusesAPIUpdateOrganizationCameraOnboardingStatusesRequest
 */
-func (a *StatusesApiService) UpdateOrganizationCameraOnboardingStatuses(ctx context.Context, organizationId string) StatusesApiUpdateOrganizationCameraOnboardingStatusesRequest {
-	return StatusesApiUpdateOrganizationCameraOnboardingStatusesRequest{
+func (a *StatusesAPIService) UpdateOrganizationCameraOnboardingStatuses(ctx context.Context, organizationId string) StatusesAPIUpdateOrganizationCameraOnboardingStatusesRequest {
+	return StatusesAPIUpdateOrganizationCameraOnboardingStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -2305,7 +2305,7 @@ func (a *StatusesApiService) UpdateOrganizationCameraOnboardingStatuses(ctx cont
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *StatusesApiService) UpdateOrganizationCameraOnboardingStatusesExecute(r StatusesApiUpdateOrganizationCameraOnboardingStatusesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *StatusesAPIService) UpdateOrganizationCameraOnboardingStatusesExecute(r StatusesAPIUpdateOrganizationCameraOnboardingStatusesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -2313,7 +2313,7 @@ func (a *StatusesApiService) UpdateOrganizationCameraOnboardingStatusesExecute(r
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusesApiService.UpdateOrganizationCameraOnboardingStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StatusesAPIService.UpdateOrganizationCameraOnboardingStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

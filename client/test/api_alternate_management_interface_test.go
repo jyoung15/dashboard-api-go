@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing AlternateManagementInterfaceApiService
+Testing AlternateManagementInterfaceAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_AlternateManagementInterfaceApiService(t *testing.T) {
+func Test_client_AlternateManagementInterfaceAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test AlternateManagementInterfaceApiService GetNetworkSwitchAlternateManagementInterface", func(t *testing.T) {
+	t.Run("Test AlternateManagementInterfaceAPIService GetNetworkSwitchAlternateManagementInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.AlternateManagementInterfaceApi.GetNetworkSwitchAlternateManagementInterface(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.AlternateManagementInterfaceAPI.GetNetworkSwitchAlternateManagementInterface(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_AlternateManagementInterfaceApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AlternateManagementInterfaceApiService GetNetworkWirelessAlternateManagementInterface", func(t *testing.T) {
+	t.Run("Test AlternateManagementInterfaceAPIService GetNetworkWirelessAlternateManagementInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.AlternateManagementInterfaceApi.GetNetworkWirelessAlternateManagementInterface(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.AlternateManagementInterfaceAPI.GetNetworkWirelessAlternateManagementInterface(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,13 +50,13 @@ func Test_client_AlternateManagementInterfaceApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AlternateManagementInterfaceApiService UpdateNetworkSwitchAlternateManagementInterface", func(t *testing.T) {
+	t.Run("Test AlternateManagementInterfaceAPIService UpdateNetworkSwitchAlternateManagementInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.AlternateManagementInterfaceApi.UpdateNetworkSwitchAlternateManagementInterface(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.AlternateManagementInterfaceAPI.UpdateNetworkSwitchAlternateManagementInterface(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -64,13 +64,13 @@ func Test_client_AlternateManagementInterfaceApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AlternateManagementInterfaceApiService UpdateNetworkWirelessAlternateManagementInterface", func(t *testing.T) {
+	t.Run("Test AlternateManagementInterfaceAPIService UpdateNetworkWirelessAlternateManagementInterface", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.AlternateManagementInterfaceApi.UpdateNetworkWirelessAlternateManagementInterface(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.AlternateManagementInterfaceAPI.UpdateNetworkWirelessAlternateManagementInterface(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

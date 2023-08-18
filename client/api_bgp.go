@@ -20,16 +20,16 @@ import (
 )
 
 
-// BgpApiService BgpApi service
-type BgpApiService service
+// BgpAPIService BgpAPI service
+type BgpAPIService service
 
-type BgpApiGetNetworkApplianceVpnBgpRequest struct {
+type BgpAPIGetNetworkApplianceVpnBgpRequest struct {
 	ctx context.Context
-	ApiService *BgpApiService
+	ApiService *BgpAPIService
 	networkId string
 }
 
-func (r BgpApiGetNetworkApplianceVpnBgpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r BgpAPIGetNetworkApplianceVpnBgpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkApplianceVpnBgpExecute(r)
 }
 
@@ -40,10 +40,10 @@ Return a Hub BGP Configuration
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return BgpApiGetNetworkApplianceVpnBgpRequest
+ @return BgpAPIGetNetworkApplianceVpnBgpRequest
 */
-func (a *BgpApiService) GetNetworkApplianceVpnBgp(ctx context.Context, networkId string) BgpApiGetNetworkApplianceVpnBgpRequest {
-	return BgpApiGetNetworkApplianceVpnBgpRequest{
+func (a *BgpAPIService) GetNetworkApplianceVpnBgp(ctx context.Context, networkId string) BgpAPIGetNetworkApplianceVpnBgpRequest {
+	return BgpAPIGetNetworkApplianceVpnBgpRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -52,7 +52,7 @@ func (a *BgpApiService) GetNetworkApplianceVpnBgp(ctx context.Context, networkId
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *BgpApiService) GetNetworkApplianceVpnBgpExecute(r BgpApiGetNetworkApplianceVpnBgpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *BgpAPIService) GetNetworkApplianceVpnBgpExecute(r BgpAPIGetNetworkApplianceVpnBgpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *BgpApiService) GetNetworkApplianceVpnBgpExecute(r BgpApiGetNetworkAppli
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BgpApiService.GetNetworkApplianceVpnBgp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BgpAPIService.GetNetworkApplianceVpnBgp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,19 +140,19 @@ func (a *BgpApiService) GetNetworkApplianceVpnBgpExecute(r BgpApiGetNetworkAppli
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BgpApiUpdateNetworkApplianceVpnBgpRequest struct {
+type BgpAPIUpdateNetworkApplianceVpnBgpRequest struct {
 	ctx context.Context
-	ApiService *BgpApiService
+	ApiService *BgpAPIService
 	networkId string
 	updateNetworkApplianceVpnBgpRequest *UpdateNetworkApplianceVpnBgpRequest
 }
 
-func (r BgpApiUpdateNetworkApplianceVpnBgpRequest) UpdateNetworkApplianceVpnBgpRequest(updateNetworkApplianceVpnBgpRequest UpdateNetworkApplianceVpnBgpRequest) BgpApiUpdateNetworkApplianceVpnBgpRequest {
+func (r BgpAPIUpdateNetworkApplianceVpnBgpRequest) UpdateNetworkApplianceVpnBgpRequest(updateNetworkApplianceVpnBgpRequest UpdateNetworkApplianceVpnBgpRequest) BgpAPIUpdateNetworkApplianceVpnBgpRequest {
 	r.updateNetworkApplianceVpnBgpRequest = &updateNetworkApplianceVpnBgpRequest
 	return r
 }
 
-func (r BgpApiUpdateNetworkApplianceVpnBgpRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r BgpAPIUpdateNetworkApplianceVpnBgpRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateNetworkApplianceVpnBgpExecute(r)
 }
 
@@ -163,10 +163,10 @@ Update a Hub BGP Configuration
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return BgpApiUpdateNetworkApplianceVpnBgpRequest
+ @return BgpAPIUpdateNetworkApplianceVpnBgpRequest
 */
-func (a *BgpApiService) UpdateNetworkApplianceVpnBgp(ctx context.Context, networkId string) BgpApiUpdateNetworkApplianceVpnBgpRequest {
-	return BgpApiUpdateNetworkApplianceVpnBgpRequest{
+func (a *BgpAPIService) UpdateNetworkApplianceVpnBgp(ctx context.Context, networkId string) BgpAPIUpdateNetworkApplianceVpnBgpRequest {
+	return BgpAPIUpdateNetworkApplianceVpnBgpRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -175,7 +175,7 @@ func (a *BgpApiService) UpdateNetworkApplianceVpnBgp(ctx context.Context, networ
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *BgpApiService) UpdateNetworkApplianceVpnBgpExecute(r BgpApiUpdateNetworkApplianceVpnBgpRequest) (map[string]interface{}, *http.Response, error) {
+func (a *BgpAPIService) UpdateNetworkApplianceVpnBgpExecute(r BgpAPIUpdateNetworkApplianceVpnBgpRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *BgpApiService) UpdateNetworkApplianceVpnBgpExecute(r BgpApiUpdateNetwor
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BgpApiService.UpdateNetworkApplianceVpnBgp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BgpAPIService.UpdateNetworkApplianceVpnBgp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

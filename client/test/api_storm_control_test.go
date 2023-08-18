@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing StormControlApiService
+Testing StormControlAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_StormControlApiService(t *testing.T) {
+func Test_client_StormControlAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test StormControlApiService GetNetworkSwitchStormControl", func(t *testing.T) {
+	t.Run("Test StormControlAPIService GetNetworkSwitchStormControl", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.StormControlApi.GetNetworkSwitchStormControl(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.StormControlAPI.GetNetworkSwitchStormControl(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_StormControlApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test StormControlApiService UpdateNetworkSwitchStormControl", func(t *testing.T) {
+	t.Run("Test StormControlAPIService UpdateNetworkSwitchStormControl", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.StormControlApi.UpdateNetworkSwitchStormControl(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.StormControlAPI.UpdateNetworkSwitchStormControl(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

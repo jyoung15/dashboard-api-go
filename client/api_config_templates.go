@@ -20,22 +20,22 @@ import (
 )
 
 
-// ConfigTemplatesApiService ConfigTemplatesApi service
-type ConfigTemplatesApiService service
+// ConfigTemplatesAPIService ConfigTemplatesAPI service
+type ConfigTemplatesAPIService service
 
-type ConfigTemplatesApiCreateOrganizationConfigTemplateRequest struct {
+type ConfigTemplatesAPICreateOrganizationConfigTemplateRequest struct {
 	ctx context.Context
-	ApiService *ConfigTemplatesApiService
+	ApiService *ConfigTemplatesAPIService
 	organizationId string
 	createOrganizationConfigTemplateRequest *CreateOrganizationConfigTemplateRequest
 }
 
-func (r ConfigTemplatesApiCreateOrganizationConfigTemplateRequest) CreateOrganizationConfigTemplateRequest(createOrganizationConfigTemplateRequest CreateOrganizationConfigTemplateRequest) ConfigTemplatesApiCreateOrganizationConfigTemplateRequest {
+func (r ConfigTemplatesAPICreateOrganizationConfigTemplateRequest) CreateOrganizationConfigTemplateRequest(createOrganizationConfigTemplateRequest CreateOrganizationConfigTemplateRequest) ConfigTemplatesAPICreateOrganizationConfigTemplateRequest {
 	r.createOrganizationConfigTemplateRequest = &createOrganizationConfigTemplateRequest
 	return r
 }
 
-func (r ConfigTemplatesApiCreateOrganizationConfigTemplateRequest) Execute() (*GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
+func (r ConfigTemplatesAPICreateOrganizationConfigTemplateRequest) Execute() (*GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
 	return r.ApiService.CreateOrganizationConfigTemplateExecute(r)
 }
 
@@ -46,10 +46,10 @@ Create a new configuration template
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ConfigTemplatesApiCreateOrganizationConfigTemplateRequest
+ @return ConfigTemplatesAPICreateOrganizationConfigTemplateRequest
 */
-func (a *ConfigTemplatesApiService) CreateOrganizationConfigTemplate(ctx context.Context, organizationId string) ConfigTemplatesApiCreateOrganizationConfigTemplateRequest {
-	return ConfigTemplatesApiCreateOrganizationConfigTemplateRequest{
+func (a *ConfigTemplatesAPIService) CreateOrganizationConfigTemplate(ctx context.Context, organizationId string) ConfigTemplatesAPICreateOrganizationConfigTemplateRequest {
+	return ConfigTemplatesAPICreateOrganizationConfigTemplateRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -58,7 +58,7 @@ func (a *ConfigTemplatesApiService) CreateOrganizationConfigTemplate(ctx context
 
 // Execute executes the request
 //  @return GetOrganizationConfigTemplates200ResponseInner
-func (a *ConfigTemplatesApiService) CreateOrganizationConfigTemplateExecute(r ConfigTemplatesApiCreateOrganizationConfigTemplateRequest) (*GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
+func (a *ConfigTemplatesAPIService) CreateOrganizationConfigTemplateExecute(r ConfigTemplatesAPICreateOrganizationConfigTemplateRequest) (*GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -66,7 +66,7 @@ func (a *ConfigTemplatesApiService) CreateOrganizationConfigTemplateExecute(r Co
 		localVarReturnValue  *GetOrganizationConfigTemplates200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigTemplatesApiService.CreateOrganizationConfigTemplate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigTemplatesAPIService.CreateOrganizationConfigTemplate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,14 +151,14 @@ func (a *ConfigTemplatesApiService) CreateOrganizationConfigTemplateExecute(r Co
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ConfigTemplatesApiDeleteOrganizationConfigTemplateRequest struct {
+type ConfigTemplatesAPIDeleteOrganizationConfigTemplateRequest struct {
 	ctx context.Context
-	ApiService *ConfigTemplatesApiService
+	ApiService *ConfigTemplatesAPIService
 	organizationId string
 	configTemplateId string
 }
 
-func (r ConfigTemplatesApiDeleteOrganizationConfigTemplateRequest) Execute() (*http.Response, error) {
+func (r ConfigTemplatesAPIDeleteOrganizationConfigTemplateRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOrganizationConfigTemplateExecute(r)
 }
 
@@ -170,10 +170,10 @@ Remove a configuration template
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param configTemplateId Config template ID
- @return ConfigTemplatesApiDeleteOrganizationConfigTemplateRequest
+ @return ConfigTemplatesAPIDeleteOrganizationConfigTemplateRequest
 */
-func (a *ConfigTemplatesApiService) DeleteOrganizationConfigTemplate(ctx context.Context, organizationId string, configTemplateId string) ConfigTemplatesApiDeleteOrganizationConfigTemplateRequest {
-	return ConfigTemplatesApiDeleteOrganizationConfigTemplateRequest{
+func (a *ConfigTemplatesAPIService) DeleteOrganizationConfigTemplate(ctx context.Context, organizationId string, configTemplateId string) ConfigTemplatesAPIDeleteOrganizationConfigTemplateRequest {
+	return ConfigTemplatesAPIDeleteOrganizationConfigTemplateRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -182,14 +182,14 @@ func (a *ConfigTemplatesApiService) DeleteOrganizationConfigTemplate(ctx context
 }
 
 // Execute executes the request
-func (a *ConfigTemplatesApiService) DeleteOrganizationConfigTemplateExecute(r ConfigTemplatesApiDeleteOrganizationConfigTemplateRequest) (*http.Response, error) {
+func (a *ConfigTemplatesAPIService) DeleteOrganizationConfigTemplateExecute(r ConfigTemplatesAPIDeleteOrganizationConfigTemplateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigTemplatesApiService.DeleteOrganizationConfigTemplate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigTemplatesAPIService.DeleteOrganizationConfigTemplate")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -261,14 +261,14 @@ func (a *ConfigTemplatesApiService) DeleteOrganizationConfigTemplateExecute(r Co
 	return localVarHTTPResponse, nil
 }
 
-type ConfigTemplatesApiGetOrganizationConfigTemplateRequest struct {
+type ConfigTemplatesAPIGetOrganizationConfigTemplateRequest struct {
 	ctx context.Context
-	ApiService *ConfigTemplatesApiService
+	ApiService *ConfigTemplatesAPIService
 	organizationId string
 	configTemplateId string
 }
 
-func (r ConfigTemplatesApiGetOrganizationConfigTemplateRequest) Execute() (*GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
+func (r ConfigTemplatesAPIGetOrganizationConfigTemplateRequest) Execute() (*GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationConfigTemplateExecute(r)
 }
 
@@ -280,10 +280,10 @@ Return a single configuration template
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param configTemplateId Config template ID
- @return ConfigTemplatesApiGetOrganizationConfigTemplateRequest
+ @return ConfigTemplatesAPIGetOrganizationConfigTemplateRequest
 */
-func (a *ConfigTemplatesApiService) GetOrganizationConfigTemplate(ctx context.Context, organizationId string, configTemplateId string) ConfigTemplatesApiGetOrganizationConfigTemplateRequest {
-	return ConfigTemplatesApiGetOrganizationConfigTemplateRequest{
+func (a *ConfigTemplatesAPIService) GetOrganizationConfigTemplate(ctx context.Context, organizationId string, configTemplateId string) ConfigTemplatesAPIGetOrganizationConfigTemplateRequest {
+	return ConfigTemplatesAPIGetOrganizationConfigTemplateRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -293,7 +293,7 @@ func (a *ConfigTemplatesApiService) GetOrganizationConfigTemplate(ctx context.Co
 
 // Execute executes the request
 //  @return GetOrganizationConfigTemplates200ResponseInner
-func (a *ConfigTemplatesApiService) GetOrganizationConfigTemplateExecute(r ConfigTemplatesApiGetOrganizationConfigTemplateRequest) (*GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
+func (a *ConfigTemplatesAPIService) GetOrganizationConfigTemplateExecute(r ConfigTemplatesAPIGetOrganizationConfigTemplateRequest) (*GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -301,7 +301,7 @@ func (a *ConfigTemplatesApiService) GetOrganizationConfigTemplateExecute(r Confi
 		localVarReturnValue  *GetOrganizationConfigTemplates200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigTemplatesApiService.GetOrganizationConfigTemplate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigTemplatesAPIService.GetOrganizationConfigTemplate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -382,16 +382,16 @@ func (a *ConfigTemplatesApiService) GetOrganizationConfigTemplateExecute(r Confi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ConfigTemplatesApiGetOrganizationConfigTemplateSwitchProfilePortRequest struct {
+type ConfigTemplatesAPIGetOrganizationConfigTemplateSwitchProfilePortRequest struct {
 	ctx context.Context
-	ApiService *ConfigTemplatesApiService
+	ApiService *ConfigTemplatesAPIService
 	organizationId string
 	configTemplateId string
 	profileId string
 	portId string
 }
 
-func (r ConfigTemplatesApiGetOrganizationConfigTemplateSwitchProfilePortRequest) Execute() (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
+func (r ConfigTemplatesAPIGetOrganizationConfigTemplateSwitchProfilePortRequest) Execute() (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationConfigTemplateSwitchProfilePortExecute(r)
 }
 
@@ -405,10 +405,10 @@ Return a switch template port
  @param configTemplateId Config template ID
  @param profileId Profile ID
  @param portId Port ID
- @return ConfigTemplatesApiGetOrganizationConfigTemplateSwitchProfilePortRequest
+ @return ConfigTemplatesAPIGetOrganizationConfigTemplateSwitchProfilePortRequest
 */
-func (a *ConfigTemplatesApiService) GetOrganizationConfigTemplateSwitchProfilePort(ctx context.Context, organizationId string, configTemplateId string, profileId string, portId string) ConfigTemplatesApiGetOrganizationConfigTemplateSwitchProfilePortRequest {
-	return ConfigTemplatesApiGetOrganizationConfigTemplateSwitchProfilePortRequest{
+func (a *ConfigTemplatesAPIService) GetOrganizationConfigTemplateSwitchProfilePort(ctx context.Context, organizationId string, configTemplateId string, profileId string, portId string) ConfigTemplatesAPIGetOrganizationConfigTemplateSwitchProfilePortRequest {
+	return ConfigTemplatesAPIGetOrganizationConfigTemplateSwitchProfilePortRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -420,7 +420,7 @@ func (a *ConfigTemplatesApiService) GetOrganizationConfigTemplateSwitchProfilePo
 
 // Execute executes the request
 //  @return GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner
-func (a *ConfigTemplatesApiService) GetOrganizationConfigTemplateSwitchProfilePortExecute(r ConfigTemplatesApiGetOrganizationConfigTemplateSwitchProfilePortRequest) (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
+func (a *ConfigTemplatesAPIService) GetOrganizationConfigTemplateSwitchProfilePortExecute(r ConfigTemplatesAPIGetOrganizationConfigTemplateSwitchProfilePortRequest) (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -428,7 +428,7 @@ func (a *ConfigTemplatesApiService) GetOrganizationConfigTemplateSwitchProfilePo
 		localVarReturnValue  *GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigTemplatesApiService.GetOrganizationConfigTemplateSwitchProfilePort")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigTemplatesAPIService.GetOrganizationConfigTemplateSwitchProfilePort")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -511,15 +511,15 @@ func (a *ConfigTemplatesApiService) GetOrganizationConfigTemplateSwitchProfilePo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ConfigTemplatesApiGetOrganizationConfigTemplateSwitchProfilePortsRequest struct {
+type ConfigTemplatesAPIGetOrganizationConfigTemplateSwitchProfilePortsRequest struct {
 	ctx context.Context
-	ApiService *ConfigTemplatesApiService
+	ApiService *ConfigTemplatesAPIService
 	organizationId string
 	configTemplateId string
 	profileId string
 }
 
-func (r ConfigTemplatesApiGetOrganizationConfigTemplateSwitchProfilePortsRequest) Execute() ([]GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
+func (r ConfigTemplatesAPIGetOrganizationConfigTemplateSwitchProfilePortsRequest) Execute() ([]GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationConfigTemplateSwitchProfilePortsExecute(r)
 }
 
@@ -532,10 +532,10 @@ Return all the ports of a switch template
  @param organizationId Organization ID
  @param configTemplateId Config template ID
  @param profileId Profile ID
- @return ConfigTemplatesApiGetOrganizationConfigTemplateSwitchProfilePortsRequest
+ @return ConfigTemplatesAPIGetOrganizationConfigTemplateSwitchProfilePortsRequest
 */
-func (a *ConfigTemplatesApiService) GetOrganizationConfigTemplateSwitchProfilePorts(ctx context.Context, organizationId string, configTemplateId string, profileId string) ConfigTemplatesApiGetOrganizationConfigTemplateSwitchProfilePortsRequest {
-	return ConfigTemplatesApiGetOrganizationConfigTemplateSwitchProfilePortsRequest{
+func (a *ConfigTemplatesAPIService) GetOrganizationConfigTemplateSwitchProfilePorts(ctx context.Context, organizationId string, configTemplateId string, profileId string) ConfigTemplatesAPIGetOrganizationConfigTemplateSwitchProfilePortsRequest {
+	return ConfigTemplatesAPIGetOrganizationConfigTemplateSwitchProfilePortsRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -546,7 +546,7 @@ func (a *ConfigTemplatesApiService) GetOrganizationConfigTemplateSwitchProfilePo
 
 // Execute executes the request
 //  @return []GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner
-func (a *ConfigTemplatesApiService) GetOrganizationConfigTemplateSwitchProfilePortsExecute(r ConfigTemplatesApiGetOrganizationConfigTemplateSwitchProfilePortsRequest) ([]GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
+func (a *ConfigTemplatesAPIService) GetOrganizationConfigTemplateSwitchProfilePortsExecute(r ConfigTemplatesAPIGetOrganizationConfigTemplateSwitchProfilePortsRequest) ([]GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -554,7 +554,7 @@ func (a *ConfigTemplatesApiService) GetOrganizationConfigTemplateSwitchProfilePo
 		localVarReturnValue  []GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigTemplatesApiService.GetOrganizationConfigTemplateSwitchProfilePorts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigTemplatesAPIService.GetOrganizationConfigTemplateSwitchProfilePorts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -636,14 +636,14 @@ func (a *ConfigTemplatesApiService) GetOrganizationConfigTemplateSwitchProfilePo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ConfigTemplatesApiGetOrganizationConfigTemplateSwitchProfilesRequest struct {
+type ConfigTemplatesAPIGetOrganizationConfigTemplateSwitchProfilesRequest struct {
 	ctx context.Context
-	ApiService *ConfigTemplatesApiService
+	ApiService *ConfigTemplatesAPIService
 	organizationId string
 	configTemplateId string
 }
 
-func (r ConfigTemplatesApiGetOrganizationConfigTemplateSwitchProfilesRequest) Execute() ([]GetOrganizationConfigTemplateSwitchProfiles200ResponseInner, *http.Response, error) {
+func (r ConfigTemplatesAPIGetOrganizationConfigTemplateSwitchProfilesRequest) Execute() ([]GetOrganizationConfigTemplateSwitchProfiles200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationConfigTemplateSwitchProfilesExecute(r)
 }
 
@@ -655,10 +655,10 @@ List the switch templates for your switch template configuration
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param configTemplateId Config template ID
- @return ConfigTemplatesApiGetOrganizationConfigTemplateSwitchProfilesRequest
+ @return ConfigTemplatesAPIGetOrganizationConfigTemplateSwitchProfilesRequest
 */
-func (a *ConfigTemplatesApiService) GetOrganizationConfigTemplateSwitchProfiles(ctx context.Context, organizationId string, configTemplateId string) ConfigTemplatesApiGetOrganizationConfigTemplateSwitchProfilesRequest {
-	return ConfigTemplatesApiGetOrganizationConfigTemplateSwitchProfilesRequest{
+func (a *ConfigTemplatesAPIService) GetOrganizationConfigTemplateSwitchProfiles(ctx context.Context, organizationId string, configTemplateId string) ConfigTemplatesAPIGetOrganizationConfigTemplateSwitchProfilesRequest {
+	return ConfigTemplatesAPIGetOrganizationConfigTemplateSwitchProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -668,7 +668,7 @@ func (a *ConfigTemplatesApiService) GetOrganizationConfigTemplateSwitchProfiles(
 
 // Execute executes the request
 //  @return []GetOrganizationConfigTemplateSwitchProfiles200ResponseInner
-func (a *ConfigTemplatesApiService) GetOrganizationConfigTemplateSwitchProfilesExecute(r ConfigTemplatesApiGetOrganizationConfigTemplateSwitchProfilesRequest) ([]GetOrganizationConfigTemplateSwitchProfiles200ResponseInner, *http.Response, error) {
+func (a *ConfigTemplatesAPIService) GetOrganizationConfigTemplateSwitchProfilesExecute(r ConfigTemplatesAPIGetOrganizationConfigTemplateSwitchProfilesRequest) ([]GetOrganizationConfigTemplateSwitchProfiles200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -676,7 +676,7 @@ func (a *ConfigTemplatesApiService) GetOrganizationConfigTemplateSwitchProfilesE
 		localVarReturnValue  []GetOrganizationConfigTemplateSwitchProfiles200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigTemplatesApiService.GetOrganizationConfigTemplateSwitchProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigTemplatesAPIService.GetOrganizationConfigTemplateSwitchProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -757,13 +757,13 @@ func (a *ConfigTemplatesApiService) GetOrganizationConfigTemplateSwitchProfilesE
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ConfigTemplatesApiGetOrganizationConfigTemplatesRequest struct {
+type ConfigTemplatesAPIGetOrganizationConfigTemplatesRequest struct {
 	ctx context.Context
-	ApiService *ConfigTemplatesApiService
+	ApiService *ConfigTemplatesAPIService
 	organizationId string
 }
 
-func (r ConfigTemplatesApiGetOrganizationConfigTemplatesRequest) Execute() ([]GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
+func (r ConfigTemplatesAPIGetOrganizationConfigTemplatesRequest) Execute() ([]GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationConfigTemplatesExecute(r)
 }
 
@@ -774,10 +774,10 @@ List the configuration templates for this organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return ConfigTemplatesApiGetOrganizationConfigTemplatesRequest
+ @return ConfigTemplatesAPIGetOrganizationConfigTemplatesRequest
 */
-func (a *ConfigTemplatesApiService) GetOrganizationConfigTemplates(ctx context.Context, organizationId string) ConfigTemplatesApiGetOrganizationConfigTemplatesRequest {
-	return ConfigTemplatesApiGetOrganizationConfigTemplatesRequest{
+func (a *ConfigTemplatesAPIService) GetOrganizationConfigTemplates(ctx context.Context, organizationId string) ConfigTemplatesAPIGetOrganizationConfigTemplatesRequest {
+	return ConfigTemplatesAPIGetOrganizationConfigTemplatesRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -786,7 +786,7 @@ func (a *ConfigTemplatesApiService) GetOrganizationConfigTemplates(ctx context.C
 
 // Execute executes the request
 //  @return []GetOrganizationConfigTemplates200ResponseInner
-func (a *ConfigTemplatesApiService) GetOrganizationConfigTemplatesExecute(r ConfigTemplatesApiGetOrganizationConfigTemplatesRequest) ([]GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
+func (a *ConfigTemplatesAPIService) GetOrganizationConfigTemplatesExecute(r ConfigTemplatesAPIGetOrganizationConfigTemplatesRequest) ([]GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -794,7 +794,7 @@ func (a *ConfigTemplatesApiService) GetOrganizationConfigTemplatesExecute(r Conf
 		localVarReturnValue  []GetOrganizationConfigTemplates200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigTemplatesApiService.GetOrganizationConfigTemplates")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigTemplatesAPIService.GetOrganizationConfigTemplates")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -874,20 +874,20 @@ func (a *ConfigTemplatesApiService) GetOrganizationConfigTemplatesExecute(r Conf
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ConfigTemplatesApiUpdateOrganizationConfigTemplateRequest struct {
+type ConfigTemplatesAPIUpdateOrganizationConfigTemplateRequest struct {
 	ctx context.Context
-	ApiService *ConfigTemplatesApiService
+	ApiService *ConfigTemplatesAPIService
 	organizationId string
 	configTemplateId string
 	updateOrganizationConfigTemplateRequest *UpdateOrganizationConfigTemplateRequest
 }
 
-func (r ConfigTemplatesApiUpdateOrganizationConfigTemplateRequest) UpdateOrganizationConfigTemplateRequest(updateOrganizationConfigTemplateRequest UpdateOrganizationConfigTemplateRequest) ConfigTemplatesApiUpdateOrganizationConfigTemplateRequest {
+func (r ConfigTemplatesAPIUpdateOrganizationConfigTemplateRequest) UpdateOrganizationConfigTemplateRequest(updateOrganizationConfigTemplateRequest UpdateOrganizationConfigTemplateRequest) ConfigTemplatesAPIUpdateOrganizationConfigTemplateRequest {
 	r.updateOrganizationConfigTemplateRequest = &updateOrganizationConfigTemplateRequest
 	return r
 }
 
-func (r ConfigTemplatesApiUpdateOrganizationConfigTemplateRequest) Execute() (*GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
+func (r ConfigTemplatesAPIUpdateOrganizationConfigTemplateRequest) Execute() (*GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationConfigTemplateExecute(r)
 }
 
@@ -899,10 +899,10 @@ Update a configuration template
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
  @param configTemplateId Config template ID
- @return ConfigTemplatesApiUpdateOrganizationConfigTemplateRequest
+ @return ConfigTemplatesAPIUpdateOrganizationConfigTemplateRequest
 */
-func (a *ConfigTemplatesApiService) UpdateOrganizationConfigTemplate(ctx context.Context, organizationId string, configTemplateId string) ConfigTemplatesApiUpdateOrganizationConfigTemplateRequest {
-	return ConfigTemplatesApiUpdateOrganizationConfigTemplateRequest{
+func (a *ConfigTemplatesAPIService) UpdateOrganizationConfigTemplate(ctx context.Context, organizationId string, configTemplateId string) ConfigTemplatesAPIUpdateOrganizationConfigTemplateRequest {
+	return ConfigTemplatesAPIUpdateOrganizationConfigTemplateRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -912,7 +912,7 @@ func (a *ConfigTemplatesApiService) UpdateOrganizationConfigTemplate(ctx context
 
 // Execute executes the request
 //  @return GetOrganizationConfigTemplates200ResponseInner
-func (a *ConfigTemplatesApiService) UpdateOrganizationConfigTemplateExecute(r ConfigTemplatesApiUpdateOrganizationConfigTemplateRequest) (*GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
+func (a *ConfigTemplatesAPIService) UpdateOrganizationConfigTemplateExecute(r ConfigTemplatesAPIUpdateOrganizationConfigTemplateRequest) (*GetOrganizationConfigTemplates200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -920,7 +920,7 @@ func (a *ConfigTemplatesApiService) UpdateOrganizationConfigTemplateExecute(r Co
 		localVarReturnValue  *GetOrganizationConfigTemplates200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigTemplatesApiService.UpdateOrganizationConfigTemplate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigTemplatesAPIService.UpdateOrganizationConfigTemplate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1003,9 +1003,9 @@ func (a *ConfigTemplatesApiService) UpdateOrganizationConfigTemplateExecute(r Co
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ConfigTemplatesApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest struct {
+type ConfigTemplatesAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest struct {
 	ctx context.Context
-	ApiService *ConfigTemplatesApiService
+	ApiService *ConfigTemplatesAPIService
 	organizationId string
 	configTemplateId string
 	profileId string
@@ -1013,12 +1013,12 @@ type ConfigTemplatesApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest 
 	updateOrganizationConfigTemplateSwitchProfilePortRequest *UpdateOrganizationConfigTemplateSwitchProfilePortRequest
 }
 
-func (r ConfigTemplatesApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest) UpdateOrganizationConfigTemplateSwitchProfilePortRequest(updateOrganizationConfigTemplateSwitchProfilePortRequest UpdateOrganizationConfigTemplateSwitchProfilePortRequest) ConfigTemplatesApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest {
+func (r ConfigTemplatesAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest) UpdateOrganizationConfigTemplateSwitchProfilePortRequest(updateOrganizationConfigTemplateSwitchProfilePortRequest UpdateOrganizationConfigTemplateSwitchProfilePortRequest) ConfigTemplatesAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest {
 	r.updateOrganizationConfigTemplateSwitchProfilePortRequest = &updateOrganizationConfigTemplateSwitchProfilePortRequest
 	return r
 }
 
-func (r ConfigTemplatesApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest) Execute() (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
+func (r ConfigTemplatesAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest) Execute() (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
 	return r.ApiService.UpdateOrganizationConfigTemplateSwitchProfilePortExecute(r)
 }
 
@@ -1032,10 +1032,10 @@ Update a switch template port
  @param configTemplateId Config template ID
  @param profileId Profile ID
  @param portId Port ID
- @return ConfigTemplatesApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest
+ @return ConfigTemplatesAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest
 */
-func (a *ConfigTemplatesApiService) UpdateOrganizationConfigTemplateSwitchProfilePort(ctx context.Context, organizationId string, configTemplateId string, profileId string, portId string) ConfigTemplatesApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest {
-	return ConfigTemplatesApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest{
+func (a *ConfigTemplatesAPIService) UpdateOrganizationConfigTemplateSwitchProfilePort(ctx context.Context, organizationId string, configTemplateId string, profileId string, portId string) ConfigTemplatesAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest {
+	return ConfigTemplatesAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -1047,7 +1047,7 @@ func (a *ConfigTemplatesApiService) UpdateOrganizationConfigTemplateSwitchProfil
 
 // Execute executes the request
 //  @return GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner
-func (a *ConfigTemplatesApiService) UpdateOrganizationConfigTemplateSwitchProfilePortExecute(r ConfigTemplatesApiUpdateOrganizationConfigTemplateSwitchProfilePortRequest) (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
+func (a *ConfigTemplatesAPIService) UpdateOrganizationConfigTemplateSwitchProfilePortExecute(r ConfigTemplatesAPIUpdateOrganizationConfigTemplateSwitchProfilePortRequest) (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1055,7 +1055,7 @@ func (a *ConfigTemplatesApiService) UpdateOrganizationConfigTemplateSwitchProfil
 		localVarReturnValue  *GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigTemplatesApiService.UpdateOrganizationConfigTemplateSwitchProfilePort")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigTemplatesAPIService.UpdateOrganizationConfigTemplateSwitchProfilePort")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

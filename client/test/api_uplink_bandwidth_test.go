@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing UplinkBandwidthApiService
+Testing UplinkBandwidthAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_UplinkBandwidthApiService(t *testing.T) {
+func Test_client_UplinkBandwidthAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test UplinkBandwidthApiService GetNetworkApplianceTrafficShapingUplinkBandwidth", func(t *testing.T) {
+	t.Run("Test UplinkBandwidthAPIService GetNetworkApplianceTrafficShapingUplinkBandwidth", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.UplinkBandwidthApi.GetNetworkApplianceTrafficShapingUplinkBandwidth(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.UplinkBandwidthAPI.GetNetworkApplianceTrafficShapingUplinkBandwidth(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_client_UplinkBandwidthApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test UplinkBandwidthApiService UpdateNetworkApplianceTrafficShapingUplinkBandwidth", func(t *testing.T) {
+	t.Run("Test UplinkBandwidthAPIService UpdateNetworkApplianceTrafficShapingUplinkBandwidth", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.UplinkBandwidthApi.UpdateNetworkApplianceTrafficShapingUplinkBandwidth(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.UplinkBandwidthAPI.UpdateNetworkApplianceTrafficShapingUplinkBandwidth(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -20,22 +20,22 @@ import (
 )
 
 
-// PiiApiService PiiApi service
-type PiiApiService service
+// PiiAPIService PiiAPI service
+type PiiAPIService service
 
-type PiiApiCreateNetworkPiiRequestRequest struct {
+type PiiAPICreateNetworkPiiRequestRequest struct {
 	ctx context.Context
-	ApiService *PiiApiService
+	ApiService *PiiAPIService
 	networkId string
 	createNetworkPiiRequestRequest *CreateNetworkPiiRequestRequest
 }
 
-func (r PiiApiCreateNetworkPiiRequestRequest) CreateNetworkPiiRequestRequest(createNetworkPiiRequestRequest CreateNetworkPiiRequestRequest) PiiApiCreateNetworkPiiRequestRequest {
+func (r PiiAPICreateNetworkPiiRequestRequest) CreateNetworkPiiRequestRequest(createNetworkPiiRequestRequest CreateNetworkPiiRequestRequest) PiiAPICreateNetworkPiiRequestRequest {
 	r.createNetworkPiiRequestRequest = &createNetworkPiiRequestRequest
 	return r
 }
 
-func (r PiiApiCreateNetworkPiiRequestRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r PiiAPICreateNetworkPiiRequestRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.CreateNetworkPiiRequestExecute(r)
 }
 
@@ -52,10 +52,10 @@ Submit a new delete or restrict processing PII request
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return PiiApiCreateNetworkPiiRequestRequest
+ @return PiiAPICreateNetworkPiiRequestRequest
 */
-func (a *PiiApiService) CreateNetworkPiiRequest(ctx context.Context, networkId string) PiiApiCreateNetworkPiiRequestRequest {
-	return PiiApiCreateNetworkPiiRequestRequest{
+func (a *PiiAPIService) CreateNetworkPiiRequest(ctx context.Context, networkId string) PiiAPICreateNetworkPiiRequestRequest {
+	return PiiAPICreateNetworkPiiRequestRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -64,7 +64,7 @@ func (a *PiiApiService) CreateNetworkPiiRequest(ctx context.Context, networkId s
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PiiApiService) CreateNetworkPiiRequestExecute(r PiiApiCreateNetworkPiiRequestRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PiiAPIService) CreateNetworkPiiRequestExecute(r PiiAPICreateNetworkPiiRequestRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -72,7 +72,7 @@ func (a *PiiApiService) CreateNetworkPiiRequestExecute(r PiiApiCreateNetworkPiiR
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PiiApiService.CreateNetworkPiiRequest")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PiiAPIService.CreateNetworkPiiRequest")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -154,14 +154,14 @@ func (a *PiiApiService) CreateNetworkPiiRequestExecute(r PiiApiCreateNetworkPiiR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PiiApiDeleteNetworkPiiRequestRequest struct {
+type PiiAPIDeleteNetworkPiiRequestRequest struct {
 	ctx context.Context
-	ApiService *PiiApiService
+	ApiService *PiiAPIService
 	networkId string
 	requestId string
 }
 
-func (r PiiApiDeleteNetworkPiiRequestRequest) Execute() (*http.Response, error) {
+func (r PiiAPIDeleteNetworkPiiRequestRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkPiiRequestExecute(r)
 }
 
@@ -179,10 +179,10 @@ Delete a restrict processing PII request
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param requestId Request ID
- @return PiiApiDeleteNetworkPiiRequestRequest
+ @return PiiAPIDeleteNetworkPiiRequestRequest
 */
-func (a *PiiApiService) DeleteNetworkPiiRequest(ctx context.Context, networkId string, requestId string) PiiApiDeleteNetworkPiiRequestRequest {
-	return PiiApiDeleteNetworkPiiRequestRequest{
+func (a *PiiAPIService) DeleteNetworkPiiRequest(ctx context.Context, networkId string, requestId string) PiiAPIDeleteNetworkPiiRequestRequest {
+	return PiiAPIDeleteNetworkPiiRequestRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -191,14 +191,14 @@ func (a *PiiApiService) DeleteNetworkPiiRequest(ctx context.Context, networkId s
 }
 
 // Execute executes the request
-func (a *PiiApiService) DeleteNetworkPiiRequestExecute(r PiiApiDeleteNetworkPiiRequestRequest) (*http.Response, error) {
+func (a *PiiAPIService) DeleteNetworkPiiRequestExecute(r PiiAPIDeleteNetworkPiiRequestRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PiiApiService.DeleteNetworkPiiRequest")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PiiAPIService.DeleteNetworkPiiRequest")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -270,9 +270,9 @@ func (a *PiiApiService) DeleteNetworkPiiRequestExecute(r PiiApiDeleteNetworkPiiR
 	return localVarHTTPResponse, nil
 }
 
-type PiiApiGetNetworkPiiPiiKeysRequest struct {
+type PiiAPIGetNetworkPiiPiiKeysRequest struct {
 	ctx context.Context
-	ApiService *PiiApiService
+	ApiService *PiiAPIService
 	networkId string
 	username *string
 	email *string
@@ -283,42 +283,42 @@ type PiiApiGetNetworkPiiPiiKeysRequest struct {
 }
 
 // The username of a Systems Manager user
-func (r PiiApiGetNetworkPiiPiiKeysRequest) Username(username string) PiiApiGetNetworkPiiPiiKeysRequest {
+func (r PiiAPIGetNetworkPiiPiiKeysRequest) Username(username string) PiiAPIGetNetworkPiiPiiKeysRequest {
 	r.username = &username
 	return r
 }
 
 // The email of a network user account or a Systems Manager device
-func (r PiiApiGetNetworkPiiPiiKeysRequest) Email(email string) PiiApiGetNetworkPiiPiiKeysRequest {
+func (r PiiAPIGetNetworkPiiPiiKeysRequest) Email(email string) PiiAPIGetNetworkPiiPiiKeysRequest {
 	r.email = &email
 	return r
 }
 
 // The MAC of a network client device or a Systems Manager device
-func (r PiiApiGetNetworkPiiPiiKeysRequest) Mac(mac string) PiiApiGetNetworkPiiPiiKeysRequest {
+func (r PiiAPIGetNetworkPiiPiiKeysRequest) Mac(mac string) PiiAPIGetNetworkPiiPiiKeysRequest {
 	r.mac = &mac
 	return r
 }
 
 // The serial of a Systems Manager device
-func (r PiiApiGetNetworkPiiPiiKeysRequest) Serial(serial string) PiiApiGetNetworkPiiPiiKeysRequest {
+func (r PiiAPIGetNetworkPiiPiiKeysRequest) Serial(serial string) PiiAPIGetNetworkPiiPiiKeysRequest {
 	r.serial = &serial
 	return r
 }
 
 // The IMEI of a Systems Manager device
-func (r PiiApiGetNetworkPiiPiiKeysRequest) Imei(imei string) PiiApiGetNetworkPiiPiiKeysRequest {
+func (r PiiAPIGetNetworkPiiPiiKeysRequest) Imei(imei string) PiiAPIGetNetworkPiiPiiKeysRequest {
 	r.imei = &imei
 	return r
 }
 
 // The MAC of a Bluetooth client
-func (r PiiApiGetNetworkPiiPiiKeysRequest) BluetoothMac(bluetoothMac string) PiiApiGetNetworkPiiPiiKeysRequest {
+func (r PiiAPIGetNetworkPiiPiiKeysRequest) BluetoothMac(bluetoothMac string) PiiAPIGetNetworkPiiPiiKeysRequest {
 	r.bluetoothMac = &bluetoothMac
 	return r
 }
 
-func (r PiiApiGetNetworkPiiPiiKeysRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r PiiAPIGetNetworkPiiPiiKeysRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkPiiPiiKeysExecute(r)
 }
 
@@ -335,10 +335,10 @@ List the keys required to access Personally Identifiable Information (PII) for a
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return PiiApiGetNetworkPiiPiiKeysRequest
+ @return PiiAPIGetNetworkPiiPiiKeysRequest
 */
-func (a *PiiApiService) GetNetworkPiiPiiKeys(ctx context.Context, networkId string) PiiApiGetNetworkPiiPiiKeysRequest {
-	return PiiApiGetNetworkPiiPiiKeysRequest{
+func (a *PiiAPIService) GetNetworkPiiPiiKeys(ctx context.Context, networkId string) PiiAPIGetNetworkPiiPiiKeysRequest {
+	return PiiAPIGetNetworkPiiPiiKeysRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -347,7 +347,7 @@ func (a *PiiApiService) GetNetworkPiiPiiKeys(ctx context.Context, networkId stri
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PiiApiService) GetNetworkPiiPiiKeysExecute(r PiiApiGetNetworkPiiPiiKeysRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PiiAPIService) GetNetworkPiiPiiKeysExecute(r PiiAPIGetNetworkPiiPiiKeysRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -355,7 +355,7 @@ func (a *PiiApiService) GetNetworkPiiPiiKeysExecute(r PiiApiGetNetworkPiiPiiKeys
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PiiApiService.GetNetworkPiiPiiKeys")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PiiAPIService.GetNetworkPiiPiiKeys")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -453,14 +453,14 @@ func (a *PiiApiService) GetNetworkPiiPiiKeysExecute(r PiiApiGetNetworkPiiPiiKeys
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PiiApiGetNetworkPiiRequestRequest struct {
+type PiiAPIGetNetworkPiiRequestRequest struct {
 	ctx context.Context
-	ApiService *PiiApiService
+	ApiService *PiiAPIService
 	networkId string
 	requestId string
 }
 
-func (r PiiApiGetNetworkPiiRequestRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r PiiAPIGetNetworkPiiRequestRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkPiiRequestExecute(r)
 }
 
@@ -478,10 +478,10 @@ Return a PII request
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param requestId Request ID
- @return PiiApiGetNetworkPiiRequestRequest
+ @return PiiAPIGetNetworkPiiRequestRequest
 */
-func (a *PiiApiService) GetNetworkPiiRequest(ctx context.Context, networkId string, requestId string) PiiApiGetNetworkPiiRequestRequest {
-	return PiiApiGetNetworkPiiRequestRequest{
+func (a *PiiAPIService) GetNetworkPiiRequest(ctx context.Context, networkId string, requestId string) PiiAPIGetNetworkPiiRequestRequest {
+	return PiiAPIGetNetworkPiiRequestRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -491,7 +491,7 @@ func (a *PiiApiService) GetNetworkPiiRequest(ctx context.Context, networkId stri
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PiiApiService) GetNetworkPiiRequestExecute(r PiiApiGetNetworkPiiRequestRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PiiAPIService) GetNetworkPiiRequestExecute(r PiiAPIGetNetworkPiiRequestRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -499,7 +499,7 @@ func (a *PiiApiService) GetNetworkPiiRequestExecute(r PiiApiGetNetworkPiiRequest
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PiiApiService.GetNetworkPiiRequest")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PiiAPIService.GetNetworkPiiRequest")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -580,13 +580,13 @@ func (a *PiiApiService) GetNetworkPiiRequestExecute(r PiiApiGetNetworkPiiRequest
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PiiApiGetNetworkPiiRequestsRequest struct {
+type PiiAPIGetNetworkPiiRequestsRequest struct {
 	ctx context.Context
-	ApiService *PiiApiService
+	ApiService *PiiAPIService
 	networkId string
 }
 
-func (r PiiApiGetNetworkPiiRequestsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+func (r PiiAPIGetNetworkPiiRequestsRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkPiiRequestsExecute(r)
 }
 
@@ -603,10 +603,10 @@ List the PII requests for this network or organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return PiiApiGetNetworkPiiRequestsRequest
+ @return PiiAPIGetNetworkPiiRequestsRequest
 */
-func (a *PiiApiService) GetNetworkPiiRequests(ctx context.Context, networkId string) PiiApiGetNetworkPiiRequestsRequest {
-	return PiiApiGetNetworkPiiRequestsRequest{
+func (a *PiiAPIService) GetNetworkPiiRequests(ctx context.Context, networkId string) PiiAPIGetNetworkPiiRequestsRequest {
+	return PiiAPIGetNetworkPiiRequestsRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -615,7 +615,7 @@ func (a *PiiApiService) GetNetworkPiiRequests(ctx context.Context, networkId str
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *PiiApiService) GetNetworkPiiRequestsExecute(r PiiApiGetNetworkPiiRequestsRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *PiiAPIService) GetNetworkPiiRequestsExecute(r PiiAPIGetNetworkPiiRequestsRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -623,7 +623,7 @@ func (a *PiiApiService) GetNetworkPiiRequestsExecute(r PiiApiGetNetworkPiiReques
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PiiApiService.GetNetworkPiiRequests")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PiiAPIService.GetNetworkPiiRequests")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -703,9 +703,9 @@ func (a *PiiApiService) GetNetworkPiiRequestsExecute(r PiiApiGetNetworkPiiReques
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PiiApiGetNetworkPiiSmDevicesForKeyRequest struct {
+type PiiAPIGetNetworkPiiSmDevicesForKeyRequest struct {
 	ctx context.Context
-	ApiService *PiiApiService
+	ApiService *PiiAPIService
 	networkId string
 	username *string
 	email *string
@@ -716,42 +716,42 @@ type PiiApiGetNetworkPiiSmDevicesForKeyRequest struct {
 }
 
 // The username of a Systems Manager user
-func (r PiiApiGetNetworkPiiSmDevicesForKeyRequest) Username(username string) PiiApiGetNetworkPiiSmDevicesForKeyRequest {
+func (r PiiAPIGetNetworkPiiSmDevicesForKeyRequest) Username(username string) PiiAPIGetNetworkPiiSmDevicesForKeyRequest {
 	r.username = &username
 	return r
 }
 
 // The email of a network user account or a Systems Manager device
-func (r PiiApiGetNetworkPiiSmDevicesForKeyRequest) Email(email string) PiiApiGetNetworkPiiSmDevicesForKeyRequest {
+func (r PiiAPIGetNetworkPiiSmDevicesForKeyRequest) Email(email string) PiiAPIGetNetworkPiiSmDevicesForKeyRequest {
 	r.email = &email
 	return r
 }
 
 // The MAC of a network client device or a Systems Manager device
-func (r PiiApiGetNetworkPiiSmDevicesForKeyRequest) Mac(mac string) PiiApiGetNetworkPiiSmDevicesForKeyRequest {
+func (r PiiAPIGetNetworkPiiSmDevicesForKeyRequest) Mac(mac string) PiiAPIGetNetworkPiiSmDevicesForKeyRequest {
 	r.mac = &mac
 	return r
 }
 
 // The serial of a Systems Manager device
-func (r PiiApiGetNetworkPiiSmDevicesForKeyRequest) Serial(serial string) PiiApiGetNetworkPiiSmDevicesForKeyRequest {
+func (r PiiAPIGetNetworkPiiSmDevicesForKeyRequest) Serial(serial string) PiiAPIGetNetworkPiiSmDevicesForKeyRequest {
 	r.serial = &serial
 	return r
 }
 
 // The IMEI of a Systems Manager device
-func (r PiiApiGetNetworkPiiSmDevicesForKeyRequest) Imei(imei string) PiiApiGetNetworkPiiSmDevicesForKeyRequest {
+func (r PiiAPIGetNetworkPiiSmDevicesForKeyRequest) Imei(imei string) PiiAPIGetNetworkPiiSmDevicesForKeyRequest {
 	r.imei = &imei
 	return r
 }
 
 // The MAC of a Bluetooth client
-func (r PiiApiGetNetworkPiiSmDevicesForKeyRequest) BluetoothMac(bluetoothMac string) PiiApiGetNetworkPiiSmDevicesForKeyRequest {
+func (r PiiAPIGetNetworkPiiSmDevicesForKeyRequest) BluetoothMac(bluetoothMac string) PiiAPIGetNetworkPiiSmDevicesForKeyRequest {
 	r.bluetoothMac = &bluetoothMac
 	return r
 }
 
-func (r PiiApiGetNetworkPiiSmDevicesForKeyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r PiiAPIGetNetworkPiiSmDevicesForKeyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkPiiSmDevicesForKeyExecute(r)
 }
 
@@ -768,10 +768,10 @@ Given a piece of Personally Identifiable Information (PII), return the Systems M
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return PiiApiGetNetworkPiiSmDevicesForKeyRequest
+ @return PiiAPIGetNetworkPiiSmDevicesForKeyRequest
 */
-func (a *PiiApiService) GetNetworkPiiSmDevicesForKey(ctx context.Context, networkId string) PiiApiGetNetworkPiiSmDevicesForKeyRequest {
-	return PiiApiGetNetworkPiiSmDevicesForKeyRequest{
+func (a *PiiAPIService) GetNetworkPiiSmDevicesForKey(ctx context.Context, networkId string) PiiAPIGetNetworkPiiSmDevicesForKeyRequest {
+	return PiiAPIGetNetworkPiiSmDevicesForKeyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -780,7 +780,7 @@ func (a *PiiApiService) GetNetworkPiiSmDevicesForKey(ctx context.Context, networ
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PiiApiService) GetNetworkPiiSmDevicesForKeyExecute(r PiiApiGetNetworkPiiSmDevicesForKeyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PiiAPIService) GetNetworkPiiSmDevicesForKeyExecute(r PiiAPIGetNetworkPiiSmDevicesForKeyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -788,7 +788,7 @@ func (a *PiiApiService) GetNetworkPiiSmDevicesForKeyExecute(r PiiApiGetNetworkPi
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PiiApiService.GetNetworkPiiSmDevicesForKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PiiAPIService.GetNetworkPiiSmDevicesForKey")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -886,9 +886,9 @@ func (a *PiiApiService) GetNetworkPiiSmDevicesForKeyExecute(r PiiApiGetNetworkPi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PiiApiGetNetworkPiiSmOwnersForKeyRequest struct {
+type PiiAPIGetNetworkPiiSmOwnersForKeyRequest struct {
 	ctx context.Context
-	ApiService *PiiApiService
+	ApiService *PiiAPIService
 	networkId string
 	username *string
 	email *string
@@ -899,42 +899,42 @@ type PiiApiGetNetworkPiiSmOwnersForKeyRequest struct {
 }
 
 // The username of a Systems Manager user
-func (r PiiApiGetNetworkPiiSmOwnersForKeyRequest) Username(username string) PiiApiGetNetworkPiiSmOwnersForKeyRequest {
+func (r PiiAPIGetNetworkPiiSmOwnersForKeyRequest) Username(username string) PiiAPIGetNetworkPiiSmOwnersForKeyRequest {
 	r.username = &username
 	return r
 }
 
 // The email of a network user account or a Systems Manager device
-func (r PiiApiGetNetworkPiiSmOwnersForKeyRequest) Email(email string) PiiApiGetNetworkPiiSmOwnersForKeyRequest {
+func (r PiiAPIGetNetworkPiiSmOwnersForKeyRequest) Email(email string) PiiAPIGetNetworkPiiSmOwnersForKeyRequest {
 	r.email = &email
 	return r
 }
 
 // The MAC of a network client device or a Systems Manager device
-func (r PiiApiGetNetworkPiiSmOwnersForKeyRequest) Mac(mac string) PiiApiGetNetworkPiiSmOwnersForKeyRequest {
+func (r PiiAPIGetNetworkPiiSmOwnersForKeyRequest) Mac(mac string) PiiAPIGetNetworkPiiSmOwnersForKeyRequest {
 	r.mac = &mac
 	return r
 }
 
 // The serial of a Systems Manager device
-func (r PiiApiGetNetworkPiiSmOwnersForKeyRequest) Serial(serial string) PiiApiGetNetworkPiiSmOwnersForKeyRequest {
+func (r PiiAPIGetNetworkPiiSmOwnersForKeyRequest) Serial(serial string) PiiAPIGetNetworkPiiSmOwnersForKeyRequest {
 	r.serial = &serial
 	return r
 }
 
 // The IMEI of a Systems Manager device
-func (r PiiApiGetNetworkPiiSmOwnersForKeyRequest) Imei(imei string) PiiApiGetNetworkPiiSmOwnersForKeyRequest {
+func (r PiiAPIGetNetworkPiiSmOwnersForKeyRequest) Imei(imei string) PiiAPIGetNetworkPiiSmOwnersForKeyRequest {
 	r.imei = &imei
 	return r
 }
 
 // The MAC of a Bluetooth client
-func (r PiiApiGetNetworkPiiSmOwnersForKeyRequest) BluetoothMac(bluetoothMac string) PiiApiGetNetworkPiiSmOwnersForKeyRequest {
+func (r PiiAPIGetNetworkPiiSmOwnersForKeyRequest) BluetoothMac(bluetoothMac string) PiiAPIGetNetworkPiiSmOwnersForKeyRequest {
 	r.bluetoothMac = &bluetoothMac
 	return r
 }
 
-func (r PiiApiGetNetworkPiiSmOwnersForKeyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r PiiAPIGetNetworkPiiSmOwnersForKeyRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetNetworkPiiSmOwnersForKeyExecute(r)
 }
 
@@ -951,10 +951,10 @@ Given a piece of Personally Identifiable Information (PII), return the Systems M
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return PiiApiGetNetworkPiiSmOwnersForKeyRequest
+ @return PiiAPIGetNetworkPiiSmOwnersForKeyRequest
 */
-func (a *PiiApiService) GetNetworkPiiSmOwnersForKey(ctx context.Context, networkId string) PiiApiGetNetworkPiiSmOwnersForKeyRequest {
-	return PiiApiGetNetworkPiiSmOwnersForKeyRequest{
+func (a *PiiAPIService) GetNetworkPiiSmOwnersForKey(ctx context.Context, networkId string) PiiAPIGetNetworkPiiSmOwnersForKeyRequest {
+	return PiiAPIGetNetworkPiiSmOwnersForKeyRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -963,7 +963,7 @@ func (a *PiiApiService) GetNetworkPiiSmOwnersForKey(ctx context.Context, network
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PiiApiService) GetNetworkPiiSmOwnersForKeyExecute(r PiiApiGetNetworkPiiSmOwnersForKeyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PiiAPIService) GetNetworkPiiSmOwnersForKeyExecute(r PiiAPIGetNetworkPiiSmOwnersForKeyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -971,7 +971,7 @@ func (a *PiiApiService) GetNetworkPiiSmOwnersForKeyExecute(r PiiApiGetNetworkPii
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PiiApiService.GetNetworkPiiSmOwnersForKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PiiAPIService.GetNetworkPiiSmOwnersForKey")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

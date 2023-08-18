@@ -20,17 +20,17 @@ import (
 )
 
 
-// UserAccessDevicesApiService UserAccessDevicesApi service
-type UserAccessDevicesApiService service
+// UserAccessDevicesAPIService UserAccessDevicesAPI service
+type UserAccessDevicesAPIService service
 
-type UserAccessDevicesApiDeleteNetworkSmUserAccessDeviceRequest struct {
+type UserAccessDevicesAPIDeleteNetworkSmUserAccessDeviceRequest struct {
 	ctx context.Context
-	ApiService *UserAccessDevicesApiService
+	ApiService *UserAccessDevicesAPIService
 	networkId string
 	userAccessDeviceId string
 }
 
-func (r UserAccessDevicesApiDeleteNetworkSmUserAccessDeviceRequest) Execute() (*http.Response, error) {
+func (r UserAccessDevicesAPIDeleteNetworkSmUserAccessDeviceRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNetworkSmUserAccessDeviceExecute(r)
 }
 
@@ -42,10 +42,10 @@ Delete a User Access Device
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param userAccessDeviceId User access device ID
- @return UserAccessDevicesApiDeleteNetworkSmUserAccessDeviceRequest
+ @return UserAccessDevicesAPIDeleteNetworkSmUserAccessDeviceRequest
 */
-func (a *UserAccessDevicesApiService) DeleteNetworkSmUserAccessDevice(ctx context.Context, networkId string, userAccessDeviceId string) UserAccessDevicesApiDeleteNetworkSmUserAccessDeviceRequest {
-	return UserAccessDevicesApiDeleteNetworkSmUserAccessDeviceRequest{
+func (a *UserAccessDevicesAPIService) DeleteNetworkSmUserAccessDevice(ctx context.Context, networkId string, userAccessDeviceId string) UserAccessDevicesAPIDeleteNetworkSmUserAccessDeviceRequest {
+	return UserAccessDevicesAPIDeleteNetworkSmUserAccessDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -54,14 +54,14 @@ func (a *UserAccessDevicesApiService) DeleteNetworkSmUserAccessDevice(ctx contex
 }
 
 // Execute executes the request
-func (a *UserAccessDevicesApiService) DeleteNetworkSmUserAccessDeviceExecute(r UserAccessDevicesApiDeleteNetworkSmUserAccessDeviceRequest) (*http.Response, error) {
+func (a *UserAccessDevicesAPIService) DeleteNetworkSmUserAccessDeviceExecute(r UserAccessDevicesAPIDeleteNetworkSmUserAccessDeviceRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAccessDevicesApiService.DeleteNetworkSmUserAccessDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAccessDevicesAPIService.DeleteNetworkSmUserAccessDevice")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -133,9 +133,9 @@ func (a *UserAccessDevicesApiService) DeleteNetworkSmUserAccessDeviceExecute(r U
 	return localVarHTTPResponse, nil
 }
 
-type UserAccessDevicesApiGetNetworkSmUserAccessDevicesRequest struct {
+type UserAccessDevicesAPIGetNetworkSmUserAccessDevicesRequest struct {
 	ctx context.Context
-	ApiService *UserAccessDevicesApiService
+	ApiService *UserAccessDevicesAPIService
 	networkId string
 	perPage *int32
 	startingAfter *string
@@ -143,24 +143,24 @@ type UserAccessDevicesApiGetNetworkSmUserAccessDevicesRequest struct {
 }
 
 // The number of entries per page returned. Acceptable range is 3 - 1000. Default is 100.
-func (r UserAccessDevicesApiGetNetworkSmUserAccessDevicesRequest) PerPage(perPage int32) UserAccessDevicesApiGetNetworkSmUserAccessDevicesRequest {
+func (r UserAccessDevicesAPIGetNetworkSmUserAccessDevicesRequest) PerPage(perPage int32) UserAccessDevicesAPIGetNetworkSmUserAccessDevicesRequest {
 	r.perPage = &perPage
 	return r
 }
 
 // A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r UserAccessDevicesApiGetNetworkSmUserAccessDevicesRequest) StartingAfter(startingAfter string) UserAccessDevicesApiGetNetworkSmUserAccessDevicesRequest {
+func (r UserAccessDevicesAPIGetNetworkSmUserAccessDevicesRequest) StartingAfter(startingAfter string) UserAccessDevicesAPIGetNetworkSmUserAccessDevicesRequest {
 	r.startingAfter = &startingAfter
 	return r
 }
 
 // A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-func (r UserAccessDevicesApiGetNetworkSmUserAccessDevicesRequest) EndingBefore(endingBefore string) UserAccessDevicesApiGetNetworkSmUserAccessDevicesRequest {
+func (r UserAccessDevicesAPIGetNetworkSmUserAccessDevicesRequest) EndingBefore(endingBefore string) UserAccessDevicesAPIGetNetworkSmUserAccessDevicesRequest {
 	r.endingBefore = &endingBefore
 	return r
 }
 
-func (r UserAccessDevicesApiGetNetworkSmUserAccessDevicesRequest) Execute() ([]GetNetworkSmUserAccessDevices200ResponseInner, *http.Response, error) {
+func (r UserAccessDevicesAPIGetNetworkSmUserAccessDevicesRequest) Execute() ([]GetNetworkSmUserAccessDevices200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmUserAccessDevicesExecute(r)
 }
 
@@ -171,10 +171,10 @@ List User Access Devices and its Trusted Access Connections
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return UserAccessDevicesApiGetNetworkSmUserAccessDevicesRequest
+ @return UserAccessDevicesAPIGetNetworkSmUserAccessDevicesRequest
 */
-func (a *UserAccessDevicesApiService) GetNetworkSmUserAccessDevices(ctx context.Context, networkId string) UserAccessDevicesApiGetNetworkSmUserAccessDevicesRequest {
-	return UserAccessDevicesApiGetNetworkSmUserAccessDevicesRequest{
+func (a *UserAccessDevicesAPIService) GetNetworkSmUserAccessDevices(ctx context.Context, networkId string) UserAccessDevicesAPIGetNetworkSmUserAccessDevicesRequest {
+	return UserAccessDevicesAPIGetNetworkSmUserAccessDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -183,7 +183,7 @@ func (a *UserAccessDevicesApiService) GetNetworkSmUserAccessDevices(ctx context.
 
 // Execute executes the request
 //  @return []GetNetworkSmUserAccessDevices200ResponseInner
-func (a *UserAccessDevicesApiService) GetNetworkSmUserAccessDevicesExecute(r UserAccessDevicesApiGetNetworkSmUserAccessDevicesRequest) ([]GetNetworkSmUserAccessDevices200ResponseInner, *http.Response, error) {
+func (a *UserAccessDevicesAPIService) GetNetworkSmUserAccessDevicesExecute(r UserAccessDevicesAPIGetNetworkSmUserAccessDevicesRequest) ([]GetNetworkSmUserAccessDevices200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -191,7 +191,7 @@ func (a *UserAccessDevicesApiService) GetNetworkSmUserAccessDevicesExecute(r Use
 		localVarReturnValue  []GetNetworkSmUserAccessDevices200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAccessDevicesApiService.GetNetworkSmUserAccessDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAccessDevicesAPIService.GetNetworkSmUserAccessDevices")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

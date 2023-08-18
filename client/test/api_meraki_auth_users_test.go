@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing MerakiAuthUsersApiService
+Testing MerakiAuthUsersAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_MerakiAuthUsersApiService(t *testing.T) {
+func Test_client_MerakiAuthUsersAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test MerakiAuthUsersApiService CreateNetworkMerakiAuthUser", func(t *testing.T) {
+	t.Run("Test MerakiAuthUsersAPIService CreateNetworkMerakiAuthUser", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 
-		resp, httpRes, err := apiClient.MerakiAuthUsersApi.CreateNetworkMerakiAuthUser(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.MerakiAuthUsersAPI.CreateNetworkMerakiAuthUser(context.Background(), networkId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,42 +36,28 @@ func Test_client_MerakiAuthUsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test MerakiAuthUsersApiService DeleteNetworkMerakiAuthUser", func(t *testing.T) {
+	t.Run("Test MerakiAuthUsersAPIService DeleteNetworkMerakiAuthUser", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var merakiAuthUserId string
 
-		httpRes, err := apiClient.MerakiAuthUsersApi.DeleteNetworkMerakiAuthUser(context.Background(), networkId, merakiAuthUserId).Execute()
+		httpRes, err := apiClient.MerakiAuthUsersAPI.DeleteNetworkMerakiAuthUser(context.Background(), networkId, merakiAuthUserId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test MerakiAuthUsersApiService GetNetworkMerakiAuthUser", func(t *testing.T) {
+	t.Run("Test MerakiAuthUsersAPIService GetNetworkMerakiAuthUser", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var merakiAuthUserId string
 
-		resp, httpRes, err := apiClient.MerakiAuthUsersApi.GetNetworkMerakiAuthUser(context.Background(), networkId, merakiAuthUserId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test MerakiAuthUsersApiService GetNetworkMerakiAuthUsers", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var networkId string
-
-		resp, httpRes, err := apiClient.MerakiAuthUsersApi.GetNetworkMerakiAuthUsers(context.Background(), networkId).Execute()
+		resp, httpRes, err := apiClient.MerakiAuthUsersAPI.GetNetworkMerakiAuthUser(context.Background(), networkId, merakiAuthUserId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,14 +65,28 @@ func Test_client_MerakiAuthUsersApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test MerakiAuthUsersApiService UpdateNetworkMerakiAuthUser", func(t *testing.T) {
+	t.Run("Test MerakiAuthUsersAPIService GetNetworkMerakiAuthUsers", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var networkId string
+
+		resp, httpRes, err := apiClient.MerakiAuthUsersAPI.GetNetworkMerakiAuthUsers(context.Background(), networkId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test MerakiAuthUsersAPIService UpdateNetworkMerakiAuthUser", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var networkId string
 		var merakiAuthUserId string
 
-		resp, httpRes, err := apiClient.MerakiAuthUsersApi.UpdateNetworkMerakiAuthUser(context.Background(), networkId, merakiAuthUserId).Execute()
+		resp, httpRes, err := apiClient.MerakiAuthUsersAPI.UpdateNetworkMerakiAuthUser(context.Background(), networkId, merakiAuthUserId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

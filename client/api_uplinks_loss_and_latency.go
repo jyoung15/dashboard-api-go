@@ -20,12 +20,12 @@ import (
 )
 
 
-// UplinksLossAndLatencyApiService UplinksLossAndLatencyApi service
-type UplinksLossAndLatencyApiService service
+// UplinksLossAndLatencyAPIService UplinksLossAndLatencyAPI service
+type UplinksLossAndLatencyAPIService service
 
-type UplinksLossAndLatencyApiGetOrganizationDevicesUplinksLossAndLatencyRequest struct {
+type UplinksLossAndLatencyAPIGetOrganizationDevicesUplinksLossAndLatencyRequest struct {
 	ctx context.Context
-	ApiService *UplinksLossAndLatencyApiService
+	ApiService *UplinksLossAndLatencyAPIService
 	organizationId string
 	t0 *string
 	t1 *string
@@ -35,36 +35,36 @@ type UplinksLossAndLatencyApiGetOrganizationDevicesUplinksLossAndLatencyRequest 
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 60 days from today.
-func (r UplinksLossAndLatencyApiGetOrganizationDevicesUplinksLossAndLatencyRequest) T0(t0 string) UplinksLossAndLatencyApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
+func (r UplinksLossAndLatencyAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) T0(t0 string) UplinksLossAndLatencyAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 5 minutes after t0. The latest possible time that t1 can be is 2 minutes into the past.
-func (r UplinksLossAndLatencyApiGetOrganizationDevicesUplinksLossAndLatencyRequest) T1(t1 string) UplinksLossAndLatencyApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
+func (r UplinksLossAndLatencyAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) T1(t1 string) UplinksLossAndLatencyAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 5 minutes. The default is 5 minutes.
-func (r UplinksLossAndLatencyApiGetOrganizationDevicesUplinksLossAndLatencyRequest) Timespan(timespan float32) UplinksLossAndLatencyApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
+func (r UplinksLossAndLatencyAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) Timespan(timespan float32) UplinksLossAndLatencyAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // Optional filter for a specific WAN uplink. Valid uplinks are wan1, wan2, wan3, cellular. Default will return all uplinks.
-func (r UplinksLossAndLatencyApiGetOrganizationDevicesUplinksLossAndLatencyRequest) Uplink(uplink string) UplinksLossAndLatencyApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
+func (r UplinksLossAndLatencyAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) Uplink(uplink string) UplinksLossAndLatencyAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
 	r.uplink = &uplink
 	return r
 }
 
 // Optional filter for a specific destination IP. Default will return all destination IPs.
-func (r UplinksLossAndLatencyApiGetOrganizationDevicesUplinksLossAndLatencyRequest) Ip(ip string) UplinksLossAndLatencyApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
+func (r UplinksLossAndLatencyAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) Ip(ip string) UplinksLossAndLatencyAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
 	r.ip = &ip
 	return r
 }
 
-func (r UplinksLossAndLatencyApiGetOrganizationDevicesUplinksLossAndLatencyRequest) Execute() ([]GetOrganizationDevicesUplinksLossAndLatency200ResponseInner, *http.Response, error) {
+func (r UplinksLossAndLatencyAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) Execute() ([]GetOrganizationDevicesUplinksLossAndLatency200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationDevicesUplinksLossAndLatencyExecute(r)
 }
 
@@ -75,10 +75,10 @@ Return the uplink loss and latency for every MX in the organization from at late
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param organizationId Organization ID
- @return UplinksLossAndLatencyApiGetOrganizationDevicesUplinksLossAndLatencyRequest
+ @return UplinksLossAndLatencyAPIGetOrganizationDevicesUplinksLossAndLatencyRequest
 */
-func (a *UplinksLossAndLatencyApiService) GetOrganizationDevicesUplinksLossAndLatency(ctx context.Context, organizationId string) UplinksLossAndLatencyApiGetOrganizationDevicesUplinksLossAndLatencyRequest {
-	return UplinksLossAndLatencyApiGetOrganizationDevicesUplinksLossAndLatencyRequest{
+func (a *UplinksLossAndLatencyAPIService) GetOrganizationDevicesUplinksLossAndLatency(ctx context.Context, organizationId string) UplinksLossAndLatencyAPIGetOrganizationDevicesUplinksLossAndLatencyRequest {
+	return UplinksLossAndLatencyAPIGetOrganizationDevicesUplinksLossAndLatencyRequest{
 		ApiService: a,
 		ctx: ctx,
 		organizationId: organizationId,
@@ -87,7 +87,7 @@ func (a *UplinksLossAndLatencyApiService) GetOrganizationDevicesUplinksLossAndLa
 
 // Execute executes the request
 //  @return []GetOrganizationDevicesUplinksLossAndLatency200ResponseInner
-func (a *UplinksLossAndLatencyApiService) GetOrganizationDevicesUplinksLossAndLatencyExecute(r UplinksLossAndLatencyApiGetOrganizationDevicesUplinksLossAndLatencyRequest) ([]GetOrganizationDevicesUplinksLossAndLatency200ResponseInner, *http.Response, error) {
+func (a *UplinksLossAndLatencyAPIService) GetOrganizationDevicesUplinksLossAndLatencyExecute(r UplinksLossAndLatencyAPIGetOrganizationDevicesUplinksLossAndLatencyRequest) ([]GetOrganizationDevicesUplinksLossAndLatency200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -95,7 +95,7 @@ func (a *UplinksLossAndLatencyApiService) GetOrganizationDevicesUplinksLossAndLa
 		localVarReturnValue  []GetOrganizationDevicesUplinksLossAndLatency200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinksLossAndLatencyApiService.GetOrganizationDevicesUplinksLossAndLatency")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UplinksLossAndLatencyAPIService.GetOrganizationDevicesUplinksLossAndLatency")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -20,12 +20,12 @@ import (
 )
 
 
-// ClientCountHistoryApiService ClientCountHistoryApi service
-type ClientCountHistoryApiService service
+// ClientCountHistoryAPIService ClientCountHistoryAPI service
+type ClientCountHistoryAPIService service
 
-type ClientCountHistoryApiGetNetworkWirelessClientCountHistoryRequest struct {
+type ClientCountHistoryAPIGetNetworkWirelessClientCountHistoryRequest struct {
 	ctx context.Context
-	ApiService *ClientCountHistoryApiService
+	ApiService *ClientCountHistoryAPIService
 	networkId string
 	t0 *string
 	t1 *string
@@ -40,66 +40,66 @@ type ClientCountHistoryApiGetNetworkWirelessClientCountHistoryRequest struct {
 }
 
 // The beginning of the timespan for the data. The maximum lookback period is 31 days from today.
-func (r ClientCountHistoryApiGetNetworkWirelessClientCountHistoryRequest) T0(t0 string) ClientCountHistoryApiGetNetworkWirelessClientCountHistoryRequest {
+func (r ClientCountHistoryAPIGetNetworkWirelessClientCountHistoryRequest) T0(t0 string) ClientCountHistoryAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.t0 = &t0
 	return r
 }
 
 // The end of the timespan for the data. t1 can be a maximum of 31 days after t0.
-func (r ClientCountHistoryApiGetNetworkWirelessClientCountHistoryRequest) T1(t1 string) ClientCountHistoryApiGetNetworkWirelessClientCountHistoryRequest {
+func (r ClientCountHistoryAPIGetNetworkWirelessClientCountHistoryRequest) T1(t1 string) ClientCountHistoryAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.t1 = &t1
 	return r
 }
 
 // The timespan for which the information will be fetched. If specifying timespan, do not specify parameters t0 and t1. The value must be in seconds and be less than or equal to 31 days. The default is 7 days.
-func (r ClientCountHistoryApiGetNetworkWirelessClientCountHistoryRequest) Timespan(timespan float32) ClientCountHistoryApiGetNetworkWirelessClientCountHistoryRequest {
+func (r ClientCountHistoryAPIGetNetworkWirelessClientCountHistoryRequest) Timespan(timespan float32) ClientCountHistoryAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.timespan = &timespan
 	return r
 }
 
 // The time resolution in seconds for returned data. The valid resolutions are: 300, 600, 1200, 3600, 14400, 86400. The default is 86400.
-func (r ClientCountHistoryApiGetNetworkWirelessClientCountHistoryRequest) Resolution(resolution int32) ClientCountHistoryApiGetNetworkWirelessClientCountHistoryRequest {
+func (r ClientCountHistoryAPIGetNetworkWirelessClientCountHistoryRequest) Resolution(resolution int32) ClientCountHistoryAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.resolution = &resolution
 	return r
 }
 
 // Automatically select a data resolution based on the given timespan; this overrides the value specified by the &#39;resolution&#39; parameter. The default setting is false.
-func (r ClientCountHistoryApiGetNetworkWirelessClientCountHistoryRequest) AutoResolution(autoResolution bool) ClientCountHistoryApiGetNetworkWirelessClientCountHistoryRequest {
+func (r ClientCountHistoryAPIGetNetworkWirelessClientCountHistoryRequest) AutoResolution(autoResolution bool) ClientCountHistoryAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.autoResolution = &autoResolution
 	return r
 }
 
 // Filter results by network client to return per-device client counts over time inner joined by the queried client&#39;s connection history.
-func (r ClientCountHistoryApiGetNetworkWirelessClientCountHistoryRequest) ClientId(clientId string) ClientCountHistoryApiGetNetworkWirelessClientCountHistoryRequest {
+func (r ClientCountHistoryAPIGetNetworkWirelessClientCountHistoryRequest) ClientId(clientId string) ClientCountHistoryAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.clientId = &clientId
 	return r
 }
 
 // Filter results by device.
-func (r ClientCountHistoryApiGetNetworkWirelessClientCountHistoryRequest) DeviceSerial(deviceSerial string) ClientCountHistoryApiGetNetworkWirelessClientCountHistoryRequest {
+func (r ClientCountHistoryAPIGetNetworkWirelessClientCountHistoryRequest) DeviceSerial(deviceSerial string) ClientCountHistoryAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.deviceSerial = &deviceSerial
 	return r
 }
 
 // Filter results by AP tag.
-func (r ClientCountHistoryApiGetNetworkWirelessClientCountHistoryRequest) ApTag(apTag string) ClientCountHistoryApiGetNetworkWirelessClientCountHistoryRequest {
+func (r ClientCountHistoryAPIGetNetworkWirelessClientCountHistoryRequest) ApTag(apTag string) ClientCountHistoryAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.apTag = &apTag
 	return r
 }
 
 // Filter results by band (either &#39;2.4&#39;, &#39;5&#39; or &#39;6&#39;).
-func (r ClientCountHistoryApiGetNetworkWirelessClientCountHistoryRequest) Band(band string) ClientCountHistoryApiGetNetworkWirelessClientCountHistoryRequest {
+func (r ClientCountHistoryAPIGetNetworkWirelessClientCountHistoryRequest) Band(band string) ClientCountHistoryAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.band = &band
 	return r
 }
 
 // Filter results by SSID number.
-func (r ClientCountHistoryApiGetNetworkWirelessClientCountHistoryRequest) Ssid(ssid int32) ClientCountHistoryApiGetNetworkWirelessClientCountHistoryRequest {
+func (r ClientCountHistoryAPIGetNetworkWirelessClientCountHistoryRequest) Ssid(ssid int32) ClientCountHistoryAPIGetNetworkWirelessClientCountHistoryRequest {
 	r.ssid = &ssid
 	return r
 }
 
-func (r ClientCountHistoryApiGetNetworkWirelessClientCountHistoryRequest) Execute() ([]GetNetworkWirelessClientCountHistory200ResponseInner, *http.Response, error) {
+func (r ClientCountHistoryAPIGetNetworkWirelessClientCountHistoryRequest) Execute() ([]GetNetworkWirelessClientCountHistory200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessClientCountHistoryExecute(r)
 }
 
@@ -110,10 +110,10 @@ Return wireless client counts over time for a network, device, or network client
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return ClientCountHistoryApiGetNetworkWirelessClientCountHistoryRequest
+ @return ClientCountHistoryAPIGetNetworkWirelessClientCountHistoryRequest
 */
-func (a *ClientCountHistoryApiService) GetNetworkWirelessClientCountHistory(ctx context.Context, networkId string) ClientCountHistoryApiGetNetworkWirelessClientCountHistoryRequest {
-	return ClientCountHistoryApiGetNetworkWirelessClientCountHistoryRequest{
+func (a *ClientCountHistoryAPIService) GetNetworkWirelessClientCountHistory(ctx context.Context, networkId string) ClientCountHistoryAPIGetNetworkWirelessClientCountHistoryRequest {
+	return ClientCountHistoryAPIGetNetworkWirelessClientCountHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -122,7 +122,7 @@ func (a *ClientCountHistoryApiService) GetNetworkWirelessClientCountHistory(ctx 
 
 // Execute executes the request
 //  @return []GetNetworkWirelessClientCountHistory200ResponseInner
-func (a *ClientCountHistoryApiService) GetNetworkWirelessClientCountHistoryExecute(r ClientCountHistoryApiGetNetworkWirelessClientCountHistoryRequest) ([]GetNetworkWirelessClientCountHistory200ResponseInner, *http.Response, error) {
+func (a *ClientCountHistoryAPIService) GetNetworkWirelessClientCountHistoryExecute(r ClientCountHistoryAPIGetNetworkWirelessClientCountHistoryRequest) ([]GetNetworkWirelessClientCountHistory200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -130,7 +130,7 @@ func (a *ClientCountHistoryApiService) GetNetworkWirelessClientCountHistoryExecu
 		localVarReturnValue  []GetNetworkWirelessClientCountHistory200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientCountHistoryApiService.GetNetworkWirelessClientCountHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientCountHistoryAPIService.GetNetworkWirelessClientCountHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -1,7 +1,7 @@
 /*
 Meraki Dashboard API
 
-Testing LogsApiService
+Testing LogsAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/meraki/dashboard-api-go/client"
 )
 
-func Test_client_LogsApiService(t *testing.T) {
+func Test_client_LogsAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test LogsApiService GetOrganizationWebhooksLogs", func(t *testing.T) {
+	t.Run("Test LogsAPIService GetOrganizationWebhooksLogs", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var organizationId string
 
-		resp, httpRes, err := apiClient.LogsApi.GetOrganizationWebhooksLogs(context.Background(), organizationId).Execute()
+		resp, httpRes, err := apiClient.LogsAPI.GetOrganizationWebhooksLogs(context.Background(), organizationId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

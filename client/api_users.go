@@ -21,17 +21,17 @@ import (
 )
 
 
-// UsersApiService UsersApi service
-type UsersApiService service
+// UsersAPIService UsersAPI service
+type UsersAPIService service
 
-type UsersApiGetNetworkSmUserDeviceProfilesRequest struct {
+type UsersAPIGetNetworkSmUserDeviceProfilesRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	networkId string
 	userId string
 }
 
-func (r UsersApiGetNetworkSmUserDeviceProfilesRequest) Execute() ([]GetNetworkSmDeviceDeviceProfiles200ResponseInner, *http.Response, error) {
+func (r UsersAPIGetNetworkSmUserDeviceProfilesRequest) Execute() ([]GetNetworkSmDeviceDeviceProfiles200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmUserDeviceProfilesExecute(r)
 }
 
@@ -43,10 +43,10 @@ Get the profiles associated with a user
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param userId User ID
- @return UsersApiGetNetworkSmUserDeviceProfilesRequest
+ @return UsersAPIGetNetworkSmUserDeviceProfilesRequest
 */
-func (a *UsersApiService) GetNetworkSmUserDeviceProfiles(ctx context.Context, networkId string, userId string) UsersApiGetNetworkSmUserDeviceProfilesRequest {
-	return UsersApiGetNetworkSmUserDeviceProfilesRequest{
+func (a *UsersAPIService) GetNetworkSmUserDeviceProfiles(ctx context.Context, networkId string, userId string) UsersAPIGetNetworkSmUserDeviceProfilesRequest {
+	return UsersAPIGetNetworkSmUserDeviceProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -56,7 +56,7 @@ func (a *UsersApiService) GetNetworkSmUserDeviceProfiles(ctx context.Context, ne
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceDeviceProfiles200ResponseInner
-func (a *UsersApiService) GetNetworkSmUserDeviceProfilesExecute(r UsersApiGetNetworkSmUserDeviceProfilesRequest) ([]GetNetworkSmDeviceDeviceProfiles200ResponseInner, *http.Response, error) {
+func (a *UsersAPIService) GetNetworkSmUserDeviceProfilesExecute(r UsersAPIGetNetworkSmUserDeviceProfilesRequest) ([]GetNetworkSmDeviceDeviceProfiles200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -64,7 +64,7 @@ func (a *UsersApiService) GetNetworkSmUserDeviceProfilesExecute(r UsersApiGetNet
 		localVarReturnValue  []GetNetworkSmDeviceDeviceProfiles200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.GetNetworkSmUserDeviceProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.GetNetworkSmUserDeviceProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -145,14 +145,14 @@ func (a *UsersApiService) GetNetworkSmUserDeviceProfilesExecute(r UsersApiGetNet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type UsersApiGetNetworkSmUserSoftwaresRequest struct {
+type UsersAPIGetNetworkSmUserSoftwaresRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	networkId string
 	userId string
 }
 
-func (r UsersApiGetNetworkSmUserSoftwaresRequest) Execute() ([]GetNetworkSmDeviceSoftwares200ResponseInner, *http.Response, error) {
+func (r UsersAPIGetNetworkSmUserSoftwaresRequest) Execute() ([]GetNetworkSmDeviceSoftwares200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmUserSoftwaresExecute(r)
 }
 
@@ -164,10 +164,10 @@ Get a list of softwares associated with a user
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
  @param userId User ID
- @return UsersApiGetNetworkSmUserSoftwaresRequest
+ @return UsersAPIGetNetworkSmUserSoftwaresRequest
 */
-func (a *UsersApiService) GetNetworkSmUserSoftwares(ctx context.Context, networkId string, userId string) UsersApiGetNetworkSmUserSoftwaresRequest {
-	return UsersApiGetNetworkSmUserSoftwaresRequest{
+func (a *UsersAPIService) GetNetworkSmUserSoftwares(ctx context.Context, networkId string, userId string) UsersAPIGetNetworkSmUserSoftwaresRequest {
+	return UsersAPIGetNetworkSmUserSoftwaresRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -177,7 +177,7 @@ func (a *UsersApiService) GetNetworkSmUserSoftwares(ctx context.Context, network
 
 // Execute executes the request
 //  @return []GetNetworkSmDeviceSoftwares200ResponseInner
-func (a *UsersApiService) GetNetworkSmUserSoftwaresExecute(r UsersApiGetNetworkSmUserSoftwaresRequest) ([]GetNetworkSmDeviceSoftwares200ResponseInner, *http.Response, error) {
+func (a *UsersAPIService) GetNetworkSmUserSoftwaresExecute(r UsersAPIGetNetworkSmUserSoftwaresRequest) ([]GetNetworkSmDeviceSoftwares200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -185,7 +185,7 @@ func (a *UsersApiService) GetNetworkSmUserSoftwaresExecute(r UsersApiGetNetworkS
 		localVarReturnValue  []GetNetworkSmDeviceSoftwares200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.GetNetworkSmUserSoftwares")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.GetNetworkSmUserSoftwares")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -266,9 +266,9 @@ func (a *UsersApiService) GetNetworkSmUserSoftwaresExecute(r UsersApiGetNetworkS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type UsersApiGetNetworkSmUsersRequest struct {
+type UsersAPIGetNetworkSmUsersRequest struct {
 	ctx context.Context
-	ApiService *UsersApiService
+	ApiService *UsersAPIService
 	networkId string
 	ids *[]string
 	usernames *[]string
@@ -277,30 +277,30 @@ type UsersApiGetNetworkSmUsersRequest struct {
 }
 
 // Filter users by id(s).
-func (r UsersApiGetNetworkSmUsersRequest) Ids(ids []string) UsersApiGetNetworkSmUsersRequest {
+func (r UsersAPIGetNetworkSmUsersRequest) Ids(ids []string) UsersAPIGetNetworkSmUsersRequest {
 	r.ids = &ids
 	return r
 }
 
 // Filter users by username(s).
-func (r UsersApiGetNetworkSmUsersRequest) Usernames(usernames []string) UsersApiGetNetworkSmUsersRequest {
+func (r UsersAPIGetNetworkSmUsersRequest) Usernames(usernames []string) UsersAPIGetNetworkSmUsersRequest {
 	r.usernames = &usernames
 	return r
 }
 
 // Filter users by email(s).
-func (r UsersApiGetNetworkSmUsersRequest) Emails(emails []string) UsersApiGetNetworkSmUsersRequest {
+func (r UsersAPIGetNetworkSmUsersRequest) Emails(emails []string) UsersAPIGetNetworkSmUsersRequest {
 	r.emails = &emails
 	return r
 }
 
 // Specifiy a scope (one of all, none, withAny, withAll, withoutAny, withoutAll) and a set of tags.
-func (r UsersApiGetNetworkSmUsersRequest) Scope(scope []string) UsersApiGetNetworkSmUsersRequest {
+func (r UsersAPIGetNetworkSmUsersRequest) Scope(scope []string) UsersAPIGetNetworkSmUsersRequest {
 	r.scope = &scope
 	return r
 }
 
-func (r UsersApiGetNetworkSmUsersRequest) Execute() ([]GetNetworkSmUsers200ResponseInner, *http.Response, error) {
+func (r UsersAPIGetNetworkSmUsersRequest) Execute() ([]GetNetworkSmUsers200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkSmUsersExecute(r)
 }
 
@@ -311,10 +311,10 @@ List the owners in an SM network with various specified fields and filters
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param networkId Network ID
- @return UsersApiGetNetworkSmUsersRequest
+ @return UsersAPIGetNetworkSmUsersRequest
 */
-func (a *UsersApiService) GetNetworkSmUsers(ctx context.Context, networkId string) UsersApiGetNetworkSmUsersRequest {
-	return UsersApiGetNetworkSmUsersRequest{
+func (a *UsersAPIService) GetNetworkSmUsers(ctx context.Context, networkId string) UsersAPIGetNetworkSmUsersRequest {
+	return UsersAPIGetNetworkSmUsersRequest{
 		ApiService: a,
 		ctx: ctx,
 		networkId: networkId,
@@ -323,7 +323,7 @@ func (a *UsersApiService) GetNetworkSmUsers(ctx context.Context, networkId strin
 
 // Execute executes the request
 //  @return []GetNetworkSmUsers200ResponseInner
-func (a *UsersApiService) GetNetworkSmUsersExecute(r UsersApiGetNetworkSmUsersRequest) ([]GetNetworkSmUsers200ResponseInner, *http.Response, error) {
+func (a *UsersAPIService) GetNetworkSmUsersExecute(r UsersAPIGetNetworkSmUsersRequest) ([]GetNetworkSmUsers200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -331,7 +331,7 @@ func (a *UsersApiService) GetNetworkSmUsersExecute(r UsersApiGetNetworkSmUsersRe
 		localVarReturnValue  []GetNetworkSmUsers200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.GetNetworkSmUsers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.GetNetworkSmUsers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
