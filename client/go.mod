@@ -1,4 +1,4 @@
-module github.com/meraki/dashboard-api-go/client
+module github.com/jyoung15/dashboard-api-go/client
 
 go 1.20
 
