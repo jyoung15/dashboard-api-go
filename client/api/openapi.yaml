@@ -23301,7 +23301,7 @@ paths:
           content:
             application/json:
               example:
-                serial: Q234-ABCD-5678
+              - serial: Q234-ABCD-5678
                 meshRoute:
                 - Q234-ABCD-5678
                 - QWEY-SKTD-ST01
@@ -23311,7 +23311,9 @@ paths:
                   metric: 12345
                   usagePercentage: 100%
               schema:
-                type: object
+                items:
+                  $ref: '#/components/schemas/getNetworkWirelessMeshStatuses_200_response_inner'
+                type: array
           description: Successful operation
           headers:
             Link:
@@ -39286,6 +39288,28 @@ components:
       required:
       - end
       - start
+      type: object
+    getNetworkWirelessMeshStatuses_200_response_inner:
+      example:
+        serial: serial
+        meshRoute:
+        - meshRoute
+        - meshRoute
+        latestMeshPerformance:
+          metric: 0
+          usagePercentage: usagePercentage
+          mbps: mbps
+      properties:
+        serial:
+          type: string
+        meshRoute:
+          items:
+            type: string
+          type: array
+        latestMeshPerformance:
+          $ref: '#/components/schemas/getNetworkWirelessMeshStatuses_200_response_inner_latestMeshPerformance'
+      required:
+      - serial
       type: object
     createOrganizationAdaptivePolicyGroup_request_policyObjects_inner:
       properties:
@@ -63503,6 +63527,19 @@ components:
           type: string
         psk:
           description: The pre-shared key of the SSID.
+          type: string
+      type: object
+    getNetworkWirelessMeshStatuses_200_response_inner_latestMeshPerformance:
+      example:
+        metric: 0
+        usagePercentage: usagePercentage
+        mbps: mbps
+      properties:
+        mbps:
+          type: string
+        metric:
+          type: integer
+        usagePercentage:
           type: string
       type: object
     createOrganizationPolicyObject_request:

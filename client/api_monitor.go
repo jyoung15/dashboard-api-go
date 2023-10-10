@@ -10371,7 +10371,7 @@ func (r MonitorAPIGetNetworkWirelessMeshStatusesRequest) EndingBefore(endingBefo
 	return r
 }
 
-func (r MonitorAPIGetNetworkWirelessMeshStatusesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r MonitorAPIGetNetworkWirelessMeshStatusesRequest) Execute() ([]GetNetworkWirelessMeshStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessMeshStatusesExecute(r)
 }
 
@@ -10393,13 +10393,13 @@ func (a *MonitorAPIService) GetNetworkWirelessMeshStatuses(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *MonitorAPIService) GetNetworkWirelessMeshStatusesExecute(r MonitorAPIGetNetworkWirelessMeshStatusesRequest) (map[string]interface{}, *http.Response, error) {
+//  @return []GetNetworkWirelessMeshStatuses200ResponseInner
+func (a *MonitorAPIService) GetNetworkWirelessMeshStatusesExecute(r MonitorAPIGetNetworkWirelessMeshStatusesRequest) ([]GetNetworkWirelessMeshStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  []GetNetworkWirelessMeshStatuses200ResponseInner
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorAPIService.GetNetworkWirelessMeshStatuses")

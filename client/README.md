@@ -2932,6 +2932,8 @@ Class | Method | HTTP request | Description
  - [GetNetworkWirelessDataRateHistory200ResponseInner](docs/GetNetworkWirelessDataRateHistory200ResponseInner.md)
  - [GetNetworkWirelessFailedConnections200ResponseInner](docs/GetNetworkWirelessFailedConnections200ResponseInner.md)
  - [GetNetworkWirelessLatencyHistory200ResponseInner](docs/GetNetworkWirelessLatencyHistory200ResponseInner.md)
+ - [GetNetworkWirelessMeshStatuses200ResponseInner](docs/GetNetworkWirelessMeshStatuses200ResponseInner.md)
+ - [GetNetworkWirelessMeshStatuses200ResponseInnerLatestMeshPerformance](docs/GetNetworkWirelessMeshStatuses200ResponseInnerLatestMeshPerformance.md)
  - [GetNetworkWirelessRfProfiles200Response](docs/GetNetworkWirelessRfProfiles200Response.md)
  - [GetNetworkWirelessRfProfiles200ResponseApBandSettings](docs/GetNetworkWirelessRfProfiles200ResponseApBandSettings.md)
  - [GetNetworkWirelessRfProfiles200ResponseApBandSettingsBands](docs/GetNetworkWirelessRfProfiles200ResponseApBandSettingsBands.md)

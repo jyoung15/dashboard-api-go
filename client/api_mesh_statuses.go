@@ -50,7 +50,7 @@ func (r MeshStatusesAPIGetNetworkWirelessMeshStatusesRequest) EndingBefore(endin
 	return r
 }
 
-func (r MeshStatusesAPIGetNetworkWirelessMeshStatusesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r MeshStatusesAPIGetNetworkWirelessMeshStatusesRequest) Execute() ([]GetNetworkWirelessMeshStatuses200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetNetworkWirelessMeshStatusesExecute(r)
 }
 
@@ -72,13 +72,13 @@ func (a *MeshStatusesAPIService) GetNetworkWirelessMeshStatuses(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *MeshStatusesAPIService) GetNetworkWirelessMeshStatusesExecute(r MeshStatusesAPIGetNetworkWirelessMeshStatusesRequest) (map[string]interface{}, *http.Response, error) {
+//  @return []GetNetworkWirelessMeshStatuses200ResponseInner
+func (a *MeshStatusesAPIService) GetNetworkWirelessMeshStatusesExecute(r MeshStatusesAPIGetNetworkWirelessMeshStatusesRequest) ([]GetNetworkWirelessMeshStatuses200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  []GetNetworkWirelessMeshStatuses200ResponseInner
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MeshStatusesAPIService.GetNetworkWirelessMeshStatuses")

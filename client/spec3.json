@@ -58499,21 +58499,54 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "serial": "Q234-ABCD-5678",
-                  "meshRoute": [
-                    "Q234-ABCD-5678",
-                    "QWEY-SKTD-ST01",
-                    "QWEY-SKTD-ST02"
-                  ],
-                  "latestMeshPerformance": {
-                    "mbps": 43,
-                    "metric": 12345,
-                    "usagePercentage": "100%"
+                  "type": "array",
+                  "items": {
+                    "required": [
+                      "serial"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "serial": {
+                        "type": "string"
+                      },
+                      "meshRoute": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "latestMeshPerformance": {
+                        "type": "object",
+                        "properties": {
+                          "mbps": {
+                            "type": "string"
+                          },
+                          "metric": {
+                            "type": "integer"
+                          },
+                          "usagePercentage": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
                   }
-                }
+                },
+                "example": [
+                  {
+                    "serial": "Q234-ABCD-5678",
+                    "meshRoute": [
+                      "Q234-ABCD-5678",
+                      "QWEY-SKTD-ST01",
+                      "QWEY-SKTD-ST02"
+                    ],
+                    "latestMeshPerformance": {
+                      "mbps": 43,
+                      "metric": 12345,
+                      "usagePercentage": "100%"
+                    }
+                  }
+                ]
               }
             },
             "headers": {
