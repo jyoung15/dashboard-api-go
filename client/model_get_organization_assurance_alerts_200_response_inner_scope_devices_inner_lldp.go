@@ -21,6 +21,8 @@ var _ MappedNullable = &GetOrganizationAssuranceAlerts200ResponseInnerScopeDevic
 type GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldp struct {
 	// Port of affect device
 	Port *string `json:"port,omitempty"`
+	// Port ID of affect device
+	PortId *string `json:"portId,omitempty"`
 }
 
 // NewGetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldp instantiates a new GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldp object
@@ -72,6 +74,38 @@ func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldp) Se
 	o.Port = &v
 }
 
+// GetPortId returns the PortId field value if set, zero value otherwise.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldp) GetPortId() string {
+	if o == nil || IsNil(o.PortId) {
+		var ret string
+		return ret
+	}
+	return *o.PortId
+}
+
+// GetPortIdOk returns a tuple with the PortId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldp) GetPortIdOk() (*string, bool) {
+	if o == nil || IsNil(o.PortId) {
+		return nil, false
+	}
+	return o.PortId, true
+}
+
+// HasPortId returns a boolean if a field has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldp) HasPortId() bool {
+	if o != nil && !IsNil(o.PortId) {
+		return true
+	}
+
+	return false
+}
+
+// SetPortId gets a reference to the given string and assigns it to the PortId field.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldp) SetPortId(v string) {
+	o.PortId = &v
+}
+
 func (o GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldp) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -84,6 +118,9 @@ func (o GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldp) ToM
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Port) {
 		toSerialize["port"] = o.Port
+	}
+	if !IsNil(o.PortId) {
+		toSerialize["portId"] = o.PortId
 	}
 	return toSerialize, nil
 }
