@@ -30,9 +30,9 @@ type GetNetworkClients200ResponseInner struct {
 	// Short description of the client
 	Description *string `json:"description,omitempty"`
 	// Timestamp client was first seen in the network
-	FirstSeen *int32 `json:"firstSeen,omitempty"`
+	FirstSeen *string `json:"firstSeen,omitempty"`
 	// Timestamp client was last seen in the network
-	LastSeen *int32 `json:"lastSeen,omitempty"`
+	LastSeen *string `json:"lastSeen,omitempty"`
 	// Manufacturer of the client
 	Manufacturer *string `json:"manufacturer,omitempty"`
 	// The operating system of the client
@@ -254,9 +254,9 @@ func (o *GetNetworkClients200ResponseInner) SetDescription(v string) {
 }
 
 // GetFirstSeen returns the FirstSeen field value if set, zero value otherwise.
-func (o *GetNetworkClients200ResponseInner) GetFirstSeen() int32 {
+func (o *GetNetworkClients200ResponseInner) GetFirstSeen() string {
 	if o == nil || IsNil(o.FirstSeen) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.FirstSeen
@@ -264,7 +264,7 @@ func (o *GetNetworkClients200ResponseInner) GetFirstSeen() int32 {
 
 // GetFirstSeenOk returns a tuple with the FirstSeen field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkClients200ResponseInner) GetFirstSeenOk() (*int32, bool) {
+func (o *GetNetworkClients200ResponseInner) GetFirstSeenOk() (*string, bool) {
 	if o == nil || IsNil(o.FirstSeen) {
 		return nil, false
 	}
@@ -280,15 +280,15 @@ func (o *GetNetworkClients200ResponseInner) HasFirstSeen() bool {
 	return false
 }
 
-// SetFirstSeen gets a reference to the given int32 and assigns it to the FirstSeen field.
-func (o *GetNetworkClients200ResponseInner) SetFirstSeen(v int32) {
+// SetFirstSeen gets a reference to the given string and assigns it to the FirstSeen field.
+func (o *GetNetworkClients200ResponseInner) SetFirstSeen(v string) {
 	o.FirstSeen = &v
 }
 
 // GetLastSeen returns the LastSeen field value if set, zero value otherwise.
-func (o *GetNetworkClients200ResponseInner) GetLastSeen() int32 {
+func (o *GetNetworkClients200ResponseInner) GetLastSeen() string {
 	if o == nil || IsNil(o.LastSeen) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.LastSeen
@@ -296,7 +296,7 @@ func (o *GetNetworkClients200ResponseInner) GetLastSeen() int32 {
 
 // GetLastSeenOk returns a tuple with the LastSeen field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkClients200ResponseInner) GetLastSeenOk() (*int32, bool) {
+func (o *GetNetworkClients200ResponseInner) GetLastSeenOk() (*string, bool) {
 	if o == nil || IsNil(o.LastSeen) {
 		return nil, false
 	}
@@ -312,8 +312,8 @@ func (o *GetNetworkClients200ResponseInner) HasLastSeen() bool {
 	return false
 }
 
-// SetLastSeen gets a reference to the given int32 and assigns it to the LastSeen field.
-func (o *GetNetworkClients200ResponseInner) SetLastSeen(v int32) {
+// SetLastSeen gets a reference to the given string and assigns it to the LastSeen field.
+func (o *GetNetworkClients200ResponseInner) SetLastSeen(v string) {
 	o.LastSeen = &v
 }
 

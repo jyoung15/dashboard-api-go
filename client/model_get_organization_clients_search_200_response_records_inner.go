@@ -27,9 +27,9 @@ type GetOrganizationClientsSearch200ResponseRecordsInner struct {
 	// Short description of the client
 	Description *string `json:"description,omitempty"`
 	// Timestamp client was first seen in the network
-	FirstSeen *int32 `json:"firstSeen,omitempty"`
+	FirstSeen *string `json:"firstSeen,omitempty"`
 	// Timestamp client was last seen in the network
-	LastSeen *int32 `json:"lastSeen,omitempty"`
+	LastSeen *string `json:"lastSeen,omitempty"`
 	// The operating system of the client
 	Os *string `json:"os,omitempty"`
 	// The username of the user of the client
@@ -202,9 +202,9 @@ func (o *GetOrganizationClientsSearch200ResponseRecordsInner) SetDescription(v s
 }
 
 // GetFirstSeen returns the FirstSeen field value if set, zero value otherwise.
-func (o *GetOrganizationClientsSearch200ResponseRecordsInner) GetFirstSeen() int32 {
+func (o *GetOrganizationClientsSearch200ResponseRecordsInner) GetFirstSeen() string {
 	if o == nil || IsNil(o.FirstSeen) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.FirstSeen
@@ -212,7 +212,7 @@ func (o *GetOrganizationClientsSearch200ResponseRecordsInner) GetFirstSeen() int
 
 // GetFirstSeenOk returns a tuple with the FirstSeen field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetOrganizationClientsSearch200ResponseRecordsInner) GetFirstSeenOk() (*int32, bool) {
+func (o *GetOrganizationClientsSearch200ResponseRecordsInner) GetFirstSeenOk() (*string, bool) {
 	if o == nil || IsNil(o.FirstSeen) {
 		return nil, false
 	}
@@ -228,15 +228,15 @@ func (o *GetOrganizationClientsSearch200ResponseRecordsInner) HasFirstSeen() boo
 	return false
 }
 
-// SetFirstSeen gets a reference to the given int32 and assigns it to the FirstSeen field.
-func (o *GetOrganizationClientsSearch200ResponseRecordsInner) SetFirstSeen(v int32) {
+// SetFirstSeen gets a reference to the given string and assigns it to the FirstSeen field.
+func (o *GetOrganizationClientsSearch200ResponseRecordsInner) SetFirstSeen(v string) {
 	o.FirstSeen = &v
 }
 
 // GetLastSeen returns the LastSeen field value if set, zero value otherwise.
-func (o *GetOrganizationClientsSearch200ResponseRecordsInner) GetLastSeen() int32 {
+func (o *GetOrganizationClientsSearch200ResponseRecordsInner) GetLastSeen() string {
 	if o == nil || IsNil(o.LastSeen) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.LastSeen
@@ -244,7 +244,7 @@ func (o *GetOrganizationClientsSearch200ResponseRecordsInner) GetLastSeen() int3
 
 // GetLastSeenOk returns a tuple with the LastSeen field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetOrganizationClientsSearch200ResponseRecordsInner) GetLastSeenOk() (*int32, bool) {
+func (o *GetOrganizationClientsSearch200ResponseRecordsInner) GetLastSeenOk() (*string, bool) {
 	if o == nil || IsNil(o.LastSeen) {
 		return nil, false
 	}
@@ -260,8 +260,8 @@ func (o *GetOrganizationClientsSearch200ResponseRecordsInner) HasLastSeen() bool
 	return false
 }
 
-// SetLastSeen gets a reference to the given int32 and assigns it to the LastSeen field.
-func (o *GetOrganizationClientsSearch200ResponseRecordsInner) SetLastSeen(v int32) {
+// SetLastSeen gets a reference to the given string and assigns it to the LastSeen field.
+func (o *GetOrganizationClientsSearch200ResponseRecordsInner) SetLastSeen(v string) {
 	o.LastSeen = &v
 }
 
