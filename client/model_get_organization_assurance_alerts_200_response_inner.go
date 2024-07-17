@@ -33,6 +33,8 @@ type GetOrganizationAssuranceAlerts200ResponseInner struct {
 	ResolvedAt *time.Time `json:"resolvedAt,omitempty"`
 	// Time when the alert was dismissed
 	DismissedAt *time.Time `json:"dismissedAt,omitempty"`
+	// Time when the alert expired
+	ExpiresAt *time.Time `json:"expiresAt,omitempty"`
 	// Device Type that the alert occurred on
 	DeviceType *string `json:"deviceType,omitempty"`
 	// Alert Type
@@ -43,6 +45,10 @@ type GetOrganizationAssuranceAlerts200ResponseInner struct {
 	Description *string `json:"description,omitempty"`
 	// Alert severity
 	Severity string `json:"severity"`
+	// Cursor
+	Cursor *int64 `json:"cursor,omitempty"`
+	// Schema Version
+	SchemaVersion *string `json:"schemaVersion,omitempty"`
 	Scope *GetOrganizationAssuranceAlerts200ResponseInnerScope `json:"scope,omitempty"`
 }
 
@@ -232,6 +238,38 @@ func (o *GetOrganizationAssuranceAlerts200ResponseInner) SetDismissedAt(v time.T
 	o.DismissedAt = &v
 }
 
+// GetExpiresAt returns the ExpiresAt field value if set, zero value otherwise.
+func (o *GetOrganizationAssuranceAlerts200ResponseInner) GetExpiresAt() time.Time {
+	if o == nil || IsNil(o.ExpiresAt) {
+		var ret time.Time
+		return ret
+	}
+	return *o.ExpiresAt
+}
+
+// GetExpiresAtOk returns a tuple with the ExpiresAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInner) GetExpiresAtOk() (*time.Time, bool) {
+	if o == nil || IsNil(o.ExpiresAt) {
+		return nil, false
+	}
+	return o.ExpiresAt, true
+}
+
+// HasExpiresAt returns a boolean if a field has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInner) HasExpiresAt() bool {
+	if o != nil && !IsNil(o.ExpiresAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetExpiresAt gets a reference to the given time.Time and assigns it to the ExpiresAt field.
+func (o *GetOrganizationAssuranceAlerts200ResponseInner) SetExpiresAt(v time.Time) {
+	o.ExpiresAt = &v
+}
+
 // GetDeviceType returns the DeviceType field value if set, zero value otherwise.
 func (o *GetOrganizationAssuranceAlerts200ResponseInner) GetDeviceType() string {
 	if o == nil || IsNil(o.DeviceType) {
@@ -368,6 +406,70 @@ func (o *GetOrganizationAssuranceAlerts200ResponseInner) SetSeverity(v string) {
 	o.Severity = v
 }
 
+// GetCursor returns the Cursor field value if set, zero value otherwise.
+func (o *GetOrganizationAssuranceAlerts200ResponseInner) GetCursor() int64 {
+	if o == nil || IsNil(o.Cursor) {
+		var ret int64
+		return ret
+	}
+	return *o.Cursor
+}
+
+// GetCursorOk returns a tuple with the Cursor field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInner) GetCursorOk() (*int64, bool) {
+	if o == nil || IsNil(o.Cursor) {
+		return nil, false
+	}
+	return o.Cursor, true
+}
+
+// HasCursor returns a boolean if a field has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInner) HasCursor() bool {
+	if o != nil && !IsNil(o.Cursor) {
+		return true
+	}
+
+	return false
+}
+
+// SetCursor gets a reference to the given int64 and assigns it to the Cursor field.
+func (o *GetOrganizationAssuranceAlerts200ResponseInner) SetCursor(v int64) {
+	o.Cursor = &v
+}
+
+// GetSchemaVersion returns the SchemaVersion field value if set, zero value otherwise.
+func (o *GetOrganizationAssuranceAlerts200ResponseInner) GetSchemaVersion() string {
+	if o == nil || IsNil(o.SchemaVersion) {
+		var ret string
+		return ret
+	}
+	return *o.SchemaVersion
+}
+
+// GetSchemaVersionOk returns a tuple with the SchemaVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInner) GetSchemaVersionOk() (*string, bool) {
+	if o == nil || IsNil(o.SchemaVersion) {
+		return nil, false
+	}
+	return o.SchemaVersion, true
+}
+
+// HasSchemaVersion returns a boolean if a field has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInner) HasSchemaVersion() bool {
+	if o != nil && !IsNil(o.SchemaVersion) {
+		return true
+	}
+
+	return false
+}
+
+// SetSchemaVersion gets a reference to the given string and assigns it to the SchemaVersion field.
+func (o *GetOrganizationAssuranceAlerts200ResponseInner) SetSchemaVersion(v string) {
+	o.SchemaVersion = &v
+}
+
 // GetScope returns the Scope field value if set, zero value otherwise.
 func (o *GetOrganizationAssuranceAlerts200ResponseInner) GetScope() GetOrganizationAssuranceAlerts200ResponseInnerScope {
 	if o == nil || IsNil(o.Scope) {
@@ -420,6 +522,9 @@ func (o GetOrganizationAssuranceAlerts200ResponseInner) ToMap() (map[string]inte
 	if !IsNil(o.DismissedAt) {
 		toSerialize["dismissedAt"] = o.DismissedAt
 	}
+	if !IsNil(o.ExpiresAt) {
+		toSerialize["expiresAt"] = o.ExpiresAt
+	}
 	if !IsNil(o.DeviceType) {
 		toSerialize["deviceType"] = o.DeviceType
 	}
@@ -429,6 +534,12 @@ func (o GetOrganizationAssuranceAlerts200ResponseInner) ToMap() (map[string]inte
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["severity"] = o.Severity
+	if !IsNil(o.Cursor) {
+		toSerialize["cursor"] = o.Cursor
+	}
+	if !IsNil(o.SchemaVersion) {
+		toSerialize["schemaVersion"] = o.SchemaVersion
+	}
 	if !IsNil(o.Scope) {
 		toSerialize["scope"] = o.Scope
 	}

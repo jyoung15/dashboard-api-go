@@ -33,6 +33,8 @@ type GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner struct {
 	Mac *string `json:"mac,omitempty"`
 	// IMEI of affected device
 	Imei *string `json:"imei,omitempty"`
+	// The device tags
+	Tags []string `json:"tags,omitempty"`
 	Lldp *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldp `json:"lldp,omitempty"`
 }
 
@@ -277,6 +279,38 @@ func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) SetIme
 	o.Imei = &v
 }
 
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) GetTags() []string {
+	if o == nil || IsNil(o.Tags) {
+		var ret []string
+		return ret
+	}
+	return o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) GetTagsOk() ([]string, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given []string and assigns it to the Tags field.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) SetTags(v []string) {
+	o.Tags = v
+}
+
 // GetLldp returns the Lldp field value if set, zero value otherwise.
 func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) GetLldp() GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldp {
 	if o == nil || IsNil(o.Lldp) {
@@ -339,6 +373,9 @@ func (o GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) ToMap()
 	}
 	if !IsNil(o.Imei) {
 		toSerialize["imei"] = o.Imei
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
 	}
 	if !IsNil(o.Lldp) {
 		toSerialize["lldp"] = o.Lldp
