@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **MeshingEnabled** | Pointer to **bool** | Toggle for enabling or disabling meshing in a network | [optional] 
 **Ipv6BridgeEnabled** | Pointer to **bool** | Toggle for enabling or disabling IPv6 bridging in a network (Note: if enabled, SSIDs must also be configured to use bridge mode) | [optional] 
 **LocationAnalyticsEnabled** | Pointer to **bool** | Toggle for enabling or disabling location analytics for your network | [optional] 
-**UpgradeStrategy** | Pointer to **string** | The upgrade strategy to apply to the network. Must be one of &#39;minimizeUpgradeTime&#39; or &#39;minimizeClientDowntime&#39;. Requires firmware version MR 26.8 or higher&#39; | [optional] 
+**UpgradeStrategy** | Pointer to **string** | The default strategy that network devices will use to perform an upgrade. Requires firmware version MR 26.8 or higher. | [optional] 
 **LedLightsOn** | Pointer to **bool** | Toggle for enabling or disabling LED lights on all APs in the network (making them run dark) | [optional] 
 **NamedVlans** | Pointer to [**GetNetworkWirelessSettings200ResponseNamedVlans**](GetNetworkWirelessSettings200ResponseNamedVlans.md) |  | [optional] 
 **RegulatoryDomain** | Pointer to [**GetNetworkWirelessSettings200ResponseRegulatoryDomain**](GetNetworkWirelessSettings200ResponseRegulatoryDomain.md) |  | [optional] 

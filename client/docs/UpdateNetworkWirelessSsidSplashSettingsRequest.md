@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **RedirectUrl** | Pointer to **string** | The custom redirect URL where the users will go after the splash page. | [optional] 
 **UseRedirectUrl** | Pointer to **bool** | The Boolean indicating whether the the user will be redirected to the custom redirect URL after the splash page. A custom redirect URL must be set if this is true. | [optional] 
 **WelcomeMessage** | Pointer to **string** | The welcome message for the users on the splash page. | [optional] 
+**ThemeId** | Pointer to **string** | The id of the selected splash theme. | [optional] 
 **SplashLogo** | Pointer to [**UpdateNetworkWirelessSsidSplashSettingsRequestSplashLogo**](UpdateNetworkWirelessSsidSplashSettingsRequestSplashLogo.md) |  | [optional] 
 **SplashImage** | Pointer to [**UpdateNetworkWirelessSsidSplashSettingsRequestSplashImage**](UpdateNetworkWirelessSsidSplashSettingsRequestSplashImage.md) |  | [optional] 
 **SplashPrepaidFront** | Pointer to [**UpdateNetworkWirelessSsidSplashSettingsRequestSplashPrepaidFront**](UpdateNetworkWirelessSsidSplashSettingsRequestSplashPrepaidFront.md) |  | [optional] 
@@ -188,6 +189,31 @@ SetWelcomeMessage sets WelcomeMessage field to given value.
 `func (o *UpdateNetworkWirelessSsidSplashSettingsRequest) HasWelcomeMessage() bool`
 
 HasWelcomeMessage returns a boolean if a field has been set.
+
+### GetThemeId
+
+`func (o *UpdateNetworkWirelessSsidSplashSettingsRequest) GetThemeId() string`
+
+GetThemeId returns the ThemeId field if non-nil, zero value otherwise.
+
+### GetThemeIdOk
+
+`func (o *UpdateNetworkWirelessSsidSplashSettingsRequest) GetThemeIdOk() (*string, bool)`
+
+GetThemeIdOk returns a tuple with the ThemeId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetThemeId
+
+`func (o *UpdateNetworkWirelessSsidSplashSettingsRequest) SetThemeId(v string)`
+
+SetThemeId sets ThemeId field to given value.
+
+### HasThemeId
+
+`func (o *UpdateNetworkWirelessSsidSplashSettingsRequest) HasThemeId() bool`
+
+HasThemeId returns a boolean if a field has been set.
 
 ### GetSplashLogo
 

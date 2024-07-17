@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Enabled** | Pointer to **bool** | If true, Bonjour forwarding is enabled on this SSID. | [optional] 
-**Rules** | Pointer to [**[]CreateNetworkGroupPolicyRequestBonjourForwardingRulesInner**](CreateNetworkGroupPolicyRequestBonjourForwardingRulesInner.md) | List of bonjour forwarding rules. | [optional] 
-**Exception** | Pointer to [**UpdateNetworkWirelessSsidBonjourForwardingRequestException**](UpdateNetworkWirelessSsidBonjourForwardingRequestException.md) |  | [optional] 
+**Rules** | Pointer to [**[]GetNetworkGroupPolicies200ResponseInnerBonjourForwardingRulesInner**](GetNetworkGroupPolicies200ResponseInnerBonjourForwardingRulesInner.md) | List of bonjour forwarding rules. | [optional] 
+**Exception** | Pointer to [**GetNetworkWirelessSsidBonjourForwarding200ResponseException**](GetNetworkWirelessSsidBonjourForwarding200ResponseException.md) |  | [optional] 
 
 ## Methods
 
@@ -54,20 +54,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetRules
 
-`func (o *UpdateNetworkWirelessSsidBonjourForwardingRequest) GetRules() []CreateNetworkGroupPolicyRequestBonjourForwardingRulesInner`
+`func (o *UpdateNetworkWirelessSsidBonjourForwardingRequest) GetRules() []GetNetworkGroupPolicies200ResponseInnerBonjourForwardingRulesInner`
 
 GetRules returns the Rules field if non-nil, zero value otherwise.
 
 ### GetRulesOk
 
-`func (o *UpdateNetworkWirelessSsidBonjourForwardingRequest) GetRulesOk() (*[]CreateNetworkGroupPolicyRequestBonjourForwardingRulesInner, bool)`
+`func (o *UpdateNetworkWirelessSsidBonjourForwardingRequest) GetRulesOk() (*[]GetNetworkGroupPolicies200ResponseInnerBonjourForwardingRulesInner, bool)`
 
 GetRulesOk returns a tuple with the Rules field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRules
 
-`func (o *UpdateNetworkWirelessSsidBonjourForwardingRequest) SetRules(v []CreateNetworkGroupPolicyRequestBonjourForwardingRulesInner)`
+`func (o *UpdateNetworkWirelessSsidBonjourForwardingRequest) SetRules(v []GetNetworkGroupPolicies200ResponseInnerBonjourForwardingRulesInner)`
 
 SetRules sets Rules field to given value.
 
@@ -79,20 +79,20 @@ HasRules returns a boolean if a field has been set.
 
 ### GetException
 
-`func (o *UpdateNetworkWirelessSsidBonjourForwardingRequest) GetException() UpdateNetworkWirelessSsidBonjourForwardingRequestException`
+`func (o *UpdateNetworkWirelessSsidBonjourForwardingRequest) GetException() GetNetworkWirelessSsidBonjourForwarding200ResponseException`
 
 GetException returns the Exception field if non-nil, zero value otherwise.
 
 ### GetExceptionOk
 
-`func (o *UpdateNetworkWirelessSsidBonjourForwardingRequest) GetExceptionOk() (*UpdateNetworkWirelessSsidBonjourForwardingRequestException, bool)`
+`func (o *UpdateNetworkWirelessSsidBonjourForwardingRequest) GetExceptionOk() (*GetNetworkWirelessSsidBonjourForwarding200ResponseException, bool)`
 
 GetExceptionOk returns a tuple with the Exception field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetException
 
-`func (o *UpdateNetworkWirelessSsidBonjourForwardingRequest) SetException(v UpdateNetworkWirelessSsidBonjourForwardingRequestException)`
+`func (o *UpdateNetworkWirelessSsidBonjourForwardingRequest) SetException(v GetNetworkWirelessSsidBonjourForwarding200ResponseException)`
 
 SetException sets Exception field to given value.
 

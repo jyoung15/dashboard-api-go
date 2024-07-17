@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | The name of the new static route | 
-**Subnet** | **string** | The subnet of the static route | 
-**GatewayIp** | **string** | The gateway IP (next hop) of the static route | 
-**GatewayVlanId** | Pointer to **string** | The gateway IP (next hop) VLAN ID of the static route | [optional] 
+**Name** | **string** | Name of the route | 
+**Subnet** | **string** | Subnet of the route | 
+**GatewayIp** | **string** | Gateway IP address (next hop) | 
+**GatewayVlanId** | Pointer to **string** | Gateway VLAN ID | [optional] 
 
 ## Methods
 

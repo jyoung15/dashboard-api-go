@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **ImageExtension** | Pointer to **string** | The format type of the image. | [optional] 
 **ImageMd5** | Pointer to **string** | The file contents (a base 64 encoded string) of your new image. Supported formats are PNG, GIF, and JPG. Note that all images are saved as PNG files, regardless of the format they are uploaded in. If you upload a new image, and you do NOT specify any new geolocation fields (&#39;center, &#39;topLeftCorner&#39;, etc), the floor plan will be recentered with no rotation in order to maintain the aspect ratio of your new image. | [optional] 
 **Name** | Pointer to **string** | The name of your floor plan. | [optional] 
-**Devices** | Pointer to [**[]GetNetworkFloorPlans200ResponseInnerDevicesInner**](GetNetworkFloorPlans200ResponseInnerDevicesInner.md) | List of devices for the floorplan | [optional] 
+**Devices** | Pointer to [**[]VmxNetworkDevicesClaim200Response**](VmxNetworkDevicesClaim200Response.md) | List of devices for the floorplan | [optional] 
 **Width** | Pointer to **float32** | The width of your floor plan. | [optional] 
 **Height** | Pointer to **float32** | The height of your floor plan. | [optional] 
 **Center** | Pointer to [**GetNetworkFloorPlans200ResponseInnerCenter**](GetNetworkFloorPlans200ResponseInnerCenter.md) |  | [optional] 
@@ -190,20 +190,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetDevices
 
-`func (o *GetNetworkFloorPlans200ResponseInner) GetDevices() []GetNetworkFloorPlans200ResponseInnerDevicesInner`
+`func (o *GetNetworkFloorPlans200ResponseInner) GetDevices() []VmxNetworkDevicesClaim200Response`
 
 GetDevices returns the Devices field if non-nil, zero value otherwise.
 
 ### GetDevicesOk
 
-`func (o *GetNetworkFloorPlans200ResponseInner) GetDevicesOk() (*[]GetNetworkFloorPlans200ResponseInnerDevicesInner, bool)`
+`func (o *GetNetworkFloorPlans200ResponseInner) GetDevicesOk() (*[]VmxNetworkDevicesClaim200Response, bool)`
 
 GetDevicesOk returns a tuple with the Devices field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevices
 
-`func (o *GetNetworkFloorPlans200ResponseInner) SetDevices(v []GetNetworkFloorPlans200ResponseInnerDevicesInner)`
+`func (o *GetNetworkFloorPlans200ResponseInner) SetDevices(v []VmxNetworkDevicesClaim200Response)`
 
 SetDevices sets Devices field to given value.
 

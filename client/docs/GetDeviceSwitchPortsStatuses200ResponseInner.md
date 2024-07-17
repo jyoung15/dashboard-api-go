@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **PortId** | Pointer to **string** | The string identifier of this port on the switch. This is commonly just the port number but may contain additional identifying information such as the slot and module-type if the port is located on a port module. | [optional] 
 **Enabled** | Pointer to **bool** | Whether the port is configured to be enabled. | [optional] 
 **Status** | Pointer to **string** | The current connection status of the port. | [optional] 
+**SpanningTree** | Pointer to [**GetDeviceSwitchPortsStatuses200ResponseInnerSpanningTree**](GetDeviceSwitchPortsStatuses200ResponseInnerSpanningTree.md) |  | [optional] 
 **IsUplink** | Pointer to **bool** | Whether the port is the switch&#39;s uplink. | [optional] 
 **Errors** | Pointer to **[]string** | All errors present on the port. | [optional] 
 **Warnings** | Pointer to **[]string** | All warnings present on the port. | [optional] 
@@ -19,6 +20,7 @@ Name | Type | Description | Notes
 **PowerUsageInWh** | Pointer to **float32** | How much power (in watt-hours) has been delivered by this port during the timespan. | [optional] 
 **TrafficInKbps** | Pointer to [**GetDeviceSwitchPortsStatuses200ResponseInnerTrafficInKbps**](GetDeviceSwitchPortsStatuses200ResponseInnerTrafficInKbps.md) |  | [optional] 
 **SecurePort** | Pointer to [**GetDeviceSwitchPortsStatuses200ResponseInnerSecurePort**](GetDeviceSwitchPortsStatuses200ResponseInnerSecurePort.md) |  | [optional] 
+**Poe** | Pointer to [**GetDeviceSwitchPortsStatuses200ResponseInnerPoe**](GetDeviceSwitchPortsStatuses200ResponseInnerPoe.md) |  | [optional] 
 
 ## Methods
 
@@ -113,6 +115,31 @@ SetStatus sets Status field to given value.
 `func (o *GetDeviceSwitchPortsStatuses200ResponseInner) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
+
+### GetSpanningTree
+
+`func (o *GetDeviceSwitchPortsStatuses200ResponseInner) GetSpanningTree() GetDeviceSwitchPortsStatuses200ResponseInnerSpanningTree`
+
+GetSpanningTree returns the SpanningTree field if non-nil, zero value otherwise.
+
+### GetSpanningTreeOk
+
+`func (o *GetDeviceSwitchPortsStatuses200ResponseInner) GetSpanningTreeOk() (*GetDeviceSwitchPortsStatuses200ResponseInnerSpanningTree, bool)`
+
+GetSpanningTreeOk returns a tuple with the SpanningTree field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSpanningTree
+
+`func (o *GetDeviceSwitchPortsStatuses200ResponseInner) SetSpanningTree(v GetDeviceSwitchPortsStatuses200ResponseInnerSpanningTree)`
+
+SetSpanningTree sets SpanningTree field to given value.
+
+### HasSpanningTree
+
+`func (o *GetDeviceSwitchPortsStatuses200ResponseInner) HasSpanningTree() bool`
+
+HasSpanningTree returns a boolean if a field has been set.
 
 ### GetIsUplink
 
@@ -413,6 +440,31 @@ SetSecurePort sets SecurePort field to given value.
 `func (o *GetDeviceSwitchPortsStatuses200ResponseInner) HasSecurePort() bool`
 
 HasSecurePort returns a boolean if a field has been set.
+
+### GetPoe
+
+`func (o *GetDeviceSwitchPortsStatuses200ResponseInner) GetPoe() GetDeviceSwitchPortsStatuses200ResponseInnerPoe`
+
+GetPoe returns the Poe field if non-nil, zero value otherwise.
+
+### GetPoeOk
+
+`func (o *GetDeviceSwitchPortsStatuses200ResponseInner) GetPoeOk() (*GetDeviceSwitchPortsStatuses200ResponseInnerPoe, bool)`
+
+GetPoeOk returns a tuple with the Poe field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPoe
+
+`func (o *GetDeviceSwitchPortsStatuses200ResponseInner) SetPoe(v GetDeviceSwitchPortsStatuses200ResponseInnerPoe)`
+
+SetPoe sets Poe field to given value.
+
+### HasPoe
+
+`func (o *GetDeviceSwitchPortsStatuses200ResponseInner) HasPoe() bool`
+
+HasPoe returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

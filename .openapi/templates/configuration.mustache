@@ -5,8 +5,6 @@ import (
 	"context"
 	"fmt"
 	"net/http"
-    "os"
-    "strconv"
 	"strings"
 )
 
@@ -106,8 +104,14 @@ type ServerConfiguration struct {
 type ServerConfigurations []ServerConfiguration
 
 {{#withCustomMiddlewareFunction}}
-// MiddlewareFunction provides way to implement custom middleware
+// MiddlewareFunction provides way to implement custom middleware in the prepareRequest
 type MiddlewareFunction func(*http.Request)
+
+// MiddlewareFunctionWithError provides way to implement custom middleware with errors in the prepareRequest
+type MiddlewareFunctionWithError func(*http.Request) error
+
+// ResponseMiddlewareFunction provides way to implement custom middleware with errors after the response is received
+type ResponseMiddlewareFunction func(*http.Response, []byte) error
 
 {{/withCustomMiddlewareFunction}}
 // Configuration stores the configuration of the API client
@@ -120,21 +124,10 @@ type Configuration struct {
 	Servers          ServerConfigurations
 	OperationServers map[string]ServerConfigurations
 	HTTPClient       *http.Client
-    DefaultBaseUrl	string
-    SingleRequestTimeout              int
-    CertificatePath                   string
-    RequestsProxy                     string
-    WaitOnRateLimit                   bool
-    Nginx429RetryWaitTime             int
-    ActionBatchRetryWaitTime          int
-    Retry4xxError                     bool
-    Retry4xxErrorWaitTime             int
-    MaximumRetries                    int
-    SimulateAPICalls                  bool
-    MerakiGoSDKCaller             	  string
-    UseIteratorForGetPages            bool
 	{{#withCustomMiddlewareFunction}}
-	Middleware       MiddlewareFunction
+	Middleware          MiddlewareFunction
+	MiddlewareWithError MiddlewareFunctionWithError
+	ResponseMiddleware  ResponseMiddlewareFunction
 	{{/withCustomMiddlewareFunction}}
 }
 
@@ -142,7 +135,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:       getEnvOrDefaultStr("MERAKI_GO_SDK_CALLER", "{{{httpUserAgent}}}{{^httpUserAgent}}meraki-golang/{{{packageVersion}}}/{{/httpUserAgent}}"),
+		UserAgent:        "{{{httpUserAgent}}}{{^httpUserAgent}}OpenAPI-Generator/{{{packageVersion}}}/go{{/httpUserAgent}}",
 		Debug:            false,
 		{{#servers}}
 		{{#-first}}
@@ -156,7 +149,7 @@ func NewConfiguration() *Configuration {
 				Variables: map[string]ServerVariable{
 				{{/-first}}
 					"{{{name}}}": ServerVariable{
-						Description: "{{{description}}}{{^description}}Meraki API Go Client{{/description}}",
+						Description: "{{{description}}}{{^description}}No description provided{{/description}}",
 						DefaultValue: "{{{defaultValue}}}",
 						{{#enumValues}}
 						{{#-first}}
@@ -220,47 +213,8 @@ func NewConfiguration() *Configuration {
 		{{/apis}}
 		},
 		{{/apiInfo}}
-        DefaultBaseUrl: getEnvOrDefaultStr("DEFAULT_BASE_URL","https://api.meraki.com/api/v1"),
-        SingleRequestTimeout:      getEnvOrDefaultInt("SINGLE_REQUEST_TIMEOUT", 60),
-        CertificatePath:           getEnvOrDefaultStr("CERTIFICATE_PATH", ""),
-        RequestsProxy:             getEnvOrDefaultStr("REQUESTS_PROXY", ""),
-        WaitOnRateLimit:           getEnvOrDefaultBool("WAIT_ON_RATE_LIMIT", true),
-        Nginx429RetryWaitTime:     getEnvOrDefaultInt("NGINX_429_RETRY_WAIT_TIME", 60),
-        ActionBatchRetryWaitTime:  getEnvOrDefaultInt("ACTION_BATCH_RETRY_WAIT_TIME", 60),
-        Retry4xxError:             getEnvOrDefaultBool("RETRY_4XX_ERROR", false),
-        Retry4xxErrorWaitTime:     getEnvOrDefaultInt("RETRY_4XX_ERROR_WAIT_TIME", 60),
-        MaximumRetries:            getEnvOrDefaultInt("MAXIMUM_RETRIES", 2),
-        SimulateAPICalls:          getEnvOrDefaultBool("SIMULATE_API_CALLS", false),
-        MerakiGoSDKCaller:     	   getEnvOrDefaultStr("MERAKI_GO_SDK_CALLER", ""),
-        UseIteratorForGetPages:    getEnvOrDefaultBool("USE_ITERATOR_FOR_GET_PAGES", true),
 	}
 	return cfg
-}
-
-func getEnvOrDefaultStr(envVar, defaultValue string) string {
-value := os.Getenv(envVar)
-if value == "" {
-return defaultValue
-}
-return value
-}
-
-func getEnvOrDefaultInt(envVar string, defaultValue int) int {
-value := getEnvOrDefaultStr(envVar, "")
-if val, err := strconv.Atoi(value); err == nil {
-return val
-}
-
-return defaultValue
-}
-
-func getEnvOrDefaultBool(envVar string, defaultValue bool) bool {
-value := getEnvOrDefaultStr(envVar, "")
-if val, err := strconv.ParseBool(value); err == nil {
-return val
-}
-
-return defaultValue
 }
 
 // AddDefaultHeader adds a new HTTP header to the default header in the request

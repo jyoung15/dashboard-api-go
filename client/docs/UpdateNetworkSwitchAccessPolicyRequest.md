@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | Name of the access policy | [optional] 
-**RadiusServers** | Pointer to [**[]CreateNetworkSwitchAccessPolicyRequestRadiusServersInner**](CreateNetworkSwitchAccessPolicyRequestRadiusServersInner.md) | List of RADIUS servers to require connecting devices to authenticate against before granting network access | [optional] 
+**RadiusServers** | Pointer to [**[]UpdateNetworkSwitchAccessPolicyRequestRadiusServersInner**](UpdateNetworkSwitchAccessPolicyRequestRadiusServersInner.md) | List of RADIUS servers to require connecting devices to authenticate against before granting network access | [optional] 
 **Radius** | Pointer to [**GetNetworkSwitchAccessPolicies200ResponseInnerRadius**](GetNetworkSwitchAccessPolicies200ResponseInnerRadius.md) |  | [optional] 
 **GuestPortBouncing** | Pointer to **bool** | If enabled, Meraki devices will periodically send access-request messages to these RADIUS servers | [optional] 
 **RadiusTestingEnabled** | Pointer to **bool** | If enabled, Meraki devices will periodically send access-request messages to these RADIUS servers | [optional] 
 **RadiusCoaSupportEnabled** | Pointer to **bool** | Change of authentication for RADIUS re-authentication and disconnection | [optional] 
 **RadiusAccountingEnabled** | Pointer to **bool** | Enable to send start, interim-update and stop messages to a configured RADIUS accounting server for tracking connected clients | [optional] 
-**RadiusAccountingServers** | Pointer to [**[]CreateNetworkSwitchAccessPolicyRequestRadiusAccountingServersInner**](CreateNetworkSwitchAccessPolicyRequestRadiusAccountingServersInner.md) | List of RADIUS accounting servers to require connecting devices to authenticate against before granting network access | [optional] 
+**RadiusAccountingServers** | Pointer to [**[]UpdateNetworkSwitchAccessPolicyRequestRadiusAccountingServersInner**](UpdateNetworkSwitchAccessPolicyRequestRadiusAccountingServersInner.md) | List of RADIUS accounting servers to require connecting devices to authenticate against before granting network access | [optional] 
 **RadiusGroupAttribute** | Pointer to **string** | Acceptable values are &#x60;\&quot;\&quot;&#x60; for None, or &#x60;\&quot;11\&quot;&#x60; for Group Policies ACL | [optional] 
 **HostMode** | Pointer to **string** | Choose the Host Mode for the access policy. | [optional] 
 **AccessPolicyType** | Pointer to **string** | Access Type of the policy. Automatically &#39;Hybrid authentication&#39; when hostMode is &#39;Multi-Domain&#39;. | [optional] 
@@ -68,20 +68,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetRadiusServers
 
-`func (o *UpdateNetworkSwitchAccessPolicyRequest) GetRadiusServers() []CreateNetworkSwitchAccessPolicyRequestRadiusServersInner`
+`func (o *UpdateNetworkSwitchAccessPolicyRequest) GetRadiusServers() []UpdateNetworkSwitchAccessPolicyRequestRadiusServersInner`
 
 GetRadiusServers returns the RadiusServers field if non-nil, zero value otherwise.
 
 ### GetRadiusServersOk
 
-`func (o *UpdateNetworkSwitchAccessPolicyRequest) GetRadiusServersOk() (*[]CreateNetworkSwitchAccessPolicyRequestRadiusServersInner, bool)`
+`func (o *UpdateNetworkSwitchAccessPolicyRequest) GetRadiusServersOk() (*[]UpdateNetworkSwitchAccessPolicyRequestRadiusServersInner, bool)`
 
 GetRadiusServersOk returns a tuple with the RadiusServers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRadiusServers
 
-`func (o *UpdateNetworkSwitchAccessPolicyRequest) SetRadiusServers(v []CreateNetworkSwitchAccessPolicyRequestRadiusServersInner)`
+`func (o *UpdateNetworkSwitchAccessPolicyRequest) SetRadiusServers(v []UpdateNetworkSwitchAccessPolicyRequestRadiusServersInner)`
 
 SetRadiusServers sets RadiusServers field to given value.
 
@@ -218,20 +218,20 @@ HasRadiusAccountingEnabled returns a boolean if a field has been set.
 
 ### GetRadiusAccountingServers
 
-`func (o *UpdateNetworkSwitchAccessPolicyRequest) GetRadiusAccountingServers() []CreateNetworkSwitchAccessPolicyRequestRadiusAccountingServersInner`
+`func (o *UpdateNetworkSwitchAccessPolicyRequest) GetRadiusAccountingServers() []UpdateNetworkSwitchAccessPolicyRequestRadiusAccountingServersInner`
 
 GetRadiusAccountingServers returns the RadiusAccountingServers field if non-nil, zero value otherwise.
 
 ### GetRadiusAccountingServersOk
 
-`func (o *UpdateNetworkSwitchAccessPolicyRequest) GetRadiusAccountingServersOk() (*[]CreateNetworkSwitchAccessPolicyRequestRadiusAccountingServersInner, bool)`
+`func (o *UpdateNetworkSwitchAccessPolicyRequest) GetRadiusAccountingServersOk() (*[]UpdateNetworkSwitchAccessPolicyRequestRadiusAccountingServersInner, bool)`
 
 GetRadiusAccountingServersOk returns a tuple with the RadiusAccountingServers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRadiusAccountingServers
 
-`func (o *UpdateNetworkSwitchAccessPolicyRequest) SetRadiusAccountingServers(v []CreateNetworkSwitchAccessPolicyRequestRadiusAccountingServersInner)`
+`func (o *UpdateNetworkSwitchAccessPolicyRequest) SetRadiusAccountingServers(v []UpdateNetworkSwitchAccessPolicyRequestRadiusAccountingServersInner)`
 
 SetRadiusAccountingServers sets RadiusAccountingServers field to given value.
 

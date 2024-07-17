@@ -4,9 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Slot** | Pointer to **string** | SIM slot being configured. Must be &#39;sim1&#39; on single-sim devices. | [optional] 
-**IsPrimary** | Pointer to **bool** | If true, this SIM is used for boot. Must be true on single-sim devices. | [optional] [default to false]
-**Apns** | Pointer to [**[]UpdateDeviceCellularSimsRequestSimsInnerApnsInner**](UpdateDeviceCellularSimsRequestSimsInnerApnsInner.md) | APN configurations. If empty, the default APN will be used. | [optional] [default to []]
+**Slot** | Pointer to **string** | SIM slot being configured. Must be &#39;sim1&#39; on single-sim devices. Use &#39;sim3&#39; for eSIM. | [optional] 
+**IsPrimary** | Pointer to **bool** | If true, this SIM is activated on platform bootup. It must be true on single-SIM devices and is a required field for dual-SIM MGs unless it is being configured using &#39;simOrdering&#39;. | [optional] [default to false]
+**Apns** | Pointer to [**[]GetDeviceCellularSims200ResponseSimsInnerApnsInner**](GetDeviceCellularSims200ResponseSimsInnerApnsInner.md) | APN configurations. If empty, the default APN will be used. | [optional] [default to []]
+**SimOrder** | Pointer to **int32** | Priority of SIM slot being configured. Use a value between 1 and total number of SIMs available. The value must be unique for each SIM. | [optional] 
 
 ## Methods
 
@@ -79,20 +80,20 @@ HasIsPrimary returns a boolean if a field has been set.
 
 ### GetApns
 
-`func (o *UpdateDeviceCellularSimsRequestSimsInner) GetApns() []UpdateDeviceCellularSimsRequestSimsInnerApnsInner`
+`func (o *UpdateDeviceCellularSimsRequestSimsInner) GetApns() []GetDeviceCellularSims200ResponseSimsInnerApnsInner`
 
 GetApns returns the Apns field if non-nil, zero value otherwise.
 
 ### GetApnsOk
 
-`func (o *UpdateDeviceCellularSimsRequestSimsInner) GetApnsOk() (*[]UpdateDeviceCellularSimsRequestSimsInnerApnsInner, bool)`
+`func (o *UpdateDeviceCellularSimsRequestSimsInner) GetApnsOk() (*[]GetDeviceCellularSims200ResponseSimsInnerApnsInner, bool)`
 
 GetApnsOk returns a tuple with the Apns field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApns
 
-`func (o *UpdateDeviceCellularSimsRequestSimsInner) SetApns(v []UpdateDeviceCellularSimsRequestSimsInnerApnsInner)`
+`func (o *UpdateDeviceCellularSimsRequestSimsInner) SetApns(v []GetDeviceCellularSims200ResponseSimsInnerApnsInner)`
 
 SetApns sets Apns field to given value.
 
@@ -101,6 +102,31 @@ SetApns sets Apns field to given value.
 `func (o *UpdateDeviceCellularSimsRequestSimsInner) HasApns() bool`
 
 HasApns returns a boolean if a field has been set.
+
+### GetSimOrder
+
+`func (o *UpdateDeviceCellularSimsRequestSimsInner) GetSimOrder() int32`
+
+GetSimOrder returns the SimOrder field if non-nil, zero value otherwise.
+
+### GetSimOrderOk
+
+`func (o *UpdateDeviceCellularSimsRequestSimsInner) GetSimOrderOk() (*int32, bool)`
+
+GetSimOrderOk returns a tuple with the SimOrder field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSimOrder
+
+`func (o *UpdateDeviceCellularSimsRequestSimsInner) SetSimOrder(v int32)`
+
+SetSimOrder sets SimOrder field to given value.
+
+### HasSimOrder
+
+`func (o *UpdateDeviceCellularSimsRequestSimsInner) HasSimOrder() bool`
+
+HasSimOrder returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

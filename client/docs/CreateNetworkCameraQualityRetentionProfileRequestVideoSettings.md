@@ -8,12 +8,16 @@ Name | Type | Description | Notes
 **MV12MV22MV72** | Pointer to [**CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV12MV22MV72**](CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV12MV22MV72.md) |  | [optional] 
 **MV32** | Pointer to [**CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV32**](CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV32.md) |  | [optional] 
 **MV33** | Pointer to [**CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV33**](CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV33.md) |  | [optional] 
+**MV33M** | Pointer to [**CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV33M**](CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV33M.md) |  | [optional] 
 **MV12WE** | Pointer to [**CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV12WE**](CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV12WE.md) |  | [optional] 
 **MV13** | Pointer to [**CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV13**](CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV13.md) |  | [optional] 
+**MV13M** | Pointer to [**CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV13M**](CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV13M.md) |  | [optional] 
 **MV22XMV72X** | Pointer to [**CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV22XMV72X**](CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV22XMV72X.md) |  | [optional] 
 **MV52** | Pointer to [**CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV52**](CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV52.md) |  | [optional] 
 **MV63** | Pointer to [**CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV63**](CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV63.md) |  | [optional] 
+**MV63M** | Pointer to [**CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV63M**](CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV63M.md) |  | [optional] 
 **MV93** | Pointer to [**CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV93**](CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV93.md) |  | [optional] 
+**MV93M** | Pointer to [**CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV93M**](CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV93M.md) |  | [optional] 
 **MV63X** | Pointer to [**CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV63X**](CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV63X.md) |  | [optional] 
 **MV93X** | Pointer to [**CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV93X**](CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV93X.md) |  | [optional] 
 
@@ -136,6 +140,31 @@ SetMV33 sets MV33 field to given value.
 
 HasMV33 returns a boolean if a field has been set.
 
+### GetMV33M
+
+`func (o *CreateNetworkCameraQualityRetentionProfileRequestVideoSettings) GetMV33M() CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV33M`
+
+GetMV33M returns the MV33M field if non-nil, zero value otherwise.
+
+### GetMV33MOk
+
+`func (o *CreateNetworkCameraQualityRetentionProfileRequestVideoSettings) GetMV33MOk() (*CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV33M, bool)`
+
+GetMV33MOk returns a tuple with the MV33M field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMV33M
+
+`func (o *CreateNetworkCameraQualityRetentionProfileRequestVideoSettings) SetMV33M(v CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV33M)`
+
+SetMV33M sets MV33M field to given value.
+
+### HasMV33M
+
+`func (o *CreateNetworkCameraQualityRetentionProfileRequestVideoSettings) HasMV33M() bool`
+
+HasMV33M returns a boolean if a field has been set.
+
 ### GetMV12WE
 
 `func (o *CreateNetworkCameraQualityRetentionProfileRequestVideoSettings) GetMV12WE() CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV12WE`
@@ -185,6 +214,31 @@ SetMV13 sets MV13 field to given value.
 `func (o *CreateNetworkCameraQualityRetentionProfileRequestVideoSettings) HasMV13() bool`
 
 HasMV13 returns a boolean if a field has been set.
+
+### GetMV13M
+
+`func (o *CreateNetworkCameraQualityRetentionProfileRequestVideoSettings) GetMV13M() CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV13M`
+
+GetMV13M returns the MV13M field if non-nil, zero value otherwise.
+
+### GetMV13MOk
+
+`func (o *CreateNetworkCameraQualityRetentionProfileRequestVideoSettings) GetMV13MOk() (*CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV13M, bool)`
+
+GetMV13MOk returns a tuple with the MV13M field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMV13M
+
+`func (o *CreateNetworkCameraQualityRetentionProfileRequestVideoSettings) SetMV13M(v CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV13M)`
+
+SetMV13M sets MV13M field to given value.
+
+### HasMV13M
+
+`func (o *CreateNetworkCameraQualityRetentionProfileRequestVideoSettings) HasMV13M() bool`
+
+HasMV13M returns a boolean if a field has been set.
 
 ### GetMV22XMV72X
 
@@ -261,6 +315,31 @@ SetMV63 sets MV63 field to given value.
 
 HasMV63 returns a boolean if a field has been set.
 
+### GetMV63M
+
+`func (o *CreateNetworkCameraQualityRetentionProfileRequestVideoSettings) GetMV63M() CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV63M`
+
+GetMV63M returns the MV63M field if non-nil, zero value otherwise.
+
+### GetMV63MOk
+
+`func (o *CreateNetworkCameraQualityRetentionProfileRequestVideoSettings) GetMV63MOk() (*CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV63M, bool)`
+
+GetMV63MOk returns a tuple with the MV63M field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMV63M
+
+`func (o *CreateNetworkCameraQualityRetentionProfileRequestVideoSettings) SetMV63M(v CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV63M)`
+
+SetMV63M sets MV63M field to given value.
+
+### HasMV63M
+
+`func (o *CreateNetworkCameraQualityRetentionProfileRequestVideoSettings) HasMV63M() bool`
+
+HasMV63M returns a boolean if a field has been set.
+
 ### GetMV93
 
 `func (o *CreateNetworkCameraQualityRetentionProfileRequestVideoSettings) GetMV93() CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV93`
@@ -285,6 +364,31 @@ SetMV93 sets MV93 field to given value.
 `func (o *CreateNetworkCameraQualityRetentionProfileRequestVideoSettings) HasMV93() bool`
 
 HasMV93 returns a boolean if a field has been set.
+
+### GetMV93M
+
+`func (o *CreateNetworkCameraQualityRetentionProfileRequestVideoSettings) GetMV93M() CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV93M`
+
+GetMV93M returns the MV93M field if non-nil, zero value otherwise.
+
+### GetMV93MOk
+
+`func (o *CreateNetworkCameraQualityRetentionProfileRequestVideoSettings) GetMV93MOk() (*CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV93M, bool)`
+
+GetMV93MOk returns a tuple with the MV93M field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMV93M
+
+`func (o *CreateNetworkCameraQualityRetentionProfileRequestVideoSettings) SetMV93M(v CreateNetworkCameraQualityRetentionProfileRequestVideoSettingsMV93M)`
+
+SetMV93M sets MV93M field to given value.
+
+### HasMV93M
+
+`func (o *CreateNetworkCameraQualityRetentionProfileRequestVideoSettings) HasMV93M() bool`
+
+HasMV93M returns a boolean if a field has been set.
 
 ### GetMV63X
 

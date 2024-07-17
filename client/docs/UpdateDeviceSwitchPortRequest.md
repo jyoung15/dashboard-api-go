@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **Tags** | Pointer to **[]string** | The list of tags of the switch port. | [optional] 
 **Enabled** | Pointer to **bool** | The status of the switch port. | [optional] 
 **PoeEnabled** | Pointer to **bool** | The PoE status of the switch port. | [optional] 
-**Type** | Pointer to **string** | The type of the switch port (&#39;trunk&#39; or &#39;access&#39;). | [optional] 
-**Vlan** | Pointer to **int32** | The VLAN of the switch port. A null value will clear the value set for trunk ports. | [optional] 
+**Type** | Pointer to **string** | The type of the switch port (&#39;trunk&#39;, &#39;access&#39; or &#39;stack&#39;). | [optional] 
+**Vlan** | Pointer to **int32** | The VLAN of the switch port. For a trunk port, this is the native VLAN. A null value will clear the value set for trunk ports. | [optional] 
 **VoiceVlan** | Pointer to **int32** | The voice VLAN of the switch port. Only applicable to access ports. | [optional] 
 **AllowedVlans** | Pointer to **string** | The VLANs allowed on the switch port. Only applicable to trunk ports. | [optional] 
 **IsolationEnabled** | Pointer to **bool** | The isolation status of the switch port. | [optional] 
@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **FlexibleStackingEnabled** | Pointer to **bool** | For supported switches (e.g. MS420/MS425), whether or not the port has flexible stacking enabled. | [optional] 
 **DaiTrusted** | Pointer to **bool** | If true, ARP packets for this port will be considered trusted, and Dynamic ARP Inspection will allow the traffic. | [optional] 
 **Profile** | Pointer to [**GetDeviceSwitchPorts200ResponseInnerProfile**](GetDeviceSwitchPorts200ResponseInnerProfile.md) |  | [optional] 
+**Dot3az** | Pointer to [**GetDeviceSwitchPorts200ResponseInnerDot3az**](GetDeviceSwitchPorts200ResponseInnerDot3az.md) |  | [optional] 
 
 ## Methods
 
@@ -673,6 +674,31 @@ SetProfile sets Profile field to given value.
 `func (o *UpdateDeviceSwitchPortRequest) HasProfile() bool`
 
 HasProfile returns a boolean if a field has been set.
+
+### GetDot3az
+
+`func (o *UpdateDeviceSwitchPortRequest) GetDot3az() GetDeviceSwitchPorts200ResponseInnerDot3az`
+
+GetDot3az returns the Dot3az field if non-nil, zero value otherwise.
+
+### GetDot3azOk
+
+`func (o *UpdateDeviceSwitchPortRequest) GetDot3azOk() (*GetDeviceSwitchPorts200ResponseInnerDot3az, bool)`
+
+GetDot3azOk returns a tuple with the Dot3az field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDot3az
+
+`func (o *UpdateDeviceSwitchPortRequest) SetDot3az(v GetDeviceSwitchPorts200ResponseInnerDot3az)`
+
+SetDot3az sets Dot3az field to given value.
+
+### HasDot3az
+
+`func (o *UpdateDeviceSwitchPortRequest) HasDot3az() bool`
+
+HasDot3az returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

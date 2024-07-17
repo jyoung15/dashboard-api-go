@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | Name of region | [optional] 
+**Host** | Pointer to [**GetOrganizations200ResponseInnerCloudRegionHost**](GetOrganizations200ResponseInnerCloudRegionHost.md) |  | [optional] 
 
 ## Methods
 
@@ -49,6 +50,31 @@ SetName sets Name field to given value.
 `func (o *GetOrganizations200ResponseInnerCloudRegion) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetHost
+
+`func (o *GetOrganizations200ResponseInnerCloudRegion) GetHost() GetOrganizations200ResponseInnerCloudRegionHost`
+
+GetHost returns the Host field if non-nil, zero value otherwise.
+
+### GetHostOk
+
+`func (o *GetOrganizations200ResponseInnerCloudRegion) GetHostOk() (*GetOrganizations200ResponseInnerCloudRegionHost, bool)`
+
+GetHostOk returns a tuple with the Host field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHost
+
+`func (o *GetOrganizations200ResponseInnerCloudRegion) SetHost(v GetOrganizations200ResponseInnerCloudRegionHost)`
+
+SetHost sets Host field to given value.
+
+### HasHost
+
+`func (o *GetOrganizations200ResponseInnerCloudRegion) HasHost() bool`
+
+HasHost returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

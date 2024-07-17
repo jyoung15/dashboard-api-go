@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Rules** | Pointer to [**[]UpdateNetworkWirelessSsidFirewallL7FirewallRulesRequestRulesInner**](UpdateNetworkWirelessSsidFirewallL7FirewallRulesRequestRulesInner.md) | An array of L7 firewall rules for this SSID. Rules will get applied in the same order user has specified in request. Empty array will clear the L7 firewall rule configuration. | [optional] 
+**Rules** | Pointer to [**[]GetNetworkWirelessSsidFirewallL7FirewallRules200ResponseRulesInner**](GetNetworkWirelessSsidFirewallL7FirewallRules200ResponseRulesInner.md) | An array of L7 firewall rules for this SSID. Rules will get applied in the same order user has specified in request. Empty array will clear the L7 firewall rule configuration. | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRules
 
-`func (o *UpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) GetRules() []UpdateNetworkWirelessSsidFirewallL7FirewallRulesRequestRulesInner`
+`func (o *UpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) GetRules() []GetNetworkWirelessSsidFirewallL7FirewallRules200ResponseRulesInner`
 
 GetRules returns the Rules field if non-nil, zero value otherwise.
 
 ### GetRulesOk
 
-`func (o *UpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) GetRulesOk() (*[]UpdateNetworkWirelessSsidFirewallL7FirewallRulesRequestRulesInner, bool)`
+`func (o *UpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) GetRulesOk() (*[]GetNetworkWirelessSsidFirewallL7FirewallRules200ResponseRulesInner, bool)`
 
 GetRulesOk returns a tuple with the Rules field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRules
 
-`func (o *UpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) SetRules(v []UpdateNetworkWirelessSsidFirewallL7FirewallRulesRequestRulesInner)`
+`func (o *UpdateNetworkWirelessSsidFirewallL7FirewallRulesRequest) SetRules(v []GetNetworkWirelessSsidFirewallL7FirewallRules200ResponseRulesInner)`
 
 SetRules sets Rules field to given value.
 

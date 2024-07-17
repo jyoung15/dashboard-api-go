@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The alert type | 
 **AlertCondition** | [**CreateOrganizationAlertsProfileRequestAlertCondition**](CreateOrganizationAlertsProfileRequestAlertCondition.md) |  | 
-**Recipients** | [**CreateOrganizationAlertsProfileRequestRecipients**](CreateOrganizationAlertsProfileRequestRecipients.md) |  | 
+**Recipients** | [**GetOrganizationAlertsProfiles200ResponseInnerRecipients**](GetOrganizationAlertsProfiles200ResponseInnerRecipients.md) |  | 
 **NetworkTags** | **[]string** | Networks with these tags will be monitored for the alert | 
 **Description** | Pointer to **string** | User supplied description of the alert | [optional] 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewCreateOrganizationAlertsProfileRequest
 
-`func NewCreateOrganizationAlertsProfileRequest(type_ string, alertCondition CreateOrganizationAlertsProfileRequestAlertCondition, recipients CreateOrganizationAlertsProfileRequestRecipients, networkTags []string, ) *CreateOrganizationAlertsProfileRequest`
+`func NewCreateOrganizationAlertsProfileRequest(type_ string, alertCondition CreateOrganizationAlertsProfileRequestAlertCondition, recipients GetOrganizationAlertsProfiles200ResponseInnerRecipients, networkTags []string, ) *CreateOrganizationAlertsProfileRequest`
 
 NewCreateOrganizationAlertsProfileRequest instantiates a new CreateOrganizationAlertsProfileRequest object
 This constructor will assign default values to properties that have it defined,
@@ -71,20 +71,20 @@ SetAlertCondition sets AlertCondition field to given value.
 
 ### GetRecipients
 
-`func (o *CreateOrganizationAlertsProfileRequest) GetRecipients() CreateOrganizationAlertsProfileRequestRecipients`
+`func (o *CreateOrganizationAlertsProfileRequest) GetRecipients() GetOrganizationAlertsProfiles200ResponseInnerRecipients`
 
 GetRecipients returns the Recipients field if non-nil, zero value otherwise.
 
 ### GetRecipientsOk
 
-`func (o *CreateOrganizationAlertsProfileRequest) GetRecipientsOk() (*CreateOrganizationAlertsProfileRequestRecipients, bool)`
+`func (o *CreateOrganizationAlertsProfileRequest) GetRecipientsOk() (*GetOrganizationAlertsProfiles200ResponseInnerRecipients, bool)`
 
 GetRecipientsOk returns a tuple with the Recipients field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRecipients
 
-`func (o *CreateOrganizationAlertsProfileRequest) SetRecipients(v CreateOrganizationAlertsProfileRequestRecipients)`
+`func (o *CreateOrganizationAlertsProfileRequest) SetRecipients(v GetOrganizationAlertsProfiles200ResponseInnerRecipients)`
 
 SetRecipients sets Recipients field to given value.
 

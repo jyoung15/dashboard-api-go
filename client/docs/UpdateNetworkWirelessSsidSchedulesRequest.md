@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Enabled** | Pointer to **bool** | If true, the SSID outage schedule is enabled. | [optional] 
-**Ranges** | Pointer to [**[]UpdateNetworkWirelessSsidSchedulesRequestRangesInner**](UpdateNetworkWirelessSsidSchedulesRequestRangesInner.md) | List of outage ranges. Has a start date and time, and end date and time. If this parameter is passed in along with rangesInSeconds parameter, this will take precedence. | [optional] 
-**RangesInSeconds** | Pointer to [**[]UpdateNetworkWirelessSsidSchedulesRequestRangesInSecondsInner**](UpdateNetworkWirelessSsidSchedulesRequestRangesInSecondsInner.md) | List of outage ranges in seconds since Sunday at Midnight. Has a start and end. If this parameter is passed in along with the ranges parameter, ranges will take precedence. | [optional] 
+**Ranges** | Pointer to [**[]GetNetworkWirelessSsidSchedules200ResponseRangesInner**](GetNetworkWirelessSsidSchedules200ResponseRangesInner.md) | List of outage ranges. Has a start date and time, and end date and time. If this parameter is passed in along with rangesInSeconds parameter, this will take precedence. | [optional] 
+**RangesInSeconds** | Pointer to [**[]GetNetworkWirelessSsidSchedules200ResponseRangesInSecondsInner**](GetNetworkWirelessSsidSchedules200ResponseRangesInSecondsInner.md) | List of outage ranges in seconds since Sunday at Midnight. Has a start and end. If this parameter is passed in along with the ranges parameter, ranges will take precedence. | [optional] 
 
 ## Methods
 
@@ -54,20 +54,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetRanges
 
-`func (o *UpdateNetworkWirelessSsidSchedulesRequest) GetRanges() []UpdateNetworkWirelessSsidSchedulesRequestRangesInner`
+`func (o *UpdateNetworkWirelessSsidSchedulesRequest) GetRanges() []GetNetworkWirelessSsidSchedules200ResponseRangesInner`
 
 GetRanges returns the Ranges field if non-nil, zero value otherwise.
 
 ### GetRangesOk
 
-`func (o *UpdateNetworkWirelessSsidSchedulesRequest) GetRangesOk() (*[]UpdateNetworkWirelessSsidSchedulesRequestRangesInner, bool)`
+`func (o *UpdateNetworkWirelessSsidSchedulesRequest) GetRangesOk() (*[]GetNetworkWirelessSsidSchedules200ResponseRangesInner, bool)`
 
 GetRangesOk returns a tuple with the Ranges field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRanges
 
-`func (o *UpdateNetworkWirelessSsidSchedulesRequest) SetRanges(v []UpdateNetworkWirelessSsidSchedulesRequestRangesInner)`
+`func (o *UpdateNetworkWirelessSsidSchedulesRequest) SetRanges(v []GetNetworkWirelessSsidSchedules200ResponseRangesInner)`
 
 SetRanges sets Ranges field to given value.
 
@@ -79,20 +79,20 @@ HasRanges returns a boolean if a field has been set.
 
 ### GetRangesInSeconds
 
-`func (o *UpdateNetworkWirelessSsidSchedulesRequest) GetRangesInSeconds() []UpdateNetworkWirelessSsidSchedulesRequestRangesInSecondsInner`
+`func (o *UpdateNetworkWirelessSsidSchedulesRequest) GetRangesInSeconds() []GetNetworkWirelessSsidSchedules200ResponseRangesInSecondsInner`
 
 GetRangesInSeconds returns the RangesInSeconds field if non-nil, zero value otherwise.
 
 ### GetRangesInSecondsOk
 
-`func (o *UpdateNetworkWirelessSsidSchedulesRequest) GetRangesInSecondsOk() (*[]UpdateNetworkWirelessSsidSchedulesRequestRangesInSecondsInner, bool)`
+`func (o *UpdateNetworkWirelessSsidSchedulesRequest) GetRangesInSecondsOk() (*[]GetNetworkWirelessSsidSchedules200ResponseRangesInSecondsInner, bool)`
 
 GetRangesInSecondsOk returns a tuple with the RangesInSeconds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRangesInSeconds
 
-`func (o *UpdateNetworkWirelessSsidSchedulesRequest) SetRangesInSeconds(v []UpdateNetworkWirelessSsidSchedulesRequestRangesInSecondsInner)`
+`func (o *UpdateNetworkWirelessSsidSchedulesRequest) SetRangesInSeconds(v []GetNetworkWirelessSsidSchedules200ResponseRangesInSecondsInner)`
 
 SetRangesInSeconds sets RangesInSeconds field to given value.
 

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **CriticalAuth** | Pointer to [**GetNetworkSwitchAccessPolicies200ResponseInnerRadiusCriticalAuth**](GetNetworkSwitchAccessPolicies200ResponseInnerRadiusCriticalAuth.md) |  | [optional] 
 **FailedAuthVlanId** | Pointer to **int32** | VLAN that clients will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth | [optional] 
 **ReAuthenticationInterval** | Pointer to **int32** | Re-authentication period in seconds. Will be null if hostMode is Multi-Auth | [optional] 
+**Cache** | Pointer to [**GetNetworkSwitchAccessPolicies200ResponseInnerRadiusCache**](GetNetworkSwitchAccessPolicies200ResponseInnerRadiusCache.md) |  | [optional] 
 
 ## Methods
 
@@ -101,6 +102,31 @@ SetReAuthenticationInterval sets ReAuthenticationInterval field to given value.
 `func (o *GetNetworkSwitchAccessPolicies200ResponseInnerRadius) HasReAuthenticationInterval() bool`
 
 HasReAuthenticationInterval returns a boolean if a field has been set.
+
+### GetCache
+
+`func (o *GetNetworkSwitchAccessPolicies200ResponseInnerRadius) GetCache() GetNetworkSwitchAccessPolicies200ResponseInnerRadiusCache`
+
+GetCache returns the Cache field if non-nil, zero value otherwise.
+
+### GetCacheOk
+
+`func (o *GetNetworkSwitchAccessPolicies200ResponseInnerRadius) GetCacheOk() (*GetNetworkSwitchAccessPolicies200ResponseInnerRadiusCache, bool)`
+
+GetCacheOk returns a tuple with the Cache field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCache
+
+`func (o *GetNetworkSwitchAccessPolicies200ResponseInnerRadius) SetCache(v GetNetworkSwitchAccessPolicies200ResponseInnerRadiusCache)`
+
+SetCache sets Cache field to given value.
+
+### HasCache
+
+`func (o *GetNetworkSwitchAccessPolicies200ResponseInnerRadius) HasCache() bool`
+
+HasCache returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

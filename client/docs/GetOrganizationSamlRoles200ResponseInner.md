@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **OrgAccess** | Pointer to **string** | The privilege of the SAML administrator on the organization | [optional] 
 **Networks** | Pointer to [**[]GetOrganizationSamlRoles200ResponseInnerNetworksInner**](GetOrganizationSamlRoles200ResponseInnerNetworksInner.md) | The list of networks that the SAML administrator has privileges on | [optional] 
 **Tags** | Pointer to [**[]GetOrganizationSamlRoles200ResponseInnerTagsInner**](GetOrganizationSamlRoles200ResponseInnerTagsInner.md) | The list of tags that the SAML administrator has privleges on | [optional] 
+**Camera** | Pointer to [**[]GetOrganizationSamlRoles200ResponseInnerCameraInner**](GetOrganizationSamlRoles200ResponseInnerCameraInner.md) | The list of camera access privileges for SAML administrator | [optional] 
 
 ## Methods
 
@@ -153,6 +154,31 @@ SetTags sets Tags field to given value.
 `func (o *GetOrganizationSamlRoles200ResponseInner) HasTags() bool`
 
 HasTags returns a boolean if a field has been set.
+
+### GetCamera
+
+`func (o *GetOrganizationSamlRoles200ResponseInner) GetCamera() []GetOrganizationSamlRoles200ResponseInnerCameraInner`
+
+GetCamera returns the Camera field if non-nil, zero value otherwise.
+
+### GetCameraOk
+
+`func (o *GetOrganizationSamlRoles200ResponseInner) GetCameraOk() (*[]GetOrganizationSamlRoles200ResponseInnerCameraInner, bool)`
+
+GetCameraOk returns a tuple with the Camera field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCamera
+
+`func (o *GetOrganizationSamlRoles200ResponseInner) SetCamera(v []GetOrganizationSamlRoles200ResponseInnerCameraInner)`
+
+SetCamera sets Camera field to given value.
+
+### HasCamera
+
+`func (o *GetOrganizationSamlRoles200ResponseInner) HasCamera() bool`
+
+HasCamera returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -10,10 +10,12 @@ Name | Type | Description | Notes
 **InterfaceIp** | Pointer to **string** | IPv4 address | [optional] 
 **MulticastRouting** | Pointer to **string** | Multicast routing status | [optional] 
 **VlanId** | Pointer to **int32** | VLAN id | [optional] 
-**DefaultGateway** | Pointer to **string** | IPv4 default gateway | [optional] 
 **OspfSettings** | Pointer to [**GetDeviceSwitchRoutingInterfaces200ResponseInnerOspfSettings**](GetDeviceSwitchRoutingInterfaces200ResponseInnerOspfSettings.md) |  | [optional] 
 **OspfV3** | Pointer to [**GetDeviceSwitchRoutingInterfaces200ResponseInnerOspfV3**](GetDeviceSwitchRoutingInterfaces200ResponseInnerOspfV3.md) |  | [optional] 
 **Ipv6** | Pointer to [**GetDeviceSwitchRoutingInterfaces200ResponseInnerIpv6**](GetDeviceSwitchRoutingInterfaces200ResponseInnerIpv6.md) |  | [optional] 
+**UplinkV4** | Pointer to **bool** | Whether this is the switch&#39;s IPv4 uplink | [optional] 
+**UplinkV6** | Pointer to **bool** | Whether this is the switch&#39;s IPv6 uplink | [optional] 
+**DefaultGateway** | Pointer to **string** | IPv4 default gateway | [optional] 
 
 ## Methods
 
@@ -184,31 +186,6 @@ SetVlanId sets VlanId field to given value.
 
 HasVlanId returns a boolean if a field has been set.
 
-### GetDefaultGateway
-
-`func (o *GetDeviceSwitchRoutingInterfaces200ResponseInner) GetDefaultGateway() string`
-
-GetDefaultGateway returns the DefaultGateway field if non-nil, zero value otherwise.
-
-### GetDefaultGatewayOk
-
-`func (o *GetDeviceSwitchRoutingInterfaces200ResponseInner) GetDefaultGatewayOk() (*string, bool)`
-
-GetDefaultGatewayOk returns a tuple with the DefaultGateway field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDefaultGateway
-
-`func (o *GetDeviceSwitchRoutingInterfaces200ResponseInner) SetDefaultGateway(v string)`
-
-SetDefaultGateway sets DefaultGateway field to given value.
-
-### HasDefaultGateway
-
-`func (o *GetDeviceSwitchRoutingInterfaces200ResponseInner) HasDefaultGateway() bool`
-
-HasDefaultGateway returns a boolean if a field has been set.
-
 ### GetOspfSettings
 
 `func (o *GetDeviceSwitchRoutingInterfaces200ResponseInner) GetOspfSettings() GetDeviceSwitchRoutingInterfaces200ResponseInnerOspfSettings`
@@ -283,6 +260,81 @@ SetIpv6 sets Ipv6 field to given value.
 `func (o *GetDeviceSwitchRoutingInterfaces200ResponseInner) HasIpv6() bool`
 
 HasIpv6 returns a boolean if a field has been set.
+
+### GetUplinkV4
+
+`func (o *GetDeviceSwitchRoutingInterfaces200ResponseInner) GetUplinkV4() bool`
+
+GetUplinkV4 returns the UplinkV4 field if non-nil, zero value otherwise.
+
+### GetUplinkV4Ok
+
+`func (o *GetDeviceSwitchRoutingInterfaces200ResponseInner) GetUplinkV4Ok() (*bool, bool)`
+
+GetUplinkV4Ok returns a tuple with the UplinkV4 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUplinkV4
+
+`func (o *GetDeviceSwitchRoutingInterfaces200ResponseInner) SetUplinkV4(v bool)`
+
+SetUplinkV4 sets UplinkV4 field to given value.
+
+### HasUplinkV4
+
+`func (o *GetDeviceSwitchRoutingInterfaces200ResponseInner) HasUplinkV4() bool`
+
+HasUplinkV4 returns a boolean if a field has been set.
+
+### GetUplinkV6
+
+`func (o *GetDeviceSwitchRoutingInterfaces200ResponseInner) GetUplinkV6() bool`
+
+GetUplinkV6 returns the UplinkV6 field if non-nil, zero value otherwise.
+
+### GetUplinkV6Ok
+
+`func (o *GetDeviceSwitchRoutingInterfaces200ResponseInner) GetUplinkV6Ok() (*bool, bool)`
+
+GetUplinkV6Ok returns a tuple with the UplinkV6 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUplinkV6
+
+`func (o *GetDeviceSwitchRoutingInterfaces200ResponseInner) SetUplinkV6(v bool)`
+
+SetUplinkV6 sets UplinkV6 field to given value.
+
+### HasUplinkV6
+
+`func (o *GetDeviceSwitchRoutingInterfaces200ResponseInner) HasUplinkV6() bool`
+
+HasUplinkV6 returns a boolean if a field has been set.
+
+### GetDefaultGateway
+
+`func (o *GetDeviceSwitchRoutingInterfaces200ResponseInner) GetDefaultGateway() string`
+
+GetDefaultGateway returns the DefaultGateway field if non-nil, zero value otherwise.
+
+### GetDefaultGatewayOk
+
+`func (o *GetDeviceSwitchRoutingInterfaces200ResponseInner) GetDefaultGatewayOk() (*string, bool)`
+
+GetDefaultGatewayOk returns a tuple with the DefaultGateway field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultGateway
+
+`func (o *GetDeviceSwitchRoutingInterfaces200ResponseInner) SetDefaultGateway(v string)`
+
+SetDefaultGateway sets DefaultGateway field to given value.
+
+### HasDefaultGateway
+
+`func (o *GetDeviceSwitchRoutingInterfaces200ResponseInner) HasDefaultGateway() bool`
+
+HasDefaultGateway returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

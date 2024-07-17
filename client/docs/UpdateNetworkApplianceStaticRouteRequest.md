@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **string** | The name of the static route | [optional] 
-**Subnet** | Pointer to **string** | The subnet of the static route | [optional] 
-**GatewayIp** | Pointer to **string** | The gateway IP (next hop) of the static route | [optional] 
-**GatewayVlanId** | Pointer to **string** | The gateway IP (next hop) VLAN ID of the static route | [optional] 
-**Enabled** | Pointer to **bool** | The enabled state of the static route | [optional] 
-**FixedIpAssignments** | Pointer to **map[string]interface{}** | The DHCP fixed IP assignments on the static route. This should be an object that contains mappings from MAC addresses to objects that themselves each contain \&quot;ip\&quot; and \&quot;name\&quot; string fields. See the sample request/response for more details. | [optional] 
-**ReservedIpRanges** | Pointer to [**[]UpdateNetworkApplianceStaticRouteRequestReservedIpRangesInner**](UpdateNetworkApplianceStaticRouteRequestReservedIpRangesInner.md) | The DHCP reserved IP ranges on the static route | [optional] 
+**Name** | Pointer to **string** | Name of the route | [optional] 
+**Subnet** | Pointer to **string** | Subnet of the route | [optional] 
+**GatewayIp** | Pointer to **string** | Gateway IP address (next hop) | [optional] 
+**GatewayVlanId** | Pointer to **string** | Gateway VLAN ID | [optional] 
+**Enabled** | Pointer to **bool** | Whether the route should be enabled or not | [optional] 
+**FixedIpAssignments** | Pointer to [**map[string]GetNetworkApplianceStaticRoutes200ResponseInnerFixedIpAssignmentsValue**](GetNetworkApplianceStaticRoutes200ResponseInnerFixedIpAssignmentsValue.md) | Fixed DHCP IP assignments on the route | [optional] 
+**ReservedIpRanges** | Pointer to [**[]UpdateNetworkApplianceStaticRouteRequestReservedIpRangesInner**](UpdateNetworkApplianceStaticRouteRequestReservedIpRangesInner.md) | DHCP reserved IP ranges | [optional] 
 
 ## Methods
 
@@ -158,20 +158,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetFixedIpAssignments
 
-`func (o *UpdateNetworkApplianceStaticRouteRequest) GetFixedIpAssignments() map[string]interface{}`
+`func (o *UpdateNetworkApplianceStaticRouteRequest) GetFixedIpAssignments() map[string]GetNetworkApplianceStaticRoutes200ResponseInnerFixedIpAssignmentsValue`
 
 GetFixedIpAssignments returns the FixedIpAssignments field if non-nil, zero value otherwise.
 
 ### GetFixedIpAssignmentsOk
 
-`func (o *UpdateNetworkApplianceStaticRouteRequest) GetFixedIpAssignmentsOk() (*map[string]interface{}, bool)`
+`func (o *UpdateNetworkApplianceStaticRouteRequest) GetFixedIpAssignmentsOk() (*map[string]GetNetworkApplianceStaticRoutes200ResponseInnerFixedIpAssignmentsValue, bool)`
 
 GetFixedIpAssignmentsOk returns a tuple with the FixedIpAssignments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFixedIpAssignments
 
-`func (o *UpdateNetworkApplianceStaticRouteRequest) SetFixedIpAssignments(v map[string]interface{})`
+`func (o *UpdateNetworkApplianceStaticRouteRequest) SetFixedIpAssignments(v map[string]GetNetworkApplianceStaticRoutes200ResponseInnerFixedIpAssignmentsValue)`
 
 SetFixedIpAssignments sets FixedIpAssignments field to given value.
 

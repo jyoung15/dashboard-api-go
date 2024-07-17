@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ServerId** | Pointer to **string** | Unique ID of the RADIUS server | [optional] 
+**OrganizationRadiusServerId** | Pointer to **string** | Organization wide RADIUS server ID. This value will be empty if this RADIUS server is not an organization wide RADIUS server | [optional] 
 **Host** | Pointer to **string** | Public IP address of the RADIUS server | [optional] 
 **Port** | Pointer to **int32** | UDP port that the RADIUS server listens on for access requests | [optional] 
 
@@ -25,6 +27,56 @@ will change when the set of required properties is changed
 NewGetNetworkSwitchAccessPolicies200ResponseInnerRadiusServersInnerWithDefaults instantiates a new GetNetworkSwitchAccessPolicies200ResponseInnerRadiusServersInner object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetServerId
+
+`func (o *GetNetworkSwitchAccessPolicies200ResponseInnerRadiusServersInner) GetServerId() string`
+
+GetServerId returns the ServerId field if non-nil, zero value otherwise.
+
+### GetServerIdOk
+
+`func (o *GetNetworkSwitchAccessPolicies200ResponseInnerRadiusServersInner) GetServerIdOk() (*string, bool)`
+
+GetServerIdOk returns a tuple with the ServerId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServerId
+
+`func (o *GetNetworkSwitchAccessPolicies200ResponseInnerRadiusServersInner) SetServerId(v string)`
+
+SetServerId sets ServerId field to given value.
+
+### HasServerId
+
+`func (o *GetNetworkSwitchAccessPolicies200ResponseInnerRadiusServersInner) HasServerId() bool`
+
+HasServerId returns a boolean if a field has been set.
+
+### GetOrganizationRadiusServerId
+
+`func (o *GetNetworkSwitchAccessPolicies200ResponseInnerRadiusServersInner) GetOrganizationRadiusServerId() string`
+
+GetOrganizationRadiusServerId returns the OrganizationRadiusServerId field if non-nil, zero value otherwise.
+
+### GetOrganizationRadiusServerIdOk
+
+`func (o *GetNetworkSwitchAccessPolicies200ResponseInnerRadiusServersInner) GetOrganizationRadiusServerIdOk() (*string, bool)`
+
+GetOrganizationRadiusServerIdOk returns a tuple with the OrganizationRadiusServerId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrganizationRadiusServerId
+
+`func (o *GetNetworkSwitchAccessPolicies200ResponseInnerRadiusServersInner) SetOrganizationRadiusServerId(v string)`
+
+SetOrganizationRadiusServerId sets OrganizationRadiusServerId field to given value.
+
+### HasOrganizationRadiusServerId
+
+`func (o *GetNetworkSwitchAccessPolicies200ResponseInnerRadiusServersInner) HasOrganizationRadiusServerId() bool`
+
+HasOrganizationRadiusServerId returns a boolean if a field has been set.
 
 ### GetHost
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Name** | **string** | Name of the group | 
 **Sgt** | **int32** | SGT value of the group | 
 **Description** | Pointer to **string** | Description of the group (default: \&quot;\&quot;) | [optional] 
-**PolicyObjects** | Pointer to [**[]CreateOrganizationAdaptivePolicyGroupRequestPolicyObjectsInner**](CreateOrganizationAdaptivePolicyGroupRequestPolicyObjectsInner.md) | The policy objects that belong to this group; traffic from addresses specified by these policy objects will be tagged with this group&#39;s SGT value if no other tagging scheme is being used (each requires one unique attribute) (default: []) | [optional] 
+**PolicyObjects** | Pointer to [**[]GetOrganizationAdaptivePolicyGroups200ResponseInnerPolicyObjectsInner**](GetOrganizationAdaptivePolicyGroups200ResponseInnerPolicyObjectsInner.md) | The policy objects that belong to this group; traffic from addresses specified by these policy objects will be tagged with this group&#39;s SGT value if no other tagging scheme is being used (each requires one unique attribute) (default: []) | [optional] 
 
 ## Methods
 
@@ -95,20 +95,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetPolicyObjects
 
-`func (o *CreateOrganizationAdaptivePolicyGroupRequest) GetPolicyObjects() []CreateOrganizationAdaptivePolicyGroupRequestPolicyObjectsInner`
+`func (o *CreateOrganizationAdaptivePolicyGroupRequest) GetPolicyObjects() []GetOrganizationAdaptivePolicyGroups200ResponseInnerPolicyObjectsInner`
 
 GetPolicyObjects returns the PolicyObjects field if non-nil, zero value otherwise.
 
 ### GetPolicyObjectsOk
 
-`func (o *CreateOrganizationAdaptivePolicyGroupRequest) GetPolicyObjectsOk() (*[]CreateOrganizationAdaptivePolicyGroupRequestPolicyObjectsInner, bool)`
+`func (o *CreateOrganizationAdaptivePolicyGroupRequest) GetPolicyObjectsOk() (*[]GetOrganizationAdaptivePolicyGroups200ResponseInnerPolicyObjectsInner, bool)`
 
 GetPolicyObjectsOk returns a tuple with the PolicyObjects field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPolicyObjects
 
-`func (o *CreateOrganizationAdaptivePolicyGroupRequest) SetPolicyObjects(v []CreateOrganizationAdaptivePolicyGroupRequestPolicyObjectsInner)`
+`func (o *CreateOrganizationAdaptivePolicyGroupRequest) SetPolicyObjects(v []GetOrganizationAdaptivePolicyGroups200ResponseInnerPolicyObjectsInner)`
 
 SetPolicyObjects sets PolicyObjects field to given value.
 

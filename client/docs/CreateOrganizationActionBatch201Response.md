@@ -8,14 +8,15 @@ Name | Type | Description | Notes
 **OrganizationId** | Pointer to **string** | ID of the organization this action batch belongs to | [optional] 
 **Confirmed** | Pointer to **bool** | Flag describing whether the action should be previewed before executing or not | [optional] 
 **Synchronous** | Pointer to **bool** | Flag describing whether actions should run synchronously or asynchronously | [optional] 
-**Status** | Pointer to [**CreateOrganizationActionBatch201ResponseStatus**](CreateOrganizationActionBatch201ResponseStatus.md) |  | [optional] 
-**Actions** | [**[]CreateOrganizationActionBatch201ResponseActionsInner**](CreateOrganizationActionBatch201ResponseActionsInner.md) | A set of changes made as part of this action (&lt;a href&#x3D;&#39;https://developer.cisco.com/meraki/api/#/rest/guides/action-batches/&#39;&gt;more details&lt;/a&gt;) | 
+**Status** | Pointer to [**GetOrganizationActionBatches200ResponseInnerStatus**](GetOrganizationActionBatches200ResponseInnerStatus.md) |  | [optional] 
+**Actions** | [**[]GetOrganizationActionBatches200ResponseInnerActionsInner**](GetOrganizationActionBatches200ResponseInnerActionsInner.md) | A set of changes made as part of this action (&lt;a href&#x3D;&#39;https://developer.cisco.com/meraki/api/#/rest/guides/action-batches/&#39;&gt;more details&lt;/a&gt;) | 
+**Callback** | Pointer to [**CreateDeviceLiveToolsArpTable201ResponseCallback**](CreateDeviceLiveToolsArpTable201ResponseCallback.md) |  | [optional] 
 
 ## Methods
 
 ### NewCreateOrganizationActionBatch201Response
 
-`func NewCreateOrganizationActionBatch201Response(actions []CreateOrganizationActionBatch201ResponseActionsInner, ) *CreateOrganizationActionBatch201Response`
+`func NewCreateOrganizationActionBatch201Response(actions []GetOrganizationActionBatches200ResponseInnerActionsInner, ) *CreateOrganizationActionBatch201Response`
 
 NewCreateOrganizationActionBatch201Response instantiates a new CreateOrganizationActionBatch201Response object
 This constructor will assign default values to properties that have it defined,
@@ -132,20 +133,20 @@ HasSynchronous returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *CreateOrganizationActionBatch201Response) GetStatus() CreateOrganizationActionBatch201ResponseStatus`
+`func (o *CreateOrganizationActionBatch201Response) GetStatus() GetOrganizationActionBatches200ResponseInnerStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *CreateOrganizationActionBatch201Response) GetStatusOk() (*CreateOrganizationActionBatch201ResponseStatus, bool)`
+`func (o *CreateOrganizationActionBatch201Response) GetStatusOk() (*GetOrganizationActionBatches200ResponseInnerStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *CreateOrganizationActionBatch201Response) SetStatus(v CreateOrganizationActionBatch201ResponseStatus)`
+`func (o *CreateOrganizationActionBatch201Response) SetStatus(v GetOrganizationActionBatches200ResponseInnerStatus)`
 
 SetStatus sets Status field to given value.
 
@@ -157,23 +158,48 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetActions
 
-`func (o *CreateOrganizationActionBatch201Response) GetActions() []CreateOrganizationActionBatch201ResponseActionsInner`
+`func (o *CreateOrganizationActionBatch201Response) GetActions() []GetOrganizationActionBatches200ResponseInnerActionsInner`
 
 GetActions returns the Actions field if non-nil, zero value otherwise.
 
 ### GetActionsOk
 
-`func (o *CreateOrganizationActionBatch201Response) GetActionsOk() (*[]CreateOrganizationActionBatch201ResponseActionsInner, bool)`
+`func (o *CreateOrganizationActionBatch201Response) GetActionsOk() (*[]GetOrganizationActionBatches200ResponseInnerActionsInner, bool)`
 
 GetActionsOk returns a tuple with the Actions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetActions
 
-`func (o *CreateOrganizationActionBatch201Response) SetActions(v []CreateOrganizationActionBatch201ResponseActionsInner)`
+`func (o *CreateOrganizationActionBatch201Response) SetActions(v []GetOrganizationActionBatches200ResponseInnerActionsInner)`
 
 SetActions sets Actions field to given value.
 
+
+### GetCallback
+
+`func (o *CreateOrganizationActionBatch201Response) GetCallback() CreateDeviceLiveToolsArpTable201ResponseCallback`
+
+GetCallback returns the Callback field if non-nil, zero value otherwise.
+
+### GetCallbackOk
+
+`func (o *CreateOrganizationActionBatch201Response) GetCallbackOk() (*CreateDeviceLiveToolsArpTable201ResponseCallback, bool)`
+
+GetCallbackOk returns a tuple with the Callback field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCallback
+
+`func (o *CreateOrganizationActionBatch201Response) SetCallback(v CreateDeviceLiveToolsArpTable201ResponseCallback)`
+
+SetCallback sets Callback field to given value.
+
+### HasCallback
+
+`func (o *CreateOrganizationActionBatch201Response) HasCallback() bool`
+
+HasCallback returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

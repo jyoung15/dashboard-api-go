@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **WpaEncryptionMode** | Pointer to **string** | The types of WPA encryption. (&#39;WPA1 only&#39;, &#39;WPA1 and WPA2&#39;, &#39;WPA2 only&#39;, &#39;WPA3 Transition Mode&#39;, &#39;WPA3 only&#39; or &#39;WPA3 192-bit Security&#39;) | [optional] 
 **Dot11w** | Pointer to [**UpdateNetworkApplianceSsidRequestDot11w**](UpdateNetworkApplianceSsidRequestDot11w.md) |  | [optional] 
 **Dot11r** | Pointer to [**UpdateNetworkWirelessSsidRequestDot11r**](UpdateNetworkWirelessSsidRequestDot11r.md) |  | [optional] 
-**SplashPage** | Pointer to **string** | The type of splash page for the SSID (&#39;None&#39;, &#39;Click-through splash page&#39;, &#39;Billing&#39;, &#39;Password-protected with Meraki RADIUS&#39;, &#39;Password-protected with custom RADIUS&#39;, &#39;Password-protected with Active Directory&#39;, &#39;Password-protected with LDAP&#39;, &#39;SMS authentication&#39;, &#39;Systems Manager Sentry&#39;, &#39;Facebook Wi-Fi&#39;, &#39;Google OAuth&#39;, &#39;Sponsored guest&#39;, &#39;Cisco ISE&#39; or &#39;Google Apps domain&#39;). This attribute is not supported for template children. | [optional] 
+**SplashPage** | Pointer to **string** | The type of splash page for the SSID (&#39;None&#39;, &#39;Click-through splash page&#39;, &#39;Billing&#39;, &#39;Password-protected with Meraki RADIUS&#39;, &#39;Password-protected with custom RADIUS&#39;, &#39;Password-protected with Active Directory&#39;, &#39;Password-protected with LDAP&#39;, &#39;SMS authentication&#39;, &#39;Systems Manager Sentry&#39;, &#39;Facebook Wi-Fi&#39;, &#39;Google OAuth&#39;, &#39;Microsoft Entra ID&#39;, &#39;Sponsored guest&#39;, &#39;Cisco ISE&#39; or &#39;Google Apps domain&#39;). This attribute is not supported for template children. | [optional] 
 **SplashGuestSponsorDomains** | Pointer to **[]string** | Array of valid sponsor email domains for sponsored guest splash type. | [optional] 
 **Oauth** | Pointer to [**UpdateNetworkWirelessSsidRequestOauth**](UpdateNetworkWirelessSsidRequestOauth.md) |  | [optional] 
 **LocalRadius** | Pointer to [**UpdateNetworkWirelessSsidRequestLocalRadius**](UpdateNetworkWirelessSsidRequestLocalRadius.md) |  | [optional] 
@@ -62,6 +62,7 @@ Name | Type | Description | Notes
 **AdultContentFilteringEnabled** | Pointer to **bool** | Boolean indicating whether or not adult content will be blocked | [optional] 
 **DnsRewrite** | Pointer to [**UpdateNetworkWirelessSsidRequestDnsRewrite**](UpdateNetworkWirelessSsidRequestDnsRewrite.md) |  | [optional] 
 **SpeedBurst** | Pointer to [**UpdateNetworkWirelessSsidRequestSpeedBurst**](UpdateNetworkWirelessSsidRequestSpeedBurst.md) |  | [optional] 
+**NamedVlans** | Pointer to [**UpdateNetworkWirelessSsidRequestNamedVlans**](UpdateNetworkWirelessSsidRequestNamedVlans.md) |  | [optional] 
 
 ## Methods
 
@@ -1531,6 +1532,31 @@ SetSpeedBurst sets SpeedBurst field to given value.
 `func (o *UpdateNetworkWirelessSsidRequest) HasSpeedBurst() bool`
 
 HasSpeedBurst returns a boolean if a field has been set.
+
+### GetNamedVlans
+
+`func (o *UpdateNetworkWirelessSsidRequest) GetNamedVlans() UpdateNetworkWirelessSsidRequestNamedVlans`
+
+GetNamedVlans returns the NamedVlans field if non-nil, zero value otherwise.
+
+### GetNamedVlansOk
+
+`func (o *UpdateNetworkWirelessSsidRequest) GetNamedVlansOk() (*UpdateNetworkWirelessSsidRequestNamedVlans, bool)`
+
+GetNamedVlansOk returns a tuple with the NamedVlans field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNamedVlans
+
+`func (o *UpdateNetworkWirelessSsidRequest) SetNamedVlans(v UpdateNetworkWirelessSsidRequestNamedVlans)`
+
+SetNamedVlans sets NamedVlans field to given value.
+
+### HasNamedVlans
+
+`func (o *UpdateNetworkWirelessSsidRequest) HasNamedVlans() bool`
+
+HasNamedVlans returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

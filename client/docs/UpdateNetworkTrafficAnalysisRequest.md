@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Mode** | Pointer to **string** |     The traffic analysis mode for the network. Can be one of &#39;disabled&#39; (do not collect traffic types),     &#39;basic&#39; (collect generic traffic categories), or &#39;detailed&#39; (collect destination hostnames).  | [optional] 
-**CustomPieChartItems** | Pointer to [**[]UpdateNetworkTrafficAnalysisRequestCustomPieChartItemsInner**](UpdateNetworkTrafficAnalysisRequestCustomPieChartItemsInner.md) | The list of items that make up the custom pie chart for traffic reporting. | [optional] 
+**CustomPieChartItems** | Pointer to [**[]GetNetworkTrafficAnalysis200ResponseCustomPieChartItemsInner**](GetNetworkTrafficAnalysis200ResponseCustomPieChartItemsInner.md) | The list of items that make up the custom pie chart for traffic reporting. | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasMode returns a boolean if a field has been set.
 
 ### GetCustomPieChartItems
 
-`func (o *UpdateNetworkTrafficAnalysisRequest) GetCustomPieChartItems() []UpdateNetworkTrafficAnalysisRequestCustomPieChartItemsInner`
+`func (o *UpdateNetworkTrafficAnalysisRequest) GetCustomPieChartItems() []GetNetworkTrafficAnalysis200ResponseCustomPieChartItemsInner`
 
 GetCustomPieChartItems returns the CustomPieChartItems field if non-nil, zero value otherwise.
 
 ### GetCustomPieChartItemsOk
 
-`func (o *UpdateNetworkTrafficAnalysisRequest) GetCustomPieChartItemsOk() (*[]UpdateNetworkTrafficAnalysisRequestCustomPieChartItemsInner, bool)`
+`func (o *UpdateNetworkTrafficAnalysisRequest) GetCustomPieChartItemsOk() (*[]GetNetworkTrafficAnalysis200ResponseCustomPieChartItemsInner, bool)`
 
 GetCustomPieChartItemsOk returns a tuple with the CustomPieChartItems field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomPieChartItems
 
-`func (o *UpdateNetworkTrafficAnalysisRequest) SetCustomPieChartItems(v []UpdateNetworkTrafficAnalysisRequestCustomPieChartItemsInner)`
+`func (o *UpdateNetworkTrafficAnalysisRequest) SetCustomPieChartItems(v []GetNetworkTrafficAnalysis200ResponseCustomPieChartItemsInner)`
 
 SetCustomPieChartItems sets CustomPieChartItems field to given value.
 

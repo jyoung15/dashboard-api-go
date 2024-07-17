@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Host** | **string** | Host name/IP address where the MQTT broker runs. | 
 **Port** | **int32** | Host port though which the MQTT broker can be reached. | 
 **Security** | Pointer to [**CreateNetworkMqttBrokerRequestSecurity**](CreateNetworkMqttBrokerRequestSecurity.md) |  | [optional] 
-**Authentication** | Pointer to **map[string]interface{}** | Authentication settings of the MQTT broker | [optional] 
+**Authentication** | Pointer to [**CreateNetworkMqttBrokerRequestAuthentication**](CreateNetworkMqttBrokerRequestAuthentication.md) |  | [optional] 
 
 ## Methods
 
@@ -116,20 +116,20 @@ HasSecurity returns a boolean if a field has been set.
 
 ### GetAuthentication
 
-`func (o *CreateNetworkMqttBrokerRequest) GetAuthentication() map[string]interface{}`
+`func (o *CreateNetworkMqttBrokerRequest) GetAuthentication() CreateNetworkMqttBrokerRequestAuthentication`
 
 GetAuthentication returns the Authentication field if non-nil, zero value otherwise.
 
 ### GetAuthenticationOk
 
-`func (o *CreateNetworkMqttBrokerRequest) GetAuthenticationOk() (*map[string]interface{}, bool)`
+`func (o *CreateNetworkMqttBrokerRequest) GetAuthenticationOk() (*CreateNetworkMqttBrokerRequestAuthentication, bool)`
 
 GetAuthenticationOk returns a tuple with the Authentication field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthentication
 
-`func (o *CreateNetworkMqttBrokerRequest) SetAuthentication(v map[string]interface{})`
+`func (o *CreateNetworkMqttBrokerRequest) SetAuthentication(v CreateNetworkMqttBrokerRequestAuthentication)`
 
 SetAuthentication sets Authentication field to given value.
 

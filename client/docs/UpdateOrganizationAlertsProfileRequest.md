@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Enabled** | Pointer to **bool** | Is the alert config enabled | [optional] 
 **Type** | Pointer to **string** | The alert type | [optional] 
 **AlertCondition** | Pointer to [**CreateOrganizationAlertsProfileRequestAlertCondition**](CreateOrganizationAlertsProfileRequestAlertCondition.md) |  | [optional] 
-**Recipients** | Pointer to [**CreateOrganizationAlertsProfileRequestRecipients**](CreateOrganizationAlertsProfileRequestRecipients.md) |  | [optional] 
+**Recipients** | Pointer to [**GetOrganizationAlertsProfiles200ResponseInnerRecipients**](GetOrganizationAlertsProfiles200ResponseInnerRecipients.md) |  | [optional] 
 **NetworkTags** | Pointer to **[]string** | Networks with these tags will be monitored for the alert | [optional] 
 **Description** | Pointer to **string** | User supplied description of the alert | [optional] 
 
@@ -107,20 +107,20 @@ HasAlertCondition returns a boolean if a field has been set.
 
 ### GetRecipients
 
-`func (o *UpdateOrganizationAlertsProfileRequest) GetRecipients() CreateOrganizationAlertsProfileRequestRecipients`
+`func (o *UpdateOrganizationAlertsProfileRequest) GetRecipients() GetOrganizationAlertsProfiles200ResponseInnerRecipients`
 
 GetRecipients returns the Recipients field if non-nil, zero value otherwise.
 
 ### GetRecipientsOk
 
-`func (o *UpdateOrganizationAlertsProfileRequest) GetRecipientsOk() (*CreateOrganizationAlertsProfileRequestRecipients, bool)`
+`func (o *UpdateOrganizationAlertsProfileRequest) GetRecipientsOk() (*GetOrganizationAlertsProfiles200ResponseInnerRecipients, bool)`
 
 GetRecipientsOk returns a tuple with the Recipients field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRecipients
 
-`func (o *UpdateOrganizationAlertsProfileRequest) SetRecipients(v CreateOrganizationAlertsProfileRequestRecipients)`
+`func (o *UpdateOrganizationAlertsProfileRequest) SetRecipients(v GetOrganizationAlertsProfiles200ResponseInnerRecipients)`
 
 SetRecipients sets Recipients field to given value.
 

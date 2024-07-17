@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Address** | Pointer to **string** | Device uplink address. | [optional] 
 **Gateway** | Pointer to **string** | Device uplink gateway address. | [optional] 
 **Public** | Pointer to [**GetOrganizationDevicesUplinksAddressesByDevice200ResponseInnerUplinksInnerAddressesInnerPublic**](GetOrganizationDevicesUplinksAddressesByDevice200ResponseInnerUplinksInnerAddressesInnerPublic.md) |  | [optional] 
+**Vlan** | Pointer to [**GetOrganizationDevicesUplinksAddressesByDevice200ResponseInnerUplinksInnerAddressesInnerVlan**](GetOrganizationDevicesUplinksAddressesByDevice200ResponseInnerUplinksInnerAddressesInnerVlan.md) |  | [optional] 
 
 ## Methods
 
@@ -153,6 +154,31 @@ SetPublic sets Public field to given value.
 `func (o *GetOrganizationDevicesUplinksAddressesByDevice200ResponseInnerUplinksInnerAddressesInner) HasPublic() bool`
 
 HasPublic returns a boolean if a field has been set.
+
+### GetVlan
+
+`func (o *GetOrganizationDevicesUplinksAddressesByDevice200ResponseInnerUplinksInnerAddressesInner) GetVlan() GetOrganizationDevicesUplinksAddressesByDevice200ResponseInnerUplinksInnerAddressesInnerVlan`
+
+GetVlan returns the Vlan field if non-nil, zero value otherwise.
+
+### GetVlanOk
+
+`func (o *GetOrganizationDevicesUplinksAddressesByDevice200ResponseInnerUplinksInnerAddressesInner) GetVlanOk() (*GetOrganizationDevicesUplinksAddressesByDevice200ResponseInnerUplinksInnerAddressesInnerVlan, bool)`
+
+GetVlanOk returns a tuple with the Vlan field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVlan
+
+`func (o *GetOrganizationDevicesUplinksAddressesByDevice200ResponseInnerUplinksInnerAddressesInner) SetVlan(v GetOrganizationDevicesUplinksAddressesByDevice200ResponseInnerUplinksInnerAddressesInnerVlan)`
+
+SetVlan sets Vlan field to given value.
+
+### HasVlan
+
+`func (o *GetOrganizationDevicesUplinksAddressesByDevice200ResponseInnerUplinksInnerAddressesInner) HasVlan() bool`
+
+HasVlan returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

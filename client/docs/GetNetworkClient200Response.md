@@ -20,10 +20,12 @@ Name | Type | Description | Notes
 **WirelessCapabilities** | Pointer to **string** | Wireless capabilities of the client | [optional] 
 **SmInstalled** | Pointer to **bool** | Status of SM for the client | [optional] 
 **RecentDeviceMac** | Pointer to **string** | The MAC address of the node that the device was last connected to | [optional] 
+**RecentDeviceConnection** | Pointer to **string** | Client&#39;s most recent connection type | [optional] 
 **ClientVpnConnections** | Pointer to [**[]GetNetworkClient200ResponseClientVpnConnectionsInner**](GetNetworkClient200ResponseClientVpnConnectionsInner.md) | VPN connections associated with the client | [optional] 
 **Lldp** | Pointer to **[][]string** | The link layer discover protocol settings for the client | [optional] 
 **Cdp** | Pointer to **[][]string** | The Cisco discover protocol settings for the client | [optional] 
 **Status** | Pointer to **string** | The connection status of the client | [optional] 
+**Notes** | Pointer to **string** | The notes associated with the client | [optional] 
 
 ## Methods
 
@@ -444,6 +446,31 @@ SetRecentDeviceMac sets RecentDeviceMac field to given value.
 
 HasRecentDeviceMac returns a boolean if a field has been set.
 
+### GetRecentDeviceConnection
+
+`func (o *GetNetworkClient200Response) GetRecentDeviceConnection() string`
+
+GetRecentDeviceConnection returns the RecentDeviceConnection field if non-nil, zero value otherwise.
+
+### GetRecentDeviceConnectionOk
+
+`func (o *GetNetworkClient200Response) GetRecentDeviceConnectionOk() (*string, bool)`
+
+GetRecentDeviceConnectionOk returns a tuple with the RecentDeviceConnection field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRecentDeviceConnection
+
+`func (o *GetNetworkClient200Response) SetRecentDeviceConnection(v string)`
+
+SetRecentDeviceConnection sets RecentDeviceConnection field to given value.
+
+### HasRecentDeviceConnection
+
+`func (o *GetNetworkClient200Response) HasRecentDeviceConnection() bool`
+
+HasRecentDeviceConnection returns a boolean if a field has been set.
+
 ### GetClientVpnConnections
 
 `func (o *GetNetworkClient200Response) GetClientVpnConnections() []GetNetworkClient200ResponseClientVpnConnectionsInner`
@@ -543,6 +570,31 @@ SetStatus sets Status field to given value.
 `func (o *GetNetworkClient200Response) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
+
+### GetNotes
+
+`func (o *GetNetworkClient200Response) GetNotes() string`
+
+GetNotes returns the Notes field if non-nil, zero value otherwise.
+
+### GetNotesOk
+
+`func (o *GetNetworkClient200Response) GetNotesOk() (*string, bool)`
+
+GetNotesOk returns a tuple with the Notes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNotes
+
+`func (o *GetNetworkClient200Response) SetNotes(v string)`
+
+SetNotes sets Notes field to given value.
+
+### HasNotes
+
+`func (o *GetNetworkClient200Response) HasNotes() bool`
+
+HasNotes returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Sims** | Pointer to [**[]UpdateDeviceCellularSimsRequestSimsInner**](UpdateDeviceCellularSimsRequestSimsInner.md) | List of SIMs. If a SIM was previously configured and not specified in this request, it will remain unchanged. | [optional] 
+**SimOrdering** | Pointer to **[]string** | Specifies the ordering of all SIMs for an MG: primary, secondary, and not-in-use (when applicable). It&#39;s required for devices with 3 or more SIMs and can be used in place of &#39;isPrimary&#39; for dual-SIM devices. To indicate eSIM, use &#39;sim3&#39;. Sim failover will occur only between primary and secondary sim slots. | [optional] 
 **SimFailover** | Pointer to [**UpdateDeviceCellularSimsRequestSimFailover**](UpdateDeviceCellularSimsRequestSimFailover.md) |  | [optional] 
 
 ## Methods
@@ -50,6 +51,31 @@ SetSims sets Sims field to given value.
 `func (o *UpdateDeviceCellularSimsRequest) HasSims() bool`
 
 HasSims returns a boolean if a field has been set.
+
+### GetSimOrdering
+
+`func (o *UpdateDeviceCellularSimsRequest) GetSimOrdering() []string`
+
+GetSimOrdering returns the SimOrdering field if non-nil, zero value otherwise.
+
+### GetSimOrderingOk
+
+`func (o *UpdateDeviceCellularSimsRequest) GetSimOrderingOk() (*[]string, bool)`
+
+GetSimOrderingOk returns a tuple with the SimOrdering field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSimOrdering
+
+`func (o *UpdateDeviceCellularSimsRequest) SetSimOrdering(v []string)`
+
+SetSimOrdering sets SimOrdering field to given value.
+
+### HasSimOrdering
+
+`func (o *UpdateDeviceCellularSimsRequest) HasSimOrdering() bool`
+
+HasSimOrdering returns a boolean if a field has been set.
 
 ### GetSimFailover
 

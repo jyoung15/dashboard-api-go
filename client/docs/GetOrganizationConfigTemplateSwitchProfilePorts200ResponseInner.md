@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **Tags** | Pointer to **[]string** | The list of tags of the switch template port. | [optional] 
 **Enabled** | Pointer to **bool** | The status of the switch template port. | [optional] 
 **PoeEnabled** | Pointer to **bool** | The PoE status of the switch template port. | [optional] 
-**Type** | Pointer to **string** | The type of the switch template port (&#39;trunk&#39; or &#39;access&#39;). | [optional] 
-**Vlan** | Pointer to **int32** | The VLAN of the switch template port. A null value will clear the value set for trunk ports. | [optional] 
+**Type** | Pointer to **string** | The type of the switch template port (&#39;trunk&#39;, &#39;access&#39; or &#39;stack&#39;). | [optional] 
+**Vlan** | Pointer to **int32** | The VLAN of the switch template port. For a trunk port, this is the native VLAN. A null value will clear the value set for trunk ports. | [optional] 
 **VoiceVlan** | Pointer to **int32** | The voice VLAN of the switch template port. Only applicable to access ports. | [optional] 
 **AllowedVlans** | Pointer to **string** | The VLANs allowed on the switch template port. Only applicable to trunk ports. | [optional] 
 **IsolationEnabled** | Pointer to **bool** | The isolation status of the switch template port. | [optional] 
@@ -29,6 +29,9 @@ Name | Type | Description | Notes
 **FlexibleStackingEnabled** | Pointer to **bool** | For supported switches (e.g. MS420/MS425), whether or not the port has flexible stacking enabled. | [optional] 
 **DaiTrusted** | Pointer to **bool** | If true, ARP packets for this port will be considered trusted, and Dynamic ARP Inspection will allow the traffic. | [optional] 
 **Profile** | Pointer to [**GetDeviceSwitchPorts200ResponseInnerProfile**](GetDeviceSwitchPorts200ResponseInnerProfile.md) |  | [optional] 
+**Module** | Pointer to [**GetDeviceSwitchPorts200ResponseInnerModule**](GetDeviceSwitchPorts200ResponseInnerModule.md) |  | [optional] 
+**Mirror** | Pointer to [**GetDeviceSwitchPorts200ResponseInnerMirror**](GetDeviceSwitchPorts200ResponseInnerMirror.md) |  | [optional] 
+**Dot3az** | Pointer to [**GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInnerDot3az**](GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInnerDot3az.md) |  | [optional] 
 
 ## Methods
 
@@ -673,6 +676,81 @@ SetProfile sets Profile field to given value.
 `func (o *GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner) HasProfile() bool`
 
 HasProfile returns a boolean if a field has been set.
+
+### GetModule
+
+`func (o *GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner) GetModule() GetDeviceSwitchPorts200ResponseInnerModule`
+
+GetModule returns the Module field if non-nil, zero value otherwise.
+
+### GetModuleOk
+
+`func (o *GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner) GetModuleOk() (*GetDeviceSwitchPorts200ResponseInnerModule, bool)`
+
+GetModuleOk returns a tuple with the Module field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetModule
+
+`func (o *GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner) SetModule(v GetDeviceSwitchPorts200ResponseInnerModule)`
+
+SetModule sets Module field to given value.
+
+### HasModule
+
+`func (o *GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner) HasModule() bool`
+
+HasModule returns a boolean if a field has been set.
+
+### GetMirror
+
+`func (o *GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner) GetMirror() GetDeviceSwitchPorts200ResponseInnerMirror`
+
+GetMirror returns the Mirror field if non-nil, zero value otherwise.
+
+### GetMirrorOk
+
+`func (o *GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner) GetMirrorOk() (*GetDeviceSwitchPorts200ResponseInnerMirror, bool)`
+
+GetMirrorOk returns a tuple with the Mirror field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMirror
+
+`func (o *GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner) SetMirror(v GetDeviceSwitchPorts200ResponseInnerMirror)`
+
+SetMirror sets Mirror field to given value.
+
+### HasMirror
+
+`func (o *GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner) HasMirror() bool`
+
+HasMirror returns a boolean if a field has been set.
+
+### GetDot3az
+
+`func (o *GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner) GetDot3az() GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInnerDot3az`
+
+GetDot3az returns the Dot3az field if non-nil, zero value otherwise.
+
+### GetDot3azOk
+
+`func (o *GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner) GetDot3azOk() (*GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInnerDot3az, bool)`
+
+GetDot3azOk returns a tuple with the Dot3az field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDot3az
+
+`func (o *GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner) SetDot3az(v GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInnerDot3az)`
+
+SetDot3az sets Dot3az field to given value.
+
+### HasDot3az
+
+`func (o *GetOrganizationConfigTemplateSwitchProfilePorts200ResponseInner) HasDot3az() bool`
+
+HasDot3az returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

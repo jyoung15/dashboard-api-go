@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | The name of the camera wireless profile. This parameter is required. | 
 **Ssid** | [**CreateNetworkCameraWirelessProfileRequestSsid**](CreateNetworkCameraWirelessProfileRequestSsid.md) |  | 
-**Identity** | Pointer to [**CreateNetworkCameraWirelessProfileRequestIdentity**](CreateNetworkCameraWirelessProfileRequestIdentity.md) |  | [optional] 
+**Identity** | Pointer to [**GetNetworkCameraWirelessProfiles200ResponseInnerIdentity**](GetNetworkCameraWirelessProfiles200ResponseInnerIdentity.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetSsid sets Ssid field to given value.
 
 ### GetIdentity
 
-`func (o *CreateNetworkCameraWirelessProfileRequest) GetIdentity() CreateNetworkCameraWirelessProfileRequestIdentity`
+`func (o *CreateNetworkCameraWirelessProfileRequest) GetIdentity() GetNetworkCameraWirelessProfiles200ResponseInnerIdentity`
 
 GetIdentity returns the Identity field if non-nil, zero value otherwise.
 
 ### GetIdentityOk
 
-`func (o *CreateNetworkCameraWirelessProfileRequest) GetIdentityOk() (*CreateNetworkCameraWirelessProfileRequestIdentity, bool)`
+`func (o *CreateNetworkCameraWirelessProfileRequest) GetIdentityOk() (*GetNetworkCameraWirelessProfiles200ResponseInnerIdentity, bool)`
 
 GetIdentityOk returns a tuple with the Identity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIdentity
 
-`func (o *CreateNetworkCameraWirelessProfileRequest) SetIdentity(v CreateNetworkCameraWirelessProfileRequestIdentity)`
+`func (o *CreateNetworkCameraWirelessProfileRequest) SetIdentity(v GetNetworkCameraWirelessProfiles200ResponseInnerIdentity)`
 
 SetIdentity sets Identity field to given value.
 

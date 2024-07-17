@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Monday** | Pointer to [**CreateNetworkGroupPolicyRequestSchedulingMonday**](CreateNetworkGroupPolicyRequestSchedulingMonday.md) |  | [optional] 
-**Tuesday** | Pointer to [**CreateNetworkGroupPolicyRequestSchedulingTuesday**](CreateNetworkGroupPolicyRequestSchedulingTuesday.md) |  | [optional] 
-**Wednesday** | Pointer to [**CreateNetworkGroupPolicyRequestSchedulingWednesday**](CreateNetworkGroupPolicyRequestSchedulingWednesday.md) |  | [optional] 
-**Thursday** | Pointer to [**CreateNetworkGroupPolicyRequestSchedulingThursday**](CreateNetworkGroupPolicyRequestSchedulingThursday.md) |  | [optional] 
-**Friday** | Pointer to [**CreateNetworkGroupPolicyRequestSchedulingFriday**](CreateNetworkGroupPolicyRequestSchedulingFriday.md) |  | [optional] 
-**Saturday** | Pointer to [**CreateNetworkGroupPolicyRequestSchedulingSaturday**](CreateNetworkGroupPolicyRequestSchedulingSaturday.md) |  | [optional] 
-**Sunday** | Pointer to [**CreateNetworkGroupPolicyRequestSchedulingSunday**](CreateNetworkGroupPolicyRequestSchedulingSunday.md) |  | [optional] 
+**Monday** | Pointer to [**GetNetworkGroupPolicies200ResponseInnerSchedulingMonday**](GetNetworkGroupPolicies200ResponseInnerSchedulingMonday.md) |  | [optional] 
+**Tuesday** | Pointer to [**GetNetworkGroupPolicies200ResponseInnerSchedulingTuesday**](GetNetworkGroupPolicies200ResponseInnerSchedulingTuesday.md) |  | [optional] 
+**Wednesday** | Pointer to [**GetNetworkGroupPolicies200ResponseInnerSchedulingWednesday**](GetNetworkGroupPolicies200ResponseInnerSchedulingWednesday.md) |  | [optional] 
+**Thursday** | Pointer to [**GetNetworkGroupPolicies200ResponseInnerSchedulingThursday**](GetNetworkGroupPolicies200ResponseInnerSchedulingThursday.md) |  | [optional] 
+**Friday** | Pointer to [**GetNetworkGroupPolicies200ResponseInnerSchedulingFriday**](GetNetworkGroupPolicies200ResponseInnerSchedulingFriday.md) |  | [optional] 
+**Saturday** | Pointer to [**GetNetworkGroupPolicies200ResponseInnerSchedulingSaturday**](GetNetworkGroupPolicies200ResponseInnerSchedulingSaturday.md) |  | [optional] 
+**Sunday** | Pointer to [**GetNetworkGroupPolicies200ResponseInnerSchedulingSunday**](GetNetworkGroupPolicies200ResponseInnerSchedulingSunday.md) |  | [optional] 
 
 ## Methods
 
@@ -33,20 +33,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMonday
 
-`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetMonday() CreateNetworkGroupPolicyRequestSchedulingMonday`
+`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetMonday() GetNetworkGroupPolicies200ResponseInnerSchedulingMonday`
 
 GetMonday returns the Monday field if non-nil, zero value otherwise.
 
 ### GetMondayOk
 
-`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetMondayOk() (*CreateNetworkGroupPolicyRequestSchedulingMonday, bool)`
+`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetMondayOk() (*GetNetworkGroupPolicies200ResponseInnerSchedulingMonday, bool)`
 
 GetMondayOk returns a tuple with the Monday field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMonday
 
-`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) SetMonday(v CreateNetworkGroupPolicyRequestSchedulingMonday)`
+`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) SetMonday(v GetNetworkGroupPolicies200ResponseInnerSchedulingMonday)`
 
 SetMonday sets Monday field to given value.
 
@@ -58,20 +58,20 @@ HasMonday returns a boolean if a field has been set.
 
 ### GetTuesday
 
-`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetTuesday() CreateNetworkGroupPolicyRequestSchedulingTuesday`
+`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetTuesday() GetNetworkGroupPolicies200ResponseInnerSchedulingTuesday`
 
 GetTuesday returns the Tuesday field if non-nil, zero value otherwise.
 
 ### GetTuesdayOk
 
-`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetTuesdayOk() (*CreateNetworkGroupPolicyRequestSchedulingTuesday, bool)`
+`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetTuesdayOk() (*GetNetworkGroupPolicies200ResponseInnerSchedulingTuesday, bool)`
 
 GetTuesdayOk returns a tuple with the Tuesday field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTuesday
 
-`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) SetTuesday(v CreateNetworkGroupPolicyRequestSchedulingTuesday)`
+`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) SetTuesday(v GetNetworkGroupPolicies200ResponseInnerSchedulingTuesday)`
 
 SetTuesday sets Tuesday field to given value.
 
@@ -83,20 +83,20 @@ HasTuesday returns a boolean if a field has been set.
 
 ### GetWednesday
 
-`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetWednesday() CreateNetworkGroupPolicyRequestSchedulingWednesday`
+`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetWednesday() GetNetworkGroupPolicies200ResponseInnerSchedulingWednesday`
 
 GetWednesday returns the Wednesday field if non-nil, zero value otherwise.
 
 ### GetWednesdayOk
 
-`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetWednesdayOk() (*CreateNetworkGroupPolicyRequestSchedulingWednesday, bool)`
+`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetWednesdayOk() (*GetNetworkGroupPolicies200ResponseInnerSchedulingWednesday, bool)`
 
 GetWednesdayOk returns a tuple with the Wednesday field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWednesday
 
-`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) SetWednesday(v CreateNetworkGroupPolicyRequestSchedulingWednesday)`
+`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) SetWednesday(v GetNetworkGroupPolicies200ResponseInnerSchedulingWednesday)`
 
 SetWednesday sets Wednesday field to given value.
 
@@ -108,20 +108,20 @@ HasWednesday returns a boolean if a field has been set.
 
 ### GetThursday
 
-`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetThursday() CreateNetworkGroupPolicyRequestSchedulingThursday`
+`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetThursday() GetNetworkGroupPolicies200ResponseInnerSchedulingThursday`
 
 GetThursday returns the Thursday field if non-nil, zero value otherwise.
 
 ### GetThursdayOk
 
-`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetThursdayOk() (*CreateNetworkGroupPolicyRequestSchedulingThursday, bool)`
+`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetThursdayOk() (*GetNetworkGroupPolicies200ResponseInnerSchedulingThursday, bool)`
 
 GetThursdayOk returns a tuple with the Thursday field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetThursday
 
-`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) SetThursday(v CreateNetworkGroupPolicyRequestSchedulingThursday)`
+`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) SetThursday(v GetNetworkGroupPolicies200ResponseInnerSchedulingThursday)`
 
 SetThursday sets Thursday field to given value.
 
@@ -133,20 +133,20 @@ HasThursday returns a boolean if a field has been set.
 
 ### GetFriday
 
-`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetFriday() CreateNetworkGroupPolicyRequestSchedulingFriday`
+`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetFriday() GetNetworkGroupPolicies200ResponseInnerSchedulingFriday`
 
 GetFriday returns the Friday field if non-nil, zero value otherwise.
 
 ### GetFridayOk
 
-`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetFridayOk() (*CreateNetworkGroupPolicyRequestSchedulingFriday, bool)`
+`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetFridayOk() (*GetNetworkGroupPolicies200ResponseInnerSchedulingFriday, bool)`
 
 GetFridayOk returns a tuple with the Friday field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFriday
 
-`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) SetFriday(v CreateNetworkGroupPolicyRequestSchedulingFriday)`
+`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) SetFriday(v GetNetworkGroupPolicies200ResponseInnerSchedulingFriday)`
 
 SetFriday sets Friday field to given value.
 
@@ -158,20 +158,20 @@ HasFriday returns a boolean if a field has been set.
 
 ### GetSaturday
 
-`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetSaturday() CreateNetworkGroupPolicyRequestSchedulingSaturday`
+`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetSaturday() GetNetworkGroupPolicies200ResponseInnerSchedulingSaturday`
 
 GetSaturday returns the Saturday field if non-nil, zero value otherwise.
 
 ### GetSaturdayOk
 
-`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetSaturdayOk() (*CreateNetworkGroupPolicyRequestSchedulingSaturday, bool)`
+`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetSaturdayOk() (*GetNetworkGroupPolicies200ResponseInnerSchedulingSaturday, bool)`
 
 GetSaturdayOk returns a tuple with the Saturday field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSaturday
 
-`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) SetSaturday(v CreateNetworkGroupPolicyRequestSchedulingSaturday)`
+`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) SetSaturday(v GetNetworkGroupPolicies200ResponseInnerSchedulingSaturday)`
 
 SetSaturday sets Saturday field to given value.
 
@@ -183,20 +183,20 @@ HasSaturday returns a boolean if a field has been set.
 
 ### GetSunday
 
-`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetSunday() CreateNetworkGroupPolicyRequestSchedulingSunday`
+`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetSunday() GetNetworkGroupPolicies200ResponseInnerSchedulingSunday`
 
 GetSunday returns the Sunday field if non-nil, zero value otherwise.
 
 ### GetSundayOk
 
-`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetSundayOk() (*CreateNetworkGroupPolicyRequestSchedulingSunday, bool)`
+`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) GetSundayOk() (*GetNetworkGroupPolicies200ResponseInnerSchedulingSunday, bool)`
 
 GetSundayOk returns a tuple with the Sunday field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSunday
 
-`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) SetSunday(v CreateNetworkGroupPolicyRequestSchedulingSunday)`
+`func (o *CreateNetworkSwitchPortScheduleRequestPortSchedule) SetSunday(v GetNetworkGroupPolicies200ResponseInnerSchedulingSunday)`
 
 SetSunday sets Sunday field to given value.
 

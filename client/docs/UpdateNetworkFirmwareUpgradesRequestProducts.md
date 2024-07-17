@@ -10,7 +10,8 @@ Name | Type | Description | Notes
 **Camera** | Pointer to [**UpdateNetworkFirmwareUpgradesRequestProductsWireless**](UpdateNetworkFirmwareUpgradesRequestProductsWireless.md) |  | [optional] 
 **CellularGateway** | Pointer to [**UpdateNetworkFirmwareUpgradesRequestProductsWireless**](UpdateNetworkFirmwareUpgradesRequestProductsWireless.md) |  | [optional] 
 **Sensor** | Pointer to [**UpdateNetworkFirmwareUpgradesRequestProductsWireless**](UpdateNetworkFirmwareUpgradesRequestProductsWireless.md) |  | [optional] 
-**CloudGateway** | Pointer to [**UpdateNetworkFirmwareUpgradesRequestProductsWireless**](UpdateNetworkFirmwareUpgradesRequestProductsWireless.md) |  | [optional] 
+**WirelessController** | Pointer to [**UpdateNetworkFirmwareUpgradesRequestProductsWireless**](UpdateNetworkFirmwareUpgradesRequestProductsWireless.md) |  | [optional] 
+**SecureConnect** | Pointer to [**UpdateNetworkFirmwareUpgradesRequestProductsWireless**](UpdateNetworkFirmwareUpgradesRequestProductsWireless.md) |  | [optional] 
 **SwitchCatalyst** | Pointer to [**UpdateNetworkFirmwareUpgradesRequestProductsWireless**](UpdateNetworkFirmwareUpgradesRequestProductsWireless.md) |  | [optional] 
 
 ## Methods
@@ -182,30 +183,55 @@ SetSensor sets Sensor field to given value.
 
 HasSensor returns a boolean if a field has been set.
 
-### GetCloudGateway
+### GetWirelessController
 
-`func (o *UpdateNetworkFirmwareUpgradesRequestProducts) GetCloudGateway() UpdateNetworkFirmwareUpgradesRequestProductsWireless`
+`func (o *UpdateNetworkFirmwareUpgradesRequestProducts) GetWirelessController() UpdateNetworkFirmwareUpgradesRequestProductsWireless`
 
-GetCloudGateway returns the CloudGateway field if non-nil, zero value otherwise.
+GetWirelessController returns the WirelessController field if non-nil, zero value otherwise.
 
-### GetCloudGatewayOk
+### GetWirelessControllerOk
 
-`func (o *UpdateNetworkFirmwareUpgradesRequestProducts) GetCloudGatewayOk() (*UpdateNetworkFirmwareUpgradesRequestProductsWireless, bool)`
+`func (o *UpdateNetworkFirmwareUpgradesRequestProducts) GetWirelessControllerOk() (*UpdateNetworkFirmwareUpgradesRequestProductsWireless, bool)`
 
-GetCloudGatewayOk returns a tuple with the CloudGateway field if it's non-nil, zero value otherwise
+GetWirelessControllerOk returns a tuple with the WirelessController field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCloudGateway
+### SetWirelessController
 
-`func (o *UpdateNetworkFirmwareUpgradesRequestProducts) SetCloudGateway(v UpdateNetworkFirmwareUpgradesRequestProductsWireless)`
+`func (o *UpdateNetworkFirmwareUpgradesRequestProducts) SetWirelessController(v UpdateNetworkFirmwareUpgradesRequestProductsWireless)`
 
-SetCloudGateway sets CloudGateway field to given value.
+SetWirelessController sets WirelessController field to given value.
 
-### HasCloudGateway
+### HasWirelessController
 
-`func (o *UpdateNetworkFirmwareUpgradesRequestProducts) HasCloudGateway() bool`
+`func (o *UpdateNetworkFirmwareUpgradesRequestProducts) HasWirelessController() bool`
 
-HasCloudGateway returns a boolean if a field has been set.
+HasWirelessController returns a boolean if a field has been set.
+
+### GetSecureConnect
+
+`func (o *UpdateNetworkFirmwareUpgradesRequestProducts) GetSecureConnect() UpdateNetworkFirmwareUpgradesRequestProductsWireless`
+
+GetSecureConnect returns the SecureConnect field if non-nil, zero value otherwise.
+
+### GetSecureConnectOk
+
+`func (o *UpdateNetworkFirmwareUpgradesRequestProducts) GetSecureConnectOk() (*UpdateNetworkFirmwareUpgradesRequestProductsWireless, bool)`
+
+GetSecureConnectOk returns a tuple with the SecureConnect field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSecureConnect
+
+`func (o *UpdateNetworkFirmwareUpgradesRequestProducts) SetSecureConnect(v UpdateNetworkFirmwareUpgradesRequestProductsWireless)`
+
+SetSecureConnect sets SecureConnect field to given value.
+
+### HasSecureConnect
+
+`func (o *UpdateNetworkFirmwareUpgradesRequestProducts) HasSecureConnect() bool`
+
+HasSecureConnect returns a boolean if a field has been set.
 
 ### GetSwitchCatalyst
 

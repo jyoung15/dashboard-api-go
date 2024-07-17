@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Rules** | Pointer to [**[]UpdateNetworkWirelessSsidFirewallL3FirewallRulesRequestRulesInner**](UpdateNetworkWirelessSsidFirewallL3FirewallRulesRequestRulesInner.md) | An ordered array of the firewall rules for this SSID (not including the local LAN access rule or the default rule) | [optional] 
+**Rules** | Pointer to [**[]GetNetworkWirelessSsidFirewallL3FirewallRules200ResponseRulesInner**](GetNetworkWirelessSsidFirewallL3FirewallRules200ResponseRulesInner.md) | An ordered array of the firewall rules for this SSID (not including the local LAN access rule or the default rule). | [optional] 
 **AllowLanAccess** | Pointer to **bool** | Allow wireless client access to local LAN (boolean value - true allows access and false denies access) (optional) | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRules
 
-`func (o *UpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest) GetRules() []UpdateNetworkWirelessSsidFirewallL3FirewallRulesRequestRulesInner`
+`func (o *UpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest) GetRules() []GetNetworkWirelessSsidFirewallL3FirewallRules200ResponseRulesInner`
 
 GetRules returns the Rules field if non-nil, zero value otherwise.
 
 ### GetRulesOk
 
-`func (o *UpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest) GetRulesOk() (*[]UpdateNetworkWirelessSsidFirewallL3FirewallRulesRequestRulesInner, bool)`
+`func (o *UpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest) GetRulesOk() (*[]GetNetworkWirelessSsidFirewallL3FirewallRules200ResponseRulesInner, bool)`
 
 GetRulesOk returns a tuple with the Rules field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRules
 
-`func (o *UpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest) SetRules(v []UpdateNetworkWirelessSsidFirewallL3FirewallRulesRequestRulesInner)`
+`func (o *UpdateNetworkWirelessSsidFirewallL3FirewallRulesRequest) SetRules(v []GetNetworkWirelessSsidFirewallL3FirewallRules200ResponseRulesInner)`
 
 SetRules sets Rules field to given value.
 

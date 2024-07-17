@@ -10,7 +10,8 @@ Name | Type | Description | Notes
 **Camera** | Pointer to [**GetNetworkFirmwareUpgrades200ResponseProductsWireless**](GetNetworkFirmwareUpgrades200ResponseProductsWireless.md) |  | [optional] 
 **CellularGateway** | Pointer to [**GetNetworkFirmwareUpgrades200ResponseProductsWireless**](GetNetworkFirmwareUpgrades200ResponseProductsWireless.md) |  | [optional] 
 **Sensor** | Pointer to [**GetNetworkFirmwareUpgrades200ResponseProductsWireless**](GetNetworkFirmwareUpgrades200ResponseProductsWireless.md) |  | [optional] 
-**CloudGateway** | Pointer to [**GetNetworkFirmwareUpgrades200ResponseProductsWireless**](GetNetworkFirmwareUpgrades200ResponseProductsWireless.md) |  | [optional] 
+**WirelessController** | Pointer to [**GetNetworkFirmwareUpgrades200ResponseProductsWireless**](GetNetworkFirmwareUpgrades200ResponseProductsWireless.md) |  | [optional] 
+**SecureConnect** | Pointer to [**GetNetworkFirmwareUpgrades200ResponseProductsWireless**](GetNetworkFirmwareUpgrades200ResponseProductsWireless.md) |  | [optional] 
 
 ## Methods
 
@@ -181,30 +182,55 @@ SetSensor sets Sensor field to given value.
 
 HasSensor returns a boolean if a field has been set.
 
-### GetCloudGateway
+### GetWirelessController
 
-`func (o *GetNetworkFirmwareUpgrades200ResponseProducts) GetCloudGateway() GetNetworkFirmwareUpgrades200ResponseProductsWireless`
+`func (o *GetNetworkFirmwareUpgrades200ResponseProducts) GetWirelessController() GetNetworkFirmwareUpgrades200ResponseProductsWireless`
 
-GetCloudGateway returns the CloudGateway field if non-nil, zero value otherwise.
+GetWirelessController returns the WirelessController field if non-nil, zero value otherwise.
 
-### GetCloudGatewayOk
+### GetWirelessControllerOk
 
-`func (o *GetNetworkFirmwareUpgrades200ResponseProducts) GetCloudGatewayOk() (*GetNetworkFirmwareUpgrades200ResponseProductsWireless, bool)`
+`func (o *GetNetworkFirmwareUpgrades200ResponseProducts) GetWirelessControllerOk() (*GetNetworkFirmwareUpgrades200ResponseProductsWireless, bool)`
 
-GetCloudGatewayOk returns a tuple with the CloudGateway field if it's non-nil, zero value otherwise
+GetWirelessControllerOk returns a tuple with the WirelessController field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCloudGateway
+### SetWirelessController
 
-`func (o *GetNetworkFirmwareUpgrades200ResponseProducts) SetCloudGateway(v GetNetworkFirmwareUpgrades200ResponseProductsWireless)`
+`func (o *GetNetworkFirmwareUpgrades200ResponseProducts) SetWirelessController(v GetNetworkFirmwareUpgrades200ResponseProductsWireless)`
 
-SetCloudGateway sets CloudGateway field to given value.
+SetWirelessController sets WirelessController field to given value.
 
-### HasCloudGateway
+### HasWirelessController
 
-`func (o *GetNetworkFirmwareUpgrades200ResponseProducts) HasCloudGateway() bool`
+`func (o *GetNetworkFirmwareUpgrades200ResponseProducts) HasWirelessController() bool`
 
-HasCloudGateway returns a boolean if a field has been set.
+HasWirelessController returns a boolean if a field has been set.
+
+### GetSecureConnect
+
+`func (o *GetNetworkFirmwareUpgrades200ResponseProducts) GetSecureConnect() GetNetworkFirmwareUpgrades200ResponseProductsWireless`
+
+GetSecureConnect returns the SecureConnect field if non-nil, zero value otherwise.
+
+### GetSecureConnectOk
+
+`func (o *GetNetworkFirmwareUpgrades200ResponseProducts) GetSecureConnectOk() (*GetNetworkFirmwareUpgrades200ResponseProductsWireless, bool)`
+
+GetSecureConnectOk returns a tuple with the SecureConnect field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSecureConnect
+
+`func (o *GetNetworkFirmwareUpgrades200ResponseProducts) SetSecureConnect(v GetNetworkFirmwareUpgrades200ResponseProductsWireless)`
+
+SetSecureConnect sets SecureConnect field to given value.
+
+### HasSecureConnect
+
+`func (o *GetNetworkFirmwareUpgrades200ResponseProducts) HasSecureConnect() bool`
+
+HasSecureConnect returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Fqdn** | Pointer to **string** | Fully qualified domain name of policy object (e.g. \&quot;example.com\&quot;) | [optional] 
 **Mask** | Pointer to **string** | Mask of a policy object (e.g. \&quot;255.255.0.0\&quot;) | [optional] 
 **Ip** | Pointer to **string** | IP Address of a policy object (e.g. \&quot;1.2.3.4\&quot;) | [optional] 
-**GroupIds** | Pointer to **[]int32** | The IDs of policy object groups the policy object belongs to | [optional] 
+**GroupIds** | Pointer to **[]string** | The IDs of policy object groups the policy object belongs to | [optional] 
 
 ## Methods
 
@@ -194,20 +194,20 @@ HasIp returns a boolean if a field has been set.
 
 ### GetGroupIds
 
-`func (o *CreateOrganizationPolicyObjectRequest) GetGroupIds() []int32`
+`func (o *CreateOrganizationPolicyObjectRequest) GetGroupIds() []string`
 
 GetGroupIds returns the GroupIds field if non-nil, zero value otherwise.
 
 ### GetGroupIdsOk
 
-`func (o *CreateOrganizationPolicyObjectRequest) GetGroupIdsOk() (*[]int32, bool)`
+`func (o *CreateOrganizationPolicyObjectRequest) GetGroupIdsOk() (*[]string, bool)`
 
 GetGroupIdsOk returns a tuple with the GroupIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroupIds
 
-`func (o *CreateOrganizationPolicyObjectRequest) SetGroupIds(v []int32)`
+`func (o *CreateOrganizationPolicyObjectRequest) SetGroupIds(v []string)`
 
 SetGroupIds sets GroupIds field to given value.
 

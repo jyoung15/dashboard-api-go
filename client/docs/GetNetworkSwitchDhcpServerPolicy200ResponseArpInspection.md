@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Enabled** | Pointer to **bool** | Enable or disable Dynamic ARP Inspection on the network. Default value is false. | [optional] 
+**UnsupportedModels** | Pointer to **[]string** | List of switch models that does not support dynamic ARP inspection | [optional] 
 
 ## Methods
 
@@ -49,6 +50,31 @@ SetEnabled sets Enabled field to given value.
 `func (o *GetNetworkSwitchDhcpServerPolicy200ResponseArpInspection) HasEnabled() bool`
 
 HasEnabled returns a boolean if a field has been set.
+
+### GetUnsupportedModels
+
+`func (o *GetNetworkSwitchDhcpServerPolicy200ResponseArpInspection) GetUnsupportedModels() []string`
+
+GetUnsupportedModels returns the UnsupportedModels field if non-nil, zero value otherwise.
+
+### GetUnsupportedModelsOk
+
+`func (o *GetNetworkSwitchDhcpServerPolicy200ResponseArpInspection) GetUnsupportedModelsOk() (*[]string, bool)`
+
+GetUnsupportedModelsOk returns a tuple with the UnsupportedModels field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUnsupportedModels
+
+`func (o *GetNetworkSwitchDhcpServerPolicy200ResponseArpInspection) SetUnsupportedModels(v []string)`
+
+SetUnsupportedModels sets UnsupportedModels field to given value.
+
+### HasUnsupportedModels
+
+`func (o *GetNetworkSwitchDhcpServerPolicy200ResponseArpInspection) HasUnsupportedModels() bool`
+
+HasUnsupportedModels returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
