@@ -19,8 +19,7 @@ var _ MappedNullable = &GetNetworkWirelessMeshStatuses200ResponseInnerLatestMesh
 
 // GetNetworkWirelessMeshStatuses200ResponseInnerLatestMeshPerformance Current metrics on how the mesh is performing.
 type GetNetworkWirelessMeshStatuses200ResponseInnerLatestMeshPerformance struct {
-	// Average Mbps.
-	Mbps *int32 `json:"mbps,omitempty"`
+	Mbps *GetNetworkWirelessMeshStatuses200ResponseInnerLatestMeshPerformanceMbps `json:"mbps,omitempty"`
 	// Represents the quality of the entire route from the repeater access point to its gateway access point.
 	Metric *int32 `json:"metric,omitempty"`
 	// Mesh utilization as a percentage.
@@ -45,9 +44,9 @@ func NewGetNetworkWirelessMeshStatuses200ResponseInnerLatestMeshPerformanceWithD
 }
 
 // GetMbps returns the Mbps field value if set, zero value otherwise.
-func (o *GetNetworkWirelessMeshStatuses200ResponseInnerLatestMeshPerformance) GetMbps() int32 {
+func (o *GetNetworkWirelessMeshStatuses200ResponseInnerLatestMeshPerformance) GetMbps() GetNetworkWirelessMeshStatuses200ResponseInnerLatestMeshPerformanceMbps {
 	if o == nil || IsNil(o.Mbps) {
-		var ret int32
+		var ret GetNetworkWirelessMeshStatuses200ResponseInnerLatestMeshPerformanceMbps
 		return ret
 	}
 	return *o.Mbps
@@ -55,7 +54,7 @@ func (o *GetNetworkWirelessMeshStatuses200ResponseInnerLatestMeshPerformance) Ge
 
 // GetMbpsOk returns a tuple with the Mbps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkWirelessMeshStatuses200ResponseInnerLatestMeshPerformance) GetMbpsOk() (*int32, bool) {
+func (o *GetNetworkWirelessMeshStatuses200ResponseInnerLatestMeshPerformance) GetMbpsOk() (*GetNetworkWirelessMeshStatuses200ResponseInnerLatestMeshPerformanceMbps, bool) {
 	if o == nil || IsNil(o.Mbps) {
 		return nil, false
 	}
@@ -71,8 +70,8 @@ func (o *GetNetworkWirelessMeshStatuses200ResponseInnerLatestMeshPerformance) Ha
 	return false
 }
 
-// SetMbps gets a reference to the given int32 and assigns it to the Mbps field.
-func (o *GetNetworkWirelessMeshStatuses200ResponseInnerLatestMeshPerformance) SetMbps(v int32) {
+// SetMbps gets a reference to the given GetNetworkWirelessMeshStatuses200ResponseInnerLatestMeshPerformanceMbps and assigns it to the Mbps field.
+func (o *GetNetworkWirelessMeshStatuses200ResponseInnerLatestMeshPerformance) SetMbps(v GetNetworkWirelessMeshStatuses200ResponseInnerLatestMeshPerformanceMbps) {
 	o.Mbps = &v
 }
 
