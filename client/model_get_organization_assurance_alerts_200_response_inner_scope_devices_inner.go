@@ -37,6 +37,11 @@ type GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner struct {
 	Tags []string `json:"tags,omitempty"`
 	Lldp *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldp `json:"lldp,omitempty"`
 	NodeID *string `json:"nodeId,omitempty"`
+	LocaleID *string `json:"localeId,omitempty"`
+	PortIdentifier *string `json:"portIdentifier,omitempty"`
+	// TODO: add types from openapi spec
+	EthernetNegotiation interface{} `json:"ethernetNegotiation,-"'
+	LldpCdpPacket interface{} `json:"lldpCdpPacket,-"'
 }
 
 // NewGetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner instantiates a new GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner object
