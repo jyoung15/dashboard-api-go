@@ -36,12 +36,14 @@ type GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner struct {
 	// The device tags
 	Tags []string `json:"tags,omitempty"`
 	Lldp *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldp `json:"lldp,omitempty"`
-	NodeID *string `json:"nodeId,omitempty"`
-	LocaleID *uint64 `json:"localeId,omitempty"`
+	// Locale ID of affected device
+	LocaleId *uint64 `json:"localeId,omitempty"`
+	// Node ID of affected device
+	NodeId *string `json:"nodeId,omitempty"`
+	// Port Identifier of affected device
 	PortIdentifier *string `json:"portIdentifier,omitempty"`
-	// TODO: add types from openapi spec
-	EthernetNegotiation interface{} `json:"ethernetNegotiation,-"`
-	LldpCdpPacket interface{} `json:"lldpCdpPacket,-"`
+	EthernetNegotiation *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerEthernetNegotiation `json:"ethernetNegotiation,omitempty"`
+	LldpCdpPacket *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket `json:"lldpCdpPacket,omitempty"`
 }
 
 // NewGetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner instantiates a new GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner object
@@ -349,6 +351,166 @@ func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) SetLld
 	o.Lldp = &v
 }
 
+// GetLocaleId returns the LocaleId field value if set, zero value otherwise.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) GetLocaleId() uint64 {
+	if o == nil || IsNil(o.LocaleId) {
+		var ret uint64
+		return ret
+	}
+	return *o.LocaleId
+}
+
+// GetLocaleIdOk returns a tuple with the LocaleId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) GetLocaleIdOk() (*uint64, bool) {
+	if o == nil || IsNil(o.LocaleId) {
+		return nil, false
+	}
+	return o.LocaleId, true
+}
+
+// HasLocaleId returns a boolean if a field has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) HasLocaleId() bool {
+	if o != nil && !IsNil(o.LocaleId) {
+		return true
+	}
+
+	return false
+}
+
+// SetLocaleId gets a reference to the given uint64 and assigns it to the LocaleId field.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) SetLocaleId(v uint64) {
+	o.LocaleId = &v
+}
+
+// GetNodeId returns the NodeId field value if set, zero value otherwise.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) GetNodeId() string {
+	if o == nil || IsNil(o.NodeId) {
+		var ret string
+		return ret
+	}
+	return *o.NodeId
+}
+
+// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) GetNodeIdOk() (*string, bool) {
+	if o == nil || IsNil(o.NodeId) {
+		return nil, false
+	}
+	return o.NodeId, true
+}
+
+// HasNodeId returns a boolean if a field has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) HasNodeId() bool {
+	if o != nil && !IsNil(o.NodeId) {
+		return true
+	}
+
+	return false
+}
+
+// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) SetNodeId(v string) {
+	o.NodeId = &v
+}
+
+// GetPortIdentifier returns the PortIdentifier field value if set, zero value otherwise.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) GetPortIdentifier() string {
+	if o == nil || IsNil(o.PortIdentifier) {
+		var ret string
+		return ret
+	}
+	return *o.PortIdentifier
+}
+
+// GetPortIdentifierOk returns a tuple with the PortIdentifier field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) GetPortIdentifierOk() (*string, bool) {
+	if o == nil || IsNil(o.PortIdentifier) {
+		return nil, false
+	}
+	return o.PortIdentifier, true
+}
+
+// HasPortIdentifier returns a boolean if a field has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) HasPortIdentifier() bool {
+	if o != nil && !IsNil(o.PortIdentifier) {
+		return true
+	}
+
+	return false
+}
+
+// SetPortIdentifier gets a reference to the given string and assigns it to the PortIdentifier field.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) SetPortIdentifier(v string) {
+	o.PortIdentifier = &v
+}
+
+// GetEthernetNegotiation returns the EthernetNegotiation field value if set, zero value otherwise.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) GetEthernetNegotiation() GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerEthernetNegotiation {
+	if o == nil || IsNil(o.EthernetNegotiation) {
+		var ret GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerEthernetNegotiation
+		return ret
+	}
+	return *o.EthernetNegotiation
+}
+
+// GetEthernetNegotiationOk returns a tuple with the EthernetNegotiation field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) GetEthernetNegotiationOk() (*GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerEthernetNegotiation, bool) {
+	if o == nil || IsNil(o.EthernetNegotiation) {
+		return nil, false
+	}
+	return o.EthernetNegotiation, true
+}
+
+// HasEthernetNegotiation returns a boolean if a field has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) HasEthernetNegotiation() bool {
+	if o != nil && !IsNil(o.EthernetNegotiation) {
+		return true
+	}
+
+	return false
+}
+
+// SetEthernetNegotiation gets a reference to the given GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerEthernetNegotiation and assigns it to the EthernetNegotiation field.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) SetEthernetNegotiation(v GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerEthernetNegotiation) {
+	o.EthernetNegotiation = &v
+}
+
+// GetLldpCdpPacket returns the LldpCdpPacket field value if set, zero value otherwise.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) GetLldpCdpPacket() GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket {
+	if o == nil || IsNil(o.LldpCdpPacket) {
+		var ret GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket
+		return ret
+	}
+	return *o.LldpCdpPacket
+}
+
+// GetLldpCdpPacketOk returns a tuple with the LldpCdpPacket field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) GetLldpCdpPacketOk() (*GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket, bool) {
+	if o == nil || IsNil(o.LldpCdpPacket) {
+		return nil, false
+	}
+	return o.LldpCdpPacket, true
+}
+
+// HasLldpCdpPacket returns a boolean if a field has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) HasLldpCdpPacket() bool {
+	if o != nil && !IsNil(o.LldpCdpPacket) {
+		return true
+	}
+
+	return false
+}
+
+// SetLldpCdpPacket gets a reference to the given GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket and assigns it to the LldpCdpPacket field.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) SetLldpCdpPacket(v GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) {
+	o.LldpCdpPacket = &v
+}
+
 func (o GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -385,6 +547,21 @@ func (o GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner) ToMap()
 	}
 	if !IsNil(o.Lldp) {
 		toSerialize["lldp"] = o.Lldp
+	}
+	if !IsNil(o.LocaleId) {
+		toSerialize["localeId"] = o.LocaleId
+	}
+	if !IsNil(o.NodeId) {
+		toSerialize["nodeId"] = o.NodeId
+	}
+	if !IsNil(o.PortIdentifier) {
+		toSerialize["portIdentifier"] = o.PortIdentifier
+	}
+	if !IsNil(o.EthernetNegotiation) {
+		toSerialize["ethernetNegotiation"] = o.EthernetNegotiation
+	}
+	if !IsNil(o.LldpCdpPacket) {
+		toSerialize["lldpCdpPacket"] = o.LldpCdpPacket
 	}
 	return toSerialize, nil
 }
