@@ -23,6 +23,8 @@ type GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacke
 	Platform *string `json:"platform,omitempty"`
 	// LLDP device ID
 	DeviceId *string `json:"deviceId,omitempty"`
+	// LLDP chassis ID
+	ChassisId *string `json:"chassisId,omitempty"`
 	// LLDP port ID
 	PortId *string `json:"portId,omitempty"`
 	// LLDP address
@@ -112,6 +114,38 @@ func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpP
 // SetDeviceId gets a reference to the given string and assigns it to the DeviceId field.
 func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) SetDeviceId(v string) {
 	o.DeviceId = &v
+}
+
+// GetChassisId returns the ChassisId field value if set, zero value otherwise.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetChassisId() string {
+	if o == nil || IsNil(o.ChassisId) {
+		var ret string
+		return ret
+	}
+	return *o.ChassisId
+}
+
+// GetChassisIdOk returns a tuple with the ChassisId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetChassisIdOk() (*string, bool) {
+	if o == nil || IsNil(o.ChassisId) {
+		return nil, false
+	}
+	return o.ChassisId, true
+}
+
+// HasChassisId returns a boolean if a field has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) HasChassisId() bool {
+	if o != nil && !IsNil(o.ChassisId) {
+		return true
+	}
+
+	return false
+}
+
+// SetChassisId gets a reference to the given string and assigns it to the ChassisId field.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) SetChassisId(v string) {
+	o.ChassisId = &v
 }
 
 // GetPortId returns the PortId field value if set, zero value otherwise.
@@ -257,6 +291,9 @@ func (o GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPa
 	}
 	if !IsNil(o.DeviceId) {
 		toSerialize["deviceId"] = o.DeviceId
+	}
+	if !IsNil(o.ChassisId) {
+		toSerialize["chassisId"] = o.ChassisId
 	}
 	if !IsNil(o.PortId) {
 		toSerialize["portId"] = o.PortId
