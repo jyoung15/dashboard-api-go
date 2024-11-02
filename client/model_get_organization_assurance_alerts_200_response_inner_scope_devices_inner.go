@@ -36,6 +36,7 @@ type GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner struct {
 	// The device tags
 	Tags []string `json:"tags,omitempty"`
 	Lldp *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldp `json:"lldp,omitempty"`
+	NodeID *string `json:"nodeId,omitempty"`
 }
 
 // NewGetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner instantiates a new GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInner object
