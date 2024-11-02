@@ -19,20 +19,26 @@ var _ MappedNullable = &GetOrganizationAssuranceAlerts200ResponseInnerScopeDevic
 
 // GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket struct for GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket
 type GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket struct {
-	// LLDP platforn
-	Platform *string `json:"platform,omitempty"`
-	// LLDP device ID
-	DeviceId *string `json:"deviceId,omitempty"`
-	// LLDP chassis ID
-	ChassisId *string `json:"chassisId,omitempty"`
-	// LLDP port ID
-	PortId *string `json:"portId,omitempty"`
 	// LLDP address
 	Address *string `json:"address,omitempty"`
-	// LLDP version
-	Version *string `json:"version,omitempty"`
+	// LLDP chassis ID
+	ChassisId *string `json:"chassisId,omitempty"`
+	// LLDP device ID
+	DeviceId *string `json:"deviceId,omitempty"`
 	// LLDP management address
 	ManagementAddress *string `json:"managementAddress,omitempty"`
+	// LLDP platforn
+	Platform *string `json:"platform,omitempty"`
+	// LLDP port ID
+	PortId *string `json:"portId,omitempty"`
+	// LLDP system capabilities
+	SystemCapabilities *string `json:"systemCapabilities,omitempty"`
+	// LLDP system description
+	SystemDescription *string `json:"systemDescription,omitempty"`
+	// LLDP system name
+	SystemName *string `json:"systemName,omitempty"`
+	// LLDP version
+	Version *string `json:"version,omitempty"`
 }
 
 // NewGetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket instantiates a new GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket object
@@ -50,134 +56,6 @@ func NewGetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPa
 func NewGetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacketWithDefaults() *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket {
 	this := GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket{}
 	return &this
-}
-
-// GetPlatform returns the Platform field value if set, zero value otherwise.
-func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetPlatform() string {
-	if o == nil || IsNil(o.Platform) {
-		var ret string
-		return ret
-	}
-	return *o.Platform
-}
-
-// GetPlatformOk returns a tuple with the Platform field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetPlatformOk() (*string, bool) {
-	if o == nil || IsNil(o.Platform) {
-		return nil, false
-	}
-	return o.Platform, true
-}
-
-// HasPlatform returns a boolean if a field has been set.
-func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) HasPlatform() bool {
-	if o != nil && !IsNil(o.Platform) {
-		return true
-	}
-
-	return false
-}
-
-// SetPlatform gets a reference to the given string and assigns it to the Platform field.
-func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) SetPlatform(v string) {
-	o.Platform = &v
-}
-
-// GetDeviceId returns the DeviceId field value if set, zero value otherwise.
-func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetDeviceId() string {
-	if o == nil || IsNil(o.DeviceId) {
-		var ret string
-		return ret
-	}
-	return *o.DeviceId
-}
-
-// GetDeviceIdOk returns a tuple with the DeviceId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetDeviceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.DeviceId) {
-		return nil, false
-	}
-	return o.DeviceId, true
-}
-
-// HasDeviceId returns a boolean if a field has been set.
-func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) HasDeviceId() bool {
-	if o != nil && !IsNil(o.DeviceId) {
-		return true
-	}
-
-	return false
-}
-
-// SetDeviceId gets a reference to the given string and assigns it to the DeviceId field.
-func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) SetDeviceId(v string) {
-	o.DeviceId = &v
-}
-
-// GetChassisId returns the ChassisId field value if set, zero value otherwise.
-func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetChassisId() string {
-	if o == nil || IsNil(o.ChassisId) {
-		var ret string
-		return ret
-	}
-	return *o.ChassisId
-}
-
-// GetChassisIdOk returns a tuple with the ChassisId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetChassisIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ChassisId) {
-		return nil, false
-	}
-	return o.ChassisId, true
-}
-
-// HasChassisId returns a boolean if a field has been set.
-func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) HasChassisId() bool {
-	if o != nil && !IsNil(o.ChassisId) {
-		return true
-	}
-
-	return false
-}
-
-// SetChassisId gets a reference to the given string and assigns it to the ChassisId field.
-func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) SetChassisId(v string) {
-	o.ChassisId = &v
-}
-
-// GetPortId returns the PortId field value if set, zero value otherwise.
-func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetPortId() string {
-	if o == nil || IsNil(o.PortId) {
-		var ret string
-		return ret
-	}
-	return *o.PortId
-}
-
-// GetPortIdOk returns a tuple with the PortId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetPortIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PortId) {
-		return nil, false
-	}
-	return o.PortId, true
-}
-
-// HasPortId returns a boolean if a field has been set.
-func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) HasPortId() bool {
-	if o != nil && !IsNil(o.PortId) {
-		return true
-	}
-
-	return false
-}
-
-// SetPortId gets a reference to the given string and assigns it to the PortId field.
-func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) SetPortId(v string) {
-	o.PortId = &v
 }
 
 // GetAddress returns the Address field value if set, zero value otherwise.
@@ -212,36 +90,68 @@ func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpP
 	o.Address = &v
 }
 
-// GetVersion returns the Version field value if set, zero value otherwise.
-func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetVersion() string {
-	if o == nil || IsNil(o.Version) {
+// GetChassisId returns the ChassisId field value if set, zero value otherwise.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetChassisId() string {
+	if o == nil || IsNil(o.ChassisId) {
 		var ret string
 		return ret
 	}
-	return *o.Version
+	return *o.ChassisId
 }
 
-// GetVersionOk returns a tuple with the Version field value if set, nil otherwise
+// GetChassisIdOk returns a tuple with the ChassisId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetVersionOk() (*string, bool) {
-	if o == nil || IsNil(o.Version) {
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetChassisIdOk() (*string, bool) {
+	if o == nil || IsNil(o.ChassisId) {
 		return nil, false
 	}
-	return o.Version, true
+	return o.ChassisId, true
 }
 
-// HasVersion returns a boolean if a field has been set.
-func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) HasVersion() bool {
-	if o != nil && !IsNil(o.Version) {
+// HasChassisId returns a boolean if a field has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) HasChassisId() bool {
+	if o != nil && !IsNil(o.ChassisId) {
 		return true
 	}
 
 	return false
 }
 
-// SetVersion gets a reference to the given string and assigns it to the Version field.
-func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) SetVersion(v string) {
-	o.Version = &v
+// SetChassisId gets a reference to the given string and assigns it to the ChassisId field.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) SetChassisId(v string) {
+	o.ChassisId = &v
+}
+
+// GetDeviceId returns the DeviceId field value if set, zero value otherwise.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetDeviceId() string {
+	if o == nil || IsNil(o.DeviceId) {
+		var ret string
+		return ret
+	}
+	return *o.DeviceId
+}
+
+// GetDeviceIdOk returns a tuple with the DeviceId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetDeviceIdOk() (*string, bool) {
+	if o == nil || IsNil(o.DeviceId) {
+		return nil, false
+	}
+	return o.DeviceId, true
+}
+
+// HasDeviceId returns a boolean if a field has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) HasDeviceId() bool {
+	if o != nil && !IsNil(o.DeviceId) {
+		return true
+	}
+
+	return false
+}
+
+// SetDeviceId gets a reference to the given string and assigns it to the DeviceId field.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) SetDeviceId(v string) {
+	o.DeviceId = &v
 }
 
 // GetManagementAddress returns the ManagementAddress field value if set, zero value otherwise.
@@ -276,6 +186,198 @@ func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpP
 	o.ManagementAddress = &v
 }
 
+// GetPlatform returns the Platform field value if set, zero value otherwise.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetPlatform() string {
+	if o == nil || IsNil(o.Platform) {
+		var ret string
+		return ret
+	}
+	return *o.Platform
+}
+
+// GetPlatformOk returns a tuple with the Platform field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetPlatformOk() (*string, bool) {
+	if o == nil || IsNil(o.Platform) {
+		return nil, false
+	}
+	return o.Platform, true
+}
+
+// HasPlatform returns a boolean if a field has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) HasPlatform() bool {
+	if o != nil && !IsNil(o.Platform) {
+		return true
+	}
+
+	return false
+}
+
+// SetPlatform gets a reference to the given string and assigns it to the Platform field.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) SetPlatform(v string) {
+	o.Platform = &v
+}
+
+// GetPortId returns the PortId field value if set, zero value otherwise.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetPortId() string {
+	if o == nil || IsNil(o.PortId) {
+		var ret string
+		return ret
+	}
+	return *o.PortId
+}
+
+// GetPortIdOk returns a tuple with the PortId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetPortIdOk() (*string, bool) {
+	if o == nil || IsNil(o.PortId) {
+		return nil, false
+	}
+	return o.PortId, true
+}
+
+// HasPortId returns a boolean if a field has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) HasPortId() bool {
+	if o != nil && !IsNil(o.PortId) {
+		return true
+	}
+
+	return false
+}
+
+// SetPortId gets a reference to the given string and assigns it to the PortId field.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) SetPortId(v string) {
+	o.PortId = &v
+}
+
+// GetSystemCapabilities returns the SystemCapabilities field value if set, zero value otherwise.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetSystemCapabilities() string {
+	if o == nil || IsNil(o.SystemCapabilities) {
+		var ret string
+		return ret
+	}
+	return *o.SystemCapabilities
+}
+
+// GetSystemCapabilitiesOk returns a tuple with the SystemCapabilities field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetSystemCapabilitiesOk() (*string, bool) {
+	if o == nil || IsNil(o.SystemCapabilities) {
+		return nil, false
+	}
+	return o.SystemCapabilities, true
+}
+
+// HasSystemCapabilities returns a boolean if a field has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) HasSystemCapabilities() bool {
+	if o != nil && !IsNil(o.SystemCapabilities) {
+		return true
+	}
+
+	return false
+}
+
+// SetSystemCapabilities gets a reference to the given string and assigns it to the SystemCapabilities field.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) SetSystemCapabilities(v string) {
+	o.SystemCapabilities = &v
+}
+
+// GetSystemDescription returns the SystemDescription field value if set, zero value otherwise.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetSystemDescription() string {
+	if o == nil || IsNil(o.SystemDescription) {
+		var ret string
+		return ret
+	}
+	return *o.SystemDescription
+}
+
+// GetSystemDescriptionOk returns a tuple with the SystemDescription field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetSystemDescriptionOk() (*string, bool) {
+	if o == nil || IsNil(o.SystemDescription) {
+		return nil, false
+	}
+	return o.SystemDescription, true
+}
+
+// HasSystemDescription returns a boolean if a field has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) HasSystemDescription() bool {
+	if o != nil && !IsNil(o.SystemDescription) {
+		return true
+	}
+
+	return false
+}
+
+// SetSystemDescription gets a reference to the given string and assigns it to the SystemDescription field.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) SetSystemDescription(v string) {
+	o.SystemDescription = &v
+}
+
+// GetSystemName returns the SystemName field value if set, zero value otherwise.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetSystemName() string {
+	if o == nil || IsNil(o.SystemName) {
+		var ret string
+		return ret
+	}
+	return *o.SystemName
+}
+
+// GetSystemNameOk returns a tuple with the SystemName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetSystemNameOk() (*string, bool) {
+	if o == nil || IsNil(o.SystemName) {
+		return nil, false
+	}
+	return o.SystemName, true
+}
+
+// HasSystemName returns a boolean if a field has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) HasSystemName() bool {
+	if o != nil && !IsNil(o.SystemName) {
+		return true
+	}
+
+	return false
+}
+
+// SetSystemName gets a reference to the given string and assigns it to the SystemName field.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) SetSystemName(v string) {
+	o.SystemName = &v
+}
+
+// GetVersion returns the Version field value if set, zero value otherwise.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetVersion() string {
+	if o == nil || IsNil(o.Version) {
+		var ret string
+		return ret
+	}
+	return *o.Version
+}
+
+// GetVersionOk returns a tuple with the Version field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) GetVersionOk() (*string, bool) {
+	if o == nil || IsNil(o.Version) {
+		return nil, false
+	}
+	return o.Version, true
+}
+
+// HasVersion returns a boolean if a field has been set.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) HasVersion() bool {
+	if o != nil && !IsNil(o.Version) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersion gets a reference to the given string and assigns it to the Version field.
+func (o *GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) SetVersion(v string) {
+	o.Version = &v
+}
+
 func (o GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -286,26 +388,35 @@ func (o GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPa
 
 func (o GetOrganizationAssuranceAlerts200ResponseInnerScopeDevicesInnerLldpCdpPacket) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Platform) {
-		toSerialize["platform"] = o.Platform
-	}
-	if !IsNil(o.DeviceId) {
-		toSerialize["deviceId"] = o.DeviceId
+	if !IsNil(o.Address) {
+		toSerialize["address"] = o.Address
 	}
 	if !IsNil(o.ChassisId) {
 		toSerialize["chassisId"] = o.ChassisId
 	}
-	if !IsNil(o.PortId) {
-		toSerialize["portId"] = o.PortId
-	}
-	if !IsNil(o.Address) {
-		toSerialize["address"] = o.Address
-	}
-	if !IsNil(o.Version) {
-		toSerialize["version"] = o.Version
+	if !IsNil(o.DeviceId) {
+		toSerialize["deviceId"] = o.DeviceId
 	}
 	if !IsNil(o.ManagementAddress) {
 		toSerialize["managementAddress"] = o.ManagementAddress
+	}
+	if !IsNil(o.Platform) {
+		toSerialize["platform"] = o.Platform
+	}
+	if !IsNil(o.PortId) {
+		toSerialize["portId"] = o.PortId
+	}
+	if !IsNil(o.SystemCapabilities) {
+		toSerialize["systemCapabilities"] = o.SystemCapabilities
+	}
+	if !IsNil(o.SystemDescription) {
+		toSerialize["systemDescription"] = o.SystemDescription
+	}
+	if !IsNil(o.SystemName) {
+		toSerialize["systemName"] = o.SystemName
+	}
+	if !IsNil(o.Version) {
+		toSerialize["version"] = o.Version
 	}
 	return toSerialize, nil
 }
