@@ -21,15 +21,15 @@ var _ MappedNullable = &GetNetworkNetworkHealthChannelUtilization200ResponseInne
 // GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner struct for GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner
 type GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner struct {
 	// The start time of the channel utilization interval.
-	StartTime *time.Time `json:"startTime,omitempty"`
+	StartTs *time.Time `json:"start_ts,omitempty"`
 	// The end time of the channel utilization interval.
-	EndTime *time.Time `json:"endTime,omitempty"`
+	EndTs *time.Time `json:"end_ts,omitempty"`
 	// Percentage of total channel utiliation for the given radio.
-	UtilizationTotal *float32 `json:"utilizationTotal,omitempty"`
+	Utilization *float32 `json:"utilization,omitempty"`
 	// Percentage of wifi channel utiliation for the given radio.
-	Utilization80211 *float32 `json:"utilization80211,omitempty"`
+	Wifi *float32 `json:"wifi,omitempty"`
 	// Percentage of non-wifi channel utiliation for the given radio.
-	UtilizationNon80211 *float32 `json:"utilizationNon80211,omitempty"`
+	NonWifi *float32 `json:"non_wifi,omitempty"`
 }
 
 // NewGetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner instantiates a new GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner object
@@ -49,164 +49,164 @@ func NewGetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0InnerWithD
 	return &this
 }
 
-// GetStartTime returns the StartTime field value if set, zero value otherwise.
-func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) GetStartTime() time.Time {
-	if o == nil || IsNil(o.StartTime) {
+// GetStartTs returns the StartTs field value if set, zero value otherwise.
+func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) GetStartTs() time.Time {
+	if o == nil || IsNil(o.StartTs) {
 		var ret time.Time
 		return ret
 	}
-	return *o.StartTime
+	return *o.StartTs
 }
 
-// GetStartTimeOk returns a tuple with the StartTime field value if set, nil otherwise
+// GetStartTsOk returns a tuple with the StartTs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) GetStartTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.StartTime) {
+func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) GetStartTsOk() (*time.Time, bool) {
+	if o == nil || IsNil(o.StartTs) {
 		return nil, false
 	}
-	return o.StartTime, true
+	return o.StartTs, true
 }
 
-// HasStartTime returns a boolean if a field has been set.
-func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) HasStartTime() bool {
-	if o != nil && !IsNil(o.StartTime) {
+// HasStartTs returns a boolean if a field has been set.
+func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) HasStartTs() bool {
+	if o != nil && !IsNil(o.StartTs) {
 		return true
 	}
 
 	return false
 }
 
-// SetStartTime gets a reference to the given time.Time and assigns it to the StartTime field.
-func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) SetStartTime(v time.Time) {
-	o.StartTime = &v
+// SetStartTs gets a reference to the given time.Time and assigns it to the StartTs field.
+func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) SetStartTs(v time.Time) {
+	o.StartTs = &v
 }
 
-// GetEndTime returns the EndTime field value if set, zero value otherwise.
-func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) GetEndTime() time.Time {
-	if o == nil || IsNil(o.EndTime) {
+// GetEndTs returns the EndTs field value if set, zero value otherwise.
+func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) GetEndTs() time.Time {
+	if o == nil || IsNil(o.EndTs) {
 		var ret time.Time
 		return ret
 	}
-	return *o.EndTime
+	return *o.EndTs
 }
 
-// GetEndTimeOk returns a tuple with the EndTime field value if set, nil otherwise
+// GetEndTsOk returns a tuple with the EndTs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) GetEndTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.EndTime) {
+func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) GetEndTsOk() (*time.Time, bool) {
+	if o == nil || IsNil(o.EndTs) {
 		return nil, false
 	}
-	return o.EndTime, true
+	return o.EndTs, true
 }
 
-// HasEndTime returns a boolean if a field has been set.
-func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) HasEndTime() bool {
-	if o != nil && !IsNil(o.EndTime) {
+// HasEndTs returns a boolean if a field has been set.
+func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) HasEndTs() bool {
+	if o != nil && !IsNil(o.EndTs) {
 		return true
 	}
 
 	return false
 }
 
-// SetEndTime gets a reference to the given time.Time and assigns it to the EndTime field.
-func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) SetEndTime(v time.Time) {
-	o.EndTime = &v
+// SetEndTs gets a reference to the given time.Time and assigns it to the EndTs field.
+func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) SetEndTs(v time.Time) {
+	o.EndTs = &v
 }
 
-// GetUtilizationTotal returns the UtilizationTotal field value if set, zero value otherwise.
-func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) GetUtilizationTotal() float32 {
-	if o == nil || IsNil(o.UtilizationTotal) {
+// GetUtilization returns the Utilization field value if set, zero value otherwise.
+func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) GetUtilization() float32 {
+	if o == nil || IsNil(o.Utilization) {
 		var ret float32
 		return ret
 	}
-	return *o.UtilizationTotal
+	return *o.Utilization
 }
 
-// GetUtilizationTotalOk returns a tuple with the UtilizationTotal field value if set, nil otherwise
+// GetUtilizationOk returns a tuple with the Utilization field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) GetUtilizationTotalOk() (*float32, bool) {
-	if o == nil || IsNil(o.UtilizationTotal) {
+func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) GetUtilizationOk() (*float32, bool) {
+	if o == nil || IsNil(o.Utilization) {
 		return nil, false
 	}
-	return o.UtilizationTotal, true
+	return o.Utilization, true
 }
 
-// HasUtilizationTotal returns a boolean if a field has been set.
-func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) HasUtilizationTotal() bool {
-	if o != nil && !IsNil(o.UtilizationTotal) {
+// HasUtilization returns a boolean if a field has been set.
+func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) HasUtilization() bool {
+	if o != nil && !IsNil(o.Utilization) {
 		return true
 	}
 
 	return false
 }
 
-// SetUtilizationTotal gets a reference to the given float32 and assigns it to the UtilizationTotal field.
-func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) SetUtilizationTotal(v float32) {
-	o.UtilizationTotal = &v
+// SetUtilization gets a reference to the given float32 and assigns it to the Utilization field.
+func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) SetUtilization(v float32) {
+	o.Utilization = &v
 }
 
-// GetUtilization80211 returns the Utilization80211 field value if set, zero value otherwise.
-func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) GetUtilization80211() float32 {
-	if o == nil || IsNil(o.Utilization80211) {
+// GetWifi returns the Wifi field value if set, zero value otherwise.
+func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) GetWifi() float32 {
+	if o == nil || IsNil(o.Wifi) {
 		var ret float32
 		return ret
 	}
-	return *o.Utilization80211
+	return *o.Wifi
 }
 
-// GetUtilization80211Ok returns a tuple with the Utilization80211 field value if set, nil otherwise
+// GetWifiOk returns a tuple with the Wifi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) GetUtilization80211Ok() (*float32, bool) {
-	if o == nil || IsNil(o.Utilization80211) {
+func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) GetWifiOk() (*float32, bool) {
+	if o == nil || IsNil(o.Wifi) {
 		return nil, false
 	}
-	return o.Utilization80211, true
+	return o.Wifi, true
 }
 
-// HasUtilization80211 returns a boolean if a field has been set.
-func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) HasUtilization80211() bool {
-	if o != nil && !IsNil(o.Utilization80211) {
+// HasWifi returns a boolean if a field has been set.
+func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) HasWifi() bool {
+	if o != nil && !IsNil(o.Wifi) {
 		return true
 	}
 
 	return false
 }
 
-// SetUtilization80211 gets a reference to the given float32 and assigns it to the Utilization80211 field.
-func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) SetUtilization80211(v float32) {
-	o.Utilization80211 = &v
+// SetWifi gets a reference to the given float32 and assigns it to the Wifi field.
+func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) SetWifi(v float32) {
+	o.Wifi = &v
 }
 
-// GetUtilizationNon80211 returns the UtilizationNon80211 field value if set, zero value otherwise.
-func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) GetUtilizationNon80211() float32 {
-	if o == nil || IsNil(o.UtilizationNon80211) {
+// GetNonWifi returns the NonWifi field value if set, zero value otherwise.
+func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) GetNonWifi() float32 {
+	if o == nil || IsNil(o.NonWifi) {
 		var ret float32
 		return ret
 	}
-	return *o.UtilizationNon80211
+	return *o.NonWifi
 }
 
-// GetUtilizationNon80211Ok returns a tuple with the UtilizationNon80211 field value if set, nil otherwise
+// GetNonWifiOk returns a tuple with the NonWifi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) GetUtilizationNon80211Ok() (*float32, bool) {
-	if o == nil || IsNil(o.UtilizationNon80211) {
+func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) GetNonWifiOk() (*float32, bool) {
+	if o == nil || IsNil(o.NonWifi) {
 		return nil, false
 	}
-	return o.UtilizationNon80211, true
+	return o.NonWifi, true
 }
 
-// HasUtilizationNon80211 returns a boolean if a field has been set.
-func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) HasUtilizationNon80211() bool {
-	if o != nil && !IsNil(o.UtilizationNon80211) {
+// HasNonWifi returns a boolean if a field has been set.
+func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) HasNonWifi() bool {
+	if o != nil && !IsNil(o.NonWifi) {
 		return true
 	}
 
 	return false
 }
 
-// SetUtilizationNon80211 gets a reference to the given float32 and assigns it to the UtilizationNon80211 field.
-func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) SetUtilizationNon80211(v float32) {
-	o.UtilizationNon80211 = &v
+// SetNonWifi gets a reference to the given float32 and assigns it to the NonWifi field.
+func (o *GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) SetNonWifi(v float32) {
+	o.NonWifi = &v
 }
 
 func (o GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) MarshalJSON() ([]byte, error) {
@@ -219,20 +219,20 @@ func (o GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) Mar
 
 func (o GetNetworkNetworkHealthChannelUtilization200ResponseInnerWifi0Inner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.StartTime) {
-		toSerialize["startTime"] = o.StartTime
+	if !IsNil(o.StartTs) {
+		toSerialize["start_ts"] = o.StartTs
 	}
-	if !IsNil(o.EndTime) {
-		toSerialize["endTime"] = o.EndTime
+	if !IsNil(o.EndTs) {
+		toSerialize["end_ts"] = o.EndTs
 	}
-	if !IsNil(o.UtilizationTotal) {
-		toSerialize["utilizationTotal"] = o.UtilizationTotal
+	if !IsNil(o.Utilization) {
+		toSerialize["utilization"] = o.Utilization
 	}
-	if !IsNil(o.Utilization80211) {
-		toSerialize["utilization80211"] = o.Utilization80211
+	if !IsNil(o.Wifi) {
+		toSerialize["wifi"] = o.Wifi
 	}
-	if !IsNil(o.UtilizationNon80211) {
-		toSerialize["utilizationNon80211"] = o.UtilizationNon80211
+	if !IsNil(o.NonWifi) {
+		toSerialize["non_wifi"] = o.NonWifi
 	}
 	return toSerialize, nil
 }
