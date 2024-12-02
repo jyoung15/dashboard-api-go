@@ -159,10 +159,10 @@ func (a *ReadingsAPIService) GetOrganizationSensorReadingsHistoryExecute(r Readi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.serials != nil {
@@ -360,10 +360,10 @@ func (a *ReadingsAPIService) GetOrganizationSensorReadingsLatestExecute(r Readin
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.serials != nil {

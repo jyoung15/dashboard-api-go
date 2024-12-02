@@ -315,10 +315,10 @@ func (a *ByClientAPIService) GetOrganizationWirelessDevicesPacketLossByClientExe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.ssids != nil {

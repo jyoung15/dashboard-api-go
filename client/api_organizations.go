@@ -7539,7 +7539,7 @@ type OrganizationsAPIGetOrganizationAssuranceAlertRequest struct {
 	id string
 }
 
-func (r OrganizationsAPIGetOrganizationAssuranceAlertRequest) Execute() (*GetOrganizationAssuranceAlerts200ResponseInner, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationAssuranceAlertRequest) Execute() (*GetOrganizationAssuranceAlert200Response, *http.Response, error) {
 	return r.ApiService.GetOrganizationAssuranceAlertExecute(r)
 }
 
@@ -7563,13 +7563,13 @@ func (a *OrganizationsAPIService) GetOrganizationAssuranceAlert(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return GetOrganizationAssuranceAlerts200ResponseInner
-func (a *OrganizationsAPIService) GetOrganizationAssuranceAlertExecute(r OrganizationsAPIGetOrganizationAssuranceAlertRequest) (*GetOrganizationAssuranceAlerts200ResponseInner, *http.Response, error) {
+//  @return GetOrganizationAssuranceAlert200Response
+func (a *OrganizationsAPIService) GetOrganizationAssuranceAlertExecute(r OrganizationsAPIGetOrganizationAssuranceAlertRequest) (*GetOrganizationAssuranceAlert200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetOrganizationAssuranceAlerts200ResponseInner
+		localVarReturnValue  *GetOrganizationAssuranceAlert200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationAssuranceAlert")
@@ -10579,10 +10579,10 @@ func (a *OrganizationsAPIService) GetOrganizationDevicesExecute(r OrganizationsA
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.productTypes != nil {
@@ -10864,10 +10864,10 @@ func (a *OrganizationsAPIService) GetOrganizationDevicesAvailabilitiesExecute(r 
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.productTypes != nil {
@@ -11138,10 +11138,10 @@ func (a *OrganizationsAPIService) GetOrganizationDevicesAvailabilitiesChangeHist
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.statuses != nil {
@@ -11309,10 +11309,10 @@ func (a *OrganizationsAPIService) GetOrganizationDevicesOverviewByModelExecute(r
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.productTypes != nil {
@@ -11513,10 +11513,10 @@ func (a *OrganizationsAPIService) GetOrganizationDevicesPowerModulesStatusesByDe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.productTypes != nil {
@@ -11749,10 +11749,10 @@ func (a *OrganizationsAPIService) GetOrganizationDevicesProvisioningStatusesExec
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.productTypes != nil {
@@ -11995,10 +11995,10 @@ func (a *OrganizationsAPIService) GetOrganizationDevicesStatusesExecute(r Organi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.serials != nil {
@@ -12206,10 +12206,10 @@ func (a *OrganizationsAPIService) GetOrganizationDevicesStatusesOverviewExecute(
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -12399,10 +12399,10 @@ func (a *OrganizationsAPIService) GetOrganizationDevicesUplinksAddressesByDevice
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.productTypes != nil {
@@ -13333,10 +13333,10 @@ func (a *OrganizationsAPIService) GetOrganizationFirmwareUpgradesByDeviceExecute
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.serials != nil {
@@ -13743,10 +13743,10 @@ func (a *OrganizationsAPIService) GetOrganizationInventoryDevicesExecute(r Organ
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.serials != nil {
@@ -18833,10 +18833,10 @@ func (a *OrganizationsAPIService) GetOrganizationUplinksStatusesExecute(r Organi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.serials != nil {

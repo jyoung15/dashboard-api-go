@@ -5595,10 +5595,10 @@ func (a *DevicesAPIService) GetOrganizationDevicesExecute(r DevicesAPIGetOrganiz
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.productTypes != nil {
@@ -5880,10 +5880,10 @@ func (a *DevicesAPIService) GetOrganizationDevicesAvailabilitiesExecute(r Device
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.productTypes != nil {
@@ -6154,10 +6154,10 @@ func (a *DevicesAPIService) GetOrganizationDevicesAvailabilitiesChangeHistoryExe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.statuses != nil {
@@ -6325,10 +6325,10 @@ func (a *DevicesAPIService) GetOrganizationDevicesOverviewByModelExecute(r Devic
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.productTypes != nil {
@@ -6529,10 +6529,10 @@ func (a *DevicesAPIService) GetOrganizationDevicesPowerModulesStatusesByDeviceEx
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.productTypes != nil {
@@ -6765,10 +6765,10 @@ func (a *DevicesAPIService) GetOrganizationDevicesProvisioningStatusesExecute(r 
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.productTypes != nil {
@@ -7011,10 +7011,10 @@ func (a *DevicesAPIService) GetOrganizationDevicesStatusesExecute(r DevicesAPIGe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.serials != nil {
@@ -7222,10 +7222,10 @@ func (a *DevicesAPIService) GetOrganizationDevicesStatusesOverviewExecute(r Devi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -7415,10 +7415,10 @@ func (a *DevicesAPIService) GetOrganizationDevicesUplinksAddressesByDeviceExecut
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.productTypes != nil {
@@ -7984,10 +7984,10 @@ func (a *DevicesAPIService) GetOrganizationInventoryDevicesExecute(r DevicesAPIG
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.serials != nil {
@@ -8768,10 +8768,10 @@ func (a *DevicesAPIService) GetOrganizationWirelessDevicesChannelUtilizationByDe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.serials != nil {
@@ -8991,10 +8991,10 @@ func (a *DevicesAPIService) GetOrganizationWirelessDevicesChannelUtilizationByNe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.serials != nil {
@@ -9214,10 +9214,10 @@ func (a *DevicesAPIService) GetOrganizationWirelessDevicesChannelUtilizationHist
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.serials != nil {
@@ -9437,10 +9437,10 @@ func (a *DevicesAPIService) GetOrganizationWirelessDevicesChannelUtilizationHist
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.serials != nil {
@@ -9634,10 +9634,10 @@ func (a *DevicesAPIService) GetOrganizationWirelessDevicesEthernetStatusesExecut
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -9832,10 +9832,10 @@ func (a *DevicesAPIService) GetOrganizationWirelessDevicesPacketLossByClientExec
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.ssids != nil {
@@ -10081,10 +10081,10 @@ func (a *DevicesAPIService) GetOrganizationWirelessDevicesPacketLossByDeviceExec
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.serials != nil {
@@ -10330,10 +10330,10 @@ func (a *DevicesAPIService) GetOrganizationWirelessDevicesPacketLossByNetworkExe
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "networkIds[]", t, "multi")
 		}
 	}
 	if r.serials != nil {
