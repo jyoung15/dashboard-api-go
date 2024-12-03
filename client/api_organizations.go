@@ -7539,7 +7539,7 @@ type OrganizationsAPIGetOrganizationAssuranceAlertRequest struct {
 	id string
 }
 
-func (r OrganizationsAPIGetOrganizationAssuranceAlertRequest) Execute() (*GetOrganizationAssuranceAlert200Response, *http.Response, error) {
+func (r OrganizationsAPIGetOrganizationAssuranceAlertRequest) Execute() (*GetOrganizationAssuranceAlerts200ResponseInner, *http.Response, error) {
 	return r.ApiService.GetOrganizationAssuranceAlertExecute(r)
 }
 
@@ -7563,13 +7563,13 @@ func (a *OrganizationsAPIService) GetOrganizationAssuranceAlert(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return GetOrganizationAssuranceAlert200Response
-func (a *OrganizationsAPIService) GetOrganizationAssuranceAlertExecute(r OrganizationsAPIGetOrganizationAssuranceAlertRequest) (*GetOrganizationAssuranceAlert200Response, *http.Response, error) {
+//  @return GetOrganizationAssuranceAlerts200ResponseInner
+func (a *OrganizationsAPIService) GetOrganizationAssuranceAlertExecute(r OrganizationsAPIGetOrganizationAssuranceAlertRequest) (*GetOrganizationAssuranceAlerts200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetOrganizationAssuranceAlert200Response
+		localVarReturnValue  *GetOrganizationAssuranceAlerts200ResponseInner
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationsAPIService.GetOrganizationAssuranceAlert")
